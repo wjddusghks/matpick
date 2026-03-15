@@ -19,6 +19,7 @@ import {
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
   getRecommendationCount,
+  getSourcesByRestaurant,
   getVisitsByRestaurant,
   restaurants,
   type Restaurant,
@@ -407,11 +408,12 @@ export default function RestaurantDetail() {
 
   const visits = getVisitsByRestaurant(restaurant.id);
   const recommenders = getCreatorsByRestaurant(restaurant.id);
+  const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
   const recCount = getRecommendationCount(restaurant.id);
   const sampleReviews = buildSampleReviews(restaurant);
   const reviews = [...storedReviews, ...sampleReviews];
   const shareUrl = getRestaurantUrl(restaurant.id);
-  const shareText = `${restaurant.name} - 맛픽에서 크리에이터 추천 맛집을 확인해 보세요.`;
+  const shareText = `${restaurant.name} - 맛픽에서 추천/선정 맛집 정보를 확인해 보세요.`;
 
   const openReviewComposer = () => {
     if (!isLoggedIn) {
@@ -567,7 +569,20 @@ export default function RestaurantDetail() {
                   <span className="font-bold text-[#FD7979]">추천 {recCount}회</span>
                 ) : null}
                 <span>{restaurant.region}</span>
+                {restaurant.foundingYear ? <span>{restaurant.foundingYear}년 개업</span> : null}
               </div>
+              {sourcesByRestaurant.length > 0 ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {sourcesByRestaurant.map((source) => (
+                    <span
+                      key={source.id}
+                      className="inline-flex items-center rounded-full border border-[#f3d5a1] bg-[#fff7e8] px-3 py-1 text-xs font-semibold text-[#b7791f]"
+                    >
+                      {source.name}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </div>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -707,6 +722,27 @@ export default function RestaurantDetail() {
                       </span>
                     </div>
                   </Link>
+                ))}
+              </div>
+            </motion.div>
+          ) : null}
+
+          {sourcesByRestaurant.length > 0 ? (
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.28 }}
+              className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+            >
+              <h3 className="mb-3 text-sm font-bold text-[#1a1a1a]">선정/소개 출처</h3>
+              <div className="flex flex-wrap gap-2">
+                {sourcesByRestaurant.map((source) => (
+                  <div
+                    key={source.id}
+                    className="rounded-xl border border-[#f3d5a1] bg-[#fff7e8] px-3 py-2 text-sm font-semibold text-[#b7791f]"
+                  >
+                    {source.name}
+                  </div>
                 ))}
               </div>
             </motion.div>

@@ -1,17 +1,5 @@
 {
   "id": "old-korean-100",
-  "name": "한국인이 사랑하는 오래된 한식당 100선",
   "type": "guide",
-  "provider": "raw-source",
-  "files": {
-    "restaurants": "한국인이 사랑하는 오래된 한식당 100선.xlsx",
-    "coverImage": "한국인이 사랑하는 오래된 한식당 100선.jpg"
-  },
-  "columns": {
-    "ordinal": "순번",
-    "foundingYear": "창업연도",
-    "category": "음식 카테고리",
-    "name": "식당명",
-    "address": "상세주소"
-  }
+  "provider": "raw-source"
 }

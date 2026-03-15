@@ -1,4 +1,5 @@
 import rawDataset from "./matpick-data.json";
+import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import type {
   Creator,
   MatpickDataSet,
@@ -11,7 +12,91 @@ import type {
   Visit,
 } from "./types";
 
-const dataset = rawDataset as MatpickDataSet;
+type SourceDataset = {
+  restaurants?: Restaurant[];
+  sources?: Source[];
+  sourceLinks?: SourceLink[];
+};
+
+function normalizeLookupValue(value: string) {
+  return value.replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+function buildRestaurantLookupKey(restaurant: Pick<Restaurant, "name" | "address">) {
+  return `${normalizeLookupValue(restaurant.name)}|${normalizeLookupValue(restaurant.address)}`;
+}
+
+function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDataSet {
+  const mergedRestaurants = [...base.restaurants];
+  const mergedSources = [...(base.sources ?? [])];
+  const mergedSourceLinks = [...(base.sourceLinks ?? [])];
+  const restaurantIdMap = new Map<string, string>();
+  const existingRestaurantIndex = new Map<string, number>();
+
+  mergedRestaurants.forEach((restaurant, index) => {
+    existingRestaurantIndex.set(buildRestaurantLookupKey(restaurant), index);
+  });
+
+  extras.forEach((extra) => {
+    (extra.sources ?? []).forEach((source) => {
+      if (!mergedSources.some((item) => item.id === source.id)) {
+        mergedSources.push(source);
+      }
+    });
+
+    (extra.restaurants ?? []).forEach((restaurant) => {
+      const lookupKey = buildRestaurantLookupKey(restaurant);
+      const existingIndex = existingRestaurantIndex.get(lookupKey);
+
+      if (existingIndex != null) {
+        const existing = mergedRestaurants[existingIndex];
+        mergedRestaurants[existingIndex] = {
+          ...existing,
+          foundingYear: existing.foundingYear ?? restaurant.foundingYear ?? null,
+          menus: existing.menus && existing.menus.length > 0 ? existing.menus : restaurant.menus ?? [],
+          thumbnailFileName:
+            existing.thumbnailFileName ?? restaurant.thumbnailFileName ?? null,
+        };
+        restaurantIdMap.set(restaurant.id, existing.id);
+        return;
+      }
+
+      mergedRestaurants.push(restaurant);
+      existingRestaurantIndex.set(lookupKey, mergedRestaurants.length - 1);
+      restaurantIdMap.set(restaurant.id, restaurant.id);
+    });
+
+    (extra.sourceLinks ?? []).forEach((link) => {
+      const remappedRestaurantId = restaurantIdMap.get(link.restaurantId) ?? link.restaurantId;
+      const dedupeKey = `${link.sourceId}:${remappedRestaurantId}:${link.ordinal ?? ""}`;
+
+      if (
+        mergedSourceLinks.some(
+          (item) =>
+            `${item.sourceId}:${item.restaurantId}:${item.ordinal ?? ""}` === dedupeKey
+        )
+      ) {
+        return;
+      }
+
+      mergedSourceLinks.push({
+        ...link,
+        restaurantId: remappedRestaurantId,
+      });
+    });
+  });
+
+  return {
+    creators: base.creators,
+    visits: base.visits,
+    restaurants: mergedRestaurants,
+    sources: mergedSources,
+    sourceLinks: mergedSourceLinks,
+  };
+}
+
+const baseDataset = rawDataset as MatpickDataSet;
+const dataset = mergeDatasets(baseDataset, [oldKorean100Dataset as SourceDataset]);
 
 export const creators: Creator[] = dataset.creators;
 export const restaurants: Restaurant[] = dataset.restaurants;
@@ -220,6 +305,24 @@ export function getSourcesByRestaurant(restaurantId: string) {
   );
 
   return sources.filter((source) => linkedSourceIds.has(source.id));
+}
+
+export function getSourceById(sourceId: string) {
+  return sources.find((source) => source.id === sourceId) ?? null;
+}
+
+export function getRestaurantsBySource(sourceId: string) {
+  const linkedRestaurantIds = new Set(
+    sourceLinks
+      .filter((link) => link.sourceId === sourceId)
+      .map((link) => link.restaurantId)
+  );
+
+  return restaurants.filter((restaurant) => linkedRestaurantIds.has(restaurant.id));
+}
+
+export function getSourceRestaurantCount(sourceId: string) {
+  return getRestaurantsBySource(sourceId).length;
 }
 
 export function getUniqueRegions(): string[] {

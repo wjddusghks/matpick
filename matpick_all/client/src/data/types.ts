@@ -46,7 +46,7 @@ export interface Restaurant {
   imageUrl: string;
   foundingYear?: number | null;
   menus?: MenuItem[];
-  thumbnailFileName?: string;
+  thumbnailFileName?: string | null;
   isOverseas?: boolean;
 }
 

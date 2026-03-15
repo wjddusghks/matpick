@@ -16,6 +16,7 @@ import {
   restaurants, visits, creators, mockSearchData,
   getCreatorsByRestaurant, getRecommendationCount,
   getRestaurantMenuSummary, getRestaurantsByCreator, getRestaurantsByCategory,
+  getSourcesByRestaurant,
   type Restaurant, type Visit, type SearchResult,
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
@@ -27,6 +28,11 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
+import { geocodeAddress } from "@/lib/naverMaps";
+import {
+  getCachedRestaurantCoordinate,
+  saveRestaurantCoordinate,
+} from "@/lib/restaurantCoordinates";
 
 // Logo is rendered inline as SVG
 
@@ -130,6 +136,7 @@ function RestaurantCard({
   restaurant: Restaurant; isSelected: boolean; onClick: () => void; onNavigateDetail: () => void;
 }) {
   const recCreators = getCreatorsByRestaurant(restaurant.id);
+  const sourceBadges = getSourcesByRestaurant(restaurant.id);
   const relatedVisits = visits.filter(v => v.restaurantId === restaurant.id);
   const isOverseas = restaurant.isOverseas === true;
 
@@ -182,6 +189,14 @@ function RestaurantCard({
                   {creator.name}
                 </span>
               </Link>
+            ))}
+            {sourceBadges.map((source) => (
+              <span
+                key={source.id}
+                className="inline-flex items-center rounded-sm border border-[#f3d5a1] bg-[#fff7e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
+              >
+                {source.name.length > 16 ? `${source.name.slice(0, 16)}...` : source.name}
+              </span>
             ))}
           </div>
         </div>
@@ -326,6 +341,9 @@ export default function SearchMap() {
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
   );
+  const [resolvedRestaurantCoords, setResolvedRestaurantCoords] = useState<
+    Record<string, { lat: number; lng: number }>
+  >({});
 
   // ─── 검색 기능 상태 ───
   const [searchQuery, setSearchQuery] = useState("");
@@ -347,12 +365,113 @@ export default function SearchMap() {
 
   const showSearchDropdown = isSearchFocused && searchQuery.trim().length > 0 && searchResults.length > 0;
 
+  useEffect(() => {
+    const nextCachedCoords: Record<string, { lat: number; lng: number }> = {};
+
+    domesticRestaurants.forEach((restaurant) => {
+      const hasOwnCoords =
+        restaurant.lat != null &&
+        restaurant.lng != null &&
+        restaurant.lat !== 0 &&
+        restaurant.lng !== 0;
+
+      if (hasOwnCoords) {
+        return;
+      }
+
+      const cached = getCachedRestaurantCoordinate(restaurant);
+      if (cached) {
+        nextCachedCoords[restaurant.id] = cached;
+      }
+    });
+
+    if (Object.keys(nextCachedCoords).length === 0) {
+      return;
+    }
+
+    setResolvedRestaurantCoords((prev) => ({ ...nextCachedCoords, ...prev }));
+  }, [domesticRestaurants]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const unresolvedRestaurants = domesticRestaurants.filter((restaurant) => {
+      const hasOwnCoords =
+        restaurant.lat != null &&
+        restaurant.lng != null &&
+        restaurant.lat !== 0 &&
+        restaurant.lng !== 0;
+
+      return !hasOwnCoords && Boolean(restaurant.address) && !resolvedRestaurantCoords[restaurant.id];
+    });
+
+    if (unresolvedRestaurants.length === 0) {
+      return () => {
+        cancelled = true;
+      };
+    }
+
+    async function resolveMissingCoordinates() {
+      for (const restaurant of unresolvedRestaurants) {
+        try {
+          const coords = await geocodeAddress(restaurant.address);
+          if (!coords || cancelled) {
+            continue;
+          }
+
+          saveRestaurantCoordinate(restaurant, coords);
+          setResolvedRestaurantCoords((prev) => {
+            if (prev[restaurant.id]) {
+              return prev;
+            }
+
+            return {
+              ...prev,
+              [restaurant.id]: coords,
+            };
+          });
+        } catch {
+          // Keep unresolved rows silent; we only need successful lookups.
+        }
+      }
+    }
+
+    void resolveMissingCoordinates();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [domesticRestaurants, resolvedRestaurantCoords]);
+
+  const restaurantsForMap = useMemo(
+    () =>
+      domesticRestaurants.map((restaurant) => {
+        const resolved = resolvedRestaurantCoords[restaurant.id];
+        const hasOwnCoords =
+          restaurant.lat != null &&
+          restaurant.lng != null &&
+          restaurant.lat !== 0 &&
+          restaurant.lng !== 0;
+
+        if (hasOwnCoords || !resolved) {
+          return restaurant;
+        }
+
+        return {
+          ...restaurant,
+          lat: resolved.lat,
+          lng: resolved.lng,
+        };
+      }),
+    [domesticRestaurants, resolvedRestaurantCoords]
+  );
+
   const nearestRestaurant = useMemo<{ restaurant: Restaurant; distanceMeters: number } | null>(() => {
     if (!currentLocation) {
       return null;
     }
 
-    const validRestaurants = domesticRestaurants.filter(
+    const validRestaurants = restaurantsForMap.filter(
       (restaurant) =>
         restaurant.lat != null &&
         restaurant.lng != null &&
@@ -383,7 +502,7 @@ export default function SearchMap() {
       restaurant: closestRestaurant,
       distanceMeters: closestDistance,
     };
-  }, [currentLocation, domesticRestaurants]);
+  }, [currentLocation, restaurantsForMap]);
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -577,14 +696,14 @@ export default function SearchMap() {
         {/* ─── 우측: 네이버 지도 영역 ─── */}
         <div className="flex-1 relative">
           <NaverMap
-            restaurants={domesticRestaurants}
+            restaurants={restaurantsForMap}
             selectedId={selectedId}
             currentLocation={currentLocation}
             nearestRestaurantId={nearestRestaurant?.restaurant.id ?? null}
             onMarkerClick={handleMarkerClick}
           />
           {/* 좌표가 없는 식당이 있을 때 안내 */}
-          {domesticRestaurants.length > 0 && domesticRestaurants.filter(r => r.lat !== 0 && r.lng !== 0).length === 0 && (
+          {restaurantsForMap.length > 0 && restaurantsForMap.filter(r => r.lat !== 0 && r.lng !== 0).length === 0 && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-6 text-center max-w-xs pointer-events-auto">
                 <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#FEEAC9] to-[#FFCDC9] flex items-center justify-center">
@@ -594,7 +713,7 @@ export default function SearchMap() {
                   </svg>
                 </div>
                 <p className="text-sm font-semibold text-[#1a1a1a] mb-1">좌표 데이터 준비 중</p>
-                <p className="text-xs text-[#888]">{domesticRestaurants.length}개 맛집의 위치 정보를<br/>업데이트하고 있습니다</p>
+                <p className="text-xs text-[#888]">{restaurantsForMap.length}개 맛집의 위치 정보를<br/>업데이트하고 있습니다</p>
               </div>
             </div>
           )}

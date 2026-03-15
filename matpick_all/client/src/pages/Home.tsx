@@ -21,6 +21,7 @@ import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { mockSearchData, type SearchResult } from "@/data";
+import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const RECENT_KEY = "matpick_recent_searches";
@@ -451,6 +452,7 @@ export default function Home() {
 
       if (!("geolocation" in navigator)) {
         if (!ignore) {
+          clearStoredLocation();
           setLocationState("unsupported");
           persistLocationStatus("unsupported");
           setShowLocationPrompt(true);
@@ -486,6 +488,29 @@ export default function Home() {
       setLocationState(nextState);
 
       persistLocationStatus(nextState);
+
+      if (nextState === "granted") {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            if (ignore) {
+              return;
+            }
+
+            saveStoredLocation({
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            });
+          },
+          () => {
+            // Ignore background refresh failures and keep the last known location.
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 300000,
+          }
+        );
+      }
 
       if (nextState !== "granted") {
         setShowLocationPrompt(true);
@@ -630,10 +655,14 @@ export default function Home() {
     setLocationFeedback(null);
 
     navigator.geolocation.getCurrentPosition(
-      () => {
+      (position) => {
         setIsRequestingLocation(false);
         setLocationState("granted");
         persistLocationStatus("granted");
+        saveStoredLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
         window.localStorage.removeItem(LOCATION_DISMISSED_KEY);
         setShowLocationPrompt(false);
       },
@@ -643,6 +672,7 @@ export default function Home() {
         if (error.code === error.PERMISSION_DENIED) {
           setLocationState("denied");
           persistLocationStatus("denied");
+          clearStoredLocation();
           setLocationFeedback(UI.location.deniedFeedback);
           return;
         }
@@ -783,8 +813,10 @@ export default function Home() {
                   <Search className="h-9 w-9" strokeWidth={2.1} />
                 </button>
               </div>
+            </div>
 
-              {isFocused ? (
+            {isFocused ? (
+              <div className="absolute left-0 right-0 top-full z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)]">
                 <div className="border-t border-[#ffb2ba] bg-white">
                   {normalizedQuery ? (
                     filteredResults.length > 0 ? (
@@ -857,8 +889,8 @@ export default function Home() {
                     </div>
                   )}
                 </div>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
           </div>
         </section>
       </main>

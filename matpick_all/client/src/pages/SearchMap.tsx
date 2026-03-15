@@ -20,6 +20,13 @@ import {
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
+import {
+  getDistanceInMeters,
+  loadStoredLocation,
+  LOCATION_UPDATED_EVENT,
+  saveStoredLocation,
+  type StoredLocation,
+} from "@/lib/location";
 
 // Logo is rendered inline as SVG
 
@@ -314,6 +321,9 @@ export default function SearchMap() {
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selectedRestaurant = filteredRestaurants.find(r => r.id === selectedId) || null;
+  const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
+    loadStoredLocation()
+  );
 
   // ─── 검색 기능 상태 ───
   const [searchQuery, setSearchQuery] = useState("");
@@ -335,6 +345,44 @@ export default function SearchMap() {
 
   const showSearchDropdown = isSearchFocused && searchQuery.trim().length > 0 && searchResults.length > 0;
 
+  const nearestRestaurant = useMemo<{ restaurant: Restaurant; distanceMeters: number } | null>(() => {
+    if (!currentLocation) {
+      return null;
+    }
+
+    const validRestaurants = domesticRestaurants.filter(
+      (restaurant) =>
+        restaurant.lat != null &&
+        restaurant.lng != null &&
+        restaurant.lat !== 0 &&
+        restaurant.lng !== 0
+    );
+
+    let closestRestaurant: Restaurant | null = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    validRestaurants.forEach((restaurant) => {
+      const distance = getDistanceInMeters(currentLocation, {
+        lat: restaurant.lat,
+        lng: restaurant.lng,
+      });
+
+      if (distance < closestDistance) {
+        closestRestaurant = restaurant;
+        closestDistance = distance;
+      }
+    });
+
+    if (!closestRestaurant) {
+      return null;
+    }
+
+    return {
+      restaurant: closestRestaurant,
+      distanceMeters: closestDistance,
+    };
+  }, [currentLocation, domesticRestaurants]);
+
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
@@ -344,6 +392,84 @@ export default function SearchMap() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    const syncStoredLocation = () => {
+      setCurrentLocation(loadStoredLocation());
+    };
+
+    syncStoredLocation();
+
+    const handleLocationUpdated = () => {
+      syncStoredLocation();
+    };
+
+    window.addEventListener(LOCATION_UPDATED_EVENT, handleLocationUpdated);
+
+    return () => {
+      window.removeEventListener(LOCATION_UPDATED_EVENT, handleLocationUpdated);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (currentLocation || !("geolocation" in navigator)) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function hydrateCurrentLocation() {
+      let permissionState: PermissionState | "prompt" = "prompt";
+
+      if ("permissions" in navigator && typeof navigator.permissions.query === "function") {
+        try {
+          const permission = await navigator.permissions.query({
+            name: "geolocation" as PermissionName,
+          });
+          permissionState = permission.state;
+        } catch {
+          permissionState = "prompt";
+        }
+      }
+
+      if (permissionState !== "granted" || cancelled) {
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          if (cancelled) {
+            return;
+          }
+
+          const nextLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          saveStoredLocation(nextLocation);
+          setCurrentLocation({
+            ...nextLocation,
+            updatedAt: Date.now(),
+          });
+        },
+        () => {
+          // Ignore silent location refresh failures on the map page.
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 300000,
+        }
+      );
+    }
+
+    void hydrateCurrentLocation();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [currentLocation]);
 
   const handleMarkerClick = useCallback((id: string) => {
     setSelectedId(prev => prev === id ? null : id);
@@ -451,6 +577,8 @@ export default function SearchMap() {
           <NaverMap
             restaurants={domesticRestaurants}
             selectedId={selectedId}
+            currentLocation={currentLocation}
+            nearestRestaurantId={nearestRestaurant?.restaurant.id ?? null}
             onMarkerClick={handleMarkerClick}
           />
           {/* 좌표가 없는 식당이 있을 때 안내 */}

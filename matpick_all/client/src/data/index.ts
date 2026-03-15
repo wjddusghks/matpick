@@ -1,4 +1,5 @@
 import rawDataset from "./matpick-data.json";
+import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import type {
   Creator,
@@ -97,13 +98,21 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 
 const baseDataset = rawDataset as MatpickDataSet;
 const dataset = mergeDatasets(baseDataset, [oldKorean100Dataset as SourceDataset]);
+const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
+  ...creator,
+  profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,
+}));
+const normalizedDataset: MatpickDataSet = {
+  ...dataset,
+  creators: creatorsWithProfileImages,
+};
 
-export const creators: Creator[] = dataset.creators;
-export const restaurants: Restaurant[] = dataset.restaurants;
-export const visits: Visit[] = dataset.visits;
-export const sources: Source[] = dataset.sources ?? [];
-export const sourceLinks: SourceLink[] = dataset.sourceLinks ?? [];
-export const dataSet: MatpickDataSet = dataset;
+export const creators: Creator[] = normalizedDataset.creators;
+export const restaurants: Restaurant[] = normalizedDataset.restaurants;
+export const visits: Visit[] = normalizedDataset.visits;
+export const sources: Source[] = normalizedDataset.sources ?? [];
+export const sourceLinks: SourceLink[] = normalizedDataset.sourceLinks ?? [];
+export const dataSet: MatpickDataSet = normalizedDataset;
 
 type CountEntry = {
   name: string;

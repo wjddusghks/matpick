@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AuthOnboardingModal from "./components/AuthOnboardingModal";
+import MonetizationScripts from "./components/monetization/MonetizationScripts";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
@@ -44,6 +45,7 @@ function App() {
           <FavoritesProvider>
             <TooltipProvider>
               <Toaster />
+              <MonetizationScripts />
               <AuthOnboardingModal />
               <Router />
             </TooltipProvider>

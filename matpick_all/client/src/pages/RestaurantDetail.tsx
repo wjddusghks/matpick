@@ -14,6 +14,7 @@ import {
 import { toast } from "sonner";
 import HeartButton from "@/components/HeartButton";
 import ShareSheet from "@/components/ShareSheet";
+import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   creators,
@@ -27,6 +28,7 @@ import {
 } from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import { getUserRestaurantRating, saveUserRestaurantRating } from "@/lib/restaurantRatings";
+import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
 type ReviewItem = { id: string; user: string; date: string; stars: number; text: string; photos: string[] };
@@ -156,6 +158,27 @@ export default function RestaurantDetail() {
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
   const shareUrl = getRestaurantUrl(restaurant.id);
+
+  useSeo({
+    title: `${restaurant.name} 맛집 정보`,
+    description: `${restaurant.name}의 대표 메뉴, 위치, 추천 소스와 리뷰를 맛픽에서 확인해보세요.`,
+    path: `/restaurant/${restaurant.id}`,
+    type: "article",
+    image: restaurant.imageUrl || "/og-default.png",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      name: restaurant.name,
+      image: restaurant.imageUrl ? buildAbsoluteUrl(restaurant.imageUrl) : buildAbsoluteUrl("/og-default.png"),
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: restaurant.address,
+        addressCountry: "KR",
+      },
+      servesCuisine: restaurant.category,
+      url: shareUrl,
+    },
+  });
 
   const openComposer = () => {
     if (!isLoggedIn) {
@@ -622,6 +645,8 @@ export default function RestaurantDetail() {
               </div>
             </div>
           ) : null}
+
+          <MonetizationSlot label="Sponsored" />
 
           <div className="flex flex-col gap-2.5 rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <button

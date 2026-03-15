@@ -18,6 +18,8 @@ import {
   type Restaurant,
 } from "@/data";
 import HeartButton from "@/components/HeartButton";
+import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import { useSeo } from "@/lib/seo";
 
 const ALL_FILTER = "all";
 const FALLBACK_RESTAURANT_IMAGE =
@@ -267,6 +269,20 @@ export default function Explore() {
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
 
+  useSeo({
+    title: "맛집 탐색",
+    description:
+      "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.",
+    path: "/explore",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "맛집 탐색",
+      description:
+        "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 탐색하는 페이지",
+    },
+  });
+
   useEffect(() => {
     setSelectedDiscoveryKeys(initialSelectedKeys);
   }, [initialSelectedKeys]);
@@ -434,6 +450,10 @@ export default function Explore() {
               필터 전체 초기화
             </button>
           ) : null}
+        </div>
+
+        <div className="mb-6">
+          <MonetizationSlot label="Sponsored" />
         </div>
 
         {filteredRestaurants.length > 0 ? (

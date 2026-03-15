@@ -8,6 +8,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { restaurants } from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import { getUserRestaurantRating } from "@/lib/restaurantRatings";
+import { useSeo } from "@/lib/seo";
 
 function RatingPreview({
   userId,
@@ -34,6 +35,13 @@ export default function MyFavorites() {
   const [, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
   const { favorites } = useFavorites();
+
+  useSeo({
+    title: "저장한 맛집",
+    description: "로그인한 사용자의 저장한 맛집과 개인 평점을 확인하는 페이지입니다.",
+    path: "/my/favorites",
+    robots: "noindex,nofollow",
+  });
 
   const favoriteRestaurants = restaurants.filter((restaurant) => favorites.has(restaurant.id));
 

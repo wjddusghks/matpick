@@ -18,6 +18,7 @@ import {
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
+import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import {
   getDistanceInMeters,
   loadStoredLocation,
@@ -30,6 +31,7 @@ import {
   getCachedRestaurantCoordinate,
   saveRestaurantCoordinate,
 } from "@/lib/restaurantCoordinates";
+import { useSeo } from "@/lib/seo";
 
 function filterRestaurants(type: string, value: string): {
   restaurants: Restaurant[];
@@ -251,6 +253,18 @@ export default function SearchMap() {
     () => filterRestaurants(type, value),
     [type, value]
   );
+
+  useSeo({
+    title: `${title} 지도`,
+    description: `${title}과 관련된 맛집을 지도와 리스트로 함께 확인할 수 있는 맛픽 검색 결과 페이지입니다.`,
+    path: `/map?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "SearchResultsPage",
+      name: `${title} 지도`,
+      description: `${title}과 관련된 맛집 검색 결과 페이지`,
+    },
+  });
 
   const domesticRestaurants = useMemo(
     () => filteredRestaurants.filter((restaurant) => !restaurant.isOverseas),
@@ -603,6 +617,10 @@ export default function SearchMap() {
                   해외 {overseasCount}곳
                 </span>
               ) : null}
+            </div>
+
+            <div className="mt-4">
+              <MonetizationSlot label="Sponsored" />
             </div>
           </div>
 

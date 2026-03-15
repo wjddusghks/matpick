@@ -1,0 +1,16 @@
+{
+  "name": "Matpick",
+  "short_name": "Matpick",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f9",
+  "theme_color": "#ff7b83",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

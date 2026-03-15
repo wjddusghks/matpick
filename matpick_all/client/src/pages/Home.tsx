@@ -19,11 +19,13 @@ import {
 } from "lucide-react";
 import { useLocation } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
+import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { mockSearchData, type SearchResult } from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
+import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const RECENT_KEY = "matpick_recent_searches";
@@ -409,6 +411,24 @@ export default function Home() {
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
+
+  useSeo({
+    title: "맛픽 Matpick | 크리에이터와 소스 기반 맛집 탐색",
+    description:
+      "유튜브, 방송, 미쉐린, 가이드 같은 다양한 소스를 한곳에 모아 내 취향과 위치에 맞는 맛집을 찾는 서비스 맛픽.",
+    path: "/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "맛픽",
+      url: buildAbsoluteUrl("/"),
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${buildAbsoluteUrl("/map")}?type=all&value={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    },
+  });
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -979,6 +999,10 @@ export default function Home() {
             ) : null}
           </div>
         </section>
+
+        <div className="mt-10 w-full max-w-[840px]">
+          <MonetizationSlot label="Sponsored" />
+        </div>
       </main>
     </div>
   );

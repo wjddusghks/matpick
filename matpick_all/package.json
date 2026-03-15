@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "vite --host",
+    "prebuild": "node scripts/generate-seo-files.mjs",
     "build": "vite build",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",

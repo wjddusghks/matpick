@@ -5,11 +5,13 @@
 import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Youtube, Users } from "lucide-react";
+import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import {
   creators, restaurants, visits,
   getRestaurantsByCreator, getCreatorsByRestaurant, getRecommendationCount,
   type Restaurant,
 } from "@/data";
+import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 // Logo is rendered inline as SVG
 
@@ -59,6 +61,25 @@ export default function CreatorDetail() {
   const { id } = useParams<{ id: string }>();
   const [, navigate] = useLocation();
   const creator = creators.find((c) => c.id === id);
+
+  useSeo({
+    title: creator ? `${creator.name} 추천 맛집` : "크리에이터",
+    description: creator
+      ? `${creator.name}이 소개한 맛집과 채널 정보를 맛픽에서 한눈에 확인해보세요.`
+      : "맛픽 크리에이터 페이지",
+    path: creator ? `/creator/${creator.id}` : "/creator",
+    type: "profile",
+    jsonLd: creator
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: creator.name,
+          image: creator.profileImage,
+          url: buildAbsoluteUrl(`/creator/${creator.id}`),
+          sameAs: creator.youtubeUrl ? [creator.youtubeUrl] : undefined,
+        }
+      : undefined,
+  });
 
   if (!creator) {
     return (
@@ -135,6 +156,9 @@ export default function CreatorDetail() {
         <h2 className="text-xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
           추천한 맛집 ({recommendedRestaurants.length}곳)
         </h2>
+        <div className="mb-6">
+          <MonetizationSlot label="Sponsored" />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {recommendedRestaurants.map((restaurant, i) => (
             <MiniRestaurantCard key={restaurant.id} restaurant={restaurant} index={i} />

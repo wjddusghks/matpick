@@ -1,6 +1,6 @@
 {
-  "installCommand": "npm install -g pnpm && cd matpick_all && pnpm install",
-  "buildCommand": "cd matpick_all && pnpm build",
+  "installCommand": "cd matpick_all && corepack pnpm install --frozen-lockfile",
+  "buildCommand": "cd matpick_all && corepack pnpm build",
   "outputDirectory": "matpick_all/dist",
   "framework": null,
   "rewrites": [

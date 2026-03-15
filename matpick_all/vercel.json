@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm install && pnpm build",
+  "buildCommand": "corepack pnpm build",
   "outputDirectory": "dist",
-  "installCommand": "npm install -g pnpm && pnpm install",
+  "installCommand": "corepack pnpm install --frozen-lockfile",
   "framework": null,
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }

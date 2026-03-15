@@ -1,6 +1,10 @@
 {
   "name": "matpick-root",
   "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "cd matpick_all && pnpm dev",
     "build": "cd matpick_all && pnpm build",

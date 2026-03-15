@@ -1,13 +1,8 @@
-/*
- * HeartButton — 찜하기 하트 버튼
- * 비로그인: 클릭 시 로그인 안내 토스트
- * 로그인: 빈 하트 ↔ 빨간 하트 토글 + 애니메이션
- */
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
-import { toast } from "sonner";
 
 interface HeartButtonProps {
   restaurantId: string;
@@ -17,30 +12,35 @@ interface HeartButtonProps {
 }
 
 const sizeMap = {
-  sm: { button: "w-8 h-8", icon: 16, label: "text-xs" },
-  md: { button: "w-9 h-9", icon: 20, label: "text-sm" },
-  lg: { button: "w-11 h-11", icon: 24, label: "text-base" },
+  sm: { button: "h-8 w-8", icon: 16, label: "text-xs" },
+  md: { button: "h-9 w-9", icon: 20, label: "text-sm" },
+  lg: { button: "h-11 w-11", icon: 24, label: "text-base" },
 };
 
-export default function HeartButton({ restaurantId, size = "md", className = "", showLabel = false }: HeartButtonProps) {
+export default function HeartButton({
+  restaurantId,
+  size = "md",
+  className = "",
+  showLabel = false,
+}: HeartButtonProps) {
   const { isLoggedIn } = useAuth();
   const { isFavorite, toggleFavorite } = useFavorites();
   const [isAnimating, setIsAnimating] = useState(false);
 
   const liked = isFavorite(restaurantId);
-  const s = sizeMap[size];
+  const sizing = sizeMap[size];
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
 
     if (!isLoggedIn) {
-      toast("데모 로그인이 필요합니다", {
-        description: "찜하기는 현재 브라우저 저장 기반 데모 기능입니다.",
+      toast("로그인이 필요해요", {
+        description: "찜한 맛집은 로그인한 계정 기준으로 저장됩니다.",
         action: {
-          label: "데모 로그인",
+          label: "홈으로",
           onClick: () => {
-            toast.info("홈 화면의 데모 로그인으로 바로 체험할 수 있습니다.");
+            window.location.assign("/");
           },
         },
       });
@@ -48,31 +48,31 @@ export default function HeartButton({ restaurantId, size = "md", className = "",
     }
 
     setIsAnimating(true);
-    const newState = toggleFavorite(restaurantId);
-    
-    if (newState) {
-      toast.success("데모 찜 목록에 추가했습니다", { duration: 1500 });
+    const nextState = toggleFavorite(restaurantId);
+
+    if (nextState) {
+      toast.success("찜한 맛집에 추가했어요.", { duration: 1500 });
     } else {
-      toast("데모 찜 목록에서 제거했습니다", { duration: 1500 });
+      toast("찜한 맛집에서 제거했어요.", { duration: 1500 });
     }
 
-    setTimeout(() => setIsAnimating(false), 400);
+    window.setTimeout(() => setIsAnimating(false), 400);
   };
 
   return (
     <button
+      type="button"
       onClick={handleClick}
-      className={`relative flex items-center justify-center rounded-full transition-all duration-200 border-none cursor-pointer ${s.button} ${
+      className={`relative flex items-center justify-center rounded-full border-none transition-all duration-200 ${sizing.button} ${
         liked
           ? "bg-red-50 hover:bg-red-100"
-          : "bg-white/80 hover:bg-white border border-gray-200"
+          : "border border-gray-200 bg-white/85 hover:bg-white"
       } ${className}`}
       aria-label={liked ? "찜 해제" : "찜하기"}
       title={liked ? "찜 해제" : "찜하기"}
     >
-      {/* 클릭 시 퍼지는 원형 이펙트 */}
       <AnimatePresence>
-        {isAnimating && liked && (
+        {isAnimating && liked ? (
           <motion.div
             initial={{ scale: 0, opacity: 0.6 }}
             animate={{ scale: 2.5, opacity: 0 }}
@@ -80,13 +80,12 @@ export default function HeartButton({ restaurantId, size = "md", className = "",
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="absolute inset-0 rounded-full bg-red-300"
           />
-        )}
+        ) : null}
       </AnimatePresence>
 
-      {/* 하트 아이콘 */}
       <motion.svg
-        width={s.icon}
-        height={s.icon}
+        width={sizing.icon}
+        height={sizing.icon}
         viewBox="0 0 24 24"
         animate={isAnimating ? { scale: [1, 1.3, 0.9, 1.1, 1] } : { scale: 1 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -100,12 +99,15 @@ export default function HeartButton({ restaurantId, size = "md", className = "",
         />
       </motion.svg>
 
-      {/* 라벨 (선택적) */}
-      {showLabel && (
-        <span className={`ml-1.5 font-medium ${s.label} ${liked ? "text-[#FD7979]" : "text-[#999]"}`}>
-          {liked ? "찜" : "찜하기"}
+      {showLabel ? (
+        <span
+          className={`ml-1.5 font-medium ${sizing.label} ${
+            liked ? "text-[#FD7979]" : "text-[#999]"
+          }`}
+        >
+          {liked ? "찜됨" : "찜하기"}
         </span>
-      )}
+      ) : null}
     </button>
   );
 }

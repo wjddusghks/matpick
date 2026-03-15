@@ -50,56 +50,12 @@ function MatpickMark({ className = "" }: { className?: string }) {
   );
 }
 
-function HeroUtensils() {
+function HeroLogoBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute left-1/2 top-1/2 h-[820px] w-[820px] -translate-x-1/2 -translate-y-1/2 opacity-50">
-        <svg viewBox="0 0 900 900" className="h-full w-full" fill="none">
-          <defs>
-            <linearGradient id="forkGradient" x1="120" y1="120" x2="760" y2="760">
-              <stop offset="0%" stopColor="#ffb3c7" />
-              <stop offset="100%" stopColor="#ff8a8a" />
-            </linearGradient>
-            <linearGradient id="spoonGradient" x1="220" y1="160" x2="760" y2="640">
-              <stop offset="0%" stopColor="#e4c4ff" />
-              <stop offset="100%" stopColor="#cdbaff" />
-            </linearGradient>
-          </defs>
-          <g transform="translate(180 130) rotate(-44 220 320)">
-            <rect
-              x="176"
-              y="275"
-              width="88"
-              height="430"
-              rx="44"
-              fill="url(#forkGradient)"
-              opacity="0.72"
-            />
-            <rect x="118" y="110" width="46" height="240" rx="23" fill="url(#forkGradient)" opacity="0.72" />
-            <rect x="178" y="88" width="46" height="262" rx="23" fill="url(#forkGradient)" opacity="0.72" />
-            <rect x="238" y="110" width="46" height="240" rx="23" fill="url(#forkGradient)" opacity="0.72" />
-            <rect x="298" y="140" width="46" height="210" rx="23" fill="url(#forkGradient)" opacity="0.72" />
-          </g>
-          <g transform="translate(450 100) rotate(42 140 360)">
-            <rect
-              x="96"
-              y="286"
-              width="88"
-              height="448"
-              rx="44"
-              fill="url(#spoonGradient)"
-              opacity="0.72"
-            />
-            <ellipse
-              cx="140"
-              cy="200"
-              rx="134"
-              ry="182"
-              fill="url(#spoonGradient)"
-              opacity="0.72"
-            />
-          </g>
-        </svg>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,0.18)_32%,rgba(255,255,255,0.88)_72%,rgba(255,255,255,0.96)_100%)]" />
+      <div className="absolute left-1/2 top-[54%] h-[540px] w-[540px] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] sm:h-[700px] sm:w-[700px] lg:h-[900px] lg:w-[900px]">
+        <MatpickMark className="h-full w-full" />
       </div>
     </div>
   );
@@ -416,15 +372,15 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#fffdfd] text-[#171717]">
-      <HeroUtensils />
+      <HeroLogoBackground />
 
       <header className="relative z-20 flex items-center justify-between px-4 py-4 sm:px-8">
         <button
           type="button"
           onClick={() => navigate("/")}
-          className="flex items-center gap-3 rounded-full bg-transparent text-left"
+          className="flex items-center gap-3 rounded-full bg-white/72 p-2 text-left shadow-[0_10px_24px_rgba(0,0,0,0.04)] backdrop-blur-sm"
         >
-          <MatpickMark className="h-9 w-9" />
+          <MatpickMark className="h-8 w-8" />
         </button>
 
         {isLoggedIn ? (
@@ -477,7 +433,7 @@ export default function Home() {
 
           <div ref={searchRef} className="relative mt-10 w-full max-w-[810px]">
             <div
-              className={`rounded-[28px] border border-[#ffb2b2] bg-white shadow-[0_18px_60px_rgba(255,102,132,0.14)] transition ${
+              className={`rounded-[28px] border border-[#ffb2b2] bg-white/96 shadow-[0_18px_60px_rgba(255,102,132,0.14)] backdrop-blur-sm transition ${
                 showDropdown ? "rounded-b-none" : ""
               }`}
             >

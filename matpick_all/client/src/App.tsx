@@ -2,11 +2,11 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import DemoNotice from "./components/DemoNotice";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
+import AuthCallback from "./pages/AuthCallback";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import SearchMap from "./pages/SearchMap";
@@ -18,6 +18,9 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/auth/callback/:provider">
+        {(params) => <AuthCallback provider={params.provider} />}
+      </Route>
       <Route path="/explore" component={Explore} />
       <Route path="/map" component={SearchMap} />
       <Route path="/restaurant/:id" component={RestaurantDetail} />
@@ -37,7 +40,6 @@ function App() {
           <FavoritesProvider>
             <TooltipProvider>
               <Toaster />
-              <DemoNotice />
               <Router />
             </TooltipProvider>
           </FavoritesProvider>

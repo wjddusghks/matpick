@@ -1,37 +1,37 @@
-/*
- * MyFavorites — 찜한 식당 목록 페이지
- * 로그인 사용자만 접근 가능, 비로그인 시 로그인 안내
- */
-import { useLocation, Link } from "wouter";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "wouter";
+import HeartButton from "@/components/HeartButton";
+import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { restaurants } from "@/data";
-import HeartButton from "@/components/HeartButton";
 
 export default function MyFavorites() {
   const [, navigate] = useLocation();
-  const { isLoggedIn, user, login } = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const { favorites } = useFavorites();
 
-  const favoriteRestaurants = restaurants.filter((r) => favorites.has(r.id));
+  const favoriteRestaurants = restaurants.filter((restaurant) =>
+    favorites.has(restaurant.id)
+  );
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-[#f8f9fa] flex items-center justify-center">
-        <div className="text-center max-w-sm">
-          <div className="text-6xl mb-4">❤️</div>
-          <h2 className="text-xl font-bold text-[#1a1a1a] mb-2">데모 로그인이 필요합니다</h2>
-          <p className="text-sm text-[#888] mb-6">찜한 맛집 목록은 데모 로그인 후 현재 브라우저에 임시 저장됩니다.</p>
+      <div className="flex min-h-screen items-center justify-center bg-[linear-gradient(135deg,#fffaf9_0%,#fff3f6_100%)] px-4">
+        <div className="w-full max-w-md rounded-[32px] border border-[#ffd4d8] bg-white px-8 py-10 text-center shadow-[0_24px_80px_rgba(255,105,135,0.16)]">
+          <div className="mx-auto mb-5 flex h-18 w-18 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff6a6a_0%,#ff00d4_100%)] text-2xl font-black text-white">
+            ❤
+          </div>
+          <h1 className="text-2xl font-black text-[#161616]">로그인이 필요합니다</h1>
+          <p className="mt-3 text-sm leading-6 text-[#7f7f7f]">
+            저장한 맛집은 로그인한 계정 기준으로 보관됩니다. 카카오나 네이버로
+            로그인하고 나만의 맛집 리스트를 모아보세요.
+          </p>
+          <SocialLoginButtons redirectTo="/my/favorites" className="mt-6" />
           <button
-            onClick={() => login()}
-            className="px-8 py-3 rounded-full bg-[#FD7979] text-white font-semibold border-none hover:bg-[#fd6060] transition-colors cursor-pointer"
-          >
-            데모 로그인하기
-          </button>
-          <button
+            type="button"
             onClick={() => navigate("/")}
-            className="block mx-auto mt-3 text-sm text-[#999] bg-transparent border-none cursor-pointer hover:text-[#FD7979] transition-colors"
+            className="mt-4 text-sm font-semibold text-[#9b9b9b] transition hover:text-[#ff6a6a]"
           >
             홈으로 돌아가기
           </button>
@@ -41,91 +41,97 @@ export default function MyFavorites() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%)" }}>
-      {/* 상단 네비게이션 */}
-      <nav className="bg-white border-b border-[#e8e8e8] px-8 py-3 flex items-center justify-between sticky top-0 z-50 shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+    <div className="min-h-screen bg-[linear-gradient(135deg,#f8f9fa_0%,#f0f2f5_100%)]">
+      <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#ececec] bg-white/92 px-6 py-4 shadow-[0_4px_18px_rgba(0,0,0,0.04)] backdrop-blur">
         <div className="flex items-center gap-3">
           <button
+            type="button"
             onClick={() => window.history.back()}
-            className="w-9 h-9 rounded-lg border border-[#e0e0e0] bg-white flex items-center justify-center text-lg hover:border-[#FD7979] hover:bg-[#FFF5F5] transition-all cursor-pointer"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e5e5] bg-white text-[#333] transition hover:border-[#ff8e8e] hover:bg-[#fff5f5]"
           >
             ←
           </button>
           <Link href="/" className="no-underline">
-            <span className="text-xl font-black text-[#1a1a1a]">맛<span className="text-[#FD7979]">픽</span></span>
+            <span
+              className="bg-[linear-gradient(135deg,#ff1b1b_0%,#ff00d4_88%)] bg-clip-text text-2xl font-black tracking-[-0.08em] text-transparent"
+              style={{ fontFamily: "'Black Han Sans', sans-serif" }}
+            >
+              맛픽
+            </span>
           </Link>
         </div>
-        <div className="flex items-center gap-2 text-sm text-[#666]">
-          <span>👤 {user?.name}</span>
-        </div>
+        <div className="text-sm font-medium text-[#666]">{user?.name}</div>
       </nav>
 
-      {/* 메인 콘텐츠 */}
-      <div className="max-w-[1200px] mx-auto px-6 py-8">
-        <div className="flex items-center gap-3 mb-8">
-          <h1 className="text-2xl font-[800] text-[#1a1a1a]">❤️ 데모 찜한 맛집</h1>
-          <span className="px-3 py-1 rounded-full bg-[#FD7979] text-white text-sm font-bold">
-            {favoriteRestaurants.length}개
+      <div className="mx-auto max-w-[1200px] px-6 py-10">
+        <div className="mb-8 flex items-center gap-3">
+          <h1 className="text-3xl font-black text-[#171717]">내가 저장한 맛집</h1>
+          <span className="rounded-full bg-[#ff7272] px-3 py-1 text-sm font-bold text-white">
+            {favoriteRestaurants.length}곳
           </span>
         </div>
 
         {favoriteRestaurants.length === 0 ? (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center py-20"
+            className="rounded-[28px] border border-[#ececec] bg-white px-8 py-16 text-center shadow-[0_18px_54px_rgba(0,0,0,0.06)]"
           >
-            <div className="text-6xl mb-4">🍽️</div>
-            <p className="text-lg text-[#888] mb-2">아직 데모 찜한 맛집이 없습니다</p>
-            <p className="text-sm text-[#aaa] mb-6">마음에 드는 맛집의 하트를 눌러보세요!</p>
+            <div className="text-6xl">🍽️</div>
+            <p className="mt-5 text-xl font-semibold text-[#202020]">
+              아직 저장한 맛집이 없어요
+            </p>
+            <p className="mt-2 text-sm text-[#8a8a8a]">
+              마음에 드는 맛집에 하트를 눌러 나만의 리스트를 만들어 보세요.
+            </p>
             <button
+              type="button"
               onClick={() => navigate("/explore")}
-              className="px-6 py-2.5 rounded-full bg-[#FD7979] text-white font-semibold border-none hover:bg-[#fd6060] transition-colors cursor-pointer"
+              className="mt-6 rounded-full bg-[#ff7272] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95"
             >
-              맛집 탐색하기
+              맛집 둘러보기
             </button>
           </motion.div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {favoriteRestaurants.map((restaurant, i) => (
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {favoriteRestaurants.map((restaurant, index) => (
               <motion.div
                 key={restaurant.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
+                transition={{ delay: index * 0.04 }}
               >
                 <Link href={`/restaurant/${restaurant.id}`} className="no-underline">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)] transition-all hover:-translate-y-1 cursor-pointer">
-                    {/* 이미지 */}
+                  <article className="overflow-hidden rounded-[28px] border border-white bg-white shadow-[0_16px_50px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_64px_rgba(0,0,0,0.12)]">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <img
-                        src={restaurant.imageUrl || "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"}
+                        src={
+                          restaurant.imageUrl ||
+                          "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
+                        }
                         alt={restaurant.name}
-                        className="w-full h-full object-cover"
+                        className="h-full w-full object-cover"
                       />
-                      {/* 하트 버튼 */}
-                      <div className="absolute top-3 right-3">
+                      <div className="absolute right-3 top-3">
                         <HeartButton restaurantId={restaurant.id} size="md" />
                       </div>
-                      {/* 카테고리 배지 */}
                       {restaurant.category && (
-                        <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-black/60 text-white text-xs font-medium">
+                        <div className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white">
                           {restaurant.category}
                         </div>
                       )}
                     </div>
 
-                    {/* 정보 */}
-                    <div className="p-4">
-                      <h3 className="text-base font-bold text-[#1a1a1a] mb-1">{restaurant.name}</h3>
-                      <p className="text-xs text-[#888] mb-2">📍 {restaurant.address}</p>
+                    <div className="p-5">
+                      <h2 className="text-lg font-bold text-[#1b1b1b]">{restaurant.name}</h2>
+                      <p className="mt-1 text-sm text-[#878787]">{restaurant.address}</p>
                       {restaurant.representativeMenu && (
-                        <p className="text-xs text-[#FD7979] font-medium line-clamp-1">
-                          🍽️ {restaurant.representativeMenu}
+                        <p className="mt-3 line-clamp-1 text-sm font-medium text-[#ff6b6b]">
+                          대표 메뉴 · {restaurant.representativeMenu}
                         </p>
                       )}
                     </div>
-                  </div>
+                  </article>
                 </Link>
               </motion.div>
             ))}

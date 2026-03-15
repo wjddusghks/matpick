@@ -131,11 +131,18 @@ function createMarkerIcon({
 function createCurrentLocationIcon() {
   return {
     content: `
-      <div style="transform:translate(-50%,-50%);">
-        <div style="width:18px;height:18px;border-radius:9999px;background:#2563eb;border:3px solid rgba(255,255,255,0.95);box-shadow:0 0 0 8px rgba(37,99,235,0.15),0 6px 18px rgba(37,99,235,0.22);"></div>
+      <div style="position:relative;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none;">
+        <div style="margin-bottom:8px;padding:6px 10px;border-radius:9999px;background:rgba(17,24,39,0.88);color:white;font-size:12px;font-weight:700;line-height:1;letter-spacing:-0.02em;box-shadow:0 10px 24px rgba(17,24,39,0.22);white-space:nowrap;">
+          내 위치
+        </div>
+        <div style="position:relative;width:34px;height:34px;display:flex;align-items:center;justify-content:center;">
+          <div style="position:absolute;inset:0;border-radius:9999px;background:rgba(37,99,235,0.18);"></div>
+          <div style="position:absolute;inset:5px;border-radius:9999px;background:rgba(37,99,235,0.22);"></div>
+          <div style="position:relative;width:18px;height:18px;border-radius:9999px;background:#2563eb;border:3px solid rgba(255,255,255,0.98);box-shadow:0 8px 20px rgba(37,99,235,0.28);"></div>
+        </div>
       </div>
     `,
-    anchor: new naver.maps.Point(9, 9),
+    anchor: new naver.maps.Point(17, 42),
   };
 }
 

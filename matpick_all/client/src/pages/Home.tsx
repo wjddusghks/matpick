@@ -186,6 +186,9 @@ function SearchResultItem({
   } else if (item.type === "food") {
     accentLabel = UI.foodLabel;
     detailText = `${UI.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+  } else if (item.type === "source") {
+    accentLabel = item.sourceTypeLabel ?? "출처";
+    detailText = `${UI.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
     accentLabel = item.category ?? UI.restaurantLabel;
     detailText = item.address ?? "";
@@ -214,6 +217,12 @@ function SearchResultItem({
             src={item.image}
             alt={item.name}
             className="h-full w-full rounded-full border border-[#ffd9de] object-cover"
+          />
+        ) : item.type === "source" && item.image ? (
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-full w-full rounded-[20px] border border-[#ffe1d8] object-cover"
           />
         ) : item.type === "region" ? (
           <div className="flex h-full w-full items-center justify-center rounded-full bg-[#ececec] text-[#111111]">
@@ -413,6 +422,8 @@ export default function Home() {
             item.parentRegion,
             item.category,
             item.address,
+            item.sourceTypeLabel,
+            item.restaurantCount?.toString(),
           ]
             .filter(Boolean)
             .join(" ")
@@ -597,6 +608,11 @@ export default function Home() {
 
       if (item.type === "food") {
         navigate(`/map?type=food&value=${encodeURIComponent(item.name)}`);
+        return;
+      }
+
+      if (item.type === "source") {
+        navigate(`/explore?source=${encodeURIComponent(item.id)}`);
         return;
       }
 
@@ -896,16 +912,18 @@ export default function Home() {
                             {UI.dropdown.resultsSuffix}
                           </p>
                         </div>
-                        {filteredResults.map((item, index) => (
-                          <SearchResultItem
-                            key={item.id}
-                            item={item}
-                            isHovered={hoveredIndex === index}
-                            onHover={() => setHoveredIndex(index)}
-                            onLeave={() => setHoveredIndex(-1)}
-                            onSelect={() => handleSelect(item)}
-                          />
-                        ))}
+                        <div className="max-h-[384px] overflow-y-auto">
+                          {filteredResults.map((item, index) => (
+                            <SearchResultItem
+                              key={item.id}
+                              item={item}
+                              isHovered={hoveredIndex === index}
+                              onHover={() => setHoveredIndex(index)}
+                              onLeave={() => setHoveredIndex(-1)}
+                              onSelect={() => handleSelect(item)}
+                            />
+                          ))}
+                        </div>
                       </div>
                     ) : (
                       <div className="px-7 py-10 text-left">
@@ -931,18 +949,20 @@ export default function Home() {
                           {UI.dropdown.clearAll}
                         </button>
                       </div>
-                      {recentSearches.map((item, index) => (
-                        <SearchResultItem
-                          key={item.id}
-                          item={item}
-                          isHovered={hoveredIndex === index}
-                          onHover={() => setHoveredIndex(index)}
-                          onLeave={() => setHoveredIndex(-1)}
-                          onSelect={() => handleSelect(item)}
-                          showDelete
-                          onDelete={() => handleDeleteRecent(item.id)}
-                        />
-                      ))}
+                      <div className="max-h-[384px] overflow-y-auto">
+                        {recentSearches.map((item, index) => (
+                          <SearchResultItem
+                            key={item.id}
+                            item={item}
+                            isHovered={hoveredIndex === index}
+                            onHover={() => setHoveredIndex(index)}
+                            onLeave={() => setHoveredIndex(-1)}
+                            onSelect={() => handleSelect(item)}
+                            showDelete
+                            onDelete={() => handleDeleteRecent(item.id)}
+                          />
+                        ))}
+                      </div>
                     </div>
                   ) : (
                     <div className="px-7 py-10 text-left">

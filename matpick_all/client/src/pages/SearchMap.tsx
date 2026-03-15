@@ -643,16 +643,18 @@ export default function SearchMap() {
                 {/* 검색 드롭다운 */}
                 {showSearchDropdown && (
                   <div className="absolute left-0 right-0 top-full mt-1 bg-white border border-[#FFCDC9] rounded-xl shadow-[0_8px_24px_rgba(253,121,121,0.12)] overflow-hidden z-50">
-                    {searchResults.map((item, idx) => (
-                      <SearchDropdownItem
-                        key={item.id + idx}
-                        item={item}
-                        isHovered={hoveredIdx === idx}
-                        onHover={() => setHoveredIdx(idx)}
-                        onLeave={() => setHoveredIdx(-1)}
-                        onSelect={() => handleSearchSelect(item)}
-                      />
-                    ))}
+                    <div className="max-h-[384px] overflow-y-auto">
+                      {searchResults.map((item, idx) => (
+                        <SearchDropdownItem
+                          key={item.id + idx}
+                          item={item}
+                          isHovered={hoveredIdx === idx}
+                          onHover={() => setHoveredIdx(idx)}
+                          onLeave={() => setHoveredIdx(-1)}
+                          onSelect={() => handleSearchSelect(item)}
+                        />
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>

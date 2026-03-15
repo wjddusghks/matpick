@@ -1,6 +1,6 @@
 export interface SearchItem {
   id: string;
-  type: "creator" | "region" | "food" | "restaurant";
+  type: "creator" | "region" | "food" | "restaurant" | "source";
   name: string;
   subtitle: string;
   icon: string;
@@ -67,7 +67,7 @@ export interface Visit {
 
 export interface SearchResult {
   id: string;
-  type: "creator" | "region" | "food" | "restaurant";
+  type: "creator" | "region" | "food" | "restaurant" | "source";
   name: string;
   platform?: string;
   subscribers?: string;
@@ -76,6 +76,7 @@ export interface SearchResult {
   restaurantCount?: number;
   category?: string;
   address?: string;
+  sourceTypeLabel?: string;
 }
 
 export interface Source {

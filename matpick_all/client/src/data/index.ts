@@ -205,6 +205,27 @@ function sortText(a: string, b: string) {
   return a.localeCompare(b, "ko-KR");
 }
 
+function getSourceTypeLabel(type: Source["type"]) {
+  switch (type) {
+    case "guide":
+      return "가이드";
+    case "tv_show":
+      return "방송";
+    case "michelin":
+      return "미쉐린";
+    case "institution":
+      return "기관 선정";
+    case "book":
+      return "책";
+    case "magazine":
+      return "매거진";
+    case "creator":
+      return "크리에이터";
+    default:
+      return "출처";
+  }
+}
+
 function createSearchId(prefix: string, value: string) {
   return `${prefix}:${encodeURIComponent(value)}`;
 }
@@ -415,6 +436,17 @@ const categoryCounts = countBy(restaurants.map((restaurant) => restaurant.catego
 const sortedRestaurants = [...restaurants].sort(
   (a, b) => getRecommendationCount(b.id) - getRecommendationCount(a.id) || sortText(a.name, b.name)
 );
+const sourceSearchEntries = sources
+  .map((source) => ({
+    source,
+    restaurantCount: getSourceRestaurantCount(source.id),
+  }))
+  .filter((entry) => entry.restaurantCount > 0)
+  .sort(
+    (a, b) =>
+      b.restaurantCount - a.restaurantCount ||
+      sortText(a.source.name, b.source.name)
+  );
 
 export const searchData: SearchItem[] = [
   ...creators.map((creator) => ({
@@ -437,6 +469,13 @@ export const searchData: SearchItem[] = [
     name: entry.name,
     subtitle: `맛집 ${entry.count}개`,
     icon: "🍽️",
+  })),
+  ...sourceSearchEntries.map((entry) => ({
+    id: createSearchId("source", entry.source.id),
+    type: "source" as const,
+    name: entry.source.name,
+    subtitle: `${getSourceTypeLabel(entry.source.type)} · 맛집 ${entry.restaurantCount}곳`,
+    icon: "🗂️",
   })),
   ...sortedRestaurants.map((restaurant) => ({
     id: createSearchId("restaurant", restaurant.id),
@@ -468,6 +507,14 @@ export const mockSearchData: SearchResult[] = [
     type: "food" as const,
     name: entry.name,
     restaurantCount: entry.count,
+  })),
+  ...sourceSearchEntries.map((entry) => ({
+    id: entry.source.id,
+    type: "source" as const,
+    name: entry.source.name,
+    image: entry.source.imageUrl,
+    restaurantCount: entry.restaurantCount,
+    sourceTypeLabel: getSourceTypeLabel(entry.source.type),
   })),
   ...sortedRestaurants.map((restaurant) => ({
     id: restaurant.id,

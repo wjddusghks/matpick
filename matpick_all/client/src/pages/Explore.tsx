@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation, useSearch } from "wouter";
 import {
+  creators,
   getAllCategories,
   getBroadRegion,
   getCreatorsByRestaurant,
   getRecommendationCount,
   getRegions,
   getRestaurantMenuSummary,
+  getRestaurantsByCreator,
   getRestaurantsBySource,
   getSourceRestaurantCount,
   getSourcesByRestaurant,
@@ -20,6 +22,17 @@ import HeartButton from "@/components/HeartButton";
 const ALL_FILTER = "all";
 const FALLBACK_RESTAURANT_IMAGE =
   "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop";
+
+type DiscoveryKind = "all" | "creator" | "source";
+
+type DiscoveryItem = {
+  id: string;
+  kind: Exclude<DiscoveryKind, "all">;
+  name: string;
+  imageUrl: string;
+  count: number;
+  badge: string;
+};
 
 function sortText(a: string, b: string) {
   return a.localeCompare(b, "ko-KR");
@@ -42,53 +55,48 @@ function getSourceTypeLabel(source: Source) {
     case "creator":
       return "크리에이터";
     default:
-      return "출처";
+      return "소스";
   }
 }
 
-function SourceFilterCard({
-  source,
-  count,
+function getSelectionKey(kind: DiscoveryKind, id = ALL_FILTER) {
+  return `${kind}:${id}`;
+}
+
+function DiscoveryRailItem({
+  item,
   selected,
   onClick,
 }: {
-  source: Source | null;
-  count: number;
+  item: DiscoveryItem | null;
   selected: boolean;
   onClick: () => void;
 }) {
-  const label = source ? source.name : "전체 맛집";
-  const typeLabel = source ? getSourceTypeLabel(source) : "전체";
-  const imageUrl = source?.imageUrl ?? FALLBACK_RESTAURANT_IMAGE;
+  const name = item?.name ?? "전체";
+  const badge = item?.badge ?? "전체";
+  const count = item?.count ?? restaurants.length;
+  const imageUrl = item?.imageUrl ?? FALLBACK_RESTAURANT_IMAGE;
 
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`group overflow-hidden rounded-[28px] border text-left transition-all ${
-        selected
-          ? "border-[#FD7979] bg-[#fff6f7] shadow-[0_16px_40px_rgba(253,121,121,0.18)]"
-          : "border-[#f0f0f0] bg-white hover:-translate-y-1 hover:border-[#FFCDC9] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)]"
-      }`}
+      className="flex min-w-[88px] flex-col items-center gap-2 text-center"
     >
-      <div className="relative h-[132px] overflow-hidden">
-        <img
-          src={imageUrl}
-          alt={label}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,17,0.05)_0%,rgba(17,17,17,0.55)_100%)]" />
-        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-          <div>
-            <div className="inline-flex rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-[#555]">
-              {typeLabel}
-            </div>
-            <p className="mt-2 line-clamp-2 text-base font-bold text-white">{label}</p>
-          </div>
-          <div className="rounded-full bg-white/92 px-3 py-1 text-xs font-bold text-[#FD7979]">
-            {count}곳
-          </div>
-        </div>
+      <div
+        className={`relative h-[84px] w-[84px] overflow-hidden rounded-full border-4 transition-all ${
+          selected
+            ? "border-[#FD7979] shadow-[0_14px_30px_rgba(253,121,121,0.28)]"
+            : "border-white shadow-[0_10px_24px_rgba(0,0,0,0.08)]"
+        }`}
+      >
+        <img src={imageUrl} alt={name} className="h-full w-full object-cover" />
+      </div>
+      <div className="space-y-0.5">
+        <p className="line-clamp-2 text-[13px] font-semibold text-[#1a1a1a]">{name}</p>
+        <p className="text-[11px] text-[#8a8a8a]">
+          {badge} · {count}곳
+        </p>
       </div>
     </button>
   );
@@ -197,47 +205,87 @@ export default function Explore() {
   const categories = getAllCategories();
   const regions = getRegions();
 
-  const sourceSummaries = useMemo(
+  const creatorItems = useMemo<DiscoveryItem[]>(
     () =>
-      sources
-        .map((source) => ({
-          source,
-          restaurantCount: getSourceRestaurantCount(source.id),
+      creators
+        .map((creator) => ({
+          id: creator.id,
+          kind: "creator" as const,
+          name: creator.name,
+          imageUrl: creator.profileImage || FALLBACK_RESTAURANT_IMAGE,
+          count: getRestaurantsByCreator(creator.id).length,
+          badge: creator.series || "채널",
         }))
-        .filter((entry) => entry.restaurantCount > 0)
-        .sort(
-          (a, b) =>
-            b.restaurantCount - a.restaurantCount ||
-            sortText(a.source.name, b.source.name)
-        ),
+        .filter((entry) => entry.count > 0)
+        .sort((a, b) => b.count - a.count || sortText(a.name, b.name)),
     []
   );
 
+  const sourceItems = useMemo<DiscoveryItem[]>(
+    () =>
+      sources
+        .map((source) => ({
+          id: source.id,
+          kind: "source" as const,
+          name: source.name,
+          imageUrl: source.imageUrl || FALLBACK_RESTAURANT_IMAGE,
+          count: getSourceRestaurantCount(source.id),
+          badge: getSourceTypeLabel(source),
+        }))
+        .filter((entry) => entry.count > 0)
+        .sort((a, b) => b.count - a.count || sortText(a.name, b.name)),
+    []
+  );
+
+  const discoveryItems = useMemo(
+    () => [...creatorItems, ...sourceItems],
+    [creatorItems, sourceItems]
+  );
+
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
-  const querySourceId = searchParams.get("source") ?? ALL_FILTER;
-  const initialSourceId = sourceSummaries.some((entry) => entry.source.id === querySourceId)
-    ? querySourceId
-    : ALL_FILTER;
+  const querySourceId = searchParams.get("source");
+  const queryCreatorId = searchParams.get("creator");
+
+  const initialSelectionKey = useMemo(() => {
+    if (querySourceId && sourceItems.some((item) => item.id === querySourceId)) {
+      return getSelectionKey("source", querySourceId);
+    }
+
+    if (queryCreatorId && creatorItems.some((item) => item.id === queryCreatorId)) {
+      return getSelectionKey("creator", queryCreatorId);
+    }
+
+    return getSelectionKey("all");
+  }, [creatorItems, queryCreatorId, querySourceId, sourceItems]);
 
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
-  const [selectedSourceId, setSelectedSourceId] = useState(initialSourceId);
+  const [selectedDiscoveryKey, setSelectedDiscoveryKey] = useState(initialSelectionKey);
 
   useEffect(() => {
-    setSelectedSourceId(initialSourceId);
-  }, [initialSourceId]);
+    setSelectedDiscoveryKey(initialSelectionKey);
+  }, [initialSelectionKey]);
 
-  const activeSource =
-    selectedSourceId === ALL_FILTER
+  const activeDiscovery =
+    selectedDiscoveryKey === getSelectionKey("all")
       ? null
-      : sourceSummaries.find((entry) => entry.source.id === selectedSourceId)?.source ?? null;
+      : discoveryItems.find(
+          (item) => selectedDiscoveryKey === getSelectionKey(item.kind, item.id)
+        ) ?? null;
 
   const filteredRestaurants = useMemo(() => {
     let nextRestaurants = [...restaurants];
 
-    if (selectedSourceId !== ALL_FILTER) {
+    if (activeDiscovery?.kind === "creator") {
       const allowedIds = new Set(
-        getRestaurantsBySource(selectedSourceId).map((restaurant) => restaurant.id)
+        getRestaurantsByCreator(activeDiscovery.id).map((restaurant) => restaurant.id)
+      );
+      nextRestaurants = nextRestaurants.filter((restaurant) => allowedIds.has(restaurant.id));
+    }
+
+    if (activeDiscovery?.kind === "source") {
+      const allowedIds = new Set(
+        getRestaurantsBySource(activeDiscovery.id).map((restaurant) => restaurant.id)
       );
       nextRestaurants = nextRestaurants.filter((restaurant) => allowedIds.has(restaurant.id));
     }
@@ -255,7 +303,7 @@ export default function Explore() {
     }
 
     nextRestaurants.sort((a, b) => {
-      if (selectedSourceId !== ALL_FILTER) {
+      if (activeDiscovery?.kind === "source") {
         const foundingYearDelta = (a.foundingYear ?? 9999) - (b.foundingYear ?? 9999);
         if (foundingYearDelta !== 0) {
           return foundingYearDelta;
@@ -269,7 +317,7 @@ export default function Explore() {
     });
 
     return nextRestaurants;
-  }, [selectedCategory, selectedRegion, selectedSourceId]);
+  }, [activeDiscovery, selectedCategory, selectedRegion]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -328,43 +376,45 @@ export default function Explore() {
             맛집 탐색
           </h1>
           <p className="text-base text-[#888]">
-            유튜브, 방송, 가이드, 기관 선정까지 출처별로 모아보고 원하는 맛집만 골라보세요.
+            채널과 소스를 먼저 고르고, 그다음 카테고리와 지역으로 더 좁혀보세요.
           </p>
         </div>
 
-        {sourceSummaries.length > 0 ? (
+        {discoveryItems.length > 0 ? (
           <section className="mb-8">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <h2 className="text-lg font-bold text-[#1a1a1a]">주제별 소스 탐색</h2>
+                <h2 className="text-lg font-bold text-[#1a1a1a]">채널 / 소스 탐색</h2>
                 <p className="mt-1 text-sm text-[#888]">
-                  100선처럼 특정 주제로 묶인 식당들을 한 번에 볼 수 있어요.
+                  인스타 스토리처럼 위에서 채널이나 소스를 먼저 골라볼 수 있어요.
                 </p>
               </div>
-              {activeSource ? (
+              {activeDiscovery ? (
                 <div className="rounded-full bg-[#fff3f4] px-4 py-2 text-sm font-semibold text-[#FD7979]">
-                  현재 선택: {activeSource.name}
+                  현재 선택: {activeDiscovery.name}
                 </div>
               ) : null}
             </div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-              <SourceFilterCard
-                source={null}
-                count={restaurants.length}
-                selected={selectedSourceId === ALL_FILTER}
-                onClick={() => setSelectedSourceId(ALL_FILTER)}
-              />
-
-              {sourceSummaries.map((entry) => (
-                <SourceFilterCard
-                  key={entry.source.id}
-                  source={entry.source}
-                  count={entry.restaurantCount}
-                  selected={selectedSourceId === entry.source.id}
-                  onClick={() => setSelectedSourceId(entry.source.id)}
+            <div className="-mx-1 overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-4 px-1">
+                <DiscoveryRailItem
+                  item={null}
+                  selected={selectedDiscoveryKey === getSelectionKey("all")}
+                  onClick={() => setSelectedDiscoveryKey(getSelectionKey("all"))}
                 />
-              ))}
+
+                {discoveryItems.map((item) => (
+                  <DiscoveryRailItem
+                    key={getSelectionKey(item.kind, item.id)}
+                    item={item}
+                    selected={selectedDiscoveryKey === getSelectionKey(item.kind, item.id)}
+                    onClick={() =>
+                      setSelectedDiscoveryKey(getSelectionKey(item.kind, item.id))
+                    }
+                  />
+                ))}
+              </div>
             </div>
           </section>
         ) : null}
@@ -433,13 +483,13 @@ export default function Explore() {
           <p className="text-sm text-[#888]">
             총 <span className="font-bold text-[#FD7979]">{filteredRestaurants.length}</span>개 맛집
           </p>
-          {selectedSourceId !== ALL_FILTER ? (
+          {activeDiscovery ? (
             <button
               type="button"
-              onClick={() => setSelectedSourceId(ALL_FILTER)}
+              onClick={() => setSelectedDiscoveryKey(getSelectionKey("all"))}
               className="text-sm font-semibold text-[#FD7979] transition hover:opacity-75"
             >
-              소스 필터 해제
+              채널/소스 필터 해제
             </button>
           ) : null}
         </div>

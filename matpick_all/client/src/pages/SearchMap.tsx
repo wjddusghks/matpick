@@ -15,7 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   restaurants, visits, creators, mockSearchData,
   getCreatorsByRestaurant, getRecommendationCount,
-  getRestaurantsByCreator, getRestaurantsByCategory,
+  getRestaurantMenuSummary, getRestaurantsByCreator, getRestaurantsByCategory,
   type Restaurant, type Visit, type SearchResult,
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
@@ -170,7 +170,9 @@ function RestaurantCard({
             <span className="text-xs text-[#999]">{restaurant.category}</span>
           </div>
           <p className="text-xs text-[#666] mb-1.5 truncate">{restaurant.address || restaurant.region}</p>
-          <p className="text-xs text-[#888] mb-2">{restaurant.representativeMenu}</p>
+          <p className="text-xs text-[#888] mb-2">
+            {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 나중에 추가될 예정입니다."}
+          </p>
 
           {/* 크리에이터 태그 */}
           <div className="flex flex-wrap gap-1.5">

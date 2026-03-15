@@ -16,6 +16,8 @@ import { toast } from "sonner";
 import {
   creators,
   getCreatorsByRestaurant,
+  getRestaurantMenuItems,
+  getRestaurantMenuSummary,
   getRecommendationCount,
   getVisitsByRestaurant,
   restaurants,
@@ -282,7 +284,7 @@ function VideosTab({ visits }: { visits: Visit[] }) {
 }
 
 function MenuTab({ restaurant }: { restaurant: Restaurant }) {
-  const menuItems = parseMenuItems(restaurant.representativeMenu || "");
+  const menuItems = getRestaurantMenuItems(restaurant);
 
   if (menuItems.length === 0) {
     return (
@@ -307,7 +309,7 @@ function MenuTab({ restaurant }: { restaurant: Restaurant }) {
               <p className="text-base font-bold text-[#171717]">{menu.name}</p>
               <p className="mt-1 text-sm text-[#8a8a8a]">대표 메뉴</p>
             </div>
-            <p className="text-sm font-semibold text-[#ff7b83]">{menu.price}</p>
+            <p className="text-sm font-semibold text-[#ff7b83]">{menu.price || "가격 문의"}</p>
           </div>
         </div>
       ))}
@@ -333,6 +335,12 @@ function DetailsTab({ restaurant }: { restaurant: Restaurant }) {
             <span className="w-[96px] flex-shrink-0 text-[#8a8a8a]">카테고리</span>
             <span className="text-[#1d1d1d]">{restaurant.category}</span>
           </div>
+          {restaurant.foundingYear ? (
+            <div className="flex gap-4">
+              <span className="w-[96px] flex-shrink-0 text-[#8a8a8a]">창업연도</span>
+              <span className="text-[#1d1d1d]">{restaurant.foundingYear}년</span>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -576,7 +584,7 @@ export default function RestaurantDetail() {
                   대표 메뉴
                 </span>
                 <span className="text-[15px] font-semibold leading-relaxed text-[#1a1a1a]">
-                  {restaurant.representativeMenu || "정보 준비 중"}
+                  {getRestaurantMenuSummary(restaurant) || "정보 준비 중"}
                 </span>
               </div>
               <div className="flex flex-col gap-1.5">

@@ -6,6 +6,16 @@ export interface SearchItem {
   icon: string;
 }
 
+export type SourceType =
+  | "creator"
+  | "tv_show"
+  | "guide"
+  | "michelin"
+  | "institution"
+  | "book"
+  | "magazine"
+  | "other";
+
 export interface Creator {
   id: string;
   name: string;
@@ -15,6 +25,13 @@ export interface Creator {
   description: string;
   youtubeUrl: string;
   series: string;
+}
+
+export interface MenuItem {
+  id: string;
+  name: string;
+  price?: string;
+  isSignature?: boolean;
 }
 
 export interface Restaurant {
@@ -27,6 +44,9 @@ export interface Restaurant {
   lat: number;
   lng: number;
   imageUrl: string;
+  foundingYear?: number | null;
+  menus?: MenuItem[];
+  thumbnailFileName?: string;
   isOverseas?: boolean;
 }
 
@@ -58,8 +78,28 @@ export interface SearchResult {
   address?: string;
 }
 
+export interface Source {
+  id: string;
+  name: string;
+  type: SourceType;
+  provider?: string;
+  description?: string;
+  imageUrl?: string;
+}
+
+export interface SourceLink {
+  id: string;
+  restaurantId: string;
+  sourceId: string;
+  ordinal?: number;
+  label?: string;
+  note?: string;
+}
+
 export interface MatpickDataSet {
   creators: Creator[];
   restaurants: Restaurant[];
   visits: Visit[];
+  sources?: Source[];
+  sourceLinks?: SourceLink[];
 }

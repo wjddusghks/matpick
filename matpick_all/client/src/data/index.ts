@@ -2,9 +2,12 @@ import rawDataset from "./matpick-data.json";
 import type {
   Creator,
   MatpickDataSet,
+  MenuItem,
   Restaurant,
   SearchItem,
   SearchResult,
+  Source,
+  SourceLink,
   Visit,
 } from "./types";
 
@@ -13,6 +16,8 @@ const dataset = rawDataset as MatpickDataSet;
 export const creators: Creator[] = dataset.creators;
 export const restaurants: Restaurant[] = dataset.restaurants;
 export const visits: Visit[] = dataset.visits;
+export const sources: Source[] = dataset.sources ?? [];
+export const sourceLinks: SourceLink[] = dataset.sourceLinks ?? [];
 export const dataSet: MatpickDataSet = dataset;
 
 type CountEntry = {
@@ -162,6 +167,59 @@ export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
 
 export function getVisitsByRestaurant(restaurantId: string): Visit[] {
   return visits.filter((visit) => visit.restaurantId === restaurantId);
+}
+
+export function getRestaurantMenuItems(restaurant: Restaurant): MenuItem[] {
+  if (restaurant.menus && restaurant.menus.length > 0) {
+    return restaurant.menus.filter((menu) => menu.name.trim().length > 0);
+  }
+
+  const items: MenuItem[] = [];
+
+  (restaurant.representativeMenu || "").split("/").forEach((chunk, index) => {
+    const trimmed = chunk.trim();
+    if (!trimmed) {
+      return;
+    }
+
+    const priceMatch = trimmed.match(/(\d[\d,]*원?)/);
+    const price = priceMatch ? priceMatch[1] : undefined;
+    const name = price ? trimmed.replace(price, "").trim() : trimmed;
+
+    items.push({
+      id: `${restaurant.id}_menu_${index}`,
+      name: name || trimmed,
+      price,
+      isSignature: index === 0,
+    });
+  });
+
+  return items;
+}
+
+export function getRestaurantMenuSummary(restaurant: Restaurant) {
+  const items = getRestaurantMenuItems(restaurant);
+  if (items.length === 0) {
+    return "";
+  }
+
+  return items
+    .slice(0, 3)
+    .map((item) => item.name)
+    .filter(Boolean)
+    .join(" / ");
+}
+
+export function getSourceLinksByRestaurant(restaurantId: string) {
+  return sourceLinks.filter((link) => link.restaurantId === restaurantId);
+}
+
+export function getSourcesByRestaurant(restaurantId: string) {
+  const linkedSourceIds = new Set(
+    getSourceLinksByRestaurant(restaurantId).map((link) => link.sourceId)
+  );
+
+  return sources.filter((source) => linkedSourceIds.has(source.id));
 }
 
 export function getUniqueRegions(): string[] {
@@ -320,8 +378,11 @@ export const mockSearchData: SearchResult[] = [
 export type {
   Creator,
   MatpickDataSet,
+  MenuItem,
   Restaurant,
   SearchItem,
   SearchResult,
+  Source,
+  SourceLink,
   Visit,
 } from "./types";

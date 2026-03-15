@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { Restaurant } from "@/data";
+import { getRestaurantMenuSummary, type Restaurant } from "@/data";
 import type { StoredLocation } from "@/lib/location";
 
 interface NaverMapProps {
@@ -147,6 +147,8 @@ function createCurrentLocationIcon() {
 }
 
 function createInfoContent(restaurant: Restaurant) {
+  const menuSummary = getRestaurantMenuSummary(restaurant);
+
   return `
     <div style="
       padding: 14px 16px;
@@ -158,7 +160,7 @@ function createInfoContent(restaurant: Restaurant) {
       <div style="font-size:15px;font-weight:700;color:#FD7979;margin-bottom:4px;">${restaurant.name}</div>
       ${restaurant.category ? `<span style="display:inline-block;font-size:11px;color:#888;background:#FEEAC9;padding:1px 6px;border-radius:4px;margin-bottom:6px;">${restaurant.category}</span>` : ""}
       <div style="font-size:12px;color:#666;margin-bottom:4px;">${restaurant.address || restaurant.region || ""}</div>
-      ${restaurant.representativeMenu ? `<div style="font-size:12px;color:#999;margin-bottom:8px;">${restaurant.representativeMenu}</div>` : ""}
+      ${menuSummary ? `<div style="font-size:12px;color:#999;margin-bottom:8px;">${menuSummary}</div>` : ""}
       <a href="/restaurant/${restaurant.id}" style="
         display:inline-block;
         font-size:12px;

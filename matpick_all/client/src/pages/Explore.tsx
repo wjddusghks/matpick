@@ -8,7 +8,7 @@ import { useLocation } from "wouter";
 import {
   restaurants,
   getAllCategories, getRegions, getBroadRegion,
-  getCreatorsByRestaurant, getRecommendationCount,
+  getCreatorsByRestaurant, getRecommendationCount, getRestaurantMenuSummary,
   type Restaurant,
 } from "@/data";
 import HeartButton from "@/components/HeartButton";
@@ -50,7 +50,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
         </h3>
         <p className="text-sm text-[#888] mb-3 truncate">{restaurant.address}</p>
         <div className="text-sm font-medium text-[#FD7979] mb-3" style={{ fontFamily: "'DM Mono', monospace" }}>
-          {restaurant.representativeMenu}
+          {getRestaurantMenuSummary(restaurant) || "메뉴 정보 준비 중"}
         </div>
         <div className="flex flex-wrap gap-1.5">
           {recCreators.map((creator, idx) => {

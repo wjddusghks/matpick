@@ -1,0 +1,10 @@
+{
+  "name": "matpick-root",
+  "private": true,
+  "scripts": {
+    "dev": "cd matpick_all && pnpm dev",
+    "build": "cd matpick_all && pnpm build",
+    "check": "cd matpick_all && pnpm check",
+    "format": "cd matpick_all && pnpm format"
+  }
+}

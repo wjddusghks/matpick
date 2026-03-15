@@ -1,0 +1,9 @@
+{
+  "installCommand": "npm install -g pnpm && cd matpick_all && pnpm install",
+  "buildCommand": "cd matpick_all && pnpm build",
+  "outputDirectory": "matpick_all/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

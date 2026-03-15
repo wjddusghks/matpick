@@ -63,7 +63,7 @@ function getButtonStyle(channel: ShareChannel, disabled: boolean) {
     case "kakao":
       return "border-[#fff0a8] bg-[#FEE500] text-[#3c1e1e]";
     case "instagram":
-      return "border-[#f0d2f5] bg-white text-[#c13584]";
+      return "border-[#f3c7dc] bg-[linear-gradient(135deg,#fdf1f6_0%,#fff5db_100%)] text-[#c13584]";
   }
 }
 
@@ -167,7 +167,7 @@ export default function ShareSheet({
 
     return `${window.location.origin}${candidate.startsWith("/") ? "" : "/"}${candidate}`;
   }, [imageUrl]);
-  const channels: Array<{
+const channels: Array<{
     key: ShareChannel;
     label: string;
     disabled?: boolean;
@@ -186,7 +186,6 @@ export default function ShareSheet({
     {
       key: "instagram",
       label: "인스타그램",
-      disabled: true,
       helper: "웹에서는 직접 공유를 지원하지 않아 URL 복사로 안내할게요.",
     },
   ];

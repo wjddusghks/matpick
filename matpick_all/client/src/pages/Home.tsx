@@ -612,7 +612,7 @@ export default function Home() {
       }
 
       if (item.type === "source") {
-        navigate(`/explore?source=${encodeURIComponent(item.id)}`);
+        navigate(`/map?type=source&value=${encodeURIComponent(item.id)}`);
         return;
       }
 

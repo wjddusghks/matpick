@@ -1,23 +1,20 @@
-/*
- * SearchMap — 검색 결과 지도 페이지
- * Design: Group4 — 좌측 패널(검색창+리스트+영상) + 우측 네이버 지도
- * Color Palette: #FEEAC9, #FFCDC9, #FDACAC, #FD7979
- * 지도: 네이버 지도 API 연동 완료
- *
- * UX 흐름:
- * 1. 식당 카드 클릭 → 영상 카드 펼침 + 하단 상세보기 버튼
- * 2. 영상 카드 클릭 → 식당 상세 페이지로 이동
- * 3. 해외 식당 → 지도 미표시 + 안내 메시지
- */
-import { useState, useMemo, useRef, useEffect, useCallback } from "react";
-import { useLocation, useSearch, Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ArrowLeft, MapPin, Search, UtensilsCrossed } from "lucide-react";
+import { Link, useLocation, useSearch } from "wouter";
 import {
-  restaurants, visits, creators, mockSearchData,
-  getCreatorsByRestaurant, getRecommendationCount,
-  getRestaurantMenuSummary, getRestaurantsByCreator, getRestaurantsByCategory,
+  creators,
+  getCreatorsByRestaurant,
+  getRecommendationCount,
+  getRestaurantMenuSummary,
+  getRestaurantsByCategory,
+  getRestaurantsByCreator,
+  getRestaurantsBySource,
+  getSourceById,
   getSourcesByRestaurant,
-  type Restaurant, type Visit, type SearchResult,
+  mockSearchData,
+  restaurants,
+  type Restaurant,
+  type SearchResult,
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
@@ -34,284 +31,215 @@ import {
   saveRestaurantCoordinate,
 } from "@/lib/restaurantCoordinates";
 
-// Logo is rendered inline as SVG
-
-/* 검색 파라미터에 따라 식당 필터링 */
-function filterRestaurants(type: string, value: string): { restaurants: Restaurant[]; title: string } {
+function filterRestaurants(type: string, value: string): {
+  restaurants: Restaurant[];
+  title: string;
+} {
   switch (type) {
     case "creator": {
-      const creator = creators.find((c) => c.id === value || c.name === value);
-      if (creator) {
-        const rests = getRestaurantsByCreator(creator.id);
-        return { restaurants: rests, title: `${creator.name}의 추천 맛집` };
+      const creator = creators.find((item) => item.id === value || item.name === value);
+      if (!creator) {
+        return { restaurants: [], title: "검색 결과" };
       }
-      return { restaurants: [], title: "검색 결과" };
+
+      return {
+        restaurants: getRestaurantsByCreator(creator.id),
+        title: `${creator.name} 추천 맛집`,
+      };
     }
-    case "region": {
-      const rests = restaurants.filter((r) => r.region?.includes(value));
-      return { restaurants: rests, title: `${value} 맛집` };
-    }
-    case "food": {
-      const rests = getRestaurantsByCategory(value);
-      return { restaurants: rests, title: `${value} 맛집` };
+    case "region":
+      return {
+        restaurants: restaurants.filter((restaurant) => restaurant.region?.includes(value)),
+        title: `${value} 맛집`,
+      };
+    case "food":
+      return {
+        restaurants: getRestaurantsByCategory(value),
+        title: `${value} 맛집`,
+      };
+    case "source": {
+      const source = getSourceById(value);
+      return {
+        restaurants: getRestaurantsBySource(value),
+        title: source ? `${source.name} 맛집` : "검색 결과",
+      };
     }
     case "restaurant": {
-      const rest = restaurants.find((r) => r.id === value);
-      return { restaurants: rest ? [rest] : [], title: rest?.name || "검색 결과" };
+      const restaurant = restaurants.find((item) => item.id === value);
+      return {
+        restaurants: restaurant ? [restaurant] : [],
+        title: restaurant?.name ?? "검색 결과",
+      };
     }
     default:
       return { restaurants: [...restaurants], title: "전체 맛집" };
   }
 }
 
-/* ─── 검색 드롭다운 아이템 ─── */
 function SearchDropdownItem({
-  item, isHovered, onHover, onLeave, onSelect,
+  item,
+  isHovered,
+  onHover,
+  onLeave,
+  onSelect,
 }: {
-  item: SearchResult; isHovered: boolean; onHover: () => void; onLeave: () => void;
+  item: SearchResult;
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
   onSelect: () => void;
 }) {
+  let accentLabel = "맛집";
+  let detailText = "";
+
+  if (item.type === "creator") {
+    accentLabel = item.platform ?? "채널";
+    detailText = item.subscribers ?? "";
+  } else if (item.type === "region") {
+    accentLabel = item.parentRegion ?? "지역";
+    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+  } else if (item.type === "food") {
+    accentLabel = "음식종류";
+    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+  } else if (item.type === "source") {
+    accentLabel = item.sourceTypeLabel ?? "소스";
+    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+  } else {
+    accentLabel = item.category ?? "맛집";
+    detailText = item.address ?? "";
+  }
+
   return (
-    <div
-      className={`flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors duration-100 ${isHovered ? "bg-[#FEEAC9]/30" : ""}`}
+    <button
+      type="button"
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       onClick={onSelect}
+      className={`flex w-full items-center gap-3 px-4 py-3 text-left transition-colors ${
+        isHovered ? "bg-[#fff7f8]" : "bg-white"
+      }`}
     >
-      {item.type === "creator" && item.image ? (
-        <img src={item.image} alt={item.name} className="w-9 h-9 rounded-full object-cover flex-shrink-0 border border-[#FFCDC9]" />
-      ) : item.type === "region" ? (
-        <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="2">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-            <circle cx="12" cy="9" r="2.5" />
-          </svg>
-        </div>
-      ) : item.type === "restaurant" ? (
-        <div className="w-9 h-9 rounded-full bg-[#FEEAC9]/50 flex items-center justify-center flex-shrink-0">
-          <span className="text-sm">🍽️</span>
-        </div>
-      ) : (
-        <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
-          <span className="text-sm">🍽️</span>
-        </div>
-      )}
-      <div className="flex-1 min-w-0">
-        <div className="font-medium text-[13px] text-[#1a1a1a] truncate">{item.name}</div>
-        <div className="flex items-center gap-1.5 text-[11px]">
-          {item.type === "creator" && (
-            <>
-              <span className="text-[#FD7979]">{item.platform}</span>
-              <span className="text-[#aaa]">{item.subscribers}</span>
-            </>
-          )}
-          {item.type === "region" && (
-            <>
-              <span className="text-[#FD7979]">지역</span>
-              <span className="text-[#aaa]">맛집 {item.restaurantCount?.toLocaleString()}개</span>
-            </>
-          )}
-          {item.type === "restaurant" && (
-            <>
-              <span className="text-[#FD7979]">{item.category}</span>
-              <span className="text-[#aaa] truncate">{item.address}</span>
-            </>
-          )}
-          {item.type === "food" && (
-            <>
-              <span className="text-[#FD7979]">음식종류</span>
-              <span className="text-[#aaa]">맛집 {item.restaurantCount?.toLocaleString()}개</span>
-            </>
-          )}
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#f4f4f4]">
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-full w-full object-cover"
+          />
+        ) : item.type === "region" ? (
+          <MapPin className="h-5 w-5 text-[#777]" />
+        ) : (
+          <UtensilsCrossed className="h-5 w-5 text-[#ff7b83]" />
+        )}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-semibold text-[#1a1a1a]">{item.name}</p>
+        <div className="mt-1 flex items-center gap-2 text-xs">
+          <span className="shrink-0 font-semibold text-[#ff7b83]">{accentLabel}</span>
+          <span className="truncate text-[#888]">{detailText}</span>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
-/* ─── 식당 카드 (Group4 스타일) ─── */
 function RestaurantCard({
-  restaurant, isSelected, onClick, onNavigateDetail,
+  restaurant,
+  selected,
+  onSelect,
 }: {
-  restaurant: Restaurant; isSelected: boolean; onClick: () => void; onNavigateDetail: () => void;
+  restaurant: Restaurant;
+  selected: boolean;
+  onSelect: () => void;
 }) {
-  const recCreators = getCreatorsByRestaurant(restaurant.id);
-  const sourceBadges = getSourcesByRestaurant(restaurant.id);
-  const relatedVisits = visits.filter(v => v.restaurantId === restaurant.id);
-  const isOverseas = restaurant.isOverseas === true;
+  const [, navigate] = useLocation();
+  const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
+  const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
 
   return (
     <div
-      className={`transition-all duration-200 ${isSelected ? "bg-[#FEEAC9]/30" : "hover:bg-gray-50"}`}
+      className={`border-b border-[#f1f1f1] px-4 py-4 transition-colors ${
+        selected ? "bg-[#fff7f1]" : "bg-white hover:bg-[#fafafa]"
+      }`}
     >
-      {/* 식당 정보 - 클릭 시 영상 펼침 */}
-      <div
-        onClick={onClick}
-        className="flex gap-3 p-4 border-b border-gray-100 cursor-pointer"
-      >
-        {/* 썸네일 */}
-        <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100">
+      <button type="button" onClick={onSelect} className="flex w-full items-start gap-3 text-left">
+        <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
           {restaurant.imageUrl ? (
-            <img src={restaurant.imageUrl} alt={restaurant.name} className="w-full h-full object-cover" />
+            <img
+              src={restaurant.imageUrl}
+              alt={restaurant.name}
+              className="h-full w-full object-cover"
+            />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-gray-300 text-2xl bg-gray-50">
-              🍽️
+            <div className="flex h-full w-full items-center justify-center text-[#d1d1d1]">
+              <UtensilsCrossed className="h-7 w-7" />
             </div>
           )}
         </div>
 
-        {/* 하트 버튼 */}
-        <div className="flex-shrink-0 self-start pt-1">
+        <div className="pt-1">
           <HeartButton restaurantId={restaurant.id} size="sm" />
         </div>
 
-        {/* 텍스트 */}
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="font-bold text-[15px] text-[#FD7979]">{restaurant.name}</span>
-            {isOverseas && (
-              <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-medium rounded bg-blue-50 text-blue-500 border border-blue-200">
-                해외
-              </span>
-            )}
-            <span className="text-xs text-[#999]">{restaurant.category}</span>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="text-[15px] font-bold text-[#ff7b83]">{restaurant.name}</p>
+            <span className="text-xs text-[#8c8c8c]">{restaurant.category}</span>
           </div>
-          <p className="text-xs text-[#666] mb-1.5 truncate">{restaurant.address || restaurant.region}</p>
-          <p className="text-xs text-[#888] mb-2">
-            {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 나중에 추가될 예정입니다."}
+
+          <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
+          <p className="mt-2 text-xs text-[#888]">
+            {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
           </p>
 
-          {/* 크리에이터 태그 */}
-          <div className="flex flex-wrap gap-1.5">
-            {recCreators.map((creator) => (
-              <Link key={creator.id} href={`/creator/${creator.id}`} className="no-underline">
-                <span className="inline-flex items-center px-2 py-0.5 text-[11px] font-medium rounded-sm border border-[#FD7979]/40 text-[#FD7979] hover:bg-[#FD7979] hover:text-white transition-colors">
-                  {creator.name}
-                </span>
-              </Link>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {creatorsForRestaurant.map((creator) => (
+              <span
+                key={creator.id}
+                className="inline-flex items-center rounded-full border border-[#ffd3d8] bg-[#fff7f8] px-2 py-0.5 text-[11px] font-medium text-[#ff7b83]"
+              >
+                {creator.name}
+              </span>
             ))}
-            {sourceBadges.map((source) => (
+
+            {sourcesForRestaurant.map((source) => (
               <span
                 key={source.id}
-                className="inline-flex items-center rounded-sm border border-[#f3d5a1] bg-[#fff7e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
+                title={source.name}
+                className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
               >
-                {source.name.length > 16 ? `${source.name.slice(0, 16)}...` : source.name}
+                <span className="truncate">
+                  {source.name}
+                </span>
               </span>
             ))}
           </div>
         </div>
-      </div>
+      </button>
 
-      {/* 관련 영상 + 상세 보기 (선택된 식당만) */}
-      <AnimatePresence>
-        {isSelected && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
+      {selected ? (
+        <div className="mt-3 flex gap-2">
+          <button
+            type="button"
+            onClick={() => navigate(`/restaurant/${restaurant.id}`)}
+            className="flex-1 rounded-xl bg-[#ff7b83] px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
           >
-            {/* 해외 식당 안내 */}
-            {isOverseas && (
-              <div className="mx-4 my-2 p-3 rounded-xl bg-blue-50/80 border border-blue-100">
-                <div className="flex items-start gap-2">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" className="flex-shrink-0 mt-0.5">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
-                  <div>
-                    <p className="text-[12px] font-semibold text-blue-700 mb-0.5">좌표 데이터 준비 중</p>
-                    <p className="text-[11px] text-blue-600/80 leading-relaxed">
-                      {restaurant.name}의 위치는 해외({restaurant.region})인 관계로<br/>
-                      지도에서 제공하지 않습니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* 영상 카드 - 클릭 시 식당 상세 페이지로 이동 */}
-            {relatedVisits.length > 0 ? (
-              relatedVisits.slice(0, 3).map((visit) => (
-                <VideoCard key={visit.id} visit={visit} restaurantId={restaurant.id} onNavigateDetail={onNavigateDetail} />
-              ))
-            ) : (
-              <div className="px-4 py-3 bg-[#FEEAC9]/10 border-b border-gray-100">
-                <p className="text-[12px] text-[#999] text-center">관련 영상이 없습니다</p>
-              </div>
-            )}
-
-            {/* 상세 보기 버튼 */}
-            <div className="px-4 py-2.5 bg-[#FEEAC9]/10 border-b border-gray-200">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onNavigateDetail();
-                }}
-                className="w-full py-2.5 rounded-lg bg-[#FD7979] text-white font-semibold text-[13px] hover:bg-[#e86868] transition-all shadow-[0_2px_8px_rgba(253,121,121,0.25)] flex items-center justify-center gap-1.5 cursor-pointer border-none"
-              >
-                {restaurant.name} 상세 정보 보기
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            식당 상세 보기
+          </button>
+          <button
+            type="button"
+            onClick={() => navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`)}
+            className="rounded-xl border border-[#ffd3d8] bg-white px-4 py-2.5 text-sm font-semibold text-[#ff7b83] transition hover:bg-[#fff6f7]"
+          >
+            지도만 보기
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
 
-/* ─── 영상 카드 — 클릭 시 식당 상세 페이지로 이동 ─── */
-function VideoCard({ visit, restaurantId, onNavigateDetail }: { visit: Visit; restaurantId: string; onNavigateDetail: () => void }) {
-  const creator = creators.find(c => c.series === visit.series) || creators.find(c => c.id === visit.creatorId);
-
-  return (
-    <div
-      onClick={(e) => {
-        e.stopPropagation();
-        onNavigateDetail();
-      }}
-      className="flex gap-3 px-4 py-3 bg-[#FEEAC9]/20 border-b border-gray-100 hover:bg-[#FEEAC9]/40 transition-colors cursor-pointer group"
-    >
-      <div className="w-24 h-16 rounded-lg overflow-hidden flex-shrink-0 relative bg-gray-200">
-        {visit.thumbnailUrl ? (
-          <img src={visit.thumbnailUrl} alt={visit.videoTitle} className="w-full h-full object-cover" />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gray-100 text-gray-300">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21" /></svg>
-          </div>
-        )}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-7 h-7 rounded-full bg-black/50 flex items-center justify-center">
-            <svg width="10" height="12" viewBox="0 0 10 12" fill="white"><polygon points="0,0 10,6 0,12" /></svg>
-          </div>
-        </div>
-      </div>
-      <div className="flex-1 min-w-0">
-        <p className="text-[13px] font-semibold text-[#FD7979] line-clamp-2 mb-1 group-hover:underline">{visit.videoTitle}</p>
-        <div className="flex items-center gap-2 text-[11px] text-[#999]">
-          <span>{visit.visitDate}</span>
-          {visit.episode && <span>{visit.episode}</span>}
-        </div>
-        {creator && (
-          <span className="text-[11px] text-[#FDACAC] font-medium">{creator.name}</span>
-        )}
-      </div>
-      {/* 상세 페이지 이동 화살표 */}
-      <div className="flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="2">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-/* ─── 메인 SearchMap ─── */
 export default function SearchMap() {
   const [, navigate] = useLocation();
   const searchString = useSearch();
@@ -324,46 +252,135 @@ export default function SearchMap() {
     [type, value]
   );
 
-  // 지도에 표시할 식당 (국내만, 좌표 있는 것만)
   const domesticRestaurants = useMemo(
-    () => filteredRestaurants.filter(r => !r.isOverseas),
+    () => filteredRestaurants.filter((restaurant) => !restaurant.isOverseas),
     [filteredRestaurants]
   );
-
-  // 해외 식당 수
   const overseasCount = useMemo(
-    () => filteredRestaurants.filter(r => r.isOverseas === true).length,
+    () => filteredRestaurants.filter((restaurant) => restaurant.isOverseas === true).length,
     [filteredRestaurants]
   );
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const selectedRestaurant = filteredRestaurants.find(r => r.id === selectedId) || null;
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
   );
   const [resolvedRestaurantCoords, setResolvedRestaurantCoords] = useState<
     Record<string, { lat: number; lng: number }>
   >({});
-
-  // ─── 검색 기능 상태 ───
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(-1);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // 선택된 식당으로 스크롤
-  const listRef = useRef<HTMLDivElement>(null);
-
   const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return [];
-    return mockSearchData.filter((item) =>
-      item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.type === "creator" && item.platform?.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      (item.type === "restaurant" && (item.address?.toLowerCase().includes(searchQuery.toLowerCase()) || item.category?.toLowerCase().includes(searchQuery.toLowerCase())))
-    ).slice(0, 6);
+    const normalized = searchQuery.trim().toLowerCase();
+    if (!normalized) {
+      return [];
+    }
+
+    return mockSearchData
+      .filter((item) => {
+        const fields = [
+          item.name,
+          item.platform,
+          item.subscribers,
+          item.parentRegion,
+          item.category,
+          item.address,
+          item.sourceTypeLabel,
+          item.restaurantCount?.toString(),
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+
+        return fields.includes(normalized);
+      })
+      .slice(0, 8);
   }, [searchQuery]);
 
-  const showSearchDropdown = isSearchFocused && searchQuery.trim().length > 0 && searchResults.length > 0;
+  const showSearchDropdown =
+    isSearchFocused && searchQuery.trim().length > 0 && searchResults.length > 0;
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchFocused(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const syncStoredLocation = () => {
+      setCurrentLocation(loadStoredLocation());
+    };
+
+    syncStoredLocation();
+    window.addEventListener(LOCATION_UPDATED_EVENT, syncStoredLocation);
+    return () => window.removeEventListener(LOCATION_UPDATED_EVENT, syncStoredLocation);
+  }, []);
+
+  useEffect(() => {
+    if (!("geolocation" in navigator)) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function hydrateCurrentLocation() {
+      let permissionState: PermissionState | "prompt" = "prompt";
+
+      if ("permissions" in navigator && typeof navigator.permissions.query === "function") {
+        try {
+          const permission = await navigator.permissions.query({
+            name: "geolocation" as PermissionName,
+          });
+          permissionState = permission.state;
+        } catch {
+          permissionState = "prompt";
+        }
+      }
+
+      if (permissionState !== "granted" || cancelled) {
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          if (cancelled) {
+            return;
+          }
+
+          const nextLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+
+          saveStoredLocation(nextLocation);
+          setCurrentLocation({
+            ...nextLocation,
+            updatedAt: Date.now(),
+          });
+        },
+        () => {},
+        {
+          enableHighAccuracy: true,
+          timeout: 15000,
+          maximumAge: 0,
+        }
+      );
+    }
+
+    void hydrateCurrentLocation();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     const nextCachedCoords: Record<string, { lat: number; lng: number }> = {};
@@ -385,11 +402,9 @@ export default function SearchMap() {
       }
     });
 
-    if (Object.keys(nextCachedCoords).length === 0) {
-      return;
+    if (Object.keys(nextCachedCoords).length > 0) {
+      setResolvedRestaurantCoords((prev) => ({ ...nextCachedCoords, ...prev }));
     }
-
-    setResolvedRestaurantCoords((prev) => ({ ...nextCachedCoords, ...prev }));
   }, [domesticRestaurants]);
 
   useEffect(() => {
@@ -420,18 +435,16 @@ export default function SearchMap() {
           }
 
           saveRestaurantCoordinate(restaurant, coords);
-          setResolvedRestaurantCoords((prev) => {
-            if (prev[restaurant.id]) {
-              return prev;
-            }
-
-            return {
-              ...prev,
-              [restaurant.id]: coords,
-            };
-          });
+          setResolvedRestaurantCoords((prev) =>
+            prev[restaurant.id]
+              ? prev
+              : {
+                  ...prev,
+                  [restaurant.id]: coords,
+                }
+          );
         } catch {
-          // Keep unresolved rows silent; we only need successful lookups.
+          // Ignore address lookup failures and keep other results available.
         }
       }
     }
@@ -504,241 +517,141 @@ export default function SearchMap() {
     };
   }, [currentLocation, restaurantsForMap]);
 
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
-        setIsSearchFocused(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    const syncStoredLocation = () => {
-      setCurrentLocation(loadStoredLocation());
-    };
-
-    syncStoredLocation();
-
-    const handleLocationUpdated = () => {
-      syncStoredLocation();
-    };
-
-    window.addEventListener(LOCATION_UPDATED_EVENT, handleLocationUpdated);
-
-    return () => {
-      window.removeEventListener(LOCATION_UPDATED_EVENT, handleLocationUpdated);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!("geolocation" in navigator)) {
-      return;
-    }
-
-    let cancelled = false;
-
-    async function hydrateCurrentLocation() {
-      let permissionState: PermissionState | "prompt" = "prompt";
-
-      if ("permissions" in navigator && typeof navigator.permissions.query === "function") {
-        try {
-          const permission = await navigator.permissions.query({
-            name: "geolocation" as PermissionName,
-          });
-          permissionState = permission.state;
-        } catch {
-          permissionState = "prompt";
-        }
-      }
-
-      if (permissionState !== "granted" || cancelled) {
-        return;
-      }
-
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          if (cancelled) {
-            return;
-          }
-
-          const nextLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          saveStoredLocation(nextLocation);
-          setCurrentLocation({
-            ...nextLocation,
-            updatedAt: Date.now(),
-          });
-        },
-        () => {
-          // Ignore silent location refresh failures on the map page.
-        },
-        {
-          enableHighAccuracy: true,
-          timeout: 15000,
-          maximumAge: 0,
-        }
-      );
-    }
-
-    void hydrateCurrentLocation();
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const handleMarkerClick = useCallback((id: string) => {
-    setSelectedId(prev => prev === id ? null : id);
-  }, []);
-
   const handleSearchSelect = (item: SearchResult) => {
     setSearchQuery("");
     setIsSearchFocused(false);
+
     if (item.type === "restaurant") {
       navigate(`/map?type=restaurant&value=${encodeURIComponent(item.id)}`);
-    } else if (item.type === "creator") {
+      return;
+    }
+
+    if (item.type === "creator") {
       navigate(`/map?type=creator&value=${encodeURIComponent(item.id)}`);
-    } else if (item.type === "region") {
+      return;
+    }
+
+    if (item.type === "region") {
       navigate(`/map?type=region&value=${encodeURIComponent(item.name)}`);
-    } else if (item.type === "food") {
+      return;
+    }
+
+    if (item.type === "food") {
       navigate(`/map?type=food&value=${encodeURIComponent(item.name)}`);
+      return;
+    }
+
+    if (item.type === "source") {
+      navigate(`/map?type=source&value=${encodeURIComponent(item.id)}`);
     }
   };
 
   return (
-    <div className="h-screen flex flex-col bg-white">
-      {/* ─── 좌측 패널 + 우측 지도 ─── */}
-      <div className="flex-1 flex overflow-hidden">
+    <div className="flex h-screen flex-col bg-white">
+      <div className="flex flex-1 overflow-hidden">
+        <aside className="flex w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
+          <div className="border-b border-[#f0f0f0] p-4">
+            <div className="mb-3 flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => navigate("/")}
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#ece7e8] bg-white text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </button>
 
-        {/* ─── 좌측 패널 (Group4 디자인) ─── */}
-        <div className="w-[380px] flex-shrink-0 flex flex-col border-r border-gray-100 bg-white">
-          {/* 헤더: 로고 + 검색창 */}
-          <div className="p-4 border-b border-gray-100">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
-                <div className="w-6 h-6 rounded-full bg-[#FD7979]/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-              </div>
-              <div ref={searchRef} className="flex-1 relative">
+              <div ref={searchRef} className="relative flex-1">
                 <input
                   type="text"
                   value={searchQuery}
-                  onChange={(e) => { setSearchQuery(e.target.value); setHoveredIdx(-1); }}
+                  onChange={(event) => {
+                    setSearchQuery(event.target.value);
+                    setHoveredIdx(-1);
+                  }}
                   onFocus={() => setIsSearchFocused(true)}
                   placeholder={title}
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#FFCDC9]/60 text-sm text-[#1a1a1a] placeholder-[#999] outline-none focus:border-[#FD7979] focus:shadow-[0_0_0_3px_rgba(253,121,121,0.1)] transition-all bg-white"
-                  style={{ fontFamily: "'Noto Sans KR', sans-serif" }}
+                  className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
                 />
-                {/* 검색 아이콘 */}
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#bbb]">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                    <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
-                </div>
+                <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />
 
-                {/* 검색 드롭다운 */}
-                {showSearchDropdown && (
-                  <div className="absolute left-0 right-0 top-full mt-1 bg-white border border-[#FFCDC9] rounded-xl shadow-[0_8px_24px_rgba(253,121,121,0.12)] overflow-hidden z-50">
+                {showSearchDropdown ? (
+                  <div className="absolute left-0 right-0 top-full z-20 mt-2 overflow-hidden rounded-2xl border border-[#ffd4d9] bg-white shadow-[0_12px_36px_rgba(255,123,131,0.12)]">
                     <div className="max-h-[384px] overflow-y-auto">
-                      {searchResults.map((item, idx) => (
+                      {searchResults.map((item, index) => (
                         <SearchDropdownItem
-                          key={item.id + idx}
+                          key={`${item.id}_${index}`}
                           item={item}
-                          isHovered={hoveredIdx === idx}
-                          onHover={() => setHoveredIdx(idx)}
+                          isHovered={hoveredIdx === index}
+                          onHover={() => setHoveredIdx(index)}
                           onLeave={() => setHoveredIdx(-1)}
                           onSelect={() => handleSearchSelect(item)}
                         />
                       ))}
                     </div>
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
 
-            {/* 검색 결과 수 */}
-            <div className="flex items-center gap-2">
-              <span className="text-[#FD7979] font-bold text-lg">{filteredRestaurants.length}개</span>
-              <span className="text-[13px] text-[#888]">의 검색 결과</span>
-              {overseasCount > 0 && (
-                <span className="text-[11px] text-blue-500 bg-blue-50 px-1.5 py-0.5 rounded">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-lg font-bold text-[#ff7b83]">
+                {filteredRestaurants.length}개
+              </span>
+              <span className="text-sm text-[#888]">검색 결과</span>
+              {overseasCount > 0 ? (
+                <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
                   해외 {overseasCount}곳
                 </span>
-              )}
+              ) : null}
             </div>
           </div>
 
-          {/* 식당 리스트 */}
-          <div ref={listRef} className="flex-1 overflow-y-auto">
-            {filteredRestaurants.map((r) => (
-              <RestaurantCard
-                key={r.id}
-                restaurant={r}
-                isSelected={selectedId === r.id}
-                onClick={() => {
-                  setSelectedId(prev => prev === r.id ? null : r.id);
-                }}
-                onNavigateDetail={() => navigate(`/restaurant/${r.id}`)}
-              />
-            ))}
-
-            {filteredRestaurants.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-20 text-center">
-                <span className="text-4xl mb-3">🔍</span>
-                <p className="text-[#888] text-sm">검색 결과가 없습니다</p>
+          <div className="flex-1 overflow-y-auto">
+            {filteredRestaurants.length > 0 ? (
+              filteredRestaurants.map((restaurant) => (
+                <RestaurantCard
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                  selected={selectedId === restaurant.id}
+                  onSelect={() =>
+                    setSelectedId((prev) => (prev === restaurant.id ? null : restaurant.id))
+                  }
+                />
+              ))
+            ) : (
+              <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
+                <p className="text-4xl">🍽️</p>
+                <p className="mt-4 text-sm font-semibold text-[#333]">검색 결과가 없어요.</p>
+                <p className="mt-2 text-xs leading-6 text-[#8a8a8a]">
+                  다른 키워드나 소스 이름으로 다시 검색해 보세요.
+                </p>
               </div>
             )}
           </div>
-        </div>
+        </aside>
 
-        {/* ─── 우측: 네이버 지도 영역 ─── */}
-        <div className="flex-1 relative">
+        <section className="relative flex-1">
           <NaverMap
             restaurants={restaurantsForMap}
             selectedId={selectedId}
             currentLocation={currentLocation}
             nearestRestaurantId={nearestRestaurant?.restaurant.id ?? null}
-            onMarkerClick={handleMarkerClick}
+            onMarkerClick={(id) => setSelectedId((prev) => (prev === id ? null : id))}
           />
-          {/* 좌표가 없는 식당이 있을 때 안내 */}
-          {restaurantsForMap.length > 0 && restaurantsForMap.filter(r => r.lat !== 0 && r.lng !== 0).length === 0 && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-6 text-center max-w-xs pointer-events-auto">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#FEEAC9] to-[#FFCDC9] flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="1.5">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-                    <circle cx="12" cy="9" r="2.5" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-[#1a1a1a] mb-1">좌표 데이터 준비 중</p>
-                <p className="text-xs text-[#888]">{restaurantsForMap.length}개 맛집의 위치 정보를<br/>업데이트하고 있습니다</p>
-              </div>
-            </div>
-          )}
 
-          {/* 해외 식당만 있을 때 안내 */}
-          {domesticRestaurants.length === 0 && overseasCount > 0 && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-100 p-6 text-center max-w-sm pointer-events-auto">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-[#1a1a1a] mb-1">해외 맛집 {overseasCount}곳</p>
-                <p className="text-xs text-[#888] leading-relaxed">
-                  해외 식당은 네이버 지도에서<br/>위치를 제공하지 않습니다.<br/>
-                  좌측 목록에서 식당 정보를 확인해주세요.
+          {restaurantsForMap.length > 0 &&
+          restaurantsForMap.filter((restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0)
+            .length === 0 ? (
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="pointer-events-auto rounded-2xl border border-[#f0e5e6] bg-white/96 p-6 text-center shadow-[0_20px_48px_rgba(0,0,0,0.08)] backdrop-blur">
+                <p className="text-sm font-semibold text-[#1a1a1a]">지도 좌표를 준비하고 있어요.</p>
+                <p className="mt-2 text-xs leading-6 text-[#888]">
+                  주소 기반으로 위치를 찾는 중이라 처음엔 잠깐 비어 보일 수 있어요.
                 </p>
               </div>
             </div>
-          )}
-        </div>
+          ) : null}
+        </section>
       </div>
     </div>
   );

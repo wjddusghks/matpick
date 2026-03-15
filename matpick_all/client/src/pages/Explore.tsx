@@ -11,7 +11,6 @@ import {
   getRegions,
   getRestaurantMenuSummary,
   getRestaurantsByCreator,
-  getRestaurantsBySource,
   getSourceRestaurantCount,
   getSourcesByRestaurant,
   restaurants,
@@ -43,7 +42,7 @@ function buildDiscoveryKey(kind: DiscoveryKind, id: string) {
   return `${kind}:${id}`;
 }
 
-function DiscoveryChip({
+function SourceAvatarButton({
   option,
   selected,
   onClick,
@@ -57,30 +56,39 @@ function DiscoveryChip({
   return (
     <button
       type="button"
-      onClick={onClick}
       title={label}
-      className={`group flex h-12 items-center gap-2.5 rounded-full border px-4 text-sm font-semibold transition-all ${
-        selected
-          ? "border-[#FD7979] bg-[#fff7f8] text-[#FD7979] shadow-[0_10px_24px_rgba(253,121,121,0.16)]"
-          : "border-[#ece7e8] bg-white text-[#555] hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
-      }`}
+      onClick={onClick}
+      className="flex w-[86px] flex-shrink-0 flex-col items-center gap-2 text-center"
     >
-      {option?.imageUrl ? (
-        <img
-          src={option.imageUrl}
-          alt={option.name}
-          className="h-7 w-7 rounded-full border border-[#f1d8dc] object-cover"
-        />
-      ) : (
-        <span
-          className={`flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-bold ${
-            selected ? "bg-[#FD7979] text-white" : "bg-[#f5f5f5] text-[#999]"
-          }`}
-        >
-          {option ? "#" : "All"}
+      <span
+        className={`flex h-[72px] w-[72px] items-center justify-center rounded-full p-[2px] transition-all ${
+          selected
+            ? "bg-[linear-gradient(135deg,#ff6a6a_0%,#ff00d4_100%)] shadow-[0_18px_38px_rgba(255,105,135,0.24)]"
+            : "bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)]"
+        }`}
+      >
+        <span className="flex h-full w-full items-center justify-center rounded-full bg-white">
+          {option?.imageUrl ? (
+            <img
+              src={option.imageUrl}
+              alt={option.name}
+              className="h-[62px] w-[62px] rounded-full object-cover"
+            />
+          ) : (
+            <span className="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#fff3f5] text-sm font-black text-[#ff7b83]">
+              ALL
+            </span>
+          )}
         </span>
-      )}
-      <span className="max-w-[128px] truncate">{label}</span>
+      </span>
+
+      <span
+        className={`max-w-[86px] truncate text-[11px] font-semibold leading-tight ${
+          selected ? "text-[#ff5d76]" : "text-[#4f4f4f]"
+        }`}
+      >
+        {label}
+      </span>
     </button>
   );
 }
@@ -98,20 +106,20 @@ function FilterChip({
 }) {
   const activeClasses =
     tone === "pink"
-      ? "bg-[#FD7979] text-white shadow-[0_8px_18px_rgba(253,121,121,0.24)]"
-      : "bg-[#FDACAC] text-white shadow-[0_8px_18px_rgba(253,172,172,0.24)]";
+      ? "border-[#ff7b83] bg-[#ff7b83] text-white shadow-[0_10px_22px_rgba(255,123,131,0.18)]"
+      : "border-[#fca5a5] bg-[#fda4af] text-white shadow-[0_10px_22px_rgba(252,165,165,0.18)]";
 
   const idleClasses =
     tone === "pink"
-      ? "bg-white text-[#666] hover:border-[#ffd0d5] hover:text-[#FD7979]"
-      : "bg-white text-[#666] hover:border-[#ffd7db] hover:text-[#FDACAC]";
+      ? "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd1d7] hover:text-[#ff7b83]"
+      : "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd7dc] hover:text-[#f08e8e]";
 
   return (
     <button
       type="button"
       onClick={onClick}
       className={`rounded-full border px-4 py-2 text-sm font-medium transition-all ${
-        selected ? activeClasses : `border-[#eee] ${idleClasses}`
+        selected ? activeClasses : idleClasses
       }`}
     >
       {label}
@@ -121,9 +129,9 @@ function FilterChip({
 
 function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   const [, navigate] = useLocation();
-  const recommendationCount = getRecommendationCount(restaurant.id);
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
+  const recommendationCount = getRecommendationCount(restaurant.id);
   const cardImage =
     restaurant.imageUrl || sourcesForRestaurant[0]?.imageUrl || FALLBACK_RESTAURANT_IMAGE;
 
@@ -146,7 +154,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
             {getCuisineCategory(restaurant.category)}
           </span>
           {restaurant.foundingYear ? (
-            <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#FD7979]">
+            <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
               {restaurant.foundingYear}년
             </span>
           ) : null}
@@ -165,14 +173,9 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
 
       <div className="space-y-4 p-5">
         <div className="space-y-2">
-          <div className="flex items-start justify-between gap-3">
-            <div>
-              <h3 className="text-lg font-bold text-[#181818]">{restaurant.name}</h3>
-              <p className="mt-1 text-sm text-[#8a8a8a]">{restaurant.address}</p>
-            </div>
-          </div>
-
-          <p className="text-sm font-medium text-[#FD7979]">
+          <h3 className="text-lg font-bold text-[#181818]">{restaurant.name}</h3>
+          <p className="text-sm text-[#8a8a8a]">{restaurant.address}</p>
+          <p className="text-sm font-medium text-[#ff7b83]">
             {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
           </p>
         </div>
@@ -182,7 +185,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
             <span
               key={creator.id}
               title={creator.name}
-              className="inline-flex max-w-[140px] items-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-3 py-1 text-xs font-semibold text-[#FD7979]"
+              className="inline-flex max-w-[140px] items-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-3 py-1 text-xs font-semibold text-[#ff7b83]"
             >
               <span className="truncate">{creator.name}</span>
             </span>
@@ -298,12 +301,10 @@ export default function Explore() {
       );
     }
 
-    nextRestaurants.sort(
+    return nextRestaurants.sort(
       (a, b) =>
         getRecommendationCount(b.id) - getRecommendationCount(a.id) || sortText(a.name, b.name)
     );
-
-    return nextRestaurants;
   }, [selectedCategory, selectedDiscoveryKeys, selectedRegion]);
 
   const toggleDiscovery = (key: string) => {
@@ -325,19 +326,18 @@ export default function Explore() {
 
   return (
     <div className="min-h-screen bg-[#fffdfd]">
-      <nav className="sticky top-0 z-40 border-b border-[#f0ebec] bg-white/85 backdrop-blur">
+      <nav className="sticky top-0 z-40 border-b border-[#f0ebec] bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <button
-            type="button"
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2"
-          >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fff1f3] text-[#FD7979]">
+          <button type="button" onClick={() => navigate("/")} className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fff1f3] text-[#ff7b83]">
               <Compass className="h-4 w-4" />
             </div>
-            <span className="text-xl font-bold tracking-[-0.03em]">
+            <span
+              className="text-xl font-bold tracking-[-0.03em]"
+              style={{ fontFamily: "'Black Han Sans', sans-serif" }}
+            >
               <span className="text-[#111111]">맛</span>
-              <span className="text-[#FD7979]">픽</span>
+              <span className="text-[#ff7b83]">픽</span>
             </span>
           </button>
 
@@ -347,7 +347,7 @@ export default function Explore() {
             className="inline-flex items-center gap-2 rounded-full border border-[#ece7e8] bg-white px-4 py-2 text-sm font-semibold text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
           >
             <Search className="h-4 w-4" />
-            홈으로 돌아가기
+            홈으로
           </button>
         </div>
       </nav>
@@ -356,25 +356,28 @@ export default function Explore() {
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-[#171717]">맛집 탐색</h1>
           <p className="mt-2 text-base text-[#7f7f7f]">
-            보고 싶은 채널이나 소스를 먼저 고른 뒤, 카테고리와 지역으로 원하는 맛집을 더 좁혀보세요.
+            먼저 보고 싶은 채널이나 소스를 고른 뒤, 카테고리와 지역으로 결과를 더
+            좁혀보세요.
           </p>
         </header>
 
         <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-5 shadow-[0_10px_36px_rgba(0,0,0,0.04)]">
-          <div className="flex flex-wrap gap-3">
-            <DiscoveryChip
-              option={null}
-              selected={!hasActiveDiscovery}
-              onClick={() => setSelectedDiscoveryKeys([])}
-            />
-            {discoveryOptions.map((option) => (
-              <DiscoveryChip
-                key={option.key}
-                option={option}
-                selected={selectedDiscoveryKeys.includes(option.key)}
-                onClick={() => toggleDiscovery(option.key)}
+          <div className="-mx-1 overflow-x-auto pb-2">
+            <div className="flex min-w-max gap-4 px-1">
+              <SourceAvatarButton
+                option={null}
+                selected={!hasActiveDiscovery}
+                onClick={() => setSelectedDiscoveryKeys([])}
               />
-            ))}
+              {discoveryOptions.map((option) => (
+                <SourceAvatarButton
+                  key={option.key}
+                  option={option}
+                  selected={selectedDiscoveryKeys.includes(option.key)}
+                  onClick={() => toggleDiscovery(option.key)}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="mt-5 space-y-4 border-t border-[#f5f0f1] pt-5">
@@ -418,7 +421,7 @@ export default function Explore() {
 
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm text-[#888]">
-            총 <span className="font-bold text-[#FD7979]">{filteredRestaurants.length}</span>곳의
+            총 <span className="font-bold text-[#ff7b83]">{filteredRestaurants.length}</span>곳의
             맛집
           </p>
 
@@ -426,7 +429,7 @@ export default function Explore() {
             <button
               type="button"
               onClick={clearFilters}
-              className="text-sm font-semibold text-[#FD7979] transition hover:opacity-75"
+              className="text-sm font-semibold text-[#ff7b83] transition hover:opacity-75"
             >
               필터 전체 초기화
             </button>
@@ -446,7 +449,7 @@ export default function Explore() {
               해당 조건에 맞는 맛집이 아직 없어요.
             </p>
             <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
-              선택한 소스나 카테고리, 지역 조건을 조금 넓혀서 다시 찾아보세요.
+              선택한 소스, 카테고리, 지역 조건을 조금만 넓혀서 다시 찾아보세요.
             </p>
           </div>
         )}

@@ -32,17 +32,17 @@ const KAKAO_SHARE_SCRIPT_SRC =
 function ShareIcon({ channel }: { channel: ShareChannel }) {
   switch (channel) {
     case "copy":
-      return <Link2 className="h-6 w-6" />;
+      return <Link2 className="h-5 w-5" />;
     case "x":
-      return <X className="h-6 w-6" />;
+      return <X className="h-5 w-5" />;
     case "facebook":
-      return <Facebook className="h-6 w-6" />;
+      return <Facebook className="h-5 w-5" />;
     case "line":
-      return <span className="text-[13px] font-black">LINE</span>;
+      return <span className="text-[12px] font-black">LINE</span>;
     case "kakao":
-      return <span className="text-[13px] font-black">Talk</span>;
+      return <span className="text-[12px] font-black">Talk</span>;
     case "instagram":
-      return <Instagram className="h-6 w-6" />;
+      return <Instagram className="h-5 w-5" />;
   }
 }
 
@@ -67,7 +67,11 @@ function getButtonStyle(channel: ShareChannel, disabled: boolean) {
   }
 }
 
-function buildShareUrl(channel: Exclude<ShareChannel, "copy" | "kakao" | "instagram">, text: string, url: string) {
+function buildShareUrl(
+  channel: Exclude<ShareChannel, "copy" | "kakao" | "instagram">,
+  text: string,
+  url: string
+) {
   const encodedText = encodeURIComponent(text);
   const encodedUrl = encodeURIComponent(url);
 
@@ -114,14 +118,14 @@ async function ensureKakaoShareSdk() {
       (document.getElementById(KAKAO_SHARE_SCRIPT_ID) as HTMLScriptElement | null);
 
     if (!script) {
-      reject(new Error("카카오 공유 스크립트를 불러오지 못했습니다."));
+      reject(new Error("카카오 공유 스크립트를 불러오지 못했어요."));
       return;
     }
 
     const finish = () => {
       const nextWindow = window as KakaoWindow;
       if (!nextWindow.Kakao) {
-        reject(new Error("카카오 공유 SDK를 찾지 못했습니다."));
+        reject(new Error("카카오 공유 SDK를 찾지 못했어요."));
         return;
       }
 
@@ -135,7 +139,7 @@ async function ensureKakaoShareSdk() {
     script.addEventListener("load", finish, { once: true });
     script.addEventListener(
       "error",
-      () => reject(new Error("카카오 공유 SDK 로딩에 실패했습니다.")),
+      () => reject(new Error("카카오 공유 SDK 로딩에 실패했어요.")),
       { once: true }
     );
 
@@ -167,13 +171,14 @@ export default function ShareSheet({
 
     return `${window.location.origin}${candidate.startsWith("/") ? "" : "/"}${candidate}`;
   }, [imageUrl]);
-const channels: Array<{
+
+  const channels: Array<{
     key: ShareChannel;
     label: string;
     disabled?: boolean;
     helper?: string;
   }> = [
-    { key: "copy", label: "URL 복사" },
+    { key: "copy", label: "URL복사" },
     { key: "line", label: "LINE" },
     { key: "x", label: "X" },
     { key: "facebook", label: "페이스북" },
@@ -185,8 +190,8 @@ const channels: Array<{
     },
     {
       key: "instagram",
-      label: "인스타그램",
-      helper: "웹에서는 직접 공유를 지원하지 않아 URL 복사로 안내할게요.",
+      label: "인스타",
+      helper: "웹에서는 링크 복사 방식으로 안내할게요.",
     },
   ];
 
@@ -276,7 +281,7 @@ const channels: Array<{
                   "noopener,noreferrer,width=600,height=720"
                 );
               }}
-              className="group flex flex-col items-center gap-2 text-center"
+              className="group flex min-w-0 flex-col items-center gap-2 text-center"
               title={channel.helper}
             >
               <span
@@ -284,10 +289,10 @@ const channels: Array<{
                   getButtonStyle(channel.key, Boolean(channel.disabled))
                 }`}
               >
-                {channel.key === "copy" ? <Copy className="h-6 w-6" /> : <ShareIcon channel={channel.key} />}
+                {channel.key === "copy" ? <Copy className="h-5 w-5" /> : <ShareIcon channel={channel.key} />}
               </span>
               <span
-                className={`text-xs font-medium ${
+                className={`whitespace-nowrap text-[11px] font-medium tracking-[-0.02em] ${
                   channel.disabled ? "text-[#b2b2b2]" : "text-[#4a4a4a]"
                 }`}
               >

@@ -553,7 +553,10 @@ export function getRegions(): string[] {
 }
 
 export function getRestaurantsByCategory(category: string): Restaurant[] {
-  return restaurants.filter((restaurant) => restaurant.category === category);
+  return restaurants.filter(
+    (restaurant) =>
+      restaurant.category === category || getCuisineCategory(restaurant.category) === category
+  );
 }
 
 export function getRestaurantsBySeries(series: string): Restaurant[] {
@@ -572,7 +575,9 @@ export function getSeriesList(): string[] {
 }
 
 const regionCounts = countBy(restaurants.map((restaurant) => restaurant.region));
-const categoryCounts = countBy(restaurants.map((restaurant) => restaurant.category));
+const categoryCounts = countBy(
+  restaurants.map((restaurant) => getCuisineCategory(restaurant.category))
+);
 const sortedRestaurants = [...restaurants].sort(
   (a, b) => getRecommendationCount(b.id) - getRecommendationCount(a.id) || sortText(a.name, b.name)
 );

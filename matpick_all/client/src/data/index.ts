@@ -389,6 +389,146 @@ export function getBroadRegions(): string[] {
   return broadRegionOrder.filter((region) => available.has(region));
 }
 
+const cuisineCategoryOrder = [
+  "한식",
+  "중식",
+  "일식",
+  "양식",
+  "멕시칸",
+  "인도",
+  "태국",
+  "베트남",
+] as const;
+
+const cuisineCategoryMatchers: Array<{
+  name: (typeof cuisineCategoryOrder)[number];
+  keywords: string[];
+}> = [
+  {
+    name: "한식",
+    keywords: [
+      "한식",
+      "설렁탕",
+      "곰탕",
+      "국밥",
+      "냉면",
+      "백반",
+      "비빔밥",
+      "국수",
+      "칼국수",
+      "갈비",
+      "불고기",
+      "장어",
+      "해장국",
+      "추어탕",
+      "복국",
+      "떡갈비",
+      "보쌈",
+      "족발",
+      "찌개",
+      "전골",
+      "정식",
+      "회",
+      "게장",
+      "분식",
+      "삼겹",
+      "순대",
+      "보리밥",
+      "쌈밥",
+      "아구",
+      "해물탕",
+    ],
+  },
+  {
+    name: "중식",
+    keywords: [
+      "중식",
+      "짜장",
+      "짬뽕",
+      "탕수육",
+      "마라",
+      "딤섬",
+      "양꼬치",
+      "훠궈",
+      "사천",
+      "중국",
+      "홍콩",
+    ],
+  },
+  {
+    name: "일식",
+    keywords: [
+      "일식",
+      "스시",
+      "초밥",
+      "오마카세",
+      "사시미",
+      "라멘",
+      "우동",
+      "돈카츠",
+      "돈까스",
+      "규카츠",
+      "텐동",
+      "소바",
+      "이자카야",
+      "야키토리",
+      "일본",
+    ],
+  },
+  {
+    name: "양식",
+    keywords: [
+      "양식",
+      "파스타",
+      "피자",
+      "스테이크",
+      "이탈리안",
+      "프렌치",
+      "브런치",
+      "버거",
+      "샌드위치",
+      "비스트로",
+      "그릴",
+      "유럽",
+      "와인",
+    ],
+  },
+  {
+    name: "멕시칸",
+    keywords: ["멕시칸", "타코", "부리또", "브리또", "퀘사디아", "나초", "엔칠라다"],
+  },
+  {
+    name: "인도",
+    keywords: ["인도", "커리", "카레", "난", "탄두리", "비리야니"],
+  },
+  {
+    name: "태국",
+    keywords: ["태국", "팟타이", "똠얌", "카오", "쏨땀", "태국식"],
+  },
+  {
+    name: "베트남",
+    keywords: ["베트남", "쌀국수", "포", "반미", "분짜", "짜조", "월남쌈"],
+  },
+];
+
+export function getCuisineCategory(category: string) {
+  const normalized = category.trim().toLowerCase();
+
+  if (!normalized) {
+    return "한식";
+  }
+
+  const matched = cuisineCategoryMatchers.find((entry) =>
+    entry.keywords.some((keyword) => normalized.includes(keyword.toLowerCase()))
+  );
+
+  return matched?.name ?? "한식";
+}
+
+export function getCuisineCategories() {
+  return [...cuisineCategoryOrder];
+}
+
 export function getTotalCreatorCount(): number {
   return creators.length;
 }

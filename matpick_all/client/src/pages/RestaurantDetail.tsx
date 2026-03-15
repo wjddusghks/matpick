@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Copy,
   ExternalLink,
+  ImagePlus,
   MapPinned,
   MessageSquarePlus,
   MoreVertical,
@@ -39,9 +40,11 @@ type ReviewItem = {
   stars: number;
   text: string;
   helpful: number;
+  photos?: string[];
 };
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
+const MAX_REVIEW_PHOTOS = 3;
 
 function getRestaurantUrl(restaurantId: string) {
   if (APP_URL) {
@@ -78,6 +81,35 @@ function saveStoredReviews(restaurantId: string, reviews: ReviewItem[]) {
   }
 
   window.localStorage.setItem(getStoredReviewsKey(restaurantId), JSON.stringify(reviews));
+}
+
+async function createReviewPhotoDataUrl(file: File) {
+  const objectUrl = URL.createObjectURL(file);
+
+  try {
+    const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const nextImage = new Image();
+      nextImage.onload = () => resolve(nextImage);
+      nextImage.onerror = () => reject(new Error("이미지를 불러오지 못했어요."));
+      nextImage.src = objectUrl;
+    });
+
+    const maxSide = 1280;
+    const scale = Math.min(1, maxSide / Math.max(image.width, image.height));
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.max(1, Math.round(image.width * scale));
+    canvas.height = Math.max(1, Math.round(image.height * scale));
+
+    const context = canvas.getContext("2d");
+    if (!context) {
+      throw new Error("이미지 변환을 준비하지 못했어요.");
+    }
+
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    return canvas.toDataURL("image/jpeg", 0.82);
+  } finally {
+    URL.revokeObjectURL(objectUrl);
+  }
 }
 
 function parseMenuItems(menuText: string) {
@@ -126,10 +158,13 @@ function ReviewsTab({
   restaurant,
   reviews,
   reviewDraft,
+  reviewPhotos,
   reviewStars,
   isComposerOpen,
   onOpenComposer,
   onReviewDraftChange,
+  onReviewPhotoFilesChange,
+  onRemoveReviewPhoto,
   onReviewStarsChange,
   onSubmitReview,
   isLoggedIn,
@@ -137,10 +172,13 @@ function ReviewsTab({
   restaurant: Restaurant;
   reviews: ReviewItem[];
   reviewDraft: string;
+  reviewPhotos: string[];
   reviewStars: number;
   isComposerOpen: boolean;
   onOpenComposer: () => void;
   onReviewDraftChange: (value: string) => void;
+  onReviewPhotoFilesChange: (files: FileList | null) => void;
+  onRemoveReviewPhoto: (index: number) => void;
   onReviewStarsChange: (stars: number) => void;
   onSubmitReview: () => void;
   isLoggedIn: boolean;
@@ -193,6 +231,59 @@ function ReviewsTab({
             disabled={!isLoggedIn}
             className="mt-4 min-h-[140px] w-full rounded-[20px] border border-[#e8dfe1] px-4 py-4 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff9ea9] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.10)] disabled:cursor-not-allowed disabled:bg-[#f9f9f9]"
           />
+          <div className="mt-4">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-semibold text-[#191919]">사진 첨부</p>
+              <p className="text-xs text-[#8a8a8a]">최대 {MAX_REVIEW_PHOTOS}장</p>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-3">
+              {reviewPhotos.map((photo, index) => (
+                <div
+                  key={`${photo}_${index}`}
+                  className="relative h-24 w-24 overflow-hidden rounded-[18px] border border-[#f0e4e6] bg-[#faf7f8]"
+                >
+                  <img
+                    src={photo}
+                    alt={`리뷰 사진 ${index + 1}`}
+                    className="h-full w-full object-cover"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => onRemoveReviewPhoto(index)}
+                    className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/65 text-sm font-bold text-white"
+                    aria-label="리뷰 사진 삭제"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+
+              {reviewPhotos.length < MAX_REVIEW_PHOTOS ? (
+                <label
+                  className={`flex h-24 w-24 items-center justify-center rounded-[18px] border border-dashed border-[#ffb7c0] bg-[#fff8f9] text-[#ff7b83] transition hover:bg-[#fff1f4] ${
+                    !isLoggedIn ? "cursor-not-allowed opacity-50" : "cursor-pointer"
+                  }`}
+                >
+                  <input
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    disabled={!isLoggedIn}
+                    onChange={(event) => {
+                      onReviewPhotoFilesChange(event.target.files);
+                      event.currentTarget.value = "";
+                    }}
+                    className="hidden"
+                  />
+                  <div className="flex flex-col items-center gap-2">
+                    <ImagePlus className="h-5 w-5" />
+                    <span className="text-xs font-semibold">사진 추가</span>
+                  </div>
+                </label>
+              ) : null}
+            </div>
+          </div>
           <div className="mt-4 flex justify-end">
             <button
               type="button"
@@ -222,7 +313,25 @@ function ReviewsTab({
               </div>
               <div className="text-sm text-[#ffb24a]">{"★".repeat(review.stars)}</div>
             </div>
-            <p className="mt-3 text-sm leading-6 text-[#555555]">{review.text}</p>
+            {review.text ? (
+              <p className="mt-3 text-sm leading-6 text-[#555555]">{review.text}</p>
+            ) : null}
+            {review.photos && review.photos.length > 0 ? (
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                {review.photos.map((photo, index) => (
+                  <div
+                    key={`${review.id}_photo_${index}`}
+                    className="overflow-hidden rounded-[18px] border border-[#efe4e6] bg-[#faf7f8]"
+                  >
+                    <img
+                      src={photo}
+                      alt={`${review.user} 리뷰 사진 ${index + 1}`}
+                      className="aspect-square w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            ) : null}
             <div className="mt-3 border-t border-[#f4f4f4] pt-3 text-xs text-[#999999]">
               도움됨 {review.helpful}
             </div>
@@ -365,6 +474,7 @@ export default function RestaurantDetail() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [isComposerOpen, setIsComposerOpen] = useState(false);
   const [reviewDraft, setReviewDraft] = useState("");
+  const [reviewPhotos, setReviewPhotos] = useState<string[]>([]);
   const [reviewStars, setReviewStars] = useState(5);
   const [storedReviews, setStoredReviews] = useState<ReviewItem[]>([]);
   const moreMenuRef = useRef<HTMLDivElement>(null);
@@ -386,6 +496,10 @@ export default function RestaurantDetail() {
     }
 
     setStoredReviews(readStoredReviews(restaurant.id));
+    setReviewDraft("");
+    setReviewPhotos([]);
+    setReviewStars(5);
+    setIsComposerOpen(false);
   }, [restaurant?.id]);
 
   if (!restaurant) {
@@ -431,6 +545,43 @@ export default function RestaurantDetail() {
     setIsComposerOpen(true);
   };
 
+  const handleReviewPhotoFilesChange = async (files: FileList | null) => {
+    if (!files || files.length === 0) {
+      return;
+    }
+
+    const imageFiles = Array.from(files).filter((file) => file.type.startsWith("image/"));
+
+    if (imageFiles.length === 0) {
+      toast("이미지 파일만 올릴 수 있어요.");
+      return;
+    }
+
+    const remainingSlots = Math.max(0, MAX_REVIEW_PHOTOS - reviewPhotos.length);
+    const filesToConvert = imageFiles.slice(0, remainingSlots);
+
+    if (filesToConvert.length === 0) {
+      toast(`사진은 최대 ${MAX_REVIEW_PHOTOS}장까지 올릴 수 있어요.`);
+      return;
+    }
+
+    try {
+      const nextPhotos = await Promise.all(
+        filesToConvert.map((file) => createReviewPhotoDataUrl(file))
+      );
+
+      setReviewPhotos((prev) => [...prev, ...nextPhotos]);
+
+      if (imageFiles.length > remainingSlots) {
+        toast(`사진은 최대 ${MAX_REVIEW_PHOTOS}장까지 저장돼요.`);
+      }
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "사진을 준비하지 못했어요. 다시 시도해 주세요."
+      );
+    }
+  };
+
   const submitReview = () => {
     if (!isLoggedIn || !user) {
       openReviewComposer();
@@ -438,8 +589,8 @@ export default function RestaurantDetail() {
     }
 
     const trimmed = reviewDraft.trim();
-    if (!trimmed) {
-      toast("리뷰 내용을 입력해 주세요.");
+    if (!trimmed && reviewPhotos.length === 0) {
+      toast("리뷰 내용이나 사진을 하나 이상 넣어주세요.");
       return;
     }
 
@@ -450,12 +601,14 @@ export default function RestaurantDetail() {
       stars: reviewStars,
       text: trimmed,
       helpful: 0,
+      photos: reviewPhotos,
     };
 
     const nextReviews = [nextReview, ...storedReviews];
     setStoredReviews(nextReviews);
     saveStoredReviews(restaurant.id, nextReviews);
     setReviewDraft("");
+    setReviewPhotos([]);
     setReviewStars(5);
     setIsComposerOpen(false);
     toast.success("리뷰를 등록했어요.");
@@ -649,10 +802,15 @@ export default function RestaurantDetail() {
                   restaurant={restaurant}
                   reviews={reviews}
                   reviewDraft={reviewDraft}
+                  reviewPhotos={reviewPhotos}
                   reviewStars={reviewStars}
                   isComposerOpen={isComposerOpen}
                   onOpenComposer={openReviewComposer}
                   onReviewDraftChange={setReviewDraft}
+                  onReviewPhotoFilesChange={handleReviewPhotoFilesChange}
+                  onRemoveReviewPhoto={(index) =>
+                    setReviewPhotos((prev) => prev.filter((_, itemIndex) => itemIndex !== index))
+                  }
                   onReviewStarsChange={setReviewStars}
                   onSubmitReview={submitReview}
                   isLoggedIn={isLoggedIn}

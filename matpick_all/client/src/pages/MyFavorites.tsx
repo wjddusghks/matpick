@@ -5,6 +5,7 @@ import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { restaurants } from "@/data";
+import { getDisplayName } from "@/lib/authProfile";
 
 export default function MyFavorites() {
   const [, navigate] = useLocation();
@@ -60,7 +61,7 @@ export default function MyFavorites() {
             </span>
           </Link>
         </div>
-        <div className="text-sm font-medium text-[#666]">{user?.name}</div>
+        <div className="text-sm font-medium text-[#666]">{getDisplayName(user)}</div>
       </nav>
 
       <div className="mx-auto max-w-[1200px] px-6 py-10">

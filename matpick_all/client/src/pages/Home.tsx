@@ -8,6 +8,7 @@ import {
 } from "react";
 import {
   CalendarCheck,
+  Compass,
   Heart,
   MapPin,
   MessageCircleMore,
@@ -21,6 +22,7 @@ import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { mockSearchData, type SearchResult } from "@/data";
+import { getDisplayName } from "@/lib/authProfile";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
@@ -73,8 +75,11 @@ const UI = {
   },
   header: {
     logoAlt: "\uB9DB\uD53D \uB85C\uACE0",
+    exploreLabel: "\uB9DB\uC9D1 \uD0D0\uC0C9",
     savedLabel: "\uC800\uC7A5\uD55C \uB9DB\uC9D1",
     logoutFallback: "\uB85C\uADF8\uC544\uC6C3",
+    accountProviderPrefix: "\uB85C\uADF8\uC778 \uACC4\uC815",
+    logout: "\uB85C\uADF8\uC544\uC6C3",
     login: "\uB85C\uADF8\uC778",
   },
   heroSubtitle:
@@ -379,6 +384,7 @@ export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
+  const [showAccountPanel, setShowAccountPanel] = useState(false);
   const [showLocationPrompt, setShowLocationPrompt] = useState(false);
   const [locationState, setLocationState] = useState<LocationPermissionState>(
     getStoredLocationStatus
@@ -387,10 +393,13 @@ export default function Home() {
   const [isRequestingLocation, setIsRequestingLocation] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const loginRef = useRef<HTMLDivElement>(null);
+  const accountRef = useRef<HTMLDivElement>(null);
   const loginTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const accountTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount } = useFavorites();
+  const userDisplayName = getDisplayName(user);
 
   const normalizedQuery = query.trim().toLowerCase();
 
@@ -427,6 +436,10 @@ export default function Home() {
       if (loginRef.current && !loginRef.current.contains(target)) {
         setShowLoginPanel(false);
       }
+
+      if (accountRef.current && !accountRef.current.contains(target)) {
+        setShowAccountPanel(false);
+      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -437,6 +450,10 @@ export default function Home() {
     return () => {
       if (loginTimeoutRef.current) {
         clearTimeout(loginTimeoutRef.current);
+      }
+
+      if (accountTimeoutRef.current) {
+        clearTimeout(accountTimeoutRef.current);
       }
     };
   }, []);
@@ -507,7 +524,7 @@ export default function Home() {
           {
             enableHighAccuracy: true,
             timeout: 10000,
-            maximumAge: 300000,
+            maximumAge: 0,
           }
         );
       }
@@ -534,6 +551,20 @@ export default function Home() {
   const handleLoginLeave = useCallback(() => {
     loginTimeoutRef.current = setTimeout(() => {
       setShowLoginPanel(false);
+    }, 160);
+  }, []);
+
+  const handleAccountEnter = useCallback(() => {
+    if (accountTimeoutRef.current) {
+      clearTimeout(accountTimeoutRef.current);
+      accountTimeoutRef.current = null;
+    }
+    setShowAccountPanel(true);
+  }, []);
+
+  const handleAccountLeave = useCallback(() => {
+    accountTimeoutRef.current = setTimeout(() => {
+      setShowAccountPanel(false);
     }, 160);
   }, []);
 
@@ -684,7 +715,7 @@ export default function Home() {
       {
         enableHighAccuracy: true,
         timeout: 10000,
-        maximumAge: 300000,
+        maximumAge: 0,
       }
     );
   }, []);
@@ -733,18 +764,53 @@ export default function Home() {
             <>
               <button
                 type="button"
-                onClick={() => navigate("/my/favorites")}
-                className="rounded-full border border-[#ffd1d7] bg-white/90 px-4 py-2 text-sm font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur"
+                onClick={() => navigate("/explore")}
+                className="flex h-11 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-5 text-sm font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white"
               >
-                {UI.header.savedLabel} {favoritesCount}
+                <Compass className="mr-2 h-4 w-4" />
+                {UI.header.exploreLabel}
               </button>
               <button
                 type="button"
-                onClick={logout}
-                className="rounded-full bg-[#ff7b83] px-7 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95"
+                onClick={() => navigate("/my/favorites")}
+                className="flex h-11 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-5 text-sm font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white"
               >
-                {user?.name ?? UI.header.logoutFallback}
+                {UI.header.savedLabel} {favoritesCount}
               </button>
+              <div
+                ref={accountRef}
+                className="relative"
+                onMouseEnter={handleAccountEnter}
+                onMouseLeave={handleAccountLeave}
+              >
+                <button
+                  type="button"
+                  onClick={() => setShowAccountPanel((prev) => !prev)}
+                  className="flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95"
+                >
+                  {userDisplayName}
+                </button>
+
+                <div
+                  className={`absolute right-0 top-full z-30 mt-3 w-[220px] origin-top-right rounded-[24px] border border-[#ffd5db] bg-white/96 p-4 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur transition-all duration-200 ${
+                    showAccountPanel
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none -translate-y-2 opacity-0"
+                  }`}
+                >
+                  <p className="text-sm font-semibold text-[#1d1d1d]">{userDisplayName}</p>
+                  <p className="mt-1 text-xs text-[#8a8a8a]">
+                    {UI.header.accountProviderPrefix} · {user?.provider === "kakao" ? "카카오" : "네이버"}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={logout}
+                    className="mt-4 flex h-10 w-full items-center justify-center rounded-full border border-[#ffd1d7] bg-[#fff8f9] text-sm font-semibold text-[#ff7b83] transition hover:bg-[#fff1f3]"
+                  >
+                    {UI.header.logout}
+                  </button>
+                </div>
+              </div>
             </>
           ) : (
             <div

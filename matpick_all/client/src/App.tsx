@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import AuthOnboardingModal from "./components/AuthOnboardingModal";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
@@ -19,6 +20,9 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/auth/callback/:provider">
+        {(params) => <AuthCallback provider={params.provider} />}
+      </Route>
+      <Route path="/auth/callback/:provider/">
         {(params) => <AuthCallback provider={params.provider} />}
       </Route>
       <Route path="/explore" component={Explore} />
@@ -40,6 +44,7 @@ function App() {
           <FavoritesProvider>
             <TooltipProvider>
               <Toaster />
+              <AuthOnboardingModal />
               <Router />
             </TooltipProvider>
           </FavoritesProvider>

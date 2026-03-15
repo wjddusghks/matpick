@@ -412,7 +412,7 @@ export default function SearchMap() {
   }, []);
 
   useEffect(() => {
-    if (currentLocation || !("geolocation" in navigator)) {
+    if (!("geolocation" in navigator)) {
       return;
     }
 
@@ -458,8 +458,8 @@ export default function SearchMap() {
         },
         {
           enableHighAccuracy: true,
-          timeout: 10000,
-          maximumAge: 300000,
+          timeout: 15000,
+          maximumAge: 0,
         }
       );
     }
@@ -469,7 +469,7 @@ export default function SearchMap() {
     return () => {
       cancelled = true;
     };
-  }, [currentLocation]);
+  }, []);
 
   const handleMarkerClick = useCallback((id: string) => {
     setSelectedId(prev => prev === id ? null : id);

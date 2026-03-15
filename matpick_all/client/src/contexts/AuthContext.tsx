@@ -6,7 +6,6 @@ import {
   type ReactNode,
 } from "react";
 import {
-  beginOAuthLogin,
   clearSavedPostLoginRedirect,
   consumeOAuthState,
   getOAuthAvailability,
@@ -14,15 +13,29 @@ import {
   getOAuthRedirectUri,
   isOAuthProvider,
   takeSavedPostLoginRedirect,
+  beginOAuthLogin,
   type OAuthProvider,
 } from "@/lib/oauth";
+import {
+  mergeUserProfile,
+  saveStoredAuthProfile,
+  sanitizeNickname,
+} from "@/lib/authProfile";
 
 export interface User {
   id: string;
   name: string;
+  nickname?: string;
   email?: string;
   profileImage?: string;
   provider: OAuthProvider;
+  consentAcceptedAt?: number;
+  allowLocationPersonalization?: boolean;
+}
+
+interface CompleteUserProfileInput {
+  nickname: string;
+  allowLocationPersonalization: boolean;
 }
 
 interface AuthContextType {
@@ -36,6 +49,7 @@ interface AuthContextType {
     provider: string,
     searchParams: URLSearchParams
   ) => Promise<string>;
+  completeUserProfile: (input: CompleteUserProfileInput) => void;
   logout: () => void;
 }
 
@@ -44,21 +58,33 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 const AUTH_STORAGE_KEY = "matpick_auth_user";
 
 function loadStoredUser(): User | null {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   try {
-    const raw = localStorage.getItem(AUTH_STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as User) : null;
+    const raw = window.localStorage.getItem(AUTH_STORAGE_KEY);
+    if (!raw) {
+      return null;
+    }
+
+    return mergeUserProfile(JSON.parse(raw) as User);
   } catch {
     return null;
   }
 }
 
 function persistUser(user: User | null) {
-  if (user) {
-    localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
+  if (typeof window === "undefined") {
     return;
   }
 
-  localStorage.removeItem(AUTH_STORAGE_KEY);
+  if (user) {
+    window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
+    return;
+  }
+
+  window.localStorage.removeItem(AUTH_STORAGE_KEY);
 }
 
 async function readErrorMessage(response: Response): Promise<string> {
@@ -99,7 +125,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const finishOAuthLogin = useCallback(
     async (providerValue: string, searchParams: URLSearchParams) => {
       if (!isOAuthProvider(providerValue)) {
-        throw new Error("지원하지 않는 로그인 공급자입니다.");
+        throw new Error("지원하지 않는 로그인 제공자입니다.");
       }
 
       const provider = providerValue;
@@ -146,8 +172,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           throw new Error(`${label} 사용자 정보를 불러오지 못했습니다.`);
         }
 
-        setUser(payload.user);
-        persistUser(payload.user);
+        const mergedUser = mergeUserProfile(payload.user);
+        setUser(mergedUser);
+        persistUser(mergedUser);
 
         return takeSavedPostLoginRedirect() || "/";
       } finally {
@@ -155,6 +182,36 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     },
     []
+  );
+
+  const completeUserProfile = useCallback(
+    ({ nickname, allowLocationPersonalization }: CompleteUserProfileInput) => {
+      if (!user) {
+        return;
+      }
+
+      const nextNickname = sanitizeNickname(nickname);
+      if (!nextNickname) {
+        throw new Error("닉네임을 입력해 주세요.");
+      }
+
+      const consentAcceptedAt = user.consentAcceptedAt ?? Date.now();
+      const nextUser: User = {
+        ...user,
+        nickname: nextNickname,
+        consentAcceptedAt,
+        allowLocationPersonalization,
+      };
+
+      saveStoredAuthProfile(user.id, {
+        nickname: nextNickname,
+        consentAcceptedAt,
+        allowLocationPersonalization,
+      });
+      setUser(nextUser);
+      persistUser(nextUser);
+    },
+    [user]
   );
 
   const logout = useCallback(() => {
@@ -173,6 +230,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         loginWithKakao,
         loginWithNaver,
         finishOAuthLogin,
+        completeUserProfile,
         logout,
       }}
     >

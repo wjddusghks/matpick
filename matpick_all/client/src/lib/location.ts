@@ -1,5 +1,6 @@
 export const LOCATION_COORDS_KEY = "matpick_location_coords";
 export const LOCATION_UPDATED_EVENT = "matpick:location-updated";
+export const LOCATION_STALE_MS = 10 * 60 * 1000;
 
 export interface StoredLocation {
   lat: number;
@@ -36,11 +37,17 @@ export function loadStoredLocation(): StoredLocation | null {
       return null;
     }
 
-    return {
+    const location = {
       lat: parsed.lat,
       lng: parsed.lng,
       updatedAt: parsed.updatedAt,
     };
+
+    if (Date.now() - location.updatedAt > LOCATION_STALE_MS) {
+      return null;
+    }
+
+    return location;
   } catch {
     return null;
   }

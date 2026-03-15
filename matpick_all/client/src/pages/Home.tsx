@@ -4,6 +4,7 @@ import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { mockSearchData, type SearchResult } from "@/data";
+import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const RECENT_KEY = "matpick_recent_searches";
 
@@ -18,47 +19,6 @@ function getRecentSearches(): SearchResult[] {
 
 function saveRecentSearches(items: SearchResult[]) {
   localStorage.setItem(RECENT_KEY, JSON.stringify(items.slice(0, 8)));
-}
-
-function MatpickMark({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      className={className}
-      fill="none"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="matpick-mark-gradient" x1="8" y1="10" x2="52" y2="54">
-          <stop offset="0%" stopColor="#ff6161" />
-          <stop offset="100%" stopColor="#ff00d4" />
-        </linearGradient>
-      </defs>
-      <g opacity="0.95">
-        <path
-          d="M16 8c1.8 0 3 1.2 3 3v10.8l4.8-4.8c1.8-1.8 4.8-.5 4.8 2.1V34a6 6 0 0 1-1.8 4.2l-3.8 3.8L43 61.1a3.6 3.6 0 1 1-5.1 5.1L19 47.2l-3.8 3.8A6 6 0 0 1 11 52.8H10c-2.6 0-3.9-3.1-2.1-4.9l4.8-4.8H11c-1.8 0-3-1.2-3-3V11c0-1.8 1.2-3 3-3h5Z"
-          fill="url(#matpick-mark-gradient)"
-        />
-        <path
-          d="M48.5 7.2c7.7 0 14 6.3 14 14 0 10.8-8.8 19.5-19.6 19.5a19.4 19.4 0 0 1-7.8-1.6L17.8 56.5a3.6 3.6 0 1 1-5.1-5.1l17.3-17.3a19.4 19.4 0 0 1-1.6-7.8c0-10.8 8.8-19.5 19.6-19.5Z"
-          fill="#cfc2f4"
-          opacity="0.68"
-        />
-      </g>
-    </svg>
-  );
-}
-
-function HeroLogoBackground() {
-  return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,0.18)_32%,rgba(255,255,255,0.88)_72%,rgba(255,255,255,0.96)_100%)]" />
-      <div className="absolute left-1/2 top-[54%] h-[540px] w-[540px] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] sm:h-[700px] sm:w-[700px] lg:h-[900px] lg:w-[900px]">
-        <MatpickMark className="h-full w-full" />
-      </div>
-    </div>
-  );
 }
 
 function SearchResultItem({
@@ -78,6 +38,15 @@ function SearchResultItem({
   showDelete?: boolean;
   onDelete?: () => void;
 }) {
+  const subtitle =
+    item.type === "creator"
+      ? `${item.platform ?? "크리에이터"} · 구독자 ${item.subscribers ?? "-"}`
+      : item.type === "region"
+        ? `${item.parentRegion ?? "지역"} · 맛집 ${item.restaurantCount?.toLocaleString() ?? 0}곳`
+        : item.type === "food"
+          ? `음식 카테고리 · 맛집 ${item.restaurantCount?.toLocaleString() ?? 0}곳`
+          : `${item.category ?? "맛집"} · ${item.address ?? ""}`;
+
   return (
     <div
       className={`flex items-center gap-4 px-5 py-3 transition-colors ${
@@ -119,14 +88,7 @@ function SearchResultItem({
 
       <div className="min-w-0 flex-1">
         <p className="truncate text-[15px] font-semibold text-[#1d1d1d]">{item.name}</p>
-        <p className="truncate text-[13px] text-[#8a8a8a]">
-          {item.type === "creator" && `${item.platform ?? "크리에이터"} · 구독자 ${item.subscribers ?? "-"}`}
-          {item.type === "region" &&
-            `${item.parentRegion ?? "지역"} · 맛집 ${item.restaurantCount?.toLocaleString() ?? 0}곳`}
-          {item.type === "food" &&
-            `음식 카테고리 · 맛집 ${item.restaurantCount?.toLocaleString() ?? 0}곳`}
-          {item.type === "restaurant" && `${item.category ?? "맛집"} · ${item.address ?? ""}`}
-        </p>
+        <p className="truncate text-[13px] text-[#8a8a8a]">{subtitle}</p>
       </div>
 
       {showDelete && onDelete && (
@@ -170,51 +132,9 @@ function BenefitItem({
   );
 }
 
-function LoggedInPanel({
-  favoritesCount,
-  userName,
-  onOpenFavorites,
-  onLogout,
-}: {
-  favoritesCount: number;
-  userName: string;
-  onOpenFavorites: () => void;
-  onLogout: () => void;
-}) {
-  return (
-    <div className="rounded-[28px] border border-[#ffd3d9] bg-white/95 p-6 shadow-[0_24px_80px_rgba(255,105,135,0.16)] backdrop-blur">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ff7b8b]">Welcome</p>
-      <h2 className="mt-2 text-2xl font-black text-[#141414]">{userName}님</h2>
-      <p className="mt-2 text-sm leading-6 text-[#7e7e7e]">
-        저장한 맛집을 모아보고, 마음에 드는 곳을 더 빠르게 다시 찾을 수 있어요.
-      </p>
-      <div className="mt-6 rounded-3xl bg-[linear-gradient(135deg,#fff3f3_0%,#fffafb_100%)] px-5 py-4">
-        <p className="text-xs font-semibold text-[#8a8a8a]">현재 저장한 맛집</p>
-        <p className="mt-1 text-3xl font-black text-[#ff5d7a]">{favoritesCount}</p>
-      </div>
-      <div className="mt-5 flex flex-col gap-2">
-        <button
-          type="button"
-          onClick={onOpenFavorites}
-          className="rounded-xl bg-[#ff7272] px-4 py-3 text-sm font-semibold text-white transition hover:brightness-95"
-        >
-          저장한 맛집 보기
-        </button>
-        <button
-          type="button"
-          onClick={onLogout}
-          className="rounded-xl border border-[#ffd0d0] px-4 py-3 text-sm font-semibold text-[#5a5a5a] transition hover:bg-[#fff5f5]"
-        >
-          로그아웃
-        </button>
-      </div>
-    </div>
-  );
-}
-
 function GuestPanel({ redirectTo }: { redirectTo: string }) {
   return (
-    <div className="rounded-[28px] border border-[#ffd3d9] bg-white/95 p-6 shadow-[0_24px_80px_rgba(255,105,135,0.16)] backdrop-blur">
+    <div className="w-[300px] rounded-[28px] border border-[#ffd3d9] bg-white/96 p-6 shadow-[0_24px_80px_rgba(255,105,135,0.16)] backdrop-blur">
       <h2 className="text-2xl font-black text-[#141414]">로그인하면 이런 혜택이!</h2>
       <div className="mt-6 space-y-4">
         <BenefitItem icon="❤" title="맛집 저장" description="가고 싶은 맛집을 즐겨찾기로 모아둘 수 있어요." />
@@ -232,8 +152,10 @@ export default function Home() {
   const [isFocused, setIsFocused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
+  const [showLoginPanel, setShowLoginPanel] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
-  const loginPanelRef = useRef<HTMLDivElement>(null);
+  const loginRef = useRef<HTMLDivElement>(null);
+  const loginTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount } = useFavorites();
@@ -259,13 +181,41 @@ export default function Home() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      const target = event.target as Node;
+
+      if (searchRef.current && !searchRef.current.contains(target)) {
         setIsFocused(false);
+      }
+
+      if (loginRef.current && !loginRef.current.contains(target)) {
+        setShowLoginPanel(false);
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (loginTimeoutRef.current) {
+        clearTimeout(loginTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const handleLoginEnter = useCallback(() => {
+    if (loginTimeoutRef.current) {
+      clearTimeout(loginTimeoutRef.current);
+      loginTimeoutRef.current = null;
+    }
+    setShowLoginPanel(true);
+  }, []);
+
+  const handleLoginLeave = useCallback(() => {
+    loginTimeoutRef.current = setTimeout(() => {
+      setShowLoginPanel(false);
+    }, 180);
   }, []);
 
   const handleSelect = useCallback(
@@ -361,10 +311,6 @@ export default function Home() {
     [filteredResults, handlePrimarySearch, handleSelect, hoveredIndex, query, recentSearches]
   );
 
-  const scrollToLoginPanel = useCallback(() => {
-    loginPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-  }, []);
-
   const redirectTo =
     typeof window !== "undefined"
       ? `${window.location.pathname}${window.location.search}`
@@ -372,63 +318,84 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#fffdfd] text-[#171717]">
-      <HeroLogoBackground />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,0.25)_40%,rgba(255,255,255,0.92)_78%,rgba(255,255,255,0.98)_100%)]" />
+        <img
+          src={matpickLogo}
+          alt=""
+          className="absolute left-1/2 top-[55%] h-[620px] w-[620px] -translate-x-1/2 -translate-y-1/2 object-contain opacity-[0.18] sm:h-[760px] sm:w-[760px] lg:h-[980px] lg:w-[980px]"
+        />
+      </div>
 
-      <header className="relative z-20 flex items-center justify-between px-4 py-4 sm:px-8">
+      <header className="relative z-20 flex items-start justify-between px-4 py-4 sm:px-8">
         <button
           type="button"
           onClick={() => navigate("/")}
-          className="flex items-center gap-3 rounded-full bg-white/72 p-2 text-left shadow-[0_10px_24px_rgba(0,0,0,0.04)] backdrop-blur-sm"
+          className="rounded-full bg-white/45 p-1 shadow-[0_8px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm"
         >
-          <MatpickMark className="h-8 w-8" />
+          <img src={matpickLogo} alt="맛픽 로고" className="h-8 w-8 object-contain opacity-70" />
         </button>
 
-        {isLoggedIn ? (
-          <div className="flex items-center gap-3">
+        <div className="flex items-start gap-3">
+          {isLoggedIn && (
             <button
               type="button"
               onClick={() => navigate("/my/favorites")}
-              className="rounded-full border border-[#ffd0d0] bg-white/85 px-4 py-2 text-sm font-semibold text-[#444] shadow-[0_8px_24px_rgba(0,0,0,0.06)] backdrop-blur transition hover:bg-white"
+              className="rounded-full border border-[#ffd0d0] bg-white/90 px-4 py-2 text-sm font-semibold text-[#4d4d4d] shadow-[0_8px_24px_rgba(0,0,0,0.06)] backdrop-blur"
             >
               저장한 맛집 {favoritesCount}
             </button>
+          )}
+
+          {isLoggedIn ? (
             <button
               type="button"
-              onClick={() => navigate("/my/favorites")}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-[linear-gradient(135deg,#ff7777_0%,#ff00d4_100%)] text-sm font-bold text-white shadow-[0_10px_25px_rgba(255,65,121,0.28)]"
+              onClick={logout}
+              className="rounded-full bg-[#ff7f7f] px-7 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(255,105,135,0.24)] transition hover:brightness-95"
             >
-              {user?.name?.charAt(0) ?? "M"}
+              {user?.name ?? "로그아웃"}
             </button>
-          </div>
-        ) : (
-          <button
-            type="button"
-            onClick={scrollToLoginPanel}
-            className="rounded-full bg-[#ff7f7f] px-8 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(255,105,135,0.24)] transition hover:brightness-95"
-          >
-            로그인
-          </button>
-        )}
+          ) : (
+            <div
+              ref={loginRef}
+              className="relative"
+              onMouseEnter={handleLoginEnter}
+              onMouseLeave={handleLoginLeave}
+            >
+              <button
+                type="button"
+                onClick={() => setShowLoginPanel((prev) => !prev)}
+                className="rounded-full bg-[#ff7f7f] px-8 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(255,105,135,0.24)] transition hover:brightness-95"
+              >
+                로그인
+              </button>
+
+              <div
+                className={`absolute right-0 top-full z-30 mt-4 origin-top-right transition-all duration-200 ${
+                  showLoginPanel
+                    ? "pointer-events-auto translate-y-0 opacity-100"
+                    : "pointer-events-none -translate-y-2 opacity-0"
+                }`}
+              >
+                <GuestPanel redirectTo={redirectTo} />
+              </div>
+            </div>
+          )}
+        </div>
       </header>
 
-      <main className="relative z-10 flex min-h-[calc(100vh-88px)] flex-col justify-center px-4 pb-10 pt-8 sm:px-8 lg:pr-[360px]">
-        <section className="mx-auto flex w-full max-w-[980px] flex-col items-center text-center">
+      <main className="relative z-10 flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-4 pb-16 pt-4 text-center sm:px-8">
+        <section className="mx-auto flex w-full max-w-[980px] flex-col items-center">
           <h1
-            className="text-[84px] font-black leading-none tracking-[-0.06em] text-transparent sm:text-[108px] lg:text-[126px]"
-            style={{
-              fontFamily: "'Black Han Sans', sans-serif",
-              backgroundImage: "linear-gradient(135deg, #ff1b1b 0%, #ff00d4 88%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-            }}
+            className="text-[88px] font-black leading-none tracking-[-0.08em] sm:text-[108px] lg:text-[126px]"
+            style={{ fontFamily: "'Black Han Sans', sans-serif" }}
           >
-            맛픽
+            <span className="text-[#111111]">맛</span>
+            <span className="text-[#ff6d78]">픽</span>
           </h1>
 
-          <p className="mt-7 text-[22px] font-semibold leading-tight text-[#9d9d9d] sm:text-[30px]">
-            <span className="text-[#ff164d]">유튜브</span>,{" "}
-            <span className="text-[#ff00d4]">인스타</span> 크리에이터들이 방문한 맛집을
-            한곳에서 찾아보세요!
+          <p className="mt-7 text-[24px] font-semibold leading-tight text-[#9a9a9a] sm:text-[34px]">
+            유튜브, 인스타 크리에이터들이 방문한 맛집을 한곳에서 찾아보세요!
           </p>
 
           <div ref={searchRef} className="relative mt-10 w-full max-w-[810px]">
@@ -509,38 +476,7 @@ export default function Home() {
               </div>
             )}
           </div>
-
-          <div className="mt-6 flex items-center gap-3 text-sm font-medium text-[#a6a6a6]">
-            <span className="text-base text-[#111]">✦</span>
-            <span>AI 검색: “여자친구랑 강남에서 분위기 좋은 이탈리안 추천해줘”</span>
-          </div>
-
-          <div ref={loginPanelRef} className="mt-10 w-full max-w-sm lg:hidden">
-            {isLoggedIn ? (
-              <LoggedInPanel
-                favoritesCount={favoritesCount}
-                userName={user?.name ?? "맛픽 사용자"}
-                onOpenFavorites={() => navigate("/my/favorites")}
-                onLogout={logout}
-              />
-            ) : (
-              <GuestPanel redirectTo={redirectTo} />
-            )}
-          </div>
         </section>
-
-        <aside className="hidden lg:fixed lg:right-8 lg:top-1/2 lg:block lg:w-[280px] lg:-translate-y-1/2">
-          {isLoggedIn ? (
-            <LoggedInPanel
-              favoritesCount={favoritesCount}
-              userName={user?.name ?? "맛픽 사용자"}
-              onOpenFavorites={() => navigate("/my/favorites")}
-              onLogout={logout}
-            />
-          ) : (
-            <GuestPanel redirectTo={redirectTo} />
-          )}
-        </aside>
       </main>
     </div>
   );

@@ -8,6 +8,7 @@ matpick_all.zip
 **/.env.test.local
 **/.env.production.local
 *.log
+.pnpm-store/
 pnpm-debug.log*
 npm-debug.log*
 yarn-debug.log*

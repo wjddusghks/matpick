@@ -253,26 +253,20 @@ function countBy(values: string[]): CountEntry[] {
 }
 
 export function getCreatorsByRestaurant(restaurantId: string): Creator[] {
-  const seriesSet = new Set(
+  const creatorIdSet = new Set(
     visits
       .filter((visit) => visit.restaurantId === restaurantId)
-      .map((visit) => visit.series)
+      .map((visit) => visit.creatorId)
       .filter(Boolean)
   );
 
-  return creators.filter((creator) => seriesSet.has(creator.series));
+  return creators.filter((creator) => creatorIdSet.has(creator.id));
 }
 
 export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
-  const creator = creators.find((candidate) => candidate.id === creatorId);
-
-  if (!creator) {
-    return [];
-  }
-
   const restaurantIds = new Set(
     visits
-      .filter((visit) => visit.series === creator.series)
+      .filter((visit) => visit.creatorId === creatorId)
       .map((visit) => visit.restaurantId)
       .filter(Boolean)
   );
@@ -543,14 +537,14 @@ export function getTotalCreatorCount(): number {
 }
 
 export function getRecommendationCount(restaurantId: string): number {
-  const seriesSet = new Set(
+  const creatorIdSet = new Set(
     visits
       .filter((visit) => visit.restaurantId === restaurantId)
-      .map((visit) => visit.series)
+      .map((visit) => visit.creatorId)
       .filter(Boolean)
   );
 
-  return seriesSet.size;
+  return creatorIdSet.size;
 }
 
 export function getAllCategories(): string[] {

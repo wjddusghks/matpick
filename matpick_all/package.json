@@ -9,8 +9,11 @@
   },
   "scripts": {
     "dev": "vite --host",
+    "sync:old-korean-100": "powershell -ExecutionPolicy Bypass -File scripts/import-old-korean-100.ps1",
+    "geocode:old-korean-100": "node scripts/geocode-old-korean-100.mjs",
     "prebuild": "node scripts/generate-seo-files.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-seo-pages.mjs",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
     "format": "prettier --write ."

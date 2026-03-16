@@ -221,20 +221,13 @@ function RestaurantCard({
       </button>
 
       {selected ? (
-        <div className="mt-3 flex gap-2">
+        <div className="mt-3">
           <button
             type="button"
             onClick={() => navigate(`/restaurant/${restaurant.id}`)}
             className="flex-1 rounded-xl bg-[#ff7b83] px-4 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
           >
             식당 상세 보기
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`)}
-            className="rounded-xl border border-[#ffd3d8] bg-white px-4 py-2.5 text-sm font-semibold text-[#ff7b83] transition hover:bg-[#fff6f7]"
-          >
-            지도만 보기
           </button>
         </div>
       ) : null}

@@ -16,12 +16,27 @@ function AdsenseSlot({ label }: { label?: string }) {
       return;
     }
 
-    try {
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
-    } catch {
-      // noop
-    }
+    const element = insRef.current;
+
+    const renderAd = () => {
+      if (!element || element.getAttribute("data-adsbygoogle-status") === "done") {
+        return;
+      }
+
+      try {
+        window.adsbygoogle = window.adsbygoogle || [];
+        window.adsbygoogle.push({});
+      } catch {
+        // noop
+      }
+    };
+
+    renderAd();
+    window.addEventListener("matpick:adsense-ready", renderAd);
+
+    return () => {
+      window.removeEventListener("matpick:adsense-ready", renderAd);
+    };
   }, [client, slot]);
 
   if (!client || !slot) {

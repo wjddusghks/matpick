@@ -1,7 +1,8 @@
 param(
   [string]$SourceDir = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100"),
   [string]$OutputJson = (Join-Path $PSScriptRoot "..\client\src\data\generated\old-korean-100.generated.json"),
-  [string]$CoverOutput = (Join-Path $PSScriptRoot "..\client\public\source-covers\old-korean-100.jpg")
+  [string]$CoverOutput = (Join-Path $PSScriptRoot "..\client\public\source-covers\old-korean-100.jpg"),
+  [string]$CoordinateOverrides = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100\coordinates.json")
 )
 
 Set-StrictMode -Version Latest
@@ -137,6 +138,45 @@ function Get-RegionFromAddress {
   return $normalized
 }
 
+function Get-CoordinateLookupKey {
+  param(
+    [string]$Name,
+    [string]$Address
+  )
+
+  return ("{0}|{1}" -f (Normalize-Text $Name).ToLowerInvariant(), (Normalize-Text $Address).ToLowerInvariant())
+}
+
+function Load-CoordinateOverrides {
+  param([string]$Path)
+
+  $lookup = @{}
+  if (-not (Test-Path $Path)) {
+    return $lookup
+  }
+
+  $raw = Get-Content -Raw -Path $Path | ConvertFrom-Json
+  if ($raw -is [System.Collections.IEnumerable] -and -not ($raw -is [string])) {
+    foreach ($entry in $raw) {
+      if ($null -eq $entry) { continue }
+      $name = Normalize-Text ([string]$entry.name)
+      $address = Normalize-Text ([string]$entry.address)
+      $lat = 0.0
+      $lng = 0.0
+      [void][double]::TryParse(([string]$entry.lat), [ref]$lat)
+      [void][double]::TryParse(([string]$entry.lng), [ref]$lng)
+      if ([string]::IsNullOrWhiteSpace($name) -or [string]::IsNullOrWhiteSpace($address)) { continue }
+      if ($lat -eq 0 -or $lng -eq 0) { continue }
+      $lookup[(Get-CoordinateLookupKey -Name $name -Address $address)] = @{
+        lat = $lat
+        lng = $lng
+      }
+    }
+  }
+
+  return $lookup
+}
+
 $sourceDirPath = [System.IO.Path]::GetFullPath($SourceDir)
 $sourceMetaPath = Join-Path $sourceDirPath "source.json"
 if (-not (Test-Path $sourceMetaPath)) {
@@ -162,6 +202,7 @@ if ($headerRow.Count -lt 5) {
 $sourceId = [string]$sourceMeta.id
 $sourceName = $xlsxFile.BaseName
 $coverPublicPath = "/source-covers/old-korean-100.jpg"
+$coordinateLookup = Load-CoordinateOverrides -Path $CoordinateOverrides
 
 $restaurants = New-Object System.Collections.Generic.List[object]
 $sourceLinks = New-Object System.Collections.Generic.List[object]
@@ -193,6 +234,9 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   }
 
   $restaurantId = "${sourceId}_restaurant_${ordinalLabel}"
+  $coordinateOverride = $coordinateLookup[(Get-CoordinateLookupKey -Name $name -Address $address)]
+  $lat = if ($coordinateOverride) { [double]$coordinateOverride.lat } else { 0 }
+  $lng = if ($coordinateOverride) { [double]$coordinateOverride.lng } else { 0 }
 
   $restaurants.Add([ordered]@{
       id = $restaurantId
@@ -201,8 +245,8 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
       address = $address
       category = $category
       representativeMenu = ""
-      lat = 0
-      lng = 0
+      lat = $lat
+      lng = $lng
       imageUrl = ""
       foundingYear = $foundingYear
       menus = @()

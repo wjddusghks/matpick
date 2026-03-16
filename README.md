@@ -26,7 +26,7 @@ Matpick is currently set up as a static Vite SPA for Vercel deployment.
 - UI-friendly search data is derived in `matpick_all/client/src/data/index.ts`
 - `convert_excel_to_json.py` outputs the same JSON shape the app reads
 - Recommended output path for imports: `matpick_all/client/src/data/matpick-data.json`
-- `corepack pnpm sync:old-korean-100` rebuilds the `old-korean-100` generated dataset
+- `corepack pnpm sync:old-korean-100` imports the Excel file, auto-geocodes missing addresses when Naver geocode credentials are present, and rebuilds the generated dataset with persisted coordinates
 - `corepack pnpm geocode:old-korean-100` fills and persists missing `lat/lng` into `source-data/old-korean-100/coordinates.json`
 
 ## Vercel Deployment
@@ -51,11 +51,11 @@ Before pushing changes to the production branch:
    - `VITE_NAVER_MAP_CLIENT_ID`
    - `VITE_ADSENSE_CLIENT=ca-pub-...`
    - `VITE_ADSENSE_SLOT_INLINE=...`
-2. If you want to persist missing map coordinates in source data:
+2. If you want Excel imports to auto-fill and persist map coordinates:
    - Set `NAVER_MAP_CLIENT_SECRET`
-   - Run `corepack pnpm geocode:old-korean-100`
-   - Commit the updated `source-data/old-korean-100/coordinates.json`
+   - Set `NAVER_MAP_CLIENT_ID` or `VITE_NAVER_MAP_CLIENT_ID`
    - Run `corepack pnpm sync:old-korean-100`
+   - Commit the updated `source-data/old-korean-100/coordinates.json`
 3. Run `corepack pnpm build` inside `matpick_all/`
 4. Confirm that `matpick_all/client/public/ads.txt` contains your real AdSense publisher line
 5. Confirm that `matpick_all/client/public/sitemap.xml` and prerendered `dist/restaurant/*` pages were regenerated

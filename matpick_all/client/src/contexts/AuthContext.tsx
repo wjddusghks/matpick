@@ -17,10 +17,13 @@ import {
   type OAuthProvider,
 } from "@/lib/oauth";
 import {
+  hasCompletedProfile,
   mergeUserProfile,
   saveStoredAuthProfile,
   sanitizeNickname,
 } from "@/lib/authProfile";
+import { persistRemoteAuthProfile } from "@/lib/authProfileSync";
+import { toast } from "sonner";
 
 export interface User {
   id: string;
@@ -31,6 +34,7 @@ export interface User {
   provider: OAuthProvider;
   consentAcceptedAt?: number;
   allowLocationPersonalization?: boolean;
+  syncToken?: string;
 }
 
 interface CompleteUserProfileInput {
@@ -49,7 +53,7 @@ interface AuthContextType {
     provider: string,
     searchParams: URLSearchParams
   ) => Promise<string>;
-  completeUserProfile: (input: CompleteUserProfileInput) => void;
+  completeUserProfile: (input: CompleteUserProfileInput) => Promise<void>;
   logout: () => void;
 }
 
@@ -173,8 +177,28 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
 
         const mergedUser = mergeUserProfile(payload.user);
+        const isExistingMember = hasCompletedProfile(mergedUser);
+
+        if (isExistingMember) {
+          try {
+            await persistRemoteAuthProfile(mergedUser.id, mergedUser.syncToken, {
+              nickname: mergedUser.nickname?.trim() || mergedUser.name.trim(),
+              consentAcceptedAt: mergedUser.consentAcceptedAt ?? Date.now(),
+              allowLocationPersonalization: Boolean(
+                mergedUser.allowLocationPersonalization
+              ),
+            });
+          } catch {
+            // Keep login flow successful even when the remote profile store is unavailable.
+          }
+        }
+
         setUser(mergedUser);
         persistUser(mergedUser);
+
+        if (isExistingMember) {
+          toast.message("이미 가입한 계정입니다. 기존 회원 정보로 로그인했습니다.");
+        }
 
         return takeSavedPostLoginRedirect() || "/";
       } finally {
@@ -185,7 +209,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const completeUserProfile = useCallback(
-    ({ nickname, allowLocationPersonalization }: CompleteUserProfileInput) => {
+    async ({ nickname, allowLocationPersonalization }: CompleteUserProfileInput) => {
       if (!user) {
         return;
       }
@@ -208,6 +232,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         consentAcceptedAt,
         allowLocationPersonalization,
       });
+
+      try {
+        await persistRemoteAuthProfile(user.id, user.syncToken, {
+          nickname: nextNickname,
+          consentAcceptedAt,
+          allowLocationPersonalization,
+        });
+      } catch {
+        // Keep the local profile even when remote sync is unavailable.
+      }
+
       setUser(nextUser);
       persistUser(nextUser);
     },

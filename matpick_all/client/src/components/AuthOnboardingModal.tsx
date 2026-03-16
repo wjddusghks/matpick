@@ -120,7 +120,7 @@ export default function AuthOnboardingModal() {
 
         <button
           type="button"
-          onClick={() => {
+          onClick={async () => {
             if (!normalizedNickname) {
               setError("닉네임을 입력해 주세요.");
               return;
@@ -132,7 +132,7 @@ export default function AuthOnboardingModal() {
             }
 
             try {
-              completeUserProfile({
+              await completeUserProfile({
                 nickname: normalizedNickname,
                 allowLocationPersonalization,
               });

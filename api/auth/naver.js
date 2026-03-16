@@ -1,3 +1,8 @@
+const {
+  createProfileSyncToken,
+  readRemoteProfile,
+} = require("./_profileStore");
+
 function readBody(req) {
   if (!req.body) {
     return {};
@@ -22,7 +27,7 @@ module.exports = async function handler(req, res) {
 
   if (!clientId || !clientSecret) {
     return res.status(500).json({
-      error: "네이버 로그인 키 또는 시크릿이 설정되지 않았습니다.",
+      error: "Naver login client credentials are not configured.",
     });
   }
 
@@ -31,7 +36,7 @@ module.exports = async function handler(req, res) {
 
     if (!code || !state) {
       return res.status(400).json({
-        error: "네이버 로그인 요청 정보가 올바르지 않습니다.",
+        error: "Missing Naver authorization payload.",
       });
     }
 
@@ -55,7 +60,7 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({
         error:
           tokenPayload.error_description ||
-          "네이버 토큰 교환에 실패했습니다.",
+          "Failed to exchange the Naver authorization code.",
       });
     }
 
@@ -68,19 +73,25 @@ module.exports = async function handler(req, res) {
     const userPayload = await userResponse.json();
     if (!userResponse.ok || userPayload.resultcode !== "00") {
       return res.status(502).json({
-        error: userPayload.message || "네이버 사용자 정보를 가져오지 못했습니다.",
+        error: userPayload.message || "Failed to load the Naver user profile.",
       });
     }
 
     const profile = userPayload.response || {};
+    const userId = `naver_${String(profile.id || "")}`;
+    const storedProfile = await readRemoteProfile(userId);
 
     return res.status(200).json({
       user: {
-        id: `naver_${String(profile.id || "")}`,
-        name: profile.name || profile.nickname || "네이버 사용자",
+        id: userId,
+        name: profile.name || profile.nickname || "Naver User",
         email: profile.email || "",
         profileImage: profile.profile_image || "",
         provider: "naver",
+        nickname: storedProfile?.nickname || "",
+        consentAcceptedAt: storedProfile?.consentAcceptedAt,
+        allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
+        syncToken: createProfileSyncToken(userId),
       },
     });
   } catch (error) {
@@ -88,7 +99,7 @@ module.exports = async function handler(req, res) {
       error:
         error instanceof Error
           ? error.message
-          : "네이버 로그인 처리 중 문제가 발생했습니다.",
+          : "An unknown error occurred while processing the Naver login.",
     });
   }
 };

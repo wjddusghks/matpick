@@ -1,3 +1,8 @@
+const {
+  createProfileSyncToken,
+  readRemoteProfile,
+} = require("./_profileStore");
+
 function readBody(req) {
   if (!req.body) {
     return {};
@@ -22,7 +27,7 @@ module.exports = async function handler(req, res) {
 
   if (!clientId) {
     return res.status(500).json({
-      error: "Kakao REST API 키가 설정되지 않았습니다.",
+      error: "Kakao REST API credentials are not configured.",
     });
   }
 
@@ -31,7 +36,7 @@ module.exports = async function handler(req, res) {
 
     if (!code || !redirectUri) {
       return res.status(400).json({
-        error: "카카오 로그인 요청 정보가 올바르지 않습니다.",
+        error: "Missing Kakao authorization payload.",
       });
     }
 
@@ -59,7 +64,7 @@ module.exports = async function handler(req, res) {
       return res.status(502).json({
         error:
           tokenPayload.error_description ||
-          "카카오 토큰 교환에 실패했습니다.",
+          "Failed to exchange the Kakao authorization code.",
       });
     }
 
@@ -73,21 +78,27 @@ module.exports = async function handler(req, res) {
     const userPayload = await userResponse.json();
     if (!userResponse.ok || !userPayload.id) {
       return res.status(502).json({
-        error: userPayload.msg || "카카오 사용자 정보를 가져오지 못했습니다.",
+        error: userPayload.msg || "Failed to load the Kakao user profile.",
       });
     }
 
     const account = userPayload.kakao_account || {};
     const profile = account.profile || {};
+    const userId = `kakao_${String(userPayload.id)}`;
+    const storedProfile = await readRemoteProfile(userId);
 
     return res.status(200).json({
       user: {
-        id: `kakao_${String(userPayload.id)}`,
-        name: profile.nickname || account.name || "카카오 사용자",
+        id: userId,
+        name: profile.nickname || account.name || "Kakao User",
         email: account.email || "",
         profileImage:
           profile.profile_image_url || profile.thumbnail_image_url || "",
         provider: "kakao",
+        nickname: storedProfile?.nickname || "",
+        consentAcceptedAt: storedProfile?.consentAcceptedAt,
+        allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
+        syncToken: createProfileSyncToken(userId),
       },
     });
   } catch (error) {
@@ -95,7 +106,7 @@ module.exports = async function handler(req, res) {
       error:
         error instanceof Error
           ? error.message
-          : "카카오 로그인 처리 중 문제가 발생했습니다.",
+          : "An unknown error occurred while processing the Kakao login.",
     });
   }
 };

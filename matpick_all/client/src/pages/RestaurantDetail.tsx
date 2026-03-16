@@ -248,7 +248,7 @@ export default function RestaurantDetail() {
         imageUrl={restaurant.imageUrl}
       />
 
-      <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-[#e8e8e8] bg-white/95 px-6 py-3 shadow-[0_2px_8px_rgba(0,0,0,0.04)] backdrop-blur">
+      <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-[#e8e8e8] bg-white/95 px-4 py-3 shadow-[0_2px_8px_rgba(0,0,0,0.04)] backdrop-blur sm:px-6">
         <button
           type="button"
           onClick={() => window.history.back()}
@@ -305,11 +305,11 @@ export default function RestaurantDetail() {
         </div>
       </nav>
 
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-6 p-6 lg:grid-cols-[1fr_420px] lg:px-8">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-[1fr_420px] lg:px-8">
         <div className="flex flex-col gap-6">
-          <div className="rounded-2xl bg-white p-7 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
             <div className="mb-6 border-b border-[#f0f0f0] pb-5">
-              <h1 className="mb-2 text-[28px] font-[800] text-[#1a1a1a]">{restaurant.name}</h1>
+              <h1 className="mb-2 text-[24px] font-[800] text-[#1a1a1a] sm:text-[28px]">{restaurant.name}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-[#666]">
                 {recommendationCount > 0 ? (
                   <span className="font-bold text-[#FD7979]">추천 {recommendationCount}곳</span>
@@ -331,7 +331,7 @@ export default function RestaurantDetail() {
               ) : null}
             </div>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
               <div>
                 <span className="text-[12px] font-medium uppercase tracking-wider text-[#999]">주소</span>
                 <p className="mt-2 text-[15px] font-semibold leading-relaxed text-[#1a1a1a]">
@@ -374,7 +374,7 @@ export default function RestaurantDetail() {
               ))}
             </div>
 
-            <div className="p-7">
+            <div className="p-5 sm:p-7">
               {activeTab === "menu" ? (
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {getRestaurantMenuItems(restaurant).length > 0 ? (
@@ -404,9 +404,9 @@ export default function RestaurantDetail() {
                           href={visit.videoUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="flex gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 no-underline transition hover:border-[#ffd5db]"
+                          className="flex flex-col gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 no-underline transition hover:border-[#ffd5db] sm:flex-row"
                         >
-                          <div className="relative h-[100px] w-[180px] overflow-hidden rounded-[18px] bg-[#1f1f1f]">
+                          <div className="relative h-[180px] w-full overflow-hidden rounded-[18px] bg-[#1f1f1f] sm:h-[100px] sm:w-[180px]">
                             <img src={visit.thumbnailUrl} alt={visit.videoTitle} className="h-full w-full object-cover" />
                             <div className="absolute inset-0 flex items-center justify-center">
                               <div className="flex h-11 w-11 items-center justify-center rounded-full bg-black/55 text-white">
@@ -434,7 +434,7 @@ export default function RestaurantDetail() {
 
               {activeTab === "reviews" ? (
                 <div className="space-y-5">
-                  <div className="flex items-center justify-between rounded-[24px] border border-[#f1e7e9] bg-[#fff8f9] px-5 py-4">
+                  <div className="flex flex-col gap-3 rounded-[24px] border border-[#f1e7e9] bg-[#fff8f9] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="text-base font-bold text-[#191919]">방문 리뷰</p>
                       <p className="mt-1 text-sm text-[#8a8a8a]">로그인한 사용자는 바로 리뷰와 사진을 남길 수 있어요.</p>
@@ -543,16 +543,16 @@ export default function RestaurantDetail() {
                   <div className="rounded-[24px] border border-[#f0f0f0] bg-white px-5 py-4">
                     <p className="text-base font-bold text-[#171717]">기본 정보</p>
                     <div className="mt-4 space-y-3 text-sm">
-                      <div className="flex gap-4">
-                        <span className="w-[96px] flex-shrink-0 text-[#8a8a8a]">주소</span>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                        <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">주소</span>
                         <span className="text-[#1d1d1d]">{restaurant.address}</span>
                       </div>
-                      <div className="flex gap-4">
-                        <span className="w-[96px] flex-shrink-0 text-[#8a8a8a]">지역</span>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                        <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">지역</span>
                         <span className="text-[#1d1d1d]">{restaurant.region}</span>
                       </div>
-                      <div className="flex gap-4">
-                        <span className="w-[96px] flex-shrink-0 text-[#8a8a8a]">카테고리</span>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                        <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">카테고리</span>
                         <span className="text-[#1d1d1d]">{restaurant.category}</span>
                       </div>
                     </div>

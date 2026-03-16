@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -7,14 +7,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.join(projectRoot, "dist");
 const baseDataPath = path.join(projectRoot, "client", "src", "data", "matpick-data.json");
-const oldKoreanPath = path.join(
-  projectRoot,
-  "client",
-  "src",
-  "data",
-  "generated",
-  "old-korean-100.generated.json"
-);
+const generatedDir = path.join(projectRoot, "client", "src", "data", "generated");
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -43,6 +36,15 @@ function absoluteUrl(siteUrl, value = "/") {
 async function readJson(filePath) {
   const raw = await readFile(filePath, "utf8");
   return JSON.parse(raw.replace(/^\uFEFF/, ""));
+}
+
+async function readGeneratedDatasets() {
+  const entries = await readdir(generatedDir, { withFileTypes: true });
+  const datasetFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".generated.json"))
+    .map((entry) => path.join(generatedDir, entry.name));
+
+  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
 }
 
 function buildLookupKey(restaurant) {
@@ -200,8 +202,8 @@ async function main() {
   const siteUrl = normalizeUrl(process.env.VITE_PUBLIC_APP_URL);
   const template = await readFile(path.join(distDir, "index.html"), "utf8");
   const baseData = await readJson(baseDataPath);
-  const oldKoreanData = await readJson(oldKoreanPath);
-  const { creators, restaurants } = mergeDatasets(baseData, [oldKoreanData]);
+  const generatedDatasets = await readGeneratedDatasets();
+  const { creators, restaurants } = mergeDatasets(baseData, generatedDatasets);
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
   const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
 

@@ -115,24 +115,24 @@ export default function CreatorDetail() {
       </nav>
 
       {/* 크리에이터 프로필 */}
-      <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="max-w-6xl mx-auto px-4 py-8 sm:py-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-6"
+          className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-6"
         >
           <img
             src={creator.profileImage}
             alt={creator.name}
-            className="w-24 h-24 rounded-full object-cover border-3 border-[#FFCDC9] shadow-md"
+            className="h-20 w-20 rounded-full object-cover border-3 border-[#FFCDC9] shadow-md sm:h-24 sm:w-24"
           />
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-[#1a1a1a]" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
+            <h1 className="text-2xl font-bold text-[#1a1a1a] sm:text-3xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
               {creator.name}
             </h1>
             <p className="text-sm text-[#888]">{creator.channelName}</p>
-            <div className="flex items-center gap-4 text-sm text-[#666]">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-[#666] sm:gap-4">
               {creator.subscribers && (
                 <span className="flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-[#FD7979]" />
@@ -152,14 +152,14 @@ export default function CreatorDetail() {
       </div>
 
       {/* 추천 맛집 */}
-      <section className="max-w-6xl mx-auto px-4 pb-16">
-        <h2 className="text-xl font-bold text-[#1a1a1a] mb-6" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
+      <section className="max-w-6xl mx-auto px-4 pb-12 sm:pb-16">
+        <h2 className="mb-6 text-lg font-bold text-[#1a1a1a] sm:text-xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
           추천한 맛집 ({recommendedRestaurants.length}곳)
         </h2>
         <div className="mb-6">
           <MonetizationSlot label="Sponsored" />
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {recommendedRestaurants.map((restaurant, i) => (
             <MiniRestaurantCard key={restaurant.id} restaurant={restaurant} index={i} />
           ))}
@@ -167,7 +167,7 @@ export default function CreatorDetail() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-100 bg-white">
+      <footer className="hidden">
         <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#888]">
           <span className="font-bold text-[#1a1a1a]" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
             <span>맛</span><span className="text-[#FD7979]">픽</span>

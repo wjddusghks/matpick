@@ -1,6 +1,8 @@
 import rawDataset from "./matpick-data.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
+import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
+import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
 import type {
   Creator,
   MatpickDataSet,
@@ -97,7 +99,11 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const baseDataset = rawDataset as MatpickDataSet;
-const dataset = mergeDatasets(baseDataset, [oldKorean100Dataset as SourceDataset]);
+const dataset = mergeDatasets(baseDataset, [
+  oldKorean100Dataset as SourceDataset,
+  sikgaekBaekbanTripDataset as SourceDataset,
+  wednesdayGourmetDataset as SourceDataset,
+]);
 const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
   ...creator,
   profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,

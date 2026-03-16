@@ -5,7 +5,6 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AuthOnboardingModal from "./components/AuthOnboardingModal";
 import MonetizationScripts from "./components/monetization/MonetizationScripts";
-import SiteFooter from "./components/SiteFooter";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
@@ -57,7 +56,6 @@ function App() {
               <MonetizationScripts />
               <AuthOnboardingModal />
               <Router />
-              <SiteFooter />
             </TooltipProvider>
           </FavoritesProvider>
         </AuthProvider>

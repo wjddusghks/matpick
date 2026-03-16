@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -9,13 +9,7 @@ const clientRoot = path.join(projectRoot, "client");
 const publicDir = path.join(clientRoot, "public");
 const sourceAsset = path.join(clientRoot, "src", "assets", "matpick-logo-final 2.png");
 const baseDataPath = path.join(clientRoot, "src", "data", "matpick-data.json");
-const oldKorean100Path = path.join(
-  clientRoot,
-  "src",
-  "data",
-  "generated",
-  "old-korean-100.generated.json"
-);
+const generatedDir = path.join(clientRoot, "src", "data", "generated");
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -39,6 +33,15 @@ async function readJson(filePath) {
   return JSON.parse(raw.replace(/^\uFEFF/, ""));
 }
 
+async function readGeneratedDatasets() {
+  const entries = await readdir(generatedDir, { withFileTypes: true });
+  const datasetFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".generated.json"))
+    .map((entry) => path.join(generatedDir, entry.name));
+
+  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
+}
+
 async function ensurePublicAssets() {
   await mkdir(publicDir, { recursive: true });
   await copyFile(sourceAsset, path.join(publicDir, "favicon.png"));
@@ -48,8 +51,11 @@ async function ensurePublicAssets() {
 
 async function buildSitemap(siteUrl) {
   const baseDataset = await readJson(baseDataPath);
-  const oldKorean100Dataset = await readJson(oldKorean100Path);
-  const restaurants = [...(baseDataset.restaurants || []), ...(oldKorean100Dataset.restaurants || [])];
+  const generatedDatasets = await readGeneratedDatasets();
+  const restaurants = [
+    ...(baseDataset.restaurants || []),
+    ...generatedDatasets.flatMap((dataset) => dataset.restaurants || []),
+  ];
   const creators = baseDataset.creators || [];
   const today = new Date().toISOString();
   const seen = new Set();

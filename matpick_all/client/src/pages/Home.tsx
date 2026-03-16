@@ -20,6 +20,7 @@ import {
 import { useLocation } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { mockSearchData, type SearchResult } from "@/data";
@@ -288,7 +289,7 @@ function BenefitItem({
 
 function GuestPanel({ redirectTo }: { redirectTo: string }) {
   return (
-    <div className="w-[302px] rounded-[28px] border border-[#ffd5db] bg-white/95 p-6 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur">
+    <div className="w-full max-w-[302px] rounded-[28px] border border-[#ffd5db] bg-white/95 p-6 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur">
       <h2 className="text-[28px] font-black leading-none text-[#161616]">{UI.guestTitle}</h2>
       <div className="mt-6 space-y-4">
         <BenefitItem
@@ -767,7 +768,7 @@ export default function Home() {
       : "/";
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#fffdfd] text-[#161616]">
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#fffdfd] text-[#161616]">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.6)_55%,rgba(255,255,255,0.96)_100%)]" />
         <img
@@ -786,7 +787,7 @@ export default function Home() {
         onLater={handleDismissLocation}
       />
 
-      <header className="relative z-20 flex items-start justify-between px-4 py-4 sm:px-8 sm:py-6">
+      <header className="relative z-20 flex items-start justify-between gap-3 px-4 py-4 sm:px-8 sm:py-6">
         <button type="button" onClick={() => navigate("/")} className="p-0">
           <img
             src={matpickLogo}
@@ -795,13 +796,13 @@ export default function Home() {
           />
         </button>
 
-        <div className="flex items-start gap-3">
+        <div className="flex flex-wrap items-start justify-end gap-2 sm:gap-3">
           {isLoggedIn ? (
             <>
               <button
                 type="button"
                 onClick={() => navigate("/explore")}
-                className="flex h-11 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-5 text-sm font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white"
+                className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-4 text-xs font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
               >
                 <Compass className="mr-2 h-4 w-4" />
                 {UI.header.exploreLabel}
@@ -809,7 +810,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => navigate("/my/favorites")}
-                className="flex h-11 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-5 text-sm font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white"
+                className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-4 text-xs font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
               >
                 {UI.header.savedLabel} {favoritesCount}
               </button>
@@ -822,7 +823,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={() => setShowAccountPanel((prev) => !prev)}
-                  className="flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95"
+                  className="flex h-10 items-center justify-center rounded-full bg-[#ff7b83] px-4 text-xs font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95 sm:h-11 sm:px-5 sm:text-sm"
                 >
                   {userDisplayName}
                 </button>
@@ -858,7 +859,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setShowLoginPanel((prev) => !prev)}
-                className="rounded-full bg-[#ff7b83] px-8 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95"
+                className="rounded-full bg-[#ff7b83] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95 sm:px-8 sm:py-3"
               >
                 {UI.header.login}
               </button>
@@ -877,23 +878,23 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-4 pb-16 pt-6 text-center sm:px-8">
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pb-12 pt-4 text-center sm:px-8 sm:pb-16 sm:pt-6">
         <section className="mx-auto flex w-full max-w-[980px] flex-col items-center">
           <h1
-            className="inline-flex items-end justify-center gap-1 text-[92px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"
+            className="inline-flex items-end justify-center gap-1 text-[68px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"
             style={{ fontFamily: "'Black Han Sans', sans-serif", fontWeight: 400 }}
           >
             <span className="text-[#111111]">{UI.brandFirst}</span>
             <span className="text-[#ff7b83]">{UI.brandSecond}</span>
           </h1>
 
-          <p className="mt-7 text-[25px] font-semibold leading-tight text-[#9a9a9a] sm:text-[33px]">
+          <p className="mt-5 max-w-[720px] text-[18px] font-semibold leading-snug text-[#9a9a9a] sm:mt-7 sm:text-[33px]">
             {UI.heroSubtitle}
           </p>
 
-          <div ref={searchRef} className="relative mt-10 w-full max-w-[810px]">
+          <div ref={searchRef} className="relative mt-8 w-full max-w-[810px] sm:mt-10">
             <div className="overflow-hidden rounded-[30px] border border-[#ff9ea9] bg-white/96 shadow-[0_18px_60px_rgba(255,102,132,0.14)] backdrop-blur-sm">
-              <div className="flex items-center gap-4 px-6 py-4 sm:px-9">
+              <div className="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-9 sm:py-4">
                 <input
                   type="text"
                   value={query}
@@ -904,15 +905,15 @@ export default function Home() {
                   onFocus={() => setIsFocused(true)}
                   onKeyDown={handleSearchKeyDown}
                   placeholder={UI.searchPlaceholder}
-                  className="w-full bg-transparent text-[18px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:text-[21px]"
+                  className="w-full bg-transparent text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:text-[21px]"
                 />
                 <button
                   type="button"
                   onClick={handlePrimarySearch}
-                  className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full text-[#111111] transition hover:bg-[#fff3f4]"
+                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[#111111] transition hover:bg-[#fff3f4] sm:h-12 sm:w-12"
                   aria-label={UI.searchButtonLabel}
                 >
-                  <Search className="h-9 w-9" strokeWidth={2.1} />
+                  <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
                 </button>
               </div>
             </div>
@@ -1000,10 +1001,14 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="mt-10 w-full max-w-[840px]">
+        <div className="mt-8 w-full max-w-[840px] sm:mt-10">
           <MonetizationSlot label="Sponsored" />
         </div>
       </main>
+
+      <div className="relative z-10">
+        <SiteFooter />
+      </div>
     </div>
   );
 }

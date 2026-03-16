@@ -60,10 +60,10 @@ function SourceAvatarButton({
       type="button"
       title={label}
       onClick={onClick}
-      className="flex w-[86px] flex-shrink-0 flex-col items-center gap-2 text-center"
+      className="flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]"
     >
       <span
-        className={`flex h-[72px] w-[72px] items-center justify-center rounded-full p-[2px] transition-all ${
+        className={`flex h-[64px] w-[64px] items-center justify-center rounded-full p-[2px] transition-all sm:h-[72px] sm:w-[72px] ${
           selected
             ? "bg-[linear-gradient(135deg,#ff6a6a_0%,#ff00d4_100%)] shadow-[0_18px_38px_rgba(255,105,135,0.24)]"
             : "bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)]"
@@ -74,10 +74,10 @@ function SourceAvatarButton({
             <img
               src={option.imageUrl}
               alt={option.name}
-              className="h-[62px] w-[62px] rounded-full object-cover"
+              className="h-[54px] w-[54px] rounded-full object-cover sm:h-[62px] sm:w-[62px]"
             />
           ) : (
-            <span className="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#fff3f5] text-sm font-black text-[#ff7b83]">
+            <span className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#fff3f5] text-xs font-black text-[#ff7b83] sm:h-[62px] sm:w-[62px] sm:text-sm">
               ALL
             </span>
           )}
@@ -85,7 +85,7 @@ function SourceAvatarButton({
       </span>
 
       <span
-        className={`max-w-[86px] truncate text-[11px] font-semibold leading-tight ${
+        className={`max-w-[74px] truncate text-[11px] font-semibold leading-tight sm:max-w-[86px] ${
           selected ? "text-[#ff5d76]" : "text-[#4f4f4f]"
         }`}
       >
@@ -360,7 +360,7 @@ export default function Explore() {
           <button
             type="button"
             onClick={() => navigate("/")}
-            className="inline-flex items-center gap-2 rounded-full border border-[#ece7e8] bg-white px-4 py-2 text-sm font-semibold text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#ece7e8] bg-white px-3 py-2 text-xs font-semibold text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9] sm:px-4 sm:text-sm"
           >
             <Search className="h-4 w-4" />
             홈으로
@@ -368,16 +368,16 @@ export default function Explore() {
         </div>
       </nav>
 
-      <main className="mx-auto max-w-6xl px-4 py-8">
+      <main className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-[#171717]">맛집 탐색</h1>
-          <p className="mt-2 text-base text-[#7f7f7f]">
+          <h1 className="text-2xl font-bold text-[#171717] sm:text-3xl">맛집 탐색</h1>
+          <p className="mt-2 text-sm leading-6 text-[#7f7f7f] sm:text-base">
             먼저 보고 싶은 채널이나 소스를 고른 뒤, 카테고리와 지역으로 결과를 더
             좁혀보세요.
           </p>
         </header>
 
-        <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-5 shadow-[0_10px_36px_rgba(0,0,0,0.04)]">
+        <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5">
           <div className="-mx-1 overflow-x-auto pb-2">
             <div className="flex min-w-max gap-4 px-1">
               <SourceAvatarButton
@@ -396,7 +396,7 @@ export default function Explore() {
             </div>
           </div>
 
-          <div className="mt-5 space-y-4 border-t border-[#f5f0f1] pt-5">
+          <div className="mt-4 space-y-4 border-t border-[#f5f0f1] pt-4 sm:mt-5 sm:pt-5">
             <div className="flex flex-wrap items-center gap-2">
               <span className="mr-1 text-sm font-semibold text-[#666]">카테고리</span>
               <FilterChip
@@ -457,13 +457,13 @@ export default function Explore() {
         </div>
 
         {filteredRestaurants.length > 0 ? (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {filteredRestaurants.map((restaurant) => (
               <RestaurantCard key={restaurant.id} restaurant={restaurant} />
             ))}
           </div>
         ) : (
-          <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-20 text-center">
+          <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
             <p className="text-5xl">🍽️</p>
             <p className="mt-4 text-lg font-semibold text-[#333]">
               해당 조건에 맞는 맛집이 아직 없어요.

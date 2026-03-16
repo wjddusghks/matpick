@@ -225,7 +225,7 @@ function RestaurantCard({
           <button
             type="button"
             onClick={() => navigate(`/restaurant/${restaurant.id}`)}
-            className="inline-flex min-w-[156px] items-center justify-center rounded-xl bg-[#ff7b83] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
+            className="inline-flex min-w-[234px] items-center justify-center rounded-xl bg-[#ff7b83] px-8 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
           >
             식당 상세 보기
           </button>
@@ -554,15 +554,15 @@ export default function SearchMap() {
   };
 
   return (
-    <div className="flex h-screen flex-col bg-white">
-      <div className="flex flex-1 overflow-hidden">
-        <aside className="flex w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
+    <div className="flex min-h-screen flex-col bg-white">
+      <div className="flex flex-1 flex-col lg:flex-row lg:overflow-hidden">
+        <aside className="flex w-full flex-shrink-0 flex-col border-b border-[#f0f0f0] bg-white lg:w-[390px] lg:border-b-0 lg:border-r">
           <div className="border-b border-[#f0f0f0] p-4">
             <div className="mb-3 flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => navigate("/")}
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#ece7e8] bg-white text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-[#ece7e8] bg-white text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
               >
                 <ArrowLeft className="h-4 w-4" />
               </button>
@@ -617,7 +617,7 @@ export default function SearchMap() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto">
+          <div className="max-h-[52vh] flex-1 overflow-y-auto lg:max-h-none">
             {filteredRestaurants.length > 0 ? (
               filteredRestaurants.map((restaurant) => (
                 <RestaurantCard
@@ -641,7 +641,7 @@ export default function SearchMap() {
           </div>
         </aside>
 
-        <section className="relative flex-1">
+        <section className="relative min-h-[42vh] flex-1 lg:min-h-0">
           <NaverMap
             restaurants={restaurantsForMap}
             selectedId={selectedId}

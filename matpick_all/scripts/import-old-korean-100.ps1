@@ -2,7 +2,8 @@ param(
   [string]$SourceDir = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100"),
   [string]$OutputJson = (Join-Path $PSScriptRoot "..\client\src\data\generated\old-korean-100.generated.json"),
   [string]$CoverOutput = (Join-Path $PSScriptRoot "..\client\public\source-covers\old-korean-100.jpg"),
-  [string]$CoordinateOverrides = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100\coordinates.json")
+  [string]$CoordinateOverrides = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100\coordinates.json"),
+  [string]$CoverPublicPath = "/source-covers/old-korean-100.jpg"
 )
 
 Set-StrictMode -Version Latest
@@ -155,7 +156,8 @@ function Load-CoordinateOverrides {
     return $lookup
   }
 
-  $raw = Get-Content -Raw -Path $Path | ConvertFrom-Json
+  $rawText = [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
+  $raw = $rawText | ConvertFrom-Json
   if ($raw -is [System.Collections.IEnumerable] -and -not ($raw -is [string])) {
     foreach ($entry in $raw) {
       if ($null -eq $entry) { continue }
@@ -201,7 +203,7 @@ if ($headerRow.Count -lt 5) {
 
 $sourceId = [string]$sourceMeta.id
 $sourceName = $xlsxFile.BaseName
-$coverPublicPath = "/source-covers/old-korean-100.jpg"
+$coverPublicPath = $CoverPublicPath
 $coordinateLookup = Load-CoordinateOverrides -Path $CoordinateOverrides
 
 $restaurants = New-Object System.Collections.Generic.List[object]

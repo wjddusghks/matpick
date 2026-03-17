@@ -96,10 +96,14 @@ export default function NaverMap({
 }: NaverMapProps) {
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markersRef = useRef<Map<string, naver.maps.Marker>>(new Map());
+  const restaurantLookupRef = useRef<Map<string, Restaurant>>(new Map());
   const currentLocationMarkerRef = useRef<naver.maps.Marker | null>(null);
   const infoWindowRef = useRef<naver.maps.InfoWindow | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const listenersRef = useRef<any[]>([]);
+  const listenersRef = useRef<Map<string, any>>(new Map());
+  const onMarkerClickRef = useRef(onMarkerClick);
+  const selectedIdRef = useRef<string | null>(selectedId);
+  const nearestRestaurantIdRef = useRef<string | null>(nearestRestaurantId);
   const [sdkReady, setSdkReady] = useState(isNaverMapsReady());
   const [sdkError, setSdkError] = useState<string | null>(null);
 
@@ -111,8 +115,20 @@ export default function NaverMap({
         // noop
       }
     });
-    listenersRef.current = [];
+    listenersRef.current.clear();
   }, []);
+
+  useEffect(() => {
+    onMarkerClickRef.current = onMarkerClick;
+  }, [onMarkerClick]);
+
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+  }, [selectedId]);
+
+  useEffect(() => {
+    nearestRestaurantIdRef.current = nearestRestaurantId;
+  }, [nearestRestaurantId]);
 
   useEffect(() => {
     if (sdkReady) return;
@@ -213,23 +229,91 @@ export default function NaverMap({
       return;
     }
 
+    const validRestaurants = restaurants.filter(
+      (restaurant) =>
+        restaurant.lat != null &&
+        restaurant.lng != null &&
+        restaurant.lat !== 0 &&
+        restaurant.lng !== 0
+    );
+    restaurantLookupRef.current = new Map(
+      validRestaurants.map((restaurant) => [restaurant.id, restaurant])
+    );
+
     clearMarkerListeners();
 
-    markersRef.current.forEach((marker) => {
+    const nextRestaurantIds = new Set(validRestaurants.map((restaurant) => restaurant.id));
+
+    markersRef.current.forEach((marker, restaurantId) => {
+      if (nextRestaurantIds.has(restaurantId)) {
+        return;
+      }
+
       try {
         marker.setMap(null);
       } catch {
         // noop
       }
+      markersRef.current.delete(restaurantId);
     });
-    markersRef.current.clear();
 
-    if (infoWindowRef.current) {
-      try {
-        infoWindowRef.current.close();
-      } catch {
-        // noop
+    validRestaurants.forEach((restaurant) => {
+      const position = new naver.maps.LatLng(restaurant.lat, restaurant.lng);
+      const isSelected = restaurant.id === selectedIdRef.current;
+      const isNearest =
+        restaurant.id === nearestRestaurantIdRef.current && selectedIdRef.current == null;
+      let marker = markersRef.current.get(restaurant.id);
+
+      if (!marker) {
+        marker = new naver.maps.Marker({
+          position,
+          map,
+          title: restaurant.name,
+          icon: createMarkerIcon({ isSelected, isNearest }),
+          zIndex: isSelected ? 200 : isNearest ? 150 : 1,
+          clickable: true,
+        });
+        markersRef.current.set(restaurant.id, marker);
+      } else {
+        marker.setMap(map);
       }
+
+      const listener = naver.maps.Event.addListener(marker, "click", () => {
+        onMarkerClickRef.current(restaurant.id);
+
+        if (infoWindowRef.current) {
+          infoWindowRef.current.setContent(createInfoContent(restaurant));
+          infoWindowRef.current.open(map, marker);
+        }
+
+        map.panTo(position, { duration: 300 });
+      });
+      listenersRef.current.set(restaurant.id, listener);
+    });
+  }, [clearMarkerListeners, restaurants, sdkReady]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !sdkReady) {
+      return;
+    }
+
+    if (currentLocation) {
+      if (!currentLocationMarkerRef.current) {
+        currentLocationMarkerRef.current = new naver.maps.Marker({
+          position: new naver.maps.LatLng(currentLocation.lat, currentLocation.lng),
+          map,
+          title: "Current location",
+          icon: createCurrentLocationIcon(),
+          zIndex: 300,
+        });
+      } else {
+        currentLocationMarkerRef.current.setMap(map);
+        currentLocationMarkerRef.current.setPosition(
+          new naver.maps.LatLng(currentLocation.lat, currentLocation.lng)
+        );
+      }
+      return;
     }
 
     if (currentLocationMarkerRef.current) {
@@ -240,6 +324,13 @@ export default function NaverMap({
       }
       currentLocationMarkerRef.current = null;
     }
+  }, [currentLocation, sdkReady]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !sdkReady) {
+      return;
+    }
 
     const validRestaurants = restaurants.filter(
       (restaurant) =>
@@ -248,51 +339,8 @@ export default function NaverMap({
         restaurant.lat !== 0 &&
         restaurant.lng !== 0
     );
-
-    if (currentLocation) {
-      currentLocationMarkerRef.current = new naver.maps.Marker({
-        position: new naver.maps.LatLng(currentLocation.lat, currentLocation.lng),
-        map,
-        title: "Current location",
-        icon: createCurrentLocationIcon(),
-        zIndex: 300,
-      });
-    }
-
-    validRestaurants.forEach((restaurant) => {
-      const position = new naver.maps.LatLng(restaurant.lat, restaurant.lng);
-      const isSelected = restaurant.id === selectedId;
-      const isNearest = restaurant.id === nearestRestaurantId && selectedId == null;
-
-      const marker = new naver.maps.Marker({
-        position,
-        map,
-        title: restaurant.name,
-        icon: createMarkerIcon({ isSelected, isNearest }),
-        zIndex: isSelected ? 200 : isNearest ? 150 : 1,
-        clickable: true,
-      });
-
-      const listener = naver.maps.Event.addListener(marker, "click", () => {
-        onMarkerClick(restaurant.id);
-
-        if (infoWindowRef.current) {
-          infoWindowRef.current.setContent(createInfoContent(restaurant));
-          infoWindowRef.current.open(map, marker);
-        }
-
-        map.panTo(position, { duration: 300 });
-      });
-
-      listenersRef.current.push(listener);
-      markersRef.current.set(restaurant.id, marker);
-    });
-
-    const selectedRestaurant = validRestaurants.find(
-      (restaurant) => restaurant.id === selectedId
-    );
-    const singleRestaurant =
-      validRestaurants.length === 1 ? validRestaurants[0] : null;
+    const selectedRestaurant = validRestaurants.find((restaurant) => restaurant.id === selectedId);
+    const singleRestaurant = validRestaurants.length === 1 ? validRestaurants[0] : null;
 
     if (selectedRestaurant) {
       map.setCenter(new naver.maps.LatLng(selectedRestaurant.lat, selectedRestaurant.lng));
@@ -314,14 +362,7 @@ export default function NaverMap({
 
     map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
     map.setZoom(7);
-  }, [
-    clearMarkerListeners,
-    currentLocation,
-    onMarkerClick,
-    restaurants,
-    sdkReady,
-    selectedId,
-  ]);
+  }, [restaurants, sdkReady, selectedId]);
 
   useEffect(() => {
     if (!sdkReady || !mapRef.current) {
@@ -342,10 +383,11 @@ export default function NaverMap({
 
     if (selectedId && markersRef.current.has(selectedId)) {
       const marker = markersRef.current.get(selectedId);
-      const restaurant = restaurants.find((item) => item.id === selectedId);
+      const restaurant =
+        restaurantLookupRef.current.get(selectedId) ??
+        restaurants.find((item) => item.id === selectedId);
 
       if (marker && restaurant && mapRef.current) {
-        mapRef.current.panTo(marker.getPosition(), { duration: 300 });
         if (infoWindowRef.current) {
           infoWindowRef.current.setContent(createInfoContent(restaurant));
           infoWindowRef.current.open(mapRef.current, marker);

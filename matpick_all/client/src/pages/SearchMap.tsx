@@ -441,6 +441,10 @@ export default function SearchMap() {
     };
   }, [currentLocation, restaurantsForMap]);
 
+  const handleMarkerClick = useCallback((id: string) => {
+    setSelectedId((prev) => (prev === id ? null : id));
+  }, []);
+
   const handleSearchSelect = (item: SearchResult) => {
     setSearchQuery("");
     setIsSearchFocused(false);
@@ -564,7 +568,7 @@ export default function SearchMap() {
             selectedId={selectedId}
             currentLocation={currentLocation}
             nearestRestaurantId={nearestRestaurant?.restaurant.id ?? null}
-            onMarkerClick={(id) => setSelectedId((prev) => (prev === id ? null : id))}
+            onMarkerClick={handleMarkerClick}
           />
 
           {restaurantsForMap.length > 0 &&

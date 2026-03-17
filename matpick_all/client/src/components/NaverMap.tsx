@@ -29,7 +29,7 @@ function createMarkerIcon({
 
   return {
     content: `
-      <div style="cursor:pointer;transform:translate(-50%,-100%);">
+      <div style="cursor:pointer;width:${size}px;height:${height}px;">
         <svg width="${size}" height="${height}" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 24 14 24s14-13.5 14-24C28 6.268 21.732 0 14 0z" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}"/>
           <circle cx="14" cy="13" r="5.5" fill="white" opacity="0.95"/>
@@ -44,7 +44,7 @@ function createMarkerIcon({
 function createCurrentLocationIcon() {
   return {
     content: `
-      <div style="position:relative;transform:translate(-50%,-100%);display:flex;flex-direction:column;align-items:center;pointer-events:none;">
+      <div style="position:relative;width:34px;height:42px;display:flex;flex-direction:column;align-items:center;pointer-events:none;">
         <div style="margin-bottom:8px;padding:6px 10px;border-radius:9999px;background:rgba(17,24,39,0.88);color:white;font-size:12px;font-weight:700;line-height:1;letter-spacing:-0.02em;box-shadow:0 10px 24px rgba(17,24,39,0.22);white-space:nowrap;">
           내 위치
         </div>

@@ -29,6 +29,7 @@ interface FavoritesContextType {
     iconKey: FavoriteTopicIconKey;
     colorKey: FavoriteTopicColorKey;
   }) => FavoriteTopic | null;
+  deleteTopics: (topicIds: string[]) => number;
   getTopicRestaurantIds: (topicId: string) => string[];
   getTopicRestaurantCount: (topicId: string) => number;
   getTopicsForRestaurant: (restaurantId: string) => FavoriteTopic[];
@@ -204,6 +205,27 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     [persistTopics, topics]
   );
 
+  const deleteTopics = useCallback(
+    (topicIds: string[]) => {
+      if (topicIds.length === 0) {
+        return 0;
+      }
+
+      const topicIdSet = new Set(topicIds);
+      const nextTopics = topics.filter((topic) => !topicIdSet.has(topic.id));
+      const nextAssignments = Object.fromEntries(
+        Object.entries(topicAssignments).filter(([topicId]) => !topicIdSet.has(topicId))
+      );
+
+      setTopics(nextTopics);
+      setTopicAssignments(nextAssignments);
+      persistTopics(nextTopics);
+      persistAssignments(nextAssignments);
+      return topicIdSet.size;
+    },
+    [persistAssignments, persistTopics, topicAssignments, topics]
+  );
+
   const getTopicRestaurantIds = useCallback(
     (topicId: string) => topicAssignments[topicId] ?? [],
     [topicAssignments]
@@ -260,6 +282,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       favoritesCount: favorites.size,
       topics,
       createTopic,
+      deleteTopics,
       getTopicRestaurantIds,
       getTopicRestaurantCount,
       getTopicsForRestaurant,
@@ -268,6 +291,7 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     }),
     [
       createTopic,
+      deleteTopics,
       favorites,
       getTopicRestaurantCount,
       getTopicRestaurantIds,

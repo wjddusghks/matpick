@@ -8,6 +8,8 @@ import {
 } from "react";
 import {
   CalendarCheck,
+  CheckCircle2,
+  Circle,
   Compass,
   Heart,
   MapPin,
@@ -15,9 +17,11 @@ import {
   Plus,
   Search,
   Star,
+  Trash2,
   UtensilsCrossed,
   X,
 } from "lucide-react";
+import { toast } from "sonner";
 import { useLocation } from "wouter";
 import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
@@ -417,6 +421,8 @@ export default function Home() {
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
   const [showTopicDialog, setShowTopicDialog] = useState(false);
+  const [isTopicDeleteMode, setIsTopicDeleteMode] = useState(false);
+  const [selectedTopicIdsForDelete, setSelectedTopicIdsForDelete] = useState<string[]>([]);
   const [showLocationPrompt, setShowLocationPrompt] = useState(false);
   const [locationState, setLocationState] = useState<LocationPermissionState>(
     getStoredLocationStatus
@@ -430,7 +436,7 @@ export default function Home() {
   const accountTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
-  const { favoritesCount, topics, getTopicRestaurantCount } = useFavorites();
+  const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
 
   useSeo({
@@ -635,6 +641,34 @@ export default function Home() {
       setShowAccountPanel(false);
     }, 160);
   }, []);
+
+  useEffect(() => {
+    if (!showAccountPanel) {
+      setIsTopicDeleteMode(false);
+      setSelectedTopicIdsForDelete([]);
+    }
+  }, [showAccountPanel]);
+
+  const toggleTopicDeleteSelection = useCallback((topicId: string) => {
+    setSelectedTopicIdsForDelete((prev) =>
+      prev.includes(topicId)
+        ? prev.filter((candidateId) => candidateId !== topicId)
+        : [...prev, topicId]
+    );
+  }, []);
+
+  const handleDeleteSelectedTopics = useCallback(() => {
+    if (selectedTopicIdsForDelete.length === 0) {
+      return;
+    }
+
+    const deletedCount = deleteTopics(selectedTopicIdsForDelete);
+    if (deletedCount > 0) {
+      toast.success(`${deletedCount}개의 주제를 삭제했어요.`);
+    }
+    setSelectedTopicIdsForDelete([]);
+    setIsTopicDeleteMode(false);
+  }, [deleteTopics, selectedTopicIdsForDelete]);
 
   const handleSelect = useCallback(
     (item: SearchResult) => {
@@ -899,14 +933,32 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-4 rounded-[22px] border border-[#ffe2e6] bg-[#fff9fa] p-4">
-                    <button
-                      type="button"
-                      onClick={() => setShowTopicDialog(true)}
-                      className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-[#ffd2d8] bg-white text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
-                    >
-                      <Plus className="h-4 w-4" />
-                      내 주제 추가하기
-                    </button>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setShowTopicDialog(true)}
+                        className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-[#ffd2d8] bg-white text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
+                      >
+                        <Plus className="h-4 w-4" />
+                        내 주제 추가하기
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIsTopicDeleteMode((prev) => !prev);
+                          setSelectedTopicIdsForDelete([]);
+                        }}
+                        disabled={topics.length === 0}
+                        className={`inline-flex h-11 items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition ${
+                          isTopicDeleteMode
+                            ? "border-[#ff9fa9] bg-[#ffeff2] text-[#ff5f70]"
+                            : "border-[#ffd2d8] bg-white text-[#ff6b7b] hover:bg-[#fff2f4]"
+                        } disabled:cursor-not-allowed disabled:opacity-45`}
+                      >
+                        <Trash2 className="h-4 w-4" />
+                        {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
+                      </button>
+                    </div>
 
                     {topics.length === 0 ? (
                       <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
@@ -918,9 +970,29 @@ export default function Home() {
                         {topics.map((topic) => (
                           <div
                             key={topic.id}
-                            className="flex items-center justify-between gap-3 rounded-[18px] border border-[#ffe5e9] bg-white px-3 py-2.5"
+                            className={`flex items-center justify-between gap-3 rounded-[18px] border bg-white px-3 py-2.5 transition ${
+                              isTopicDeleteMode && selectedTopicIdsForDelete.includes(topic.id)
+                                ? "border-[#ffb7c0] bg-[#fff4f6]"
+                                : "border-[#ffe5e9]"
+                            }`}
                           >
-                            <FavoriteTopicBadge topic={topic} />
+                            <div className="flex items-center gap-3">
+                              {isTopicDeleteMode ? (
+                                <button
+                                  type="button"
+                                  onClick={() => toggleTopicDeleteSelection(topic.id)}
+                                  className="flex h-6 w-6 items-center justify-center rounded-full text-[#ff6b7b]"
+                                  aria-label={`${topic.name} 삭제 선택`}
+                                >
+                                  {selectedTopicIdsForDelete.includes(topic.id) ? (
+                                    <CheckCircle2 className="h-5 w-5 fill-current" />
+                                  ) : (
+                                    <Circle className="h-5 w-5" />
+                                  )}
+                                </button>
+                              ) : null}
+                              <FavoriteTopicBadge topic={topic} />
+                            </div>
                             <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
                               저장된 식당 : {getTopicRestaurantCount(topic.id)}곳
                             </span>
@@ -928,6 +1000,19 @@ export default function Home() {
                         ))}
                       </div>
                     )}
+
+                    {isTopicDeleteMode ? (
+                      <div className="mt-3">
+                        <button
+                          type="button"
+                          onClick={handleDeleteSelectedTopics}
+                          disabled={selectedTopicIdsForDelete.length === 0}
+                          className="inline-flex h-10 w-full items-center justify-center rounded-full bg-[#ff6b7b] text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-45"
+                        >
+                          선택한 주제 삭제하기 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
+                        </button>
+                      </div>
+                    ) : null}
                   </div>
                   <button
                     type="button"

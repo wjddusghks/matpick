@@ -12,6 +12,7 @@ import {
   Heart,
   MapPin,
   MessageCircleMore,
+  Plus,
   Search,
   Star,
   UtensilsCrossed,
@@ -868,50 +869,65 @@ export default function Home() {
                 </button>
 
                 <div
-                  className={`absolute right-0 top-full z-30 mt-3 w-[320px] origin-top-right rounded-[24px] border border-[#ffd5db] bg-white/96 p-4 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur transition-all duration-200 ${
+                  className={`absolute right-0 top-full z-30 mt-3 w-[340px] origin-top-right rounded-[24px] border border-[#ffd5db] bg-white/96 p-4 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur transition-all duration-200 ${
                     showAccountPanel
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none -translate-y-2 opacity-0"
                   }`}
                 >
-                  <p className="text-sm font-semibold text-[#1d1d1d]">{userDisplayName}</p>
-                  <p className="mt-1 text-xs text-[#8a8a8a]">
-                    {UI.header.accountProviderPrefix} · {user?.provider === "kakao" ? "카카오" : "네이버"}
-                  </p>
-                  <div className="mt-4 rounded-[22px] border border-[#ffe2e6] bg-[#fff9fa] p-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <p className="text-sm font-semibold text-[#242424]">내 주제</p>
-                        <p className="mt-1 text-xs leading-5 text-[#8d8d8d]">
-                          {topics.length === 0
-                            ? "아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 야식처럼 주제별로 나눠 담아보세요."
-                            : `지금 ${topics.length}개의 주제를 만들었고, ${topics.reduce(
-                                (sum, topic) => sum + getTopicRestaurantCount(topic.id),
-                                0
-                              )}곳을 나눠 담을 수 있어요.`}
-                        </p>
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-[#1d1d1d]">{userDisplayName}</p>
+                    <div className="mt-3 flex justify-center">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-[#ffe0e5] bg-[#fff8f9] px-3 py-2">
+                        <span
+                          className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                            user?.provider === "kakao"
+                              ? "bg-[#FEE500] text-[#3C1E1E]"
+                              : "bg-[#03C75A] text-white"
+                          }`}
+                        >
+                          {user?.provider === "kakao" ? (
+                            <KakaoProviderIcon />
+                          ) : (
+                            <NaverProviderIcon />
+                          )}
+                        </span>
+                        <span className="text-xs font-semibold text-[#555555]">
+                          {user?.provider === "kakao" ? "카카오 계정" : "네이버 계정"}
+                        </span>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => setShowTopicDialog(true)}
-                        className="inline-flex h-8 flex-shrink-0 items-center justify-center rounded-full border border-[#ffd2d8] bg-white px-3 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
-                      >
-                        {topics.length === 0 ? "주제 만들기" : "추가"}
-                      </button>
                     </div>
+                  </div>
+                  <div className="mt-4 rounded-[22px] border border-[#ffe2e6] bg-[#fff9fa] p-4">
+                    <button
+                      type="button"
+                      onClick={() => setShowTopicDialog(true)}
+                      className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-[#ffd2d8] bg-white text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
+                    >
+                      <Plus className="h-4 w-4" />
+                      내 주제 추가하기
+                    </button>
 
-                    {topics.length > 0 ? (
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {topics.slice(0, 4).map((topic) => (
-                          <FavoriteTopicBadge key={topic.id} topic={topic} />
+                    {topics.length === 0 ? (
+                      <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
+                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 야식처럼 주제별로 나눠
+                        담아보세요.
+                      </p>
+                    ) : (
+                      <div className="mt-3 space-y-2">
+                        {topics.map((topic) => (
+                          <div
+                            key={topic.id}
+                            className="flex items-center justify-between gap-3 rounded-[18px] border border-[#ffe5e9] bg-white px-3 py-2.5"
+                          >
+                            <FavoriteTopicBadge topic={topic} />
+                            <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
+                              저장된 식당 : {getTopicRestaurantCount(topic.id)}곳
+                            </span>
+                          </div>
                         ))}
-                        {topics.length > 4 ? (
-                          <span className="inline-flex items-center rounded-full border border-[#ece7e8] bg-white px-3 py-1 text-xs font-semibold text-[#8a8a8a]">
-                            +{topics.length - 4}
-                          </span>
-                        ) : null}
                       </div>
-                    ) : null}
+                    )}
                   </div>
                   <button
                     type="button"
@@ -1089,4 +1105,16 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+function KakaoProviderIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 3C6.48 3 2 6.38 2 10.5c0 2.65 1.8 4.99 4.49 6.32l-1 3.59a.43.43 0 0 0 .65.47l4.19-2.79c.55.08 1.11.12 1.67.12 5.52 0 10-3.38 10-7.71S17.52 3 12 3Z" />
+    </svg>
+  );
+}
+
+function NaverProviderIcon() {
+  return <span className="text-sm font-black leading-none">N</span>;
 }

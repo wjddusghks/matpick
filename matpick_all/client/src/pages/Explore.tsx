@@ -19,7 +19,9 @@ import {
   type Restaurant,
 } from "@/data";
 import HeartButton from "@/components/HeartButton";
+import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import { useFavorites } from "@/contexts/FavoritesContext";
 import { useSeo } from "@/lib/seo";
 
 const ALL_FILTER = "all";
@@ -218,6 +220,7 @@ export default function Explore() {
   const search = useSearch();
   const categories = getCuisineCategories();
   const regions = getRegions();
+  const { topics, isRestaurantInTopic, getTopicRestaurantCount } = useFavorites();
 
   const discoveryOptions = useMemo<DiscoveryOption[]>(() => {
     const creatorOptions = creators
@@ -273,6 +276,7 @@ export default function Explore() {
   const [selectedDiscoveryKeys, setSelectedDiscoveryKeys] = useState<string[]>(initialSelectedKeys);
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
+  const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
 
   useSeo({
     title: "맛집 탐색",
@@ -331,11 +335,23 @@ export default function Explore() {
       );
     }
 
+    if (selectedTopicId !== ALL_FILTER) {
+      nextRestaurants = nextRestaurants.filter((restaurant) =>
+        isRestaurantInTopic(selectedTopicId, restaurant.id)
+      );
+    }
+
     return dedupeRestaurantsById(nextRestaurants).sort(
       (a, b) =>
         getRecommendationCount(b.id) - getRecommendationCount(a.id) || sortText(a.name, b.name)
     );
-  }, [selectedCategory, selectedDiscoveryKeys, selectedRegion]);
+  }, [
+    isRestaurantInTopic,
+    selectedCategory,
+    selectedDiscoveryKeys,
+    selectedRegion,
+    selectedTopicId,
+  ]);
 
   const toggleDiscovery = (key: string) => {
     setSelectedDiscoveryKeys((prev) =>
@@ -347,12 +363,16 @@ export default function Explore() {
     setSelectedDiscoveryKeys([]);
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
+    setSelectedTopicId(ALL_FILTER);
     navigate("/explore");
   };
 
   const hasActiveDiscovery = selectedDiscoveryKeys.length > 0;
   const hasActiveFilters =
-    hasActiveDiscovery || selectedCategory !== ALL_FILTER || selectedRegion !== ALL_FILTER;
+    hasActiveDiscovery ||
+    selectedCategory !== ALL_FILTER ||
+    selectedRegion !== ALL_FILTER ||
+    selectedTopicId !== ALL_FILTER;
 
   return (
     <div className="min-h-screen bg-[#fffdfd]">
@@ -411,6 +431,31 @@ export default function Explore() {
           </div>
 
           <div className="mt-4 space-y-4 border-t border-[#f5f0f1] pt-4 sm:mt-5 sm:pt-5">
+            {topics.length > 0 ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-sm font-semibold text-[#666]">내 주제</span>
+                <FilterChip
+                  label="전체"
+                  selected={selectedTopicId === ALL_FILTER}
+                  onClick={() => setSelectedTopicId(ALL_FILTER)}
+                />
+                {topics.map((topic) => (
+                  <button
+                    key={topic.id}
+                    type="button"
+                    onClick={() => setSelectedTopicId(topic.id)}
+                    className="transition"
+                    title={`${topic.name} (${getTopicRestaurantCount(topic.id)}곳)`}
+                  >
+                    <FavoriteTopicBadge
+                      topic={topic}
+                      active={selectedTopicId === topic.id}
+                    />
+                  </button>
+                ))}
+              </div>
+            ) : null}
+
             <div className="flex flex-wrap items-center gap-2">
               <span className="mr-1 text-sm font-semibold text-[#666]">카테고리</span>
               <FilterChip

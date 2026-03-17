@@ -13,9 +13,11 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import HeartButton from "@/components/HeartButton";
+import FavoriteTopicPickerDialog from "@/components/FavoriteTopicPickerDialog";
 import ShareSheet from "@/components/ShareSheet";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
+import { useFavorites } from "@/contexts/FavoritesContext";
 import {
   creators,
   getCreatorDisplayName,
@@ -97,6 +99,7 @@ export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
   const [, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
+  const { topics, getTopicsForRestaurant } = useFavorites();
   const restaurant = restaurants.find((item) => item.id === id);
   const [activeTab, setActiveTab] = useState<DetailTab>("menu");
   const [shareOpen, setShareOpen] = useState(false);
@@ -108,6 +111,7 @@ export default function RestaurantDetail() {
   const [storedReviews, setStoredReviews] = useState<ReviewItem[]>([]);
   const [personalRating, setPersonalRating] = useState(0);
   const [hoveredPersonalRating, setHoveredPersonalRating] = useState(0);
+  const [topicPickerOpen, setTopicPickerOpen] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -167,6 +171,7 @@ export default function RestaurantDetail() {
   const recommendationCount = getRecommendationCount(restaurant.id);
   const shareUrl = getRestaurantUrl(restaurant.id);
   const visiblePersonalRating = hoveredPersonalRating || personalRating;
+  const assignedTopics = getTopicsForRestaurant(restaurant.id);
 
   useSeo({
     title: `${restaurant.name} 맛집 정보`,
@@ -265,6 +270,12 @@ export default function RestaurantDetail() {
         text={`${restaurant.name} - 맛픽에서 확인해보세요.`}
         url={shareUrl}
         imageUrl={restaurant.imageUrl}
+      />
+      <FavoriteTopicPickerDialog
+        open={topicPickerOpen}
+        onOpenChange={setTopicPickerOpen}
+        restaurantId={restaurant.id}
+        restaurantName={restaurant.name}
       />
 
       <nav className="sticky top-0 z-40 flex items-center justify-between border-b border-[#e8e8e8] bg-white/95 px-4 py-3 shadow-[0_2px_8px_rgba(0,0,0,0.04)] backdrop-blur sm:px-6">
@@ -640,6 +651,38 @@ export default function RestaurantDetail() {
                 );
               })}
             </div>
+            {isLoggedIn ? (
+              <div className="mt-4 border-t border-[#f3eef0] pt-4">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
+                    <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
+                      만든 주제에 이 식당을 담아 두고 나중에 탐색 화면에서 바로 모아볼 수 있어요.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setTopicPickerOpen(true)}
+                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
+                  >
+                    {topics.length > 0 ? "주제에 담기" : "주제 만들기"}
+                  </button>
+                </div>
+
+                {assignedTopics.length > 0 ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {assignedTopics.map((topic) => (
+                      <span
+                        key={topic.id}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd2d8] bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6b7b]"
+                      >
+                        <span>{topic.name}</span>
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
 
           {recommenders.length > 0 || sourcesByRestaurant.length > 0 ? (

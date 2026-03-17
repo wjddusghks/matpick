@@ -18,6 +18,7 @@ import {
   X,
 } from "lucide-react";
 import { useLocation } from "wouter";
+import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
@@ -414,6 +415,7 @@ export default function Home() {
   const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
+  const [showTopicDialog, setShowTopicDialog] = useState(false);
   const [showLocationPrompt, setShowLocationPrompt] = useState(false);
   const [locationState, setLocationState] = useState<LocationPermissionState>(
     getStoredLocationStatus
@@ -427,7 +429,7 @@ export default function Home() {
   const accountTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
-  const { favoritesCount } = useFavorites();
+  const { favoritesCount, topics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
 
   useSeo({
@@ -822,6 +824,7 @@ export default function Home() {
         onAllow={requestLocationPermission}
         onLater={handleDismissLocation}
       />
+      <FavoriteTopicDialog open={showTopicDialog} onOpenChange={setShowTopicDialog} />
 
       <header className="relative z-20 flex items-start justify-between gap-3 px-4 py-4 sm:px-8 sm:py-6">
         <button type="button" onClick={() => navigate("/")} className="p-0">
@@ -865,7 +868,7 @@ export default function Home() {
                 </button>
 
                 <div
-                  className={`absolute right-0 top-full z-30 mt-3 w-[220px] origin-top-right rounded-[24px] border border-[#ffd5db] bg-white/96 p-4 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur transition-all duration-200 ${
+                  className={`absolute right-0 top-full z-30 mt-3 w-[320px] origin-top-right rounded-[24px] border border-[#ffd5db] bg-white/96 p-4 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur transition-all duration-200 ${
                     showAccountPanel
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none -translate-y-2 opacity-0"
@@ -875,6 +878,41 @@ export default function Home() {
                   <p className="mt-1 text-xs text-[#8a8a8a]">
                     {UI.header.accountProviderPrefix} · {user?.provider === "kakao" ? "카카오" : "네이버"}
                   </p>
+                  <div className="mt-4 rounded-[22px] border border-[#ffe2e6] bg-[#fff9fa] p-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="text-sm font-semibold text-[#242424]">내 주제</p>
+                        <p className="mt-1 text-xs leading-5 text-[#8d8d8d]">
+                          {topics.length === 0
+                            ? "아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 야식처럼 주제별로 나눠 담아보세요."
+                            : `지금 ${topics.length}개의 주제를 만들었고, ${topics.reduce(
+                                (sum, topic) => sum + getTopicRestaurantCount(topic.id),
+                                0
+                              )}곳을 나눠 담을 수 있어요.`}
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setShowTopicDialog(true)}
+                        className="inline-flex h-8 flex-shrink-0 items-center justify-center rounded-full border border-[#ffd2d8] bg-white px-3 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
+                      >
+                        {topics.length === 0 ? "주제 만들기" : "추가"}
+                      </button>
+                    </div>
+
+                    {topics.length > 0 ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {topics.slice(0, 4).map((topic) => (
+                          <FavoriteTopicBadge key={topic.id} topic={topic} />
+                        ))}
+                        {topics.length > 4 ? (
+                          <span className="inline-flex items-center rounded-full border border-[#ece7e8] bg-white px-3 py-1 text-xs font-semibold text-[#8a8a8a]">
+                            +{topics.length - 4}
+                          </span>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
                   <button
                     type="button"
                     onClick={logout}

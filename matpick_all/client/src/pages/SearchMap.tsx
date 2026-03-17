@@ -460,9 +460,9 @@ export default function SearchMap() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <div className="flex flex-1 flex-col lg:flex-row lg:overflow-hidden">
-        <aside className="flex w-full flex-shrink-0 flex-col border-b border-[#f0f0f0] bg-white lg:w-[390px] lg:border-b-0 lg:border-r">
+    <div className="flex min-h-screen flex-col bg-white lg:h-[100dvh] lg:overflow-hidden">
+      <div className="flex flex-1 flex-col lg:min-h-0 lg:flex-row lg:overflow-hidden">
+        <aside className="flex w-full flex-shrink-0 flex-col border-b border-[#f0f0f0] bg-white lg:h-full lg:w-[390px] lg:border-b-0 lg:border-r">
           <div className="border-b border-[#f0f0f0] p-4">
             <div className="mb-3 flex items-center gap-3">
               <button
@@ -523,7 +523,7 @@ export default function SearchMap() {
             </div>
           </div>
 
-          <div className="max-h-[52vh] flex-1 overflow-y-auto lg:max-h-none">
+          <div className="max-h-[52vh] flex-1 overflow-y-auto lg:min-h-0 lg:max-h-none">
             {filteredRestaurants.length > 0 ? (
               filteredRestaurants.map((restaurant) => (
                 <RestaurantCard
@@ -547,7 +547,7 @@ export default function SearchMap() {
           </div>
         </aside>
 
-        <section className="relative min-h-[42vh] flex-1 lg:min-h-0">
+        <section className="relative min-h-[42vh] flex-1 lg:min-h-0 lg:overflow-hidden">
           <NaverMap
             restaurants={restaurantsForMap}
             selectedId={selectedId}

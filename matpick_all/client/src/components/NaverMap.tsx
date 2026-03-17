@@ -11,7 +11,7 @@ interface NaverMapProps {
   onMarkerClick: (id: string) => void;
 }
 
-const SEOUL_CENTER = { lat: 37.5665, lng: 126.978 };
+const KOREA_CENTER = { lat: 36.35, lng: 127.85 };
 
 function createMarkerIcon({
   isSelected,
@@ -87,25 +87,6 @@ function createInfoContent(restaurant: Restaurant) {
   `;
 }
 
-function getBoundsFromPoints(points: Array<{ lat: number; lng: number }>) {
-  let minLat = 90;
-  let maxLat = -90;
-  let minLng = 180;
-  let maxLng = -180;
-
-  points.forEach((point) => {
-    if (point.lat < minLat) minLat = point.lat;
-    if (point.lat > maxLat) maxLat = point.lat;
-    if (point.lng < minLng) minLng = point.lng;
-    if (point.lng > maxLng) maxLng = point.lng;
-  });
-
-  return new naver.maps.LatLngBounds(
-    new naver.maps.LatLng(minLat, minLng),
-    new naver.maps.LatLng(maxLat, maxLng)
-  );
-}
-
 export default function NaverMap({
   restaurants,
   selectedId,
@@ -161,7 +142,7 @@ export default function NaverMap({
 
     try {
       const map = new naver.maps.Map(containerRef.current, {
-        center: new naver.maps.LatLng(SEOUL_CENTER.lat, SEOUL_CENTER.lng),
+        center: new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng),
         zoom: 7,
         zoomControl: true,
         zoomControlOptions: {
@@ -188,7 +169,7 @@ export default function NaverMap({
 
       window.setTimeout(() => {
         (map as any).autoResize?.();
-        map.setCenter(new naver.maps.LatLng(SEOUL_CENTER.lat, SEOUL_CENTER.lng));
+        map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
       }, 100);
     } catch (error) {
       console.error("Failed to initialize Naver Map:", error);
@@ -320,23 +301,9 @@ export default function NaverMap({
       return;
     }
 
-    if (currentLocation && nearestRestaurant) {
-      const bounds = getBoundsFromPoints([
-        { lat: currentLocation.lat, lng: currentLocation.lng },
-        { lat: nearestRestaurant.lat, lng: nearestRestaurant.lng },
-      ]);
-      map.fitBounds(bounds, { top: 120, right: 120, bottom: 120, left: 120 });
-      return;
-    }
-
     if (validRestaurants.length === 0) {
-      if (currentLocation) {
-        map.setCenter(new naver.maps.LatLng(currentLocation.lat, currentLocation.lng));
-        map.setZoom(15);
-      } else {
-        map.setCenter(new naver.maps.LatLng(SEOUL_CENTER.lat, SEOUL_CENTER.lng));
-        map.setZoom(12);
-      }
+      map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
+      map.setZoom(7);
       return;
     }
 
@@ -346,17 +313,11 @@ export default function NaverMap({
       return;
     }
 
-    const bounds = getBoundsFromPoints(
-      validRestaurants.map((restaurant) => ({
-        lat: restaurant.lat,
-        lng: restaurant.lng,
-      }))
-    );
-    map.fitBounds(bounds, { top: 60, right: 60, bottom: 60, left: 60 });
+    map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
+    map.setZoom(7);
   }, [
     clearMarkerListeners,
     currentLocation,
-    nearestRestaurantId,
     onMarkerClick,
     restaurants,
     sdkReady,

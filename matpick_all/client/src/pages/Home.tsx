@@ -113,6 +113,18 @@ type LocationPermissionState =
   | "denied"
   | "unsupported";
 
+function getSearchResultKey(item: Pick<SearchResult, "type" | "id">) {
+  return `${item.type}:${item.id}`;
+}
+
+function normalizeSearchResult(item: SearchResult) {
+  const latest = mockSearchData.find(
+    (entry) => getSearchResultKey(entry) === getSearchResultKey(item)
+  );
+
+  return latest ? { ...item, ...latest } : item;
+}
+
 function getRecentSearches(): SearchResult[] {
   if (typeof window === "undefined") {
     return [];
@@ -120,7 +132,7 @@ function getRecentSearches(): SearchResult[] {
 
   try {
     const raw = window.localStorage.getItem(RECENT_KEY);
-    return raw ? (JSON.parse(raw) as SearchResult[]) : [];
+    return raw ? (JSON.parse(raw) as SearchResult[]).map(normalizeSearchResult) : [];
   } catch {
     return [];
   }
@@ -131,7 +143,10 @@ function saveRecentSearches(items: SearchResult[]) {
     return;
   }
 
-  window.localStorage.setItem(RECENT_KEY, JSON.stringify(items.slice(0, 8)));
+  window.localStorage.setItem(
+    RECENT_KEY,
+    JSON.stringify(items.slice(0, 8).map(normalizeSearchResult))
+  );
 }
 
 function persistLocationStatus(status: Exclude<LocationPermissionState, "unknown">) {
@@ -458,6 +473,22 @@ export default function Home() {
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
 
   useEffect(() => {
+    setRecentSearches((prev) => {
+      const normalized = prev.map(normalizeSearchResult);
+      const changed = normalized.some(
+        (item, index) => JSON.stringify(item) !== JSON.stringify(prev[index])
+      );
+
+      if (changed) {
+        saveRecentSearches(normalized);
+        return normalized;
+      }
+
+      return prev;
+    });
+  }, []);
+
+  useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
 
@@ -602,38 +633,42 @@ export default function Home() {
 
   const handleSelect = useCallback(
     (item: SearchResult) => {
+      const normalizedItem = normalizeSearchResult(item);
+
       setRecentSearches((prev) => {
-        const withoutCurrent = prev.filter((entry) => entry.id !== item.id);
-        const updated = [item, ...withoutCurrent];
+        const withoutCurrent = prev.filter(
+          (entry) => getSearchResultKey(entry) !== getSearchResultKey(normalizedItem)
+        );
+        const updated = [normalizedItem, ...withoutCurrent];
         saveRecentSearches(updated);
         return updated;
       });
 
-      setQuery(item.name);
+      setQuery(normalizedItem.name);
       setIsFocused(false);
 
-      if (item.type === "restaurant") {
-        navigate(`/map?type=restaurant&value=${encodeURIComponent(item.id)}`);
+      if (normalizedItem.type === "restaurant") {
+        navigate(`/map?type=restaurant&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
 
-      if (item.type === "creator") {
-        navigate(`/map?type=creator&value=${encodeURIComponent(item.id)}`);
+      if (normalizedItem.type === "creator") {
+        navigate(`/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
 
-      if (item.type === "region") {
-        navigate(`/map?type=region&value=${encodeURIComponent(item.name)}`);
+      if (normalizedItem.type === "region") {
+        navigate(`/map?type=region&value=${encodeURIComponent(normalizedItem.name)}`);
         return;
       }
 
-      if (item.type === "food") {
-        navigate(`/map?type=food&value=${encodeURIComponent(item.name)}`);
+      if (normalizedItem.type === "food") {
+        navigate(`/map?type=food&value=${encodeURIComponent(normalizedItem.name)}`);
         return;
       }
 
-      if (item.type === "source") {
-        navigate(`/map?type=source&value=${encodeURIComponent(item.id)}`);
+      if (normalizedItem.type === "source") {
+        navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
 
@@ -768,7 +803,7 @@ export default function Home() {
       : "/";
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#fffdfd] text-[#161616]">
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-[#fffdfd] text-[#161616]">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.6)_55%,rgba(255,255,255,0.96)_100%)]" />
         <img
@@ -878,7 +913,11 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pb-12 pt-4 text-center sm:px-8 sm:pb-16 sm:pt-6">
+      <main
+        className={`relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-4 text-center sm:px-8 sm:pt-6 ${
+          isFocused ? "pb-[26rem] sm:pb-[18rem]" : "pb-12 sm:pb-16"
+        }`}
+      >
         <section className="mx-auto flex w-full max-w-[980px] flex-col items-center">
           <h1
             className="inline-flex items-end justify-center gap-1 text-[68px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"

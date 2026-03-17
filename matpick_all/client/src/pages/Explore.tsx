@@ -6,6 +6,7 @@ import {
   getBroadRegion,
   getCuisineCategories,
   getCuisineCategory,
+  getCreatorDisplayName,
   getCreatorsByRestaurant,
   getRecommendationCount,
   getRegions,
@@ -186,10 +187,10 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
           {creatorsForRestaurant.map((creator) => (
             <span
               key={creator.id}
-              title={creator.name}
+              title={getCreatorDisplayName(creator)}
               className="inline-flex max-w-[140px] items-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-3 py-1 text-xs font-semibold text-[#ff7b83]"
             >
-              <span className="truncate">{creator.name}</span>
+              <span className="truncate">{getCreatorDisplayName(creator)}</span>
             </span>
           ))}
 
@@ -220,7 +221,7 @@ export default function Explore() {
         key: buildDiscoveryKey("creator", creator.id),
         id: creator.id,
         kind: "creator" as const,
-        name: creator.name,
+        name: getCreatorDisplayName(creator),
         imageUrl: creator.profileImage,
         count: getRestaurantsByCreator(creator.id).length,
       }))
@@ -291,17 +292,26 @@ export default function Explore() {
     let nextRestaurants = [...restaurants];
 
     if (selectedDiscoveryKeys.length > 0) {
-      const selectedSet = new Set(selectedDiscoveryKeys);
+      const selectedCreatorKeys = new Set(
+        selectedDiscoveryKeys.filter((key) => key.startsWith("creator:"))
+      );
+      const selectedSourceKeys = new Set(
+        selectedDiscoveryKeys.filter((key) => key.startsWith("source:"))
+      );
 
       nextRestaurants = nextRestaurants.filter((restaurant) => {
-        const creatorMatch = getCreatorsByRestaurant(restaurant.id).some((creator) =>
-          selectedSet.has(buildDiscoveryKey("creator", creator.id))
-        );
-        const sourceMatch = getSourcesByRestaurant(restaurant.id).some((source) =>
-          selectedSet.has(buildDiscoveryKey("source", source.id))
-        );
+        const creatorMatch =
+          selectedCreatorKeys.size === 0 ||
+          getCreatorsByRestaurant(restaurant.id).some((creator) =>
+            selectedCreatorKeys.has(buildDiscoveryKey("creator", creator.id))
+          );
+        const sourceMatch =
+          selectedSourceKeys.size === 0 ||
+          getSourcesByRestaurant(restaurant.id).some((source) =>
+            selectedSourceKeys.has(buildDiscoveryKey("source", source.id))
+          );
 
-        return creatorMatch || sourceMatch;
+        return creatorMatch && sourceMatch;
       });
     }
 

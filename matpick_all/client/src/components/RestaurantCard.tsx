@@ -73,7 +73,10 @@ export default function RestaurantCard({ restaurant, index }: Props) {
                     ? { borderColor: "oklch(0.55 0.06 140)", color: "oklch(0.55 0.06 140)", transform: "rotate(1.5deg)" }
                     : { borderColor: "oklch(0.50 0.10 30)", color: "oklch(0.50 0.10 30)", transform: "rotate(-1deg)" }
                 }>
-                  {creator.name.length > 8 ? creator.name.slice(0, 8) + "…" : creator.name}
+                  {(() => {
+                    const displayName = creator.series === "또간집" ? "또간집" : creator.name;
+                    return displayName.length > 8 ? `${displayName.slice(0, 8)}…` : displayName;
+                  })()}
                 </span>
               ))}
             </div>

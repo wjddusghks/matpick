@@ -8,7 +8,7 @@ import { ArrowLeft, Youtube, Users } from "lucide-react";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import {
   creators, restaurants, visits,
-  getRestaurantsByCreator, getCreatorsByRestaurant, getRecommendationCount,
+  getCreatorDisplayName, getRestaurantsByCreator, getCreatorsByRestaurant, getRecommendationCount,
   type Restaurant,
 } from "@/data";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
@@ -124,12 +124,12 @@ export default function CreatorDetail() {
         >
           <img
             src={creator.profileImage}
-            alt={creator.name}
+            alt={getCreatorDisplayName(creator)}
             className="h-20 w-20 rounded-full object-cover border-3 border-[#FFCDC9] shadow-md sm:h-24 sm:w-24"
           />
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-[#1a1a1a] sm:text-3xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-              {creator.name}
+              {getCreatorDisplayName(creator)}
             </h1>
             <p className="text-sm text-[#888]">{creator.channelName}</p>
             <div className="flex flex-wrap items-center gap-3 text-sm text-[#666] sm:gap-4">

@@ -3,6 +3,7 @@ import { ArrowLeft, MapPin, Search, UtensilsCrossed } from "lucide-react";
 import { Link, useLocation, useSearch } from "wouter";
 import {
   creators,
+  getCreatorDisplayName,
   getCreatorsByRestaurant,
   getRecommendationCount,
   getRestaurantMenuSummary,
@@ -46,7 +47,7 @@ function filterRestaurants(type: string, value: string): {
 
       return {
         restaurants: getRestaurantsByCreator(creator.id),
-        title: `${creator.name} 추천 맛집`,
+        title: `${getCreatorDisplayName(creator)} 추천 맛집`,
       };
     }
     case "region":
@@ -201,7 +202,7 @@ function RestaurantCard({
                 key={creator.id}
                 className="inline-flex items-center rounded-full border border-[#ffd3d8] bg-[#fff7f8] px-2 py-0.5 text-[11px] font-medium text-[#ff7b83]"
               >
-                {creator.name}
+                {getCreatorDisplayName(creator)}
               </span>
             ))}
 
@@ -246,6 +247,14 @@ export default function SearchMap() {
     () => filterRestaurants(type, value),
     [type, value]
   );
+  const displayTitle = useMemo(() => {
+    if (type !== "creator") {
+      return title;
+    }
+
+    const creator = creators.find((item) => item.id === value || item.name === value);
+    return creator ? `${getCreatorDisplayName(creator)} 추천 맛집` : title;
+  }, [title, type, value]);
 
   useSeo({
     title: `${title} 지도`,
@@ -576,7 +585,7 @@ export default function SearchMap() {
                     setHoveredIdx(-1);
                   }}
                   onFocus={() => setIsSearchFocused(true)}
-                  placeholder={title}
+                  placeholder={displayTitle}
                   className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
                 />
                 <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />

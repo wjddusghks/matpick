@@ -104,6 +104,19 @@ const dataset = mergeDatasets(baseDataset, [
   sikgaekBaekbanTripDataset as SourceDataset,
   wednesdayGourmetDataset as SourceDataset,
 ]);
+const creatorDisplayNameOverrides: Record<string, string> = {
+  UCrDMtdCSMTGVmUKvuhcahRw: "또간집",
+};
+
+export function getCreatorDisplayName(creator: Pick<Creator, "id" | "name">) {
+  return creatorDisplayNameOverrides[creator.id] ?? creator.name;
+}
+
+function getCreatorSearchName(creator: Creator) {
+  const displayName = getCreatorDisplayName(creator);
+  return displayName === creator.name ? `${creator.name} (${creator.series})` : displayName;
+}
+
 const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
   ...creator,
   profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,
@@ -606,7 +619,7 @@ export const searchData: SearchItem[] = [
   ...creators.map((creator) => ({
     id: createSearchId("creator", creator.id),
     type: "creator" as const,
-    name: `${creator.name} (${creator.series})`,
+    name: getCreatorSearchName(creator),
     subtitle: `${creator.channelName} · ${creator.subscribers}`,
     icon: "🎬",
   })),
@@ -644,7 +657,7 @@ export const mockSearchData: SearchResult[] = [
   ...creators.map((creator) => ({
     id: creator.id,
     type: "creator" as const,
-    name: `${creator.name} (${creator.series})`,
+    name: getCreatorSearchName(creator),
     platform: "YouTube",
     subscribers: creator.subscribers,
     image: creator.profileImage,

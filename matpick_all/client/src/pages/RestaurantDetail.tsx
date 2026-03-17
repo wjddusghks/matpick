@@ -18,6 +18,7 @@ import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   creators,
+  getCreatorDisplayName,
   getCreatorsByRestaurant,
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
@@ -417,7 +418,11 @@ export default function RestaurantDetail() {
                           <div className="min-w-0 flex-1">
                             <p className="line-clamp-2 text-[15px] font-bold leading-6 text-[#171717]">{visit.videoTitle}</p>
                             <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-[#8d8d8d]">
-                              {creator ? <span className="font-semibold text-[#ff7b83]">{creator.name}</span> : null}
+                              {creator ? (
+                                <span className="font-semibold text-[#ff7b83]">
+                                  {getCreatorDisplayName(creator)}
+                                </span>
+                              ) : null}
                               <span>{visit.visitDate}</span>
                             </div>
                           </div>
@@ -618,10 +623,12 @@ export default function RestaurantDetail() {
                     <div className="flex items-center gap-2 rounded-xl border border-[#FFCDC9] px-3 py-2 transition-colors hover:bg-[#FFF5F5]">
                       <img
                         src={creator.profileImage}
-                        alt={creator.name}
+                        alt={getCreatorDisplayName(creator)}
                         className="h-7 w-7 rounded-full object-cover"
                       />
-                      <span className="text-sm font-semibold text-[#FD7979]">{creator.name}</span>
+                      <span className="text-sm font-semibold text-[#FD7979]">
+                        {getCreatorDisplayName(creator)}
+                      </span>
                     </div>
                   </Link>
                 ))}

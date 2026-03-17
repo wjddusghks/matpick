@@ -913,11 +913,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main
-        className={`relative z-10 flex flex-1 flex-col items-center justify-center px-4 pt-4 text-center sm:px-8 sm:pt-6 ${
-          isFocused ? "pb-[26rem] sm:pb-[18rem]" : "pb-12 sm:pb-16"
-        }`}
-      >
+      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 pb-12 pt-4 text-center sm:px-8 sm:pb-16 sm:pt-6">
         <section className="mx-auto flex w-full max-w-[980px] flex-col items-center">
           <h1
             className="inline-flex items-end justify-center gap-1 text-[68px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"
@@ -1045,7 +1041,11 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="relative z-10">
+      <div
+        className={`relative z-10 transition-opacity duration-150 ${
+          isFocused ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
+      >
         <SiteFooter />
       </div>
     </div>

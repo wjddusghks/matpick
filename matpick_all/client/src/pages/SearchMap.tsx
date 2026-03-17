@@ -27,11 +27,6 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
-import { geocodeAddress } from "@/lib/naverMaps";
-import {
-  getCachedRestaurantCoordinate,
-  saveRestaurantCoordinate,
-} from "@/lib/restaurantCoordinates";
 import { useSeo } from "@/lib/seo";
 
 function filterRestaurants(type: string, value: string): {
@@ -281,9 +276,6 @@ export default function SearchMap() {
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
   );
-  const [resolvedRestaurantCoords, setResolvedRestaurantCoords] = useState<
-    Record<string, { lat: number; lng: number }>
-  >({});
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(-1);
@@ -398,102 +390,7 @@ export default function SearchMap() {
     };
   }, []);
 
-  useEffect(() => {
-    const nextCachedCoords: Record<string, { lat: number; lng: number }> = {};
-
-    domesticRestaurants.forEach((restaurant) => {
-      const hasOwnCoords =
-        restaurant.lat != null &&
-        restaurant.lng != null &&
-        restaurant.lat !== 0 &&
-        restaurant.lng !== 0;
-
-      if (hasOwnCoords) {
-        return;
-      }
-
-      const cached = getCachedRestaurantCoordinate(restaurant);
-      if (cached) {
-        nextCachedCoords[restaurant.id] = cached;
-      }
-    });
-
-    if (Object.keys(nextCachedCoords).length > 0) {
-      setResolvedRestaurantCoords((prev) => ({ ...nextCachedCoords, ...prev }));
-    }
-  }, [domesticRestaurants]);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const unresolvedRestaurants = domesticRestaurants.filter((restaurant) => {
-      const hasOwnCoords =
-        restaurant.lat != null &&
-        restaurant.lng != null &&
-        restaurant.lat !== 0 &&
-        restaurant.lng !== 0;
-
-      return !hasOwnCoords && Boolean(restaurant.address) && !resolvedRestaurantCoords[restaurant.id];
-    });
-
-    if (unresolvedRestaurants.length === 0) {
-      return () => {
-        cancelled = true;
-      };
-    }
-
-    async function resolveMissingCoordinates() {
-      for (const restaurant of unresolvedRestaurants) {
-        try {
-          const coords = await geocodeAddress(restaurant.address);
-          if (!coords || cancelled) {
-            continue;
-          }
-
-          saveRestaurantCoordinate(restaurant, coords);
-          setResolvedRestaurantCoords((prev) =>
-            prev[restaurant.id]
-              ? prev
-              : {
-                  ...prev,
-                  [restaurant.id]: coords,
-                }
-          );
-        } catch {
-          // Ignore address lookup failures and keep other results available.
-        }
-      }
-    }
-
-    void resolveMissingCoordinates();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [domesticRestaurants, resolvedRestaurantCoords]);
-
-  const restaurantsForMap = useMemo(
-    () =>
-      domesticRestaurants.map((restaurant) => {
-        const resolved = resolvedRestaurantCoords[restaurant.id];
-        const hasOwnCoords =
-          restaurant.lat != null &&
-          restaurant.lng != null &&
-          restaurant.lat !== 0 &&
-          restaurant.lng !== 0;
-
-        if (hasOwnCoords || !resolved) {
-          return restaurant;
-        }
-
-        return {
-          ...restaurant,
-          lat: resolved.lat,
-          lng: resolved.lng,
-        };
-      }),
-    [domesticRestaurants, resolvedRestaurantCoords]
-  );
+  const restaurantsForMap = domesticRestaurants;
 
   const nearestRestaurant = useMemo<{ restaurant: Restaurant; distanceMeters: number } | null>(() => {
     if (!currentLocation) {

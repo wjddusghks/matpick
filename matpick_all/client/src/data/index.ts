@@ -29,6 +29,78 @@ function buildRestaurantLookupKey(restaurant: Pick<Restaurant, "name" | "address
   return `${normalizeLookupValue(restaurant.name)}|${normalizeLookupValue(restaurant.address)}`;
 }
 
+function hasValidCoords(restaurant: Pick<Restaurant, "lat" | "lng">) {
+  return (
+    Number.isFinite(restaurant.lat) &&
+    Number.isFinite(restaurant.lng) &&
+    restaurant.lat !== 0 &&
+    restaurant.lng !== 0
+  );
+}
+
+function preferLongerText(currentValue: string, nextValue: string) {
+  const current = currentValue?.trim() ?? "";
+  const next = nextValue?.trim() ?? "";
+
+  if (!current) return next;
+  if (!next) return current;
+  return next.length > current.length ? next : current;
+}
+
+function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant {
+  const preferredAddressRestaurant =
+    preferLongerText(current.address, next.address) === next.address ? next : current;
+
+  return {
+    ...current,
+    ...next,
+    name: preferLongerText(current.name, next.name),
+    region: preferLongerText(current.region, next.region),
+    address: preferLongerText(current.address, next.address),
+    category: preferLongerText(current.category, next.category),
+    representativeMenu: preferLongerText(
+      current.representativeMenu,
+      next.representativeMenu
+    ),
+    lat: hasValidCoords(preferredAddressRestaurant)
+      ? preferredAddressRestaurant.lat
+      : hasValidCoords(next)
+        ? next.lat
+        : current.lat,
+    lng: hasValidCoords(preferredAddressRestaurant)
+      ? preferredAddressRestaurant.lng
+      : hasValidCoords(next)
+        ? next.lng
+        : current.lng,
+    imageUrl: current.imageUrl || next.imageUrl,
+    foundingYear: current.foundingYear ?? next.foundingYear ?? null,
+    menus: current.menus && current.menus.length > 0 ? current.menus : next.menus ?? [],
+    thumbnailFileName: current.thumbnailFileName ?? next.thumbnailFileName ?? null,
+    isOverseas: current.isOverseas ?? next.isOverseas,
+  };
+}
+
+function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
+  const dedupedRestaurants: Restaurant[] = [];
+  const indexById = new Map<string, number>();
+
+  restaurantsToMerge.forEach((restaurant) => {
+    const existingIndex = indexById.get(restaurant.id);
+    if (existingIndex == null) {
+      indexById.set(restaurant.id, dedupedRestaurants.length);
+      dedupedRestaurants.push(restaurant);
+      return;
+    }
+
+    dedupedRestaurants[existingIndex] = mergeRestaurantById(
+      dedupedRestaurants[existingIndex],
+      restaurant
+    );
+  });
+
+  return dedupedRestaurants;
+}
+
 function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDataSet {
   const mergedRestaurants = [...base.restaurants];
   const mergedSources = [...(base.sources ?? [])];
@@ -92,7 +164,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   return {
     creators: base.creators,
     visits: base.visits,
-    restaurants: mergedRestaurants,
+    restaurants: dedupeRestaurantsById(mergedRestaurants),
     sources: mergedSources,
     sourceLinks: mergedSourceLinks,
   };

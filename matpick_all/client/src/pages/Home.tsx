@@ -304,8 +304,10 @@ function BenefitItem({
 
 function GuestPanel({ redirectTo }: { redirectTo: string }) {
   return (
-    <div className="w-full max-w-[302px] rounded-[28px] border border-[#ffd5db] bg-white/95 p-6 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur">
-      <h2 className="text-[28px] font-black leading-none text-[#161616]">{UI.guestTitle}</h2>
+    <div className="w-[320px] max-w-[calc(100vw-2rem)] rounded-[28px] border border-[#ffd5db] bg-white/95 p-6 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur sm:w-[340px]">
+      <h2 className="break-keep text-[28px] font-black leading-[1.05] text-[#161616]">
+        {UI.guestTitle}
+      </h2>
       <div className="mt-6 space-y-4">
         <BenefitItem
           icon={<Heart className="h-5 w-5 fill-current" />}
@@ -691,10 +693,9 @@ export default function Home() {
   }, []);
 
   const handlePrimarySearch = useCallback(() => {
-    const selectedItem =
-      activeItems[hoveredIndex >= 0 ? hoveredIndex : 0] ??
-      filteredResults[0] ??
-      recentSearches[0];
+    const selectedItem = normalizedQuery
+      ? filteredResults[hoveredIndex >= 0 ? hoveredIndex : 0] ?? filteredResults[0]
+      : recentSearches[hoveredIndex >= 0 ? hoveredIndex : 0] ?? recentSearches[0];
 
     if (selectedItem) {
       handleSelect(selectedItem);
@@ -702,7 +703,7 @@ export default function Home() {
     }
 
     navigate("/explore");
-  }, [activeItems, filteredResults, handleSelect, hoveredIndex, navigate, recentSearches]);
+  }, [filteredResults, handleSelect, hoveredIndex, navigate, normalizedQuery, recentSearches]);
 
   const handleSearchKeyDown = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {

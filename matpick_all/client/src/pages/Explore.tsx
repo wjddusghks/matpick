@@ -45,6 +45,10 @@ function buildDiscoveryKey(kind: DiscoveryKind, id: string) {
   return `${kind}:${id}`;
 }
 
+function dedupeRestaurantsById(items: Restaurant[]) {
+  return Array.from(new Map(items.map((restaurant) => [restaurant.id, restaurant])).values());
+}
+
 function SourceAvatarButton({
   option,
   selected,
@@ -327,7 +331,7 @@ export default function Explore() {
       );
     }
 
-    return nextRestaurants.sort(
+    return dedupeRestaurantsById(nextRestaurants).sort(
       (a, b) =>
         getRecommendationCount(b.id) - getRecommendationCount(a.id) || sortText(a.name, b.name)
     );

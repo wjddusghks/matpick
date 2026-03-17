@@ -281,6 +281,17 @@ export default function SearchMap() {
   const [hoveredIdx, setHoveredIdx] = useState(-1);
   const searchRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (type === "restaurant" && filteredRestaurants.length === 1) {
+      setSelectedId(filteredRestaurants[0].id);
+      return;
+    }
+
+    setSelectedId((prev) =>
+      prev && filteredRestaurants.some((restaurant) => restaurant.id === prev) ? prev : null
+    );
+  }, [filteredRestaurants, type]);
+
   const searchResults = useMemo(() => {
     const normalized = searchQuery.trim().toLowerCase();
     if (!normalized) {

@@ -291,9 +291,8 @@ export default function NaverMap({
     const selectedRestaurant = validRestaurants.find(
       (restaurant) => restaurant.id === selectedId
     );
-    const nearestRestaurant = validRestaurants.find(
-      (restaurant) => restaurant.id === nearestRestaurantId
-    );
+    const singleRestaurant =
+      validRestaurants.length === 1 ? validRestaurants[0] : null;
 
     if (selectedRestaurant) {
       map.setCenter(new naver.maps.LatLng(selectedRestaurant.lat, selectedRestaurant.lng));
@@ -307,8 +306,8 @@ export default function NaverMap({
       return;
     }
 
-    if (validRestaurants.length === 1) {
-      map.setCenter(new naver.maps.LatLng(validRestaurants[0].lat, validRestaurants[0].lng));
+    if (singleRestaurant) {
+      map.setCenter(new naver.maps.LatLng(singleRestaurant.lat, singleRestaurant.lng));
       map.setZoom(16);
       return;
     }

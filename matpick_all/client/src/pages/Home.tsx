@@ -923,7 +923,7 @@ export default function Home() {
             <span className="text-[#ff7b83]">{UI.brandSecond}</span>
           </h1>
 
-          <p className="mt-5 max-w-[720px] text-[18px] font-semibold leading-snug text-[#9a9a9a] sm:mt-7 sm:text-[33px]">
+          <p className="mt-5 max-w-[720px] break-keep px-2 text-[18px] font-semibold leading-snug text-[#9a9a9a] sm:mt-7 sm:text-[28px] lg:max-w-none lg:whitespace-nowrap lg:text-[31px]">
             {UI.heroSubtitle}
           </p>
 

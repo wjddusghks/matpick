@@ -942,22 +942,23 @@ export default function Home() {
                         <Plus className="h-4 w-4" />
                         내 주제 추가하기
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIsTopicDeleteMode((prev) => !prev);
-                          setSelectedTopicIdsForDelete([]);
-                        }}
-                        disabled={topics.length === 0}
-                        className={`inline-flex h-11 items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition ${
-                          isTopicDeleteMode
-                            ? "border-[#ff9fa9] bg-[#ffeff2] text-[#ff5f70]"
-                            : "border-[#ffd2d8] bg-white text-[#ff6b7b] hover:bg-[#fff2f4]"
-                        } disabled:cursor-not-allowed disabled:opacity-45`}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                        {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
-                      </button>
+                      {topics.length > 0 ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsTopicDeleteMode((prev) => !prev);
+                            setSelectedTopicIdsForDelete([]);
+                          }}
+                          className={`inline-flex h-11 items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition ${
+                            isTopicDeleteMode
+                              ? "border-[#ff9fa9] bg-[#ffeff2] text-[#ff5f70]"
+                              : "border-[#ffd2d8] bg-white text-[#ff6b7b] hover:bg-[#fff2f4]"
+                          }`}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
+                        </button>
+                      ) : null}
                     </div>
 
                     {topics.length === 0 ? (

@@ -48,3 +48,17 @@ export function saveUserRestaurantRating(userId: string, restaurantId: string, s
 
   window.localStorage.setItem(getStorageKey(userId), JSON.stringify(ratings));
 }
+
+export function clearUserRestaurantRating(userId: string, restaurantId: string) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const ratings = readUserRestaurantRatings(userId);
+  if (!(restaurantId in ratings)) {
+    return;
+  }
+
+  delete ratings[restaurantId];
+  window.localStorage.setItem(getStorageKey(userId), JSON.stringify(ratings));
+}

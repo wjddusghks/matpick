@@ -28,7 +28,11 @@ import {
   restaurants,
 } from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
-import { getUserRestaurantRating, saveUserRestaurantRating } from "@/lib/restaurantRatings";
+import {
+  clearUserRestaurantRating,
+  getUserRestaurantRating,
+  saveUserRestaurantRating,
+} from "@/lib/restaurantRatings";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
@@ -103,6 +107,7 @@ export default function RestaurantDetail() {
   const [reviewPhotos, setReviewPhotos] = useState<string[]>([]);
   const [storedReviews, setStoredReviews] = useState<ReviewItem[]>([]);
   const [personalRating, setPersonalRating] = useState(0);
+  const [hoveredPersonalRating, setHoveredPersonalRating] = useState(0);
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -121,12 +126,14 @@ export default function RestaurantDetail() {
     setReviewDraft("");
     setReviewStars(5);
     setReviewPhotos([]);
+    setHoveredPersonalRating(0);
     setComposerOpen(false);
   }, [restaurant?.id]);
 
   useEffect(() => {
     if (!restaurant || !user) {
       setPersonalRating(0);
+      setHoveredPersonalRating(0);
       return;
     }
     setPersonalRating(getUserRestaurantRating(user.id, restaurant.id)?.stars ?? 0);
@@ -159,6 +166,7 @@ export default function RestaurantDetail() {
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
   const shareUrl = getRestaurantUrl(restaurant.id);
+  const visiblePersonalRating = hoveredPersonalRating || personalRating;
 
   useSeo({
     title: `${restaurant.name} 맛집 정보`,
@@ -195,8 +203,18 @@ export default function RestaurantDetail() {
       toast("내 평점은 로그인 후에 저장할 수 있어요.");
       return;
     }
+
+    if (personalRating === stars) {
+      clearUserRestaurantRating(user.id, restaurant.id);
+      setPersonalRating(0);
+      setHoveredPersonalRating(0);
+      toast.success("내 평점을 초기화했어요.");
+      return;
+    }
+
     saveUserRestaurantRating(user.id, restaurant.id, stars);
     setPersonalRating(stars);
+    setHoveredPersonalRating(0);
     toast.success(`내 평점 ${stars}점을 저장했어요.`);
   };
 
@@ -596,21 +614,31 @@ export default function RestaurantDetail() {
                 </span>
               ) : null}
             </div>
-            <div className="mt-4 flex items-center gap-2">
-              {[1, 2, 3, 4, 5].map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => saveRating(value)}
-                  className={`flex h-10 w-10 items-center justify-center rounded-full transition ${
-                    value <= personalRating
-                      ? "bg-[#fff4d8] text-[#ffb24a]"
-                      : "bg-[#f6f6f6] text-[#c7c7c7] hover:bg-[#fff8e8] hover:text-[#ffb24a]"
-                  }`}
-                >
-                  <Star className="h-5 w-5" fill={value <= personalRating ? "currentColor" : "transparent"} />
-                </button>
-              ))}
+            <div
+              className="mt-4 flex items-center gap-2"
+              onMouseLeave={() => setHoveredPersonalRating(0)}
+            >
+              {[1, 2, 3, 4, 5].map((value) => {
+                const isActive = value <= visiblePersonalRating;
+
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    onMouseEnter={() => setHoveredPersonalRating(value)}
+                    onFocus={() => setHoveredPersonalRating(value)}
+                    onBlur={() => setHoveredPersonalRating(0)}
+                    onClick={() => saveRating(value)}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full transition ${
+                      isActive
+                        ? "bg-[#fff4d8] text-[#ffb24a]"
+                        : "bg-[#f6f6f6] text-[#c7c7c7] hover:bg-[#fff8e8] hover:text-[#ffb24a]"
+                    }`}
+                  >
+                    <Star className="h-5 w-5" fill={isActive ? "currentColor" : "transparent"} />
+                  </button>
+                );
+              })}
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import rawDataset from "./matpick-data.json";
+import discoveryTopicDefinitions from "./discovery-topics.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
@@ -19,6 +20,25 @@ type SourceDataset = {
   restaurants?: Restaurant[];
   sources?: Source[];
   sourceLinks?: SourceLink[];
+};
+
+export type DiscoveryTopicKind = "creator" | "source";
+
+type DiscoveryTopicDefinition = {
+  slug: string;
+  kind: DiscoveryTopicKind;
+  targetId: string;
+};
+
+export type DiscoveryTopic = {
+  slug: string;
+  kind: DiscoveryTopicKind;
+  targetId: string;
+  key: string;
+  name: string;
+  description: string;
+  path: string;
+  count: number;
 };
 
 function normalizeLookupValue(value: string) {
@@ -438,6 +458,78 @@ export function getRestaurantsBySource(sourceId: string) {
 
 export function getSourceRestaurantCount(sourceId: string) {
   return getRestaurantsBySource(sourceId).length;
+}
+
+function buildDiscoveryTopicKey(kind: DiscoveryTopicKind, targetId: string) {
+  return `${kind}:${targetId}`;
+}
+
+function buildDiscoveryTopicPath(slug: string) {
+  return `/explore/topic/${slug}`;
+}
+
+function buildCreatorTopicDescription(creator: Creator, count: number) {
+  const displayName = getCreatorDisplayName(creator);
+  return `${displayName}에서 소개된 맛집 ${count}곳을 지역과 음식별로 모아 탐색해보세요.`;
+}
+
+function buildSourceTopicDescription(source: Source, count: number) {
+  return `${source.name}에 포함된 맛집 ${count}곳을 지역과 음식별로 한눈에 둘러보세요.`;
+}
+
+const typedDiscoveryTopicDefinitions =
+  discoveryTopicDefinitions as DiscoveryTopicDefinition[];
+
+export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
+  .map((definition) => {
+    if (definition.kind === "creator") {
+      const creator = creators.find((entry) => entry.id === definition.targetId);
+      if (!creator) {
+        return null;
+      }
+
+      const count = getRestaurantsByCreator(creator.id).length;
+      if (count === 0) {
+        return null;
+      }
+
+      return {
+        slug: definition.slug,
+        kind: definition.kind,
+        targetId: definition.targetId,
+        key: buildDiscoveryTopicKey(definition.kind, definition.targetId),
+        name: getCreatorDisplayName(creator),
+        description: buildCreatorTopicDescription(creator, count),
+        path: buildDiscoveryTopicPath(definition.slug),
+        count,
+      };
+    }
+
+    const source = getSourceById(definition.targetId);
+    if (!source) {
+      return null;
+    }
+
+    const count = getSourceRestaurantCount(source.id);
+    if (count === 0) {
+      return null;
+    }
+
+    return {
+      slug: definition.slug,
+      kind: definition.kind,
+      targetId: definition.targetId,
+      key: buildDiscoveryTopicKey(definition.kind, definition.targetId),
+      name: source.name,
+      description: buildSourceTopicDescription(source, count),
+      path: buildDiscoveryTopicPath(definition.slug),
+      count,
+    };
+  })
+  .filter((topic): topic is DiscoveryTopic => topic != null);
+
+export function getDiscoveryTopicBySlug(slug: string) {
+  return discoveryTopics.find((topic) => topic.slug === slug) ?? null;
 }
 
 export function getUniqueRegions(): string[] {

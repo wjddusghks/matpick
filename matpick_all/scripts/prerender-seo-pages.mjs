@@ -8,6 +8,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.join(projectRoot, "dist");
 const baseDataPath = path.join(projectRoot, "client", "src", "data", "matpick-data.json");
 const generatedDir = path.join(projectRoot, "client", "src", "data", "generated");
+const discoveryTopicsPath = path.join(projectRoot, "client", "src", "data", "discovery-topics.json");
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -203,6 +204,7 @@ async function main() {
   const template = await readFile(path.join(distDir, "index.html"), "utf8");
   const baseData = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
+  const discoveryTopics = await readJson(discoveryTopicsPath);
   const { creators, restaurants } = mergeDatasets(baseData, generatedDatasets);
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
   const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
@@ -247,6 +249,34 @@ async function main() {
       },
     })
   );
+
+  for (const topic of discoveryTopics) {
+    const topicPath = `/explore/topic/${topic.slug}`;
+    const topicTitle = `${topic.name} 맛집 탐색`;
+    const topicDescription =
+      topic.kind === "creator"
+        ? `${topic.name}에서 소개된 맛집을 맛집 탐색 페이지에서 지역과 음식 기준으로 골라보세요.`
+        : `${topic.name}에 포함된 맛집을 맛집 탐색 페이지에서 지역과 음식 기준으로 둘러보세요.`;
+
+    await writeRouteHtml(
+      path.join("explore", "topic", topic.slug),
+      renderHtml(template, {
+        title: topicTitle,
+        description: topicDescription,
+        url: absoluteUrl(siteUrl, topicPath),
+        image: defaultImage,
+        type: "website",
+        adsenseClient,
+        jsonLd: {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: topicTitle,
+          description: topicDescription,
+          url: absoluteUrl(siteUrl, topicPath),
+        },
+      })
+    );
+  }
 
   await writeRouteHtml(
     "map",

@@ -3,6 +3,7 @@ import { Compass, Search } from "lucide-react";
 import { useLocation, useSearch } from "wouter";
 import {
   creators,
+  getDiscoveryTopicBySlug,
   getBroadRegion,
   getCuisineCategories,
   getCuisineCategory,
@@ -37,6 +38,10 @@ type DiscoveryOption = {
   name: string;
   imageUrl?: string;
   count: number;
+};
+
+type ExploreProps = {
+  topicSlug?: string;
 };
 
 function sortText(a: string, b: string) {
@@ -215,12 +220,16 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   );
 }
 
-export default function Explore() {
+export default function Explore({ topicSlug }: ExploreProps = {}) {
   const [, navigate] = useLocation();
   const search = useSearch();
   const categories = getCuisineCategories();
   const regions = getRegions();
   const { topics, isRestaurantInTopic, getTopicRestaurantCount } = useFavorites();
+  const presetTopic = useMemo(
+    () => (topicSlug ? getDiscoveryTopicBySlug(topicSlug) : null),
+    [topicSlug]
+  );
 
   const discoveryOptions = useMemo<DiscoveryOption[]>(() => {
     const creatorOptions = creators
@@ -252,6 +261,10 @@ export default function Explore() {
 
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
   const initialSelectedKeys = useMemo(() => {
+    if (presetTopic) {
+      return [presetTopic.key];
+    }
+
     const nextKeys: string[] = [];
     const creatorId = searchParams.get("creator");
     const sourceId = searchParams.get("source");
@@ -271,24 +284,29 @@ export default function Explore() {
     }
 
     return nextKeys;
-  }, [discoveryOptions, searchParams]);
+  }, [discoveryOptions, presetTopic, searchParams]);
 
   const [selectedDiscoveryKeys, setSelectedDiscoveryKeys] = useState<string[]>(initialSelectedKeys);
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
   const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
 
+  const seoTitle = presetTopic ? `${presetTopic.name} 맛집 탐색` : "맛집 탐색";
+  const seoDescription = presetTopic
+    ? presetTopic.description
+    : "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.";
+  const seoPath = presetTopic ? presetTopic.path : "/explore";
+
   useSeo({
-    title: "맛집 탐색",
-    description:
-      "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.",
-    path: "/explore",
+    title: seoTitle,
+    description: seoDescription,
+    path: seoPath,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "맛집 탐색",
-      description:
-        "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 탐색하는 페이지",
+      name: seoTitle,
+      description: seoDescription,
+      url: `https://matpick.co.kr${seoPath}`,
     },
   });
 

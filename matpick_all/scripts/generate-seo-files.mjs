@@ -10,6 +10,7 @@ const publicDir = path.join(clientRoot, "public");
 const sourceAsset = path.join(clientRoot, "src", "assets", "matpick-logo-final 2.png");
 const baseDataPath = path.join(clientRoot, "src", "data", "matpick-data.json");
 const generatedDir = path.join(clientRoot, "src", "data", "generated");
+const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -52,6 +53,7 @@ async function ensurePublicAssets() {
 async function buildSitemap(siteUrl) {
   const baseDataset = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
+  const discoveryTopics = await readJson(discoveryTopicsPath);
   const restaurants = [
     ...(baseDataset.restaurants || []),
     ...generatedDatasets.flatMap((dataset) => dataset.restaurants || []),
@@ -65,6 +67,10 @@ async function buildSitemap(siteUrl) {
 
   for (const item of staticUrls) {
     entries.push(item);
+  }
+
+  for (const topic of discoveryTopics) {
+    entries.push(`/explore/topic/${topic.slug}`);
   }
 
   for (const creator of creators) {

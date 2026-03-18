@@ -30,7 +30,13 @@ function Router() {
       <Route path="/auth/callback/:provider/">
         {(params) => <AuthCallback provider={params.provider} />}
       </Route>
-      <Route path="/explore" component={Explore} />
+      <Route path="/explore">{() => <Explore />}</Route>
+      <Route path="/explore/topic/:topicSlug">
+        {(params) => <Explore topicSlug={params.topicSlug} />}
+      </Route>
+      <Route path="/explore/topic/:topicSlug/">
+        {(params) => <Explore topicSlug={params.topicSlug} />}
+      </Route>
       <Route path="/map" component={SearchMap} />
       <Route path="/about" component={About} />
       <Route path="/privacy" component={Privacy} />

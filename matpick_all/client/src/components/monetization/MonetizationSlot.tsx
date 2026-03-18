@@ -3,6 +3,15 @@ import { useEffect, useRef } from "react";
 declare global {
   interface Window {
     adsbygoogle?: unknown[];
+    PartnersCoupang?: {
+      G: new (config: {
+        id: string | number;
+        template: string;
+        trackingCode: string;
+        width: string;
+        height: string;
+      }) => unknown;
+    };
   }
 }
 
@@ -133,14 +142,87 @@ export function CoupangSlot({
   link = import.meta.env.VITE_COUPANG_PARTNERS_URL?.trim() ?? "",
   image = import.meta.env.VITE_COUPANG_BANNER_IMAGE_URL?.trim() ?? "",
   title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ?? "추천 상품 보러가기",
+  dynamicBannerId = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_ID?.trim() ?? "",
+  dynamicBannerTemplate =
+    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TEMPLATE?.trim() ?? "carousel",
+  dynamicBannerTrackingCode =
+    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TRACKING_CODE?.trim() ?? "",
+  dynamicBannerWidth =
+    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_WIDTH?.trim() ?? "680",
+  dynamicBannerHeight =
+    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_HEIGHT?.trim() ?? "140",
 }: {
   label?: string;
   link?: string;
   image?: string;
   title?: string;
+  dynamicBannerId?: string;
+  dynamicBannerTemplate?: string;
+  dynamicBannerTrackingCode?: string;
+  dynamicBannerWidth?: string;
+  dynamicBannerHeight?: string;
 }) {
-  if (!link) {
+  const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
+  const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
+
+  useEffect(() => {
+    if (!hasDynamicBanner || !dynamicBannerRef.current) {
+      return;
+    }
+
+    const container = dynamicBannerRef.current;
+    container.innerHTML = "";
+
+    const sdkScript = document.createElement("script");
+    sdkScript.src = "https://ads-partners.coupang.com/g.js";
+    sdkScript.async = true;
+
+    const inlineScript = document.createElement("script");
+    inlineScript.text = `
+      new PartnersCoupang.G({
+        id: ${JSON.stringify(dynamicBannerId)},
+        template: ${JSON.stringify(dynamicBannerTemplate)},
+        trackingCode: ${JSON.stringify(dynamicBannerTrackingCode)},
+        width: ${JSON.stringify(dynamicBannerWidth)},
+        height: ${JSON.stringify(dynamicBannerHeight)}
+      });
+    `;
+
+    sdkScript.onload = () => {
+      container.appendChild(inlineScript);
+    };
+
+    container.appendChild(sdkScript);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, [
+    dynamicBannerHeight,
+    dynamicBannerId,
+    dynamicBannerTemplate,
+    dynamicBannerTrackingCode,
+    dynamicBannerWidth,
+    hasDynamicBanner,
+  ]);
+
+  if (!hasDynamicBanner && !link) {
     return null;
+  }
+
+  if (hasDynamicBanner) {
+    return (
+      <SlotFrame label={label}>
+        <div
+          ref={dynamicBannerRef}
+          className="overflow-hidden rounded-[18px] bg-[#fffafb]"
+          style={{
+            width: "100%",
+            minHeight: `${dynamicBannerHeight}px`,
+          }}
+        />
+      </SlotFrame>
+    );
   }
 
   return (
@@ -160,9 +242,7 @@ export function CoupangSlot({
         )}
         <div className="min-w-0">
           <p className="text-sm font-semibold text-[#1e1e1e]">{title}</p>
-          <p className="mt-1 text-xs text-[#8c8c8c]">
-            제휴 링크가 포함되어 있어요.
-          </p>
+          <p className="mt-1 text-xs text-[#8c8c8c]">제휴 링크가 포함되어 있어요.</p>
         </div>
       </a>
     </SlotFrame>

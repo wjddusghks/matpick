@@ -24,7 +24,7 @@ import { toast } from "sonner";
 import { useLocation } from "wouter";
 import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
-import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
@@ -1263,7 +1263,7 @@ export default function Home() {
         </section>
 
         <div className="mt-8 w-full max-w-[840px] sm:mt-10">
-          <MonetizationSlot label="Sponsored" />
+          <AdsenseSlot label="Sponsored" />
         </div>
       </main>
 

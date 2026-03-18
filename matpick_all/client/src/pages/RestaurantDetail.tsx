@@ -17,7 +17,10 @@ import AuthFeatureDialog, { type AuthFeatureMode } from "@/components/AuthFeatur
 import HeartButton from "@/components/HeartButton";
 import FavoriteTopicPickerDialog from "@/components/FavoriteTopicPickerDialog";
 import ShareSheet from "@/components/ShareSheet";
-import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import {
+  AdsenseSlot,
+  CoupangSlot,
+} from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import {
@@ -798,7 +801,10 @@ export default function RestaurantDetail() {
             </div>
           ) : null}
 
-          <MonetizationSlot label="Sponsored" />
+          <div className="space-y-4">
+            <AdsenseSlot label="Sponsored" />
+            <CoupangSlot label="Partner Pick" />
+          </div>
 
           <div className="flex flex-col gap-2.5 rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <button

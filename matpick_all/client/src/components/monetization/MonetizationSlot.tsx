@@ -6,10 +6,36 @@ declare global {
   }
 }
 
-function AdsenseSlot({ label }: { label?: string }) {
+export type MonetizationProvider = "adsense" | "kakao" | "coupang";
+
+function SlotFrame({
+  label,
+  children,
+}: {
+  label?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="rounded-[24px] border border-[#efe5e6] bg-white p-4 shadow-[0_10px_32px_rgba(0,0,0,0.04)]">
+      {label ? (
+        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b1a6a7]">
+          {label}
+        </p>
+      ) : null}
+      {children}
+    </div>
+  );
+}
+
+export function AdsenseSlot({
+  label,
+  slot = import.meta.env.VITE_ADSENSE_SLOT_INLINE?.trim() ?? "",
+}: {
+  label?: string;
+  slot?: string;
+}) {
   const insRef = useRef<HTMLModElement | null>(null);
   const client = import.meta.env.VITE_ADSENSE_CLIENT?.trim() ?? "";
-  const slot = import.meta.env.VITE_ADSENSE_SLOT_INLINE?.trim() ?? "";
 
   useEffect(() => {
     if (!client || !slot || !insRef.current) {
@@ -44,12 +70,7 @@ function AdsenseSlot({ label }: { label?: string }) {
   }
 
   return (
-    <div className="rounded-[24px] border border-[#efe5e6] bg-white p-4 shadow-[0_10px_32px_rgba(0,0,0,0.04)]">
-      {label ? (
-        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b1a6a7]">
-          {label}
-        </p>
-      ) : null}
+    <SlotFrame label={label}>
       <ins
         ref={insRef}
         className="adsbygoogle block min-h-[120px] overflow-hidden rounded-[18px] bg-[#faf7f8]"
@@ -59,57 +80,78 @@ function AdsenseSlot({ label }: { label?: string }) {
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
-    </div>
+    </SlotFrame>
   );
 }
 
-function KakaoAdfitSlot({ label }: { label?: string }) {
-  const unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "";
-  const width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320";
-  const height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100";
+export function KakaoAdfitSlot({
+  label,
+  unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "",
+  width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320",
+  height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100",
+}: {
+  label?: string;
+  unit?: string;
+  width?: string;
+  height?: string;
+}) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!unit || !containerRef.current) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://t1.daumcdn.net/kas/static/ba.min.js";
+    containerRef.current.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, [unit, width, height]);
 
   if (!unit) {
     return null;
   }
 
   return (
-    <div className="rounded-[24px] border border-[#efe5e6] bg-white p-4 shadow-[0_10px_32px_rgba(0,0,0,0.04)]">
-      {label ? (
-        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b1a6a7]">
-          {label}
-        </p>
-      ) : null}
-      <ins
-        className="kakao_ad_area block overflow-hidden rounded-[18px] bg-[#faf7f8]"
-        style={{ display: "none" }}
-        data-ad-unit={unit}
-        data-ad-width={width}
-        data-ad-height={height}
-      />
-    </div>
+    <SlotFrame label={label}>
+      <div ref={containerRef}>
+        <ins
+          className="kakao_ad_area block overflow-hidden rounded-[18px] bg-[#faf7f8]"
+          style={{ display: "none" }}
+          data-ad-unit={unit}
+          data-ad-width={width}
+          data-ad-height={height}
+        />
+      </div>
+    </SlotFrame>
   );
 }
 
-function CoupangSlot({ label }: { label?: string }) {
-  const link = import.meta.env.VITE_COUPANG_PARTNERS_URL?.trim() ?? "";
-  const image = import.meta.env.VITE_COUPANG_BANNER_IMAGE_URL?.trim() ?? "";
-  const title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ?? "추천 상품 보러가기";
-
+export function CoupangSlot({
+  label,
+  link = import.meta.env.VITE_COUPANG_PARTNERS_URL?.trim() ?? "",
+  image = import.meta.env.VITE_COUPANG_BANNER_IMAGE_URL?.trim() ?? "",
+  title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ?? "추천 상품 보러가기",
+}: {
+  label?: string;
+  link?: string;
+  image?: string;
+  title?: string;
+}) {
   if (!link) {
     return null;
   }
 
   return (
-    <div className="rounded-[24px] border border-[#efe5e6] bg-white p-4 shadow-[0_10px_32px_rgba(0,0,0,0.04)]">
-      {label ? (
-        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#b1a6a7]">
-          {label}
-        </p>
-      ) : null}
+    <SlotFrame label={label}>
       <a
         href={link}
         target="_blank"
-        rel="noreferrer sponsored"
+        rel="noopener noreferrer sponsored"
         className="flex items-center gap-4 rounded-[18px] border border-[#f2ecec] bg-[#fffafb] p-4 no-underline transition hover:border-[#ffd1d7] hover:bg-[#fff5f7]"
       >
         {image ? (
@@ -121,16 +163,23 @@ function CoupangSlot({ label }: { label?: string }) {
         )}
         <div className="min-w-0">
           <p className="text-sm font-semibold text-[#1e1e1e]">{title}</p>
-          <p className="mt-1 text-xs text-[#8c8c8c]">제휴 링크가 포함되어 있어요.</p>
+          <p className="mt-1 text-xs text-[#8c8c8c]">
+            제휴 링크가 포함되어 있어요.
+          </p>
         </div>
       </a>
-    </div>
+    </SlotFrame>
   );
 }
 
-export default function MonetizationSlot({ label }: { label?: string }) {
-  const provider = import.meta.env.VITE_MONETIZATION_PROVIDER?.trim() ?? "";
-
+export default function MonetizationSlot({
+  label,
+  provider = (import.meta.env.VITE_MONETIZATION_PROVIDER?.trim() ??
+    "adsense") as MonetizationProvider,
+}: {
+  label?: string;
+  provider?: MonetizationProvider;
+}) {
   if (provider === "adsense") {
     return <AdsenseSlot label={label} />;
   }

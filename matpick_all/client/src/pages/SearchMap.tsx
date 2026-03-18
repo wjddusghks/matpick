@@ -19,7 +19,7 @@ import {
 } from "@/data";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
-import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
 import {
   getDistanceInMeters,
   loadStoredLocation,
@@ -534,7 +534,7 @@ export default function SearchMap() {
             </div>
 
             <div className="mt-4">
-              <MonetizationSlot label="Sponsored" />
+              <KakaoAdfitSlot label="Sponsored" />
             </div>
           </div>
 

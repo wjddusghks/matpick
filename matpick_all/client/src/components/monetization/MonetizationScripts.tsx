@@ -7,17 +7,20 @@ declare global {
 }
 
 const ADSENSE_SCRIPT_ID = "matpick-adsense-sdk";
-const KAKAO_ADFIT_SCRIPT_ID = "matpick-kakao-adfit-sdk";
 const ADSENSE_READY_EVENT = "matpick:adsense-ready";
 
-function ensureScript(id: string, src: string, attributes: Record<string, string> = {}) {
+function ensureScript(
+  id: string,
+  src: string,
+  attributes: Record<string, string> = {}
+) {
   if (typeof document === "undefined") {
-    return;
+    return null;
   }
 
   const existing = document.getElementById(id);
   if (existing) {
-    return;
+    return existing;
   }
 
   const script = document.createElement("script");
@@ -30,6 +33,7 @@ function ensureScript(id: string, src: string, attributes: Record<string, string
   });
 
   document.head.appendChild(script);
+  return script;
 }
 
 function upsertMeta(name: string, content: string) {
@@ -48,43 +52,43 @@ function upsertMeta(name: string, content: string) {
 }
 
 export default function MonetizationScripts() {
-  const provider = import.meta.env.VITE_MONETIZATION_PROVIDER?.trim() ?? "";
   const adsenseClient = import.meta.env.VITE_ADSENSE_CLIENT?.trim() ?? "";
 
   useEffect(() => {
-    if (provider === "adsense" && adsenseClient) {
-      upsertMeta("google-adsense-account", adsenseClient);
-      ensureScript(
-        ADSENSE_SCRIPT_ID,
-        `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`,
-        { crossorigin: "anonymous" }
-      );
-
-      const script = document.getElementById(ADSENSE_SCRIPT_ID);
-      if (script?.getAttribute("data-ready") === "true") {
-        window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
-        return;
-      }
-
-      if (Array.isArray(window.adsbygoogle)) {
-        script?.setAttribute("data-ready", "true");
-        window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
-        return;
-      }
-
-      const handleReady = () => {
-        script?.setAttribute("data-ready", "true");
-        window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
-      };
-
-      script?.addEventListener("load", handleReady, { once: true });
-      return () => script?.removeEventListener("load", handleReady);
+    if (!adsenseClient) {
+      return;
     }
 
-    if (provider === "kakao") {
-      ensureScript(KAKAO_ADFIT_SCRIPT_ID, "//t1.daumcdn.net/kas/static/ba.min.js");
+    upsertMeta("google-adsense-account", adsenseClient);
+    const script = ensureScript(
+      ADSENSE_SCRIPT_ID,
+      `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`,
+      { crossorigin: "anonymous" }
+    );
+
+    if (!script) {
+      return;
     }
-  }, [adsenseClient, provider]);
+
+    if (script.getAttribute("data-ready") === "true") {
+      window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
+      return;
+    }
+
+    if (Array.isArray(window.adsbygoogle)) {
+      script.setAttribute("data-ready", "true");
+      window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
+      return;
+    }
+
+    const handleReady = () => {
+      script.setAttribute("data-ready", "true");
+      window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
+    };
+
+    script.addEventListener("load", handleReady, { once: true });
+    return () => script.removeEventListener("load", handleReady);
+  }, [adsenseClient]);
 
   return null;
 }

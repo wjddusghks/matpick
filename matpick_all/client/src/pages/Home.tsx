@@ -419,7 +419,9 @@ export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
+  const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
+  const [isAccountPanelPinned, setIsAccountPanelPinned] = useState(false);
   const [showTopicDialog, setShowTopicDialog] = useState(false);
   const [isTopicDeleteMode, setIsTopicDeleteMode] = useState(false);
   const [selectedTopicIdsForDelete, setSelectedTopicIdsForDelete] = useState<string[]>([]);
@@ -499,6 +501,26 @@ export default function Home() {
     });
   }, []);
 
+  const closeLoginPanel = useCallback(() => {
+    if (loginTimeoutRef.current) {
+      clearTimeout(loginTimeoutRef.current);
+      loginTimeoutRef.current = null;
+    }
+
+    setShowLoginPanel(false);
+    setIsLoginPanelPinned(false);
+  }, []);
+
+  const closeAccountPanel = useCallback(() => {
+    if (accountTimeoutRef.current) {
+      clearTimeout(accountTimeoutRef.current);
+      accountTimeoutRef.current = null;
+    }
+
+    setShowAccountPanel(false);
+    setIsAccountPanelPinned(false);
+  }, []);
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as Node;
@@ -508,17 +530,17 @@ export default function Home() {
       }
 
       if (loginRef.current && !loginRef.current.contains(target)) {
-        setShowLoginPanel(false);
+        closeLoginPanel();
       }
 
       if (accountRef.current && !accountRef.current.contains(target)) {
-        setShowAccountPanel(false);
+        closeAccountPanel();
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [closeAccountPanel, closeLoginPanel]);
 
   useEffect(() => {
     return () => {
@@ -623,10 +645,29 @@ export default function Home() {
   }, []);
 
   const handleLoginLeave = useCallback(() => {
+    if (isLoginPanelPinned) {
+      return;
+    }
+
     loginTimeoutRef.current = setTimeout(() => {
       setShowLoginPanel(false);
     }, 160);
-  }, []);
+  }, [isLoginPanelPinned]);
+
+  const handleLoginToggle = useCallback(() => {
+    if (showLoginPanel && isLoginPanelPinned) {
+      closeLoginPanel();
+      return;
+    }
+
+    if (loginTimeoutRef.current) {
+      clearTimeout(loginTimeoutRef.current);
+      loginTimeoutRef.current = null;
+    }
+
+    setShowLoginPanel(true);
+    setIsLoginPanelPinned(true);
+  }, [closeLoginPanel, isLoginPanelPinned, showLoginPanel]);
 
   const handleAccountEnter = useCallback(() => {
     if (accountTimeoutRef.current) {
@@ -637,10 +678,29 @@ export default function Home() {
   }, []);
 
   const handleAccountLeave = useCallback(() => {
+    if (isAccountPanelPinned) {
+      return;
+    }
+
     accountTimeoutRef.current = setTimeout(() => {
       setShowAccountPanel(false);
     }, 160);
-  }, []);
+  }, [isAccountPanelPinned]);
+
+  const handleAccountToggle = useCallback(() => {
+    if (showAccountPanel && isAccountPanelPinned) {
+      closeAccountPanel();
+      return;
+    }
+
+    if (accountTimeoutRef.current) {
+      clearTimeout(accountTimeoutRef.current);
+      accountTimeoutRef.current = null;
+    }
+
+    setShowAccountPanel(true);
+    setIsAccountPanelPinned(true);
+  }, [closeAccountPanel, isAccountPanelPinned, showAccountPanel]);
 
   useEffect(() => {
     if (!showAccountPanel) {
@@ -669,6 +729,16 @@ export default function Home() {
     setSelectedTopicIdsForDelete([]);
     setIsTopicDeleteMode(false);
   }, [deleteTopics, selectedTopicIdsForDelete]);
+
+  const handleOpenTopicPage = useCallback(
+    (topicId: string) => {
+      setIsTopicDeleteMode(false);
+      setSelectedTopicIdsForDelete([]);
+      closeAccountPanel();
+      navigate(`/my/favorites?topic=${encodeURIComponent(topicId)}`);
+    },
+    [closeAccountPanel, navigate]
+  );
 
   const handleSelect = useCallback(
     (item: SearchResult) => {
@@ -896,7 +966,7 @@ export default function Home() {
               >
                 <button
                   type="button"
-                  onClick={() => setShowAccountPanel((prev) => !prev)}
+                  onClick={handleAccountToggle}
                   className="flex h-10 items-center justify-center rounded-full bg-[#ff7b83] px-4 text-xs font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95 sm:h-11 sm:px-5 sm:text-sm"
                 >
                   {userDisplayName}
@@ -971,11 +1041,27 @@ export default function Home() {
                         {topics.map((topic) => (
                           <div
                             key={topic.id}
+                            onClick={() => {
+                              if (!isTopicDeleteMode) {
+                                handleOpenTopicPage(topic.id);
+                              }
+                            }}
+                            onKeyDown={(event) => {
+                              if (
+                                !isTopicDeleteMode &&
+                                (event.key === "Enter" || event.key === " ")
+                              ) {
+                                event.preventDefault();
+                                handleOpenTopicPage(topic.id);
+                              }
+                            }}
+                            role={isTopicDeleteMode ? undefined : "button"}
+                            tabIndex={isTopicDeleteMode ? -1 : 0}
                             className={`flex items-center justify-between gap-3 rounded-[18px] border bg-white px-3 py-2.5 transition ${
                               isTopicDeleteMode && selectedTopicIdsForDelete.includes(topic.id)
                                 ? "border-[#ffb7c0] bg-[#fff4f6]"
                                 : "border-[#ffe5e9]"
-                            }`}
+                            } ${!isTopicDeleteMode ? "cursor-pointer hover:border-[#ffcad1] hover:bg-[#fff4f6]" : ""}`}
                           >
                             <div className="flex items-center gap-3">
                               {isTopicDeleteMode ? (
@@ -1034,7 +1120,7 @@ export default function Home() {
             >
               <button
                 type="button"
-                onClick={() => setShowLoginPanel((prev) => !prev)}
+                onClick={handleLoginToggle}
                 className="rounded-full bg-[#ff7b83] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95 sm:px-8 sm:py-3"
               >
                 {UI.header.login}

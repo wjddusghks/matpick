@@ -184,8 +184,15 @@ export default function NaverMap({
       });
 
       window.setTimeout(() => {
+        const currentCenter = map.getCenter();
+        const currentZoom = map.getZoom();
         (map as any).autoResize?.();
-        map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
+        if (currentCenter) {
+          map.setCenter(currentCenter);
+        }
+        if (typeof currentZoom === "number") {
+          map.setZoom(currentZoom);
+        }
       }, 100);
     } catch (error) {
       console.error("Failed to initialize Naver Map:", error);

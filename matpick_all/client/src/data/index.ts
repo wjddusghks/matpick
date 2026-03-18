@@ -39,6 +39,20 @@ export type DiscoveryTopic = {
   description: string;
   path: string;
   count: number;
+  imageUrl?: string;
+};
+
+export type DiscoveryTopicEpisode = {
+  slug: string;
+  topicSlug: string;
+  episode: string;
+  title: string;
+  description: string;
+  videoTitle: string;
+  videoUrl: string;
+  restaurantIds: string[];
+  count: number;
+  path: string;
 };
 
 function normalizeLookupValue(value: string) {
@@ -468,6 +482,33 @@ function buildDiscoveryTopicPath(slug: string) {
   return `/explore/topic/${slug}`;
 }
 
+function buildDiscoveryTopicEpisodePath(topicSlug: string, episodeSlug: string) {
+  return `/explore/topic/${topicSlug}/episode/${episodeSlug}`;
+}
+
+function slugifyTopicSegment(value: string) {
+  const normalized = String(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+
+  const slug = normalized
+    .replace(/[^a-z0-9가-힣]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return slug || "episode";
+}
+
+function getEpisodeSortValue(value: string) {
+  const match = value.match(/\d+/);
+  return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER;
+}
+
+function sortVisitsByDate(a: Visit, b: Visit) {
+  return (b.visitDate || "").localeCompare(a.visitDate || "", "ko-KR");
+}
+
 function buildCreatorTopicDescription(creator: Creator, count: number) {
   const displayName = getCreatorDisplayName(creator);
   return `${displayName}에서 소개된 맛집 ${count}곳을 지역과 음식별로 모아 탐색해보세요.`;
@@ -481,7 +522,7 @@ const typedDiscoveryTopicDefinitions =
   discoveryTopicDefinitions as DiscoveryTopicDefinition[];
 
 export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
-  .map((definition) => {
+  .map<DiscoveryTopic | null>((definition) => {
     if (definition.kind === "creator") {
       const creator = creators.find((entry) => entry.id === definition.targetId);
       if (!creator) {
@@ -502,6 +543,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
         description: buildCreatorTopicDescription(creator, count),
         path: buildDiscoveryTopicPath(definition.slug),
         count,
+        imageUrl: creator.profileImage,
       };
     }
 
@@ -524,12 +566,103 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
       description: buildSourceTopicDescription(source, count),
       path: buildDiscoveryTopicPath(definition.slug),
       count,
+      imageUrl: source.imageUrl,
     };
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
 export function getDiscoveryTopicBySlug(slug: string) {
   return discoveryTopics.find((topic) => topic.slug === slug) ?? null;
+}
+
+export function getDiscoveryTopicByTarget(
+  kind: DiscoveryTopicKind,
+  targetId: string
+) {
+  return (
+    discoveryTopics.find(
+      (topic) => topic.kind === kind && topic.targetId === targetId
+    ) ?? null
+  );
+}
+
+const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
+  discoveryTopics.map((topic) => {
+    if (topic.kind !== "creator") {
+      return [topic.slug, []];
+    }
+
+    const creatorVisits = visits
+      .filter((visit) => visit.creatorId === topic.targetId)
+      .sort(sortVisitsByDate);
+    const groupedVisits = new Map<string, Visit[]>();
+
+    creatorVisits.forEach((visit) => {
+      const groupKey = visit.videoId || visit.episode || visit.videoTitle || visit.id;
+      const current = groupedVisits.get(groupKey) ?? [];
+      current.push(visit);
+      groupedVisits.set(groupKey, current);
+    });
+
+    const usedSlugs = new Set<string>();
+    const episodes = Array.from(groupedVisits.values())
+      .map((episodeVisits) => {
+        const firstVisit = [...episodeVisits].sort(sortVisitsByDate)[0];
+        const episodeLabel =
+          firstVisit?.episode?.trim() ||
+          firstVisit?.videoTitle?.trim() ||
+          firstVisit?.videoId?.trim() ||
+          "회차";
+        const baseSlug = slugifyTopicSegment(episodeLabel);
+        let episodeSlug = baseSlug;
+
+        if (usedSlugs.has(episodeSlug)) {
+          episodeSlug = `${baseSlug}-${slugifyTopicSegment(firstVisit.videoId || firstVisit.id)}`;
+        }
+        usedSlugs.add(episodeSlug);
+
+        const restaurantIds = Array.from(
+          new Set(episodeVisits.map((visit) => visit.restaurantId).filter(Boolean))
+        );
+        const videoTitle = firstVisit?.videoTitle?.trim() || `${topic.name} ${episodeLabel}`;
+        const videoUrl = firstVisit?.videoUrl?.trim() || "";
+
+        return {
+          slug: episodeSlug,
+          topicSlug: topic.slug,
+          episode: episodeLabel,
+          title: videoTitle,
+          description: `${topic.name} ${episodeLabel}에 소개된 맛집 ${restaurantIds.length}곳을 모아봤어요.`,
+          videoTitle,
+          videoUrl,
+          restaurantIds,
+          count: restaurantIds.length,
+          path: buildDiscoveryTopicEpisodePath(topic.slug, episodeSlug),
+        } satisfies DiscoveryTopicEpisode;
+      })
+      .filter((episode) => episode.count > 0)
+      .sort(
+        (a, b) =>
+          getEpisodeSortValue(a.episode) - getEpisodeSortValue(b.episode) ||
+          sortText(a.episode, b.episode)
+      );
+
+    return [topic.slug, episodes];
+  })
+);
+
+export function getDiscoveryTopicEpisodes(topicSlug: string) {
+  return discoveryTopicEpisodesBySlug.get(topicSlug) ?? [];
+}
+
+export function getDiscoveryTopicEpisodeBySlug(
+  topicSlug: string,
+  episodeSlug: string
+) {
+  return (
+    getDiscoveryTopicEpisodes(topicSlug).find((episode) => episode.slug === episodeSlug) ??
+    null
+  );
 }
 
 export function getUniqueRegions(): string[] {

@@ -37,6 +37,16 @@ function Router() {
       <Route path="/explore/topic/:topicSlug/">
         {(params) => <Explore topicSlug={params.topicSlug} />}
       </Route>
+      <Route path="/explore/topic/:topicSlug/episode/:episodeSlug">
+        {(params) => (
+          <Explore topicSlug={params.topicSlug} episodeSlug={params.episodeSlug} />
+        )}
+      </Route>
+      <Route path="/explore/topic/:topicSlug/episode/:episodeSlug/">
+        {(params) => (
+          <Explore topicSlug={params.topicSlug} episodeSlug={params.episodeSlug} />
+        )}
+      </Route>
       <Route path="/map" component={SearchMap} />
       <Route path="/about" component={About} />
       <Route path="/privacy" component={Privacy} />

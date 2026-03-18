@@ -28,7 +28,13 @@ import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
-import { mockSearchData, type SearchResult } from "@/data";
+import {
+  discoveryTopics,
+  getDiscoveryTopicByTarget,
+  mockSearchData,
+  type DiscoveryTopic,
+  type SearchResult,
+} from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
@@ -282,6 +288,43 @@ function SearchResultItem({
         </button>
       ) : null}
     </div>
+  );
+}
+
+function TopicShortcutButton({
+  topic,
+  onClick,
+}: {
+  topic: DiscoveryTopic;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      title={topic.name}
+      onClick={onClick}
+      className="flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]"
+    >
+      <span className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)] p-[2px] transition-all hover:shadow-[0_14px_30px_rgba(255,105,135,0.18)] sm:h-[68px] sm:w-[68px]">
+        <span className="flex h-full w-full items-center justify-center rounded-full bg-white">
+          {topic.imageUrl ? (
+            <img
+              src={topic.imageUrl}
+              alt={topic.name}
+              className="h-[50px] w-[50px] rounded-full object-cover sm:h-[58px] sm:w-[58px]"
+            />
+          ) : (
+            <span className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#fff3f5] text-[10px] font-black text-[#ff7b83] sm:h-[58px] sm:w-[58px] sm:text-xs">
+              TOP
+            </span>
+          )}
+        </span>
+      </span>
+
+      <span className="max-w-[74px] truncate text-[11px] font-semibold leading-tight text-[#5a5a5a] sm:max-w-[86px]">
+        {topic.name}
+      </span>
+    </button>
   );
 }
 
@@ -761,6 +804,12 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "creator") {
+        const topic = getDiscoveryTopicByTarget("creator", normalizedItem.id);
+        if (topic) {
+          navigate(topic.path);
+          return;
+        }
+
         navigate(`/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
@@ -776,6 +825,12 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "source") {
+        const topic = getDiscoveryTopicByTarget("source", normalizedItem.id);
+        if (topic) {
+          navigate(topic.path);
+          return;
+        }
+
         navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
@@ -1176,6 +1231,18 @@ export default function Home() {
                 >
                   <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
                 </button>
+              </div>
+            </div>
+
+            <div className="mt-4 overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-4 px-1">
+                {discoveryTopics.map((topic) => (
+                  <TopicShortcutButton
+                    key={topic.slug}
+                    topic={topic}
+                    onClick={() => navigate(topic.path)}
+                  />
+                ))}
               </div>
             </div>
 

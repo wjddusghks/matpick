@@ -3,7 +3,10 @@ import { Compass, Search } from "lucide-react";
 import { useLocation, useSearch } from "wouter";
 import {
   creators,
+  discoveryTopics,
   getDiscoveryTopicBySlug,
+  getDiscoveryTopicEpisodeBySlug,
+  getDiscoveryTopicEpisodes,
   getBroadRegion,
   getCuisineCategories,
   getCuisineCategory,
@@ -42,6 +45,12 @@ type DiscoveryOption = {
 
 type ExploreProps = {
   topicSlug?: string;
+  episodeSlug?: string;
+};
+
+type AvatarOption = {
+  name: string;
+  imageUrl?: string | null;
 };
 
 function sortText(a: string, b: string) {
@@ -61,7 +70,7 @@ function SourceAvatarButton({
   selected,
   onClick,
 }: {
-  option: DiscoveryOption | null;
+  option: AvatarOption | null;
   selected: boolean;
   onClick: () => void;
 }) {
@@ -220,7 +229,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   );
 }
 
-export default function Explore({ topicSlug }: ExploreProps = {}) {
+export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [, navigate] = useLocation();
   const search = useSearch();
   const categories = getCuisineCategories();
@@ -229,6 +238,17 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
   const presetTopic = useMemo(
     () => (topicSlug ? getDiscoveryTopicBySlug(topicSlug) : null),
     [topicSlug]
+  );
+  const topicEpisodes = useMemo(
+    () => (topicSlug ? getDiscoveryTopicEpisodes(topicSlug) : []),
+    [topicSlug]
+  );
+  const presetEpisode = useMemo(
+    () =>
+      topicSlug && episodeSlug
+        ? getDiscoveryTopicEpisodeBySlug(topicSlug, episodeSlug)
+        : null,
+    [episodeSlug, topicSlug]
   );
 
   const discoveryOptions = useMemo<DiscoveryOption[]>(() => {
@@ -291,11 +311,26 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
   const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
 
-  const seoTitle = presetTopic ? `${presetTopic.name} 맛집 탐색` : "맛집 탐색";
-  const seoDescription = presetTopic
-    ? presetTopic.description
-    : "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.";
-  const seoPath = presetTopic ? presetTopic.path : "/explore";
+  const seoTitle = presetEpisode
+    ? `${presetTopic?.name ?? ""} ${presetEpisode.episode} 맛집 탐색`
+    : presetTopic
+      ? `${presetTopic.name} 맛집 탐색`
+      : "맛집 탐색";
+  const seoDescription = presetEpisode
+    ? presetEpisode.description
+    : presetTopic
+      ? presetTopic.description
+      : "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.";
+  const seoPath = presetEpisode
+    ? presetEpisode.path
+    : presetTopic
+      ? presetTopic.path
+      : "/explore";
+  const topicLine = presetEpisode
+    ? `${presetEpisode.episode}에 소개된 맛집만 모아보는 화면입니다.`
+    : presetTopic
+      ? `${presetTopic.name}만 빠르게 둘러볼 수 있는 탐색 화면입니다.`
+      : "";
 
   useSeo({
     title: seoTitle,
@@ -313,6 +348,12 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
   useEffect(() => {
     setSelectedDiscoveryKeys(initialSelectedKeys);
   }, [initialSelectedKeys]);
+
+  useEffect(() => {
+    setSelectedCategory(ALL_FILTER);
+    setSelectedRegion(ALL_FILTER);
+    setSelectedTopicId(ALL_FILTER);
+  }, [episodeSlug, topicSlug]);
 
   const filteredRestaurants = useMemo(() => {
     let nextRestaurants = [...restaurants];
@@ -353,6 +394,13 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
       );
     }
 
+    if (presetEpisode) {
+      const episodeRestaurantIds = new Set(presetEpisode.restaurantIds);
+      nextRestaurants = nextRestaurants.filter((restaurant) =>
+        episodeRestaurantIds.has(restaurant.id)
+      );
+    }
+
     if (selectedTopicId !== ALL_FILTER) {
       nextRestaurants = nextRestaurants.filter((restaurant) =>
         isRestaurantInTopic(selectedTopicId, restaurant.id)
@@ -365,6 +413,7 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
     );
   }, [
     isRestaurantInTopic,
+    presetEpisode,
     selectedCategory,
     selectedDiscoveryKeys,
     selectedRegion,
@@ -372,9 +421,23 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
   ]);
 
   const toggleDiscovery = (key: string) => {
+    if (presetTopic && key === presetTopic.key && selectedDiscoveryKeys.length === 1) {
+      navigate("/explore");
+      return;
+    }
+
     setSelectedDiscoveryKeys((prev) =>
       prev.includes(key) ? prev.filter((entry) => entry !== key) : [...prev, key]
     );
+  };
+
+  const clearDiscoverySelection = () => {
+    if (presetTopic) {
+      navigate("/explore");
+      return;
+    }
+
+    setSelectedDiscoveryKeys([]);
   };
 
   const clearFilters = () => {
@@ -382,6 +445,11 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
     setSelectedTopicId(ALL_FILTER);
+    if (presetEpisode && presetTopic) {
+      navigate(presetTopic.path);
+      return;
+    }
+
     navigate("/explore");
   };
 
@@ -427,15 +495,36 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
             먼저 보고 싶은 채널이나 소스를 고른 뒤, 카테고리와 지역으로 결과를 더
             좁혀보세요.
           </p>
+          {presetTopic ? (
+            <p className="mt-3 text-xs font-medium text-[#ff7b83] sm:text-sm">{topicLine}</p>
+          ) : null}
         </header>
 
         <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5">
+          <div className="mb-4">
+            <p className="mb-3 text-xs font-semibold tracking-[0.08em] text-[#b58f95]">
+              주제 바로가기
+            </p>
+            <div className="-mx-1 overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-4 px-1">
+                {discoveryTopics.map((topic) => (
+                  <SourceAvatarButton
+                    key={topic.slug}
+                    option={{ name: topic.name, imageUrl: topic.imageUrl }}
+                    selected={topic.slug === topicSlug}
+                    onClick={() => navigate(topic.path)}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="-mx-1 overflow-x-auto pb-2">
             <div className="flex min-w-max gap-4 px-1">
               <SourceAvatarButton
                 option={null}
                 selected={!hasActiveDiscovery}
-                onClick={() => setSelectedDiscoveryKeys([])}
+                onClick={clearDiscoverySelection}
               />
               {discoveryOptions.map((option) => (
                 <SourceAvatarButton
@@ -449,6 +538,25 @@ export default function Explore({ topicSlug }: ExploreProps = {}) {
           </div>
 
           <div className="mt-4 space-y-4 border-t border-[#f5f0f1] pt-4 sm:mt-5 sm:pt-5">
+            {presetTopic && topicEpisodes.length > 0 ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-sm font-semibold text-[#666]">회차</span>
+                <FilterChip
+                  label="전체"
+                  selected={!presetEpisode}
+                  onClick={() => navigate(presetTopic.path)}
+                />
+                {topicEpisodes.map((episode) => (
+                  <FilterChip
+                    key={episode.slug}
+                    label={episode.episode}
+                    selected={presetEpisode?.slug === episode.slug}
+                    onClick={() => navigate(episode.path)}
+                  />
+                ))}
+              </div>
+            ) : null}
+
             {topics.length > 0 ? (
               <div className="flex flex-wrap items-center gap-2">
                 <span className="mr-1 text-sm font-semibold text-[#666]">내 주제</span>

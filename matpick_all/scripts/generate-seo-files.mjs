@@ -34,6 +34,72 @@ async function readJson(filePath) {
   return JSON.parse(raw.replace(/^\uFEFF/, ""));
 }
 
+function slugifyTopicSegment(value) {
+  const normalized = String(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+
+  const slug = normalized
+    .replace(/[^a-z0-9가-힣]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return slug || "episode";
+}
+
+function sortVisitsByDate(a, b) {
+  return String(b.visitDate || "").localeCompare(String(a.visitDate || ""), "ko-KR");
+}
+
+function buildTopicEpisodes(discoveryTopics, creators, visits) {
+  return discoveryTopics.flatMap((topic) => {
+    if (topic.kind !== "creator") {
+      return [];
+    }
+
+    const creator = creators.find((entry) => entry.id === topic.targetId);
+    const creatorName = topic.name || creator?.name || topic.slug;
+    const groupedVisits = new Map();
+
+    visits
+      .filter((visit) => visit.creatorId === topic.targetId)
+      .sort(sortVisitsByDate)
+      .forEach((visit) => {
+        const groupKey = visit.videoId || visit.episode || visit.videoTitle || visit.id;
+        const current = groupedVisits.get(groupKey) ?? [];
+        current.push(visit);
+        groupedVisits.set(groupKey, current);
+      });
+
+    const usedSlugs = new Set();
+
+    return Array.from(groupedVisits.values())
+      .map((episodeVisits) => {
+        const firstVisit = [...episodeVisits].sort(sortVisitsByDate)[0];
+        const episodeLabel =
+          firstVisit?.episode?.trim() ||
+          firstVisit?.videoTitle?.trim() ||
+          firstVisit?.videoId?.trim() ||
+          "회차";
+        const baseSlug = slugifyTopicSegment(episodeLabel);
+        let episodeSlug = baseSlug;
+
+        if (usedSlugs.has(episodeSlug)) {
+          episodeSlug = `${baseSlug}-${slugifyTopicSegment(firstVisit.videoId || firstVisit.id)}`;
+        }
+        usedSlugs.add(episodeSlug);
+
+        return {
+          topicSlug: topic.slug,
+          slug: episodeSlug,
+          name: creatorName,
+        };
+      })
+      .filter(Boolean);
+  });
+}
+
 async function readGeneratedDatasets() {
   const entries = await readdir(generatedDir, { withFileTypes: true });
   const datasetFiles = entries
@@ -54,6 +120,11 @@ async function buildSitemap(siteUrl) {
   const baseDataset = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
   const discoveryTopics = await readJson(discoveryTopicsPath);
+  const topicEpisodes = buildTopicEpisodes(
+    discoveryTopics,
+    baseDataset.creators || [],
+    baseDataset.visits || []
+  );
   const restaurants = [
     ...(baseDataset.restaurants || []),
     ...generatedDatasets.flatMap((dataset) => dataset.restaurants || []),
@@ -71,6 +142,10 @@ async function buildSitemap(siteUrl) {
 
   for (const topic of discoveryTopics) {
     entries.push(`/explore/topic/${topic.slug}`);
+  }
+
+  for (const episode of topicEpisodes) {
+    entries.push(`/explore/topic/${episode.topicSlug}/episode/${episode.slug}`);
   }
 
   for (const creator of creators) {

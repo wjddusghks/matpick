@@ -39,6 +39,81 @@ async function readJson(filePath) {
   return JSON.parse(raw.replace(/^\uFEFF/, ""));
 }
 
+function slugifyTopicSegment(value) {
+  const normalized = String(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+
+  const slug = normalized
+    .replace(/[^a-z0-9가-힣]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+  return slug || "episode";
+}
+
+function sortVisitsByDate(a, b) {
+  return String(b.visitDate || "").localeCompare(String(a.visitDate || ""), "ko-KR");
+}
+
+function buildTopicEpisodes(discoveryTopics, creators, visits) {
+  return discoveryTopics.flatMap((topic) => {
+    if (topic.kind !== "creator") {
+      return [];
+    }
+
+    const creator = creators.find((entry) => entry.id === topic.targetId);
+    const creatorName = topic.name || creator?.name || topic.slug;
+    const groupedVisits = new Map();
+
+    visits
+      .filter((visit) => visit.creatorId === topic.targetId)
+      .sort(sortVisitsByDate)
+      .forEach((visit) => {
+        const groupKey = visit.videoId || visit.episode || visit.videoTitle || visit.id;
+        const current = groupedVisits.get(groupKey) ?? [];
+        current.push(visit);
+        groupedVisits.set(groupKey, current);
+      });
+
+    const usedSlugs = new Set();
+
+    return Array.from(groupedVisits.values())
+      .map((episodeVisits) => {
+        const firstVisit = [...episodeVisits].sort(sortVisitsByDate)[0];
+        const episodeLabel =
+          firstVisit?.episode?.trim() ||
+          firstVisit?.videoTitle?.trim() ||
+          firstVisit?.videoId?.trim() ||
+          "회차";
+        const baseSlug = slugifyTopicSegment(episodeLabel);
+        let episodeSlug = baseSlug;
+
+        if (usedSlugs.has(episodeSlug)) {
+          episodeSlug = `${baseSlug}-${slugifyTopicSegment(firstVisit.videoId || firstVisit.id)}`;
+        }
+        usedSlugs.add(episodeSlug);
+
+        const restaurantIds = Array.from(
+          new Set(episodeVisits.map((visit) => visit.restaurantId).filter(Boolean))
+        );
+        const videoTitle = firstVisit?.videoTitle?.trim() || `${creatorName} ${episodeLabel}`;
+
+        return {
+          topicSlug: topic.slug,
+          topicName: creatorName,
+          slug: episodeSlug,
+          episode: episodeLabel,
+          title: videoTitle,
+          restaurantIds,
+          description: `${creatorName} ${episodeLabel}에 소개된 맛집 ${restaurantIds.length}곳을 모아봤어요.`,
+        };
+      })
+      .filter((episode) => episode.restaurantIds.length > 0);
+  });
+}
+
 async function readGeneratedDatasets() {
   const entries = await readdir(generatedDir, { withFileTypes: true });
   const datasetFiles = entries
@@ -206,6 +281,11 @@ async function main() {
   const generatedDatasets = await readGeneratedDatasets();
   const discoveryTopics = await readJson(discoveryTopicsPath);
   const { creators, restaurants } = mergeDatasets(baseData, generatedDatasets);
+  const topicEpisodes = buildTopicEpisodes(
+    discoveryTopics,
+    creators,
+    baseData.visits || []
+  );
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
   const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
 
@@ -273,6 +353,30 @@ async function main() {
           name: topicTitle,
           description: topicDescription,
           url: absoluteUrl(siteUrl, topicPath),
+        },
+      })
+    );
+  }
+
+  for (const episode of topicEpisodes) {
+    const episodePath = `/explore/topic/${episode.topicSlug}/episode/${episode.slug}`;
+    const episodeTitle = `${episode.topicName} ${episode.episode} 맛집 탐색`;
+
+    await writeRouteHtml(
+      path.join("explore", "topic", episode.topicSlug, "episode", episode.slug),
+      renderHtml(template, {
+        title: episodeTitle,
+        description: episode.description,
+        url: absoluteUrl(siteUrl, episodePath),
+        image: defaultImage,
+        type: "website",
+        adsenseClient,
+        jsonLd: {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: episodeTitle,
+          description: episode.description,
+          url: absoluteUrl(siteUrl, episodePath),
         },
       })
     );

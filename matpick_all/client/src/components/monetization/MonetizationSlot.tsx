@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 declare global {
   interface Window {
@@ -16,6 +17,11 @@ declare global {
 }
 
 export type MonetizationProvider = "adsense" | "kakao" | "coupang";
+
+function parseBannerDimension(value: string, fallback: number) {
+  const parsed = Number.parseInt(value, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
 
 function SlotFrame({
   label,
@@ -163,7 +169,35 @@ export function CoupangSlot({
   dynamicBannerHeight?: string;
 }) {
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
+  const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
   const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
+  const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
+  const configuredBannerHeight = parseBannerDimension(dynamicBannerHeight, 140);
+  const effectiveBannerWidth = measuredBannerWidth > 0 ? measuredBannerWidth : configuredBannerWidth;
+
+  useEffect(() => {
+    if (!hasDynamicBanner || !dynamicBannerRef.current || typeof ResizeObserver === "undefined") {
+      return;
+    }
+
+    const container = dynamicBannerRef.current;
+    const updateWidth = () => {
+      const nextWidth = Math.max(280, Math.floor(container.clientWidth));
+      setMeasuredBannerWidth((prev) => (prev === nextWidth ? prev : nextWidth));
+    };
+
+    updateWidth();
+
+    const observer = new ResizeObserver(() => {
+      updateWidth();
+    });
+
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [hasDynamicBanner]);
 
   useEffect(() => {
     if (!hasDynamicBanner || !dynamicBannerRef.current) {
@@ -183,8 +217,8 @@ export function CoupangSlot({
         id: ${JSON.stringify(dynamicBannerId)},
         template: ${JSON.stringify(dynamicBannerTemplate)},
         trackingCode: ${JSON.stringify(dynamicBannerTrackingCode)},
-        width: ${JSON.stringify(dynamicBannerWidth)},
-        height: ${JSON.stringify(dynamicBannerHeight)}
+        width: ${JSON.stringify(String(effectiveBannerWidth))},
+        height: ${JSON.stringify(String(configuredBannerHeight))}
       });
     `;
 
@@ -198,11 +232,11 @@ export function CoupangSlot({
       container.innerHTML = "";
     };
   }, [
-    dynamicBannerHeight,
     dynamicBannerId,
     dynamicBannerTemplate,
     dynamicBannerTrackingCode,
-    dynamicBannerWidth,
+    configuredBannerHeight,
+    effectiveBannerWidth,
     hasDynamicBanner,
   ]);
 
@@ -215,10 +249,10 @@ export function CoupangSlot({
       <SlotFrame label={label}>
         <div
           ref={dynamicBannerRef}
-          className="overflow-hidden rounded-[18px] bg-[#fffafb]"
+          className="flex justify-center overflow-hidden rounded-[18px] bg-[#fffafb]"
           style={{
             width: "100%",
-            minHeight: `${dynamicBannerHeight}px`,
+            minHeight: `${configuredBannerHeight}px`,
           }}
         />
       </SlotFrame>

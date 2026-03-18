@@ -165,7 +165,7 @@ function truncateText(value: string, limit: number) {
 function buildPlaceholderSvg(
   restaurant: Pick<
     Restaurant,
-    "id" | "name" | "category" | "representativeMenu" | "menus"
+    "id" | "name" | "category" | "representativeMenu" | "menus" | "address"
   >,
   { width = DEFAULT_IMAGE_WIDTH, height = DEFAULT_IMAGE_HEIGHT }: RestaurantImageOptions = {}
 ) {
@@ -174,12 +174,14 @@ function buildPlaceholderSvg(
   const heroMenu = truncateText(
     menuItems.find((menu) => menu.isSignature)?.name ||
       menuItems[0]?.name ||
-      "Menu details coming soon",
+      restaurant.representativeMenu.trim() ||
+      restaurant.name.trim() ||
+      theme.label,
     28
   );
   const secondaryLine =
     menuItems.find((menu) => menu.price)?.price ||
-    truncateText(restaurant.name.trim() || "Matpick Restaurant", 28);
+    truncateText(restaurant.address.trim() || restaurant.name.trim() || theme.label, 28);
   const categoryLabel = truncateText(
     restaurant.category.trim() || theme.label,
     18
@@ -196,13 +198,9 @@ function buildPlaceholderSvg(
       <rect width="${width}" height="${height}" rx="${Math.round(width * 0.045)}" fill="url(#bg)" />
       <circle cx="${Math.round(width * 0.14)}" cy="${Math.round(height * 0.24)}" r="${Math.round(Math.min(width, height) * 0.09)}" fill="${theme.tint}" />
       <circle cx="${Math.round(width * 0.86)}" cy="${Math.round(height * 0.18)}" r="${Math.round(Math.min(width, height) * 0.06)}" fill="${theme.tint}" />
-      <rect x="${Math.round(width * 0.08)}" y="${Math.round(height * 0.16)}" width="${Math.round(width * 0.32)}" height="${Math.round(height * 0.08)}" rx="${Math.round(height * 0.04)}" fill="${theme.tint}" />
-      <text x="${Math.round(width * 0.11)}" y="${Math.round(height * 0.215)}" fill="${theme.accent}" font-family="Arial, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="${Math.round(height * 0.035)}" font-weight="700">PHOTO READY</text>
       <text x="${Math.round(width * 0.08)}" y="${Math.round(height * 0.47)}" fill="${theme.accent}" font-family="Arial, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="${Math.round(height * 0.085)}" font-weight="800">${escapeXml(categoryLabel)}</text>
       <text x="${Math.round(width * 0.08)}" y="${Math.round(height * 0.62)}" fill="#1f2430" font-family="Arial, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="${Math.round(height * 0.06)}" font-weight="700">${escapeXml(heroMenu)}</text>
       <text x="${Math.round(width * 0.08)}" y="${Math.round(height * 0.72)}" fill="#5f6470" font-family="Arial, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="${Math.round(height * 0.045)}" font-weight="600">${escapeXml(secondaryLine)}</text>
-      <rect x="${Math.round(width * 0.08)}" y="${Math.round(height * 0.8)}" width="${Math.round(width * 0.34)}" height="${Math.round(height * 0.09)}" rx="${Math.round(height * 0.045)}" fill="rgba(255,255,255,0.75)" />
-      <text x="${Math.round(width * 0.11)}" y="${Math.round(height * 0.858)}" fill="#6a6f7b" font-family="Arial, Apple SD Gothic Neo, Noto Sans KR, sans-serif" font-size="${Math.round(height * 0.036)}" font-weight="700">Matpick curated fallback</text>
     </svg>
   `.trim();
 
@@ -223,6 +221,7 @@ export function getRestaurantDisplayImage(
     | "category"
     | "representativeMenu"
     | "menus"
+    | "address"
     | "imageUrl"
     | "thumbnailFileName"
   >,

@@ -51,6 +51,7 @@ type ReviewItem = { id: string; user: string; date: string; stars: number; text:
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
+const GUIDE_REVIEW_USERS = new Set(["맛픽가이드", "맛픽 가이드"]);
 
 function getRestaurantUrl(restaurantId: string) {
   if (APP_URL) return `${APP_URL}/restaurant/${restaurantId}`;
@@ -66,7 +67,9 @@ function readStoredReviews(restaurantId: string): ReviewItem[] {
   if (typeof window === "undefined") return [];
   try {
     const raw = window.localStorage.getItem(getStoredReviewsKey(restaurantId));
-    return raw ? (JSON.parse(raw) as ReviewItem[]) : [];
+    return raw
+      ? (JSON.parse(raw) as ReviewItem[]).filter((review) => !GUIDE_REVIEW_USERS.has(review.user))
+      : [];
   } catch {
     return [];
   }
@@ -171,6 +174,10 @@ export default function RestaurantDetail() {
           ]
         : [],
     [restaurant, storedReviews]
+  );
+  const visibleReviews = useMemo(
+    () => reviews.filter((review) => !GUIDE_REVIEW_USERS.has(review.user)),
+    [reviews]
   );
 
   if (!restaurant) {
@@ -593,7 +600,7 @@ export default function RestaurantDetail() {
                   ) : null}
 
                   <div className="space-y-4">
-                    {reviews.map((review) => (
+                    {visibleReviews.map((review) => (
                       <div key={review.id} className="rounded-[24px] border border-[#f0f0f0] bg-white px-5 py-4">
                         <div className="flex items-center gap-3">
                           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffecee] text-sm font-bold text-[#ff7b83]">

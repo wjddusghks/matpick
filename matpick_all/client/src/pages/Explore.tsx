@@ -331,6 +331,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
   const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
+  const [isEpisodeMenuOpen, setIsEpisodeMenuOpen] = useState(Boolean(episodeSlug));
 
   const seoTitle = presetEpisode
     ? `${presetTopic?.name ?? ""} ${presetEpisode.episode} 맛집 탐색`
@@ -347,6 +348,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     : presetTopic
       ? presetTopic.path
       : "/explore";
+  const presetTopicPath = presetTopic?.path ?? "/explore";
   const topicLine = presetEpisode
     ? `${presetEpisode.episode}에 소개된 맛집만 모아보는 화면입니다.`
     : presetTopic
@@ -374,6 +376,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
     setSelectedTopicId(ALL_FILTER);
+  }, [episodeSlug, topicSlug]);
+
+  useEffect(() => {
+    setIsEpisodeMenuOpen(Boolean(episodeSlug));
   }, [episodeSlug, topicSlug]);
 
   const filteredRestaurants = useMemo(() => {
@@ -452,27 +458,24 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     );
   };
 
-  const clearDiscoverySelection = () => {
-    setSelectedDiscoveryKeys(presetTopic ? [presetTopic.key] : []);
-  };
-
   const clearFilters = () => {
     setSelectedDiscoveryKeys([]);
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
     setSelectedTopicId(ALL_FILTER);
-    if (presetEpisode && presetTopic) {
-      navigate(presetTopic.path);
-      return;
-    }
-
     navigate("/explore");
   };
 
+  const handleTopicShortcutClick = (slug: string, path: string) => {
+    if (topicSlug === slug) {
+      navigate("/explore");
+      return;
+    }
+
+    navigate(path);
+  };
+
   const hasActiveDiscovery = selectedDiscoveryKeys.length > 0;
-  const hasAdditionalDiscovery = selectedDiscoveryKeys.some(
-    (key) => !curatedDiscoveryKeySet.has(key)
-  );
   const hasActiveFilters =
     hasActiveDiscovery ||
     selectedCategory !== ALL_FILTER ||
@@ -526,12 +529,17 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             </p>
             <div className="-mx-1 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
+                <SourceAvatarButton
+                  option={null}
+                  selected={!presetTopic}
+                  onClick={() => navigate("/explore")}
+                />
                 {discoveryTopics.map((topic) => (
                   <SourceAvatarButton
                     key={topic.slug}
                     option={{ name: topic.name, imageUrl: topic.imageUrl }}
                     selected={topic.slug === topicSlug}
-                    onClick={() => navigate(topic.path)}
+                    onClick={() => handleTopicShortcutClick(topic.slug, topic.path)}
                   />
                 ))}
               </div>
@@ -541,11 +549,6 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
           {additionalDiscoveryOptions.length > 0 ? (
             <div className="-mx-1 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
-                <SourceAvatarButton
-                  option={null}
-                  selected={!hasAdditionalDiscovery}
-                  onClick={clearDiscoverySelection}
-                />
                 {additionalDiscoveryOptions.map((option) => (
                   <SourceAvatarButton
                     key={option.key}
@@ -560,21 +563,52 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
 
           <div className="mt-4 space-y-4 border-t border-[#f5f0f1] pt-4 sm:mt-5 sm:pt-5">
             {presetTopic && topicEpisodes.length > 0 ? (
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="mr-1 text-sm font-semibold text-[#666]">회차</span>
-                <FilterChip
-                  label="전체"
-                  selected={!presetEpisode}
-                  onClick={() => navigate(presetTopic.path)}
-                />
-                {topicEpisodes.map((episode) => (
-                  <FilterChip
-                    key={episode.slug}
-                    label={episode.episode}
-                    selected={presetEpisode?.slug === episode.slug}
-                    onClick={() => navigate(episode.path)}
-                  />
-                ))}
+              <div className="space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="mr-1 text-sm font-semibold text-[#666]">회차</span>
+                  <button
+                    type="button"
+                    onClick={() => setIsEpisodeMenuOpen((prev) => !prev)}
+                    className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all ${
+                      isEpisodeMenuOpen
+                        ? "border-[#ff7b83] bg-[#fff4f6] text-[#ff7b83]"
+                        : "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd1d7] hover:text-[#ff7b83]"
+                    }`}
+                  >
+                    <span>{presetEpisode ? presetEpisode.episode : "전체 회차"}</span>
+                    <span className="text-[11px] text-[#b58f95]">
+                      {isEpisodeMenuOpen ? "접기" : `${topicEpisodes.length}개 보기`}
+                    </span>
+                  </button>
+                </div>
+
+                {isEpisodeMenuOpen ? (
+                  <div className="rounded-[22px] border border-[#f1e7e9] bg-[#fffafb] p-3">
+                    <div className="max-h-[230px] overflow-y-auto pr-1">
+                      <div className="flex flex-wrap gap-2">
+                        <FilterChip
+                          label="전체"
+                          selected={!presetEpisode}
+                          onClick={() => {
+                            setIsEpisodeMenuOpen(false);
+                            navigate(presetTopicPath);
+                          }}
+                        />
+                        {topicEpisodes.map((episode) => (
+                          <FilterChip
+                            key={episode.slug}
+                            label={episode.episode}
+                            selected={presetEpisode?.slug === episode.slug}
+                            onClick={() => {
+                              setIsEpisodeMenuOpen(false);
+                              navigate(episode.path);
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : null}
               </div>
             ) : null}
 

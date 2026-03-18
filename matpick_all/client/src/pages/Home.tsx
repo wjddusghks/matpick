@@ -1048,7 +1048,7 @@ export default function Home() {
                       <button
                         type="button"
                         onClick={() => setShowTopicDialog(true)}
-                        className="inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-full border border-[#ffd2d8] bg-white text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
+                        className="inline-flex h-11 min-w-[160px] flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
                       >
                         <Plus className="h-4 w-4" />
                         내 주제 추가하기

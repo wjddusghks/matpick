@@ -172,7 +172,7 @@ export default function FavoriteTopicDialog({
           <button
             type="button"
             onClick={handleCreate}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+            className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
           >
             주제 만들기
           </button>

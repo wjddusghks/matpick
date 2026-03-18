@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { upload } from "@vercel/blob/client";
 import { Link, useLocation, useParams } from "wouter";
 import {
   ArrowLeft,
@@ -47,7 +48,15 @@ import {
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
-type ReviewItem = { id: string; user: string; date: string; stars: number; text: string; photos: string[] };
+type ReviewItem = {
+  id: string;
+  user: string;
+  date: string;
+  stars: number;
+  text: string;
+  photos: string[];
+  createdAt?: number;
+};
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
@@ -78,6 +87,116 @@ function readStoredReviews(restaurantId: string): ReviewItem[] {
 function saveStoredReviews(restaurantId: string, reviews: ReviewItem[]) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(getStoredReviewsKey(restaurantId), JSON.stringify(reviews));
+}
+
+function normalizeReview(review: ReviewItem): ReviewItem {
+  return {
+    ...review,
+    createdAt: Number.isFinite(review.createdAt) ? review.createdAt : Date.now(),
+    photos: Array.isArray(review.photos) ? review.photos.filter(Boolean) : [],
+  };
+}
+
+function mergeReviews(...collections: ReviewItem[][]) {
+  const merged = new Map<string, ReviewItem>();
+
+  collections.flat().forEach((review) => {
+    if (!review?.id) {
+      return;
+    }
+
+    merged.set(review.id, normalizeReview(review));
+  });
+
+  return Array.from(merged.values()).sort(
+    (a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0)
+  );
+}
+
+async function fetchRemoteReviews(restaurantId: string): Promise<ReviewItem[]> {
+  const response = await fetch(`/api/reviews?restaurantId=${encodeURIComponent(restaurantId)}`);
+  if (!response.ok) {
+    throw new Error("Failed to load remote reviews");
+  }
+
+  const payload = (await response.json()) as { reviews?: ReviewItem[] };
+  return Array.isArray(payload.reviews) ? payload.reviews.map(normalizeReview) : [];
+}
+
+async function saveRemoteReview({
+  restaurantId,
+  userId,
+  syncToken,
+  review,
+}: {
+  restaurantId: string;
+  userId: string;
+  syncToken: string;
+  review: ReviewItem;
+}) {
+  const response = await fetch("/api/reviews", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      restaurantId,
+      userId,
+      syncToken,
+      review,
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to save remote review");
+  }
+
+  const payload = (await response.json()) as { review?: ReviewItem };
+  return payload.review ? normalizeReview(payload.review) : review;
+}
+
+function dataUrlToBlob(dataUrl: string) {
+  const [header, encoded] = dataUrl.split(",");
+  const mimeMatch = header.match(/data:(.*?);base64/);
+  const mimeType = mimeMatch?.[1] || "image/jpeg";
+  const binary = atob(encoded);
+  const bytes = new Uint8Array(binary.length);
+
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+
+  return new Blob([bytes], { type: mimeType });
+}
+
+async function uploadReviewPhotos({
+  restaurantId,
+  userId,
+  syncToken,
+  reviewId,
+  photos,
+}: {
+  restaurantId: string;
+  userId: string;
+  syncToken: string;
+  reviewId: string;
+  photos: string[];
+}) {
+  const uploaded = await Promise.all(
+    photos.map((photo, index) =>
+      upload(`reviews/${restaurantId}/${userId}-${reviewId}-${index + 1}.jpg`, dataUrlToBlob(photo), {
+        access: "public",
+        handleUploadUrl: "/api/reviews/upload",
+        clientPayload: JSON.stringify({
+          restaurantId,
+          userId,
+          syncToken,
+        }),
+      })
+    )
+  );
+
+  return uploaded.map((blob) => blob.url);
 }
 
 async function toDataUrl(file: File) {
@@ -123,6 +242,7 @@ export default function RestaurantDetail() {
   const [storedReviews, setStoredReviews] = useState<ReviewItem[]>([]);
   const [personalRating, setPersonalRating] = useState(0);
   const [hoveredPersonalRating, setHoveredPersonalRating] = useState(0);
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
   const [topicPickerOpen, setTopicPickerOpen] = useState(false);
   const [authFeatureDialogOpen, setAuthFeatureDialogOpen] = useState(false);
   const [authFeatureMode, setAuthFeatureMode] =
@@ -141,12 +261,33 @@ export default function RestaurantDetail() {
 
   useEffect(() => {
     if (!restaurant) return;
-    setStoredReviews(readStoredReviews(restaurant.id));
+    const localReviews = readStoredReviews(restaurant.id).map(normalizeReview);
+    setStoredReviews(localReviews);
     setReviewDraft("");
     setReviewStars(5);
     setReviewPhotos([]);
     setHoveredPersonalRating(0);
     setComposerOpen(false);
+
+    let ignore = false;
+
+    void fetchRemoteReviews(restaurant.id)
+      .then((remoteReviews) => {
+        if (ignore) {
+          return;
+        }
+
+        const merged = mergeReviews(remoteReviews, localReviews);
+        setStoredReviews(merged);
+        saveStoredReviews(restaurant.id, merged);
+      })
+      .catch(() => {
+        // Keep local reviews when the remote review store is unavailable.
+      });
+
+    return () => {
+      ignore = true;
+    };
   }, [restaurant?.id]);
 
   useEffect(() => {
@@ -176,8 +317,8 @@ export default function RestaurantDetail() {
     [restaurant, storedReviews]
   );
   const visibleReviews = useMemo(
-    () => reviews.filter((review) => !GUIDE_REVIEW_USERS.has(review.user)),
-    [reviews]
+    () => storedReviews.filter((review) => !GUIDE_REVIEW_USERS.has(review.user)),
+    [storedReviews]
   );
 
   if (!restaurant) {
@@ -276,6 +417,74 @@ export default function RestaurantDetail() {
       .slice(0, Math.max(0, MAX_REVIEW_PHOTOS - reviewPhotos.length));
     const nextPhotos = await Promise.all(candidates.map((file) => toDataUrl(file)));
     setReviewPhotos((prev) => [...prev, ...nextPhotos].slice(0, MAX_REVIEW_PHOTOS));
+  };
+
+  const handleSubmitReview = async () => {
+    if (!isLoggedIn || !user) {
+      openAuthFeatureDialog("review");
+      return;
+    }
+
+    if (!reviewDraft.trim() && reviewPhotos.length === 0) {
+      toast("리뷰 내용이나 사진을 하나 이상 넣어주세요.");
+      return;
+    }
+
+    setIsSubmittingReview(true);
+
+    try {
+      const reviewId = `${Date.now()}`;
+      const photoUrls =
+        reviewPhotos.length > 0 && user.syncToken
+          ? await uploadReviewPhotos({
+              restaurantId: restaurant.id,
+              userId: user.id,
+              syncToken: user.syncToken,
+              reviewId,
+              photos: reviewPhotos,
+            })
+          : reviewPhotos;
+
+      const nextReview = normalizeReview({
+        id: reviewId,
+        user: getDisplayName(user),
+        date: formatDate(),
+        stars: reviewStars,
+        text: reviewDraft.trim(),
+        photos: photoUrls,
+        createdAt: Date.now(),
+      });
+
+      const localMerged = mergeReviews([nextReview], storedReviews);
+      setStoredReviews(localMerged);
+      saveStoredReviews(restaurant.id, localMerged);
+
+      if (user.syncToken) {
+        const remoteSavedReview = await saveRemoteReview({
+          restaurantId: restaurant.id,
+          userId: user.id,
+          syncToken: user.syncToken,
+          review: nextReview,
+        });
+
+        const syncedReviews = mergeReviews([remoteSavedReview], localMerged);
+        setStoredReviews(syncedReviews);
+        saveStoredReviews(restaurant.id, syncedReviews);
+      } else {
+        toast("리뷰를 현재 기기에 먼저 저장했어요.");
+      }
+
+      setReviewDraft("");
+      setReviewStars(5);
+      setReviewPhotos([]);
+      setComposerOpen(false);
+      toast.success("리뷰를 등록했어요.");
+    } catch (error) {
+      console.error(error);
+      toast.error("리뷰를 업로드하지 못했어요. 다시 시도해주세요.");
+    } finally {
+      setIsSubmittingReview(false);
+    }
   };
 
   const submitReview = () => {
@@ -590,10 +799,11 @@ export default function RestaurantDetail() {
                       <div className="mt-4 flex justify-end">
                         <button
                           type="button"
-                          onClick={submitReview}
-                          className="flex h-11 items-center justify-center rounded-full bg-[#161616] px-5 text-sm font-semibold text-white transition hover:brightness-110"
+                          onClick={handleSubmitReview}
+                          disabled={isSubmittingReview}
+                          className="flex h-11 items-center justify-center rounded-full bg-[#161616] px-5 text-sm font-semibold text-white transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-55"
                         >
-                          리뷰 등록
+                          {isSubmittingReview ? "업로드 중..." : "리뷰 등록"}
                         </button>
                       </div>
                     </div>

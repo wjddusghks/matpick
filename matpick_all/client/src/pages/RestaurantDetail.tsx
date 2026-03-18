@@ -10,6 +10,7 @@ import {
   Play,
   Share2,
   Star,
+  X,
 } from "lucide-react";
 import { toast } from "sonner";
 import AuthFeatureDialog, { type AuthFeatureMode } from "@/components/AuthFeatureDialog";
@@ -100,7 +101,7 @@ export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
   const [location, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
-  const { topics, getTopicsForRestaurant } = useFavorites();
+  const { topics, getTopicsForRestaurant, toggleRestaurantInTopic } = useFavorites();
   const restaurant = restaurants.find((item) => item.id === id);
   const [activeTab, setActiveTab] = useState<DetailTab>("menu");
   const [shareOpen, setShareOpen] = useState(false);
@@ -184,6 +185,13 @@ export default function RestaurantDetail() {
   const openAuthFeatureDialog = (mode: AuthFeatureMode) => {
     setAuthFeatureMode(mode);
     setAuthFeatureDialogOpen(true);
+  };
+
+  const removeRestaurantFromTopic = (topicId: string, topicName: string) => {
+    const nextState = toggleRestaurantInTopic(topicId, restaurant.id);
+    if (!nextState) {
+      toast.success(`"${topicName}"에서 "${restaurant.name}"을 뺐어요.`);
+    }
   };
 
   useSeo({
@@ -729,13 +737,24 @@ export default function RestaurantDetail() {
                     {assignedTopics.map((topic) => (
                       <span
                         key={topic.id}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd2d8] bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6b7b]"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[#ffd2d8] bg-[#fff4f6] py-1 pl-3 pr-1 text-xs font-semibold text-[#ff6b7b]"
                       >
                         <span>{topic.name}</span>
+                        <button
+                          type="button"
+                          onClick={() => removeRestaurantFromTopic(topic.id, topic.name)}
+                          className="flex h-5 w-5 items-center justify-center rounded-full bg-white/70 text-[#ff6b7b] transition hover:bg-white"
+                          aria-label={`${topic.name}에서 제거`}
+                        >
+                          <X className="h-3.5 w-3.5" />
+                        </button>
                       </span>
                     ))}
                   </div>
                 ) : null}
+                <p className="mt-3 text-xs leading-5 text-[#8a8a8a]">
+                  주제에 담기 버튼에서 같은 주제를 다시 누르면 취소되고, 아래 주제 오른쪽 X 버튼으로도 바로 뺄 수 있어요.
+                </p>
               </div>
             ) : null}
           </div>

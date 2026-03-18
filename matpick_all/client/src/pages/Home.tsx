@@ -7,7 +7,6 @@ import {
   type ReactNode,
 } from "react";
 import {
-  CalendarCheck,
   CheckCircle2,
   Circle,
   Compass,
@@ -58,9 +57,9 @@ const UI = {
     ratingTitle: "\uB098\uB9CC\uC758 \uD3C9\uC810",
     ratingDescription:
       "\uBC29\uBB38\uD55C \uB9DB\uC9D1\uC744 \uAE30\uB85D\uD574 \uB450\uACE0 \uB2E4\uC2DC \uBE44\uAD50\uD560 \uC218 \uC788\uC5B4\uC694.",
-    planTitle: "\uBC29\uBB38 \uACC4\uD68D",
-    planDescription:
-      "\uB2E4\uC74C\uC5D0 \uAC08 \uD6C4\uBCF4\uB97C \uC800\uC7A5\uD574 \uB450\uACE0 \uB0B4 \uC77C\uC815\uCC98\uB7FC \uAD00\uB9AC\uD560 \uC218 \uC788\uC5B4\uC694.",
+    topicTitle: "\uC8FC\uC81C\uBCC4 \uC800\uC7A5",
+    topicDescription:
+      "\uB370\uC774\uD2B8, \uD63C\uBC25, \uC5EC\uD589 \uCC98\uB7FC \uC6D0\uD558\uB294 \uD14C\uB9C8\uB85C \uB9DB\uC9D1\uC744 \uB098\uB220 \uB2F4\uC544\uB458 \uC218 \uC788\uC5B4\uC694.",
   },
   location: {
     deniedTitle: "\uC704\uCE58 \uAD8C\uD55C\uC774 \uCC28\uB2E8\uB418\uC5B4 \uC788\uC5B4\uC694",
@@ -331,9 +330,9 @@ function GuestPanel({ redirectTo }: { redirectTo: string }) {
           description={UI.benefits.ratingDescription}
         />
         <BenefitItem
-          icon={<CalendarCheck className="h-5 w-5" />}
-          title={UI.benefits.planTitle}
-          description={UI.benefits.planDescription}
+          icon={<Plus className="h-5 w-5" />}
+          title={UI.benefits.topicTitle}
+          description={UI.benefits.topicDescription}
         />
       </div>
       <SocialLoginButtons redirectTo={redirectTo} className="mt-6" />

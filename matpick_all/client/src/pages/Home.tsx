@@ -30,7 +30,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import {
   discoveryTopics,
-  getDiscoveryTopicByTarget,
   mockSearchData,
   type DiscoveryTopic,
   type SearchResult,
@@ -804,12 +803,6 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "creator") {
-        const topic = getDiscoveryTopicByTarget("creator", normalizedItem.id);
-        if (topic) {
-          navigate(topic.path);
-          return;
-        }
-
         navigate(`/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
@@ -825,12 +818,6 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "source") {
-        const topic = getDiscoveryTopicByTarget("source", normalizedItem.id);
-        if (topic) {
-          navigate(topic.path);
-          return;
-        }
-
         navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }

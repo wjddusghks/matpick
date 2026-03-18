@@ -12,6 +12,7 @@ import { getDisplayName } from "@/lib/authProfile";
 import {
   type FavoriteTopic,
 } from "@/lib/favoriteTopics";
+import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 import { getUserRestaurantRating } from "@/lib/restaurantRatings";
 import { useSeo } from "@/lib/seo";
 
@@ -47,19 +48,23 @@ function FavoriteRestaurantCard({
   userId: string;
   topics: FavoriteTopic[];
 }) {
+  const displayImage = getRestaurantDisplayImage(restaurant);
+
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
       <Link href={`/restaurant/${restaurant.id}`} className="no-underline">
         <article className="overflow-hidden rounded-[28px] border border-white bg-white shadow-[0_16px_50px_rgba(0,0,0,0.08)] transition hover:-translate-y-1 hover:shadow-[0_20px_64px_rgba(0,0,0,0.12)]">
           <div className="relative aspect-[16/10] overflow-hidden">
             <img
-              src={
-                restaurant.imageUrl ||
-                "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop"
-              }
+              src={displayImage.src}
               alt={restaurant.name}
               className="h-full w-full object-cover"
             />
+            {!displayImage.hasPhoto ? (
+              <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#6f7280] backdrop-blur-sm">
+                사진 준비 중
+              </div>
+            ) : null}
             <div className="absolute right-3 top-3">
               <HeartButton restaurantId={restaurant.id} size="md" />
             </div>

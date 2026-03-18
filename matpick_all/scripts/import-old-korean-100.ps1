@@ -123,6 +123,175 @@ function Normalize-Text {
   return ($Value -replace "\s+", " ").Trim()
 }
 
+function Normalize-HeaderText {
+  param([string]$Value)
+
+  return ((Normalize-Text $Value).ToLowerInvariant() -replace "[^a-z0-9가-힣]", "")
+}
+
+function Find-ColumnIndex {
+  param(
+    [string[]]$Headers,
+    [string[]]$Candidates
+  )
+
+  $normalizedHeaders = $Headers | ForEach-Object { Normalize-HeaderText $_ }
+  $normalizedCandidates = $Candidates | ForEach-Object { Normalize-HeaderText $_ }
+
+  foreach ($candidate in $normalizedCandidates) {
+    for ($index = 0; $index -lt $normalizedHeaders.Count; $index++) {
+      if ([string]::IsNullOrWhiteSpace($normalizedHeaders[$index])) {
+        continue
+      }
+
+      if ($normalizedHeaders[$index] -eq $candidate -or $normalizedHeaders[$index].Contains($candidate)) {
+        return $index
+      }
+    }
+  }
+
+  return -1
+}
+
+function Get-CellValue {
+  param(
+    [object[]]$Row,
+    [int]$Index,
+    [int]$FallbackIndex = -1
+  )
+
+  $resolvedIndex = if ($Index -ge 0) { $Index } else { $FallbackIndex }
+  if ($resolvedIndex -lt 0 -or $resolvedIndex -ge $Row.Count) {
+    return ""
+  }
+
+  return Normalize-Text ([string]$Row[$resolvedIndex])
+}
+
+function Split-ListText {
+  param(
+    [string]$Value,
+    [switch]$AllowSlash
+  )
+
+  if ([string]::IsNullOrWhiteSpace($Value)) {
+    return @()
+  }
+
+  $normalized = ($Value -replace "`r`n", "`n" -replace "`r", "`n").Trim()
+  if ($normalized.Contains("`n")) {
+    return $normalized.Split("`n", [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object {
+      Normalize-Text $_
+    } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+  }
+
+  if ($AllowSlash) {
+    return $normalized.Split("/", [System.StringSplitOptions]::RemoveEmptyEntries) | ForEach-Object {
+      Normalize-Text $_
+    } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+  }
+
+  return @((Normalize-Text $normalized))
+}
+
+function Parse-MenuLine {
+  param([string]$Value)
+
+  $trimmed = Normalize-Text $Value
+  if ([string]::IsNullOrWhiteSpace($trimmed)) {
+    return $null
+  }
+
+  $priceMatch = [regex]::Match($trimmed, "\d[\d,]*\s*원?")
+  $price = if ($priceMatch.Success) { Normalize-Text $priceMatch.Value } else { "" }
+  $name = if ($priceMatch.Success) {
+    Normalize-Text ($trimmed.Remove($priceMatch.Index, $priceMatch.Length))
+  } else {
+    $trimmed
+  }
+
+  if ([string]::IsNullOrWhiteSpace($name)) {
+    $name = $trimmed
+  }
+
+  return @{
+    name = $name
+    price = $price
+  }
+}
+
+function Build-MenuItems {
+  param(
+    [string]$RestaurantId,
+    [string]$RepresentativeMenuRaw,
+    [string]$MenuListRaw,
+    [string]$PriceListRaw
+  )
+
+  $menuLines = Split-ListText -Value $MenuListRaw
+  $priceLines = Split-ListText -Value $PriceListRaw
+
+  if ($menuLines.Count -eq 0) {
+    $menuLines = Split-ListText -Value $RepresentativeMenuRaw -AllowSlash
+  }
+
+  $menuItems = New-Object System.Collections.Generic.List[object]
+  $seen = New-Object System.Collections.Generic.HashSet[string]
+
+  for ($menuIndex = 0; $menuIndex -lt $menuLines.Count; $menuIndex++) {
+    $parsedLine = Parse-MenuLine -Value $menuLines[$menuIndex]
+    if ($null -eq $parsedLine) {
+      continue
+    }
+
+    $explicitPrice = if ($menuIndex -lt $priceLines.Count) {
+      Normalize-Text $priceLines[$menuIndex]
+    } else {
+      ""
+    }
+
+    $price = if ([string]::IsNullOrWhiteSpace($explicitPrice)) { $parsedLine.price } else { $explicitPrice }
+    $dedupeKey = ("{0}|{1}" -f $parsedLine.name.ToLowerInvariant(), $price)
+    if (-not $seen.Add($dedupeKey)) {
+      continue
+    }
+
+    $menuItems.Add([ordered]@{
+        id = "${RestaurantId}_menu_$($menuItems.Count + 1)"
+        name = $parsedLine.name
+        price = if ([string]::IsNullOrWhiteSpace($price)) { $null } else { $price }
+        isSignature = ($menuItems.Count -eq 0)
+      })
+  }
+
+  return $menuItems
+}
+
+function Get-RepresentativeMenuText {
+  param(
+    [string]$RepresentativeMenuRaw,
+    [System.Collections.Generic.List[object]]$MenuItems
+  )
+
+  $normalizedRepresentative = Normalize-Text $RepresentativeMenuRaw
+  if (-not [string]::IsNullOrWhiteSpace($normalizedRepresentative)) {
+    $candidateMenus = Split-ListText -Value $normalizedRepresentative -AllowSlash | ForEach-Object {
+      $parsed = Parse-MenuLine -Value $_
+      if ($parsed) { $parsed.name }
+    } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+
+    if ($candidateMenus.Count -gt 0) {
+      return (($candidateMenus | Select-Object -First 3) -join " / ")
+    }
+  }
+
+  if ($MenuItems.Count -gt 0) {
+    return (($MenuItems | Select-Object -First 3 | ForEach-Object { $_.name }) -join " / ")
+  }
+
+  return ""
+}
+
 function Get-RegionFromAddress {
   param([string]$Address)
 
@@ -201,6 +370,15 @@ if ($headerRow.Count -lt 5) {
   throw "The source Excel file must contain at least five columns."
 }
 
+$ordinalColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("회차", "번호", "순번", "ordinal", "order", "ep", "episode")
+$foundingYearColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("개업연도", "개업년도", "개업", "창업연도", "창업년도", "창업", "foundingyear")
+$categoryColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("카테고리", "분류", "유형", "음식종류", "장르", "category")
+$nameColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("식당명", "맛집명", "업체명", "상호", "가게명", "식당이름", "name")
+$addressColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("주소", "위치", "도로명주소", "지번주소", "address")
+$representativeMenuColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("대표메뉴", "대표메뉴명", "대표 메뉴", "시그니처", "signaturemenu")
+$menuColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("메뉴목록", "메뉴리스트", "메뉴 목록", "상세메뉴", "메뉴명", "음식명", "menu")
+$priceColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("가격목록", "가격리스트", "가격 목록", "메뉴가격", "가격", "price")
+
 $sourceId = [string]$sourceMeta.id
 $sourceName = $xlsxFile.BaseName
 $coverPublicPath = $CoverPublicPath
@@ -215,11 +393,14 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
     continue
   }
 
-  $ordinalRaw = if ($row.Count -gt 0) { Normalize-Text $row[0] } else { "" }
-  $foundingYearRaw = if ($row.Count -gt 1) { Normalize-Text $row[1] } else { "" }
-  $category = if ($row.Count -gt 2) { Normalize-Text $row[2] } else { "" }
-  $name = if ($row.Count -gt 3) { Normalize-Text $row[3] } else { "" }
-  $address = if ($row.Count -gt 4) { Normalize-Text $row[4] } else { "" }
+  $ordinalRaw = Get-CellValue -Row $row -Index $ordinalColumnIndex -FallbackIndex 0
+  $foundingYearRaw = Get-CellValue -Row $row -Index $foundingYearColumnIndex -FallbackIndex 1
+  $category = Get-CellValue -Row $row -Index $categoryColumnIndex -FallbackIndex 2
+  $name = Get-CellValue -Row $row -Index $nameColumnIndex -FallbackIndex 3
+  $address = Get-CellValue -Row $row -Index $addressColumnIndex -FallbackIndex 4
+  $representativeMenuRaw = Get-CellValue -Row $row -Index $representativeMenuColumnIndex -FallbackIndex 5
+  $menuListRaw = Get-CellValue -Row $row -Index $menuColumnIndex
+  $priceListRaw = Get-CellValue -Row $row -Index $priceColumnIndex
 
   if ([string]::IsNullOrWhiteSpace($name) -or [string]::IsNullOrWhiteSpace($address)) {
     continue
@@ -236,6 +417,8 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   }
 
   $restaurantId = "${sourceId}_restaurant_${ordinalLabel}"
+  $menuItems = Build-MenuItems -RestaurantId $restaurantId -RepresentativeMenuRaw $representativeMenuRaw -MenuListRaw $menuListRaw -PriceListRaw $priceListRaw
+  $representativeMenu = Get-RepresentativeMenuText -RepresentativeMenuRaw $representativeMenuRaw -MenuItems $menuItems
   $coordinateOverride = $coordinateLookup[(Get-CoordinateLookupKey -Name $name -Address $address)]
   $lat = if ($coordinateOverride) { [double]$coordinateOverride.lat } else { 0 }
   $lng = if ($coordinateOverride) { [double]$coordinateOverride.lng } else { 0 }
@@ -246,12 +429,12 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
       region = Get-RegionFromAddress -Address $address
       address = $address
       category = $category
-      representativeMenu = ""
+      representativeMenu = $representativeMenu
       lat = $lat
       lng = $lng
       imageUrl = ""
       foundingYear = $foundingYear
-      menus = @()
+      menus = $menuItems
       thumbnailFileName = $null
       isOverseas = $false
     })

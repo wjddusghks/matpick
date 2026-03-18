@@ -40,6 +40,10 @@ import {
   getUserRestaurantRating,
   saveUserRestaurantRating,
 } from "@/lib/restaurantRatings";
+import {
+  getRestaurantDisplayImage,
+  getRestaurantPrimaryPrice,
+} from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
@@ -173,6 +177,9 @@ export default function RestaurantDetail() {
     return <div className="flex min-h-screen items-center justify-center text-[#666]">식당을 찾을 수 없어요.</div>;
   }
 
+  const displayImage = getRestaurantDisplayImage(restaurant, { width: 1200, height: 900 });
+  const primaryPrice = getRestaurantPrimaryPrice(restaurant);
+  const shareImage = restaurant.imageUrl || "/og-default.png";
   const visits = getVisitsByRestaurant(restaurant.id);
   const recommenders = getCreatorsByRestaurant(restaurant.id);
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
@@ -202,12 +209,12 @@ export default function RestaurantDetail() {
     description: `${restaurant.name}의 대표 메뉴, 위치, 추천 소스와 리뷰를 맛픽에서 확인해보세요.`,
     path: `/restaurant/${restaurant.id}`,
     type: "article",
-    image: restaurant.imageUrl || "/og-default.png",
+    image: shareImage,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "Restaurant",
       name: restaurant.name,
-      image: restaurant.imageUrl ? buildAbsoluteUrl(restaurant.imageUrl) : buildAbsoluteUrl("/og-default.png"),
+      image: buildAbsoluteUrl(shareImage),
       address: {
         "@type": "PostalAddress",
         streetAddress: restaurant.address,
@@ -305,7 +312,7 @@ export default function RestaurantDetail() {
         title={restaurant.name}
         text={`${restaurant.name} - 맛픽에서 확인해보세요.`}
         url={shareUrl}
-        imageUrl={restaurant.imageUrl}
+        imageUrl={shareImage}
       />
       <AuthFeatureDialog
         open={authFeatureDialogOpen}
@@ -640,15 +647,22 @@ export default function RestaurantDetail() {
         </div>
 
         <div className="flex h-fit flex-col gap-5 lg:sticky lg:top-[80px]">
-          <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <img
-              src={
-                restaurant.imageUrl ||
-                "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=420&h=315&fit=crop"
-              }
+              src={displayImage.src}
               alt={restaurant.name}
               className="aspect-[4/3] w-full object-cover"
             />
+            {!displayImage.hasPhoto ? (
+              <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
+                사진 준비 중
+              </div>
+            ) : null}
+            {primaryPrice ? (
+              <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                대표 가격 {primaryPrice}
+              </div>
+            ) : null}
           </div>
 
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">

@@ -27,6 +27,10 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
+import {
+  getRestaurantDisplayImage,
+  getRestaurantPrimaryPrice,
+} from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
 
 function filterRestaurants(type: string, value: string): {
@@ -154,6 +158,8 @@ function RestaurantCard({
   const [, navigate] = useLocation();
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
+  const displayImage = getRestaurantDisplayImage(restaurant, { width: 320, height: 320 });
+  const priceHint = getRestaurantPrimaryPrice(restaurant);
 
   return (
     <div
@@ -163,17 +169,11 @@ function RestaurantCard({
     >
       <button type="button" onClick={onSelect} className="flex w-full items-start gap-3 text-left">
         <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
-          {restaurant.imageUrl ? (
-            <img
-              src={restaurant.imageUrl}
-              alt={restaurant.name}
-              className="h-full w-full object-cover"
-            />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-[#d1d1d1]">
-              <UtensilsCrossed className="h-7 w-7" />
-            </div>
-          )}
+          <img
+            src={displayImage.src}
+            alt={restaurant.name}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="pt-1">
@@ -187,9 +187,18 @@ function RestaurantCard({
           </div>
 
           <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
+          {priceHint ? (
+            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#b1a5a8]">
+              대표 가격 {priceHint}
+            </p>
+          ) : null}
           <p className="mt-2 text-xs text-[#888]">
             {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
           </p>
+
+          {!displayImage.hasPhoto ? (
+            <p className="mt-1 text-[11px] font-medium text-[#9b9b9b]">사진 준비 중</p>
+          ) : null}
 
           <div className="mt-2 flex flex-wrap gap-1.5">
             {creatorsForRestaurant.map((creator) => (

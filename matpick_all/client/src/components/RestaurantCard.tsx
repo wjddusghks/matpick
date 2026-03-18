@@ -8,6 +8,7 @@ import { MapPin, Tag } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Restaurant } from "@/data";
 import { getCreatorsByRestaurant, getRecommendationCount } from "@/data";
+import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 
 interface Props {
   restaurant: Restaurant;
@@ -17,6 +18,7 @@ interface Props {
 export default function RestaurantCard({ restaurant, index }: Props) {
   const recommenders = getCreatorsByRestaurant(restaurant.id);
   const recCount = getRecommendationCount(restaurant.id);
+  const displayImage = getRestaurantDisplayImage(restaurant);
 
   return (
     <motion.div
@@ -29,11 +31,16 @@ export default function RestaurantCard({ restaurant, index }: Props) {
           {/* Image */}
           <div className="relative aspect-[4/3] overflow-hidden">
             <img
-              src={restaurant.imageUrl}
+              src={displayImage.src}
               alt={restaurant.name}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
+            {!displayImage.hasPhoto ? (
+              <div className="absolute top-3 left-3 rounded-full bg-white/88 px-2.5 py-1 text-[11px] font-semibold text-[#6f7280] backdrop-blur-sm">
+                사진 준비 중
+              </div>
+            ) : null}
             {/* Recommendation count badge */}
             {recCount > 1 && (
               <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full shadow-md">

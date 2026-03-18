@@ -161,7 +161,12 @@ export default function ShareSheet({
   const trimmedUrl = useMemo(() => url.trim(), [url]);
   const resolvedImageUrl = useMemo(() => {
     const candidate = (imageUrl || matpickLogo).trim();
-    if (candidate.startsWith("http://") || candidate.startsWith("https://")) {
+    if (
+      candidate.startsWith("http://") ||
+      candidate.startsWith("https://") ||
+      candidate.startsWith("data:") ||
+      candidate.startsWith("blob:")
+    ) {
       return candidate;
     }
 

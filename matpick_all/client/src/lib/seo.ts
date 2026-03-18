@@ -20,7 +20,12 @@ function getSiteUrl() {
 
 function makeAbsoluteUrl(path = "/") {
   const siteUrl = getSiteUrl();
-  if (path.startsWith("http://") || path.startsWith("https://")) {
+  if (
+    path.startsWith("http://") ||
+    path.startsWith("https://") ||
+    path.startsWith("data:") ||
+    path.startsWith("blob:")
+  ) {
     return path;
   }
 

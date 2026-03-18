@@ -81,6 +81,38 @@ function preferLongerText(currentValue: string, nextValue: string) {
   return next.length > current.length ? next : current;
 }
 
+function mergeRestaurantMenus(currentMenus: MenuItem[] = [], nextMenus: MenuItem[] = []) {
+  const mergedMenus = new Map<string, MenuItem>();
+
+  [...currentMenus, ...nextMenus].forEach((menu, index) => {
+    const normalizedName = menu.name?.trim();
+    if (!normalizedName) {
+      return;
+    }
+
+    const key = normalizedName.toLowerCase();
+    const existing = mergedMenus.get(key);
+
+    if (!existing) {
+      mergedMenus.set(key, {
+        id: menu.id || `merged_menu_${index}`,
+        name: normalizedName,
+        price: menu.price?.trim() || undefined,
+        isSignature: Boolean(menu.isSignature),
+      });
+      return;
+    }
+
+    mergedMenus.set(key, {
+      ...existing,
+      price: existing.price || menu.price?.trim() || undefined,
+      isSignature: existing.isSignature || Boolean(menu.isSignature),
+    });
+  });
+
+  return Array.from(mergedMenus.values());
+}
+
 function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant {
   const preferredAddressRestaurant =
     preferLongerText(current.address, next.address) === next.address ? next : current;
@@ -108,7 +140,7 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
         : current.lng,
     imageUrl: current.imageUrl || next.imageUrl,
     foundingYear: current.foundingYear ?? next.foundingYear ?? null,
-    menus: current.menus && current.menus.length > 0 ? current.menus : next.menus ?? [],
+    menus: mergeRestaurantMenus(current.menus ?? [], next.menus ?? []),
     thumbnailFileName: current.thumbnailFileName ?? next.thumbnailFileName ?? null,
     isOverseas: current.isOverseas ?? next.isOverseas,
   };
@@ -162,7 +194,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
         mergedRestaurants[existingIndex] = {
           ...existing,
           foundingYear: existing.foundingYear ?? restaurant.foundingYear ?? null,
-          menus: existing.menus && existing.menus.length > 0 ? existing.menus : restaurant.menus ?? [],
+          menus: mergeRestaurantMenus(existing.menus ?? [], restaurant.menus ?? []),
           thumbnailFileName:
             existing.thumbnailFileName ?? restaurant.thumbnailFileName ?? null,
         };

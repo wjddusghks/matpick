@@ -11,6 +11,7 @@ import {
   getCreatorDisplayName, getRestaurantsByCreator, getCreatorsByRestaurant, getRecommendationCount,
   type Restaurant,
 } from "@/data";
+import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 // Logo is rendered inline as SVG
@@ -19,6 +20,7 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
   const [, navigate] = useLocation();
   const recCount = getRecommendationCount(restaurant.id);
   const recCreators = getCreatorsByRestaurant(restaurant.id);
+  const displayImage = getRestaurantDisplayImage(restaurant);
 
   return (
     <motion.div
@@ -30,10 +32,15 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
     >
       <div className="relative h-44 overflow-hidden">
         <img
-          src={restaurant.imageUrl || "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop"}
+          src={displayImage.src}
           alt={restaurant.name}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
+        {!displayImage.hasPhoto && (
+          <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#6f7280] backdrop-blur-sm">
+            사진 준비 중
+          </div>
+        )}
         {recCount > 1 && (
           <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg" style={{ background: "linear-gradient(135deg, #FD7979, #FDACAC)" }}>
             🔥 {recCount}개 채널 추천

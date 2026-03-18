@@ -26,11 +26,13 @@ import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import {
+  getRestaurantDisplayImage,
+  getRestaurantPrimaryPrice,
+} from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
 
 const ALL_FILTER = "all";
-const FALLBACK_RESTAURANT_IMAGE =
-  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop";
 
 type DiscoveryKind = "creator" | "source";
 
@@ -155,8 +157,8 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
-  const cardImage =
-    restaurant.imageUrl || sourcesForRestaurant[0]?.imageUrl || FALLBACK_RESTAURANT_IMAGE;
+  const displayImage = getRestaurantDisplayImage(restaurant);
+  const priceHint = getRestaurantPrimaryPrice(restaurant);
 
   return (
     <button
@@ -166,13 +168,18 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
     >
       <div className="relative h-52 overflow-hidden">
         <img
-          src={cardImage}
+          src={displayImage.src}
           alt={restaurant.name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.18)_100%)]" />
 
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+          {!displayImage.hasPhoto ? (
+            <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
+              사진 준비 중
+            </span>
+          ) : null}
           <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
             {getCuisineCategory(restaurant.category)}
           </span>
@@ -198,6 +205,11 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
         <div className="space-y-2">
           <h3 className="text-lg font-bold text-[#181818]">{restaurant.name}</h3>
           <p className="text-sm text-[#8a8a8a]">{restaurant.address}</p>
+          {priceHint ? (
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b2a2a6]">
+              대표 가격 {priceHint}
+            </p>
+          ) : null}
           <p className="text-sm font-medium text-[#ff7b83]">
             {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
           </p>

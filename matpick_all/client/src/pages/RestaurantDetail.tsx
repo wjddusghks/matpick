@@ -12,6 +12,7 @@ import {
   Star,
 } from "lucide-react";
 import { toast } from "sonner";
+import AuthFeatureDialog, { type AuthFeatureMode } from "@/components/AuthFeatureDialog";
 import HeartButton from "@/components/HeartButton";
 import FavoriteTopicPickerDialog from "@/components/FavoriteTopicPickerDialog";
 import ShareSheet from "@/components/ShareSheet";
@@ -97,7 +98,7 @@ function formatDate() {
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
-  const [, navigate] = useLocation();
+  const [location, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
   const { topics, getTopicsForRestaurant } = useFavorites();
   const restaurant = restaurants.find((item) => item.id === id);
@@ -112,6 +113,9 @@ export default function RestaurantDetail() {
   const [personalRating, setPersonalRating] = useState(0);
   const [hoveredPersonalRating, setHoveredPersonalRating] = useState(0);
   const [topicPickerOpen, setTopicPickerOpen] = useState(false);
+  const [authFeatureDialogOpen, setAuthFeatureDialogOpen] = useState(false);
+  const [authFeatureMode, setAuthFeatureMode] =
+    useState<AuthFeatureMode>("rating");
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -170,8 +174,17 @@ export default function RestaurantDetail() {
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
   const shareUrl = getRestaurantUrl(restaurant.id);
+  const redirectTo =
+    typeof window === "undefined"
+      ? location || `/restaurant/${restaurant.id}`
+      : `${window.location.pathname}${window.location.search}`;
   const visiblePersonalRating = hoveredPersonalRating || personalRating;
   const assignedTopics = getTopicsForRestaurant(restaurant.id);
+
+  const openAuthFeatureDialog = (mode: AuthFeatureMode) => {
+    setAuthFeatureMode(mode);
+    setAuthFeatureDialogOpen(true);
+  };
 
   useSeo({
     title: `${restaurant.name} 맛집 정보`,
@@ -196,6 +209,10 @@ export default function RestaurantDetail() {
 
   const openComposer = () => {
     if (!isLoggedIn) {
+      openAuthFeatureDialog("review");
+      return;
+    }
+    if (!isLoggedIn) {
       toast("리뷰 작성은 로그인 후에 이용할 수 있어요.");
       return;
     }
@@ -204,6 +221,10 @@ export default function RestaurantDetail() {
   };
 
   const saveRating = (stars: number) => {
+    if (!isLoggedIn || !user) {
+      openAuthFeatureDialog("rating");
+      return;
+    }
     if (!isLoggedIn || !user) {
       toast("내 평점은 로그인 후에 저장할 수 있어요.");
       return;
@@ -233,6 +254,10 @@ export default function RestaurantDetail() {
   };
 
   const submitReview = () => {
+    if (!isLoggedIn || !user) {
+      openAuthFeatureDialog("review");
+      return;
+    }
     if (!isLoggedIn || !user) {
       toast("리뷰 작성은 로그인 후에 이용할 수 있어요.");
       return;
@@ -270,6 +295,12 @@ export default function RestaurantDetail() {
         text={`${restaurant.name} - 맛픽에서 확인해보세요.`}
         url={shareUrl}
         imageUrl={restaurant.imageUrl}
+      />
+      <AuthFeatureDialog
+        open={authFeatureDialogOpen}
+        onOpenChange={setAuthFeatureDialogOpen}
+        mode={authFeatureMode}
+        redirectTo={redirectTo}
       />
       <FavoriteTopicPickerDialog
         open={topicPickerOpen}
@@ -651,6 +682,30 @@ export default function RestaurantDetail() {
                 );
               })}
             </div>
+            {!isLoggedIn ? (
+              <div className="mt-4 border-t border-[#f3eef0] pt-4">
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
+                    <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
+                      로그인하면 데이트, 혼밥, 여행 코스처럼 원하는 주제를 만들고 식당을 나눠 담아둘 수 있어요.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => openAuthFeatureDialog("topic")}
+                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
+                  >
+                    로그인하고 주제 저장
+                  </button>
+                </div>
+                <div className="mt-3 rounded-[18px] border border-dashed border-[#ffe0e4] bg-[#fffafb] px-4 py-3">
+                  <p className="text-xs leading-5 text-[#8a8a8a]">
+                    주제를 만들면 저장한 맛집을 테마별로 다시 모아보고, 나중에 탐색 화면에서도 바로 불러올 수 있어요.
+                  </p>
+                </div>
+              </div>
+            ) : null}
             {isLoggedIn ? (
               <div className="mt-4 border-t border-[#f3eef0] pt-4">
                 <div className="flex items-center justify-between gap-3">

@@ -85,7 +85,6 @@ export function AdsenseSlot({
 }
 
 export function KakaoAdfitSlot({
-  label,
   unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "",
   width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320",
   height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100",
@@ -117,17 +116,15 @@ export function KakaoAdfitSlot({
   }
 
   return (
-    <SlotFrame label={label}>
-      <div ref={containerRef}>
-        <ins
-          className="kakao_ad_area block overflow-hidden rounded-[18px] bg-[#faf7f8]"
-          style={{ display: "none" }}
-          data-ad-unit={unit}
-          data-ad-width={width}
-          data-ad-height={height}
-        />
-      </div>
-    </SlotFrame>
+    <div ref={containerRef} className="w-full">
+      <ins
+        className="kakao_ad_area"
+        style={{ display: "none" }}
+        data-ad-unit={unit}
+        data-ad-width={width}
+        data-ad-height={height}
+      />
+    </div>
   );
 }
 

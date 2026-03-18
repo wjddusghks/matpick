@@ -51,18 +51,11 @@ export default function FavoriteTopicPickerDialog({
         <DialogContent className="sm:max-w-[560px]">
           <DialogHeader>
             <DialogTitle>주제에 담기</DialogTitle>
-            <DialogDescription>
-              "{restaurantName}"을 담을 주제를 고르세요. 이미 담긴 주제는
-              한번 더 누르면 바로 취소할 수 있어요.
-            </DialogDescription>
+            <DialogDescription>"{restaurantName}"을 담을 주제를 고르세요.</DialogDescription>
           </DialogHeader>
 
           {topics.length > 0 ? (
             <div className="space-y-3">
-              <div className="rounded-2xl border border-[#ffe2e6] bg-[#fff9fa] px-4 py-3 text-xs leading-5 text-[#8a8a8a]">
-                주제를 눌러 담기와 취소를 바로 바꿀 수 있어요. 담겨 있는
-                항목은 다시 누르면 주제에서 빠집니다.
-              </div>
               {topics.map((topic) => {
                 const active = assignedTopicIds.includes(topic.id);
 

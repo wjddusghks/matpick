@@ -239,6 +239,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     () => (topicSlug ? getDiscoveryTopicBySlug(topicSlug) : null),
     [topicSlug]
   );
+  const curatedDiscoveryKeySet = useMemo(
+    () => new Set(discoveryTopics.map((topic) => topic.key)),
+    []
+  );
   const topicEpisodes = useMemo(
     () => (topicSlug ? getDiscoveryTopicEpisodes(topicSlug) : []),
     [topicSlug]
@@ -278,6 +282,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       (a, b) => b.count - a.count || sortText(a.name, b.name)
     );
   }, []);
+  const additionalDiscoveryOptions = useMemo(
+    () =>
+      discoveryOptions.filter((option) => !curatedDiscoveryKeySet.has(option.key)),
+    [curatedDiscoveryKeySet, discoveryOptions]
+  );
 
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
   const initialSelectedKeys = useMemo(() => {
@@ -432,12 +441,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   };
 
   const clearDiscoverySelection = () => {
-    if (presetTopic) {
-      navigate("/explore");
-      return;
-    }
-
-    setSelectedDiscoveryKeys([]);
+    setSelectedDiscoveryKeys(presetTopic ? [presetTopic.key] : []);
   };
 
   const clearFilters = () => {
@@ -454,6 +458,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   };
 
   const hasActiveDiscovery = selectedDiscoveryKeys.length > 0;
+  const hasAdditionalDiscovery = selectedDiscoveryKeys.some(
+    (key) => !curatedDiscoveryKeySet.has(key)
+  );
   const hasActiveFilters =
     hasActiveDiscovery ||
     selectedCategory !== ALL_FILTER ||
@@ -519,23 +526,25 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             </div>
           </div>
 
-          <div className="-mx-1 overflow-x-auto pb-2">
-            <div className="flex min-w-max gap-4 px-1">
-              <SourceAvatarButton
-                option={null}
-                selected={!hasActiveDiscovery}
-                onClick={clearDiscoverySelection}
-              />
-              {discoveryOptions.map((option) => (
+          {additionalDiscoveryOptions.length > 0 ? (
+            <div className="-mx-1 overflow-x-auto pb-2">
+              <div className="flex min-w-max gap-4 px-1">
                 <SourceAvatarButton
-                  key={option.key}
-                  option={option}
-                  selected={selectedDiscoveryKeys.includes(option.key)}
-                  onClick={() => toggleDiscovery(option.key)}
+                  option={null}
+                  selected={!hasAdditionalDiscovery}
+                  onClick={clearDiscoverySelection}
                 />
-              ))}
+                {additionalDiscoveryOptions.map((option) => (
+                  <SourceAvatarButton
+                    key={option.key}
+                    option={option}
+                    selected={selectedDiscoveryKeys.includes(option.key)}
+                    onClick={() => toggleDiscovery(option.key)}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <div className="mt-4 space-y-4 border-t border-[#f5f0f1] pt-4 sm:mt-5 sm:pt-5">
             {presetTopic && topicEpisodes.length > 0 ? (

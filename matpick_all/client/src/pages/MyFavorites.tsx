@@ -1,7 +1,7 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Bookmark, CircleUserRound, Heart, Star } from "lucide-react";
-import { Link, useLocation, useSearch } from "wouter";
+import { Link, useLocation, useSearchParams } from "wouter";
 import HeartButton from "@/components/HeartButton";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
@@ -154,7 +154,7 @@ function FavoritesSection({
 
 export default function MyFavorites() {
   const [, navigate] = useLocation();
-  const search = useSearch();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { isLoggedIn, user } = useAuth();
   const {
     favorites,
@@ -170,9 +170,32 @@ export default function MyFavorites() {
     robots: "noindex,nofollow",
   });
 
-  const searchParams = useMemo(() => new URLSearchParams(search), [search]);
   const selectedTopicId = searchParams.get("topic");
   const selectedTab = searchParams.get("tab");
+
+  const handleBack = useCallback(() => {
+    if (typeof window !== "undefined" && window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+
+    navigate("/");
+  }, [navigate]);
+
+  const showAllFavorites = useCallback(() => {
+    setSearchParams({}, { replace: true });
+  }, [setSearchParams]);
+
+  const showPlainFavorites = useCallback(() => {
+    setSearchParams({ tab: "plain" }, { replace: true });
+  }, [setSearchParams]);
+
+  const showTopicFavorites = useCallback(
+    (topicId: string) => {
+      setSearchParams({ topic: topicId }, { replace: true });
+    },
+    [setSearchParams]
+  );
 
   const restaurantById = useMemo(
     () => new Map(restaurants.map((restaurant) => [restaurant.id, restaurant])),
@@ -260,7 +283,7 @@ export default function MyFavorites() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => window.history.back()}
+            onClick={handleBack}
             className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e5e5] bg-white text-[#333] transition hover:border-[#ff8e8e] hover:bg-[#fff5f5]"
             aria-label="뒤로 가기"
           >
@@ -310,7 +333,7 @@ export default function MyFavorites() {
           <div className="mt-5 flex flex-wrap gap-2">
             <button
               type="button"
-              onClick={() => navigate("/my/favorites")}
+              onClick={showAllFavorites}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
                 activeView === "all"
                   ? "border-[#ff8f99] bg-[#ff7b83] text-white"
@@ -321,7 +344,7 @@ export default function MyFavorites() {
             </button>
             <button
               type="button"
-              onClick={() => navigate("/my/favorites?tab=plain")}
+              onClick={showPlainFavorites}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
                 activeView === "plain"
                   ? "border-[#ff8f99] bg-[#ff7b83] text-white"
@@ -334,9 +357,7 @@ export default function MyFavorites() {
               <button
                 key={section.topic.id}
                 type="button"
-                onClick={() =>
-                  navigate(`/my/favorites?topic=${encodeURIComponent(section.topic.id)}`)
-                }
+                onClick={() => showTopicFavorites(section.topic.id)}
                 className="rounded-full transition"
               >
                 <FavoriteTopicBadge

@@ -1,17 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { Compass, Search } from "lucide-react";
-import { useLocation, useSearch } from "wouter";
+import { Link, useLocation, useSearch } from "wouter";
 import {
   creators,
   discoveryTopics,
-  getDiscoveryTopicBySlug,
-  getDiscoveryTopicEpisodeBySlug,
-  getDiscoveryTopicEpisodes,
   getBroadRegion,
   getCuisineCategories,
   getCuisineCategory,
   getCreatorDisplayName,
   getCreatorsByRestaurant,
+  getDiscoveryTopicBySlug,
+  getDiscoveryTopicEpisodeBySlug,
+  getDiscoveryTopicEpisodes,
   getRecommendationCount,
   getRegions,
   getRestaurantMenuSummary,
@@ -20,17 +20,21 @@ import {
   getSourcesByRestaurant,
   restaurants,
   sources,
+  type DiscoveryTopic,
+  type DiscoveryTopicEpisode,
   type Restaurant,
 } from "@/data";
 import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { useLocale } from "@/contexts/LocaleContext";
+import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import {
   getRestaurantDisplayImage,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
-import { useSeo } from "@/lib/seo";
+import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 const ALL_FILTER = "all";
 
@@ -55,6 +59,72 @@ type AvatarOption = {
   imageUrl?: string | null;
 };
 
+const EXPLORE_COPY = {
+  ko: {
+    homeLabel: "홈으로",
+    pageTitle: "맛집 탐색",
+    pageDescription:
+      "보고 싶은 채널이나 주제를 먼저 고른 뒤 카테고리와 지역 필터를 조합해서 원하는 맛집을 찾아보세요.",
+    topicLine: (topic: DiscoveryTopic) => `${topic.name}만 빠르게 둘러보는 탐색 화면입니다.`,
+    episodeLine: (episode: DiscoveryTopicEpisode) =>
+      `${episode.episode}에 소개된 맛집만 모아보는 화면입니다.`,
+    topicShortcutLabel: "주제 바로가기",
+    topicHeading: "내 주제",
+    episodeHeading: "회차",
+    categoryHeading: "카테고리",
+    regionHeading: "지역",
+    allLabel: "전체",
+    episodeOpen: (count: number) => `${count}개 보기`,
+    episodeClose: "닫기",
+    clearFilters: "필터 전체 초기화",
+    resultsCount: (count: number) => `총 ${count.toLocaleString()}곳의 맛집`,
+    emptyTitle: "해당 조건에 맞는 맛집이 아직 없어요.",
+    emptyDescription:
+      "선택한 주제, 카테고리, 지역 조건을 조금만 바꿔서 다시 찾아보세요.",
+    loadMore: "스크롤하면 더 많은 맛집을 이어서 불러와요.",
+    sponsoredLabel: "Sponsored",
+    photoPending: "사진 준비 중",
+    priceLabel: "대표 가격",
+    menuFallback: "메뉴 정보가 아직 준비 중이에요.",
+    recommendLabel: (count: number) => `추천 ${count}곳`,
+    seoTitle: "맛집 탐색",
+    seoDescription:
+      "채널, 주제, 카테고리, 지역 필터를 조합해서 원하는 맛집을 탐색해보세요.",
+  },
+  en: {
+    homeLabel: "Home",
+    pageTitle: "Explore restaurants",
+    pageDescription:
+      "Start with a creator or curated topic, then combine cuisine and region filters to narrow the list.",
+    topicLine: (topic: DiscoveryTopic) =>
+      `You are browsing restaurants curated under ${topic.name}.`,
+    episodeLine: (episode: DiscoveryTopicEpisode) =>
+      `You are browsing only the restaurants featured in ${episode.episode}.`,
+    topicShortcutLabel: "Topic shortcuts",
+    topicHeading: "My topics",
+    episodeHeading: "Episodes",
+    categoryHeading: "Cuisine",
+    regionHeading: "Region",
+    allLabel: "All",
+    episodeOpen: (count: number) => `${count} episodes`,
+    episodeClose: "Close",
+    clearFilters: "Clear all filters",
+    resultsCount: (count: number) => `${count.toLocaleString()} restaurants`,
+    emptyTitle: "No restaurant matches these filters yet.",
+    emptyDescription:
+      "Try another topic, cuisine, or region combination to broaden the results.",
+    loadMore: "Scroll to load more restaurants.",
+    sponsoredLabel: "Sponsored",
+    photoPending: "Photo coming soon",
+    priceLabel: "From",
+    menuFallback: "Menu details are coming soon.",
+    recommendLabel: (count: number) => `${count} picks`,
+    seoTitle: "Explore restaurants",
+    seoDescription:
+      "Browse restaurants by creator, topic, cuisine, and region on Matpick.",
+  },
+} as const;
+
 function sortText(a: string, b: string) {
   return a.localeCompare(b, "ko-KR");
 }
@@ -71,20 +141,18 @@ function SourceAvatarButton({
   option,
   selected,
   onClick,
+  href,
+  fallbackLabel,
 }: {
   option: AvatarOption | null;
   selected: boolean;
-  onClick: () => void;
+  onClick?: () => void;
+  href?: string;
+  fallbackLabel: string;
 }) {
-  const label = option?.name ?? "전체";
-
-  return (
-    <button
-      type="button"
-      title={label}
-      onClick={onClick}
-      className="flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]"
-    >
+  const label = option?.name ?? fallbackLabel;
+  const inner = (
+    <>
       <span
         className={`flex h-[64px] w-[64px] items-center justify-center rounded-full p-[2px] transition-all sm:h-[72px] sm:w-[72px] ${
           selected
@@ -114,6 +182,22 @@ function SourceAvatarButton({
       >
         {label}
       </span>
+    </>
+  );
+
+  const className = "flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]";
+
+  if (href) {
+    return (
+      <Link href={href} title={label} className={className}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <button type="button" title={label} onClick={onClick} className={className}>
+      {inner}
     </button>
   );
 }
@@ -152,7 +236,15 @@ function FilterChip({
   );
 }
 
-function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
+function RestaurantCard({
+  restaurant,
+  locale,
+  copy,
+}: {
+  restaurant: Restaurant;
+  locale: AppLocale;
+  copy: (typeof EXPLORE_COPY)[AppLocale];
+}) {
   const [, navigate] = useLocation();
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
@@ -177,15 +269,15 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
           {!displayImage.hasPhoto ? (
             <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-              사진 준비 중
+              {copy.photoPending}
             </span>
           ) : null}
           <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
-            {getCuisineCategory(restaurant.category)}
+            {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
           </span>
           {restaurant.foundingYear ? (
             <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
-              {restaurant.foundingYear}년
+              {restaurant.foundingYear}
             </span>
           ) : null}
         </div>
@@ -196,7 +288,7 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
 
         {recommendationCount > 1 ? (
           <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/72 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-            추천 {recommendationCount}곳
+            {copy.recommendLabel(recommendationCount)}
           </div>
         ) : null}
       </div>
@@ -207,11 +299,11 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
           <p className="text-sm text-[#8a8a8a]">{restaurant.address}</p>
           {priceHint ? (
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b2a2a6]">
-              대표 가격 {priceHint}
+              {copy.priceLabel} {priceHint}
             </p>
           ) : null}
           <p className="text-sm font-medium text-[#ff7b83]">
-            {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
+            {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
           </p>
         </div>
 
@@ -241,9 +333,56 @@ function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   );
 }
 
+function buildSeoContent({
+  locale,
+  copy,
+  presetTopic,
+  presetEpisode,
+}: {
+  locale: AppLocale;
+  copy: (typeof EXPLORE_COPY)[AppLocale];
+  presetTopic: DiscoveryTopic | null;
+  presetEpisode: DiscoveryTopicEpisode | null;
+}) {
+  if (presetEpisode && presetTopic) {
+    if (locale === "en") {
+      return {
+        title: `${presetTopic.name} ${presetEpisode.episode} restaurants`,
+        description: `Browse restaurants featured in ${presetEpisode.episode} from ${presetTopic.name} on Matpick.`,
+      };
+    }
+
+    return {
+      title: `${presetTopic.name} ${presetEpisode.episode} 맛집 탐색`,
+      description: `${presetTopic.name} ${presetEpisode.episode}에 소개된 맛집을 맛픽에서 한 번에 탐색해보세요.`,
+    };
+  }
+
+  if (presetTopic) {
+    if (locale === "en") {
+      return {
+        title: `${presetTopic.name} restaurant list`,
+        description: `Explore restaurants curated under ${presetTopic.name} on Matpick.`,
+      };
+    }
+
+    return {
+      title: `${presetTopic.name} 맛집 탐색`,
+      description: `${presetTopic.name}에 포함된 맛집을 맛픽에서 지도와 함께 탐색해보세요.`,
+    };
+  }
+
+  return {
+    title: copy.seoTitle,
+    description: copy.seoDescription,
+  };
+}
+
 export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [, navigate] = useLocation();
   const search = useSearch();
+  const { locale } = useLocale();
+  const copy = EXPLORE_COPY[locale];
   const categories = getCuisineCategories();
   const regions = getRegions();
   const { topics, isRestaurantInTopic, getTopicRestaurantCount } = useFavorites();
@@ -294,9 +433,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       (a, b) => b.count - a.count || sortText(a.name, b.name)
     );
   }, []);
+
   const additionalDiscoveryOptions = useMemo(
-    () =>
-      discoveryOptions.filter((option) => !curatedDiscoveryKeySet.has(option.key)),
+    () => discoveryOptions.filter((option) => !curatedDiscoveryKeySet.has(option.key)),
     [curatedDiscoveryKeySet, discoveryOptions]
   );
 
@@ -332,40 +471,84 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
   const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
   const [isEpisodeMenuOpen, setIsEpisodeMenuOpen] = useState(Boolean(episodeSlug));
+  const [visibleCount, setVisibleCount] = useState(60);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
 
-  const seoTitle = presetEpisode
-    ? `${presetTopic?.name ?? ""} ${presetEpisode.episode} 맛집 탐색`
-    : presetTopic
-      ? `${presetTopic.name} 맛집 탐색`
-      : "맛집 탐색";
-  const seoDescription = presetEpisode
-    ? presetEpisode.description
-    : presetTopic
-      ? presetTopic.description
-      : "채널과 소스, 카테고리, 지역 필터를 조합해서 원하는 스타일의 맛집을 한눈에 탐색해보세요.";
+  const seoContent = useMemo(
+    () =>
+      buildSeoContent({
+        locale,
+        copy,
+        presetTopic,
+        presetEpisode,
+      }),
+    [copy, locale, presetEpisode, presetTopic]
+  );
+
   const seoPath = presetEpisode
     ? presetEpisode.path
     : presetTopic
       ? presetTopic.path
       : "/explore";
-  const presetTopicPath = presetTopic?.path ?? "/explore";
-  const topicLine = presetEpisode
-    ? `${presetEpisode.episode}에 소개된 맛집만 모아보는 화면입니다.`
-    : presetTopic
-      ? `${presetTopic.name}만 빠르게 둘러볼 수 있는 탐색 화면입니다.`
-      : "";
+
+  const seoJsonLd = useMemo(() => {
+    const items = [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: seoContent.title,
+        description: seoContent.description,
+        url: buildAbsoluteUrl(seoPath),
+      },
+    ] as Array<Record<string, unknown>>;
+
+    if (presetTopic) {
+      const breadcrumbItems: Array<Record<string, unknown>> = [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Matpick",
+          item: buildAbsoluteUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: copy.pageTitle,
+          item: buildAbsoluteUrl("/explore"),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: presetTopic.name,
+          item: buildAbsoluteUrl(presetTopic.path),
+        },
+      ];
+
+      if (presetEpisode) {
+        breadcrumbItems.push({
+          "@type": "ListItem",
+          position: 4,
+          name: presetEpisode.episode,
+          item: buildAbsoluteUrl(presetEpisode.path),
+        });
+      }
+
+      items.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbItems,
+      });
+    }
+
+    return items;
+  }, [copy.pageTitle, presetEpisode, presetTopic, seoContent.description, seoContent.title, seoPath]);
 
   useSeo({
-    title: seoTitle,
-    description: seoDescription,
+    title: seoContent.title,
+    description: seoContent.description,
     path: seoPath,
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: seoTitle,
-      description: seoDescription,
-      url: `https://matpick.co.kr${seoPath}`,
-    },
+    locale,
+    jsonLd: seoJsonLd,
   });
 
   useEffect(() => {
@@ -381,6 +564,17 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   useEffect(() => {
     setIsEpisodeMenuOpen(Boolean(episodeSlug));
   }, [episodeSlug, topicSlug]);
+
+  useEffect(() => {
+    setVisibleCount(60);
+  }, [
+    episodeSlug,
+    selectedCategory,
+    selectedDiscoveryKeys,
+    selectedRegion,
+    selectedTopicId,
+    topicSlug,
+  ]);
 
   const filteredRestaurants = useMemo(() => {
     let nextRestaurants = [...restaurants];
@@ -447,6 +641,38 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     selectedTopicId,
   ]);
 
+  const deferredRestaurants = useDeferredValue(filteredRestaurants);
+  const visibleRestaurants = useMemo(
+    () => deferredRestaurants.slice(0, visibleCount),
+    [deferredRestaurants, visibleCount]
+  );
+
+  useEffect(() => {
+    const target = loadMoreRef.current;
+
+    if (!target || visibleCount >= deferredRestaurants.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          setVisibleCount((prev) => Math.min(prev + 60, deferredRestaurants.length));
+        });
+      },
+      {
+        rootMargin: "320px 0px",
+      }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [deferredRestaurants.length, visibleCount]);
+
   const toggleDiscovery = (key: string) => {
     if (presetTopic && key === presetTopic.key && selectedDiscoveryKeys.length === 1) {
       navigate("/explore");
@@ -466,21 +692,20 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     navigate("/explore");
   };
 
-  const handleTopicShortcutClick = (slug: string, path: string) => {
-    if (topicSlug === slug) {
-      navigate("/explore");
-      return;
-    }
-
-    navigate(path);
-  };
-
   const hasActiveDiscovery = selectedDiscoveryKeys.length > 0;
   const hasActiveFilters =
     hasActiveDiscovery ||
     selectedCategory !== ALL_FILTER ||
     selectedRegion !== ALL_FILTER ||
-    selectedTopicId !== ALL_FILTER;
+    selectedTopicId !== ALL_FILTER ||
+    Boolean(presetTopic) ||
+    Boolean(presetEpisode);
+
+  const topicLine = presetEpisode
+    ? copy.episodeLine(presetEpisode)
+    : presetTopic
+      ? copy.topicLine(presetTopic)
+      : "";
 
   return (
     <div className="min-h-screen bg-[#fffdfd]">
@@ -505,27 +730,25 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             className="inline-flex items-center gap-2 rounded-full border border-[#ece7e8] bg-white px-3 py-2 text-xs font-semibold text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9] sm:px-4 sm:text-sm"
           >
             <Search className="h-4 w-4" />
-            홈으로
+            {copy.homeLabel}
           </button>
         </div>
       </nav>
 
       <main className="mx-auto max-w-6xl px-4 py-6 sm:py-8">
         <header className="mb-8">
-          <h1 className="text-2xl font-bold text-[#171717] sm:text-3xl">맛집 탐색</h1>
+          <h1 className="text-2xl font-bold text-[#171717] sm:text-3xl">{copy.pageTitle}</h1>
           <p className="mt-2 text-sm leading-6 text-[#7f7f7f] sm:text-base">
-            먼저 보고 싶은 채널이나 소스를 고른 뒤, 카테고리와 지역으로 결과를 더
-            좁혀보세요.
+            {copy.pageDescription}
           </p>
           {presetTopic ? (
             <p className="mt-3 text-xs font-medium text-[#ff7b83] sm:text-sm">{topicLine}</p>
           ) : null}
         </header>
-
         <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5">
           <div className="mb-4">
             <p className="mb-3 text-xs font-semibold tracking-[0.08em] text-[#b58f95]">
-              주제 바로가기
+              {copy.topicShortcutLabel}
             </p>
             <div className="-mx-1 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
@@ -533,13 +756,15 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                   option={null}
                   selected={!presetTopic}
                   onClick={() => navigate("/explore")}
+                  fallbackLabel={copy.allLabel}
                 />
                 {discoveryTopics.map((topic) => (
                   <SourceAvatarButton
                     key={topic.slug}
                     option={{ name: topic.name, imageUrl: topic.imageUrl }}
                     selected={topic.slug === topicSlug}
-                    onClick={() => handleTopicShortcutClick(topic.slug, topic.path)}
+                    href={topic.slug === topicSlug ? "/explore" : topic.path}
+                    fallbackLabel={copy.allLabel}
                   />
                 ))}
               </div>
@@ -555,6 +780,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                     option={option}
                     selected={selectedDiscoveryKeys.includes(option.key)}
                     onClick={() => toggleDiscovery(option.key)}
+                    fallbackLabel={copy.allLabel}
                   />
                 ))}
               </div>
@@ -565,7 +791,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             {presetTopic && topicEpisodes.length > 0 ? (
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="mr-1 text-sm font-semibold text-[#666]">회차</span>
+                  <span className="mr-1 text-sm font-semibold text-[#666]">{copy.episodeHeading}</span>
                   <button
                     type="button"
                     onClick={() => setIsEpisodeMenuOpen((prev) => !prev)}
@@ -575,9 +801,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                         : "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd1d7] hover:text-[#ff7b83]"
                     }`}
                   >
-                    <span>{presetEpisode ? presetEpisode.episode : "전체 회차"}</span>
+                    <span>{presetEpisode ? presetEpisode.episode : copy.allLabel}</span>
                     <span className="text-[11px] text-[#b58f95]">
-                      {isEpisodeMenuOpen ? "접기" : `${topicEpisodes.length}개 보기`}
+                      {isEpisodeMenuOpen
+                        ? copy.episodeClose
+                        : copy.episodeOpen(topicEpisodes.length)}
                     </span>
                   </button>
                 </div>
@@ -587,11 +815,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                     <div className="max-h-[230px] overflow-y-auto pr-1">
                       <div className="flex flex-wrap gap-2">
                         <FilterChip
-                          label="전체"
+                          label={copy.allLabel}
                           selected={!presetEpisode}
                           onClick={() => {
                             setIsEpisodeMenuOpen(false);
-                            navigate(presetTopicPath);
+                            navigate(presetTopic.path);
                           }}
                         />
                         {topicEpisodes.map((episode) => (
@@ -614,9 +842,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
 
             {topics.length > 0 ? (
               <div className="flex flex-wrap items-center gap-2">
-                <span className="mr-1 text-sm font-semibold text-[#666]">내 주제</span>
+                <span className="mr-1 text-sm font-semibold text-[#666]">{copy.topicHeading}</span>
                 <FilterChip
-                  label="전체"
+                  label={copy.allLabel}
                   selected={selectedTopicId === ALL_FILTER}
                   onClick={() => setSelectedTopicId(ALL_FILTER)}
                 />
@@ -626,28 +854,25 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                     type="button"
                     onClick={() => setSelectedTopicId(topic.id)}
                     className="transition"
-                    title={`${topic.name} (${getTopicRestaurantCount(topic.id)}곳)`}
+                    title={`${topic.name} (${getTopicRestaurantCount(topic.id)})`}
                   >
-                    <FavoriteTopicBadge
-                      topic={topic}
-                      active={selectedTopicId === topic.id}
-                    />
+                    <FavoriteTopicBadge topic={topic} active={selectedTopicId === topic.id} />
                   </button>
                 ))}
               </div>
             ) : null}
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="mr-1 text-sm font-semibold text-[#666]">카테고리</span>
+              <span className="mr-1 text-sm font-semibold text-[#666]">{copy.categoryHeading}</span>
               <FilterChip
-                label="전체"
+                label={copy.allLabel}
                 selected={selectedCategory === ALL_FILTER}
                 onClick={() => setSelectedCategory(ALL_FILTER)}
               />
               {categories.map((category) => (
                 <FilterChip
                   key={category}
-                  label={category}
+                  label={translateCuisineLabel(category, locale)}
                   selected={selectedCategory === category}
                   onClick={() => setSelectedCategory(category)}
                 />
@@ -655,9 +880,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className="mr-1 text-sm font-semibold text-[#666]">지역</span>
+              <span className="mr-1 text-sm font-semibold text-[#666]">{copy.regionHeading}</span>
               <FilterChip
-                label="전체"
+                label={copy.allLabel}
                 tone="peach"
                 selected={selectedRegion === ALL_FILTER}
                 onClick={() => setSelectedRegion(ALL_FILTER)}
@@ -677,8 +902,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
 
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
           <p className="text-sm text-[#888]">
-            총 <span className="font-bold text-[#ff7b83]">{filteredRestaurants.length}</span>곳의
-            맛집
+            <span className="font-bold text-[#ff7b83]">{copy.resultsCount(filteredRestaurants.length)}</span>
           </p>
 
           {hasActiveFilters ? (
@@ -687,32 +911,39 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               onClick={clearFilters}
               className="text-sm font-semibold text-[#ff7b83] transition hover:opacity-75"
             >
-              필터 전체 초기화
+              {copy.clearFilters}
             </button>
           ) : null}
         </div>
 
         <div className="mb-6">
-          <MonetizationSlot label="Sponsored" />
+          <MonetizationSlot label={copy.sponsoredLabel} />
         </div>
 
         {filteredRestaurants.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-            {filteredRestaurants.map((restaurant) => (
-              <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+            {visibleRestaurants.map((restaurant) => (
+              <RestaurantCard
+                key={restaurant.id}
+                restaurant={restaurant}
+                locale={locale}
+                copy={copy}
+              />
             ))}
           </div>
         ) : (
           <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
-            <p className="text-5xl">🍽️</p>
-            <p className="mt-4 text-lg font-semibold text-[#333]">
-              해당 조건에 맞는 맛집이 아직 없어요.
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
-              선택한 소스, 카테고리, 지역 조건을 조금만 넓혀서 다시 찾아보세요.
-            </p>
+            <p className="text-5xl">⌕</p>
+            <p className="mt-4 text-lg font-semibold text-[#333]">{copy.emptyTitle}</p>
+            <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">{copy.emptyDescription}</p>
           </div>
         )}
+
+        {visibleCount < deferredRestaurants.length ? (
+          <div ref={loadMoreRef} className="py-8 text-center text-sm font-medium text-[#9a8f92]">
+            {copy.loadMore}
+          </div>
+        ) : null}
       </main>
     </div>
   );

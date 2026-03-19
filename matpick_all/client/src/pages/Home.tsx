@@ -1,4 +1,4 @@
-import {
+﻿import {
   useCallback,
   useEffect,
   useRef,
@@ -21,13 +21,14 @@ import {
   X,
 } from "lucide-react";
 import { toast } from "sonner";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { useLocale } from "@/contexts/LocaleContext";
 import {
   discoveryTopics,
   mockSearchData,
@@ -43,7 +44,7 @@ const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 
-const UI = {
+const HOME_UI_KO = {
   brandFirst: "\uB9DB",
   brandSecond: "\uD53D",
   restaurantLabel: "\uB9DB\uC9D1",
@@ -116,12 +117,85 @@ const UI = {
   },
 } as const;
 
+const HOME_UI_EN = {
+  brandFirst: HOME_UI_KO.brandFirst,
+  brandSecond: HOME_UI_KO.brandSecond,
+  restaurantLabel: "Restaurants",
+  subscriberPrefix: "Subscribers ",
+  regionLabel: "Region",
+  foodLabel: "Cuisine",
+  recentDeleteSuffix: "remove recent search",
+  guestTitle: "Sign in to unlock more with Matpick",
+  benefits: {
+    saveTitle: "Save places",
+    saveDescription:
+      "Bookmark the restaurants you want to visit and come back to them faster later.",
+    communityTitle: "Join the community",
+    communityDescription:
+      "Leave reviews, share photos, and see what other diners thought about each place.",
+    ratingTitle: "Your own ratings",
+    ratingDescription:
+      "Keep personal ratings for the places you visited and compare them again later.",
+    topicTitle: "Save by topic",
+    topicDescription:
+      "Organize restaurants into themes like date night, solo meals, or travel courses.",
+  },
+  location: {
+    deniedTitle: "Location access is blocked",
+    promptTitle: "Allow location to discover nearby restaurants more accurately",
+    deniedDescription:
+      "If you allow location access again in your browser settings, Matpick can show better nearby restaurant results.",
+    promptDescription:
+      "We use your current location to make region search and nearby recommendations feel more natural on the home screen.",
+    laterButton: "Maybe later",
+    allowButton: "Allow location",
+    loadingButton: "Checking location...",
+    unsupportedMessage: "This browser does not support requesting location permission.",
+    unsupportedFootnote:
+      "Location permission requests are not supported in this browser. You can still use search normally.",
+    deniedFeedback:
+      "Location access was denied in your browser. If you allow it later, Matpick can show better nearby discovery results.",
+    failedFeedback:
+      "We could not confirm your location. Please try again in a moment.",
+  },
+  header: {
+    logoAlt: "Matpick logo",
+    exploreLabel: "Explore",
+    savedLabel: "Saved places",
+    logoutFallback: "Log out",
+    accountProviderPrefix: "Signed in with",
+    logout: "Log out",
+    login: "Sign in",
+  },
+  heroSubtitle:
+    "Discover restaurants visited by YouTube and Instagram creators in one place.",
+  searchPlaceholder: "Search restaurants, creators, regions, and cuisines",
+  searchButtonLabel: "Search",
+  dropdown: {
+    resultsTitle: "Search results",
+    resultsSuffix: " results",
+    emptyResultsTitle: "No matching result yet.",
+    emptyResultsDescription:
+      "Try a different keyword or browse the curated topic shortcuts below.",
+    recentTitle: "Recent searches",
+    clearAll: "Clear all",
+    noRecentTitle: "No recent searches yet.",
+    noRecentDescription:
+      "Your recent searches will appear here so you can jump back into discovery faster.",
+  },
+} as const;
+
 type LocationPermissionState =
   | "unknown"
   | "prompt"
   | "granted"
   | "denied"
   | "unsupported";
+
+function useHomeUi() {
+  const { isEnglish } = useLocale();
+  return isEnglish ? HOME_UI_EN : HOME_UI_KO;
+}
 
 function getSearchResultKey(item: Pick<SearchResult, "type" | "id">) {
   return `${item.type}:${item.id}`;
@@ -202,23 +276,24 @@ function SearchResultItem({
   showDelete?: boolean;
   onDelete?: () => void;
 }) {
-  let accentLabel: string = UI.restaurantLabel;
+  const ui = useHomeUi();
+  let accentLabel: string = ui.restaurantLabel;
   let detailText = "";
 
   if (item.type === "creator") {
     accentLabel = item.platform ?? "Creator";
-    detailText = `${UI.subscriberPrefix}${item.subscribers ?? "-"}`;
+    detailText = `${ui.subscriberPrefix}${item.subscribers ?? "-"}`;
   } else if (item.type === "region") {
-    accentLabel = item.parentRegion ?? UI.regionLabel;
-    detailText = `${UI.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+    accentLabel = item.parentRegion ?? ui.regionLabel;
+    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "food") {
-    accentLabel = UI.foodLabel;
-    detailText = `${UI.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+    accentLabel = ui.foodLabel;
+    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "source") {
-    accentLabel = item.sourceTypeLabel ?? "출처";
-    detailText = `${UI.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+    accentLabel = item.sourceTypeLabel ?? "異쒖쿂";
+    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
-    accentLabel = item.category ?? UI.restaurantLabel;
+    accentLabel = item.category ?? ui.restaurantLabel;
     detailText = item.address ?? "";
   }
 
@@ -281,7 +356,7 @@ function SearchResultItem({
             onDelete();
           }}
           className="rounded-full p-2 text-[#1f1f1f] transition hover:bg-[#fff3f4]"
-          aria-label={`${item.name} ${UI.recentDeleteSuffix}`}
+          aria-label={`${item.name} ${ui.recentDeleteSuffix}`}
         >
           <X className="h-8 w-8" strokeWidth={1.8} />
         </button>
@@ -292,16 +367,15 @@ function SearchResultItem({
 
 function TopicShortcutButton({
   topic,
-  onClick,
+  href,
 }: {
   topic: DiscoveryTopic;
-  onClick: () => void;
+  href: string;
 }) {
   return (
-    <button
-      type="button"
+    <Link
+      href={href}
       title={topic.name}
-      onClick={onClick}
       className="flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]"
     >
       <span className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)] p-[2px] transition-all hover:shadow-[0_14px_30px_rgba(255,105,135,0.18)] sm:h-[68px] sm:w-[68px]">
@@ -323,7 +397,7 @@ function TopicShortcutButton({
       <span className="max-w-[74px] truncate text-[11px] font-semibold leading-tight text-[#5a5a5a] sm:max-w-[86px]">
         {topic.name}
       </span>
-    </button>
+    </Link>
   );
 }
 
@@ -350,31 +424,32 @@ function BenefitItem({
 }
 
 function GuestPanel({ redirectTo }: { redirectTo: string }) {
+  const ui = useHomeUi();
   return (
     <div className="w-[320px] max-w-[calc(100vw-2rem)] rounded-[28px] border border-[#ffd5db] bg-white/95 p-6 shadow-[0_24px_70px_rgba(255,112,140,0.18)] backdrop-blur sm:w-[340px]">
       <h2 className="break-keep text-[28px] font-black leading-[1.05] text-[#161616]">
-        {UI.guestTitle}
+        {ui.guestTitle}
       </h2>
       <div className="mt-6 space-y-4">
         <BenefitItem
           icon={<Heart className="h-5 w-5 fill-current" />}
-          title={UI.benefits.saveTitle}
-          description={UI.benefits.saveDescription}
+          title={ui.benefits.saveTitle}
+          description={ui.benefits.saveDescription}
         />
         <BenefitItem
           icon={<MessageCircleMore className="h-5 w-5" />}
-          title={UI.benefits.communityTitle}
-          description={UI.benefits.communityDescription}
+          title={ui.benefits.communityTitle}
+          description={ui.benefits.communityDescription}
         />
         <BenefitItem
           icon={<Star className="h-5 w-5 fill-current" />}
-          title={UI.benefits.ratingTitle}
-          description={UI.benefits.ratingDescription}
+          title={ui.benefits.ratingTitle}
+          description={ui.benefits.ratingDescription}
         />
         <BenefitItem
           icon={<Plus className="h-5 w-5" />}
-          title={UI.benefits.topicTitle}
-          description={UI.benefits.topicDescription}
+          title={ui.benefits.topicTitle}
+          description={ui.benefits.topicDescription}
         />
       </div>
       <SocialLoginButtons redirectTo={redirectTo} className="mt-6" />
@@ -397,19 +472,20 @@ function LocationPermissionModal({
   onAllow: () => void;
   onLater: () => void;
 }) {
+  const ui = useHomeUi();
   if (!open) {
     return null;
   }
 
   const title =
     locationState === "denied"
-      ? UI.location.deniedTitle
-      : UI.location.promptTitle;
+      ? ui.location.deniedTitle
+      : ui.location.promptTitle;
 
   const description =
     locationState === "denied"
-      ? UI.location.deniedDescription
-      : UI.location.promptDescription;
+      ? ui.location.deniedDescription
+      : ui.location.promptDescription;
 
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-[rgba(17,17,17,0.28)] px-4">
@@ -432,7 +508,7 @@ function LocationPermissionModal({
             onClick={onLater}
             className="flex-1 rounded-full border border-[#e9d9dd] px-5 py-3 text-sm font-semibold text-[#646464] transition hover:bg-[#faf7f8]"
           >
-            {UI.location.laterButton}
+            {ui.location.laterButton}
           </button>
           <button
             type="button"
@@ -440,13 +516,13 @@ function LocationPermissionModal({
             disabled={isRequesting || locationState === "unsupported"}
             className="flex-1 rounded-full bg-[#ff7b83] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {isRequesting ? UI.location.loadingButton : UI.location.allowButton}
+            {isRequesting ? ui.location.loadingButton : ui.location.allowButton}
           </button>
         </div>
 
         {locationState === "unsupported" ? (
           <p className="mt-4 text-xs leading-5 text-[#999999]">
-            {UI.location.unsupportedFootnote}
+            {ui.location.unsupportedFootnote}
           </p>
         ) : null}
       </div>
@@ -455,6 +531,8 @@ function LocationPermissionModal({
 }
 
 export default function Home() {
+  const ui = useHomeUi();
+  const { locale, isEnglish } = useLocale();
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
@@ -481,16 +559,28 @@ export default function Home() {
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
+  const providerLabel =
+    user?.provider === "kakao"
+      ? isEnglish
+        ? "Kakao account"
+        : "카카오 계정"
+      : isEnglish
+        ? "Naver account"
+        : "네이버 계정";
 
   useSeo({
-    title: "맛픽 Matpick | 크리에이터와 소스 기반 맛집 탐색",
-    description:
-      "유튜브, 방송, 미쉐린, 가이드 같은 다양한 소스를 한곳에 모아 내 취향과 위치에 맞는 맛집을 찾는 서비스 맛픽.",
+    title: isEnglish
+      ? "Matpick | Discover creator-picked restaurants in Korea"
+      : "맛픽 Matpick | 크리에이터 추천 맛집 탐색",
+    description: isEnglish
+      ? "Find restaurants featured by YouTube creators, TV shows, and curated guides in one place with maps, menus, and saved topics."
+      : "유튜브 방송, 미쉐린 가이드 같은 다양한 소스를 한곳에 모아 취향과 위치에 맞는 맛집을 찾는 서비스 맛픽.",
     path: "/",
+    locale,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      name: "맛픽",
+      name: "Matpick",
       url: buildAbsoluteUrl("/"),
       potentialAction: {
         "@type": "SearchAction",
@@ -765,7 +855,7 @@ export default function Home() {
 
     const deletedCount = deleteTopics(selectedTopicIdsForDelete);
     if (deletedCount > 0) {
-      toast.success(`${deletedCount}개의 주제를 삭제했어요.`);
+      toast.success(`${deletedCount}媛쒖쓽 二쇱젣瑜???젣?덉뼱??`);
     }
     setSelectedTopicIdsForDelete([]);
     setIsTopicDeleteMode(false);
@@ -898,7 +988,7 @@ export default function Home() {
   const requestLocationPermission = useCallback(() => {
     if (!("geolocation" in navigator)) {
       setLocationState("unsupported");
-      setLocationFeedback(UI.location.unsupportedMessage);
+      setLocationFeedback(ui.location.unsupportedMessage);
       persistLocationStatus("unsupported");
       return;
     }
@@ -925,13 +1015,13 @@ export default function Home() {
           setLocationState("denied");
           persistLocationStatus("denied");
           clearStoredLocation();
-          setLocationFeedback(UI.location.deniedFeedback);
+          setLocationFeedback(ui.location.deniedFeedback);
           return;
         }
 
         setLocationState("prompt");
         persistLocationStatus("prompt");
-        setLocationFeedback(UI.location.failedFeedback);
+        setLocationFeedback(ui.location.failedFeedback);
       },
       {
         enableHighAccuracy: true,
@@ -976,7 +1066,7 @@ export default function Home() {
         <button type="button" onClick={() => navigate("/")} className="p-0">
           <img
             src={matpickLogo}
-            alt={UI.header.logoAlt}
+            alt={ui.header.logoAlt}
             className="h-8 w-8 object-contain opacity-75"
           />
         </button>
@@ -990,14 +1080,14 @@ export default function Home() {
                 className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-4 text-xs font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
               >
                 <Compass className="mr-2 h-4 w-4" />
-                {UI.header.exploreLabel}
+                {ui.header.exploreLabel}
               </button>
               <button
                 type="button"
                 onClick={() => navigate("/my/favorites")}
                 className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-4 text-xs font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
               >
-                {UI.header.savedLabel} {favoritesCount}
+                {ui.header.savedLabel} {favoritesCount}
               </button>
               <div
                 ref={accountRef}
@@ -1037,9 +1127,7 @@ export default function Home() {
                             <NaverProviderIcon />
                           )}
                         </span>
-                        <span className="text-xs font-semibold text-[#555555]">
-                          {user?.provider === "kakao" ? "카카오 계정" : "네이버 계정"}
-                        </span>
+                        <span className="text-xs font-semibold text-[#555555]">{providerLabel}</span>
                       </div>
                     </div>
                   </div>
@@ -1051,7 +1139,7 @@ export default function Home() {
                         className="inline-flex h-11 min-w-[160px] flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
                       >
                         <Plus className="h-4 w-4" />
-                        내 주제 추가하기
+                        ??二쇱젣 異붽??섍린
                       </button>
                       {topics.length > 0 ? (
                         <button
@@ -1067,15 +1155,15 @@ export default function Home() {
                           }`}
                         >
                           <Trash2 className="h-4 w-4" />
-                          {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
+                          {isTopicDeleteMode ? "??젣 痍⑥냼" : "二쇱젣 ??젣?섍린"}
                         </button>
                       ) : null}
                     </div>
 
                     {topics.length === 0 ? (
                       <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
-                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 야식처럼 주제별로 나눠
-                        담아보세요.
+                        ?꾩쭅 留뚮뱺 二쇱젣媛 ?놁뼱?? ??ν븳 留쏆쭛???곗씠?? ?ы뻾, ?쇱떇泥섎읆 二쇱젣蹂꾨줈 ?섎닠
+                        ?댁븘蹂댁꽭??
                       </p>
                     ) : (
                       <div className="mt-3 space-y-2">
@@ -1110,7 +1198,7 @@ export default function Home() {
                                   type="button"
                                   onClick={() => toggleTopicDeleteSelection(topic.id)}
                                   className="flex h-6 w-6 items-center justify-center rounded-full text-[#ff6b7b]"
-                                  aria-label={`${topic.name} 삭제 선택`}
+                                  aria-label={`${topic.name} ??젣 ?좏깮`}
                                 >
                                   {selectedTopicIdsForDelete.includes(topic.id) ? (
                                     <CheckCircle2 className="h-5 w-5 fill-current" />
@@ -1122,8 +1210,7 @@ export default function Home() {
                               <FavoriteTopicBadge topic={topic} />
                             </div>
                             <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
-                              저장된 식당 : {getTopicRestaurantCount(topic.id)}곳
-                            </span>
+                              ??λ맂 ?앸떦 : {getTopicRestaurantCount(topic.id)}怨?                            </span>
                           </div>
                         ))}
                       </div>
@@ -1137,7 +1224,7 @@ export default function Home() {
                           disabled={selectedTopicIdsForDelete.length === 0}
                           className="inline-flex h-10 w-full items-center justify-center rounded-full bg-[#ff6b7b] text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-45"
                         >
-                          선택한 주제 삭제하기 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
+                          ?좏깮??二쇱젣 ??젣?섍린 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
                         </button>
                       </div>
                     ) : null}
@@ -1147,7 +1234,7 @@ export default function Home() {
                     onClick={logout}
                     className="mt-4 flex h-10 w-full items-center justify-center rounded-full border border-[#ffd1d7] bg-[#fff8f9] text-sm font-semibold text-[#ff7b83] transition hover:bg-[#fff1f3]"
                   >
-                    {UI.header.logout}
+                    {ui.header.logout}
                   </button>
                 </div>
               </div>
@@ -1164,7 +1251,7 @@ export default function Home() {
                 onClick={handleLoginToggle}
                 className="rounded-full bg-[#ff7b83] px-6 py-2.5 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(255,108,136,0.26)] transition hover:brightness-95 sm:px-8 sm:py-3"
               >
-                {UI.header.login}
+                {ui.header.login}
               </button>
 
               <div
@@ -1187,12 +1274,12 @@ export default function Home() {
             className="inline-flex items-end justify-center gap-1 text-[68px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"
             style={{ fontFamily: "'Black Han Sans', sans-serif", fontWeight: 400 }}
           >
-            <span className="text-[#111111]">{UI.brandFirst}</span>
-            <span className="text-[#ff7b83]">{UI.brandSecond}</span>
+            <span className="text-[#111111]">{ui.brandFirst}</span>
+            <span className="text-[#ff7b83]">{ui.brandSecond}</span>
           </h1>
 
           <p className="mt-5 max-w-[720px] break-keep px-2 text-[18px] font-semibold leading-snug text-[#9a9a9a] sm:mt-7 sm:text-[28px] lg:max-w-none lg:whitespace-nowrap lg:text-[31px]">
-            {UI.heroSubtitle}
+            {ui.heroSubtitle}
           </p>
 
           <div ref={searchRef} className="relative mt-8 w-full max-w-[810px] sm:mt-10">
@@ -1207,14 +1294,14 @@ export default function Home() {
                   }}
                   onFocus={() => setIsFocused(true)}
                   onKeyDown={handleSearchKeyDown}
-                  placeholder={UI.searchPlaceholder}
+                  placeholder={ui.searchPlaceholder}
                   className="w-full bg-transparent text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:text-[21px]"
                 />
                 <button
                   type="button"
                   onClick={handlePrimarySearch}
                   className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[#111111] transition hover:bg-[#fff3f4] sm:h-12 sm:w-12"
-                  aria-label={UI.searchButtonLabel}
+                  aria-label={ui.searchButtonLabel}
                 >
                   <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
                 </button>
@@ -1227,7 +1314,7 @@ export default function Home() {
                   <TopicShortcutButton
                     key={topic.slug}
                     topic={topic}
-                    onClick={() => navigate(topic.path)}
+                    href={topic.path}
                   />
                 ))}
               </div>
@@ -1241,11 +1328,11 @@ export default function Home() {
                       <div className="py-2">
                         <div className="flex items-center justify-between px-7 py-3">
                           <p className="text-[16px] font-semibold text-[#1d1d1d]">
-                            {UI.dropdown.resultsTitle}
+                            {ui.dropdown.resultsTitle}
                           </p>
                           <p className="text-[13px] text-[#8f8f8f]">
                             {filteredResults.length}
-                            {UI.dropdown.resultsSuffix}
+                            {ui.dropdown.resultsSuffix}
                           </p>
                         </div>
                         <div className="max-h-[384px] overflow-y-auto">
@@ -1264,10 +1351,10 @@ export default function Home() {
                     ) : (
                       <div className="px-7 py-10 text-left">
                         <p className="text-[17px] font-semibold text-[#1f1f1f]">
-                          {UI.dropdown.emptyResultsTitle}
+                          {ui.dropdown.emptyResultsTitle}
                         </p>
                         <p className="mt-2 text-[14px] leading-6 text-[#8d8d8d]">
-                          {UI.dropdown.emptyResultsDescription}
+                          {ui.dropdown.emptyResultsDescription}
                         </p>
                       </div>
                     )
@@ -1275,14 +1362,14 @@ export default function Home() {
                     <div className="py-2">
                       <div className="flex items-center justify-between px-7 py-3">
                         <p className="text-[16px] font-semibold text-[#1d1d1d]">
-                          {UI.dropdown.recentTitle}
+                          {ui.dropdown.recentTitle}
                         </p>
                         <button
                           type="button"
                           onClick={handleClearAll}
                           className="text-[14px] font-medium text-[#1f1f1f] transition hover:text-[#ff7b83]"
                         >
-                          {UI.dropdown.clearAll}
+                          {ui.dropdown.clearAll}
                         </button>
                       </div>
                       <div className="max-h-[384px] overflow-y-auto">
@@ -1303,10 +1390,10 @@ export default function Home() {
                   ) : (
                     <div className="px-7 py-10 text-left">
                       <p className="text-[16px] font-semibold text-[#1f1f1f]">
-                        {UI.dropdown.noRecentTitle}
+                        {ui.dropdown.noRecentTitle}
                       </p>
                       <p className="mt-2 text-[14px] leading-6 text-[#8d8d8d]">
-                        {UI.dropdown.noRecentDescription}
+                        {ui.dropdown.noRecentDescription}
                       </p>
                     </div>
                   )}
@@ -1343,3 +1430,4 @@ function KakaoProviderIcon() {
 function NaverProviderIcon() {
   return <span className="text-sm font-black leading-none">N</span>;
 }
+

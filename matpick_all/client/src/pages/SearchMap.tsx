@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, MapPin, Search, UtensilsCrossed } from "lucide-react";
-import { Link, useLocation, useSearch } from "wouter";
+import { useLocation, useSearch } from "wouter";
 import {
   creators,
   getCreatorDisplayName,
@@ -20,6 +20,7 @@ import {
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
 import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
+import { useLocale } from "@/contexts/LocaleContext";
 import {
   getDistanceInMeters,
   loadStoredLocation,
@@ -27,54 +28,131 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
+import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import {
   getRestaurantDisplayImage,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
 
-function filterRestaurants(type: string, value: string): {
+const MAP_COPY = {
+  ko: {
+    searchResults: "검색 결과",
+    allRestaurants: "전체 맛집",
+    regionRestaurants: (value: string) => `${value} 맛집`,
+    cuisineRestaurants: (value: string) => `${value} 맛집`,
+    sourceRestaurants: (value: string) => `${value} 맛집`,
+    creatorRestaurants: (value: string) => `${value} 추천 맛집`,
+    resultCount: (count: number) => `${count.toLocaleString()}개 검색 결과`,
+    overseasCount: (count: number) => `해외 ${count.toLocaleString()}곳`,
+    mapReadyTitle: "지도 좌표를 준비하고 있어요",
+    mapReadyDescription:
+      "저장된 식당 좌표를 불러오는 동안 잠시 비어 보일 수 있어요.",
+    noResultsTitle: "검색 결과가 없어요",
+    noResultsDescription: "다른 키워드나 채널 이름으로 다시 검색해보세요.",
+    loadMore: "스크롤하면 더 많은 맛집을 이어서 불러와요.",
+    listPlaceholder: "메뉴 정보가 아직 준비 중이에요.",
+    detailsButton: "식당 상세 보기",
+    photoPending: "사진 준비 중",
+    creatorLabel: "크리에이터",
+    regionLabel: "지역",
+    cuisineLabel: "음식",
+    sourceLabel: "주제",
+    sponsoredLabel: "Sponsored",
+    priceLabel: "대표 가격",
+    pageTitle: (title: string) => `${title} 지도`,
+    pageDescription: (title: string) =>
+      `${title} 관련 맛집을 지도와 리스트로 함께 확인할 수 있는 맛픽 검색 결과 페이지입니다.`,
+    pageName: (title: string) => `${title} 지도`,
+  },
+  en: {
+    searchResults: "Search results",
+    allRestaurants: "All restaurants",
+    regionRestaurants: (value: string) => `${value} restaurants`,
+    cuisineRestaurants: (value: string) => `${value} restaurants`,
+    sourceRestaurants: (value: string) => `${value} restaurants`,
+    creatorRestaurants: (value: string) => `${value} picks`,
+    resultCount: (count: number) => `${count.toLocaleString()} results`,
+    overseasCount: (count: number) => `${count.toLocaleString()} overseas`,
+    mapReadyTitle: "We are preparing map coordinates",
+    mapReadyDescription:
+      "This may look empty for a moment while saved restaurant coordinates are loading.",
+    noResultsTitle: "No result found",
+    noResultsDescription: "Try another keyword, creator, or topic name.",
+    loadMore: "Scroll to keep loading more restaurants.",
+    listPlaceholder: "Menu details are coming soon.",
+    detailsButton: "View restaurant",
+    photoPending: "Photo coming soon",
+    creatorLabel: "Creator",
+    regionLabel: "Region",
+    cuisineLabel: "Cuisine",
+    sourceLabel: "Topic",
+    sponsoredLabel: "Sponsored",
+    priceLabel: "From",
+    pageTitle: (title: string) => `${title} map`,
+    pageDescription: (title: string) =>
+      `Browse ${title} restaurants on the map and in the list view on Matpick.`,
+    pageName: (title: string) => `${title} map`,
+  },
+} as const;
+
+function filterRestaurants(
+  type: string,
+  value: string,
+  locale: AppLocale
+): {
   restaurants: Restaurant[];
   title: string;
 } {
+  const copy = MAP_COPY[locale];
+  const isEnglish = locale === "en";
+
   switch (type) {
     case "creator": {
       const creator = creators.find((item) => item.id === value || item.name === value);
       if (!creator) {
-        return { restaurants: [], title: "검색 결과" };
+        return {
+          restaurants: [],
+          title: copy.searchResults,
+        };
       }
 
       return {
         restaurants: getRestaurantsByCreator(creator.id),
-        title: `${getCreatorDisplayName(creator)} 추천 맛집`,
+        title: copy.creatorRestaurants(getCreatorDisplayName(creator)),
       };
     }
     case "region":
       return {
         restaurants: restaurants.filter((restaurant) => restaurant.region?.includes(value)),
-        title: `${value} 맛집`,
+        title: copy.regionRestaurants(value),
       };
     case "food":
       return {
         restaurants: getRestaurantsByCategory(value),
-        title: `${value} 맛집`,
+        title: copy.cuisineRestaurants(
+          isEnglish ? translateCuisineLabel(value, "en") : value
+        ),
       };
     case "source": {
       const source = getSourceById(value);
       return {
         restaurants: getRestaurantsBySource(value),
-        title: source ? `${source.name} 맛집` : "검색 결과",
+        title: source ? copy.sourceRestaurants(source.name) : copy.searchResults,
       };
     }
     case "restaurant": {
       const restaurant = restaurants.find((item) => item.id === value);
       return {
         restaurants: restaurant ? [restaurant] : [],
-        title: restaurant?.name ?? "검색 결과",
+        title: restaurant?.name ?? copy.searchResults,
       };
     }
     default:
-      return { restaurants: [...restaurants], title: "전체 맛집" };
+      return {
+        restaurants: [...restaurants],
+        title: copy.allRestaurants,
+      };
   }
 }
 
@@ -91,23 +169,34 @@ function SearchDropdownItem({
   onLeave: () => void;
   onSelect: () => void;
 }) {
-  let accentLabel = "맛집";
+  const { locale, isEnglish } = useLocale();
+  const copy = MAP_COPY[locale];
+
+  let accentLabel: string = copy.creatorLabel;
   let detailText = "";
 
   if (item.type === "creator") {
-    accentLabel = item.platform ?? "채널";
+    accentLabel = item.platform ?? copy.creatorLabel;
     detailText = item.subscribers ?? "";
   } else if (item.type === "region") {
-    accentLabel = item.parentRegion ?? "지역";
-    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+    accentLabel = item.parentRegion ?? copy.regionLabel;
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else if (item.type === "food") {
-    accentLabel = "음식종류";
-    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+    accentLabel = copy.cuisineLabel;
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else if (item.type === "source") {
-    accentLabel = item.sourceTypeLabel ?? "소스";
-    detailText = `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+    accentLabel = item.sourceTypeLabel ?? copy.sourceLabel;
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else {
-    accentLabel = item.category ?? "맛집";
+    accentLabel = item.category
+      ? translateCuisineLabel(item.category, locale)
+      : copy.searchResults;
     detailText = item.address ?? "";
   }
 
@@ -123,11 +212,7 @@ function SearchDropdownItem({
     >
       <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#f4f4f4]">
         {item.image ? (
-          <img
-            src={item.image}
-            alt={item.name}
-            className="h-full w-full object-cover"
-          />
+          <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
         ) : item.type === "region" ? (
           <MapPin className="h-5 w-5 text-[#777]" />
         ) : (
@@ -156,6 +241,8 @@ function RestaurantCard({
   onSelect: () => void;
 }) {
   const [, navigate] = useLocation();
+  const { locale } = useLocale();
+  const copy = MAP_COPY[locale];
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
   const displayImage = getRestaurantDisplayImage(restaurant, { width: 320, height: 320 });
@@ -169,11 +256,7 @@ function RestaurantCard({
     >
       <button type="button" onClick={onSelect} className="flex w-full items-start gap-3 text-left">
         <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
-          <img
-            src={displayImage.src}
-            alt={restaurant.name}
-            className="h-full w-full object-cover"
-          />
+          <img src={displayImage.src} alt={restaurant.name} className="h-full w-full object-cover" />
         </div>
 
         <div className="pt-1">
@@ -183,21 +266,23 @@ function RestaurantCard({
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-[15px] font-bold text-[#ff7b83]">{restaurant.name}</p>
-            <span className="text-xs text-[#8c8c8c]">{restaurant.category}</span>
+            <span className="text-xs text-[#8c8c8c]">
+              {translateCuisineLabel(restaurant.category, locale)}
+            </span>
           </div>
 
           <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
           {priceHint ? (
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#b1a5a8]">
-              대표 가격 {priceHint}
+              {copy.priceLabel} {priceHint}
             </p>
           ) : null}
           <p className="mt-2 text-xs text-[#888]">
-            {getRestaurantMenuSummary(restaurant) || "메뉴 정보는 아직 준비 중이에요."}
+            {getRestaurantMenuSummary(restaurant) || copy.listPlaceholder}
           </p>
 
           {!displayImage.hasPhoto ? (
-            <p className="mt-1 text-[11px] font-medium text-[#9b9b9b]">사진 준비 중</p>
+            <p className="mt-1 text-[11px] font-medium text-[#9b9b9b]">{copy.photoPending}</p>
           ) : null}
 
           <div className="mt-2 flex flex-wrap gap-1.5">
@@ -216,9 +301,7 @@ function RestaurantCard({
                 title={source.name}
                 className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
               >
-                <span className="truncate">
-                  {source.name}
-                </span>
+                <span className="truncate">{source.name}</span>
               </span>
             ))}
           </div>
@@ -232,7 +315,7 @@ function RestaurantCard({
             onClick={() => navigate(`/restaurant/${restaurant.id}`)}
             className="inline-flex min-w-[234px] items-center justify-center rounded-xl bg-[#ff7b83] px-8 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
           >
-            식당 상세 보기
+            {copy.detailsButton}
           </button>
         </div>
       ) : null}
@@ -242,39 +325,35 @@ function RestaurantCard({
 
 export default function SearchMap() {
   const [, navigate] = useLocation();
+  const { locale } = useLocale();
+  const copy = MAP_COPY[locale];
   const searchString = useSearch();
   const params = new URLSearchParams(searchString);
   const type = params.get("type") || "all";
   const value = params.get("value") || "";
 
   const { restaurants: filteredRestaurants, title } = useMemo(
-    () => filterRestaurants(type, value),
-    [type, value]
+    () => filterRestaurants(type, value, locale),
+    [locale, type, value]
   );
-  const displayTitle = useMemo(() => {
-    if (type !== "creator") {
-      return title;
-    }
-
-    const creator = creators.find((item) => item.id === value || item.name === value);
-    return creator ? `${getCreatorDisplayName(creator)} 추천 맛집` : title;
-  }, [title, type, value]);
+  const deferredRestaurants = useDeferredValue(filteredRestaurants);
 
   useSeo({
-    title: `${title} 지도`,
-    description: `${title}과 관련된 맛집을 지도와 리스트로 함께 확인할 수 있는 맛픽 검색 결과 페이지입니다.`,
+    title: copy.pageTitle(title),
+    description: copy.pageDescription(title),
     path: `/map?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`,
+    locale,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SearchResultsPage",
-      name: `${title} 지도`,
-      description: `${title}과 관련된 맛집 검색 결과 페이지`,
+      name: copy.pageName(title),
+      description: copy.pageDescription(title),
     },
   });
 
   const domesticRestaurants = useMemo(
-    () => filteredRestaurants.filter((restaurant) => !restaurant.isOverseas),
-    [filteredRestaurants]
+    () => deferredRestaurants.filter((restaurant) => !restaurant.isOverseas),
+    [deferredRestaurants]
   );
   const overseasCount = useMemo(
     () => filteredRestaurants.filter((restaurant) => restaurant.isOverseas === true).length,
@@ -288,7 +367,10 @@ export default function SearchMap() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(-1);
+  const [visibleListCount, setVisibleListCount] = useState(80);
   const searchRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const listLoadMoreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (type === "restaurant" && filteredRestaurants.length === 1) {
@@ -300,6 +382,38 @@ export default function SearchMap() {
       prev && filteredRestaurants.some((restaurant) => restaurant.id === prev) ? prev : null
     );
   }, [filteredRestaurants, type]);
+
+  useEffect(() => {
+    setVisibleListCount(80);
+  }, [type, value]);
+
+  useEffect(() => {
+    const root = listRef.current;
+    const target = listLoadMoreRef.current;
+
+    if (!root || !target || visibleListCount >= deferredRestaurants.length) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          setVisibleListCount((prev) => Math.min(prev + 80, deferredRestaurants.length));
+        });
+      },
+      {
+        root,
+        rootMargin: "160px 0px",
+      }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [deferredRestaurants.length, visibleListCount]);
 
   const searchResults = useMemo(() => {
     const normalized = searchQuery.trim().toLowerCase();
@@ -411,6 +525,10 @@ export default function SearchMap() {
   }, []);
 
   const restaurantsForMap = domesticRestaurants;
+  const visibleRestaurants = useMemo(
+    () => deferredRestaurants.slice(0, visibleListCount),
+    [deferredRestaurants, visibleListCount]
+  );
 
   const nearestRestaurant = useMemo<{ restaurant: Restaurant; distanceMeters: number } | null>(() => {
     if (!currentLocation) {
@@ -483,6 +601,10 @@ export default function SearchMap() {
     }
   };
 
+  const restaurantsWithCoords = restaurantsForMap.filter(
+    (restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0
+  );
+
   return (
     <div className="flex min-h-screen flex-col bg-white lg:h-[100dvh] lg:overflow-hidden">
       <div className="flex flex-1 flex-col lg:min-h-0 lg:flex-row lg:overflow-hidden">
@@ -506,7 +628,7 @@ export default function SearchMap() {
                     setHoveredIdx(-1);
                   }}
                   onFocus={() => setIsSearchFocused(true)}
-                  placeholder={displayTitle}
+                  placeholder={title}
                   className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
                 />
                 <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />
@@ -532,39 +654,48 @@ export default function SearchMap() {
 
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-lg font-bold text-[#ff7b83]">
-                {filteredRestaurants.length}개
+                {copy.resultCount(filteredRestaurants.length)}
               </span>
-              <span className="text-sm text-[#888]">검색 결과</span>
               {overseasCount > 0 ? (
                 <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
-                  해외 {overseasCount}곳
+                  {copy.overseasCount(overseasCount)}
                 </span>
               ) : null}
             </div>
 
             <div className="mt-4">
-              <KakaoAdfitSlot label="Sponsored" />
+              <KakaoAdfitSlot label={copy.sponsoredLabel} />
             </div>
           </div>
 
-          <div className="max-h-[52vh] flex-1 overflow-y-auto lg:min-h-0 lg:max-h-none">
-            {filteredRestaurants.length > 0 ? (
-              filteredRestaurants.map((restaurant) => (
-                <RestaurantCard
-                  key={restaurant.id}
-                  restaurant={restaurant}
-                  selected={selectedId === restaurant.id}
-                  onSelect={() =>
-                    setSelectedId((prev) => (prev === restaurant.id ? null : restaurant.id))
-                  }
-                />
-              ))
+          <div ref={listRef} className="max-h-[52vh] flex-1 overflow-y-auto lg:min-h-0 lg:max-h-none">
+            {deferredRestaurants.length > 0 ? (
+              <>
+                {visibleRestaurants.map((restaurant) => (
+                  <RestaurantCard
+                    key={restaurant.id}
+                    restaurant={restaurant}
+                    selected={selectedId === restaurant.id}
+                    onSelect={() =>
+                      setSelectedId((prev) => (prev === restaurant.id ? null : restaurant.id))
+                    }
+                  />
+                ))}
+                {visibleListCount < deferredRestaurants.length ? (
+                  <div
+                    ref={listLoadMoreRef}
+                    className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
+                  >
+                    {copy.loadMore}
+                  </div>
+                ) : null}
+              </>
             ) : (
               <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
-                <p className="text-4xl">🍽️</p>
-                <p className="mt-4 text-sm font-semibold text-[#333]">검색 결과가 없어요.</p>
+                <p className="text-4xl">⌕</p>
+                <p className="mt-4 text-sm font-semibold text-[#333]">{copy.noResultsTitle}</p>
                 <p className="mt-2 text-xs leading-6 text-[#8a8a8a]">
-                  다른 키워드나 소스 이름으로 다시 검색해 보세요.
+                  {copy.noResultsDescription}
                 </p>
               </div>
             )}
@@ -580,15 +711,11 @@ export default function SearchMap() {
             onMarkerClick={handleMarkerClick}
           />
 
-          {restaurantsForMap.length > 0 &&
-          restaurantsForMap.filter((restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0)
-            .length === 0 ? (
+          {restaurantsForMap.length > 0 && restaurantsWithCoords.length === 0 ? (
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
               <div className="pointer-events-auto rounded-2xl border border-[#f0e5e6] bg-white/96 p-6 text-center shadow-[0_20px_48px_rgba(0,0,0,0.08)] backdrop-blur">
-                <p className="text-sm font-semibold text-[#1a1a1a]">지도 좌표를 준비하고 있어요.</p>
-                <p className="mt-2 text-xs leading-6 text-[#888]">
-                  주소 기반으로 위치를 찾는 중이라 처음엔 잠깐 비어 보일 수 있어요.
-                </p>
+                <p className="text-sm font-semibold text-[#1a1a1a]">{copy.mapReadyTitle}</p>
+                <p className="mt-2 text-xs leading-6 text-[#888]">{copy.mapReadyDescription}</p>
               </div>
             </div>
           ) : null}

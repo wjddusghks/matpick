@@ -7,6 +7,7 @@ type SeoInput = {
   image?: string;
   type?: "website" | "article" | "profile";
   robots?: string;
+  locale?: "ko" | "en";
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
@@ -52,6 +53,10 @@ function upsertLink(rel: string, href: string) {
   element.setAttribute("href", href);
 }
 
+function removeMeta(name: string, attr: "name" | "property" = "name") {
+  document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${name}"]`)?.remove();
+}
+
 function upsertJsonLd(jsonLd: SeoInput["jsonLd"]) {
   const existing = document.head.querySelector<HTMLScriptElement>('script[data-matpick-seo="jsonld"]');
   if (!jsonLd) {
@@ -76,17 +81,24 @@ export function useSeo({
   image = DEFAULT_OG_IMAGE,
   type = "website",
   robots = "index,follow",
+  locale = "ko",
   jsonLd,
 }: SeoInput) {
   useEffect(() => {
     const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
     const canonical = makeAbsoluteUrl(path);
     const imageUrl = makeAbsoluteUrl(image);
+    const htmlLang = locale === "en" ? "en" : "ko";
+    const ogLocale = locale === "en" ? "en_US" : "ko_KR";
+    const alternateOgLocale = locale === "en" ? "ko_KR" : "en_US";
 
     document.title = fullTitle;
+    document.documentElement.lang = htmlLang;
     upsertMeta("description", description);
+    upsertMeta("language", htmlLang);
     upsertMeta("robots", robots);
-    upsertMeta("og:locale", "ko_KR", "property");
+    upsertMeta("og:locale", ogLocale, "property");
+    upsertMeta("og:locale:alternate", alternateOgLocale, "property");
     upsertMeta("og:site_name", SITE_NAME, "property");
     upsertMeta("og:type", type, "property");
     upsertMeta("og:title", fullTitle, "property");
@@ -99,7 +111,15 @@ export function useSeo({
     upsertMeta("twitter:image", imageUrl);
     upsertLink("canonical", canonical);
     upsertJsonLd(jsonLd);
-  }, [description, image, jsonLd, path, robots, title, type]);
+    return () => {
+      if (!jsonLd) {
+        upsertJsonLd(undefined);
+      }
+      if (!description) {
+        removeMeta("description");
+      }
+    };
+  }, [description, image, jsonLd, locale, path, robots, title, type]);
 }
 
 export function buildAbsoluteUrl(path?: string) {

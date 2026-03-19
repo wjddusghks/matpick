@@ -37,6 +37,7 @@ import {
 } from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
+import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
@@ -368,14 +369,17 @@ function SearchResultItem({
 function TopicShortcutButton({
   topic,
   href,
+  onClick,
 }: {
   topic: DiscoveryTopic;
   href: string;
+  onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
       title={topic.name}
+      onClick={onClick}
       className="flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[86px]"
     >
       <span className="flex h-[60px] w-[60px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)] p-[2px] transition-all hover:shadow-[0_14px_30px_rgba(255,105,135,0.18)] sm:h-[68px] sm:w-[68px]">
@@ -874,6 +878,12 @@ export default function Home() {
   const handleSelect = useCallback(
     (item: SearchResult) => {
       const normalizedItem = normalizeSearchResult(item);
+      trackMarketingEvent("search_result_click", {
+        query: normalizedQuery || "recent",
+        result_type: normalizedItem.type,
+        result_id: normalizedItem.id,
+        result_name: normalizedItem.name,
+      });
 
       setRecentSearches((prev) => {
         const withoutCurrent = prev.filter(
@@ -914,7 +924,7 @@ export default function Home() {
 
       navigate("/map");
     },
-    [navigate]
+    [navigate, normalizedQuery]
   );
 
   const handleDeleteRecent = useCallback((id: string) => {
@@ -931,6 +941,12 @@ export default function Home() {
   }, []);
 
   const handlePrimarySearch = useCallback(() => {
+    trackMarketingEvent("search_submit", {
+      query: normalizedQuery || "",
+      has_query: Boolean(normalizedQuery),
+      result_count: filteredResults.length,
+    });
+
     const selectedItem = normalizedQuery
       ? filteredResults[hoveredIndex >= 0 ? hoveredIndex : 0] ?? filteredResults[0]
       : recentSearches[hoveredIndex >= 0 ? hoveredIndex : 0] ?? recentSearches[0];
@@ -1315,6 +1331,13 @@ export default function Home() {
                     key={topic.slug}
                     topic={topic}
                     href={topic.path}
+                    onClick={() =>
+                      trackMarketingEvent("topic_shortcut_click", {
+                        topic_slug: topic.slug,
+                        topic_name: topic.name,
+                        source: "home",
+                      })
+                    }
                   />
                 ))}
               </div>

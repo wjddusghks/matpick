@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Camera, MessageSquareText, Star } from "lucide-react";
+import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
 import { getRestaurantById } from "@/data";
+import { trackMarketingEvent } from "@/lib/marketing";
 import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 import {
   collectReviewPhotos,
@@ -61,6 +63,12 @@ export default function ReviewFeed() {
       ignore = true;
     };
   }, []);
+
+  useEffect(() => {
+    trackMarketingEvent("review_feed_view", {
+      review_count: reviews.length,
+    });
+  }, [reviews.length]);
 
   const summary = useMemo(() => summarizeReviews(reviews), [reviews]);
   const visibleReviews = useMemo(() => sortReviews(reviews, sortMode), [reviews, sortMode]);
@@ -124,7 +132,12 @@ export default function ReviewFeed() {
                     <button
                       key={option.key}
                       type="button"
-                      onClick={() => setSortMode(option.key)}
+                      onClick={() => {
+                        trackMarketingEvent("review_feed_sort", {
+                          sort_mode: option.key,
+                        });
+                        setSortMode(option.key);
+                      }}
                       className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                         sortMode === option.key
                           ? "bg-[#ff7b83] text-white shadow-[0_10px_24px_rgba(255,123,131,0.24)]"
@@ -156,7 +169,22 @@ export default function ReviewFeed() {
                     const restaurant = photo.restaurantId ? getRestaurantById(photo.restaurantId) : null;
 
                     return (
-                      <Link key={photo.id} href={photo.restaurantId ? `/restaurant/${photo.restaurantId}` : "/reviews"}>
+                      <Link
+                        key={photo.id}
+                        href={photo.restaurantId ? `/restaurant/${photo.restaurantId}` : "/reviews"}
+                        onClick={() => {
+                          if (!photo.restaurantId || !restaurant) {
+                            return;
+                          }
+
+                          trackMarketingEvent("review_feed_restaurant_click", {
+                            restaurant_id: restaurant.id,
+                            restaurant_name: restaurant.name,
+                            source: "gallery",
+                            sort_mode: sortMode,
+                          });
+                        }}
+                      >
                         <div className="group overflow-hidden rounded-[20px] border border-[#f2e6e9] bg-[#fff8f9]">
                           <img
                             src={photo.url}
@@ -178,6 +206,8 @@ export default function ReviewFeed() {
               </section>
             ) : null}
 
+            <AdsenseSlot label="Sponsored" />
+
             <section className="space-y-4">
               {isLoading ? (
                 <div className="rounded-[30px] border border-dashed border-[#eed7db] bg-white px-6 py-16 text-center text-sm text-[#8b8b8b]">
@@ -191,21 +221,28 @@ export default function ReviewFeed() {
                 </div>
               ) : null}
 
-              {visibleReviews.map((review) => {
+              {visibleReviews.map((review, index) => {
                 const restaurant = getRestaurantById(review.restaurantId);
                 const displayImage = restaurant
                   ? getRestaurantDisplayImage(restaurant, { width: 480, height: 320 })
                   : null;
 
                 return (
-                  <article
-                    key={`${review.restaurantId}_${review.id}`}
-                    className="rounded-[30px] border border-[#f3e3e6] bg-white px-5 py-5 shadow-[0_22px_60px_rgba(0,0,0,0.05)] sm:px-6"
-                  >
-                    <div className="flex flex-col gap-5 lg:flex-row">
+                  <div key={`${review.restaurantId}_${review.id}`} className="space-y-4">
+                    <article className="rounded-[30px] border border-[#f3e3e6] bg-white px-5 py-5 shadow-[0_22px_60px_rgba(0,0,0,0.05)] sm:px-6">
+                      <div className="flex flex-col gap-5 lg:flex-row">
                       <div className="lg:w-[280px]">
                         {restaurant ? (
-                          <Link href={`/restaurant/${restaurant.id}`}>
+                          <Link
+                            href={`/restaurant/${restaurant.id}`}
+                            onClick={() =>
+                              trackMarketingEvent("review_feed_restaurant_click", {
+                                restaurant_id: restaurant.id,
+                                restaurant_name: restaurant.name,
+                                sort_mode: sortMode,
+                              })
+                            }
+                          >
                             <div className="overflow-hidden rounded-[24px] border border-[#f0e2e6] bg-[#fff8f9]">
                               <img
                                 src={displayImage?.src}
@@ -273,7 +310,17 @@ export default function ReviewFeed() {
                               <span className="font-semibold text-[#ff7b83]">{restaurant.name}</span> 상세 페이지에서
                               메뉴와 위치를 더 볼 수 있어요.
                             </div>
-                            <Link href={`/restaurant/${restaurant.id}`}>
+                            <Link
+                              href={`/restaurant/${restaurant.id}`}
+                              onClick={() =>
+                                trackMarketingEvent("review_feed_restaurant_click", {
+                                  restaurant_id: restaurant.id,
+                                  restaurant_name: restaurant.name,
+                                  sort_mode: sortMode,
+                                  source: "review_footer",
+                                })
+                              }
+                            >
                               <div className="inline-flex items-center gap-2 rounded-full bg-[#ff7b83] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(255,123,131,0.22)]">
                                 식당 상세 보기
                               </div>
@@ -281,8 +328,12 @@ export default function ReviewFeed() {
                           </div>
                         ) : null}
                       </div>
-                    </div>
-                  </article>
+                      </div>
+                    </article>
+                    {(index + 1) % 8 === 0 && index + 1 < visibleReviews.length ? (
+                      <AdsenseSlot label="Sponsored" />
+                    ) : null}
+                  </div>
                 );
               })}
             </section>

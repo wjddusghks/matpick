@@ -4,6 +4,7 @@ import FavoriteTopicDialog, {
   FavoriteTopicBadge,
 } from "@/components/FavoriteTopicDialog";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { trackMarketingEvent } from "@/lib/marketing";
 import {
   Dialog,
   DialogContent,
@@ -38,6 +39,11 @@ export default function FavoriteTopicPickerDialog({
 
   const handleToggleTopic = (topicId: string, topicName: string) => {
     const nextState = toggleRestaurantInTopic(topicId, restaurantId);
+    trackMarketingEvent(nextState ? "topic_save" : "topic_remove", {
+      restaurant_id: restaurantId,
+      topic_id: topicId,
+      topic_name: topicName,
+    });
     toast.success(
       nextState
         ? `"${restaurantName}"을 "${topicName}"에 담았어요.`

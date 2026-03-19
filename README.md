@@ -1,6 +1,6 @@
 # Matpick
 
-크리에이터 맛집 큐레이션 웹사이트입니다. 유튜브, 인스타그램 등 먹방 크리에이터들이 추천한 맛집을 한곳에 모아서 검색하고 탐색할 수 있습니다.
+맛픽은 크리에이터, 방송, 가이드에 소개된 맛집을 한곳에서 비교하고 지도 위에서 탐색하는 서비스입니다.
 
 Matpick is currently set up as a static Vite SPA for Vercel deployment.
 
@@ -51,6 +51,8 @@ Before pushing changes to the production branch:
    - `VITE_NAVER_MAP_CLIENT_ID`
    - `VITE_ADSENSE_CLIENT=ca-pub-...`
    - `VITE_ADSENSE_SLOT_INLINE=...`
+   - `VITE_GOOGLE_TAG_IDS=G-...,AW-...`
+   - `VITE_META_PIXEL_ID=...`
 2. If you want Excel imports to auto-fill and persist map coordinates:
    - Set `NAVER_MAP_CLIENT_SECRET`
    - Set `NAVER_MAP_CLIENT_ID` or `VITE_NAVER_MAP_CLIENT_ID`
@@ -59,6 +61,23 @@ Before pushing changes to the production branch:
 3. Run `corepack pnpm build` inside `matpick_all/`
 4. Confirm that `matpick_all/client/public/ads.txt` contains your real AdSense publisher line
 5. Confirm that `matpick_all/client/public/sitemap.xml` and prerendered `dist/restaurant/*` pages were regenerated
+
+### Search Ops Checklist
+
+When you publish new topic, episode, or review pages:
+
+1. Set verification env vars in Vercel when you use HTML meta verification:
+   - `VITE_GOOGLE_SITE_VERIFICATION`
+   - `VITE_NAVER_SITE_VERIFICATION`
+2. Inspect and request indexing for:
+   - `/`
+   - `/explore/topic/<topic-slug>`
+   - `/explore/topic/<topic-slug>/episode/<episode-slug>`
+   - `/reviews`
+3. Submit `https://matpick.co.kr/sitemap.xml` in:
+   - Google Search Console
+   - Naver Search Advisor
+4. Verify that the deployment page source shows clean title/description text and no placeholder metadata
 
 ## Current Demo Scope
 

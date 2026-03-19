@@ -26,10 +26,13 @@ import {
 } from "@/data";
 import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
-import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import MonetizationSlot, {
+  AdsenseSlot,
+} from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import { trackMarketingEvent } from "@/lib/marketing";
 import {
   getRestaurantDisplayImage,
   getRestaurantPrimaryPrice,
@@ -77,6 +80,10 @@ const EXPLORE_COPY = {
     episodeOpen: (count: number) => `${count}개 보기`,
     episodeClose: "닫기",
     clearFilters: "필터 전체 초기화",
+    contextExploreAll: "전체 탐색",
+    contextMapView: "지도에서 보기",
+    contextTopicView: "주제 전체 보기",
+    contextVideoView: "원본 영상 보기",
     resultsCount: (count: number) => `총 ${count.toLocaleString()}곳의 맛집`,
     emptyTitle: "해당 조건에 맞는 맛집이 아직 없어요.",
     emptyDescription:
@@ -109,6 +116,10 @@ const EXPLORE_COPY = {
     episodeOpen: (count: number) => `${count} episodes`,
     episodeClose: "Close",
     clearFilters: "Clear all filters",
+    contextExploreAll: "All explore",
+    contextMapView: "View on map",
+    contextTopicView: "Topic overview",
+    contextVideoView: "Watch original video",
     resultsCount: (count: number) => `${count.toLocaleString()} restaurants`,
     emptyTitle: "No restaurant matches these filters yet.",
     emptyDescription:
@@ -131,6 +142,14 @@ function sortText(a: string, b: string) {
 
 function buildDiscoveryKey(kind: DiscoveryKind, id: string) {
   return `${kind}:${id}`;
+}
+
+function buildMapPathForTopic(topic: DiscoveryTopic) {
+  if (topic.kind === "creator") {
+    return `/map?type=creator&value=${encodeURIComponent(topic.targetId)}`;
+  }
+
+  return `/map?type=source&value=${encodeURIComponent(topic.targetId)}`;
 }
 
 function dedupeRestaurantsById(items: Restaurant[]) {
@@ -189,7 +208,7 @@ function SourceAvatarButton({
 
   if (href) {
     return (
-      <Link href={href} title={label} className={className}>
+      <Link href={href} title={label} onClick={onClick} className={className}>
         {inner}
       </Link>
     );
@@ -240,10 +259,12 @@ function RestaurantCard({
   restaurant,
   locale,
   copy,
+  onSelect,
 }: {
   restaurant: Restaurant;
   locale: AppLocale;
   copy: (typeof EXPLORE_COPY)[AppLocale];
+  onSelect?: (restaurant: Restaurant) => void;
 }) {
   const [, navigate] = useLocation();
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
@@ -255,7 +276,10 @@ function RestaurantCard({
   return (
     <button
       type="button"
-      onClick={() => navigate(`/restaurant/${restaurant.id}`)}
+      onClick={() => {
+        onSelect?.(restaurant);
+        navigate(`/restaurant/${restaurant.id}`);
+      }}
       className="group overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
     >
       <div className="relative h-52 overflow-hidden">
@@ -674,6 +698,13 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   }, [deferredRestaurants.length, visibleCount]);
 
   const toggleDiscovery = (key: string) => {
+    const option = discoveryOptions.find((entry) => entry.key === key);
+    trackMarketingEvent("topic_filter_click", {
+      topic_key: key,
+      topic_name: option?.name ?? key,
+      selected: !selectedDiscoveryKeys.includes(key),
+    });
+
     if (presetTopic && key === presetTopic.key && selectedDiscoveryKeys.length === 1) {
       navigate("/explore");
       return;
@@ -685,6 +716,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   };
 
   const clearFilters = () => {
+    trackMarketingEvent("explore_filters_clear", {
+      topic_slug: presetTopic?.slug ?? "",
+      episode_slug: presetEpisode?.slug ?? "",
+    });
     setSelectedDiscoveryKeys([]);
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
@@ -706,6 +741,54 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     : presetTopic
       ? copy.topicLine(presetTopic)
       : "";
+  const contextDescription = presetEpisode?.description || presetTopic?.description || "";
+  const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";
+
+  const handleCategorySelect = (category: string) => {
+    trackMarketingEvent("category_filter_click", {
+      category,
+      topic_slug: presetTopic?.slug ?? "",
+      episode_slug: presetEpisode?.slug ?? "",
+    });
+    setSelectedCategory(category);
+  };
+
+  const handleRegionSelect = (region: string) => {
+    trackMarketingEvent("region_filter_click", {
+      region,
+      topic_slug: presetTopic?.slug ?? "",
+      episode_slug: presetEpisode?.slug ?? "",
+    });
+    setSelectedRegion(region);
+  };
+
+  const handleFavoriteTopicSelect = (topicId: string) => {
+    trackMarketingEvent("saved_topic_filter_click", {
+      topic_id: topicId,
+      selected: topicId !== ALL_FILTER,
+    });
+    setSelectedTopicId(topicId);
+  };
+
+  const handleRestaurantSelect = (restaurant: Restaurant) => {
+    trackMarketingEvent("explore_restaurant_click", {
+      restaurant_id: restaurant.id,
+      restaurant_name: restaurant.name,
+      topic_slug: presetTopic?.slug ?? "",
+      episode_slug: presetEpisode?.slug ?? "",
+      category: selectedCategory,
+      region: selectedRegion,
+    });
+  };
+
+  useEffect(() => {
+    trackMarketingEvent("explore_view", {
+      topic_slug: presetTopic?.slug ?? "",
+      episode_slug: presetEpisode?.slug ?? "",
+      has_topic: Boolean(presetTopic),
+      has_episode: Boolean(presetEpisode),
+    });
+  }, [presetEpisode?.slug, presetTopic?.slug]);
 
   return (
     <div className="min-h-screen bg-[#fffdfd]">
@@ -742,7 +825,71 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             {copy.pageDescription}
           </p>
           {presetTopic ? (
-            <p className="mt-3 text-xs font-medium text-[#ff7b83] sm:text-sm">{topicLine}</p>
+            <div className="mt-3 space-y-2">
+              <p className="text-xs font-medium text-[#ff7b83] sm:text-sm">{topicLine}</p>
+              {contextDescription ? (
+                <p className="text-xs leading-6 text-[#8b8284] sm:text-sm">{contextDescription}</p>
+              ) : null}
+              <div className="flex flex-wrap gap-2">
+                <Link
+                  href="/explore"
+                  onClick={() =>
+                    trackMarketingEvent("explore_context_link_click", {
+                      destination: "explore_all",
+                      topic_slug: presetTopic.slug,
+                      episode_slug: presetEpisode?.slug ?? "",
+                    })
+                  }
+                  className="rounded-full border border-[#f0dadd] bg-white px-3 py-1.5 text-xs font-semibold text-[#6d6668] transition hover:border-[#ffc1c9] hover:text-[#ff6b7b]"
+                >
+                  {copy.contextExploreAll}
+                </Link>
+                <Link
+                  href={topicMapPath}
+                  onClick={() =>
+                    trackMarketingEvent("explore_context_link_click", {
+                      destination: "map",
+                      topic_slug: presetTopic.slug,
+                      episode_slug: presetEpisode?.slug ?? "",
+                    })
+                  }
+                  className="rounded-full border border-[#f0dadd] bg-white px-3 py-1.5 text-xs font-semibold text-[#6d6668] transition hover:border-[#ffc1c9] hover:text-[#ff6b7b]"
+                >
+                  {copy.contextMapView}
+                </Link>
+                {presetEpisode ? (
+                  <Link
+                    href={presetTopic.path}
+                    onClick={() =>
+                      trackMarketingEvent("explore_context_link_click", {
+                        destination: "topic_overview",
+                        topic_slug: presetTopic.slug,
+                        episode_slug: presetEpisode.slug,
+                      })
+                    }
+                    className="rounded-full border border-[#f0dadd] bg-white px-3 py-1.5 text-xs font-semibold text-[#6d6668] transition hover:border-[#ffc1c9] hover:text-[#ff6b7b]"
+                  >
+                    {copy.contextTopicView}
+                  </Link>
+                ) : null}
+                {presetEpisode?.videoUrl ? (
+                  <a
+                    href={presetEpisode.videoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      trackMarketingEvent("episode_video_click", {
+                        topic_slug: presetTopic.slug,
+                        episode_slug: presetEpisode.slug,
+                      })
+                    }
+                    className="rounded-full border border-[#f0dadd] bg-white px-3 py-1.5 text-xs font-semibold text-[#6d6668] transition hover:border-[#ffc1c9] hover:text-[#ff6b7b]"
+                  >
+                    {copy.contextVideoView}
+                  </a>
+                ) : null}
+              </div>
+            </div>
           ) : null}
         </header>
         <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5">
@@ -755,7 +902,13 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 <SourceAvatarButton
                   option={null}
                   selected={!presetTopic}
-                  onClick={() => navigate("/explore")}
+                  onClick={() => {
+                    trackMarketingEvent("topic_shortcut_click", {
+                      topic_slug: "all",
+                      source: "explore",
+                    });
+                    navigate("/explore");
+                  }}
                   fallbackLabel={copy.allLabel}
                 />
                 {discoveryTopics.map((topic) => (
@@ -764,6 +917,12 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                     option={{ name: topic.name, imageUrl: topic.imageUrl }}
                     selected={topic.slug === topicSlug}
                     href={topic.slug === topicSlug ? "/explore" : topic.path}
+                    onClick={() =>
+                      trackMarketingEvent("topic_shortcut_click", {
+                        topic_slug: topic.slug,
+                        source: "explore",
+                      })
+                    }
                     fallbackLabel={copy.allLabel}
                   />
                 ))}
@@ -819,6 +978,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                           selected={!presetEpisode}
                           onClick={() => {
                             setIsEpisodeMenuOpen(false);
+                            trackMarketingEvent("episode_filter_click", {
+                              topic_slug: presetTopic.slug,
+                              episode_slug: "all",
+                            });
                             navigate(presetTopic.path);
                           }}
                         />
@@ -829,6 +992,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                             selected={presetEpisode?.slug === episode.slug}
                             onClick={() => {
                               setIsEpisodeMenuOpen(false);
+                              trackMarketingEvent("episode_filter_click", {
+                                topic_slug: presetTopic.slug,
+                                episode_slug: episode.slug,
+                              });
                               navigate(episode.path);
                             }}
                           />
@@ -846,13 +1013,13 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 <FilterChip
                   label={copy.allLabel}
                   selected={selectedTopicId === ALL_FILTER}
-                  onClick={() => setSelectedTopicId(ALL_FILTER)}
+                  onClick={() => handleFavoriteTopicSelect(ALL_FILTER)}
                 />
                 {topics.map((topic) => (
                   <button
                     key={topic.id}
                     type="button"
-                    onClick={() => setSelectedTopicId(topic.id)}
+                    onClick={() => handleFavoriteTopicSelect(topic.id)}
                     className="transition"
                     title={`${topic.name} (${getTopicRestaurantCount(topic.id)})`}
                   >
@@ -867,14 +1034,14 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               <FilterChip
                 label={copy.allLabel}
                 selected={selectedCategory === ALL_FILTER}
-                onClick={() => setSelectedCategory(ALL_FILTER)}
+                onClick={() => handleCategorySelect(ALL_FILTER)}
               />
               {categories.map((category) => (
                 <FilterChip
                   key={category}
                   label={translateCuisineLabel(category, locale)}
                   selected={selectedCategory === category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategorySelect(category)}
                 />
               ))}
             </div>
@@ -885,7 +1052,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 label={copy.allLabel}
                 tone="peach"
                 selected={selectedRegion === ALL_FILTER}
-                onClick={() => setSelectedRegion(ALL_FILTER)}
+                onClick={() => handleRegionSelect(ALL_FILTER)}
               />
               {regions.map((region) => (
                 <FilterChip
@@ -893,7 +1060,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                   label={region}
                   tone="peach"
                   selected={selectedRegion === region}
-                  onClick={() => setSelectedRegion(region)}
+                  onClick={() => handleRegionSelect(region)}
                 />
               ))}
             </div>
@@ -922,14 +1089,30 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
 
         {filteredRestaurants.length > 0 ? (
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-            {visibleRestaurants.map((restaurant) => (
-              <RestaurantCard
-                key={restaurant.id}
-                restaurant={restaurant}
-                locale={locale}
-                copy={copy}
-              />
-            ))}
+            {visibleRestaurants.flatMap((restaurant, index) => {
+              const items = [
+                <RestaurantCard
+                  key={restaurant.id}
+                  restaurant={restaurant}
+                  locale={locale}
+                  copy={copy}
+                  onSelect={handleRestaurantSelect}
+                />,
+              ];
+
+              if ((index + 1) % 12 === 0 && index + 1 < visibleRestaurants.length) {
+                items.push(
+                  <div
+                    key={`adsense-inline-${restaurant.id}`}
+                    className="sm:col-span-2 lg:col-span-3"
+                  >
+                    <AdsenseSlot label={copy.sponsoredLabel} />
+                  </div>
+                );
+              }
+
+              return items;
+            })}
           </div>
         ) : (
           <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">

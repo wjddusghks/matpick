@@ -1,5 +1,9 @@
 import { useEffect, useMemo } from "react";
 import { useLocation } from "wouter";
+import {
+  getMarketingEventName,
+  type MarketingEventDetail,
+} from "@/lib/marketing";
 
 declare global {
   interface Window {
@@ -14,6 +18,8 @@ declare global {
 
 const GOOGLE_TAG_SCRIPT_ID = "matpick-google-tag";
 const META_PIXEL_SCRIPT_ID = "matpick-meta-pixel";
+const GOOGLE_SITE_VERIFICATION_META_ID = "matpick-google-site-verification";
+const NAVER_SITE_VERIFICATION_META_ID = "matpick-naver-site-verification";
 
 function ensureScript(id: string, src: string) {
   if (typeof document === "undefined") {
@@ -38,6 +44,47 @@ function normalizeGoogleTagIds() {
     .split(",")
     .map((value: string) => value.trim())
     .filter(Boolean);
+}
+
+function upsertMetaTag(id: string, name: string, content: string) {
+  if (typeof document === "undefined") {
+    return () => {};
+  }
+
+  let meta = document.getElementById(id) as HTMLMetaElement | null;
+  const created = !meta;
+
+  if (!meta) {
+    meta = document.createElement("meta");
+    meta.id = id;
+    meta.name = name;
+    document.head.appendChild(meta);
+  }
+
+  meta.content = content;
+
+  return () => {
+    if (created) {
+      meta?.remove();
+    }
+  };
+}
+
+function toMetaPixelPayload(
+  name: string,
+  params: Record<string, unknown>
+): { mode: "standard" | "custom"; name: string } {
+  switch (name) {
+    case "search_submit":
+      return { mode: "standard", name: "Search" };
+    case "restaurant_view":
+      return { mode: "standard", name: "ViewContent" };
+    case "favorite_save":
+    case "topic_save":
+      return { mode: "standard", name: "AddToWishlist" };
+    default:
+      return { mode: "custom", name };
+  }
 }
 
 function getPagePayload(path: string) {
@@ -116,6 +163,10 @@ export default function MarketingScripts() {
   const [location] = useLocation();
   const googleTagIds = useMemo(() => normalizeGoogleTagIds(), []);
   const metaPixelId = import.meta.env.VITE_META_PIXEL_ID?.trim() ?? "";
+  const googleSiteVerification =
+    import.meta.env.VITE_GOOGLE_SITE_VERIFICATION?.trim() ?? "";
+  const naverSiteVerification =
+    import.meta.env.VITE_NAVER_SITE_VERIFICATION?.trim() ?? "";
 
   useEffect(() => {
     ensureGoogleTag(googleTagIds);
@@ -124,6 +175,34 @@ export default function MarketingScripts() {
   useEffect(() => {
     ensureMetaPixel(metaPixelId);
   }, [metaPixelId]);
+
+  useEffect(() => {
+    const cleanups: Array<() => void> = [];
+
+    if (googleSiteVerification) {
+      cleanups.push(
+        upsertMetaTag(
+          GOOGLE_SITE_VERIFICATION_META_ID,
+          "google-site-verification",
+          googleSiteVerification
+        )
+      );
+    }
+
+    if (naverSiteVerification) {
+      cleanups.push(
+        upsertMetaTag(
+          NAVER_SITE_VERIFICATION_META_ID,
+          "naver-site-verification",
+          naverSiteVerification
+        )
+      );
+    }
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup());
+    };
+  }, [googleSiteVerification, naverSiteVerification]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -140,6 +219,38 @@ export default function MarketingScripts() {
 
     return () => window.clearTimeout(timer);
   }, [googleTagIds, location, metaPixelId]);
+
+  useEffect(() => {
+    const eventName = getMarketingEventName();
+
+    const handleTrack = (event: Event) => {
+      const detail = (event as CustomEvent<MarketingEventDetail>).detail;
+
+      if (!detail?.name) {
+        return;
+      }
+
+      const params = detail.params ?? {};
+
+      if (googleTagIds.length > 0 && window.gtag) {
+        window.gtag("event", detail.name, params);
+      }
+
+      if (metaPixelId && window.fbq) {
+        const metaPixelPayload = toMetaPixelPayload(detail.name, params);
+        if (metaPixelPayload.mode === "standard") {
+          window.fbq("track", metaPixelPayload.name, params);
+        } else {
+          window.fbq("trackCustom", metaPixelPayload.name, params);
+        }
+      }
+    };
+
+    window.addEventListener(eventName, handleTrack as EventListener);
+    return () => {
+      window.removeEventListener(eventName, handleTrack as EventListener);
+    };
+  }, [googleTagIds, metaPixelId]);
 
   return null;
 }

@@ -54,6 +54,7 @@ import {
   type ReviewSortMode,
   type SharedReview,
 } from "@/lib/reviews";
+import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
@@ -317,6 +318,20 @@ export default function RestaurantDetail() {
     setPersonalRating(getUserRestaurantRating(user.id, restaurant.id)?.stars ?? 0);
   }, [restaurant, user]);
 
+  useEffect(() => {
+    if (!restaurant) {
+      return;
+    }
+
+    trackMarketingEvent("restaurant_view", {
+      restaurant_id: restaurant.id,
+      restaurant_name: restaurant.name,
+      category: restaurant.category,
+      region: restaurant.region,
+      recommendation_count: getRecommendationCount(restaurant.id),
+    });
+  }, [restaurant]);
+
   const visibleReviews = useMemo(
     () => storedReviews.filter((review) => !GUIDE_REVIEW_USERS.has(review.user)),
     [storedReviews]
@@ -364,6 +379,11 @@ export default function RestaurantDetail() {
   const removeRestaurantFromTopic = (topicId: string, topicName: string) => {
     const nextState = toggleRestaurantInTopic(topicId, restaurant.id);
     if (!nextState) {
+      trackMarketingEvent("topic_remove", {
+        restaurant_id: restaurant.id,
+        topic_id: topicId,
+        topic_name: topicName,
+      });
       toast.success(`"${topicName}"에서 "${restaurant.name}"을 뺐어요.`);
     }
   };
@@ -407,6 +427,9 @@ export default function RestaurantDetail() {
       toast("리뷰 작성은 로그인 후에 이용할 수 있어요.");
       return;
     }
+    trackMarketingEvent("review_composer_open", {
+      restaurant_id: restaurant.id,
+    });
     setActiveTab("reviews");
     setComposerOpen(true);
   };
@@ -425,6 +448,9 @@ export default function RestaurantDetail() {
       clearUserRestaurantRating(user.id, restaurant.id);
       setPersonalRating(0);
       setHoveredPersonalRating(0);
+      trackMarketingEvent("rating_clear", {
+        restaurant_id: restaurant.id,
+      });
       toast.success("내 평점을 초기화했어요.");
       return;
     }
@@ -432,6 +458,10 @@ export default function RestaurantDetail() {
     saveUserRestaurantRating(user.id, restaurant.id, stars);
     setPersonalRating(stars);
     setHoveredPersonalRating(0);
+    trackMarketingEvent("rating_submit", {
+      restaurant_id: restaurant.id,
+      stars,
+    });
     toast.success(`내 평점 ${stars}점을 저장했어요.`);
   };
 
@@ -503,6 +533,11 @@ export default function RestaurantDetail() {
       setReviewStars(5);
       setReviewPhotos([]);
       setComposerOpen(false);
+      trackMarketingEvent("review_submit", {
+        restaurant_id: restaurant.id,
+        stars: nextReview.stars,
+        photo_count: nextReview.photos.length,
+      });
       toast.success("리뷰를 등록했어요.");
     } catch (error) {
       console.error(error);
@@ -581,7 +616,12 @@ export default function RestaurantDetail() {
           <HeartButton restaurantId={restaurant.id} size="md" className="shadow-sm" />
           <button
             type="button"
-            onClick={() => setShareOpen(true)}
+            onClick={() => {
+              trackMarketingEvent("share_open", {
+                restaurant_id: restaurant.id,
+              });
+              setShareOpen(true);
+            }}
             className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#e0e0e0] bg-white text-[#555] transition hover:border-[#FD7979] hover:bg-[#FFF5F5]"
           >
             <Share2 className="h-4.5 w-4.5" />
@@ -611,6 +651,10 @@ export default function RestaurantDetail() {
                 <button
                   type="button"
                   onClick={() => {
+                    trackMarketingEvent("map_open", {
+                      restaurant_id: restaurant.id,
+                      source: "overflow_menu",
+                    });
                     navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
                     setMoreOpen(false);
                   }}
@@ -809,6 +853,13 @@ export default function RestaurantDetail() {
                           href={visit.videoUrl}
                           target="_blank"
                           rel="noreferrer"
+                          onClick={() =>
+                            trackMarketingEvent("video_click", {
+                              restaurant_id: restaurant.id,
+                              video_url: visit.videoUrl,
+                              creator_id: visit.creatorId,
+                            })
+                          }
                           className="flex flex-col gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 no-underline transition hover:border-[#ffd5db] sm:flex-row"
                         >
                           <div className="relative h-[180px] w-full overflow-hidden rounded-[18px] bg-[#1f1f1f] sm:h-[100px] sm:w-[180px]">
@@ -853,7 +904,15 @@ export default function RestaurantDetail() {
                       </div>
                       <div className="flex flex-wrap gap-2">
                         <Link href="/reviews">
-                          <div className="flex h-11 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-5 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff2f4]">
+                          <div
+                            onClick={() =>
+                              trackMarketingEvent("review_feed_open", {
+                                restaurant_id: restaurant.id,
+                                source: "restaurant_detail",
+                              })
+                            }
+                            className="flex h-11 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-5 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff2f4]"
+                          >
                             방문자 리뷰 전체 보기
                           </div>
                         </Link>
@@ -898,7 +957,13 @@ export default function RestaurantDetail() {
                         <button
                           key={option.key}
                           type="button"
-                          onClick={() => setReviewSortMode(option.key)}
+                          onClick={() => {
+                            trackMarketingEvent("review_sort_change", {
+                              restaurant_id: restaurant.id,
+                              sort_mode: option.key,
+                            });
+                            setReviewSortMode(option.key);
+                          }}
                           className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
                             reviewSortMode === option.key
                               ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
@@ -1199,7 +1264,13 @@ export default function RestaurantDetail() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => openAuthFeatureDialog("topic")}
+                    onClick={() => {
+                      trackMarketingEvent("topic_picker_open", {
+                        restaurant_id: restaurant.id,
+                        source: "guest_cta",
+                      });
+                      openAuthFeatureDialog("topic");
+                    }}
                     className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
                   >
                     로그인하고 주제 저장
@@ -1223,7 +1294,13 @@ export default function RestaurantDetail() {
                   </div>
                   <button
                     type="button"
-                    onClick={() => setTopicPickerOpen(true)}
+                    onClick={() => {
+                      trackMarketingEvent("topic_picker_open", {
+                        restaurant_id: restaurant.id,
+                        source: "detail_sidebar",
+                      });
+                      setTopicPickerOpen(true);
+                    }}
                     className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
                   >
                     {topics.length > 0 ? "주제에 담기" : "주제 만들기"}
@@ -1304,7 +1381,13 @@ export default function RestaurantDetail() {
           <div className="flex flex-col gap-2.5 rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <button
               type="button"
-              onClick={() => navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`)}
+              onClick={() => {
+                trackMarketingEvent("map_open", {
+                  restaurant_id: restaurant.id,
+                  source: "sidebar_cta",
+                });
+                navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
+              }}
               className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FD7979] to-[#FDACAC] py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(253,121,121,0.3)]"
             >
               <MapPinned className="h-4 w-4" />

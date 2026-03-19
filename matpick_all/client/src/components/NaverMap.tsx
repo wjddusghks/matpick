@@ -159,6 +159,8 @@ export default function NaverMap({
   const infoWindowRef = useRef<naver.maps.InfoWindow | null>(null);
   const mapIdleListenerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const resizeObserverRef = useRef<ResizeObserver | null>(null);
+  const resizeFrameRef = useRef<number | null>(null);
   const listenersRef = useRef<Map<string, any>>(new Map());
   const onMarkerClickRef = useRef(onMarkerClick);
   const selectedIdRef = useRef<string | null>(selectedId);
@@ -307,6 +309,40 @@ export default function NaverMap({
       return;
     }
 
+    const syncMapSize = () => {
+      const map = mapRef.current;
+      if (!map) {
+        return;
+      }
+
+      const currentCenter = map.getCenter();
+      const currentZoom = map.getZoom();
+
+      try {
+        (map as any).autoResize?.();
+      } catch {
+        // noop
+      }
+
+      if (currentCenter) {
+        map.setCenter(currentCenter);
+      }
+      if (typeof currentZoom === "number") {
+        map.setZoom(currentZoom);
+      }
+    };
+
+    const scheduleResizeSync = () => {
+      if (resizeFrameRef.current != null) {
+        window.cancelAnimationFrame(resizeFrameRef.current);
+      }
+
+      resizeFrameRef.current = window.requestAnimationFrame(() => {
+        resizeFrameRef.current = null;
+        syncMapSize();
+      });
+    };
+
     try {
       const map = new naver.maps.Map(containerRef.current, {
         center: new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng),
@@ -338,17 +374,17 @@ export default function NaverMap({
         setViewZoom(map.getZoom());
       });
 
-      window.setTimeout(() => {
-        const currentCenter = map.getCenter();
-        const currentZoom = map.getZoom();
-        (map as any).autoResize?.();
-        if (currentCenter) {
-          map.setCenter(currentCenter);
-        }
-        if (typeof currentZoom === "number") {
-          map.setZoom(currentZoom);
-        }
-      }, 100);
+      window.setTimeout(scheduleResizeSync, 100);
+      window.setTimeout(scheduleResizeSync, 350);
+
+      if (typeof ResizeObserver !== "undefined") {
+        resizeObserverRef.current = new ResizeObserver(() => {
+          scheduleResizeSync();
+        });
+        resizeObserverRef.current.observe(containerRef.current);
+      }
+
+      window.addEventListener("resize", scheduleResizeSync);
     } catch (error) {
       console.error("Failed to initialize Naver Map:", error);
       setSdkError("Map initialization failed.");
@@ -391,6 +427,22 @@ export default function NaverMap({
         }
         mapIdleListenerRef.current = null;
       }
+
+      if (resizeObserverRef.current) {
+        try {
+          resizeObserverRef.current.disconnect();
+        } catch {
+          // noop
+        }
+        resizeObserverRef.current = null;
+      }
+
+      if (resizeFrameRef.current != null) {
+        window.cancelAnimationFrame(resizeFrameRef.current);
+        resizeFrameRef.current = null;
+      }
+
+      window.removeEventListener("resize", scheduleResizeSync);
     };
   }, [clearMarkerListeners, sdkReady]);
 

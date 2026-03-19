@@ -133,7 +133,7 @@ async function buildSitemap(siteUrl) {
   const today = new Date().toISOString();
   const seen = new Set();
 
-  const staticUrls = ["/", "/explore", "/map", "/about", "/privacy", "/terms", "/contact"];
+  const staticUrls = ["/", "/explore", "/map", "/reviews", "/about", "/privacy", "/terms", "/contact"];
   const entries = [];
 
   for (const item of staticUrls) {

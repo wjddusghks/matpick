@@ -1,18 +1,8 @@
-import { useEffect, useRef } from "react";
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 declare global {
   interface Window {
     adsbygoogle?: unknown[];
-    PartnersCoupang?: {
-      G: new (config: {
-        id: string | number;
-        template: string;
-        trackingCode: string;
-        width: string;
-        height: string;
-      }) => unknown;
-    };
   }
 }
 
@@ -199,43 +189,58 @@ export function CoupangSlot({
     };
   }, [hasDynamicBanner]);
 
-  useEffect(() => {
-    if (!hasDynamicBanner || !dynamicBannerRef.current) {
-      return;
+  const dynamicBannerSrcDoc = useMemo(() => {
+    if (!hasDynamicBanner) {
+      return "";
     }
 
-    const container = dynamicBannerRef.current;
-    container.innerHTML = "";
+    return `<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+        background: transparent;
+      }
 
-    const sdkScript = document.createElement("script");
-    sdkScript.src = "https://ads-partners.coupang.com/g.js";
-    sdkScript.async = true;
+      body {
+        display: flex;
+        justify-content: center;
+      }
 
-    const inlineScript = document.createElement("script");
-    inlineScript.text = `
-      new PartnersCoupang.G({
-        id: ${JSON.stringify(dynamicBannerId)},
-        template: ${JSON.stringify(dynamicBannerTemplate)},
-        trackingCode: ${JSON.stringify(dynamicBannerTrackingCode)},
-        width: ${JSON.stringify(String(effectiveBannerWidth))},
-        height: ${JSON.stringify(String(configuredBannerHeight))}
+      #coupang-banner-root {
+        width: ${effectiveBannerWidth}px;
+        min-height: ${configuredBannerHeight}px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="coupang-banner-root"></div>
+    <script src="https://ads-partners.coupang.com/g.js"><\/script>
+    <script>
+      window.addEventListener("load", function () {
+        new PartnersCoupang.G({
+          id: ${JSON.stringify(dynamicBannerId)},
+          template: ${JSON.stringify(dynamicBannerTemplate)},
+          trackingCode: ${JSON.stringify(dynamicBannerTrackingCode)},
+          width: ${JSON.stringify(String(effectiveBannerWidth))},
+          height: ${JSON.stringify(String(configuredBannerHeight))}
+        });
       });
-    `;
-
-    sdkScript.onload = () => {
-      container.appendChild(inlineScript);
-    };
-
-    container.appendChild(sdkScript);
-
-    return () => {
-      container.innerHTML = "";
-    };
+    <\/script>
+  </body>
+</html>`;
   }, [
+    configuredBannerHeight,
     dynamicBannerId,
     dynamicBannerTemplate,
     dynamicBannerTrackingCode,
-    configuredBannerHeight,
     effectiveBannerWidth,
     hasDynamicBanner,
   ]);
@@ -249,12 +254,22 @@ export function CoupangSlot({
       <SlotFrame label={label}>
         <div
           ref={dynamicBannerRef}
-          className="flex justify-center overflow-hidden rounded-[18px] bg-[#fffafb]"
+          className="overflow-hidden rounded-[18px] bg-[#fffafb]"
           style={{
             width: "100%",
             minHeight: `${configuredBannerHeight}px`,
           }}
-        />
+        >
+          <iframe
+            key={`${effectiveBannerWidth}:${configuredBannerHeight}`}
+            title={label ?? "Coupang partners banner"}
+            srcDoc={dynamicBannerSrcDoc}
+            className="block w-full border-0"
+            style={{ height: `${configuredBannerHeight}px` }}
+            loading="lazy"
+            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+          />
+        </div>
       </SlotFrame>
     );
   }

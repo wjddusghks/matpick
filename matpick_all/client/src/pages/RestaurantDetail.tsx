@@ -28,6 +28,8 @@ import {
   creators,
   getCreatorDisplayName,
   getCreatorsByRestaurant,
+  getNearbyRestaurants,
+  getRelatedRestaurants,
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
   getRecommendationCount,
@@ -45,18 +47,18 @@ import {
   getRestaurantDisplayImage,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
+import {
+  collectReviewPhotos,
+  sortReviews,
+  summarizeReviews,
+  type ReviewSortMode,
+  type SharedReview,
+} from "@/lib/reviews";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
-type ReviewItem = {
-  id: string;
-  user: string;
-  date: string;
-  stars: number;
-  text: string;
-  photos: string[];
-  createdAt?: number;
-};
+type ReviewItem = SharedReview;
+type RelatedSortMode = "related" | "nearby";
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
@@ -226,6 +228,18 @@ function formatDate() {
   return new Date().toISOString().slice(0, 10).replace(/-/g, ".");
 }
 
+function formatDistance(distanceKm: number | null) {
+  if (distanceKm == null) {
+    return "거리 정보 없음";
+  }
+
+  if (distanceKm < 1) {
+    return `${Math.max(100, Math.round(distanceKm * 1000))}m`;
+  }
+
+  return `${distanceKm.toFixed(1)}km`;
+}
+
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
   const [location, navigate] = useLocation();
@@ -247,6 +261,8 @@ export default function RestaurantDetail() {
   const [authFeatureDialogOpen, setAuthFeatureDialogOpen] = useState(false);
   const [authFeatureMode, setAuthFeatureMode] =
     useState<AuthFeatureMode>("rating");
+  const [reviewSortMode, setReviewSortMode] = useState<ReviewSortMode>("latest");
+  const [relatedSortMode, setRelatedSortMode] = useState<RelatedSortMode>("related");
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -267,6 +283,8 @@ export default function RestaurantDetail() {
     setReviewStars(5);
     setReviewPhotos([]);
     setHoveredPersonalRating(0);
+    setReviewSortMode("latest");
+    setRelatedSortMode("related");
     setComposerOpen(false);
 
     let ignore = false;
@@ -299,27 +317,25 @@ export default function RestaurantDetail() {
     setPersonalRating(getUserRestaurantRating(user.id, restaurant.id)?.stars ?? 0);
   }, [restaurant, user]);
 
-  const reviews = useMemo(
-    () =>
-      restaurant
-        ? [
-            ...storedReviews,
-            {
-              id: `${restaurant.id}_sample`,
-              user: "맛픽가이드",
-              date: "2025.01.15",
-              stars: 5,
-              text: `${restaurant.name} 분위기와 대표 메뉴가 좋아서 기억에 남는 곳이에요.`,
-              photos: [],
-            },
-          ]
-        : [],
-    [restaurant, storedReviews]
-  );
   const visibleReviews = useMemo(
     () => storedReviews.filter((review) => !GUIDE_REVIEW_USERS.has(review.user)),
     [storedReviews]
   );
+  const publicReviewSummary = useMemo(() => summarizeReviews(visibleReviews), [visibleReviews]);
+  const reviewGallery = useMemo(() => collectReviewPhotos(visibleReviews).slice(0, 8), [visibleReviews]);
+  const sortedReviews = useMemo(
+    () => sortReviews(visibleReviews, reviewSortMode),
+    [reviewSortMode, visibleReviews]
+  );
+  const relatedRestaurants = useMemo(() => {
+    if (!restaurant) {
+      return [];
+    }
+
+    return relatedSortMode === "related"
+      ? getRelatedRestaurants(restaurant.id, 6)
+      : getNearbyRestaurants(restaurant.id, 6);
+  }, [relatedSortMode, restaurant]);
 
   if (!restaurant) {
     return <div className="flex min-h-screen items-center justify-center text-[#666]">식당을 찾을 수 없어요.</div>;
@@ -370,6 +386,15 @@ export default function RestaurantDetail() {
       },
       servesCuisine: restaurant.category,
       url: shareUrl,
+      ...(publicReviewSummary.count > 0
+        ? {
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: publicReviewSummary.average.toFixed(1),
+              reviewCount: publicReviewSummary.count,
+            },
+          }
+        : {}),
     },
   });
 
@@ -646,6 +671,91 @@ export default function RestaurantDetail() {
             </div>
           </div>
 
+          {relatedRestaurants.length > 0 ? (
+            <section className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-sm font-bold text-[#1a1a1a]">함께 둘러볼만한 맛집</p>
+                  <p className="mt-1 text-sm text-[#8a8a8a]">
+                    지금 보고 있는 식당과 잘 어울리는 곳을 연관도와 거리 기준으로 나눠서 보여드려요.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { key: "related" as const, label: "연관순" },
+                    { key: "nearby" as const, label: "현재 식당 거리순" },
+                  ].map((option) => (
+                    <button
+                      key={option.key}
+                      type="button"
+                      onClick={() => setRelatedSortMode(option.key)}
+                      className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                        relatedSortMode === option.key
+                          ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
+                          : "border border-[#f0d7db] bg-white text-[#666] hover:border-[#ffb5be] hover:text-[#ff6f7c]"
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
+                {relatedRestaurants.map((entry) => {
+                  const candidate = entry.restaurant;
+
+                  return (
+                    <Link key={`${relatedSortMode}_${candidate.id}`} href={`/restaurant/${candidate.id}`}>
+                      <div className="flex h-full gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 transition hover:border-[#ffd1d8] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
+                        <img
+                          src={getRestaurantDisplayImage(candidate, { width: 320, height: 240 }).src}
+                          alt={candidate.name}
+                          className="h-[92px] w-[92px] flex-shrink-0 rounded-[18px] object-cover"
+                          loading="lazy"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-start justify-between gap-2">
+                            <div className="min-w-0">
+                              <p className="truncate text-[15px] font-bold text-[#171717]">{candidate.name}</p>
+                              <p className="mt-1 line-clamp-1 text-sm text-[#7f7f7f]">{candidate.address}</p>
+                            </div>
+                            <span className="rounded-full bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
+                              {formatDistance(entry.distanceKm)}
+                            </span>
+                          </div>
+
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {entry.sharedCreatorCount > 0 ? (
+                              <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
+                                겹치는 크리에이터 {entry.sharedCreatorCount}
+                              </span>
+                            ) : null}
+                            {entry.sharedSourceCount > 0 ? (
+                              <span className="rounded-full bg-[#eef8ff] px-2.5 py-1 text-[11px] font-semibold text-[#3a7bb7]">
+                                같은 선정 출처 {entry.sharedSourceCount}
+                              </span>
+                            ) : null}
+                            {entry.sameCuisine ? (
+                              <span className="rounded-full bg-[#f5f2ff] px-2.5 py-1 text-[11px] font-semibold text-[#7457c7]">
+                                같은 카테고리
+                              </span>
+                            ) : null}
+                            {entry.sameRegion ? (
+                              <span className="rounded-full bg-[#effaf2] px-2.5 py-1 text-[11px] font-semibold text-[#2d8b57]">
+                                같은 지역
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          ) : null}
+
           <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <div className="flex border-b-2 border-[#f0f0f0]">
               {[
@@ -733,19 +843,72 @@ export default function RestaurantDetail() {
 
               {activeTab === "reviews" ? (
                 <div className="space-y-5">
-                  <div className="flex flex-col gap-3 rounded-[24px] border border-[#f1e7e9] bg-[#fff8f9] px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                      <p className="text-base font-bold text-[#191919]">방문 리뷰</p>
-                      <p className="mt-1 text-sm text-[#8a8a8a]">로그인한 사용자는 바로 리뷰와 사진을 남길 수 있어요.</p>
+                  <div className="flex flex-col gap-4 rounded-[24px] border border-[#f1e7e9] bg-[#fff8f9] px-5 py-4">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="text-base font-bold text-[#191919]">방문 리뷰</p>
+                        <p className="mt-1 text-sm text-[#8a8a8a]">
+                          방문자들의 실제 평점과 사진을 모아서 볼 수 있어요.
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Link href="/reviews">
+                          <div className="flex h-11 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-5 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff2f4]">
+                            방문자 리뷰 전체 보기
+                          </div>
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={openComposer}
+                          className="flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+                        >
+                          <MessageSquarePlus className="mr-2 h-4 w-4" />
+                          리뷰 쓰기
+                        </button>
+                      </div>
                     </div>
-                    <button
-                      type="button"
-                      onClick={openComposer}
-                      className="flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
-                    >
-                      <MessageSquarePlus className="mr-2 h-4 w-4" />
-                      리뷰 쓰기
-                    </button>
+
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      <div className="rounded-[20px] bg-white px-4 py-4">
+                        <p className="text-xs font-semibold text-[#929292]">평균 평점</p>
+                        <p className="mt-2 text-[28px] font-black tracking-[-0.03em] text-[#181818]">
+                          {publicReviewSummary.count > 0 ? publicReviewSummary.average.toFixed(1) : "-"}
+                        </p>
+                      </div>
+                      <div className="rounded-[20px] bg-white px-4 py-4">
+                        <p className="text-xs font-semibold text-[#929292]">전체 리뷰</p>
+                        <p className="mt-2 text-[28px] font-black tracking-[-0.03em] text-[#181818]">
+                          {publicReviewSummary.count}
+                        </p>
+                      </div>
+                      <div className="rounded-[20px] bg-white px-4 py-4">
+                        <p className="text-xs font-semibold text-[#929292]">사진 리뷰</p>
+                        <p className="mt-2 text-[28px] font-black tracking-[-0.03em] text-[#181818]">
+                          {publicReviewSummary.withPhotosCount}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        { key: "latest" as const, label: "최신순" },
+                        { key: "photos" as const, label: "사진 많은 순" },
+                        { key: "top" as const, label: "높은 평점순" },
+                      ].map((option) => (
+                        <button
+                          key={option.key}
+                          type="button"
+                          onClick={() => setReviewSortMode(option.key)}
+                          className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                            reviewSortMode === option.key
+                              ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
+                              : "border border-[#f0d7db] bg-white text-[#666] hover:border-[#ffb5be] hover:text-[#ff6f7c]"
+                          }`}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
                   </div>
 
                   {composerOpen ? (
@@ -809,8 +972,39 @@ export default function RestaurantDetail() {
                     </div>
                   ) : null}
 
+                  {reviewGallery.length > 0 ? (
+                    <div className="rounded-[24px] border border-[#f0f0f0] bg-white p-5">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <p className="text-base font-bold text-[#171717]">사진 모아보기</p>
+                          <p className="mt-1 text-sm text-[#8a8a8a]">
+                            방문자들이 올린 사진만 먼저 모아봤어요.
+                          </p>
+                        </div>
+                        <span className="rounded-full bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
+                          {reviewGallery.length}장
+                        </span>
+                      </div>
+                      <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                        {reviewGallery.map((photo) => (
+                          <div
+                            key={photo.id}
+                            className="overflow-hidden rounded-[18px] border border-[#efe4e6]"
+                          >
+                            <img
+                              src={photo.url}
+                              alt={`${photo.user} 리뷰 사진`}
+                              className="aspect-square w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+
                   <div className="space-y-4">
-                    {visibleReviews.map((review) => (
+                    {sortedReviews.map((review) => (
                       <div key={review.id} className="rounded-[24px] border border-[#f0f0f0] bg-white px-5 py-4">
                         <div className="flex items-center gap-3">
                           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffecee] text-sm font-bold text-[#ff7b83]">
@@ -820,7 +1014,7 @@ export default function RestaurantDetail() {
                             <p className="text-sm font-semibold text-[#171717]">{review.user}</p>
                             <p className="text-xs text-[#999999]">{review.date}</p>
                           </div>
-                          <div className="text-sm text-[#ffb24a]">{"★".repeat(review.stars)}</div>
+                          <div className="text-sm font-semibold text-[#ffb24a]">{"★".repeat(review.stars)}</div>
                         </div>
                         {review.text ? <p className="mt-3 text-sm leading-6 text-[#555555]">{review.text}</p> : null}
                         {review.photos.length > 0 ? (
@@ -834,6 +1028,12 @@ export default function RestaurantDetail() {
                         ) : null}
                       </div>
                     ))}
+
+                    {!isSubmittingReview && sortedReviews.length === 0 ? (
+                      <div className="rounded-[24px] border border-dashed border-[#e3e3e3] px-6 py-12 text-center text-sm text-[#8a8a8a]">
+                        아직 방문 리뷰가 없어요. 첫 리뷰를 남겨보면 이 식당의 분위기를 더 잘 전달할 수 있어요.
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               ) : null}
@@ -878,6 +1078,70 @@ export default function RestaurantDetail() {
             {primaryPrice ? (
               <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                 대표 가격 {primaryPrice}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="text-sm font-bold text-[#1a1a1a]">방문자 평점</h3>
+                <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
+                  실제 방문자 리뷰를 바탕으로 요약한 공용 평점이에요.
+                </p>
+              </div>
+              {publicReviewSummary.count > 0 ? (
+                <div className="text-right">
+                  <p className="text-[30px] font-black tracking-[-0.03em] text-[#171717]">
+                    {publicReviewSummary.average.toFixed(1)}
+                  </p>
+                  <p className="text-xs text-[#8a8a8a]">{publicReviewSummary.count}개 리뷰</p>
+                </div>
+              ) : null}
+            </div>
+
+            {publicReviewSummary.count > 0 ? (
+              <div className="mt-4 space-y-2.5">
+                {publicReviewSummary.distribution.map((entry) => {
+                  const fill =
+                    publicReviewSummary.count > 0
+                      ? (entry.count / publicReviewSummary.count) * 100
+                      : 0;
+
+                  return (
+                    <div key={entry.stars} className="flex items-center gap-3">
+                      <span className="w-5 text-xs font-semibold text-[#6d6d6d]">{entry.stars}</span>
+                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#f2ecee]">
+                        <div
+                          className="h-full rounded-full bg-[#ffb24a]"
+                          style={{ width: `${fill}%` }}
+                        />
+                      </div>
+                      <span className="w-6 text-right text-xs text-[#8a8a8a]">{entry.count}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="mt-4 rounded-[18px] border border-dashed border-[#efe4e6] bg-[#fffafb] px-4 py-4 text-sm text-[#8a8a8a]">
+                아직 공용 리뷰가 많지 않아요. 첫 방문 리뷰를 남기면 이 식당의 공용 평점이 시작돼요.
+              </div>
+            )}
+
+            {reviewGallery.length > 0 ? (
+              <div className="mt-4 border-t border-[#f3eef0] pt-4">
+                <div className="grid grid-cols-4 gap-2">
+                  {reviewGallery.slice(0, 4).map((photo) => (
+                    <div key={`summary_${photo.id}`} className="overflow-hidden rounded-[16px] border border-[#efe4e6]">
+                      <img
+                        src={photo.url}
+                        alt={`${photo.user} 리뷰 사진`}
+                        className="aspect-square w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             ) : null}
           </div>

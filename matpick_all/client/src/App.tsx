@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Privacy from "./pages/Privacy";
+import ReviewFeed from "./pages/ReviewFeed";
 import SearchMap from "./pages/SearchMap";
 import RestaurantDetail from "./pages/RestaurantDetail";
 import Terms from "./pages/Terms";
@@ -55,6 +56,7 @@ function Router() {
       <Route path="/terms" component={Terms} />
       <Route path="/contact" component={Contact} />
       <Route path="/restaurant/:id" component={RestaurantDetail} />
+      <Route path="/reviews" component={ReviewFeed} />
       <Route path="/creator/:id" component={CreatorDetail} />
       <Route path="/my/favorites" component={MyFavorites} />
       <Route path="/404" component={NotFound} />

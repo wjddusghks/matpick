@@ -476,6 +476,25 @@ async function main() {
     })
   );
 
+  await writeRouteHtml(
+    "reviews",
+    renderHtml(template, {
+      title: "방문자 리뷰 모아보기 | Matpick",
+      description:
+        "맛픽 사용자들이 직접 남긴 최신 리뷰와 사진을 한 화면에서 모아보고, 마음에 드는 식당으로 바로 이동해보세요.",
+      url: absoluteUrl(siteUrl, "/reviews"),
+      image: defaultImage,
+      type: "website",
+      adsenseClient,
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Matpick 방문자 리뷰 모아보기",
+        url: absoluteUrl(siteUrl, "/reviews"),
+      },
+    })
+  );
+
   for (const creator of creators) {
     const creatorUrl = absoluteUrl(siteUrl, `/creator/${creator.id}`);
     const creatorImage = creator.profileImage ? absoluteUrl(siteUrl, creator.profileImage) : defaultImage;

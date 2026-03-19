@@ -270,6 +270,7 @@ export const visits: Visit[] = normalizedDataset.visits;
 export const sources: Source[] = normalizedDataset.sources ?? [];
 export const sourceLinks: SourceLink[] = normalizedDataset.sourceLinks ?? [];
 export const dataSet: MatpickDataSet = normalizedDataset;
+const restaurantById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
 
 const visitsByRestaurantId = new Map<string, Visit[]>();
 const creatorIdsByRestaurantId = new Map<string, Set<string>>();
@@ -453,6 +454,10 @@ export function getCreatorsByRestaurant(restaurantId: string): Creator[] {
   const creatorIdSet = creatorIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
 
   return creators.filter((creator) => creatorIdSet.has(creator.id));
+}
+
+export function getRestaurantById(restaurantId: string) {
+  return restaurantById.get(restaurantId) ?? null;
 }
 
 export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
@@ -910,6 +915,171 @@ export function getTotalCreatorCount(): number {
 
 export function getRecommendationCount(restaurantId: string): number {
   return recommendationCountByRestaurantId.get(restaurantId) ?? 0;
+}
+
+export type RelatedRestaurant = {
+  restaurant: Restaurant;
+  score: number;
+  distanceKm: number | null;
+  sharedCreatorCount: number;
+  sharedSourceCount: number;
+  sharedMenuCount: number;
+  sameCuisine: boolean;
+  sameRegion: boolean;
+};
+
+function hasCoords(restaurant: Pick<Restaurant, "lat" | "lng">) {
+  return Number.isFinite(restaurant.lat) && Number.isFinite(restaurant.lng) && restaurant.lat !== 0 && restaurant.lng !== 0;
+}
+
+function toRadians(value: number) {
+  return (value * Math.PI) / 180;
+}
+
+export function getDistanceKmBetweenRestaurants(
+  sourceRestaurant: Pick<Restaurant, "lat" | "lng">,
+  targetRestaurant: Pick<Restaurant, "lat" | "lng">
+) {
+  if (!hasCoords(sourceRestaurant) || !hasCoords(targetRestaurant)) {
+    return null;
+  }
+
+  const earthRadiusKm = 6371;
+  const deltaLat = toRadians(targetRestaurant.lat - sourceRestaurant.lat);
+  const deltaLng = toRadians(targetRestaurant.lng - sourceRestaurant.lng);
+  const sourceLat = toRadians(sourceRestaurant.lat);
+  const targetLat = toRadians(targetRestaurant.lat);
+
+  const a =
+    Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+    Math.cos(sourceLat) *
+      Math.cos(targetLat) *
+      Math.sin(deltaLng / 2) *
+      Math.sin(deltaLng / 2);
+
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return earthRadiusKm * c;
+}
+
+function getMenuKeywordSet(restaurant: Restaurant) {
+  return new Set(
+    getRestaurantMenuItems(restaurant)
+      .map((menu) => menu.name.trim().toLowerCase())
+      .filter(Boolean)
+  );
+}
+
+function buildRestaurantRelation(baseRestaurant: Restaurant, candidateRestaurant: Restaurant): RelatedRestaurant {
+  const baseCreatorIds = creatorIdsByRestaurantId.get(baseRestaurant.id) ?? new Set<string>();
+  const candidateCreatorIds = creatorIdsByRestaurantId.get(candidateRestaurant.id) ?? new Set<string>();
+  const baseSourceIds = sourceIdsByRestaurantId.get(baseRestaurant.id) ?? new Set<string>();
+  const candidateSourceIds = sourceIdsByRestaurantId.get(candidateRestaurant.id) ?? new Set<string>();
+  const baseMenuKeywords = getMenuKeywordSet(baseRestaurant);
+  const candidateMenuKeywords = getMenuKeywordSet(candidateRestaurant);
+
+  let sharedCreatorCount = 0;
+  baseCreatorIds.forEach((creatorId) => {
+    if (candidateCreatorIds.has(creatorId)) {
+      sharedCreatorCount += 1;
+    }
+  });
+
+  let sharedSourceCount = 0;
+  baseSourceIds.forEach((sourceId) => {
+    if (candidateSourceIds.has(sourceId)) {
+      sharedSourceCount += 1;
+    }
+  });
+
+  let sharedMenuCount = 0;
+  baseMenuKeywords.forEach((menuKeyword) => {
+    if (candidateMenuKeywords.has(menuKeyword)) {
+      sharedMenuCount += 1;
+    }
+  });
+
+  const sameCuisine =
+    getCuisineCategory(baseRestaurant.category) === getCuisineCategory(candidateRestaurant.category);
+  const sameRegion = getBroadRegion(baseRestaurant.region) === getBroadRegion(candidateRestaurant.region);
+  const distanceKm = getDistanceKmBetweenRestaurants(baseRestaurant, candidateRestaurant);
+  const distanceBonus =
+    distanceKm == null ? 0 : Math.max(0, 16 - Math.min(distanceKm, 16));
+
+  const score =
+    sharedCreatorCount * 42 +
+    sharedSourceCount * 32 +
+    sharedMenuCount * 10 +
+    (sameCuisine ? 12 : 0) +
+    (sameRegion ? 10 : 0) +
+    distanceBonus +
+    Math.min(getRecommendationCount(candidateRestaurant.id), 6);
+
+  return {
+    restaurant: candidateRestaurant,
+    score,
+    distanceKm,
+    sharedCreatorCount,
+    sharedSourceCount,
+    sharedMenuCount,
+    sameCuisine,
+    sameRegion,
+  };
+}
+
+export function getRelatedRestaurants(restaurantId: string, limit = 6): RelatedRestaurant[] {
+  const restaurant = getRestaurantById(restaurantId);
+  if (!restaurant) {
+    return [];
+  }
+
+  return restaurants
+    .filter((candidate) => candidate.id !== restaurantId)
+    .map((candidate) => buildRestaurantRelation(restaurant, candidate))
+    .filter(
+      (relation) =>
+        relation.sharedCreatorCount > 0 ||
+        relation.sharedSourceCount > 0 ||
+        relation.sameCuisine ||
+        relation.sameRegion
+    )
+    .sort((left, right) => {
+      if (right.score !== left.score) {
+        return right.score - left.score;
+      }
+
+      if (left.distanceKm == null && right.distanceKm == null) {
+        return left.restaurant.name.localeCompare(right.restaurant.name, "ko-KR");
+      }
+
+      if (left.distanceKm == null) return 1;
+      if (right.distanceKm == null) return -1;
+      return left.distanceKm - right.distanceKm;
+    })
+    .slice(0, limit);
+}
+
+export function getNearbyRestaurants(restaurantId: string, limit = 6): RelatedRestaurant[] {
+  const restaurant = getRestaurantById(restaurantId);
+  if (!restaurant) {
+    return [];
+  }
+
+  return restaurants
+    .filter((candidate) => candidate.id !== restaurantId)
+    .map((candidate) => buildRestaurantRelation(restaurant, candidate))
+    .filter((relation) => relation.distanceKm != null)
+    .sort((left, right) => {
+      if (left.distanceKm == null || right.distanceKm == null) {
+        return left.score - right.score;
+      }
+
+      if (left.distanceKm !== right.distanceKm) {
+        return left.distanceKm - right.distanceKm;
+      }
+
+      return right.score - left.score;
+    })
+    .slice(0, limit);
 }
 
 export function getAllCategories(): string[] {

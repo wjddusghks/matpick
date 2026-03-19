@@ -1,5 +1,5 @@
 const { isValidProfileSyncToken } = require("../auth/_profileStore");
-const { appendRemoteReview, readRemoteReviews } = require("./_reviewStore");
+const { appendRemoteReview, readRemoteReviews, readReviewFeed } = require("./_reviewStore");
 
 function readBody(req) {
   if (!req.body) {
@@ -16,6 +16,13 @@ function readBody(req) {
 module.exports = async function handler(req, res) {
   if (req.method === "GET") {
     try {
+      const scope = String(req.query?.scope || "").trim();
+      if (scope === "feed") {
+        const limit = Math.min(Math.max(Number(req.query?.limit) || 60, 1), 120);
+        const reviews = await readReviewFeed(limit);
+        return res.status(200).json({ reviews });
+      }
+
       const restaurantId = String(req.query?.restaurantId || "").trim();
       if (!restaurantId) {
         return res.status(400).json({ error: "restaurantId is required" });

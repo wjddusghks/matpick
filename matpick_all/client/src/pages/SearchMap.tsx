@@ -1,11 +1,17 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, MapPin, Search, UtensilsCrossed } from "lucide-react";
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronUp,
+  MapPin,
+  Search,
+  UtensilsCrossed,
+} from "lucide-react";
 import { useLocation, useSearch } from "wouter";
 import {
   creators,
   getCreatorDisplayName,
   getCreatorsByRestaurant,
-  getRecommendationCount,
   getRestaurantMenuSummary,
   getRestaurantsByCategory,
   getRestaurantsByCreator,
@@ -47,10 +53,10 @@ const MAP_COPY = {
     overseasCount: (count: number) => `해외 ${count.toLocaleString()}곳`,
     mapReadyTitle: "지도 좌표를 준비하고 있어요",
     mapReadyDescription:
-      "저장된 식당 좌표를 불러오는 동안 잠시 비어 보일 수 있어요.",
+      "저장된 식당 좌표를 불러오는 동안 지도가 잠시 비어 보일 수 있어요.",
     noResultsTitle: "검색 결과가 없어요",
     noResultsDescription: "다른 키워드나 채널 이름으로 다시 검색해보세요.",
-    loadMore: "스크롤하면 더 많은 맛집을 이어서 불러와요.",
+    loadMore: "스크롤하면 더 많은 맛집을 불러와요.",
     listPlaceholder: "메뉴 정보가 아직 준비 중이에요.",
     detailsButton: "식당 상세 보기",
     photoPending: "사진 준비 중",
@@ -60,9 +66,11 @@ const MAP_COPY = {
     sourceLabel: "주제",
     sponsoredLabel: "Sponsored",
     priceLabel: "대표 가격",
+    expandResults: "목록 펼치기",
+    collapseResults: "목록 접기",
     pageTitle: (title: string) => `${title} 지도`,
     pageDescription: (title: string) =>
-      `${title} 관련 맛집을 지도와 리스트로 함께 확인할 수 있는 맛픽 검색 결과 페이지입니다.`,
+      `${title} 관련 맛집을 지도와 리스트로 한 번에 확인할 수 있는 Matpick 검색 결과 페이지입니다.`,
     pageName: (title: string) => `${title} 지도`,
   },
   en: {
@@ -89,6 +97,8 @@ const MAP_COPY = {
     sourceLabel: "Topic",
     sponsoredLabel: "Sponsored",
     priceLabel: "From",
+    expandResults: "Expand results",
+    collapseResults: "Collapse results",
     pageTitle: (title: string) => `${title} map`,
     pageDescription: (title: string) =>
       `Browse ${title} restaurants on the map and in the list view on Matpick.`,
@@ -313,7 +323,7 @@ function RestaurantCard({
           <button
             type="button"
             onClick={() => navigate(`/restaurant/${restaurant.id}`)}
-            className="inline-flex min-w-[234px] items-center justify-center rounded-xl bg-[#ff7b83] px-8 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
+            className="inline-flex min-w-[234px] max-w-full items-center justify-center rounded-xl bg-[#ff7b83] px-8 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
           >
             {copy.detailsButton}
           </button>
@@ -367,10 +377,43 @@ export default function SearchMap() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(-1);
-  const [visibleListCount, setVisibleListCount] = useState(80);
+  const [isMobileLayout, setIsMobileLayout] = useState(() =>
+    typeof window !== "undefined"
+      ? window.matchMedia("(max-width: 1023px)").matches
+      : false
+  );
+  const [mobileSheetExpanded, setMobileSheetExpanded] = useState(false);
+  const resultPageSize = isMobileLayout ? 24 : 60;
+  const [visibleListCount, setVisibleListCount] = useState(resultPageSize);
   const searchRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const listLoadMoreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 1023px)");
+    const syncLayout = () => {
+      setIsMobileLayout(mediaQuery.matches);
+    };
+
+    syncLayout();
+
+    if ("addEventListener" in mediaQuery) {
+      mediaQuery.addEventListener("change", syncLayout);
+      return () => mediaQuery.removeEventListener("change", syncLayout);
+    }
+
+    const legacyMediaQuery = mediaQuery as MediaQueryList & {
+      addListener?: (listener: (event: MediaQueryListEvent | MediaQueryList) => void) => void;
+      removeListener?: (listener: (event: MediaQueryListEvent | MediaQueryList) => void) => void;
+    };
+
+    legacyMediaQuery.addListener?.(syncLayout);
+    return () => legacyMediaQuery.removeListener?.(syncLayout);
+  }, []);
 
   useEffect(() => {
     if (type === "restaurant" && filteredRestaurants.length === 1) {
@@ -384,8 +427,9 @@ export default function SearchMap() {
   }, [filteredRestaurants, type]);
 
   useEffect(() => {
-    setVisibleListCount(80);
-  }, [type, value]);
+    setVisibleListCount(resultPageSize);
+    setMobileSheetExpanded(false);
+  }, [resultPageSize, type, value]);
 
   useEffect(() => {
     const root = listRef.current;
@@ -402,7 +446,7 @@ export default function SearchMap() {
             return;
           }
 
-          setVisibleListCount((prev) => Math.min(prev + 80, deferredRestaurants.length));
+          setVisibleListCount((prev) => Math.min(prev + resultPageSize, deferredRestaurants.length));
         });
       },
       {
@@ -413,7 +457,7 @@ export default function SearchMap() {
 
     observer.observe(target);
     return () => observer.disconnect();
-  }, [deferredRestaurants.length, visibleListCount]);
+  }, [deferredRestaurants.length, resultPageSize, visibleListCount]);
 
   const searchResults = useMemo(() => {
     const normalized = searchQuery.trim().toLowerCase();
@@ -530,7 +574,7 @@ export default function SearchMap() {
     [deferredRestaurants, visibleListCount]
   );
 
-  const nearestRestaurant = useMemo<{ restaurant: Restaurant; distanceMeters: number } | null>(() => {
+  const nearestRestaurantId = useMemo<string | null>(() => {
     if (!currentLocation) {
       return null;
     }
@@ -543,7 +587,7 @@ export default function SearchMap() {
         restaurant.lng !== 0
     );
 
-    let closestRestaurant: Restaurant | null = null;
+    let closestRestaurantId: string | null = null;
     let closestDistance = Number.POSITIVE_INFINITY;
 
     validRestaurants.forEach((restaurant) => {
@@ -553,24 +597,33 @@ export default function SearchMap() {
       });
 
       if (distance < closestDistance) {
-        closestRestaurant = restaurant;
+        closestRestaurantId = restaurant.id;
         closestDistance = distance;
       }
     });
 
-    if (!closestRestaurant) {
-      return null;
-    }
-
-    return {
-      restaurant: closestRestaurant,
-      distanceMeters: closestDistance,
-    };
+    return closestRestaurantId;
   }, [currentLocation, restaurantsForMap]);
 
-  const handleMarkerClick = useCallback((id: string) => {
-    setSelectedId((prev) => (prev === id ? null : id));
-  }, []);
+  const handleMarkerClick = useCallback(
+    (id: string) => {
+      setSelectedId((prev) => (prev === id ? null : id));
+      if (isMobileLayout) {
+        setMobileSheetExpanded(false);
+      }
+    },
+    [isMobileLayout]
+  );
+
+  const handleRestaurantSelect = useCallback(
+    (restaurantId: string) => {
+      setSelectedId((prev) => (prev === restaurantId ? null : restaurantId));
+      if (isMobileLayout) {
+        setMobileSheetExpanded(false);
+      }
+    },
+    [isMobileLayout]
+  );
 
   const handleSearchSelect = (item: SearchResult) => {
     setSearchQuery("");
@@ -605,122 +658,183 @@ export default function SearchMap() {
     (restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0
   );
 
+  const searchControls = (
+    <div className="mb-3 flex items-center gap-3">
+      <button
+        type="button"
+        onClick={() => navigate("/")}
+        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-[#ece7e8] bg-white text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+      >
+        <ArrowLeft className="h-4 w-4" />
+      </button>
+
+      <div ref={searchRef} className="relative flex-1">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(event) => {
+            setSearchQuery(event.target.value);
+            setHoveredIdx(-1);
+          }}
+          onFocus={() => setIsSearchFocused(true)}
+          placeholder={title}
+          className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
+        />
+        <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />
+
+        {showSearchDropdown ? (
+          <div className="absolute left-0 right-0 top-full z-20 mt-2 overflow-hidden rounded-2xl border border-[#ffd4d9] bg-white shadow-[0_12px_36px_rgba(255,123,131,0.12)]">
+            <div className="max-h-[384px] overflow-y-auto">
+              {searchResults.map((item, index) => (
+                <SearchDropdownItem
+                  key={`${item.id}_${index}`}
+                  item={item}
+                  isHovered={hoveredIdx === index}
+                  onHover={() => setHoveredIdx(index)}
+                  onLeave={() => setHoveredIdx(-1)}
+                  onSelect={() => handleSearchSelect(item)}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+
+  const resultSummary = (
+    <div className="flex flex-wrap items-center gap-2">
+      <span className="text-lg font-bold text-[#ff7b83]">
+        {copy.resultCount(filteredRestaurants.length)}
+      </span>
+      {overseasCount > 0 ? (
+        <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
+          {copy.overseasCount(overseasCount)}
+        </span>
+      ) : null}
+    </div>
+  );
+
+  const restaurantList = deferredRestaurants.length > 0 ? (
+    <>
+      {visibleRestaurants.map((restaurant) => (
+        <RestaurantCard
+          key={restaurant.id}
+          restaurant={restaurant}
+          selected={selectedId === restaurant.id}
+          onSelect={() => handleRestaurantSelect(restaurant.id)}
+        />
+      ))}
+      {visibleListCount < deferredRestaurants.length ? (
+        <div
+          ref={listLoadMoreRef}
+          className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
+        >
+          {copy.loadMore}
+        </div>
+      ) : null}
+    </>
+  ) : (
+    <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
+      <p className="text-4xl">🍽️</p>
+      <p className="mt-4 text-sm font-semibold text-[#333]">{copy.noResultsTitle}</p>
+      <p className="mt-2 text-xs leading-6 text-[#8a8a8a]">{copy.noResultsDescription}</p>
+    </div>
+  );
+
+  const mapContent = (
+    <>
+      <NaverMap
+        restaurants={restaurantsForMap}
+        selectedId={selectedId}
+        currentLocation={currentLocation}
+        nearestRestaurantId={nearestRestaurantId}
+        onMarkerClick={handleMarkerClick}
+      />
+
+      {restaurantsForMap.length > 0 && restaurantsWithCoords.length === 0 ? (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="pointer-events-auto rounded-2xl border border-[#f0e5e6] bg-white/96 p-6 text-center shadow-[0_20px_48px_rgba(0,0,0,0.08)] backdrop-blur">
+            <p className="text-sm font-semibold text-[#1a1a1a]">{copy.mapReadyTitle}</p>
+            <p className="mt-2 text-xs leading-6 text-[#888]">{copy.mapReadyDescription}</p>
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+
+  const mobileSheetHeight =
+    deferredRestaurants.length === 0 ? "26dvh" : mobileSheetExpanded ? "74dvh" : "34dvh";
+
   return (
-    <div className="flex min-h-screen flex-col bg-white lg:h-[100dvh] lg:overflow-hidden">
-      <div className="flex flex-1 flex-col lg:min-h-0 lg:flex-row lg:overflow-hidden">
-        <aside className="flex w-full flex-shrink-0 flex-col border-b border-[#f0f0f0] bg-white lg:h-full lg:w-[390px] lg:border-b-0 lg:border-r">
-          <div className="border-b border-[#f0f0f0] p-4">
-            <div className="mb-3 flex items-center gap-3">
+    <div className="h-[100dvh] overflow-hidden bg-white">
+      {isMobileLayout ? (
+        <div className="relative h-full overflow-hidden bg-[#f6f6f6]">
+          <section className="absolute inset-0">{mapContent}</section>
+
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3">
+            <div className="pointer-events-auto rounded-[28px] border border-[#f0e5e6] bg-white/96 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur">
+              {searchControls}
+              {resultSummary}
+            </div>
+          </div>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 p-3">
+            <div
+              className="pointer-events-auto flex flex-col overflow-hidden rounded-[30px] border border-[#f0e5e6] bg-white/98 shadow-[0_-16px_40px_rgba(15,23,42,0.16)] backdrop-blur transition-[height] duration-300 ease-out"
+              style={{ height: mobileSheetHeight }}
+            >
               <button
                 type="button"
-                onClick={() => navigate("/")}
-                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-[#ece7e8] bg-white text-[#666] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+                onClick={() => setMobileSheetExpanded((prev) => !prev)}
+                aria-label={mobileSheetExpanded ? copy.collapseResults : copy.expandResults}
+                className="flex items-center gap-3 border-b border-[#f4edef] px-5 py-3.5 text-left"
               >
-                <ArrowLeft className="h-4 w-4" />
+                <div className="flex flex-1 flex-col gap-1">
+                  <div className="h-1.5 w-12 rounded-full bg-[#eadfe1]" />
+                  <p className="text-sm font-semibold text-[#1a1a1a]">{title}</p>
+                  <p className="text-xs text-[#8d8587]">
+                    {copy.resultCount(filteredRestaurants.length)}
+                  </p>
+                </div>
+                <span className="rounded-full border border-[#f1d8db] bg-[#fff6f7] p-2 text-[#ff7b83]">
+                  {mobileSheetExpanded ? (
+                    <ChevronDown className="h-4 w-4" />
+                  ) : (
+                    <ChevronUp className="h-4 w-4" />
+                  )}
+                </span>
               </button>
 
-              <div ref={searchRef} className="relative flex-1">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(event) => {
-                    setSearchQuery(event.target.value);
-                    setHoveredIdx(-1);
-                  }}
-                  onFocus={() => setIsSearchFocused(true)}
-                  placeholder={title}
-                  className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
-                />
-                <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />
-
-                {showSearchDropdown ? (
-                  <div className="absolute left-0 right-0 top-full z-20 mt-2 overflow-hidden rounded-2xl border border-[#ffd4d9] bg-white shadow-[0_12px_36px_rgba(255,123,131,0.12)]">
-                    <div className="max-h-[384px] overflow-y-auto">
-                      {searchResults.map((item, index) => (
-                        <SearchDropdownItem
-                          key={`${item.id}_${index}`}
-                          item={item}
-                          isHovered={hoveredIdx === index}
-                          onHover={() => setHoveredIdx(index)}
-                          onLeave={() => setHoveredIdx(-1)}
-                          onSelect={() => handleSearchSelect(item)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
+              <div
+                ref={listRef}
+                className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white"
+              >
+                {restaurantList}
               </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-lg font-bold text-[#ff7b83]">
-                {copy.resultCount(filteredRestaurants.length)}
-              </span>
-              {overseasCount > 0 ? (
-                <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
-                  {copy.overseasCount(overseasCount)}
-                </span>
-              ) : null}
-            </div>
-
-            <div className="mt-4">
-              <KakaoAdfitSlot label={copy.sponsoredLabel} />
             </div>
           </div>
+        </div>
+      ) : (
+        <div className="flex h-full min-h-0 flex-row overflow-hidden">
+          <aside className="flex h-full w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
+            <div className="border-b border-[#f0f0f0] p-4">
+              {searchControls}
+              {resultSummary}
 
-          <div ref={listRef} className="max-h-[52vh] flex-1 overflow-y-auto lg:min-h-0 lg:max-h-none">
-            {deferredRestaurants.length > 0 ? (
-              <>
-                {visibleRestaurants.map((restaurant) => (
-                  <RestaurantCard
-                    key={restaurant.id}
-                    restaurant={restaurant}
-                    selected={selectedId === restaurant.id}
-                    onSelect={() =>
-                      setSelectedId((prev) => (prev === restaurant.id ? null : restaurant.id))
-                    }
-                  />
-                ))}
-                {visibleListCount < deferredRestaurants.length ? (
-                  <div
-                    ref={listLoadMoreRef}
-                    className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
-                  >
-                    {copy.loadMore}
-                  </div>
-                ) : null}
-              </>
-            ) : (
-              <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
-                <p className="text-4xl">⌕</p>
-                <p className="mt-4 text-sm font-semibold text-[#333]">{copy.noResultsTitle}</p>
-                <p className="mt-2 text-xs leading-6 text-[#8a8a8a]">
-                  {copy.noResultsDescription}
-                </p>
-              </div>
-            )}
-          </div>
-        </aside>
-
-        <section className="relative min-h-[42vh] flex-1 lg:min-h-0 lg:overflow-hidden">
-          <NaverMap
-            restaurants={restaurantsForMap}
-            selectedId={selectedId}
-            currentLocation={currentLocation}
-            nearestRestaurantId={nearestRestaurant?.restaurant.id ?? null}
-            onMarkerClick={handleMarkerClick}
-          />
-
-          {restaurantsForMap.length > 0 && restaurantsWithCoords.length === 0 ? (
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-              <div className="pointer-events-auto rounded-2xl border border-[#f0e5e6] bg-white/96 p-6 text-center shadow-[0_20px_48px_rgba(0,0,0,0.08)] backdrop-blur">
-                <p className="text-sm font-semibold text-[#1a1a1a]">{copy.mapReadyTitle}</p>
-                <p className="mt-2 text-xs leading-6 text-[#888]">{copy.mapReadyDescription}</p>
+              <div className="mt-4">
+                <KakaoAdfitSlot label={copy.sponsoredLabel} />
               </div>
             </div>
-          ) : null}
-        </section>
-      </div>
+
+            <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto">
+              {restaurantList}
+            </div>
+          </aside>
+
+          <section className="relative min-h-0 flex-1 overflow-hidden">{mapContent}</section>
+        </div>
+      )}
     </div>
   );
 }

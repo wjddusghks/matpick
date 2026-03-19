@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getRestaurantMenuSummary, type Restaurant } from "@/data";
 import type { StoredLocation } from "@/lib/location";
 import { ensureNaverMapsSdk, isNaverMapsReady } from "@/lib/naverMaps";
@@ -12,6 +12,34 @@ interface NaverMapProps {
 }
 
 const KOREA_CENTER = { lat: 36.35, lng: 127.85 };
+const MARKER_AGGREGATION_THRESHOLD = 260;
+
+type RestaurantMarkerEntry = {
+  id: string;
+  type: "restaurant";
+  restaurant: Restaurant;
+  lat: number;
+  lng: number;
+};
+
+type ClusterMarkerEntry = {
+  id: string;
+  type: "cluster";
+  count: number;
+  lat: number;
+  lng: number;
+};
+
+type MapMarkerEntry = RestaurantMarkerEntry | ClusterMarkerEntry;
+
+function getClusterCellSize(zoom: number) {
+  if (zoom <= 7) return 0.34;
+  if (zoom <= 8) return 0.22;
+  if (zoom <= 9) return 0.14;
+  if (zoom <= 10) return 0.09;
+  if (zoom <= 11) return 0.05;
+  return 0.025;
+}
 
 function createMarkerIcon({
   isSelected,
@@ -38,6 +66,35 @@ function createMarkerIcon({
       </div>
     `,
     anchor: new naver.maps.Point(size / 2, height),
+  };
+}
+
+function createClusterIcon(count: number) {
+  const size = count >= 100 ? 46 : count >= 10 ? 42 : 38;
+  const fontSize = count >= 100 ? 12 : 13;
+
+  return {
+    content: `
+      <div style="width:${size}px;height:${size}px;display:flex;align-items:center;justify-content:center;">
+        <div style="
+          width:${size}px;
+          height:${size}px;
+          border-radius:9999px;
+          background:rgba(253,121,121,0.92);
+          color:white;
+          font-size:${fontSize}px;
+          font-weight:800;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          border:3px solid rgba(255,255,255,0.98);
+          box-shadow:0 12px 28px rgba(253,121,121,0.24);
+        ">
+          ${count}
+        </div>
+      </div>
+    `,
+    anchor: new naver.maps.Point(size / 2, size / 2),
   };
 }
 
@@ -96,9 +153,11 @@ export default function NaverMap({
 }: NaverMapProps) {
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markersRef = useRef<Map<string, naver.maps.Marker>>(new Map());
+  const markerEntryRef = useRef<Map<string, MapMarkerEntry>>(new Map());
   const restaurantLookupRef = useRef<Map<string, Restaurant>>(new Map());
   const currentLocationMarkerRef = useRef<naver.maps.Marker | null>(null);
   const infoWindowRef = useRef<naver.maps.InfoWindow | null>(null);
+  const mapIdleListenerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const listenersRef = useRef<Map<string, any>>(new Map());
   const onMarkerClickRef = useRef(onMarkerClick);
@@ -106,6 +165,98 @@ export default function NaverMap({
   const nearestRestaurantIdRef = useRef<string | null>(nearestRestaurantId);
   const [sdkReady, setSdkReady] = useState(isNaverMapsReady());
   const [sdkError, setSdkError] = useState<string | null>(null);
+  const [viewZoom, setViewZoom] = useState(7);
+
+  const validRestaurants = useMemo(
+    () =>
+      restaurants.filter(
+        (restaurant) =>
+          restaurant.lat != null &&
+          restaurant.lng != null &&
+          restaurant.lat !== 0 &&
+          restaurant.lng !== 0
+      ),
+    [restaurants]
+  );
+
+  const markerEntries = useMemo<MapMarkerEntry[]>(() => {
+    const selectedRestaurant = selectedId
+      ? validRestaurants.find((restaurant) => restaurant.id === selectedId) ?? null
+      : null;
+    const restaurantsToAggregate = selectedRestaurant
+      ? validRestaurants.filter((restaurant) => restaurant.id !== selectedRestaurant.id)
+      : validRestaurants;
+
+    if (!selectedRestaurant && validRestaurants.length <= MARKER_AGGREGATION_THRESHOLD) {
+      return validRestaurants.map((restaurant) => ({
+        id: `restaurant:${restaurant.id}`,
+        type: "restaurant",
+        restaurant,
+        lat: restaurant.lat,
+        lng: restaurant.lng,
+      }));
+    }
+
+    const cellSize = getClusterCellSize(viewZoom);
+    const buckets = new Map<
+      string,
+      { latSum: number; lngSum: number; count: number; restaurants: Restaurant[] }
+    >();
+
+    restaurantsToAggregate.forEach((restaurant) => {
+      const latKey = Math.round(restaurant.lat / cellSize);
+      const lngKey = Math.round(restaurant.lng / cellSize);
+      const bucketKey = `${latKey}:${lngKey}`;
+      const current =
+        buckets.get(bucketKey) ?? { latSum: 0, lngSum: 0, count: 0, restaurants: [] };
+
+      current.latSum += restaurant.lat;
+      current.lngSum += restaurant.lng;
+      current.count += 1;
+      current.restaurants.push(restaurant);
+      buckets.set(bucketKey, current);
+    });
+
+    const aggregatedEntries = Array.from(buckets.entries()).map(([bucketKey, bucket]) => {
+      if (bucket.count === 1) {
+        const [restaurant] = bucket.restaurants;
+        return {
+          id: `restaurant:${restaurant.id}`,
+          type: "restaurant",
+          restaurant,
+          lat: restaurant.lat,
+          lng: restaurant.lng,
+        } satisfies RestaurantMarkerEntry;
+      }
+
+      return {
+        id: `cluster:${bucketKey}`,
+        type: "cluster",
+        count: bucket.count,
+        lat: bucket.latSum / bucket.count,
+        lng: bucket.lngSum / bucket.count,
+      } satisfies ClusterMarkerEntry;
+    });
+
+    return selectedRestaurant
+      ? [
+          {
+            id: `restaurant:${selectedRestaurant.id}`,
+            type: "restaurant",
+            restaurant: selectedRestaurant,
+            lat: selectedRestaurant.lat,
+            lng: selectedRestaurant.lng,
+          } satisfies RestaurantMarkerEntry,
+          ...aggregatedEntries,
+        ]
+      : aggregatedEntries;
+  }, [selectedId, validRestaurants, viewZoom]);
+
+  useEffect(() => {
+    restaurantLookupRef.current = new Map(
+      validRestaurants.map((restaurant) => [restaurant.id, restaurant])
+    );
+  }, [validRestaurants]);
 
   const clearMarkerListeners = useCallback(() => {
     listenersRef.current.forEach((listener) => {
@@ -183,6 +334,10 @@ export default function NaverMap({
         disableAnchor: false,
       });
 
+      mapIdleListenerRef.current = naver.maps.Event.addListener(map, "idle", () => {
+        setViewZoom(map.getZoom());
+      });
+
       window.setTimeout(() => {
         const currentCenter = map.getCenter();
         const currentZoom = map.getZoom();
@@ -227,6 +382,15 @@ export default function NaverMap({
         }
         mapRef.current = null;
       }
+
+      if (mapIdleListenerRef.current) {
+        try {
+          naver.maps.Event.removeListener(mapIdleListenerRef.current);
+        } catch {
+          // noop
+        }
+        mapIdleListenerRef.current = null;
+      }
     };
   }, [clearMarkerListeners, sdkReady]);
 
@@ -236,23 +400,12 @@ export default function NaverMap({
       return;
     }
 
-    const validRestaurants = restaurants.filter(
-      (restaurant) =>
-        restaurant.lat != null &&
-        restaurant.lng != null &&
-        restaurant.lat !== 0 &&
-        restaurant.lng !== 0
-    );
-    restaurantLookupRef.current = new Map(
-      validRestaurants.map((restaurant) => [restaurant.id, restaurant])
-    );
-
     clearMarkerListeners();
 
-    const nextRestaurantIds = new Set(validRestaurants.map((restaurant) => restaurant.id));
+    const nextMarkerIds = new Set(markerEntries.map((entry) => entry.id));
 
-    markersRef.current.forEach((marker, restaurantId) => {
-      if (nextRestaurantIds.has(restaurantId)) {
+    markersRef.current.forEach((marker, markerId) => {
+      if (nextMarkerIds.has(markerId)) {
         return;
       }
 
@@ -261,43 +414,72 @@ export default function NaverMap({
       } catch {
         // noop
       }
-      markersRef.current.delete(restaurantId);
+      markersRef.current.delete(markerId);
     });
 
-    validRestaurants.forEach((restaurant) => {
-      const position = new naver.maps.LatLng(restaurant.lat, restaurant.lng);
-      const isSelected = restaurant.id === selectedIdRef.current;
+    markerEntryRef.current = new Map(markerEntries.map((entry) => [entry.id, entry]));
+
+    markerEntries.forEach((entry) => {
+      const position = new naver.maps.LatLng(entry.lat, entry.lng);
+      const isRestaurantMarker = entry.type === "restaurant";
+      const isSelected =
+        isRestaurantMarker && entry.restaurant.id === selectedIdRef.current;
       const isNearest =
-        restaurant.id === nearestRestaurantIdRef.current && selectedIdRef.current == null;
-      let marker = markersRef.current.get(restaurant.id);
+        isRestaurantMarker &&
+        entry.restaurant.id === nearestRestaurantIdRef.current &&
+        selectedIdRef.current == null;
+      let marker = markersRef.current.get(entry.id);
 
       if (!marker) {
         marker = new naver.maps.Marker({
           position,
           map,
-          title: restaurant.name,
-          icon: createMarkerIcon({ isSelected, isNearest }),
-          zIndex: isSelected ? 200 : isNearest ? 150 : 1,
+          title:
+            entry.type === "restaurant"
+              ? entry.restaurant.name
+              : `${entry.count} restaurants`,
+          icon:
+            entry.type === "restaurant"
+              ? createMarkerIcon({ isSelected, isNearest })
+              : createClusterIcon(entry.count),
+          zIndex:
+            entry.type === "restaurant"
+              ? isSelected
+                ? 200
+                : isNearest
+                  ? 150
+                  : 1
+              : 120,
           clickable: true,
         });
-        markersRef.current.set(restaurant.id, marker);
+        markersRef.current.set(entry.id, marker);
       } else {
         marker.setMap(map);
       }
 
       const listener = naver.maps.Event.addListener(marker, "click", () => {
-        onMarkerClickRef.current(restaurant.id);
+        if (entry.type === "cluster") {
+          if (infoWindowRef.current) {
+            infoWindowRef.current.close();
+          }
+
+          map.panTo(position, { duration: 250 });
+          map.setZoom(Math.min(map.getZoom() + 2, 16));
+          return;
+        }
+
+        onMarkerClickRef.current(entry.restaurant.id);
 
         if (infoWindowRef.current) {
-          infoWindowRef.current.setContent(createInfoContent(restaurant));
+          infoWindowRef.current.setContent(createInfoContent(entry.restaurant));
           infoWindowRef.current.open(map, marker);
         }
 
         map.panTo(position, { duration: 300 });
       });
-      listenersRef.current.set(restaurant.id, listener);
+      listenersRef.current.set(entry.id, listener);
     });
-  }, [clearMarkerListeners, restaurants, sdkReady]);
+  }, [clearMarkerListeners, markerEntries, sdkReady]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -338,14 +520,6 @@ export default function NaverMap({
     if (!map || !sdkReady) {
       return;
     }
-
-    const validRestaurants = restaurants.filter(
-      (restaurant) =>
-        restaurant.lat != null &&
-        restaurant.lng != null &&
-        restaurant.lat !== 0 &&
-        restaurant.lng !== 0
-    );
     const selectedRestaurant = validRestaurants.find((restaurant) => restaurant.id === selectedId);
     const singleRestaurant = validRestaurants.length === 1 ? validRestaurants[0] : null;
 
@@ -369,7 +543,7 @@ export default function NaverMap({
 
     map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
     map.setZoom(7);
-  }, [restaurants, sdkReady, selectedId]);
+  }, [sdkReady, selectedId, validRestaurants]);
 
   useEffect(() => {
     if (!sdkReady || !mapRef.current) {
@@ -377,8 +551,14 @@ export default function NaverMap({
     }
 
     markersRef.current.forEach((marker, id) => {
-      const isSelected = id === selectedId;
-      const isNearest = id === nearestRestaurantId && selectedId == null;
+      const entry = markerEntryRef.current.get(id);
+      if (!entry || entry.type !== "restaurant") {
+        return;
+      }
+
+      const isSelected = entry.restaurant.id === selectedId;
+      const isNearest =
+        entry.restaurant.id === nearestRestaurantId && selectedId == null;
 
       try {
         marker.setIcon(createMarkerIcon({ isSelected, isNearest }));
@@ -388,11 +568,16 @@ export default function NaverMap({
       }
     });
 
-    if (selectedId && markersRef.current.has(selectedId)) {
-      const marker = markersRef.current.get(selectedId);
+    const selectedRestaurantId = selectedId ?? null;
+    const selectedMarkerId = selectedRestaurantId
+      ? `restaurant:${selectedRestaurantId}`
+      : null;
+
+    if (selectedMarkerId && selectedRestaurantId && markersRef.current.has(selectedMarkerId)) {
+      const marker = markersRef.current.get(selectedMarkerId);
       const restaurant =
-        restaurantLookupRef.current.get(selectedId) ??
-        restaurants.find((item) => item.id === selectedId);
+        restaurantLookupRef.current.get(selectedRestaurantId) ??
+        restaurants.find((item) => item.id === selectedRestaurantId);
 
       if (marker && restaurant && mapRef.current) {
         if (infoWindowRef.current) {

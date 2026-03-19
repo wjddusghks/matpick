@@ -271,6 +271,46 @@ export const sources: Source[] = normalizedDataset.sources ?? [];
 export const sourceLinks: SourceLink[] = normalizedDataset.sourceLinks ?? [];
 export const dataSet: MatpickDataSet = normalizedDataset;
 
+const visitsByRestaurantId = new Map<string, Visit[]>();
+const creatorIdsByRestaurantId = new Map<string, Set<string>>();
+const restaurantIdsByCreatorId = new Map<string, Set<string>>();
+const sourceLinksByRestaurantId = new Map<string, SourceLink[]>();
+const sourceIdsByRestaurantId = new Map<string, Set<string>>();
+const restaurantIdsBySourceId = new Map<string, Set<string>>();
+const recommendationCountByRestaurantId = new Map<string, number>();
+
+visits.forEach((visit) => {
+  const restaurantVisits = visitsByRestaurantId.get(visit.restaurantId) ?? [];
+  restaurantVisits.push(visit);
+  visitsByRestaurantId.set(visit.restaurantId, restaurantVisits);
+
+  const creatorIds = creatorIdsByRestaurantId.get(visit.restaurantId) ?? new Set<string>();
+  creatorIds.add(visit.creatorId);
+  creatorIdsByRestaurantId.set(visit.restaurantId, creatorIds);
+
+  const restaurantIds = restaurantIdsByCreatorId.get(visit.creatorId) ?? new Set<string>();
+  restaurantIds.add(visit.restaurantId);
+  restaurantIdsByCreatorId.set(visit.creatorId, restaurantIds);
+});
+
+sourceLinks.forEach((link) => {
+  const restaurantLinks = sourceLinksByRestaurantId.get(link.restaurantId) ?? [];
+  restaurantLinks.push(link);
+  sourceLinksByRestaurantId.set(link.restaurantId, restaurantLinks);
+
+  const sourceIds = sourceIdsByRestaurantId.get(link.restaurantId) ?? new Set<string>();
+  sourceIds.add(link.sourceId);
+  sourceIdsByRestaurantId.set(link.restaurantId, sourceIds);
+
+  const restaurantIds = restaurantIdsBySourceId.get(link.sourceId) ?? new Set<string>();
+  restaurantIds.add(link.restaurantId);
+  restaurantIdsBySourceId.set(link.sourceId, restaurantIds);
+});
+
+creatorIdsByRestaurantId.forEach((creatorIds, restaurantId) => {
+  recommendationCountByRestaurantId.set(restaurantId, creatorIds.size);
+});
+
 type CountEntry = {
   name: string;
   count: number;
@@ -410,29 +450,19 @@ function countBy(values: string[]): CountEntry[] {
 }
 
 export function getCreatorsByRestaurant(restaurantId: string): Creator[] {
-  const creatorIdSet = new Set(
-    visits
-      .filter((visit) => visit.restaurantId === restaurantId)
-      .map((visit) => visit.creatorId)
-      .filter(Boolean)
-  );
+  const creatorIdSet = creatorIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
 
   return creators.filter((creator) => creatorIdSet.has(creator.id));
 }
 
 export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
-  const restaurantIds = new Set(
-    visits
-      .filter((visit) => visit.creatorId === creatorId)
-      .map((visit) => visit.restaurantId)
-      .filter(Boolean)
-  );
+  const restaurantIds = restaurantIdsByCreatorId.get(creatorId) ?? new Set<string>();
 
   return restaurants.filter((restaurant) => restaurantIds.has(restaurant.id));
 }
 
 export function getVisitsByRestaurant(restaurantId: string): Visit[] {
-  return visits.filter((visit) => visit.restaurantId === restaurantId);
+  return visitsByRestaurantId.get(restaurantId) ?? [];
 }
 
 export function getRestaurantMenuItems(restaurant: Restaurant): MenuItem[] {
@@ -477,13 +507,11 @@ export function getRestaurantMenuSummary(restaurant: Restaurant) {
 }
 
 export function getSourceLinksByRestaurant(restaurantId: string) {
-  return sourceLinks.filter((link) => link.restaurantId === restaurantId);
+  return sourceLinksByRestaurantId.get(restaurantId) ?? [];
 }
 
 export function getSourcesByRestaurant(restaurantId: string) {
-  const linkedSourceIds = new Set(
-    getSourceLinksByRestaurant(restaurantId).map((link) => link.sourceId)
-  );
+  const linkedSourceIds = sourceIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
 
   return sources.filter((source) => linkedSourceIds.has(source.id));
 }
@@ -493,17 +521,13 @@ export function getSourceById(sourceId: string) {
 }
 
 export function getRestaurantsBySource(sourceId: string) {
-  const linkedRestaurantIds = new Set(
-    sourceLinks
-      .filter((link) => link.sourceId === sourceId)
-      .map((link) => link.restaurantId)
-  );
+  const linkedRestaurantIds = restaurantIdsBySourceId.get(sourceId) ?? new Set<string>();
 
   return restaurants.filter((restaurant) => linkedRestaurantIds.has(restaurant.id));
 }
 
 export function getSourceRestaurantCount(sourceId: string) {
-  return getRestaurantsBySource(sourceId).length;
+  return restaurantIdsBySourceId.get(sourceId)?.size ?? 0;
 }
 
 function buildDiscoveryTopicKey(kind: DiscoveryTopicKind, targetId: string) {
@@ -885,14 +909,7 @@ export function getTotalCreatorCount(): number {
 }
 
 export function getRecommendationCount(restaurantId: string): number {
-  const creatorIdSet = new Set(
-    visits
-      .filter((visit) => visit.restaurantId === restaurantId)
-      .map((visit) => visit.creatorId)
-      .filter(Boolean)
-  );
-
-  return creatorIdSet.size;
+  return recommendationCountByRestaurantId.get(restaurantId) ?? 0;
 }
 
 export function getAllCategories(): string[] {

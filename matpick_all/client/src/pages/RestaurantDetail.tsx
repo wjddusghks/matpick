@@ -1209,7 +1209,7 @@ export default function RestaurantDetail() {
                   onClick={openComposer}
                   className="mt-3 inline-flex h-10 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-4 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
                 >
-                  ?? ??? ??
+                  {"\uB9AC\uBDF0 \uB0A8\uAE30\uB7EC \uAC00\uAE30"}
                 </button>
               </div>
             )}

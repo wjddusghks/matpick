@@ -161,18 +161,18 @@ export default function FavoriteTopicDialog({
           </div>
         </div>
 
-        <DialogFooter>
+        <DialogFooter className="flex-col gap-2 sm:flex-row">
           <button
             type="button"
             onClick={() => onOpenChange(false)}
-            className="inline-flex h-11 items-center justify-center rounded-full border border-[#e8e2e3] px-5 text-sm font-semibold text-[#666666] transition hover:bg-[#f8f8f8]"
+            className="inline-flex h-11 w-full items-center justify-center rounded-full border border-[#e8e2e3] px-5 text-sm font-semibold text-[#666666] transition hover:bg-[#f8f8f8] sm:w-auto"
           >
             닫기
           </button>
           <button
             type="button"
             onClick={handleCreate}
-            className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
+            className="inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95 sm:w-auto"
           >
             주제 만들기
           </button>

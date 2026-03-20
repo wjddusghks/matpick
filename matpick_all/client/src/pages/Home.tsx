@@ -291,7 +291,7 @@ function SearchResultItem({
     accentLabel = ui.foodLabel;
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "source") {
-    accentLabel = item.sourceTypeLabel ?? "異쒖쿂";
+    accentLabel = item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
     accentLabel = item.category ?? ui.restaurantLabel;
@@ -859,7 +859,7 @@ export default function Home() {
 
     const deletedCount = deleteTopics(selectedTopicIdsForDelete);
     if (deletedCount > 0) {
-      toast.success(`${deletedCount}媛쒖쓽 二쇱젣瑜???젣?덉뼱??`);
+      toast.success(`${deletedCount}개의 주제를 삭제했어요.`);
     }
     setSelectedTopicIdsForDelete([]);
     setIsTopicDeleteMode(false);
@@ -1148,14 +1148,14 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-4 rounded-[22px] border border-[#ffe2e6] bg-[#fff9fa] p-4">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
                       <button
                         type="button"
                         onClick={() => setShowTopicDialog(true)}
-                        className="inline-flex h-11 min-w-[160px] flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4]"
+                        className="inline-flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4] sm:min-w-[160px] sm:flex-1"
                       >
                         <Plus className="h-4 w-4" />
-                        ??二쇱젣 異붽??섍린
+                        내 주제 추가하기
                       </button>
                       {topics.length > 0 ? (
                         <button
@@ -1164,22 +1164,21 @@ export default function Home() {
                             setIsTopicDeleteMode((prev) => !prev);
                             setSelectedTopicIdsForDelete([]);
                           }}
-                          className={`inline-flex h-11 items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition ${
+                          className={`inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition sm:w-auto ${
                             isTopicDeleteMode
                               ? "border-[#ff9fa9] bg-[#ffeff2] text-[#ff5f70]"
                               : "border-[#ffd2d8] bg-white text-[#ff6b7b] hover:bg-[#fff2f4]"
                           }`}
                         >
                           <Trash2 className="h-4 w-4" />
-                          {isTopicDeleteMode ? "??젣 痍⑥냼" : "二쇱젣 ??젣?섍린"}
+                          {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
                         </button>
                       ) : null}
                     </div>
 
                     {topics.length === 0 ? (
                       <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
-                        ?꾩쭅 留뚮뱺 二쇱젣媛 ?놁뼱?? ??ν븳 留쏆쭛???곗씠?? ?ы뻾, ?쇱떇泥섎읆 二쇱젣蹂꾨줈 ?섎닠
-                        ?댁븘蹂댁꽭??
+                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 혼밥 같은 테마별로 나눠보세요.
                       </p>
                     ) : (
                       <div className="mt-3 space-y-2">
@@ -1214,7 +1213,7 @@ export default function Home() {
                                   type="button"
                                   onClick={() => toggleTopicDeleteSelection(topic.id)}
                                   className="flex h-6 w-6 items-center justify-center rounded-full text-[#ff6b7b]"
-                                  aria-label={`${topic.name} ??젣 ?좏깮`}
+                                  aria-label={`${topic.name} 삭제 선택`}
                                 >
                                   {selectedTopicIdsForDelete.includes(topic.id) ? (
                                     <CheckCircle2 className="h-5 w-5 fill-current" />
@@ -1226,7 +1225,8 @@ export default function Home() {
                               <FavoriteTopicBadge topic={topic} />
                             </div>
                             <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
-                              ??λ맂 ?앸떦 : {getTopicRestaurantCount(topic.id)}怨?                            </span>
+                              저장된 식당 : {getTopicRestaurantCount(topic.id)}곳
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -1240,7 +1240,7 @@ export default function Home() {
                           disabled={selectedTopicIdsForDelete.length === 0}
                           className="inline-flex h-10 w-full items-center justify-center rounded-full bg-[#ff6b7b] text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-45"
                         >
-                          ?좏깮??二쇱젣 ??젣?섍린 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
+                          선택한 주제 삭제하기 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
                         </button>
                       </div>
                     ) : null}

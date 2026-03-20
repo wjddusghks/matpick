@@ -352,6 +352,14 @@ export default function RestaurantDetail() {
       : getNearbyRestaurants(restaurant.id, 6);
   }, [relatedSortMode, restaurant]);
 
+  useEffect(() => {
+    if (!restaurant) {
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [restaurant]);
+
   if (!restaurant) {
     return <div className="flex min-h-screen items-center justify-center text-[#666]">식당을 찾을 수 없어요.</div>;
   }
@@ -750,7 +758,13 @@ export default function RestaurantDetail() {
                   const candidate = entry.restaurant;
 
                   return (
-                    <Link key={`${relatedSortMode}_${candidate.id}`} href={`/restaurant/${candidate.id}`}>
+                    <Link
+                      key={`${relatedSortMode}_${candidate.id}`}
+                      href={`/restaurant/${candidate.id}`}
+                      onClick={() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+                      }}
+                    >
                       <div className="flex h-full gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 transition hover:border-[#ffd1d8] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
                         <img
                           src={getRestaurantDisplayImage(candidate, { width: 320, height: 240 }).src}
@@ -1096,7 +1110,14 @@ export default function RestaurantDetail() {
 
                     {!isSubmittingReview && sortedReviews.length === 0 ? (
                       <div className="rounded-[24px] border border-dashed border-[#e3e3e3] px-6 py-12 text-center text-sm text-[#8a8a8a]">
-                        아직 방문 리뷰가 없어요. 첫 리뷰를 남겨보면 이 식당의 분위기를 더 잘 전달할 수 있어요.
+                        <p>아직 방문 리뷰가 없어요. 첫 리뷰를 남겨보면 이 식당의 분위기를 더 잘 전달할 수 있어요.</p>
+                        <button
+                          type="button"
+                          onClick={openComposer}
+                          className="mx-auto mt-4 inline-flex h-11 items-center justify-center rounded-full border border-[#ffd5db] bg-[#fff6f7] px-5 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
+                        >
+                          리뷰 남기러 가기
+                        </button>
                       </div>
                     ) : null}
                   </div>
@@ -1241,7 +1262,10 @@ export default function RestaurantDetail() {
                     onMouseEnter={() => setHoveredPersonalRating(value)}
                     onFocus={() => setHoveredPersonalRating(value)}
                     onBlur={() => setHoveredPersonalRating(0)}
-                    onClick={() => saveRating(value)}
+                    onClick={(event) => {
+                      event.currentTarget.blur();
+                      saveRating(value);
+                    }}
                     className={`flex h-10 w-10 items-center justify-center rounded-full transition ${
                       isActive
                         ? "bg-[#fff4d8] text-[#ffb24a]"

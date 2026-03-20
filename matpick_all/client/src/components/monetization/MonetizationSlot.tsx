@@ -160,6 +160,7 @@ export function CoupangSlot({
 }) {
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
+  const [isCompactViewport, setIsCompactViewport] = useState(false);
   const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
   const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
   const configuredBannerHeight = parseBannerDimension(dynamicBannerHeight, 140);
@@ -188,6 +189,27 @@ export function CoupangSlot({
       observer.disconnect();
     };
   }, [hasDynamicBanner]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateViewportMode = () => {
+      setIsCompactViewport(mediaQuery.matches);
+    };
+
+    updateViewportMode();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateViewportMode);
+      return () => mediaQuery.removeEventListener("change", updateViewportMode);
+    }
+
+    mediaQuery.addListener(updateViewportMode);
+    return () => mediaQuery.removeListener(updateViewportMode);
+  }, []);
 
   const dynamicBannerSrcDoc = useMemo(() => {
     if (!hasDynamicBanner) {
@@ -245,11 +267,13 @@ export function CoupangSlot({
     hasDynamicBanner,
   ]);
 
-  if (!hasDynamicBanner && !link) {
+  const shouldRenderDynamicBanner = hasDynamicBanner && !isCompactViewport;
+
+  if (!shouldRenderDynamicBanner && !link) {
     return null;
   }
 
-  if (hasDynamicBanner) {
+  if (shouldRenderDynamicBanner) {
     return (
       <SlotFrame label={label}>
         <div

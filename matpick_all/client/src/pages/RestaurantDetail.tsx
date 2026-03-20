@@ -1111,13 +1111,6 @@ export default function RestaurantDetail() {
                     {!isSubmittingReview && sortedReviews.length === 0 ? (
                       <div className="rounded-[24px] border border-dashed border-[#e3e3e3] px-6 py-12 text-center text-sm text-[#8a8a8a]">
                         <p>아직 방문 리뷰가 없어요. 첫 리뷰를 남겨보면 이 식당의 분위기를 더 잘 전달할 수 있어요.</p>
-                        <button
-                          type="button"
-                          onClick={openComposer}
-                          className="mx-auto mt-4 inline-flex h-11 items-center justify-center rounded-full border border-[#ffd5db] bg-[#fff6f7] px-5 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
-                        >
-                          리뷰 남기러 가기
-                        </button>
                       </div>
                     ) : null}
                   </div>
@@ -1211,6 +1204,13 @@ export default function RestaurantDetail() {
             ) : (
               <div className="mt-4 rounded-[18px] border border-dashed border-[#efe4e6] bg-[#fffafb] px-4 py-4 text-sm text-[#8a8a8a]">
                 아직 공용 리뷰가 많지 않아요. 첫 방문 리뷰를 남기면 이 식당의 공용 평점이 시작돼요.
+                <button
+                  type="button"
+                  onClick={openComposer}
+                  className="mt-3 inline-flex h-10 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-4 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
+                >
+                  ?? ??? ??
+                </button>
               </div>
             )}
 
@@ -1279,7 +1279,7 @@ export default function RestaurantDetail() {
             </div>
             {!isLoggedIn ? (
               <div className="mt-4 border-t border-[#f3eef0] pt-4">
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
                     <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
@@ -1295,7 +1295,7 @@ export default function RestaurantDetail() {
                       });
                       openAuthFeatureDialog("topic");
                     }}
-                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
+                    className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3] sm:w-auto sm:self-auto"
                   >
                     로그인하고 주제 저장
                   </button>
@@ -1309,7 +1309,7 @@ export default function RestaurantDetail() {
             ) : null}
             {isLoggedIn ? (
               <div className="mt-4 border-t border-[#f3eef0] pt-4">
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
                     <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
@@ -1325,7 +1325,7 @@ export default function RestaurantDetail() {
                       });
                       setTopicPickerOpen(true);
                     }}
-                    className="inline-flex h-9 items-center justify-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3]"
+                    className="inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-4 text-xs font-semibold text-[#ff6b7b] transition hover:bg-[#fff0f3] sm:w-auto sm:self-auto"
                   >
                     {topics.length > 0 ? "주제에 담기" : "주제 만들기"}
                   </button>

@@ -142,6 +142,7 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
     foundingYear: current.foundingYear ?? next.foundingYear ?? null,
     menus: mergeRestaurantMenus(current.menus ?? [], next.menus ?? []),
     thumbnailFileName: current.thumbnailFileName ?? next.thumbnailFileName ?? null,
+    googlePlaceId: current.googlePlaceId ?? next.googlePlaceId ?? null,
     isOverseas: current.isOverseas ?? next.isOverseas,
   };
 }
@@ -197,6 +198,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
           menus: mergeRestaurantMenus(existing.menus ?? [], restaurant.menus ?? []),
           thumbnailFileName:
             existing.thumbnailFileName ?? restaurant.thumbnailFileName ?? null,
+          googlePlaceId: existing.googlePlaceId ?? restaurant.googlePlaceId ?? null,
         };
         restaurantIdMap.set(restaurant.id, existing.id);
         return;

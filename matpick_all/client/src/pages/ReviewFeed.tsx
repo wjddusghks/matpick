@@ -224,7 +224,11 @@ export default function ReviewFeed() {
               {visibleReviews.map((review, index) => {
                 const restaurant = getRestaurantById(review.restaurantId);
                 const displayImage = restaurant
-                  ? getRestaurantDisplayImage(restaurant, { width: 480, height: 320 })
+                  ? getRestaurantDisplayImage(restaurant, {
+                      width: 480,
+                      height: 320,
+                      reviewPhotoUrl: review.photos[0] ?? "",
+                    })
                   : null;
 
                 return (
@@ -244,12 +248,19 @@ export default function ReviewFeed() {
                             }
                           >
                             <div className="overflow-hidden rounded-[24px] border border-[#f0e2e6] bg-[#fff8f9]">
-                              <img
-                                src={displayImage?.src}
-                                alt={restaurant.name}
-                                className="aspect-[4/3] w-full object-cover"
-                                loading="lazy"
-                              />
+                              <div className="relative">
+                                <img
+                                  src={displayImage?.src}
+                                  alt={restaurant.name}
+                                  className="aspect-[4/3] w-full object-cover"
+                                  loading="lazy"
+                                />
+                                {displayImage?.source === "review" ? (
+                                  <span className="absolute left-3 top-3 rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c] backdrop-blur">
+                                    방문자 사진
+                                  </span>
+                                ) : null}
+                              </div>
                               <div className="space-y-1 px-4 py-4">
                                 <p className="text-base font-black tracking-[-0.02em] text-[#191919]">
                                   {restaurant.name}

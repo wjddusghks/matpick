@@ -117,3 +117,7 @@ export function collectReviewPhotos(reviews: SharedReview[]): ReviewPhoto[] {
 
   return photos;
 }
+
+export function getPrimaryReviewPhotoUrl(reviews: SharedReview[]) {
+  return collectReviewPhotos(reviews)[0]?.url ?? "";
+}

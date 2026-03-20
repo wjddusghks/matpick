@@ -47,6 +47,7 @@ export interface Restaurant {
   foundingYear?: number | null;
   menus?: MenuItem[];
   thumbnailFileName?: string | null;
+  googlePlaceId?: string | null;
   isOverseas?: boolean;
 }
 

@@ -49,6 +49,7 @@ import {
 } from "@/lib/restaurantPresentation";
 import {
   collectReviewPhotos,
+  getPrimaryReviewPhotoUrl,
   sortReviews,
   summarizeReviews,
   type ReviewSortMode,
@@ -60,6 +61,10 @@ import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 type DetailTab = "menu" | "videos" | "reviews" | "details";
 type ReviewItem = SharedReview;
 type RelatedSortMode = "related" | "nearby";
+type GoogleFallbackPhoto = {
+  imageUrl: string;
+  attributions: Array<{ displayName?: string; uri?: string }>;
+};
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
@@ -264,6 +269,8 @@ export default function RestaurantDetail() {
     useState<AuthFeatureMode>("rating");
   const [reviewSortMode, setReviewSortMode] = useState<ReviewSortMode>("latest");
   const [relatedSortMode, setRelatedSortMode] = useState<RelatedSortMode>("related");
+  const [googleFallbackPhoto, setGoogleFallbackPhoto] =
+    useState<GoogleFallbackPhoto | null>(null);
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -287,6 +294,7 @@ export default function RestaurantDetail() {
     setReviewSortMode("latest");
     setRelatedSortMode("related");
     setComposerOpen(false);
+    setGoogleFallbackPhoto(null);
 
     let ignore = false;
 
@@ -338,6 +346,10 @@ export default function RestaurantDetail() {
   );
   const publicReviewSummary = useMemo(() => summarizeReviews(visibleReviews), [visibleReviews]);
   const reviewGallery = useMemo(() => collectReviewPhotos(visibleReviews).slice(0, 8), [visibleReviews]);
+  const primaryReviewPhotoUrl = useMemo(
+    () => getPrimaryReviewPhotoUrl(visibleReviews),
+    [visibleReviews]
+  );
   const sortedReviews = useMemo(
     () => sortReviews(visibleReviews, reviewSortMode),
     [reviewSortMode, visibleReviews]
@@ -357,6 +369,59 @@ export default function RestaurantDetail() {
       return;
     }
 
+    if (
+      !restaurant.googlePlaceId ||
+      primaryReviewPhotoUrl ||
+      restaurant.imageUrl.trim() ||
+      restaurant.thumbnailFileName?.trim()
+    ) {
+      setGoogleFallbackPhoto(null);
+      return;
+    }
+
+    let ignore = false;
+
+    void fetch(`/api/places/photo?placeId=${encodeURIComponent(restaurant.googlePlaceId)}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load Google place photo");
+        }
+
+        return response.json() as Promise<GoogleFallbackPhoto>;
+      })
+      .then((payload) => {
+        if (ignore) {
+          return;
+        }
+
+        if (payload?.imageUrl) {
+          setGoogleFallbackPhoto(payload);
+        } else {
+          setGoogleFallbackPhoto(null);
+        }
+      })
+      .catch(() => {
+        if (!ignore) {
+          setGoogleFallbackPhoto(null);
+        }
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, [
+    primaryReviewPhotoUrl,
+    restaurant,
+    restaurant?.googlePlaceId,
+    restaurant?.imageUrl,
+    restaurant?.thumbnailFileName,
+  ]);
+
+  useEffect(() => {
+    if (!restaurant) {
+      return;
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [restaurant]);
 
@@ -364,9 +429,14 @@ export default function RestaurantDetail() {
     return <div className="flex min-h-screen items-center justify-center text-[#666]">식당을 찾을 수 없어요.</div>;
   }
 
-  const displayImage = getRestaurantDisplayImage(restaurant, { width: 1200, height: 900 });
+  const displayImage = getRestaurantDisplayImage(restaurant, {
+    width: 1200,
+    height: 900,
+    reviewPhotoUrl: primaryReviewPhotoUrl,
+    googlePhotoUrl: googleFallbackPhoto?.imageUrl,
+  });
   const primaryPrice = getRestaurantPrimaryPrice(restaurant);
-  const shareImage = restaurant.imageUrl || "/og-default.png";
+  const shareImage = displayImage.hasPhoto ? displayImage.src : "/og-default.png";
   const visits = getVisitsByRestaurant(restaurant.id);
   const recommenders = getCreatorsByRestaurant(restaurant.id);
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
@@ -378,6 +448,15 @@ export default function RestaurantDetail() {
       : `${window.location.pathname}${window.location.search}`;
   const visiblePersonalRating = hoveredPersonalRating || personalRating;
   const assignedTopics = getTopicsForRestaurant(restaurant.id);
+  const detailPhotoBadge =
+    displayImage.source === "review"
+      ? "방문자 사진"
+      : displayImage.source === "google"
+        ? "Google 사진"
+        : !displayImage.hasPhoto
+          ? "사진 준비 중"
+          : "";
+  const googlePhotoAttribution = googleFallbackPhoto?.attributions?.[0];
 
   const openAuthFeatureDialog = (mode: AuthFeatureMode) => {
     setAuthFeatureMode(mode);
@@ -1149,14 +1228,32 @@ export default function RestaurantDetail() {
               alt={restaurant.name}
               className="aspect-[4/3] w-full object-cover"
             />
-            {!displayImage.hasPhoto ? (
+            {detailPhotoBadge ? (
               <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-                사진 준비 중
+                {detailPhotoBadge}
               </div>
             ) : null}
             {primaryPrice ? (
               <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                 대표 가격 {primaryPrice}
+              </div>
+            ) : null}
+            {displayImage.source === "google" && googlePhotoAttribution?.displayName ? (
+              <div className="border-t border-[#f3eef0] bg-white px-4 py-2 text-[11px] text-[#8a8a8a]">
+                Google 사진 · {googlePhotoAttribution.uri ? (
+                  <a
+                    href={googlePhotoAttribution.uri}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-[#6f7280] underline underline-offset-2"
+                  >
+                    {googlePhotoAttribution.displayName}
+                  </a>
+                ) : (
+                  <span className="font-medium text-[#6f7280]">
+                    {googlePhotoAttribution.displayName}
+                  </span>
+                )}
               </div>
             ) : null}
           </div>

@@ -3,6 +3,14 @@ import type { MenuItem, Restaurant } from "@/data/types";
 type RestaurantImageOptions = {
   width?: number;
   height?: number;
+  reviewPhotoUrl?: string | null;
+  googlePhotoUrl?: string | null;
+};
+
+export type RestaurantDisplayImage = {
+  src: string;
+  hasPhoto: boolean;
+  source: "review" | "google" | "restaurant" | "thumbnail" | "fallback";
 };
 
 type CuisineTheme = {
@@ -226,11 +234,28 @@ export function getRestaurantDisplayImage(
     | "thumbnailFileName"
   >,
   options?: RestaurantImageOptions
-) {
+) : RestaurantDisplayImage {
+  if (options?.reviewPhotoUrl?.trim()) {
+    return {
+      src: options.reviewPhotoUrl.trim(),
+      hasPhoto: true,
+      source: "review",
+    };
+  }
+
+  if (options?.googlePhotoUrl?.trim()) {
+    return {
+      src: options.googlePhotoUrl.trim(),
+      hasPhoto: true,
+      source: "google",
+    };
+  }
+
   if (hasRestaurantPhoto(restaurant)) {
     return {
       src: restaurant.imageUrl,
       hasPhoto: true,
+      source: "restaurant",
     };
   }
 
@@ -238,12 +263,14 @@ export function getRestaurantDisplayImage(
     return {
       src: `/restaurant-thumbnails/${restaurant.thumbnailFileName.trim()}`,
       hasPhoto: true,
+      source: "thumbnail",
     };
   }
 
   return {
     src: buildPlaceholderSvg(restaurant, options),
     hasPhoto: false,
+    source: "fallback",
   };
 }
 

@@ -368,31 +368,39 @@ function buildSeoContent({
   presetTopic: DiscoveryTopic | null;
   presetEpisode: DiscoveryTopicEpisode | null;
 }) {
+  const matchedCreator =
+    presetTopic?.kind === "creator"
+      ? creators.find((creator) => creator.id === presetTopic.targetId) ?? null
+      : null;
+  const topicKeyword = matchedCreator
+    ? `${getCreatorDisplayName(matchedCreator)} ${presetTopic?.name ?? ""}`.trim()
+    : presetTopic?.name ?? "";
+
   if (presetEpisode && presetTopic) {
     if (locale === "en") {
       return {
-        title: `${presetTopic.name} ${presetEpisode.episode} restaurants`,
-        description: `Browse restaurants featured in ${presetEpisode.episode} from ${presetTopic.name} on Matpick.`,
+        title: `${topicKeyword} ${presetEpisode.episode} restaurant list`,
+        description: `Browse the restaurant list featured in ${presetEpisode.episode} from ${topicKeyword} on Matpick.`,
       };
     }
 
     return {
-      title: `${presetTopic.name} ${presetEpisode.episode} 맛집 탐색`,
-      description: `${presetTopic.name} ${presetEpisode.episode}에 소개된 맛집을 맛픽에서 한 번에 탐색해보세요.`,
+      title: `${topicKeyword} ${presetEpisode.episode} 맛집 리스트`,
+      description: `${topicKeyword} ${presetEpisode.episode}에 나온 맛집 리스트를 맛픽에서 지도와 함께 찾아보세요.`,
     };
   }
 
   if (presetTopic) {
     if (locale === "en") {
       return {
-        title: `${presetTopic.name} restaurant list`,
-        description: `Explore restaurants curated under ${presetTopic.name} on Matpick.`,
+        title: `${topicKeyword} restaurant list`,
+        description: `Explore the restaurant list curated under ${topicKeyword} on Matpick.`,
       };
     }
 
     return {
-      title: `${presetTopic.name} 맛집 탐색`,
-      description: `${presetTopic.name}에 포함된 맛집을 맛픽에서 지도와 함께 탐색해보세요.`,
+      title: `${topicKeyword} 맛집 리스트`,
+      description: `${topicKeyword}에 포함된 맛집 리스트를 맛픽에서 지도와 함께 탐색해보세요.`,
     };
   }
 

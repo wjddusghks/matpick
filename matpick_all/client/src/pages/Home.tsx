@@ -581,17 +581,28 @@ export default function Home() {
       : "유튜브 방송, 미쉐린 가이드 같은 다양한 소스를 한곳에 모아 취향과 위치에 맞는 맛집을 찾는 서비스 맛픽.",
     path: "/",
     locale,
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Matpick",
-      url: buildAbsoluteUrl("/"),
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${buildAbsoluteUrl("/map")}?type=all&value={search_term_string}`,
-        "query-input": "required name=search_term_string",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "맛픽",
+        alternateName: "Matpick",
+        url: buildAbsoluteUrl("/"),
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${buildAbsoluteUrl("/map")}?type=all&value={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
       },
-    },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "맛픽",
+        alternateName: "Matpick",
+        url: buildAbsoluteUrl("/"),
+        logo: buildAbsoluteUrl("/web-app-manifest-512x512.png"),
+      },
+    ],
   });
 
   const normalizedQuery = query.trim().toLowerCase();

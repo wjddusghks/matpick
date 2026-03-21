@@ -280,3 +280,47 @@ export function getRestaurantPrimaryPrice(
   const menuItems = normalizeMenuItems(restaurant);
   return menuItems.find((menu) => menu.price)?.price ?? "";
 }
+
+type BroadcastBadgeInput = {
+  count: number;
+  primaryEpisode: string;
+};
+
+type RestaurantMetadataLocale = "ko" | "en";
+
+function truncateBadgeText(value: string, limit: number) {
+  if (value.length <= limit) {
+    return value;
+  }
+
+  return `${value.slice(0, Math.max(0, limit - 1)).trimEnd()}…`;
+}
+
+export function formatRestaurantFoundingBadge(
+  foundingYear?: number | null,
+  locale: RestaurantMetadataLocale = "ko"
+) {
+  if (!foundingYear) {
+    return "";
+  }
+
+  return locale === "en" ? `Since ${foundingYear}` : `개업 ${foundingYear}`;
+}
+
+export function formatRestaurantBroadcastBadge(
+  broadcastMeta?: BroadcastBadgeInput | null,
+  locale: RestaurantMetadataLocale = "ko"
+) {
+  if (!broadcastMeta) {
+    return "";
+  }
+
+  if (broadcastMeta.count <= 1) {
+    const episodeLabel = truncateBadgeText(broadcastMeta.primaryEpisode, 18);
+    return locale === "en" ? `Episode ${episodeLabel}` : `방송 ${episodeLabel}`;
+  }
+
+  return locale === "en"
+    ? `${broadcastMeta.count} episodes`
+    : `방송 ${broadcastMeta.count}회차`;
+}

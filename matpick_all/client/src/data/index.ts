@@ -61,12 +61,58 @@ export type DiscoveryTopicEpisode = {
   path: string;
 };
 
+export type RestaurantBroadcastMeta = {
+  count: number;
+  primaryEpisode: string;
+  episodeLabels: string[];
+};
+
 function normalizeLookupValue(value: string) {
   return value.replace(/\s+/g, " ").trim().toLowerCase();
 }
 
-function buildRestaurantLookupKey(restaurant: Pick<Restaurant, "name" | "address">) {
-  return `${normalizeLookupValue(restaurant.name)}|${normalizeLookupValue(restaurant.address)}`;
+function normalizeAddressForLookup(address: string) {
+  return normalizeLookupValue(address.replace(/\([^)]*\)/g, " "));
+}
+
+function buildRestaurantNameLookupCandidates(
+  restaurant: Pick<Restaurant, "name" | "address" | "region">
+) {
+  const normalizedName = normalizeLookupValue(restaurant.name);
+  const candidates = new Set<string>([normalizedName]);
+  const addressTokens = normalizeLookupValue(
+    `${restaurant.region || ""} ${restaurant.address || ""}`
+  )
+    .split(" ")
+    .filter(Boolean);
+
+  const removablePrefixes = new Set<string>();
+  if (addressTokens[0]) {
+    removablePrefixes.add(addressTokens[0]);
+  }
+  if (addressTokens[1]) {
+    removablePrefixes.add(`${addressTokens[0]} ${addressTokens[1]}`);
+  }
+
+  removablePrefixes.forEach((prefix) => {
+    if (normalizedName.startsWith(`${prefix} `)) {
+      const stripped = normalizedName.slice(prefix.length).trim();
+      if (stripped) {
+        candidates.add(stripped);
+      }
+    }
+  });
+
+  return Array.from(candidates);
+}
+
+function buildRestaurantLookupKeys(
+  restaurant: Pick<Restaurant, "name" | "address" | "region">
+) {
+  const normalizedAddress = normalizeAddressForLookup(restaurant.address);
+  return buildRestaurantNameLookupCandidates(restaurant).map(
+    (nameCandidate) => `${nameCandidate}|${normalizedAddress}`
+  );
 }
 
 function hasValidCoords(restaurant: Pick<Restaurant, "lat" | "lng">) {
@@ -155,13 +201,19 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
 
 function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
   const dedupedRestaurants: Restaurant[] = [];
-  const indexById = new Map<string, number>();
+  const indexByLookupKey = new Map<string, number>();
 
   restaurantsToMerge.forEach((restaurant) => {
-    const existingIndex = indexById.get(restaurant.id);
+    const existingIndex = buildRestaurantLookupKeys(restaurant)
+      .map((lookupKey) => indexByLookupKey.get(lookupKey))
+      .find((value): value is number => value != null);
+
     if (existingIndex == null) {
-      indexById.set(restaurant.id, dedupedRestaurants.length);
+      const nextIndex = dedupedRestaurants.length;
       dedupedRestaurants.push(restaurant);
+      buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
+        indexByLookupKey.set(lookupKey, nextIndex);
+      });
       return;
     }
 
@@ -169,6 +221,9 @@ function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
       dedupedRestaurants[existingIndex],
       restaurant
     );
+    buildRestaurantLookupKeys(dedupedRestaurants[existingIndex]).forEach((lookupKey) => {
+      indexByLookupKey.set(lookupKey, existingIndex);
+    });
   });
 
   return dedupedRestaurants;
@@ -182,7 +237,9 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   const existingRestaurantIndex = new Map<string, number>();
 
   mergedRestaurants.forEach((restaurant, index) => {
-    existingRestaurantIndex.set(buildRestaurantLookupKey(restaurant), index);
+    buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
+      existingRestaurantIndex.set(lookupKey, index);
+    });
   });
 
   extras.forEach((extra) => {
@@ -193,8 +250,9 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
     });
 
     (extra.restaurants ?? []).forEach((restaurant) => {
-      const lookupKey = buildRestaurantLookupKey(restaurant);
-      const existingIndex = existingRestaurantIndex.get(lookupKey);
+      const existingIndex = buildRestaurantLookupKeys(restaurant)
+        .map((lookupKey) => existingRestaurantIndex.get(lookupKey))
+        .find((value): value is number => value != null);
 
       if (existingIndex != null) {
         const existing = mergedRestaurants[existingIndex];
@@ -207,11 +265,17 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
           googlePlaceId: existing.googlePlaceId ?? restaurant.googlePlaceId ?? null,
         };
         restaurantIdMap.set(restaurant.id, existing.id);
+        buildRestaurantLookupKeys(mergedRestaurants[existingIndex]).forEach((lookupKey) => {
+          existingRestaurantIndex.set(lookupKey, existingIndex);
+        });
         return;
       }
 
       mergedRestaurants.push(restaurant);
-      existingRestaurantIndex.set(lookupKey, mergedRestaurants.length - 1);
+      const insertedIndex = mergedRestaurants.length - 1;
+      buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
+        existingRestaurantIndex.set(lookupKey, insertedIndex);
+      });
       restaurantIdMap.set(restaurant.id, restaurant.id);
     });
 
@@ -521,6 +585,44 @@ export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
 
 export function getVisitsByRestaurant(restaurantId: string): Visit[] {
   return visitsByRestaurantId.get(restaurantId) ?? [];
+}
+
+export function getRestaurantBroadcastMeta(
+  restaurantId: string
+): RestaurantBroadcastMeta | null {
+  const seenLabels = new Set<string>();
+  const episodeLabels = getVisitsByRestaurant(restaurantId)
+    .slice()
+    .sort(sortVisitsByDate)
+    .map((visit) => {
+      const label =
+        visit.episode?.trim() ||
+        visit.videoTitle?.trim() ||
+        visit.series?.trim() ||
+        "";
+
+      return label;
+    })
+    .filter((label): label is string => Boolean(label))
+    .filter((label) => {
+      const normalized = normalizeLookupValue(label);
+      if (seenLabels.has(normalized)) {
+        return false;
+      }
+
+      seenLabels.add(normalized);
+      return true;
+    });
+
+  if (episodeLabels.length === 0) {
+    return null;
+  }
+
+  return {
+    count: episodeLabels.length,
+    primaryEpisode: episodeLabels[0],
+    episodeLabels,
+  };
 }
 
 export function getRestaurantMenuItems(restaurant: Restaurant): MenuItem[] {

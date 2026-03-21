@@ -7,11 +7,19 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Youtube, Users } from "lucide-react";
 import MonetizationSlot from "@/components/monetization/MonetizationSlot";
 import {
-  creators, restaurants, visits,
-  getCreatorDisplayName, getRestaurantsByCreator, getCreatorsByRestaurant, getRecommendationCount,
+  creators,
+  getCreatorDisplayName,
+  getCreatorsByRestaurant,
+  getRecommendationCount,
+  getRestaurantBroadcastMeta,
+  getRestaurantsByCreator,
   type Restaurant,
 } from "@/data";
-import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
+import {
+  formatRestaurantBroadcastBadge,
+  formatRestaurantFoundingBadge,
+  getRestaurantDisplayImage,
+} from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
 // Logo is rendered inline as SVG
@@ -21,6 +29,10 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
   const recCount = getRecommendationCount(restaurant.id);
   const recCreators = getCreatorsByRestaurant(restaurant.id);
   const displayImage = getRestaurantDisplayImage(restaurant);
+  const broadcastBadge = formatRestaurantBroadcastBadge(
+    getRestaurantBroadcastMeta(restaurant.id)
+  );
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear);
 
   return (
     <motion.div
@@ -46,8 +58,20 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
             🔥 {recCount}개 채널 추천
           </div>
         )}
-        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-medium text-[#666]">
-          {restaurant.category}
+        <div className="absolute left-3 bottom-3 flex max-w-[80%] flex-wrap gap-2">
+          <div className="rounded-full bg-white/90 px-2.5 py-1 text-xs font-medium text-[#666] backdrop-blur-sm">
+            {restaurant.category}
+          </div>
+          {foundingBadge ? (
+            <div className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-xs font-semibold text-[#ff6f7c] backdrop-blur-sm">
+              {foundingBadge}
+            </div>
+          ) : null}
+          {broadcastBadge ? (
+            <div className="rounded-full bg-[#eef7ff] px-2.5 py-1 text-xs font-semibold text-[#3b82c4] backdrop-blur-sm">
+              {broadcastBadge}
+            </div>
+          ) : null}
         </div>
       </div>
 

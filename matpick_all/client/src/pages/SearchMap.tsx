@@ -12,6 +12,7 @@ import {
   creators,
   getCreatorDisplayName,
   getCreatorsByRestaurant,
+  getRestaurantBroadcastMeta,
   getRestaurantMenuSummary,
   getRestaurantsByCategory,
   getRestaurantsByCreator,
@@ -36,7 +37,9 @@ import {
 } from "@/lib/location";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import {
+  formatRestaurantBroadcastBadge,
   getRestaurantDisplayImage,
+  formatRestaurantFoundingBadge,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
@@ -257,6 +260,9 @@ function RestaurantCard({
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
   const displayImage = getRestaurantDisplayImage(restaurant, { width: 320, height: 320 });
   const priceHint = getRestaurantPrimaryPrice(restaurant);
+  const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
+  const broadcastBadge = formatRestaurantBroadcastBadge(broadcastMeta, locale);
 
   return (
     <div
@@ -282,6 +288,20 @@ function RestaurantCard({
           </div>
 
           <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
+          {foundingBadge || broadcastBadge ? (
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {foundingBadge ? (
+                <span className="inline-flex items-center rounded-full bg-[#fff4f5] px-2 py-0.5 text-[11px] font-semibold text-[#ff6f7c]">
+                  {foundingBadge}
+                </span>
+              ) : null}
+              {broadcastBadge ? (
+                <span className="inline-flex items-center rounded-full bg-[#eef7ff] px-2 py-0.5 text-[11px] font-semibold text-[#3b82c4]">
+                  {broadcastBadge}
+                </span>
+              ) : null}
+            </div>
+          ) : null}
           {priceHint ? (
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#b1a5a8]">
               {copy.priceLabel} {priceHint}

@@ -1,6 +1,6 @@
 import { useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Bookmark, CircleUserRound, Heart, Star } from "lucide-react";
+import { ArrowLeft, Bookmark, CircleUserRound, Heart } from "lucide-react";
 import { Link, useLocation, useSearchParams } from "wouter";
 import HeartButton from "@/components/HeartButton";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
@@ -8,13 +8,21 @@ import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import { restaurants, type Restaurant } from "@/data";
+import {
+  getRestaurantBroadcastMeta,
+  restaurants,
+  type Restaurant,
+} from "@/data";
 import { getDisplayName } from "@/lib/authProfile";
 import {
   type FavoriteTopic,
 } from "@/lib/favoriteTopics";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
-import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
+import {
+  formatRestaurantBroadcastBadge,
+  formatRestaurantFoundingBadge,
+  getRestaurantDisplayImage,
+} from "@/lib/restaurantPresentation";
 import { getUserRestaurantRating } from "@/lib/restaurantRatings";
 import { useSeo } from "@/lib/seo";
 
@@ -129,6 +137,11 @@ function FavoriteRestaurantCard({
   const cuisineLabel = restaurant.category
     ? translateCuisineLabel(restaurant.category, locale)
     : "";
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
+  const broadcastBadge = formatRestaurantBroadcastBadge(
+    getRestaurantBroadcastMeta(restaurant.id),
+    locale
+  );
 
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -181,12 +194,18 @@ function FavoriteRestaurantCard({
               </div>
             ) : null}
 
-            {restaurant.foundingYear ? (
-              <div className="mt-3 inline-flex items-center gap-1 rounded-full bg-[#fff5f6] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
-                <Star className="h-3.5 w-3.5" />
-                {locale === "en"
-                  ? `${restaurant.foundingYear}${ui.foundedLabel}`
-                  : `${restaurant.foundingYear}${ui.foundedLabel}`}
+            {(foundingBadge || broadcastBadge) ? (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {foundingBadge ? (
+                  <span className="inline-flex items-center rounded-full bg-[#fff5f6] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
+                    {foundingBadge}
+                  </span>
+                ) : null}
+                {broadcastBadge ? (
+                  <span className="inline-flex items-center rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
+                    {broadcastBadge}
+                  </span>
+                ) : null}
               </div>
             ) : null}
           </div>

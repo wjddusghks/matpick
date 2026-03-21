@@ -5,6 +5,7 @@ import {
   creators,
   discoveryTopics,
   getBroadRegion,
+  getRestaurantBroadcastMeta,
   getCuisineCategories,
   getCuisineCategory,
   getCreatorDisplayName,
@@ -34,7 +35,9 @@ import { useLocale } from "@/contexts/LocaleContext";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
 import {
+  formatRestaurantBroadcastBadge,
   getRestaurantDisplayImage,
+  formatRestaurantFoundingBadge,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
@@ -272,6 +275,9 @@ function RestaurantCard({
   const recommendationCount = getRecommendationCount(restaurant.id);
   const displayImage = getRestaurantDisplayImage(restaurant);
   const priceHint = getRestaurantPrimaryPrice(restaurant);
+  const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
+  const broadcastBadge = formatRestaurantBroadcastBadge(broadcastMeta, locale);
 
   return (
     <button
@@ -299,9 +305,14 @@ function RestaurantCard({
           <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
             {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
           </span>
-          {restaurant.foundingYear ? (
+          {foundingBadge ? (
             <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
-              {restaurant.foundingYear}
+              {foundingBadge}
+            </span>
+          ) : null}
+          {broadcastBadge ? (
+            <span className="rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
+              {broadcastBadge}
             </span>
           ) : null}
         </div>

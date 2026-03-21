@@ -29,6 +29,7 @@ import {
   getCreatorDisplayName,
   getCreatorsByRestaurant,
   getNearbyRestaurants,
+  getRestaurantBroadcastMeta,
   getRelatedRestaurants,
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
@@ -44,7 +45,9 @@ import {
   saveUserRestaurantRating,
 } from "@/lib/restaurantRatings";
 import {
+  formatRestaurantBroadcastBadge,
   getRestaurantDisplayImage,
+  formatRestaurantFoundingBadge,
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import {
@@ -448,6 +451,10 @@ export default function RestaurantDetail() {
       : `${window.location.pathname}${window.location.search}`;
   const visiblePersonalRating = hoveredPersonalRating || personalRating;
   const assignedTopics = getTopicsForRestaurant(restaurant.id);
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear);
+  const broadcastBadge = formatRestaurantBroadcastBadge(
+    getRestaurantBroadcastMeta(restaurant.id)
+  );
   const detailPhotoBadge =
     displayImage.source === "review"
       ? "방문자 사진"
@@ -766,8 +773,21 @@ export default function RestaurantDetail() {
                   <span className="font-bold text-[#FD7979]">추천 {recommendationCount}곳</span>
                 ) : null}
                 <span>{restaurant.region}</span>
-                {restaurant.foundingYear ? <span>{restaurant.foundingYear}년 개업</span> : null}
               </div>
+              {(foundingBadge || broadcastBadge) ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {foundingBadge ? (
+                    <span className="inline-flex items-center rounded-full bg-[#fff4f5] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
+                      {foundingBadge}
+                    </span>
+                  ) : null}
+                  {broadcastBadge ? (
+                    <span className="inline-flex items-center rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
+                      {broadcastBadge}
+                    </span>
+                  ) : null}
+                </div>
+              ) : null}
               {sourcesByRestaurant.length > 0 ? (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {sourcesByRestaurant.map((source) => (
@@ -835,6 +855,12 @@ export default function RestaurantDetail() {
               <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
                 {relatedRestaurants.map((entry) => {
                   const candidate = entry.restaurant;
+                  const candidateFoundingBadge = formatRestaurantFoundingBadge(
+                    candidate.foundingYear
+                  );
+                  const candidateBroadcastBadge = formatRestaurantBroadcastBadge(
+                    getRestaurantBroadcastMeta(candidate.id)
+                  );
 
                   return (
                     <Link
@@ -863,6 +889,16 @@ export default function RestaurantDetail() {
                           </div>
 
                           <div className="mt-3 flex flex-wrap gap-2">
+                            {candidateFoundingBadge ? (
+                              <span className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c]">
+                                {candidateFoundingBadge}
+                              </span>
+                            ) : null}
+                            {candidateBroadcastBadge ? (
+                              <span className="rounded-full bg-[#eef7ff] px-2.5 py-1 text-[11px] font-semibold text-[#3b82c4]">
+                                {candidateBroadcastBadge}
+                              </span>
+                            ) : null}
                             {entry.sharedCreatorCount > 0 ? (
                               <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
                                 겹치는 크리에이터 {entry.sharedCreatorCount}

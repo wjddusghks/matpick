@@ -1,6 +1,6 @@
 {
   "datasetId": "baekban-trip",
-  "generatedAt": "2026-03-21T09:56:52.267Z",
+  "generatedAt": "2026-03-21T10:47:31.359Z",
   "restaurants": [
     {
       "id": "topic_enrichment_baekban-trip_dadf7abec696",
@@ -12991,6 +12991,3306 @@
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "sikgaek-baekban-trip",
+      "name": "식객 허영만의 백반기행",
+      "type": "tv_show",
+      "provider": "TV CHOSUN",
+      "description": "허영만의 백반기행에 소개된 맛집을 모아봤어요.",
+      "imageUrl": "/source-covers/sikgaek-baekban-trip.jpg"
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f3f68fe91e9c",
+      "restaurantId": "topic_enrichment_baekban-trip_f3f68fe91e9c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 1
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_347c93d4160d",
+      "restaurantId": "topic_enrichment_baekban-trip_347c93d4160d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 2
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_30953bbaa6b4",
+      "restaurantId": "topic_enrichment_baekban-trip_30953bbaa6b4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 3
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_75c2736b1a1e",
+      "restaurantId": "topic_enrichment_baekban-trip_75c2736b1a1e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 4
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a704b3fa0b06",
+      "restaurantId": "topic_enrichment_baekban-trip_a704b3fa0b06",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 5
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3d66b9d40f2e",
+      "restaurantId": "topic_enrichment_baekban-trip_3d66b9d40f2e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 6
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8d8e6eb1853e",
+      "restaurantId": "topic_enrichment_baekban-trip_8d8e6eb1853e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 7
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_861773db15ca",
+      "restaurantId": "topic_enrichment_baekban-trip_861773db15ca",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 8
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_383aa4ff76cb",
+      "restaurantId": "topic_enrichment_baekban-trip_383aa4ff76cb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 9
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d75bac60de4c",
+      "restaurantId": "topic_enrichment_baekban-trip_d75bac60de4c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 10
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3ee04120e76d",
+      "restaurantId": "topic_enrichment_baekban-trip_3ee04120e76d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 11
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a99ead543420",
+      "restaurantId": "topic_enrichment_baekban-trip_a99ead543420",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 12
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_37c91ee04e3f",
+      "restaurantId": "topic_enrichment_baekban-trip_37c91ee04e3f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 13
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_059ee18728ef",
+      "restaurantId": "topic_enrichment_baekban-trip_059ee18728ef",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 14
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c867d895f266",
+      "restaurantId": "topic_enrichment_baekban-trip_c867d895f266",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 15
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2f974438c2f2",
+      "restaurantId": "topic_enrichment_baekban-trip_2f974438c2f2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 16
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d3b5218c573d",
+      "restaurantId": "topic_enrichment_baekban-trip_d3b5218c573d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 17
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8da51d880418",
+      "restaurantId": "topic_enrichment_baekban-trip_8da51d880418",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 18
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bb67d263a37a",
+      "restaurantId": "topic_enrichment_baekban-trip_bb67d263a37a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 19
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b9bb67009a04",
+      "restaurantId": "topic_enrichment_baekban-trip_b9bb67009a04",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 20
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_236a86542929",
+      "restaurantId": "topic_enrichment_baekban-trip_236a86542929",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 21
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3aedc92e7d4f",
+      "restaurantId": "topic_enrichment_baekban-trip_3aedc92e7d4f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 22
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_578d0ccd4658",
+      "restaurantId": "topic_enrichment_baekban-trip_578d0ccd4658",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 23
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f3737050fbd7",
+      "restaurantId": "topic_enrichment_baekban-trip_f3737050fbd7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 24
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3baddb11a879",
+      "restaurantId": "topic_enrichment_baekban-trip_3baddb11a879",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 25
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9c200d3da6d5",
+      "restaurantId": "topic_enrichment_baekban-trip_9c200d3da6d5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 26
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_52d266dd8cf6",
+      "restaurantId": "topic_enrichment_baekban-trip_52d266dd8cf6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 27
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1a6f4f0c2c93",
+      "restaurantId": "topic_enrichment_baekban-trip_1a6f4f0c2c93",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 28
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_28df7a067173",
+      "restaurantId": "topic_enrichment_baekban-trip_28df7a067173",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 29
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_887fbda34702",
+      "restaurantId": "topic_enrichment_baekban-trip_887fbda34702",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 30
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9571885ac3e2",
+      "restaurantId": "topic_enrichment_baekban-trip_9571885ac3e2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 31
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f546a09bf3b5",
+      "restaurantId": "topic_enrichment_baekban-trip_f546a09bf3b5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 32
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_16759fd77e4d",
+      "restaurantId": "topic_enrichment_baekban-trip_16759fd77e4d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 33
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3c099ed93517",
+      "restaurantId": "topic_enrichment_baekban-trip_3c099ed93517",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 34
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6e6c5b43e32e",
+      "restaurantId": "topic_enrichment_baekban-trip_6e6c5b43e32e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 35
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1413a20195c4",
+      "restaurantId": "topic_enrichment_baekban-trip_1413a20195c4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 36
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_09de8ea4ec40",
+      "restaurantId": "topic_enrichment_baekban-trip_09de8ea4ec40",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 37
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ab02ff497eba",
+      "restaurantId": "topic_enrichment_baekban-trip_ab02ff497eba",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 38
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_059209e4f9de",
+      "restaurantId": "topic_enrichment_baekban-trip_059209e4f9de",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 39
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dbf6dbfc1ac3",
+      "restaurantId": "topic_enrichment_baekban-trip_dbf6dbfc1ac3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 40
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0409f0b9d0d2",
+      "restaurantId": "topic_enrichment_baekban-trip_0409f0b9d0d2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 41
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_23beb182e1cd",
+      "restaurantId": "topic_enrichment_baekban-trip_23beb182e1cd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 42
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4b11369aa747",
+      "restaurantId": "topic_enrichment_baekban-trip_4b11369aa747",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 43
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b33bec05af8e",
+      "restaurantId": "topic_enrichment_baekban-trip_b33bec05af8e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 44
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fdbf6b55e2c5",
+      "restaurantId": "topic_enrichment_baekban-trip_fdbf6b55e2c5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 45
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4356e89305d7",
+      "restaurantId": "topic_enrichment_baekban-trip_4356e89305d7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 46
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3b945e5d7802",
+      "restaurantId": "topic_enrichment_baekban-trip_3b945e5d7802",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 47
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_02efe3316f8f",
+      "restaurantId": "topic_enrichment_baekban-trip_02efe3316f8f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 48
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c2d2ca61a1a0",
+      "restaurantId": "topic_enrichment_baekban-trip_c2d2ca61a1a0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 49
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ada11409a038",
+      "restaurantId": "topic_enrichment_baekban-trip_ada11409a038",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 50
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6721e67979e5",
+      "restaurantId": "topic_enrichment_baekban-trip_6721e67979e5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 51
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a32343005c6c",
+      "restaurantId": "topic_enrichment_baekban-trip_a32343005c6c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 52
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1aa3db290a2a",
+      "restaurantId": "topic_enrichment_baekban-trip_1aa3db290a2a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 53
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_74458af413b5",
+      "restaurantId": "topic_enrichment_baekban-trip_74458af413b5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 54
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0e8db8f0019b",
+      "restaurantId": "topic_enrichment_baekban-trip_0e8db8f0019b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 55
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4c9b99deb7f1",
+      "restaurantId": "topic_enrichment_baekban-trip_4c9b99deb7f1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 56
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0ca387b6afe7",
+      "restaurantId": "topic_enrichment_baekban-trip_0ca387b6afe7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 57
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_82f33e866db5",
+      "restaurantId": "topic_enrichment_baekban-trip_82f33e866db5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 58
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3e394967c9af",
+      "restaurantId": "topic_enrichment_baekban-trip_3e394967c9af",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 59
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2735663ed016",
+      "restaurantId": "topic_enrichment_baekban-trip_2735663ed016",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 60
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_58df6045989d",
+      "restaurantId": "topic_enrichment_baekban-trip_58df6045989d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 61
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2439bb5ea5cd",
+      "restaurantId": "topic_enrichment_baekban-trip_2439bb5ea5cd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 62
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_241890e60307",
+      "restaurantId": "topic_enrichment_baekban-trip_241890e60307",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 63
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f6491866a405",
+      "restaurantId": "topic_enrichment_baekban-trip_f6491866a405",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 64
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4ade268585ff",
+      "restaurantId": "topic_enrichment_baekban-trip_4ade268585ff",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 65
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bbcaac080e83",
+      "restaurantId": "topic_enrichment_baekban-trip_bbcaac080e83",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 66
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_20beec462001",
+      "restaurantId": "topic_enrichment_baekban-trip_20beec462001",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 67
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d7283e5def3e",
+      "restaurantId": "topic_enrichment_baekban-trip_d7283e5def3e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 68
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a1a2716f3d28",
+      "restaurantId": "topic_enrichment_baekban-trip_a1a2716f3d28",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 69
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b4ca3f93a275",
+      "restaurantId": "topic_enrichment_baekban-trip_b4ca3f93a275",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 70
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_33677e42ec45",
+      "restaurantId": "topic_enrichment_baekban-trip_33677e42ec45",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 71
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_97cdc1e841d3",
+      "restaurantId": "topic_enrichment_baekban-trip_97cdc1e841d3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 72
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_704624a38904",
+      "restaurantId": "topic_enrichment_baekban-trip_704624a38904",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 73
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_077430b083a7",
+      "restaurantId": "topic_enrichment_baekban-trip_077430b083a7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 74
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_418d086edb0b",
+      "restaurantId": "topic_enrichment_baekban-trip_418d086edb0b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 75
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1bcdc3a98b9a",
+      "restaurantId": "topic_enrichment_baekban-trip_1bcdc3a98b9a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 76
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ad1b572c2582",
+      "restaurantId": "topic_enrichment_baekban-trip_ad1b572c2582",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 77
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d88319062a02",
+      "restaurantId": "topic_enrichment_baekban-trip_d88319062a02",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 78
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_930b5d237bcc",
+      "restaurantId": "topic_enrichment_baekban-trip_930b5d237bcc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 79
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8a23e7e99133",
+      "restaurantId": "topic_enrichment_baekban-trip_8a23e7e99133",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 80
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ffcf4c1ccffe",
+      "restaurantId": "topic_enrichment_baekban-trip_ffcf4c1ccffe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 81
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ec64209c8cb9",
+      "restaurantId": "topic_enrichment_baekban-trip_ec64209c8cb9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 82
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9f283ebbaceb",
+      "restaurantId": "topic_enrichment_baekban-trip_9f283ebbaceb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 83
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4c151b3cd785",
+      "restaurantId": "topic_enrichment_baekban-trip_4c151b3cd785",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 84
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_266d9cf67f32",
+      "restaurantId": "topic_enrichment_baekban-trip_266d9cf67f32",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 85
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6a713ae0534c",
+      "restaurantId": "topic_enrichment_baekban-trip_6a713ae0534c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 86
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9a8ae4d62fc9",
+      "restaurantId": "topic_enrichment_baekban-trip_9a8ae4d62fc9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 87
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1ea6e155c4c4",
+      "restaurantId": "topic_enrichment_baekban-trip_1ea6e155c4c4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 88
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9d0446f90981",
+      "restaurantId": "topic_enrichment_baekban-trip_9d0446f90981",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 89
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3e66d9e7caae",
+      "restaurantId": "topic_enrichment_baekban-trip_3e66d9e7caae",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 90
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1fce0efab9fe",
+      "restaurantId": "topic_enrichment_baekban-trip_1fce0efab9fe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 91
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e6dc5057ada2",
+      "restaurantId": "topic_enrichment_baekban-trip_e6dc5057ada2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 92
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6c22fd012b08",
+      "restaurantId": "topic_enrichment_baekban-trip_6c22fd012b08",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 93
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_47748e0dba5d",
+      "restaurantId": "topic_enrichment_baekban-trip_47748e0dba5d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 94
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_820db465f590",
+      "restaurantId": "topic_enrichment_baekban-trip_820db465f590",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 95
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8a0c048d2290",
+      "restaurantId": "topic_enrichment_baekban-trip_8a0c048d2290",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 96
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_67f97ddb3334",
+      "restaurantId": "topic_enrichment_baekban-trip_67f97ddb3334",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 97
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8432487c4d5d",
+      "restaurantId": "topic_enrichment_baekban-trip_8432487c4d5d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 98
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_22fc6bd4b57f",
+      "restaurantId": "topic_enrichment_baekban-trip_22fc6bd4b57f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 99
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_28a9f1bba873",
+      "restaurantId": "topic_enrichment_baekban-trip_28a9f1bba873",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 100
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b2ef2571fcec",
+      "restaurantId": "topic_enrichment_baekban-trip_b2ef2571fcec",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 101
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9afe7e874002",
+      "restaurantId": "topic_enrichment_baekban-trip_9afe7e874002",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 102
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2bb440260aae",
+      "restaurantId": "topic_enrichment_baekban-trip_2bb440260aae",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 103
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_30f3356c5588",
+      "restaurantId": "topic_enrichment_baekban-trip_30f3356c5588",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 104
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b02a204d790f",
+      "restaurantId": "topic_enrichment_baekban-trip_b02a204d790f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 105
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_57f2e15a3cce",
+      "restaurantId": "topic_enrichment_baekban-trip_57f2e15a3cce",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 106
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_26bf4107d337",
+      "restaurantId": "topic_enrichment_baekban-trip_26bf4107d337",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 107
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ca89e0a3523d",
+      "restaurantId": "topic_enrichment_baekban-trip_ca89e0a3523d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 108
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f90cf91dda59",
+      "restaurantId": "topic_enrichment_baekban-trip_f90cf91dda59",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 109
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_92b99e495058",
+      "restaurantId": "topic_enrichment_baekban-trip_92b99e495058",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 110
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dd4cec241761",
+      "restaurantId": "topic_enrichment_baekban-trip_dd4cec241761",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 111
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e7473c014b97",
+      "restaurantId": "topic_enrichment_baekban-trip_e7473c014b97",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 112
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d6447d90e5d6",
+      "restaurantId": "topic_enrichment_baekban-trip_d6447d90e5d6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 113
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_87c401ece279",
+      "restaurantId": "topic_enrichment_baekban-trip_87c401ece279",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 114
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_84066695d527",
+      "restaurantId": "topic_enrichment_baekban-trip_84066695d527",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 115
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_eef23acf3600",
+      "restaurantId": "topic_enrichment_baekban-trip_eef23acf3600",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 116
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c44e52bc6943",
+      "restaurantId": "topic_enrichment_baekban-trip_c44e52bc6943",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 117
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_19167b917685",
+      "restaurantId": "topic_enrichment_baekban-trip_19167b917685",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 118
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_35a34f8088e3",
+      "restaurantId": "topic_enrichment_baekban-trip_35a34f8088e3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 119
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fb13d403cc96",
+      "restaurantId": "topic_enrichment_baekban-trip_fb13d403cc96",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 120
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5c6f598779df",
+      "restaurantId": "topic_enrichment_baekban-trip_5c6f598779df",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 121
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c7a723283abd",
+      "restaurantId": "topic_enrichment_baekban-trip_c7a723283abd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 122
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9f314bf05d1d",
+      "restaurantId": "topic_enrichment_baekban-trip_9f314bf05d1d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 123
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9c22a8b63d91",
+      "restaurantId": "topic_enrichment_baekban-trip_9c22a8b63d91",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 124
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_02945f24f770",
+      "restaurantId": "topic_enrichment_baekban-trip_02945f24f770",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 125
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2d108d429670",
+      "restaurantId": "topic_enrichment_baekban-trip_2d108d429670",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 126
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_546d6364065b",
+      "restaurantId": "topic_enrichment_baekban-trip_546d6364065b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 127
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a1325083b0eb",
+      "restaurantId": "topic_enrichment_baekban-trip_a1325083b0eb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 128
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4acfdf70f82b",
+      "restaurantId": "topic_enrichment_baekban-trip_4acfdf70f82b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 129
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_48bdfed6d6c0",
+      "restaurantId": "topic_enrichment_baekban-trip_48bdfed6d6c0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 130
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c9ab3d401bf2",
+      "restaurantId": "topic_enrichment_baekban-trip_c9ab3d401bf2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 131
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_88200bad7f29",
+      "restaurantId": "topic_enrichment_baekban-trip_88200bad7f29",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 132
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_083c8f9d42ef",
+      "restaurantId": "topic_enrichment_baekban-trip_083c8f9d42ef",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 133
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8c1d3e0996ce",
+      "restaurantId": "topic_enrichment_baekban-trip_8c1d3e0996ce",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 134
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fe31c726e83d",
+      "restaurantId": "topic_enrichment_baekban-trip_fe31c726e83d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 135
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2cee247b6867",
+      "restaurantId": "topic_enrichment_baekban-trip_2cee247b6867",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 136
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8c7612333f6d",
+      "restaurantId": "topic_enrichment_baekban-trip_8c7612333f6d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 137
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1e6454354637",
+      "restaurantId": "topic_enrichment_baekban-trip_1e6454354637",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 138
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_58a2a8cad216",
+      "restaurantId": "topic_enrichment_baekban-trip_58a2a8cad216",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 139
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7a852660fc34",
+      "restaurantId": "topic_enrichment_baekban-trip_7a852660fc34",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 140
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5293cf09fb86",
+      "restaurantId": "topic_enrichment_baekban-trip_5293cf09fb86",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 141
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_80c9699d0aa8",
+      "restaurantId": "topic_enrichment_baekban-trip_80c9699d0aa8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 142
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_83fbe7425ae8",
+      "restaurantId": "topic_enrichment_baekban-trip_83fbe7425ae8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 143
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a379a24d6377",
+      "restaurantId": "topic_enrichment_baekban-trip_a379a24d6377",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 144
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f987ce5b69f1",
+      "restaurantId": "topic_enrichment_baekban-trip_f987ce5b69f1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 145
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_82ee60af660b",
+      "restaurantId": "topic_enrichment_baekban-trip_82ee60af660b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 146
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c1b7eedfd3c4",
+      "restaurantId": "topic_enrichment_baekban-trip_c1b7eedfd3c4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 147
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_374b941990ec",
+      "restaurantId": "topic_enrichment_baekban-trip_374b941990ec",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 148
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_cae948703b68",
+      "restaurantId": "topic_enrichment_baekban-trip_cae948703b68",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 149
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fe4f7e0edab6",
+      "restaurantId": "topic_enrichment_baekban-trip_fe4f7e0edab6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 150
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c90dfcdca275",
+      "restaurantId": "topic_enrichment_baekban-trip_c90dfcdca275",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 151
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_94e53ebdbf12",
+      "restaurantId": "topic_enrichment_baekban-trip_94e53ebdbf12",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 152
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9b6548d8c890",
+      "restaurantId": "topic_enrichment_baekban-trip_9b6548d8c890",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 153
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_74a46046db9c",
+      "restaurantId": "topic_enrichment_baekban-trip_74a46046db9c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 154
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bd262f39cc0a",
+      "restaurantId": "topic_enrichment_baekban-trip_bd262f39cc0a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 155
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9d993e24b15b",
+      "restaurantId": "topic_enrichment_baekban-trip_9d993e24b15b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 156
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9245d78575f5",
+      "restaurantId": "topic_enrichment_baekban-trip_9245d78575f5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 157
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9bfb0ddccd99",
+      "restaurantId": "topic_enrichment_baekban-trip_9bfb0ddccd99",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 158
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2453ad8623f9",
+      "restaurantId": "topic_enrichment_baekban-trip_2453ad8623f9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 159
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ec9b0fb14075",
+      "restaurantId": "topic_enrichment_baekban-trip_ec9b0fb14075",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 160
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_22291938a2e6",
+      "restaurantId": "topic_enrichment_baekban-trip_22291938a2e6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 161
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e10043252335",
+      "restaurantId": "topic_enrichment_baekban-trip_e10043252335",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 162
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c796d4466cfb",
+      "restaurantId": "topic_enrichment_baekban-trip_c796d4466cfb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 163
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5fae57cc1892",
+      "restaurantId": "topic_enrichment_baekban-trip_5fae57cc1892",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 164
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4041718753ba",
+      "restaurantId": "topic_enrichment_baekban-trip_4041718753ba",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 165
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_98b9d052ebf7",
+      "restaurantId": "topic_enrichment_baekban-trip_98b9d052ebf7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 166
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1d49f78a446d",
+      "restaurantId": "topic_enrichment_baekban-trip_1d49f78a446d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 167
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ce91f6501fcc",
+      "restaurantId": "topic_enrichment_baekban-trip_ce91f6501fcc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 168
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b745eda154b9",
+      "restaurantId": "topic_enrichment_baekban-trip_b745eda154b9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 169
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a3a1d541772a",
+      "restaurantId": "topic_enrichment_baekban-trip_a3a1d541772a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 170
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ed3bbfa8d06e",
+      "restaurantId": "topic_enrichment_baekban-trip_ed3bbfa8d06e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 171
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1338e31bc743",
+      "restaurantId": "topic_enrichment_baekban-trip_1338e31bc743",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 172
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_04988286ae6e",
+      "restaurantId": "topic_enrichment_baekban-trip_04988286ae6e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 173
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_92e9c2762747",
+      "restaurantId": "topic_enrichment_baekban-trip_92e9c2762747",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 174
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8e1ee8f84b77",
+      "restaurantId": "topic_enrichment_baekban-trip_8e1ee8f84b77",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 175
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fbbcd0c262bd",
+      "restaurantId": "topic_enrichment_baekban-trip_fbbcd0c262bd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 176
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_98c482aa9d95",
+      "restaurantId": "topic_enrichment_baekban-trip_98c482aa9d95",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 177
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4eb3413a993a",
+      "restaurantId": "topic_enrichment_baekban-trip_4eb3413a993a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 178
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_87fd37d6b231",
+      "restaurantId": "topic_enrichment_baekban-trip_87fd37d6b231",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 179
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_20c6e3fcabe2",
+      "restaurantId": "topic_enrichment_baekban-trip_20c6e3fcabe2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 180
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e70f2218b3c4",
+      "restaurantId": "topic_enrichment_baekban-trip_e70f2218b3c4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 181
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f3dd560297e1",
+      "restaurantId": "topic_enrichment_baekban-trip_f3dd560297e1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 182
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5675c78c7726",
+      "restaurantId": "topic_enrichment_baekban-trip_5675c78c7726",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 183
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d71371c4d0e8",
+      "restaurantId": "topic_enrichment_baekban-trip_d71371c4d0e8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 184
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b5fecd96db66",
+      "restaurantId": "topic_enrichment_baekban-trip_b5fecd96db66",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 185
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6c34ac248932",
+      "restaurantId": "topic_enrichment_baekban-trip_6c34ac248932",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 186
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_81f0b8244342",
+      "restaurantId": "topic_enrichment_baekban-trip_81f0b8244342",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 187
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4392d32fc4db",
+      "restaurantId": "topic_enrichment_baekban-trip_4392d32fc4db",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 188
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f09efd2bdd30",
+      "restaurantId": "topic_enrichment_baekban-trip_f09efd2bdd30",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 189
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c0e8ea1d5bae",
+      "restaurantId": "topic_enrichment_baekban-trip_c0e8ea1d5bae",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 190
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ea8255c3fa28",
+      "restaurantId": "topic_enrichment_baekban-trip_ea8255c3fa28",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 191
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3fb4ddfebd06",
+      "restaurantId": "topic_enrichment_baekban-trip_3fb4ddfebd06",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 192
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0762e7d27347",
+      "restaurantId": "topic_enrichment_baekban-trip_0762e7d27347",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 193
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a826019a8c64",
+      "restaurantId": "topic_enrichment_baekban-trip_a826019a8c64",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 194
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_edf816d62103",
+      "restaurantId": "topic_enrichment_baekban-trip_edf816d62103",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 195
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dadf7abec696",
+      "restaurantId": "topic_enrichment_baekban-trip_dadf7abec696",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 196
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a085419d8531",
+      "restaurantId": "topic_enrichment_baekban-trip_a085419d8531",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 197
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9ba058f8ccb4",
+      "restaurantId": "topic_enrichment_baekban-trip_9ba058f8ccb4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 198
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_99c4c977a2d5",
+      "restaurantId": "topic_enrichment_baekban-trip_99c4c977a2d5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 199
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_749ebb5a0327",
+      "restaurantId": "topic_enrichment_baekban-trip_749ebb5a0327",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 200
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_70c4da44d7e9",
+      "restaurantId": "topic_enrichment_baekban-trip_70c4da44d7e9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 201
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8ed335809648",
+      "restaurantId": "topic_enrichment_baekban-trip_8ed335809648",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 202
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3c149e1956ad",
+      "restaurantId": "topic_enrichment_baekban-trip_3c149e1956ad",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 203
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ae9e5030ed31",
+      "restaurantId": "topic_enrichment_baekban-trip_ae9e5030ed31",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 204
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_52de90693355",
+      "restaurantId": "topic_enrichment_baekban-trip_52de90693355",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 205
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_92b610362c76",
+      "restaurantId": "topic_enrichment_baekban-trip_92b610362c76",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 206
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c97d83fd63f0",
+      "restaurantId": "topic_enrichment_baekban-trip_c97d83fd63f0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 207
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7838536ab4d8",
+      "restaurantId": "topic_enrichment_baekban-trip_7838536ab4d8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 208
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_17160c8e15c1",
+      "restaurantId": "topic_enrichment_baekban-trip_17160c8e15c1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 209
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_811e9336f493",
+      "restaurantId": "topic_enrichment_baekban-trip_811e9336f493",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 210
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8127126c7a1c",
+      "restaurantId": "topic_enrichment_baekban-trip_8127126c7a1c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 211
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_99f345557cde",
+      "restaurantId": "topic_enrichment_baekban-trip_99f345557cde",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 212
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_97c86b4c948c",
+      "restaurantId": "topic_enrichment_baekban-trip_97c86b4c948c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 213
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7568e7b77db9",
+      "restaurantId": "topic_enrichment_baekban-trip_7568e7b77db9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 214
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0eaa493192ac",
+      "restaurantId": "topic_enrichment_baekban-trip_0eaa493192ac",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 215
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8768194aba7e",
+      "restaurantId": "topic_enrichment_baekban-trip_8768194aba7e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 216
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f75bf6f1113d",
+      "restaurantId": "topic_enrichment_baekban-trip_f75bf6f1113d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 217
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0e07b702675d",
+      "restaurantId": "topic_enrichment_baekban-trip_0e07b702675d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 218
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_07a7d6c43e14",
+      "restaurantId": "topic_enrichment_baekban-trip_07a7d6c43e14",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 219
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9eece7de67c6",
+      "restaurantId": "topic_enrichment_baekban-trip_9eece7de67c6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 220
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d9c21b1ab369",
+      "restaurantId": "topic_enrichment_baekban-trip_d9c21b1ab369",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 221
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_046bef524aff",
+      "restaurantId": "topic_enrichment_baekban-trip_046bef524aff",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 222
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_be27bfc9e8d1",
+      "restaurantId": "topic_enrichment_baekban-trip_be27bfc9e8d1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 223
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_95620289309a",
+      "restaurantId": "topic_enrichment_baekban-trip_95620289309a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 224
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_008aa451ba34",
+      "restaurantId": "topic_enrichment_baekban-trip_008aa451ba34",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 225
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_25dee463683b",
+      "restaurantId": "topic_enrichment_baekban-trip_25dee463683b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 226
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f77c257f3d7b",
+      "restaurantId": "topic_enrichment_baekban-trip_f77c257f3d7b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 227
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f5048e981062",
+      "restaurantId": "topic_enrichment_baekban-trip_f5048e981062",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 228
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8d14ef1bfc7d",
+      "restaurantId": "topic_enrichment_baekban-trip_8d14ef1bfc7d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 229
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_11541ff3a69b",
+      "restaurantId": "topic_enrichment_baekban-trip_11541ff3a69b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 230
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d0768c22f989",
+      "restaurantId": "topic_enrichment_baekban-trip_d0768c22f989",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 231
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_10a0a702a7fc",
+      "restaurantId": "topic_enrichment_baekban-trip_10a0a702a7fc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 232
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ea9a1725f574",
+      "restaurantId": "topic_enrichment_baekban-trip_ea9a1725f574",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 233
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_628c3ccfe9a3",
+      "restaurantId": "topic_enrichment_baekban-trip_628c3ccfe9a3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 234
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f74383d091f9",
+      "restaurantId": "topic_enrichment_baekban-trip_f74383d091f9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 235
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ffec09aa5893",
+      "restaurantId": "topic_enrichment_baekban-trip_ffec09aa5893",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 236
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_777ad9246832",
+      "restaurantId": "topic_enrichment_baekban-trip_777ad9246832",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 237
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_038c5f60d3dc",
+      "restaurantId": "topic_enrichment_baekban-trip_038c5f60d3dc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 238
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6a9ca199e419",
+      "restaurantId": "topic_enrichment_baekban-trip_6a9ca199e419",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 239
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_50def6483dc6",
+      "restaurantId": "topic_enrichment_baekban-trip_50def6483dc6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 240
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d7a049056763",
+      "restaurantId": "topic_enrichment_baekban-trip_d7a049056763",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 241
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0af67d38adb8",
+      "restaurantId": "topic_enrichment_baekban-trip_0af67d38adb8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 242
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_601b2427b330",
+      "restaurantId": "topic_enrichment_baekban-trip_601b2427b330",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 243
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_570a28ee6060",
+      "restaurantId": "topic_enrichment_baekban-trip_570a28ee6060",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 244
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7b108d810b5a",
+      "restaurantId": "topic_enrichment_baekban-trip_7b108d810b5a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 245
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4787473d2739",
+      "restaurantId": "topic_enrichment_baekban-trip_4787473d2739",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 246
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_543b1067a38f",
+      "restaurantId": "topic_enrichment_baekban-trip_543b1067a38f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 247
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1bad91334402",
+      "restaurantId": "topic_enrichment_baekban-trip_1bad91334402",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 248
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b183196b1fd2",
+      "restaurantId": "topic_enrichment_baekban-trip_b183196b1fd2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 249
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_55a39abe669e",
+      "restaurantId": "topic_enrichment_baekban-trip_55a39abe669e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 250
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9c5c561ba99e",
+      "restaurantId": "topic_enrichment_baekban-trip_9c5c561ba99e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 251
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bdb955bdc3fe",
+      "restaurantId": "topic_enrichment_baekban-trip_bdb955bdc3fe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 252
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_008933f7d1f6",
+      "restaurantId": "topic_enrichment_baekban-trip_008933f7d1f6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 253
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_26bace3b9a3d",
+      "restaurantId": "topic_enrichment_baekban-trip_26bace3b9a3d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 254
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_18342bb07658",
+      "restaurantId": "topic_enrichment_baekban-trip_18342bb07658",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 255
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ede7da663e7c",
+      "restaurantId": "topic_enrichment_baekban-trip_ede7da663e7c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 256
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a14c7c0974d1",
+      "restaurantId": "topic_enrichment_baekban-trip_a14c7c0974d1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 257
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a8ad87a001c9",
+      "restaurantId": "topic_enrichment_baekban-trip_a8ad87a001c9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 258
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f8592d573e12",
+      "restaurantId": "topic_enrichment_baekban-trip_f8592d573e12",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 259
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ff637ba9f2cf",
+      "restaurantId": "topic_enrichment_baekban-trip_ff637ba9f2cf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 260
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dc4ed483b42e",
+      "restaurantId": "topic_enrichment_baekban-trip_dc4ed483b42e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 261
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8ea3ba7eafa2",
+      "restaurantId": "topic_enrichment_baekban-trip_8ea3ba7eafa2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 262
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7f2df75279b0",
+      "restaurantId": "topic_enrichment_baekban-trip_7f2df75279b0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 263
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b0b0380e3f86",
+      "restaurantId": "topic_enrichment_baekban-trip_b0b0380e3f86",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 264
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c00e99bba9d6",
+      "restaurantId": "topic_enrichment_baekban-trip_c00e99bba9d6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 265
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a1b3cf78a7c0",
+      "restaurantId": "topic_enrichment_baekban-trip_a1b3cf78a7c0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 266
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6c4c305e5484",
+      "restaurantId": "topic_enrichment_baekban-trip_6c4c305e5484",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 267
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_25b4ea117bd9",
+      "restaurantId": "topic_enrichment_baekban-trip_25b4ea117bd9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 268
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1665c7fcb246",
+      "restaurantId": "topic_enrichment_baekban-trip_1665c7fcb246",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 269
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dd14614f2901",
+      "restaurantId": "topic_enrichment_baekban-trip_dd14614f2901",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 270
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_742795dc8a8c",
+      "restaurantId": "topic_enrichment_baekban-trip_742795dc8a8c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 271
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_01cc7a016b45",
+      "restaurantId": "topic_enrichment_baekban-trip_01cc7a016b45",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 272
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d2b5016b9f27",
+      "restaurantId": "topic_enrichment_baekban-trip_d2b5016b9f27",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 273
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d60d188f241d",
+      "restaurantId": "topic_enrichment_baekban-trip_d60d188f241d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 274
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1bf9d5b1b7d6",
+      "restaurantId": "topic_enrichment_baekban-trip_1bf9d5b1b7d6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 275
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_93b735fe93ee",
+      "restaurantId": "topic_enrichment_baekban-trip_93b735fe93ee",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 276
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b7113c8f46d5",
+      "restaurantId": "topic_enrichment_baekban-trip_b7113c8f46d5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 277
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c8ffe9a80b9f",
+      "restaurantId": "topic_enrichment_baekban-trip_c8ffe9a80b9f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 278
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1ee7b780d642",
+      "restaurantId": "topic_enrichment_baekban-trip_1ee7b780d642",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 279
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ec9f587025a0",
+      "restaurantId": "topic_enrichment_baekban-trip_ec9f587025a0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 280
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e3b80b5fe0a0",
+      "restaurantId": "topic_enrichment_baekban-trip_e3b80b5fe0a0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 281
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d5e7cf9b014f",
+      "restaurantId": "topic_enrichment_baekban-trip_d5e7cf9b014f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 282
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_11b9b09ab942",
+      "restaurantId": "topic_enrichment_baekban-trip_11b9b09ab942",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 283
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a248968d8e45",
+      "restaurantId": "topic_enrichment_baekban-trip_a248968d8e45",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 284
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_af73fe10485c",
+      "restaurantId": "topic_enrichment_baekban-trip_af73fe10485c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 285
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3cb98519c999",
+      "restaurantId": "topic_enrichment_baekban-trip_3cb98519c999",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 286
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6414b3226a8e",
+      "restaurantId": "topic_enrichment_baekban-trip_6414b3226a8e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 287
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5fa34a1bcd4f",
+      "restaurantId": "topic_enrichment_baekban-trip_5fa34a1bcd4f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 288
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b9bf14362a35",
+      "restaurantId": "topic_enrichment_baekban-trip_b9bf14362a35",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 289
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8b133c3fb3f0",
+      "restaurantId": "topic_enrichment_baekban-trip_8b133c3fb3f0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 290
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bf8579a8f70d",
+      "restaurantId": "topic_enrichment_baekban-trip_bf8579a8f70d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 291
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_58a1ac69250b",
+      "restaurantId": "topic_enrichment_baekban-trip_58a1ac69250b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 292
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_694fe3af15f9",
+      "restaurantId": "topic_enrichment_baekban-trip_694fe3af15f9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 293
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4bb1ba6b3781",
+      "restaurantId": "topic_enrichment_baekban-trip_4bb1ba6b3781",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 294
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9b5da0427820",
+      "restaurantId": "topic_enrichment_baekban-trip_9b5da0427820",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 295
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_106c46dfb776",
+      "restaurantId": "topic_enrichment_baekban-trip_106c46dfb776",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 296
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d28537d75b94",
+      "restaurantId": "topic_enrichment_baekban-trip_d28537d75b94",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 297
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_83f8c2e44569",
+      "restaurantId": "topic_enrichment_baekban-trip_83f8c2e44569",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 298
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2b28ba0399a5",
+      "restaurantId": "topic_enrichment_baekban-trip_2b28ba0399a5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 299
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b1a080f1a99f",
+      "restaurantId": "topic_enrichment_baekban-trip_b1a080f1a99f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 300
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1ae620755938",
+      "restaurantId": "topic_enrichment_baekban-trip_1ae620755938",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 301
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_cce779f39e97",
+      "restaurantId": "topic_enrichment_baekban-trip_cce779f39e97",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 302
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e7ae2ccf7c81",
+      "restaurantId": "topic_enrichment_baekban-trip_e7ae2ccf7c81",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 303
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_47e483cc2ea1",
+      "restaurantId": "topic_enrichment_baekban-trip_47e483cc2ea1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 304
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4bf4b371e554",
+      "restaurantId": "topic_enrichment_baekban-trip_4bf4b371e554",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 305
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f00dc1aa8b3c",
+      "restaurantId": "topic_enrichment_baekban-trip_f00dc1aa8b3c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 306
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a38f1418b442",
+      "restaurantId": "topic_enrichment_baekban-trip_a38f1418b442",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 307
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d0787822365c",
+      "restaurantId": "topic_enrichment_baekban-trip_d0787822365c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 308
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_35b5e9ee845a",
+      "restaurantId": "topic_enrichment_baekban-trip_35b5e9ee845a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 309
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f84972374077",
+      "restaurantId": "topic_enrichment_baekban-trip_f84972374077",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 310
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e3c53e05d14b",
+      "restaurantId": "topic_enrichment_baekban-trip_e3c53e05d14b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 311
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bac0a856a567",
+      "restaurantId": "topic_enrichment_baekban-trip_bac0a856a567",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 312
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6a2b4b7cf90e",
+      "restaurantId": "topic_enrichment_baekban-trip_6a2b4b7cf90e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 313
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_887e4153af50",
+      "restaurantId": "topic_enrichment_baekban-trip_887e4153af50",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 314
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9a94bf6d1594",
+      "restaurantId": "topic_enrichment_baekban-trip_9a94bf6d1594",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 315
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d0774ba9c45b",
+      "restaurantId": "topic_enrichment_baekban-trip_d0774ba9c45b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 316
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_78f10b9b6577",
+      "restaurantId": "topic_enrichment_baekban-trip_78f10b9b6577",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 317
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d69bf6c495e9",
+      "restaurantId": "topic_enrichment_baekban-trip_d69bf6c495e9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 318
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7417a2c4cab0",
+      "restaurantId": "topic_enrichment_baekban-trip_7417a2c4cab0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 319
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_67d3ad63c69c",
+      "restaurantId": "topic_enrichment_baekban-trip_67d3ad63c69c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 320
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0d026f34165a",
+      "restaurantId": "topic_enrichment_baekban-trip_0d026f34165a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 321
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c037e5ec4fbe",
+      "restaurantId": "topic_enrichment_baekban-trip_c037e5ec4fbe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 322
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fd25f3aba897",
+      "restaurantId": "topic_enrichment_baekban-trip_fd25f3aba897",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 323
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2c071487933a",
+      "restaurantId": "topic_enrichment_baekban-trip_2c071487933a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 324
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d7ebcf503c47",
+      "restaurantId": "topic_enrichment_baekban-trip_d7ebcf503c47",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 325
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3fbeffe08f4f",
+      "restaurantId": "topic_enrichment_baekban-trip_3fbeffe08f4f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 326
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f2554749e05f",
+      "restaurantId": "topic_enrichment_baekban-trip_f2554749e05f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 327
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bb048474a155",
+      "restaurantId": "topic_enrichment_baekban-trip_bb048474a155",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 328
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2e626f1f0de6",
+      "restaurantId": "topic_enrichment_baekban-trip_2e626f1f0de6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 329
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4bf22e745b9e",
+      "restaurantId": "topic_enrichment_baekban-trip_4bf22e745b9e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 330
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_67c102f5db0d",
+      "restaurantId": "topic_enrichment_baekban-trip_67c102f5db0d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 331
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d470d17558a8",
+      "restaurantId": "topic_enrichment_baekban-trip_d470d17558a8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 332
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b3164cb7bc87",
+      "restaurantId": "topic_enrichment_baekban-trip_b3164cb7bc87",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 333
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1f95aea3f461",
+      "restaurantId": "topic_enrichment_baekban-trip_1f95aea3f461",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 334
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_efb064e694d2",
+      "restaurantId": "topic_enrichment_baekban-trip_efb064e694d2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 335
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4e1c0724c410",
+      "restaurantId": "topic_enrichment_baekban-trip_4e1c0724c410",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 336
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_106702d90602",
+      "restaurantId": "topic_enrichment_baekban-trip_106702d90602",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 337
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0369d5f55278",
+      "restaurantId": "topic_enrichment_baekban-trip_0369d5f55278",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 338
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a29cf33a0043",
+      "restaurantId": "topic_enrichment_baekban-trip_a29cf33a0043",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 339
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_913157310245",
+      "restaurantId": "topic_enrichment_baekban-trip_913157310245",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 340
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bbd735132e92",
+      "restaurantId": "topic_enrichment_baekban-trip_bbd735132e92",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 341
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f696de53a5ee",
+      "restaurantId": "topic_enrichment_baekban-trip_f696de53a5ee",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 342
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_90460c665adf",
+      "restaurantId": "topic_enrichment_baekban-trip_90460c665adf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 343
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dba86e8194cf",
+      "restaurantId": "topic_enrichment_baekban-trip_dba86e8194cf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 344
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4e7f11047f72",
+      "restaurantId": "topic_enrichment_baekban-trip_4e7f11047f72",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 345
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b3b4bee36ca3",
+      "restaurantId": "topic_enrichment_baekban-trip_b3b4bee36ca3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 346
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_91a280583355",
+      "restaurantId": "topic_enrichment_baekban-trip_91a280583355",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 347
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_22e0d2ba5687",
+      "restaurantId": "topic_enrichment_baekban-trip_22e0d2ba5687",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 348
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0743aa14d227",
+      "restaurantId": "topic_enrichment_baekban-trip_0743aa14d227",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 349
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ac80fc8ef29f",
+      "restaurantId": "topic_enrichment_baekban-trip_ac80fc8ef29f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 350
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b3ed505aed5d",
+      "restaurantId": "topic_enrichment_baekban-trip_b3ed505aed5d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 351
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_634847274b80",
+      "restaurantId": "topic_enrichment_baekban-trip_634847274b80",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 352
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c399a06f855d",
+      "restaurantId": "topic_enrichment_baekban-trip_c399a06f855d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 353
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_670161d80b66",
+      "restaurantId": "topic_enrichment_baekban-trip_670161d80b66",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 354
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8653deb9f81d",
+      "restaurantId": "topic_enrichment_baekban-trip_8653deb9f81d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 355
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_19989b196eb0",
+      "restaurantId": "topic_enrichment_baekban-trip_19989b196eb0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 356
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5e6a29e6908f",
+      "restaurantId": "topic_enrichment_baekban-trip_5e6a29e6908f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 357
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8c758082c11f",
+      "restaurantId": "topic_enrichment_baekban-trip_8c758082c11f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 358
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dad5af5fd502",
+      "restaurantId": "topic_enrichment_baekban-trip_dad5af5fd502",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 359
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a3f7c04577d3",
+      "restaurantId": "topic_enrichment_baekban-trip_a3f7c04577d3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 360
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_930f81d5f182",
+      "restaurantId": "topic_enrichment_baekban-trip_930f81d5f182",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 361
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c988da5b2a06",
+      "restaurantId": "topic_enrichment_baekban-trip_c988da5b2a06",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 362
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_78031903189a",
+      "restaurantId": "topic_enrichment_baekban-trip_78031903189a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 363
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_92788da2e584",
+      "restaurantId": "topic_enrichment_baekban-trip_92788da2e584",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 364
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_001f690b95d4",
+      "restaurantId": "topic_enrichment_baekban-trip_001f690b95d4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 365
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_19de60fb99ae",
+      "restaurantId": "topic_enrichment_baekban-trip_19de60fb99ae",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 366
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5618405a9946",
+      "restaurantId": "topic_enrichment_baekban-trip_5618405a9946",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 367
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_857ffb93159e",
+      "restaurantId": "topic_enrichment_baekban-trip_857ffb93159e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 368
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_cd14a88473f3",
+      "restaurantId": "topic_enrichment_baekban-trip_cd14a88473f3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 369
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f5ec3c9519b1",
+      "restaurantId": "topic_enrichment_baekban-trip_f5ec3c9519b1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 370
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_87fc484e5dff",
+      "restaurantId": "topic_enrichment_baekban-trip_87fc484e5dff",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 371
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b844c6921f38",
+      "restaurantId": "topic_enrichment_baekban-trip_b844c6921f38",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 372
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_aaa455405112",
+      "restaurantId": "topic_enrichment_baekban-trip_aaa455405112",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 373
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_87c3523575cf",
+      "restaurantId": "topic_enrichment_baekban-trip_87c3523575cf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 374
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8aa4e0a70e4a",
+      "restaurantId": "topic_enrichment_baekban-trip_8aa4e0a70e4a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 375
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_523947be9835",
+      "restaurantId": "topic_enrichment_baekban-trip_523947be9835",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 376
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7a5a76679741",
+      "restaurantId": "topic_enrichment_baekban-trip_7a5a76679741",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 377
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_78cc9c104727",
+      "restaurantId": "topic_enrichment_baekban-trip_78cc9c104727",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 378
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_593e842655e6",
+      "restaurantId": "topic_enrichment_baekban-trip_593e842655e6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 379
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_617b55e7b5bf",
+      "restaurantId": "topic_enrichment_baekban-trip_617b55e7b5bf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 380
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4dca0b8d1239",
+      "restaurantId": "topic_enrichment_baekban-trip_4dca0b8d1239",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 381
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c4b865f49cf3",
+      "restaurantId": "topic_enrichment_baekban-trip_c4b865f49cf3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 382
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fe4fa87f5387",
+      "restaurantId": "topic_enrichment_baekban-trip_fe4fa87f5387",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 383
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_353834e04f78",
+      "restaurantId": "topic_enrichment_baekban-trip_353834e04f78",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 384
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e99f7ec379a5",
+      "restaurantId": "topic_enrichment_baekban-trip_e99f7ec379a5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 385
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e0a606b25c23",
+      "restaurantId": "topic_enrichment_baekban-trip_e0a606b25c23",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 386
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f7560cc470dd",
+      "restaurantId": "topic_enrichment_baekban-trip_f7560cc470dd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 387
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4a7cdb5e1910",
+      "restaurantId": "topic_enrichment_baekban-trip_4a7cdb5e1910",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 388
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d98970101503",
+      "restaurantId": "topic_enrichment_baekban-trip_d98970101503",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 389
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f1b671aca595",
+      "restaurantId": "topic_enrichment_baekban-trip_f1b671aca595",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 390
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_98d80bbfc728",
+      "restaurantId": "topic_enrichment_baekban-trip_98d80bbfc728",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 391
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ab37656f598c",
+      "restaurantId": "topic_enrichment_baekban-trip_ab37656f598c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 392
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_09f0c2eb1abe",
+      "restaurantId": "topic_enrichment_baekban-trip_09f0c2eb1abe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 393
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3400b8cea979",
+      "restaurantId": "topic_enrichment_baekban-trip_3400b8cea979",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 394
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dead7bde3335",
+      "restaurantId": "topic_enrichment_baekban-trip_dead7bde3335",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 395
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0f7ee3e0b321",
+      "restaurantId": "topic_enrichment_baekban-trip_0f7ee3e0b321",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 396
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a5270fdfb795",
+      "restaurantId": "topic_enrichment_baekban-trip_a5270fdfb795",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 397
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_52a0bd01fe04",
+      "restaurantId": "topic_enrichment_baekban-trip_52a0bd01fe04",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 398
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9223b5436084",
+      "restaurantId": "topic_enrichment_baekban-trip_9223b5436084",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 399
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6db1ec80c8dc",
+      "restaurantId": "topic_enrichment_baekban-trip_6db1ec80c8dc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 400
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a56d7d53c0c6",
+      "restaurantId": "topic_enrichment_baekban-trip_a56d7d53c0c6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 401
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_733ad04396f8",
+      "restaurantId": "topic_enrichment_baekban-trip_733ad04396f8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 402
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3dd5d01c890f",
+      "restaurantId": "topic_enrichment_baekban-trip_3dd5d01c890f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 403
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_eabed69bc2fd",
+      "restaurantId": "topic_enrichment_baekban-trip_eabed69bc2fd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 404
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a3dd06a0229d",
+      "restaurantId": "topic_enrichment_baekban-trip_a3dd06a0229d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 405
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ced2ecd8b732",
+      "restaurantId": "topic_enrichment_baekban-trip_ced2ecd8b732",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 406
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_03db01150c60",
+      "restaurantId": "topic_enrichment_baekban-trip_03db01150c60",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 407
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fe7a53d77203",
+      "restaurantId": "topic_enrichment_baekban-trip_fe7a53d77203",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 408
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_159eb22601a8",
+      "restaurantId": "topic_enrichment_baekban-trip_159eb22601a8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 409
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f75764a85363",
+      "restaurantId": "topic_enrichment_baekban-trip_f75764a85363",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 410
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5dfbe118afea",
+      "restaurantId": "topic_enrichment_baekban-trip_5dfbe118afea",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 411
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_56f7696ed27e",
+      "restaurantId": "topic_enrichment_baekban-trip_56f7696ed27e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 412
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3b9ff95e4ee7",
+      "restaurantId": "topic_enrichment_baekban-trip_3b9ff95e4ee7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 413
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1b31ec4b709e",
+      "restaurantId": "topic_enrichment_baekban-trip_1b31ec4b709e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 414
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5c98d09b537f",
+      "restaurantId": "topic_enrichment_baekban-trip_5c98d09b537f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 415
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a9a1f3428352",
+      "restaurantId": "topic_enrichment_baekban-trip_a9a1f3428352",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 416
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8f97518b67a0",
+      "restaurantId": "topic_enrichment_baekban-trip_8f97518b67a0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 417
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fa2dd3f822de",
+      "restaurantId": "topic_enrichment_baekban-trip_fa2dd3f822de",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 418
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_578f932da7b7",
+      "restaurantId": "topic_enrichment_baekban-trip_578f932da7b7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 419
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_86667b192ea2",
+      "restaurantId": "topic_enrichment_baekban-trip_86667b192ea2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 420
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0c1f6d1f7ddd",
+      "restaurantId": "topic_enrichment_baekban-trip_0c1f6d1f7ddd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 421
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bbad183de023",
+      "restaurantId": "topic_enrichment_baekban-trip_bbad183de023",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 422
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_db00716fd769",
+      "restaurantId": "topic_enrichment_baekban-trip_db00716fd769",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 423
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fced2eeb3ca6",
+      "restaurantId": "topic_enrichment_baekban-trip_fced2eeb3ca6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 424
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e015e7662a20",
+      "restaurantId": "topic_enrichment_baekban-trip_e015e7662a20",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 425
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b7e0e72002b9",
+      "restaurantId": "topic_enrichment_baekban-trip_b7e0e72002b9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 426
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_91c695259675",
+      "restaurantId": "topic_enrichment_baekban-trip_91c695259675",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 427
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_43285e51c469",
+      "restaurantId": "topic_enrichment_baekban-trip_43285e51c469",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 428
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_971e87750dcc",
+      "restaurantId": "topic_enrichment_baekban-trip_971e87750dcc",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 429
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_169eda54f23c",
+      "restaurantId": "topic_enrichment_baekban-trip_169eda54f23c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 430
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a4f8a942715c",
+      "restaurantId": "topic_enrichment_baekban-trip_a4f8a942715c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 431
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_54bbb5ecb098",
+      "restaurantId": "topic_enrichment_baekban-trip_54bbb5ecb098",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 432
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0cf613d8d2f2",
+      "restaurantId": "topic_enrichment_baekban-trip_0cf613d8d2f2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 433
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_acc4c3d73274",
+      "restaurantId": "topic_enrichment_baekban-trip_acc4c3d73274",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 434
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6168583d8be5",
+      "restaurantId": "topic_enrichment_baekban-trip_6168583d8be5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 435
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f783d38e305a",
+      "restaurantId": "topic_enrichment_baekban-trip_f783d38e305a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 436
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e3428126ee73",
+      "restaurantId": "topic_enrichment_baekban-trip_e3428126ee73",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 437
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9aeafd39f648",
+      "restaurantId": "topic_enrichment_baekban-trip_9aeafd39f648",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 438
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_48ae46509372",
+      "restaurantId": "topic_enrichment_baekban-trip_48ae46509372",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 439
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_683b02255b9c",
+      "restaurantId": "topic_enrichment_baekban-trip_683b02255b9c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 440
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1a561b1985d3",
+      "restaurantId": "topic_enrichment_baekban-trip_1a561b1985d3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 441
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2e150d23a4e4",
+      "restaurantId": "topic_enrichment_baekban-trip_2e150d23a4e4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 442
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e058c4678b56",
+      "restaurantId": "topic_enrichment_baekban-trip_e058c4678b56",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 443
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6e9d43b572a7",
+      "restaurantId": "topic_enrichment_baekban-trip_6e9d43b572a7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 444
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1334e0b198fe",
+      "restaurantId": "topic_enrichment_baekban-trip_1334e0b198fe",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 445
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_cb9da980aaf0",
+      "restaurantId": "topic_enrichment_baekban-trip_cb9da980aaf0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 446
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_43c46f061f2f",
+      "restaurantId": "topic_enrichment_baekban-trip_43c46f061f2f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 447
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a6a4296c1a1e",
+      "restaurantId": "topic_enrichment_baekban-trip_a6a4296c1a1e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 448
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a1f160805126",
+      "restaurantId": "topic_enrichment_baekban-trip_a1f160805126",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 449
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_de2b22a1921c",
+      "restaurantId": "topic_enrichment_baekban-trip_de2b22a1921c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 450
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b649f0682a3b",
+      "restaurantId": "topic_enrichment_baekban-trip_b649f0682a3b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 451
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5da3045cf2ae",
+      "restaurantId": "topic_enrichment_baekban-trip_5da3045cf2ae",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 452
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_86b4588c67b8",
+      "restaurantId": "topic_enrichment_baekban-trip_86b4588c67b8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 453
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_82a88dbbb48a",
+      "restaurantId": "topic_enrichment_baekban-trip_82a88dbbb48a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 454
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3524493435b8",
+      "restaurantId": "topic_enrichment_baekban-trip_3524493435b8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 455
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0d05b1378981",
+      "restaurantId": "topic_enrichment_baekban-trip_0d05b1378981",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 456
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f3ea2ab10948",
+      "restaurantId": "topic_enrichment_baekban-trip_f3ea2ab10948",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 457
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_28f23f105d2f",
+      "restaurantId": "topic_enrichment_baekban-trip_28f23f105d2f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 458
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_696afd28f1b2",
+      "restaurantId": "topic_enrichment_baekban-trip_696afd28f1b2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 459
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dd3770dbfaeb",
+      "restaurantId": "topic_enrichment_baekban-trip_dd3770dbfaeb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 460
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f38a6a621b9f",
+      "restaurantId": "topic_enrichment_baekban-trip_f38a6a621b9f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 461
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4aebb003112e",
+      "restaurantId": "topic_enrichment_baekban-trip_4aebb003112e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 462
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_babfabd0778f",
+      "restaurantId": "topic_enrichment_baekban-trip_babfabd0778f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 463
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_edefc37cfa99",
+      "restaurantId": "topic_enrichment_baekban-trip_edefc37cfa99",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 464
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_741a72a7d603",
+      "restaurantId": "topic_enrichment_baekban-trip_741a72a7d603",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 465
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_de4408966914",
+      "restaurantId": "topic_enrichment_baekban-trip_de4408966914",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 466
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ff2819ee9ca1",
+      "restaurantId": "topic_enrichment_baekban-trip_ff2819ee9ca1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 467
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1297fda157bd",
+      "restaurantId": "topic_enrichment_baekban-trip_1297fda157bd",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 468
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d197d080678a",
+      "restaurantId": "topic_enrichment_baekban-trip_d197d080678a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 469
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b210abbb35f5",
+      "restaurantId": "topic_enrichment_baekban-trip_b210abbb35f5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 470
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3a4238cb7044",
+      "restaurantId": "topic_enrichment_baekban-trip_3a4238cb7044",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 471
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9cb7c0518d1b",
+      "restaurantId": "topic_enrichment_baekban-trip_9cb7c0518d1b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 472
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_16dafdc1d59f",
+      "restaurantId": "topic_enrichment_baekban-trip_16dafdc1d59f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 473
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8839d010138c",
+      "restaurantId": "topic_enrichment_baekban-trip_8839d010138c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 474
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_50d5c5961879",
+      "restaurantId": "topic_enrichment_baekban-trip_50d5c5961879",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 475
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f57713ddfc6a",
+      "restaurantId": "topic_enrichment_baekban-trip_f57713ddfc6a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 476
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3a09f4c3407c",
+      "restaurantId": "topic_enrichment_baekban-trip_3a09f4c3407c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 477
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2467534ed33d",
+      "restaurantId": "topic_enrichment_baekban-trip_2467534ed33d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 478
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c70d4357521c",
+      "restaurantId": "topic_enrichment_baekban-trip_c70d4357521c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 479
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e7d7f5cda6d3",
+      "restaurantId": "topic_enrichment_baekban-trip_e7d7f5cda6d3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 480
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4d3a094b743a",
+      "restaurantId": "topic_enrichment_baekban-trip_4d3a094b743a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 481
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_44bdb9c5a04b",
+      "restaurantId": "topic_enrichment_baekban-trip_44bdb9c5a04b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 482
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5ed009fb4a94",
+      "restaurantId": "topic_enrichment_baekban-trip_5ed009fb4a94",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 483
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4f0b987e1065",
+      "restaurantId": "topic_enrichment_baekban-trip_4f0b987e1065",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 484
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_302ed81ee2f5",
+      "restaurantId": "topic_enrichment_baekban-trip_302ed81ee2f5",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 485
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5038c56c9d87",
+      "restaurantId": "topic_enrichment_baekban-trip_5038c56c9d87",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 486
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_bbcb92035cc4",
+      "restaurantId": "topic_enrichment_baekban-trip_bbcb92035cc4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 487
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a82a5683be4d",
+      "restaurantId": "topic_enrichment_baekban-trip_a82a5683be4d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 488
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c2aac9d0baee",
+      "restaurantId": "topic_enrichment_baekban-trip_c2aac9d0baee",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 489
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8c1d056d843d",
+      "restaurantId": "topic_enrichment_baekban-trip_8c1d056d843d",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 490
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_41f912458cf4",
+      "restaurantId": "topic_enrichment_baekban-trip_41f912458cf4",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 491
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d1544ffdd1ca",
+      "restaurantId": "topic_enrichment_baekban-trip_d1544ffdd1ca",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 492
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_aa23025cc7bf",
+      "restaurantId": "topic_enrichment_baekban-trip_aa23025cc7bf",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 493
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b33205757952",
+      "restaurantId": "topic_enrichment_baekban-trip_b33205757952",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 494
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ef602419b5aa",
+      "restaurantId": "topic_enrichment_baekban-trip_ef602419b5aa",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 495
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_fc3c2d5a2ca8",
+      "restaurantId": "topic_enrichment_baekban-trip_fc3c2d5a2ca8",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 496
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7aece4cfbf2b",
+      "restaurantId": "topic_enrichment_baekban-trip_7aece4cfbf2b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 497
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b0a8432713a0",
+      "restaurantId": "topic_enrichment_baekban-trip_b0a8432713a0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 498
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a66de8f29043",
+      "restaurantId": "topic_enrichment_baekban-trip_a66de8f29043",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 499
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2bd637a2d89b",
+      "restaurantId": "topic_enrichment_baekban-trip_2bd637a2d89b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 500
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5b756cc56848",
+      "restaurantId": "topic_enrichment_baekban-trip_5b756cc56848",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 501
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_773eeaeb5578",
+      "restaurantId": "topic_enrichment_baekban-trip_773eeaeb5578",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 502
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_e8fc7af34462",
+      "restaurantId": "topic_enrichment_baekban-trip_e8fc7af34462",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 503
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c8ba6c945c4e",
+      "restaurantId": "topic_enrichment_baekban-trip_c8ba6c945c4e",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 504
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_06a325f41fb3",
+      "restaurantId": "topic_enrichment_baekban-trip_06a325f41fb3",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 505
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_58bbc8eaac23",
+      "restaurantId": "topic_enrichment_baekban-trip_58bbc8eaac23",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 506
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7f43f1e93a11",
+      "restaurantId": "topic_enrichment_baekban-trip_7f43f1e93a11",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 507
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_780271814abb",
+      "restaurantId": "topic_enrichment_baekban-trip_780271814abb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 508
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_cfaf2579fe25",
+      "restaurantId": "topic_enrichment_baekban-trip_cfaf2579fe25",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 509
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_79f13a0de2a7",
+      "restaurantId": "topic_enrichment_baekban-trip_79f13a0de2a7",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 510
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_01c387400e4c",
+      "restaurantId": "topic_enrichment_baekban-trip_01c387400e4c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 511
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_f75d2be59ae9",
+      "restaurantId": "topic_enrichment_baekban-trip_f75d2be59ae9",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 512
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_6cd0676e927f",
+      "restaurantId": "topic_enrichment_baekban-trip_6cd0676e927f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 513
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ce96f6e0ae42",
+      "restaurantId": "topic_enrichment_baekban-trip_ce96f6e0ae42",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 514
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_84da93ab373f",
+      "restaurantId": "topic_enrichment_baekban-trip_84da93ab373f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 515
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5db918a3f880",
+      "restaurantId": "topic_enrichment_baekban-trip_5db918a3f880",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 516
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2d2b209f4888",
+      "restaurantId": "topic_enrichment_baekban-trip_2d2b209f4888",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 517
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a982c405fef2",
+      "restaurantId": "topic_enrichment_baekban-trip_a982c405fef2",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 518
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_57d1e557ef3f",
+      "restaurantId": "topic_enrichment_baekban-trip_57d1e557ef3f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 519
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7808574ad129",
+      "restaurantId": "topic_enrichment_baekban-trip_7808574ad129",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 520
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_9b1fa63fa9d0",
+      "restaurantId": "topic_enrichment_baekban-trip_9b1fa63fa9d0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 521
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_96f5fb38b016",
+      "restaurantId": "topic_enrichment_baekban-trip_96f5fb38b016",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 522
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ee67b4037088",
+      "restaurantId": "topic_enrichment_baekban-trip_ee67b4037088",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 523
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_73a33ab7575c",
+      "restaurantId": "topic_enrichment_baekban-trip_73a33ab7575c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 524
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a0bc3b656140",
+      "restaurantId": "topic_enrichment_baekban-trip_a0bc3b656140",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 525
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b41a3db26ec0",
+      "restaurantId": "topic_enrichment_baekban-trip_b41a3db26ec0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 526
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1b3df58fa240",
+      "restaurantId": "topic_enrichment_baekban-trip_1b3df58fa240",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 527
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_a8c9206f8ee0",
+      "restaurantId": "topic_enrichment_baekban-trip_a8c9206f8ee0",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 528
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_ad31d2f37d3f",
+      "restaurantId": "topic_enrichment_baekban-trip_ad31d2f37d3f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 529
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_21b0a319541c",
+      "restaurantId": "topic_enrichment_baekban-trip_21b0a319541c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 530
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_51772450c82b",
+      "restaurantId": "topic_enrichment_baekban-trip_51772450c82b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 531
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_521a9fd24832",
+      "restaurantId": "topic_enrichment_baekban-trip_521a9fd24832",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 532
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_0493c4e333bb",
+      "restaurantId": "topic_enrichment_baekban-trip_0493c4e333bb",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 533
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_7dfa1d24f2d6",
+      "restaurantId": "topic_enrichment_baekban-trip_7dfa1d24f2d6",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 534
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2ef385a6269c",
+      "restaurantId": "topic_enrichment_baekban-trip_2ef385a6269c",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 535
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_2bf3e2d7fc96",
+      "restaurantId": "topic_enrichment_baekban-trip_2bf3e2d7fc96",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 536
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_dbd0b7ad6062",
+      "restaurantId": "topic_enrichment_baekban-trip_dbd0b7ad6062",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 537
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_8066af6d7104",
+      "restaurantId": "topic_enrichment_baekban-trip_8066af6d7104",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 538
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_3579d0fcca63",
+      "restaurantId": "topic_enrichment_baekban-trip_3579d0fcca63",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 539
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_205e12ade48a",
+      "restaurantId": "topic_enrichment_baekban-trip_205e12ade48a",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 540
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4240cf9faf29",
+      "restaurantId": "topic_enrichment_baekban-trip_4240cf9faf29",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 541
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_d873f9a0eee1",
+      "restaurantId": "topic_enrichment_baekban-trip_d873f9a0eee1",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 542
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_5b88ea9cef47",
+      "restaurantId": "topic_enrichment_baekban-trip_5b88ea9cef47",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 543
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_c3e32e92034b",
+      "restaurantId": "topic_enrichment_baekban-trip_c3e32e92034b",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 544
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_1cb428915e3f",
+      "restaurantId": "topic_enrichment_baekban-trip_1cb428915e3f",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 545
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_02e188e94779",
+      "restaurantId": "topic_enrichment_baekban-trip_02e188e94779",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 546
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_4240a59ce919",
+      "restaurantId": "topic_enrichment_baekban-trip_4240a59ce919",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 547
+    },
+    {
+      "id": "sikgaek-baekban-trip_topic_enrichment_baekban-trip_b2291946f595",
+      "restaurantId": "topic_enrichment_baekban-trip_b2291946f595",
+      "sourceId": "sikgaek-baekban-trip",
+      "ordinal": 548
     }
   ]
 }

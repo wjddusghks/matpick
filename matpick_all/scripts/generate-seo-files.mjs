@@ -10,7 +10,9 @@ const publicDir = path.join(clientRoot, "public");
 const sourceAsset = path.join(clientRoot, "src", "assets", "matpick-logo-final 2.png");
 const baseDataPath = path.join(clientRoot, "src", "data", "matpick-data.json");
 const generatedDir = path.join(clientRoot, "src", "data", "generated");
+const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
 const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
+const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -109,6 +111,22 @@ async function readGeneratedDatasets() {
   return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
 }
 
+async function readTopicEnrichments() {
+  const entries = await readdir(topicEnrichmentDir, { withFileTypes: true });
+  const datasetFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".enriched.json"))
+    .map((entry) => path.join(topicEnrichmentDir, entry.name));
+
+  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
+}
+
+function filterVisibleCreatorData(creators = [], visits = []) {
+  return {
+    creators: creators.filter((creator) => !hiddenCreatorIds.has(creator.id)),
+    visits: visits.filter((visit) => !hiddenCreatorIds.has(visit.creatorId)),
+  };
+}
+
 async function ensurePublicAssets() {
   await mkdir(publicDir, { recursive: true });
   await copyFile(sourceAsset, path.join(publicDir, "favicon.png"));
@@ -119,17 +137,31 @@ async function ensurePublicAssets() {
 async function buildSitemap(siteUrl) {
   const baseDataset = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
+  const topicEnrichments = await readTopicEnrichments();
   const discoveryTopics = await readJson(discoveryTopicsPath);
-  const topicEpisodes = buildTopicEpisodes(
-    discoveryTopics,
+  const { creators, visits } = filterVisibleCreatorData(
     baseDataset.creators || [],
     baseDataset.visits || []
+  );
+  const visibleRestaurantIds = new Set([
+    ...visits.map((visit) => visit.restaurantId).filter(Boolean),
+    ...topicEnrichments.flatMap((dataset) =>
+      (dataset.sourceLinks || []).map((link) => link.restaurantId).filter(Boolean)
+    ),
+  ]);
+  const topicEpisodes = buildTopicEpisodes(
+    discoveryTopics,
+    creators,
+    visits
   );
   const restaurants = [
     ...(baseDataset.restaurants || []),
     ...generatedDatasets.flatMap((dataset) => dataset.restaurants || []),
-  ];
-  const creators = baseDataset.creators || [];
+    ...topicEnrichments.flatMap((dataset) => dataset.restaurants || []),
+  ].filter(
+    (restaurant) =>
+      visibleRestaurantIds.size === 0 || visibleRestaurantIds.has(restaurant.id)
+  );
   const today = new Date().toISOString();
   const seen = new Set();
 

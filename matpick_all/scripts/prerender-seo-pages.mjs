@@ -8,7 +8,9 @@ const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.join(projectRoot, "dist");
 const baseDataPath = path.join(projectRoot, "client", "src", "data", "matpick-data.json");
 const generatedDir = path.join(projectRoot, "client", "src", "data", "generated");
+const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
 const discoveryTopicsPath = path.join(projectRoot, "client", "src", "data", "discovery-topics.json");
+const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -121,6 +123,33 @@ async function readGeneratedDatasets() {
     .map((entry) => path.join(generatedDir, entry.name));
 
   return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
+}
+
+async function readTopicEnrichments() {
+  const entries = await readdir(topicEnrichmentDir, { withFileTypes: true });
+  const datasetFiles = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".enriched.json"))
+    .map((entry) => path.join(topicEnrichmentDir, entry.name));
+
+  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
+}
+
+function filterVisibleSeoDataset({ creators = [], visits = [], restaurants = [], sourceLinks = [] }) {
+  const visibleCreators = creators.filter((creator) => !hiddenCreatorIds.has(creator.id));
+  const visibleVisits = visits.filter((visit) => !hiddenCreatorIds.has(visit.creatorId));
+  const visibleRestaurantIds = new Set([
+    ...visibleVisits.map((visit) => visit.restaurantId).filter(Boolean),
+    ...sourceLinks.map((link) => link.restaurantId).filter(Boolean),
+  ]);
+
+  return {
+    creators: visibleCreators,
+    visits: visibleVisits,
+    restaurants: restaurants.filter(
+      (restaurant) =>
+        visibleRestaurantIds.size === 0 || visibleRestaurantIds.has(restaurant.id)
+    ),
+  };
 }
 
 function buildLookupKey(restaurant) {
@@ -279,12 +308,17 @@ async function main() {
   const template = await readFile(path.join(distDir, "index.html"), "utf8");
   const baseData = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
+  const topicEnrichments = await readTopicEnrichments();
   const discoveryTopics = await readJson(discoveryTopicsPath);
-  const { creators, restaurants } = mergeDatasets(baseData, generatedDatasets);
+  const { creators, restaurants } = filterVisibleSeoDataset({
+    ...mergeDatasets(baseData, [...generatedDatasets, ...topicEnrichments]),
+    visits: baseData.visits || [],
+    sourceLinks: topicEnrichments.flatMap((dataset) => dataset.sourceLinks || []),
+  });
   const topicEpisodes = buildTopicEpisodes(
     discoveryTopics,
     creators,
-    baseData.visits || []
+    (baseData.visits || []).filter((visit) => !hiddenCreatorIds.has(visit.creatorId))
   );
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
   const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";

@@ -36,6 +36,40 @@ const workbookDatasetMatchers = [
   { datasetId: "old-korean-100", keyword: "100선" },
 ];
 
+const sourceMetadataByDatasetId = {
+  "baekban-trip": {
+    id: "sikgaek-baekban-trip",
+    name: "식객 허영만의 백반기행",
+    type: "tv_show",
+    provider: "TV CHOSUN",
+    description: "허영만의 백반기행에 소개된 맛집을 모아봤어요.",
+    imageUrl: "/source-covers/sikgaek-baekban-trip.jpg",
+  },
+  "wednesday-gourmet": {
+    id: "wednesday-gourmet",
+    name: "수요미식회",
+    type: "tv_show",
+    provider: "tvN",
+    description: "수요미식회에 소개된 맛집을 한 번에 탐색해보세요.",
+    imageUrl: "/source-covers/wednesday-gourmet.jpg",
+  },
+  "old-korean-100": {
+    id: "old-korean-100",
+    name: "한국인이 사랑하는 오래된 한식당 100선",
+    type: "institution",
+    provider: "한식진흥원",
+    description: "한국인이 사랑하는 오래된 한식당 100선을 지역별로 정리했어요.",
+    imageUrl: "/source-covers/old-korean-100.jpg",
+  },
+  "baekjong-wok": {
+    id: "baekjong-wok",
+    name: "백종원의 3대천왕",
+    type: "tv_show",
+    provider: "SBS",
+    description: "백종원의 3대천왕에 소개된 맛집을 모아봤어요.",
+  },
+};
+
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
 }
@@ -256,12 +290,23 @@ function mergeGoogleEnrichments(datasetMap) {
 function writeTopicOutputs(datasetMap) {
   for (const [datasetId, restaurants] of datasetMap.entries()) {
     const outputPath = path.join(topicEnrichmentRoot, `${datasetId}.enriched.json`);
+    const sourceMetadata = sourceMetadataByDatasetId[datasetId];
+    const sourceLinks = sourceMetadata
+      ? Array.from(restaurants.values()).map((restaurant, index) => ({
+          id: `${sourceMetadata.id}_${restaurant.id}`,
+          restaurantId: restaurant.id,
+          sourceId: sourceMetadata.id,
+          ordinal: index + 1,
+        }))
+      : [];
     writeJson(outputPath, {
       datasetId,
       generatedAt: new Date().toISOString(),
       restaurants: Array.from(restaurants.values()).sort((left, right) =>
         left.name.localeCompare(right.name, "ko")
       ),
+      sources: sourceMetadata ? [sourceMetadata] : [],
+      sourceLinks,
     });
   }
 }

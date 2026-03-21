@@ -1,6 +1,6 @@
 {
   "datasetId": "wednesday-gourmet",
-  "generatedAt": "2026-03-21T09:56:52.280Z",
+  "generatedAt": "2026-03-21T10:47:31.373Z",
   "restaurants": [
     {
       "id": "topic_enrichment_wednesday-gourmet_ad821e2f63e8",
@@ -12590,6 +12590,2844 @@
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJHfs_aW6ffDURhRyocALDuG0",
       "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "wednesday-gourmet",
+      "name": "수요미식회",
+      "type": "tv_show",
+      "provider": "tvN",
+      "description": "수요미식회에 소개된 맛집을 한 번에 탐색해보세요.",
+      "imageUrl": "/source-covers/wednesday-gourmet.jpg"
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_10660c110a7e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_10660c110a7e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 1
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_609e0ace24fe",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_609e0ace24fe",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 2
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5eab1981bd88",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5eab1981bd88",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 3
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_30b3a4b022c6",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_30b3a4b022c6",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 4
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_933ace0e84cf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_933ace0e84cf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 5
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1f8eb0f9fcaf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1f8eb0f9fcaf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 6
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_abab2ca9ed5f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_abab2ca9ed5f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 7
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a6838188d48c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a6838188d48c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 8
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f4a77c19e084",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f4a77c19e084",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 9
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b3b0432bdfa1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b3b0432bdfa1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 10
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_905d9d7fdfcd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_905d9d7fdfcd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 11
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cc1b339ae12b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cc1b339ae12b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 12
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_17d1357d61aa",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_17d1357d61aa",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 13
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_53b4e9a48a42",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_53b4e9a48a42",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 14
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_294b0a464e21",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_294b0a464e21",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 15
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0ec4c75a39c2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0ec4c75a39c2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 16
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c58a5ab6bf97",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c58a5ab6bf97",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 17
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_62733aeecb1b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_62733aeecb1b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 18
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f848c597d144",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f848c597d144",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 19
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_abdc534bde01",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_abdc534bde01",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 20
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0ff4244fee18",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0ff4244fee18",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 21
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b67412dfd3f2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b67412dfd3f2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 22
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7d714f168ece",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7d714f168ece",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 23
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f9a8e3b506a3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f9a8e3b506a3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 24
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4bd7cb46cc2e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4bd7cb46cc2e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 25
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0255f02245c4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0255f02245c4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 26
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0761052bd3ea",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0761052bd3ea",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 27
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c77e480d8ee8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c77e480d8ee8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 28
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_388e7f70bda7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_388e7f70bda7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 29
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_02a06d562ccc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_02a06d562ccc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 30
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_533b36c6a793",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_533b36c6a793",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 31
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1e45422f08ec",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1e45422f08ec",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 32
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_45cae69a0002",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_45cae69a0002",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 33
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8bdc538077a1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8bdc538077a1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 34
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_74962a715eab",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_74962a715eab",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 35
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c1933f736ba9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c1933f736ba9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 36
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d56113cac7bb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d56113cac7bb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 37
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bad889bd2ff7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bad889bd2ff7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 38
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8ea1d2f48823",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8ea1d2f48823",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 39
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_441f34eefd29",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_441f34eefd29",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 40
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7a1fcb964b26",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7a1fcb964b26",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 41
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_79a2690e4041",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_79a2690e4041",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 42
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e63f4bbae470",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e63f4bbae470",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 43
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_af8ee3894d8e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_af8ee3894d8e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 44
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_92cdb75a87cc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_92cdb75a87cc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 45
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b1e21205a010",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b1e21205a010",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 46
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_618f8b901739",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_618f8b901739",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 47
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2b949511e277",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2b949511e277",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 48
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e41fa7977c65",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e41fa7977c65",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 49
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_11996eb5873a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_11996eb5873a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 50
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5c18e9dc8369",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5c18e9dc8369",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 51
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f7c5ae2dbc0f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f7c5ae2dbc0f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 52
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_53459366f2ea",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_53459366f2ea",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 53
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1882f7ef16e7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1882f7ef16e7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 54
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3bba1755743b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3bba1755743b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 55
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1a7b9cc65294",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1a7b9cc65294",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 56
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_289fe252a447",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_289fe252a447",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 57
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5e750da15fdf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5e750da15fdf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 58
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b16532409169",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b16532409169",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 59
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a926f2f081d4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a926f2f081d4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 60
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e31c27d02ad7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e31c27d02ad7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 61
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d3b879e7fd27",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d3b879e7fd27",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 62
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1b9300730641",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1b9300730641",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 63
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_573145098b73",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_573145098b73",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 64
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b91c1db65402",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b91c1db65402",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 65
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3e95e01f2a91",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3e95e01f2a91",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 66
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_dab23d7fd63d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_dab23d7fd63d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 67
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2c30b0caac54",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2c30b0caac54",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 68
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2345e073fcd9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2345e073fcd9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 69
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_12b0f2a1422f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_12b0f2a1422f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 70
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_873d380cc18a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_873d380cc18a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 71
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_324252e14b9a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_324252e14b9a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 72
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_06bfffe83332",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_06bfffe83332",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 73
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a0871229aa18",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a0871229aa18",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 74
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c50aa14da62c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c50aa14da62c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 75
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_efd002ee5116",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_efd002ee5116",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 76
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_40df725c90c8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_40df725c90c8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 77
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b87acf2f63a8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b87acf2f63a8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 78
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c1cde9003698",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c1cde9003698",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 79
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_11081caf8edc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_11081caf8edc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 80
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9ceadf8f019e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9ceadf8f019e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 81
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2feb822aa311",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2feb822aa311",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 82
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_36b80139fa37",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_36b80139fa37",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 83
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_dbf42a614cd4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_dbf42a614cd4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 84
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_730c3065e490",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_730c3065e490",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 85
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_033f1a2cc472",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_033f1a2cc472",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 86
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5f11ea1b9be5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5f11ea1b9be5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 87
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8896e1058d13",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8896e1058d13",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 88
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_37ed4ee1f8a7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_37ed4ee1f8a7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 89
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c5ac0becdbad",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c5ac0becdbad",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 90
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6005e77da99d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6005e77da99d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 91
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d81c6d41d5c5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d81c6d41d5c5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 92
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4b754f129c98",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4b754f129c98",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 93
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_16f302ddd2e8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_16f302ddd2e8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 94
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_98f983cf731f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_98f983cf731f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 95
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_10baa18fa55b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_10baa18fa55b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 96
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_046e09d43b7f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_046e09d43b7f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 97
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_48929349bae7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_48929349bae7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 98
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_08d21163f955",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_08d21163f955",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 99
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_98ea1bda9c9b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_98ea1bda9c9b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 100
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_894b2b108102",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_894b2b108102",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 101
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4580d03127b0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4580d03127b0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 102
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9fae9ef0475a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9fae9ef0475a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 103
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4521ac81f11f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4521ac81f11f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 104
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4cce4519f154",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4cce4519f154",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 105
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1770f7010470",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1770f7010470",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 106
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f15b40bfb844",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f15b40bfb844",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 107
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f14edff7e7d1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f14edff7e7d1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 108
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4b872c115260",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4b872c115260",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 109
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e5ea04ca9472",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e5ea04ca9472",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 110
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8b09bf2f6c27",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8b09bf2f6c27",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 111
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4c98140254fa",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4c98140254fa",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 112
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6893c7700aa1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6893c7700aa1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 113
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6f410e4be9dd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6f410e4be9dd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 114
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_84a065ccbcfe",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_84a065ccbcfe",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 115
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2edc050595e6",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2edc050595e6",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 116
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e4a097c3d910",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e4a097c3d910",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 117
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_897397fdde53",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_897397fdde53",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 118
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1f317d893460",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1f317d893460",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 119
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1d14b85cf744",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1d14b85cf744",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 120
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f5bada862383",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f5bada862383",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 121
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6f8af55cf229",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6f8af55cf229",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 122
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f2877addc6cb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f2877addc6cb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 123
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fa2dcd82c3d7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fa2dcd82c3d7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 124
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2727b77c1797",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2727b77c1797",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 125
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a06512e85c3e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a06512e85c3e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 126
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_23573dba9a10",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_23573dba9a10",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 127
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d872f3fa4933",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d872f3fa4933",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 128
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_302c4a685012",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_302c4a685012",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 129
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3f0aa7b1c437",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3f0aa7b1c437",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 130
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f822b2cbfd3b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f822b2cbfd3b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 131
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_851831e632a5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_851831e632a5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 132
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6ac8cb9a365d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6ac8cb9a365d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 133
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_35afcff104c2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_35afcff104c2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 134
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7329c2f005b1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7329c2f005b1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 135
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0c509f3521cf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0c509f3521cf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 136
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_65629e42ff83",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_65629e42ff83",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 137
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_17cabcede32d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_17cabcede32d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 138
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a4089217ef7a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a4089217ef7a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 139
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1d72dfb1740d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1d72dfb1740d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 140
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9e2639bdd726",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9e2639bdd726",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 141
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c5461b10cb0d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c5461b10cb0d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 142
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b0d14d00ce31",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b0d14d00ce31",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 143
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e44e714f751c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e44e714f751c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 144
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bae0783c8480",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bae0783c8480",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 145
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_03cd0b817b18",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_03cd0b817b18",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 146
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_08726f494d3d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_08726f494d3d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 147
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f6b624cceb75",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f6b624cceb75",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 148
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b4560374ca3a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b4560374ca3a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 149
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a1d94e39eebf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a1d94e39eebf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 150
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bece48450035",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bece48450035",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 151
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_deaf8654e584",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_deaf8654e584",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 152
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a6ea7b8c5e4d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a6ea7b8c5e4d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 153
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_59d8b0f84bf2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_59d8b0f84bf2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 154
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_553444124e34",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_553444124e34",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 155
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2118e3458e81",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2118e3458e81",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 156
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_68f88d632788",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_68f88d632788",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 157
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a18e94c96e88",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a18e94c96e88",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 158
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b1631dea2d8d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b1631dea2d8d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 159
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4cf05a4f48ac",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4cf05a4f48ac",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 160
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3915c6fb925f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3915c6fb925f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 161
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ad821e2f63e8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ad821e2f63e8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 162
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2fe3e1e1d6a3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2fe3e1e1d6a3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 163
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6be5ab92d192",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6be5ab92d192",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 164
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8f72f325634c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8f72f325634c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 165
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3c177c3d9c3d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3c177c3d9c3d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 166
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ec4ce2988ffe",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ec4ce2988ffe",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 167
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_aa7ed0485ba0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_aa7ed0485ba0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 168
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_38e20c16e921",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_38e20c16e921",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 169
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9c644c8caf50",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9c644c8caf50",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 170
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d44089e1a097",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d44089e1a097",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 171
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9a12adc24960",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9a12adc24960",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 172
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4b6ef271bd4c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4b6ef271bd4c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 173
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_304f63750231",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_304f63750231",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 174
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d33dbe274699",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d33dbe274699",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 175
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_347725efdb9e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_347725efdb9e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 176
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_10f04a562592",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_10f04a562592",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 177
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3dc346b2a7db",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3dc346b2a7db",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 178
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_53f4b5cdb427",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_53f4b5cdb427",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 179
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2f88668bc795",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2f88668bc795",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 180
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4bcd2b7ec0a2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4bcd2b7ec0a2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 181
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6e8ed8e4791a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6e8ed8e4791a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 182
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ef87119070f3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ef87119070f3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 183
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_648818f415fc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_648818f415fc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 184
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8fd72baed107",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8fd72baed107",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 185
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5ffe81c6f3cc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5ffe81c6f3cc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 186
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4bd1442ccbee",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4bd1442ccbee",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 187
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_36894942411f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_36894942411f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 188
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8ca32e4b03c1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8ca32e4b03c1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 189
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_02a6ec52f16b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_02a6ec52f16b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 190
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0cb5b2b3b0fa",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0cb5b2b3b0fa",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 191
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c7a21d4cce57",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c7a21d4cce57",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 192
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2a6c40d669f0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2a6c40d669f0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 193
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_570050ae7a5f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_570050ae7a5f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 194
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7abf26e38c1d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7abf26e38c1d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 195
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0b9d28ce95e1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0b9d28ce95e1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 196
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_32e76424cb56",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_32e76424cb56",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 197
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b1496d59044d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b1496d59044d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 198
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_985c7d107b04",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_985c7d107b04",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 199
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d77d86b3a56d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d77d86b3a56d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 200
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f1544e99eb60",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f1544e99eb60",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 201
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_77b8ea450e63",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_77b8ea450e63",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 202
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6868600ecea0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6868600ecea0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 203
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7d2d077e2c33",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7d2d077e2c33",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 204
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0fee0d6861bf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0fee0d6861bf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 205
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f1a3b27a3b83",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f1a3b27a3b83",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 206
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4015707d7cc3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4015707d7cc3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 207
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_80dd9971dd6f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_80dd9971dd6f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 208
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_26f361b4cdde",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_26f361b4cdde",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 209
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0ab7df6f11ea",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0ab7df6f11ea",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 210
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4cb307de2a65",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4cb307de2a65",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 211
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bc770672bcef",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bc770672bcef",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 212
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bcdb568776e5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bcdb568776e5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 213
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_759c3ecb0814",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_759c3ecb0814",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 214
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2ce7da0f9996",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2ce7da0f9996",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 215
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_30da557cbc82",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_30da557cbc82",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 216
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c247f04c2a0a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c247f04c2a0a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 217
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d5cf2a04869c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d5cf2a04869c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 218
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_303f49bc76ce",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_303f49bc76ce",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 219
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f802523b73b1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f802523b73b1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 220
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_945848e80ba4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_945848e80ba4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 221
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_80c3b69f57d7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_80c3b69f57d7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 222
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1c1565e530a8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1c1565e530a8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 223
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_55ee512e49dd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_55ee512e49dd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 224
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cf8688f613e6",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cf8688f613e6",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 225
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f4437a5a6276",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f4437a5a6276",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 226
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0833fb345629",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0833fb345629",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 227
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_89244e2e44ae",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_89244e2e44ae",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 228
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6b96608ac01b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6b96608ac01b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 229
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bfd2c6c9150f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bfd2c6c9150f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 230
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_97fdda2b8464",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_97fdda2b8464",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 231
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_77ef036731fa",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_77ef036731fa",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 232
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8defffaf4b3c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8defffaf4b3c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 233
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cc27abc2e3f1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cc27abc2e3f1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 234
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_362fbcbaa26a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_362fbcbaa26a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 235
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c70482ab9bd7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c70482ab9bd7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 236
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5888d65363d0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5888d65363d0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 237
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8ecf1f84d490",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8ecf1f84d490",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 238
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3d669d90ddc1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3d669d90ddc1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 239
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b310e27e83c5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b310e27e83c5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 240
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1a5b88d539e9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1a5b88d539e9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 241
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_451a259894d6",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_451a259894d6",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 242
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_643872b5b931",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_643872b5b931",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 243
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c05e657adc04",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c05e657adc04",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 244
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cde3fbc33e47",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cde3fbc33e47",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 245
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0f9425a82380",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0f9425a82380",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 246
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cd7e2a5511e9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cd7e2a5511e9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 247
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_68e2e33d15c9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_68e2e33d15c9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 248
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2bc72808f347",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2bc72808f347",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 249
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1c651a3ddf53",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1c651a3ddf53",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 250
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0fc00e5d93c0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0fc00e5d93c0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 251
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3543f87b8174",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3543f87b8174",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 252
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ead4aca1d680",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ead4aca1d680",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 253
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8172bf7ef4e6",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8172bf7ef4e6",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 254
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_99fc3ac21c15",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_99fc3ac21c15",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 255
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_60843826574b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_60843826574b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 256
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_153b05b60740",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_153b05b60740",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 257
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0f64b4c20be1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0f64b4c20be1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 258
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d9b55fae040a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d9b55fae040a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 259
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7f36de7e0555",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7f36de7e0555",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 260
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_eefae6c8db52",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_eefae6c8db52",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 261
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6c27df49b9b8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6c27df49b9b8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 262
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1f44157c38ff",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1f44157c38ff",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 263
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e001b83d5e6f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e001b83d5e6f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 264
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_88ce42bc1b5d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_88ce42bc1b5d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 265
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4d38cf34cdd1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4d38cf34cdd1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 266
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b3a571bd8985",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b3a571bd8985",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 267
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e990c04a637d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e990c04a637d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 268
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6e2fb0e6b49a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6e2fb0e6b49a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 269
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d4b2494a41f2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d4b2494a41f2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 270
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2094f1bdd288",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2094f1bdd288",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 271
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_383a2703116d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_383a2703116d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 272
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_86ddefed8f2a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_86ddefed8f2a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 273
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_631f80f3ab67",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_631f80f3ab67",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 274
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d0c0b8577b58",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d0c0b8577b58",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 275
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4fbba383943b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4fbba383943b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 276
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_116a3bd3b7f4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_116a3bd3b7f4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 277
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_046c5ddb98f2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_046c5ddb98f2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 278
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_aa1ff49e4433",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_aa1ff49e4433",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 279
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e7241ac045fc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e7241ac045fc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 280
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e42ca1818729",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e42ca1818729",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 281
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_252735d51ebb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_252735d51ebb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 282
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9bc0da4029b1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9bc0da4029b1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 283
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d08eb7e26dab",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d08eb7e26dab",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 284
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b420e204b186",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b420e204b186",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 285
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d4e5ab7b4672",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d4e5ab7b4672",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 286
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1b941503b55d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1b941503b55d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 287
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_27ad915e9be3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_27ad915e9be3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 288
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e1f26073938a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e1f26073938a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 289
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d584299dd94f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d584299dd94f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 290
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_cfb1b025150b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_cfb1b025150b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 291
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_dd754ce9fb3a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_dd754ce9fb3a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 292
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d74fac32e67f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d74fac32e67f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 293
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a075f9cdb5b3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a075f9cdb5b3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 294
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7940bcd021b7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7940bcd021b7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 295
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f8f67fc42953",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f8f67fc42953",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 296
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7aaf5f97efbf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7aaf5f97efbf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 297
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9fafdc5d41bc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9fafdc5d41bc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 298
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fe20aa959e4b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fe20aa959e4b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 299
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fe603574f3c3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fe603574f3c3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 300
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_92d03bda93eb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_92d03bda93eb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 301
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_53231af41bdd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_53231af41bdd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 302
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e5c8070ba477",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e5c8070ba477",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 303
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a95eda18729c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a95eda18729c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 304
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_29fd835859fe",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_29fd835859fe",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 305
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_216382bcbb41",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_216382bcbb41",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 306
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3a33a21362be",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3a33a21362be",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 307
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3e092f311a24",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3e092f311a24",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 308
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_468a983977d5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_468a983977d5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 309
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_51357101395e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_51357101395e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 310
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d42e97188e50",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d42e97188e50",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 311
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_80161c728ff0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_80161c728ff0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 312
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d15877bd8a61",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d15877bd8a61",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 313
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_841d250e0be8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_841d250e0be8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 314
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9b111acab5a4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9b111acab5a4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 315
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_18a96b2e5e53",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_18a96b2e5e53",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 316
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_07d918a5aaf3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_07d918a5aaf3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 317
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c6df448f51e1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c6df448f51e1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 318
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_db51f23d6c56",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_db51f23d6c56",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 319
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d3866c0a6126",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d3866c0a6126",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 320
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a948cb0cada0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a948cb0cada0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 321
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_77921592dec0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_77921592dec0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 322
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1725663286c4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1725663286c4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 323
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8fa217a9fa9b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8fa217a9fa9b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 324
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_84e995bf7306",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_84e995bf7306",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 325
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d99ffd3811d4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d99ffd3811d4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 326
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_81a8c7bd070f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_81a8c7bd070f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 327
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_41e217dd42a3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_41e217dd42a3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 328
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3268f2c6bbe8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3268f2c6bbe8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 329
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_967f29baa70e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_967f29baa70e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 330
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2347100f1066",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2347100f1066",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 331
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ad7ac2e4ccda",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ad7ac2e4ccda",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 332
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f79edeafd08f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f79edeafd08f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 333
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_56d5c15b6a7b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_56d5c15b6a7b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 334
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c21d78997259",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c21d78997259",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 335
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3b69869d9477",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3b69869d9477",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 336
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8b8b74c72f7b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8b8b74c72f7b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 337
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4de8b44dfd57",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4de8b44dfd57",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 338
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f2cd3c0be8cb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f2cd3c0be8cb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 339
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ad6c5db700ee",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ad6c5db700ee",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 340
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0527627a31c4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0527627a31c4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 341
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e43dcf947347",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e43dcf947347",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 342
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8ae894d8d640",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8ae894d8d640",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 343
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_25376e0d3937",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_25376e0d3937",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 344
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ce143f331a5f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ce143f331a5f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 345
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_dd848944211e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_dd848944211e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 346
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_07cb7e71c16c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_07cb7e71c16c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 347
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fe50d537d2ff",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fe50d537d2ff",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 348
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_02ae9d45006b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_02ae9d45006b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 349
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4a0f02c5645d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4a0f02c5645d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 350
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_39af1387c931",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_39af1387c931",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 351
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5a04222e7fad",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5a04222e7fad",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 352
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_c69955775613",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_c69955775613",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 353
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_661ddc4dba4c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_661ddc4dba4c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 354
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6b6518ee699c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6b6518ee699c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 355
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_70a4d3ab5594",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_70a4d3ab5594",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 356
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9854b3f165bd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9854b3f165bd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 357
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d731b6db704a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d731b6db704a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 358
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f3ce32c4bd68",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f3ce32c4bd68",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 359
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_40284f20b4fc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_40284f20b4fc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 360
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ee9acc839123",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ee9acc839123",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 361
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1075f89e7d64",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1075f89e7d64",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 362
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7d2b41e27d86",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7d2b41e27d86",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 363
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4003237d07c0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4003237d07c0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 364
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5db76870ab3e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5db76870ab3e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 365
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6fb68125b9b9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6fb68125b9b9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 366
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6f8f2bf5a607",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6f8f2bf5a607",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 367
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_430867b9cb8b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_430867b9cb8b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 368
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e71ea43f1a0c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e71ea43f1a0c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 369
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5f2695b8a854",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5f2695b8a854",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 370
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_99e00ed8d2ce",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_99e00ed8d2ce",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 371
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7ebdc8b6e99e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7ebdc8b6e99e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 372
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3efbdd692b8b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3efbdd692b8b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 373
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bc16a90aef46",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bc16a90aef46",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 374
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7cfcfbc6ae9f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7cfcfbc6ae9f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 375
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_af6278a7df12",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_af6278a7df12",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 376
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_58ab51bd31f1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_58ab51bd31f1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 377
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0ab42d5f285d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0ab42d5f285d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 378
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ae434a4d77b2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ae434a4d77b2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 379
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_91bf009241ff",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_91bf009241ff",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 380
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9d9eb286b42b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9d9eb286b42b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 381
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4de5aae497e2",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4de5aae497e2",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 382
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5227338f0c9a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5227338f0c9a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 383
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_51738f2e9179",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_51738f2e9179",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 384
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_52032640cebd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_52032640cebd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 385
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_aa1a36105603",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_aa1a36105603",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 386
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9a9f487d8265",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9a9f487d8265",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 387
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f385b37eb3cd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f385b37eb3cd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 388
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a13aff19da0a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a13aff19da0a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 389
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_1f04e995c9f3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_1f04e995c9f3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 390
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_295b3cf29c20",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_295b3cf29c20",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 391
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e7adc55f47c8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e7adc55f47c8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 392
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e87c29ee1094",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e87c29ee1094",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 393
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2ab8a6652635",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2ab8a6652635",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 394
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_3874cbbe8566",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_3874cbbe8566",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 395
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6115e00ca7c7",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6115e00ca7c7",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 396
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_96347d8cff73",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_96347d8cff73",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 397
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d3ee13a15146",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d3ee13a15146",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 398
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a6ee5a15c319",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a6ee5a15c319",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 399
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_550d32c80e67",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_550d32c80e67",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 400
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ce5da5da281b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ce5da5da281b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 401
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a32504a93116",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a32504a93116",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 402
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_07513fac2aa4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_07513fac2aa4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 403
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e0030a6dfb5b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e0030a6dfb5b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 404
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b3b1f664e86e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b3b1f664e86e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 405
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_2ec5230665b1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_2ec5230665b1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 406
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9c8c4ced8593",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9c8c4ced8593",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 407
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e2cdae6deaa3",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e2cdae6deaa3",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 408
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_08610566d462",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_08610566d462",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 409
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_faa569b5fba0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_faa569b5fba0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 410
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6462b3610228",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6462b3610228",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 411
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4d0fade5a704",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4d0fade5a704",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 412
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b0b1d4a7ec30",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b0b1d4a7ec30",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 413
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_248f44621516",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_248f44621516",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 414
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6af99aa081fd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6af99aa081fd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 415
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_69918457a686",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_69918457a686",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 416
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ed462a6f4cfb",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ed462a6f4cfb",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 417
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ecbe7e2455da",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ecbe7e2455da",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 418
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_19a9b59c254a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_19a9b59c254a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 419
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9e99ac38139d",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9e99ac38139d",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 420
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6356ecd2d2a1",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6356ecd2d2a1",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 421
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_439f3890d86e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_439f3890d86e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 422
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bdd7d9749f5f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bdd7d9749f5f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 423
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8d388b48ee0c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8d388b48ee0c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 424
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_11a42fb62fb4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_11a42fb62fb4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 425
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_33780b5e33e4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_33780b5e33e4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 426
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fe3e698aa7f4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fe3e698aa7f4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 427
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_14f4bfd5250c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_14f4bfd5250c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 428
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_17c85fa4e7e4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_17c85fa4e7e4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 429
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_4ec66c5ea719",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_4ec66c5ea719",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 430
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_82a40df7633f",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_82a40df7633f",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 431
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a6b4fefc9991",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a6b4fefc9991",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 432
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_753590a2afdf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_753590a2afdf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 433
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_b5dcc38a290b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_b5dcc38a290b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 434
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_50e0e2cd49cd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_50e0e2cd49cd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 435
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_385acf60ec18",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_385acf60ec18",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 436
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_af4e30c00307",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_af4e30c00307",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 437
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_23f2555cab38",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_23f2555cab38",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 438
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f2f145b25fbd",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f2f145b25fbd",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 439
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_32365a34a631",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_32365a34a631",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 440
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5467ebde5777",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5467ebde5777",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 441
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_425df0add28a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_425df0add28a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 442
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_8b6da964fae9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_8b6da964fae9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 443
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_a2b46bc5ecb8",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_a2b46bc5ecb8",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 444
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_61f84c280d0c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_61f84c280d0c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 445
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_279ea092a937",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_279ea092a937",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 446
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f2944a620caf",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f2944a620caf",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 447
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_0d23ff6b31f0",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_0d23ff6b31f0",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 448
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9c3aee0e7c3c",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9c3aee0e7c3c",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 449
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_031f7d160914",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_031f7d160914",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 450
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_bd76db88cc06",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_bd76db88cc06",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 451
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_80b41ab5d57e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_80b41ab5d57e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 452
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_09759a63b907",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_09759a63b907",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 453
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_093f12b0d5fc",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_093f12b0d5fc",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 454
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e85759ebae9a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e85759ebae9a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 455
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_397ce5d79350",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_397ce5d79350",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 456
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_027a02b9c850",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_027a02b9c850",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 457
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_e54f854670a9",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_e54f854670a9",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 458
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f4c57dbd8253",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f4c57dbd8253",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 459
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_ceb888d2072e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_ceb888d2072e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 460
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_de3177dc6887",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_de3177dc6887",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 461
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_6de1507913e4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_6de1507913e4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 462
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_7eba10e3bb1b",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_7eba10e3bb1b",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 463
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_23426ea7b1b4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_23426ea7b1b4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 464
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d5aa147be4f4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d5aa147be4f4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 465
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_f0cb12952228",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_f0cb12952228",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 466
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_588dd3a76cad",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_588dd3a76cad",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 467
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_d04ad7017e4a",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_d04ad7017e4a",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 468
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_fe158e8c36d4",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_fe158e8c36d4",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 469
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_9be818f3133e",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_9be818f3133e",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 470
+    },
+    {
+      "id": "wednesday-gourmet_topic_enrichment_wednesday-gourmet_5f2dbe722da5",
+      "restaurantId": "topic_enrichment_wednesday-gourmet_5f2dbe722da5",
+      "sourceId": "wednesday-gourmet",
+      "ordinal": 471
     }
   ]
 }

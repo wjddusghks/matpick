@@ -244,8 +244,46 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   };
 }
 
+const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
+
+function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
+  const visibleCreators = dataset.creators.filter(
+    (creator) => !hiddenCreatorIds.has(creator.id)
+  );
+  const visibleVisits = dataset.visits.filter(
+    (visit) => !hiddenCreatorIds.has(visit.creatorId)
+  );
+  const visibleSourceLinks = dataset.sourceLinks ?? [];
+  const referencedRestaurantIds = new Set<string>();
+
+  visibleVisits.forEach((visit) => {
+    if (visit.restaurantId) {
+      referencedRestaurantIds.add(visit.restaurantId);
+    }
+  });
+
+  visibleSourceLinks.forEach((link) => {
+    if (link.restaurantId) {
+      referencedRestaurantIds.add(link.restaurantId);
+    }
+  });
+
+  return {
+    ...dataset,
+    creators: visibleCreators,
+    visits: visibleVisits,
+    restaurants: dataset.restaurants.filter(
+      (restaurant) =>
+        referencedRestaurantIds.size === 0 || referencedRestaurantIds.has(restaurant.id)
+    ),
+    sources: dataset.sources ?? [],
+    sourceLinks: visibleSourceLinks,
+  };
+}
+
 const baseDataset = rawDataset as MatpickDataSet;
-const dataset = mergeDatasets(baseDataset, [
+const dataset = filterDatasetForVisibleContent(
+  mergeDatasets(baseDataset, [
   oldKorean100Dataset as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
   wednesdayGourmetDataset as SourceDataset,
@@ -255,7 +293,8 @@ const dataset = mergeDatasets(baseDataset, [
   baekjongWokTopicEnrichment as SourceDataset,
   wednesdayGourmetTopicEnrichment as SourceDataset,
   oldKorean100TopicEnrichment as SourceDataset,
-]);
+  ])
+);
 const creatorDisplayNameOverrides: Record<string, string> = {
   UCrDMtdCSMTGVmUKvuhcahRw: "또간집",
 };

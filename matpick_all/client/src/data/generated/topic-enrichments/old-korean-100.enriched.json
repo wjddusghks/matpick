@@ -1,6 +1,6 @@
 {
   "datasetId": "old-korean-100",
-  "generatedAt": "2026-03-21T09:56:52.285Z",
+  "generatedAt": "2026-03-21T10:47:31.379Z",
   "restaurants": [
     {
       "id": "topic_enrichment_old-korean-100_d70993395a18",
@@ -2273,6 +2273,528 @@
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJcy8ivW8McDURNn_xQ5Wdch4",
       "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "old-korean-100",
+      "name": "한국인이 사랑하는 오래된 한식당 100선",
+      "type": "institution",
+      "provider": "한식진흥원",
+      "description": "한국인이 사랑하는 오래된 한식당 100선을 지역별로 정리했어요.",
+      "imageUrl": "/source-covers/old-korean-100.jpg"
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_697fde7ad100",
+      "restaurantId": "topic_enrichment_old-korean-100_697fde7ad100",
+      "sourceId": "old-korean-100",
+      "ordinal": 1
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_b1299eed8205",
+      "restaurantId": "topic_enrichment_old-korean-100_b1299eed8205",
+      "sourceId": "old-korean-100",
+      "ordinal": 2
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_9b2be30d2576",
+      "restaurantId": "topic_enrichment_old-korean-100_9b2be30d2576",
+      "sourceId": "old-korean-100",
+      "ordinal": 3
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_8ab94556db8b",
+      "restaurantId": "topic_enrichment_old-korean-100_8ab94556db8b",
+      "sourceId": "old-korean-100",
+      "ordinal": 4
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_256f31357365",
+      "restaurantId": "topic_enrichment_old-korean-100_256f31357365",
+      "sourceId": "old-korean-100",
+      "ordinal": 5
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_e6b84568d3d3",
+      "restaurantId": "topic_enrichment_old-korean-100_e6b84568d3d3",
+      "sourceId": "old-korean-100",
+      "ordinal": 6
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5a078b9e35e2",
+      "restaurantId": "topic_enrichment_old-korean-100_5a078b9e35e2",
+      "sourceId": "old-korean-100",
+      "ordinal": 7
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_0e584aeab10c",
+      "restaurantId": "topic_enrichment_old-korean-100_0e584aeab10c",
+      "sourceId": "old-korean-100",
+      "ordinal": 8
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_7e021b855e83",
+      "restaurantId": "topic_enrichment_old-korean-100_7e021b855e83",
+      "sourceId": "old-korean-100",
+      "ordinal": 9
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_b149d950faf7",
+      "restaurantId": "topic_enrichment_old-korean-100_b149d950faf7",
+      "sourceId": "old-korean-100",
+      "ordinal": 10
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_cf9a2e0278a1",
+      "restaurantId": "topic_enrichment_old-korean-100_cf9a2e0278a1",
+      "sourceId": "old-korean-100",
+      "ordinal": 11
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_3e1fb9a929a9",
+      "restaurantId": "topic_enrichment_old-korean-100_3e1fb9a929a9",
+      "sourceId": "old-korean-100",
+      "ordinal": 12
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_6c6414a87497",
+      "restaurantId": "topic_enrichment_old-korean-100_6c6414a87497",
+      "sourceId": "old-korean-100",
+      "ordinal": 13
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5d78048bf497",
+      "restaurantId": "topic_enrichment_old-korean-100_5d78048bf497",
+      "sourceId": "old-korean-100",
+      "ordinal": 14
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_461fc87b7750",
+      "restaurantId": "topic_enrichment_old-korean-100_461fc87b7750",
+      "sourceId": "old-korean-100",
+      "ordinal": 15
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5a9441ab2ebe",
+      "restaurantId": "topic_enrichment_old-korean-100_5a9441ab2ebe",
+      "sourceId": "old-korean-100",
+      "ordinal": 16
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_6490563e0dba",
+      "restaurantId": "topic_enrichment_old-korean-100_6490563e0dba",
+      "sourceId": "old-korean-100",
+      "ordinal": 17
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5aef4b42723b",
+      "restaurantId": "topic_enrichment_old-korean-100_5aef4b42723b",
+      "sourceId": "old-korean-100",
+      "ordinal": 18
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_4996d3d6fa71",
+      "restaurantId": "topic_enrichment_old-korean-100_4996d3d6fa71",
+      "sourceId": "old-korean-100",
+      "ordinal": 19
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_747015d8b0f6",
+      "restaurantId": "topic_enrichment_old-korean-100_747015d8b0f6",
+      "sourceId": "old-korean-100",
+      "ordinal": 20
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_4564e152417a",
+      "restaurantId": "topic_enrichment_old-korean-100_4564e152417a",
+      "sourceId": "old-korean-100",
+      "ordinal": 21
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_a88c5f220197",
+      "restaurantId": "topic_enrichment_old-korean-100_a88c5f220197",
+      "sourceId": "old-korean-100",
+      "ordinal": 22
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_cce7fe85ffd0",
+      "restaurantId": "topic_enrichment_old-korean-100_cce7fe85ffd0",
+      "sourceId": "old-korean-100",
+      "ordinal": 23
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_a58f73451281",
+      "restaurantId": "topic_enrichment_old-korean-100_a58f73451281",
+      "sourceId": "old-korean-100",
+      "ordinal": 24
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_720652317eac",
+      "restaurantId": "topic_enrichment_old-korean-100_720652317eac",
+      "sourceId": "old-korean-100",
+      "ordinal": 25
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_73cb618f82b4",
+      "restaurantId": "topic_enrichment_old-korean-100_73cb618f82b4",
+      "sourceId": "old-korean-100",
+      "ordinal": 26
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_6c9855a06e48",
+      "restaurantId": "topic_enrichment_old-korean-100_6c9855a06e48",
+      "sourceId": "old-korean-100",
+      "ordinal": 27
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_35fe45703768",
+      "restaurantId": "topic_enrichment_old-korean-100_35fe45703768",
+      "sourceId": "old-korean-100",
+      "ordinal": 28
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_c628a2673902",
+      "restaurantId": "topic_enrichment_old-korean-100_c628a2673902",
+      "sourceId": "old-korean-100",
+      "ordinal": 29
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_9928f9a2c2df",
+      "restaurantId": "topic_enrichment_old-korean-100_9928f9a2c2df",
+      "sourceId": "old-korean-100",
+      "ordinal": 30
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_e3b2a5665b67",
+      "restaurantId": "topic_enrichment_old-korean-100_e3b2a5665b67",
+      "sourceId": "old-korean-100",
+      "ordinal": 31
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ad7d521a1673",
+      "restaurantId": "topic_enrichment_old-korean-100_ad7d521a1673",
+      "sourceId": "old-korean-100",
+      "ordinal": 32
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_13de856e653b",
+      "restaurantId": "topic_enrichment_old-korean-100_13de856e653b",
+      "sourceId": "old-korean-100",
+      "ordinal": 33
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_522e90b90c30",
+      "restaurantId": "topic_enrichment_old-korean-100_522e90b90c30",
+      "sourceId": "old-korean-100",
+      "ordinal": 34
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_d70993395a18",
+      "restaurantId": "topic_enrichment_old-korean-100_d70993395a18",
+      "sourceId": "old-korean-100",
+      "ordinal": 35
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5a9cf62b1493",
+      "restaurantId": "topic_enrichment_old-korean-100_5a9cf62b1493",
+      "sourceId": "old-korean-100",
+      "ordinal": 36
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_bf64e6dccbab",
+      "restaurantId": "topic_enrichment_old-korean-100_bf64e6dccbab",
+      "sourceId": "old-korean-100",
+      "ordinal": 37
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_c9f9e006d08b",
+      "restaurantId": "topic_enrichment_old-korean-100_c9f9e006d08b",
+      "sourceId": "old-korean-100",
+      "ordinal": 38
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_66b5de38db76",
+      "restaurantId": "topic_enrichment_old-korean-100_66b5de38db76",
+      "sourceId": "old-korean-100",
+      "ordinal": 39
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_054645c4d8f8",
+      "restaurantId": "topic_enrichment_old-korean-100_054645c4d8f8",
+      "sourceId": "old-korean-100",
+      "ordinal": 40
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_d328cccce561",
+      "restaurantId": "topic_enrichment_old-korean-100_d328cccce561",
+      "sourceId": "old-korean-100",
+      "ordinal": 41
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_73a833e4c058",
+      "restaurantId": "topic_enrichment_old-korean-100_73a833e4c058",
+      "sourceId": "old-korean-100",
+      "ordinal": 42
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_739a4b6ac4b9",
+      "restaurantId": "topic_enrichment_old-korean-100_739a4b6ac4b9",
+      "sourceId": "old-korean-100",
+      "ordinal": 43
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_496aa4ea70e5",
+      "restaurantId": "topic_enrichment_old-korean-100_496aa4ea70e5",
+      "sourceId": "old-korean-100",
+      "ordinal": 44
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_1d8449d41dfe",
+      "restaurantId": "topic_enrichment_old-korean-100_1d8449d41dfe",
+      "sourceId": "old-korean-100",
+      "ordinal": 45
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_9635b6073225",
+      "restaurantId": "topic_enrichment_old-korean-100_9635b6073225",
+      "sourceId": "old-korean-100",
+      "ordinal": 46
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_244327bdb2a1",
+      "restaurantId": "topic_enrichment_old-korean-100_244327bdb2a1",
+      "sourceId": "old-korean-100",
+      "ordinal": 47
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_58f3c677426b",
+      "restaurantId": "topic_enrichment_old-korean-100_58f3c677426b",
+      "sourceId": "old-korean-100",
+      "ordinal": 48
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_f672457946b0",
+      "restaurantId": "topic_enrichment_old-korean-100_f672457946b0",
+      "sourceId": "old-korean-100",
+      "ordinal": 49
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5a14522bedcf",
+      "restaurantId": "topic_enrichment_old-korean-100_5a14522bedcf",
+      "sourceId": "old-korean-100",
+      "ordinal": 50
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_c33639fd5177",
+      "restaurantId": "topic_enrichment_old-korean-100_c33639fd5177",
+      "sourceId": "old-korean-100",
+      "ordinal": 51
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_5147c1d7ed86",
+      "restaurantId": "topic_enrichment_old-korean-100_5147c1d7ed86",
+      "sourceId": "old-korean-100",
+      "ordinal": 52
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_bd22333f8936",
+      "restaurantId": "topic_enrichment_old-korean-100_bd22333f8936",
+      "sourceId": "old-korean-100",
+      "ordinal": 53
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ade337ac5ae2",
+      "restaurantId": "topic_enrichment_old-korean-100_ade337ac5ae2",
+      "sourceId": "old-korean-100",
+      "ordinal": 54
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_7597bb18ce6e",
+      "restaurantId": "topic_enrichment_old-korean-100_7597bb18ce6e",
+      "sourceId": "old-korean-100",
+      "ordinal": 55
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_66aeb845216d",
+      "restaurantId": "topic_enrichment_old-korean-100_66aeb845216d",
+      "sourceId": "old-korean-100",
+      "ordinal": 56
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_52f914e0f385",
+      "restaurantId": "topic_enrichment_old-korean-100_52f914e0f385",
+      "sourceId": "old-korean-100",
+      "ordinal": 57
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_351df00ce58b",
+      "restaurantId": "topic_enrichment_old-korean-100_351df00ce58b",
+      "sourceId": "old-korean-100",
+      "ordinal": 58
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ff7744221cb1",
+      "restaurantId": "topic_enrichment_old-korean-100_ff7744221cb1",
+      "sourceId": "old-korean-100",
+      "ordinal": 59
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_6ad65adba0ff",
+      "restaurantId": "topic_enrichment_old-korean-100_6ad65adba0ff",
+      "sourceId": "old-korean-100",
+      "ordinal": 60
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_69a7907d322a",
+      "restaurantId": "topic_enrichment_old-korean-100_69a7907d322a",
+      "sourceId": "old-korean-100",
+      "ordinal": 61
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_a82a59ae4547",
+      "restaurantId": "topic_enrichment_old-korean-100_a82a59ae4547",
+      "sourceId": "old-korean-100",
+      "ordinal": 62
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_04bfd4324581",
+      "restaurantId": "topic_enrichment_old-korean-100_04bfd4324581",
+      "sourceId": "old-korean-100",
+      "ordinal": 63
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_6e586918c258",
+      "restaurantId": "topic_enrichment_old-korean-100_6e586918c258",
+      "sourceId": "old-korean-100",
+      "ordinal": 64
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ac5f73e5c29f",
+      "restaurantId": "topic_enrichment_old-korean-100_ac5f73e5c29f",
+      "sourceId": "old-korean-100",
+      "ordinal": 65
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_96c198abae71",
+      "restaurantId": "topic_enrichment_old-korean-100_96c198abae71",
+      "sourceId": "old-korean-100",
+      "ordinal": 66
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_18ac3372c278",
+      "restaurantId": "topic_enrichment_old-korean-100_18ac3372c278",
+      "sourceId": "old-korean-100",
+      "ordinal": 67
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_9e02ae1a9073",
+      "restaurantId": "topic_enrichment_old-korean-100_9e02ae1a9073",
+      "sourceId": "old-korean-100",
+      "ordinal": 68
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_760eeb197322",
+      "restaurantId": "topic_enrichment_old-korean-100_760eeb197322",
+      "sourceId": "old-korean-100",
+      "ordinal": 69
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_12d8661dd772",
+      "restaurantId": "topic_enrichment_old-korean-100_12d8661dd772",
+      "sourceId": "old-korean-100",
+      "ordinal": 70
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_47c118d8f1ae",
+      "restaurantId": "topic_enrichment_old-korean-100_47c118d8f1ae",
+      "sourceId": "old-korean-100",
+      "ordinal": 71
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_7d09b87318f7",
+      "restaurantId": "topic_enrichment_old-korean-100_7d09b87318f7",
+      "sourceId": "old-korean-100",
+      "ordinal": 72
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_9b64fad725f4",
+      "restaurantId": "topic_enrichment_old-korean-100_9b64fad725f4",
+      "sourceId": "old-korean-100",
+      "ordinal": 73
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_dca52ca89556",
+      "restaurantId": "topic_enrichment_old-korean-100_dca52ca89556",
+      "sourceId": "old-korean-100",
+      "ordinal": 74
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_d527a543e673",
+      "restaurantId": "topic_enrichment_old-korean-100_d527a543e673",
+      "sourceId": "old-korean-100",
+      "ordinal": 75
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ec915c6d8979",
+      "restaurantId": "topic_enrichment_old-korean-100_ec915c6d8979",
+      "sourceId": "old-korean-100",
+      "ordinal": 76
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_d3bec31ad91c",
+      "restaurantId": "topic_enrichment_old-korean-100_d3bec31ad91c",
+      "sourceId": "old-korean-100",
+      "ordinal": 77
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_c7be97bef699",
+      "restaurantId": "topic_enrichment_old-korean-100_c7be97bef699",
+      "sourceId": "old-korean-100",
+      "ordinal": 78
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_c07816d4c81b",
+      "restaurantId": "topic_enrichment_old-korean-100_c07816d4c81b",
+      "sourceId": "old-korean-100",
+      "ordinal": 79
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_03316bfdecde",
+      "restaurantId": "topic_enrichment_old-korean-100_03316bfdecde",
+      "sourceId": "old-korean-100",
+      "ordinal": 80
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_884d6ae3b5c7",
+      "restaurantId": "topic_enrichment_old-korean-100_884d6ae3b5c7",
+      "sourceId": "old-korean-100",
+      "ordinal": 81
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_367617122a4f",
+      "restaurantId": "topic_enrichment_old-korean-100_367617122a4f",
+      "sourceId": "old-korean-100",
+      "ordinal": 82
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_2988218720a2",
+      "restaurantId": "topic_enrichment_old-korean-100_2988218720a2",
+      "sourceId": "old-korean-100",
+      "ordinal": 83
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_ce12ad912b9e",
+      "restaurantId": "topic_enrichment_old-korean-100_ce12ad912b9e",
+      "sourceId": "old-korean-100",
+      "ordinal": 84
+    },
+    {
+      "id": "old-korean-100_topic_enrichment_old-korean-100_eb1648737b48",
+      "restaurantId": "topic_enrichment_old-korean-100_eb1648737b48",
+      "sourceId": "old-korean-100",
+      "ordinal": 85
     }
   ]
 }

@@ -6,12 +6,6 @@
     "targetId": "UCrDMtdCSMTGVmUKvuhcahRw"
   },
   {
-    "slug": "meokeultende",
-    "name": "먹을텐데",
-    "kind": "creator",
-    "targetId": "UCfpaSruWW3S4dibonKXENjA"
-  },
-  {
     "slug": "taste-guys",
     "name": "맛있는 녀석들",
     "kind": "creator",
@@ -40,5 +34,11 @@
     "name": "수요미식회",
     "kind": "source",
     "targetId": "wednesday-gourmet"
+  },
+  {
+    "slug": "baekjong-wok",
+    "name": "백종원의 3대천왕",
+    "kind": "source",
+    "targetId": "baekjong-wok"
   }
 ]

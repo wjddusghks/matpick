@@ -3,6 +3,12 @@ import discoveryTopicDefinitions from "./discovery-topics.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
+import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
+import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
+import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
+import oldKorean100TopicEnrichment from "./generated/topic-enrichments/old-korean-100.enriched.json";
+import ttoganjipTopicEnrichment from "./generated/topic-enrichments/ttoganjip.enriched.json";
+import wednesdayGourmetTopicEnrichment from "./generated/topic-enrichments/wednesday-gourmet.enriched.json";
 import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
 import type {
   Creator,
@@ -243,6 +249,12 @@ const dataset = mergeDatasets(baseDataset, [
   oldKorean100Dataset as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
   wednesdayGourmetDataset as SourceDataset,
+  ttoganjipTopicEnrichment as SourceDataset,
+  deliciousGuysTopicEnrichment as SourceDataset,
+  baekbanTripTopicEnrichment as SourceDataset,
+  baekjongWokTopicEnrichment as SourceDataset,
+  wednesdayGourmetTopicEnrichment as SourceDataset,
+  oldKorean100TopicEnrichment as SourceDataset,
 ]);
 const creatorDisplayNameOverrides: Record<string, string> = {
   UCrDMtdCSMTGVmUKvuhcahRw: "또간집",

@@ -1,6 +1,7 @@
 import rawDataset from "./matpick-data.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
+import { sourceProfileImageOverrides } from "./sourceProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
 import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
@@ -452,9 +453,14 @@ const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => (
   ...creator,
   profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,
 }));
+const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map((source) => ({
+  ...source,
+  imageUrl: sourceProfileImageOverrides[source.id] ?? source.imageUrl,
+}));
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
   creators: creatorsWithProfileImages,
+  sources: sourcesWithProfileImages,
 };
 
 export const creators: Creator[] = normalizedDataset.creators;

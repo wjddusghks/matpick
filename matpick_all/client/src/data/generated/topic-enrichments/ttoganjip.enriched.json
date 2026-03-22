@@ -1,6 +1,6 @@
 {
   "datasetId": "ttoganjip",
-  "generatedAt": "2026-03-22T08:45:57.968Z",
+  "generatedAt": "2026-03-22T09:59:45.472Z",
   "restaurants": [
     {
       "id": "topic_enrichment_ttoganjip_7682de14575b",
@@ -137,13 +137,13 @@
       "address": "서울특별시 마포구 월드컵로 65 양경회관 1층",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5548715,
+      "lng": 126.91082809999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJe5mr9ieZfDURYzq-FB8pMj8",
       "isOverseas": false
     },
     {
@@ -344,13 +344,13 @@
       "address": "서울특별시 마포구 동교로 238-1 1층 경양카츠",
       "category": "오락실",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5611563,
+      "lng": 126.9245071,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJe4Tox1qZfDURrS_oXXoMnJM",
       "isOverseas": false
     },
     {
@@ -530,8 +530,8 @@
       "address": "서울특별시 서대문구 연세로7안길 38 고삼이",
       "category": "한식",
       "representativeMenu": "삼치구이",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5583636,
+      "lng": 126.93472810000002,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -573,7 +573,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJm3oMjpSYfDURZKNqTkmoGe0",
       "isOverseas": false
     },
     {
@@ -767,8 +767,8 @@
       "address": "경상남도 창원시 진해구 용원로78번안길 24 1층 고향",
       "category": "육류,고기요리",
       "representativeMenu": "소갈비찜+김치+김가루+콩나물",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.188205499999995,
+      "lng": 128.6934679,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -810,7 +810,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ6_SZnsjNaDURmrd-6HmsyTk",
       "isOverseas": false
     },
     {
@@ -1244,8 +1244,8 @@
       "address": "전북특별자치도 군산시 문화로 119 101호",
       "category": "우동,소바",
       "representativeMenu": "그릇냉소바 50%",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.9701076,
+      "lng": 126.7189432,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -1305,7 +1305,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJVU70sJJbcDURoDXLYTm0ZKk",
       "isOverseas": false
     },
     {
@@ -2583,8 +2583,8 @@
       "address": "대구광역시 수성구 용학로25길 45",
       "category": "곱창,막창,양",
       "representativeMenu": "국내산 1등급 생막창",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8257829,
+      "lng": 128.62493010000003,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -2632,7 +2632,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJf5OaovHiZTURTTIquXRfFUg",
       "isOverseas": false
     },
     {
@@ -2916,8 +2916,8 @@
       "address": "서울특별시 광진구 아차산로30길 39 1층",
       "category": "양꼬치",
       "representativeMenu": "예약없이 15분이면 나와요",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.538678000000004,
+      "lng": 127.0674004,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -3013,7 +3013,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJudEGSe-lfDURI9Hz6xUA1CE",
       "isOverseas": false
     },
     {
@@ -4183,8 +4183,8 @@
       "address": "서울특별시 중구 남대문시장2가길 2 2층",
       "category": "생선회",
       "representativeMenu": "광어+우럭(大)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5583999,
+      "lng": 126.97665409999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -4244,7 +4244,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ__nCPPWifDURRYubjJS0IQw",
       "isOverseas": false
     },
     {
@@ -4518,8 +4518,8 @@
       "address": "경기도 용인시 수지구 수지로342번길 7 수지외식타운",
       "category": "해물,생선요리",
       "representativeMenu": "매콤한명태조림과함께셀프코너에서마음껏드실수잇어요",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3272519,
+      "lng": 127.0968856,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -4537,7 +4537,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ3Vp-aZJbezURnQGVq50nGL8",
       "isOverseas": false
     },
     {
@@ -5141,8 +5141,8 @@
       "address": "부산광역시 중구 중구로47번길 35",
       "category": "국밥",
       "representativeMenu": "맛보기수육",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1021681,
+      "lng": 129.0259761,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -5196,7 +5196,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJE7eN16HpaDURs9fokc8tuXA",
       "isOverseas": false
     },
     {
@@ -8467,8 +8467,8 @@
       "address": "전라남도 여수시 봉산남4길 23-26 명동게장본관",
       "category": "한식",
       "representativeMenu": "모둠꽃게장(연평도알배기암꽃게+전복+새우+딱새우+문어+계란장)과 양념꽃게장이 함께제공되고게장은돌게장으로 3회까지리필가능! 100%국내산연평도알배기암꽃게만을 사용하며 15가지밑반찬도",
-      "lat": 0,
-      "lng": 0,
+      "lat": 34.7329454,
+      "lng": 127.72192930000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -8552,7 +8552,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJy5xhGtPebTURcRhsECINsKQ",
       "isOverseas": false
     },
     {
@@ -8562,8 +8562,8 @@
       "address": "대구광역시 북구 복현로 182-27",
       "category": "육류,고기요리",
       "representativeMenu": "기존 동인동소갈비찜의 고가인 단점을 보완하여 저렴하게 동인동식 매운찜갈비를 즐길 수 있습니다. 뼈 양을 줄이기 위해 갈비와 목전지를 함께 사용합니다.",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.9065929,
+      "lng": 128.62017269999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -8605,7 +8605,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJmzdJn63hZTURKjEWo2euDAg",
       "isOverseas": false
     },
     {
@@ -9010,13 +9010,13 @@
       "address": "대전광역시 서구 갈마역로25번길 9-8 1층 와타요업",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.3525827,
+      "lng": 127.3734357,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJnUFHArVLZTUR1M5J-x5fAgI",
       "isOverseas": false
     },
     {
@@ -9227,13 +9227,13 @@
       "address": "강원특별자치도 춘천시 우묵들길 33 우성닭갈비",
       "category": "닭갈비",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.8872893,
+      "lng": 127.76361870000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ3ysVfL3lYjURpaXCs5HOtZA",
       "isOverseas": false
     },
     {
@@ -9243,13 +9243,13 @@
       "address": "서울특별시 강남구 도산대로55길 23 1층 우정",
       "category": "육류,고기요리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5750339,
+      "lng": 126.9838854,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJZWOT9sKifDURhkDbZtcpJ7A",
       "isOverseas": false
     },
     {
@@ -12165,8 +12165,8 @@
       "address": "경기도 평택시 문화촌로19번길 55",
       "category": "우동,소바",
       "representativeMenu": "우동사리 추가",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.9974349,
+      "lng": 127.1142569,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -12262,7 +12262,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJBQCQRmU6ezUR347xJFGbNEo",
       "isOverseas": false
     },
     {
@@ -14169,8 +14169,8 @@
       "address": "경상남도 창원시 마산합포구 합포동4길 21 ,",
       "category": "육류,고기요리",
       "representativeMenu": "한우스페셜",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.2087548,
+      "lng": 128.58395629999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -14266,7 +14266,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJD47eTPEtbzURq2m4C-pWLrw",
       "isOverseas": false
     },
     {
@@ -14813,8 +14813,8 @@
       "address": "경기도 남양주시 다산중앙로123번길 21-7 신해센트럴타워1 111호",
       "category": "카페,디저트",
       "representativeMenu": "겉바속쫀!!!",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.6227437,
+      "lng": 127.1516425,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -14910,7 +14910,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJr6_G1Ui3fDURBYMvTEj5VSM",
       "isOverseas": false
     }
   ],

@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-1-star",
-  "generatedAt": "2026-03-22T09:31:38.527Z",
+  "generatedAt": "2026-03-22T09:59:45.466Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-1-star_d4132c79cb30",
@@ -9,13 +9,13 @@
       "address": "강남구 압구정로 80길 19-1, 2층, Seoul, 06015, 한국",
       "category": "일식당",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.524513299999995,
+      "lng": 127.04523669999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJKzILV7ulfDUR4-cgf86P2s4",
       "isOverseas": false
     },
     {
@@ -137,13 +137,13 @@
       "address": "강남구 도산대로 67길 30, 2층, Seoul, 06015, 한국",
       "category": "프렌치",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.52591770000001,
+      "lng": 127.0445553,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJH2jZ86GlfDURAVZBp3imf64",
       "isOverseas": false
     },
     {

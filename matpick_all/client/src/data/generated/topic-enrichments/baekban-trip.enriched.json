@@ -1,6 +1,6 @@
 {
   "datasetId": "baekban-trip",
-  "generatedAt": "2026-03-22T08:45:58.035Z",
+  "generatedAt": "2026-03-22T09:59:45.519Z",
   "restaurants": [
     {
       "id": "sikgaek-baekban-trip_restaurant_001",
@@ -1814,8 +1814,8 @@
       "address": "서울 중구 을지로39길 29 (을지로6가 1-1)",
       "category": "돼지고기구이",
       "representativeMenu": "국내산돼지갈비 1인분",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5684788,
+      "lng": 127.0053786,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -1828,7 +1828,7 @@
       ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": "ChIJY6zSCCOjfDURNgoicMmCBH4"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_107",

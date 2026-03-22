@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-selected",
-  "generatedAt": "2026-03-22T09:31:38.531Z",
+  "generatedAt": "2026-03-22T09:59:45.469Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-selected_9cba981aa9c5",
@@ -56,13 +56,13 @@
       "address": "강남구 영동대로 115길 10, Seoul, 06087, 한국",
       "category": "바비큐",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.51484800000001,
+      "lng": 127.058769,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJi7TvdWmkfDURzu_8K9y8RRQ",
       "isOverseas": false
     },
     {
@@ -136,13 +136,13 @@
       "address": "부산진구 서전로 47번길 19, Busan, 47247, 한국",
       "category": "중식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.158756,
+      "lng": 129.0644341,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ1a4XlWbraDURgVLbg5i_dHM",
       "isOverseas": false
     },
     {
@@ -168,13 +168,13 @@
       "address": "해운대구 중동 1로 43번길 23, Busan, 48095, 한국",
       "category": "복어",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.162420499999996,
+      "lng": 129.16450609999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJb6ju4GeNaDURuR1LsbcI5lw",
       "isOverseas": false
     },
     {
@@ -481,13 +481,13 @@
       "address": "수영구 수영로 582번길 10, Busan, 48297, 한국",
       "category": "일식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1574168,
+      "lng": 129.1136277,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJY6mZCQDtaDURmoirXwQlKcY",
       "isOverseas": false
     },
     {
@@ -513,13 +513,13 @@
       "address": "중구 명동 10길 29, Seoul, 04537, 한국",
       "category": "칼국수",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5625266,
+      "lng": 126.98560900000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJW7FBDfCifDURHTpisLbVUH0",
       "isOverseas": false
     },
     {
@@ -993,8 +993,8 @@
       "address": "강남구 선릉로 157길 33, 3층, Seoul, 06018, 한국",
       "category": "양식",
       "representativeMenu": "SONNET (26.03.11~)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.4327968,
+      "lng": 127.16729519999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -1006,7 +1006,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJMfWP39-ofDURdHKvL9zBjko",
       "isOverseas": false
     },
     {
@@ -1080,13 +1080,13 @@
       "address": "강남구 도산대로 54길 33, Seoul, 06056, 한국",
       "category": "컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5472853,
+      "lng": 126.91427909999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJjdPrYciZfDURJYueWagp2DU",
       "isOverseas": false
     },
     {
@@ -1470,13 +1470,13 @@
       "address": "강남구 도산대로 34길 22, 지하1층, Seoul, 06049, 한국",
       "category": "컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.342067,
+      "lng": 126.935865,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJjzynz5lnezUR5uvJ1DphNUM",
       "isOverseas": false
     },
     {
@@ -2066,13 +2066,13 @@
       "address": "중구 장충단로 207, Seoul, 04615, 한국",
       "category": "냉면",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5189036,
+      "lng": 127.0291479,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJMcnUX-2jfDURvSSGbYjqQdI",
       "isOverseas": false
     },
     {
@@ -2098,13 +2098,13 @@
       "address": "강남구 언주로 172길 14, Seoul, 06017, 한국",
       "category": "스시",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5278266,
+      "lng": 127.0349664,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJi3NxagCjfDURlo0Wbuk9VNI",
       "isOverseas": false
     },
     {

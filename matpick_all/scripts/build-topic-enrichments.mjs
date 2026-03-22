@@ -35,6 +35,13 @@ const michelinGoogleResultsRoot = path.join(
   "google-places",
   "michelin"
 );
+const retryGoogleResultsRoot = path.join(
+  workspaceRoot,
+  "Menu-Automation",
+  "workspace",
+  "google-places",
+  "missing-coords"
+);
 const topicEnrichmentRoot = path.join(generatedDataRoot, "topic-enrichments");
 
 const patchOnlyDatasetIds = new Set([
@@ -509,6 +516,29 @@ function isReliableMichelinGoogleMatch(match) {
   );
 }
 
+function isReliableRetryGoogleMatch(match) {
+  if (isReliableGoogleMatch(match)) return true;
+  if (!match?.candidatePlaceId) return false;
+
+  const nameScore = Number(match.nameScore ?? 0);
+  const addressScore = Number(match.addressScore ?? 0);
+  const overall = Number(match.overallScore ?? 0);
+  const latitude = Number(match.location?.latitude ?? 0);
+  const longitude = Number(match.location?.longitude ?? 0);
+
+  return (
+    isValidCoord(latitude) &&
+    isValidCoord(longitude) &&
+    ((nameScore >= 0.95 && addressScore >= 0.15) ||
+      (nameScore >= 0.9 && overall >= 0.7) ||
+      (nameScore >= 0.85 && addressScore >= 0.35 && overall >= 0.65) ||
+      (nameScore >= 0.7 && addressScore >= 0.45) ||
+      (nameScore >= 0.6 && addressScore >= 0.55) ||
+      (nameScore >= 0.45 && addressScore >= 0.75) ||
+      (nameScore >= 1 && addressScore >= 0.2))
+  );
+}
+
 function buildRestaurantFromMenuItem(datasetId, item) {
   const restaurant = createBaseRestaurant(datasetId, item.restaurantName, item.address);
   return mergeRestaurant(restaurant, {
@@ -651,6 +681,53 @@ function mergeMichelinGoogleEnrichments(datasetMap) {
   return datasetMap;
 }
 
+function mergeRetryGoogleEnrichments(datasetMap) {
+  if (!fs.existsSync(retryGoogleResultsRoot)) {
+    return datasetMap;
+  }
+
+  const resultFiles = fs
+    .readdirSync(retryGoogleResultsRoot)
+    .filter((fileName) => fileName.endsWith(".places.json"))
+    .sort();
+
+  for (const fileName of resultFiles) {
+    const filePath = path.join(retryGoogleResultsRoot, fileName);
+    const payload = readJson(filePath);
+    const datasetId = normalizeText(payload.datasetId);
+    if (!datasetId) continue;
+
+    const restaurants = datasetMap.get(datasetId) ?? new Map();
+    const canonicalKeyByLookupKey = new Map();
+    for (const [canonicalKey, restaurant] of restaurants.entries()) {
+      buildLookupKeys(restaurant.name, restaurant.address, restaurant.region).forEach((lookupKey) => {
+        if (!canonicalKeyByLookupKey.has(lookupKey)) {
+          canonicalKeyByLookupKey.set(lookupKey, canonicalKey);
+        }
+      });
+    }
+
+    for (const result of payload.results || []) {
+      if (!isReliableRetryGoogleMatch(result.bestMatch)) continue;
+
+      const key =
+        buildLookupKeys(result.restaurantName, result.address)
+          .map((lookupKey) => canonicalKeyByLookupKey.get(lookupKey))
+          .find(Boolean) ?? buildLookupKey(result.restaurantName, result.address);
+      const nextRestaurant = buildRestaurantPatchFromGoogle(datasetId, result);
+      const currentRestaurant = restaurants.get(key);
+      restaurants.set(
+        key,
+        currentRestaurant ? mergeRestaurant(currentRestaurant, nextRestaurant) : nextRestaurant
+      );
+    }
+
+    datasetMap.set(datasetId, restaurants);
+  }
+
+  return datasetMap;
+}
+
 function buildCanonicalPatchOutput(datasetId, restaurants) {
   const generatedPath = generatedDatasetFileByDatasetId[datasetId];
   if (!generatedPath || !fs.existsSync(generatedPath)) {
@@ -771,6 +848,7 @@ function main() {
   mergeMenuEnrichments(datasetMap);
   mergeGoogleEnrichments(datasetMap);
   mergeMichelinGoogleEnrichments(datasetMap);
+  mergeRetryGoogleEnrichments(datasetMap);
   writeTopicOutputs(datasetMap);
 
   const summary = Array.from(datasetMap.entries()).map(([datasetId, restaurants]) => ({

@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-bib-gourmand",
-  "generatedAt": "2026-03-22T09:31:38.529Z",
+  "generatedAt": "2026-03-22T09:59:45.467Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
@@ -184,13 +184,13 @@
       "address": "해운대구 우동 1로 57, Busan, 48088, 한국",
       "category": "라멘",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1666425,
+      "lng": 129.1574833,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJH9vDHGGNaDUR2GrUTQC42RU",
       "isOverseas": false
     },
     {
@@ -283,13 +283,13 @@
       "address": "용산구 한강대로 40길 28, Seoul, 04386, 한국",
       "category": "곰탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.530085299999996,
+      "lng": 126.97078750000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ-R1qgxmifDUR4igPyu23xmo",
       "isOverseas": false
     },
     {
@@ -299,13 +299,13 @@
       "address": "서울 마포구 동교로 265, 4층, Seoul, 03983, 한국",
       "category": "라멘",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5633741,
+      "lng": 126.92526300000002,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJpXffNqGZfDUR74ZT2Gzgu2M",
       "isOverseas": false
     },
     {
@@ -821,13 +821,13 @@
       "address": "북구 양달로 4번길 17, Busan, 46517, 한국",
       "category": "장어",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.2408856,
+      "lng": 129.0147204,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJUzuzuKaVaDURuXIYxTJdBvQ",
       "isOverseas": false
     },
     {
@@ -885,13 +885,13 @@
       "address": "수영구 광남로 22번길 3, Busan, 48307, 한국",
       "category": "돼지국밥",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3981297,
+      "lng": 126.9841661,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJW4Rde5RfezUR4Q44FOjAk7w",
       "isOverseas": false
     },
     {
@@ -981,13 +981,13 @@
       "address": "마포구 독막로 8길 16, Seoul, 04072, 한국",
       "category": "라멘",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5472593,
+      "lng": 126.91781089999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJqYTmWtGYfDURryq7AaODZoc",
       "isOverseas": false
     },
     {
@@ -1194,13 +1194,13 @@
       "address": "영등포구 국회대로 76길 10, Seoul, 07238, 한국",
       "category": "냉면",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5306271,
+      "lng": 126.92174929999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ3YVgTCWffDURFxXN4L28kyU",
       "isOverseas": false
     },
     {
@@ -1402,13 +1402,13 @@
       "address": "영등포구 국회대로 62길 15, Seoul, 07236, 한국",
       "category": "게장",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.52708630000001,
+      "lng": 126.91681399999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJDZMdLCWffDURLJe61me3ZMU",
       "isOverseas": false
     },
     {

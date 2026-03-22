@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-2-stars",
-  "generatedAt": "2026-03-22T09:31:38.526Z",
+  "generatedAt": "2026-03-22T09:59:45.464Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-2-stars_fbce08263974",
@@ -108,13 +108,13 @@
       "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
       "category": "양식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5411532,
+      "lng": 126.9961548,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJJeNdcbOjfDURCzyDecCVK7o",
       "isOverseas": false
     },
     {

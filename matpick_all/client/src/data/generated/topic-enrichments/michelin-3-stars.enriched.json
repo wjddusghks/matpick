@@ -1,0 +1,76 @@
+{
+  "datasetId": "michelin-3-stars",
+  "generatedAt": "2026-03-22T07:46:30.336Z",
+  "restaurants": [
+    {
+      "id": "topic_enrichment_michelin-3-stars_90fd82c780a7",
+      "name": "밍글스",
+      "region": "강남구 도산대로",
+      "address": "강남구 도산대로 67길 19, 2층, Seoul, 06016, 한국",
+      "category": "한식",
+      "representativeMenu": "디너에 준하는 테이스팅 코스 메뉴가 준비됩니다.",
+      "lat": 37.5253386,
+      "lng": 127.04414519999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_1",
+          "name": "디너에 준하는 테이스팅 코스 메뉴가 준비됩니다.",
+          "price": "320,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_2",
+          "name": "한국의 자연과 제철 식재료를 담은 테이스팅 코스요리.",
+          "price": "420,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_3",
+          "name": "4 glasses 와인페어링",
+          "price": "변동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_4",
+          "name": "우리 술 페어링",
+          "price": "변동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_5",
+          "name": "시그니쳐 페어링",
+          "price": "변동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-3-stars_90fd82c780a7_menu_6",
+          "name": "셀렉티드 페어링",
+          "price": "변동",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJjXuM24mjfDURSwmouRnxNlM",
+      "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "michelin-3-stars",
+      "name": "미쉐린 3스타",
+      "type": "michelin",
+      "provider": "MICHELIN Guide",
+      "description": "미쉐린 3스타로 선정된 레스토랑을 모아봤어요."
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "michelin-3-stars_topic_enrichment_michelin-3-stars_90fd82c780a7",
+      "restaurantId": "topic_enrichment_michelin-3-stars_90fd82c780a7",
+      "sourceId": "michelin-3-stars",
+      "ordinal": 1
+    }
+  ]
+}

@@ -1,0 +1,1963 @@
+{
+  "datasetId": "michelin-bib-gourmand",
+  "generatedAt": "2026-03-22T07:46:30.353Z",
+  "restaurants": [
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
+      "name": "3대 삼계장인",
+      "region": "서초구 반포대로",
+      "address": "서초구 반포대로 28길 56-3, Seoul, 06646, 한국",
+      "category": "백숙,삼계탕",
+      "representativeMenu": "3대간 사랑 받아온 잣을 갈아만든 명품 삼계탕 (찹쌀밥은 리필이 가능합니다)",
+      "lat": 37.491357099999995,
+      "lng": 127.0115555,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060_menu_1",
+          "name": "3대간 사랑 받아온 잣을 갈아만든 명품 삼계탕 (찹쌀밥은 리필이 가능합니다)",
+          "price": "19,500원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060_menu_2",
+          "name": "최초개발자) 저온으로 조리하고 각종 고급재료로 맛의 층을 섬세하게 표현한 ‘명품’ 닭볶음탕",
+          "price": "40,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060_menu_3",
+          "name": "3대간 사랑받아온 녹두가 씹히는게 일품인 삼계탕",
+          "price": "19,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060_menu_4",
+          "name": "2대가 처음 개발한 쑥을 갈아내어 만든 시루에쩌낸 삼계탕",
+          "price": "19,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060_menu_5",
+          "name": "전기구이",
+          "price": "19,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJq7z77WyhfDURJm6zbi7bFkw",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+      "name": "개성만두 궁",
+      "region": "종로구 인사동",
+      "address": "종로구 인사동 10길 11-3, Seoul, 03146, 한국",
+      "category": "만두",
+      "representativeMenu": "",
+      "lat": 37.5742823,
+      "lng": 126.98540829999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJBXBbv8KifDURu3CVFSwMyjg",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_175611706310",
+      "name": "게방식당",
+      "region": "강남구 선릉로",
+      "address": "강남구 선릉로 131길 17, Seoul, 06060, 한국",
+      "category": "게장",
+      "representativeMenu": "",
+      "lat": 37.5172952,
+      "lng": 127.03944109999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ9Uxbo4qjfDURYaXnzVaYiMY",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
+      "name": "계월",
+      "region": "성동구 성덕정",
+      "address": "성동구 성덕정 3길 8, Seoul, 04774, 한국",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 37.539526699999996,
+      "lng": 127.0476224,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ3z3vJ3ulfDUR893XkU1Inyk",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
+      "name": "고사리 익스프레스",
+      "region": "중구 퇴계로85길",
+      "address": "중구 퇴계로85길 12-10, Seoul, 04576, 한국",
+      "category": "비건",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
+      "name": "곰탕랩",
+      "region": "강남구 테헤란로",
+      "address": "강남구 테헤란로 517, 현대백화점 10층, Seoul, 06164, 한국",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+      "name": "교다이야",
+      "region": "마포구 성지길",
+      "address": "마포구 성지길 39, Seoul, 04083, 한국",
+      "category": "우동",
+      "representativeMenu": "",
+      "lat": 37.5469039,
+      "lng": 126.913187,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJn5sM9u6efDURMountCMxj_Y",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_a394500bb68e",
+      "name": "금돼지식당",
+      "region": "중구 다산로",
+      "address": "중구 다산로 149, Seoul, 04607, 한국",
+      "category": "바비큐",
+      "representativeMenu": "",
+      "lat": 37.5570994,
+      "lng": 127.0116712,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJFRmIDRGjfDUR2nv7h8qMx2Y",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+      "name": "꿉당",
+      "region": "서초구 강남대로",
+      "address": "서초구 강남대로 615, Seoul, 06524, 한국",
+      "category": "바비큐",
+      "representativeMenu": "",
+      "lat": 37.5166367,
+      "lng": 127.01905959999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJe3UoNQKjfDURa_IWZVyc2w4",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
+      "name": "나가하마 만게츠",
+      "region": "해운대구 우동",
+      "address": "해운대구 우동 1로 57, Busan, 48088, 한국",
+      "category": "라멘",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+      "name": "뉴러우멘관즈",
+      "region": "수영구 수영로",
+      "address": "수영구 수영로 388번길 25-4, Busan, 48311, 한국",
+      "category": "아시아음식",
+      "representativeMenu": "대만식 사천 소고기 우육면",
+      "lat": 35.140284099999995,
+      "lng": 129.1084217,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_1",
+          "name": "대만식 사천 소고기 우육면",
+          "price": "11,900원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_2",
+          "name": "가오슝 방식으로 육수에 자작하게 비벼먹는 우육면",
+          "price": "11,900원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_3",
+          "name": "돼지갈비 튀김과 알새우 튀김,온센 타마고가 올려진 대만식 텐동",
+          "price": "11,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_4",
+          "name": "땅콩소스를 이용한 대만 비빔면",
+          "price": "8,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_5",
+          "name": "홍유초수 4개",
+          "price": "5,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_6",
+          "name": "홍샤오 뉴러우멘에 깐양(소내장)이 추가된 우육면",
+          "price": "14,900원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_7",
+          "name": "완탕면(소)",
+          "price": "9,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_8",
+          "name": "대만식 돼지 갈비 돈까스",
+          "price": "6,900원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_9",
+          "name": "홍샤오 뉴러우멘(중)",
+          "price": "14,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_10",
+          "name": "완탕면(중)",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5_menu_11",
+          "name": "깐양 추가",
+          "price": "4,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJYTUq5LXtaDURp5QSpTu_x6k",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
+      "name": "능동미나리",
+      "region": "용산구 한강대로",
+      "address": "용산구 한강대로 40길 28, Seoul, 04386, 한국",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
+      "name": "니시무라멘",
+      "region": "서울 마포구",
+      "address": "서울 마포구 동교로 265, 4층, Seoul, 03983, 한국",
+      "category": "라멘",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
+      "name": "담택",
+      "region": "마포구 동교로12안길",
+      "address": "마포구 동교로12안길 51, Seoul, 04029, 한국",
+      "category": "라멘",
+      "representativeMenu": "",
+      "lat": 37.5544873,
+      "lng": 126.91512840000001,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJi-ZS7o2ZfDURcffutblKC4o",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_8b30cd561327",
+      "name": "대성집",
+      "region": "종로구 사직로",
+      "address": "종로구 사직로 5, Seoul, 03029, 한국",
+      "category": "도가니탕",
+      "representativeMenu": "",
+      "lat": 37.5726897,
+      "lng": 126.9609043,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJd6YDRZdrMhURXjRQpMLq23U",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+      "name": "동경밥상",
+      "region": "수영구 남천바다로",
+      "address": "수영구 남천바다로 34-6, Busan, 48304, 한국",
+      "category": "장어",
+      "representativeMenu": "",
+      "lat": 35.1483979,
+      "lng": 129.11386800000002,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJmf-3icTtaDURJEzRhCO--sE",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
+      "name": "마포옥",
+      "region": "마포구 토정로",
+      "address": "마포구 토정로 312, Seoul, 04165, 한국",
+      "category": "설렁탕",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
+      "name": "만두집",
+      "region": "강남구 압구정로",
+      "address": "강남구 압구정로 338, Seoul, 06018, 한국",
+      "category": "만두",
+      "representativeMenu": "",
+      "lat": 37.5278827,
+      "lng": 127.0389978,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ-zTnnoejfDURU00l4M32Uhc",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
+      "name": "맷돌",
+      "region": "성동구 성덕정길",
+      "address": "성동구 성덕정길 63, Seoul, 04775, 한국",
+      "category": "멕시칸",
+      "representativeMenu": "",
+      "lat": 37.5380818,
+      "lng": 127.05065730000001,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJF3dws7WlfDURu4yGTlxgOHU",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_104103149e3d",
+      "name": "면서울",
+      "region": "강남구 선릉로",
+      "address": "강남구 선릉로 805, Seoul, 06019, 한국",
+      "category": "국수",
+      "representativeMenu": "",
+      "lat": 37.5241658,
+      "lng": 127.0390675,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJOY1bNEqjfDUR8pHYAdJ029M",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_64d91730bf44",
+      "name": "뫼밀집",
+      "region": "해운대구 마린시티",
+      "address": "해운대구 마린시티 3로 23, 오렌지 프라자 2층, Busan, 48118, 한국",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51",
+      "name": "미진",
+      "region": "종로구 종로",
+      "address": "종로구 종로 19, 르메이에르 종로타운 116-2호, Seoul, 03157, 한국",
+      "category": "한식",
+      "representativeMenu": "콩국수(5~8월)",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_1",
+          "name": "콩국수(5~8월)",
+          "price": "12,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_2",
+          "name": "냉메밀",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_3",
+          "name": "온메밀",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_4",
+          "name": "비빔메밀",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_5",
+          "name": "메밀 막국수",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_6",
+          "name": "메밀전병",
+          "price": "7,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_7",
+          "name": "보쌈정식",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_8",
+          "name": "돌냄비우동",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_9",
+          "name": "메밀국수 주는 수제 돈까스",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_10",
+          "name": "메밀 해물파전",
+          "price": "17,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_11",
+          "name": "메밀 김치전",
+          "price": "17,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_12",
+          "name": "보쌈(맛보기)",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_13",
+          "name": "보쌈(소)",
+          "price": "20,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_14",
+          "name": "보쌈(중)",
+          "price": "30,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_2df130330a51_menu_15",
+          "name": "보쌈(대)",
+          "price": "40,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
+      "name": "미필담",
+      "region": "마포구 성지",
+      "address": "마포구 성지 3길 22, Seoul, 04083, 한국",
+      "category": "만두",
+      "representativeMenu": "",
+      "lat": 37.5465836,
+      "lng": 126.91419030000002,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJFxPP-oOZfDURqlOrwJdGEqI",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+      "name": "바오하우스",
+      "region": "부산진구 서전로",
+      "address": "부산진구 서전로 38번길 62-9, Busan, 47294, 한국",
+      "category": "타이완",
+      "representativeMenu": "",
+      "lat": 35.1548831,
+      "lng": 129.0633401,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJjyMh4mTraDURXGsFaLHR8u4",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
+      "name": "백일평냉",
+      "region": "수영구 남천바다로",
+      "address": "수영구 남천바다로 10번길 29, Busan, 48314, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 35.1485537,
+      "lng": 129.111649,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJed-rnYrtaDURkLqspWsPZN8",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
+      "name": "베이스 이즈 나이스",
+      "region": "마포구 도화",
+      "address": "마포구 도화 2길 20, Seoul, 04171, 한국",
+      "category": "베지테리안",
+      "representativeMenu": "",
+      "lat": 37.539588200000004,
+      "lng": 126.9490809,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJm4-szsKZfDURb1v4KUtJCP4",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
+      "name": "부다면옥",
+      "region": "해운대구 중동",
+      "address": "해운대구 중동 1로 36, 2층, Busan, 48095, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 35.162367599999996,
+      "lng": 129.1629743,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJvUYp_lySaDURSxcMD3TcvvU",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
+      "name": "비비재",
+      "region": "수영구 남천바다로",
+      "address": "수영구 남천바다로 10번길 45, Busan, 48314, 한국",
+      "category": "비빔밥",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "name": "사루카메",
+      "region": "마포구 연남로",
+      "address": "마포구 연남로 15, Seoul, 03990, 한국",
+      "category": "라멘",
+      "representativeMenu": "",
+      "lat": 37.5610311,
+      "lng": 126.92267740000001,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJTQ3uYuiYfDURYKfjeAlpp-I",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_927dc8369053",
+      "name": "삼청동 수제비",
+      "region": "종로구 삼청로",
+      "address": "종로구 삼청로 101-1, Seoul, 03049, 한국",
+      "category": "수제비",
+      "representativeMenu": "",
+      "lat": 37.584565,
+      "lng": 126.98193709999998,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJI9JAR8-ifDURSFjz37c33lE",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17",
+      "name": "서교난면방",
+      "region": "마포구 동교로",
+      "address": "마포구 동교로 12길 16, Seoul, 04029, 한국",
+      "category": "국수",
+      "representativeMenu": "한우, 구엄닭을 반씩 블렌딩한 육수, 라비올리 2피스와 우리밀 난면",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_1",
+          "name": "한우, 구엄닭을 반씩 블렌딩한 육수, 라비올리 2피스와 우리밀 난면",
+          "price": "12,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_2",
+          "name": "들기름과 직접 만든 간장을 넣은 비빔면, 유정란, 모르따델라햄",
+          "price": "13,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_3",
+          "name": "버크셔 K 앞다리살을 오븐에 조리한 제육 푹 익은 양파와 마늘을 함께 드세요.",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_4",
+          "name": "얇은 튀깁옷을 입혀 튀긴 가지와 시그니쳐 라구소스, 페코리노치즈",
+          "price": "10,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_5",
+          "name": "제주도 구엄리에서 키우는 토종닭 구엄닭으로 육수를 낸 난면과 라비올리 1피스",
+          "price": "10,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_6",
+          "name": "한우 육수와 우리밀 난면, 제철 채소",
+          "price": "13,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_7",
+          "name": "24시간이 모자라는 오랜시간 끓인 한우 설렁탕 먹고 나면 에너지 충전!",
+          "price": "14,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_8",
+          "name": "한우양지육수에 전통발효식초를 절묘한 비율로 섞어 만든육수와 계란으로 반죽한 메밀냉난면",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_9",
+          "name": "서교난면방의 시그니쳐 메뉴를 고루 맛볼수 있는 코스.(반드시 2일전 전화 예약 필요!)",
+          "price": "38,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_10",
+          "name": "서교난면방의 시그니쳐 메뉴를 고루 맛볼수 있는 코스. (반드시 최소 2일전 전화 예약필요)",
+          "price": "70,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_11",
+          "name": "두부,새우,치즈가 들어간 이태리만두",
+          "price": "10,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_12",
+          "name": "구엄닭 껍질과 살로만 만든 편육과 비슷한 피편 위에 계란노른자와 잣가루, 올리브오일과 후추",
+          "price": "9,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_4fe444039e17_menu_13",
+          "name": "한우 양지와 우족을 끓이고 살을 발라 굳힌 편육",
+          "price": "10,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_05c9759cd576",
+      "name": "서령",
+      "region": "중구 소월로",
+      "address": "중구 소월로 10, Seoul, 04527, 한국",
+      "category": "메밀국수",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
+      "name": "소바키리 스즈",
+      "region": "중구 동호로",
+      "address": "중구 동호로 12길 98, Seoul, 04608, 한국",
+      "category": "소바",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
+      "name": "송헌집",
+      "region": "수영구 민락로",
+      "address": "수영구 민락로 19번길 18, Busan, 48285, 한국",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 35.1565455,
+      "lng": 129.1214646,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ28NDpWjtaDURtoaidiRWiiU",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "name": "슌사이 쿠보",
+      "region": "북구 양달로",
+      "address": "북구 양달로 4번길 17, Busan, 46517, 한국",
+      "category": "장어",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
+      "name": "스바루",
+      "region": "서초구 방배중앙로",
+      "address": "서초구 방배중앙로 21길 7, Seoul, 06560, 한국",
+      "category": "소바",
+      "representativeMenu": "",
+      "lat": 37.4923967,
+      "lng": 126.98611999999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJCQU272qhfDUR6PCzxxD7AfY",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
+      "name": "아르프",
+      "region": "영도구 태종로",
+      "address": "영도구 태종로 99번길 35, Busan, 49035, 한국",
+      "category": "비건",
+      "representativeMenu": "",
+      "lat": 35.0929191,
+      "lng": 129.0425592,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJTwr4shPpaDURHFxRkgPD3H4",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+      "name": "안덕",
+      "region": "종로구 자하문로",
+      "address": "종로구 자하문로 17길 18, Seoul, 03035, 한국",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 37.581439800000005,
+      "lng": 126.96965669999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ-yZQ4JijfDURDGQwBKgy9nk",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
+      "name": "안목",
+      "region": "수영구 광남로",
+      "address": "수영구 광남로 22번길 3, Busan, 48307, 한국",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
+      "name": "안암",
+      "region": "종로구 북촌로",
+      "address": "종로구 북촌로 5길 10, Seoul, 03055, 한국",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 37.579398999999995,
+      "lng": 126.98446229999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJBedYETCjfDURWaJ6phZ-yy4",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
+      "name": "알트에이",
+      "region": "용산구 보광로",
+      "address": "용산구 보광로 109, Seoul, 04391, 한국",
+      "category": "아시아음식",
+      "representativeMenu": "",
+      "lat": 37.532414599999996,
+      "lng": 126.99446049999997,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJAweR_RyjfDURWomb0mTkRI0",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
+      "name": "야키토리 온정",
+      "region": "부산진구 동천로",
+      "address": "부산진구 동천로 108번길 9-7, Busan, 47247, 한국",
+      "category": "야키토리",
+      "representativeMenu": "",
+      "lat": 35.158667799999996,
+      "lng": 129.0628495,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ15oIIFfraDURsGRztK9PlRs",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
+      "name": "양양 메밀 막국수",
+      "region": "서초구 동광로",
+      "address": "서초구 동광로 15길 10, Seoul, 06561, 한국",
+      "category": "메밀국수",
+      "representativeMenu": "",
+      "lat": 37.4924951,
+      "lng": 126.98829519999998,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJzbFCkqShfDURlJnels3lvdQ",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
+      "name": "역전회관",
+      "region": "마포구 토정로",
+      "address": "마포구 토정로 37길 47, Seoul, 04155, 한국",
+      "category": "불고기",
+      "representativeMenu": "",
+      "lat": 37.5428839,
+      "lng": 126.9470359,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJxZim3K-YfDUR3jf_ThTKP18",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70",
+      "name": "오레노 라멘",
+      "region": "마포구 독막로",
+      "address": "마포구 독막로 8길 16, Seoul, 04072, 한국",
+      "category": "라멘",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
+      "name": "오일제",
+      "region": "용산구 한강대로",
+      "address": "용산구 한강대로 62다길 29, Seoul, 04382, 한국",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
+      "name": "옥돌현옥",
+      "region": "송파구 오금로",
+      "address": "송파구 오금로 36길 26-1, Seoul, 05700, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.5015357,
+      "lng": 127.1240852,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ1YvHj8ClfDURGdKbF4psJ1o",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18",
+      "name": "옥동식",
+      "region": "마포구 양화로",
+      "address": "마포구 양화로 7길 44-10, Seoul, 04035, 한국",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
+      "name": "용금옥",
+      "region": "종로구 자하문로",
+      "address": "종로구 자하문로 41-2, Seoul, 03036, 한국",
+      "category": "추어탕",
+      "representativeMenu": "",
+      "lat": 37.5797709,
+      "lng": 126.97091139999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJIf38cb6ifDURf7nV1pl5O1U",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
+      "name": "우래옥",
+      "region": "중구 창경궁로",
+      "address": "중구 창경궁로 62-29, Seoul, 04546, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.5681851,
+      "lng": 126.9987092,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ95h3lR-jfDURkB9hKZltPXM",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
+      "name": "유림면",
+      "region": "중구 서소문로",
+      "address": "중구 서소문로 139-1, Seoul, 04515, 한국",
+      "category": "국수",
+      "representativeMenu": "시원한 유림면 특제간장 육수에 파,무즙,겨자를 곁들여 찍어먹는 100% 봉평 메밀국수",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_1",
+          "name": "시원한 유림면 특제간장 육수에 파,무즙,겨자를 곁들여 찍어먹는 100% 봉평 메밀국수",
+          "price": "11,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_2",
+          "name": "60년 노하우의 부드럽고 소화가 잘 되는 국수면과 유림면 특제 육수로 끓인 깔끔한 냄비국수",
+          "price": "11,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_3",
+          "name": "국내산 영광 고추가루를 이용하여 달인 특제비빔 약고추장과 고명을 곁들인 매콤 달콤 비빔메밀",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_4",
+          "name": "국내산 영광 고추가루를 이용하여 달인 특제비빔 약고추장과 고명을 곁들인 매콤 달콤 비빔국수",
+          "price": "11,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_5",
+          "name": "100% 봉평 메밀면과 유림면 특제육수를 이용한 따뜻한 메밀국수 계절메뉴(11월~3월)",
+          "price": "11,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0_menu_6",
+          "name": "국수면과 새우,은행,대추등 재료를 더해 진한 육수맛을 즐길수있는 계절메뉴(12월~3월)",
+          "price": "13,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_69a5b29de596",
+      "name": "유한",
+      "region": "용산구 대사관로",
+      "address": "용산구 대사관로 5길 10-5, Seoul, 04400, 한국",
+      "category": "타이",
+      "representativeMenu": "",
+      "lat": 37.534828499999996,
+      "lng": 127.0010836,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJESHUysWjfDURuaDOEmdnsuI",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
+      "name": "임병주 산동 칼국수",
+      "region": "서초구 강남대로",
+      "address": "서초구 강남대로 37길 65, Seoul, 06734, 한국",
+      "category": "칼국수",
+      "representativeMenu": "",
+      "lat": 37.484572299999996,
+      "lng": 127.03003700000001,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ90PW2EuhfDURVGnAxYEqiYc",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
+      "name": "자하 손만두",
+      "region": "종로구 백석동길",
+      "address": "종로구 백석동길 12, Seoul, 03020, 한국",
+      "category": "만두",
+      "representativeMenu": "",
+      "lat": 37.5931183,
+      "lng": 126.9660427,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJC1L27LGifDURk9mMQgbLfg0",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
+      "name": "정면",
+      "region": "광진구 능동로",
+      "address": "광진구 능동로 13길 88, Seoul, 05012, 한국",
+      "category": "국수",
+      "representativeMenu": "",
+      "lat": 37.5455262,
+      "lng": 127.0687454,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJNzgZOqalfDURp8oGe93cVsI",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
+      "name": "정인면옥",
+      "region": "영등포구 국회대로",
+      "address": "영등포구 국회대로 76길 10, Seoul, 07238, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_c013858f8af2",
+      "name": "정짓간",
+      "region": "사하구 비봉로",
+      "address": "사하구 비봉로 6, Busan, 49419, 한국",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+      "name": "진진",
+      "region": "마포구 월드컵북로",
+      "address": "마포구 월드컵북로 1길 60, Seoul, 04031, 한국",
+      "category": "중식",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_45037def01d9",
+      "name": "코르 파스타바",
+      "region": "부산진구 동성로",
+      "address": "부산진구 동성로 25번길 13, 2층, Busan, 47305, 한국",
+      "category": "이탤리언",
+      "representativeMenu": "",
+      "lat": 35.1526436,
+      "lng": 129.06769459999998,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJgSV5xWTraDURae9x-JoXEYE",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_ee623682524d",
+      "name": "평양집",
+      "region": "북구 금곡대로",
+      "address": "북구 금곡대로 20번길 21, Busan, 46547, 한국",
+      "category": "만두",
+      "representativeMenu": "",
+      "lat": 35.2121382,
+      "lng": 129.0058657,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ_RAJiEiVaDURMBsrzmwEoWo",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_969169eca959",
+      "name": "피리피리",
+      "region": "수영구 무학로",
+      "address": "수영구 무학로 33번길 54, Busan, 48268, 한국",
+      "category": "타이",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
+      "name": "필동면옥",
+      "region": "중구 서애로",
+      "address": "중구 서애로 26, Seoul, 04624, 한국",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.5603604,
+      "lng": 126.9969996,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJzctx3J2jfDUR8aZ4DVRySoE",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
+      "name": "한월관",
+      "region": "수영구 광안로",
+      "address": "수영구 광안로 62번길 10, Busan, 48303, 한국",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 35.154691199999995,
+      "lng": 129.1185433,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJjXcyIb7taDURc6S9txRteto",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
+      "name": "할매집",
+      "region": "종로구 사직로",
+      "address": "종로구 사직로 12길 1-5, Seoul, 03169, 한국",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 37.5756598,
+      "lng": 126.9714624,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJSz0DNZSifDURbyoY-rvEl1o",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+      "name": "합정옥",
+      "region": "마포구 양화로",
+      "address": "마포구 양화로 1길 21, 2층, Seoul, 04026, 한국",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "name": "합천국밥집",
+      "region": "남구 용호로",
+      "address": "남구 용호로 235, Busan, 48593, 한국",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 35.111245,
+      "lng": 129.11127349999998,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJfQCVmTXtaDUR-EuI2s4TbiQ",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
+      "name": "해목",
+      "region": "해운대구 구남로",
+      "address": "해운대구 구남로 24번길 8, Busan, 48094, 한국",
+      "category": "일식",
+      "representativeMenu": "",
+      "lat": 35.161780799999995,
+      "lng": 129.15966659999998,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ-ebR3l2NaDURmbr14mvrOMU",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+      "name": "호라파",
+      "region": "종로구 자하문로",
+      "address": "종로구 자하문로 37-1, 2층, Seoul, 03040, 한국",
+      "category": "타이",
+      "representativeMenu": "",
+      "lat": 37.5793824,
+      "lng": 126.97110479999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJhQtB_rSjfDURKQupt63WLDY",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
+      "name": "화해당",
+      "region": "영등포구 국회대로",
+      "address": "영등포구 국회대로 62길 15, Seoul, 07236, 한국",
+      "category": "게장",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
+      "name": "황금콩밭",
+      "region": "마포구 마포대로",
+      "address": "마포구 마포대로 16길 9, Seoul, 04205, 한국",
+      "category": "두부",
+      "representativeMenu": "",
+      "lat": 37.5509285,
+      "lng": 126.9567625,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJJ-gxpXeifDUR-UWa6w9-IBw",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
+      "name": "황생가 칼국수",
+      "region": "종로구 북촌로",
+      "address": "종로구 북촌로 5길 78, Seoul, 03053, 한국",
+      "category": "칼국수,만두",
+      "representativeMenu": "1인분가격 20,000원/ 2인분 이상부터 주문가능",
+      "lat": 37.580100699999996,
+      "lng": 126.9806614,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_1",
+          "name": "1인분가격 20,000원/ 2인분 이상부터 주문가능",
+          "price": "20,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_2",
+          "name": "콩국수",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_3",
+          "name": "왕만두",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_4",
+          "name": "왕만두국",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_5",
+          "name": "사골칼국수",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_6",
+          "name": "모듬전 (R)",
+          "price": "35,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_7",
+          "name": "모듬전 (L)",
+          "price": "45,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_8",
+          "name": "보쌈 (R)",
+          "price": "40,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_9",
+          "name": "보쌈 (L)",
+          "price": "50,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_10",
+          "name": "수육 (R)",
+          "price": "45,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_11",
+          "name": "수육 (L)",
+          "price": "55,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_12",
+          "name": "백수육 (R)",
+          "price": "50,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee_menu_13",
+          "name": "백수육 (L)",
+          "price": "60,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJ13yZpsaifDURUpD__4MZcT4",
+      "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "michelin-bib-gourmand",
+      "name": "빕 구르망",
+      "type": "michelin",
+      "provider": "MICHELIN Guide",
+      "description": "빕 구르망으로 선정된 가성비 좋은 레스토랑을 모아봤어요."
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_59e7690d6060",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 1
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 2
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_175611706310",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_175611706310",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 3
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 4
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 5
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 6
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 7
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_a394500bb68e",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_a394500bb68e",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 8
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 9
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 10
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 11
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 12
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 13
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 14
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_8b30cd561327",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_8b30cd561327",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 15
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 16
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 17
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 18
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 19
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_104103149e3d",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_104103149e3d",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 20
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_64d91730bf44",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_64d91730bf44",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 21
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_2df130330a51",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_2df130330a51",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 22
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 23
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 24
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 25
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 26
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 27
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 28
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 29
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_927dc8369053",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_927dc8369053",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 30
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4fe444039e17",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4fe444039e17",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 31
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_05c9759cd576",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_05c9759cd576",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 32
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 33
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 34
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 35
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 36
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 37
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 38
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 39
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 40
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 41
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 42
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 43
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 44
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ec81b148db70",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_ec81b148db70",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 45
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 46
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 47
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_948a029ffc18",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_948a029ffc18",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 48
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 49
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 50
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 51
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_69a5b29de596",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_69a5b29de596",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 52
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 53
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 54
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 55
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 56
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_c013858f8af2",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 57
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 58
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_45037def01d9",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_45037def01d9",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 59
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ee623682524d",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_ee623682524d",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 60
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_969169eca959",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_969169eca959",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 61
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 62
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 63
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 64
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 65
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 66
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 67
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 68
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 69
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 70
+    },
+    {
+      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
+      "sourceId": "michelin-bib-gourmand",
+      "ordinal": 71
+    }
+  ]
+}

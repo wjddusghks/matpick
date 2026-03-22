@@ -1,0 +1,340 @@
+{
+  "datasetId": "michelin-2-stars",
+  "generatedAt": "2026-03-22T07:46:30.350Z",
+  "restaurants": [
+    {
+      "id": "topic_enrichment_michelin-2-stars_fbce08263974",
+      "name": "권숙수",
+      "region": "강남구 압구정로",
+      "address": "강남구 압구정로 80길 37, 4층, Seoul, 06016, 한국",
+      "category": "한식",
+      "representativeMenu": "DINNER",
+      "lat": 37.5243775,
+      "lng": 127.0435589,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_fbce08263974_menu_1",
+          "name": "DINNER",
+          "price": "360,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_fbce08263974_menu_2",
+          "name": "LUNCH",
+          "price": "240,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJZ1-yoYijfDURvkRg_wdaQao",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_e40f1a27b276",
+      "name": "라연",
+      "region": "중구 동호로",
+      "address": "중구 동호로 249, 신라호텔 23층, Seoul, 04605, 한국",
+      "category": "한식",
+      "representativeMenu": "점심/라연코스",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_e40f1a27b276_menu_1",
+          "name": "점심/라연코스",
+          "price": "220,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_e40f1a27b276_menu_2",
+          "name": "저녁/신라코스",
+          "price": "350,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_e40f1a27b276_menu_3",
+          "name": "구절판",
+          "price": "55,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_e40f1a27b276_menu_4",
+          "name": "신선로",
+          "price": "110,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_f38f7e9e54fc",
+      "name": "레스토랑 알렌",
+      "region": "강남구 테헤란로",
+      "address": "강남구 테헤란로 231, 센터필드 East 2층 E205호, Seoul, 06142, 한국",
+      "category": "프랑스음식",
+      "representativeMenu": "계절별로 한가지 메뉴를 선보이며, 메인 선택에 따라 추가 금액이 발생할 수 있습니다.",
+      "lat": 37.5036006,
+      "lng": 127.0418041,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_f38f7e9e54fc_menu_1",
+          "name": "계절별로 한가지 메뉴를 선보이며, 메인 선택에 따라 추가 금액이 발생할 수 있습니다.",
+          "price": "220,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_f38f7e9e54fc_menu_2",
+          "name": "계절별로 한가지 메뉴를 선보이며, 메인 선택에 따라 추가 금액이 발생할 수 있습니다.",
+          "price": "350,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJQ-Y88belfDURrUsKUS6HMVY",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be",
+      "name": "모수",
+      "region": "서울시 용산구",
+      "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
+      "category": "양식",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_2663deda0dab",
+      "name": "미토우",
+      "region": "강남구 도산대로",
+      "address": "강남구 도산대로 70길 24, Seoul, 06064, 한국",
+      "category": "일식당",
+      "representativeMenu": "재철 재료를 사용한 코스요리",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_2663deda0dab_menu_1",
+          "name": "재철 재료를 사용한 코스요리",
+          "price": "변동",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_2663deda0dab_menu_2",
+          "name": "콜키지",
+          "price": "80,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_1f775d4caaf7",
+      "name": "소수헌",
+      "region": "중구 만리재로",
+      "address": "중구 만리재로 21길 8, Seoul, 04500, 한국",
+      "category": "기업,빌딩",
+      "representativeMenu": "",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_759bcc5b5dd8",
+      "name": "스와니예",
+      "region": "강남구 강남대로",
+      "address": "강남구 강남대로 652 신사스퀘어 2층 201호, Seoul, 06027, 한국",
+      "category": "양식",
+      "representativeMenu": "런치 코스",
+      "lat": 0,
+      "lng": 0,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_759bcc5b5dd8_menu_1",
+          "name": "런치 코스",
+          "price": "240,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_759bcc5b5dd8_menu_2",
+          "name": "디너 코스",
+          "price": "380,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_8e94f1b51d47",
+      "name": "알라 프리마",
+      "region": "강남구 학동로",
+      "address": "강남구 학동로 17길 13, Seoul, 06045, 한국",
+      "category": "퓨전음식",
+      "representativeMenu": "메뉴 구성은 계절성과 당일의 식재료에 따라 수시로 변동될 수 있으니 참고 부탁드립니다.",
+      "lat": 37.513413799999995,
+      "lng": 127.0260405,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_8e94f1b51d47_menu_1",
+          "name": "메뉴 구성은 계절성과 당일의 식재료에 따라 수시로 변동될 수 있으니 참고 부탁드립니다.",
+          "price": "350,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_8e94f1b51d47_menu_2",
+          "name": "메뉴 구성은 계절성과 당일의 식재료에 따라 수시로 변동될 수 있으니 참고 부탁드립니다.",
+          "price": "190,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJsdM8l_KjfDURobnSNkInVo8",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+      "name": "에빗",
+      "region": "강남구 도산대로",
+      "address": "강남구 도산대로 45길 10-5, Seoul, 06021, 한국",
+      "category": "양식",
+      "representativeMenu": "Lunch Course",
+      "lat": 37.5233759,
+      "lng": 127.03621329999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_4b8c738a2ffd_menu_1",
+          "name": "Lunch Course",
+          "price": "190,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_4b8c738a2ffd_menu_2",
+          "name": "Dinner Course",
+          "price": "300,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJTaVjWi6hfDURVegqLOB9oSs",
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+      "name": "정식당",
+      "region": "강남구 선릉로",
+      "address": "강남구 선릉로 158길 11, Seoul, 06014, 한국",
+      "category": "컨템퍼러리",
+      "representativeMenu": "",
+      "lat": 37.525673399999995,
+      "lng": 127.04108459999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "googlePlaceId": "ChIJLwsYxYijfDURiJD-QZw6MYU",
+      "isOverseas": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "michelin-2-stars",
+      "name": "미쉐린 2스타",
+      "type": "michelin",
+      "provider": "MICHELIN Guide",
+      "description": "미쉐린 2스타로 선정된 레스토랑을 모아봤어요."
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_fbce08263974",
+      "restaurantId": "topic_enrichment_michelin-2-stars_fbce08263974",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 1
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_e40f1a27b276",
+      "restaurantId": "topic_enrichment_michelin-2-stars_e40f1a27b276",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 2
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_f38f7e9e54fc",
+      "restaurantId": "topic_enrichment_michelin-2-stars_f38f7e9e54fc",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 3
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_d2dd9eeff8be",
+      "restaurantId": "topic_enrichment_michelin-2-stars_d2dd9eeff8be",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 4
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_2663deda0dab",
+      "restaurantId": "topic_enrichment_michelin-2-stars_2663deda0dab",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 5
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_1f775d4caaf7",
+      "restaurantId": "topic_enrichment_michelin-2-stars_1f775d4caaf7",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 6
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_759bcc5b5dd8",
+      "restaurantId": "topic_enrichment_michelin-2-stars_759bcc5b5dd8",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 7
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_8e94f1b51d47",
+      "restaurantId": "topic_enrichment_michelin-2-stars_8e94f1b51d47",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 8
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+      "restaurantId": "topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 9
+    },
+    {
+      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+      "restaurantId": "topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+      "sourceId": "michelin-2-stars",
+      "ordinal": 10
+    }
+  ]
+}

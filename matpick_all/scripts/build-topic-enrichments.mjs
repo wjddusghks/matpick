@@ -3,20 +3,40 @@ import fs from "node:fs";
 import path from "node:path";
 import { generatedDataRoot, workspaceRoot } from "./source-dataset-paths.mjs";
 
-const menuResultsRoot = path.join(
+const standardizedMenuResultsRoot = path.join(
   workspaceRoot,
   "Menu-Automation",
   "workspace",
   "standardized-results"
 );
-const googleResultsPath = path.join(
+const standardizedGoogleResultsPath = path.join(
   workspaceRoot,
   "Menu-Automation",
   "workspace",
   "google-places",
   "places-full-results-20260321.json"
 );
+const michelinMenuResultsRoot = path.join(
+  workspaceRoot,
+  "Menu-Automation",
+  "workspace",
+  "michelin-results"
+);
+const michelinRawResultsRoot = path.join(
+  workspaceRoot,
+  "Menu-Automation",
+  "workspace",
+  "michelin"
+);
+const michelinGoogleResultsRoot = path.join(
+  workspaceRoot,
+  "Menu-Automation",
+  "workspace",
+  "google-places",
+  "michelin"
+);
 const topicEnrichmentRoot = path.join(generatedDataRoot, "topic-enrichments");
+
 const patchOnlyDatasetIds = new Set([
   "baekban-trip",
   "wednesday-gourmet",
@@ -24,12 +44,45 @@ const patchOnlyDatasetIds = new Set([
 ]);
 
 const menuResultFiles = {
-  ttoganjip: "ttoganjip.results.json",
-  "delicious-guys": "delicious-guys.results.json",
-  "baekban-trip": "baekban-trip.results.json",
-  "baekjong-wok": "baekjong-wok.results.json",
-  "wednesday-gourmet": "wednesday-gourmet.results.json",
-  "old-korean-100": "old-korean-100.parallel.b3.results.json",
+  ttoganjip: path.join(standardizedMenuResultsRoot, "ttoganjip.results.json"),
+  "delicious-guys": path.join(standardizedMenuResultsRoot, "delicious-guys.results.json"),
+  "baekban-trip": path.join(standardizedMenuResultsRoot, "baekban-trip.results.json"),
+  "baekjong-wok": path.join(standardizedMenuResultsRoot, "baekjong-wok.results.json"),
+  "wednesday-gourmet": path.join(
+    standardizedMenuResultsRoot,
+    "wednesday-gourmet.results.json"
+  ),
+  "old-korean-100": path.join(
+    standardizedMenuResultsRoot,
+    "old-korean-100.parallel.b3.results.json"
+  ),
+  "michelin-3-stars": path.join(michelinMenuResultsRoot, "michelin-3-stars.results.json"),
+  "michelin-2-stars": path.join(michelinMenuResultsRoot, "michelin-2-stars.results.json"),
+  "michelin-1-star": path.join(michelinMenuResultsRoot, "michelin-1-star.results.json"),
+  "michelin-bib-gourmand": path.join(
+    michelinMenuResultsRoot,
+    "michelin-bib-gourmand.results.json"
+  ),
+  "michelin-selected": path.join(michelinMenuResultsRoot, "michelin-selected.results.json"),
+};
+
+const michelinGoogleResultFiles = {
+  "michelin-3-stars": path.join(michelinGoogleResultsRoot, "michelin-3-stars.places.json"),
+  "michelin-2-stars": path.join(michelinGoogleResultsRoot, "michelin-2-stars.places.json"),
+  "michelin-1-star": path.join(michelinGoogleResultsRoot, "michelin-1-star.places.json"),
+  "michelin-bib-gourmand": path.join(
+    michelinGoogleResultsRoot,
+    "michelin-bib-gourmand.places.json"
+  ),
+  "michelin-selected": path.join(michelinGoogleResultsRoot, "michelin-selected.places.json"),
+};
+
+const michelinRawDatasetFiles = {
+  "michelin-3-stars": path.join(michelinRawResultsRoot, "michelin-3-stars.json"),
+  "michelin-2-stars": path.join(michelinRawResultsRoot, "michelin-2-stars.json"),
+  "michelin-1-star": path.join(michelinRawResultsRoot, "michelin-1-star.json"),
+  "michelin-bib-gourmand": path.join(michelinRawResultsRoot, "michelin-bib-gourmand.json"),
+  "michelin-selected": path.join(michelinRawResultsRoot, "michelin-selected.json"),
 };
 
 const workbookDatasetMatchers = [
@@ -48,7 +101,7 @@ const sourceMetadataByDatasetId = {
     type: "creator",
     provider: "YouTube",
     creatorId: "UCrDMtdCSMTGVmUKvuhcahRw",
-    description: "또간집에 소개된 맛집을 모아봤어요.",
+    description: "또간집에 소개된 맛집을 한 번에 모아봤어요.",
   },
   "delicious-guys": {
     id: "delicious-guys",
@@ -56,14 +109,14 @@ const sourceMetadataByDatasetId = {
     type: "tv_show",
     provider: "IHQ",
     creatorId: "UCT-eNSaIVbeFnMhOLPDBGhg",
-    description: "맛있는 녀석들에 소개된 맛집을 모아봤어요.",
+    description: "맛있는 녀석들에 소개된 맛집을 한 번에 모아봤어요.",
   },
   "baekban-trip": {
     id: "sikgaek-baekban-trip",
     name: "식객 허영만의 백반기행",
     type: "tv_show",
     provider: "TV CHOSUN",
-    description: "허영만의 백반기행에 소개된 맛집을 모아봤어요.",
+    description: "허영만의 백반기행에 소개된 맛집을 한 번에 모아봤어요.",
     imageUrl: "/source-covers/sikgaek-baekban-trip.jpg",
   },
   "wednesday-gourmet": {
@@ -71,7 +124,7 @@ const sourceMetadataByDatasetId = {
     name: "수요미식회",
     type: "tv_show",
     provider: "tvN",
-    description: "수요미식회에 소개된 맛집을 한 번에 탐색해보세요.",
+    description: "수요미식회에 소개된 맛집을 한 번에 둘러볼 수 있어요.",
     imageUrl: "/source-covers/wednesday-gourmet.jpg",
   },
   "old-korean-100": {
@@ -79,7 +132,7 @@ const sourceMetadataByDatasetId = {
     name: "한국인이 사랑하는 오래된 한식당 100선",
     type: "institution",
     provider: "한식진흥원",
-    description: "한국인이 사랑하는 오래된 한식당 100선을 지역별로 정리했어요.",
+    description: "한국인이 사랑하는 오래된 한식당 100선을 지역별로 둘러보세요.",
     imageUrl: "/source-covers/old-korean-100.jpg",
   },
   "baekjong-wok": {
@@ -87,7 +140,42 @@ const sourceMetadataByDatasetId = {
     name: "백종원의 3대천왕",
     type: "tv_show",
     provider: "SBS",
-    description: "백종원의 3대천왕에 소개된 맛집을 모아봤어요.",
+    description: "백종원의 3대천왕에 소개된 맛집을 한 번에 모아봤어요.",
+  },
+  "michelin-3-stars": {
+    id: "michelin-3-stars",
+    name: "미쉐린 3스타",
+    type: "michelin",
+    provider: "MICHELIN Guide",
+    description: "미쉐린 3스타로 선정된 레스토랑을 모아봤어요.",
+  },
+  "michelin-2-stars": {
+    id: "michelin-2-stars",
+    name: "미쉐린 2스타",
+    type: "michelin",
+    provider: "MICHELIN Guide",
+    description: "미쉐린 2스타로 선정된 레스토랑을 모아봤어요.",
+  },
+  "michelin-1-star": {
+    id: "michelin-1-star",
+    name: "미쉐린 1스타",
+    type: "michelin",
+    provider: "MICHELIN Guide",
+    description: "미쉐린 1스타로 선정된 레스토랑을 모아봤어요.",
+  },
+  "michelin-bib-gourmand": {
+    id: "michelin-bib-gourmand",
+    name: "빕 구르망",
+    type: "michelin",
+    provider: "MICHELIN Guide",
+    description: "빕 구르망으로 선정된 가성비 좋은 레스토랑을 모아봤어요.",
+  },
+  "michelin-selected": {
+    id: "michelin-selected",
+    name: "선정 레스토랑",
+    type: "michelin",
+    provider: "MICHELIN Guide",
+    description: "미쉐린 선정 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
 };
 
@@ -304,17 +392,49 @@ function buildRestaurantPatchFromGoogle(datasetId, result) {
   });
 }
 
-function loadMenuEnrichments() {
-  const datasetMap = new Map();
+function buildRestaurantFromMichelinItem(datasetId, item) {
+  const restaurant = createBaseRestaurant(datasetId, item.restaurantName, item.address);
+  return mergeRestaurant(restaurant, {
+    ...restaurant,
+    category: normalizeText(item.cuisine) || restaurant.category,
+  });
+}
 
-  for (const [datasetId, fileName] of Object.entries(menuResultFiles)) {
-    const filePath = path.join(menuResultsRoot, fileName);
+function mergeMichelinBaseEnrichments(datasetMap) {
+  for (const [datasetId, filePath] of Object.entries(michelinRawDatasetFiles)) {
     if (!fs.existsSync(filePath)) {
       continue;
     }
 
     const payload = readJson(filePath);
-    const restaurants = new Map();
+    const restaurants = datasetMap.get(datasetId) ?? new Map();
+
+    for (const item of payload.restaurants || []) {
+      const key = buildLookupKey(item.restaurantName, item.address);
+      const nextRestaurant = buildRestaurantFromMichelinItem(datasetId, item);
+      const currentRestaurant = restaurants.get(key);
+      restaurants.set(
+        key,
+        currentRestaurant ? mergeRestaurant(currentRestaurant, nextRestaurant) : nextRestaurant
+      );
+    }
+
+    datasetMap.set(datasetId, restaurants);
+  }
+
+  return datasetMap;
+}
+
+function mergeMenuEnrichments(datasetMap) {
+
+  for (const [datasetId, filePath] of Object.entries(menuResultFiles)) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const payload = readJson(filePath);
+    const restaurants = datasetMap.get(datasetId) ?? new Map();
+
     for (const item of payload.items || []) {
       const key = buildLookupKey(item.restaurantName, item.address);
       const nextRestaurant = buildRestaurantFromMenuItem(datasetId, item);
@@ -332,7 +452,7 @@ function loadMenuEnrichments() {
 }
 
 function mergeGoogleEnrichments(datasetMap) {
-  const payload = readJson(googleResultsPath);
+  const payload = readJson(standardizedGoogleResultsPath);
 
   for (const result of payload.results || []) {
     const datasetId = detectDatasetIdFromWorkbook(result.sourceWorkbook);
@@ -348,6 +468,32 @@ function mergeGoogleEnrichments(datasetMap) {
       currentRestaurant ? mergeRestaurant(currentRestaurant, nextRestaurant) : nextRestaurant
     );
     datasetMap.set(datasetId, restaurants);
+  }
+
+  return datasetMap;
+}
+
+function mergeMichelinGoogleEnrichments(datasetMap) {
+  for (const [datasetId, filePath] of Object.entries(michelinGoogleResultFiles)) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const payload = readJson(filePath);
+
+    for (const result of payload.results || []) {
+      if (!isReliableGoogleMatch(result.bestMatch)) continue;
+
+      const key = buildLookupKey(result.restaurantName, result.address);
+      const restaurants = datasetMap.get(datasetId) ?? new Map();
+      const nextRestaurant = buildRestaurantPatchFromGoogle(datasetId, result);
+      const currentRestaurant = restaurants.get(key);
+      restaurants.set(
+        key,
+        currentRestaurant ? mergeRestaurant(currentRestaurant, nextRestaurant) : nextRestaurant
+      );
+      datasetMap.set(datasetId, restaurants);
+    }
   }
 
   return datasetMap;
@@ -394,6 +540,7 @@ function buildCanonicalPatchOutput(datasetId, restaurants) {
 function writeTopicOutputs(datasetMap) {
   for (const [datasetId, restaurants] of datasetMap.entries()) {
     const outputPath = path.join(topicEnrichmentRoot, `${datasetId}.enriched.json`);
+
     if (patchOnlyDatasetIds.has(datasetId)) {
       const canonicalPayload = buildCanonicalPatchOutput(datasetId, restaurants);
       if (canonicalPayload) {
@@ -403,20 +550,22 @@ function writeTopicOutputs(datasetMap) {
     }
 
     const sourceMetadata = sourceMetadataByDatasetId[datasetId];
+    const orderedRestaurants = Array.from(restaurants.values()).sort((left, right) =>
+      left.name.localeCompare(right.name, "ko")
+    );
     const sourceLinks = sourceMetadata
-      ? Array.from(restaurants.values()).map((restaurant, index) => ({
+      ? orderedRestaurants.map((restaurant, index) => ({
           id: `${sourceMetadata.id}_${restaurant.id}`,
           restaurantId: restaurant.id,
           sourceId: sourceMetadata.id,
           ordinal: index + 1,
         }))
       : [];
+
     writeJson(outputPath, {
       datasetId,
       generatedAt: new Date().toISOString(),
-      restaurants: Array.from(restaurants.values()).sort((left, right) =>
-        left.name.localeCompare(right.name, "ko")
-      ),
+      restaurants: orderedRestaurants,
       sources: sourceMetadata ? [sourceMetadata] : [],
       sourceLinks,
     });
@@ -424,8 +573,11 @@ function writeTopicOutputs(datasetMap) {
 }
 
 function main() {
-  const datasetMap = loadMenuEnrichments();
+  const datasetMap = new Map();
+  mergeMichelinBaseEnrichments(datasetMap);
+  mergeMenuEnrichments(datasetMap);
   mergeGoogleEnrichments(datasetMap);
+  mergeMichelinGoogleEnrichments(datasetMap);
   writeTopicOutputs(datasetMap);
 
   const summary = Array.from(datasetMap.entries()).map(([datasetId, restaurants]) => ({

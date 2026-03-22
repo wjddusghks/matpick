@@ -12,6 +12,36 @@
     "targetId": "delicious-guys"
   },
   {
+    "slug": "michelin-3-stars",
+    "name": "미쉐린 3스타",
+    "kind": "source",
+    "targetId": "michelin-3-stars"
+  },
+  {
+    "slug": "michelin-2-stars",
+    "name": "미쉐린 2스타",
+    "kind": "source",
+    "targetId": "michelin-2-stars"
+  },
+  {
+    "slug": "michelin-1-star",
+    "name": "미쉐린 1스타",
+    "kind": "source",
+    "targetId": "michelin-1-star"
+  },
+  {
+    "slug": "michelin-bib-gourmand",
+    "name": "빕 구르망",
+    "kind": "source",
+    "targetId": "michelin-bib-gourmand"
+  },
+  {
+    "slug": "michelin-selected",
+    "name": "선정 레스토랑",
+    "kind": "source",
+    "targetId": "michelin-selected"
+  },
+  {
     "slug": "tzuyang",
     "name": "쯔양",
     "kind": "creator",
@@ -19,7 +49,7 @@
   },
   {
     "slug": "old-korean-100",
-    "name": "한국인이 사랑한 오래된 한식당 100선",
+    "name": "한국인이 사랑하는 오래된 한식당 100선",
     "kind": "source",
     "targetId": "old-korean-100"
   },

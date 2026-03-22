@@ -18,6 +18,7 @@ import {
   getRestaurantsByCreator,
   getRestaurantsBySource,
   getSourceById,
+  getSourceDisplayName,
   getSourcesByRestaurant,
   mockSearchData,
   restaurants,
@@ -152,7 +153,7 @@ function filterRestaurants(
       const source = getSourceById(value);
       return {
         restaurants: getRestaurantsBySource(value),
-        title: source ? copy.sourceRestaurants(source.name) : copy.searchResults,
+        title: source ? copy.sourceRestaurants(getSourceDisplayName(source)) : copy.searchResults,
       };
     }
     case "restaurant": {
@@ -341,10 +342,10 @@ function RestaurantCard({
             {sourcesForRestaurant.map((source) => (
               <span
                 key={source.id}
-                title={source.name}
+                title={getSourceDisplayName(source)}
                 className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
               >
-                <span className="truncate">{source.name}</span>
+                <span className="truncate">{getSourceDisplayName(source)}</span>
               </span>
             ))}
           </div>

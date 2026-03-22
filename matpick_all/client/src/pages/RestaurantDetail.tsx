@@ -36,6 +36,7 @@ import {
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
   getRecommendationCount,
+  getSourceDisplayName,
   getSourcesByRestaurant,
   getVisitsByRestaurant,
   restaurants,
@@ -1151,14 +1152,14 @@ export default function RestaurantDetail() {
               ) : null}
               {sourcesByRestaurant.length > 0 ? (
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {sourcesByRestaurant.map((source) => (
-                    <span
-                      key={source.id}
-                      className="inline-flex items-center rounded-full border border-[#f3d5a1] bg-[#fff7e8] px-3 py-1 text-xs font-semibold text-[#b7791f]"
-                    >
-                      {source.name}
-                    </span>
-                  ))}
+                {sourcesByRestaurant.map((source) => (
+                  <span
+                    key={source.id}
+                    className="inline-flex items-center rounded-full border border-[#f3d5a1] bg-[#fff7e8] px-3 py-1 text-xs font-semibold text-[#b7791f]"
+                  >
+                    {getSourceDisplayName(source)}
+                  </span>
+                ))}
                 </div>
               ) : null}
             </div>
@@ -1876,17 +1877,17 @@ export default function RestaurantDetail() {
                 {sourcesByRestaurant.map((source) => (
                   <div
                     key={source.id}
-                    title={source.name}
+                    title={getSourceDisplayName(source)}
                     className="inline-flex max-w-full items-center gap-2 rounded-xl border border-[#f3d5a1] bg-[#fff7e8] px-3 py-2 text-sm font-semibold text-[#b7791f]"
                   >
                     {source.imageUrl ? (
                       <img
                         src={source.imageUrl}
-                        alt={source.name}
+                        alt={getSourceDisplayName(source)}
                         className="h-7 w-7 rounded-full object-cover"
                       />
                     ) : null}
-                    <span className="truncate">{source.name}</span>
+                    <span className="truncate">{getSourceDisplayName(source)}</span>
                   </div>
                 ))}
               </div>

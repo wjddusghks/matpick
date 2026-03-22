@@ -18,6 +18,7 @@ import {
   getRestaurantMenuSummary,
   getRestaurantsByCreator,
   getSourceRestaurantCount,
+  getSourceDisplayName,
   getSourceSubdivisions,
   getSourcesByRestaurant,
   restaurantMatchesSourceSubdivision,
@@ -371,10 +372,10 @@ function RestaurantCard({
           {sourcesForRestaurant.map((source) => (
             <span
               key={source.id}
-              title={source.name}
+              title={getSourceDisplayName(source)}
               className="inline-flex max-w-[170px] items-center rounded-full border border-[#f1ddaf] bg-[#fff8e8] px-3 py-1 text-xs font-semibold text-[#b67b19]"
             >
-              <span className="truncate">{source.name}</span>
+              <span className="truncate">{getSourceDisplayName(source)}</span>
             </span>
           ))}
         </div>

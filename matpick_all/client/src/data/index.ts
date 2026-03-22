@@ -463,8 +463,22 @@ const creatorDisplayNameOverrides: Record<string, string> = {
   UCrDMtdCSMTGVmUKvuhcahRw: "또간집",
 };
 
+const sourceDisplayNameOverrides: Record<string, string> = {
+  ttoganjip: "또간집",
+  "delicious-guys": "맛있는 녀석들",
+  "baekjong-wok": "백종원의 3대천왕",
+  "sikgaek-baekban-trip": "백반기행",
+  "wednesday-gourmet": "수요미식회",
+  "old-korean-100": "한국인 100선",
+  michelin: "미쉐린",
+};
+
 export function getCreatorDisplayName(creator: Pick<Creator, "id" | "name">) {
   return creatorDisplayNameOverrides[creator.id] ?? creator.name;
+}
+
+export function getSourceDisplayName(source: Pick<Source, "id" | "name">) {
+  return sourceDisplayNameOverrides[source.id] ?? source.name;
 }
 
 function getCreatorSearchName(creator: Creator) {
@@ -728,11 +742,20 @@ export function getRestaurantBroadcastMeta(
     .slice()
     .sort((a, b) => (a.ordinal ?? Number.MAX_SAFE_INTEGER) - (b.ordinal ?? Number.MAX_SAFE_INTEGER))
     .map((link) => {
-      if (link.label?.trim()) {
-        return link.label.trim();
+      const source = getSourceById(link.sourceId);
+      const isBroadcastSource =
+        episodicSourceIds.has(link.sourceId) || source?.type === "tv_show";
+
+      if (!isBroadcastSource) {
+        return "";
       }
 
-      if (episodicSourceIds.has(link.sourceId) && Number.isFinite(link.ordinal)) {
+      const label = link.label?.trim() ?? "";
+      if (/^(ep\.?\s*\d+|\d+\s*회|episode\s*\d+)/i.test(label)) {
+        return label;
+      }
+
+      if (Number.isFinite(link.ordinal)) {
         return `EP.${link.ordinal}`;
       }
 

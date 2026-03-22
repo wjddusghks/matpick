@@ -28,6 +28,12 @@ type SourceDataset = {
   sourceLinks?: SourceLink[];
 };
 
+const patchOnlySourceIds = new Set<string>([
+  "old-korean-100",
+  "sikgaek-baekban-trip",
+  "wednesday-gourmet",
+]);
+
 export type DiscoveryTopicKind = "creator" | "source";
 
 type DiscoveryTopicDefinition = {
@@ -172,6 +178,7 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
   return {
     ...current,
     ...next,
+    id: current.id,
     name: preferLongerText(current.name, next.name),
     region: preferLongerText(current.region, next.region),
     address: preferLongerText(current.address, next.address),
@@ -202,6 +209,7 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
 function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
   const dedupedRestaurants: Restaurant[] = [];
   const indexByLookupKey = new Map<string, number>();
+  const canonicalRestaurantIdMap = new Map<string, string>();
 
   restaurantsToMerge.forEach((restaurant) => {
     const existingIndex = buildRestaurantLookupKeys(restaurant)
@@ -211,6 +219,7 @@ function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
     if (existingIndex == null) {
       const nextIndex = dedupedRestaurants.length;
       dedupedRestaurants.push(restaurant);
+      canonicalRestaurantIdMap.set(restaurant.id, restaurant.id);
       buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
         indexByLookupKey.set(lookupKey, nextIndex);
       });
@@ -221,12 +230,19 @@ function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
       dedupedRestaurants[existingIndex],
       restaurant
     );
+    canonicalRestaurantIdMap.set(
+      restaurant.id,
+      dedupedRestaurants[existingIndex].id
+    );
     buildRestaurantLookupKeys(dedupedRestaurants[existingIndex]).forEach((lookupKey) => {
       indexByLookupKey.set(lookupKey, existingIndex);
     });
   });
 
-  return dedupedRestaurants;
+  return {
+    restaurants: dedupedRestaurants,
+    canonicalRestaurantIdMap,
+  };
 }
 
 function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDataSet {
@@ -243,6 +259,21 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   });
 
   extras.forEach((extra) => {
+    const sourceIds = new Set((extra.sources ?? []).map((source) => source.id));
+    const patchOnlyDataset =
+      sourceIds.size > 0 &&
+      Array.from(sourceIds).every((sourceId) => patchOnlySourceIds.has(sourceId)) &&
+      (extra.restaurants ?? []).every((restaurant) =>
+        restaurant.id.startsWith("topic_enrichment_")
+      );
+    const patchableRestaurantIds = patchOnlyDataset
+      ? new Set(
+          mergedSourceLinks
+            .filter((link) => sourceIds.has(link.sourceId))
+            .map((link) => link.restaurantId)
+        )
+      : null;
+
     (extra.sources ?? []).forEach((source) => {
       if (!mergedSources.some((item) => item.id === source.id)) {
         mergedSources.push(source);
@@ -252,22 +283,24 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
     (extra.restaurants ?? []).forEach((restaurant) => {
       const existingIndex = buildRestaurantLookupKeys(restaurant)
         .map((lookupKey) => existingRestaurantIndex.get(lookupKey))
-        .find((value): value is number => value != null);
+        .find(
+          (value): value is number =>
+            value != null &&
+            (!patchableRestaurantIds ||
+              patchableRestaurantIds.has(mergedRestaurants[value].id))
+        );
 
       if (existingIndex != null) {
         const existing = mergedRestaurants[existingIndex];
-        mergedRestaurants[existingIndex] = {
-          ...existing,
-          foundingYear: existing.foundingYear ?? restaurant.foundingYear ?? null,
-          menus: mergeRestaurantMenus(existing.menus ?? [], restaurant.menus ?? []),
-          thumbnailFileName:
-            existing.thumbnailFileName ?? restaurant.thumbnailFileName ?? null,
-          googlePlaceId: existing.googlePlaceId ?? restaurant.googlePlaceId ?? null,
-        };
+        mergedRestaurants[existingIndex] = mergeRestaurantById(existing, restaurant);
         restaurantIdMap.set(restaurant.id, existing.id);
         buildRestaurantLookupKeys(mergedRestaurants[existingIndex]).forEach((lookupKey) => {
           existingRestaurantIndex.set(lookupKey, existingIndex);
         });
+        return;
+      }
+
+      if (patchOnlyDataset) {
         return;
       }
 
@@ -281,6 +314,13 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 
     (extra.sourceLinks ?? []).forEach((link) => {
       const remappedRestaurantId = restaurantIdMap.get(link.restaurantId) ?? link.restaurantId;
+      if (
+        patchOnlyDataset &&
+        !restaurantIdMap.has(link.restaurantId) &&
+        !mergedRestaurants.some((restaurant) => restaurant.id === remappedRestaurantId)
+      ) {
+        return;
+      }
       const dedupeKey = `${link.sourceId}:${remappedRestaurantId}:${link.ordinal ?? ""}`;
 
       if (
@@ -299,12 +339,48 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
     });
   });
 
+  const deduped = dedupeRestaurantsById(mergedRestaurants);
+  const dedupedRestaurantIds = new Set(deduped.restaurants.map((restaurant) => restaurant.id));
+  const normalizedSourceLinks = new Map<string, SourceLink>();
+
+  mergedSourceLinks.forEach((link) => {
+    const canonicalRestaurantId =
+      deduped.canonicalRestaurantIdMap.get(link.restaurantId) ?? link.restaurantId;
+
+    if (!dedupedRestaurantIds.has(canonicalRestaurantId)) {
+      return;
+    }
+
+    const dedupeKey = `${link.sourceId}:${canonicalRestaurantId}`;
+    const existing = normalizedSourceLinks.get(dedupeKey);
+
+    if (!existing) {
+      normalizedSourceLinks.set(dedupeKey, {
+        ...link,
+        restaurantId: canonicalRestaurantId,
+      });
+      return;
+    }
+
+    normalizedSourceLinks.set(dedupeKey, {
+      ...existing,
+      ordinal:
+        existing.ordinal == null
+          ? link.ordinal
+          : link.ordinal == null
+            ? existing.ordinal
+            : Math.min(existing.ordinal, link.ordinal),
+      label: existing.label ?? link.label,
+      note: existing.note ?? link.note,
+    });
+  });
+
   return {
     creators: base.creators,
     visits: base.visits,
-    restaurants: dedupeRestaurantsById(mergedRestaurants),
+    restaurants: deduped.restaurants,
     sources: mergedSources,
-    sourceLinks: mergedSourceLinks,
+    sourceLinks: Array.from(normalizedSourceLinks.values()),
   };
 }
 

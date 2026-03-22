@@ -17,6 +17,11 @@ const googleResultsPath = path.join(
   "places-full-results-20260321.json"
 );
 const topicEnrichmentRoot = path.join(generatedDataRoot, "topic-enrichments");
+const patchOnlyDatasetIds = new Set([
+  "baekban-trip",
+  "wednesday-gourmet",
+  "old-korean-100",
+]);
 
 const menuResultFiles = {
   ttoganjip: "ttoganjip.results.json",
@@ -70,8 +75,14 @@ const sourceMetadataByDatasetId = {
   },
 };
 
+const generatedDatasetFileByDatasetId = {
+  "baekban-trip": path.join(generatedDataRoot, "sikgaek-baekban-trip.generated.json"),
+  "wednesday-gourmet": path.join(generatedDataRoot, "wednesday-gourmet.generated.json"),
+  "old-korean-100": path.join(generatedDataRoot, "old-korean-100.generated.json"),
+};
+
 function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
 }
 
 function writeJson(filePath, payload) {
@@ -87,8 +98,46 @@ function normalizeLookupValue(value) {
   return normalizeText(value).toLowerCase();
 }
 
-function buildLookupKey(name, address) {
-  return `${normalizeLookupValue(name)}|${normalizeLookupValue(address)}`;
+function normalizeAddressForLookup(address) {
+  return normalizeLookupValue(String(address ?? "").replace(/\([^)]*\)/g, " "));
+}
+
+function buildLookupNameCandidates(name, region = "", address = "") {
+  const normalizedName = normalizeLookupValue(name);
+  const candidates = new Set([normalizedName]);
+  const addressTokens = normalizeLookupValue(`${region} ${address}`)
+    .split(" ")
+    .filter(Boolean);
+  const removablePrefixes = new Set();
+
+  if (addressTokens[0]) {
+    removablePrefixes.add(addressTokens[0]);
+  }
+  if (addressTokens[1]) {
+    removablePrefixes.add(`${addressTokens[0]} ${addressTokens[1]}`);
+  }
+
+  removablePrefixes.forEach((prefix) => {
+    if (normalizedName.startsWith(`${prefix} `)) {
+      const stripped = normalizedName.slice(prefix.length).trim();
+      if (stripped) {
+        candidates.add(stripped);
+      }
+    }
+  });
+
+  return Array.from(candidates);
+}
+
+function buildLookupKeys(name, address, region = "") {
+  const normalizedAddress = normalizeAddressForLookup(address);
+  return buildLookupNameCandidates(name, region, address).map(
+    (candidate) => `${candidate}|${normalizedAddress}`
+  );
+}
+
+function buildLookupKey(name, address, region = "") {
+  return buildLookupKeys(name, address, region)[0];
 }
 
 function buildRestaurantId(datasetId, name, address) {
@@ -163,6 +212,7 @@ function mergeMenus(currentMenus = [], nextMenus = []) {
 
 function mergeRestaurant(current, next) {
   return {
+    id: current.id,
     ...current,
     ...next,
     name: normalizeText(next.name) || current.name,
@@ -287,9 +337,55 @@ function mergeGoogleEnrichments(datasetMap) {
   return datasetMap;
 }
 
+function buildCanonicalPatchOutput(datasetId, restaurants) {
+  const generatedPath = generatedDatasetFileByDatasetId[datasetId];
+  if (!generatedPath || !fs.existsSync(generatedPath)) {
+    return null;
+  }
+
+  const generatedPayload = readJson(generatedPath);
+  const baseRestaurants = generatedPayload.restaurants || [];
+  const patchRestaurants = Array.from(restaurants.values());
+  const patchRestaurantByLookupKey = new Map();
+
+  patchRestaurants.forEach((restaurant) => {
+    buildLookupKeys(restaurant.name, restaurant.address, restaurant.region).forEach((lookupKey) => {
+      patchRestaurantByLookupKey.set(lookupKey, restaurant);
+    });
+  });
+
+  const mergedRestaurants = baseRestaurants.map((restaurant) => {
+    const patch = buildLookupKeys(restaurant.name, restaurant.address, restaurant.region)
+      .map((lookupKey) => patchRestaurantByLookupKey.get(lookupKey))
+      .find(Boolean);
+
+    if (!patch) {
+      return restaurant;
+    }
+
+    return mergeRestaurant(restaurant, patch);
+  });
+
+  return {
+    datasetId,
+    generatedAt: new Date().toISOString(),
+    restaurants: mergedRestaurants,
+    sources: generatedPayload.sources ?? [],
+    sourceLinks: generatedPayload.sourceLinks ?? [],
+  };
+}
+
 function writeTopicOutputs(datasetMap) {
   for (const [datasetId, restaurants] of datasetMap.entries()) {
     const outputPath = path.join(topicEnrichmentRoot, `${datasetId}.enriched.json`);
+    if (patchOnlyDatasetIds.has(datasetId)) {
+      const canonicalPayload = buildCanonicalPatchOutput(datasetId, restaurants);
+      if (canonicalPayload) {
+        writeJson(outputPath, canonicalPayload);
+        continue;
+      }
+    }
+
     const sourceMetadata = sourceMetadataByDatasetId[datasetId];
     const sourceLinks = sourceMetadata
       ? Array.from(restaurants.values()).map((restaurant, index) => ({

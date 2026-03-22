@@ -1,728 +1,231 @@
 {
   "datasetId": "old-korean-100",
-  "generatedAt": "2026-03-21T10:47:31.379Z",
+  "generatedAt": "2026-03-21T16:03:53.791Z",
   "restaurants": [
     {
-      "id": "topic_enrichment_old-korean-100_d70993395a18",
-      "name": "가선식당",
-      "region": "충북 영동군",
-      "address": "충북 영동군 양산면 금강로 760",
-      "category": "",
+      "id": "old-korean-100_restaurant_001",
+      "name": "서울 이문설농탕",
+      "region": "서울 종로구",
+      "address": "서울 종로구 우정국로 38-13 (견지동 88)",
+      "category": "설렁탕",
       "representativeMenu": "",
-      "lat": 36.1248439,
-      "lng": 127.60108769999998,
+      "lat": 37.5727716,
+      "lng": 126.9838991,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1904,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJxwR-IbRdZTURBJt5OS3dEz4",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_5a9cf62b1493",
-      "name": "강산면옥 본점",
-      "region": "대구 중구",
-      "address": "대구 중구 교동길 27-8",
-      "category": "",
+      "id": "old-korean-100_restaurant_002",
+      "name": "나주 하얀집",
+      "region": "전남 나주시",
+      "address": "전남 나주시 금성관길 6-1 (중앙동 48-17)",
+      "category": "곰탕,수육",
       "representativeMenu": "",
-      "lat": 35.8736678,
-      "lng": 128.5963748,
+      "lat": 35.0322393,
+      "lng": 126.7172247,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1910,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJs6B1dNvjZTURLueJ5gL55ro",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_bf64e6dccbab",
-      "name": "강서면옥",
-      "region": "서울 중구",
-      "address": "서울 중구 세종대로11길 35",
-      "category": "",
+      "id": "old-korean-100_restaurant_003",
+      "name": "부산 내호냉면",
+      "region": "부산 남구",
+      "address": "부산 남구 우암번영로26번길 17 (우암동 189-671)",
+      "category": "함흥냉면",
       "representativeMenu": "",
-      "lat": 37.5620353,
-      "lng": 126.97391449999998,
+      "lat": 35.1264806,
+      "lng": 129.0708398,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1919,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJn5V9E4uifDUR54WxnuLI56A",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_c628a2673902",
-      "name": "강진 완도횟집(현재 폐업, 영업종료)",
-      "region": "전남 강진군",
-      "address": "전남 강진군 마량면 마량리 980-37",
-      "category": "생선회",
+      "id": "old-korean-100_restaurant_004",
+      "name": "부산 박달집",
+      "region": "부산 금정구",
+      "address": "부산 금정구 금샘로 377-1 (구서동 1026-8)",
+      "category": "전통개장국",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.2567179,
+      "lng": 129.084258,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1920,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_c9f9e006d08b",
-      "name": "경주 원조콩국",
-      "region": "경북 경주시",
-      "address": "경북 경주시 첨성로 113",
-      "category": "",
+      "id": "old-korean-100_restaurant_005",
+      "name": "안성 안일옥",
+      "region": "경기 안성시",
+      "address": "경기 안성시 중앙로411번길 20 (영동 25-1)",
+      "category": "설렁탕",
       "representativeMenu": "",
-      "lat": 35.8334295,
-      "lng": 129.2147573,
+      "lat": 37.0076671,
+      "lng": 127.2728826,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1920,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_6c6414a87497",
-      "name": "경주 전통경주할매집(현재 폐업, 영업종료)",
-      "region": "경북 경주시",
-      "address": "경북 경주시 황남동 200-2",
-      "category": "쌈밥정식",
+      "id": "old-korean-100_restaurant_006",
+      "name": "울산 함양집",
+      "region": "울산 남구",
+      "address": "울산 남구 중앙로208번길 12 (신정동 579-4)",
+      "category": "전통비빔밥",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.5399315,
+      "lng": 129.3142182,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1924,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_66b5de38db76",
-      "name": "구포집",
-      "region": "부산 중구",
-      "address": "부산 중구 보수대로36번길 14-1 구포집",
-      "category": "",
+      "id": "old-korean-100_restaurant_007",
+      "name": "해남 천일식당",
+      "region": "전남 해남군",
+      "address": "전남 해남군 해남읍 읍내길 20-8 (읍내리 34-1)",
+      "category": "떡갈비",
       "representativeMenu": "",
-      "lat": 35.1012184,
-      "lng": 129.0246579,
+      "lat": 34.5706044,
+      "lng": 126.599265,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1924,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJpxf-jqHpaDUR__Lfed1y62U",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_054645c4d8f8",
-      "name": "국일따로국밥",
-      "region": "대구 중구",
-      "address": "대구 중구 국채보상로 571",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.8711068,
-      "lng": 128.5931728,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJRaErBcPjZTUReOtXOS3odMs",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_d328cccce561",
-      "name": "급행장",
-      "region": "부산 부산진구",
-      "address": "부산 부산진구 서면문화로 4",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.1580808,
-      "lng": 129.058029,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ43Ic_m7raDUR3-Npv5nNZP0",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_256f31357365",
-      "name": "기장곰장어",
-      "region": "부산 북구",
-      "address": "부산 북구 산성로12번길 79",
-      "category": "장어,먹장어요리",
-      "representativeMenu": "양념구이 소",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_1",
-          "name": "양념구이 소",
-          "price": "35,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_2",
-          "name": "양념구이 중",
-          "price": "45,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_3",
-          "name": "양념구이 대",
-          "price": "55,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_4",
-          "name": "양념구이 특대",
-          "price": "65,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_5",
-          "name": "소금구이 소",
-          "price": "35,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_6",
-          "name": "소금구이 중",
-          "price": "45,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_7",
-          "name": "소금구이 대",
-          "price": "55,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_256f31357365_menu_8",
-          "name": "소금구이 특대",
-          "price": "65,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_73a833e4c058",
-      "name": "남들갈비",
-      "region": "충북 청주시",
-      "address": "충북 청주시 서원구 청남로2133번길 8",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.6227778,
-      "lng": 127.4875,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJgUTxTTYmZTURLGujhh6xSkg",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_739a4b6ac4b9",
-      "name": "남성식당",
-      "region": "경남 창원시",
-      "address": "경남 창원시 마산합포구 오동동10길 3 주택",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.2049507,
-      "lng": 128.5792955,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJL8y7XuUtbzURZsa6L_-ZEzY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_b1299eed8205",
-      "name": "내호냉면",
-      "region": "부산 사하구",
-      "address": "부산 사하구 사리로27번길 75 . 1층",
-      "category": "냉면",
-      "representativeMenu": "물냉면",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_1",
-          "name": "물냉면",
-          "price": "12,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_2",
-          "name": "가오리회무침(소)",
-          "price": "9,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_3",
-          "name": "가오리회무침(대)",
-          "price": "25,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_4",
-          "name": "만두(8개)",
-          "price": "6,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_5",
-          "name": "함흥식(비빔)냉면",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_6",
-          "name": "물밀면",
-          "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_7",
-          "name": "비빔밀면",
-          "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_8",
-          "name": "칠성사이다(355ml)",
-          "price": "1,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_9",
-          "name": "코카콜라(355ml)",
-          "price": "1,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_10",
-          "name": "환타 오랜지맛(355ml)",
-          "price": "1,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_11",
-          "name": "환타 파인애플맛(355ml)",
-          "price": "1,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b1299eed8205_menu_12",
-          "name": "온육수(1L)",
-          "price": "5,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_496aa4ea70e5",
-      "name": "대들보함흥면옥",
-      "region": "대전 중구",
-      "address": "대전 중구 계백로1583번길 39",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.3197025,
-      "lng": 127.39521049999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ-aCCQ7BOZTURbpQFmQ9tLCs",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_1d8449d41dfe",
-      "name": "덕인관",
-      "region": "전남 담양군",
-      "address": "전남 담양군 담양읍 죽향대로 1121",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.3057778,
-      "lng": 126.98052699999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ6R9cmx7rcTURcBDnOYH5OKQ",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_9635b6073225",
-      "name": "두암식당",
-      "region": "전남 무안군",
-      "address": "전남 무안군 몽탄면 우명길 52 몽탄 두암식당",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 34.9653622,
-      "lng": 126.51888290000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJD41i6lnJczUR88u9kp9BMGo",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_6c9855a06e48",
-      "name": "마포진짜원조최대포 본점",
-      "region": "서울 마포구",
-      "address": "서울 마포구 만리재로1길 1-2 1층",
-      "category": "육류,고기요리",
-      "representativeMenu": "돼지갈비 (1인분250g)",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_6c9855a06e48_menu_1",
-          "name": "돼지갈비 (1인분250g)",
-          "price": "19,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_6c9855a06e48_menu_2",
-          "name": "소금구이 (1인분200g)",
-          "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_6c9855a06e48_menu_3",
-          "name": "갈매기살 (1인분150g)",
-          "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_6c9855a06e48_menu_4",
-          "name": "껍데기",
-          "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_6c9855a06e48_menu_5",
-          "name": "염통 (1인분150g)",
-          "price": "18,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_244327bdb2a1",
-      "name": "명월집",
-      "region": "인천 중구",
-      "address": "인천 중구 신포로23번길 41",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.4720075,
-      "lng": 126.6228517,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJgQXmzI94ezURjwgXl6TcCmQ",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_58f3c677426b",
-      "name": "목리장어센터",
-      "region": "전남 강진군",
-      "address": "전남 강진군 강진읍 목리길 80",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 34.6338566,
-      "lng": 126.7806763,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJJfdzc3VQcjURGXJD3F60MM0",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_f672457946b0",
-      "name": "백번집",
-      "region": "전북 전주시",
-      "address": "전북 전주시 완산구 전라감영2길 15 백번집",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.8152937,
-      "lng": 127.1418661,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJd1iQtaYkcDUR-UMCmArWIeY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_522e90b90c30",
-      "name": "버들식당",
-      "region": "대구 북구",
-      "address": "대구 북구 매천로18길 34",
+      "id": "topic_enrichment_old-korean-100_8ab94556db8b",
+      "name": "서울 형제추어탕(현재 폐업, 영업종료)",
+      "region": "서울 종로구",
+      "address": "서울 종로구 평창동 281-1",
       "category": "한식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.6038386,
+      "lng": 126.9645921,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1926,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
-      "id": "topic_enrichment_old-korean-100_4996d3d6fa71",
-      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
-      "region": "부산 중구",
-      "address": "부산 중구 광복동1가 5-14",
-      "category": "곰탕,설렁탕",
+      "id": "old-korean-100_restaurant_009",
+      "name": "진주 천황식당",
+      "region": "경남 진주시",
+      "address": "경남 진주시 촉석로207번길 3 (대안동 4-1)",
+      "category": "진주비빔밥",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1961092,
+      "lng": 128.0844884,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1927,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_5a14522bedcf",
-      "name": "부여집",
-      "region": "서울 영등포구",
-      "address": "서울 영등포구 선유동1로 24",
-      "category": "",
+      "id": "old-korean-100_restaurant_010",
+      "name": "부산 기장곰장어",
+      "region": "부산 기장군",
+      "address": "부산 기장군 기장읍 기장해안로 70 (시랑리 572-4)",
+      "category": "짚불곰장어",
       "representativeMenu": "",
-      "lat": 37.5242766,
-      "lng": 126.89205299999999,
+      "lat": 35.1853126,
+      "lng": 129.2113852,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1929,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJx2FHeO2efDURPY_rWjCVbPA",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_c33639fd5177",
-      "name": "불로식당",
-      "region": "경남 창원시",
-      "address": "경남 창원시 마산합포구 남성로 137",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.2053217,
-      "lng": 128.5765382,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ0W9f5OQtbzURMabWOmWF6As",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_5147c1d7ed86",
-      "name": "삼거리먼지막순대국",
-      "region": "서울 영등포구",
-      "address": "서울 영등포구 시흥대로185길 11",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.4917386,
-      "lng": 126.9072279,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJCaPmiwaffDURphVOVYB5NS8",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_bd22333f8936",
-      "name": "삼대광양불고기집",
+      "id": "old-korean-100_restaurant_011",
+      "name": "광양 삼대광양불고기집",
       "region": "전남 광양시",
-      "address": "전남 광양시 광양읍 서천1길 52",
-      "category": "",
+      "address": "전남 광양시 광양읍 서천1길 52 (칠성리 959-11)",
+      "category": "불고기",
       "representativeMenu": "",
-      "lat": 34.9701081,
-      "lng": 127.57889840000001,
+      "lat": 34.9702492,
+      "lng": 127.5790042,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1930,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ-xCxP5INbjURVPMnghoJ2iw",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_5d78048bf497",
-      "name": "삼백집 전주 본점",
-      "region": "전북 전주시",
-      "address": "전북 전주시 완산구 전주객사2길 22",
-      "category": "국밥",
-      "representativeMenu": "콩나물국밥",
-      "lat": 35.817830199999996,
-      "lng": 127.14101660000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_1",
-          "name": "콩나물국밥",
-          "price": "8,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_2",
-          "name": "고추군만두",
-          "price": "6,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_3",
-          "name": "한우선지온반",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_4",
-          "name": "모주 1잔",
-          "price": "3,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_5",
-          "name": "모주 1병",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5d78048bf497_menu_6",
-          "name": "대패삼겹철판(간장맛,매운맛)",
-          "price": "19,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJpTzeOKckcDUR9e1C-Y9lNAA",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_ade337ac5ae2",
-      "name": "상주식당",
-      "region": "대구 중구",
-      "address": "대구 중구 국채보상로 598-1",
-      "category": "",
+      "id": "old-korean-100_restaurant_012",
+      "name": "논산 황산옥",
+      "region": "충남 논산시",
+      "address": "충남 논산시 강경읍 금백로 34 (황산리 81-16)",
+      "category": "생복찜",
       "representativeMenu": "",
-      "lat": 35.8704122,
-      "lng": 128.5959842,
+      "lat": 36.156469,
+      "lng": 127.0092824,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1931,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJperqkMTjZTURW1qpUUbemDo",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_7597bb18ce6e",
-      "name": "새이학가든",
-      "region": "충남 공주시",
-      "address": "충남 공주시 금강공원길 15-2",
-      "category": "",
+      "id": "old-korean-100_restaurant_013",
+      "name": "담양 신식당",
+      "region": "전남 담양군",
+      "address": "전남 담양군 담양읍 중앙로 95 (담주리 75-1)",
+      "category": "떡갈비",
       "representativeMenu": "",
-      "lat": 36.466498099999995,
-      "lng": 127.12195109999999,
+      "lat": 35.3217442,
+      "lng": 126.9820063,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1932,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJk0EoCyu4ejURWJD1VJQ93jc",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_66aeb845216d",
-      "name": "새진주식당",
-      "region": "부산 중구",
-      "address": "부산 중구 흑교로 60",
-      "category": "",
+      "id": "old-korean-100_restaurant_014",
+      "name": "서울 용금옥",
+      "region": "서울 중구",
+      "address": "서울 중구 다동길 24-2 (다동 165-1)",
+      "category": "추탕",
       "representativeMenu": "",
-      "lat": 35.1047588,
-      "lng": 129.0248878,
+      "lat": 37.5676711,
+      "lng": 126.9805106,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1932,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ8f2UJZ_paDUR64ISm5UFCdU",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_e3b2a5665b67",
-      "name": "새집추어탕",
-      "region": "전북 남원시",
-      "address": "전북 남원시 요천로 1397",
-      "category": "추어탕",
-      "representativeMenu": "추어탕",
-      "lat": 35.4002479,
-      "lng": 127.37535100000001,
+      "id": "old-korean-100_restaurant_015",
+      "name": "서울 은호식당",
+      "region": "서울 중구",
+      "address": "서울 중구 남대문시장4길 28-4 (남창동 50-42)",
+      "category": "꼬리토막",
+      "representativeMenu": "",
+      "lat": 37.5590024,
+      "lng": 126.9770706,
       "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_1",
-          "name": "추어탕",
-          "price": "12,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_2",
-          "name": "향단정식 2인기준",
-          "price": "60,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_3",
-          "name": "춘향정식",
-          "price": "100,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_4",
-          "name": "새집정식",
-          "price": "120,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_5",
-          "name": "도토리묵",
-          "price": "5,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e3b2a5665b67_menu_6",
-          "name": "매실무침",
-          "price": "10,000원",
-          "isSignature": false
-        }
-      ],
+      "foundingYear": 1932,
+      "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJr5td1C0pbjURug1_CCefI7E",
       "isOverseas": false
     },
     {
@@ -735,11 +238,484 @@
       "lat": 0,
       "lng": 0,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1933,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_7d09b87318f7",
+      "name": "잼배옥",
+      "region": "서울 중구",
+      "address": "서울 중구 세종대로9길 68-9",
+      "category": "설렁탕",
+      "representativeMenu": "",
+      "lat": 37.5625074,
+      "lng": 126.9736923,
+      "imageUrl": "",
+      "foundingYear": 1933,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJFeLbbYuifDURucXOnVpo0wU"
+    },
+    {
+      "id": "old-korean-100_restaurant_018",
+      "name": "아산 연춘식당",
+      "region": "충남 아산시",
+      "address": "충남 아산시 신정호길 67 (득산동 15-3)",
+      "category": "장어구이",
+      "representativeMenu": "",
+      "lat": 36.7756365,
+      "lng": 126.9762983,
+      "imageUrl": "",
+      "foundingYear": 1936,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_d3bec31ad91c",
+      "name": "청진옥",
+      "region": "서울 종로구",
+      "address": "서울 종로구 종로3길 32",
+      "category": "해장국",
+      "representativeMenu": "",
+      "lat": 37.5716988,
+      "lng": 126.9793981,
+      "imageUrl": "",
+      "foundingYear": 1937,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJyfkL8-uifDURGjR9tuiIbSo"
+    },
+    {
+      "id": "old-korean-100_restaurant_020",
+      "name": "천안 진주회관",
+      "region": "충남 천안시",
+      "address": "충남 천안시 서북구 성환읍 성환11길 15 (성환리 449-175)",
+      "category": "불고기",
+      "representativeMenu": "",
+      "lat": 36.9169796,
+      "lng": 127.1296109,
+      "imageUrl": "",
+      "foundingYear": 1939,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_021",
+      "name": "서울 하동관",
+      "region": "서울 중구",
+      "address": "서울 중구 명동9길 12 (명동1가 10-4)",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 37.5644417,
+      "lng": 126.9850433,
+      "imageUrl": "",
+      "foundingYear": 1939,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_022",
+      "name": "서울 한일관",
+      "region": "서울 강남구",
+      "address": "서울 강남구 압구정로38길 14 (신사동 619-4)",
+      "category": "불고기, 냉면",
+      "representativeMenu": "",
+      "lat": 37.5277875,
+      "lng": 127.03251,
+      "imageUrl": "",
+      "foundingYear": 1939,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_023",
+      "name": "부산 동래할매파전",
+      "region": "부산 동래구",
+      "address": "부산 동래구 명륜로94번길 43-10 (복천동 367-2)",
+      "category": "동래파전",
+      "representativeMenu": "",
+      "lat": 35.2046243,
+      "lng": 129.0838339,
+      "imageUrl": "",
+      "foundingYear": 1940,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_b149d950faf7",
+      "name": "영암 영명식당",
+      "region": "전남 영암군",
+      "address": "전남 영암군 학산면 독천로 164 (독천리 184-1)",
+      "category": "갈낙탕",
+      "representativeMenu": "",
+      "lat": 34.724786,
+      "lng": 126.5671667,
+      "imageUrl": "",
+      "foundingYear": 1940,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_18ac3372c278",
+      "name": "옥천옥",
+      "region": "서울 동대문구",
+      "address": "서울 동대문구 하정로 16",
+      "category": "설렁탕",
+      "representativeMenu": "",
+      "lat": 37.5725,
+      "lng": 127.02694439999998,
+      "imageUrl": "",
+      "foundingYear": 1941,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJuyENGk-jfDUR-rsD96Xmro8"
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_cf9a2e0278a1",
+      "name": "예산 소복갈비(소복식당)",
+      "region": "충남 예산군",
+      "address": "충남 예산군 예산읍 천변로195번길 9 (예산리 210-10)",
+      "category": "육류,고기요리",
+      "representativeMenu": "예약주문",
+      "lat": 36.6796015,
+      "lng": 126.850241,
+      "imageUrl": "",
+      "foundingYear": 1942,
+      "menus": [
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_1",
+          "name": "예약주문",
+          "price": "55,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_2",
+          "name": "양념갈비 1인분",
+          "price": "47,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_3",
+          "name": "굴회",
+          "price": "35,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_4",
+          "name": "갈비탕",
+          "price": "19,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_5",
+          "name": "설렁탕",
+          "price": "10,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_6",
+          "name": "물냉면(여름메뉴)",
+          "price": "8,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_7",
+          "name": "비빔냉면(여름메뉴)",
+          "price": "9,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_8",
+          "name": "국수",
+          "price": "8,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_9",
+          "name": "어리굴젓 1.5kg",
+          "price": "30,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_027",
+      "name": "오산 할머니집",
+      "region": "경기 오산시",
+      "address": "경기 오산시 오산동 429-9 (오산로300번길 3)",
+      "category": "소머리국밥",
+      "representativeMenu": "",
+      "lat": 37.1537545,
+      "lng": 127.0690588,
+      "imageUrl": "",
+      "foundingYear": 1943,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_6c6414a87497",
+      "name": "경주 전통경주할매집(현재 폐업, 영업종료)",
+      "region": "경북 경주시",
+      "address": "경북 경주시 황남동 200-2",
+      "category": "쌈밥정식",
+      "representativeMenu": "",
+      "lat": 35.8358224,
+      "lng": 129.216016,
+      "imageUrl": "",
+      "foundingYear": 1944,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_029",
+      "name": "창원 남성식당",
+      "region": "경남 창원시",
+      "address": "경남 창원시 마산합포구 오동동10길 3 (오동동 251-8)",
+      "category": "복국",
+      "representativeMenu": "",
+      "lat": 35.2049569,
+      "lng": 128.5792773,
+      "imageUrl": "",
+      "foundingYear": 1945,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_030",
+      "name": "전주 삼백집",
+      "region": "전북 전주시",
+      "address": "전북 전주시 완산구 전주객사2길 22 (고사동 454-1)",
+      "category": "콩나물국밥",
+      "representativeMenu": "",
+      "lat": 35.8179019,
+      "lng": 127.1411289,
+      "imageUrl": "",
+      "foundingYear": 1945,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_c07816d4c81b",
+      "name": "평양옥",
+      "region": "인천 중구",
+      "address": "인천 중구 도원로8번길 68",
+      "category": "해장국",
+      "representativeMenu": "",
+      "lat": 37.463995,
+      "lng": 126.63988540000001,
+      "imageUrl": "",
+      "foundingYear": 1945,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJBf6Gy2B5ezURCYfA8Pb6rUc"
+    },
+    {
+      "id": "old-korean-100_restaurant_032",
+      "name": "진주 하연옥",
+      "region": "경남 진주시",
+      "address": "경남 진주시 진주대로 1317-20 (이현동 1191)",
+      "category": "진주물냉면",
+      "representativeMenu": "",
+      "lat": 35.1939209,
+      "lng": 128.0606972,
+      "imageUrl": "",
+      "foundingYear": 1945,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_054645c4d8f8",
+      "name": "국일따로국밥",
+      "region": "대구 중구",
+      "address": "대구 중구 국채보상로 571",
+      "category": "따로국밥",
+      "representativeMenu": "",
+      "lat": 35.8711068,
+      "lng": 128.5931728,
+      "imageUrl": "",
+      "foundingYear": 1946,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJRaErBcPjZTUReOtXOS3odMs"
+    },
+    {
+      "id": "old-korean-100_restaurant_034",
+      "name": "부산 송정3대국밥",
+      "region": "부산 부산진구",
+      "address": "부산 부산진구 서면로68번길 33 (부전동 255-19)",
+      "category": "돼지국밥",
+      "representativeMenu": "",
+      "lat": 35.1555809,
+      "lng": 129.0585409,
+      "imageUrl": "",
+      "foundingYear": 1946,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_9e02ae1a9073",
+      "name": "우래옥",
+      "region": "서울 중구",
+      "address": "서울 중구 창경궁로 62-29",
+      "category": "평양냉면",
+      "representativeMenu": "",
+      "lat": 37.5681851,
+      "lng": 126.9987092,
+      "imageUrl": "",
+      "foundingYear": 1946,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJ95h3lR-jfDURkB9hKZltPXM"
+    },
+    {
+      "id": "old-korean-100_restaurant_036",
+      "name": "대전 할머니묵집",
+      "region": "대전 유성구",
+      "address": "대전 유성구 금남구즉로 1378 (봉산동 709-16)",
+      "category": "묵밥",
+      "representativeMenu": "",
+      "lat": 36.4462597,
+      "lng": 127.3837799,
+      "imageUrl": "",
+      "foundingYear": 1946,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_5a14522bedcf",
+      "name": "부여집",
+      "region": "서울 영등포구",
+      "address": "서울 영등포구 선유동1로 24",
+      "category": "꼬리곰탕",
+      "representativeMenu": "",
+      "lat": 37.5242766,
+      "lng": 126.89205299999999,
+      "imageUrl": "",
+      "foundingYear": 1947,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJx2FHeO2efDURPY_rWjCVbPA"
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_bf64e6dccbab",
+      "name": "강서면옥",
+      "region": "서울 중구",
+      "address": "서울 중구 세종대로11길 35",
+      "category": "평양냉면",
+      "representativeMenu": "",
+      "lat": 37.5620353,
+      "lng": 126.97391449999998,
+      "imageUrl": "",
+      "foundingYear": 1948,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJn5V9E4uifDUR54WxnuLI56A"
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_5a9441ab2ebe",
+      "name": "서울 옥돌집(현재 폐업, 영업종료)",
+      "region": "서울 성북구",
+      "address": "서울 성북구 길음동 1065",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 37.6065298,
+      "lng": 127.0272817,
+      "imageUrl": "",
+      "foundingYear": 1948,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_040",
+      "name": "진주 육거리곰탕",
+      "region": "경남 진주시",
+      "address": "경남 진주시 망경로 303 (강남동 119)",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 35.1858096,
+      "lng": 128.0862779,
+      "imageUrl": "",
+      "foundingYear": 1948,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_041",
+      "name": "담양 원조창평시장국밥",
+      "region": "전남 담양군",
+      "address": "전남 담양군 창평면 사동길 14-25 (창평리 209-1)",
+      "category": "국밥",
+      "representativeMenu": "",
+      "lat": 35.2381046,
+      "lng": 127.0148996,
+      "imageUrl": "",
+      "foundingYear": 1949,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_042",
+      "name": "보은 경희식당",
+      "region": "충북 보은군",
+      "address": "충북 보은군 속리산면 사내7길 11-4 (사내리 282)",
+      "category": "한정식",
+      "representativeMenu": "",
+      "lat": 36.5324847,
+      "lng": 127.8215239,
+      "imageUrl": "",
+      "foundingYear": 1950,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_d328cccce561",
+      "name": "급행장",
+      "region": "부산 부산진구",
+      "address": "부산 부산진구 서면문화로 4",
+      "category": "소갈비구이",
+      "representativeMenu": "",
+      "lat": 35.1580808,
+      "lng": 129.058029,
+      "imageUrl": "",
+      "foundingYear": 1950,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJ43Ic_m7raDUR3-Npv5nNZP0"
     },
     {
       "id": "topic_enrichment_old-korean-100_6490563e0dba",
@@ -748,13 +724,239 @@
       "address": "서울 중구 명동2가 31-7",
       "category": "낙지백반",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5621623,
+      "lng": 126.9851064,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1950,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_045",
+      "name": "서울 진주집",
+      "region": "서울 중구",
+      "address": "서울 중구 남대문시장길 22-2 (남창동 34-31)",
+      "category": "꼬리곰탕",
+      "representativeMenu": "",
+      "lat": 37.560009,
+      "lng": 126.9770936,
+      "imageUrl": "",
+      "foundingYear": 1950,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_046",
+      "name": "영천 포항할매집",
+      "region": "경북 영천시",
+      "address": "경북 영천시 시장4길 52 (완산동 982-3)",
+      "category": "곰탕",
+      "representativeMenu": "",
+      "lat": 35.9642486,
+      "lng": 128.9385815,
+      "imageUrl": "",
+      "foundingYear": 1950,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_047",
+      "name": "대구 강산면옥",
+      "region": "대구 중구",
+      "address": "대구 중구 교동길 27-8 (교동 62-1)",
+      "category": "물냉면",
+      "representativeMenu": "",
+      "lat": 35.8736428,
+      "lng": 128.5964187,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_048",
+      "name": "울산 고래고기원조할매집",
+      "region": "울산 남구",
+      "address": "울산 남구 장생포고래로 135 (장생포동 335-2)",
+      "category": "고래수육",
+      "representativeMenu": "",
+      "lat": 35.5017393,
+      "lng": 129.3695602,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_049",
+      "name": "창원 불로식당",
+      "region": "경남 창원시",
+      "address": "경남 창원시 마산합포구 남성로 137 (동성동 153)",
+      "category": "한정식",
+      "representativeMenu": "",
+      "lat": 35.205326,
+      "lng": 128.5765201,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_4996d3d6fa71",
+      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+      "region": "부산 중구",
+      "address": "부산 중구 광복동1가 5-14",
+      "category": "곰탕,설렁탕",
+      "representativeMenu": "",
+      "lat": 35.09932,
+      "lng": 129.0345785,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_051",
+      "name": "대전 평양옥",
+      "region": "대전 서구",
+      "address": "대전 서구 만년로67번길 34-10 (만년동 314)",
+      "category": "영양탕",
+      "representativeMenu": "",
+      "lat": 36.368684,
+      "lng": 127.3807757,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_052",
+      "name": "통영 호동식당",
+      "region": "경남 통영시",
+      "address": "경남 통영시 새터길 49 (서호동 177-102)",
+      "category": "복국",
+      "representativeMenu": "",
+      "lat": 34.8416544,
+      "lng": 128.4193258,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_053",
+      "name": "보성 국일식당",
+      "region": "전남 보성군",
+      "address": "전남 보성군 벌교읍 태백산맥길 18-1 (벌교리 624-11)",
+      "category": "꼬막정식",
+      "representativeMenu": "",
+      "lat": 34.8439255,
+      "lng": 127.3436495,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_054",
+      "name": "서울 문화옥",
+      "region": "서울 중구",
+      "address": "서울 중구 창경궁로 62-5 (주교동 118-3)",
+      "category": "설렁탕",
+      "representativeMenu": "",
+      "lat": 37.56809,
+      "lng": 126.998489,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_055",
+      "name": "양평 옥천냉면 황해식당",
+      "region": "경기 양평군",
+      "address": "경기 양평군 옥천면 고읍로 140 (옥천리 760)",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.5197847,
+      "lng": 127.4578813,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_056",
+      "name": "공주 새이학가든(이학식당)",
+      "region": "충남 공주시",
+      "address": "충남 공주시 금강공원길 15-2 (금성동 173-5)",
+      "category": "따로국밥",
+      "representativeMenu": "",
+      "lat": 36.4665318,
+      "lng": 127.1219444,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_057",
+      "name": "천안 평양냉면",
+      "region": "충남 천안시",
+      "address": "충남 천안시 동남구 큰시장길 27 (사직동 168-8)",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 36.8020198,
+      "lng": 127.1496924,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_058",
+      "name": "전주 한국집",
+      "region": "전북 전주시",
+      "address": "전북 전주시 완산구 어진길 119 (전동 2-1)",
+      "category": "육회비빔밥",
+      "representativeMenu": "",
+      "lat": 35.816529,
+      "lng": 127.1482056,
+      "imageUrl": "",
+      "foundingYear": 1952,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_059",
+      "name": "속초 신다신(다신식당)",
+      "region": "강원 속초시",
+      "address": "강원 속초시 아바이마을길 22 (청호동 838)",
+      "category": "가리국밥",
+      "representativeMenu": "",
+      "lat": 38.2028231,
+      "lng": 128.5940629,
+      "imageUrl": "",
+      "foundingYear": 1953,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
     },
     {
@@ -764,10 +966,10 @@
       "address": "서울 서대문구 연희맛로 15 (연희동 189-7)",
       "category": "육류,고기요리",
       "representativeMenu": "소갈비",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5666456,
+      "lng": 126.9291305,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1953,
       "menus": [
         {
           "id": "topic_enrichment_old-korean-100_cce7fe85ffd0_menu_1",
@@ -789,40 +991,430 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
-      "id": "topic_enrichment_old-korean-100_5a9441ab2ebe",
-      "name": "서울 옥돌집(현재 폐업, 영업종료)",
-      "region": "서울 성북구",
-      "address": "서울 성북구 길음동 1065",
-      "category": "한식",
+      "id": "topic_enrichment_old-korean-100_ac5f73e5c29f",
+      "name": "옛집식당",
+      "region": "대구 중구",
+      "address": "대구 중구 달성공원로6길 48-5",
+      "category": "육개장",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8720478,
+      "lng": 128.58174409999998,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1953,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJkXWn0e3jZTUR95U8CpfYZT4"
+    },
+    {
+      "id": "old-korean-100_restaurant_062",
+      "name": "인천 우리옥",
+      "region": "인천 강화군",
+      "address": "인천 강화군 강화읍 남산길 12 (신문리 184-1)",
+      "category": "백반",
+      "representativeMenu": "",
+      "lat": 37.7461558,
+      "lng": 126.4838238,
+      "imageUrl": "",
+      "foundingYear": 1953,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_ad7d521a1673",
-      "name": "서울 전주중앙회관(현재 폐업, 영업종료)",
-      "region": "서울 중구",
-      "address": "서울 중구 충무로1가 24-11",
+      "id": "topic_enrichment_old-korean-100_760eeb197322",
+      "name": "원산면옥",
+      "region": "부산 중구",
+      "address": "부산 중구 광복로 56-8",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 35.0990576,
+      "lng": 129.0310886,
+      "imageUrl": "",
+      "foundingYear": 1953,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJCQGG6QrpaDURmHwopWVd1oE"
+    },
+    {
+      "id": "old-korean-100_restaurant_064",
+      "name": "진주 하동복집",
+      "region": "경남 진주시",
+      "address": "경남 진주시 중앙시장길 29-5 (대안동 8-170)",
+      "category": "복국",
+      "representativeMenu": "",
+      "lat": 35.1946953,
+      "lng": 128.0849285,
+      "imageUrl": "",
+      "foundingYear": 1953,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_065",
+      "name": "전주 한일관",
+      "region": "전북 전주시",
+      "address": "전북 전주시 완산구 어은로 48 (중화산동2가 4-34)",
+      "category": "한정식, 전주비빔밥",
+      "representativeMenu": "",
+      "lat": 35.8176369,
+      "lng": 127.1280438,
+      "imageUrl": "",
+      "foundingYear": 1954,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_73cb618f82b4",
+      "name": "속초 고성회관(현재 폐업, 영업종료)",
+      "region": "강원도 속초시",
+      "address": "강원도 속초시 중앙동 481-1",
+      "category": "오징어순대",
+      "representativeMenu": "",
+      "lat": 38.2025141,
+      "lng": 128.5909626,
+      "imageUrl": "",
+      "foundingYear": 1955,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_067",
+      "name": "청주 남들갈비",
+      "region": "충북 청주시",
+      "address": "충북 청주시 서원구 청남로2133번길 8 (모충동 120-15)",
+      "category": "돼지갈비",
+      "representativeMenu": "",
+      "lat": 36.6227894,
+      "lng": 127.48751,
+      "imageUrl": "",
+      "foundingYear": 1955,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_068",
+      "name": "통영 소문난3대할매김밥집",
+      "region": "경남 통영시",
+      "address": "경남 통영시 통영해안로 229 (서호동 177-360)",
+      "category": "충무김밥",
+      "representativeMenu": "",
+      "lat": 34.840774,
+      "lng": 128.4211438,
+      "imageUrl": "",
+      "foundingYear": 1955,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_66aeb845216d",
+      "name": "새진주식당",
+      "region": "부산 중구",
+      "address": "부산 중구 흑교로 60",
       "category": "비빔밥",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1047588,
+      "lng": 129.0248878,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1955,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJ8f2UJZ_paDUR64ISm5UFCdU"
+    },
+    {
+      "id": "old-korean-100_restaurant_070",
+      "name": "광양 시내식당",
+      "region": "전남 광양시",
+      "address": "전남 광양시 광양읍 서천1길 38 (칠성리 964-1)",
+      "category": "광양불고기",
+      "representativeMenu": "",
+      "lat": 34.969322,
+      "lng": 127.5795732,
+      "imageUrl": "",
+      "foundingYear": 1955,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_071",
+      "name": "청주 옥산장날순대",
+      "region": "충북 청주시",
+      "address": "충북 청주시 흥덕구 옥산면 청주역로 653-7 (오산리 211-26)",
+      "category": "순대국밥",
+      "representativeMenu": "",
+      "lat": 36.6654457,
+      "lng": 127.373269,
+      "imageUrl": "",
+      "foundingYear": 1955,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_c9f9e006d08b",
+      "name": "경주 원조콩국",
+      "region": "경북 경주시",
+      "address": "경북 경주시 첨성로 113",
+      "category": "콩국수",
+      "representativeMenu": "",
+      "lat": 35.8334295,
+      "lng": 129.2147573,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y"
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_496aa4ea70e5",
+      "name": "대들보함흥면옥",
+      "region": "대전 중구",
+      "address": "대전 중구 계백로1583번길 39",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 36.3197025,
+      "lng": 127.39521049999999,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJ-aCCQ7BOZTURbpQFmQ9tLCs"
+    },
+    {
+      "id": "old-korean-100_restaurant_074",
+      "name": "서울 마포진짜원조최대포",
+      "region": "서울 마포구",
+      "address": "서울 마포구 마포대로 112-4 (공덕동 255-5)",
+      "category": "돼지갈비",
+      "representativeMenu": "",
+      "lat": 37.5445489,
+      "lng": 126.9519594,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_075",
+      "name": "동두천 송월관",
+      "region": "경기 동두천시",
+      "address": "경기 동두천시 큰시장로 28-10 (생연동 683-24)",
+      "category": "떡갈비",
+      "representativeMenu": "",
+      "lat": 37.9010212,
+      "lng": 127.0550305,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_076",
+      "name": "부산 양산도집",
+      "region": "부산 사상구",
+      "address": "부산 사상구 낙동대로 799-34 (감전동 516)",
+      "category": "민물장어구이",
+      "representativeMenu": "",
+      "lat": 35.1305084,
+      "lng": 128.970518,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_077",
+      "name": "서울 열차집",
+      "region": "서울 종로구",
+      "address": "서울 종로구 종로7길 47 (공평동 130-1)",
+      "category": "빈대떡",
+      "representativeMenu": "",
+      "lat": 37.5717118,
+      "lng": 126.9827998,
+      "imageUrl": "",
+      "foundingYear": 1956,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_078",
+      "name": "강진 목리장어센터",
+      "region": "전남 강진군",
+      "address": "전남 강진군 강진읍 목리길 80 (목리 31-1)",
+      "category": "장어구이",
+      "representativeMenu": "",
+      "lat": 34.6338563,
+      "lng": 126.7808454,
+      "imageUrl": "",
+      "foundingYear": 1957,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_5147c1d7ed86",
+      "name": "삼거리먼지막순대국",
+      "region": "서울 영등포구",
+      "address": "서울 영등포구 시흥대로185길 11",
+      "category": "순대국",
+      "representativeMenu": "",
+      "lat": 37.4917386,
+      "lng": 126.9072279,
+      "imageUrl": "",
+      "foundingYear": 1957,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJCaPmiwaffDURphVOVYB5NS8"
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_ade337ac5ae2",
+      "name": "상주식당",
+      "region": "대구 중구",
+      "address": "대구 중구 국채보상로 598-1",
+      "category": "추어탕",
+      "representativeMenu": "",
+      "lat": 35.8704122,
+      "lng": 128.5959842,
+      "imageUrl": "",
+      "foundingYear": 1957,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJperqkMTjZTURW1qpUUbemDo"
+    },
+    {
+      "id": "old-korean-100_restaurant_081",
+      "name": "영동 가선식당",
+      "region": "충북 영동군",
+      "address": "충북 영동군 양산면 금강로 760 (가선리 139-6)",
+      "category": "어죽",
+      "representativeMenu": "",
+      "lat": 36.12494,
+      "lng": 127.6011032,
+      "imageUrl": "",
+      "foundingYear": 1958,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_35fe45703768",
+      "name": "청주 리정식당",
+      "region": "충북 청주시",
+      "address": "충북 청주시 청원구 우암로 71-1 (내덕동 297-12)",
+      "category": "한식",
+      "representativeMenu": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
+      "lat": 36.6544871,
+      "lng": 127.486671,
+      "imageUrl": "",
+      "foundingYear": 1958,
+      "menus": [
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_1",
+          "name": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
+          "price": "11,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_2",
+          "name": "깊은 사골 육수에 소머리 고기가 들어가 뜨끈하고 든든하게 먹는 건강 국밥",
+          "price": "11,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_3",
+          "name": "살짝 데친 대파 위에 두툼한 소머리고기가(소머리뽈살,우설)올려진 수육!!! 부드러운 식감",
+          "price": "39,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_4",
+          "name": "살짝 데친 대파 위에 두툼한 소머리고기가(소머리뽈살,우설)올려진 수육!!! 부드러운 식감",
+          "price": "35,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_5",
+          "name": "깊은 사골 육수에 소머리 고기가 들어가 뜨끈하고 든든하게 먹는 건강 국밥",
+          "price": "13,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_6",
+          "name": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
+          "price": "13,000원",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_083",
+      "name": "전주 백번집",
+      "region": "전북 전주시",
+      "address": "전북 전주시 완산구 전라감영2길 15 (다가동1가 44-7)",
+      "category": "한정식",
+      "representativeMenu": "",
+      "lat": 35.8153231,
+      "lng": 127.1418495,
+      "imageUrl": "",
+      "foundingYear": 1958,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_084",
+      "name": "서울 오장동함흥냉면",
+      "region": "서울 중구",
+      "address": "서울 중구 마른내로 108 (오장동 90-10)",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.564274,
+      "lng": 126.9999001,
+      "imageUrl": "",
+      "foundingYear": 1958,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_c628a2673902",
+      "name": "강진 완도횟집(현재 폐업, 영업종료)",
+      "region": "전남 강진군",
+      "address": "전남 강진군 마량면 마량리 980-37",
+      "category": "생선회",
+      "representativeMenu": "",
+      "lat": 34.4491215,
+      "lng": 126.8204333,
+      "imageUrl": "",
+      "foundingYear": 1958,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "topic_enrichment_old-korean-100_9928f9a2c2df",
@@ -831,10 +1423,10 @@
       "address": "서울 성북구 보문로34길 43 (동선동1가 49)",
       "category": "감자탕",
       "representativeMenu": "전통 좋~다 (국산등뼈)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5908174,
+      "lng": 127.0177129,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1958,
       "menus": [
         {
           "id": "topic_enrichment_old-korean-100_9928f9a2c2df_menu_1",
@@ -928,735 +1520,129 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
-      "id": "topic_enrichment_old-korean-100_8ab94556db8b",
-      "name": "서울 형제추어탕(현재 폐업, 영업종료)",
-      "region": "서울 종로구",
-      "address": "서울 종로구 평창동 281-1",
-      "category": "한식",
-      "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_73cb618f82b4",
-      "name": "속초 고성회관(현재 폐업, 영업종료)",
-      "region": "강원도 속초시",
-      "address": "강원도 속초시 중앙동 481-1",
-      "category": "오징어순대",
-      "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_52f914e0f385",
-      "name": "송월관",
-      "region": "경기 동두천시",
-      "address": "경기 동두천시 큰시장로 28-10",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.9009674,
-      "lng": 127.05495250000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJoToHFZzbfDURX1JRw7enwBY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_351df00ce58b",
-      "name": "송정3대국밥",
-      "region": "부산 부산진구",
-      "address": "부산 부산진구 서면로68번길 33 송정3대국밥",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.1556037,
-      "lng": 129.0585412,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJg_f70G_raDURpQVzaHgmouc",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_ff7744221cb1",
-      "name": "시내식당",
-      "region": "전남 광양시",
-      "address": "전남 광양시 광양읍 서천1길 38",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 34.9693028,
-      "lng": 127.57959689999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJx4ubK5INbjURmDEHR4b-ME8",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_6ad65adba0ff",
-      "name": "신다신",
-      "region": "강원 속초시",
-      "address": "강원 속초시 아바이마을길 22 신다신",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 38.2028264,
-      "lng": 128.5940135,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJXdRWIYi72F8R7N39MD3uvV0",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_e6b84568d3d3",
-      "name": "신식당",
-      "region": "전남 담양군",
-      "address": "전남 담양군 담양읍 담주2길 18-13 중앙로95도가능",
-      "category": "한식",
-      "representativeMenu": "한상4인기준 2인분부터 판매. 1인분 250g(3덩이). 식사 별도주문. *혼밥가능",
-      "lat": 35.3216296,
-      "lng": 126.98157370000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_1",
-          "name": "한상4인기준 2인분부터 판매. 1인분 250g(3덩이). 식사 별도주문. *혼밥가능",
-          "price": "37,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_2",
-          "name": "한상4인기준 2인분부터판매. 떡갈비(2덩이)+대통밥1개. 혼밥가능",
-          "price": "31,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_3",
-          "name": "한상4인기준 2인분부터 판매 합니다. 1인분 가격. 1인분 250g(3덩이). 공깃밥포함",
-          "price": "42,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_4",
-          "name": "담양죽순, 한접시가격",
-          "price": "25,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_5",
-          "name": "조기에 매진 될 수 있습니다. 토, 일, 공휴일에는 판매 하지 않습니다.",
-          "price": "18,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_6",
-          "name": "한우 익힌고기",
-          "price": "13,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_7",
-          "name": "식사류 떡갈비전골, 구이, 소반 식사 하실 때 주문 가능합니다.",
-          "price": "7,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_8",
-          "name": "식사류 멸치육수사용 떡갈비전골, 구이, 소반 식사 하실 때 주문 가능합니다.",
-          "price": "5,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_9",
-          "name": "식사류(농식품부 선정 1등 담양쌀)",
-          "price": "2,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_10",
-          "name": "떡갈비 구이 1인분 3덩이+야채(*추천:초벌구이*)",
-          "price": "32,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_11",
-          "name": "1인분 (3덩이) + 반찬 + 야채 선택메뉴 : 공깃밥 2,000원, 대통밥",
-          "price": "7,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_e6b84568d3d3_menu_12",
-          "name": "기본5인분, 추가는 1인분도 됩니다. 1인분 3덩이 37,000원. 택배 안됨.",
-          "price": "185,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJvWX6yO7qcTURXcdI5zgioHA",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_69a7907d322a",
-      "name": "안일옥",
-      "region": "경기 안성시",
-      "address": "경기 안성시 중앙로411번길 20 안일옥",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.007431,
-      "lng": 127.27275460000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ7yDFVR41ezURJ1tC01gNqD4",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_a82a59ae4547",
-      "name": "양산도집",
-      "region": "부산 사상구",
-      "address": "부산 사상구 낙동대로 799-34 양산도집",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.1321353,
-      "lng": 128.969828,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJD4a7IBfCaDURRHEvufc2pv8",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_04bfd4324581",
-      "name": "연춘식당",
-      "region": "충남 아산시",
-      "address": "충남 아산시 신정호길 67",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.7757657,
-      "lng": 126.976161,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJk4QQL97dejURBDaH5brd1b4",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_6e586918c258",
-      "name": "열차집",
-      "region": "서울 종로구",
-      "address": "서울 종로구 종로7길 47 1층",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.571669799999995,
-      "lng": 126.98273739999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJEcIYG82jfDUR0qgkdV0LfBw",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_b149d950faf7",
-      "name": "영암 영명식당",
-      "region": "전남 영암군",
-      "address": "전남 영암군 학산면 독천로 164 (독천리 184-1)",
-      "category": "갈낙탕",
-      "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_cf9a2e0278a1",
-      "name": "예산 소복갈비(소복식당)",
-      "region": "충남 예산군",
-      "address": "충남 예산군 예산읍 천변로195번길 9 (예산리 210-10)",
-      "category": "육류,고기요리",
-      "representativeMenu": "예약주문",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_1",
-          "name": "예약주문",
-          "price": "55,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_2",
-          "name": "양념갈비 1인분",
-          "price": "47,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_3",
-          "name": "굴회",
-          "price": "35,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_4",
-          "name": "갈비탕",
-          "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_5",
-          "name": "설렁탕",
-          "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_6",
-          "name": "물냉면(여름메뉴)",
-          "price": "8,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_7",
-          "name": "비빔냉면(여름메뉴)",
-          "price": "9,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_8",
-          "name": "국수",
-          "price": "8,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_cf9a2e0278a1_menu_9",
-          "name": "어리굴젓 1.5kg",
-          "price": "30,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_ac5f73e5c29f",
-      "name": "옛집식당",
-      "region": "대구 중구",
-      "address": "대구 중구 달성공원로6길 48-5",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.8720478,
-      "lng": 128.58174409999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJkXWn0e3jZTUR95U8CpfYZT4",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_3e1fb9a929a9",
-      "name": "오산할머니집",
-      "region": "경기 오산시",
-      "address": "경기 오산시 오산로300번길 3",
-      "category": "국밥",
-      "representativeMenu": "설렁탕(특)",
-      "lat": 37.153698000000006,
-      "lng": 127.06909179999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_1",
-          "name": "설렁탕(특)",
-          "price": "15,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_2",
-          "name": "수육",
-          "price": "40,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_3",
-          "name": "설렁탕(보통)",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_4",
-          "name": "소주",
-          "price": "4,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_5",
-          "name": "맥주",
-          "price": "4,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_6",
-          "name": "오산막걸리",
-          "price": "4,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_3e1fb9a929a9_menu_7",
-          "name": "수육(반)",
-          "price": "20,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJCbqfhh1HezURxEv9xNVD2dQ",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_96c198abae71",
-      "name": "오장동함흥냉면",
-      "region": "서울 중구",
-      "address": "서울 중구 마른내로 108 오장동함흥냉면",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5643077,
-      "lng": 126.99983470000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJb63Nih6jfDURs1emCe-s2EY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_4564e152417a",
-      "name": "옥천냉면 황해식당",
-      "region": "경기 양평군",
-      "address": "경기 양평군 옥천면 경강로 1493-12",
-      "category": "냉면",
-      "representativeMenu": "완자",
-      "lat": 37.5108622,
-      "lng": 127.4497721,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_4564e152417a_menu_1",
-          "name": "완자",
-          "price": "28,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_4564e152417a_menu_2",
-          "name": "물냉면",
-          "price": "14,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_4564e152417a_menu_3",
-          "name": "완자+편육",
-          "price": "28,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_4564e152417a_menu_4",
-          "name": "편육",
-          "price": "28,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_4564e152417a_menu_5",
-          "name": "비빔냉면",
-          "price": "14,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJd-5p_75IYzURsCqJORMG0Cw",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_18ac3372c278",
-      "name": "옥천옥",
-      "region": "서울 동대문구",
-      "address": "서울 동대문구 하정로 16",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5725,
-      "lng": 127.02694439999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJuyENGk-jfDUR-rsD96Xmro8",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_5a078b9e35e2",
-      "name": "용금옥",
-      "region": "서울 종로구",
-      "address": "서울 종로구 자하문로 41-2 1층",
-      "category": "추어탕",
-      "representativeMenu": "서울식추어탕",
-      "lat": 37.5797709,
-      "lng": 126.97091139999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_1",
-          "name": "서울식추어탕",
-          "price": "15,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_2",
-          "name": "굴전",
-          "price": "30,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_3",
-          "name": "추어튀김",
-          "price": "28,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_4",
-          "name": "동태찜",
-          "price": "40,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_5",
-          "name": "낙지볶음",
-          "price": "45,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_6",
-          "name": "미나리전",
-          "price": "22,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_7",
-          "name": "모둠전",
-          "price": "30,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_8",
-          "name": "턍평채",
-          "price": "22,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_9",
-          "name": "버섯육개장",
-          "price": "15,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5a078b9e35e2_menu_10",
-          "name": "남도 추어탕",
-          "price": "15,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJIf38cb6ifDURf7nV1pl5O1U",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_9e02ae1a9073",
-      "name": "우래옥",
-      "region": "서울 중구",
-      "address": "서울 중구 창경궁로 62-29",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5681851,
-      "lng": 126.9987092,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ95h3lR-jfDURkB9hKZltPXM",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_a58f73451281",
-      "name": "우리옥",
-      "region": "경기 고양시",
-      "address": "경기 고양시 일산동구 강촌로26번길 7-19 1층 우리옥",
-      "category": "한식",
-      "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_760eeb197322",
-      "name": "원산면옥",
+      "id": "old-korean-100_restaurant_087",
+      "name": "부산 구포집",
       "region": "부산 중구",
-      "address": "부산 중구 광복로 56-8",
-      "category": "",
+      "address": "부산 중구 보수대로36번길 14-1 (부평동3가 36-8)",
+      "category": "회비빔밥",
       "representativeMenu": "",
-      "lat": 35.0990576,
-      "lng": 129.0310886,
+      "lat": 35.1012272,
+      "lng": 129.0246472,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1959,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJCQGG6QrpaDURmHwopWVd1oE",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_12d8661dd772",
-      "name": "육거리 곰탕",
-      "region": "경남 진주시",
-      "address": "경남 진주시 망경로 303",
-      "category": "",
+      "id": "old-korean-100_restaurant_088",
+      "name": "남원 새집추어탕",
+      "region": "전북 남원시",
+      "address": "전북 남원시 천거길 9 (천거동 160-206)",
+      "category": "추어숙회",
       "representativeMenu": "",
-      "lat": 35.1857949,
-      "lng": 128.0862685,
+      "lat": 35.400412,
+      "lng": 127.3753305,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1959,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ2eaq-mz8bjURfcz6xlKbDqk",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_47c118d8f1ae",
-      "name": "이문설렁탕",
-      "region": "서울 종로구",
-      "address": "서울 종로구 우정국로 38-13",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5726592,
-      "lng": 126.9839377,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJN0aOM-iifDUR98SZc1MQre0",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_7d09b87318f7",
-      "name": "잼배옥",
+      "id": "topic_enrichment_old-korean-100_ad7d521a1673",
+      "name": "서울 전주중앙회관(현재 폐업, 영업종료)",
       "region": "서울 중구",
-      "address": "서울 중구 세종대로9길 68-9",
-      "category": "",
+      "address": "서울 중구 충무로1가 24-11",
+      "category": "비빔밥",
       "representativeMenu": "",
-      "lat": 37.5625074,
-      "lng": 126.9736923,
+      "lat": 37.5611938,
+      "lng": 126.9837665,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1959,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJFeLbbYuifDURucXOnVpo0wU",
+      "isOverseas": false,
+      "googlePlaceId": null
+    },
+    {
+      "id": "old-korean-100_restaurant_090",
+      "name": "서울 고려삼계탕",
+      "region": "서울 중구",
+      "address": "서울 중구 서소문로11길 1 (서소문동 55-3)",
+      "category": "삼계탕",
+      "representativeMenu": "",
+      "lat": 37.5630065,
+      "lng": 126.9729241,
+      "imageUrl": "",
+      "foundingYear": 1960,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_5aef4b42723b",
-      "name": "진주집",
-      "region": "서울 영등포구",
-      "address": "서울 영등포구 국제금융로6길 33 지하 1층",
-      "category": "국수",
-      "representativeMenu": "냉콩국수",
-      "lat": 37.520782,
-      "lng": 126.92691610000001,
+      "id": "old-korean-100_restaurant_091",
+      "name": "무안 두암식당",
+      "region": "전남 무안군",
+      "address": "전남 무안군 몽탄면 우명길 52 (몽탄면 사창리 697-2)",
+      "category": "짚불구이",
+      "representativeMenu": "",
+      "lat": 34.9654556,
+      "lng": 126.5189461,
       "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_1",
-          "name": "냉콩국수",
-          "price": "15,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_2",
-          "name": "비빔국수",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_3",
-          "name": "닭칼국수",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_4",
-          "name": "접시만두",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_5",
-          "name": "육개장칼국수(10월-3월)",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_6",
-          "name": "손만두국(12,1월)",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_7",
-          "name": "떡국(12,1월)",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_5aef4b42723b_menu_8",
-          "name": "떡만두국(12,1월)",
-          "price": "12,000원",
-          "isSignature": false
-        }
-      ],
+      "foundingYear": 1960,
+      "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJg3mO-z2ffDURxBvzNdq99p4",
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_092",
+      "name": "서울 함흥곰보냉면",
+      "region": "서울 종로구",
+      "address": "서울 종로구 창경궁로 109 (인의동 112-14)",
+      "category": "냉면",
+      "representativeMenu": "",
+      "lat": 37.57169,
+      "lng": 126.9964571,
+      "imageUrl": "",
+      "foundingYear": 1960,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_old-korean-100_244327bdb2a1",
+      "name": "명월집",
+      "region": "인천 중구",
+      "address": "인천 중구 신포로23번길 41",
+      "category": "백반",
+      "representativeMenu": "",
+      "lat": 37.4720075,
+      "lng": 126.6228517,
+      "imageUrl": "",
+      "foundingYear": 1962,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "googlePlaceId": "ChIJgQXmzI94ezURjwgXl6TcCmQ"
+    },
+    {
+      "id": "old-korean-100_restaurant_094",
+      "name": "서울 역전회관",
+      "region": "서울 마포구",
+      "address": "서울 마포구 토정로37길 47 (염리동 173-21)",
+      "category": "바싹불고기",
+      "representativeMenu": "",
+      "lat": 37.5429287,
+      "lng": 126.9470142,
+      "imageUrl": "",
+      "foundingYear": 1962,
+      "menus": [],
+      "thumbnailFileName": null,
       "isOverseas": false
     },
     {
@@ -1664,614 +1650,90 @@
       "name": "진주회관",
       "region": "서울 중구",
       "address": "서울 중구 세종대로11길 26",
-      "category": "",
+      "category": "콩국수",
       "representativeMenu": "",
       "lat": 37.5624142,
       "lng": 126.97450540000001,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1962,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJKcw_Q4uifDUR8xJygSjZwpc",
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJKcw_Q4uifDUR8xJygSjZwpc"
     },
     {
-      "id": "topic_enrichment_old-korean-100_dca52ca89556",
-      "name": "진주회관",
-      "region": "충남 천안시",
-      "address": "충남 천안시 서북구 성환읍 성환11길 15",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.9169147,
-      "lng": 127.1295907,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJyYPqQ4YvezURB9zLly9W1ig",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_d527a543e673",
-      "name": "천일식당",
-      "region": "전남 해남군",
-      "address": "전남 해남군 해남읍 읍내길 20-8 천일식당",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 34.5705496,
-      "lng": 126.5993032,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJgT1FQ6-qczUR18BLsyGUyOU",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_ec915c6d8979",
-      "name": "천황식당",
-      "region": "경남 진주시",
-      "address": "경남 진주시 촉석로207번길 3",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.1961169,
-      "lng": 128.0845091,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJvQmtnUD8bjURJRZJefhgtGs",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_35fe45703768",
-      "name": "청주 리정식당",
-      "region": "충북 청주시",
-      "address": "충북 청주시 청원구 우암로 71-1 (내덕동 297-12)",
-      "category": "한식",
-      "representativeMenu": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_1",
-          "name": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
-          "price": "11,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_2",
-          "name": "깊은 사골 육수에 소머리 고기가 들어가 뜨끈하고 든든하게 먹는 건강 국밥",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_3",
-          "name": "살짝 데친 대파 위에 두툼한 소머리고기가(소머리뽈살,우설)올려진 수육!!! 부드러운 식감",
-          "price": "39,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_4",
-          "name": "살짝 데친 대파 위에 두툼한 소머리고기가(소머리뽈살,우설)올려진 수육!!! 부드러운 식감",
-          "price": "35,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_5",
-          "name": "깊은 사골 육수에 소머리 고기가 들어가 뜨끈하고 든든하게 먹는 건강 국밥",
-          "price": "13,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_35fe45703768_menu_6",
-          "name": "소고기 양지 육수, 사골 육수가 대파와 어우러져 자극적이지 않고 깊은 국물맛에 옛 엄마손맛",
-          "price": "13,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_d3bec31ad91c",
-      "name": "청진옥",
-      "region": "서울 종로구",
-      "address": "서울 종로구 종로3길 32",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5716988,
-      "lng": 126.9793981,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJyfkL8-uifDURGjR9tuiIbSo",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_c7be97bef699",
-      "name": "청화집",
-      "region": "충남 천안시",
-      "address": "충남 천안시 동남구 병천면 충절로 1749",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.762303599999996,
-      "lng": 127.29921499999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJpfl_8jLVZDURcb1ckRVdu5c",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_13de856e653b",
-      "name": "편대장 영화식당 신세계백화점 의정부점",
-      "region": "경기 의정부시",
-      "address": "경기 의정부시 평화로 525 신세계백화점 의정부점 9층",
-      "category": "육류,고기요리",
-      "representativeMenu": "한우육회한상차림(2인)",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_1",
-          "name": "한우육회한상차림(2인)",
-          "price": "49,500원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_2",
-          "name": "고등어한상차림A(2인)",
-          "price": "41,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_3",
-          "name": "떡갈비+물냉면",
-          "price": "21,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_4",
-          "name": "떡갈비+비빔냉면",
-          "price": "21,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_5",
-          "name": "물냉면",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_6",
-          "name": "비빔냉면",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_7",
-          "name": "여름계절메뉴",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_8",
-          "name": "한우돌솥비빔밥",
-          "price": "14,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_9",
-          "name": "한우소고기비빔밥",
-          "price": "13,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_10",
-          "name": "곤드레비빔밥",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_11",
-          "name": "열무비빔밥",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_12",
-          "name": "소불고기쌈정식",
-          "price": "17,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_13",
-          "name": "한우육회",
-          "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_14",
-          "name": "한우 육회비빔밥",
-          "price": "16,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_13de856e653b_menu_15",
-          "name": "뚝배기불고기",
-          "price": "14,500원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_747015d8b0f6",
-      "name": "평양옥",
-      "region": "대전 서구",
-      "address": "대전 서구 도마5길 61 1층 평양옥",
-      "category": "냉면",
-      "representativeMenu": "",
-      "lat": 36.317233699999996,
-      "lng": 127.3815863,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ41WjU09NZTURwPCYIQg8gAY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_c07816d4c81b",
-      "name": "평양옥",
-      "region": "인천 중구",
-      "address": "인천 중구 도원로8번길 68",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.463995,
-      "lng": 126.63988540000001,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJBf6Gy2B5ezURCYfA8Pb6rUc",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_03316bfdecde",
-      "name": "포항할매집",
+      "id": "old-korean-100_restaurant_096",
+      "name": "영천 편대장 영화식당",
       "region": "경북 영천시",
-      "address": "경북 영천시 시장4길 30",
-      "category": "",
+      "address": "경북 영천시 강변로 50-15 (금노동 582-15)",
+      "category": "육회",
       "representativeMenu": "",
-      "lat": 35.964415699999996,
-      "lng": 128.9373704,
+      "lat": 35.9603662,
+      "lng": 128.9281479,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1962,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": "ChIJMZEzeYVoZjUR4Dxyp2zFQhM",
       "isOverseas": false
     },
     {
-      "id": "topic_enrichment_old-korean-100_a88c5f220197",
-      "name": "피양옥 천안본점",
+      "id": "old-korean-100_restaurant_097",
+      "name": "담양 덕인관",
+      "region": "전남 담양군",
+      "address": "전남 담양군 담양읍 죽향대로 1121 (백동리 409-5)",
+      "category": "떡갈비",
+      "representativeMenu": "",
+      "lat": 35.3059372,
+      "lng": 126.9805235,
+      "imageUrl": "",
+      "foundingYear": 1963,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_098",
+      "name": "마산 진짜초가집 원조아구찜",
+      "region": "경남 창원시",
+      "address": "경남 창원시 마산합포구 오동남3길 8-2 (오동동 151-5)",
+      "category": "아구찜",
+      "representativeMenu": "",
+      "lat": 35.2066975,
+      "lng": 128.5782503,
+      "imageUrl": "",
+      "foundingYear": 1965,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_099",
+      "name": "대구 버들식당",
+      "region": "대구 달서구",
+      "address": "대구 달서구 두류공원로28길 8 (성당동 118-1)",
+      "category": "곱창 전골",
+      "representativeMenu": "",
+      "lat": 35.8479202,
+      "lng": 128.5667826,
+      "imageUrl": "",
+      "foundingYear": 1967,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "old-korean-100_restaurant_100",
+      "name": "천안 청화집",
       "region": "충남 천안시",
-      "address": "충남 천안시 동남구 큰시장길 27 (사직동 168-8)",
-      "category": "냉면",
+      "address": "충남 천안시 동남구 병천면 충절로 1749 (병천리 167-6)",
+      "category": "순대",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.7623321,
+      "lng": 127.299225,
       "imageUrl": "",
-      "foundingYear": null,
+      "foundingYear": 1967,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_884d6ae3b5c7",
-      "name": "하동관 명동본점",
-      "region": "서울 중구",
-      "address": "서울 중구 명동9길 12",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 37.5643946,
-      "lng": 126.9850185,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJvZjTMWC9fDURxnT8dx21N3U",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_720652317eac",
-      "name": "하동복집",
-      "region": "경남 진주시",
-      "address": "경남 진주시 진양호로 553",
-      "category": "복어요리",
-      "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_697fde7ad100",
-      "name": "하얀집",
-      "region": "전남 나주시",
-      "address": "전남 나주시 동강면 인동길 25-12",
-      "category": "한식",
-      "representativeMenu": "",
-      "lat": 34.9389484,
-      "lng": 126.56255029999998,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJ_WMtCaHLczUR-0l_ifKFqhY",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_461fc87b7750",
-      "name": "하연옥 진주냉면 촉석루점",
-      "region": "경남 진주시",
-      "address": "경남 진주시 남강로673번길 7",
-      "category": "냉면",
-      "representativeMenu": "진주 물냉면",
-      "lat": 35.1919166,
-      "lng": 128.0856935,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_1",
-          "name": "진주 물냉면",
-          "price": "12,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_2",
-          "name": "진주 비빔냉면",
-          "price": "13,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_3",
-          "name": "진주 육전",
-          "price": "27,500원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_4",
-          "name": "소선지국밥",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_5",
-          "name": "지리산흑돼지맑은곰탕",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_461fc87b7750_menu_6",
-          "name": "돌판소참갈비",
-          "price": "45,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJU0eikRz9bjURG_CsFiK0ew4",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_367617122a4f",
-      "name": "한국집",
-      "region": "전북 전주시",
-      "address": "전북 전주시 완산구 어진길 119",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.816503399999995,
-      "lng": 127.14822369999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJEdoS4p8kcDURZpF6tveZYGo",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_7e021b855e83",
-      "name": "한일관 광화문점",
-      "region": "서울 종로구",
-      "address": "서울 종로구 종로1길 50 더케이트윈타워",
-      "category": "한정식",
-      "representativeMenu": "전통갈비탕",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_1",
-          "name": "전통갈비탕",
-          "price": "20,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_2",
-          "name": "골동반(궁중비빔밥)",
-          "price": "18,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_3",
-          "name": "서울냉면",
-          "price": "14,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_4",
-          "name": "녹두빈대떡",
-          "price": "24,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_5",
-          "name": "전통갈비구이 점심 반상",
-          "price": "43,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_7e021b855e83_menu_6",
-          "name": "등심불고기 점심 반상",
-          "price": "35,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_2988218720a2",
-      "name": "한일관 본점",
-      "region": "전북 전주시",
-      "address": "전북 전주시 완산구 어은로 48 전주한일관",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 35.817610699999996,
-      "lng": 127.1280539,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJI0Uo8qwkcDURwW5Qw0uNhrI",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_9b2be30d2576",
-      "name": "함양집",
-      "region": "울산 남구",
-      "address": "울산 남구 삼산로228번길 19",
-      "category": "비빔밥",
-      "representativeMenu": "전통비빔밥",
-      "lat": 0,
-      "lng": 0,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_1",
-          "name": "전통비빔밥",
-          "price": "15,000원",
-          "isSignature": true
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_2",
-          "name": "고래비빔밥",
-          "price": "18,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_3",
-          "name": "울산비빔밥",
-          "price": "11,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_4",
-          "name": "오색화반",
-          "price": "20,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_5",
-          "name": "소고기국밥",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_6",
-          "name": "곰탕",
-          "price": "12,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_7",
-          "name": "도가니탕",
-          "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_8",
-          "name": "묵채",
-          "price": "6,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_9",
-          "name": "한우등심 200g",
-          "price": "38,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_9b2be30d2576_menu_10",
-          "name": "육회",
-          "price": "36,000원",
-          "isSignature": false
-        }
-      ],
-      "thumbnailFileName": null,
-      "googlePlaceId": null,
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_ce12ad912b9e",
-      "name": "호동식당",
-      "region": "경남 통영시",
-      "address": "경남 통영시 새터길 49 호동식당",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 34.841614799999995,
-      "lng": 128.4193794,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJPU0KYEDHbjURCIfrXZWqqW0",
-      "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_old-korean-100_eb1648737b48",
-      "name": "황산옥",
-      "region": "충남 논산시",
-      "address": "충남 논산시 강경읍 금백로 34",
-      "category": "",
-      "representativeMenu": "",
-      "lat": 36.156484299999995,
-      "lng": 127.00931059999999,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "googlePlaceId": "ChIJcy8ivW8McDURNn_xQ5Wdch4",
       "isOverseas": false
     }
   ],
@@ -2279,522 +1741,812 @@
     {
       "id": "old-korean-100",
       "name": "한국인이 사랑하는 오래된 한식당 100선",
-      "type": "institution",
-      "provider": "한식진흥원",
-      "description": "한국인이 사랑하는 오래된 한식당 100선을 지역별로 정리했어요.",
+      "type": "guide",
+      "provider": "raw-source",
+      "description": "한국인이 사랑하는 오래된 한식당 100선 data",
       "imageUrl": "/source-covers/old-korean-100.jpg"
     }
   ],
   "sourceLinks": [
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_697fde7ad100",
-      "restaurantId": "topic_enrichment_old-korean-100_697fde7ad100",
+      "id": "old-korean-100_link_001",
+      "restaurantId": "old-korean-100_restaurant_001",
       "sourceId": "old-korean-100",
-      "ordinal": 1
+      "ordinal": 1,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1904"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_b1299eed8205",
-      "restaurantId": "topic_enrichment_old-korean-100_b1299eed8205",
+      "id": "old-korean-100_link_002",
+      "restaurantId": "old-korean-100_restaurant_002",
       "sourceId": "old-korean-100",
-      "ordinal": 2
+      "ordinal": 2,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1910"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_9b2be30d2576",
-      "restaurantId": "topic_enrichment_old-korean-100_9b2be30d2576",
+      "id": "old-korean-100_link_003",
+      "restaurantId": "old-korean-100_restaurant_003",
       "sourceId": "old-korean-100",
-      "ordinal": 3
+      "ordinal": 3,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1919"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_8ab94556db8b",
-      "restaurantId": "topic_enrichment_old-korean-100_8ab94556db8b",
+      "id": "old-korean-100_link_004",
+      "restaurantId": "old-korean-100_restaurant_004",
       "sourceId": "old-korean-100",
-      "ordinal": 4
+      "ordinal": 4,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1920"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_256f31357365",
-      "restaurantId": "topic_enrichment_old-korean-100_256f31357365",
+      "id": "old-korean-100_link_005",
+      "restaurantId": "old-korean-100_restaurant_005",
       "sourceId": "old-korean-100",
-      "ordinal": 5
+      "ordinal": 5,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1920"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_e6b84568d3d3",
-      "restaurantId": "topic_enrichment_old-korean-100_e6b84568d3d3",
+      "id": "old-korean-100_link_006",
+      "restaurantId": "old-korean-100_restaurant_006",
       "sourceId": "old-korean-100",
-      "ordinal": 6
+      "ordinal": 6,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1924"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5a078b9e35e2",
-      "restaurantId": "topic_enrichment_old-korean-100_5a078b9e35e2",
+      "id": "old-korean-100_link_007",
+      "restaurantId": "old-korean-100_restaurant_007",
       "sourceId": "old-korean-100",
-      "ordinal": 7
+      "ordinal": 7,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1924"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_0e584aeab10c",
-      "restaurantId": "topic_enrichment_old-korean-100_0e584aeab10c",
+      "id": "old-korean-100_link_008",
+      "restaurantId": "old-korean-100_restaurant_008",
       "sourceId": "old-korean-100",
-      "ordinal": 8
+      "ordinal": 8,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1926"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_7e021b855e83",
-      "restaurantId": "topic_enrichment_old-korean-100_7e021b855e83",
+      "id": "old-korean-100_link_009",
+      "restaurantId": "old-korean-100_restaurant_009",
       "sourceId": "old-korean-100",
-      "ordinal": 9
+      "ordinal": 9,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1927"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_b149d950faf7",
-      "restaurantId": "topic_enrichment_old-korean-100_b149d950faf7",
+      "id": "old-korean-100_link_010",
+      "restaurantId": "old-korean-100_restaurant_010",
       "sourceId": "old-korean-100",
-      "ordinal": 10
+      "ordinal": 10,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1929"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_cf9a2e0278a1",
-      "restaurantId": "topic_enrichment_old-korean-100_cf9a2e0278a1",
+      "id": "old-korean-100_link_011",
+      "restaurantId": "old-korean-100_restaurant_011",
       "sourceId": "old-korean-100",
-      "ordinal": 11
+      "ordinal": 11,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1930"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_3e1fb9a929a9",
-      "restaurantId": "topic_enrichment_old-korean-100_3e1fb9a929a9",
+      "id": "old-korean-100_link_012",
+      "restaurantId": "old-korean-100_restaurant_012",
       "sourceId": "old-korean-100",
-      "ordinal": 12
+      "ordinal": 12,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1931"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_6c6414a87497",
-      "restaurantId": "topic_enrichment_old-korean-100_6c6414a87497",
+      "id": "old-korean-100_link_013",
+      "restaurantId": "old-korean-100_restaurant_013",
       "sourceId": "old-korean-100",
-      "ordinal": 13
+      "ordinal": 13,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1932"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5d78048bf497",
-      "restaurantId": "topic_enrichment_old-korean-100_5d78048bf497",
+      "id": "old-korean-100_link_014",
+      "restaurantId": "old-korean-100_restaurant_014",
       "sourceId": "old-korean-100",
-      "ordinal": 14
+      "ordinal": 14,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1932"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_461fc87b7750",
-      "restaurantId": "topic_enrichment_old-korean-100_461fc87b7750",
+      "id": "old-korean-100_link_015",
+      "restaurantId": "old-korean-100_restaurant_015",
       "sourceId": "old-korean-100",
-      "ordinal": 15
+      "ordinal": 15,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1932"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5a9441ab2ebe",
-      "restaurantId": "topic_enrichment_old-korean-100_5a9441ab2ebe",
+      "id": "old-korean-100_link_016",
+      "restaurantId": "old-korean-100_restaurant_016",
       "sourceId": "old-korean-100",
-      "ordinal": 16
+      "ordinal": 16,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1933"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_6490563e0dba",
-      "restaurantId": "topic_enrichment_old-korean-100_6490563e0dba",
+      "id": "old-korean-100_link_017",
+      "restaurantId": "old-korean-100_restaurant_017",
       "sourceId": "old-korean-100",
-      "ordinal": 17
+      "ordinal": 17,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1933"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5aef4b42723b",
-      "restaurantId": "topic_enrichment_old-korean-100_5aef4b42723b",
+      "id": "old-korean-100_link_018",
+      "restaurantId": "old-korean-100_restaurant_018",
       "sourceId": "old-korean-100",
-      "ordinal": 18
+      "ordinal": 18,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1936"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_4996d3d6fa71",
-      "restaurantId": "topic_enrichment_old-korean-100_4996d3d6fa71",
+      "id": "old-korean-100_link_019",
+      "restaurantId": "old-korean-100_restaurant_019",
       "sourceId": "old-korean-100",
-      "ordinal": 19
+      "ordinal": 19,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1937"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_747015d8b0f6",
-      "restaurantId": "topic_enrichment_old-korean-100_747015d8b0f6",
+      "id": "old-korean-100_link_020",
+      "restaurantId": "old-korean-100_restaurant_020",
       "sourceId": "old-korean-100",
-      "ordinal": 20
+      "ordinal": 20,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1939"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_4564e152417a",
-      "restaurantId": "topic_enrichment_old-korean-100_4564e152417a",
+      "id": "old-korean-100_link_021",
+      "restaurantId": "old-korean-100_restaurant_021",
       "sourceId": "old-korean-100",
-      "ordinal": 21
+      "ordinal": 21,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1939"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_a88c5f220197",
-      "restaurantId": "topic_enrichment_old-korean-100_a88c5f220197",
+      "id": "old-korean-100_link_022",
+      "restaurantId": "old-korean-100_restaurant_022",
       "sourceId": "old-korean-100",
-      "ordinal": 22
+      "ordinal": 22,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1939"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_cce7fe85ffd0",
-      "restaurantId": "topic_enrichment_old-korean-100_cce7fe85ffd0",
+      "id": "old-korean-100_link_023",
+      "restaurantId": "old-korean-100_restaurant_023",
       "sourceId": "old-korean-100",
-      "ordinal": 23
+      "ordinal": 23,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1940"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_a58f73451281",
-      "restaurantId": "topic_enrichment_old-korean-100_a58f73451281",
+      "id": "old-korean-100_link_024",
+      "restaurantId": "old-korean-100_restaurant_024",
       "sourceId": "old-korean-100",
-      "ordinal": 24
+      "ordinal": 24,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1940"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_720652317eac",
-      "restaurantId": "topic_enrichment_old-korean-100_720652317eac",
+      "id": "old-korean-100_link_025",
+      "restaurantId": "old-korean-100_restaurant_025",
       "sourceId": "old-korean-100",
-      "ordinal": 25
+      "ordinal": 25,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1941"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_73cb618f82b4",
-      "restaurantId": "topic_enrichment_old-korean-100_73cb618f82b4",
+      "id": "old-korean-100_link_026",
+      "restaurantId": "old-korean-100_restaurant_026",
       "sourceId": "old-korean-100",
-      "ordinal": 26
+      "ordinal": 26,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1942"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_6c9855a06e48",
-      "restaurantId": "topic_enrichment_old-korean-100_6c9855a06e48",
+      "id": "old-korean-100_link_027",
+      "restaurantId": "old-korean-100_restaurant_027",
       "sourceId": "old-korean-100",
-      "ordinal": 27
+      "ordinal": 27,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1943"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_35fe45703768",
-      "restaurantId": "topic_enrichment_old-korean-100_35fe45703768",
+      "id": "old-korean-100_link_028",
+      "restaurantId": "old-korean-100_restaurant_028",
       "sourceId": "old-korean-100",
-      "ordinal": 28
+      "ordinal": 28,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1944"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_c628a2673902",
-      "restaurantId": "topic_enrichment_old-korean-100_c628a2673902",
+      "id": "old-korean-100_link_029",
+      "restaurantId": "old-korean-100_restaurant_029",
       "sourceId": "old-korean-100",
-      "ordinal": 29
+      "ordinal": 29,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1945"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_9928f9a2c2df",
-      "restaurantId": "topic_enrichment_old-korean-100_9928f9a2c2df",
+      "id": "old-korean-100_link_030",
+      "restaurantId": "old-korean-100_restaurant_030",
       "sourceId": "old-korean-100",
-      "ordinal": 30
+      "ordinal": 30,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1945"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_e3b2a5665b67",
-      "restaurantId": "topic_enrichment_old-korean-100_e3b2a5665b67",
+      "id": "old-korean-100_link_031",
+      "restaurantId": "old-korean-100_restaurant_031",
       "sourceId": "old-korean-100",
-      "ordinal": 31
+      "ordinal": 31,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1945"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ad7d521a1673",
-      "restaurantId": "topic_enrichment_old-korean-100_ad7d521a1673",
+      "id": "old-korean-100_link_032",
+      "restaurantId": "old-korean-100_restaurant_032",
       "sourceId": "old-korean-100",
-      "ordinal": 32
+      "ordinal": 32,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1945"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_13de856e653b",
-      "restaurantId": "topic_enrichment_old-korean-100_13de856e653b",
+      "id": "old-korean-100_link_033",
+      "restaurantId": "old-korean-100_restaurant_033",
       "sourceId": "old-korean-100",
-      "ordinal": 33
+      "ordinal": 33,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1946"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_522e90b90c30",
-      "restaurantId": "topic_enrichment_old-korean-100_522e90b90c30",
+      "id": "old-korean-100_link_034",
+      "restaurantId": "old-korean-100_restaurant_034",
       "sourceId": "old-korean-100",
-      "ordinal": 34
+      "ordinal": 34,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1946"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_d70993395a18",
-      "restaurantId": "topic_enrichment_old-korean-100_d70993395a18",
+      "id": "old-korean-100_link_035",
+      "restaurantId": "old-korean-100_restaurant_035",
       "sourceId": "old-korean-100",
-      "ordinal": 35
+      "ordinal": 35,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1946"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5a9cf62b1493",
-      "restaurantId": "topic_enrichment_old-korean-100_5a9cf62b1493",
+      "id": "old-korean-100_link_036",
+      "restaurantId": "old-korean-100_restaurant_036",
       "sourceId": "old-korean-100",
-      "ordinal": 36
+      "ordinal": 36,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1946"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_bf64e6dccbab",
-      "restaurantId": "topic_enrichment_old-korean-100_bf64e6dccbab",
+      "id": "old-korean-100_link_037",
+      "restaurantId": "old-korean-100_restaurant_037",
       "sourceId": "old-korean-100",
-      "ordinal": 37
+      "ordinal": 37,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1947"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_c9f9e006d08b",
-      "restaurantId": "topic_enrichment_old-korean-100_c9f9e006d08b",
+      "id": "old-korean-100_link_038",
+      "restaurantId": "old-korean-100_restaurant_038",
       "sourceId": "old-korean-100",
-      "ordinal": 38
+      "ordinal": 38,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1948"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_66b5de38db76",
-      "restaurantId": "topic_enrichment_old-korean-100_66b5de38db76",
+      "id": "old-korean-100_link_039",
+      "restaurantId": "old-korean-100_restaurant_039",
       "sourceId": "old-korean-100",
-      "ordinal": 39
+      "ordinal": 39,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1948"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_054645c4d8f8",
-      "restaurantId": "topic_enrichment_old-korean-100_054645c4d8f8",
+      "id": "old-korean-100_link_040",
+      "restaurantId": "old-korean-100_restaurant_040",
       "sourceId": "old-korean-100",
-      "ordinal": 40
+      "ordinal": 40,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1948"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_d328cccce561",
-      "restaurantId": "topic_enrichment_old-korean-100_d328cccce561",
+      "id": "old-korean-100_link_041",
+      "restaurantId": "old-korean-100_restaurant_041",
       "sourceId": "old-korean-100",
-      "ordinal": 41
+      "ordinal": 41,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1949"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_73a833e4c058",
-      "restaurantId": "topic_enrichment_old-korean-100_73a833e4c058",
+      "id": "old-korean-100_link_042",
+      "restaurantId": "old-korean-100_restaurant_042",
       "sourceId": "old-korean-100",
-      "ordinal": 42
+      "ordinal": 42,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1950"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_739a4b6ac4b9",
-      "restaurantId": "topic_enrichment_old-korean-100_739a4b6ac4b9",
+      "id": "old-korean-100_link_043",
+      "restaurantId": "old-korean-100_restaurant_043",
       "sourceId": "old-korean-100",
-      "ordinal": 43
+      "ordinal": 43,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1950"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_496aa4ea70e5",
-      "restaurantId": "topic_enrichment_old-korean-100_496aa4ea70e5",
+      "id": "old-korean-100_link_044",
+      "restaurantId": "old-korean-100_restaurant_044",
       "sourceId": "old-korean-100",
-      "ordinal": 44
+      "ordinal": 44,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1950"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_1d8449d41dfe",
-      "restaurantId": "topic_enrichment_old-korean-100_1d8449d41dfe",
+      "id": "old-korean-100_link_045",
+      "restaurantId": "old-korean-100_restaurant_045",
       "sourceId": "old-korean-100",
-      "ordinal": 45
+      "ordinal": 45,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1950"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_9635b6073225",
-      "restaurantId": "topic_enrichment_old-korean-100_9635b6073225",
+      "id": "old-korean-100_link_046",
+      "restaurantId": "old-korean-100_restaurant_046",
       "sourceId": "old-korean-100",
-      "ordinal": 46
+      "ordinal": 46,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1950"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_244327bdb2a1",
-      "restaurantId": "topic_enrichment_old-korean-100_244327bdb2a1",
+      "id": "old-korean-100_link_047",
+      "restaurantId": "old-korean-100_restaurant_047",
       "sourceId": "old-korean-100",
-      "ordinal": 47
+      "ordinal": 47,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_58f3c677426b",
-      "restaurantId": "topic_enrichment_old-korean-100_58f3c677426b",
+      "id": "old-korean-100_link_048",
+      "restaurantId": "old-korean-100_restaurant_048",
       "sourceId": "old-korean-100",
-      "ordinal": 48
+      "ordinal": 48,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_f672457946b0",
-      "restaurantId": "topic_enrichment_old-korean-100_f672457946b0",
+      "id": "old-korean-100_link_049",
+      "restaurantId": "old-korean-100_restaurant_049",
       "sourceId": "old-korean-100",
-      "ordinal": 49
+      "ordinal": 49,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5a14522bedcf",
-      "restaurantId": "topic_enrichment_old-korean-100_5a14522bedcf",
+      "id": "old-korean-100_link_050",
+      "restaurantId": "old-korean-100_restaurant_050",
       "sourceId": "old-korean-100",
-      "ordinal": 50
+      "ordinal": 50,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_c33639fd5177",
-      "restaurantId": "topic_enrichment_old-korean-100_c33639fd5177",
+      "id": "old-korean-100_link_051",
+      "restaurantId": "old-korean-100_restaurant_051",
       "sourceId": "old-korean-100",
-      "ordinal": 51
+      "ordinal": 51,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_5147c1d7ed86",
-      "restaurantId": "topic_enrichment_old-korean-100_5147c1d7ed86",
+      "id": "old-korean-100_link_052",
+      "restaurantId": "old-korean-100_restaurant_052",
       "sourceId": "old-korean-100",
-      "ordinal": 52
+      "ordinal": 52,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1951"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_bd22333f8936",
-      "restaurantId": "topic_enrichment_old-korean-100_bd22333f8936",
+      "id": "old-korean-100_link_053",
+      "restaurantId": "old-korean-100_restaurant_053",
       "sourceId": "old-korean-100",
-      "ordinal": 53
+      "ordinal": 53,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ade337ac5ae2",
-      "restaurantId": "topic_enrichment_old-korean-100_ade337ac5ae2",
+      "id": "old-korean-100_link_054",
+      "restaurantId": "old-korean-100_restaurant_054",
       "sourceId": "old-korean-100",
-      "ordinal": 54
+      "ordinal": 54,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_7597bb18ce6e",
-      "restaurantId": "topic_enrichment_old-korean-100_7597bb18ce6e",
+      "id": "old-korean-100_link_055",
+      "restaurantId": "old-korean-100_restaurant_055",
       "sourceId": "old-korean-100",
-      "ordinal": 55
+      "ordinal": 55,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_66aeb845216d",
-      "restaurantId": "topic_enrichment_old-korean-100_66aeb845216d",
+      "id": "old-korean-100_link_056",
+      "restaurantId": "old-korean-100_restaurant_056",
       "sourceId": "old-korean-100",
-      "ordinal": 56
+      "ordinal": 56,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_52f914e0f385",
-      "restaurantId": "topic_enrichment_old-korean-100_52f914e0f385",
+      "id": "old-korean-100_link_057",
+      "restaurantId": "old-korean-100_restaurant_057",
       "sourceId": "old-korean-100",
-      "ordinal": 57
+      "ordinal": 57,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_351df00ce58b",
-      "restaurantId": "topic_enrichment_old-korean-100_351df00ce58b",
+      "id": "old-korean-100_link_058",
+      "restaurantId": "old-korean-100_restaurant_058",
       "sourceId": "old-korean-100",
-      "ordinal": 58
+      "ordinal": 58,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1952"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ff7744221cb1",
-      "restaurantId": "topic_enrichment_old-korean-100_ff7744221cb1",
+      "id": "old-korean-100_link_059",
+      "restaurantId": "old-korean-100_restaurant_059",
       "sourceId": "old-korean-100",
-      "ordinal": 59
+      "ordinal": 59,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_6ad65adba0ff",
-      "restaurantId": "topic_enrichment_old-korean-100_6ad65adba0ff",
+      "id": "old-korean-100_link_060",
+      "restaurantId": "old-korean-100_restaurant_060",
       "sourceId": "old-korean-100",
-      "ordinal": 60
+      "ordinal": 60,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_69a7907d322a",
-      "restaurantId": "topic_enrichment_old-korean-100_69a7907d322a",
+      "id": "old-korean-100_link_061",
+      "restaurantId": "old-korean-100_restaurant_061",
       "sourceId": "old-korean-100",
-      "ordinal": 61
+      "ordinal": 61,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_a82a59ae4547",
-      "restaurantId": "topic_enrichment_old-korean-100_a82a59ae4547",
+      "id": "old-korean-100_link_062",
+      "restaurantId": "old-korean-100_restaurant_062",
       "sourceId": "old-korean-100",
-      "ordinal": 62
+      "ordinal": 62,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_04bfd4324581",
-      "restaurantId": "topic_enrichment_old-korean-100_04bfd4324581",
+      "id": "old-korean-100_link_063",
+      "restaurantId": "old-korean-100_restaurant_063",
       "sourceId": "old-korean-100",
-      "ordinal": 63
+      "ordinal": 63,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_6e586918c258",
-      "restaurantId": "topic_enrichment_old-korean-100_6e586918c258",
+      "id": "old-korean-100_link_064",
+      "restaurantId": "old-korean-100_restaurant_064",
       "sourceId": "old-korean-100",
-      "ordinal": 64
+      "ordinal": 64,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1953"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ac5f73e5c29f",
-      "restaurantId": "topic_enrichment_old-korean-100_ac5f73e5c29f",
+      "id": "old-korean-100_link_065",
+      "restaurantId": "old-korean-100_restaurant_065",
       "sourceId": "old-korean-100",
-      "ordinal": 65
+      "ordinal": 65,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1954"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_96c198abae71",
-      "restaurantId": "topic_enrichment_old-korean-100_96c198abae71",
+      "id": "old-korean-100_link_066",
+      "restaurantId": "old-korean-100_restaurant_066",
       "sourceId": "old-korean-100",
-      "ordinal": 66
+      "ordinal": 66,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_18ac3372c278",
-      "restaurantId": "topic_enrichment_old-korean-100_18ac3372c278",
+      "id": "old-korean-100_link_067",
+      "restaurantId": "old-korean-100_restaurant_067",
       "sourceId": "old-korean-100",
-      "ordinal": 67
+      "ordinal": 67,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_9e02ae1a9073",
-      "restaurantId": "topic_enrichment_old-korean-100_9e02ae1a9073",
+      "id": "old-korean-100_link_068",
+      "restaurantId": "old-korean-100_restaurant_068",
       "sourceId": "old-korean-100",
-      "ordinal": 68
+      "ordinal": 68,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_760eeb197322",
-      "restaurantId": "topic_enrichment_old-korean-100_760eeb197322",
+      "id": "old-korean-100_link_069",
+      "restaurantId": "old-korean-100_restaurant_069",
       "sourceId": "old-korean-100",
-      "ordinal": 69
+      "ordinal": 69,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_12d8661dd772",
-      "restaurantId": "topic_enrichment_old-korean-100_12d8661dd772",
+      "id": "old-korean-100_link_070",
+      "restaurantId": "old-korean-100_restaurant_070",
       "sourceId": "old-korean-100",
-      "ordinal": 70
+      "ordinal": 70,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_47c118d8f1ae",
-      "restaurantId": "topic_enrichment_old-korean-100_47c118d8f1ae",
+      "id": "old-korean-100_link_071",
+      "restaurantId": "old-korean-100_restaurant_071",
       "sourceId": "old-korean-100",
-      "ordinal": 71
+      "ordinal": 71,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1955"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_7d09b87318f7",
-      "restaurantId": "topic_enrichment_old-korean-100_7d09b87318f7",
+      "id": "old-korean-100_link_072",
+      "restaurantId": "old-korean-100_restaurant_072",
       "sourceId": "old-korean-100",
-      "ordinal": 72
+      "ordinal": 72,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_9b64fad725f4",
-      "restaurantId": "topic_enrichment_old-korean-100_9b64fad725f4",
+      "id": "old-korean-100_link_073",
+      "restaurantId": "old-korean-100_restaurant_073",
       "sourceId": "old-korean-100",
-      "ordinal": 73
+      "ordinal": 73,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_dca52ca89556",
-      "restaurantId": "topic_enrichment_old-korean-100_dca52ca89556",
+      "id": "old-korean-100_link_074",
+      "restaurantId": "old-korean-100_restaurant_074",
       "sourceId": "old-korean-100",
-      "ordinal": 74
+      "ordinal": 74,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_d527a543e673",
-      "restaurantId": "topic_enrichment_old-korean-100_d527a543e673",
+      "id": "old-korean-100_link_075",
+      "restaurantId": "old-korean-100_restaurant_075",
       "sourceId": "old-korean-100",
-      "ordinal": 75
+      "ordinal": 75,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ec915c6d8979",
-      "restaurantId": "topic_enrichment_old-korean-100_ec915c6d8979",
+      "id": "old-korean-100_link_076",
+      "restaurantId": "old-korean-100_restaurant_076",
       "sourceId": "old-korean-100",
-      "ordinal": 76
+      "ordinal": 76,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_d3bec31ad91c",
-      "restaurantId": "topic_enrichment_old-korean-100_d3bec31ad91c",
+      "id": "old-korean-100_link_077",
+      "restaurantId": "old-korean-100_restaurant_077",
       "sourceId": "old-korean-100",
-      "ordinal": 77
+      "ordinal": 77,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1956"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_c7be97bef699",
-      "restaurantId": "topic_enrichment_old-korean-100_c7be97bef699",
+      "id": "old-korean-100_link_078",
+      "restaurantId": "old-korean-100_restaurant_078",
       "sourceId": "old-korean-100",
-      "ordinal": 78
+      "ordinal": 78,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1957"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_c07816d4c81b",
-      "restaurantId": "topic_enrichment_old-korean-100_c07816d4c81b",
+      "id": "old-korean-100_link_079",
+      "restaurantId": "old-korean-100_restaurant_079",
       "sourceId": "old-korean-100",
-      "ordinal": 79
+      "ordinal": 79,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1957"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_03316bfdecde",
-      "restaurantId": "topic_enrichment_old-korean-100_03316bfdecde",
+      "id": "old-korean-100_link_080",
+      "restaurantId": "old-korean-100_restaurant_080",
       "sourceId": "old-korean-100",
-      "ordinal": 80
+      "ordinal": 80,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1957"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_884d6ae3b5c7",
-      "restaurantId": "topic_enrichment_old-korean-100_884d6ae3b5c7",
+      "id": "old-korean-100_link_081",
+      "restaurantId": "old-korean-100_restaurant_081",
       "sourceId": "old-korean-100",
-      "ordinal": 81
+      "ordinal": 81,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_367617122a4f",
-      "restaurantId": "topic_enrichment_old-korean-100_367617122a4f",
+      "id": "old-korean-100_link_082",
+      "restaurantId": "old-korean-100_restaurant_082",
       "sourceId": "old-korean-100",
-      "ordinal": 82
+      "ordinal": 82,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_2988218720a2",
-      "restaurantId": "topic_enrichment_old-korean-100_2988218720a2",
+      "id": "old-korean-100_link_083",
+      "restaurantId": "old-korean-100_restaurant_083",
       "sourceId": "old-korean-100",
-      "ordinal": 83
+      "ordinal": 83,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_ce12ad912b9e",
-      "restaurantId": "topic_enrichment_old-korean-100_ce12ad912b9e",
+      "id": "old-korean-100_link_084",
+      "restaurantId": "old-korean-100_restaurant_084",
       "sourceId": "old-korean-100",
-      "ordinal": 84
+      "ordinal": 84,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
     },
     {
-      "id": "old-korean-100_topic_enrichment_old-korean-100_eb1648737b48",
-      "restaurantId": "topic_enrichment_old-korean-100_eb1648737b48",
+      "id": "old-korean-100_link_085",
+      "restaurantId": "old-korean-100_restaurant_085",
       "sourceId": "old-korean-100",
-      "ordinal": 85
+      "ordinal": 85,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
+    },
+    {
+      "id": "old-korean-100_link_086",
+      "restaurantId": "old-korean-100_restaurant_086",
+      "sourceId": "old-korean-100",
+      "ordinal": 86,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1958"
+    },
+    {
+      "id": "old-korean-100_link_087",
+      "restaurantId": "old-korean-100_restaurant_087",
+      "sourceId": "old-korean-100",
+      "ordinal": 87,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1959"
+    },
+    {
+      "id": "old-korean-100_link_088",
+      "restaurantId": "old-korean-100_restaurant_088",
+      "sourceId": "old-korean-100",
+      "ordinal": 88,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1959"
+    },
+    {
+      "id": "old-korean-100_link_089",
+      "restaurantId": "old-korean-100_restaurant_089",
+      "sourceId": "old-korean-100",
+      "ordinal": 89,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1959"
+    },
+    {
+      "id": "old-korean-100_link_090",
+      "restaurantId": "old-korean-100_restaurant_090",
+      "sourceId": "old-korean-100",
+      "ordinal": 90,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1960"
+    },
+    {
+      "id": "old-korean-100_link_091",
+      "restaurantId": "old-korean-100_restaurant_091",
+      "sourceId": "old-korean-100",
+      "ordinal": 91,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1960"
+    },
+    {
+      "id": "old-korean-100_link_092",
+      "restaurantId": "old-korean-100_restaurant_092",
+      "sourceId": "old-korean-100",
+      "ordinal": 92,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1960"
+    },
+    {
+      "id": "old-korean-100_link_093",
+      "restaurantId": "old-korean-100_restaurant_093",
+      "sourceId": "old-korean-100",
+      "ordinal": 93,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1962"
+    },
+    {
+      "id": "old-korean-100_link_094",
+      "restaurantId": "old-korean-100_restaurant_094",
+      "sourceId": "old-korean-100",
+      "ordinal": 94,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1962"
+    },
+    {
+      "id": "old-korean-100_link_095",
+      "restaurantId": "old-korean-100_restaurant_095",
+      "sourceId": "old-korean-100",
+      "ordinal": 95,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1962"
+    },
+    {
+      "id": "old-korean-100_link_096",
+      "restaurantId": "old-korean-100_restaurant_096",
+      "sourceId": "old-korean-100",
+      "ordinal": 96,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1962"
+    },
+    {
+      "id": "old-korean-100_link_097",
+      "restaurantId": "old-korean-100_restaurant_097",
+      "sourceId": "old-korean-100",
+      "ordinal": 97,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1963"
+    },
+    {
+      "id": "old-korean-100_link_098",
+      "restaurantId": "old-korean-100_restaurant_098",
+      "sourceId": "old-korean-100",
+      "ordinal": 98,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1965"
+    },
+    {
+      "id": "old-korean-100_link_099",
+      "restaurantId": "old-korean-100_restaurant_099",
+      "sourceId": "old-korean-100",
+      "ordinal": 99,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1967"
+    },
+    {
+      "id": "old-korean-100_link_100",
+      "restaurantId": "old-korean-100_restaurant_100",
+      "sourceId": "old-korean-100",
+      "ordinal": 100,
+      "label": "한국인이 사랑하는 오래된 한식당 100선",
+      "note": "Founded in 1967"
     }
   ]
 }

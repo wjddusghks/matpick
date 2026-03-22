@@ -74,6 +74,14 @@ export type RestaurantBroadcastMeta = {
   episodeLabels: string[];
 };
 
+const episodicSourceIds = new Set([
+  "ttoganjip",
+  "delicious-guys",
+  "baekjong-wok",
+  "sikgaek-baekban-trip",
+  "wednesday-gourmet",
+]);
+
 function normalizeLookupValue(value: string) {
   return value.replace(/\s+/g, " ").trim().toLowerCase();
 }
@@ -678,7 +686,7 @@ export function getRestaurantBroadcastMeta(
   restaurantId: string
 ): RestaurantBroadcastMeta | null {
   const seenLabels = new Set<string>();
-  const episodeLabels = getVisitsByRestaurant(restaurantId)
+  const visitLabels = getVisitsByRestaurant(restaurantId)
     .slice()
     .sort(sortVisitsByDate)
     .map((visit) => {
@@ -700,6 +708,33 @@ export function getRestaurantBroadcastMeta(
       seenLabels.add(normalized);
       return true;
     });
+
+  const sourceLabels = getSourceLinksByRestaurant(restaurantId)
+    .slice()
+    .sort((a, b) => (a.ordinal ?? Number.MAX_SAFE_INTEGER) - (b.ordinal ?? Number.MAX_SAFE_INTEGER))
+    .map((link) => {
+      if (link.label?.trim()) {
+        return link.label.trim();
+      }
+
+      if (episodicSourceIds.has(link.sourceId) && Number.isFinite(link.ordinal)) {
+        return `EP.${link.ordinal}`;
+      }
+
+      return "";
+    })
+    .filter((label): label is string => Boolean(label))
+    .filter((label) => {
+      const normalized = normalizeLookupValue(label);
+      if (seenLabels.has(normalized)) {
+        return false;
+      }
+
+      seenLabels.add(normalized);
+      return true;
+    });
+
+  const episodeLabels = [...visitLabels, ...sourceLabels];
 
   if (episodeLabels.length === 0) {
     return null;

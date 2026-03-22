@@ -43,6 +43,7 @@ import {
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
+import { useCardVisibility, useGooglePlacePhoto } from "@/lib/useGooglePlacePhoto";
 
 const MAP_COPY = {
   ko: {
@@ -258,7 +259,18 @@ function RestaurantCard({
   const copy = MAP_COPY[locale];
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
-  const displayImage = getRestaurantDisplayImage(restaurant, { width: 320, height: 320 });
+  const { ref: cardRef, isVisible } = useCardVisibility<HTMLDivElement>();
+  const googleFallbackPhoto = useGooglePlacePhoto(
+    restaurant.googlePlaceId,
+    isVisible &&
+      !restaurant.imageUrl.trim() &&
+      !restaurant.thumbnailFileName?.trim()
+  );
+  const displayImage = getRestaurantDisplayImage(restaurant, {
+    width: 320,
+    height: 320,
+    googlePhotoUrl: googleFallbackPhoto?.imageUrl,
+  });
   const priceHint = getRestaurantPrimaryPrice(restaurant);
   const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
   const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
@@ -266,6 +278,7 @@ function RestaurantCard({
 
   return (
     <div
+      ref={cardRef}
       className={`border-b border-[#f1f1f1] px-4 py-4 transition-colors ${
         selected ? "bg-[#fff7f1]" : "bg-white hover:bg-[#fafafa]"
       }`}

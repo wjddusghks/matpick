@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronRight, Instagram } from "lucide-react";
 import { Link } from "wouter";
 import { useLocale } from "@/contexts/LocaleContext";
 
@@ -9,6 +9,8 @@ type InfoPageLayoutProps = {
   description: string;
   children: ReactNode;
 };
+
+const instagramUrl = "https://www.instagram.com/matpick.co.kr/";
 
 export default function InfoPageLayout({
   eyebrow,
@@ -26,15 +28,21 @@ export default function InfoPageLayout({
         terms: "Terms",
         contact: "Contact",
         home: "Home",
+        notice:
+          "If any Matpick information is outdated or inaccurate, please send us a DM on Instagram.",
+        noticeLink: "@matpick.co.kr",
       }
     : {
         back: "홈으로 돌아가기",
         information: "맛픽 안내",
         about: "소개",
-        privacy: "개인정보",
-        terms: "약관",
+        privacy: "개인정보처리방침",
+        terms: "이용약관",
         contact: "문의",
         home: "홈",
+        notice:
+          "맛픽 관련 정보가 정확하지 않거나 바뀌었다면 Instagram으로 DM 주세요.",
+        noticeLink: "@matpick.co.kr",
       };
 
   return (
@@ -94,6 +102,25 @@ export default function InfoPageLayout({
             <p className="mt-5 text-base leading-8 text-[#6d6465] sm:text-lg">
               {description}
             </p>
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-[#ffe0e4] bg-[#fff8f9] p-5">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-start gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#ff7b83] shadow-[0_6px_18px_rgba(255,123,131,0.12)]">
+                  <Instagram className="h-5 w-5" />
+                </span>
+                <p className="text-sm leading-6 text-[#6d6465]">{labels.notice}</p>
+              </div>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-[#ffd0d7] bg-white px-4 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
+              >
+                {labels.noticeLink}
+              </a>
+            </div>
           </div>
 
           <div className="mt-10 space-y-10">{children}</div>

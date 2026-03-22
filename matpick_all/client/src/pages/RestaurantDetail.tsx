@@ -7,6 +7,7 @@ import {
   ImagePlus,
   MapPinned,
   MessageSquarePlus,
+  Navigation,
   MoreVertical,
   Play,
   Share2,
@@ -24,6 +25,7 @@ import {
 } from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { useLocale } from "@/contexts/LocaleContext";
 import {
   creators,
   getCreatorDisplayName,
@@ -60,6 +62,12 @@ import {
 } from "@/lib/reviews";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
+import {
+  loadStoredLocation,
+  LOCATION_UPDATED_EVENT,
+  type StoredLocation,
+} from "@/lib/location";
+import type { Restaurant } from "@/data/types";
 
 type DetailTab = "menu" | "videos" | "reviews" | "details";
 type ReviewItem = SharedReview;
@@ -71,6 +79,8 @@ type GoogleFallbackPhoto = {
 
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
+const MATPICK_FALLBACK_APP_URL = "https://matpick.co.kr";
+const MOBILE_MAP_FALLBACK_DELAY_MS = 900;
 const GUIDE_REVIEW_USERS = new Set(["맛픽가이드", "맛픽 가이드"]);
 
 function getRestaurantUrl(restaurantId: string) {
@@ -249,10 +259,82 @@ function formatDistance(distanceKm: number | null) {
   return `${distanceKm.toFixed(1)}km`;
 }
 
+function isMobileMapContext() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  return /Android|iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+}
+
+function getMapAppName() {
+  return encodeURIComponent(APP_URL || MATPICK_FALLBACK_APP_URL);
+}
+
+function buildNaverNavigationUrls(restaurant: Restaurant) {
+  const destinationName = encodeURIComponent(restaurant.name);
+  const destinationQuery = encodeURIComponent(`${restaurant.name} ${restaurant.address}`);
+
+  return {
+    appUrl: `nmap://navigation?dlat=${restaurant.lat}&dlng=${restaurant.lng}&dname=${destinationName}&appname=${getMapAppName()}`,
+    webUrl: `https://map.naver.com/p/search/${destinationQuery}`,
+  };
+}
+
+function buildKakaoNavigationUrls(
+  restaurant: Restaurant,
+  currentLocation: StoredLocation | null
+) {
+  if (currentLocation) {
+    const routePath = `sp=${currentLocation.lat},${currentLocation.lng}&ep=${restaurant.lat},${restaurant.lng}&by=car`;
+
+    return {
+      appUrl: `kakaomap://route?${routePath}`,
+      webUrl: `http://m.map.kakao.com/scheme/route?${routePath}`,
+    };
+  }
+
+  const point = `${restaurant.lat},${restaurant.lng}`;
+
+  return {
+    appUrl: `kakaomap://look?p=${point}`,
+    webUrl: `http://m.map.kakao.com/scheme/look?p=${point}`,
+  };
+}
+
+function openMobileMapApp(appUrl: string, fallbackUrl: string) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const fallbackTimer = window.setTimeout(() => {
+    window.location.href = fallbackUrl;
+  }, MOBILE_MAP_FALLBACK_DELAY_MS);
+
+  const clearFallback = () => {
+    window.clearTimeout(fallbackTimer);
+    window.removeEventListener("blur", clearFallback);
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+  };
+
+  const handleVisibilityChange = () => {
+    if (document.hidden) {
+      clearFallback();
+    }
+  };
+
+  window.addEventListener("blur", clearFallback, { once: true });
+  document.addEventListener("visibilitychange", handleVisibilityChange, {
+    once: true,
+  });
+  window.location.href = appUrl;
+}
+
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
   const [location, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
+  const { isEnglish } = useLocale();
   const { topics, getTopicsForRestaurant, toggleRestaurantInTopic } = useFavorites();
   const restaurant = restaurants.find((item) => item.id === id);
   const [activeTab, setActiveTab] = useState<DetailTab>("menu");
@@ -274,6 +356,9 @@ export default function RestaurantDetail() {
   const [relatedSortMode, setRelatedSortMode] = useState<RelatedSortMode>("related");
   const [googleFallbackPhoto, setGoogleFallbackPhoto] =
     useState<GoogleFallbackPhoto | null>(null);
+  const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
+    loadStoredLocation()
+  );
   const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -284,6 +369,20 @@ export default function RestaurantDetail() {
     }
     document.addEventListener("mousedown", handleOutside);
     return () => document.removeEventListener("mousedown", handleOutside);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const syncLocation = () => {
+      setCurrentLocation(loadStoredLocation());
+    };
+
+    window.addEventListener(LOCATION_UPDATED_EVENT, syncLocation as EventListener);
+    return () =>
+      window.removeEventListener(LOCATION_UPDATED_EVENT, syncLocation as EventListener);
   }, []);
 
   useEffect(() => {
@@ -464,10 +563,65 @@ export default function RestaurantDetail() {
           ? "사진 준비 중"
           : "";
   const googlePhotoAttribution = googleFallbackPhoto?.attributions?.[0];
+  const uiCopy = isEnglish
+    ? {
+        mobileSummaryEyebrow: "Quick actions",
+        mobileSummaryDescription:
+          "Open the map, continue in a navigation app, or jump into reviews before you scroll further.",
+        relatedTitle: "Restaurants to explore next",
+        relatedDescription:
+          "Browse nearby alternatives or places that overlap in source, creator, cuisine, or neighborhood.",
+        relatedModeRelated: "Related",
+        relatedModeNearby: "Distance",
+        directionsTitle: "Continue in map apps",
+        directionsDescription:
+          "Open the destination directly in Naver Map or KakaoMap and continue with directions there.",
+        actionMap: "View on Matpick map",
+        actionNaver: "Naver Map",
+        actionKakao: "KakaoMap",
+        actionReview: "Write a review",
+      }
+    : {
+        mobileSummaryEyebrow: "\uBC14\uB85C \uC774\uC5B4\uBCF4\uAE30",
+        mobileSummaryDescription:
+          "\uC9C0\uB3C4 \uBCF4\uAE30, \uAE38\uC548\uB0B4 \uC5F0\uACB0, \uB9AC\uBDF0 \uC791\uC131\uC744 \uBA3C\uC800 \uBAA8\uC544\uC11C \uBCFC \uC218 \uC788\uAC8C \uC815\uB9AC\uD588\uC5B4\uC694.",
+        relatedTitle: "\uD568\uAED8 \uB458\uB7EC\uBCFC \uB9CC\uD55C \uB9DB\uC9D1",
+        relatedDescription:
+          "\uC9C0\uAE08 \uBCF4\uACE0 \uC788\uB294 \uC2DD\uB2F9\uACFC \uAC00\uAE4C\uC6B4 \uACF3, \uB610\uB294 \uAC19\uC740 \uCD9C\uCC98\u00B7\uD06C\uB9AC\uC5D0\uC774\uD130\u00B7\uCE74\uD14C\uACE0\uB9AC\u00B7\uC9C0\uC5ED\uC744 \uACF5\uC720\uD558\uB294 \uACF3\uC744 \uBAA8\uC544\uBD24\uC5B4\uC694.",
+        relatedModeRelated: "\uC5F0\uAD00\uC21C",
+        relatedModeNearby: "\uD604\uC7AC \uC2DD\uB2F9 \uAC70\uB9AC\uC21C",
+        directionsTitle: "\uC678\uBD80 \uC9C0\uB3C4\uB85C \uC774\uC5B4\uAC00\uAE30",
+        directionsDescription:
+          "\uB124\uC774\uBC84\uC9C0\uB3C4\uB098 \uCE74\uCE74\uC624\uB9F5\uC5D0\uC11C \uC2DD\uB2F9 \uC704\uCE58\uB97C \uBC14\uB85C \uC5F4\uACE0 \uAE38\uC548\uB0B4\uB97C \uC774\uC5B4\uAC00\uC138\uC694.",
+        actionMap: "\uB9DB\uD53D \uC9C0\uB3C4\uC5D0\uC11C \uBCF4\uAE30",
+        actionNaver: "\uB124\uC774\uBC84\uC9C0\uB3C4 \uAE38\uC548\uB0B4",
+        actionKakao: "\uCE74\uCE74\uC624\uB9F5 \uC5F4\uAE30",
+        actionReview: "\uB9AC\uBDF0 \uC4F0\uAE30",
+      };
+  const naverNavigation = buildNaverNavigationUrls(restaurant);
+  const kakaoNavigation = buildKakaoNavigationUrls(restaurant, currentLocation);
 
   const openAuthFeatureDialog = (mode: AuthFeatureMode) => {
     setAuthFeatureMode(mode);
     setAuthFeatureDialogOpen(true);
+  };
+
+  const openExternalDirections = (provider: "naver" | "kakao") => {
+    const target = provider === "naver" ? naverNavigation : kakaoNavigation;
+
+    trackMarketingEvent("directions_click", {
+      restaurant_id: restaurant.id,
+      provider,
+      has_origin: Boolean(currentLocation),
+      platform: isMobileMapContext() ? "mobile" : "desktop",
+    });
+
+    if (isMobileMapContext()) {
+      openMobileMapApp(target.appUrl, target.webUrl);
+      return;
+    }
+
+    window.open(target.webUrl, "_blank", "noopener,noreferrer");
   };
 
   const removeRestaurantFromTopic = (topicId: string, topicName: string) => {
@@ -674,6 +828,163 @@ export default function RestaurantDetail() {
     toast.success("리뷰를 등록했어요.");
   };
 
+  const renderQuickActionPanel = (mobile = false) => (
+    <div className="rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+      <div className="mb-4">
+        <h3 className="text-sm font-bold text-[#1a1a1a]">{uiCopy.directionsTitle}</h3>
+        <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">{uiCopy.directionsDescription}</p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-2.5">
+        <button
+          type="button"
+          onClick={() => {
+            trackMarketingEvent("map_open", {
+              restaurant_id: restaurant.id,
+              source: mobile ? "mobile_quick_actions" : "sidebar_cta",
+            });
+            navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
+          }}
+          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FD7979] to-[#FDACAC] px-4 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(253,121,121,0.3)]"
+        >
+          <MapPinned className="h-4 w-4" />
+          {uiCopy.actionMap}
+        </button>
+        <button
+          type="button"
+          onClick={() => openExternalDirections("naver")}
+          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl border border-[#d8f0dc] bg-[#f4fbf6] px-4 py-3 text-sm font-semibold text-[#20744a] transition hover:border-[#bde4c5] hover:bg-[#eef8f1]"
+        >
+          <Navigation className="h-4 w-4" />
+          {uiCopy.actionNaver}
+        </button>
+        <button
+          type="button"
+          onClick={() => openExternalDirections("kakao")}
+          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl border border-[#f1e6bb] bg-[#fff9e8] px-4 py-3 text-sm font-semibold text-[#9a6b00] transition hover:border-[#e7d99a] hover:bg-[#fff5d9]"
+        >
+          <Navigation className="h-4 w-4" />
+          {uiCopy.actionKakao}
+        </button>
+        <button
+          type="button"
+          onClick={openComposer}
+          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#f5f5f5] px-4 py-3 text-sm font-semibold text-[#555] transition hover:bg-[#e8e8e8]"
+        >
+          <MessageSquarePlus className="h-4 w-4" />
+          {uiCopy.actionReview}
+        </button>
+      </div>
+    </div>
+  );
+
+  const relatedSection =
+    relatedRestaurants.length > 0 ? (
+      <section className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-bold text-[#1a1a1a]">{uiCopy.relatedTitle}</p>
+            <p className="mt-1 text-sm text-[#8a8a8a]">{uiCopy.relatedDescription}</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { key: "related" as const, label: uiCopy.relatedModeRelated },
+              { key: "nearby" as const, label: uiCopy.relatedModeNearby },
+            ].map((option) => (
+              <button
+                key={option.key}
+                type="button"
+                onClick={() => setRelatedSortMode(option.key)}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                  relatedSortMode === option.key
+                    ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
+                    : "border border-[#f0d7db] bg-white text-[#666] hover:border-[#ffb5be] hover:text-[#ff6f7c]"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+
+        </div>
+
+        <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
+          {relatedRestaurants.map((entry) => {
+            const candidate = entry.restaurant;
+            const candidateFoundingBadge = formatRestaurantFoundingBadge(
+              candidate.foundingYear
+            );
+            const candidateBroadcastBadge = formatRestaurantBroadcastBadge(
+              getRestaurantBroadcastMeta(candidate.id)
+            );
+
+            return (
+              <Link
+                key={`${relatedSortMode}_${candidate.id}`}
+                href={`/restaurant/${candidate.id}`}
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+                }}
+              >
+                <div className="flex h-full gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 transition hover:border-[#ffd1d8] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
+                  <img
+                    src={getRestaurantDisplayImage(candidate, { width: 320, height: 240 }).src}
+                    alt={candidate.name}
+                    className="h-[92px] w-[92px] flex-shrink-0 rounded-[18px] object-cover"
+                    loading="lazy"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <p className="truncate text-[15px] font-bold text-[#171717]">{candidate.name}</p>
+                        <p className="mt-1 line-clamp-1 text-sm text-[#7f7f7f]">{candidate.address}</p>
+                      </div>
+                      <span className="rounded-full bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
+                        {formatDistance(entry.distanceKm)}
+                      </span>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {candidateFoundingBadge ? (
+                        <span className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c]">
+                          {candidateFoundingBadge}
+                        </span>
+                      ) : null}
+                      {candidateBroadcastBadge ? (
+                        <span className="rounded-full bg-[#eef7ff] px-2.5 py-1 text-[11px] font-semibold text-[#3b82c4]">
+                          {candidateBroadcastBadge}
+                        </span>
+                      ) : null}
+                      {entry.sharedCreatorCount > 0 ? (
+                        <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
+                          寃뱀튂???щ━?먯씠??{entry.sharedCreatorCount}
+                        </span>
+                      ) : null}
+                      {entry.sharedSourceCount > 0 ? (
+                        <span className="rounded-full bg-[#eef8ff] px-2.5 py-1 text-[11px] font-semibold text-[#3a7bb7]">
+                          媛숈? ?좎젙 異쒖쿂 {entry.sharedSourceCount}
+                        </span>
+                      ) : null}
+                      {entry.sameCuisine ? (
+                        <span className="rounded-full bg-[#f5f2ff] px-2.5 py-1 text-[11px] font-semibold text-[#7457c7]">
+                          媛숈? 移댄뀒怨좊━
+                        </span>
+                      ) : null}
+                      {entry.sameRegion ? (
+                        <span className="rounded-full bg-[#effaf2] px-2.5 py-1 text-[11px] font-semibold text-[#2d8b57]">
+                          媛숈? 吏??
+                        </span>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+    ) : null;
+
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,#f8f9fa_0%,#f0f2f5_100%)]">
       <ShareSheet
@@ -765,6 +1076,56 @@ export default function RestaurantDetail() {
 
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-[1fr_420px] lg:px-8">
         <div className="flex flex-col gap-6">
+          <div className="lg:hidden">
+            <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+              <img
+                src={displayImage.src}
+                alt={restaurant.name}
+                className="aspect-[4/3] w-full object-cover"
+              />
+              {detailPhotoBadge ? (
+                <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
+                  {detailPhotoBadge}
+                </div>
+              ) : null}
+              {primaryPrice ? (
+                <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+                  ???媛寃?{primaryPrice}
+                </div>
+              ) : null}
+              {displayImage.source === "google" && googlePhotoAttribution?.displayName ? (
+                <div className="border-t border-[#f3eef0] bg-white px-4 py-2 text-[11px] text-[#8a8a8a]">
+                  Google ?ъ쭊 쨌{" "}
+                  {googlePhotoAttribution.uri ? (
+                    <a
+                      href={googlePhotoAttribution.uri}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-[#6f7280] underline underline-offset-2"
+                    >
+                      {googlePhotoAttribution.displayName}
+                    </a>
+                  ) : (
+                    <span className="font-medium text-[#6f7280]">
+                      {googlePhotoAttribution.displayName}
+                    </span>
+                  )}
+                </div>
+              ) : null}
+            </div>
+
+            <div className="mt-4 rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
+                {uiCopy.mobileSummaryEyebrow}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
+                {uiCopy.mobileSummaryDescription}
+              </p>
+            </div>
+
+            <div className="mt-4">{renderQuickActionPanel(true)}</div>
+          </div>
+
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
             <div className="mb-6 border-b border-[#f0f0f0] pb-5">
               <h1 className="mb-2 text-[24px] font-[800] text-[#1a1a1a] sm:text-[28px]">{restaurant.name}</h1>
@@ -822,7 +1183,7 @@ export default function RestaurantDetail() {
             </div>
           </div>
 
-          {relatedRestaurants.length > 0 ? (
+          {false ? (
             <section className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
@@ -1255,10 +1616,12 @@ export default function RestaurantDetail() {
               ) : null}
             </div>
           </div>
+
+          {relatedSection}
         </div>
 
         <div className="flex h-fit flex-col gap-5 lg:sticky lg:top-[80px]">
-          <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="relative hidden overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] lg:block">
             <img
               src={displayImage.src}
               alt={restaurant.name}
@@ -1535,7 +1898,9 @@ export default function RestaurantDetail() {
             <CoupangSlot label="Partner Pick" />
           </div>
 
-          <div className="flex flex-col gap-2.5 rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="hidden lg:block">{renderQuickActionPanel()}</div>
+
+          <div className="hidden">
             <button
               type="button"
               onClick={() => {

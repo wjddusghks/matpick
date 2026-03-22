@@ -302,7 +302,7 @@ function RestaurantCard({
         onSelect?.(restaurant);
         navigate(`/restaurant/${restaurant.id}`);
       }}
-      className="group overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
+      className="group self-start overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
     >
       <div className="relative h-52 overflow-hidden">
         <img
@@ -346,14 +346,16 @@ function RestaurantCard({
 
       <div className="space-y-4 p-5">
         <div className="space-y-2">
-          <h3 className="text-lg font-bold text-[#181818]">{restaurant.name}</h3>
-          <p className="text-sm text-[#8a8a8a]">{restaurant.address}</p>
+          <h3 className="line-clamp-1 text-lg font-bold text-[#181818]">{restaurant.name}</h3>
+          <p className="line-clamp-2 min-h-[2.625rem] text-sm text-[#8a8a8a]">
+            {restaurant.address}
+          </p>
           {priceHint ? (
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b2a2a6]">
               {copy.priceLabel} {priceHint}
             </p>
           ) : null}
-          <p className="text-sm font-medium text-[#ff7b83]">
+          <p className="line-clamp-3 min-h-[3.9375rem] text-sm font-medium text-[#ff7b83]">
             {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
           </p>
         </div>
@@ -1202,7 +1204,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         </div>
 
         {filteredRestaurants.length > 0 ? (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {visibleRestaurants.flatMap((restaurant, index) => {
               const items = [
                 <RestaurantCard

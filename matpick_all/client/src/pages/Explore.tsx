@@ -450,7 +450,13 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   );
 
   const discoveryOptions = useMemo<DiscoveryOption[]>(() => {
+    const sourceBackedCreatorIds = new Set(
+      sources
+        .map((source) => source.creatorId)
+        .filter((creatorId): creatorId is string => Boolean(creatorId))
+    );
     const creatorOptions = creators
+      .filter((creator) => !sourceBackedCreatorIds.has(creator.id))
       .map((creator) => ({
         key: buildDiscoveryKey("creator", creator.id),
         id: creator.id,

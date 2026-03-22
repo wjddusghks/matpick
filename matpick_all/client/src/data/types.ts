@@ -87,6 +87,7 @@ export interface Source {
   provider?: string;
   description?: string;
   imageUrl?: string;
+  creatorId?: string;
 }
 
 export interface SourceLink {

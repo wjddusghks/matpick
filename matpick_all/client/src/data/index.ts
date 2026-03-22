@@ -457,6 +457,11 @@ const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map((source) 
   ...source,
   imageUrl: sourceProfileImageOverrides[source.id] ?? source.imageUrl,
 }));
+const sourceBackedCreatorIds = new Set(
+  sourcesWithProfileImages
+    .map((source) => source.creatorId)
+    .filter((creatorId): creatorId is string => Boolean(creatorId))
+);
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
   creators: creatorsWithProfileImages,
@@ -886,12 +891,17 @@ export function getDiscoveryTopicByTarget(
 
 const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
   discoveryTopics.map((topic) => {
-    if (topic.kind !== "creator") {
+    const episodeCreatorId =
+      topic.kind === "creator"
+        ? topic.targetId
+        : getSourceById(topic.targetId)?.creatorId ?? null;
+
+    if (!episodeCreatorId) {
       return [topic.slug, []];
     }
 
     const creatorVisits = visits
-      .filter((visit) => visit.creatorId === topic.targetId)
+      .filter((visit) => visit.creatorId === episodeCreatorId)
       .sort(sortVisitsByDate);
     const groupedVisits = new Map<string, Visit[]>();
 
@@ -1369,7 +1379,9 @@ const sourceSearchEntries = sources
   );
 
 export const searchData: SearchItem[] = [
-  ...creators.map((creator) => ({
+  ...creators
+    .filter((creator) => !sourceBackedCreatorIds.has(creator.id))
+    .map((creator) => ({
     id: createSearchId("creator", creator.id),
     type: "creator" as const,
     name: getCreatorSearchName(creator),
@@ -1407,7 +1419,9 @@ export const searchData: SearchItem[] = [
 ];
 
 export const mockSearchData: SearchResult[] = [
-  ...creators.map((creator) => ({
+  ...creators
+    .filter((creator) => !sourceBackedCreatorIds.has(creator.id))
+    .map((creator) => ({
     id: creator.id,
     type: "creator" as const,
     name: getCreatorSearchName(creator),

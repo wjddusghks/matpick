@@ -42,6 +42,22 @@ const workbookDatasetMatchers = [
 ];
 
 const sourceMetadataByDatasetId = {
+  ttoganjip: {
+    id: "ttoganjip",
+    name: "또간집",
+    type: "creator",
+    provider: "YouTube",
+    creatorId: "UCrDMtdCSMTGVmUKvuhcahRw",
+    description: "또간집에 소개된 맛집을 모아봤어요.",
+  },
+  "delicious-guys": {
+    id: "delicious-guys",
+    name: "맛있는 녀석들",
+    type: "tv_show",
+    provider: "IHQ",
+    creatorId: "UCT-eNSaIVbeFnMhOLPDBGhg",
+    description: "맛있는 녀석들에 소개된 맛집을 모아봤어요.",
+  },
   "baekban-trip": {
     id: "sikgaek-baekban-trip",
     name: "식객 허영만의 백반기행",

@@ -1,6 +1,6 @@
 {
   "datasetId": "ttoganjip",
-  "generatedAt": "2026-03-21T16:03:53.713Z",
+  "generatedAt": "2026-03-22T04:34:24.191Z",
   "restaurants": [
     {
       "id": "topic_enrichment_ttoganjip_7682de14575b",
@@ -14914,6 +14914,1648 @@
       "isOverseas": false
     }
   ],
-  "sources": [],
-  "sourceLinks": []
+  "sources": [
+    {
+      "id": "ttoganjip",
+      "name": "또간집",
+      "type": "creator",
+      "provider": "YouTube",
+      "creatorId": "UCrDMtdCSMTGVmUKvuhcahRw",
+      "description": "또간집에 소개된 맛집을 모아봤어요."
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_18e2bdf00981",
+      "restaurantId": "topic_enrichment_ttoganjip_18e2bdf00981",
+      "sourceId": "ttoganjip",
+      "ordinal": 1
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6a1a6bada12c",
+      "restaurantId": "topic_enrichment_ttoganjip_6a1a6bada12c",
+      "sourceId": "ttoganjip",
+      "ordinal": 2
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cb25ee18d254",
+      "restaurantId": "topic_enrichment_ttoganjip_cb25ee18d254",
+      "sourceId": "ttoganjip",
+      "ordinal": 3
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9a0fbbb36ab1",
+      "restaurantId": "topic_enrichment_ttoganjip_9a0fbbb36ab1",
+      "sourceId": "ttoganjip",
+      "ordinal": 4
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_117053f6e782",
+      "restaurantId": "topic_enrichment_ttoganjip_117053f6e782",
+      "sourceId": "ttoganjip",
+      "ordinal": 5
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8588187217e0",
+      "restaurantId": "topic_enrichment_ttoganjip_8588187217e0",
+      "sourceId": "ttoganjip",
+      "ordinal": 6
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6ff5c4454761",
+      "restaurantId": "topic_enrichment_ttoganjip_6ff5c4454761",
+      "sourceId": "ttoganjip",
+      "ordinal": 7
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d962729d08e4",
+      "restaurantId": "topic_enrichment_ttoganjip_d962729d08e4",
+      "sourceId": "ttoganjip",
+      "ordinal": 8
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_585465646488",
+      "restaurantId": "topic_enrichment_ttoganjip_585465646488",
+      "sourceId": "ttoganjip",
+      "ordinal": 9
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_02ac2d32de6b",
+      "restaurantId": "topic_enrichment_ttoganjip_02ac2d32de6b",
+      "sourceId": "ttoganjip",
+      "ordinal": 10
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5945989fbedb",
+      "restaurantId": "topic_enrichment_ttoganjip_5945989fbedb",
+      "sourceId": "ttoganjip",
+      "ordinal": 11
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8679e0322b93",
+      "restaurantId": "topic_enrichment_ttoganjip_8679e0322b93",
+      "sourceId": "ttoganjip",
+      "ordinal": 12
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_927d8561f93b",
+      "restaurantId": "topic_enrichment_ttoganjip_927d8561f93b",
+      "sourceId": "ttoganjip",
+      "ordinal": 13
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_861d160c267d",
+      "restaurantId": "topic_enrichment_ttoganjip_861d160c267d",
+      "sourceId": "ttoganjip",
+      "ordinal": 14
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_21708c9bbdad",
+      "restaurantId": "topic_enrichment_ttoganjip_21708c9bbdad",
+      "sourceId": "ttoganjip",
+      "ordinal": 15
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7569bc0b228e",
+      "restaurantId": "topic_enrichment_ttoganjip_7569bc0b228e",
+      "sourceId": "ttoganjip",
+      "ordinal": 16
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e2f26767018b",
+      "restaurantId": "topic_enrichment_ttoganjip_e2f26767018b",
+      "sourceId": "ttoganjip",
+      "ordinal": 17
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_63e42e7fa5ec",
+      "restaurantId": "topic_enrichment_ttoganjip_63e42e7fa5ec",
+      "sourceId": "ttoganjip",
+      "ordinal": 18
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_085f2e1f3740",
+      "restaurantId": "topic_enrichment_ttoganjip_085f2e1f3740",
+      "sourceId": "ttoganjip",
+      "ordinal": 19
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_56100a87f753",
+      "restaurantId": "topic_enrichment_ttoganjip_56100a87f753",
+      "sourceId": "ttoganjip",
+      "ordinal": 20
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_663b4667776a",
+      "restaurantId": "topic_enrichment_ttoganjip_663b4667776a",
+      "sourceId": "ttoganjip",
+      "ordinal": 21
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_661b0290983d",
+      "restaurantId": "topic_enrichment_ttoganjip_661b0290983d",
+      "sourceId": "ttoganjip",
+      "ordinal": 22
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_27f472c49a38",
+      "restaurantId": "topic_enrichment_ttoganjip_27f472c49a38",
+      "sourceId": "ttoganjip",
+      "ordinal": 23
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a7db278a884c",
+      "restaurantId": "topic_enrichment_ttoganjip_a7db278a884c",
+      "sourceId": "ttoganjip",
+      "ordinal": 24
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_92c2c16d169d",
+      "restaurantId": "topic_enrichment_ttoganjip_92c2c16d169d",
+      "sourceId": "ttoganjip",
+      "ordinal": 25
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_bd93f0f13285",
+      "restaurantId": "topic_enrichment_ttoganjip_bd93f0f13285",
+      "sourceId": "ttoganjip",
+      "ordinal": 26
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7a2e164c0718",
+      "restaurantId": "topic_enrichment_ttoganjip_7a2e164c0718",
+      "sourceId": "ttoganjip",
+      "ordinal": 27
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ce3fd17fffe3",
+      "restaurantId": "topic_enrichment_ttoganjip_ce3fd17fffe3",
+      "sourceId": "ttoganjip",
+      "ordinal": 28
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ca19a9c77990",
+      "restaurantId": "topic_enrichment_ttoganjip_ca19a9c77990",
+      "sourceId": "ttoganjip",
+      "ordinal": 29
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_96b65c6ad340",
+      "restaurantId": "topic_enrichment_ttoganjip_96b65c6ad340",
+      "sourceId": "ttoganjip",
+      "ordinal": 30
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a0987f1eb4e5",
+      "restaurantId": "topic_enrichment_ttoganjip_a0987f1eb4e5",
+      "sourceId": "ttoganjip",
+      "ordinal": 31
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f19065df624b",
+      "restaurantId": "topic_enrichment_ttoganjip_f19065df624b",
+      "sourceId": "ttoganjip",
+      "ordinal": 32
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_60a0c1c47e08",
+      "restaurantId": "topic_enrichment_ttoganjip_60a0c1c47e08",
+      "sourceId": "ttoganjip",
+      "ordinal": 33
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8c7ed3c9f547",
+      "restaurantId": "topic_enrichment_ttoganjip_8c7ed3c9f547",
+      "sourceId": "ttoganjip",
+      "ordinal": 34
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d10d0b61b0e8",
+      "restaurantId": "topic_enrichment_ttoganjip_d10d0b61b0e8",
+      "sourceId": "ttoganjip",
+      "ordinal": 35
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_61cc31a0c0c1",
+      "restaurantId": "topic_enrichment_ttoganjip_61cc31a0c0c1",
+      "sourceId": "ttoganjip",
+      "ordinal": 36
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cc57af7d3de9",
+      "restaurantId": "topic_enrichment_ttoganjip_cc57af7d3de9",
+      "sourceId": "ttoganjip",
+      "ordinal": 37
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d720e0042666",
+      "restaurantId": "topic_enrichment_ttoganjip_d720e0042666",
+      "sourceId": "ttoganjip",
+      "ordinal": 38
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ab5650249c0b",
+      "restaurantId": "topic_enrichment_ttoganjip_ab5650249c0b",
+      "sourceId": "ttoganjip",
+      "ordinal": 39
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f5026fb78ee4",
+      "restaurantId": "topic_enrichment_ttoganjip_f5026fb78ee4",
+      "sourceId": "ttoganjip",
+      "ordinal": 40
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5e1834d97597",
+      "restaurantId": "topic_enrichment_ttoganjip_5e1834d97597",
+      "sourceId": "ttoganjip",
+      "ordinal": 41
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_50ae311479a7",
+      "restaurantId": "topic_enrichment_ttoganjip_50ae311479a7",
+      "sourceId": "ttoganjip",
+      "ordinal": 42
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4f31db9dec57",
+      "restaurantId": "topic_enrichment_ttoganjip_4f31db9dec57",
+      "sourceId": "ttoganjip",
+      "ordinal": 43
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5efe8318c4d0",
+      "restaurantId": "topic_enrichment_ttoganjip_5efe8318c4d0",
+      "sourceId": "ttoganjip",
+      "ordinal": 44
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d7039097871b",
+      "restaurantId": "topic_enrichment_ttoganjip_d7039097871b",
+      "sourceId": "ttoganjip",
+      "ordinal": 45
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7d1eb36a6ab4",
+      "restaurantId": "topic_enrichment_ttoganjip_7d1eb36a6ab4",
+      "sourceId": "ttoganjip",
+      "ordinal": 46
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f9aaca52fcbf",
+      "restaurantId": "topic_enrichment_ttoganjip_f9aaca52fcbf",
+      "sourceId": "ttoganjip",
+      "ordinal": 47
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0032efe3697d",
+      "restaurantId": "topic_enrichment_ttoganjip_0032efe3697d",
+      "sourceId": "ttoganjip",
+      "ordinal": 48
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2f2636ad5112",
+      "restaurantId": "topic_enrichment_ttoganjip_2f2636ad5112",
+      "sourceId": "ttoganjip",
+      "ordinal": 49
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_af541292429e",
+      "restaurantId": "topic_enrichment_ttoganjip_af541292429e",
+      "sourceId": "ttoganjip",
+      "ordinal": 50
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2dee2d6da99a",
+      "restaurantId": "topic_enrichment_ttoganjip_2dee2d6da99a",
+      "sourceId": "ttoganjip",
+      "ordinal": 51
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c7ef48cdef48",
+      "restaurantId": "topic_enrichment_ttoganjip_c7ef48cdef48",
+      "sourceId": "ttoganjip",
+      "ordinal": 52
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_17cdef13a7c1",
+      "restaurantId": "topic_enrichment_ttoganjip_17cdef13a7c1",
+      "sourceId": "ttoganjip",
+      "ordinal": 53
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_856aca517795",
+      "restaurantId": "topic_enrichment_ttoganjip_856aca517795",
+      "sourceId": "ttoganjip",
+      "ordinal": 54
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_15b7eeedc88d",
+      "restaurantId": "topic_enrichment_ttoganjip_15b7eeedc88d",
+      "sourceId": "ttoganjip",
+      "ordinal": 55
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4696a9d593ce",
+      "restaurantId": "topic_enrichment_ttoganjip_4696a9d593ce",
+      "sourceId": "ttoganjip",
+      "ordinal": 56
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a1b8bb0f730c",
+      "restaurantId": "topic_enrichment_ttoganjip_a1b8bb0f730c",
+      "sourceId": "ttoganjip",
+      "ordinal": 57
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4cce047d96d0",
+      "restaurantId": "topic_enrichment_ttoganjip_4cce047d96d0",
+      "sourceId": "ttoganjip",
+      "ordinal": 58
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6f56571ad48c",
+      "restaurantId": "topic_enrichment_ttoganjip_6f56571ad48c",
+      "sourceId": "ttoganjip",
+      "ordinal": 59
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_70aadca01ed3",
+      "restaurantId": "topic_enrichment_ttoganjip_70aadca01ed3",
+      "sourceId": "ttoganjip",
+      "ordinal": 60
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4f6134c23aef",
+      "restaurantId": "topic_enrichment_ttoganjip_4f6134c23aef",
+      "sourceId": "ttoganjip",
+      "ordinal": 61
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0382d13edb3c",
+      "restaurantId": "topic_enrichment_ttoganjip_0382d13edb3c",
+      "sourceId": "ttoganjip",
+      "ordinal": 62
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0aaed731512e",
+      "restaurantId": "topic_enrichment_ttoganjip_0aaed731512e",
+      "sourceId": "ttoganjip",
+      "ordinal": 63
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_40f8c258bad6",
+      "restaurantId": "topic_enrichment_ttoganjip_40f8c258bad6",
+      "sourceId": "ttoganjip",
+      "ordinal": 64
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2b4e52c87060",
+      "restaurantId": "topic_enrichment_ttoganjip_2b4e52c87060",
+      "sourceId": "ttoganjip",
+      "ordinal": 65
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_dc02d6039e47",
+      "restaurantId": "topic_enrichment_ttoganjip_dc02d6039e47",
+      "sourceId": "ttoganjip",
+      "ordinal": 66
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1d99d5689c0a",
+      "restaurantId": "topic_enrichment_ttoganjip_1d99d5689c0a",
+      "sourceId": "ttoganjip",
+      "ordinal": 67
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_489ab79a00d5",
+      "restaurantId": "topic_enrichment_ttoganjip_489ab79a00d5",
+      "sourceId": "ttoganjip",
+      "ordinal": 68
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_165514cfe2f8",
+      "restaurantId": "topic_enrichment_ttoganjip_165514cfe2f8",
+      "sourceId": "ttoganjip",
+      "ordinal": 69
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e3f1ba4edb92",
+      "restaurantId": "topic_enrichment_ttoganjip_e3f1ba4edb92",
+      "sourceId": "ttoganjip",
+      "ordinal": 70
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_aa9deb17101e",
+      "restaurantId": "topic_enrichment_ttoganjip_aa9deb17101e",
+      "sourceId": "ttoganjip",
+      "ordinal": 71
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_627d574cdbc2",
+      "restaurantId": "topic_enrichment_ttoganjip_627d574cdbc2",
+      "sourceId": "ttoganjip",
+      "ordinal": 72
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ef1fb3e282d6",
+      "restaurantId": "topic_enrichment_ttoganjip_ef1fb3e282d6",
+      "sourceId": "ttoganjip",
+      "ordinal": 73
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_09de6cce9a10",
+      "restaurantId": "topic_enrichment_ttoganjip_09de6cce9a10",
+      "sourceId": "ttoganjip",
+      "ordinal": 74
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_85c256786c4e",
+      "restaurantId": "topic_enrichment_ttoganjip_85c256786c4e",
+      "sourceId": "ttoganjip",
+      "ordinal": 75
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cd8c6762b23b",
+      "restaurantId": "topic_enrichment_ttoganjip_cd8c6762b23b",
+      "sourceId": "ttoganjip",
+      "ordinal": 76
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_403ad6568f5a",
+      "restaurantId": "topic_enrichment_ttoganjip_403ad6568f5a",
+      "sourceId": "ttoganjip",
+      "ordinal": 77
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6b7f8cb261f1",
+      "restaurantId": "topic_enrichment_ttoganjip_6b7f8cb261f1",
+      "sourceId": "ttoganjip",
+      "ordinal": 78
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_526675ad0165",
+      "restaurantId": "topic_enrichment_ttoganjip_526675ad0165",
+      "sourceId": "ttoganjip",
+      "ordinal": 79
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a5a0f79e5b61",
+      "restaurantId": "topic_enrichment_ttoganjip_a5a0f79e5b61",
+      "sourceId": "ttoganjip",
+      "ordinal": 80
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1ef8e9280168",
+      "restaurantId": "topic_enrichment_ttoganjip_1ef8e9280168",
+      "sourceId": "ttoganjip",
+      "ordinal": 81
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e0d379adc1f0",
+      "restaurantId": "topic_enrichment_ttoganjip_e0d379adc1f0",
+      "sourceId": "ttoganjip",
+      "ordinal": 82
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b6d6713acf96",
+      "restaurantId": "topic_enrichment_ttoganjip_b6d6713acf96",
+      "sourceId": "ttoganjip",
+      "ordinal": 83
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d1765030b91d",
+      "restaurantId": "topic_enrichment_ttoganjip_d1765030b91d",
+      "sourceId": "ttoganjip",
+      "ordinal": 84
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e0aaa357b035",
+      "restaurantId": "topic_enrichment_ttoganjip_e0aaa357b035",
+      "sourceId": "ttoganjip",
+      "ordinal": 85
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ee68332fff00",
+      "restaurantId": "topic_enrichment_ttoganjip_ee68332fff00",
+      "sourceId": "ttoganjip",
+      "ordinal": 86
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a4453f2800ec",
+      "restaurantId": "topic_enrichment_ttoganjip_a4453f2800ec",
+      "sourceId": "ttoganjip",
+      "ordinal": 87
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_798ce32a7984",
+      "restaurantId": "topic_enrichment_ttoganjip_798ce32a7984",
+      "sourceId": "ttoganjip",
+      "ordinal": 88
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_934e2a1c7195",
+      "restaurantId": "topic_enrichment_ttoganjip_934e2a1c7195",
+      "sourceId": "ttoganjip",
+      "ordinal": 89
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_84fe0ec40b23",
+      "restaurantId": "topic_enrichment_ttoganjip_84fe0ec40b23",
+      "sourceId": "ttoganjip",
+      "ordinal": 90
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_609a8f510682",
+      "restaurantId": "topic_enrichment_ttoganjip_609a8f510682",
+      "sourceId": "ttoganjip",
+      "ordinal": 91
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e9930358ee3a",
+      "restaurantId": "topic_enrichment_ttoganjip_e9930358ee3a",
+      "sourceId": "ttoganjip",
+      "ordinal": 92
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a14ace816a9a",
+      "restaurantId": "topic_enrichment_ttoganjip_a14ace816a9a",
+      "sourceId": "ttoganjip",
+      "ordinal": 93
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7a0c9ec04c61",
+      "restaurantId": "topic_enrichment_ttoganjip_7a0c9ec04c61",
+      "sourceId": "ttoganjip",
+      "ordinal": 94
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ee0127021598",
+      "restaurantId": "topic_enrichment_ttoganjip_ee0127021598",
+      "sourceId": "ttoganjip",
+      "ordinal": 95
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_20cdb98aeb1b",
+      "restaurantId": "topic_enrichment_ttoganjip_20cdb98aeb1b",
+      "sourceId": "ttoganjip",
+      "ordinal": 96
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_64dea0af7a57",
+      "restaurantId": "topic_enrichment_ttoganjip_64dea0af7a57",
+      "sourceId": "ttoganjip",
+      "ordinal": 97
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0e2d971949c5",
+      "restaurantId": "topic_enrichment_ttoganjip_0e2d971949c5",
+      "sourceId": "ttoganjip",
+      "ordinal": 98
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c532fcf81651",
+      "restaurantId": "topic_enrichment_ttoganjip_c532fcf81651",
+      "sourceId": "ttoganjip",
+      "ordinal": 99
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6ff4a01ed334",
+      "restaurantId": "topic_enrichment_ttoganjip_6ff4a01ed334",
+      "sourceId": "ttoganjip",
+      "ordinal": 100
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_806e59bbf766",
+      "restaurantId": "topic_enrichment_ttoganjip_806e59bbf766",
+      "sourceId": "ttoganjip",
+      "ordinal": 101
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_24910e9012d0",
+      "restaurantId": "topic_enrichment_ttoganjip_24910e9012d0",
+      "sourceId": "ttoganjip",
+      "ordinal": 102
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d282e224f916",
+      "restaurantId": "topic_enrichment_ttoganjip_d282e224f916",
+      "sourceId": "ttoganjip",
+      "ordinal": 103
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3905f819e80d",
+      "restaurantId": "topic_enrichment_ttoganjip_3905f819e80d",
+      "sourceId": "ttoganjip",
+      "ordinal": 104
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b15167c22646",
+      "restaurantId": "topic_enrichment_ttoganjip_b15167c22646",
+      "sourceId": "ttoganjip",
+      "ordinal": 105
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_79e537355308",
+      "restaurantId": "topic_enrichment_ttoganjip_79e537355308",
+      "sourceId": "ttoganjip",
+      "ordinal": 106
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7be18da44dac",
+      "restaurantId": "topic_enrichment_ttoganjip_7be18da44dac",
+      "sourceId": "ttoganjip",
+      "ordinal": 107
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_824e68611359",
+      "restaurantId": "topic_enrichment_ttoganjip_824e68611359",
+      "sourceId": "ttoganjip",
+      "ordinal": 108
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4aadf7906e60",
+      "restaurantId": "topic_enrichment_ttoganjip_4aadf7906e60",
+      "sourceId": "ttoganjip",
+      "ordinal": 109
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ae19afbb9dd3",
+      "restaurantId": "topic_enrichment_ttoganjip_ae19afbb9dd3",
+      "sourceId": "ttoganjip",
+      "ordinal": 110
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3043d587412e",
+      "restaurantId": "topic_enrichment_ttoganjip_3043d587412e",
+      "sourceId": "ttoganjip",
+      "ordinal": 111
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9b56b397a897",
+      "restaurantId": "topic_enrichment_ttoganjip_9b56b397a897",
+      "sourceId": "ttoganjip",
+      "ordinal": 112
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_fc24428ec3ca",
+      "restaurantId": "topic_enrichment_ttoganjip_fc24428ec3ca",
+      "sourceId": "ttoganjip",
+      "ordinal": 113
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2eb88189456a",
+      "restaurantId": "topic_enrichment_ttoganjip_2eb88189456a",
+      "sourceId": "ttoganjip",
+      "ordinal": 114
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cfcd0456b615",
+      "restaurantId": "topic_enrichment_ttoganjip_cfcd0456b615",
+      "sourceId": "ttoganjip",
+      "ordinal": 115
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_bd0de20d3622",
+      "restaurantId": "topic_enrichment_ttoganjip_bd0de20d3622",
+      "sourceId": "ttoganjip",
+      "ordinal": 116
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c2d4a9209bb6",
+      "restaurantId": "topic_enrichment_ttoganjip_c2d4a9209bb6",
+      "sourceId": "ttoganjip",
+      "ordinal": 117
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_355addb3fac6",
+      "restaurantId": "topic_enrichment_ttoganjip_355addb3fac6",
+      "sourceId": "ttoganjip",
+      "ordinal": 118
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b573bdcb3e25",
+      "restaurantId": "topic_enrichment_ttoganjip_b573bdcb3e25",
+      "sourceId": "ttoganjip",
+      "ordinal": 119
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_60d235308a8f",
+      "restaurantId": "topic_enrichment_ttoganjip_60d235308a8f",
+      "sourceId": "ttoganjip",
+      "ordinal": 120
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_26b47dc653a8",
+      "restaurantId": "topic_enrichment_ttoganjip_26b47dc653a8",
+      "sourceId": "ttoganjip",
+      "ordinal": 121
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e1dd57fa3b5c",
+      "restaurantId": "topic_enrichment_ttoganjip_e1dd57fa3b5c",
+      "sourceId": "ttoganjip",
+      "ordinal": 122
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f53731b87e36",
+      "restaurantId": "topic_enrichment_ttoganjip_f53731b87e36",
+      "sourceId": "ttoganjip",
+      "ordinal": 123
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_33aaf7c2fe0a",
+      "restaurantId": "topic_enrichment_ttoganjip_33aaf7c2fe0a",
+      "sourceId": "ttoganjip",
+      "ordinal": 124
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_333069d2cd51",
+      "restaurantId": "topic_enrichment_ttoganjip_333069d2cd51",
+      "sourceId": "ttoganjip",
+      "ordinal": 125
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_566a75b16102",
+      "restaurantId": "topic_enrichment_ttoganjip_566a75b16102",
+      "sourceId": "ttoganjip",
+      "ordinal": 126
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d32627ba7687",
+      "restaurantId": "topic_enrichment_ttoganjip_d32627ba7687",
+      "sourceId": "ttoganjip",
+      "ordinal": 127
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_faa99aec3e43",
+      "restaurantId": "topic_enrichment_ttoganjip_faa99aec3e43",
+      "sourceId": "ttoganjip",
+      "ordinal": 128
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_28ba85a202fe",
+      "restaurantId": "topic_enrichment_ttoganjip_28ba85a202fe",
+      "sourceId": "ttoganjip",
+      "ordinal": 129
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b9d256e3953b",
+      "restaurantId": "topic_enrichment_ttoganjip_b9d256e3953b",
+      "sourceId": "ttoganjip",
+      "ordinal": 130
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_38a7e095ee11",
+      "restaurantId": "topic_enrichment_ttoganjip_38a7e095ee11",
+      "sourceId": "ttoganjip",
+      "ordinal": 131
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_854cafbd5ff1",
+      "restaurantId": "topic_enrichment_ttoganjip_854cafbd5ff1",
+      "sourceId": "ttoganjip",
+      "ordinal": 132
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_84fce56cc026",
+      "restaurantId": "topic_enrichment_ttoganjip_84fce56cc026",
+      "sourceId": "ttoganjip",
+      "ordinal": 133
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1aa69a73aa42",
+      "restaurantId": "topic_enrichment_ttoganjip_1aa69a73aa42",
+      "sourceId": "ttoganjip",
+      "ordinal": 134
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_751658a5680d",
+      "restaurantId": "topic_enrichment_ttoganjip_751658a5680d",
+      "sourceId": "ttoganjip",
+      "ordinal": 135
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c684e551ee38",
+      "restaurantId": "topic_enrichment_ttoganjip_c684e551ee38",
+      "sourceId": "ttoganjip",
+      "ordinal": 136
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_555365112cae",
+      "restaurantId": "topic_enrichment_ttoganjip_555365112cae",
+      "sourceId": "ttoganjip",
+      "ordinal": 137
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6ae942a8c6e4",
+      "restaurantId": "topic_enrichment_ttoganjip_6ae942a8c6e4",
+      "sourceId": "ttoganjip",
+      "ordinal": 138
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_06ec27231a0b",
+      "restaurantId": "topic_enrichment_ttoganjip_06ec27231a0b",
+      "sourceId": "ttoganjip",
+      "ordinal": 139
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b45727863520",
+      "restaurantId": "topic_enrichment_ttoganjip_b45727863520",
+      "sourceId": "ttoganjip",
+      "ordinal": 140
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5022827d9e9c",
+      "restaurantId": "topic_enrichment_ttoganjip_5022827d9e9c",
+      "sourceId": "ttoganjip",
+      "ordinal": 141
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_735b26768427",
+      "restaurantId": "topic_enrichment_ttoganjip_735b26768427",
+      "sourceId": "ttoganjip",
+      "ordinal": 142
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9de66b6b1ce0",
+      "restaurantId": "topic_enrichment_ttoganjip_9de66b6b1ce0",
+      "sourceId": "ttoganjip",
+      "ordinal": 143
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c5b9088ba421",
+      "restaurantId": "topic_enrichment_ttoganjip_c5b9088ba421",
+      "sourceId": "ttoganjip",
+      "ordinal": 144
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_359e36d6abd8",
+      "restaurantId": "topic_enrichment_ttoganjip_359e36d6abd8",
+      "sourceId": "ttoganjip",
+      "ordinal": 145
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_824718559044",
+      "restaurantId": "topic_enrichment_ttoganjip_824718559044",
+      "sourceId": "ttoganjip",
+      "ordinal": 146
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5cfbd7ff8609",
+      "restaurantId": "topic_enrichment_ttoganjip_5cfbd7ff8609",
+      "sourceId": "ttoganjip",
+      "ordinal": 147
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c460c5887a05",
+      "restaurantId": "topic_enrichment_ttoganjip_c460c5887a05",
+      "sourceId": "ttoganjip",
+      "ordinal": 148
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9915cdfec319",
+      "restaurantId": "topic_enrichment_ttoganjip_9915cdfec319",
+      "sourceId": "ttoganjip",
+      "ordinal": 149
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2ba3a0b0fb83",
+      "restaurantId": "topic_enrichment_ttoganjip_2ba3a0b0fb83",
+      "sourceId": "ttoganjip",
+      "ordinal": 150
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_41e60585cf70",
+      "restaurantId": "topic_enrichment_ttoganjip_41e60585cf70",
+      "sourceId": "ttoganjip",
+      "ordinal": 151
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c52de78c3347",
+      "restaurantId": "topic_enrichment_ttoganjip_c52de78c3347",
+      "sourceId": "ttoganjip",
+      "ordinal": 152
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d18e639e51bf",
+      "restaurantId": "topic_enrichment_ttoganjip_d18e639e51bf",
+      "sourceId": "ttoganjip",
+      "ordinal": 153
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_bb42c1e20165",
+      "restaurantId": "topic_enrichment_ttoganjip_bb42c1e20165",
+      "sourceId": "ttoganjip",
+      "ordinal": 154
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_368b11c9b3f8",
+      "restaurantId": "topic_enrichment_ttoganjip_368b11c9b3f8",
+      "sourceId": "ttoganjip",
+      "ordinal": 155
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_46731b271837",
+      "restaurantId": "topic_enrichment_ttoganjip_46731b271837",
+      "sourceId": "ttoganjip",
+      "ordinal": 156
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_fa6246745217",
+      "restaurantId": "topic_enrichment_ttoganjip_fa6246745217",
+      "sourceId": "ttoganjip",
+      "ordinal": 157
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_258756cc4c33",
+      "restaurantId": "topic_enrichment_ttoganjip_258756cc4c33",
+      "sourceId": "ttoganjip",
+      "ordinal": 158
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_84550bcbbdad",
+      "restaurantId": "topic_enrichment_ttoganjip_84550bcbbdad",
+      "sourceId": "ttoganjip",
+      "ordinal": 159
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7682de14575b",
+      "restaurantId": "topic_enrichment_ttoganjip_7682de14575b",
+      "sourceId": "ttoganjip",
+      "ordinal": 160
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3e5544fcf81e",
+      "restaurantId": "topic_enrichment_ttoganjip_3e5544fcf81e",
+      "sourceId": "ttoganjip",
+      "ordinal": 161
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6626a9adf6bc",
+      "restaurantId": "topic_enrichment_ttoganjip_6626a9adf6bc",
+      "sourceId": "ttoganjip",
+      "ordinal": 162
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d3637c85c037",
+      "restaurantId": "topic_enrichment_ttoganjip_d3637c85c037",
+      "sourceId": "ttoganjip",
+      "ordinal": 163
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d85f14df28ee",
+      "restaurantId": "topic_enrichment_ttoganjip_d85f14df28ee",
+      "sourceId": "ttoganjip",
+      "ordinal": 164
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3ff51cad553e",
+      "restaurantId": "topic_enrichment_ttoganjip_3ff51cad553e",
+      "sourceId": "ttoganjip",
+      "ordinal": 165
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_95618a664324",
+      "restaurantId": "topic_enrichment_ttoganjip_95618a664324",
+      "sourceId": "ttoganjip",
+      "ordinal": 166
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_923c2fea3153",
+      "restaurantId": "topic_enrichment_ttoganjip_923c2fea3153",
+      "sourceId": "ttoganjip",
+      "ordinal": 167
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2e0ca992199d",
+      "restaurantId": "topic_enrichment_ttoganjip_2e0ca992199d",
+      "sourceId": "ttoganjip",
+      "ordinal": 168
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1675d35424df",
+      "restaurantId": "topic_enrichment_ttoganjip_1675d35424df",
+      "sourceId": "ttoganjip",
+      "ordinal": 169
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0dc4c4991997",
+      "restaurantId": "topic_enrichment_ttoganjip_0dc4c4991997",
+      "sourceId": "ttoganjip",
+      "ordinal": 170
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8b8e2a094e37",
+      "restaurantId": "topic_enrichment_ttoganjip_8b8e2a094e37",
+      "sourceId": "ttoganjip",
+      "ordinal": 171
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6fd661e334be",
+      "restaurantId": "topic_enrichment_ttoganjip_6fd661e334be",
+      "sourceId": "ttoganjip",
+      "ordinal": 172
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5096443c4c1f",
+      "restaurantId": "topic_enrichment_ttoganjip_5096443c4c1f",
+      "sourceId": "ttoganjip",
+      "ordinal": 173
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b1cfea4197de",
+      "restaurantId": "topic_enrichment_ttoganjip_b1cfea4197de",
+      "sourceId": "ttoganjip",
+      "ordinal": 174
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_122386cf68aa",
+      "restaurantId": "topic_enrichment_ttoganjip_122386cf68aa",
+      "sourceId": "ttoganjip",
+      "ordinal": 175
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7cb208e31c30",
+      "restaurantId": "topic_enrichment_ttoganjip_7cb208e31c30",
+      "sourceId": "ttoganjip",
+      "ordinal": 176
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1c712e14a651",
+      "restaurantId": "topic_enrichment_ttoganjip_1c712e14a651",
+      "sourceId": "ttoganjip",
+      "ordinal": 177
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_167d92c9ef1c",
+      "restaurantId": "topic_enrichment_ttoganjip_167d92c9ef1c",
+      "sourceId": "ttoganjip",
+      "ordinal": 178
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0d3a98efe77d",
+      "restaurantId": "topic_enrichment_ttoganjip_0d3a98efe77d",
+      "sourceId": "ttoganjip",
+      "ordinal": 179
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1a4dc81fca5e",
+      "restaurantId": "topic_enrichment_ttoganjip_1a4dc81fca5e",
+      "sourceId": "ttoganjip",
+      "ordinal": 180
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1fb945c8c364",
+      "restaurantId": "topic_enrichment_ttoganjip_1fb945c8c364",
+      "sourceId": "ttoganjip",
+      "ordinal": 181
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_78f4300f2b66",
+      "restaurantId": "topic_enrichment_ttoganjip_78f4300f2b66",
+      "sourceId": "ttoganjip",
+      "ordinal": 182
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f6ac4fc1e033",
+      "restaurantId": "topic_enrichment_ttoganjip_f6ac4fc1e033",
+      "sourceId": "ttoganjip",
+      "ordinal": 183
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c59241f6b8ed",
+      "restaurantId": "topic_enrichment_ttoganjip_c59241f6b8ed",
+      "sourceId": "ttoganjip",
+      "ordinal": 184
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_129d3d53e8f2",
+      "restaurantId": "topic_enrichment_ttoganjip_129d3d53e8f2",
+      "sourceId": "ttoganjip",
+      "ordinal": 185
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_010e8191f180",
+      "restaurantId": "topic_enrichment_ttoganjip_010e8191f180",
+      "sourceId": "ttoganjip",
+      "ordinal": 186
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e61d6a823d7c",
+      "restaurantId": "topic_enrichment_ttoganjip_e61d6a823d7c",
+      "sourceId": "ttoganjip",
+      "ordinal": 187
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b968b658afb0",
+      "restaurantId": "topic_enrichment_ttoganjip_b968b658afb0",
+      "sourceId": "ttoganjip",
+      "ordinal": 188
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3ae0064f6465",
+      "restaurantId": "topic_enrichment_ttoganjip_3ae0064f6465",
+      "sourceId": "ttoganjip",
+      "ordinal": 189
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_88fa4fc1639b",
+      "restaurantId": "topic_enrichment_ttoganjip_88fa4fc1639b",
+      "sourceId": "ttoganjip",
+      "ordinal": 190
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2e91d7c3abd1",
+      "restaurantId": "topic_enrichment_ttoganjip_2e91d7c3abd1",
+      "sourceId": "ttoganjip",
+      "ordinal": 191
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_28228b44a023",
+      "restaurantId": "topic_enrichment_ttoganjip_28228b44a023",
+      "sourceId": "ttoganjip",
+      "ordinal": 192
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cce40a1a130c",
+      "restaurantId": "topic_enrichment_ttoganjip_cce40a1a130c",
+      "sourceId": "ttoganjip",
+      "ordinal": 193
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_09295528fd2b",
+      "restaurantId": "topic_enrichment_ttoganjip_09295528fd2b",
+      "sourceId": "ttoganjip",
+      "ordinal": 194
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_54b4d8798b3a",
+      "restaurantId": "topic_enrichment_ttoganjip_54b4d8798b3a",
+      "sourceId": "ttoganjip",
+      "ordinal": 195
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_dd29f34c9210",
+      "restaurantId": "topic_enrichment_ttoganjip_dd29f34c9210",
+      "sourceId": "ttoganjip",
+      "ordinal": 196
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c6b25b0fe289",
+      "restaurantId": "topic_enrichment_ttoganjip_c6b25b0fe289",
+      "sourceId": "ttoganjip",
+      "ordinal": 197
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_acda3d63ac1d",
+      "restaurantId": "topic_enrichment_ttoganjip_acda3d63ac1d",
+      "sourceId": "ttoganjip",
+      "ordinal": 198
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_35541bbf7357",
+      "restaurantId": "topic_enrichment_ttoganjip_35541bbf7357",
+      "sourceId": "ttoganjip",
+      "ordinal": 199
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6744e3e112d2",
+      "restaurantId": "topic_enrichment_ttoganjip_6744e3e112d2",
+      "sourceId": "ttoganjip",
+      "ordinal": 200
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_170debd05759",
+      "restaurantId": "topic_enrichment_ttoganjip_170debd05759",
+      "sourceId": "ttoganjip",
+      "ordinal": 201
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9c0d2da220c6",
+      "restaurantId": "topic_enrichment_ttoganjip_9c0d2da220c6",
+      "sourceId": "ttoganjip",
+      "ordinal": 202
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f48ab659a727",
+      "restaurantId": "topic_enrichment_ttoganjip_f48ab659a727",
+      "sourceId": "ttoganjip",
+      "ordinal": 203
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2357543f33ec",
+      "restaurantId": "topic_enrichment_ttoganjip_2357543f33ec",
+      "sourceId": "ttoganjip",
+      "ordinal": 204
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c9f1e4066d53",
+      "restaurantId": "topic_enrichment_ttoganjip_c9f1e4066d53",
+      "sourceId": "ttoganjip",
+      "ordinal": 205
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9c48872a168a",
+      "restaurantId": "topic_enrichment_ttoganjip_9c48872a168a",
+      "sourceId": "ttoganjip",
+      "ordinal": 206
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_eb9d69879a14",
+      "restaurantId": "topic_enrichment_ttoganjip_eb9d69879a14",
+      "sourceId": "ttoganjip",
+      "ordinal": 207
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1e12585a4166",
+      "restaurantId": "topic_enrichment_ttoganjip_1e12585a4166",
+      "sourceId": "ttoganjip",
+      "ordinal": 208
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ac77f28c989e",
+      "restaurantId": "topic_enrichment_ttoganjip_ac77f28c989e",
+      "sourceId": "ttoganjip",
+      "ordinal": 209
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_88a58b90c855",
+      "restaurantId": "topic_enrichment_ttoganjip_88a58b90c855",
+      "sourceId": "ttoganjip",
+      "ordinal": 210
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0e480ccdfc95",
+      "restaurantId": "topic_enrichment_ttoganjip_0e480ccdfc95",
+      "sourceId": "ttoganjip",
+      "ordinal": 211
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6c146aeadc30",
+      "restaurantId": "topic_enrichment_ttoganjip_6c146aeadc30",
+      "sourceId": "ttoganjip",
+      "ordinal": 212
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8825fe7477fa",
+      "restaurantId": "topic_enrichment_ttoganjip_8825fe7477fa",
+      "sourceId": "ttoganjip",
+      "ordinal": 213
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_12b39678810d",
+      "restaurantId": "topic_enrichment_ttoganjip_12b39678810d",
+      "sourceId": "ttoganjip",
+      "ordinal": 214
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_90df3b3b8dcf",
+      "restaurantId": "topic_enrichment_ttoganjip_90df3b3b8dcf",
+      "sourceId": "ttoganjip",
+      "ordinal": 215
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_92ed1d440dfb",
+      "restaurantId": "topic_enrichment_ttoganjip_92ed1d440dfb",
+      "sourceId": "ttoganjip",
+      "ordinal": 216
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_694284465e38",
+      "restaurantId": "topic_enrichment_ttoganjip_694284465e38",
+      "sourceId": "ttoganjip",
+      "ordinal": 217
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d9b0822ea7d7",
+      "restaurantId": "topic_enrichment_ttoganjip_d9b0822ea7d7",
+      "sourceId": "ttoganjip",
+      "ordinal": 218
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_99d8a37d2c21",
+      "restaurantId": "topic_enrichment_ttoganjip_99d8a37d2c21",
+      "sourceId": "ttoganjip",
+      "ordinal": 219
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7187e958ecda",
+      "restaurantId": "topic_enrichment_ttoganjip_7187e958ecda",
+      "sourceId": "ttoganjip",
+      "ordinal": 220
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_373040dab16c",
+      "restaurantId": "topic_enrichment_ttoganjip_373040dab16c",
+      "sourceId": "ttoganjip",
+      "ordinal": 221
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6106065daa32",
+      "restaurantId": "topic_enrichment_ttoganjip_6106065daa32",
+      "sourceId": "ttoganjip",
+      "ordinal": 222
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6985dd052e89",
+      "restaurantId": "topic_enrichment_ttoganjip_6985dd052e89",
+      "sourceId": "ttoganjip",
+      "ordinal": 223
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0729d2dcc785",
+      "restaurantId": "topic_enrichment_ttoganjip_0729d2dcc785",
+      "sourceId": "ttoganjip",
+      "ordinal": 224
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_98fda2ff34fa",
+      "restaurantId": "topic_enrichment_ttoganjip_98fda2ff34fa",
+      "sourceId": "ttoganjip",
+      "ordinal": 225
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_227bc19c1b0a",
+      "restaurantId": "topic_enrichment_ttoganjip_227bc19c1b0a",
+      "sourceId": "ttoganjip",
+      "ordinal": 226
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9b0384670980",
+      "restaurantId": "topic_enrichment_ttoganjip_9b0384670980",
+      "sourceId": "ttoganjip",
+      "ordinal": 227
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_459a67fad0e1",
+      "restaurantId": "topic_enrichment_ttoganjip_459a67fad0e1",
+      "sourceId": "ttoganjip",
+      "ordinal": 228
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a80587bde01f",
+      "restaurantId": "topic_enrichment_ttoganjip_a80587bde01f",
+      "sourceId": "ttoganjip",
+      "ordinal": 229
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_138d5aaa3f43",
+      "restaurantId": "topic_enrichment_ttoganjip_138d5aaa3f43",
+      "sourceId": "ttoganjip",
+      "ordinal": 230
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d9e136e85e33",
+      "restaurantId": "topic_enrichment_ttoganjip_d9e136e85e33",
+      "sourceId": "ttoganjip",
+      "ordinal": 231
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b456072ad6cd",
+      "restaurantId": "topic_enrichment_ttoganjip_b456072ad6cd",
+      "sourceId": "ttoganjip",
+      "ordinal": 232
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9119c60f7c5a",
+      "restaurantId": "topic_enrichment_ttoganjip_9119c60f7c5a",
+      "sourceId": "ttoganjip",
+      "ordinal": 233
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_94080ef257c3",
+      "restaurantId": "topic_enrichment_ttoganjip_94080ef257c3",
+      "sourceId": "ttoganjip",
+      "ordinal": 234
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c4b513789215",
+      "restaurantId": "topic_enrichment_ttoganjip_c4b513789215",
+      "sourceId": "ttoganjip",
+      "ordinal": 235
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f53ae5ae9582",
+      "restaurantId": "topic_enrichment_ttoganjip_f53ae5ae9582",
+      "sourceId": "ttoganjip",
+      "ordinal": 236
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_5397312a8455",
+      "restaurantId": "topic_enrichment_ttoganjip_5397312a8455",
+      "sourceId": "ttoganjip",
+      "ordinal": 237
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2bbd45ba4e1f",
+      "restaurantId": "topic_enrichment_ttoganjip_2bbd45ba4e1f",
+      "sourceId": "ttoganjip",
+      "ordinal": 238
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_14ed8deb6767",
+      "restaurantId": "topic_enrichment_ttoganjip_14ed8deb6767",
+      "sourceId": "ttoganjip",
+      "ordinal": 239
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_91486dcb5761",
+      "restaurantId": "topic_enrichment_ttoganjip_91486dcb5761",
+      "sourceId": "ttoganjip",
+      "ordinal": 240
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_75c1bb3b2517",
+      "restaurantId": "topic_enrichment_ttoganjip_75c1bb3b2517",
+      "sourceId": "ttoganjip",
+      "ordinal": 241
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_56591729436b",
+      "restaurantId": "topic_enrichment_ttoganjip_56591729436b",
+      "sourceId": "ttoganjip",
+      "ordinal": 242
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b74499a167f6",
+      "restaurantId": "topic_enrichment_ttoganjip_b74499a167f6",
+      "sourceId": "ttoganjip",
+      "ordinal": 243
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_88784df1c159",
+      "restaurantId": "topic_enrichment_ttoganjip_88784df1c159",
+      "sourceId": "ttoganjip",
+      "ordinal": 244
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2a4542d90a7a",
+      "restaurantId": "topic_enrichment_ttoganjip_2a4542d90a7a",
+      "sourceId": "ttoganjip",
+      "ordinal": 245
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4d6af9b40fc3",
+      "restaurantId": "topic_enrichment_ttoganjip_4d6af9b40fc3",
+      "sourceId": "ttoganjip",
+      "ordinal": 246
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_dc66dc12765b",
+      "restaurantId": "topic_enrichment_ttoganjip_dc66dc12765b",
+      "sourceId": "ttoganjip",
+      "ordinal": 247
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0e06ec2ed254",
+      "restaurantId": "topic_enrichment_ttoganjip_0e06ec2ed254",
+      "sourceId": "ttoganjip",
+      "ordinal": 248
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_1f5e307e41e3",
+      "restaurantId": "topic_enrichment_ttoganjip_1f5e307e41e3",
+      "sourceId": "ttoganjip",
+      "ordinal": 249
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_967647da4a35",
+      "restaurantId": "topic_enrichment_ttoganjip_967647da4a35",
+      "sourceId": "ttoganjip",
+      "ordinal": 250
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_eefdf35fed26",
+      "restaurantId": "topic_enrichment_ttoganjip_eefdf35fed26",
+      "sourceId": "ttoganjip",
+      "ordinal": 251
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_beab5ad2ba02",
+      "restaurantId": "topic_enrichment_ttoganjip_beab5ad2ba02",
+      "sourceId": "ttoganjip",
+      "ordinal": 252
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b32e763cde36",
+      "restaurantId": "topic_enrichment_ttoganjip_b32e763cde36",
+      "sourceId": "ttoganjip",
+      "ordinal": 253
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ac2ea4704e42",
+      "restaurantId": "topic_enrichment_ttoganjip_ac2ea4704e42",
+      "sourceId": "ttoganjip",
+      "ordinal": 254
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ccd97830a830",
+      "restaurantId": "topic_enrichment_ttoganjip_ccd97830a830",
+      "sourceId": "ttoganjip",
+      "ordinal": 255
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_fcbc9953efaf",
+      "restaurantId": "topic_enrichment_ttoganjip_fcbc9953efaf",
+      "sourceId": "ttoganjip",
+      "ordinal": 256
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_888dde365096",
+      "restaurantId": "topic_enrichment_ttoganjip_888dde365096",
+      "sourceId": "ttoganjip",
+      "ordinal": 257
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_809090fb0bda",
+      "restaurantId": "topic_enrichment_ttoganjip_809090fb0bda",
+      "sourceId": "ttoganjip",
+      "ordinal": 258
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2ab41f0553cf",
+      "restaurantId": "topic_enrichment_ttoganjip_2ab41f0553cf",
+      "sourceId": "ttoganjip",
+      "ordinal": 259
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ad46d38bc482",
+      "restaurantId": "topic_enrichment_ttoganjip_ad46d38bc482",
+      "sourceId": "ttoganjip",
+      "ordinal": 260
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2119241ad076",
+      "restaurantId": "topic_enrichment_ttoganjip_2119241ad076",
+      "sourceId": "ttoganjip",
+      "ordinal": 261
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_cfc87706cb8f",
+      "restaurantId": "topic_enrichment_ttoganjip_cfc87706cb8f",
+      "sourceId": "ttoganjip",
+      "ordinal": 262
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_322ce040008f",
+      "restaurantId": "topic_enrichment_ttoganjip_322ce040008f",
+      "sourceId": "ttoganjip",
+      "ordinal": 263
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9f6c6939bbd6",
+      "restaurantId": "topic_enrichment_ttoganjip_9f6c6939bbd6",
+      "sourceId": "ttoganjip",
+      "ordinal": 264
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a2de4ca525df",
+      "restaurantId": "topic_enrichment_ttoganjip_a2de4ca525df",
+      "sourceId": "ttoganjip",
+      "ordinal": 265
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9d2967eb7c3d",
+      "restaurantId": "topic_enrichment_ttoganjip_9d2967eb7c3d",
+      "sourceId": "ttoganjip",
+      "ordinal": 266
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_50635b63e573",
+      "restaurantId": "topic_enrichment_ttoganjip_50635b63e573",
+      "sourceId": "ttoganjip",
+      "ordinal": 267
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_4181f5334e08",
+      "restaurantId": "topic_enrichment_ttoganjip_4181f5334e08",
+      "sourceId": "ttoganjip",
+      "ordinal": 268
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_500473de780d",
+      "restaurantId": "topic_enrichment_ttoganjip_500473de780d",
+      "sourceId": "ttoganjip",
+      "ordinal": 269
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_26b941d9913a",
+      "restaurantId": "topic_enrichment_ttoganjip_26b941d9913a",
+      "sourceId": "ttoganjip",
+      "ordinal": 270
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ee8d62eb8e03",
+      "restaurantId": "topic_enrichment_ttoganjip_ee8d62eb8e03",
+      "sourceId": "ttoganjip",
+      "ordinal": 271
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9dad991696ad",
+      "restaurantId": "topic_enrichment_ttoganjip_9dad991696ad",
+      "sourceId": "ttoganjip",
+      "ordinal": 272
+    }
+  ]
 }

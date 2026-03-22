@@ -1,6 +1,6 @@
 {
   "datasetId": "wednesday-gourmet",
-  "generatedAt": "2026-03-22T08:45:58.077Z",
+  "generatedAt": "2026-03-22T10:52:11.687Z",
   "restaurants": [
     {
       "id": "topic_enrichment_wednesday-gourmet_aa7ed0485ba0",
@@ -2006,8 +2006,8 @@
       "address": "전북 군산시 군산시 백릉로 116-1 (조촌동 734-12)",
       "category": "복어탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.975456099999995,
+      "lng": 126.73887699999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -4966,19 +4966,20 @@
       "googlePlaceId": "ChIJxzyM-s-ffDURCCCFE-UmNCM"
     },
     {
-      "id": "wednesday-gourmet_restaurant_320",
+      "id": "topic_enrichment_wednesday-gourmet_41aab56a0b6f",
       "name": "서울 덕원",
       "region": "서울 영등포구",
       "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
       "category": "꼬리곰탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.522256399999996,
+      "lng": 126.91202359999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "wednesday-gourmet_restaurant_321",
@@ -5422,19 +5423,20 @@
       "isOverseas": false
     },
     {
-      "id": "wednesday-gourmet_restaurant_341",
-      "name": "서울 쟈니덤플링",
+      "id": "topic_enrichment_wednesday-gourmet_a32504a93116",
+      "name": "쟈니덤플링 본관",
       "region": "서울 용산구",
-      "address": "서울 용산구 보광로59길 33 (이태원동 74-24)",
+      "address": "서울 용산구 보광로59길 33",
       "category": "중국만두",
       "representativeMenu": "",
-      "lat": 37.5338232,
-      "lng": 126.9921256,
+      "lat": 37.5337958,
+      "lng": 126.99208990000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJuUpZb0qifDURhqMECCcxNso"
     },
     {
       "id": "wednesday-gourmet_restaurant_342",
@@ -8197,19 +8199,20 @@
       "isOverseas": false
     },
     {
-      "id": "wednesday-gourmet_restaurant_493",
-      "name": "서울 빠오즈푸",
+      "id": "topic_enrichment_wednesday-gourmet_fe603574f3c3",
+      "name": "빠오즈푸 본점",
       "region": "서울 광진구",
-      "address": "서울 광진구 광나루로 373 (군자동 361-32)",
+      "address": "서울 광진구 광나루로 373",
       "category": "만두",
       "representativeMenu": "",
-      "lat": 37.5482417,
-      "lng": 127.0715808,
+      "lat": 37.548078,
+      "lng": 127.071529,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJwVFs2sSkfDURrBADUs-qpLc"
     },
     {
       "id": "wednesday-gourmet_restaurant_494",
@@ -8802,19 +8805,51 @@
       "googlePlaceId": "ChIJddwdaOSifDURUeKnfI1iPtE"
     },
     {
-      "id": "wednesday-gourmet_restaurant_526",
-      "name": "서울 명동교자",
+      "id": "topic_enrichment_wednesday-gourmet_deaf8654e584",
+      "name": "명동교자 본점",
       "region": "서울 중구",
       "address": "서울 중구 명동10길 29 (명동2가 25-2)",
-      "category": "칼국수",
-      "representativeMenu": "",
-      "lat": 37.5625768,
-      "lng": 126.9857689,
+      "category": "칼국수,만두",
+      "representativeMenu": "구수하면서 진한 닭 육수, 부드러운 국수 그리고 고명이 어우러져 환상적인 맛이 일품인 명동교자 만의 칼국수",
+      "lat": 37.5625266,
+      "lng": 126.98560900000001,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_wednesday-gourmet_deaf8654e584_menu_1",
+          "name": "구수하면서 진한 닭 육수, 부드러운 국수 그리고 고명이 어우러져 환상적인 맛이 일품인 명동교자 만의 칼국수",
+          "price": "12,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_wednesday-gourmet_deaf8654e584_menu_2",
+          "name": "속이 비칠 정도로 앏은 피에 최고급 암퇘지 고기, 채소, 갓 짠 참기름으로 만든 만두",
+          "price": "13,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_wednesday-gourmet_deaf8654e584_menu_3",
+          "name": "매콤하고 새콤하면서 감칠맛이 어울린 양념장과 갓 짠 참기름의 향미가 조화를 이루는 소박한 맛의 국수",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_wednesday-gourmet_deaf8654e584_menu_4",
+          "name": "콩과 검은콩을 맷돌로 갈아 만든 콩물에 클로렐라 국수를 말아 먹는 영양 만점의 시원한 여름철 건강식",
+          "price": "13,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_wednesday-gourmet_deaf8654e584_menu_5",
+          "name": "언제 어디서나 즐길 수 있는 포장만두",
+          "price": "13,000원",
+          "isSignature": false
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJW7FBDfCifDURHTpisLbVUH0"
     },
     {
       "id": "topic_enrichment_wednesday-gourmet_a6ea7b8c5e4d",
@@ -13545,7 +13580,7 @@
       "restaurantId": "wednesday-gourmet_restaurant_526",
       "sourceId": "wednesday-gourmet",
       "ordinal": 526,
-      "label": "수요미식회 맛집리스트",
+      "label": "EP.2",
       "note": ""
     },
     {

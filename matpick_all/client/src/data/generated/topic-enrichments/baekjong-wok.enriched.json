@@ -1,6 +1,6 @@
 {
   "datasetId": "baekjong-wok",
-  "generatedAt": "2026-03-22T09:59:45.526Z",
+  "generatedAt": "2026-03-22T10:52:11.664Z",
   "restaurants": [
     {
       "id": "topic_enrichment_baekjong-wok_6a00fbce20f8",
@@ -1010,13 +1010,13 @@
       "address": "전북 익산시 중앙로 52 (갈산동 25)",
       "category": "종합분식",
       "representativeMenu": "찐빵",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.935537,
+      "lng": 126.97690530000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJwXCydnZAcDUR-shcqGM6mOA",
       "isOverseas": false
     },
     {
@@ -1952,8 +1952,8 @@
       "address": "전북 전주시 덕진구 태진로 136 (금암1동 455-25)",
       "category": "곰탕,설렁탕",
       "representativeMenu": "한우 우족탕",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8330152,
+      "lng": 127.13564849999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -1995,7 +1995,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJcxlMdk8jcDURPj2KG8hpA_w",
       "isOverseas": false
     },
     {
@@ -2111,8 +2111,8 @@
       "address": "서울 마포구 신촌로 124 (노고산동 40-9)",
       "category": "칼국수,만두",
       "representativeMenu": "버섯얼큰소고기샤브",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5556595,
+      "lng": 126.93943680000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -2160,7 +2160,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJi2Wi8paYfDUR7NWXeBBj_vU",
       "isOverseas": false
     },
     {
@@ -2267,13 +2267,13 @@
       "address": "서울 마포구 연희로1길 55 (연남동 383-72)",
       "category": "기업",
       "representativeMenu": "스페인음식",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5612859,
+      "lng": 126.926226,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ5dVXQemYfDURWB4bCz12x-0",
       "isOverseas": false
     },
     {
@@ -4056,8 +4056,8 @@
       "address": "부산 동래구 명륜로94번길 43-10 (복천동 367-2)",
       "category": "전,빈대떡",
       "representativeMenu": "뚜기상 A",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.2045795,
+      "lng": 129.0838345,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -4168,8 +4168,8 @@
       "address": "제주 제주시 복지로 72 (도남동 642-1)",
       "category": "치킨,닭강정",
       "representativeMenu": "치킨",
-      "lat": 0,
-      "lng": 0,
+      "lat": 33.4933858,
+      "lng": 126.49366479999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -4549,13 +4549,13 @@
       "address": "서울 마포구 마포구 동교로 227-5 (연남동 373-14)",
       "category": "",
       "representativeMenu": "치킨",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5605244,
+      "lng": 126.92364500000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJDSJiWeiYfDURNLzrV1UpqN4",
       "isOverseas": false
     },
     {
@@ -5096,8 +5096,8 @@
       "address": "부산 수영구 광안해변로 235 (민락동 179-3)",
       "category": "피자",
       "representativeMenu": "[pizza] 오리지널 시카고 피자",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1515702,
+      "lng": 129.1166812,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -5181,7 +5181,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ502bHybtaDURRhhyXqLLc2E",
       "isOverseas": false
     },
     {
@@ -6574,8 +6574,8 @@
       "address": "서울 마포구 백범로1길 8-15 (노고산동 31-74)",
       "category": "",
       "representativeMenu": "미고렝",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5536105,
+      "lng": 126.93793540000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -6619,8 +6619,8 @@
       "address": "광주 동구 백서로174번길 7 (서석동 471-11)",
       "category": "중식당",
       "representativeMenu": "짬짜밥",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1587703,
+      "lng": 126.86363639999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -6692,7 +6692,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJSVCekVSJcTURRWMfgdvr75k",
       "isOverseas": false
     },
     {
@@ -7438,8 +7438,8 @@
       "address": "울산 동구 바드래1길 3 (전하동 300-264)",
       "category": "",
       "representativeMenu": "마늘통닭",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.5178952,
+      "lng": 129.4312467,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -7809,8 +7809,8 @@
       "address": "전북 전주시 완산구 동문길 94 (경원동2가 7-9)",
       "category": "다방",
       "representativeMenu": "더치커피",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8182014,
+      "lng": 127.1488486,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -7862,8 +7862,8 @@
       "address": "경북 포항시 남구 오천읍 문덕로43번길 6-4 (문덕리 347-3)",
       "category": "닭요리",
       "representativeMenu": "닭냉국수",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.958490999999995,
+      "lng": 129.40343,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -7911,7 +7911,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ-yx-S7UAZzUR0tSx8LUIJOM",
       "isOverseas": false
     },
     {
@@ -8055,8 +8055,8 @@
       "address": "강원 홍천군 서석면 군두리길 310 (생곡리 694)",
       "category": "막국수",
       "representativeMenu": "메밀막국수",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.700235899999996,
+      "lng": 128.2245944,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -8110,7 +8110,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ0T-8rElPYjURumKEjHAJES4",
       "isOverseas": false
     },
     {
@@ -8335,8 +8335,8 @@
       "address": "경남 창원시 마산합포구 구산면 해양관광로 1393 (내포리 51)",
       "category": "돼지고기구이",
       "representativeMenu": "200g",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.0918785,
+      "lng": 128.58178279999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -8540,8 +8540,8 @@
       "address": "전북 전주시 완산구 전라감영5길 19-9 (중앙동3가 31-2)",
       "category": "비빔밥",
       "representativeMenu": "국내산 육우",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8173299,
+      "lng": 127.14529679999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -9993,8 +9993,8 @@
       "address": "경북 안동시 광석3길 20 (광석동 232-1)",
       "category": "국수",
       "representativeMenu": "냉우동",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.5660212,
+      "lng": 128.7231203,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -10030,7 +10030,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJIyy6Ak-hZjURn8UUwSHvCuc",
       "isOverseas": false
     },
     {
@@ -10555,13 +10555,13 @@
       "address": "전북 군산시 구영5길 118-14 (영화동 18-4)",
       "category": "종합분식",
       "representativeMenu": "떡볶이",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.9889326,
+      "lng": 126.7109166,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJz5ZZiRZccDUR8xsBwTJvKyo",
       "isOverseas": false
     },
     {
@@ -11638,8 +11638,8 @@
       "address": "광주 동구 지호로127번길 29 (지산동 67-21)",
       "category": "",
       "representativeMenu": "보리밥",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1496555,
+      "lng": 126.94470910000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -11944,8 +11944,8 @@
       "address": "서울 용산구 이태원로 151 (이태원동 176-2)",
       "category": "피부,체형관리",
       "representativeMenu": "팟타이",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.3559414,
+      "lng": 127.3630709,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -12248,8 +12248,8 @@
       "address": "경기 이천시 중리천로21번길 11 (관고동 10-11)",
       "category": "닭요리",
       "representativeMenu": "최고 인기 상품 전국에서 찾아오는 맛",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.30314550000001,
+      "lng": 127.41827989999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -12303,7 +12303,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJi03iJDZWYzUR22GoeZFyVHI",
       "isOverseas": false
     },
     {
@@ -12384,8 +12384,8 @@
       "address": "서울 중구 퇴계로76길 55 (신당동 304-791)",
       "category": "떡볶이",
       "representativeMenu": "해물떡볶이",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.2022005,
+      "lng": 127.09794529999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -12693,8 +12693,8 @@
       "address": "서울 은평구 연서로28길 5 (대조동 185-34)",
       "category": "오징어요리",
       "representativeMenu": "불오징어",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.618184899999996,
+      "lng": 126.92112999999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -13070,8 +13070,8 @@
       "address": "경기 안산시 단원구 광덕3로 167-12 (고잔동 726-9)",
       "category": "가구,인테리어",
       "representativeMenu": "로제파스타",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3135566,
+      "lng": 126.8316277,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -13086,13 +13086,13 @@
       "address": "경기 성남시 분당구 판교역로10번길 14-5 (백현동 579-4)",
       "category": "",
       "representativeMenu": "햄버거",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.506279899999996,
+      "lng": 127.0978714,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJl9MEg2mlfDURgiZc232HdRQ",
       "isOverseas": false
     },
     {
@@ -13102,8 +13102,8 @@
       "address": "충북 청주시 상당구 상당로3번길 2 (석교동 492)",
       "category": "족발,보쌈",
       "representativeMenu": "족발",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.6279359,
+      "lng": 127.490835,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -15326,13 +15326,13 @@
       "address": "전북 남원시 하정2길 6 (하정동 84-2)",
       "category": "돼지고기구이",
       "representativeMenu": "냉동삼겹살",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.4069444,
+      "lng": 127.3816667,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJi0hZXzMpbjURjzklNWU_Qoc",
       "isOverseas": false
     },
     {
@@ -15741,13 +15741,13 @@
       "address": "대구 서구 달서천로83길 13 (원대동3가 1223-13)",
       "category": "육류,고기요리",
       "representativeMenu": "대창불고기",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8826951,
+      "lng": 128.5775308,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJbQ_dYfvjZTUR4jOgr3wsJPI",
       "isOverseas": false
     },
     {
@@ -16393,8 +16393,8 @@
       "address": "서울 마포구 양화로6길 38 (합정동 413-16)",
       "category": "이자카야",
       "representativeMenu": "야키토리 5종세트",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.548768599999995,
+      "lng": 126.9162499,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -16763,8 +16763,8 @@
       "address": "부산 중구 신창동 국제시장 단팥죽거리",
       "category": "죽",
       "representativeMenu": "단팥죽",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1002035,
+      "lng": 129.0303831,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -17057,13 +17057,13 @@
       "address": "전남 순천시 성남뒷길 3 (장천동 19-16)",
       "category": "치킨,닭강정",
       "representativeMenu": "마늘치킨",
-      "lat": 0,
-      "lng": 0,
+      "lat": 34.932454,
+      "lng": 127.514104,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJvWTwiTcPbjURSkND5E4EyXU",
       "isOverseas": false
     },
     {
@@ -17126,8 +17126,8 @@
       "address": "서울 영등포구 의사당대로 38 (여의도동 17)",
       "category": "베트남음식",
       "representativeMenu": "하롱베이 쌀국수",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5256409,
+      "lng": 126.91861759999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -17379,8 +17379,8 @@
       "address": "전북 전주시 완산구 전주객사2길 21 (다가동3가 16)",
       "category": "중식당",
       "representativeMenu": "간짜장",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.8177778,
+      "lng": 127.14083330000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -17446,7 +17446,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ92mdPqckcDUR93j8ZCCyrOE",
       "isOverseas": false
     },
     {
@@ -18051,8 +18051,8 @@
       "address": "전북 전주시 완산구 공북로 98 (서노송동 655-4)",
       "category": "닭요리",
       "representativeMenu": "닭내장탕(대)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.826276199999995,
+      "lng": 127.14277870000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -18118,7 +18118,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJyTWtkVwjcDURciyumpGWi7E",
       "isOverseas": false
     },
     {
@@ -18787,13 +18787,13 @@
       "address": "인천 동구 만석부두로 3 (만석동 2-70)",
       "category": "",
       "representativeMenu": "간짜장",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.782406099999996,
+      "lng": 126.4537951,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJLbLzvN5cejURsYIh_do84cs",
       "isOverseas": false
     },
     {

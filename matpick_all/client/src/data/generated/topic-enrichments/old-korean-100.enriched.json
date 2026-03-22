@@ -1,6 +1,6 @@
 {
   "datasetId": "old-korean-100",
-  "generatedAt": "2026-03-22T08:45:58.087Z",
+  "generatedAt": "2026-03-22T10:52:11.695Z",
   "restaurants": [
     {
       "id": "old-korean-100_restaurant_001",
@@ -235,8 +235,8 @@
       "address": "서울 동대문구 용신동 767-6",
       "category": "추탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5753595,
+      "lng": 127.04151739999999,
       "imageUrl": "",
       "foundingYear": 1933,
       "menus": [],
@@ -764,19 +764,20 @@
       "isOverseas": false
     },
     {
-      "id": "old-korean-100_restaurant_047",
-      "name": "대구 강산면옥",
+      "id": "topic_enrichment_old-korean-100_5a9cf62b1493",
+      "name": "강산면옥 본점",
       "region": "대구 중구",
-      "address": "대구 중구 교동길 27-8 (교동 62-1)",
+      "address": "대구 중구 교동길 27-8",
       "category": "물냉면",
       "representativeMenu": "",
-      "lat": 35.8736428,
-      "lng": 128.5964187,
+      "lat": 35.8736678,
+      "lng": 128.5963748,
       "imageUrl": "",
       "foundingYear": 1951,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJs6B1dNvjZTURLueJ5gL55ro"
     },
     {
       "id": "old-korean-100_restaurant_048",

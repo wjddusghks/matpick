@@ -1,6 +1,6 @@
 {
   "datasetId": "ttoganjip",
-  "generatedAt": "2026-03-22T09:59:45.472Z",
+  "generatedAt": "2026-03-22T10:52:11.615Z",
   "restaurants": [
     {
       "id": "topic_enrichment_ttoganjip_7682de14575b",
@@ -299,8 +299,8 @@
       "address": "경기도 안양시 동안구 평촌대로223번길 28 에이스프라자 1층 105호",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3910464,
+      "lng": 126.95382110000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -944,8 +944,8 @@
       "address": "서울특별시 중구 남대문시장길 29 1층 1호",
       "category": "냉면",
       "representativeMenu": "함흥 물냉면",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5605256,
+      "lng": 126.97767209999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -1873,8 +1873,8 @@
       "address": "서울특별시 강남구 선릉로153길 18 지하1층",
       "category": "태국음식",
       "representativeMenu": "태국식 매콤새콤 등뼈찜",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.52485540000001,
+      "lng": 127.0380967,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -2256,8 +2256,8 @@
       "address": "서울특별시 동작구 남부순환로269길 12",
       "category": "육류,고기요리",
       "representativeMenu": "갈비살",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.477344599999995,
+      "lng": 126.97839689999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -2305,7 +2305,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJYWbQCkmgfDURFV8qsb1nEZ8",
       "isOverseas": false
     },
     {
@@ -2315,8 +2315,8 @@
       "address": "경기도 화성시 왕배산1길 3-16 1층",
       "category": "양식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.180700099999996,
+      "lng": 127.12393080000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -2741,8 +2741,8 @@
       "address": "강원특별자치도 원주시 치악로 1534 1층",
       "category": "추어탕",
       "representativeMenu": "갈추어탕",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.321076999999995,
+      "lng": 127.9648386,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -2784,7 +2784,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJcYKJLJN1YzURz3zcMa5aDEQ",
       "isOverseas": false
     },
     {
@@ -3518,8 +3518,8 @@
       "address": "경상남도 통영시 무전1길 64-11 되뫼골부대찌개",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 34.860839899999995,
+      "lng": 128.4230518,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -3534,8 +3534,8 @@
       "address": "경기도 평택시 조개터로26번길 20",
       "category": "한식",
       "representativeMenu": "김치볶음밥(점심식사)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.98904290000001,
+      "lng": 127.1030939,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -3601,7 +3601,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJm9bw0fQ6ezURcV7pkIoreAQ",
       "isOverseas": false
     },
     {
@@ -4102,13 +4102,13 @@
       "address": "경기도 안산시 단원구 원곡로 34 1층 마마교자관",
       "category": "중식당",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.330024,
+      "lng": 126.7929041,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJUabjfM1vezUR6372ue9Fres",
       "isOverseas": false
     },
     {
@@ -4118,8 +4118,8 @@
       "address": "전라남도 목포시 유달로97번길 2 1층",
       "category": "양식",
       "representativeMenu": "감자튀김, 케찹, 꿀",
-      "lat": 0,
-      "lng": 0,
+      "lat": 34.787372,
+      "lng": 126.37932199999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -4812,13 +4812,13 @@
       "address": "강원특별자치도 양양군 양양읍 남문로 12-7 물치손칼국수",
       "category": "칼국수,만두",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 38.073429600000004,
+      "lng": 128.6211729,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJH1VipMqu2F8R1SxxdzQwGoA",
       "isOverseas": false
     },
     {
@@ -4828,8 +4828,8 @@
       "address": "경기도 성남시 분당구 황새울로335번길 10 1층 102호",
       "category": "한식",
       "representativeMenu": "들깨손수제비",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3867288,
+      "lng": 127.12197239999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -5792,13 +5792,13 @@
       "address": "경상남도 창원시 진해구 냉천로 53",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1518385,
+      "lng": 128.7032324,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJq8-NrmfSaDURWex6EYgFk4c",
       "isOverseas": false
     },
     {
@@ -6086,13 +6086,13 @@
       "address": "서울특별시 종로구 사직로 127-14 2층",
       "category": "한식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.576243999999996,
+      "lng": 126.97312769999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "Ejoy7Li1LCAxMjctMTQgU2FqaWstcm8sIEpvbmdubyBEaXN0cmljdCwgU2VvdWwsIFNvdXRoIEtvcmVhIiAaHgoWChQKEgmxhxALlaJ8NREH2cYXbjzs0hIEMuy4tQ",
       "isOverseas": false
     },
     {
@@ -6147,8 +6147,8 @@
       "address": "서울특별시 마포구 포은로 110",
       "category": "돼지고기구이",
       "representativeMenu": "200G",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.556765,
+      "lng": 126.90469960000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -6220,7 +6220,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJf4fj7SWZfDURRmnnFI0RR3Q",
       "isOverseas": false
     },
     {
@@ -6275,13 +6275,13 @@
       "address": "경상남도 창원시 성산구 마디미로 28 C동-359호(상남시장)",
       "category": "돈가스",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.222209899999996,
+      "lng": 128.68340279999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ__hoQ-XMaDUREmyWa2GWvTE",
       "isOverseas": false
     },
     {
@@ -6524,8 +6524,8 @@
       "address": "서울특별시 성동구 연무장길 41-26 지하1층",
       "category": "조개요리",
       "representativeMenu": "최적의 온도와 시간으로 갓 쪄낸 조개고유의 식감에 가득찬 담백함&감칠맛",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5433788,
+      "lng": 127.05425890000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -7746,8 +7746,8 @@
       "address": "경기도 파주시 문화로 32 1층 신간짬뽕 금촌점",
       "category": "중식당",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.2532101,
+      "lng": 127.0770852,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -8223,8 +8223,8 @@
       "address": "대구광역시 남구 큰골길 35 앞산큰골집 앞산본점",
       "category": "육류,고기요리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.837535599999995,
+      "lng": 128.5781768,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -8731,8 +8731,8 @@
       "address": "경기도 남양주시 천마산로16번길 16",
       "category": "오리요리",
       "representativeMenu": "조리시간1시간",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.664800299999996,
+      "lng": 127.2478995,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -8744,7 +8744,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJm0JXFFzKfDURpz-KhGnQgxw",
       "isOverseas": false
     },
     {
@@ -8887,8 +8887,8 @@
       "address": "경기도 안양시 동안구 귀인로190번길 61-17",
       "category": "",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.383279099999996,
+      "lng": 126.961754,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -9350,8 +9350,8 @@
       "address": "전라남도 여수시 웅남2길 12-2",
       "category": "한식",
       "representativeMenu": "다른메뉴2인이상 주문시 1인분 주문됩니다 (공기밥포함)",
-      "lat": 0,
-      "lng": 0,
+      "lat": 34.7474056,
+      "lng": 127.67476269999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -9405,7 +9405,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJIw-0o1DebTUR24EwtM-TB9s",
       "isOverseas": false
     },
     {
@@ -10128,8 +10128,8 @@
       "address": "경상북도 포항시 북구 중앙로 328",
       "category": "한식",
       "representativeMenu": "된장찌개",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.041925299999996,
+      "lng": 129.3662076,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -10369,8 +10369,8 @@
       "address": "강원특별자치도 원주시 행구로 53 1층 장군본가",
       "category": "소고기구이",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.341746500000006,
+      "lng": 127.96161239999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
@@ -10616,8 +10616,8 @@
       "address": "경기도 수원시 영통구 영통로130번길 42",
       "category": "곱창,막창,양",
       "representativeMenu": "알곱창구이",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3321149,
+      "lng": 126.82825969999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -10695,7 +10695,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJX6AFBQtvezUR1tdFiqrppw8",
       "isOverseas": false
     },
     {
@@ -10786,8 +10786,8 @@
       "address": "제주특별자치도 제주시 도남로 32",
       "category": "한식",
       "representativeMenu": "제주식 향토 육개장",
-      "lat": 0,
-      "lng": 0,
+      "lat": 33.4972839,
+      "lng": 126.52595720000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -10817,7 +10817,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJl2kIUqb8DDURyq4qKL2dfYs",
       "isOverseas": false
     },
     {
@@ -12637,8 +12637,8 @@
       "address": "경기도 평택시 쇼핑로 7 2층",
       "category": "베트남음식",
       "representativeMenu": "안심과 아롱사태 두가지 고기가 푸짐하게 들어간 BEST 안심사태 쌀국수",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.2002674,
+      "lng": 127.072733,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -14345,8 +14345,8 @@
       "address": "서울특별시 종로구 종로 200-1",
       "category": "육류,고기요리",
       "representativeMenu": "육회",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.570612499999996,
+      "lng": 127.00001519999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -14703,8 +14703,8 @@
       "address": "경기도 의정부시 시민로132번길 14 1층 황포연탄구이",
       "category": "육류,고기요리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.7364284,
+      "lng": 127.0412426,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],

@@ -1,6 +1,6 @@
 {
   "datasetId": "baekban-trip",
-  "generatedAt": "2026-03-22T09:59:45.519Z",
+  "generatedAt": "2026-03-22T10:52:11.657Z",
   "restaurants": [
     {
       "id": "sikgaek-baekban-trip_restaurant_001",
@@ -5071,19 +5071,20 @@
       "googlePlaceId": "ChIJr97SBfaefDURvOm_uNvsEgQ"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_308",
+      "id": "topic_enrichment_baekban-trip_f9631b784347",
       "name": "서울 덕원",
       "region": "서울 영등포구",
       "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
       "category": "방치탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.522256399999996,
+      "lng": 126.91202359999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_309",
@@ -5675,19 +5676,20 @@
       "isOverseas": false
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_348",
+      "id": "topic_enrichment_baekban-trip_d87046c871d3",
       "name": "충주 올뱅이식당",
       "region": "충북 충주시",
       "address": "충북 충주시 신대1길 1 (단월동 451-4)",
       "category": "올갱이해장국",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.943003499999996,
+      "lng": 127.89924189999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_349",
@@ -8266,19 +8268,20 @@
       "isOverseas": false
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_518",
+      "id": "topic_enrichment_baekban-trip_0cd29770cab5",
       "name": "광주 순영네돼지집",
       "region": "경기 광주시",
       "address": "경기 광주시 오포읍 오포로520번길 13 (문형리 375-21)",
       "category": "두루치기",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.3454313,
+      "lng": 127.21380130000001,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_519",
@@ -9218,19 +9221,20 @@
       "isOverseas": false
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_578",
-      "name": "서울 태능배밭갈비",
+      "id": "topic_enrichment_baekban-trip_a66de8f29043",
+      "name": "태능배밭갈비 본점",
       "region": "서울 중랑구",
-      "address": "서울 중랑구 동일로143길 30 (묵동 249-107)",
+      "address": "서울 중랑구 동일로143길 30",
       "category": "전통갈비",
       "representativeMenu": "",
-      "lat": 37.6052488,
-      "lng": 127.0768549,
+      "lat": 37.605205999999995,
+      "lng": 127.076832,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": "ChIJ0X2n7bG7fDUR64bxhiZYLq0"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_579",
@@ -9464,19 +9468,20 @@
       "googlePlaceId": null
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_588",
+      "id": "topic_enrichment_baekban-trip_3360e177da0a",
       "name": "울산 밀양시골밥상",
       "region": "울산 중구",
       "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
       "category": "생가자미찌개",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.526174999999995,
+      "lng": 129.2519512,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_589",
@@ -10031,19 +10036,20 @@
       "isOverseas": false
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_624",
+      "id": "topic_enrichment_baekban-trip_3901c6ceae71",
       "name": "대전 홍두깨칼국수",
       "region": "대전 중구",
       "address": "대전 중구 충무로107번길 15 (대흥동 378-25)",
       "category": "얼큰이칼국수",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 36.3109799,
+      "lng": 127.4396381,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_625",

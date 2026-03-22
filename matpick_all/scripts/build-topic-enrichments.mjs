@@ -309,12 +309,25 @@ function formatEpisodeLabel(value) {
 }
 
 function normalizeAddressForLookup(address) {
-  return normalizeLookupValue(String(address ?? "").replace(/\([^)]*\)/g, " "));
+  return normalizeLookupValue(
+    String(address ?? "")
+      .replace(/\([^)]*\)/g, " ")
+      .replace(/[,:]/g, " ")
+  );
 }
 
 function buildLookupNameCandidates(name, region = "", address = "") {
   const normalizedName = normalizeLookupValue(name);
   const candidates = new Set([normalizedName]);
+  const strippedName = normalizedName
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/\[[^\]]*\]/g, " ")
+    .replace(/(?:현재\s*폐업|재방문|본점|본관|별관|분점)$/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (strippedName) {
+    candidates.add(strippedName);
+  }
   const addressTokens = normalizeLookupValue(`${region} ${address}`)
     .split(" ")
     .filter(Boolean);
@@ -539,6 +552,59 @@ function isReliableRetryGoogleMatch(match) {
   );
 }
 
+function hasUsableRetryLocation(match) {
+  if (!match?.candidatePlaceId) return false;
+
+  const latitude = Number(match.location?.latitude ?? 0);
+  const longitude = Number(match.location?.longitude ?? 0);
+  return isValidCoord(latitude) && isValidCoord(longitude);
+}
+
+function canUseRetryLocationForCoords(match) {
+  if (!hasUsableRetryLocation(match)) return false;
+  if (isReliableRetryGoogleMatch(match)) return true;
+
+  const nameScore = Number(match.nameScore ?? 0);
+  const addressScore = Number(match.addressScore ?? 0);
+  const overall = Number(match.overallScore ?? 0);
+
+  return (
+    addressScore >= 0.15 ||
+    nameScore >= 0.9 ||
+    (nameScore >= 0.8 && addressScore >= 0) ||
+    (nameScore >= 0.6 && addressScore >= 0.1) ||
+    overall >= 0.7
+  );
+}
+
+function chooseRetryLocationMatch(result) {
+  const candidates = [result.bestMatch, ...(result.matches || [])].filter(hasUsableRetryLocation);
+  if (!candidates.length) {
+    return null;
+  }
+
+  const highAddressMatch = candidates
+    .filter((candidate) => Number(candidate.addressScore ?? 0) >= 0.85)
+    .sort(
+      (left, right) =>
+        Number(right.addressScore ?? 0) - Number(left.addressScore ?? 0) ||
+        Number(right.nameScore ?? 0) - Number(left.nameScore ?? 0)
+    )[0];
+
+  if (highAddressMatch) {
+    return highAddressMatch;
+  }
+
+  return candidates
+    .filter(canUseRetryLocationForCoords)
+    .sort(
+      (left, right) =>
+        Number(right.overallScore ?? 0) - Number(left.overallScore ?? 0) ||
+        Number(right.addressScore ?? 0) - Number(left.addressScore ?? 0) ||
+        Number(right.nameScore ?? 0) - Number(left.nameScore ?? 0)
+    )[0] ?? null;
+}
+
 function buildRestaurantFromMenuItem(datasetId, item) {
   const restaurant = createBaseRestaurant(datasetId, item.restaurantName, item.address);
   return mergeRestaurant(restaurant, {
@@ -561,16 +627,17 @@ function buildRestaurantFromMenuItem(datasetId, item) {
   });
 }
 
-function buildRestaurantPatchFromGoogle(datasetId, result) {
+function buildRestaurantPatchFromGoogle(datasetId, result, options = {}) {
+  const { includePlaceId = true, matchOverride = null } = options;
   const restaurant = createBaseRestaurant(datasetId, result.restaurantName, result.address);
-  const bestMatch = result.bestMatch || {};
+  const bestMatch = matchOverride || result.bestMatch || {};
   const location = bestMatch.location || {};
 
   return mergeRestaurant(restaurant, {
     ...restaurant,
     lat: Number(location.latitude || 0),
     lng: Number(location.longitude || 0),
-    googlePlaceId: normalizeText(bestMatch.candidatePlaceId) || null,
+    googlePlaceId: includePlaceId ? normalizeText(bestMatch.candidatePlaceId) || null : null,
   });
 }
 
@@ -699,27 +766,94 @@ function mergeRetryGoogleEnrichments(datasetMap) {
 
     const restaurants = datasetMap.get(datasetId) ?? new Map();
     const canonicalKeyByLookupKey = new Map();
+    const canonicalKeyByAddress = new Map();
     for (const [canonicalKey, restaurant] of restaurants.entries()) {
       buildLookupKeys(restaurant.name, restaurant.address, restaurant.region).forEach((lookupKey) => {
         if (!canonicalKeyByLookupKey.has(lookupKey)) {
           canonicalKeyByLookupKey.set(lookupKey, canonicalKey);
         }
       });
+
+      const normalizedAddress = normalizeAddressForLookup(restaurant.address);
+      if (!normalizedAddress) {
+        continue;
+      }
+
+      const current = canonicalKeyByAddress.get(normalizedAddress);
+      if (!current) {
+        canonicalKeyByAddress.set(normalizedAddress, canonicalKey);
+      } else if (current !== canonicalKey) {
+        canonicalKeyByAddress.set(normalizedAddress, null);
+      }
     }
 
     for (const result of payload.results || []) {
-      if (!isReliableRetryGoogleMatch(result.bestMatch)) continue;
+      const bestMatch = chooseRetryLocationMatch(result);
+      if (!bestMatch) continue;
 
+      const normalizedAddress = normalizeAddressForLookup(result.address);
       const key =
         buildLookupKeys(result.restaurantName, result.address)
           .map((lookupKey) => canonicalKeyByLookupKey.get(lookupKey))
-          .find(Boolean) ?? buildLookupKey(result.restaurantName, result.address);
-      const nextRestaurant = buildRestaurantPatchFromGoogle(datasetId, result);
+          .find(Boolean) ??
+        (normalizedAddress ? canonicalKeyByAddress.get(normalizedAddress) : null) ??
+        buildLookupKey(result.restaurantName, result.address);
+      const nextRestaurant = buildRestaurantPatchFromGoogle(datasetId, result, {
+        includePlaceId: isReliableRetryGoogleMatch(bestMatch),
+        matchOverride: bestMatch,
+      });
       const currentRestaurant = restaurants.get(key);
       restaurants.set(
         key,
         currentRestaurant ? mergeRestaurant(currentRestaurant, nextRestaurant) : nextRestaurant
       );
+    }
+
+    datasetMap.set(datasetId, restaurants);
+  }
+
+  return datasetMap;
+}
+
+function propagateCoordsAcrossSameAddress(datasetMap) {
+  for (const [datasetId, restaurants] of datasetMap.entries()) {
+    const restaurantsByAddress = new Map();
+
+    for (const [canonicalKey, restaurant] of restaurants.entries()) {
+      const normalizedAddress = normalizeAddressForLookup(restaurant.address);
+      if (!normalizedAddress) {
+        continue;
+      }
+
+      const bucket = restaurantsByAddress.get(normalizedAddress) ?? [];
+      bucket.push([canonicalKey, restaurant]);
+      restaurantsByAddress.set(normalizedAddress, bucket);
+    }
+
+    for (const bucket of restaurantsByAddress.values()) {
+      const coordSource = bucket
+        .map((entry) => entry[1])
+        .find((restaurant) => isValidCoord(restaurant.lat) && isValidCoord(restaurant.lng));
+
+      if (!coordSource) {
+        continue;
+      }
+
+      bucket.forEach(([canonicalKey, restaurant]) => {
+        if (isValidCoord(restaurant.lat) && isValidCoord(restaurant.lng)) {
+          return;
+        }
+
+        restaurants.set(
+          canonicalKey,
+          mergeRestaurant(restaurant, {
+            ...restaurant,
+            lat: coordSource.lat,
+            lng: coordSource.lng,
+            googlePlaceId: restaurant.googlePlaceId ?? coordSource.googlePlaceId ?? null,
+          })
+        );
+      });
     }
 
     datasetMap.set(datasetId, restaurants);
@@ -849,6 +983,7 @@ function main() {
   mergeGoogleEnrichments(datasetMap);
   mergeMichelinGoogleEnrichments(datasetMap);
   mergeRetryGoogleEnrichments(datasetMap);
+  propagateCoordsAcrossSameAddress(datasetMap);
   writeTopicOutputs(datasetMap);
 
   const summary = Array.from(datasetMap.entries()).map(([datasetId, restaurants]) => ({

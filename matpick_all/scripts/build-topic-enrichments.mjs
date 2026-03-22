@@ -43,6 +43,14 @@ const patchOnlyDatasetIds = new Set([
   "old-korean-100",
 ]);
 
+const episodicDatasetIds = new Set([
+  "ttoganjip",
+  "delicious-guys",
+  "baekban-trip",
+  "baekjong-wok",
+  "wednesday-gourmet",
+]);
+
 const menuResultFiles = {
   ttoganjip: path.join(standardizedMenuResultsRoot, "ttoganjip.results.json"),
   "delicious-guys": path.join(standardizedMenuResultsRoot, "delicious-guys.results.json"),
@@ -187,11 +195,80 @@ const sourceLinkLabelByDatasetId = {
   "michelin-selected": "선정 레스토랑",
 };
 
+Object.assign(sourceMetadataByDatasetId, {
+  ttoganjip: {
+    ...sourceMetadataByDatasetId.ttoganjip,
+    name: "또간집",
+    description: "또간집에 소개된 맛집을 한 번에 모아봤어요.",
+  },
+  "delicious-guys": {
+    ...sourceMetadataByDatasetId["delicious-guys"],
+    name: "맛있는 녀석들",
+    description: "맛있는 녀석들에 소개된 맛집을 한 번에 모아봤어요.",
+  },
+  "baekban-trip": {
+    ...sourceMetadataByDatasetId["baekban-trip"],
+    name: "식객 허영만의 백반기행",
+    description: "식객 허영만의 백반기행에 소개된 맛집을 한 번에 모아봤어요.",
+  },
+  "wednesday-gourmet": {
+    ...sourceMetadataByDatasetId["wednesday-gourmet"],
+    name: "수요미식회",
+    description: "수요미식회에 소개된 맛집을 한 번에 둘러보세요.",
+  },
+  "old-korean-100": {
+    ...sourceMetadataByDatasetId["old-korean-100"],
+    name: "한국인이 사랑하는 오래된 한식당 100선",
+    provider: "한식진흥원",
+    description: "한국인이 사랑하는 오래된 한식당 100선을 지역별로 둘러보세요.",
+  },
+  "baekjong-wok": {
+    ...sourceMetadataByDatasetId["baekjong-wok"],
+    name: "백종원의 3대천왕",
+    description: "백종원의 3대천왕에 소개된 맛집을 한 번에 모아봤어요.",
+  },
+  "michelin-3-stars": {
+    ...sourceMetadataByDatasetId["michelin-3-stars"],
+    name: "미쉐린",
+    description: "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요.",
+  },
+  "michelin-2-stars": {
+    ...sourceMetadataByDatasetId["michelin-2-stars"],
+    name: "미쉐린",
+    description: "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요.",
+  },
+  "michelin-1-star": {
+    ...sourceMetadataByDatasetId["michelin-1-star"],
+    name: "미쉐린",
+    description: "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요.",
+  },
+  "michelin-bib-gourmand": {
+    ...sourceMetadataByDatasetId["michelin-bib-gourmand"],
+    name: "미쉐린",
+    description: "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요.",
+  },
+  "michelin-selected": {
+    ...sourceMetadataByDatasetId["michelin-selected"],
+    name: "미쉐린",
+    description: "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요.",
+  },
+});
+
+Object.assign(sourceLinkLabelByDatasetId, {
+  "michelin-3-stars": "미쉐린 3스타",
+  "michelin-2-stars": "미쉐린 2스타",
+  "michelin-1-star": "미쉐린 1스타",
+  "michelin-bib-gourmand": "빕 구르망",
+  "michelin-selected": "선정 레스토랑",
+});
+
 const generatedDatasetFileByDatasetId = {
   "baekban-trip": path.join(generatedDataRoot, "sikgaek-baekban-trip.generated.json"),
   "wednesday-gourmet": path.join(generatedDataRoot, "wednesday-gourmet.generated.json"),
   "old-korean-100": path.join(generatedDataRoot, "old-korean-100.generated.json"),
 };
+
+const sourceLinkLabelOverridesByDatasetId = buildSourceLinkLabelOverrides();
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, ""));
@@ -208,6 +285,20 @@ function normalizeText(value) {
 
 function normalizeLookupValue(value) {
   return normalizeText(value).toLowerCase();
+}
+
+function formatEpisodeLabel(value) {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return "";
+  }
+
+  const episodeNumber = normalized.match(/\d+/)?.[0];
+  if (episodeNumber) {
+    return `EP.${episodeNumber}`;
+  }
+
+  return normalized;
 }
 
 function normalizeAddressForLookup(address) {
@@ -246,6 +337,42 @@ function buildLookupKeys(name, address, region = "") {
   return buildLookupNameCandidates(name, region, address).map(
     (candidate) => `${candidate}|${normalizedAddress}`
   );
+}
+
+function buildSourceLinkLabelOverrides() {
+  const overrides = new Map();
+
+  for (const [datasetId, filePath] of Object.entries(menuResultFiles)) {
+    if (!episodicDatasetIds.has(datasetId)) {
+      continue;
+    }
+
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
+    const payload = readJson(filePath);
+    const datasetOverrides = {
+      byLookupKey: new Map(),
+      byOrdinal: new Map(),
+    };
+
+    (payload.items || []).forEach((item, index) => {
+      const label = formatEpisodeLabel(item.specialValue);
+      if (!label) {
+        return;
+      }
+
+      for (const lookupKey of buildLookupKeys(item.restaurantName, item.address)) {
+        datasetOverrides.byLookupKey.set(lookupKey, label);
+      }
+      datasetOverrides.byOrdinal.set(index + 1, label);
+    });
+
+    overrides.set(datasetId, datasetOverrides);
+  }
+
+  return overrides;
 }
 
 function buildLookupKey(name, address, region = "") {
@@ -517,6 +644,10 @@ function buildCanonicalPatchOutput(datasetId, restaurants) {
   const baseRestaurants = generatedPayload.restaurants || [];
   const patchRestaurants = Array.from(restaurants.values());
   const patchRestaurantByLookupKey = new Map();
+  const sourceLinkLabelOverrides = sourceLinkLabelOverridesByDatasetId.get(datasetId) ?? {
+    byLookupKey: new Map(),
+    byOrdinal: new Map(),
+  };
 
   patchRestaurants.forEach((restaurant) => {
     buildLookupKeys(restaurant.name, restaurant.address, restaurant.region).forEach((lookupKey) => {
@@ -536,12 +667,41 @@ function buildCanonicalPatchOutput(datasetId, restaurants) {
     return mergeRestaurant(restaurant, patch);
   });
 
+  const baseRestaurantById = new Map(baseRestaurants.map((restaurant) => [restaurant.id, restaurant]));
+  const sourceLinks = (generatedPayload.sourceLinks ?? []).map((link) => {
+    const restaurant = baseRestaurantById.get(link.restaurantId);
+    if (!restaurant) {
+      return link;
+    }
+
+    const overrideLabel = buildLookupKeys(
+      restaurant.name,
+      restaurant.address,
+      restaurant.region
+    )
+      .map((lookupKey) => sourceLinkLabelOverrides.byLookupKey.get(lookupKey))
+      .find(Boolean);
+
+    const nextLabel =
+      overrideLabel ??
+      (Number.isFinite(link.ordinal)
+        ? sourceLinkLabelOverrides.byOrdinal.get(link.ordinal)
+        : undefined);
+
+    return nextLabel
+      ? {
+          ...link,
+          label: nextLabel,
+        }
+      : link;
+  });
+
   return {
     datasetId,
     generatedAt: new Date().toISOString(),
     restaurants: mergedRestaurants,
     sources: generatedPayload.sources ?? [],
-    sourceLinks: generatedPayload.sourceLinks ?? [],
+    sourceLinks,
   };
 }
 
@@ -558,6 +718,10 @@ function writeTopicOutputs(datasetMap) {
     }
 
     const sourceMetadata = sourceMetadataByDatasetId[datasetId];
+    const sourceLinkLabelOverrides = sourceLinkLabelOverridesByDatasetId.get(datasetId) ?? {
+      byLookupKey: new Map(),
+      byOrdinal: new Map(),
+    };
     const orderedRestaurants = Array.from(restaurants.values()).sort((left, right) =>
       left.name.localeCompare(right.name, "ko")
     );
@@ -567,7 +731,10 @@ function writeTopicOutputs(datasetMap) {
           restaurantId: restaurant.id,
           sourceId: sourceMetadata.id,
           ordinal: index + 1,
-          label: sourceLinkLabelByDatasetId[datasetId],
+          label:
+            buildLookupKeys(restaurant.name, restaurant.address, restaurant.region)
+              .map((lookupKey) => sourceLinkLabelOverrides.byLookupKey.get(lookupKey))
+              .find(Boolean) ?? sourceLinkLabelByDatasetId[datasetId],
         }))
       : [];
 

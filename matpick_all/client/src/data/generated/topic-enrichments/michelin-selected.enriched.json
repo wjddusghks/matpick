@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-selected",
-  "generatedAt": "2026-03-22T08:00:17.031Z",
+  "generatedAt": "2026-03-22T08:45:57.960Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-selected_9cba981aa9c5",
@@ -2231,7 +2231,7 @@
       "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
+      "description": "미쉐린 가이드의 선정 레스토랑을 한 번에 둘러보세요."
     }
   ],
   "sourceLinks": [

@@ -488,7 +488,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         key: buildDiscoveryKey("source", source.id),
         id: source.id,
         kind: "source" as const,
-        name: source.name,
+        name: getSourceDisplayName(source),
         imageUrl: source.imageUrl,
         count: getSourceRestaurantCount(source.id),
       }))

@@ -492,6 +492,23 @@ function isReliableGoogleMatch(match) {
   );
 }
 
+function isReliableMichelinGoogleMatch(match) {
+  if (isReliableGoogleMatch(match)) return true;
+  if (!match?.candidatePlaceId) return false;
+
+  const nameScore = Number(match.nameScore ?? 0);
+  const addressScore = Number(match.addressScore ?? 0);
+  const latitude = Number(match.location?.latitude ?? 0);
+  const longitude = Number(match.location?.longitude ?? 0);
+
+  return (
+    nameScore >= 0.95 &&
+    addressScore >= 0.15 &&
+    isValidCoord(latitude) &&
+    isValidCoord(longitude)
+  );
+}
+
 function buildRestaurantFromMenuItem(datasetId, item) {
   const restaurant = createBaseRestaurant(datasetId, item.restaurantName, item.address);
   return mergeRestaurant(restaurant, {
@@ -617,7 +634,7 @@ function mergeMichelinGoogleEnrichments(datasetMap) {
     const payload = readJson(filePath);
 
     for (const result of payload.results || []) {
-      if (!isReliableGoogleMatch(result.bestMatch)) continue;
+      if (!isReliableMichelinGoogleMatch(result.bestMatch)) continue;
 
       const key = buildLookupKey(result.restaurantName, result.address);
       const restaurants = datasetMap.get(datasetId) ?? new Map();

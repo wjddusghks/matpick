@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-1-star",
-  "generatedAt": "2026-03-22T08:45:57.951Z",
+  "generatedAt": "2026-03-22T09:31:38.527Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-1-star_d4132c79cb30",
@@ -121,13 +121,13 @@
       "address": "중구 퇴계로 67, 레스케이프 호텔 26층, Seoul, 04529, 한국",
       "category": "컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5598403,
+      "lng": 126.97951339999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJVZ4zFyOjfDURrY5_G1k5F7A",
       "isOverseas": false
     },
     {
@@ -201,13 +201,13 @@
       "address": "해운대구 마린시티 3로 37, 2층, Busan, 48118, 한국",
       "category": "코리안 컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.155484799999996,
+      "lng": 129.14664009999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ3yQ_9a6SaDURZ1fPnia4NUA",
       "isOverseas": false
     },
     {
@@ -217,13 +217,13 @@
       "address": "해운대구 구남로 21 경동리인뷰2차 상가 3층 311호, Busan, 48095, 한국",
       "category": "일식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1635104,
+      "lng": 129.1612983,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJxYhym0KNaDURznUJelakfU0",
       "isOverseas": false
     },
     {
@@ -473,13 +473,13 @@
       "address": "강남구 테헤란로 231, 조선팰리스 호텔 36층, Seoul, 06142, 한국",
       "category": "코리안 컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5030426,
+      "lng": 127.04158799999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJKWHZw3alfDUR5A5F61Oqj5I",
       "isOverseas": false
     },
     {
@@ -550,13 +550,13 @@
       "address": "해운대구 달맞이길 117번가길 219, 2층, Busan, 48105, 한국",
       "category": "이탤리언 컨템퍼러리",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.161867099999995,
+      "lng": 129.1735612,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJVds1KMWNaDUR0eBDjoc3IfM",
       "isOverseas": false
     },
     {

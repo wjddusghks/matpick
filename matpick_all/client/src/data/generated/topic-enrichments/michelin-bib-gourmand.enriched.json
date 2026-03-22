@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-bib-gourmand",
-  "generatedAt": "2026-03-22T08:45:57.954Z",
+  "generatedAt": "2026-03-22T09:31:38.529Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
@@ -630,13 +630,13 @@
       "address": "수영구 남천바다로 10번길 45, Busan, 48314, 한국",
       "category": "비빔밥",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.147954399999996,
+      "lng": 129.11142329999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJd13rH-TtaDURYgi7r2FNPk4",
       "isOverseas": false
     },
     {
@@ -789,13 +789,13 @@
       "address": "중구 동호로 12길 98, Seoul, 04608, 한국",
       "category": "소바",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5594926,
+      "lng": 127.01243389999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJgdTBeACjfDURNWojiUHxSho",
       "isOverseas": false
     },
     {
@@ -997,13 +997,13 @@
       "address": "용산구 한강대로 62다길 29, Seoul, 04382, 한국",
       "category": "한식",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5325443,
+      "lng": 126.9747393,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ_QFVYGSjfDURpdna_-3xNGI",
       "isOverseas": false
     },
     {
@@ -1274,13 +1274,13 @@
       "address": "수영구 무학로 33번길 54, Busan, 48268, 한국",
       "category": "타이",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 35.1638053,
+      "lng": 129.11808349999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJSwdWYqmTaDURGswHh5uoVMA",
       "isOverseas": false
     },
     {
@@ -1338,13 +1338,13 @@
       "address": "마포구 양화로 1길 21, 2층, Seoul, 04026, 한국",
       "category": "곰탕",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.549455699999996,
+      "lng": 126.9104449,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ04tbHSqZfDURPGoYOojI57Q",
       "isOverseas": false
     },
     {

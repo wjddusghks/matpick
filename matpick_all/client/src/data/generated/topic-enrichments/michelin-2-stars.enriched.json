@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-2-stars",
-  "generatedAt": "2026-03-22T08:45:57.948Z",
+  "generatedAt": "2026-03-22T09:31:38.526Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-2-stars_fbce08263974",
@@ -124,8 +124,8 @@
       "address": "강남구 도산대로 70길 24, Seoul, 06064, 한국",
       "category": "일식당",
       "representativeMenu": "재철 재료를 사용한 코스요리",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.522197399999996,
+      "lng": 127.04503059999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -143,7 +143,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJGZ6vIe2jfDURWOUsVCO94cA",
       "isOverseas": false
     },
     {
@@ -153,13 +153,13 @@
       "address": "중구 만리재로 21길 8, Seoul, 04500, 한국",
       "category": "기업,빌딩",
       "representativeMenu": "",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5529456,
+      "lng": 126.96340309999998,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJ6fwnPgCjfDURRK3JXHKApos",
       "isOverseas": false
     },
     {
@@ -169,8 +169,8 @@
       "address": "강남구 강남대로 652 신사스퀘어 2층 201호, Seoul, 06027, 한국",
       "category": "양식",
       "representativeMenu": "런치 코스",
-      "lat": 0,
-      "lng": 0,
+      "lat": 37.5193295,
+      "lng": 127.01903259999999,
       "imageUrl": "",
       "foundingYear": null,
       "menus": [
@@ -188,7 +188,7 @@
         }
       ],
       "thumbnailFileName": null,
-      "googlePlaceId": null,
+      "googlePlaceId": "ChIJIU2RrnahfDURNvCJDhODupM",
       "isOverseas": false
     },
     {

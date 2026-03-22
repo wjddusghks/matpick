@@ -574,6 +574,10 @@ export default function RestaurantDetail() {
           "Browse nearby alternatives or places that overlap in source, creator, cuisine, or neighborhood.",
         relatedModeRelated: "Related",
         relatedModeNearby: "Distance",
+        relatedSharedCreator: "Shared creators",
+        relatedSharedSource: "Same source",
+        relatedSameCuisine: "Same cuisine",
+        relatedSameRegion: "Same area",
         directionsTitle: "Continue in map apps",
         directionsDescription:
           "Open the destination directly in Naver Map or KakaoMap and continue with directions there.",
@@ -591,6 +595,10 @@ export default function RestaurantDetail() {
           "\uC9C0\uAE08 \uBCF4\uACE0 \uC788\uB294 \uC2DD\uB2F9\uACFC \uAC00\uAE4C\uC6B4 \uACF3, \uB610\uB294 \uAC19\uC740 \uCD9C\uCC98\u00B7\uD06C\uB9AC\uC5D0\uC774\uD130\u00B7\uCE74\uD14C\uACE0\uB9AC\u00B7\uC9C0\uC5ED\uC744 \uACF5\uC720\uD558\uB294 \uACF3\uC744 \uBAA8\uC544\uBD24\uC5B4\uC694.",
         relatedModeRelated: "\uC5F0\uAD00\uC21C",
         relatedModeNearby: "\uD604\uC7AC \uC2DD\uB2F9 \uAC70\uB9AC\uC21C",
+        relatedSharedCreator: "\uACB9\uCE58\uB294 \uD06C\uB9AC\uC5D0\uC774\uD130",
+        relatedSharedSource: "\uAC19\uC740 \uCD9C\uCC98",
+        relatedSameCuisine: "\uAC19\uC740 \uCE74\uD14C\uACE0\uB9AC",
+        relatedSameRegion: "\uAC19\uC740 \uC9C0\uC5ED",
         directionsTitle: "\uC678\uBD80 \uC9C0\uB3C4\uB85C \uC774\uC5B4\uAC00\uAE30",
         directionsDescription:
           "\uB124\uC774\uBC84\uC9C0\uB3C4\uB098 \uCE74\uCE74\uC624\uB9F5\uC5D0\uC11C \uC2DD\uB2F9 \uC704\uCE58\uB97C \uBC14\uB85C \uC5F4\uACE0 \uAE38\uC548\uB0B4\uB97C \uC774\uC5B4\uAC00\uC138\uC694.",
@@ -958,22 +966,22 @@ export default function RestaurantDetail() {
                       ) : null}
                       {entry.sharedCreatorCount > 0 ? (
                         <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
-                          寃뱀튂???щ━?먯씠??{entry.sharedCreatorCount}
+                          {uiCopy.relatedSharedCreator} {entry.sharedCreatorCount}
                         </span>
                       ) : null}
                       {entry.sharedSourceCount > 0 ? (
                         <span className="rounded-full bg-[#eef8ff] px-2.5 py-1 text-[11px] font-semibold text-[#3a7bb7]">
-                          媛숈? ?좎젙 異쒖쿂 {entry.sharedSourceCount}
+                          {uiCopy.relatedSharedSource} {entry.sharedSourceCount}
                         </span>
                       ) : null}
                       {entry.sameCuisine ? (
                         <span className="rounded-full bg-[#f5f2ff] px-2.5 py-1 text-[11px] font-semibold text-[#7457c7]">
-                          媛숈? 移댄뀒怨좊━
+                          {uiCopy.relatedSameCuisine}
                         </span>
                       ) : null}
                       {entry.sameRegion ? (
                         <span className="rounded-full bg-[#effaf2] px-2.5 py-1 text-[11px] font-semibold text-[#2d8b57]">
-                          媛숈? 吏??
+                          {uiCopy.relatedSameRegion}
                         </span>
                       ) : null}
                     </div>

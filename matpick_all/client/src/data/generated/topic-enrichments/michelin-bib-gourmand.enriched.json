@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-bib-gourmand",
-  "generatedAt": "2026-03-22T07:46:30.353Z",
+  "generatedAt": "2026-03-22T08:00:17.030Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
@@ -1525,439 +1525,510 @@
   ],
   "sources": [
     {
-      "id": "michelin-bib-gourmand",
-      "name": "빕 구르망",
+      "id": "michelin",
+      "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "빕 구르망으로 선정된 가성비 좋은 레스토랑을 모아봤어요."
+      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
     }
   ],
   "sourceLinks": [
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_59e7690d6060",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_59e7690d6060",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_59e7690d6060",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 1
+      "sourceId": "michelin",
+      "ordinal": 1,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_7545010b8a03",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_7545010b8a03",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 2
+      "sourceId": "michelin",
+      "ordinal": 2,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_175611706310",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_175611706310",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_175611706310",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 3
+      "sourceId": "michelin",
+      "ordinal": 3,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 4
+      "sourceId": "michelin",
+      "ordinal": 4,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 5
+      "sourceId": "michelin",
+      "ordinal": 5,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_ccad019b6bdf",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 6
+      "sourceId": "michelin",
+      "ordinal": 6,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 7
+      "sourceId": "michelin",
+      "ordinal": 7,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_a394500bb68e",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_a394500bb68e",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_a394500bb68e",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 8
+      "sourceId": "michelin",
+      "ordinal": 8,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_0eb12b158603",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_0eb12b158603",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 9
+      "sourceId": "michelin",
+      "ordinal": 9,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_097ec67f9ded",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 10
+      "sourceId": "michelin",
+      "ordinal": 10,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 11
+      "sourceId": "michelin",
+      "ordinal": 11,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 12
+      "sourceId": "michelin",
+      "ordinal": 12,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_8d3e962531c2",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 13
+      "sourceId": "michelin",
+      "ordinal": 13,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 14
+      "sourceId": "michelin",
+      "ordinal": 14,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_8b30cd561327",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_8b30cd561327",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_8b30cd561327",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 15
+      "sourceId": "michelin",
+      "ordinal": 15,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 16
+      "sourceId": "michelin",
+      "ordinal": 16,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_1a9ef66946fe",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 17
+      "sourceId": "michelin",
+      "ordinal": 17,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_4d8b0f05e154",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 18
+      "sourceId": "michelin",
+      "ordinal": 18,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_4c409e3ad211",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 19
+      "sourceId": "michelin",
+      "ordinal": 19,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_104103149e3d",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_104103149e3d",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_104103149e3d",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 20
+      "sourceId": "michelin",
+      "ordinal": 20,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_64d91730bf44",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_64d91730bf44",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_64d91730bf44",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 21
+      "sourceId": "michelin",
+      "ordinal": 21,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_2df130330a51",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_2df130330a51",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_2df130330a51",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 22
+      "sourceId": "michelin",
+      "ordinal": 22,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 23
+      "sourceId": "michelin",
+      "ordinal": 23,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 24
+      "sourceId": "michelin",
+      "ordinal": 24,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_e14571ccb0f6",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 25
+      "sourceId": "michelin",
+      "ordinal": 25,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_ef3502ce072b",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 26
+      "sourceId": "michelin",
+      "ordinal": 26,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_0cbb8c1969a9",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 27
+      "sourceId": "michelin",
+      "ordinal": 27,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_f01e29fddb2b",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 28
+      "sourceId": "michelin",
+      "ordinal": 28,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 29
+      "sourceId": "michelin",
+      "ordinal": 29,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_927dc8369053",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_927dc8369053",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_927dc8369053",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 30
+      "sourceId": "michelin",
+      "ordinal": 30,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4fe444039e17",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_4fe444039e17",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_4fe444039e17",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 31
+      "sourceId": "michelin",
+      "ordinal": 31,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_05c9759cd576",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_05c9759cd576",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_05c9759cd576",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 32
+      "sourceId": "michelin",
+      "ordinal": 32,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_fe27cefbd17b",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 33
+      "sourceId": "michelin",
+      "ordinal": 33,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 34
+      "sourceId": "michelin",
+      "ordinal": 34,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 35
+      "sourceId": "michelin",
+      "ordinal": 35,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_6d3129f012bf",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 36
+      "sourceId": "michelin",
+      "ordinal": 36,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_64ce42f0ec2c",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 37
+      "sourceId": "michelin",
+      "ordinal": 37,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 38
+      "sourceId": "michelin",
+      "ordinal": 38,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 39
+      "sourceId": "michelin",
+      "ordinal": 39,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_083fcd6b347c",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 40
+      "sourceId": "michelin",
+      "ordinal": 40,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_f2b05e7e9236",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 41
+      "sourceId": "michelin",
+      "ordinal": 41,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_5c1ccbcec6c6",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 42
+      "sourceId": "michelin",
+      "ordinal": 42,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_400fdcd4654f",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 43
+      "sourceId": "michelin",
+      "ordinal": 43,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_964b28d8f80b",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 44
+      "sourceId": "michelin",
+      "ordinal": 44,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ec81b148db70",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_ec81b148db70",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_ec81b148db70",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 45
+      "sourceId": "michelin",
+      "ordinal": 45,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_4f6e93dfb010",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 46
+      "sourceId": "michelin",
+      "ordinal": 46,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 47
+      "sourceId": "michelin",
+      "ordinal": 47,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_948a029ffc18",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_948a029ffc18",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_948a029ffc18",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 48
+      "sourceId": "michelin",
+      "ordinal": 48,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_e25bfcdc55a5",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 49
+      "sourceId": "michelin",
+      "ordinal": 49,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 50
+      "sourceId": "michelin",
+      "ordinal": 50,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_bf11f33a90d0",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 51
+      "sourceId": "michelin",
+      "ordinal": 51,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_69a5b29de596",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_69a5b29de596",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_69a5b29de596",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 52
+      "sourceId": "michelin",
+      "ordinal": 52,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_fddd23ea8541",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 53
+      "sourceId": "michelin",
+      "ordinal": 53,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_ed52a9039e17",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 54
+      "sourceId": "michelin",
+      "ordinal": 54,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_be70d7b653e9",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 55
+      "sourceId": "michelin",
+      "ordinal": 55,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 56
+      "sourceId": "michelin",
+      "ordinal": 56,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_c013858f8af2",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_c013858f8af2",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 57
+      "sourceId": "michelin",
+      "ordinal": 57,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_172e88cb161c",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_172e88cb161c",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 58
+      "sourceId": "michelin",
+      "ordinal": 58,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_45037def01d9",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_45037def01d9",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_45037def01d9",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 59
+      "sourceId": "michelin",
+      "ordinal": 59,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_ee623682524d",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_ee623682524d",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_ee623682524d",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 60
+      "sourceId": "michelin",
+      "ordinal": 60,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_969169eca959",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_969169eca959",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_969169eca959",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 61
+      "sourceId": "michelin",
+      "ordinal": 61,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_bc7a33ffbc9f",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 62
+      "sourceId": "michelin",
+      "ordinal": 62,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_c27c4a173b86",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 63
+      "sourceId": "michelin",
+      "ordinal": 63,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_0324c1fe4a14",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 64
+      "sourceId": "michelin",
+      "ordinal": 64,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 65
+      "sourceId": "michelin",
+      "ordinal": 65,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 66
+      "sourceId": "michelin",
+      "ordinal": 66,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_a0697afbfd6a",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 67
+      "sourceId": "michelin",
+      "ordinal": 67,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_9386f81586dd",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_9386f81586dd",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 68
+      "sourceId": "michelin",
+      "ordinal": 68,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 69
+      "sourceId": "michelin",
+      "ordinal": 69,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 70
+      "sourceId": "michelin",
+      "ordinal": 70,
+      "label": "빕 구르망"
     },
     {
-      "id": "michelin-bib-gourmand_topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
+      "id": "michelin_topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
       "restaurantId": "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee",
-      "sourceId": "michelin-bib-gourmand",
-      "ordinal": 71
+      "sourceId": "michelin",
+      "ordinal": 71,
+      "label": "빕 구르망"
     }
   ]
 }

@@ -73,6 +73,11 @@ export type DiscoveryTopicEpisode = {
   path: string;
 };
 
+export type SourceSubdivision = {
+  label: string;
+  count: number;
+};
+
 export type RestaurantBroadcastMeta = {
   count: number;
   primaryEpisode: string;
@@ -820,6 +825,42 @@ export function getRestaurantsBySource(sourceId: string) {
 
 export function getSourceRestaurantCount(sourceId: string) {
   return restaurantIdsBySourceId.get(sourceId)?.size ?? 0;
+}
+
+export function getSourceSubdivisions(sourceId: string): SourceSubdivision[] {
+  const counts = new Map<string, number>();
+
+  sourceLinks.forEach((link) => {
+    if (link.sourceId !== sourceId) {
+      return;
+    }
+
+    const label = link.label?.trim();
+    if (!label) {
+      return;
+    }
+
+    counts.set(label, (counts.get(label) ?? 0) + 1);
+  });
+
+  return Array.from(counts.entries())
+    .map(([label, count]) => ({ label, count }))
+    .sort((a, b) => b.count - a.count || sortText(a.label, b.label));
+}
+
+export function restaurantMatchesSourceSubdivision(
+  restaurantId: string,
+  sourceId: string,
+  label: string
+) {
+  const normalizedLabel = label.trim();
+  if (!normalizedLabel) {
+    return false;
+  }
+
+  return getSourceLinksByRestaurant(restaurantId).some(
+    (link) => link.sourceId === sourceId && (link.label?.trim() ?? "") === normalizedLabel
+  );
 }
 
 function buildDiscoveryTopicKey(kind: DiscoveryTopicKind, targetId: string) {

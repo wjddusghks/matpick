@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-3-stars",
-  "generatedAt": "2026-03-22T07:46:30.336Z",
+  "generatedAt": "2026-03-22T08:00:17.016Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-3-stars_90fd82c780a7",
@@ -58,19 +58,20 @@
   ],
   "sources": [
     {
-      "id": "michelin-3-stars",
-      "name": "미쉐린 3스타",
+      "id": "michelin",
+      "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "미쉐린 3스타로 선정된 레스토랑을 모아봤어요."
+      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
     }
   ],
   "sourceLinks": [
     {
-      "id": "michelin-3-stars_topic_enrichment_michelin-3-stars_90fd82c780a7",
+      "id": "michelin_topic_enrichment_michelin-3-stars_90fd82c780a7",
       "restaurantId": "topic_enrichment_michelin-3-stars_90fd82c780a7",
-      "sourceId": "michelin-3-stars",
-      "ordinal": 1
+      "sourceId": "michelin",
+      "ordinal": 1,
+      "label": "미쉐린 3스타"
     }
   ]
 }

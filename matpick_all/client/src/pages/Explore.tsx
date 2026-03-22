@@ -18,7 +18,9 @@ import {
   getRestaurantMenuSummary,
   getRestaurantsByCreator,
   getSourceRestaurantCount,
+  getSourceSubdivisions,
   getSourcesByRestaurant,
+  restaurantMatchesSourceSubdivision,
   restaurants,
   sources,
   type DiscoveryTopic,
@@ -78,6 +80,7 @@ const EXPLORE_COPY = {
     topicShortcutLabel: "주제 바로가기",
     topicHeading: "내 주제",
     episodeHeading: "회차",
+    subdivisionHeading: "구분",
     categoryHeading: "카테고리",
     regionHeading: "지역",
     allLabel: "전체",
@@ -114,6 +117,7 @@ const EXPLORE_COPY = {
     topicShortcutLabel: "Topic shortcuts",
     topicHeading: "My topics",
     episodeHeading: "Episodes",
+    subdivisionHeading: "Distinction",
     categoryHeading: "Cuisine",
     regionHeading: "Region",
     allLabel: "All",
@@ -530,6 +534,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [selectedCategory, setSelectedCategory] = useState(ALL_FILTER);
   const [selectedRegion, setSelectedRegion] = useState(ALL_FILTER);
   const [selectedTopicId, setSelectedTopicId] = useState(ALL_FILTER);
+  const [selectedSubdivision, setSelectedSubdivision] = useState(ALL_FILTER);
   const [isEpisodeMenuOpen, setIsEpisodeMenuOpen] = useState(Boolean(episodeSlug));
   const [visibleCount, setVisibleCount] = useState(60);
   const loadMoreRef = useRef<HTMLDivElement>(null);
@@ -619,6 +624,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
     setSelectedTopicId(ALL_FILTER);
+    setSelectedSubdivision(ALL_FILTER);
   }, [episodeSlug, topicSlug]);
 
   useEffect(() => {
@@ -632,9 +638,36 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     selectedCategory,
     selectedDiscoveryKeys,
     selectedRegion,
+    selectedSubdivision,
     selectedTopicId,
     topicSlug,
   ]);
+
+  const activeMichelinSourceId = useMemo(() => {
+    if (presetTopic?.kind === "source" && presetTopic.targetId === "michelin") {
+      return "michelin";
+    }
+
+    if (selectedDiscoveryKeys.includes(buildDiscoveryKey("source", "michelin"))) {
+      return "michelin";
+    }
+
+    return null;
+  }, [presetTopic, selectedDiscoveryKeys]);
+
+  const activeSourceSubdivisions = useMemo(() => {
+    if (!activeMichelinSourceId) {
+      return [];
+    }
+
+    return getSourceSubdivisions(activeMichelinSourceId);
+  }, [activeMichelinSourceId]);
+
+  useEffect(() => {
+    if (!activeMichelinSourceId && selectedSubdivision !== ALL_FILTER) {
+      setSelectedSubdivision(ALL_FILTER);
+    }
+  }, [activeMichelinSourceId, selectedSubdivision]);
 
   const filteredRestaurants = useMemo(() => {
     let nextRestaurants = [...restaurants];
@@ -675,6 +708,16 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       );
     }
 
+    if (activeMichelinSourceId && selectedSubdivision !== ALL_FILTER) {
+      nextRestaurants = nextRestaurants.filter((restaurant) =>
+        restaurantMatchesSourceSubdivision(
+          restaurant.id,
+          activeMichelinSourceId,
+          selectedSubdivision
+        )
+      );
+    }
+
     if (presetEpisode) {
       const episodeRestaurantIds = new Set(presetEpisode.restaurantIds);
       nextRestaurants = nextRestaurants.filter((restaurant) =>
@@ -698,7 +741,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     selectedCategory,
     selectedDiscoveryKeys,
     selectedRegion,
+    selectedSubdivision,
     selectedTopicId,
+    activeMichelinSourceId,
   ]);
 
   const deferredRestaurants = useDeferredValue(filteredRestaurants);
@@ -759,6 +804,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     setSelectedDiscoveryKeys([]);
     setSelectedCategory(ALL_FILTER);
     setSelectedRegion(ALL_FILTER);
+    setSelectedSubdivision(ALL_FILTER);
     setSelectedTopicId(ALL_FILTER);
     navigate("/explore");
   };
@@ -768,6 +814,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     hasActiveDiscovery ||
     selectedCategory !== ALL_FILTER ||
     selectedRegion !== ALL_FILTER ||
+    selectedSubdivision !== ALL_FILTER ||
     selectedTopicId !== ALL_FILTER ||
     Boolean(presetTopic) ||
     Boolean(presetEpisode);
@@ -804,6 +851,15 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       selected: topicId !== ALL_FILTER,
     });
     setSelectedTopicId(topicId);
+  };
+
+  const handleSubdivisionSelect = (label: string) => {
+    trackMarketingEvent("source_subdivision_filter_click", {
+      source_id: activeMichelinSourceId ?? "",
+      subdivision_label: label,
+      topic_slug: presetTopic?.slug ?? "",
+    });
+    setSelectedSubdivision(label);
   };
 
   const handleRestaurantSelect = (restaurant: Restaurant) => {
@@ -1061,6 +1117,27 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                   >
                     <FavoriteTopicBadge topic={topic} active={selectedTopicId === topic.id} />
                   </button>
+                ))}
+              </div>
+            ) : null}
+
+            {activeMichelinSourceId && activeSourceSubdivisions.length > 0 ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-sm font-semibold text-[#666]">
+                  {copy.subdivisionHeading}
+                </span>
+                <FilterChip
+                  label={copy.allLabel}
+                  selected={selectedSubdivision === ALL_FILTER}
+                  onClick={() => handleSubdivisionSelect(ALL_FILTER)}
+                />
+                {activeSourceSubdivisions.map((subdivision) => (
+                  <FilterChip
+                    key={subdivision.label}
+                    label={subdivision.label}
+                    selected={selectedSubdivision === subdivision.label}
+                    onClick={() => handleSubdivisionSelect(subdivision.label)}
+                  />
                 ))}
               </div>
             ) : null}

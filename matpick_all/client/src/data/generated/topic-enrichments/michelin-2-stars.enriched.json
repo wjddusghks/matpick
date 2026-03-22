@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-2-stars",
-  "generatedAt": "2026-03-22T07:46:30.350Z",
+  "generatedAt": "2026-03-22T08:00:17.027Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-2-stars_fbce08263974",
@@ -268,73 +268,83 @@
   ],
   "sources": [
     {
-      "id": "michelin-2-stars",
-      "name": "미쉐린 2스타",
+      "id": "michelin",
+      "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "미쉐린 2스타로 선정된 레스토랑을 모아봤어요."
+      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
     }
   ],
   "sourceLinks": [
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_fbce08263974",
+      "id": "michelin_topic_enrichment_michelin-2-stars_fbce08263974",
       "restaurantId": "topic_enrichment_michelin-2-stars_fbce08263974",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 1
+      "sourceId": "michelin",
+      "ordinal": 1,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_e40f1a27b276",
+      "id": "michelin_topic_enrichment_michelin-2-stars_e40f1a27b276",
       "restaurantId": "topic_enrichment_michelin-2-stars_e40f1a27b276",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 2
+      "sourceId": "michelin",
+      "ordinal": 2,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_f38f7e9e54fc",
+      "id": "michelin_topic_enrichment_michelin-2-stars_f38f7e9e54fc",
       "restaurantId": "topic_enrichment_michelin-2-stars_f38f7e9e54fc",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 3
+      "sourceId": "michelin",
+      "ordinal": 3,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_d2dd9eeff8be",
+      "id": "michelin_topic_enrichment_michelin-2-stars_d2dd9eeff8be",
       "restaurantId": "topic_enrichment_michelin-2-stars_d2dd9eeff8be",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 4
+      "sourceId": "michelin",
+      "ordinal": 4,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_2663deda0dab",
+      "id": "michelin_topic_enrichment_michelin-2-stars_2663deda0dab",
       "restaurantId": "topic_enrichment_michelin-2-stars_2663deda0dab",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 5
+      "sourceId": "michelin",
+      "ordinal": 5,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_1f775d4caaf7",
+      "id": "michelin_topic_enrichment_michelin-2-stars_1f775d4caaf7",
       "restaurantId": "topic_enrichment_michelin-2-stars_1f775d4caaf7",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 6
+      "sourceId": "michelin",
+      "ordinal": 6,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_759bcc5b5dd8",
+      "id": "michelin_topic_enrichment_michelin-2-stars_759bcc5b5dd8",
       "restaurantId": "topic_enrichment_michelin-2-stars_759bcc5b5dd8",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 7
+      "sourceId": "michelin",
+      "ordinal": 7,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_8e94f1b51d47",
+      "id": "michelin_topic_enrichment_michelin-2-stars_8e94f1b51d47",
       "restaurantId": "topic_enrichment_michelin-2-stars_8e94f1b51d47",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 8
+      "sourceId": "michelin",
+      "ordinal": 8,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+      "id": "michelin_topic_enrichment_michelin-2-stars_4b8c738a2ffd",
       "restaurantId": "topic_enrichment_michelin-2-stars_4b8c738a2ffd",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 9
+      "sourceId": "michelin",
+      "ordinal": 9,
+      "label": "미쉐린 2스타"
     },
     {
-      "id": "michelin-2-stars_topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+      "id": "michelin_topic_enrichment_michelin-2-stars_ee0ea1ef1717",
       "restaurantId": "topic_enrichment_michelin-2-stars_ee0ea1ef1717",
-      "sourceId": "michelin-2-stars",
-      "ordinal": 10
+      "sourceId": "michelin",
+      "ordinal": 10,
+      "label": "미쉐린 2스타"
     }
   ]
 }

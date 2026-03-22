@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-selected",
-  "generatedAt": "2026-03-22T07:46:30.355Z",
+  "generatedAt": "2026-03-22T08:00:17.031Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-selected_9cba981aa9c5",
@@ -2227,703 +2227,818 @@
   ],
   "sources": [
     {
-      "id": "michelin-selected",
-      "name": "선정 레스토랑",
+      "id": "michelin",
+      "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "미쉐린 선정 레스토랑을 한 번에 둘러볼 수 있어요."
+      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
     }
   ],
   "sourceLinks": [
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9cba981aa9c5",
+      "id": "michelin_topic_enrichment_michelin-selected_9cba981aa9c5",
       "restaurantId": "topic_enrichment_michelin-selected_9cba981aa9c5",
-      "sourceId": "michelin-selected",
-      "ordinal": 1
+      "sourceId": "michelin",
+      "ordinal": 1,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_dfcc6abb53a9",
+      "id": "michelin_topic_enrichment_michelin-selected_dfcc6abb53a9",
       "restaurantId": "topic_enrichment_michelin-selected_dfcc6abb53a9",
-      "sourceId": "michelin-selected",
-      "ordinal": 2
+      "sourceId": "michelin",
+      "ordinal": 2,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_0476aa088e94",
+      "id": "michelin_topic_enrichment_michelin-selected_0476aa088e94",
       "restaurantId": "topic_enrichment_michelin-selected_0476aa088e94",
-      "sourceId": "michelin-selected",
-      "ordinal": 3
+      "sourceId": "michelin",
+      "ordinal": 3,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9d477e81cba4",
+      "id": "michelin_topic_enrichment_michelin-selected_9d477e81cba4",
       "restaurantId": "topic_enrichment_michelin-selected_9d477e81cba4",
-      "sourceId": "michelin-selected",
-      "ordinal": 4
+      "sourceId": "michelin",
+      "ordinal": 4,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e35ef71e95ff",
+      "id": "michelin_topic_enrichment_michelin-selected_e35ef71e95ff",
       "restaurantId": "topic_enrichment_michelin-selected_e35ef71e95ff",
-      "sourceId": "michelin-selected",
-      "ordinal": 5
+      "sourceId": "michelin",
+      "ordinal": 5,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e7dc971c60da",
+      "id": "michelin_topic_enrichment_michelin-selected_e7dc971c60da",
       "restaurantId": "topic_enrichment_michelin-selected_e7dc971c60da",
-      "sourceId": "michelin-selected",
-      "ordinal": 6
+      "sourceId": "michelin",
+      "ordinal": 6,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_78e61aa34bd8",
+      "id": "michelin_topic_enrichment_michelin-selected_78e61aa34bd8",
       "restaurantId": "topic_enrichment_michelin-selected_78e61aa34bd8",
-      "sourceId": "michelin-selected",
-      "ordinal": 7
+      "sourceId": "michelin",
+      "ordinal": 7,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ba2646885062",
+      "id": "michelin_topic_enrichment_michelin-selected_ba2646885062",
       "restaurantId": "topic_enrichment_michelin-selected_ba2646885062",
-      "sourceId": "michelin-selected",
-      "ordinal": 8
+      "sourceId": "michelin",
+      "ordinal": 8,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_391f996a6f59",
+      "id": "michelin_topic_enrichment_michelin-selected_391f996a6f59",
       "restaurantId": "topic_enrichment_michelin-selected_391f996a6f59",
-      "sourceId": "michelin-selected",
-      "ordinal": 9
+      "sourceId": "michelin",
+      "ordinal": 9,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4ad812e416da",
+      "id": "michelin_topic_enrichment_michelin-selected_4ad812e416da",
       "restaurantId": "topic_enrichment_michelin-selected_4ad812e416da",
-      "sourceId": "michelin-selected",
-      "ordinal": 10
+      "sourceId": "michelin",
+      "ordinal": 10,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a9edbe86daff",
+      "id": "michelin_topic_enrichment_michelin-selected_a9edbe86daff",
       "restaurantId": "topic_enrichment_michelin-selected_a9edbe86daff",
-      "sourceId": "michelin-selected",
-      "ordinal": 11
+      "sourceId": "michelin",
+      "ordinal": 11,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ea0ea67066e9",
+      "id": "michelin_topic_enrichment_michelin-selected_ea0ea67066e9",
       "restaurantId": "topic_enrichment_michelin-selected_ea0ea67066e9",
-      "sourceId": "michelin-selected",
-      "ordinal": 12
+      "sourceId": "michelin",
+      "ordinal": 12,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_3adfeaf102cd",
+      "id": "michelin_topic_enrichment_michelin-selected_3adfeaf102cd",
       "restaurantId": "topic_enrichment_michelin-selected_3adfeaf102cd",
-      "sourceId": "michelin-selected",
-      "ordinal": 13
+      "sourceId": "michelin",
+      "ordinal": 13,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_61c342647a54",
+      "id": "michelin_topic_enrichment_michelin-selected_61c342647a54",
       "restaurantId": "topic_enrichment_michelin-selected_61c342647a54",
-      "sourceId": "michelin-selected",
-      "ordinal": 14
+      "sourceId": "michelin",
+      "ordinal": 14,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_d0c5379e98cb",
+      "id": "michelin_topic_enrichment_michelin-selected_d0c5379e98cb",
       "restaurantId": "topic_enrichment_michelin-selected_d0c5379e98cb",
-      "sourceId": "michelin-selected",
-      "ordinal": 15
+      "sourceId": "michelin",
+      "ordinal": 15,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_65a12488602d",
+      "id": "michelin_topic_enrichment_michelin-selected_65a12488602d",
       "restaurantId": "topic_enrichment_michelin-selected_65a12488602d",
-      "sourceId": "michelin-selected",
-      "ordinal": 16
+      "sourceId": "michelin",
+      "ordinal": 16,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ff43ec9c7d12",
+      "id": "michelin_topic_enrichment_michelin-selected_ff43ec9c7d12",
       "restaurantId": "topic_enrichment_michelin-selected_ff43ec9c7d12",
-      "sourceId": "michelin-selected",
-      "ordinal": 17
+      "sourceId": "michelin",
+      "ordinal": 17,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_5d88a1c726c6",
+      "id": "michelin_topic_enrichment_michelin-selected_5d88a1c726c6",
       "restaurantId": "topic_enrichment_michelin-selected_5d88a1c726c6",
-      "sourceId": "michelin-selected",
-      "ordinal": 18
+      "sourceId": "michelin",
+      "ordinal": 18,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f65f51470954",
+      "id": "michelin_topic_enrichment_michelin-selected_f65f51470954",
       "restaurantId": "topic_enrichment_michelin-selected_f65f51470954",
-      "sourceId": "michelin-selected",
-      "ordinal": 19
+      "sourceId": "michelin",
+      "ordinal": 19,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9a98cbb18585",
+      "id": "michelin_topic_enrichment_michelin-selected_9a98cbb18585",
       "restaurantId": "topic_enrichment_michelin-selected_9a98cbb18585",
-      "sourceId": "michelin-selected",
-      "ordinal": 20
+      "sourceId": "michelin",
+      "ordinal": 20,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_dddf83c3bf8d",
+      "id": "michelin_topic_enrichment_michelin-selected_dddf83c3bf8d",
       "restaurantId": "topic_enrichment_michelin-selected_dddf83c3bf8d",
-      "sourceId": "michelin-selected",
-      "ordinal": 21
+      "sourceId": "michelin",
+      "ordinal": 21,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_0ae86cdd59a0",
+      "id": "michelin_topic_enrichment_michelin-selected_0ae86cdd59a0",
       "restaurantId": "topic_enrichment_michelin-selected_0ae86cdd59a0",
-      "sourceId": "michelin-selected",
-      "ordinal": 22
+      "sourceId": "michelin",
+      "ordinal": 22,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_2b65eff1a91f",
+      "id": "michelin_topic_enrichment_michelin-selected_2b65eff1a91f",
       "restaurantId": "topic_enrichment_michelin-selected_2b65eff1a91f",
-      "sourceId": "michelin-selected",
-      "ordinal": 23
+      "sourceId": "michelin",
+      "ordinal": 23,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6b8da13d3b9e",
+      "id": "michelin_topic_enrichment_michelin-selected_6b8da13d3b9e",
       "restaurantId": "topic_enrichment_michelin-selected_6b8da13d3b9e",
-      "sourceId": "michelin-selected",
-      "ordinal": 24
+      "sourceId": "michelin",
+      "ordinal": 24,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_fcbbc8e93109",
+      "id": "michelin_topic_enrichment_michelin-selected_fcbbc8e93109",
       "restaurantId": "topic_enrichment_michelin-selected_fcbbc8e93109",
-      "sourceId": "michelin-selected",
-      "ordinal": 25
+      "sourceId": "michelin",
+      "ordinal": 25,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_bc4e97c93e13",
+      "id": "michelin_topic_enrichment_michelin-selected_bc4e97c93e13",
       "restaurantId": "topic_enrichment_michelin-selected_bc4e97c93e13",
-      "sourceId": "michelin-selected",
-      "ordinal": 26
+      "sourceId": "michelin",
+      "ordinal": 26,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ff0e44a8843f",
+      "id": "michelin_topic_enrichment_michelin-selected_ff0e44a8843f",
       "restaurantId": "topic_enrichment_michelin-selected_ff0e44a8843f",
-      "sourceId": "michelin-selected",
-      "ordinal": 27
+      "sourceId": "michelin",
+      "ordinal": 27,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_846510973572",
+      "id": "michelin_topic_enrichment_michelin-selected_846510973572",
       "restaurantId": "topic_enrichment_michelin-selected_846510973572",
-      "sourceId": "michelin-selected",
-      "ordinal": 28
+      "sourceId": "michelin",
+      "ordinal": 28,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6c0413fd0259",
+      "id": "michelin_topic_enrichment_michelin-selected_6c0413fd0259",
       "restaurantId": "topic_enrichment_michelin-selected_6c0413fd0259",
-      "sourceId": "michelin-selected",
-      "ordinal": 29
+      "sourceId": "michelin",
+      "ordinal": 29,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_616126b562b1",
+      "id": "michelin_topic_enrichment_michelin-selected_616126b562b1",
       "restaurantId": "topic_enrichment_michelin-selected_616126b562b1",
-      "sourceId": "michelin-selected",
-      "ordinal": 30
+      "sourceId": "michelin",
+      "ordinal": 30,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_12da9922c455",
+      "id": "michelin_topic_enrichment_michelin-selected_12da9922c455",
       "restaurantId": "topic_enrichment_michelin-selected_12da9922c455",
-      "sourceId": "michelin-selected",
-      "ordinal": 31
+      "sourceId": "michelin",
+      "ordinal": 31,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6c04f4ac0077",
+      "id": "michelin_topic_enrichment_michelin-selected_6c04f4ac0077",
       "restaurantId": "topic_enrichment_michelin-selected_6c04f4ac0077",
-      "sourceId": "michelin-selected",
-      "ordinal": 32
+      "sourceId": "michelin",
+      "ordinal": 32,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_476ed05cc22e",
+      "id": "michelin_topic_enrichment_michelin-selected_476ed05cc22e",
       "restaurantId": "topic_enrichment_michelin-selected_476ed05cc22e",
-      "sourceId": "michelin-selected",
-      "ordinal": 33
+      "sourceId": "michelin",
+      "ordinal": 33,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_8728fbace697",
+      "id": "michelin_topic_enrichment_michelin-selected_8728fbace697",
       "restaurantId": "topic_enrichment_michelin-selected_8728fbace697",
-      "sourceId": "michelin-selected",
-      "ordinal": 34
+      "sourceId": "michelin",
+      "ordinal": 34,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f0bf275c7ac7",
+      "id": "michelin_topic_enrichment_michelin-selected_f0bf275c7ac7",
       "restaurantId": "topic_enrichment_michelin-selected_f0bf275c7ac7",
-      "sourceId": "michelin-selected",
-      "ordinal": 35
+      "sourceId": "michelin",
+      "ordinal": 35,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e88816f27063",
+      "id": "michelin_topic_enrichment_michelin-selected_e88816f27063",
       "restaurantId": "topic_enrichment_michelin-selected_e88816f27063",
-      "sourceId": "michelin-selected",
-      "ordinal": 36
+      "sourceId": "michelin",
+      "ordinal": 36,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e32bf87dc7fa",
+      "id": "michelin_topic_enrichment_michelin-selected_e32bf87dc7fa",
       "restaurantId": "topic_enrichment_michelin-selected_e32bf87dc7fa",
-      "sourceId": "michelin-selected",
-      "ordinal": 37
+      "sourceId": "michelin",
+      "ordinal": 37,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_400a8557759b",
+      "id": "michelin_topic_enrichment_michelin-selected_400a8557759b",
       "restaurantId": "topic_enrichment_michelin-selected_400a8557759b",
-      "sourceId": "michelin-selected",
-      "ordinal": 38
+      "sourceId": "michelin",
+      "ordinal": 38,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_579c203c7bed",
+      "id": "michelin_topic_enrichment_michelin-selected_579c203c7bed",
       "restaurantId": "topic_enrichment_michelin-selected_579c203c7bed",
-      "sourceId": "michelin-selected",
-      "ordinal": 39
+      "sourceId": "michelin",
+      "ordinal": 39,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_b6512ce876de",
+      "id": "michelin_topic_enrichment_michelin-selected_b6512ce876de",
       "restaurantId": "topic_enrichment_michelin-selected_b6512ce876de",
-      "sourceId": "michelin-selected",
-      "ordinal": 40
+      "sourceId": "michelin",
+      "ordinal": 40,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f6fffeecb10e",
+      "id": "michelin_topic_enrichment_michelin-selected_f6fffeecb10e",
       "restaurantId": "topic_enrichment_michelin-selected_f6fffeecb10e",
-      "sourceId": "michelin-selected",
-      "ordinal": 41
+      "sourceId": "michelin",
+      "ordinal": 41,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a9953d60b184",
+      "id": "michelin_topic_enrichment_michelin-selected_a9953d60b184",
       "restaurantId": "topic_enrichment_michelin-selected_a9953d60b184",
-      "sourceId": "michelin-selected",
-      "ordinal": 42
+      "sourceId": "michelin",
+      "ordinal": 42,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6e17110e1083",
+      "id": "michelin_topic_enrichment_michelin-selected_6e17110e1083",
       "restaurantId": "topic_enrichment_michelin-selected_6e17110e1083",
-      "sourceId": "michelin-selected",
-      "ordinal": 43
+      "sourceId": "michelin",
+      "ordinal": 43,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_77c1f549a378",
+      "id": "michelin_topic_enrichment_michelin-selected_77c1f549a378",
       "restaurantId": "topic_enrichment_michelin-selected_77c1f549a378",
-      "sourceId": "michelin-selected",
-      "ordinal": 44
+      "sourceId": "michelin",
+      "ordinal": 44,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_b687493d8c85",
+      "id": "michelin_topic_enrichment_michelin-selected_b687493d8c85",
       "restaurantId": "topic_enrichment_michelin-selected_b687493d8c85",
-      "sourceId": "michelin-selected",
-      "ordinal": 45
+      "sourceId": "michelin",
+      "ordinal": 45,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f21e5f1d4202",
+      "id": "michelin_topic_enrichment_michelin-selected_f21e5f1d4202",
       "restaurantId": "topic_enrichment_michelin-selected_f21e5f1d4202",
-      "sourceId": "michelin-selected",
-      "ordinal": 46
+      "sourceId": "michelin",
+      "ordinal": 46,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_da8d132d8012",
+      "id": "michelin_topic_enrichment_michelin-selected_da8d132d8012",
       "restaurantId": "topic_enrichment_michelin-selected_da8d132d8012",
-      "sourceId": "michelin-selected",
-      "ordinal": 47
+      "sourceId": "michelin",
+      "ordinal": 47,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f85c30889ee0",
+      "id": "michelin_topic_enrichment_michelin-selected_f85c30889ee0",
       "restaurantId": "topic_enrichment_michelin-selected_f85c30889ee0",
-      "sourceId": "michelin-selected",
-      "ordinal": 48
+      "sourceId": "michelin",
+      "ordinal": 48,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_c4d6d688f33b",
+      "id": "michelin_topic_enrichment_michelin-selected_c4d6d688f33b",
       "restaurantId": "topic_enrichment_michelin-selected_c4d6d688f33b",
-      "sourceId": "michelin-selected",
-      "ordinal": 49
+      "sourceId": "michelin",
+      "ordinal": 49,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a5272cc7ced1",
+      "id": "michelin_topic_enrichment_michelin-selected_a5272cc7ced1",
       "restaurantId": "topic_enrichment_michelin-selected_a5272cc7ced1",
-      "sourceId": "michelin-selected",
-      "ordinal": 50
+      "sourceId": "michelin",
+      "ordinal": 50,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9135779849e8",
+      "id": "michelin_topic_enrichment_michelin-selected_9135779849e8",
       "restaurantId": "topic_enrichment_michelin-selected_9135779849e8",
-      "sourceId": "michelin-selected",
-      "ordinal": 51
+      "sourceId": "michelin",
+      "ordinal": 51,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_7429c12e8881",
+      "id": "michelin_topic_enrichment_michelin-selected_7429c12e8881",
       "restaurantId": "topic_enrichment_michelin-selected_7429c12e8881",
-      "sourceId": "michelin-selected",
-      "ordinal": 52
+      "sourceId": "michelin",
+      "ordinal": 52,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ae0457b2deae",
+      "id": "michelin_topic_enrichment_michelin-selected_ae0457b2deae",
       "restaurantId": "topic_enrichment_michelin-selected_ae0457b2deae",
-      "sourceId": "michelin-selected",
-      "ordinal": 53
+      "sourceId": "michelin",
+      "ordinal": 53,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e4ab54f18dad",
+      "id": "michelin_topic_enrichment_michelin-selected_e4ab54f18dad",
       "restaurantId": "topic_enrichment_michelin-selected_e4ab54f18dad",
-      "sourceId": "michelin-selected",
-      "ordinal": 54
+      "sourceId": "michelin",
+      "ordinal": 54,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_fd30be1c667a",
+      "id": "michelin_topic_enrichment_michelin-selected_fd30be1c667a",
       "restaurantId": "topic_enrichment_michelin-selected_fd30be1c667a",
-      "sourceId": "michelin-selected",
-      "ordinal": 55
+      "sourceId": "michelin",
+      "ordinal": 55,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f2ad1953ca86",
+      "id": "michelin_topic_enrichment_michelin-selected_f2ad1953ca86",
       "restaurantId": "topic_enrichment_michelin-selected_f2ad1953ca86",
-      "sourceId": "michelin-selected",
-      "ordinal": 56
+      "sourceId": "michelin",
+      "ordinal": 56,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4d40b3fb444d",
+      "id": "michelin_topic_enrichment_michelin-selected_4d40b3fb444d",
       "restaurantId": "topic_enrichment_michelin-selected_4d40b3fb444d",
-      "sourceId": "michelin-selected",
-      "ordinal": 57
+      "sourceId": "michelin",
+      "ordinal": 57,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_28e6f98565fe",
+      "id": "michelin_topic_enrichment_michelin-selected_28e6f98565fe",
       "restaurantId": "topic_enrichment_michelin-selected_28e6f98565fe",
-      "sourceId": "michelin-selected",
-      "ordinal": 58
+      "sourceId": "michelin",
+      "ordinal": 58,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_02984ce7e69c",
+      "id": "michelin_topic_enrichment_michelin-selected_02984ce7e69c",
       "restaurantId": "topic_enrichment_michelin-selected_02984ce7e69c",
-      "sourceId": "michelin-selected",
-      "ordinal": 59
+      "sourceId": "michelin",
+      "ordinal": 59,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_3f271991cd9b",
+      "id": "michelin_topic_enrichment_michelin-selected_3f271991cd9b",
       "restaurantId": "topic_enrichment_michelin-selected_3f271991cd9b",
-      "sourceId": "michelin-selected",
-      "ordinal": 60
+      "sourceId": "michelin",
+      "ordinal": 60,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_cba665bd9a25",
+      "id": "michelin_topic_enrichment_michelin-selected_cba665bd9a25",
       "restaurantId": "topic_enrichment_michelin-selected_cba665bd9a25",
-      "sourceId": "michelin-selected",
-      "ordinal": 61
+      "sourceId": "michelin",
+      "ordinal": 61,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_5e661df02477",
+      "id": "michelin_topic_enrichment_michelin-selected_5e661df02477",
       "restaurantId": "topic_enrichment_michelin-selected_5e661df02477",
-      "sourceId": "michelin-selected",
-      "ordinal": 62
+      "sourceId": "michelin",
+      "ordinal": 62,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_16bab1993f32",
+      "id": "michelin_topic_enrichment_michelin-selected_16bab1993f32",
       "restaurantId": "topic_enrichment_michelin-selected_16bab1993f32",
-      "sourceId": "michelin-selected",
-      "ordinal": 63
+      "sourceId": "michelin",
+      "ordinal": 63,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_908a4831bea9",
+      "id": "michelin_topic_enrichment_michelin-selected_908a4831bea9",
       "restaurantId": "topic_enrichment_michelin-selected_908a4831bea9",
-      "sourceId": "michelin-selected",
-      "ordinal": 64
+      "sourceId": "michelin",
+      "ordinal": 64,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_1716f29bccb1",
+      "id": "michelin_topic_enrichment_michelin-selected_1716f29bccb1",
       "restaurantId": "topic_enrichment_michelin-selected_1716f29bccb1",
-      "sourceId": "michelin-selected",
-      "ordinal": 65
+      "sourceId": "michelin",
+      "ordinal": 65,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_8b21064a17a2",
+      "id": "michelin_topic_enrichment_michelin-selected_8b21064a17a2",
       "restaurantId": "topic_enrichment_michelin-selected_8b21064a17a2",
-      "sourceId": "michelin-selected",
-      "ordinal": 66
+      "sourceId": "michelin",
+      "ordinal": 66,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f8354bd7c8f4",
+      "id": "michelin_topic_enrichment_michelin-selected_f8354bd7c8f4",
       "restaurantId": "topic_enrichment_michelin-selected_f8354bd7c8f4",
-      "sourceId": "michelin-selected",
-      "ordinal": 67
+      "sourceId": "michelin",
+      "ordinal": 67,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_7448c5082e39",
+      "id": "michelin_topic_enrichment_michelin-selected_7448c5082e39",
       "restaurantId": "topic_enrichment_michelin-selected_7448c5082e39",
-      "sourceId": "michelin-selected",
-      "ordinal": 68
+      "sourceId": "michelin",
+      "ordinal": 68,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9c276901269d",
+      "id": "michelin_topic_enrichment_michelin-selected_9c276901269d",
       "restaurantId": "topic_enrichment_michelin-selected_9c276901269d",
-      "sourceId": "michelin-selected",
-      "ordinal": 69
+      "sourceId": "michelin",
+      "ordinal": 69,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a6780b884be0",
+      "id": "michelin_topic_enrichment_michelin-selected_a6780b884be0",
       "restaurantId": "topic_enrichment_michelin-selected_a6780b884be0",
-      "sourceId": "michelin-selected",
-      "ordinal": 70
+      "sourceId": "michelin",
+      "ordinal": 70,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a92ba873923d",
+      "id": "michelin_topic_enrichment_michelin-selected_a92ba873923d",
       "restaurantId": "topic_enrichment_michelin-selected_a92ba873923d",
-      "sourceId": "michelin-selected",
-      "ordinal": 71
+      "sourceId": "michelin",
+      "ordinal": 71,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_481548d630df",
+      "id": "michelin_topic_enrichment_michelin-selected_481548d630df",
       "restaurantId": "topic_enrichment_michelin-selected_481548d630df",
-      "sourceId": "michelin-selected",
-      "ordinal": 72
+      "sourceId": "michelin",
+      "ordinal": 72,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_c83cbdf6e43e",
+      "id": "michelin_topic_enrichment_michelin-selected_c83cbdf6e43e",
       "restaurantId": "topic_enrichment_michelin-selected_c83cbdf6e43e",
-      "sourceId": "michelin-selected",
-      "ordinal": 73
+      "sourceId": "michelin",
+      "ordinal": 73,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_dffeb6a1949e",
+      "id": "michelin_topic_enrichment_michelin-selected_dffeb6a1949e",
       "restaurantId": "topic_enrichment_michelin-selected_dffeb6a1949e",
-      "sourceId": "michelin-selected",
-      "ordinal": 74
+      "sourceId": "michelin",
+      "ordinal": 74,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_faedeaae7338",
+      "id": "michelin_topic_enrichment_michelin-selected_faedeaae7338",
       "restaurantId": "topic_enrichment_michelin-selected_faedeaae7338",
-      "sourceId": "michelin-selected",
-      "ordinal": 75
+      "sourceId": "michelin",
+      "ordinal": 75,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6f5e417073ba",
+      "id": "michelin_topic_enrichment_michelin-selected_6f5e417073ba",
       "restaurantId": "topic_enrichment_michelin-selected_6f5e417073ba",
-      "sourceId": "michelin-selected",
-      "ordinal": 76
+      "sourceId": "michelin",
+      "ordinal": 76,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_2fafd18c2ee2",
+      "id": "michelin_topic_enrichment_michelin-selected_2fafd18c2ee2",
       "restaurantId": "topic_enrichment_michelin-selected_2fafd18c2ee2",
-      "sourceId": "michelin-selected",
-      "ordinal": 77
+      "sourceId": "michelin",
+      "ordinal": 77,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_eb66f982182f",
+      "id": "michelin_topic_enrichment_michelin-selected_eb66f982182f",
       "restaurantId": "topic_enrichment_michelin-selected_eb66f982182f",
-      "sourceId": "michelin-selected",
-      "ordinal": 78
+      "sourceId": "michelin",
+      "ordinal": 78,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9d049d89d8be",
+      "id": "michelin_topic_enrichment_michelin-selected_9d049d89d8be",
       "restaurantId": "topic_enrichment_michelin-selected_9d049d89d8be",
-      "sourceId": "michelin-selected",
-      "ordinal": 79
+      "sourceId": "michelin",
+      "ordinal": 79,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_8474777be7cb",
+      "id": "michelin_topic_enrichment_michelin-selected_8474777be7cb",
       "restaurantId": "topic_enrichment_michelin-selected_8474777be7cb",
-      "sourceId": "michelin-selected",
-      "ordinal": 80
+      "sourceId": "michelin",
+      "ordinal": 80,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a36f115381a3",
+      "id": "michelin_topic_enrichment_michelin-selected_a36f115381a3",
       "restaurantId": "topic_enrichment_michelin-selected_a36f115381a3",
-      "sourceId": "michelin-selected",
-      "ordinal": 81
+      "sourceId": "michelin",
+      "ordinal": 81,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_cf767a913e72",
+      "id": "michelin_topic_enrichment_michelin-selected_cf767a913e72",
       "restaurantId": "topic_enrichment_michelin-selected_cf767a913e72",
-      "sourceId": "michelin-selected",
-      "ordinal": 82
+      "sourceId": "michelin",
+      "ordinal": 82,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f7358e7f07e4",
+      "id": "michelin_topic_enrichment_michelin-selected_f7358e7f07e4",
       "restaurantId": "topic_enrichment_michelin-selected_f7358e7f07e4",
-      "sourceId": "michelin-selected",
-      "ordinal": 83
+      "sourceId": "michelin",
+      "ordinal": 83,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_520671dfff90",
+      "id": "michelin_topic_enrichment_michelin-selected_520671dfff90",
       "restaurantId": "topic_enrichment_michelin-selected_520671dfff90",
-      "sourceId": "michelin-selected",
-      "ordinal": 84
+      "sourceId": "michelin",
+      "ordinal": 84,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_7c46052878a7",
+      "id": "michelin_topic_enrichment_michelin-selected_7c46052878a7",
       "restaurantId": "topic_enrichment_michelin-selected_7c46052878a7",
-      "sourceId": "michelin-selected",
-      "ordinal": 85
+      "sourceId": "michelin",
+      "ordinal": 85,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_82bfaa6228a5",
+      "id": "michelin_topic_enrichment_michelin-selected_82bfaa6228a5",
       "restaurantId": "topic_enrichment_michelin-selected_82bfaa6228a5",
-      "sourceId": "michelin-selected",
-      "ordinal": 86
+      "sourceId": "michelin",
+      "ordinal": 86,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_1cf7d498a952",
+      "id": "michelin_topic_enrichment_michelin-selected_1cf7d498a952",
       "restaurantId": "topic_enrichment_michelin-selected_1cf7d498a952",
-      "sourceId": "michelin-selected",
-      "ordinal": 87
+      "sourceId": "michelin",
+      "ordinal": 87,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_e798017ab6cf",
+      "id": "michelin_topic_enrichment_michelin-selected_e798017ab6cf",
       "restaurantId": "topic_enrichment_michelin-selected_e798017ab6cf",
-      "sourceId": "michelin-selected",
-      "ordinal": 88
+      "sourceId": "michelin",
+      "ordinal": 88,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_7b91776cc1ed",
+      "id": "michelin_topic_enrichment_michelin-selected_7b91776cc1ed",
       "restaurantId": "topic_enrichment_michelin-selected_7b91776cc1ed",
-      "sourceId": "michelin-selected",
-      "ordinal": 89
+      "sourceId": "michelin",
+      "ordinal": 89,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_ebb6098cb048",
+      "id": "michelin_topic_enrichment_michelin-selected_ebb6098cb048",
       "restaurantId": "topic_enrichment_michelin-selected_ebb6098cb048",
-      "sourceId": "michelin-selected",
-      "ordinal": 90
+      "sourceId": "michelin",
+      "ordinal": 90,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_951c0af88ce8",
+      "id": "michelin_topic_enrichment_michelin-selected_951c0af88ce8",
       "restaurantId": "topic_enrichment_michelin-selected_951c0af88ce8",
-      "sourceId": "michelin-selected",
-      "ordinal": 91
+      "sourceId": "michelin",
+      "ordinal": 91,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_73db764ec566",
+      "id": "michelin_topic_enrichment_michelin-selected_73db764ec566",
       "restaurantId": "topic_enrichment_michelin-selected_73db764ec566",
-      "sourceId": "michelin-selected",
-      "ordinal": 92
+      "sourceId": "michelin",
+      "ordinal": 92,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_f90b93a95c96",
+      "id": "michelin_topic_enrichment_michelin-selected_f90b93a95c96",
       "restaurantId": "topic_enrichment_michelin-selected_f90b93a95c96",
-      "sourceId": "michelin-selected",
-      "ordinal": 93
+      "sourceId": "michelin",
+      "ordinal": 93,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a527be693b71",
+      "id": "michelin_topic_enrichment_michelin-selected_a527be693b71",
       "restaurantId": "topic_enrichment_michelin-selected_a527be693b71",
-      "sourceId": "michelin-selected",
-      "ordinal": 94
+      "sourceId": "michelin",
+      "ordinal": 94,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_85c37dcf69b1",
+      "id": "michelin_topic_enrichment_michelin-selected_85c37dcf69b1",
       "restaurantId": "topic_enrichment_michelin-selected_85c37dcf69b1",
-      "sourceId": "michelin-selected",
-      "ordinal": 95
+      "sourceId": "michelin",
+      "ordinal": 95,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_98f9ab0f789f",
+      "id": "michelin_topic_enrichment_michelin-selected_98f9ab0f789f",
       "restaurantId": "topic_enrichment_michelin-selected_98f9ab0f789f",
-      "sourceId": "michelin-selected",
-      "ordinal": 96
+      "sourceId": "michelin",
+      "ordinal": 96,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_7715e8beda36",
+      "id": "michelin_topic_enrichment_michelin-selected_7715e8beda36",
       "restaurantId": "topic_enrichment_michelin-selected_7715e8beda36",
-      "sourceId": "michelin-selected",
-      "ordinal": 97
+      "sourceId": "michelin",
+      "ordinal": 97,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4218ee6fa88c",
+      "id": "michelin_topic_enrichment_michelin-selected_4218ee6fa88c",
       "restaurantId": "topic_enrichment_michelin-selected_4218ee6fa88c",
-      "sourceId": "michelin-selected",
-      "ordinal": 98
+      "sourceId": "michelin",
+      "ordinal": 98,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_5c5108d198cb",
+      "id": "michelin_topic_enrichment_michelin-selected_5c5108d198cb",
       "restaurantId": "topic_enrichment_michelin-selected_5c5108d198cb",
-      "sourceId": "michelin-selected",
-      "ordinal": 99
+      "sourceId": "michelin",
+      "ordinal": 99,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_c68e238e90b6",
+      "id": "michelin_topic_enrichment_michelin-selected_c68e238e90b6",
       "restaurantId": "topic_enrichment_michelin-selected_c68e238e90b6",
-      "sourceId": "michelin-selected",
-      "ordinal": 100
+      "sourceId": "michelin",
+      "ordinal": 100,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_39020bad3813",
+      "id": "michelin_topic_enrichment_michelin-selected_39020bad3813",
       "restaurantId": "topic_enrichment_michelin-selected_39020bad3813",
-      "sourceId": "michelin-selected",
-      "ordinal": 101
+      "sourceId": "michelin",
+      "ordinal": 101,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_20c24268e41d",
+      "id": "michelin_topic_enrichment_michelin-selected_20c24268e41d",
       "restaurantId": "topic_enrichment_michelin-selected_20c24268e41d",
-      "sourceId": "michelin-selected",
-      "ordinal": 102
+      "sourceId": "michelin",
+      "ordinal": 102,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_31d72c17b326",
+      "id": "michelin_topic_enrichment_michelin-selected_31d72c17b326",
       "restaurantId": "topic_enrichment_michelin-selected_31d72c17b326",
-      "sourceId": "michelin-selected",
-      "ordinal": 103
+      "sourceId": "michelin",
+      "ordinal": 103,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_5838e2f9f105",
+      "id": "michelin_topic_enrichment_michelin-selected_5838e2f9f105",
       "restaurantId": "topic_enrichment_michelin-selected_5838e2f9f105",
-      "sourceId": "michelin-selected",
-      "ordinal": 104
+      "sourceId": "michelin",
+      "ordinal": 104,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_a0e8d40d2c75",
+      "id": "michelin_topic_enrichment_michelin-selected_a0e8d40d2c75",
       "restaurantId": "topic_enrichment_michelin-selected_a0e8d40d2c75",
-      "sourceId": "michelin-selected",
-      "ordinal": 105
+      "sourceId": "michelin",
+      "ordinal": 105,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_714db7591fbc",
+      "id": "michelin_topic_enrichment_michelin-selected_714db7591fbc",
       "restaurantId": "topic_enrichment_michelin-selected_714db7591fbc",
-      "sourceId": "michelin-selected",
-      "ordinal": 106
+      "sourceId": "michelin",
+      "ordinal": 106,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_9f3fcdf2fe35",
+      "id": "michelin_topic_enrichment_michelin-selected_9f3fcdf2fe35",
       "restaurantId": "topic_enrichment_michelin-selected_9f3fcdf2fe35",
-      "sourceId": "michelin-selected",
-      "ordinal": 107
+      "sourceId": "michelin",
+      "ordinal": 107,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_472601101a28",
+      "id": "michelin_topic_enrichment_michelin-selected_472601101a28",
       "restaurantId": "topic_enrichment_michelin-selected_472601101a28",
-      "sourceId": "michelin-selected",
-      "ordinal": 108
+      "sourceId": "michelin",
+      "ordinal": 108,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4591cba1fbbb",
+      "id": "michelin_topic_enrichment_michelin-selected_4591cba1fbbb",
       "restaurantId": "topic_enrichment_michelin-selected_4591cba1fbbb",
-      "sourceId": "michelin-selected",
-      "ordinal": 109
+      "sourceId": "michelin",
+      "ordinal": 109,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_5f70d76afd3c",
+      "id": "michelin_topic_enrichment_michelin-selected_5f70d76afd3c",
       "restaurantId": "topic_enrichment_michelin-selected_5f70d76afd3c",
-      "sourceId": "michelin-selected",
-      "ordinal": 110
+      "sourceId": "michelin",
+      "ordinal": 110,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4a9b2f9d0a48",
+      "id": "michelin_topic_enrichment_michelin-selected_4a9b2f9d0a48",
       "restaurantId": "topic_enrichment_michelin-selected_4a9b2f9d0a48",
-      "sourceId": "michelin-selected",
-      "ordinal": 111
+      "sourceId": "michelin",
+      "ordinal": 111,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_d146241e05f5",
+      "id": "michelin_topic_enrichment_michelin-selected_d146241e05f5",
       "restaurantId": "topic_enrichment_michelin-selected_d146241e05f5",
-      "sourceId": "michelin-selected",
-      "ordinal": 112
+      "sourceId": "michelin",
+      "ordinal": 112,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_4a003376e98e",
+      "id": "michelin_topic_enrichment_michelin-selected_4a003376e98e",
       "restaurantId": "topic_enrichment_michelin-selected_4a003376e98e",
-      "sourceId": "michelin-selected",
-      "ordinal": 113
+      "sourceId": "michelin",
+      "ordinal": 113,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_d5099d7e2265",
+      "id": "michelin_topic_enrichment_michelin-selected_d5099d7e2265",
       "restaurantId": "topic_enrichment_michelin-selected_d5099d7e2265",
-      "sourceId": "michelin-selected",
-      "ordinal": 114
+      "sourceId": "michelin",
+      "ordinal": 114,
+      "label": "선정 레스토랑"
     },
     {
-      "id": "michelin-selected_topic_enrichment_michelin-selected_6fb776637c0e",
+      "id": "michelin_topic_enrichment_michelin-selected_6fb776637c0e",
       "restaurantId": "topic_enrichment_michelin-selected_6fb776637c0e",
-      "sourceId": "michelin-selected",
-      "ordinal": 115
+      "sourceId": "michelin",
+      "ordinal": 115,
+      "label": "선정 레스토랑"
     }
   ]
 }

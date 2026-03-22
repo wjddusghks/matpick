@@ -143,40 +143,48 @@ const sourceMetadataByDatasetId = {
     description: "백종원의 3대천왕에 소개된 맛집을 한 번에 모아봤어요.",
   },
   "michelin-3-stars": {
-    id: "michelin-3-stars",
-    name: "미쉐린 3스타",
+    id: "michelin",
+    name: "미쉐린",
     type: "michelin",
     provider: "MICHELIN Guide",
-    description: "미쉐린 3스타로 선정된 레스토랑을 모아봤어요.",
+    description: "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
   "michelin-2-stars": {
-    id: "michelin-2-stars",
-    name: "미쉐린 2스타",
+    id: "michelin",
+    name: "미쉐린",
     type: "michelin",
     provider: "MICHELIN Guide",
-    description: "미쉐린 2스타로 선정된 레스토랑을 모아봤어요.",
+    description: "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
   "michelin-1-star": {
-    id: "michelin-1-star",
-    name: "미쉐린 1스타",
+    id: "michelin",
+    name: "미쉐린",
     type: "michelin",
     provider: "MICHELIN Guide",
-    description: "미쉐린 1스타로 선정된 레스토랑을 모아봤어요.",
+    description: "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
   "michelin-bib-gourmand": {
-    id: "michelin-bib-gourmand",
-    name: "빕 구르망",
+    id: "michelin",
+    name: "미쉐린",
     type: "michelin",
     provider: "MICHELIN Guide",
-    description: "빕 구르망으로 선정된 가성비 좋은 레스토랑을 모아봤어요.",
+    description: "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
   "michelin-selected": {
-    id: "michelin-selected",
-    name: "선정 레스토랑",
+    id: "michelin",
+    name: "미쉐린",
     type: "michelin",
     provider: "MICHELIN Guide",
-    description: "미쉐린 선정 레스토랑을 한 번에 둘러볼 수 있어요.",
+    description: "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요.",
   },
+};
+
+const sourceLinkLabelByDatasetId = {
+  "michelin-3-stars": "미쉐린 3스타",
+  "michelin-2-stars": "미쉐린 2스타",
+  "michelin-1-star": "미쉐린 1스타",
+  "michelin-bib-gourmand": "빕 구르망",
+  "michelin-selected": "선정 레스토랑",
 };
 
 const generatedDatasetFileByDatasetId = {
@@ -559,6 +567,7 @@ function writeTopicOutputs(datasetMap) {
           restaurantId: restaurant.id,
           sourceId: sourceMetadata.id,
           ordinal: index + 1,
+          label: sourceLinkLabelByDatasetId[datasetId],
         }))
       : [];
 

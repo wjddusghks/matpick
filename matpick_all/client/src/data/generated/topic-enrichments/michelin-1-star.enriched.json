@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-1-star",
-  "generatedAt": "2026-03-22T07:46:30.351Z",
+  "generatedAt": "2026-03-22T08:00:17.029Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-1-star_d4132c79cb30",
@@ -578,223 +578,258 @@
   ],
   "sources": [
     {
-      "id": "michelin-1-star",
-      "name": "미쉐린 1스타",
+      "id": "michelin",
+      "name": "미쉐린",
       "type": "michelin",
       "provider": "MICHELIN Guide",
-      "description": "미쉐린 1스타로 선정된 레스토랑을 모아봤어요."
+      "description": "미쉐린 가이드에 선정된 레스토랑을 한 번에 둘러볼 수 있어요."
     }
   ],
   "sourceLinks": [
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_d4132c79cb30",
+      "id": "michelin_topic_enrichment_michelin-1-star_d4132c79cb30",
       "restaurantId": "topic_enrichment_michelin-1-star_d4132c79cb30",
-      "sourceId": "michelin-1-star",
-      "ordinal": 1
+      "sourceId": "michelin",
+      "ordinal": 1,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_a9eddb623b77",
+      "id": "michelin_topic_enrichment_michelin-1-star_a9eddb623b77",
       "restaurantId": "topic_enrichment_michelin-1-star_a9eddb623b77",
-      "sourceId": "michelin-1-star",
-      "ordinal": 2
+      "sourceId": "michelin",
+      "ordinal": 2,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_5114d1a96d52",
+      "id": "michelin_topic_enrichment_michelin-1-star_5114d1a96d52",
       "restaurantId": "topic_enrichment_michelin-1-star_5114d1a96d52",
-      "sourceId": "michelin-1-star",
-      "ordinal": 3
+      "sourceId": "michelin",
+      "ordinal": 3,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_c4b6327ff616",
+      "id": "michelin_topic_enrichment_michelin-1-star_c4b6327ff616",
       "restaurantId": "topic_enrichment_michelin-1-star_c4b6327ff616",
-      "sourceId": "michelin-1-star",
-      "ordinal": 4
+      "sourceId": "michelin",
+      "ordinal": 4,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_b85a816dfd85",
+      "id": "michelin_topic_enrichment_michelin-1-star_b85a816dfd85",
       "restaurantId": "topic_enrichment_michelin-1-star_b85a816dfd85",
-      "sourceId": "michelin-1-star",
-      "ordinal": 5
+      "sourceId": "michelin",
+      "ordinal": 5,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_3dc95d8efbc6",
+      "id": "michelin_topic_enrichment_michelin-1-star_3dc95d8efbc6",
       "restaurantId": "topic_enrichment_michelin-1-star_3dc95d8efbc6",
-      "sourceId": "michelin-1-star",
-      "ordinal": 6
+      "sourceId": "michelin",
+      "ordinal": 6,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_444ed38557b3",
+      "id": "michelin_topic_enrichment_michelin-1-star_444ed38557b3",
       "restaurantId": "topic_enrichment_michelin-1-star_444ed38557b3",
-      "sourceId": "michelin-1-star",
-      "ordinal": 7
+      "sourceId": "michelin",
+      "ordinal": 7,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_eede8621faa8",
+      "id": "michelin_topic_enrichment_michelin-1-star_eede8621faa8",
       "restaurantId": "topic_enrichment_michelin-1-star_eede8621faa8",
-      "sourceId": "michelin-1-star",
-      "ordinal": 8
+      "sourceId": "michelin",
+      "ordinal": 8,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_bf5e1ef750b9",
+      "id": "michelin_topic_enrichment_michelin-1-star_bf5e1ef750b9",
       "restaurantId": "topic_enrichment_michelin-1-star_bf5e1ef750b9",
-      "sourceId": "michelin-1-star",
-      "ordinal": 9
+      "sourceId": "michelin",
+      "ordinal": 9,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_f598df305b4f",
+      "id": "michelin_topic_enrichment_michelin-1-star_f598df305b4f",
       "restaurantId": "topic_enrichment_michelin-1-star_f598df305b4f",
-      "sourceId": "michelin-1-star",
-      "ordinal": 10
+      "sourceId": "michelin",
+      "ordinal": 10,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_4b63750d045e",
+      "id": "michelin_topic_enrichment_michelin-1-star_4b63750d045e",
       "restaurantId": "topic_enrichment_michelin-1-star_4b63750d045e",
-      "sourceId": "michelin-1-star",
-      "ordinal": 11
+      "sourceId": "michelin",
+      "ordinal": 11,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_afdacbada4bd",
+      "id": "michelin_topic_enrichment_michelin-1-star_afdacbada4bd",
       "restaurantId": "topic_enrichment_michelin-1-star_afdacbada4bd",
-      "sourceId": "michelin-1-star",
-      "ordinal": 12
+      "sourceId": "michelin",
+      "ordinal": 12,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_3fdc932a47c8",
+      "id": "michelin_topic_enrichment_michelin-1-star_3fdc932a47c8",
       "restaurantId": "topic_enrichment_michelin-1-star_3fdc932a47c8",
-      "sourceId": "michelin-1-star",
-      "ordinal": 13
+      "sourceId": "michelin",
+      "ordinal": 13,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_72d85597e5ae",
+      "id": "michelin_topic_enrichment_michelin-1-star_72d85597e5ae",
       "restaurantId": "topic_enrichment_michelin-1-star_72d85597e5ae",
-      "sourceId": "michelin-1-star",
-      "ordinal": 14
+      "sourceId": "michelin",
+      "ordinal": 14,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_cb452a021e94",
+      "id": "michelin_topic_enrichment_michelin-1-star_cb452a021e94",
       "restaurantId": "topic_enrichment_michelin-1-star_cb452a021e94",
-      "sourceId": "michelin-1-star",
-      "ordinal": 15
+      "sourceId": "michelin",
+      "ordinal": 15,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_9cca295d4b85",
+      "id": "michelin_topic_enrichment_michelin-1-star_9cca295d4b85",
       "restaurantId": "topic_enrichment_michelin-1-star_9cca295d4b85",
-      "sourceId": "michelin-1-star",
-      "ordinal": 16
+      "sourceId": "michelin",
+      "ordinal": 16,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_306c2c698efe",
+      "id": "michelin_topic_enrichment_michelin-1-star_306c2c698efe",
       "restaurantId": "topic_enrichment_michelin-1-star_306c2c698efe",
-      "sourceId": "michelin-1-star",
-      "ordinal": 17
+      "sourceId": "michelin",
+      "ordinal": 17,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_f427097e0c15",
+      "id": "michelin_topic_enrichment_michelin-1-star_f427097e0c15",
       "restaurantId": "topic_enrichment_michelin-1-star_f427097e0c15",
-      "sourceId": "michelin-1-star",
-      "ordinal": 18
+      "sourceId": "michelin",
+      "ordinal": 18,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_e3a57371d986",
+      "id": "michelin_topic_enrichment_michelin-1-star_e3a57371d986",
       "restaurantId": "topic_enrichment_michelin-1-star_e3a57371d986",
-      "sourceId": "michelin-1-star",
-      "ordinal": 19
+      "sourceId": "michelin",
+      "ordinal": 19,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_df44dbdfc983",
+      "id": "michelin_topic_enrichment_michelin-1-star_df44dbdfc983",
       "restaurantId": "topic_enrichment_michelin-1-star_df44dbdfc983",
-      "sourceId": "michelin-1-star",
-      "ordinal": 20
+      "sourceId": "michelin",
+      "ordinal": 20,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_07ba1760af28",
+      "id": "michelin_topic_enrichment_michelin-1-star_07ba1760af28",
       "restaurantId": "topic_enrichment_michelin-1-star_07ba1760af28",
-      "sourceId": "michelin-1-star",
-      "ordinal": 21
+      "sourceId": "michelin",
+      "ordinal": 21,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_5261df72964d",
+      "id": "michelin_topic_enrichment_michelin-1-star_5261df72964d",
       "restaurantId": "topic_enrichment_michelin-1-star_5261df72964d",
-      "sourceId": "michelin-1-star",
-      "ordinal": 22
+      "sourceId": "michelin",
+      "ordinal": 22,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_b5d2780fa246",
+      "id": "michelin_topic_enrichment_michelin-1-star_b5d2780fa246",
       "restaurantId": "topic_enrichment_michelin-1-star_b5d2780fa246",
-      "sourceId": "michelin-1-star",
-      "ordinal": 23
+      "sourceId": "michelin",
+      "ordinal": 23,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_717da4a81695",
+      "id": "michelin_topic_enrichment_michelin-1-star_717da4a81695",
       "restaurantId": "topic_enrichment_michelin-1-star_717da4a81695",
-      "sourceId": "michelin-1-star",
-      "ordinal": 24
+      "sourceId": "michelin",
+      "ordinal": 24,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_2a2e4a184f14",
+      "id": "michelin_topic_enrichment_michelin-1-star_2a2e4a184f14",
       "restaurantId": "topic_enrichment_michelin-1-star_2a2e4a184f14",
-      "sourceId": "michelin-1-star",
-      "ordinal": 25
+      "sourceId": "michelin",
+      "ordinal": 25,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_b92a964e6559",
+      "id": "michelin_topic_enrichment_michelin-1-star_b92a964e6559",
       "restaurantId": "topic_enrichment_michelin-1-star_b92a964e6559",
-      "sourceId": "michelin-1-star",
-      "ordinal": 26
+      "sourceId": "michelin",
+      "ordinal": 26,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_f2108786a675",
+      "id": "michelin_topic_enrichment_michelin-1-star_f2108786a675",
       "restaurantId": "topic_enrichment_michelin-1-star_f2108786a675",
-      "sourceId": "michelin-1-star",
-      "ordinal": 27
+      "sourceId": "michelin",
+      "ordinal": 27,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_d1afa7a20b1a",
+      "id": "michelin_topic_enrichment_michelin-1-star_d1afa7a20b1a",
       "restaurantId": "topic_enrichment_michelin-1-star_d1afa7a20b1a",
-      "sourceId": "michelin-1-star",
-      "ordinal": 28
+      "sourceId": "michelin",
+      "ordinal": 28,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_a3dccc40404c",
+      "id": "michelin_topic_enrichment_michelin-1-star_a3dccc40404c",
       "restaurantId": "topic_enrichment_michelin-1-star_a3dccc40404c",
-      "sourceId": "michelin-1-star",
-      "ordinal": 29
+      "sourceId": "michelin",
+      "ordinal": 29,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_dbff87d1921f",
+      "id": "michelin_topic_enrichment_michelin-1-star_dbff87d1921f",
       "restaurantId": "topic_enrichment_michelin-1-star_dbff87d1921f",
-      "sourceId": "michelin-1-star",
-      "ordinal": 30
+      "sourceId": "michelin",
+      "ordinal": 30,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_fc7225f94ac0",
+      "id": "michelin_topic_enrichment_michelin-1-star_fc7225f94ac0",
       "restaurantId": "topic_enrichment_michelin-1-star_fc7225f94ac0",
-      "sourceId": "michelin-1-star",
-      "ordinal": 31
+      "sourceId": "michelin",
+      "ordinal": 31,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_8cd2db00c5cf",
+      "id": "michelin_topic_enrichment_michelin-1-star_8cd2db00c5cf",
       "restaurantId": "topic_enrichment_michelin-1-star_8cd2db00c5cf",
-      "sourceId": "michelin-1-star",
-      "ordinal": 32
+      "sourceId": "michelin",
+      "ordinal": 32,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_8c011f3d5409",
+      "id": "michelin_topic_enrichment_michelin-1-star_8c011f3d5409",
       "restaurantId": "topic_enrichment_michelin-1-star_8c011f3d5409",
-      "sourceId": "michelin-1-star",
-      "ordinal": 33
+      "sourceId": "michelin",
+      "ordinal": 33,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_8ac2bff03407",
+      "id": "michelin_topic_enrichment_michelin-1-star_8ac2bff03407",
       "restaurantId": "topic_enrichment_michelin-1-star_8ac2bff03407",
-      "sourceId": "michelin-1-star",
-      "ordinal": 34
+      "sourceId": "michelin",
+      "ordinal": 34,
+      "label": "미쉐린 1스타"
     },
     {
-      "id": "michelin-1-star_topic_enrichment_michelin-1-star_6a880d627fe6",
+      "id": "michelin_topic_enrichment_michelin-1-star_6a880d627fe6",
       "restaurantId": "topic_enrichment_michelin-1-star_6a880d627fe6",
-      "sourceId": "michelin-1-star",
-      "ordinal": 35
+      "sourceId": "michelin",
+      "ordinal": 35,
+      "label": "미쉐린 1스타"
     }
   ]
 }

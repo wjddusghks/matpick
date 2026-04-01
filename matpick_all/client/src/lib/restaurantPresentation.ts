@@ -4,13 +4,12 @@ type RestaurantImageOptions = {
   width?: number;
   height?: number;
   reviewPhotoUrl?: string | null;
-  googlePhotoUrl?: string | null;
 };
 
 export type RestaurantDisplayImage = {
   src: string;
   hasPhoto: boolean;
-  source: "review" | "google" | "restaurant" | "thumbnail" | "fallback";
+  source: "review" | "restaurant" | "thumbnail" | "fallback";
 };
 
 type CuisineTheme = {
@@ -240,14 +239,6 @@ export function getRestaurantDisplayImage(
       src: options.reviewPhotoUrl.trim(),
       hasPhoto: true,
       source: "review",
-    };
-  }
-
-  if (options?.googlePhotoUrl?.trim()) {
-    return {
-      src: options.googlePhotoUrl.trim(),
-      hasPhoto: true,
-      source: "google",
     };
   }
 

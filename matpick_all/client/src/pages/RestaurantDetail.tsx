@@ -73,11 +73,6 @@ import type { Restaurant } from "@/data/types";
 type DetailTab = "menu" | "videos" | "reviews" | "details";
 type ReviewItem = SharedReview;
 type RelatedSortMode = "related" | "nearby";
-type GoogleFallbackPhoto = {
-  imageUrl: string;
-  attributions: Array<{ displayName?: string; uri?: string }>;
-};
-
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
 const MAX_REVIEW_PHOTOS = 3;
 const MATPICK_FALLBACK_APP_URL = "https://matpick.co.kr";
@@ -355,8 +350,6 @@ export default function RestaurantDetail() {
     useState<AuthFeatureMode>("rating");
   const [reviewSortMode, setReviewSortMode] = useState<ReviewSortMode>("latest");
   const [relatedSortMode, setRelatedSortMode] = useState<RelatedSortMode>("related");
-  const [googleFallbackPhoto, setGoogleFallbackPhoto] =
-    useState<GoogleFallbackPhoto | null>(null);
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
   );
@@ -397,7 +390,6 @@ export default function RestaurantDetail() {
     setReviewSortMode("latest");
     setRelatedSortMode("related");
     setComposerOpen(false);
-    setGoogleFallbackPhoto(null);
 
     let ignore = false;
 
@@ -472,59 +464,6 @@ export default function RestaurantDetail() {
       return;
     }
 
-    if (
-      !restaurant.googlePlaceId ||
-      primaryReviewPhotoUrl ||
-      restaurant.imageUrl.trim() ||
-      restaurant.thumbnailFileName?.trim()
-    ) {
-      setGoogleFallbackPhoto(null);
-      return;
-    }
-
-    let ignore = false;
-
-    void fetch(`/api/places/photo?placeId=${encodeURIComponent(restaurant.googlePlaceId)}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load Google place photo");
-        }
-
-        return response.json() as Promise<GoogleFallbackPhoto>;
-      })
-      .then((payload) => {
-        if (ignore) {
-          return;
-        }
-
-        if (payload?.imageUrl) {
-          setGoogleFallbackPhoto(payload);
-        } else {
-          setGoogleFallbackPhoto(null);
-        }
-      })
-      .catch(() => {
-        if (!ignore) {
-          setGoogleFallbackPhoto(null);
-        }
-      });
-
-    return () => {
-      ignore = true;
-    };
-  }, [
-    primaryReviewPhotoUrl,
-    restaurant,
-    restaurant?.googlePlaceId,
-    restaurant?.imageUrl,
-    restaurant?.thumbnailFileName,
-  ]);
-
-  useEffect(() => {
-    if (!restaurant) {
-      return;
-    }
-
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [restaurant]);
 
@@ -536,7 +475,6 @@ export default function RestaurantDetail() {
     width: 1200,
     height: 900,
     reviewPhotoUrl: primaryReviewPhotoUrl,
-    googlePhotoUrl: googleFallbackPhoto?.imageUrl,
   });
   const primaryPrice = getRestaurantPrimaryPrice(restaurant);
   const shareImage = displayImage.hasPhoto ? displayImage.src : "/og-default.png";
@@ -558,12 +496,9 @@ export default function RestaurantDetail() {
   const detailPhotoBadge =
     displayImage.source === "review"
       ? "방문자 사진"
-      : displayImage.source === "google"
-        ? "Google 사진"
         : !displayImage.hasPhoto
           ? "사진 준비 중"
           : "";
-  const googlePhotoAttribution = googleFallbackPhoto?.attributions?.[0];
   const uiCopy = isEnglish
     ? {
         mobileSummaryEyebrow: "Quick actions",
@@ -1102,25 +1037,6 @@ export default function RestaurantDetail() {
                   ???媛寃?{primaryPrice}
                 </div>
               ) : null}
-              {displayImage.source === "google" && googlePhotoAttribution?.displayName ? (
-                <div className="border-t border-[#f3eef0] bg-white px-4 py-2 text-[11px] text-[#8a8a8a]">
-                  Google ?ъ쭊 쨌{" "}
-                  {googlePhotoAttribution.uri ? (
-                    <a
-                      href={googlePhotoAttribution.uri}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="font-medium text-[#6f7280] underline underline-offset-2"
-                    >
-                      {googlePhotoAttribution.displayName}
-                    </a>
-                  ) : (
-                    <span className="font-medium text-[#6f7280]">
-                      {googlePhotoAttribution.displayName}
-                    </span>
-                  )}
-                </div>
-              ) : null}
             </div>
 
             <div className="mt-4 rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
@@ -1644,24 +1560,6 @@ export default function RestaurantDetail() {
             {primaryPrice ? (
               <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
                 대표 가격 {primaryPrice}
-              </div>
-            ) : null}
-            {displayImage.source === "google" && googlePhotoAttribution?.displayName ? (
-              <div className="border-t border-[#f3eef0] bg-white px-4 py-2 text-[11px] text-[#8a8a8a]">
-                Google 사진 · {googlePhotoAttribution.uri ? (
-                  <a
-                    href={googlePhotoAttribution.uri}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium text-[#6f7280] underline underline-offset-2"
-                  >
-                    {googlePhotoAttribution.displayName}
-                  </a>
-                ) : (
-                  <span className="font-medium text-[#6f7280]">
-                    {googlePhotoAttribution.displayName}
-                  </span>
-                )}
               </div>
             ) : null}
           </div>

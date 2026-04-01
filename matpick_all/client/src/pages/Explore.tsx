@@ -44,7 +44,6 @@ import {
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
-import { useCardVisibility, useGooglePlacePhoto } from "@/lib/useGooglePlacePhoto";
 
 const ALL_FILTER = "all";
 
@@ -279,16 +278,7 @@ function RestaurantCard({
   const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
   const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
-  const { ref: cardRef, isVisible } = useCardVisibility<HTMLButtonElement>();
-  const googleFallbackPhoto = useGooglePlacePhoto(
-    restaurant.googlePlaceId,
-    isVisible &&
-      !restaurant.imageUrl.trim() &&
-      !restaurant.thumbnailFileName?.trim()
-  );
-  const displayImage = getRestaurantDisplayImage(restaurant, {
-    googlePhotoUrl: googleFallbackPhoto?.imageUrl,
-  });
+  const displayImage = getRestaurantDisplayImage(restaurant);
   const priceHint = getRestaurantPrimaryPrice(restaurant);
   const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
   const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
@@ -296,7 +286,6 @@ function RestaurantCard({
 
   return (
     <button
-      ref={cardRef}
       type="button"
       onClick={() => {
         onSelect?.(restaurant);

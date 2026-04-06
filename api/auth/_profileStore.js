@@ -1,6 +1,8 @@
 const crypto = require("node:crypto");
 
 const PROFILE_KEY_PREFIX = "matpick:auth-profile:";
+const SYNC_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
+const ALLOW_LEGACY_SYNC_TOKEN = process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN !== "0";
 
 function getKvConfig() {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
@@ -27,6 +29,37 @@ function getSigningSecret() {
 
 function getProfileKey(userId) {
   return `${PROFILE_KEY_PREFIX}${userId}`;
+}
+
+function createLegacyProfileSyncToken(userId) {
+  const secret = getSigningSecret();
+  if (!secret || !userId) {
+    return "";
+  }
+
+  return crypto.createHmac("sha256", secret).update(String(userId)).digest("hex");
+}
+
+function signSyncPayload(encodedPayload) {
+  return crypto
+    .createHmac("sha256", getSigningSecret())
+    .update(encodedPayload)
+    .digest("base64url");
+}
+
+function isSafeEqual(left, right) {
+  const leftBuffer = Buffer.from(String(left));
+  const rightBuffer = Buffer.from(String(right));
+
+  if (leftBuffer.length !== rightBuffer.length) {
+    return false;
+  }
+
+  try {
+    return crypto.timingSafeEqual(leftBuffer, rightBuffer);
+  } catch {
+    return false;
+  }
 }
 
 async function requestRedis(command) {
@@ -105,33 +138,96 @@ async function writeRemoteProfile(userId, profile) {
   return true;
 }
 
-function createProfileSyncToken(userId) {
+function createProfileSyncToken(userId, options = {}) {
   const secret = getSigningSecret();
   if (!secret || !userId) {
     return "";
   }
 
-  return crypto.createHmac("sha256", secret).update(String(userId)).digest("hex");
+  const ttlSeconds = Math.max(
+    60,
+    Number.isFinite(options.ttlSeconds) ? Number(options.ttlSeconds) : SYNC_TOKEN_TTL_SECONDS
+  );
+  const now = Math.floor(Date.now() / 1000);
+  const payload = {
+    v: 2,
+    uid: String(userId),
+    iat: now,
+    exp: now + ttlSeconds,
+  };
+  const encodedPayload = Buffer.from(JSON.stringify(payload)).toString("base64url");
+  const signature = signSyncPayload(encodedPayload);
+
+  return `${encodedPayload}.${signature}`;
+}
+
+function validateProfileSyncToken(userId, token) {
+  const secret = getSigningSecret();
+  if (!secret || !userId || !token) {
+    return { valid: false, version: null, reason: "missing" };
+  }
+
+  const stringToken = String(token).trim();
+  const [encodedPayload, signature] = stringToken.split(".");
+
+  if (encodedPayload && signature) {
+    const expectedSignature = signSyncPayload(encodedPayload);
+    if (!isSafeEqual(expectedSignature, signature)) {
+      return { valid: false, version: "v2", reason: "bad-signature" };
+    }
+
+    try {
+      const payload = JSON.parse(
+        Buffer.from(encodedPayload, "base64url").toString("utf8")
+      );
+      const now = Math.floor(Date.now() / 1000);
+
+      if (payload?.uid !== String(userId)) {
+        return { valid: false, version: "v2", reason: "wrong-user" };
+      }
+
+      if (!Number.isFinite(payload?.exp)) {
+        return { valid: false, version: "v2", reason: "missing-exp" };
+      }
+
+      if (Number(payload.exp) <= now) {
+        return { valid: false, version: "v2", reason: "expired" };
+      }
+
+      return {
+        valid: true,
+        version: "v2",
+        reason: "ok",
+        issuedAt: Number(payload?.iat || 0) || null,
+        expiresAt: Number(payload.exp),
+      };
+    } catch {
+      return { valid: false, version: "v2", reason: "invalid-payload" };
+    }
+  }
+
+  if (!ALLOW_LEGACY_SYNC_TOKEN) {
+    return { valid: false, version: "legacy", reason: "legacy-disabled" };
+  }
+
+  // Temporary compatibility path so already logged-in users are not logged out immediately.
+  const legacyExpected = createLegacyProfileSyncToken(userId);
+  const valid = isSafeEqual(legacyExpected, stringToken);
+  return {
+    valid,
+    version: "legacy",
+    reason: valid ? "ok" : "bad-legacy-token",
+  };
 }
 
 function isValidProfileSyncToken(userId, token) {
-  const secret = getSigningSecret();
-  if (!secret || !userId || !token) {
-    return false;
-  }
-
-  const expected = createProfileSyncToken(userId);
-
-  try {
-    return crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(String(token)));
-  } catch {
-    return false;
-  }
+  return validateProfileSyncToken(userId, token).valid;
 }
 
 module.exports = {
   createProfileSyncToken,
   isValidProfileSyncToken,
+  validateProfileSyncToken,
   readRemoteProfile,
   writeRemoteProfile,
 };

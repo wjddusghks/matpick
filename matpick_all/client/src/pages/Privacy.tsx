@@ -58,54 +58,58 @@ export default function Privacy() {
           },
           {
             title: "6. Effective date",
-            paragraphs: ["This policy takes effect from the time it is posted on the site and may be updated with notice on this page."],
+            paragraphs: [
+              "This policy takes effect from the time it is posted on the site and may be updated with notice on this page.",
+            ],
           },
         ],
       }
     : {
         seoTitle: "개인정보처리방침",
         seoDescription:
-          "Matpick 서비스 이용 중 처리될 수 있는 개인정보, 쿠키, 로컬 저장소 데이터와 사용자 권리에 대해 안내합니다.",
+          "Matpick 서비스 이용 중 처리될 수 있는 개인정보, 쿠키, 브라우저 저장소 사용 방식과 이용자 권리를 안내합니다.",
         title: "개인정보처리방침",
         description:
-          "Matpick은 서비스 운영과 기본 기능 제공에 필요한 범위 내에서만 정보를 처리하며, 브라우저 저장소와 광고 도구 사용 여부를 투명하게 안내합니다.",
+          "Matpick은 서비스 운영에 필요한 범위 안에서만 정보를 처리하며, 브라우저 저장소와 광고 도구 사용 방식도 함께 안내합니다.",
         sections: [
           {
-            title: "1. 수집 및 처리되는 정보",
+            title: "1. 수집 및 처리하는 정보",
             paragraphs: [
-              "Matpick은 계정 로그인, 즐겨찾기, 위치 기반 탐색, 리뷰 작성 기능 제공을 위해 브라우저 저장소 또는 인증 서비스 연동 과정에서 제한적인 정보를 처리할 수 있습니다.",
-              "처리될 수 있는 정보에는 로그인 식별자, 즐겨찾기 상태, 리뷰 초안, 브라우저 위치 권한에 따라 제공된 현재 위치 정보, 광고 및 분석 도구 사용 기록이 포함될 수 있습니다.",
+              "Matpick은 로그인, 저장한 맛집, 위치 기반 탐색, 리뷰 기능을 제공하기 위해 브라우저 저장소 또는 제3자 로그인 연동 과정에서 제한적인 정보를 처리할 수 있습니다.",
+              "처리될 수 있는 정보에는 로그인 식별자, 저장한 맛집 상태, 리뷰 초안, 위치 권한이 허용된 경우의 현재 위치, 광고 및 성과 측정 관련 기록이 포함될 수 있습니다.",
             ],
           },
           {
-            title: "2. 위치 정보 처리",
+            title: "2. 위치 정보",
             paragraphs: [
-              "사용자가 브라우저에서 위치 권한을 허용한 경우에만 현재 위치를 기준으로 주변 맛집 탐색 및 거리 계산 기능을 제공합니다. 위치 정보는 기능 제공 목적 외에 사용하지 않으며, 브라우저 설정 또는 저장소 삭제를 통해 제거할 수 있습니다.",
+              "현재 위치 정보는 브라우저에서 위치 권한을 직접 허용한 경우에만 사용되며, 주변 식당 탐색과 거리 계산을 돕는 목적에 한해 처리됩니다.",
             ],
           },
           {
             title: "3. 쿠키 및 브라우저 저장소",
             paragraphs: [
-              "Matpick은 서비스 선호 설정, 최근 검색어, 즐겨찾기, 일부 리뷰 정보 저장을 위해 브라우저의 로컬 저장소를 사용할 수 있습니다. 또한 광고 제공, 성과 측정, 동의 메시지 제공을 위해 제3자 쿠키나 유사 기술이 사용될 수 있습니다.",
-              "사용자는 브라우저 설정에서 쿠키 또는 저장소를 삭제하거나, 동의 메시지를 통해 일부 처리에 대한 선택을 변경할 수 있습니다.",
+              "Matpick은 서비스 선호 설정, 최근 검색어, 저장한 맛집, 일부 리뷰 정보를 유지하기 위해 브라우저 저장소를 사용할 수 있습니다. 광고, 측정, 동의 메시지 제공을 위해 제3자 쿠키 또는 유사 기술이 사용될 수도 있습니다.",
+              "이용자는 브라우저 설정을 통해 쿠키나 저장소를 삭제하거나, 동의 메시지를 통해 일부 처리 방식을 조정할 수 있습니다.",
             ],
           },
           {
-            title: "4. 제3자 서비스",
+            title: "4. 외부 서비스",
             paragraphs: [
-              "Matpick은 지도 서비스, 로그인 연동, 광고 제공, 배포 인프라 등 제3자 서비스를 이용할 수 있습니다. 대표적으로 지도 SDK, 인증 서비스, Google AdSense, Vercel과 같은 도구가 포함될 수 있습니다.",
-              "각 제3자 서비스는 자체 정책에 따라 정보를 처리할 수 있으며, 사용자는 해당 서비스의 정책도 함께 확인하는 것이 좋습니다.",
+              "Matpick은 지도, 로그인, 광고, 배포 인프라를 위해 외부 서비스를 이용할 수 있습니다. 예를 들어 지도 SDK, 인증 서비스, Google AdSense, Vercel 등이 포함될 수 있습니다.",
+              "각 외부 서비스는 자체 정책에 따라 정보를 처리할 수 있으므로, 필요한 경우 해당 서비스의 정책도 함께 확인해 주세요.",
             ],
           },
           {
-            title: "5. 사용자 권리와 문의",
+            title: "5. 이용자 권리와 문의",
             paragraphs: [
-              "사용자는 브라우저 저장소 삭제, 위치 권한 해제, 광고 동의 변경 등을 통해 자신의 데이터 사용 범위를 조정할 수 있습니다. 서비스 운영 정책이나 개인정보 처리에 대한 문의는 문의 안내 페이지를 통해 확인할 수 있습니다.",
+              "이용자는 브라우저 저장소 삭제, 위치 권한 철회, 광고 동의 설정 변경 등을 통해 자신의 정보 사용 범위를 조정할 수 있습니다. 서비스 운영 또는 개인정보 처리에 대한 문의는 문의 페이지 또는 Instagram @matpick.co.kr 계정으로 알려 주세요.",
             ],
           },
           {
             title: "6. 시행일",
-            paragraphs: ["본 방침은 사이트에 게시된 시점부터 적용됩니다. 정책 변경 시 본 페이지를 통해 고지합니다."],
+            paragraphs: [
+              "이 방침은 사이트에 게시된 시점부터 적용되며, 내용이 변경될 경우 이 페이지를 통해 안내합니다.",
+            ],
           },
         ],
       };
@@ -124,11 +128,7 @@ export default function Privacy() {
   });
 
   return (
-    <InfoPageLayout
-      eyebrow="Privacy"
-      title={page.title}
-      description={page.description}
-    >
+    <InfoPageLayout eyebrow="Privacy" title={page.title} description={page.description}>
       {page.sections.map((section) => (
         <Section key={section.title} title={section.title}>
           {section.paragraphs.map((paragraph) => (

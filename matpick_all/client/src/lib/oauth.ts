@@ -72,7 +72,7 @@ export function getOAuthRedirectUri(provider: OAuthProvider) {
 function buildAuthorizeUrl(provider: OAuthProvider, state: string) {
   const clientId = getClientId(provider);
   if (!clientId) {
-    throw new Error(`${getOAuthProviderLabel(provider)} 로그인 키가 아직 설정되지 않았습니다.`);
+    throw new Error(`${getOAuthProviderLabel(provider)} 로그인이 아직 설정되지 않았습니다.`);
   }
 
   const params = new URLSearchParams({

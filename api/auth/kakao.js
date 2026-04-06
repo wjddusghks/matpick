@@ -2,6 +2,9 @@ const {
   createProfileSyncToken,
   readRemoteProfile,
 } = require("./_profileStore");
+const { enforceRateLimit, getClientIp } = require("../_rateLimit");
+const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const { logSecurityEvent, maskValue } = require("../_securityLog");
 
 function readBody(req) {
   if (!req.body) {
@@ -16,9 +19,27 @@ function readBody(req) {
 }
 
 module.exports = async function handler(req, res) {
+  applyApiSecurityHeaders(res);
+
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  if (!enforceSameOrigin(req, res)) {
+    return;
+  }
+
+  if (
+    !(await enforceRateLimit(req, res, {
+      bucket: "auth:kakao:ip",
+      subject: getClientIp(req),
+      limit: 20,
+      windowSec: 600,
+      message: "Too many Kakao login attempts. Please try again in a few minutes.",
+    }))
+  ) {
+    return;
   }
 
   const clientId =
@@ -102,6 +123,11 @@ module.exports = async function handler(req, res) {
       },
     });
   } catch (error) {
+    logSecurityEvent("error", "kakao-auth-failed", {
+      route: "/api/auth/kakao",
+      ip: maskValue(getClientIp(req)),
+      message: error instanceof Error ? error.message : "unknown",
+    });
     return res.status(500).json({
       error:
         error instanceof Error

@@ -8,6 +8,8 @@ function getFallbackLocale(acceptLanguage) {
 }
 
 module.exports = function handler(req, res) {
+  res.setHeader("X-Robots-Tag", "noindex, nofollow");
+
   if (req.method !== "GET") {
     res.setHeader("Allow", "GET");
     return res.status(405).json({ error: "Method not allowed" });

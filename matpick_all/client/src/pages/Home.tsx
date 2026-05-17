@@ -122,7 +122,6 @@ const HOME_UI_KO = {
     close: "닫기",
     previous: "이전 카드",
     next: "다음 카드",
-    nextCards: "다음 카드",
     viewMap: "지도에서 보기",
     like: "좋아요",
     comment: "댓글",
@@ -217,7 +216,6 @@ const HOME_UI_EN = {
     close: "Close",
     previous: "Previous card",
     next: "Next card",
-    nextCards: "Next cards",
     viewMap: "View on map",
     like: "Like",
     comment: "Comment",
@@ -263,6 +261,15 @@ type CollectionComment = {
 type CollectionSocialState = {
   likedSlugs: string[];
   commentsBySlug: Record<string, CollectionComment[]>;
+};
+
+type CollectionStorySlide = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+  tags?: string[];
+  variant: "cover" | "editorial" | "list" | "map";
 };
 
 const emptyCollectionSocialState: CollectionSocialState = {
@@ -344,6 +351,50 @@ function saveCollectionSocialState(state: CollectionSocialState) {
   }
 
   window.localStorage.setItem(COLLECTION_SOCIAL_KEY, JSON.stringify(state));
+}
+
+function getCollectionStorySlides(collection: MapCollectionTopic): CollectionStorySlide[] {
+  const tagText = collection.purposeTags.join(" · ");
+
+  return [
+    {
+      id: "cover",
+      eyebrow: collection.eyebrow,
+      title: collection.title,
+      body: collection.description,
+      tags: collection.purposeTags,
+      variant: "cover",
+    },
+    {
+      id: "local",
+      eyebrow: `${collection.areaLabel}에서 고를 때`,
+      title: `${collection.areaLabel} 근처 유명 맛집만 빠르게`,
+      body: "방송, 크리에이터, 가이드 출처가 있는 곳만 묶어서 지도에서 바로 훑어볼 수 있어요.",
+      tags: [collection.areaLabel, `${collection.targetCount}곳`, "지도 탐색"],
+      variant: "editorial",
+    },
+    {
+      id: "mood",
+      eyebrow: "이럴 때 저장",
+      title: tagText,
+      body: "데이트, 여행, 약속 전처럼 시간이 없을 때 먼저 열어보기 좋은 주제형 맛집 리스트입니다.",
+      tags: collection.purposeTags,
+      variant: "list",
+    },
+    {
+      id: "map",
+      eyebrow: "지도에서 한 번에",
+      title: `${collection.targetCount}곳을 지도 위에서 바로 보기`,
+      body: "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해 보세요.",
+      tags: ["지도 보기", collection.areaLabel],
+      variant: "map",
+    },
+  ];
+}
+
+function getCollectionMetric(slug: string, base: number) {
+  const seed = slug.split("").reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return base + (seed % 87);
 }
 
 function persistLocationStatus(status: Exclude<LocationPermissionState, "unknown">) {
@@ -1589,7 +1640,6 @@ function FeaturedCollectionMarquee({
   label: string;
   collections: MapCollectionTopic[];
 }) {
-  const marqueeItems = [...collections, ...collections];
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -1626,23 +1676,27 @@ function FeaturedCollectionMarquee({
         </div>
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fff0f3] to-transparent sm:w-28" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fff0f3] to-transparent sm:w-28" />
-        <div className="matpick-marquee-track flex w-max gap-3 px-3 sm:gap-4 sm:px-4">
-          {marqueeItems.map((collection, index) => (
-            <MapCollectionCard
-              key={`${collection.slug}_${index}`}
-              collection={collection}
-              duplicateIndex={index}
-              onOpen={() => openCollection(index)}
-            />
-          ))}
+        <div className="overflow-hidden px-3 sm:px-4">
+          <div className="matpick-marquee-track">
+            {[0, 1].map((groupIndex) => (
+              <div className="matpick-marquee-group" key={groupIndex}>
+                {collections.map((collection, index) => (
+                  <MapCollectionCard
+                    key={`${collection.slug}_${groupIndex}`}
+                    collection={collection}
+                    duplicateIndex={groupIndex * collections.length + index}
+                    onOpen={() => openCollection(index)}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {activeIndex !== null ? (
         <FeaturedCollectionModal
-          collections={collections}
-          activeIndex={activeIndex}
-          onIndexChange={setActiveIndex}
+          collection={collections[activeIndex]}
           onClose={() => setActiveIndex(null)}
         />
       ) : null}
@@ -1680,10 +1734,7 @@ function MapCollectionCard({
       <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/15 blur-sm" />
       <div className="relative z-10 flex h-full w-full flex-col justify-between">
         <div>
-          <span className="inline-flex rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/90 backdrop-blur">
-            Catchable
-          </span>
-          <p className="mt-8 text-[12px] font-semibold leading-5 text-white/80">
+          <p className="text-[12px] font-semibold leading-5 text-white/80">
             {collection.eyebrow}
           </p>
           <h2 className="mt-2 break-keep text-[23px] font-black leading-tight tracking-normal text-white sm:text-[25px]">
@@ -1717,38 +1768,35 @@ function MapCollectionCard({
 }
 
 function FeaturedCollectionModal({
-  collections,
-  activeIndex,
-  onIndexChange,
+  collection,
   onClose,
 }: {
-  collections: MapCollectionTopic[];
-  activeIndex: number;
-  onIndexChange: (index: number) => void;
+  collection: MapCollectionTopic;
   onClose: () => void;
 }) {
   const ui = useHomeUi();
+  const slides = getCollectionStorySlides(collection);
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [socialState, setSocialState] = useState<CollectionSocialState>(
     getCollectionSocialState
   );
   const [commentDraft, setCommentDraft] = useState("");
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const commentInputRef = useRef<HTMLInputElement>(null);
 
-  const activeCollection = collections[activeIndex];
-  const comments = socialState.commentsBySlug[activeCollection.slug] ?? [];
-  const isLiked = socialState.likedSlugs.includes(activeCollection.slug);
-  const likeCount = isLiked ? 1 : 0;
-  const nextPreviewIndexes = [1, 2, 3].map(
-    (offset) => (activeIndex + offset) % collections.length
-  );
+  const comments = socialState.commentsBySlug[collection.slug] ?? [];
+  const isLiked = socialState.likedSlugs.includes(collection.slug);
+  const likeCount = getCollectionMetric(collection.slug, 180) + (isLiked ? 1 : 0);
+  const commentCount = getCollectionMetric(collection.slug, 38) + comments.length;
+  const shareCount = getCollectionMetric(collection.slug, 24);
+  const saveCount = getCollectionMetric(collection.slug, 420);
 
-  const goToIndex = useCallback(
+  const goToSlide = useCallback(
     (index: number) => {
-      const nextIndex = (index + collections.length) % collections.length;
-      setCommentDraft("");
-      onIndexChange(nextIndex);
+      const nextIndex = (index + slides.length) % slides.length;
+      setActiveSlideIndex(nextIndex);
     },
-    [collections.length, onIndexChange]
+    [slides.length]
   );
 
   useEffect(() => {
@@ -1769,18 +1817,18 @@ function FeaturedCollectionModal({
 
       if (event.key === "ArrowRight") {
         event.preventDefault();
-        goToIndex(activeIndex + 1);
+        goToSlide(activeSlideIndex + 1);
       }
 
       if (event.key === "ArrowLeft") {
         event.preventDefault();
-        goToIndex(activeIndex - 1);
+        goToSlide(activeSlideIndex - 1);
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeIndex, goToIndex, onClose]);
+  }, [activeSlideIndex, goToSlide, onClose]);
 
   const updateSocialState = useCallback((nextState: CollectionSocialState) => {
     setSocialState(nextState);
@@ -1789,8 +1837,8 @@ function FeaturedCollectionModal({
 
   const handleLike = useCallback(() => {
     const nextLikedSlugs = isLiked
-      ? socialState.likedSlugs.filter((slug) => slug !== activeCollection.slug)
-      : [...socialState.likedSlugs, activeCollection.slug];
+      ? socialState.likedSlugs.filter((slug) => slug !== collection.slug)
+      : [...socialState.likedSlugs, collection.slug];
 
     updateSocialState({
       ...socialState,
@@ -1802,10 +1850,10 @@ function FeaturedCollectionModal({
     });
 
     trackMarketingEvent("home_collection_like_toggle", {
-      collection_slug: activeCollection.slug,
+      collection_slug: collection.slug,
       liked: !isLiked,
     });
-  }, [activeCollection.slug, isLiked, socialState, ui.collectionModal, updateSocialState]);
+  }, [collection.slug, isLiked, socialState, ui.collectionModal, updateSocialState]);
 
   const handleCommentSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -1830,18 +1878,18 @@ function FeaturedCollectionModal({
         ...socialState,
         commentsBySlug: {
           ...socialState.commentsBySlug,
-          [activeCollection.slug]: [newComment, ...comments].slice(0, 8),
+          [collection.slug]: [newComment, ...comments].slice(0, 8),
         },
       });
       setCommentDraft("");
       toast.success(ui.collectionModal.commentAdded, { duration: 1400 });
 
       trackMarketingEvent("home_collection_comment_add", {
-        collection_slug: activeCollection.slug,
+        collection_slug: collection.slug,
       });
     },
     [
-      activeCollection.slug,
+      collection.slug,
       commentDraft,
       comments,
       socialState,
@@ -1851,7 +1899,7 @@ function FeaturedCollectionModal({
   );
 
   const handleShare = useCallback(async () => {
-    const sharePath = getMapCollectionPath(activeCollection.slug);
+    const sharePath = getMapCollectionPath(collection.slug);
     const shareUrl =
       typeof window !== "undefined"
         ? `${window.location.origin}${sharePath}`
@@ -1860,8 +1908,8 @@ function FeaturedCollectionModal({
     try {
       if (navigator.share) {
         await navigator.share({
-          title: activeCollection.title,
-          text: activeCollection.description,
+          title: collection.title,
+          text: collection.description,
           url: shareUrl,
         });
       } else if (navigator.clipboard) {
@@ -1872,7 +1920,7 @@ function FeaturedCollectionModal({
       }
 
       trackMarketingEvent("home_collection_share", {
-        collection_slug: activeCollection.slug,
+        collection_slug: collection.slug,
       });
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") {
@@ -1881,258 +1929,278 @@ function FeaturedCollectionModal({
 
       toast(ui.collectionModal.shareFailed, { duration: 1600 });
     }
-  }, [activeCollection, ui.collectionModal]);
+  }, [collection, ui.collectionModal]);
+
+  const handleTouchEnd = (clientX: number) => {
+    if (touchStartX === null) {
+      return;
+    }
+
+    const deltaX = touchStartX - clientX;
+    setTouchStartX(null);
+
+    if (Math.abs(deltaX) < 48) {
+      return;
+    }
+
+    goToSlide(activeSlideIndex + (deltaX > 0 ? 1 : -1));
+  };
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(20,16,18,0.58)] px-3 py-4 backdrop-blur-sm sm:px-5"
-      onClick={onClose}
+      className="fixed inset-0 z-50 overflow-hidden bg-[#070b10] text-white"
       role="dialog"
       aria-modal="true"
-      aria-label={activeCollection.title}
+      aria-label={collection.title}
     >
-      <div
-        className="relative grid max-h-[calc(100vh-2rem)] w-full max-w-[1040px] overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_28px_90px_rgba(0,0,0,0.24)] lg:grid-cols-[minmax(0,1fr)_340px]"
-        onClick={(event) => event.stopPropagation()}
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute left-4 top-4 z-30 flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:bg-white/10 sm:left-6 sm:top-6"
+        aria-label={ui.collectionModal.close}
       >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1e1e1e] shadow-[0_10px_24px_rgba(0,0,0,0.14)] transition hover:bg-[#fff4f6]"
-          aria-label={ui.collectionModal.close}
-        >
-          <X className="h-5 w-5" />
-        </button>
+        <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
+      </button>
 
-        <div className="min-h-0 overflow-y-auto bg-[#fff0f3] p-4 sm:p-6">
-          <div className="mb-4 flex items-center justify-between pr-12">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
-                Catchable
-              </p>
-              <h2 className="mt-1 break-keep text-[22px] font-black leading-tight text-[#171717] sm:text-[28px]">
-                {activeCollection.title}
-              </h2>
-            </div>
-            <span className="hidden rounded-full border border-[#ffd7dd] bg-white px-3 py-1 text-xs font-bold text-[#ff7b83] sm:inline-flex">
-              {activeIndex + 1} / {collections.length}
-            </span>
-          </div>
+      <div className="flex h-full w-full items-center justify-center px-3 pb-[92px] pt-[58px] sm:px-8 sm:py-7">
+        <div className="relative flex h-full w-full max-w-[1120px] items-center justify-center gap-5">
+          <button
+            type="button"
+            onClick={() => goToSlide(activeSlideIndex - 1)}
+            className="hidden h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 md:flex"
+            aria-label={ui.collectionModal.previous}
+          >
+            <ChevronLeft className="h-7 w-7" />
+          </button>
 
-          <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_160px]">
-            <div className="relative">
-              <CollectionStoryCard collection={activeCollection} />
-              <button
-                type="button"
-                onClick={() => goToIndex(activeIndex - 1)}
-                className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#222222] shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition hover:bg-white"
-                aria-label={ui.collectionModal.previous}
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => goToIndex(activeIndex + 1)}
-                className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#222222] shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition hover:bg-white"
-                aria-label={ui.collectionModal.next}
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
-
-            <div className="min-w-0">
-              <p className="mb-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#ff7b83]">
-                {ui.collectionModal.nextCards}
-              </p>
-              <div className="flex gap-3 overflow-x-auto pb-1 md:flex-col md:overflow-visible md:pb-0">
-                {nextPreviewIndexes.map((index) => (
-                  <button
-                    key={collections[index].slug}
-                    type="button"
-                    onClick={() => goToIndex(index)}
-                    className="w-[132px] flex-shrink-0 text-left transition hover:-translate-y-0.5 md:w-full"
-                  >
-                    <CollectionStoryCard collection={collections[index]} compact />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <aside className="flex min-h-0 flex-col border-t border-[#f2e4e6] bg-white lg:border-l lg:border-t-0">
-          <div className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6">
-            <p className="break-keep text-sm font-semibold leading-6 text-[#686063]">
-              {activeCollection.description}
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {activeCollection.purposeTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[#ffe0e5] bg-[#fff7f8] px-3 py-1 text-xs font-bold text-[#ff7b83]"
-                >
-                  {tag}
-                </span>
+          <div
+            className="relative aspect-[9/16] h-full max-h-[820px] min-h-[420px] max-w-[calc(100vw-88px)] overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
+            onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
+            onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
+          >
+            <div
+              className="flex h-full transition-transform duration-300 ease-out"
+              style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
+            >
+              {slides.map((slide) => (
+                <CollectionInstagramSlide
+                  key={slide.id}
+                  slide={slide}
+                  collection={collection}
+                />
               ))}
             </div>
 
-            <div className="mt-5 flex items-center gap-2 border-y border-[#f1e7e9] py-3">
-              <button
-                type="button"
-                onClick={handleLike}
-                className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
-                  isLiked
-                    ? "bg-[#fff0f2] text-[#ff6475]"
-                    : "bg-[#f7f7f7] text-[#333333] hover:bg-[#fff0f2] hover:text-[#ff6475]"
-                }`}
-                aria-label={ui.collectionModal.like}
-              >
-                <Heart className={`h-5 w-5 ${isLiked ? "fill-current" : ""}`} />
-              </button>
-              <button
-                type="button"
-                onClick={() => commentInputRef.current?.focus()}
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f7f7] text-[#333333] transition hover:bg-[#fff0f2] hover:text-[#ff6475]"
-                aria-label={ui.collectionModal.comment}
-              >
-                <MessageCircleMore className="h-5 w-5" />
-              </button>
-              <button
-                type="button"
-                onClick={handleShare}
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f7f7] text-[#333333] transition hover:bg-[#fff0f2] hover:text-[#ff6475]"
-                aria-label={ui.collectionModal.share}
-              >
-                <Share2 className="h-5 w-5" />
-              </button>
-              <Link
-                href={getMapCollectionPath(activeCollection.slug)}
-                onClick={() =>
-                  trackMarketingEvent("home_collection_modal_map_click", {
-                    collection_slug: activeCollection.slug,
-                  })
-                }
-                className="ml-auto inline-flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-4 text-sm font-bold text-white shadow-[0_12px_26px_rgba(255,102,132,0.24)] transition hover:brightness-95"
-              >
-                {ui.collectionModal.viewMap}
-              </Link>
-            </div>
+            <button
+              type="button"
+              onClick={() => goToSlide(activeSlideIndex - 1)}
+              className="absolute inset-y-0 left-0 w-1/3"
+              aria-label={ui.collectionModal.previous}
+            />
+            <button
+              type="button"
+              onClick={() => goToSlide(activeSlideIndex + 1)}
+              className="absolute inset-y-0 right-0 w-1/3"
+              aria-label={ui.collectionModal.next}
+            />
 
-            <p className="mt-3 text-sm font-black text-[#171717]">
-              {likeCount > 0 ? `${ui.collectionModal.like} ${likeCount}` : ui.collectionModal.like}
-            </p>
-
-            <div className="mt-5">
-              <p className="text-sm font-black text-[#171717]">
-                {ui.collectionModal.commentsTitle} {comments.length}
-              </p>
-              <div className="mt-3 space-y-3">
-                {comments.length > 0 ? (
-                  comments.map((comment) => (
-                    <div
-                      key={comment.id}
-                      className="rounded-[18px] border border-[#f3e6e8] bg-[#fffafa] px-3 py-2.5"
-                    >
-                      <p className="text-sm font-semibold leading-5 text-[#333333]">
-                        {comment.text}
-                      </p>
-                    </div>
-                  ))
-                ) : (
-                  <p className="rounded-[18px] border border-dashed border-[#ffd8de] bg-[#fff8f9] px-3 py-4 text-sm font-medium text-[#9a8f92]">
-                    {ui.collectionModal.noComments}
-                  </p>
-                )}
-              </div>
+            <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/15 px-3 py-2 backdrop-blur">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => goToSlide(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === activeSlideIndex ? "w-5 bg-white" : "w-2 bg-white/55"
+                  }`}
+                  aria-label={`${index + 1}`}
+                />
+              ))}
             </div>
           </div>
 
-          <form
-            onSubmit={handleCommentSubmit}
-            className="flex items-center gap-2 border-t border-[#f1e7e9] p-4"
+          <button
+            type="button"
+            onClick={() => goToSlide(activeSlideIndex + 1)}
+            className="hidden h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20 md:flex"
+            aria-label={ui.collectionModal.next}
           >
-            <input
-              ref={commentInputRef}
-              type="text"
-              value={commentDraft}
-              onChange={(event) => setCommentDraft(event.target.value)}
-              placeholder={ui.collectionModal.commentPlaceholder}
-              className="min-w-0 flex-1 rounded-full border border-[#f0dfe3] bg-[#fff8f9] px-4 py-3 text-sm font-medium text-[#222222] outline-none placeholder:text-[#b7acae] focus:border-[#ff9ea9]"
+            <ChevronRight className="h-7 w-7" />
+          </button>
+
+          <div className="absolute right-1 top-1/2 z-20 flex -translate-y-1/2 flex-col items-center gap-5 sm:right-0 md:static md:translate-y-0">
+            <InstagramActionButton
+              icon={<Heart className={`h-8 w-8 ${isLiked ? "fill-current" : ""}`} />}
+              label={likeCount.toLocaleString()}
+              active={isLiked}
+              ariaLabel={ui.collectionModal.like}
+              onClick={handleLike}
             />
-            <button
-              type="submit"
-              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#ff7b83] text-white transition hover:brightness-95"
-              aria-label={ui.collectionModal.commentSubmit}
+            <InstagramActionButton
+              icon={<MessageCircleMore className="h-8 w-8" />}
+              label={commentCount.toLocaleString()}
+              ariaLabel={ui.collectionModal.comment}
+              onClick={() => commentInputRef.current?.focus()}
+            />
+            <InstagramActionButton
+              icon={<Share2 className="h-8 w-8" />}
+              label={shareCount.toLocaleString()}
+              ariaLabel={ui.collectionModal.share}
+              onClick={handleShare}
+            />
+            <Link
+              href={getMapCollectionPath(collection.slug)}
+              onClick={() =>
+                trackMarketingEvent("home_collection_modal_map_click", {
+                  collection_slug: collection.slug,
+                })
+              }
+              className="flex flex-col items-center gap-1 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] transition hover:text-[#ff9ea9]"
+              aria-label={ui.collectionModal.viewMap}
             >
-              <Send className="h-4 w-4" />
-            </button>
-          </form>
-        </aside>
+              <MapPin className="h-8 w-8" />
+              <span className="text-xs font-bold">{ui.collectionModal.viewMap}</span>
+            </Link>
+          </div>
+        </div>
       </div>
+
+      <div className="pointer-events-none absolute bottom-[96px] left-4 z-20 max-w-[calc(100vw-96px)] text-left sm:left-8 sm:max-w-[420px]">
+        <p className="text-sm font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+          matpick
+        </p>
+        <p className="mt-1 line-clamp-2 break-keep text-sm font-semibold leading-5 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+          {collection.shortTitle} · {collection.description}
+        </p>
+        {comments[0] ? (
+          <p className="mt-2 line-clamp-1 text-xs font-medium text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+            {ui.collectionModal.commentsTitle}: {comments[0].text}
+          </p>
+        ) : null}
+      </div>
+
+      <form
+        onSubmit={handleCommentSubmit}
+        className="absolute bottom-4 left-4 right-4 z-30 flex items-center gap-2 sm:left-8 sm:right-8"
+      >
+        <input
+          ref={commentInputRef}
+          type="text"
+          value={commentDraft}
+          onChange={(event) => setCommentDraft(event.target.value)}
+          placeholder={ui.collectionModal.commentPlaceholder}
+          className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-5 py-4 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
+        />
+        <button
+          type="submit"
+          className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
+          aria-label={ui.collectionModal.commentSubmit}
+        >
+          <Send className="h-5 w-5" />
+        </button>
+      </form>
     </div>
   );
 }
 
-function CollectionStoryCard({
-  collection,
-  compact = false,
+function InstagramActionButton({
+  icon,
+  label,
+  ariaLabel,
+  active = false,
+  onClick,
 }: {
-  collection: MapCollectionTopic;
-  compact?: boolean;
+  icon: ReactNode;
+  label: string;
+  ariaLabel: string;
+  active?: boolean;
+  onClick: () => void;
 }) {
   return (
-    <div
-      className={`relative flex w-full overflow-hidden rounded-[22px] border border-white/70 text-white shadow-[0_18px_38px_rgba(255,98,124,0.18)] ${
-        compact ? "h-[112px] p-3" : "min-h-[420px] p-6 sm:min-h-[500px] sm:p-8"
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex flex-col items-center gap-1 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] transition hover:text-[#ff9ea9] ${
+        active ? "text-[#ff7b83]" : ""
       }`}
-      style={{ background: collection.palette.background }}
+      aria-label={ariaLabel}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.52))]" />
-      <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/15 blur-sm" />
-      <div className="relative z-10 flex h-full w-full flex-col justify-between">
+      {icon}
+      <span className="text-xs font-bold">{label}</span>
+    </button>
+  );
+}
+
+function CollectionInstagramSlide({
+  slide,
+  collection,
+}: {
+  slide: CollectionStorySlide;
+  collection: MapCollectionTopic;
+}) {
+  const isCover = slide.variant === "cover";
+  const isMap = slide.variant === "map";
+
+  return (
+    <article
+      className={`relative h-full w-full flex-shrink-0 overflow-hidden ${
+        isCover ? "text-white" : "text-[#202020]"
+      }`}
+      style={{ background: isCover ? collection.palette.background : "#ffffff" }}
+    >
+      {isCover ? (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.58))]" />
+      ) : (
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(180deg,#f5f5f5_0%,#ffffff_72%)]" />
+      )}
+      <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-[#ff7b83]/18 blur-2xl" />
+      <div className="relative z-10 flex h-full flex-col justify-between px-7 py-8 sm:px-10 sm:py-11">
         <div>
-          <span
-            className={`inline-flex rounded-full bg-white/20 font-bold uppercase tracking-[0.12em] text-white/90 backdrop-blur ${
-              compact ? "px-2 py-0.5 text-[9px]" : "px-3 py-1 text-[11px]"
-            }`}
-          >
-            Catchable
-          </span>
           <p
-            className={`font-semibold leading-5 text-white/80 ${
-              compact ? "mt-3 text-[10px]" : "mt-10 text-[13px]"
+            className={`break-keep text-[15px] font-black leading-6 ${
+              isCover ? "text-white/85" : "text-[#777777]"
             }`}
           >
-            {collection.eyebrow}
+            {slide.eyebrow}
           </p>
           <h3
-            className={`break-keep font-black leading-tight tracking-normal text-white ${
-              compact ? "mt-1 line-clamp-2 text-[17px]" : "mt-3 text-[34px] sm:text-[44px]"
+            className={`mt-10 break-keep font-black leading-[1.12] tracking-normal ${
+              isCover
+                ? "text-[42px] text-white sm:text-[54px]"
+                : "text-[40px] text-[#242424] sm:text-[52px]"
             }`}
           >
-            {collection.title}
+            {slide.title}
           </h3>
         </div>
 
-        {!compact ? (
-          <div>
-            <div className="mb-4 flex flex-wrap gap-2">
-              {collection.purposeTags.map((tag) => (
+        <div>
+          {slide.tags ? (
+            <div className="mb-5 flex flex-wrap gap-2">
+              {slide.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white/90 backdrop-blur"
+                  className={`rounded-full px-3 py-1.5 text-xs font-black ${
+                    isCover
+                      ? "bg-white/20 text-white"
+                      : "bg-[#fff0f3] text-[#ff6576]"
+                  }`}
                 >
                   {tag}
                 </span>
               ))}
             </div>
-            <p className="max-w-[460px] break-keep text-sm font-medium leading-6 text-white/80">
-              {collection.description}
-            </p>
-          </div>
-        ) : null}
+          ) : null}
+          <p
+            className={`break-keep text-[22px] font-bold leading-[1.45] ${
+              isCover ? "text-white/90" : "text-[#343434]"
+            } ${isMap ? "text-[27px] sm:text-[32px]" : ""}`}
+          >
+            {slide.body}
+          </p>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }
 

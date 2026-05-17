@@ -183,3 +183,21 @@
     color: oklch(0.50 0.02 50);
   }
 }
+
+@keyframes matpick-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.matpick-marquee-track {
+  animation: matpick-marquee 44s linear infinite;
+}
+
+.matpick-marquee-track:hover {
+  animation-play-state: paused;
+}

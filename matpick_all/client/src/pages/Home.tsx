@@ -3,10 +3,13 @@
   useEffect,
   useRef,
   useState,
+  type FormEvent,
   type KeyboardEvent,
   type ReactNode,
 } from "react";
 import {
+  ChevronLeft,
+  ChevronRight,
   CheckCircle2,
   Circle,
   Compass,
@@ -15,6 +18,8 @@ import {
   MessageCircleMore,
   Plus,
   Search,
+  Send,
+  Share2,
   Star,
   Trash2,
   UtensilsCrossed,
@@ -35,6 +40,11 @@ import {
   type DiscoveryTopic,
   type SearchResult,
 } from "@/data";
+import {
+  featuredMapCollections,
+  getMapCollectionPath,
+  type MapCollectionTopic,
+} from "@/data/mapCollections";
 import { getDisplayName } from "@/lib/authProfile";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
@@ -44,6 +54,7 @@ import matpickLogo from "../assets/matpick-logo-final 2.png";
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
+const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
 
 const HOME_UI_KO = {
   brandFirst: "\uB9DB",
@@ -98,10 +109,35 @@ const HOME_UI_KO = {
     login: "\uB85C\uADF8\uC778",
   },
   heroSubtitle:
-    "\uC720\uD29C\uBE0C, \uC778\uC2A4\uD0C0 \uD06C\uB9AC\uC5D0\uC774\uD130\uB4E4\uC774 \uBC29\uBB38\uD55C \uB9DB\uC9D1\uC744 \uD55C\uACF3\uC5D0\uC11C \uCC3E\uC544\uBCF4\uC138\uC694!",
+    "\uB0B4 \uC8FC\uBCC0 \uC720\uBA85\uD55C \uB9DB\uC9D1\uC744 \uD55C\uACF3\uC5D0\uC11C \uCC3E\uC544\uBCF4\uC138\uC694!",
   searchPlaceholder:
-    "\uB9DB\uC9D1, \uD06C\uB9AC\uC5D0\uC774\uD130, \uC9C0\uC5ED, \uC74C\uC2DD\uC744 \uAC80\uC0C9\uD574 \uBCF4\uC138\uC694!",
+    "\uC9C0\uC5ED, \uB9DB\uC9D1, \uC74C\uC2DD\uC744 \uAC80\uC0C9\uD574 \uBCF4\uC138\uC694!",
+  searchHelperText:
+    "\uAC80\uC0C9\uC5B4 \uC5C6\uC774 \uB3CB\uBCF4\uAE30\uB97C \uB204\uB974\uBA74 \uB0B4 \uC8FC\uBCC0 \uC720\uBA85 \uB9DB\uC9D1 \uC9C0\uB3C4\uAC00 \uBC14\uB85C \uC5F4\uB824\uC694.",
   searchButtonLabel: "\uAC80\uC0C9",
+  collectionMarqueeLabel: "\uC800\uC7A5\uD574\uB450\uACE0 \uAEBC\uB0B4\uBCF4\uB294 \uC9C0\uC5ED\uBCC4 \uB9DB\uC9D1 \uB9AC\uC2A4\uD2B8",
+  collectionModal: {
+    openAria: "주제 카드 자세히 보기",
+    openCta: "카드 보기",
+    close: "닫기",
+    previous: "이전 카드",
+    next: "다음 카드",
+    nextCards: "다음 카드",
+    viewMap: "지도에서 보기",
+    like: "좋아요",
+    comment: "댓글",
+    share: "공유",
+    commentPlaceholder: "댓글을 남겨보세요",
+    commentSubmit: "게시",
+    commentsTitle: "댓글",
+    noComments: "첫 댓글을 남겨보세요.",
+    likeAdded: "좋아요를 눌렀어요",
+    likeRemoved: "좋아요를 취소했어요",
+    commentAdded: "댓글을 남겼어요",
+    commentEmpty: "댓글 내용을 입력해 주세요",
+    shareCopied: "링크가 복사됐어요",
+    shareFailed: "공유 링크를 만들지 못했어요",
+  },
   dropdown: {
     resultsTitle: "\uAC80\uC0C9 \uACB0\uACFC",
     resultsSuffix: "\uAC1C \uD56D\uBAA9",
@@ -169,9 +205,34 @@ const HOME_UI_EN = {
     login: "Sign in",
   },
   heroSubtitle:
-    "Discover restaurants visited by YouTube and Instagram creators in one place.",
-  searchPlaceholder: "Search restaurants, creators, regions, and cuisines",
+    "Find famous restaurants near you in one place.",
+  searchPlaceholder: "Search a region, restaurant, or cuisine",
+  searchHelperText:
+    "Press search with an empty field to open the nearby famous restaurant map.",
   searchButtonLabel: "Search",
+  collectionMarqueeLabel: "Saveable local restaurant lists",
+  collectionModal: {
+    openAria: "Open topic card details",
+    openCta: "Open card",
+    close: "Close",
+    previous: "Previous card",
+    next: "Next card",
+    nextCards: "Next cards",
+    viewMap: "View on map",
+    like: "Like",
+    comment: "Comment",
+    share: "Share",
+    commentPlaceholder: "Leave a comment",
+    commentSubmit: "Post",
+    commentsTitle: "Comments",
+    noComments: "Leave the first comment.",
+    likeAdded: "Liked this list",
+    likeRemoved: "Removed like",
+    commentAdded: "Comment added",
+    commentEmpty: "Please enter a comment",
+    shareCopied: "Link copied",
+    shareFailed: "Could not create a share link",
+  },
   dropdown: {
     resultsTitle: "Search results",
     resultsSuffix: " results",
@@ -192,6 +253,22 @@ type LocationPermissionState =
   | "granted"
   | "denied"
   | "unsupported";
+
+type CollectionComment = {
+  id: string;
+  text: string;
+  createdAt: string;
+};
+
+type CollectionSocialState = {
+  likedSlugs: string[];
+  commentsBySlug: Record<string, CollectionComment[]>;
+};
+
+const emptyCollectionSocialState: CollectionSocialState = {
+  likedSlugs: [],
+  commentsBySlug: {},
+};
 
 function useHomeUi() {
   const { isEnglish } = useLocale();
@@ -232,6 +309,41 @@ function saveRecentSearches(items: SearchResult[]) {
     RECENT_KEY,
     JSON.stringify(items.slice(0, 8).map(normalizeSearchResult))
   );
+}
+
+function getCollectionSocialState(): CollectionSocialState {
+  if (typeof window === "undefined") {
+    return emptyCollectionSocialState;
+  }
+
+  try {
+    const raw = window.localStorage.getItem(COLLECTION_SOCIAL_KEY);
+    if (!raw) {
+      return emptyCollectionSocialState;
+    }
+
+    const parsed = JSON.parse(raw) as Partial<CollectionSocialState>;
+    const commentsBySlug = Object.fromEntries(
+      Object.entries(parsed.commentsBySlug ?? {}).filter(([, comments]) =>
+        Array.isArray(comments)
+      )
+    ) as Record<string, CollectionComment[]>;
+
+    return {
+      likedSlugs: Array.isArray(parsed.likedSlugs) ? parsed.likedSlugs : [],
+      commentsBySlug,
+    };
+  } catch {
+    return emptyCollectionSocialState;
+  }
+}
+
+function saveCollectionSocialState(state: CollectionSocialState) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.localStorage.setItem(COLLECTION_SOCIAL_KEY, JSON.stringify(state));
 }
 
 function persistLocationStatus(status: Exclude<LocationPermissionState, "unknown">) {
@@ -958,17 +1070,21 @@ export default function Home() {
       result_count: filteredResults.length,
     });
 
-    const selectedItem = normalizedQuery
-      ? filteredResults[hoveredIndex >= 0 ? hoveredIndex : 0] ?? filteredResults[0]
-      : recentSearches[hoveredIndex >= 0 ? hoveredIndex : 0] ?? recentSearches[0];
+    if (!normalizedQuery) {
+      navigate("/map?type=nearby");
+      return;
+    }
+
+    const selectedItem =
+      filteredResults[hoveredIndex >= 0 ? hoveredIndex : 0] ?? filteredResults[0];
 
     if (selectedItem) {
       handleSelect(selectedItem);
       return;
     }
 
-    navigate("/explore");
-  }, [filteredResults, handleSelect, hoveredIndex, navigate, normalizedQuery, recentSearches]);
+    navigate(`/map?type=region&value=${encodeURIComponent(query.trim())}`);
+  }, [filteredResults, handleSelect, hoveredIndex, navigate, normalizedQuery, query]);
 
   const handleSearchKeyDown = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
@@ -999,6 +1115,11 @@ export default function Home() {
       if (event.key === "Enter") {
         event.preventDefault();
 
+        if (!normalizedQuery) {
+          handlePrimarySearch();
+          return;
+        }
+
         const selectedItem = activeItems[hoveredIndex] ?? activeItems[0];
 
         if (selectedItem) {
@@ -1009,7 +1130,7 @@ export default function Home() {
         handlePrimarySearch();
       }
     },
-    [activeItems, handlePrimarySearch, handleSelect, hoveredIndex]
+    [activeItems, handlePrimarySearch, handleSelect, hoveredIndex, normalizedQuery]
   );
 
   const requestLocationPermission = useCallback(() => {
@@ -1334,6 +1455,9 @@ export default function Home() {
                 </button>
               </div>
             </div>
+            <p className="mt-3 px-3 text-center text-[13px] font-medium leading-5 text-[#9b8f92] sm:text-[15px]">
+              {ui.searchHelperText}
+            </p>
 
             <div className="mt-4 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
@@ -1437,6 +1561,11 @@ export default function Home() {
           </div>
         </section>
 
+        <FeaturedCollectionMarquee
+          label={ui.collectionMarqueeLabel}
+          collections={featuredMapCollections}
+        />
+
         <div className="mt-8 w-full max-w-[840px] sm:mt-10">
           <AdsenseSlot label="Sponsored" />
         </div>
@@ -1448,6 +1577,560 @@ export default function Home() {
         }`}
       >
         <SiteFooter />
+      </div>
+    </div>
+  );
+}
+
+function FeaturedCollectionMarquee({
+  label,
+  collections,
+}: {
+  label: string;
+  collections: MapCollectionTopic[];
+}) {
+  const marqueeItems = [...collections, ...collections];
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (activeIndex === null) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeIndex]);
+
+  const openCollection = useCallback(
+    (index: number) => {
+      if (collections.length === 0) {
+        return;
+      }
+
+      setActiveIndex(index % collections.length);
+    },
+    [collections.length]
+  );
+
+  return (
+    <>
+      <section className="relative left-1/2 mt-9 w-screen -translate-x-1/2 overflow-hidden border-y border-[#ffe1e7] bg-[#fff0f3] py-5 text-left sm:mt-11 sm:py-6">
+        <div className="mx-auto mb-4 flex w-full max-w-[980px] items-center justify-between px-4 sm:px-8">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
+            {label}
+          </p>
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fff0f3] to-transparent sm:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fff0f3] to-transparent sm:w-28" />
+        <div className="matpick-marquee-track flex w-max gap-3 px-3 sm:gap-4 sm:px-4">
+          {marqueeItems.map((collection, index) => (
+            <MapCollectionCard
+              key={`${collection.slug}_${index}`}
+              collection={collection}
+              duplicateIndex={index}
+              onOpen={() => openCollection(index)}
+            />
+          ))}
+        </div>
+      </section>
+
+      {activeIndex !== null ? (
+        <FeaturedCollectionModal
+          collections={collections}
+          activeIndex={activeIndex}
+          onIndexChange={setActiveIndex}
+          onClose={() => setActiveIndex(null)}
+        />
+      ) : null}
+    </>
+  );
+}
+
+function MapCollectionCard({
+  collection,
+  duplicateIndex,
+  onOpen,
+}: {
+  collection: MapCollectionTopic;
+  duplicateIndex: number;
+  onOpen: () => void;
+}) {
+  const ui = useHomeUi();
+
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        trackMarketingEvent("home_collection_marquee_click", {
+          collection_slug: collection.slug,
+          collection_title: collection.title,
+          duplicate_index: duplicateIndex,
+        });
+        onOpen();
+      }}
+      className="group relative flex h-[268px] w-[204px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[292px] sm:w-[224px]"
+      style={{ background: collection.palette.background }}
+      aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_20%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.48))]" />
+      <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/15 blur-sm" />
+      <div className="relative z-10 flex h-full w-full flex-col justify-between">
+        <div>
+          <span className="inline-flex rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-white/90 backdrop-blur">
+            Catchable
+          </span>
+          <p className="mt-8 text-[12px] font-semibold leading-5 text-white/80">
+            {collection.eyebrow}
+          </p>
+          <h2 className="mt-2 break-keep text-[23px] font-black leading-tight tracking-normal text-white sm:text-[25px]">
+            {collection.title}
+          </h2>
+        </div>
+        <div>
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            {collection.purposeTags.slice(0, 3).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold text-white/90 backdrop-blur"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="line-clamp-2 text-[12px] font-medium leading-5 text-white/80">
+            {collection.description}
+          </p>
+          <span
+            className="mt-4 inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[12px] font-bold text-[#ff6f7b] transition group-hover:bg-[#fff5f7]"
+            style={{ color: collection.palette.accent }}
+          >
+            {ui.collectionModal.openCta}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function FeaturedCollectionModal({
+  collections,
+  activeIndex,
+  onIndexChange,
+  onClose,
+}: {
+  collections: MapCollectionTopic[];
+  activeIndex: number;
+  onIndexChange: (index: number) => void;
+  onClose: () => void;
+}) {
+  const ui = useHomeUi();
+  const [socialState, setSocialState] = useState<CollectionSocialState>(
+    getCollectionSocialState
+  );
+  const [commentDraft, setCommentDraft] = useState("");
+  const commentInputRef = useRef<HTMLInputElement>(null);
+
+  const activeCollection = collections[activeIndex];
+  const comments = socialState.commentsBySlug[activeCollection.slug] ?? [];
+  const isLiked = socialState.likedSlugs.includes(activeCollection.slug);
+  const likeCount = isLiked ? 1 : 0;
+  const nextPreviewIndexes = [1, 2, 3].map(
+    (offset) => (activeIndex + offset) % collections.length
+  );
+
+  const goToIndex = useCallback(
+    (index: number) => {
+      const nextIndex = (index + collections.length) % collections.length;
+      setCommentDraft("");
+      onIndexChange(nextIndex);
+    },
+    [collections.length, onIndexChange]
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const isTyping =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.isContentEditable;
+
+      if (event.key === "Escape") {
+        onClose();
+      }
+
+      if (isTyping) {
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goToIndex(activeIndex + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goToIndex(activeIndex - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeIndex, goToIndex, onClose]);
+
+  const updateSocialState = useCallback((nextState: CollectionSocialState) => {
+    setSocialState(nextState);
+    saveCollectionSocialState(nextState);
+  }, []);
+
+  const handleLike = useCallback(() => {
+    const nextLikedSlugs = isLiked
+      ? socialState.likedSlugs.filter((slug) => slug !== activeCollection.slug)
+      : [...socialState.likedSlugs, activeCollection.slug];
+
+    updateSocialState({
+      ...socialState,
+      likedSlugs: nextLikedSlugs,
+    });
+
+    toast(isLiked ? ui.collectionModal.likeRemoved : ui.collectionModal.likeAdded, {
+      duration: 1400,
+    });
+
+    trackMarketingEvent("home_collection_like_toggle", {
+      collection_slug: activeCollection.slug,
+      liked: !isLiked,
+    });
+  }, [activeCollection.slug, isLiked, socialState, ui.collectionModal, updateSocialState]);
+
+  const handleCommentSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const text = commentDraft.trim();
+
+      if (!text) {
+        toast(ui.collectionModal.commentEmpty, { duration: 1400 });
+        return;
+      }
+
+      const newComment: CollectionComment = {
+        id:
+          typeof crypto !== "undefined" && "randomUUID" in crypto
+            ? crypto.randomUUID()
+            : `${Date.now()}`,
+        text,
+        createdAt: new Date().toISOString(),
+      };
+
+      updateSocialState({
+        ...socialState,
+        commentsBySlug: {
+          ...socialState.commentsBySlug,
+          [activeCollection.slug]: [newComment, ...comments].slice(0, 8),
+        },
+      });
+      setCommentDraft("");
+      toast.success(ui.collectionModal.commentAdded, { duration: 1400 });
+
+      trackMarketingEvent("home_collection_comment_add", {
+        collection_slug: activeCollection.slug,
+      });
+    },
+    [
+      activeCollection.slug,
+      commentDraft,
+      comments,
+      socialState,
+      ui.collectionModal,
+      updateSocialState,
+    ]
+  );
+
+  const handleShare = useCallback(async () => {
+    const sharePath = getMapCollectionPath(activeCollection.slug);
+    const shareUrl =
+      typeof window !== "undefined"
+        ? `${window.location.origin}${sharePath}`
+        : sharePath;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: activeCollection.title,
+          text: activeCollection.description,
+          url: shareUrl,
+        });
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareUrl);
+        toast.success(ui.collectionModal.shareCopied, { duration: 1500 });
+      } else {
+        throw new Error("Share is not available");
+      }
+
+      trackMarketingEvent("home_collection_share", {
+        collection_slug: activeCollection.slug,
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+
+      toast(ui.collectionModal.shareFailed, { duration: 1600 });
+    }
+  }, [activeCollection, ui.collectionModal]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(20,16,18,0.58)] px-3 py-4 backdrop-blur-sm sm:px-5"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={activeCollection.title}
+    >
+      <div
+        className="relative grid max-h-[calc(100vh-2rem)] w-full max-w-[1040px] overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-[0_28px_90px_rgba(0,0,0,0.24)] lg:grid-cols-[minmax(0,1fr)_340px]"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1e1e1e] shadow-[0_10px_24px_rgba(0,0,0,0.14)] transition hover:bg-[#fff4f6]"
+          aria-label={ui.collectionModal.close}
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <div className="min-h-0 overflow-y-auto bg-[#fff0f3] p-4 sm:p-6">
+          <div className="mb-4 flex items-center justify-between pr-12">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
+                Catchable
+              </p>
+              <h2 className="mt-1 break-keep text-[22px] font-black leading-tight text-[#171717] sm:text-[28px]">
+                {activeCollection.title}
+              </h2>
+            </div>
+            <span className="hidden rounded-full border border-[#ffd7dd] bg-white px-3 py-1 text-xs font-bold text-[#ff7b83] sm:inline-flex">
+              {activeIndex + 1} / {collections.length}
+            </span>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_160px]">
+            <div className="relative">
+              <CollectionStoryCard collection={activeCollection} />
+              <button
+                type="button"
+                onClick={() => goToIndex(activeIndex - 1)}
+                className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#222222] shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition hover:bg-white"
+                aria-label={ui.collectionModal.previous}
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => goToIndex(activeIndex + 1)}
+                className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#222222] shadow-[0_10px_24px_rgba(0,0,0,0.16)] transition hover:bg-white"
+                aria-label={ui.collectionModal.next}
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="min-w-0">
+              <p className="mb-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#ff7b83]">
+                {ui.collectionModal.nextCards}
+              </p>
+              <div className="flex gap-3 overflow-x-auto pb-1 md:flex-col md:overflow-visible md:pb-0">
+                {nextPreviewIndexes.map((index) => (
+                  <button
+                    key={collections[index].slug}
+                    type="button"
+                    onClick={() => goToIndex(index)}
+                    className="w-[132px] flex-shrink-0 text-left transition hover:-translate-y-0.5 md:w-full"
+                  >
+                    <CollectionStoryCard collection={collections[index]} compact />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside className="flex min-h-0 flex-col border-t border-[#f2e4e6] bg-white lg:border-l lg:border-t-0">
+          <div className="min-h-0 flex-1 overflow-y-auto p-5 sm:p-6">
+            <p className="break-keep text-sm font-semibold leading-6 text-[#686063]">
+              {activeCollection.description}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {activeCollection.purposeTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-[#ffe0e5] bg-[#fff7f8] px-3 py-1 text-xs font-bold text-[#ff7b83]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-5 flex items-center gap-2 border-y border-[#f1e7e9] py-3">
+              <button
+                type="button"
+                onClick={handleLike}
+                className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
+                  isLiked
+                    ? "bg-[#fff0f2] text-[#ff6475]"
+                    : "bg-[#f7f7f7] text-[#333333] hover:bg-[#fff0f2] hover:text-[#ff6475]"
+                }`}
+                aria-label={ui.collectionModal.like}
+              >
+                <Heart className={`h-5 w-5 ${isLiked ? "fill-current" : ""}`} />
+              </button>
+              <button
+                type="button"
+                onClick={() => commentInputRef.current?.focus()}
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f7f7] text-[#333333] transition hover:bg-[#fff0f2] hover:text-[#ff6475]"
+                aria-label={ui.collectionModal.comment}
+              >
+                <MessageCircleMore className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={handleShare}
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7f7f7] text-[#333333] transition hover:bg-[#fff0f2] hover:text-[#ff6475]"
+                aria-label={ui.collectionModal.share}
+              >
+                <Share2 className="h-5 w-5" />
+              </button>
+              <Link
+                href={getMapCollectionPath(activeCollection.slug)}
+                onClick={() =>
+                  trackMarketingEvent("home_collection_modal_map_click", {
+                    collection_slug: activeCollection.slug,
+                  })
+                }
+                className="ml-auto inline-flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-4 text-sm font-bold text-white shadow-[0_12px_26px_rgba(255,102,132,0.24)] transition hover:brightness-95"
+              >
+                {ui.collectionModal.viewMap}
+              </Link>
+            </div>
+
+            <p className="mt-3 text-sm font-black text-[#171717]">
+              {likeCount > 0 ? `${ui.collectionModal.like} ${likeCount}` : ui.collectionModal.like}
+            </p>
+
+            <div className="mt-5">
+              <p className="text-sm font-black text-[#171717]">
+                {ui.collectionModal.commentsTitle} {comments.length}
+              </p>
+              <div className="mt-3 space-y-3">
+                {comments.length > 0 ? (
+                  comments.map((comment) => (
+                    <div
+                      key={comment.id}
+                      className="rounded-[18px] border border-[#f3e6e8] bg-[#fffafa] px-3 py-2.5"
+                    >
+                      <p className="text-sm font-semibold leading-5 text-[#333333]">
+                        {comment.text}
+                      </p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="rounded-[18px] border border-dashed border-[#ffd8de] bg-[#fff8f9] px-3 py-4 text-sm font-medium text-[#9a8f92]">
+                    {ui.collectionModal.noComments}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <form
+            onSubmit={handleCommentSubmit}
+            className="flex items-center gap-2 border-t border-[#f1e7e9] p-4"
+          >
+            <input
+              ref={commentInputRef}
+              type="text"
+              value={commentDraft}
+              onChange={(event) => setCommentDraft(event.target.value)}
+              placeholder={ui.collectionModal.commentPlaceholder}
+              className="min-w-0 flex-1 rounded-full border border-[#f0dfe3] bg-[#fff8f9] px-4 py-3 text-sm font-medium text-[#222222] outline-none placeholder:text-[#b7acae] focus:border-[#ff9ea9]"
+            />
+            <button
+              type="submit"
+              className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#ff7b83] text-white transition hover:brightness-95"
+              aria-label={ui.collectionModal.commentSubmit}
+            >
+              <Send className="h-4 w-4" />
+            </button>
+          </form>
+        </aside>
+      </div>
+    </div>
+  );
+}
+
+function CollectionStoryCard({
+  collection,
+  compact = false,
+}: {
+  collection: MapCollectionTopic;
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className={`relative flex w-full overflow-hidden rounded-[22px] border border-white/70 text-white shadow-[0_18px_38px_rgba(255,98,124,0.18)] ${
+        compact ? "h-[112px] p-3" : "min-h-[420px] p-6 sm:min-h-[500px] sm:p-8"
+      }`}
+      style={{ background: collection.palette.background }}
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.52))]" />
+      <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/15 blur-sm" />
+      <div className="relative z-10 flex h-full w-full flex-col justify-between">
+        <div>
+          <span
+            className={`inline-flex rounded-full bg-white/20 font-bold uppercase tracking-[0.12em] text-white/90 backdrop-blur ${
+              compact ? "px-2 py-0.5 text-[9px]" : "px-3 py-1 text-[11px]"
+            }`}
+          >
+            Catchable
+          </span>
+          <p
+            className={`font-semibold leading-5 text-white/80 ${
+              compact ? "mt-3 text-[10px]" : "mt-10 text-[13px]"
+            }`}
+          >
+            {collection.eyebrow}
+          </p>
+          <h3
+            className={`break-keep font-black leading-tight tracking-normal text-white ${
+              compact ? "mt-1 line-clamp-2 text-[17px]" : "mt-3 text-[34px] sm:text-[44px]"
+            }`}
+          >
+            {collection.title}
+          </h3>
+        </div>
+
+        {!compact ? (
+          <div>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {collection.purposeTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-white/20 px-3 py-1 text-xs font-bold text-white/90 backdrop-blur"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <p className="max-w-[460px] break-keep text-sm font-medium leading-6 text-white/80">
+              {collection.description}
+            </p>
+          </div>
+        ) : null}
       </div>
     </div>
   );

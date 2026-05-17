@@ -25,6 +25,10 @@ import {
   type Restaurant,
   type SearchResult,
 } from "@/data";
+import {
+  getMapCollectionTopicBySlug,
+  getRestaurantsForMapCollection,
+} from "@/data/mapCollections";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
 import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
@@ -49,6 +53,9 @@ const MAP_COPY = {
   ko: {
     searchResults: "검색 결과",
     allRestaurants: "전체 맛집",
+    nearbyRestaurants: "내 주변 유명 맛집",
+    nearbyDescription:
+      "현재 위치를 기준으로 방송·크리에이터·가이드에 소개된 맛집을 지도에서 먼저 보여드려요.",
     regionRestaurants: (value: string) => `${value} 맛집`,
     cuisineRestaurants: (value: string) => `${value} 맛집`,
     sourceRestaurants: (value: string) => `${value} 맛집`,
@@ -80,6 +87,9 @@ const MAP_COPY = {
   en: {
     searchResults: "Search results",
     allRestaurants: "All restaurants",
+    nearbyRestaurants: "Famous restaurants near me",
+    nearbyDescription:
+      "Browse restaurants near your current location that appeared in creator, TV, or guide sources.",
     regionRestaurants: (value: string) => `${value} restaurants`,
     cuisineRestaurants: (value: string) => `${value} restaurants`,
     sourceRestaurants: (value: string) => `${value} restaurants`,
@@ -117,11 +127,36 @@ function filterRestaurants(
 ): {
   restaurants: Restaurant[];
   title: string;
+  description?: string;
 } {
   const copy = MAP_COPY[locale];
   const isEnglish = locale === "en";
 
   switch (type) {
+    case "nearby":
+      return {
+        restaurants: [...restaurants],
+        title: copy.nearbyRestaurants,
+        description: copy.nearbyDescription,
+      };
+    case "collection": {
+      const collection = getMapCollectionTopicBySlug(value);
+      if (!collection) {
+        return {
+          restaurants: [],
+          title: copy.searchResults,
+        };
+      }
+
+      return {
+        restaurants: getRestaurantsForMapCollection(collection, {
+          restaurants,
+          getRestaurantsBySource,
+        }),
+        title: collection.title,
+        description: collection.description,
+      };
+    }
     case "creator": {
       const creator = creators.find((item) => item.id === value || item.name === value);
       if (!creator) {
@@ -366,7 +401,7 @@ export default function SearchMap() {
   const type = params.get("type") || "all";
   const value = params.get("value") || "";
 
-  const { restaurants: filteredRestaurants, title } = useMemo(
+  const { restaurants: filteredRestaurants, title, description } = useMemo(
     () => filterRestaurants(type, value, locale),
     [locale, type, value]
   );
@@ -374,14 +409,14 @@ export default function SearchMap() {
 
   useSeo({
     title: copy.pageTitle(title),
-    description: copy.pageDescription(title),
+    description: description || copy.pageDescription(title),
     path: `/map?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`,
     locale,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "SearchResultsPage",
       name: copy.pageName(title),
-      description: copy.pageDescription(title),
+      description: description || copy.pageDescription(title),
     },
   });
 
@@ -726,6 +761,15 @@ export default function SearchMap() {
     </div>
   );
 
+  const titleSummary = (
+    <div className="mb-3 rounded-2xl border border-[#ffe0e5] bg-[#fff8f9] px-4 py-3">
+      <p className="text-base font-bold leading-6 text-[#171717]">{title}</p>
+      {description ? (
+        <p className="mt-1 text-xs leading-5 text-[#887d80]">{description}</p>
+      ) : null}
+    </div>
+  );
+
   const resultSummary = (
     <div className="flex flex-wrap items-center gap-2">
       <span className="text-lg font-bold text-[#ff7b83]">
@@ -799,6 +843,7 @@ export default function SearchMap() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3">
             <div className="pointer-events-auto rounded-[28px] border border-[#f0e5e6] bg-white/96 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur">
               {searchControls}
+              {titleSummary}
               {resultSummary}
             </div>
           </div>
@@ -844,6 +889,7 @@ export default function SearchMap() {
           <aside className="flex h-full w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
             <div className="border-b border-[#f0f0f0] p-4">
               {searchControls}
+              {titleSummary}
               {resultSummary}
 
               <div className="mt-4">

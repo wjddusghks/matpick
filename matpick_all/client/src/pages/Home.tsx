@@ -7,6 +7,7 @@
   type KeyboardEvent,
   type ReactNode,
 } from "react";
+import { createPortal } from "react-dom";
 import {
   ChevronLeft,
   ChevronRight,
@@ -1641,6 +1642,11 @@ function FeaturedCollectionMarquee({
   collections: MapCollectionTopic[];
 }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setPortalRoot(document.body);
+  }, []);
 
   useEffect(() => {
     if (activeIndex === null) {
@@ -1694,12 +1700,15 @@ function FeaturedCollectionMarquee({
         </div>
       </section>
 
-      {activeIndex !== null ? (
-        <FeaturedCollectionModal
-          collection={collections[activeIndex]}
-          onClose={() => setActiveIndex(null)}
-        />
-      ) : null}
+      {activeIndex !== null && portalRoot
+        ? createPortal(
+            <FeaturedCollectionModal
+              collection={collections[activeIndex]}
+              onClose={() => setActiveIndex(null)}
+            />,
+            portalRoot
+          )
+        : null}
     </>
   );
 }
@@ -1948,21 +1957,26 @@ function FeaturedCollectionModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-hidden bg-[#070b10] text-white"
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[rgba(17,17,17,0.42)] px-3 py-4 text-white backdrop-blur-sm sm:px-6"
+      onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={collection.title}
     >
-      <button
-        type="button"
-        onClick={onClose}
-        className="absolute left-4 top-4 z-30 flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:bg-white/10 sm:left-6 sm:top-6"
-        aria-label={ui.collectionModal.close}
+      <div
+        className="relative h-[min(760px,calc(100vh-2rem))] w-full max-w-[1040px] overflow-hidden rounded-[28px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
+        onClick={(event) => event.stopPropagation()}
       >
-        <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
-      </button>
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute left-4 top-4 z-30 flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:bg-white/10 sm:left-6 sm:top-6"
+          aria-label={ui.collectionModal.close}
+        >
+          <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
+        </button>
 
-      <div className="flex h-full w-full items-center justify-center px-3 pb-[92px] pt-[58px] sm:px-8 sm:py-7">
+        <div className="flex h-full w-full items-center justify-center px-3 pb-[92px] pt-[58px] sm:px-8 sm:py-7">
         <div className="relative flex h-full w-full max-w-[1120px] items-center justify-center gap-5">
           <button
             type="button"
@@ -2063,42 +2077,43 @@ function FeaturedCollectionModal({
             </Link>
           </div>
         </div>
-      </div>
+        </div>
 
-      <div className="pointer-events-none absolute bottom-[96px] left-4 z-20 max-w-[calc(100vw-96px)] text-left sm:left-8 sm:max-w-[420px]">
-        <p className="text-sm font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-          matpick
-        </p>
-        <p className="mt-1 line-clamp-2 break-keep text-sm font-semibold leading-5 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-          {collection.shortTitle} · {collection.description}
-        </p>
-        {comments[0] ? (
-          <p className="mt-2 line-clamp-1 text-xs font-medium text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-            {ui.collectionModal.commentsTitle}: {comments[0].text}
+        <div className="pointer-events-none absolute bottom-[96px] left-4 z-20 max-w-[calc(100%-96px)] text-left sm:left-8 sm:max-w-[420px]">
+          <p className="text-sm font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+            matpick
           </p>
-        ) : null}
-      </div>
+          <p className="mt-1 line-clamp-2 break-keep text-sm font-semibold leading-5 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+            {collection.shortTitle} · {collection.description}
+          </p>
+          {comments[0] ? (
+            <p className="mt-2 line-clamp-1 text-xs font-medium text-white/85 drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+              {ui.collectionModal.commentsTitle}: {comments[0].text}
+            </p>
+          ) : null}
+        </div>
 
-      <form
-        onSubmit={handleCommentSubmit}
-        className="absolute bottom-4 left-4 right-4 z-30 flex items-center gap-2 sm:left-8 sm:right-8"
-      >
-        <input
-          ref={commentInputRef}
-          type="text"
-          value={commentDraft}
-          onChange={(event) => setCommentDraft(event.target.value)}
-          placeholder={ui.collectionModal.commentPlaceholder}
-          className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-5 py-4 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
-        />
-        <button
-          type="submit"
-          className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
-          aria-label={ui.collectionModal.commentSubmit}
+        <form
+          onSubmit={handleCommentSubmit}
+          className="absolute bottom-4 left-4 right-4 z-30 flex items-center gap-2 sm:left-8 sm:right-8"
         >
-          <Send className="h-5 w-5" />
-        </button>
-      </form>
+          <input
+            ref={commentInputRef}
+            type="text"
+            value={commentDraft}
+            onChange={(event) => setCommentDraft(event.target.value)}
+            placeholder={ui.collectionModal.commentPlaceholder}
+            className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-5 py-4 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
+          />
+          <button
+            type="submit"
+            className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
+            aria-label={ui.collectionModal.commentSubmit}
+          >
+            <Send className="h-5 w-5" />
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

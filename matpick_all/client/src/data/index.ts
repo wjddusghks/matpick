@@ -988,6 +988,12 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
+const publicDiscoveryTopicSlugs = new Set(["ttoganjip"]);
+
+export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
+  publicDiscoveryTopicSlugs.has(topic.slug)
+);
+
 export function getDiscoveryTopicBySlug(slug: string) {
   return discoveryTopics.find((topic) => topic.slug === slug) ?? null;
 }
@@ -1540,6 +1546,10 @@ const sourceSearchEntries = sources
       b.restaurantCount - a.restaurantCount ||
       sortText(getSourceDisplayName(a.source), getSourceDisplayName(b.source))
   );
+const publicSourceSearchIds = new Set(["ttoganjip"]);
+const publicSourceSearchEntries = sourceSearchEntries.filter((entry) =>
+  publicSourceSearchIds.has(entry.source.id)
+);
 
 export const searchData: SearchItem[] = [
   ...creators
@@ -1565,7 +1575,7 @@ export const searchData: SearchItem[] = [
     subtitle: `맛집 ${entry.count}개`,
     icon: "🍽️",
   })),
-  ...sourceSearchEntries.map((entry) => ({
+  ...publicSourceSearchEntries.map((entry) => ({
     id: createSearchId("source", entry.source.id),
     type: "source" as const,
     name: getSourceDisplayName(entry.source),
@@ -1605,7 +1615,7 @@ export const mockSearchData: SearchResult[] = [
     name: entry.name,
     restaurantCount: entry.count,
   })),
-  ...sourceSearchEntries.map((entry) => ({
+  ...publicSourceSearchEntries.map((entry) => ({
     id: entry.source.id,
     type: "source" as const,
     name: getSourceDisplayName(entry.source),

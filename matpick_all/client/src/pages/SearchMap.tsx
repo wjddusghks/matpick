@@ -12,6 +12,8 @@ import {
   creators,
   getCreatorDisplayName,
   getCreatorsByRestaurant,
+  getDiscoveryTopicBySlug,
+  getDiscoveryTopicEpisodeBySlug,
   getRestaurantBroadcastMeta,
   getRestaurantMenuSummary,
   getRestaurantsByCategory,
@@ -123,6 +125,7 @@ const MAP_COPY = {
 function filterRestaurants(
   type: string,
   value: string,
+  topicSlug: string,
   locale: AppLocale
 ): {
   restaurants: Restaurant[];
@@ -155,6 +158,27 @@ function filterRestaurants(
         }),
         title: collection.title,
         description: collection.description,
+      };
+    }
+    case "episode": {
+      const resolvedTopicSlug = topicSlug || "ttoganjip";
+      const topic = getDiscoveryTopicBySlug(resolvedTopicSlug);
+      const episode = getDiscoveryTopicEpisodeBySlug(resolvedTopicSlug, value);
+
+      if (!topic || !episode) {
+        return {
+          restaurants: [],
+          title: copy.searchResults,
+        };
+      }
+
+      const episodeRestaurantIds = new Set(episode.restaurantIds);
+      return {
+        restaurants: restaurants.filter((restaurant) =>
+          episodeRestaurantIds.has(restaurant.id)
+        ),
+        title: `${topic.name} ${episode.episode}`,
+        description: episode.description,
       };
     }
     case "creator": {
@@ -400,17 +424,20 @@ export default function SearchMap() {
   const params = new URLSearchParams(searchString);
   const type = params.get("type") || "all";
   const value = params.get("value") || "";
+  const topic = params.get("topic") || "";
 
   const { restaurants: filteredRestaurants, title, description } = useMemo(
-    () => filterRestaurants(type, value, locale),
-    [locale, type, value]
+    () => filterRestaurants(type, value, topic, locale),
+    [locale, topic, type, value]
   );
   const deferredRestaurants = useDeferredValue(filteredRestaurants);
 
   useSeo({
     title: copy.pageTitle(title),
     description: description || copy.pageDescription(title),
-    path: `/map?type=${encodeURIComponent(type)}&value=${encodeURIComponent(value)}`,
+    path: `/map?type=${encodeURIComponent(type)}${
+      topic ? `&topic=${encodeURIComponent(topic)}` : ""
+    }&value=${encodeURIComponent(value)}`,
     locale,
     jsonLd: {
       "@context": "https://schema.org",

@@ -36,7 +36,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
-  discoveryTopics,
+  publicDiscoveryTopics,
   mockSearchData,
   type DiscoveryTopic,
   type SearchResult,
@@ -116,7 +116,7 @@ const HOME_UI_KO = {
   searchHelperText:
     "\uAC80\uC0C9\uC5B4 \uC5C6\uC774 \uB3CB\uBCF4\uAE30\uB97C \uB204\uB974\uBA74 \uB0B4 \uC8FC\uBCC0 \uC720\uBA85 \uB9DB\uC9D1 \uC9C0\uB3C4\uAC00 \uBC14\uB85C \uC5F4\uB824\uC694.",
   searchButtonLabel: "\uAC80\uC0C9",
-  collectionMarqueeLabel: "\uC800\uC7A5\uD574\uB450\uACE0 \uAEBC\uB0B4\uBCF4\uB294 \uC9C0\uC5ED\uBCC4 \uB9DB\uC9D1 \uB9AC\uC2A4\uD2B8",
+  collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
     openAria: "주제 카드 자세히 보기",
     openCta: "카드 보기",
@@ -210,7 +210,7 @@ const HOME_UI_EN = {
   searchHelperText:
     "Press search with an empty field to open the nearby famous restaurant map.",
   searchButtonLabel: "Search",
-  collectionMarqueeLabel: "Saveable local restaurant lists",
+  collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
     openCta: "Open card",
@@ -1514,7 +1514,7 @@ export default function Home() {
 
             <div className="mt-4 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
-                {discoveryTopics.map((topic) => (
+                {publicDiscoveryTopics.map((topic) => (
                   <TopicShortcutButton
                     key={topic.slug}
                     topic={topic}

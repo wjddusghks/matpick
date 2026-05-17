@@ -1,5 +1,13 @@
-import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
-import { Compass, Search } from "lucide-react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Compass,
+  MapPin,
+  PlayCircle,
+  Search,
+} from "lucide-react";
 import { Link, useLocation, useSearch } from "wouter";
 import {
   creators,
@@ -21,6 +29,7 @@ import {
   getSourceDisplayName,
   getSourceSubdivisions,
   getSourcesByRestaurant,
+  publicDiscoveryTopics,
   restaurantMatchesSourceSubdivision,
   restaurants,
   sources,
@@ -67,6 +76,23 @@ type AvatarOption = {
   name: string;
   imageUrl?: string | null;
 };
+
+type EpisodeStorySlide = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  tags: string[];
+  background: string;
+};
+
+const EPISODE_CARD_PALETTES = [
+  "linear-gradient(145deg, #261f3f 0%, #6d4ec1 48%, #ff8aa4 100%)",
+  "linear-gradient(145deg, #18324a 0%, #2878a5 52%, #8fd8ff 100%)",
+  "linear-gradient(145deg, #24362d 0%, #3d8265 52%, #ffd47f 100%)",
+  "linear-gradient(145deg, #3b211b 0%, #aa5138 52%, #ffd0b4 100%)",
+  "linear-gradient(145deg, #252525 0%, #59606b 52%, #f7b267 100%)",
+];
 
 const EXPLORE_COPY = {
   ko: {
@@ -160,8 +186,88 @@ function buildMapPathForTopic(topic: DiscoveryTopic) {
   return `/map?type=source&value=${encodeURIComponent(topic.targetId)}`;
 }
 
+function buildMapPathForEpisode(episode: DiscoveryTopicEpisode) {
+  return `/map?type=episode&topic=${encodeURIComponent(
+    episode.topicSlug
+  )}&value=${encodeURIComponent(episode.slug)}`;
+}
+
 function dedupeRestaurantsById(items: Restaurant[]) {
   return Array.from(new Map(items.map((restaurant) => [restaurant.id, restaurant])).values());
+}
+
+function getRestaurantsForEpisode(episode: DiscoveryTopicEpisode) {
+  const restaurantIds = new Set(episode.restaurantIds);
+  return restaurants.filter((restaurant) => restaurantIds.has(restaurant.id));
+}
+
+function getEpisodeDisplayTitle(episode: DiscoveryTopicEpisode) {
+  return episode.title || episode.videoTitle || episode.episode;
+}
+
+function getEpisodeCardTitle(episode: DiscoveryTopicEpisode) {
+  const title = getEpisodeDisplayTitle(episode);
+  return title.replace(/^\[[^\]]+\]\s*/, "").trim() || episode.episode;
+}
+
+function getEpisodeCardPalette(index: number) {
+  return EPISODE_CARD_PALETTES[index % EPISODE_CARD_PALETTES.length];
+}
+
+function buildEpisodeStorySlides({
+  episode,
+  topic,
+  locale,
+}: {
+  episode: DiscoveryTopicEpisode;
+  topic: DiscoveryTopic;
+  locale: AppLocale;
+}): EpisodeStorySlide[] {
+  const episodeRestaurants = getRestaurantsForEpisode(episode);
+  const restaurantSlides = episodeRestaurants.slice(0, 4).map((restaurant, index) => ({
+    id: `restaurant-${restaurant.id}`,
+    eyebrow: locale === "en" ? `Pick ${index + 1}` : `맛집 ${index + 1}`,
+    title: restaurant.name,
+    description:
+      getRestaurantMenuSummary(restaurant) ||
+      restaurant.address ||
+      (locale === "en" ? "Restaurant details are coming soon." : "식당 정보를 정리 중입니다."),
+    tags: [
+      restaurant.category || (locale === "en" ? "Restaurant" : "맛집"),
+      getRestaurantPrimaryPrice(restaurant) || restaurant.region || "",
+    ].filter(Boolean),
+    background: getEpisodeCardPalette(index + 1),
+  }));
+
+  return [
+    {
+      id: "cover",
+      eyebrow: `${topic.name} ${episode.episode}`,
+      title: getEpisodeCardTitle(episode),
+      description:
+        episode.description ||
+        (locale === "en"
+          ? `${episode.count} restaurants featured in this episode.`
+          : `이 회차에 소개된 맛집 ${episode.count}곳을 모았습니다.`),
+      tags: [
+        locale === "en" ? `${episode.count} places` : `${episode.count}곳`,
+        locale === "en" ? "Episode" : "회차별 카드",
+      ],
+      background: getEpisodeCardPalette(0),
+    },
+    ...restaurantSlides,
+    {
+      id: "map",
+      eyebrow: locale === "en" ? "Open on map" : "지도에서 한 번에",
+      title: locale === "en" ? "See every place on the map" : `${episode.count}곳을 지도에서 보기`,
+      description:
+        locale === "en"
+          ? "Open this episode as a map-based restaurant list."
+          : "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해보세요.",
+      tags: [locale === "en" ? "Map" : "지도 보기", topic.name],
+      background: getEpisodeCardPalette(2),
+    },
+  ];
 }
 
 function SourceAvatarButton({
@@ -375,6 +481,335 @@ function RestaurantCard({
   );
 }
 
+function TtoganjipEpisodeGrid({
+  topic,
+  episodes,
+  locale,
+  onOpen,
+}: {
+  topic: DiscoveryTopic;
+  episodes: DiscoveryTopicEpisode[];
+  locale: AppLocale;
+  onOpen: (index: number) => void;
+}) {
+  const title =
+    locale === "en" ? `${topic.name} episode cards` : `${topic.name} 회차별 맛집 카드`;
+  const description =
+    locale === "en"
+      ? "Open an episode card, swipe through the featured places, then view the same set on the map."
+      : "회차마다 소개된 맛집을 인스타 카드처럼 넘겨보고, 마음에 들면 지도에서 한 번에 확인하세요.";
+
+  if (episodes.length === 0) {
+    return (
+      <section className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
+        <p className="text-lg font-semibold text-[#333]">
+          {locale === "en" ? "Episode cards are coming soon." : "회차 카드가 준비 중입니다."}
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="mb-10">
+      <div className="mb-5 flex flex-col gap-2 sm:mb-6">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
+          Ttoganjip
+        </p>
+        <h2 className="break-keep text-2xl font-black leading-tight text-[#171717] sm:text-3xl">
+          {title}
+        </h2>
+        <p className="max-w-3xl break-keep text-sm leading-6 text-[#7f7f7f] sm:text-base">
+          {description}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {episodes.map((episode, index) => (
+          <EpisodeCollectionCard
+            key={episode.slug}
+            episode={episode}
+            index={index}
+            locale={locale}
+            onOpen={() => onOpen(index)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function EpisodeCollectionCard({
+  episode,
+  index,
+  locale,
+  onOpen,
+}: {
+  episode: DiscoveryTopicEpisode;
+  index: number;
+  locale: AppLocale;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        trackMarketingEvent("ttoganjip_episode_card_click", {
+          episode_slug: episode.slug,
+          episode_label: episode.episode,
+        });
+        onOpen();
+      }}
+      className="group relative aspect-[9/16] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
+      style={{ background: getEpisodeCardPalette(index) }}
+      aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_18%,rgba(255,255,255,0.28),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.62))]" />
+      <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-white/15 blur-2xl" />
+      <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+        <div>
+          <p className="text-sm font-black leading-5 text-white/80">{episode.episode}</p>
+          <h3 className="mt-8 break-keep text-[28px] font-black leading-[1.08] tracking-normal sm:text-[31px]">
+            {getEpisodeCardTitle(episode)}
+          </h3>
+        </div>
+
+        <div>
+          <div className="mb-3 flex flex-wrap gap-1.5">
+            <span className="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-black">
+              {locale === "en" ? `${episode.count} places` : `${episode.count}곳`}
+            </span>
+            <span className="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-black">
+              {locale === "en" ? "Map ready" : "지도 보기"}
+            </span>
+          </div>
+          <p className="line-clamp-2 break-keep text-[13px] font-semibold leading-5 text-white/80">
+            {episode.description}
+          </p>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function EpisodeStoryModal({
+  topic,
+  episode,
+  locale,
+  onClose,
+}: {
+  topic: DiscoveryTopic;
+  episode: DiscoveryTopicEpisode;
+  locale: AppLocale;
+  onClose: () => void;
+}) {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const slides = useMemo(
+    () => buildEpisodeStorySlides({ episode, topic, locale }),
+    [episode, locale, topic]
+  );
+  const episodeRestaurants = useMemo(() => getRestaurantsForEpisode(episode), [episode]);
+  const mapPath = buildMapPathForEpisode(episode);
+
+  const goToSlide = useCallback(
+    (index: number) => {
+      setActiveSlideIndex((index + slides.length) % slides.length);
+    },
+    [slides.length]
+  );
+
+  useEffect(() => {
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        goToSlide(activeSlideIndex + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        goToSlide(activeSlideIndex - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeSlideIndex, goToSlide, onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[rgba(17,17,17,0.42)] px-3 py-4 text-white backdrop-blur-sm sm:px-6"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={getEpisodeDisplayTitle(episode)}
+    >
+      <div
+        className="relative h-[min(720px,calc(100vh-2rem))] w-full max-w-[640px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute left-4 top-4 z-30 flex h-12 w-12 items-center justify-center rounded-full text-white transition hover:bg-white/10 sm:left-6 sm:top-6"
+          aria-label={locale === "en" ? "Close" : "닫기"}
+        >
+          <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
+        </button>
+
+        <div className="grid h-full grid-cols-[minmax(0,1fr)_104px] gap-3 px-4 pb-4 pt-14 sm:grid-cols-[minmax(0,1fr)_132px] sm:gap-4 sm:px-5 sm:pb-5">
+          <div className="flex min-w-0 flex-col items-center">
+            <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
+              <div className="relative aspect-[9/16] h-full max-h-[590px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]">
+                <div
+                  className="flex h-full transition-transform duration-300 ease-out"
+                  style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
+                >
+                  {slides.map((slide) => (
+                    <EpisodeStorySlideView key={slide.id} slide={slide} />
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => goToSlide(activeSlideIndex - 1)}
+                  className="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/35 text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur transition hover:bg-black/50"
+                  aria-label={locale === "en" ? "Previous card" : "이전 카드"}
+                >
+                  <ChevronLeft className="h-6 w-6" strokeWidth={2.2} />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goToSlide(activeSlideIndex + 1)}
+                  className="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/35 text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur transition hover:bg-black/50"
+                  aria-label={locale === "en" ? "Next card" : "다음 카드"}
+                >
+                  <ChevronRight className="h-6 w-6" strokeWidth={2.2} />
+                </button>
+
+                <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/20 px-3 py-2 backdrop-blur">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      onClick={() => goToSlide(index)}
+                      className={`h-2 rounded-full transition-all ${
+                        index === activeSlideIndex ? "w-5 bg-white" : "w-2 bg-white/55"
+                      }`}
+                      aria-label={`${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside className="flex min-h-0 flex-col pt-2">
+            <div className="flex flex-col items-center gap-4">
+              <Link
+                href={mapPath}
+                onClick={() =>
+                  trackMarketingEvent("ttoganjip_episode_modal_map_click", {
+                    episode_slug: episode.slug,
+                  })
+                }
+                className="flex flex-col items-center gap-1 text-center text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] transition hover:text-[#ff9ea9]"
+                aria-label={locale === "en" ? "View on map" : "지도에서 보기"}
+              >
+                <MapPin className="h-7 w-7" />
+                <span className="text-[11px] font-bold leading-4">
+                  {locale === "en" ? "View on map" : "지도에서 보기"}
+                </span>
+              </Link>
+
+              {episode.videoUrl ? (
+                <a
+                  href={episode.videoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() =>
+                    trackMarketingEvent("ttoganjip_episode_modal_video_click", {
+                      episode_slug: episode.slug,
+                    })
+                  }
+                  className="flex flex-col items-center gap-1 text-center text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] transition hover:text-[#ff9ea9]"
+                >
+                  <PlayCircle className="h-7 w-7" />
+                  <span className="text-[11px] font-bold leading-4">
+                    {locale === "en" ? "Video" : "영상"}
+                  </span>
+                </a>
+              ) : null}
+            </div>
+
+            <div className="mt-4 max-h-[230px] overflow-hidden rounded-[16px] border border-white/10 bg-white/10 p-3 text-left">
+              <p className="text-xs font-black text-white">
+                {locale === "en" ? "Places" : "맛집"} {episodeRestaurants.length}
+              </p>
+              <div className="mt-3 max-h-[178px] space-y-2 overflow-y-auto pr-1">
+                {episodeRestaurants.map((restaurant) => (
+                  <p
+                    key={restaurant.id}
+                    className="line-clamp-2 rounded-[12px] bg-white/10 px-3 py-2 text-xs font-semibold leading-5 text-white/90"
+                  >
+                    {restaurant.name}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div className="pointer-events-none absolute bottom-5 left-5 z-20 max-w-[360px] text-left sm:left-6">
+          <p className="line-clamp-1 text-xs font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
+            {topic.name} · {episode.episode}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EpisodeStorySlideView({ slide }: { slide: EpisodeStorySlide }) {
+  return (
+    <article
+      className="relative h-full w-full flex-shrink-0 overflow-hidden text-white"
+      style={{ background: slide.background }}
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.6))]" />
+      <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-white/15 blur-2xl" />
+      <div className="relative z-10 flex h-full flex-col justify-between px-7 py-8 sm:px-10 sm:py-11">
+        <div>
+          <p className="break-keep text-[15px] font-black leading-6 text-white/85">
+            {slide.eyebrow}
+          </p>
+          <h3 className="mt-10 break-keep text-[36px] font-black leading-[1.1] tracking-normal sm:text-[43px]">
+            {slide.title}
+          </h3>
+        </div>
+
+        <div>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {slide.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-white/20 px-3 py-1 text-xs font-black text-white"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <p className="break-keep text-[15px] font-semibold leading-6 text-white/85">
+            {slide.description}
+          </p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function buildSeoContent({
   locale,
   copy,
@@ -529,7 +964,10 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [selectedSubdivision, setSelectedSubdivision] = useState(ALL_FILTER);
   const [isEpisodeMenuOpen, setIsEpisodeMenuOpen] = useState(Boolean(episodeSlug));
   const [visibleCount, setVisibleCount] = useState(60);
+  const [activeEpisodeIndex, setActiveEpisodeIndex] = useState<number | null>(null);
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
+  const isTtoganjipOverview = presetTopic?.slug === "ttoganjip" && !presetEpisode;
 
   const seoContent = useMemo(
     () =>
@@ -634,6 +1072,23 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     selectedTopicId,
     topicSlug,
   ]);
+
+  useEffect(() => {
+    setPortalRoot(document.body);
+  }, []);
+
+  useEffect(() => {
+    if (activeEpisodeIndex === null) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeEpisodeIndex]);
 
   const activeMichelinSourceId = useMemo(() => {
     if (presetTopic?.kind === "source" && presetTopic.targetId === "michelin") {
@@ -801,6 +1256,17 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     navigate("/explore");
   };
 
+  const openEpisodeCard = useCallback(
+    (index: number) => {
+      if (topicEpisodes.length === 0) {
+        return;
+      }
+
+      setActiveEpisodeIndex(index % topicEpisodes.length);
+    },
+    [topicEpisodes.length]
+  );
+
   const hasActiveDiscovery = selectedDiscoveryKeys.length > 0;
   const hasActiveFilters =
     hasActiveDiscovery ||
@@ -816,6 +1282,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     : presetTopic
       ? copy.topicLine(presetTopic)
       : "";
+  const pageDescription = isTtoganjipOverview
+    ? locale === "en"
+      ? "Browse Ttoganjip by episode cards, then open any episode on the map."
+      : "또간집 회차별 맛집 카드를 보고, 마음에 드는 회차를 지도에서 바로 확인해보세요."
+    : copy.pageDescription;
   const contextDescription = presetEpisode?.description || presetTopic?.description || "";
   const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";
 
@@ -906,7 +1377,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         <header className="mb-8">
           <h1 className="text-2xl font-bold text-[#171717] sm:text-3xl">{copy.pageTitle}</h1>
           <p className="mt-2 text-sm leading-6 text-[#7f7f7f] sm:text-base">
-            {copy.pageDescription}
+            {pageDescription}
           </p>
           {presetTopic ? (
             <div className="mt-3 space-y-2">
@@ -976,7 +1447,21 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             </div>
           ) : null}
         </header>
-        <section className="mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5">
+
+        {isTtoganjipOverview && presetTopic ? (
+          <TtoganjipEpisodeGrid
+            topic={presetTopic}
+            episodes={topicEpisodes}
+            locale={locale}
+            onOpen={openEpisodeCard}
+          />
+        ) : null}
+
+        <section
+          className={`mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5 ${
+            isTtoganjipOverview ? "hidden" : ""
+          }`}
+        >
           <div className="mb-4">
             <p className="mb-3 text-xs font-semibold tracking-[0.08em] text-[#b58f95]">
               {copy.topicShortcutLabel}
@@ -995,7 +1480,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                   }}
                   fallbackLabel={copy.allLabel}
                 />
-                {discoveryTopics.map((topic) => (
+                {publicDiscoveryTopics.map((topic) => (
                   <SourceAvatarButton
                     key={topic.slug}
                     option={{ name: topic.name, imageUrl: topic.imageUrl }}
@@ -1172,7 +1657,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
           </div>
         </section>
 
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <div
+          className={`mb-6 flex flex-wrap items-center justify-between gap-3 ${
+            isTtoganjipOverview ? "hidden" : ""
+          }`}
+        >
           <p className="text-sm text-[#888]">
             <span className="font-bold text-[#ff7b83]">{copy.resultsCount(filteredRestaurants.length)}</span>
           </p>
@@ -1188,11 +1677,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
           ) : null}
         </div>
 
-        <div className="mb-6">
+        <div className={`mb-6 ${isTtoganjipOverview ? "hidden" : ""}`}>
           <MonetizationSlot label={copy.sponsoredLabel} />
         </div>
 
-        {filteredRestaurants.length > 0 ? (
+        {!isTtoganjipOverview && filteredRestaurants.length > 0 ? (
           <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {visibleRestaurants.flatMap((restaurant, index) => {
               const items = [
@@ -1219,15 +1708,31 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               return items;
             })}
           </div>
-        ) : (
+        ) : !isTtoganjipOverview ? (
           <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
             <p className="text-5xl">⌕</p>
             <p className="mt-4 text-lg font-semibold text-[#333]">{copy.emptyTitle}</p>
             <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">{copy.emptyDescription}</p>
           </div>
-        )}
+        ) : null}
 
-        {visibleCount < deferredRestaurants.length ? (
+        {isTtoganjipOverview &&
+        activeEpisodeIndex !== null &&
+        portalRoot &&
+        presetTopic &&
+        topicEpisodes[activeEpisodeIndex]
+          ? createPortal(
+              <EpisodeStoryModal
+                topic={presetTopic}
+                episode={topicEpisodes[activeEpisodeIndex]}
+                locale={locale}
+                onClose={() => setActiveEpisodeIndex(null)}
+              />,
+              portalRoot
+            )
+          : null}
+
+        {!isTtoganjipOverview && visibleCount < deferredRestaurants.length ? (
           <div ref={loadMoreRef} className="py-8 text-center text-sm font-medium text-[#9a8f92]">
             {copy.loadMore}
           </div>

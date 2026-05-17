@@ -1736,7 +1736,7 @@ function MapCollectionCard({
         });
         onOpen();
       }}
-      className="group relative flex aspect-[9/16] h-[300px] w-[169px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[326px] sm:w-[183px]"
+      className="group relative flex aspect-[4/5] h-[286px] w-[229px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[314px] sm:w-[251px]"
       style={{ background: collection.palette.background }}
       aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
     >
@@ -1791,6 +1791,7 @@ function FeaturedCollectionModal({
     getCollectionSocialState
   );
   const [commentDraft, setCommentDraft] = useState("");
+  const [isCommentsOpen, setIsCommentsOpen] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const commentInputRef = useRef<HTMLInputElement>(null);
 
@@ -1817,6 +1818,11 @@ function FeaturedCollectionModal({
         target?.isContentEditable;
 
       if (event.key === "Escape") {
+        if (isCommentsOpen) {
+          setIsCommentsOpen(false);
+          return;
+        }
+
         onClose();
       }
 
@@ -1837,7 +1843,7 @@ function FeaturedCollectionModal({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeSlideIndex, goToSlide, onClose]);
+  }, [activeSlideIndex, goToSlide, isCommentsOpen, onClose]);
 
   const updateSocialState = useCallback((nextState: CollectionSocialState) => {
     setSocialState(nextState);
@@ -1965,14 +1971,14 @@ function FeaturedCollectionModal({
 
   return (
     <div
-      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[rgba(17,17,17,0.42)] px-3 py-4 text-white backdrop-blur-sm sm:px-6"
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[#070b10] px-3 py-4 text-white sm:px-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={collection.title}
     >
       <div
-        className="relative h-[min(720px,calc(100vh-2rem))] w-full max-w-[640px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
+        className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -1984,11 +1990,11 @@ function FeaturedCollectionModal({
           <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
         </button>
 
-        <div className="grid h-full grid-cols-[minmax(0,1fr)_104px] gap-3 px-4 pb-4 pt-14 sm:grid-cols-[minmax(0,1fr)_132px] sm:gap-4 sm:px-5 sm:pb-5">
+        <div className="grid h-full grid-cols-[minmax(0,1fr)_86px] gap-3 px-4 pb-4 pt-14 sm:grid-cols-[minmax(0,1fr)_112px] sm:gap-5 sm:px-5 sm:pb-5">
           <div className="flex min-w-0 flex-col items-center">
             <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
               <div
-                className="relative aspect-[9/16] h-full max-h-[590px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
+                className="relative aspect-[4/5] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
                 onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
                 onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
               >
@@ -2038,26 +2044,13 @@ function FeaturedCollectionModal({
               </div>
             </div>
 
-            <form
-              onSubmit={handleCommentSubmit}
-              className="mt-3 flex w-full max-w-[336px] items-center gap-2"
+            <button
+              type="button"
+              onClick={() => setIsCommentsOpen(true)}
+              className="mt-3 flex w-full max-w-[384px] items-center rounded-full bg-[#252a30] px-4 py-3 text-left text-sm font-semibold text-white/72 transition hover:bg-[#2d333a]"
             >
-              <input
-                ref={commentInputRef}
-                type="text"
-                value={commentDraft}
-                onChange={(event) => setCommentDraft(event.target.value)}
-                placeholder={ui.collectionModal.commentPlaceholder}
-                className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
-              />
-              <button
-                type="submit"
-                className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
-                aria-label={ui.collectionModal.commentSubmit}
-              >
-                <Send className="h-5 w-5" />
-              </button>
-            </form>
+              {ui.collectionModal.commentPlaceholder}
+            </button>
           </div>
 
           <aside className="flex min-h-0 flex-col pt-2">
@@ -2073,7 +2066,7 @@ function FeaturedCollectionModal({
                 icon={<MessageCircleMore className="h-7 w-7" />}
                 label={commentCount.toLocaleString()}
                 ariaLabel={ui.collectionModal.comment}
-                onClick={() => commentInputRef.current?.focus()}
+                onClick={() => setIsCommentsOpen(true)}
               />
               <InstagramActionButton
                 icon={<Share2 className="h-7 w-7" />}
@@ -2098,35 +2091,95 @@ function FeaturedCollectionModal({
               </Link>
             </div>
 
-            <div className="mt-4 max-h-[190px] overflow-hidden rounded-[16px] border border-white/10 bg-white/10 p-3 text-left">
-              <p className="text-xs font-black text-white">
-                {ui.collectionModal.commentsTitle} {comments.length}
-              </p>
-              <div className="mt-3 max-h-[142px] space-y-2 overflow-y-auto pr-1">
-                {comments.length > 0 ? (
-                  comments.map((comment) => (
-                    <div
-                      key={comment.id}
-                      className="rounded-[14px] bg-white/10 px-3 py-2 text-xs font-semibold leading-5 text-white/90"
-                    >
-                      {comment.text}
-                    </div>
-                  ))
-                ) : (
-                  <p className="break-keep text-xs font-medium leading-5 text-white/55">
-                    {ui.collectionModal.noComments}
-                  </p>
-                )}
-              </div>
-            </div>
           </aside>
         </div>
 
-        <div className="pointer-events-none absolute bottom-[72px] left-5 z-20 max-w-[360px] text-left sm:left-6">
+        <div className="pointer-events-none absolute bottom-[72px] left-5 z-20 max-w-[420px] text-left sm:left-6">
           <p className="line-clamp-1 text-xs font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
             matpick · {collection.shortTitle}
           </p>
         </div>
+
+        {isCommentsOpen ? (
+          <div
+            className="absolute inset-0 z-40 flex items-end bg-black/45"
+            onClick={() => setIsCommentsOpen(false)}
+          >
+            <section
+              className="flex max-h-[78%] w-full flex-col overflow-hidden rounded-t-[28px] border-t border-white/10 bg-[#181c1f] shadow-[0_-28px_80px_rgba(0,0,0,0.36)]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-white/35" />
+              <div className="flex items-center justify-between px-5 py-4">
+                <div>
+                  <p className="text-sm font-black text-white">
+                    {ui.collectionModal.commentsTitle} {comments.length}
+                  </p>
+                  <p className="mt-1 line-clamp-1 text-xs font-semibold text-white/55">
+                    {collection.title}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsCommentsOpen(false)}
+                  className="rounded-full px-3 py-1.5 text-sm font-bold text-white/80 transition hover:bg-white/10"
+                >
+                  {ui.collectionModal.close}
+                </button>
+              </div>
+
+              <div className="min-h-[240px] flex-1 space-y-3 overflow-y-auto px-5 pb-4">
+                {comments.length > 0 ? (
+                  comments.map((comment) => (
+                    <div key={comment.id} className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-black text-white">
+                        M
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-black text-white">matpick_user</p>
+                        <p className="mt-1 break-keep text-sm font-semibold leading-6 text-white/85">
+                          {comment.text}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold text-white/45">
+                          {ui.collectionModal.comment}
+                        </p>
+                      </div>
+                      <Heart className="mt-2 h-5 w-5 flex-shrink-0 text-white/55" />
+                    </div>
+                  ))
+                ) : (
+                  <div className="flex min-h-[220px] items-center justify-center text-center">
+                    <p className="break-keep text-sm font-semibold leading-6 text-white/55">
+                      {ui.collectionModal.noComments}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <form
+                onSubmit={handleCommentSubmit}
+                className="flex items-center gap-2 border-t border-white/10 px-4 py-3"
+              >
+                <input
+                  ref={commentInputRef}
+                  type="text"
+                  value={commentDraft}
+                  onChange={(event) => setCommentDraft(event.target.value)}
+                  placeholder={ui.collectionModal.commentPlaceholder}
+                  className="min-w-0 flex-1 rounded-full border border-white/10 bg-transparent px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/55 focus:border-white/35"
+                  autoFocus
+                />
+                <button
+                  type="submit"
+                  className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
+                  aria-label={ui.collectionModal.commentSubmit}
+                >
+                  <Send className="h-5 w-5" />
+                </button>
+              </form>
+            </section>
+          </div>
+        ) : null}
       </div>
     </div>
   );

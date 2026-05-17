@@ -677,6 +677,7 @@ function EpisodeStoryModal({
   const [socialState, setSocialState] = useState<EpisodeSocialState>(getEpisodeSocialState);
   const [commentDraft, setCommentDraft] = useState("");
   const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const commentInputRef = useRef<HTMLInputElement>(null);
   const slides = useMemo(
     () => buildEpisodeStorySlides({ episode, topic, locale }),
@@ -787,6 +788,21 @@ function EpisodeStoryModal({
     }
   }, [episode, episodeKey, mapPath, shareCount, socialState, updateSocialState]);
 
+  const handleTouchEnd = (clientX: number) => {
+    if (touchStartX === null) {
+      return;
+    }
+
+    const deltaX = touchStartX - clientX;
+    setTouchStartX(null);
+
+    if (Math.abs(deltaX) < 48) {
+      return;
+    }
+
+    goToSlide(activeSlideIndex + (deltaX > 0 ? 1 : -1));
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: globalThis.KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
@@ -825,14 +841,14 @@ function EpisodeStoryModal({
 
   return (
     <div
-      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[rgba(17,17,17,0.42)] px-3 py-4 text-white backdrop-blur-sm sm:px-6"
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[#070b10] px-3 py-4 text-white sm:px-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={getEpisodeDisplayTitle(episode)}
     >
       <div
-        className="relative h-[min(720px,calc(100vh-2rem))] w-full max-w-[640px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
+        className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -844,10 +860,14 @@ function EpisodeStoryModal({
           <ChevronLeft className="h-9 w-9" strokeWidth={2.1} />
         </button>
 
-        <div className="grid h-full grid-cols-[minmax(0,1fr)_104px] gap-3 px-4 pb-4 pt-14 sm:grid-cols-[minmax(0,1fr)_132px] sm:gap-4 sm:px-5 sm:pb-5">
+        <div className="grid h-full grid-cols-[minmax(0,1fr)_86px] gap-3 px-4 pb-4 pt-14 sm:grid-cols-[minmax(0,1fr)_112px] sm:gap-5 sm:px-5 sm:pb-5">
           <div className="flex min-w-0 flex-col items-center">
             <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
-              <div className="relative aspect-[9/16] h-full max-h-[590px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]">
+              <div
+                className="relative aspect-[4/5] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
+                onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
+                onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
+              >
                 <div
                   className="flex h-full transition-transform duration-300 ease-out"
                   style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
@@ -909,16 +929,16 @@ function EpisodeStoryModal({
                 onClick={handleLike}
               />
               <EpisodeStoryActionButton
-                icon={<Share2 className="h-7 w-7" />}
-                label={shareCount.toLocaleString()}
-                ariaLabel={locale === "en" ? "Share" : "공유"}
-                onClick={handleShare}
-              />
-              <EpisodeStoryActionButton
                 icon={<MessageCircleMore className="h-7 w-7" />}
                 label={commentCount.toLocaleString()}
                 ariaLabel={locale === "en" ? "Comment" : "댓글"}
                 onClick={() => setIsCommentsOpen(true)}
+              />
+              <EpisodeStoryActionButton
+                icon={<Share2 className="h-7 w-7" />}
+                label={shareCount.toLocaleString()}
+                ariaLabel={locale === "en" ? "Share" : "공유"}
+                onClick={handleShare}
               />
               <Link
                 href={mapPath}
@@ -966,14 +986,15 @@ function EpisodeStoryModal({
 
         {isCommentsOpen ? (
           <div
-            className="absolute inset-0 z-40 flex items-end justify-center bg-black/60 px-4 py-5 backdrop-blur-sm sm:items-center"
+            className="absolute inset-0 z-40 flex items-end bg-black/45"
             onClick={() => setIsCommentsOpen(false)}
           >
-            <div
-              className="flex max-h-[min(620px,calc(100vh-3rem))] w-full max-w-[420px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-[#101418] shadow-[0_28px_90px_rgba(0,0,0,0.42)]"
+            <section
+              className="flex max-h-[78%] w-full flex-col overflow-hidden rounded-t-[28px] border-t border-white/10 bg-[#181c1f] shadow-[0_-28px_80px_rgba(0,0,0,0.36)]"
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+              <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-white/35" />
+              <div className="flex items-center justify-between px-5 py-4">
                 <div>
                   <p className="text-sm font-black text-white">
                     {locale === "en" ? "Comments" : "댓글"} {comments.length}
@@ -991,14 +1012,23 @@ function EpisodeStoryModal({
                 </button>
               </div>
 
-              <div className="min-h-[240px] flex-1 space-y-2 overflow-y-auto px-5 py-4">
+              <div className="min-h-[240px] flex-1 space-y-3 overflow-y-auto px-5 pb-4">
                 {comments.length > 0 ? (
                   comments.map((comment) => (
-                    <div
-                      key={comment.id}
-                      className="rounded-[16px] bg-white/10 px-4 py-3 text-sm font-semibold leading-6 text-white/90"
-                    >
-                      {comment.text}
+                    <div key={comment.id} className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-black text-white">
+                        M
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-black text-white">matpick_user</p>
+                        <p className="mt-1 break-keep text-sm font-semibold leading-6 text-white/85">
+                          {comment.text}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold text-white/45">
+                          {locale === "en" ? "Reply" : "답글 달기"}
+                        </p>
+                      </div>
+                      <Heart className="mt-2 h-5 w-5 flex-shrink-0 text-white/55" />
                     </div>
                   ))
                 ) : (
@@ -1022,7 +1052,7 @@ function EpisodeStoryModal({
                   value={commentDraft}
                   onChange={(event) => setCommentDraft(event.target.value)}
                   placeholder={locale === "en" ? "Leave a comment" : "댓글을 남겨보세요"}
-                  className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
+                  className="min-w-0 flex-1 rounded-full border border-white/10 bg-transparent px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/55 focus:border-white/35"
                   autoFocus
                 />
                 <button
@@ -1033,7 +1063,7 @@ function EpisodeStoryModal({
                   <Send className="h-5 w-5" />
                 </button>
               </form>
-            </div>
+            </section>
           </div>
         ) : null}
       </div>

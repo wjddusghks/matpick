@@ -93,6 +93,7 @@ export function AdsenseSlot({
 }
 
 export function KakaoAdfitSlot({
+  label,
   unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "",
   width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320",
   height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100",
@@ -103,34 +104,52 @@ export function KakaoAdfitSlot({
   height?: string;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const adWidth = parseBannerDimension(width, 320);
+  const adHeight = parseBannerDimension(height, 100);
 
   useEffect(() => {
     if (!unit || !containerRef.current) {
       return;
     }
 
+    const container = containerRef.current;
+    container.innerHTML = "";
+
+    const adElement = document.createElement("ins");
+    adElement.className = "kakao_ad_area";
+    adElement.style.display = "none";
+    adElement.setAttribute("data-ad-unit", unit);
+    adElement.setAttribute("data-ad-width", String(adWidth));
+    adElement.setAttribute("data-ad-height", String(adHeight));
+
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://t1.daumcdn.net/kas/static/ba.min.js";
-    containerRef.current.appendChild(script);
+
+    container.appendChild(adElement);
+    container.appendChild(script);
 
     return () => {
-      script.remove();
+      container.innerHTML = "";
     };
-  }, [unit, width, height]);
+  }, [adHeight, adWidth, unit]);
 
   if (!unit) {
     return null;
   }
 
   return (
-    <div ref={containerRef} className="w-full">
-      <ins
-        className="kakao_ad_area"
-        style={{ display: "none" }}
-        data-ad-unit={unit}
-        data-ad-width={width}
-        data-ad-height={height}
+    <div className="w-full overflow-hidden" aria-label={label}>
+      <div
+        ref={containerRef}
+        className="mx-auto overflow-hidden rounded-[16px] bg-[#faf7f8]"
+        style={{
+          width: `${adWidth}px`,
+          maxWidth: "100%",
+          height: `${adHeight}px`,
+          maxHeight: `${adHeight}px`,
+          contain: "layout paint",
+        }}
       />
     </div>
   );
@@ -316,7 +335,9 @@ export function CoupangSlot({
           className="overflow-hidden rounded-[18px] bg-[#fffafb]"
           style={{
             width: "100%",
-            minHeight: `${configuredBannerHeight}px`,
+            height: `${configuredBannerHeight}px`,
+            maxHeight: `${configuredBannerHeight}px`,
+            contain: "layout paint",
           }}
         />
       </SlotFrame>

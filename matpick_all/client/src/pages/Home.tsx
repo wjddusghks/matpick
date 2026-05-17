@@ -130,7 +130,7 @@ const HOME_UI_KO = {
     commentPlaceholder: "댓글을 남겨보세요",
     commentSubmit: "게시",
     commentsTitle: "댓글",
-    noComments: "첫 댓글을 남겨보세요.",
+    noComments: "댓글이 달리면 여기에 표시됩니다.",
     likeAdded: "좋아요를 눌렀어요",
     likeRemoved: "좋아요를 취소했어요",
     commentAdded: "댓글을 남겼어요",
@@ -224,7 +224,7 @@ const HOME_UI_EN = {
     commentPlaceholder: "Leave a comment",
     commentSubmit: "Post",
     commentsTitle: "Comments",
-    noComments: "Leave the first comment.",
+    noComments: "Comments will appear here.",
     likeAdded: "Liked this list",
     likeRemoved: "Removed like",
     commentAdded: "Comment added",
@@ -2008,17 +2008,21 @@ function FeaturedCollectionModal({
                 <button
                   type="button"
                   onClick={() => goToSlide(activeSlideIndex - 1)}
-                  className="absolute inset-y-0 left-0 w-1/3"
+                  className="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/35 text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur transition hover:bg-black/50"
                   aria-label={ui.collectionModal.previous}
-                />
+                >
+                  <ChevronLeft className="h-6 w-6" strokeWidth={2.2} />
+                </button>
                 <button
                   type="button"
                   onClick={() => goToSlide(activeSlideIndex + 1)}
-                  className="absolute inset-y-0 right-0 w-1/3"
+                  className="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/35 text-white shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur transition hover:bg-black/50"
                   aria-label={ui.collectionModal.next}
-                />
+                >
+                  <ChevronRight className="h-6 w-6" strokeWidth={2.2} />
+                </button>
 
-                <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/20 px-3 py-2 backdrop-blur">
+                <div className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-black/20 px-3 py-2 backdrop-blur">
                   {slides.map((slide, index) => (
                     <button
                       key={slide.id}
@@ -2094,11 +2098,11 @@ function FeaturedCollectionModal({
               </Link>
             </div>
 
-            <div className="mt-5 min-h-0 flex-1 rounded-[18px] border border-white/10 bg-white/10 p-3 text-left">
+            <div className="mt-4 max-h-[190px] overflow-hidden rounded-[16px] border border-white/10 bg-white/10 p-3 text-left">
               <p className="text-xs font-black text-white">
                 {ui.collectionModal.commentsTitle} {comments.length}
               </p>
-              <div className="mt-3 max-h-full space-y-2 overflow-y-auto pr-1">
+              <div className="mt-3 max-h-[142px] space-y-2 overflow-y-auto pr-1">
                 {comments.length > 0 ? (
                   comments.map((comment) => (
                     <div

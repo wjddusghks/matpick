@@ -1736,7 +1736,7 @@ function MapCollectionCard({
         });
         onOpen();
       }}
-      className="group relative flex h-[268px] w-[204px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[292px] sm:w-[224px]"
+      className="group relative flex aspect-[9/16] h-[300px] w-[169px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[326px] sm:w-[183px]"
       style={{ background: collection.palette.background }}
       aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
     >

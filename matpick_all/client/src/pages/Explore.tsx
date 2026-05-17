@@ -1,12 +1,25 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import {
+  type FormEvent,
+  type ReactNode,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 import {
   ChevronLeft,
   ChevronRight,
   Compass,
+  Heart,
   MapPin,
+  MessageCircleMore,
   PlayCircle,
   Search,
+  Send,
+  Share2,
 } from "lucide-react";
 import { Link, useLocation, useSearch } from "wouter";
 import {
@@ -86,6 +99,18 @@ type EpisodeStorySlide = {
   background: string;
 };
 
+type EpisodeComment = {
+  id: string;
+  text: string;
+  createdAt: string;
+};
+
+type EpisodeSocialState = {
+  likedEpisodeSlugs: string[];
+  commentsByEpisodeSlug: Record<string, EpisodeComment[]>;
+  shareCountsByEpisodeSlug: Record<string, number>;
+};
+
 const EPISODE_CARD_PALETTES = [
   "linear-gradient(145deg, #261f3f 0%, #6d4ec1 48%, #ff8aa4 100%)",
   "linear-gradient(145deg, #18324a 0%, #2878a5 52%, #8fd8ff 100%)",
@@ -94,12 +119,58 @@ const EPISODE_CARD_PALETTES = [
   "linear-gradient(145deg, #252525 0%, #59606b 52%, #f7b267 100%)",
 ];
 
+const EPISODE_SOCIAL_STORAGE_KEY = "matpick:episode-card-social:v1";
+
+const emptyEpisodeSocialState: EpisodeSocialState = {
+  likedEpisodeSlugs: [],
+  commentsByEpisodeSlug: {},
+  shareCountsByEpisodeSlug: {},
+};
+
+function getEpisodeSocialState(): EpisodeSocialState {
+  if (typeof window === "undefined") {
+    return emptyEpisodeSocialState;
+  }
+
+  try {
+    const raw = window.localStorage.getItem(EPISODE_SOCIAL_STORAGE_KEY);
+    if (!raw) {
+      return emptyEpisodeSocialState;
+    }
+
+    const parsed = JSON.parse(raw) as Partial<EpisodeSocialState>;
+    return {
+      likedEpisodeSlugs: Array.isArray(parsed.likedEpisodeSlugs)
+        ? parsed.likedEpisodeSlugs
+        : [],
+      commentsByEpisodeSlug:
+        parsed.commentsByEpisodeSlug && typeof parsed.commentsByEpisodeSlug === "object"
+          ? parsed.commentsByEpisodeSlug
+          : {},
+      shareCountsByEpisodeSlug:
+        parsed.shareCountsByEpisodeSlug && typeof parsed.shareCountsByEpisodeSlug === "object"
+          ? parsed.shareCountsByEpisodeSlug
+          : {},
+    };
+  } catch {
+    return emptyEpisodeSocialState;
+  }
+}
+
+function saveEpisodeSocialState(nextState: EpisodeSocialState) {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.localStorage.setItem(EPISODE_SOCIAL_STORAGE_KEY, JSON.stringify(nextState));
+}
+
 const EXPLORE_COPY = {
   ko: {
     homeLabel: "홈으로",
     pageTitle: "맛집 탐색",
     pageDescription:
-      "보고 싶은 채널이나 주제를 먼저 고른 뒤 카테고리와 지역 필터를 조합해서 원하는 맛집을 찾아보세요.",
+      "또간집부터 미쉐린까지, 앞으로 추가될 주제별 맛집 카드를 골라 보고 지도에서 바로 확인해보세요.",
     topicLine: (topic: DiscoveryTopic) => `${topic.name}만 빠르게 둘러보는 탐색 화면입니다.`,
     episodeLine: (episode: DiscoveryTopicEpisode) =>
       `${episode.episode}에 소개된 맛집만 모아보는 화면입니다.`,
@@ -135,7 +206,7 @@ const EXPLORE_COPY = {
     homeLabel: "Home",
     pageTitle: "Explore restaurants",
     pageDescription:
-      "Start with a creator or curated topic, then combine cuisine and region filters to narrow the list.",
+      "Choose a theme like Ttoganjip or Michelin, browse its restaurant cards, then open the matching places on the map.",
     topicLine: (topic: DiscoveryTopic) =>
       `You are browsing restaurants curated under ${topic.name}.`,
     episodeLine: (episode: DiscoveryTopicEpisode) =>
@@ -496,8 +567,8 @@ function TtoganjipEpisodeGrid({
     locale === "en" ? `${topic.name} episode cards` : `${topic.name} 회차별 맛집 카드`;
   const description =
     locale === "en"
-      ? "Open an episode card, swipe through the featured places, then view the same set on the map."
-      : "회차마다 소개된 맛집을 인스타 카드처럼 넘겨보고, 마음에 들면 지도에서 한 번에 확인하세요.";
+      ? "Ttoganjip is the first theme here. More themes such as Michelin will be added later in the same card format."
+      : "지금은 또간집 회차별 맛집을 먼저 보여드리고, 이후 미쉐린 같은 주제도 같은 카드 형식으로 추가할 예정입니다.";
 
   if (episodes.length === 0) {
     return (
@@ -523,7 +594,7 @@ function TtoganjipEpisodeGrid({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {episodes.map((episode, index) => (
           <EpisodeCollectionCard
             key={episode.slug}
@@ -559,7 +630,7 @@ function EpisodeCollectionCard({
         });
         onOpen();
       }}
-      className="group relative aspect-[9/16] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
+      className="group relative aspect-[4/5] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
       style={{ background: getEpisodeCardPalette(index) }}
       aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
@@ -603,12 +674,21 @@ function EpisodeStoryModal({
   onClose: () => void;
 }) {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [socialState, setSocialState] = useState<EpisodeSocialState>(getEpisodeSocialState);
+  const [commentDraft, setCommentDraft] = useState("");
+  const [isCommentsOpen, setIsCommentsOpen] = useState(false);
+  const commentInputRef = useRef<HTMLInputElement>(null);
   const slides = useMemo(
     () => buildEpisodeStorySlides({ episode, topic, locale }),
     [episode, locale, topic]
   );
-  const episodeRestaurants = useMemo(() => getRestaurantsForEpisode(episode), [episode]);
   const mapPath = buildMapPathForEpisode(episode);
+  const episodeKey = `${episode.topicSlug}:${episode.slug}`;
+  const comments = socialState.commentsByEpisodeSlug[episodeKey] ?? [];
+  const isLiked = socialState.likedEpisodeSlugs.includes(episodeKey);
+  const likeCount = isLiked ? 1 : 0;
+  const commentCount = comments.length;
+  const shareCount = socialState.shareCountsByEpisodeSlug[episodeKey] ?? 0;
 
   const goToSlide = useCallback(
     (index: number) => {
@@ -617,10 +697,115 @@ function EpisodeStoryModal({
     [slides.length]
   );
 
+  const updateSocialState = useCallback((nextState: EpisodeSocialState) => {
+    setSocialState(nextState);
+    saveEpisodeSocialState(nextState);
+  }, []);
+
+  const handleLike = useCallback(() => {
+    const nextLikedEpisodeSlugs = isLiked
+      ? socialState.likedEpisodeSlugs.filter((slug) => slug !== episodeKey)
+      : [...socialState.likedEpisodeSlugs, episodeKey];
+
+    updateSocialState({
+      ...socialState,
+      likedEpisodeSlugs: nextLikedEpisodeSlugs,
+    });
+
+    trackMarketingEvent("ttoganjip_episode_like_toggle", {
+      episode_slug: episode.slug,
+      liked: !isLiked,
+    });
+  }, [episode.slug, episodeKey, isLiked, socialState, updateSocialState]);
+
+  const handleCommentSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const text = commentDraft.trim();
+
+      if (!text) {
+        return;
+      }
+
+      const newComment: EpisodeComment = {
+        id:
+          typeof crypto !== "undefined" && "randomUUID" in crypto
+            ? crypto.randomUUID()
+            : `${Date.now()}`,
+        text,
+        createdAt: new Date().toISOString(),
+      };
+
+      updateSocialState({
+        ...socialState,
+        commentsByEpisodeSlug: {
+          ...socialState.commentsByEpisodeSlug,
+          [episodeKey]: [newComment, ...comments].slice(0, 8),
+        },
+      });
+      setCommentDraft("");
+
+      trackMarketingEvent("ttoganjip_episode_comment_add", {
+        episode_slug: episode.slug,
+      });
+    },
+    [commentDraft, comments, episode.slug, episodeKey, socialState, updateSocialState]
+  );
+
+  const handleShare = useCallback(async () => {
+    const shareUrl =
+      typeof window !== "undefined" ? `${window.location.origin}${mapPath}` : mapPath;
+
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: getEpisodeDisplayTitle(episode),
+          text: episode.description,
+          url: shareUrl,
+        });
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareUrl);
+      } else {
+        throw new Error("Share is not available");
+      }
+
+      updateSocialState({
+        ...socialState,
+        shareCountsByEpisodeSlug: {
+          ...socialState.shareCountsByEpisodeSlug,
+          [episodeKey]: shareCount + 1,
+        },
+      });
+
+      trackMarketingEvent("ttoganjip_episode_share", {
+        episode_slug: episode.slug,
+      });
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        return;
+      }
+    }
+  }, [episode, episodeKey, mapPath, shareCount, socialState, updateSocialState]);
+
   useEffect(() => {
     const handleKeyDown = (event: globalThis.KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+      const isTyping =
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.isContentEditable;
+
       if (event.key === "Escape") {
+        if (isCommentsOpen) {
+          setIsCommentsOpen(false);
+          return;
+        }
+
         onClose();
+      }
+
+      if (isTyping) {
+        return;
       }
 
       if (event.key === "ArrowRight") {
@@ -636,7 +821,7 @@ function EpisodeStoryModal({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeSlideIndex, goToSlide, onClose]);
+  }, [activeSlideIndex, goToSlide, isCommentsOpen, onClose]);
 
   return (
     <div
@@ -704,10 +889,37 @@ function EpisodeStoryModal({
                 </div>
               </div>
             </div>
+
+            <button
+              type="button"
+              onClick={() => setIsCommentsOpen(true)}
+              className="mt-3 flex w-full max-w-[336px] items-center rounded-full bg-[#252a30] px-4 py-3 text-left text-sm font-semibold text-white/72 transition hover:bg-[#2d333a]"
+            >
+              {locale === "en" ? "Leave a comment" : "댓글을 남겨보세요"}
+            </button>
           </div>
 
           <aside className="flex min-h-0 flex-col pt-2">
             <div className="flex flex-col items-center gap-4">
+              <EpisodeStoryActionButton
+                icon={<Heart className={`h-7 w-7 ${isLiked ? "fill-current" : ""}`} />}
+                label={likeCount.toLocaleString()}
+                active={isLiked}
+                ariaLabel={locale === "en" ? "Like" : "좋아요"}
+                onClick={handleLike}
+              />
+              <EpisodeStoryActionButton
+                icon={<Share2 className="h-7 w-7" />}
+                label={shareCount.toLocaleString()}
+                ariaLabel={locale === "en" ? "Share" : "공유"}
+                onClick={handleShare}
+              />
+              <EpisodeStoryActionButton
+                icon={<MessageCircleMore className="h-7 w-7" />}
+                label={commentCount.toLocaleString()}
+                ariaLabel={locale === "en" ? "Comment" : "댓글"}
+                onClick={() => setIsCommentsOpen(true)}
+              />
               <Link
                 href={mapPath}
                 onClick={() =>
@@ -743,22 +955,6 @@ function EpisodeStoryModal({
                 </a>
               ) : null}
             </div>
-
-            <div className="mt-4 max-h-[230px] overflow-hidden rounded-[16px] border border-white/10 bg-white/10 p-3 text-left">
-              <p className="text-xs font-black text-white">
-                {locale === "en" ? "Places" : "맛집"} {episodeRestaurants.length}
-              </p>
-              <div className="mt-3 max-h-[178px] space-y-2 overflow-y-auto pr-1">
-                {episodeRestaurants.map((restaurant) => (
-                  <p
-                    key={restaurant.id}
-                    className="line-clamp-2 rounded-[12px] bg-white/10 px-3 py-2 text-xs font-semibold leading-5 text-white/90"
-                  >
-                    {restaurant.name}
-                  </p>
-                ))}
-              </div>
-            </div>
           </aside>
         </div>
 
@@ -767,8 +963,109 @@ function EpisodeStoryModal({
             {topic.name} · {episode.episode}
           </p>
         </div>
+
+        {isCommentsOpen ? (
+          <div
+            className="absolute inset-0 z-40 flex items-end justify-center bg-black/60 px-4 py-5 backdrop-blur-sm sm:items-center"
+            onClick={() => setIsCommentsOpen(false)}
+          >
+            <div
+              className="flex max-h-[min(620px,calc(100vh-3rem))] w-full max-w-[420px] flex-col overflow-hidden rounded-[24px] border border-white/10 bg-[#101418] shadow-[0_28px_90px_rgba(0,0,0,0.42)]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                <div>
+                  <p className="text-sm font-black text-white">
+                    {locale === "en" ? "Comments" : "댓글"} {comments.length}
+                  </p>
+                  <p className="mt-1 line-clamp-1 text-xs font-semibold text-white/55">
+                    {episode.episode}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsCommentsOpen(false)}
+                  className="rounded-full px-3 py-1.5 text-sm font-bold text-white/80 transition hover:bg-white/10"
+                >
+                  {locale === "en" ? "Close" : "닫기"}
+                </button>
+              </div>
+
+              <div className="min-h-[240px] flex-1 space-y-2 overflow-y-auto px-5 py-4">
+                {comments.length > 0 ? (
+                  comments.map((comment) => (
+                    <div
+                      key={comment.id}
+                      className="rounded-[16px] bg-white/10 px-4 py-3 text-sm font-semibold leading-6 text-white/90"
+                    >
+                      {comment.text}
+                    </div>
+                  ))
+                ) : (
+                  <div className="flex min-h-[220px] items-center justify-center text-center">
+                    <p className="break-keep text-sm font-semibold leading-6 text-white/55">
+                      {locale === "en"
+                        ? "No comments yet. Be the first to leave one."
+                        : "아직 댓글이 없어요. 첫 댓글을 남겨보세요."}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <form
+                onSubmit={handleCommentSubmit}
+                className="flex items-center gap-2 border-t border-white/10 px-4 py-3"
+              >
+                <input
+                  ref={commentInputRef}
+                  type="text"
+                  value={commentDraft}
+                  onChange={(event) => setCommentDraft(event.target.value)}
+                  placeholder={locale === "en" ? "Leave a comment" : "댓글을 남겨보세요"}
+                  className="min-w-0 flex-1 rounded-full border border-white/5 bg-[#252a30] px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/72 focus:border-white/35"
+                  autoFocus
+                />
+                <button
+                  type="submit"
+                  className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-white text-[#101418] transition hover:bg-[#ffe8ed]"
+                  aria-label={locale === "en" ? "Post comment" : "댓글 게시"}
+                >
+                  <Send className="h-5 w-5" />
+                </button>
+              </form>
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
+  );
+}
+
+function EpisodeStoryActionButton({
+  icon,
+  label,
+  ariaLabel,
+  active = false,
+  onClick,
+}: {
+  icon: ReactNode;
+  label: string;
+  ariaLabel: string;
+  active?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex flex-col items-center gap-1 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] transition hover:text-[#ff9ea9] ${
+        active ? "text-[#ff7b83]" : ""
+      }`}
+      aria-label={ariaLabel}
+    >
+      {icon}
+      <span className="text-xs font-bold">{label}</span>
+    </button>
   );
 }
 
@@ -1284,8 +1581,8 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       : "";
   const pageDescription = isTtoganjipOverview
     ? locale === "en"
-      ? "Browse Ttoganjip by episode cards, then open any episode on the map."
-      : "또간집 회차별 맛집 카드를 보고, 마음에 드는 회차를 지도에서 바로 확인해보세요."
+      ? "Ttoganjip is shown first as episode cards. More themes such as Michelin can be added here later."
+      : "지금은 또간집 회차별 맛집 카드를 먼저 보여드리고, 이후 미쉐린 같은 주제도 이 영역에 추가할 예정입니다."
     : copy.pageDescription;
   const contextDescription = presetEpisode?.description || presetTopic?.description || "";
   const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";

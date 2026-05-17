@@ -830,10 +830,18 @@ export function getSourceLinksByRestaurant(restaurantId: string) {
   return sourceLinksByRestaurantId.get(restaurantId) ?? [];
 }
 
+const publicVisibleSourceIds = new Set(["ttoganjip"]);
+
+export function isPublicSourceId(sourceId: string) {
+  return publicVisibleSourceIds.has(sourceId);
+}
+
 export function getSourcesByRestaurant(restaurantId: string) {
   const linkedSourceIds = sourceIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
 
-  return sources.filter((source) => linkedSourceIds.has(source.id));
+  return sources.filter(
+    (source) => linkedSourceIds.has(source.id) && isPublicSourceId(source.id)
+  );
 }
 
 export function getSourceById(sourceId: string) {
@@ -1546,9 +1554,8 @@ const sourceSearchEntries = sources
       b.restaurantCount - a.restaurantCount ||
       sortText(getSourceDisplayName(a.source), getSourceDisplayName(b.source))
   );
-const publicSourceSearchIds = new Set(["ttoganjip"]);
 const publicSourceSearchEntries = sourceSearchEntries.filter((entry) =>
-  publicSourceSearchIds.has(entry.source.id)
+  isPublicSourceId(entry.source.id)
 );
 
 export const searchData: SearchItem[] = [

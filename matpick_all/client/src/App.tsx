@@ -22,6 +22,7 @@ import RestaurantDetail from "./pages/RestaurantDetail";
 import Terms from "./pages/Terms";
 import CreatorDetail from "./pages/CreatorDetail";
 import MyFavorites from "./pages/MyFavorites";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function Router() {
   return (
@@ -59,6 +60,7 @@ function Router() {
       <Route path="/reviews" component={ReviewFeed} />
       <Route path="/creator/:id" component={CreatorDetail} />
       <Route path="/my/favorites" component={MyFavorites} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

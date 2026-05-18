@@ -14,6 +14,7 @@ interface ImportMetaEnv {
   readonly VITE_COUPANG_PARTNERS_URL?: string;
   readonly VITE_COUPANG_BANNER_IMAGE_URL?: string;
   readonly VITE_COUPANG_BANNER_TITLE?: string;
+  readonly VITE_ADMIN_USER_IDS?: string;
 }
 
 interface ImportMeta {

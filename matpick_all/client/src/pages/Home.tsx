@@ -15,6 +15,7 @@ import {
   Circle,
   Compass,
   Heart,
+  LayoutDashboard,
   MapPin,
   MessageCircleMore,
   Plus,
@@ -47,6 +48,7 @@ import {
   type MapCollectionTopic,
 } from "@/data/mapCollections";
 import { getDisplayName } from "@/lib/authProfile";
+import { isAdminUser } from "@/lib/admin";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
@@ -103,6 +105,7 @@ const HOME_UI_KO = {
   header: {
     logoAlt: "\uB9DB\uD53D \uB85C\uACE0",
     exploreLabel: "\uB9DB\uC9D1 \uD0D0\uC0C9",
+    adminLabel: "대시보드",
     savedLabel: "\uC800\uC7A5\uD55C \uB9DB\uC9D1",
     logoutFallback: "\uB85C\uADF8\uC544\uC6C3",
     accountProviderPrefix: "\uB85C\uADF8\uC778 \uACC4\uC815",
@@ -116,6 +119,7 @@ const HOME_UI_KO = {
   searchHelperText:
     "\uAC80\uC0C9\uC5B4 \uC5C6\uC774 \uB3CB\uBCF4\uAE30\uB97C \uB204\uB974\uBA74 \uB0B4 \uC8FC\uBCC0 \uC720\uBA85 \uB9DB\uC9D1 \uC9C0\uB3C4\uAC00 \uBC14\uB85C \uC5F4\uB824\uC694.",
   searchButtonLabel: "\uAC80\uC0C9",
+  nearbyMapButtonLabel: "주변 맛집 지도 보기",
   collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
     openAria: "주제 카드 자세히 보기",
@@ -198,6 +202,7 @@ const HOME_UI_EN = {
   header: {
     logoAlt: "Matpick logo",
     exploreLabel: "Explore",
+    adminLabel: "Dashboard",
     savedLabel: "Saved places",
     logoutFallback: "Log out",
     accountProviderPrefix: "Signed in with",
@@ -210,6 +215,7 @@ const HOME_UI_EN = {
   searchHelperText:
     "Press search with an empty field to open the nearby famous restaurant map.",
   searchButtonLabel: "Search",
+  nearbyMapButtonLabel: "Open nearby restaurant map",
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
@@ -728,6 +734,7 @@ export default function Home() {
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
+  const isAdmin = isAdminUser(user);
   const providerLabel =
     user?.provider === "kakao"
       ? isEnglish
@@ -795,6 +802,7 @@ export default function Home() {
     : [];
 
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
+  const hasSearchQuery = Boolean(normalizedQuery);
 
   useEffect(() => {
     setRecentSearches((prev) => {
@@ -1283,6 +1291,16 @@ export default function Home() {
                 <Compass className="mr-2 h-4 w-4" />
                 {ui.header.exploreLabel}
               </button>
+              {isAdmin ? (
+                <button
+                  type="button"
+                  onClick={() => navigate("/admin")}
+                  className="flex h-10 items-center justify-center rounded-full border border-[#ffc5cd] bg-[#fff5f7] px-4 text-xs font-semibold text-[#ff5f70] shadow-[0_10px_24px_rgba(255,108,136,0.1)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
+                >
+                  <LayoutDashboard className="mr-2 h-4 w-4" />
+                  {ui.header.adminLabel}
+                </button>
+              ) : null}
               <button
                 type="button"
                 onClick={() => navigate("/my/favorites")}
@@ -1502,9 +1520,15 @@ export default function Home() {
                   type="button"
                   onClick={handlePrimarySearch}
                   className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[#111111] transition hover:bg-[#fff3f4] sm:h-12 sm:w-12"
-                  aria-label={ui.searchButtonLabel}
+                  aria-label={
+                    hasSearchQuery ? ui.searchButtonLabel : ui.nearbyMapButtonLabel
+                  }
                 >
-                  <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
+                  {hasSearchQuery ? (
+                    <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
+                  ) : (
+                    <MapPin className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
+                  )}
                 </button>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { trackAnalyticsEvent } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -73,6 +74,17 @@ export function AdsenseSlot({
     };
   }, [client, slot]);
 
+  useEffect(() => {
+    if (!client || !slot) {
+      return;
+    }
+
+    trackAnalyticsEvent("ad_impression", {
+      provider: "adsense",
+      targetLabel: slot,
+    });
+  }, [client, slot]);
+
   if (!client || !slot) {
     return null;
   }
@@ -133,6 +145,17 @@ export function KakaoAdfitSlot({
       container.innerHTML = "";
     };
   }, [adHeight, adWidth, unit]);
+
+  useEffect(() => {
+    if (!unit) {
+      return;
+    }
+
+    trackAnalyticsEvent("ad_impression", {
+      provider: "adfit",
+      targetLabel: unit,
+    });
+  }, [unit]);
 
   if (!unit) {
     return null;
@@ -323,6 +346,23 @@ export function CoupangSlot({
   const shouldRenderFallbackCard =
     Boolean(link) && (!hasDynamicBanner || isCompactViewport || dynamicBannerFailed);
 
+  useEffect(() => {
+    if (shouldRenderDynamicBanner) {
+      trackAnalyticsEvent("ad_impression", {
+        provider: "coupang",
+        targetLabel: dynamicBannerId || "dynamic-banner",
+      });
+      return;
+    }
+
+    if (shouldRenderFallbackCard) {
+      trackAnalyticsEvent("ad_impression", {
+        provider: "coupang",
+        targetLabel: title || link || "fallback-banner",
+      });
+    }
+  }, [dynamicBannerId, link, shouldRenderDynamicBanner, shouldRenderFallbackCard, title]);
+
   if (!shouldRenderDynamicBanner && !shouldRenderFallbackCard) {
     return null;
   }
@@ -350,6 +390,13 @@ export function CoupangSlot({
         href={link}
         target="_blank"
         rel="noopener noreferrer sponsored"
+        onClick={() => {
+          trackAnalyticsEvent("ad_click", {
+            provider: "coupang",
+            targetLabel: title || link || "fallback-banner",
+            href: link,
+          });
+        }}
         className="flex items-center gap-4 rounded-[18px] border border-[#f2ecec] bg-[#fffafb] p-4 no-underline transition hover:border-[#ffd1d7] hover:bg-[#fff5f7]"
       >
         {image ? (

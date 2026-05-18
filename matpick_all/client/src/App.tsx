@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 import MarketingScripts from "./components/marketing/MarketingScripts";
 import AuthOnboardingModal from "./components/AuthOnboardingModal";
 import MonetizationScripts from "./components/monetization/MonetizationScripts";
@@ -78,6 +79,7 @@ function App() {
                 <Toaster />
                 <MonetizationScripts />
                 <MarketingScripts />
+                <AnalyticsTracker />
                 <AuthOnboardingModal />
                 <Router />
               </TooltipProvider>

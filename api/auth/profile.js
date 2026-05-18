@@ -2,6 +2,7 @@ const {
   validateProfileSyncToken,
   writeRemoteProfile,
 } = require("./_profileStore");
+const { recordMemberProfileCompletion } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
@@ -86,6 +87,16 @@ module.exports = async function handler(req, res) {
     }
 
     await writeRemoteProfile(userId, profile);
+
+    try {
+      await recordMemberProfileCompletion(userId, profile);
+    } catch (error) {
+      logSecurityEvent("warn", "member-profile-completion-record-failed", {
+        route: "/api/auth/profile",
+        userId: maskValue(userId),
+        message: error instanceof Error ? error.message : "unknown",
+      });
+    }
 
     return res.status(200).json({ ok: true });
   } catch (error) {

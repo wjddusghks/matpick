@@ -2,6 +2,7 @@ const {
   createProfileSyncToken,
   readRemoteProfile,
 } = require("./_profileStore");
+const { recordAuthMember } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
@@ -101,19 +102,30 @@ module.exports = async function handler(req, res) {
     const profile = userPayload.response || {};
     const userId = `naver_${String(profile.id || "")}`;
     const storedProfile = await readRemoteProfile(userId);
+    const user = {
+      id: userId,
+      name: profile.name || profile.nickname || "Naver User",
+      email: profile.email || "",
+      profileImage: profile.profile_image || "",
+      provider: "naver",
+      nickname: storedProfile?.nickname || "",
+      consentAcceptedAt: storedProfile?.consentAcceptedAt,
+      allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
+      syncToken: createProfileSyncToken(userId),
+    };
+
+    try {
+      await recordAuthMember(user);
+    } catch (error) {
+      logSecurityEvent("warn", "member-record-failed", {
+        route: "/api/auth/naver",
+        userId: maskValue(userId),
+        message: error instanceof Error ? error.message : "unknown",
+      });
+    }
 
     return res.status(200).json({
-      user: {
-        id: userId,
-        name: profile.name || profile.nickname || "Naver User",
-        email: profile.email || "",
-        profileImage: profile.profile_image || "",
-        provider: "naver",
-        nickname: storedProfile?.nickname || "",
-        consentAcceptedAt: storedProfile?.consentAcceptedAt,
-        allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
-        syncToken: createProfileSyncToken(userId),
-      },
+      user,
     });
   } catch (error) {
     logSecurityEvent("error", "naver-auth-failed", {

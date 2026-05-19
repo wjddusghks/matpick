@@ -582,7 +582,7 @@ export default function RestaurantDetail() {
 
   useSeo({
     title: `${restaurant.name} 맛집 정보`,
-    description: `${restaurant.name}의 대표 메뉴, 위치, 추천 소스와 리뷰를 맛픽에서 확인해보세요.`,
+    description: `${restaurant.name}의 메뉴, 가격, 위치 정보를 맛픽에서 간단하게 확인해보세요.`,
     path: `/restaurant/${restaurant.id}`,
     type: "article",
     image: shareImage,
@@ -779,7 +779,7 @@ export default function RestaurantDetail() {
         <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">{uiCopy.directionsDescription}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
         <button
           type="button"
           onClick={() => {
@@ -810,124 +810,9 @@ export default function RestaurantDetail() {
           <Navigation className="h-4 w-4" />
           {uiCopy.actionKakao}
         </button>
-        <button
-          type="button"
-          onClick={openComposer}
-          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#f5f5f5] px-4 py-3 text-sm font-semibold text-[#555] transition hover:bg-[#e8e8e8]"
-        >
-          <MessageSquarePlus className="h-4 w-4" />
-          {uiCopy.actionReview}
-        </button>
       </div>
     </div>
   );
-
-  const relatedSection =
-    relatedRestaurants.length > 0 ? (
-      <section className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm font-bold text-[#1a1a1a]">{uiCopy.relatedTitle}</p>
-            <p className="mt-1 text-sm text-[#8a8a8a]">{uiCopy.relatedDescription}</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { key: "related" as const, label: uiCopy.relatedModeRelated },
-              { key: "nearby" as const, label: uiCopy.relatedModeNearby },
-            ].map((option) => (
-              <button
-                key={option.key}
-                type="button"
-                onClick={() => setRelatedSortMode(option.key)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                  relatedSortMode === option.key
-                    ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
-                    : "border border-[#f0d7db] bg-white text-[#666] hover:border-[#ffb5be] hover:text-[#ff6f7c]"
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-
-        </div>
-
-        <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
-          {relatedRestaurants.map((entry) => {
-            const candidate = entry.restaurant;
-            const candidateFoundingBadge = formatRestaurantFoundingBadge(
-              candidate.foundingYear
-            );
-            const candidateBroadcastBadge = formatRestaurantBroadcastBadge(
-              getRestaurantBroadcastMeta(candidate.id)
-            );
-
-            return (
-              <Link
-                key={`${relatedSortMode}_${candidate.id}`}
-                href={`/restaurant/${candidate.id}`}
-                onClick={() => {
-                  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-                }}
-              >
-                <div className="flex h-full gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 transition hover:border-[#ffd1d8] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
-                  <img
-                    src={getRestaurantDisplayImage(candidate, { width: 320, height: 240 }).src}
-                    alt={candidate.name}
-                    className="h-[92px] w-[92px] flex-shrink-0 rounded-[18px] object-cover"
-                    loading="lazy"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-start justify-between gap-2">
-                      <div className="min-w-0">
-                        <p className="truncate text-[15px] font-bold text-[#171717]">{candidate.name}</p>
-                        <p className="mt-1 line-clamp-1 text-sm text-[#7f7f7f]">{candidate.address}</p>
-                      </div>
-                      <span className="rounded-full bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
-                        {formatDistance(entry.distanceKm)}
-                      </span>
-                    </div>
-
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {candidateFoundingBadge ? (
-                        <span className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c]">
-                          {candidateFoundingBadge}
-                        </span>
-                      ) : null}
-                      {candidateBroadcastBadge ? (
-                        <span className="rounded-full bg-[#eef7ff] px-2.5 py-1 text-[11px] font-semibold text-[#3b82c4]">
-                          {candidateBroadcastBadge}
-                        </span>
-                      ) : null}
-                      {entry.sharedCreatorCount > 0 ? (
-                        <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
-                          {uiCopy.relatedSharedCreator} {entry.sharedCreatorCount}
-                        </span>
-                      ) : null}
-                      {entry.sharedSourceCount > 0 ? (
-                        <span className="rounded-full bg-[#eef8ff] px-2.5 py-1 text-[11px] font-semibold text-[#3a7bb7]">
-                          {uiCopy.relatedSharedSource} {entry.sharedSourceCount}
-                        </span>
-                      ) : null}
-                      {entry.sameCuisine ? (
-                        <span className="rounded-full bg-[#f5f2ff] px-2.5 py-1 text-[11px] font-semibold text-[#7457c7]">
-                          {uiCopy.relatedSameCuisine}
-                        </span>
-                      ) : null}
-                      {entry.sameRegion ? (
-                        <span className="rounded-full bg-[#effaf2] px-2.5 py-1 text-[11px] font-semibold text-[#2d8b57]">
-                          {uiCopy.relatedSameRegion}
-                        </span>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-    ) : null;
 
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,#f8f9fa_0%,#f0f2f5_100%)]">
@@ -1021,30 +906,12 @@ export default function RestaurantDetail() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-[1fr_420px] lg:px-8">
         <div className="flex flex-col gap-6">
           <div className="lg:hidden">
-            <div className="relative overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-              <img
-                src={displayImage.src}
-                alt={restaurant.name}
-                className="aspect-[4/3] w-full object-cover"
-              />
-              {detailPhotoBadge ? (
-                <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-                  {detailPhotoBadge}
-                </div>
-              ) : null}
-              {primaryPrice ? (
-                <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                  ???媛寃?{primaryPrice}
-                </div>
-              ) : null}
-            </div>
-
-            <div className="mt-4 rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+            <div className="rounded-2xl border border-[#ffe1e6] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
                 {uiCopy.mobileSummaryEyebrow}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
-                {uiCopy.mobileSummaryDescription}
+                사진 없이도 메뉴, 위치, 길찾기를 먼저 볼 수 있게 정리했어요.
               </p>
             </div>
 
@@ -1108,154 +975,36 @@ export default function RestaurantDetail() {
             </div>
           </div>
 
-          {false ? (
-            <section className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-sm font-bold text-[#1a1a1a]">함께 둘러볼만한 맛집</p>
-                  <p className="mt-1 text-sm text-[#8a8a8a]">
-                    지금 보고 있는 식당과 잘 어울리는 곳을 연관도와 거리 기준으로 나눠서 보여드려요.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { key: "related" as const, label: "연관순" },
-                    { key: "nearby" as const, label: "현재 식당 거리순" },
-                  ].map((option) => (
-                    <button
-                      key={option.key}
-                      type="button"
-                      onClick={() => setRelatedSortMode(option.key)}
-                      className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
-                        relatedSortMode === option.key
-                          ? "bg-[#ff7b83] text-white shadow-[0_10px_20px_rgba(255,123,131,0.22)]"
-                          : "border border-[#f0d7db] bg-white text-[#666] hover:border-[#ffb5be] hover:text-[#ff6f7c]"
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-5 grid grid-cols-1 gap-4 xl:grid-cols-2">
-                {relatedRestaurants.map((entry) => {
-                  const candidate = entry.restaurant;
-                  const candidateFoundingBadge = formatRestaurantFoundingBadge(
-                    candidate.foundingYear
-                  );
-                  const candidateBroadcastBadge = formatRestaurantBroadcastBadge(
-                    getRestaurantBroadcastMeta(candidate.id)
-                  );
-
-                  return (
-                    <Link
-                      key={`${relatedSortMode}_${candidate.id}`}
-                      href={`/restaurant/${candidate.id}`}
-                      onClick={() => {
-                        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-                      }}
-                    >
-                      <div className="flex h-full gap-4 rounded-[22px] border border-[#f0f0f0] bg-white p-4 transition hover:border-[#ffd1d8] hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)]">
-                        <img
-                          src={getRestaurantDisplayImage(candidate, { width: 320, height: 240 }).src}
-                          alt={candidate.name}
-                          className="h-[92px] w-[92px] flex-shrink-0 rounded-[18px] object-cover"
-                          loading="lazy"
-                        />
-                        <div className="min-w-0 flex-1">
-                          <div className="flex flex-wrap items-start justify-between gap-2">
-                            <div className="min-w-0">
-                              <p className="truncate text-[15px] font-bold text-[#171717]">{candidate.name}</p>
-                              <p className="mt-1 line-clamp-1 text-sm text-[#7f7f7f]">{candidate.address}</p>
-                            </div>
-                            <span className="rounded-full bg-[#fff4f6] px-3 py-1 text-xs font-semibold text-[#ff6f7c]">
-                              {formatDistance(entry.distanceKm)}
-                            </span>
-                          </div>
-
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            {candidateFoundingBadge ? (
-                              <span className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c]">
-                                {candidateFoundingBadge}
-                              </span>
-                            ) : null}
-                            {candidateBroadcastBadge ? (
-                              <span className="rounded-full bg-[#eef7ff] px-2.5 py-1 text-[11px] font-semibold text-[#3b82c4]">
-                                {candidateBroadcastBadge}
-                              </span>
-                            ) : null}
-                            {entry.sharedCreatorCount > 0 ? (
-                              <span className="rounded-full bg-[#fff8eb] px-2.5 py-1 text-[11px] font-semibold text-[#b7791f]">
-                                겹치는 크리에이터 {entry.sharedCreatorCount}
-                              </span>
-                            ) : null}
-                            {entry.sharedSourceCount > 0 ? (
-                              <span className="rounded-full bg-[#eef8ff] px-2.5 py-1 text-[11px] font-semibold text-[#3a7bb7]">
-                                같은 선정 출처 {entry.sharedSourceCount}
-                              </span>
-                            ) : null}
-                            {entry.sameCuisine ? (
-                              <span className="rounded-full bg-[#f5f2ff] px-2.5 py-1 text-[11px] font-semibold text-[#7457c7]">
-                                같은 카테고리
-                              </span>
-                            ) : null}
-                            {entry.sameRegion ? (
-                              <span className="rounded-full bg-[#effaf2] px-2.5 py-1 text-[11px] font-semibold text-[#2d8b57]">
-                                같은 지역
-                              </span>
-                            ) : null}
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </section>
-          ) : null}
-
           <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-            <div className="flex border-b-2 border-[#f0f0f0]">
-              {[
-                { key: "menu" as const, label: "메뉴" },
-                { key: "videos" as const, label: "영상" },
-                { key: "reviews" as const, label: "리뷰" },
-                { key: "details" as const, label: "상세 정보" },
-              ].map((tab) => (
-                <button
-                  key={tab.key}
-                  type="button"
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`-mb-[2px] flex-1 border-b-[3px] bg-transparent px-5 py-4 text-[15px] font-semibold transition-all ${
-                    activeTab === tab.key
-                      ? "border-[#FD7979] text-[#FD7979]"
-                      : "border-transparent text-[#999] hover:text-[#FD7979]"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+            <div className="border-b border-[#f0f0f0] px-5 py-5 sm:px-7">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
+                MENU
+              </p>
+              <h2 className="mt-2 text-xl font-black text-[#171717]">메뉴</h2>
+              <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
+                방문 전에 확인하기 좋은 메뉴와 가격만 간단하게 정리했어요.
+              </p>
             </div>
 
             <div className="p-5 sm:p-7">
-              {activeTab === "menu" ? (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {getRestaurantMenuItems(restaurant).length > 0 ? (
                     getRestaurantMenuItems(restaurant).map((menu) => (
-                      <div key={menu.id} className="rounded-[24px] border border-[#f0f0f0] bg-white p-5">
-                        <p className="text-base font-bold text-[#171717]">{menu.name}</p>
+                      <div key={menu.id} className="rounded-[20px] border border-[#f0f0f0] bg-[#fffdfd] p-5">
+                        <p className="text-base font-black text-[#171717]">{menu.name}</p>
                         <p className="mt-1 text-sm text-[#8a8a8a]">{menu.isSignature ? "대표 메뉴" : "메뉴"}</p>
-                        <p className="mt-3 text-sm font-semibold text-[#ff7b83]">{menu.price || "가격 문의"}</p>
+                        <p className="mt-4 text-lg font-black text-[#ff6f7c]">{menu.price || "가격 문의"}</p>
                       </div>
                     ))
                   ) : (
-                    <div className="rounded-[24px] border border-dashed border-[#e3e3e3] px-6 py-12 text-center text-sm text-[#8a8a8a]">
-                      메뉴 정보가 아직 없어요.
+                    <div className="sm:col-span-2 rounded-[20px] border border-dashed border-[#e3e3e3] bg-[#fffdfd] px-6 py-12 text-center">
+                      <p className="text-base font-bold text-[#171717]">메뉴 정보가 아직 준비 중이에요.</p>
+                      <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
+                        사진 없이도 어색하지 않도록 메뉴 데이터가 들어오면 이 영역에 바로 정리됩니다.
+                      </p>
                     </div>
                   )}
                 </div>
-              ) : null}
 
               {activeTab === "videos" ? (
                 visits.length > 0 ? (
@@ -1542,151 +1291,60 @@ export default function RestaurantDetail() {
             </div>
           </div>
 
-          {relatedSection}
         </div>
 
         <div className="flex h-fit flex-col gap-5 lg:sticky lg:top-[80px]">
-          <div className="relative hidden overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] lg:block">
-            <img
-              src={displayImage.src}
-              alt={restaurant.name}
-              className="aspect-[4/3] w-full object-cover"
-            />
-            {detailPhotoBadge ? (
-              <div className="absolute left-4 top-4 rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-                {detailPhotoBadge}
-              </div>
-            ) : null}
-            {primaryPrice ? (
-              <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/78 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                대표 가격 {primaryPrice}
-              </div>
-            ) : null}
-          </div>
-
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="rounded-2xl border border-[#ffe1e6] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <div className="flex items-start justify-between gap-3">
               <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]">방문자 평점</h3>
+                <h3 className="text-sm font-bold text-[#1a1a1a]">식당 정보</h3>
                 <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
-                  실제 방문자 리뷰를 바탕으로 요약한 공용 평점이에요.
+                  사진 없이도 핵심 정보가 먼저 보이도록 정리했어요.
                 </p>
               </div>
-              {publicReviewSummary.count > 0 ? (
-                <div className="text-right">
-                  <p className="text-[30px] font-black tracking-[-0.03em] text-[#171717]">
-                    {publicReviewSummary.average.toFixed(1)}
-                  </p>
-                  <p className="text-xs text-[#8a8a8a]">{publicReviewSummary.count}개 리뷰</p>
-                </div>
-              ) : null}
             </div>
-
-            {publicReviewSummary.count > 0 ? (
-              <div className="mt-4 space-y-2.5">
-                {publicReviewSummary.distribution.map((entry) => {
-                  const fill =
-                    publicReviewSummary.count > 0
-                      ? (entry.count / publicReviewSummary.count) * 100
-                      : 0;
-
-                  return (
-                    <div key={entry.stars} className="flex items-center gap-3">
-                      <span className="w-5 text-xs font-semibold text-[#6d6d6d]">{entry.stars}</span>
-                      <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#f2ecee]">
-                        <div
-                          className="h-full rounded-full bg-[#ffb24a]"
-                          style={{ width: `${fill}%` }}
-                        />
-                      </div>
-                      <span className="w-6 text-right text-xs text-[#8a8a8a]">{entry.count}</span>
-                    </div>
-                  );
-                })}
+            <div className="mt-5 space-y-4 text-sm">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#a1a1a1]">주소</p>
+                <p className="mt-1 font-semibold leading-6 text-[#202020]">{restaurant.address}</p>
               </div>
-            ) : (
-              <div className="mt-4 rounded-[18px] border border-dashed border-[#efe4e6] bg-[#fffafb] px-4 py-4 text-sm text-[#8a8a8a]">
-                아직 공용 리뷰가 많지 않아요. 첫 방문 리뷰를 남기면 이 식당의 공용 평점이 시작돼요.
-                <button
-                  type="button"
-                  onClick={openComposer}
-                  className="mt-3 inline-flex h-10 items-center justify-center rounded-full border border-[#ffd5db] bg-white px-4 text-sm font-semibold text-[#ff6f7c] transition hover:bg-[#fff0f3]"
-                >
-                  {"\uB9AC\uBDF0 \uB0A8\uAE30\uB7EC \uAC00\uAE30"}
-                </button>
-              </div>
-            )}
-
-            {reviewGallery.length > 0 ? (
-              <div className="mt-4 border-t border-[#f3eef0] pt-4">
-                <div className="grid grid-cols-4 gap-2">
-                  {reviewGallery.slice(0, 4).map((photo) => (
-                    <div key={`summary_${photo.id}`} className="overflow-hidden rounded-[16px] border border-[#efe4e6]">
-                      <img
-                        src={photo.url}
-                        alt={`${photo.user} 리뷰 사진`}
-                        className="aspect-square w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-[18px] bg-[#fff8f9] px-4 py-3">
+                  <p className="text-xs font-bold text-[#8a8a8a]">지역</p>
+                  <p className="mt-1 font-black text-[#171717]">{restaurant.region}</p>
+                </div>
+                <div className="rounded-[18px] bg-[#fff8f9] px-4 py-3">
+                  <p className="text-xs font-bold text-[#8a8a8a]">카테고리</p>
+                  <p className="mt-1 font-black text-[#171717]">{restaurant.category}</p>
                 </div>
               </div>
-            ) : null}
+              <div className="rounded-[18px] border border-[#ffe1e6] bg-[#fffdfd] px-4 py-3">
+                <p className="text-xs font-bold text-[#8a8a8a]">대표 메뉴</p>
+                <p className="mt-1 font-black leading-6 text-[#171717]">
+                  {getRestaurantMenuSummary(restaurant) || "정보 준비 중"}
+                </p>
+              </div>
+            </div>
           </div>
 
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]">나만의 평점</h3>
+                <h3 className="text-sm font-bold text-[#1a1a1a]">주제별 저장</h3>
                 <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
                   {isLoggedIn
-                    ? "식당별로 내 평점을 기록해 둘 수 있어요."
-                    : "로그인하면 식당마다 내 평점을 남길 수 있어요."}
+                    ? "이 식당을 직접 만든 주제에 담아둘 수 있어요."
+                    : "로그인하면 데이트, 혼밥, 여행 코스처럼 원하는 주제에 식당을 담아둘 수 있어요."}
                 </p>
               </div>
-              {personalRating > 0 ? (
-                <span className="rounded-full bg-[#fff3e8] px-3 py-1 text-xs font-semibold text-[#ff9f1c]">
-                  {personalRating}/5
-                </span>
-              ) : null}
-            </div>
-            <div
-              className="mt-4 flex items-center gap-2"
-              onMouseLeave={() => setHoveredPersonalRating(0)}
-            >
-              {[1, 2, 3, 4, 5].map((value) => {
-                const isActive = value <= visiblePersonalRating;
-
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    onMouseEnter={() => setHoveredPersonalRating(value)}
-                    onFocus={() => setHoveredPersonalRating(value)}
-                    onBlur={() => setHoveredPersonalRating(0)}
-                    onClick={(event) => {
-                      event.currentTarget.blur();
-                      saveRating(value);
-                    }}
-                    className={`flex h-10 w-10 items-center justify-center rounded-full transition ${
-                      isActive
-                        ? "bg-[#fff4d8] text-[#ffb24a]"
-                        : "bg-[#f6f6f6] text-[#c7c7c7] hover:bg-[#fff8e8] hover:text-[#ffb24a]"
-                    }`}
-                  >
-                    <Star className="h-5 w-5" fill={isActive ? "currentColor" : "transparent"} />
-                  </button>
-                );
-              })}
             </div>
             {!isLoggedIn ? (
-              <div className="mt-4 border-t border-[#f3eef0] pt-4">
+              <div className="mt-4">
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
+                    <p className="text-sm font-semibold text-[#202020]">로그인이 필요해요</p>
                     <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
-                      로그인하면 데이트, 혼밥, 여행 코스처럼 원하는 주제를 만들고 식당을 나눠 담아둘 수 있어요.
+                      내 주제에 담아두면 나중에 탐색 화면에서 다시 모아볼 수 있어요.
                     </p>
                   </div>
                   <button
@@ -1711,10 +1369,10 @@ export default function RestaurantDetail() {
               </div>
             ) : null}
             {isLoggedIn ? (
-              <div className="mt-4 border-t border-[#f3eef0] pt-4">
+              <div className="mt-4">
                 <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-[#202020]">주제별 저장</p>
+                    <p className="text-sm font-semibold text-[#202020]">내 주제에 담기</p>
                     <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
                       만든 주제에 이 식당을 담아 두고 나중에 탐색 화면에서 바로 모아볼 수 있어요.
                     </p>
@@ -1807,30 +1465,6 @@ export default function RestaurantDetail() {
 
           <div className="hidden lg:block">{renderQuickActionPanel()}</div>
 
-          <div className="hidden">
-            <button
-              type="button"
-              onClick={() => {
-                trackMarketingEvent("map_open", {
-                  restaurant_id: restaurant.id,
-                  source: "sidebar_cta",
-                });
-                navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
-              }}
-              className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FD7979] to-[#FDACAC] py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(253,121,121,0.3)]"
-            >
-              <MapPinned className="h-4 w-4" />
-              지도에서 보기
-            </button>
-            <button
-              type="button"
-              onClick={openComposer}
-              className="flex items-center justify-center gap-2 rounded-xl bg-[#f5f5f5] py-3 text-sm font-semibold text-[#555] transition-all hover:bg-[#e8e8e8]"
-            >
-              <MessageSquarePlus className="h-4 w-4" />
-              리뷰 쓰기
-            </button>
-          </div>
         </div>
       </div>
     </div>

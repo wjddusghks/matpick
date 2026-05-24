@@ -46,6 +46,7 @@ type AnalyticsEntry = {
 
 type AnalyticsSummary = {
   day: string;
+  scope: "today" | "all";
   storage: "kv" | "memory";
   counts: {
     visitors: number;
@@ -104,6 +105,7 @@ type MemberDashboard = {
 
 const emptyAnalyticsSummary: AnalyticsSummary = {
   day: "",
+  scope: "today",
   storage: "memory",
   counts: {
     visitors: 0,
@@ -170,7 +172,11 @@ function formatMetricDate(day: string) {
 }
 
 function formatStorageLabel(storage: AnalyticsSummary["storage"]) {
-  return storage === "kv" ? "KV 누적" : "임시 메모리";
+  return storage === "kv" ? "KV 저장" : "임시 메모리";
+}
+
+function formatAnalyticsScopeLabel(scope: AnalyticsSummary["scope"]) {
+  return scope === "all" ? "누적" : "오늘만";
 }
 
 function formatDateTime(timestamp: number) {
@@ -412,6 +418,7 @@ export default function AdminDashboard() {
   const [analyticsStatus, setAnalyticsStatus] = useState<"idle" | "loading" | "ready" | "error">(
     "idle"
   );
+  const [analyticsScope, setAnalyticsScope] = useState<AnalyticsSummary["scope"]>("today");
   const [analyticsError, setAnalyticsError] = useState("");
   const [memberDashboard, setMemberDashboard] =
     useState<MemberDashboard>(emptyMemberDashboard);
@@ -444,7 +451,7 @@ export default function AdminDashboard() {
     setAnalyticsStatus("loading");
     setAnalyticsError("");
 
-    fetch("/api/admin/metrics", {
+    fetch(`/api/admin/metrics?scope=${analyticsScope}`, {
       headers: {
         "x-matpick-admin-key": getAdminRegistrationKey(user),
       },
@@ -474,7 +481,7 @@ export default function AdminDashboard() {
       });
 
     return () => controller.abort();
-  }, [isAdmin, isLoggedIn, user]);
+  }, [analyticsScope, isAdmin, isLoggedIn, user]);
 
   useEffect(() => {
     if (!isLoggedIn || !user || !isAdmin) {
@@ -589,26 +596,54 @@ export default function AdminDashboard() {
         <section className="mt-8">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="text-sm font-black text-[#ff6b7b]">TODAY</p>
+              <p className="text-sm font-black text-[#ff6b7b]">
+                {analyticsScope === "all" ? "TOTAL" : "TODAY"}
+              </p>
               <h2 className="mt-2 text-2xl font-black text-[#171717]">
-                오늘 운영 지표
+                운영 지표
               </h2>
               <p className="mt-2 text-sm leading-6 text-[#6d6265]">
-                {formatMetricDate(analyticsSummary.day)} 기준 ·{" "}
+                {analyticsScope === "all"
+                  ? `${formatMetricDate(analyticsSummary.day)}까지 누적`
+                  : `${formatMetricDate(analyticsSummary.day)} 기준`}{" "}
+                · {formatAnalyticsScopeLabel(analyticsSummary.scope)} ·{" "}
                 {formatStorageLabel(analyticsSummary.storage)}
                 {analyticsStatus === "loading" ? " · 불러오는 중" : ""}
               </p>
             </div>
-            {analyticsError ? (
-              <p className="rounded-full border border-[#ffd5db] bg-white px-4 py-2 text-xs font-bold text-[#ff5f70]">
-                {analyticsError}
-              </p>
-            ) : null}
+            <div className="flex flex-wrap items-center justify-end gap-2">
+              <div
+                className="inline-flex rounded-full border border-[#ffd5db] bg-white p-1 text-xs font-black text-[#8a747a]"
+                role="group"
+                aria-label="운영 지표 범위"
+              >
+                {(["today", "all"] as const).map((scope) => (
+                  <button
+                    key={scope}
+                    type="button"
+                    aria-pressed={analyticsScope === scope}
+                    onClick={() => setAnalyticsScope(scope)}
+                    className={`rounded-full px-4 py-2 transition ${
+                      analyticsScope === scope
+                        ? "bg-[#ff6b7b] text-white shadow-[0_8px_18px_rgba(255,107,123,0.22)]"
+                        : "text-[#8a747a] hover:bg-[#fff0f3] hover:text-[#ff6b7b]"
+                    }`}
+                  >
+                    {scope === "today" ? "오늘만" : "누적"}
+                  </button>
+                ))}
+              </div>
+              {analyticsError ? (
+                <p className="rounded-full border border-[#ffd5db] bg-white px-4 py-2 text-xs font-bold text-[#ff5f70]">
+                  {analyticsError}
+                </p>
+              ) : null}
+            </div>
           </div>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard
-              label="오늘 방문자"
+              label={analyticsScope === "all" ? "누적 방문자" : "오늘 방문자"}
               value={analyticsCounts.visitors}
               description={`세션 ${formatNumber(analyticsCounts.sessions)}회`}
               icon={<Eye className="h-5 w-5" />}
@@ -616,7 +651,7 @@ export default function AdminDashboard() {
             <StatCard
               label="페이지뷰"
               value={analyticsCounts.pageViews}
-              description="오늘 열린 전체 페이지 수"
+              description={analyticsScope === "all" ? "누적 열린 전체 페이지 수" : "오늘 열린 전체 페이지 수"}
               icon={<BarChart3 className="h-5 w-5" />}
             />
             <StatCard
@@ -640,19 +675,25 @@ export default function AdminDashboard() {
             <StatCard
               label="광고 노출"
               value={analyticsCounts.adImpressions}
-              description="맛픽 광고 슬롯 렌더링 기준"
+              description="애드핏과 쿠팡 슬롯 렌더링 합산"
+              icon={<Megaphone className="h-5 w-5" />}
+            />
+            <StatCard
+              label="애드핏 노출"
+              value={analyticsCounts.adfitImpressions}
+              description={`애드핏 클릭 ${formatNumber(analyticsCounts.adfitClicks)}회`}
+              icon={<Megaphone className="h-5 w-5" />}
+            />
+            <StatCard
+              label="쿠팡 노출"
+              value={analyticsCounts.coupangImpressions}
+              description={`쿠팡 클릭 ${formatNumber(analyticsCounts.coupangClicks)}회`}
               icon={<Megaphone className="h-5 w-5" />}
             />
             <StatCard
               label="광고 클릭"
               value={analyticsCounts.adClicks}
-              description="추적 가능한 제휴 링크 클릭"
-              icon={<MousePointerClick className="h-5 w-5" />}
-            />
-            <StatCard
-              label="쿠팡 클릭"
-              value={analyticsCounts.coupangClicks}
-              description={`쿠팡 노출 ${formatNumber(analyticsCounts.coupangImpressions)}회`}
+              description="추적 가능한 제휴 링크 클릭 합산"
               icon={<MousePointerClick className="h-5 w-5" />}
             />
           </div>
@@ -800,22 +841,22 @@ export default function AdminDashboard() {
         <div className="mt-6 grid gap-4 lg:grid-cols-4">
           <MetricList
             title="인기 페이지"
-            description="오늘 가장 많이 열린 URL입니다."
+            description={`${formatAnalyticsScopeLabel(analyticsSummary.scope)} 기준 가장 많이 열린 URL입니다.`}
             entries={analyticsSummary.topPages}
           />
           <MetricList
             title="검색어"
-            description="메인 검색에서 제출된 검색어입니다."
+            description={`${formatAnalyticsScopeLabel(analyticsSummary.scope)} 기준 메인 검색에서 제출된 검색어입니다.`}
             entries={analyticsSummary.topSearches}
           />
           <MetricList
             title="주요 행동"
-            description="검색, 카드, 지도, 리뷰 등 내부 이벤트입니다."
+            description={`${formatAnalyticsScopeLabel(analyticsSummary.scope)} 기준 검색, 카드, 지도, 리뷰 등 내부 이벤트입니다.`}
             entries={analyticsSummary.topEvents}
           />
           <MetricList
             title="클릭 위치"
-            description="지도와 광고 클릭이 많이 발생한 위치입니다."
+            description={`${formatAnalyticsScopeLabel(analyticsSummary.scope)} 기준 지도와 광고 클릭이 많이 발생한 위치입니다.`}
             entries={analyticsSummary.topClicks}
           />
         </div>
@@ -835,6 +876,12 @@ export default function AdminDashboard() {
                 <span className="font-bold text-[#6d6265]">애드핏 노출</span>
                 <span className="font-black text-[#171717]">
                   {formatNumber(analyticsCounts.adfitImpressions)}
+                </span>
+              </div>
+              <div className="flex justify-between gap-4 rounded-[8px] bg-[#fff8f9] px-4 py-3">
+                <span className="font-bold text-[#6d6265]">애드핏 클릭</span>
+                <span className="font-black text-[#171717]">
+                  {formatNumber(analyticsCounts.adfitClicks)}
                 </span>
               </div>
               <div className="flex justify-between gap-4 rounded-[8px] bg-[#fff8f9] px-4 py-3">

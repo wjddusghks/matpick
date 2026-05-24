@@ -58,6 +58,36 @@ function getDayKeys(day) {
   };
 }
 
+function getAllKeys() {
+  const keyPrefix = `${ANALYTICS_PREFIX}:all`;
+  return {
+    counts: `${keyPrefix}:counts`,
+    visitors: `${keyPrefix}:visitors`,
+    sessions: `${keyPrefix}:sessions`,
+    paths: `${keyPrefix}:paths`,
+    searches: `${keyPrefix}:searches`,
+    events: `${keyPrefix}:events`,
+    clicks: `${keyPrefix}:clicks`,
+  };
+}
+
+function normalizeSummaryOptions(options) {
+  if (typeof options === "string") {
+    return {
+      day: options || getKoreaDay(),
+      scope: "today",
+    };
+  }
+
+  const scope = options?.scope === "all" ? "all" : "today";
+  const day = typeof options?.day === "string" && options.day.trim() ? options.day.trim() : getKoreaDay();
+  return { day, scope };
+}
+
+function getSummaryKeys(scope, day) {
+  return scope === "all" ? getAllKeys() : getDayKeys(day);
+}
+
 function hashIdentity(value) {
   return crypto.createHash("sha256").update(String(value)).digest("hex").slice(0, 32);
 }
@@ -130,8 +160,8 @@ function normalizeEvent(input) {
   };
 }
 
-function ensureFallbackDay(day) {
-  const existing = FALLBACK_STORE.get(day);
+function ensureFallbackBucket(bucket) {
+  const existing = FALLBACK_STORE.get(bucket);
   if (existing) {
     return existing;
   }
@@ -145,7 +175,7 @@ function ensureFallbackDay(day) {
     events: new Map(),
     clicks: new Map(),
   };
-  FALLBACK_STORE.set(day, next);
+  FALLBACK_STORE.set(bucket, next);
   return next;
 }
 
@@ -187,8 +217,7 @@ async function expireDayKeys(keys) {
   );
 }
 
-async function recordFallbackEvent(day, event) {
-  const store = ensureFallbackDay(day);
+function applyFallbackEvent(store, event) {
   if (event.visitorId) {
     store.visitors.add(hashIdentity(event.visitorId));
   }
@@ -232,8 +261,12 @@ async function recordFallbackEvent(day, event) {
   }
 }
 
-async function recordKvEvent(day, event) {
-  const keys = getDayKeys(day);
+async function recordFallbackEvent(day, event) {
+  applyFallbackEvent(ensureFallbackBucket(day), event);
+  applyFallbackEvent(ensureFallbackBucket("all"), event);
+}
+
+async function recordKvEventForKeys(keys, event) {
   const commands = [];
 
   if (event.visitorId) {
@@ -288,7 +321,20 @@ async function recordKvEvent(day, event) {
   }
 
   await Promise.all(commands.map((command) => requestRedis(command)));
-  await expireDayKeys(keys);
+  return commands.length;
+}
+
+async function recordKvEvent(day, event) {
+  const dayKeys = getDayKeys(day);
+  const allKeys = getAllKeys();
+  const [dayCommandCount] = await Promise.all([
+    recordKvEventForKeys(dayKeys, event),
+    recordKvEventForKeys(allKeys, event),
+  ]);
+
+  if (dayCommandCount > 0) {
+    await expireDayKeys(dayKeys);
+  }
 }
 
 async function recordAnalyticsEvent(input) {
@@ -304,14 +350,16 @@ async function recordAnalyticsEvent(input) {
   return { day, storage: "memory" };
 }
 
-async function readFallbackSummary(day) {
-  const store = ensureFallbackDay(day);
+async function readFallbackSummary(options) {
+  const { day, scope } = normalizeSummaryOptions(options);
+  const store = ensureFallbackBucket(scope === "all" ? "all" : day);
   const counts = Object.fromEntries(store.counts.entries());
   const durationMs = Number(counts.durationMs || 0);
   const durationSamples = Number(counts.durationSamples || 0);
 
   return {
     day,
+    scope,
     storage: "memory",
     counts: {
       visitors: store.visitors.size,
@@ -337,8 +385,9 @@ async function readFallbackSummary(day) {
   };
 }
 
-async function readKvSummary(day) {
-  const keys = getDayKeys(day);
+async function readKvSummary(options) {
+  const { day, scope } = normalizeSummaryOptions(options);
+  const keys = getSummaryKeys(scope, day);
   const [countsPayload, visitorPayload, sessionPayload, pathsPayload, searchesPayload, eventsPayload, clicksPayload] =
     await Promise.all([
       requestRedis(["HGETALL", keys.counts]),
@@ -356,6 +405,7 @@ async function readKvSummary(day) {
 
   return {
     day,
+    scope,
     storage: "kv",
     counts: {
       visitors: Number(visitorPayload?.result || 0),
@@ -381,12 +431,12 @@ async function readKvSummary(day) {
   };
 }
 
-async function readAnalyticsSummary(day = getKoreaDay()) {
+async function readAnalyticsSummary(options = { day: getKoreaDay(), scope: "today" }) {
   if (getKvConfig()) {
-    return readKvSummary(day);
+    return readKvSummary(options);
   }
 
-  return readFallbackSummary(day);
+  return readFallbackSummary(options);
 }
 
 module.exports = {

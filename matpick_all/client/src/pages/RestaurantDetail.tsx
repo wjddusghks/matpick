@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   Copy,
   ImagePlus,
-  MapPinned,
   MessageSquarePlus,
   Navigation,
   MoreVertical,
@@ -19,17 +18,13 @@ import AuthFeatureDialog, { type AuthFeatureMode } from "@/components/AuthFeatur
 import HeartButton from "@/components/HeartButton";
 import FavoriteTopicPickerDialog from "@/components/FavoriteTopicPickerDialog";
 import ShareSheet from "@/components/ShareSheet";
-import {
-  AdsenseSlot,
-  CoupangSlot,
-} from "@/components/monetization/MonetizationSlot";
+import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
   creators,
   getCreatorDisplayName,
-  getCreatorsByRestaurant,
   getNearbyRestaurants,
   getRestaurantBroadcastMeta,
   getRelatedRestaurants,
@@ -328,7 +323,7 @@ function openMobileMapApp(appUrl: string, fallbackUrl: string) {
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
-  const [location, navigate] = useLocation();
+  const [location] = useLocation();
   const { isLoggedIn, user } = useAuth();
   const { isEnglish } = useLocale();
   const { topics, getTopicsForRestaurant, toggleRestaurantInTopic } = useFavorites();
@@ -479,7 +474,6 @@ export default function RestaurantDetail() {
   const primaryPrice = getRestaurantPrimaryPrice(restaurant);
   const shareImage = displayImage.hasPhoto ? displayImage.src : "/og-default.png";
   const visits = getVisitsByRestaurant(restaurant.id);
-  const recommenders = getCreatorsByRestaurant(restaurant.id);
   const sourcesByRestaurant = getSourcesByRestaurant(restaurant.id);
   const recommendationCount = getRecommendationCount(restaurant.id);
   const shareUrl = getRestaurantUrl(restaurant.id);
@@ -516,7 +510,6 @@ export default function RestaurantDetail() {
         directionsTitle: "Continue in map apps",
         directionsDescription:
           "Open the destination directly in Naver Map or KakaoMap and continue with directions there.",
-        actionMap: "View on Matpick map",
         actionNaver: "Naver Map",
         actionKakao: "KakaoMap",
         actionReview: "Write a review",
@@ -537,7 +530,6 @@ export default function RestaurantDetail() {
         directionsTitle: "\uC678\uBD80 \uC9C0\uB3C4\uB85C \uC774\uC5B4\uAC00\uAE30",
         directionsDescription:
           "\uB124\uC774\uBC84\uC9C0\uB3C4\uB098 \uCE74\uCE74\uC624\uB9F5\uC5D0\uC11C \uC2DD\uB2F9 \uC704\uCE58\uB97C \uBC14\uB85C \uC5F4\uACE0 \uAE38\uC548\uB0B4\uB97C \uC774\uC5B4\uAC00\uC138\uC694.",
-        actionMap: "\uB9DB\uD53D \uC9C0\uB3C4\uC5D0\uC11C \uBCF4\uAE30",
         actionNaver: "\uB124\uC774\uBC84\uC9C0\uB3C4 \uAE38\uC548\uB0B4",
         actionKakao: "\uCE74\uCE74\uC624\uB9F5 \uC5F4\uAE30",
         actionReview: "\uB9AC\uBDF0 \uC4F0\uAE30",
@@ -772,28 +764,14 @@ export default function RestaurantDetail() {
     toast.success("리뷰를 등록했어요.");
   };
 
-  const renderQuickActionPanel = (mobile = false) => (
+  const renderQuickActionPanel = () => (
     <div className="rounded-2xl bg-white p-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
       <div className="mb-4">
         <h3 className="text-sm font-bold text-[#1a1a1a]">{uiCopy.directionsTitle}</h3>
         <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">{uiCopy.directionsDescription}</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
-        <button
-          type="button"
-          onClick={() => {
-            trackMarketingEvent("map_open", {
-              restaurant_id: restaurant.id,
-              source: mobile ? "mobile_quick_actions" : "sidebar_cta",
-            });
-            navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
-          }}
-          className="flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#FD7979] to-[#FDACAC] px-4 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_16px_rgba(253,121,121,0.3)]"
-        >
-          <MapPinned className="h-4 w-4" />
-          {uiCopy.actionMap}
-        </button>
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         <button
           type="button"
           onClick={() => openExternalDirections("naver")}
@@ -882,21 +860,6 @@ export default function RestaurantDetail() {
                   <Copy className="h-4 w-4" />
                   주소 복사
                 </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    trackMarketingEvent("map_open", {
-                      restaurant_id: restaurant.id,
-                      source: "overflow_menu",
-                    });
-                    navigate(`/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`);
-                    setMoreOpen(false);
-                  }}
-                  className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-[#252525] transition hover:bg-[#fff6f7]"
-                >
-                  <MapPinned className="h-4 w-4" />
-                  지도에서 보기
-                </button>
               </div>
             ) : null}
           </div>
@@ -915,7 +878,7 @@ export default function RestaurantDetail() {
               </p>
             </div>
 
-            <div className="mt-4">{renderQuickActionPanel(true)}</div>
+            <div className="mt-4">{renderQuickActionPanel()}</div>
           </div>
 
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
@@ -1294,39 +1257,6 @@ export default function RestaurantDetail() {
         </div>
 
         <div className="flex h-fit flex-col gap-5 lg:sticky lg:top-[80px]">
-          <div className="rounded-2xl border border-[#ffe1e6] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]">식당 정보</h3>
-                <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
-                  사진 없이도 핵심 정보가 먼저 보이도록 정리했어요.
-                </p>
-              </div>
-            </div>
-            <div className="mt-5 space-y-4 text-sm">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#a1a1a1]">주소</p>
-                <p className="mt-1 font-semibold leading-6 text-[#202020]">{restaurant.address}</p>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-[18px] bg-[#fff8f9] px-4 py-3">
-                  <p className="text-xs font-bold text-[#8a8a8a]">지역</p>
-                  <p className="mt-1 font-black text-[#171717]">{restaurant.region}</p>
-                </div>
-                <div className="rounded-[18px] bg-[#fff8f9] px-4 py-3">
-                  <p className="text-xs font-bold text-[#8a8a8a]">카테고리</p>
-                  <p className="mt-1 font-black text-[#171717]">{restaurant.category}</p>
-                </div>
-              </div>
-              <div className="rounded-[18px] border border-[#ffe1e6] bg-[#fffdfd] px-4 py-3">
-                <p className="text-xs font-bold text-[#8a8a8a]">대표 메뉴</p>
-                <p className="mt-1 font-black leading-6 text-[#171717]">
-                  {getRestaurantMenuSummary(restaurant) || "정보 준비 중"}
-                </p>
-              </div>
-            </div>
-          </div>
-
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <div className="flex items-center justify-between gap-3">
               <div>
@@ -1419,49 +1349,7 @@ export default function RestaurantDetail() {
             ) : null}
           </div>
 
-          {recommenders.length > 0 || sourcesByRestaurant.length > 0 ? (
-            <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
-              <h3 className="mb-3 text-sm font-bold text-[#1a1a1a]">추천 채널 · 소스</h3>
-              <div className="flex flex-wrap gap-2">
-                {recommenders.map((creator) => (
-                  <Link key={creator.id} href={`/creator/${creator.id}`} className="no-underline">
-                    <div className="flex items-center gap-2 rounded-xl border border-[#FFCDC9] px-3 py-2 transition-colors hover:bg-[#FFF5F5]">
-                      <img
-                        src={creator.profileImage}
-                        alt={getCreatorDisplayName(creator)}
-                        className="h-7 w-7 rounded-full object-cover"
-                      />
-                      <span className="text-sm font-semibold text-[#FD7979]">
-                        {getCreatorDisplayName(creator)}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-
-                {sourcesByRestaurant.map((source) => (
-                  <div
-                    key={source.id}
-                    title={getSourceDisplayName(source)}
-                    className="inline-flex max-w-full items-center gap-2 rounded-xl border border-[#f3d5a1] bg-[#fff7e8] px-3 py-2 text-sm font-semibold text-[#b7791f]"
-                  >
-                    {source.imageUrl ? (
-                      <img
-                        src={source.imageUrl}
-                        alt={getSourceDisplayName(source)}
-                        className="h-7 w-7 rounded-full object-cover"
-                      />
-                    ) : null}
-                    <span className="truncate">{getSourceDisplayName(source)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
-
-          <div className="space-y-4">
-            <AdsenseSlot label="Sponsored" />
-            <CoupangSlot label="Partner Pick" />
-          </div>
+          <AdsenseSlot label="Sponsored" />
 
           <div className="hidden lg:block">{renderQuickActionPanel()}</div>
 

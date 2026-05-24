@@ -15,6 +15,7 @@
     "geocode:old-korean-100": "node scripts/geocode-source-dataset.mjs old-korean-100",
     "geocode:sikgaek-baekban-trip": "node scripts/geocode-source-dataset.mjs sikgaek-baekban-trip",
     "geocode:wednesday-gourmet": "node scripts/geocode-source-dataset.mjs wednesday-gourmet",
+    "matpick:research-topic": "node scripts/content-automation/research-topic.mjs",
     "prebuild": "node scripts/generate-seo-files.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender-seo-pages.mjs",

@@ -277,7 +277,8 @@ type CollectionStorySlide = {
   title: string;
   body: string;
   tags?: string[];
-  variant: "cover" | "editorial" | "list" | "map";
+  variant: "cover" | "editorial" | "list" | "map" | "photo";
+  imageUrl?: string;
 };
 
 const emptyCollectionSocialState: CollectionSocialState = {
@@ -368,6 +369,29 @@ function saveCollectionSocialState(state: CollectionSocialState) {
 
 function getCollectionStorySlides(collection: MapCollectionTopic): CollectionStorySlide[] {
   const tagText = collection.purposeTags.join(" · ");
+  const photoSlides = (collection.cardImageUrls ?? []).map((imageUrl, index) => ({
+    id: index === 0 ? "cover" : `photo-${index}`,
+    eyebrow: index === 0 ? collection.eyebrow : `${collection.shortTitle} ${index}`,
+    title: index === 0 ? collection.title : "",
+    body: index === 0 ? collection.description : "",
+    tags: index === 0 ? collection.purposeTags : undefined,
+    variant: index === 0 ? "cover" : "photo",
+    imageUrl,
+  })) satisfies CollectionStorySlide[];
+
+  if (photoSlides.length > 0) {
+    return [
+      ...photoSlides,
+      {
+        id: "map",
+        eyebrow: "지도에서 한 번에",
+        title: `${collection.targetCount}곳을 지도 위에서 바로 보기`,
+        body: "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해 보세요.",
+        tags: ["지도 보기", collection.areaLabel],
+        variant: "map",
+      },
+    ];
+  }
 
   return [
     {
@@ -1764,8 +1788,18 @@ function MapCollectionCard({
       style={{ background: collection.palette.background }}
       aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_20%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.48))]" />
-      <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/15 blur-sm" />
+      {collection.imageUrl ? (
+        <img
+          src={collection.imageUrl}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+      ) : null}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.06),rgba(0,0,0,0.54))]" />
+      {!collection.imageUrl ? (
+        <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/15 blur-sm" />
+      ) : null}
       <div className="relative z-10 flex h-full w-full flex-col justify-between">
         <div>
           <p className="text-[12px] font-semibold leading-5 text-white/80">
@@ -2246,38 +2280,48 @@ function CollectionInstagramSlide({
 }) {
   const isCover = slide.variant === "cover";
   const isMap = slide.variant === "map";
+  const isPhoto = slide.variant === "photo";
 
   return (
     <article
       className={`relative h-full w-full flex-shrink-0 overflow-hidden ${
-        isCover ? "text-white" : "text-[#202020]"
+        isCover || isPhoto ? "text-white" : "text-[#202020]"
       }`}
-      style={{ background: isCover ? collection.palette.background : "#ffffff" }}
+      style={{ background: isCover || isPhoto ? collection.palette.background : "#ffffff" }}
     >
-      {isCover ? (
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.58))]" />
+      {slide.imageUrl ? (
+        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      ) : null}
+      {isCover || isPhoto ? (
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.58))]" />
       ) : (
         <div className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(180deg,#f5f5f5_0%,#ffffff_72%)]" />
       )}
-      <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-[#ff7b83]/18 blur-2xl" />
+      {!slide.imageUrl ? (
+        <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-[#ff7b83]/18 blur-2xl" />
+      ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between px-7 py-8 sm:px-10 sm:py-11">
         <div>
-          <p
-            className={`break-keep text-[15px] font-black leading-6 ${
-              isCover ? "text-white/85" : "text-[#777777]"
-            }`}
-          >
-            {slide.eyebrow}
-          </p>
-          <h3
-            className={`mt-10 break-keep font-black leading-[1.12] tracking-normal ${
-              isCover
-                ? "text-[42px] text-white sm:text-[54px]"
-                : "text-[40px] text-[#242424] sm:text-[52px]"
-            }`}
-          >
-            {slide.title}
-          </h3>
+          {slide.eyebrow ? (
+            <p
+              className={`break-keep text-[15px] font-black leading-6 ${
+                isCover || isPhoto ? "text-white/85" : "text-[#777777]"
+              }`}
+            >
+              {slide.eyebrow}
+            </p>
+          ) : null}
+          {slide.title ? (
+            <h3
+              className={`mt-10 break-keep font-black leading-[1.12] tracking-normal ${
+                isCover
+                  ? "text-[42px] text-white sm:text-[54px]"
+                  : "text-[40px] text-[#242424] sm:text-[52px]"
+              }`}
+            >
+              {slide.title}
+            </h3>
+          ) : null}
         </div>
 
         <div>
@@ -2299,7 +2343,7 @@ function CollectionInstagramSlide({
           ) : null}
           <p
             className={`break-keep text-[22px] font-bold leading-[1.45] ${
-              isCover ? "text-white/90" : "text-[#343434]"
+              isCover || isPhoto ? "text-white/90" : "text-[#343434]"
             } ${isMap ? "text-[27px] sm:text-[32px]" : ""}`}
           >
             {slide.body}

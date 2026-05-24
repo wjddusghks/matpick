@@ -1,0 +1,452 @@
+{
+  "datasetId": "popular-restaurants",
+  "generatedAt": "2026-05-24T00:00:00+09:00",
+  "sources": [
+    {
+      "id": "popular-restaurants",
+      "name": "인기맛집",
+      "type": "guide",
+      "provider": "Matpick",
+      "description": "맛픽에서 지역과 음식 주제별로 묶은 인기 맛집 리스트입니다.",
+      "imageUrl": "/card-data/popular-restaurants/dongtan-main.webp"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "popular_restaurants_dongtan_babwie_saengseon",
+      "name": "밥위에생선 동탄호수본점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄순환대로5길 5-15 1층 101호",
+      "category": "일식",
+      "representativeMenu": "회전초밥 / 후토마끼 / 카이센동",
+      "lat": 37.1658837,
+      "lng": 127.0992869,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-babwie-saengseon.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_babwie_saengseon_menu_1",
+          "name": "회전초밥",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_babwie_saengseon_menu_2",
+          "name": "후토마끼"
+        },
+        {
+          "id": "popular_restaurants_dongtan_babwie_saengseon_menu_3",
+          "name": "카이센동"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_gate9",
+      "name": "Gate9 롯데백화점 동탄점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄역로 160 롯데백화점 B1 게이트나인",
+      "category": "태국",
+      "representativeMenu": "팟타이 / 쌀국수 / 뿌팟봉커리",
+      "lat": 37.2006675,
+      "lng": 127.0982031,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-gate9.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_gate9_menu_1",
+          "name": "팟타이",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_gate9_menu_2",
+          "name": "쌀국수"
+        },
+        {
+          "id": "popular_restaurants_dongtan_gate9_menu_3",
+          "name": "뿌팟봉커리"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_nongga",
+      "name": "농가의 하루 동탄 본점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 왕배산1길 3-16 1층",
+      "category": "양식",
+      "representativeMenu": "시카고피자 / 생면파스타",
+      "lat": 37.180703,
+      "lng": 127.1239328,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-nongga.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_nongga_menu_1",
+          "name": "시카고피자",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_nongga_menu_2",
+          "name": "생면파스타"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_oh_italian",
+      "name": "오이탈리안 동탄점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄공원로3길 14-14 1층",
+      "category": "양식",
+      "representativeMenu": "파케리 / 광어레몬 / 파스타",
+      "lat": 37.2071583,
+      "lng": 127.0616121,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-oh-italian.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_oh_italian_menu_1",
+          "name": "파케리",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_oh_italian_menu_2",
+          "name": "광어레몬"
+        },
+        {
+          "id": "popular_restaurants_dongtan_oh_italian_menu_3",
+          "name": "파스타"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_caffe_maia",
+      "name": "카페마이아",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄공원로1길 12-33 101호 카페마이아",
+      "category": "카페",
+      "representativeMenu": "피넛크림라떼 / 마이아라떼",
+      "lat": 37.2024513,
+      "lng": 127.061731,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-caffe-maia.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_caffe_maia_menu_1",
+          "name": "피넛크림라떼",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_caffe_maia_menu_2",
+          "name": "마이아라떼"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_gongwon_blues",
+      "name": "공원블루스 동탄레이크꼬모점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄대로 181 레이크꼬모 지하3층",
+      "category": "양식",
+      "representativeMenu": "돌문어 콜드파스타 / 호박크림뇨끼",
+      "lat": 37.1720762,
+      "lng": 127.104078,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-gongwon-blues.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_gongwon_blues_menu_1",
+          "name": "돌문어 콜드파스타",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_gongwon_blues_menu_2",
+          "name": "호박크림뇨끼"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_dongtan_jogakdal",
+      "name": "조각달과자점",
+      "region": "경기 화성시",
+      "address": "경기 화성시 동탄순환대로3길 28-26 1층",
+      "category": "베이커리",
+      "representativeMenu": "소금빵 / 휘낭시에 / 카야버터",
+      "lat": 37.1673024,
+      "lng": 127.0942199,
+      "imageUrl": "/card-data/popular-restaurants/dongtan-jogakdal.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_dongtan_jogakdal_menu_1",
+          "name": "소금빵",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_dongtan_jogakdal_menu_2",
+          "name": "휘낭시에"
+        },
+        {
+          "id": "popular_restaurants_dongtan_jogakdal_menu_3",
+          "name": "카야버터"
+        },
+        {
+          "id": "popular_restaurants_dongtan_jogakdal_menu_4",
+          "name": "명란대파"
+        },
+        {
+          "id": "popular_restaurants_dongtan_jogakdal_menu_5",
+          "name": "초코"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_hongdae_hakata_bunko",
+      "name": "하카타분코",
+      "region": "서울 마포구",
+      "address": "서울 마포구 독막로19길 43",
+      "category": "일식",
+      "representativeMenu": "돈코츠라멘",
+      "lat": 37.5489195,
+      "lng": 126.9237589,
+      "imageUrl": "/card-data/popular-restaurants/hongdae-hakata-bunko.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_hongdae_hakata_bunko_menu_1",
+          "name": "돈코츠라멘",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_hongdae_itsumo_ramen",
+      "name": "이츠모라멘",
+      "region": "서울 마포구",
+      "address": "서울 마포구 와우산로23길 18-7 2층 202호",
+      "category": "일식",
+      "representativeMenu": "돈코츠라멘 / 매운라멘",
+      "lat": 37.5539978,
+      "lng": 126.9246008,
+      "imageUrl": "/card-data/popular-restaurants/hongdae-itsumo-ramen.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_hongdae_itsumo_ramen_menu_1",
+          "name": "돈코츠라멘",
+          "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_hongdae_itsumo_ramen_menu_2",
+          "name": "매운라멘"
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_hongdae_566_ramen",
+      "name": "566라멘",
+      "region": "서울 마포구",
+      "address": "서울 마포구 연남로3길 33",
+      "category": "일식",
+      "representativeMenu": "지로계 라멘",
+      "lat": 37.5605973,
+      "lng": 126.9208825,
+      "imageUrl": "/card-data/popular-restaurants/hongdae-566-ramen.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_hongdae_566_ramen_menu_1",
+          "name": "지로계 라멘",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_hongdae_sarukame",
+      "name": "사루카메",
+      "region": "서울 마포구",
+      "address": "서울 마포구 연남로 15 1층",
+      "category": "일식",
+      "representativeMenu": "창작 라멘",
+      "lat": 37.5610778,
+      "lng": 126.9226848,
+      "imageUrl": "/card-data/popular-restaurants/hongdae-sarukame.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_hongdae_sarukame_menu_1",
+          "name": "창작 라멘",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_daehakro_bongjju_tteokbokki",
+      "name": "봉쥬떡볶이",
+      "region": "서울 종로구",
+      "address": "서울특별시 종로구 대명길 4 지하1층",
+      "category": "분식",
+      "representativeMenu": "즉석떡볶이",
+      "lat": 37.5838101,
+      "lng": 127.0011936,
+      "imageUrl": "/card-data/popular-restaurants/daehakro-bongjju-tteokbokki.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_daehakro_bongjju_tteokbokki_menu_1",
+          "name": "즉석떡볶이",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_daehakro_nanumi_tteokbokki",
+      "name": "나누미떡볶이",
+      "region": "서울 종로구",
+      "address": "서울특별시 종로구 성균관로 9-1",
+      "category": "분식",
+      "representativeMenu": "쌀떡볶이",
+      "lat": 37.5837192,
+      "lng": 126.9979248,
+      "imageUrl": "/card-data/popular-restaurants/daehakro-nanumi-tteokbokki.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_daehakro_nanumi_tteokbokki_menu_1",
+          "name": "쌀떡볶이",
+          "isSignature": true
+        }
+      ]
+    },
+    {
+      "id": "popular_restaurants_daehakro_koyako",
+      "name": "코야코",
+      "region": "서울 종로구",
+      "address": "서울특별시 종로구 동숭길 68 1층 코야코",
+      "category": "분식",
+      "representativeMenu": "치즈즉석떡볶이",
+      "lat": 37.5813142,
+      "lng": 127.0043232,
+      "imageUrl": "/card-data/popular-restaurants/daehakro-koyako.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "popular_restaurants_daehakro_koyako_menu_1",
+          "name": "치즈즉석떡볶이",
+          "isSignature": true
+        }
+      ]
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "popular_restaurants_dongtan_babwie_saengseon_link",
+      "restaurantId": "popular_restaurants_dongtan_babwie_saengseon",
+      "sourceId": "popular-restaurants",
+      "ordinal": 1,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "72가지 신선한 메뉴로 골라 먹는 재미가 있는 동탄호수공원 회전초밥 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_gate9_link",
+      "restaurantId": "popular_restaurants_dongtan_gate9",
+      "sourceId": "popular-restaurants",
+      "ordinal": 2,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "롯데백화점 동탄점에서 만나는 깔끔한 태국·동남아 음식 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_nongga_link",
+      "restaurantId": "popular_restaurants_dongtan_nongga",
+      "sourceId": "popular-restaurants",
+      "ordinal": 3,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "치즈 듬뿍 시카고피자와 쫄깃한 생면파스타를 함께 즐기기 좋은 양식 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_oh_italian_link",
+      "restaurantId": "popular_restaurants_dongtan_oh_italian",
+      "sourceId": "popular-restaurants",
+      "ordinal": 4,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "단호박 하몽 뇨끼와 광어레몬 등 특별한 파스타 메뉴가 있는 이탈리안 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_caffe_maia_link",
+      "restaurantId": "popular_restaurants_dongtan_caffe_maia",
+      "sourceId": "popular-restaurants",
+      "ordinal": 5,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "센트럴파크 근처에서 피넛크림라떼와 마이아라떼를 즐기기 좋은 카페입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_gongwon_blues_link",
+      "restaurantId": "popular_restaurants_dongtan_gongwon_blues",
+      "sourceId": "popular-restaurants",
+      "ordinal": 6,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "동탄호수공원 산책 후 들르기 좋은 레이크꼬모 파스타·와인 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_dongtan_jogakdal_link",
+      "restaurantId": "popular_restaurants_dongtan_jogakdal",
+      "sourceId": "popular-restaurants",
+      "ordinal": 7,
+      "label": "EP.1 동탄 맛집 BEST7",
+      "note": "소금빵과 휘낭시에로 입소문 난 동탄호수공원 근처 디저트 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_hongdae_hakata_bunko_link",
+      "restaurantId": "popular_restaurants_hongdae_hakata_bunko",
+      "sourceId": "popular-restaurants",
+      "ordinal": 1,
+      "label": "EP.2 홍대라멘 맛집 BEST4",
+      "note": "진한 돈코츠 국물과 얇은 면발이 특징인 홍대 터줏대감 하카타식 라멘 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_hongdae_itsumo_ramen_link",
+      "restaurantId": "popular_restaurants_hongdae_itsumo_ramen",
+      "sourceId": "popular-restaurants",
+      "ordinal": 2,
+      "label": "EP.2 홍대라멘 맛집 BEST4",
+      "note": "돈코츠라멘과 매운라멘을 함께 고를 수 있는 홍대 라멘 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_hongdae_566_ramen_link",
+      "restaurantId": "popular_restaurants_hongdae_566_ramen",
+      "sourceId": "popular-restaurants",
+      "ordinal": 3,
+      "label": "EP.2 홍대라멘 맛집 BEST4",
+      "note": "숙주와 양배추를 산처럼 쌓아 올린 지로계 라멘으로 알려진 연남동 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_hongdae_sarukame_link",
+      "restaurantId": "popular_restaurants_hongdae_sarukame",
+      "sourceId": "popular-restaurants",
+      "ordinal": 4,
+      "label": "EP.2 홍대라멘 맛집 BEST4",
+      "note": "바지락과 차슈를 올린 깔끔한 간장 베이스 창작 라멘 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_daehakro_bongjju_tteokbokki_link",
+      "restaurantId": "popular_restaurants_daehakro_bongjju_tteokbokki",
+      "sourceId": "popular-restaurants",
+      "ordinal": 1,
+      "label": "EP.3 대학로 떡볶이 BEST3",
+      "note": "라면사리와 어묵이 어우러진 진한 국물 즉석떡볶이 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_daehakro_nanumi_tteokbokki_link",
+      "restaurantId": "popular_restaurants_daehakro_nanumi_tteokbokki",
+      "sourceId": "popular-restaurants",
+      "ordinal": 2,
+      "label": "EP.3 대학로 떡볶이 BEST3",
+      "note": "쫄깃한 쌀떡과 꾸덕한 빨간 양념이 살아있는 대학로 대표 떡볶이 맛집입니다."
+    },
+    {
+      "id": "popular_restaurants_daehakro_koyako_link",
+      "restaurantId": "popular_restaurants_daehakro_koyako",
+      "sourceId": "popular-restaurants",
+      "ordinal": 3,
+      "label": "EP.3 대학로 떡볶이 BEST3",
+      "note": "치즈와 햄, 소시지가 듬뿍 올라간 즉석떡볶이로 알려진 대학로 맛집입니다."
+    }
+  ]
+}

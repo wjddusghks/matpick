@@ -97,6 +97,7 @@ type EpisodeStorySlide = {
   description: string;
   tags: string[];
   background: string;
+  imageUrl?: string;
 };
 
 type EpisodeComment = {
@@ -295,7 +296,7 @@ function buildEpisodeStorySlides({
   locale: AppLocale;
 }): EpisodeStorySlide[] {
   const episodeRestaurants = getRestaurantsForEpisode(episode);
-  const restaurantSlides = episodeRestaurants.slice(0, 4).map((restaurant, index) => ({
+  const restaurantSlides = episodeRestaurants.map((restaurant, index) => ({
     id: `restaurant-${restaurant.id}`,
     eyebrow: locale === "en" ? `Pick ${index + 1}` : `맛집 ${index + 1}`,
     title: restaurant.name,
@@ -308,6 +309,7 @@ function buildEpisodeStorySlides({
       getRestaurantPrimaryPrice(restaurant) || restaurant.region || "",
     ].filter(Boolean),
     background: getEpisodeCardPalette(index + 1),
+    imageUrl: getRestaurantDisplayImage(restaurant).src,
   }));
 
   return [
@@ -1100,13 +1102,20 @@ function EpisodeStoryActionButton({
 }
 
 function EpisodeStorySlideView({ slide }: { slide: EpisodeStorySlide }) {
+  const hasImage = Boolean(slide.imageUrl);
+
   return (
     <article
       className="relative h-full w-full flex-shrink-0 overflow-hidden text-white"
       style={{ background: slide.background }}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(255,255,255,0.32),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.6))]" />
-      <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-white/15 blur-2xl" />
+      {slide.imageUrl ? (
+        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      ) : null}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.68))]" />
+      {!hasImage ? (
+        <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-white/15 blur-2xl" />
+      ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between px-7 py-8 sm:px-10 sm:py-11">
         <div>
           <p className="break-keep text-[15px] font-black leading-6 text-white/85">

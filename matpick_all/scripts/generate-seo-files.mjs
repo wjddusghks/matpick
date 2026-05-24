@@ -13,6 +13,7 @@ const generatedDir = path.join(clientRoot, "src", "data", "generated");
 const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
 const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
 const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
+const publicDataSourceIds = new Set(["popular-restaurants"]);
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -138,15 +139,16 @@ async function buildSitemap(siteUrl) {
   const baseDataset = await readJson(baseDataPath);
   const generatedDatasets = await readGeneratedDatasets();
   const topicEnrichments = await readTopicEnrichments();
-  const discoveryTopics = await readJson(discoveryTopicsPath);
-  const { creators, visits } = filterVisibleCreatorData(
-    baseDataset.creators || [],
-    baseDataset.visits || []
+  const discoveryTopics = (await readJson(discoveryTopicsPath)).filter(
+    (topic) => topic.kind === "source" && publicDataSourceIds.has(topic.targetId)
   );
+  const { creators, visits } = filterVisibleCreatorData([], []);
   const visibleRestaurantIds = new Set([
-    ...visits.map((visit) => visit.restaurantId).filter(Boolean),
     ...topicEnrichments.flatMap((dataset) =>
-      (dataset.sourceLinks || []).map((link) => link.restaurantId).filter(Boolean)
+      (dataset.sourceLinks || [])
+        .filter((link) => publicDataSourceIds.has(link.sourceId))
+        .map((link) => link.restaurantId)
+        .filter(Boolean)
     ),
   ]);
   const topicEpisodes = buildTopicEpisodes(

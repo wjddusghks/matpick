@@ -6,6 +6,12 @@
     "targetId": "ttoganjip"
   },
   {
+    "slug": "popular-restaurants",
+    "name": "인기맛집",
+    "kind": "source",
+    "targetId": "popular-restaurants"
+  },
+  {
     "slug": "taste-guys",
     "name": "맛있는 녀석들",
     "kind": "source",

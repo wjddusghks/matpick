@@ -45,7 +45,8 @@ module.exports = async function handler(req, res) {
     }
 
     const day = String(req.query?.day || "").trim();
-    const summary = await readAnalyticsSummary(day || undefined);
+    const scope = req.query?.scope === "all" ? "all" : "today";
+    const summary = await readAnalyticsSummary({ day: day || undefined, scope });
     return res.status(200).json({ summary });
   } catch (error) {
     logSecurityEvent("error", "admin-metrics-failed", {

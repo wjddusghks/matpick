@@ -13,6 +13,7 @@ import michelin3StarsTopicEnrichment from "./generated/topic-enrichments/micheli
 import michelinBibGourmandTopicEnrichment from "./generated/topic-enrichments/michelin-bib-gourmand.enriched.json";
 import michelinSelectedTopicEnrichment from "./generated/topic-enrichments/michelin-selected.enriched.json";
 import oldKorean100TopicEnrichment from "./generated/topic-enrichments/old-korean-100.enriched.json";
+import popularRestaurantsTopicEnrichment from "./generated/topic-enrichments/popular-restaurants.enriched.json";
 import ttoganjipTopicEnrichment from "./generated/topic-enrichments/ttoganjip.enriched.json";
 import wednesdayGourmetTopicEnrichment from "./generated/topic-enrichments/wednesday-gourmet.enriched.json";
 import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
@@ -86,6 +87,7 @@ export type RestaurantBroadcastMeta = {
 
 const episodicSourceIds = new Set([
   "ttoganjip",
+  "popular-restaurants",
   "delicious-guys",
   "baekjong-wok",
   "sikgaek-baekban-trip",
@@ -404,15 +406,16 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
+const publicDataSourceIds = new Set(["popular-restaurants"]);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
   const visibleCreators = dataset.creators.filter(
     (creator) => !hiddenCreatorIds.has(creator.id)
   );
-  const visibleVisits = dataset.visits.filter(
-    (visit) => !hiddenCreatorIds.has(visit.creatorId)
+  const visibleVisits: Visit[] = [];
+  const visibleSourceLinks = (dataset.sourceLinks ?? []).filter((link) =>
+    publicDataSourceIds.has(link.sourceId)
   );
-  const visibleSourceLinks = dataset.sourceLinks ?? [];
   const referencedRestaurantIds = new Set<string>();
 
   visibleVisits.forEach((visit) => {
@@ -429,13 +432,16 @@ function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet
 
   return {
     ...dataset,
-    creators: visibleCreators,
+    creators: visibleCreators.filter((creator) =>
+      visibleVisits.some((visit) => visit.creatorId === creator.id)
+    ),
     visits: visibleVisits,
     restaurants: dataset.restaurants.filter(
-      (restaurant) =>
-        referencedRestaurantIds.size === 0 || referencedRestaurantIds.has(restaurant.id)
+      (restaurant) => referencedRestaurantIds.has(restaurant.id)
     ),
-    sources: dataset.sources ?? [],
+    sources: (dataset.sources ?? []).filter((source) =>
+      publicDataSourceIds.has(source.id)
+    ),
     sourceLinks: visibleSourceLinks,
   };
 }
@@ -447,6 +453,7 @@ const dataset = filterDatasetForVisibleContent(
   sikgaekBaekbanTripDataset as SourceDataset,
   wednesdayGourmetDataset as SourceDataset,
   ttoganjipTopicEnrichment as SourceDataset,
+  popularRestaurantsTopicEnrichment as SourceDataset,
   deliciousGuysTopicEnrichment as SourceDataset,
   baekbanTripTopicEnrichment as SourceDataset,
   baekjongWokTopicEnrichment as SourceDataset,
@@ -465,6 +472,7 @@ const creatorDisplayNameOverrides: Record<string, string> = {
 
 const sourceDisplayNameOverrides: Record<string, string> = {
   ttoganjip: "또간집",
+  "popular-restaurants": "인기맛집",
   "delicious-guys": "맛있는 녀석들",
   "baekjong-wok": "백종원의 3대천왕",
   "sikgaek-baekban-trip": "백반기행",
@@ -830,7 +838,7 @@ export function getSourceLinksByRestaurant(restaurantId: string) {
   return sourceLinksByRestaurantId.get(restaurantId) ?? [];
 }
 
-const publicVisibleSourceIds = new Set(["ttoganjip"]);
+const publicVisibleSourceIds = publicDataSourceIds;
 
 export function isPublicSourceId(sourceId: string) {
   return publicVisibleSourceIds.has(sourceId);
@@ -996,7 +1004,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
-const publicDiscoveryTopicSlugs = new Set(["ttoganjip"]);
+const publicDiscoveryTopicSlugs = new Set(["popular-restaurants"]);
 
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
   publicDiscoveryTopicSlugs.has(topic.slug)
@@ -1077,7 +1085,7 @@ const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
           } satisfies DiscoveryTopicEpisode;
         })
         .filter((episode) => episode.count > 0);
-    } else if (source?.type === "tv_show") {
+    } else if (source && (source.type === "tv_show" || episodicSourceIds.has(source.id))) {
       const groupedSourceLinks = new Map<string, SourceLink[]>();
 
       sourceLinks

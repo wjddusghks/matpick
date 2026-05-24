@@ -16,6 +16,7 @@
     "geocode:sikgaek-baekban-trip": "node scripts/geocode-source-dataset.mjs sikgaek-baekban-trip",
     "geocode:wednesday-gourmet": "node scripts/geocode-source-dataset.mjs wednesday-gourmet",
     "matpick:research-topic": "node scripts/content-automation/research-topic.mjs",
+    "matpick:prepare-card-topic": "node scripts/content-automation/prepare-card-topic.mjs",
     "prebuild": "node scripts/generate-seo-files.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender-seo-pages.mjs",

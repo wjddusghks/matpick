@@ -54,11 +54,32 @@ import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
+import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.png";
+import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.png";
 
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
+
+type HomeShortcutTopic = Pick<DiscoveryTopic, "slug" | "name" | "path"> & {
+  imageUrl?: string;
+};
+
+const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
+  {
+    slug: "ttoganjip",
+    name: "또간집",
+    path: "/explore/topic/ttoganjip",
+    imageUrl: ttoganjipShortcutImage,
+  },
+  {
+    slug: "popular-restaurants",
+    name: "인기맛집",
+    path: "/explore/topic/popular-restaurants",
+    imageUrl: popularRestaurantsShortcutImage,
+  },
+];
 
 const HOME_UI_KO = {
   brandFirst: "\uB9DB",
@@ -549,7 +570,7 @@ function TopicShortcutButton({
   href,
   onClick,
 }: {
-  topic: DiscoveryTopic;
+  topic: HomeShortcutTopic;
   href: string;
   onClick?: () => void;
 }) {
@@ -810,6 +831,14 @@ export default function Home() {
 
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
   const hasSearchQuery = Boolean(normalizedQuery);
+  const homeShortcutTopics = HOME_TOPIC_SHORTCUTS.map((shortcut) => {
+    const liveTopic = publicDiscoveryTopics.find((topic) => topic.slug === shortcut.slug);
+
+    return {
+      ...shortcut,
+      imageUrl: liveTopic?.imageUrl ?? shortcut.imageUrl,
+    };
+  });
 
   useEffect(() => {
     setRecentSearches((prev) => {
@@ -1551,7 +1580,7 @@ export default function Home() {
 
             <div className="mt-4 overflow-x-auto pb-2">
               <div className="flex min-w-max gap-4 px-1">
-                {publicDiscoveryTopics.map((topic) => (
+                {homeShortcutTopics.map((topic) => (
                   <TopicShortcutButton
                     key={topic.slug}
                     topic={topic}

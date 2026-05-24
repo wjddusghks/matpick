@@ -32,6 +32,7 @@ import {
   getCreatorDisplayName,
   getCreatorsByRestaurant,
   getDiscoveryTopicBySlug,
+  getDiscoveryTopicByTarget,
   getDiscoveryTopicEpisodeBySlug,
   getDiscoveryTopicEpisodes,
   getRecommendationCount,
@@ -1353,6 +1354,26 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   );
 
   const searchParams = useMemo(() => new URLSearchParams(search), [search]);
+
+  useEffect(() => {
+    if (topicSlug) {
+      return;
+    }
+
+    const sourceId = searchParams.get("source");
+    if (!sourceId) {
+      return;
+    }
+
+    const publicSourceTopic = getDiscoveryTopicByTarget("source", sourceId);
+    if (
+      publicSourceTopic &&
+      publicDiscoveryTopics.some((topic) => topic.slug === publicSourceTopic.slug)
+    ) {
+      navigate(publicSourceTopic.path);
+    }
+  }, [navigate, searchParams, topicSlug]);
+
   const initialSelectedKeys = useMemo(() => {
     if (presetTopic) {
       return [presetTopic.key];

@@ -127,6 +127,9 @@ const EPISODE_CARD_PALETTES = [
 ];
 
 const EPISODE_SOCIAL_STORAGE_KEY = "matpick:episode-card-social:v1";
+const POPULAR_RESTAURANT_TOPIC_EXCLUDED_COLLECTION_SLUGS = new Set([
+  "popular-dongtan-best7",
+]);
 
 const emptyEpisodeSocialState: EpisodeSocialState = {
   likedEpisodeSlugs: [],
@@ -615,6 +618,9 @@ function PopularRestaurantCollectionGrid({
   collections: MapCollectionTopic[];
   locale: AppLocale;
 }) {
+  const visibleCollections = collections.filter(
+    (collection) => !POPULAR_RESTAURANT_TOPIC_EXCLUDED_COLLECTION_SLUGS.has(collection.slug)
+  );
   const title =
     locale === "en" ? `${topic.name} card collections` : `${topic.name} 카드 묶음`;
   const description =
@@ -637,7 +643,7 @@ function PopularRestaurantCollectionGrid({
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {collections.map((collection, index) => (
+        {visibleCollections.map((collection, index) => (
           <Link
             key={collection.slug}
             href={getMapCollectionPath(collection.slug)}

@@ -87,7 +87,6 @@ export type RestaurantBroadcastMeta = {
 
 const episodicSourceIds = new Set([
   "ttoganjip",
-  "popular-restaurants",
   "delicious-guys",
   "baekjong-wok",
   "sikgaek-baekban-trip",
@@ -406,7 +405,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set(["popular-restaurants"]);
+const publicDataSourceIds = new Set(["ttoganjip", "popular-restaurants"]);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
   const visibleCreators = dataset.creators.filter(
@@ -1004,7 +1003,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
-const publicDiscoveryTopicSlugs = new Set(["popular-restaurants"]);
+const publicDiscoveryTopicSlugs = new Set(["ttoganjip", "popular-restaurants"]);
 
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
   publicDiscoveryTopicSlugs.has(topic.slug)
@@ -1028,10 +1027,16 @@ export function getDiscoveryTopicByTarget(
 const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
   discoveryTopics.map((topic) => {
     const source = topic.kind === "source" ? getSourceById(topic.targetId) : null;
+    const shouldBuildSourceLinkEpisodes =
+      topic.kind === "source" &&
+      source != null &&
+      (source.type === "tv_show" || episodicSourceIds.has(source.id));
     const episodeCreatorId =
       topic.kind === "creator"
         ? topic.targetId
-        : source?.creatorId ?? null;
+        : source && !shouldBuildSourceLinkEpisodes
+          ? source.creatorId ?? null
+          : null;
 
     const usedSlugs = new Set<string>();
     let episodes: DiscoveryTopicEpisode[] = [];
@@ -1085,7 +1090,7 @@ const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
           } satisfies DiscoveryTopicEpisode;
         })
         .filter((episode) => episode.count > 0);
-    } else if (source && (source.type === "tv_show" || episodicSourceIds.has(source.id))) {
+    } else if (shouldBuildSourceLinkEpisodes) {
       const groupedSourceLinks = new Map<string, SourceLink[]>();
 
       sourceLinks

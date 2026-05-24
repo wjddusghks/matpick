@@ -14,6 +14,7 @@ export type MapCollectionTopic = {
   areaLabel: string;
   purposeTags: string[];
   targetCount: number;
+  restaurantIds?: string[];
   regionKeywords: string[];
   cuisineKeywords?: string[];
   sourceIds?: string[];
@@ -37,8 +38,16 @@ export const featuredMapCollections: MapCollectionTopic[] = [
     areaLabel: "동탄",
     purposeTags: ["동탄", "데이트", "가족"],
     targetCount: 7,
+    restaurantIds: [
+      "popular_restaurants_dongtan_babwie_saengseon",
+      "popular_restaurants_dongtan_gate9",
+      "popular_restaurants_dongtan_nongga",
+      "popular_restaurants_dongtan_oh_italian",
+      "popular_restaurants_dongtan_caffe_maia",
+      "popular_restaurants_dongtan_gongwon_blues",
+      "popular_restaurants_dongtan_jogakdal",
+    ],
     regionKeywords: ["동탄", "화성"],
-    sourceIds: ["popular-restaurants"],
     imageUrl: "/card-data/popular-restaurants/dongtan-main.webp",
     cardImageUrls: [
       "/card-data/popular-restaurants/dongtan-main.webp",
@@ -64,9 +73,14 @@ export const featuredMapCollections: MapCollectionTopic[] = [
     areaLabel: "홍대",
     purposeTags: ["홍대", "라멘", "혼밥"],
     targetCount: 4,
+    restaurantIds: [
+      "popular_restaurants_hongdae_hakata_bunko",
+      "popular_restaurants_hongdae_itsumo_ramen",
+      "popular_restaurants_hongdae_566_ramen",
+      "popular_restaurants_hongdae_sarukame",
+    ],
     regionKeywords: ["홍대", "마포", "연남"],
     cuisineKeywords: ["라멘", "일식"],
-    sourceIds: ["popular-restaurants"],
     imageUrl: "/card-data/popular-restaurants/hongdae-ramen-main.webp",
     cardImageUrls: [
       "/card-data/popular-restaurants/hongdae-ramen-main.webp",
@@ -89,9 +103,13 @@ export const featuredMapCollections: MapCollectionTopic[] = [
     areaLabel: "대학로",
     purposeTags: ["대학로", "떡볶이", "분식"],
     targetCount: 3,
+    restaurantIds: [
+      "popular_restaurants_daehakro_bongjju_tteokbokki",
+      "popular_restaurants_daehakro_nanumi_tteokbokki",
+      "popular_restaurants_daehakro_koyako",
+    ],
     regionKeywords: ["대학로", "혜화", "종로"],
     cuisineKeywords: ["떡볶이", "분식"],
-    sourceIds: ["popular-restaurants"],
     imageUrl: "/card-data/popular-restaurants/daehakro-tteokbokki-main.webp",
     cardImageUrls: [
       "/card-data/popular-restaurants/daehakro-tteokbokki-main.webp",
@@ -159,6 +177,16 @@ export function getRestaurantsForMapCollection(
   collection: MapCollectionTopic,
   options: ResolveCollectionOptions
 ) {
+  if (collection.restaurantIds?.length) {
+    const restaurantById = new Map(
+      options.restaurants.map((restaurant) => [restaurant.id, restaurant])
+    );
+    return collection.restaurantIds
+      .map((restaurantId) => restaurantById.get(restaurantId))
+      .filter((restaurant): restaurant is Restaurant => Boolean(restaurant))
+      .slice(0, collection.targetCount);
+  }
+
   const sourceRestaurants = dedupeRestaurants(
     (collection.sourceIds ?? []).flatMap((sourceId) =>
       options.getRestaurantsBySource(sourceId)

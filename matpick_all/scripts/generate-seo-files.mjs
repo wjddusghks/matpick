@@ -13,7 +13,8 @@ const generatedDir = path.join(clientRoot, "src", "data", "generated");
 const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
 const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
 const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set(["popular-restaurants"]);
+const publicDataSourceIds = new Set(["ttoganjip", "popular-restaurants"]);
+const episodicSourceIds = new Set(["ttoganjip"]);
 
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
@@ -55,8 +56,46 @@ function sortVisitsByDate(a, b) {
   return String(b.visitDate || "").localeCompare(String(a.visitDate || ""), "ko-KR");
 }
 
-function buildTopicEpisodes(discoveryTopics, creators, visits) {
+function buildTopicEpisodes(discoveryTopics, creators, visits, sourceLinks = []) {
   return discoveryTopics.flatMap((topic) => {
+    if (topic.kind === "source" && episodicSourceIds.has(topic.targetId)) {
+      const groupedSourceLinks = new Map();
+
+      sourceLinks
+        .filter((link) => link.sourceId === topic.targetId)
+        .forEach((link) => {
+          const episodeLabel =
+            link.label?.trim() ||
+            (Number.isFinite(link.ordinal) ? `EP.${link.ordinal}` : "");
+
+          if (!episodeLabel) {
+            return;
+          }
+
+          const current = groupedSourceLinks.get(episodeLabel) ?? [];
+          current.push(link);
+          groupedSourceLinks.set(episodeLabel, current);
+        });
+
+      const usedSlugs = new Set();
+
+      return Array.from(groupedSourceLinks.entries()).map(([episodeLabel, links]) => {
+        const baseSlug = slugifyTopicSegment(episodeLabel);
+        let episodeSlug = baseSlug;
+
+        if (usedSlugs.has(episodeSlug)) {
+          episodeSlug = `${baseSlug}-${links[0]?.ordinal ?? usedSlugs.size + 1}`;
+        }
+        usedSlugs.add(episodeSlug);
+
+        return {
+          topicSlug: topic.slug,
+          slug: episodeSlug,
+          name: topic.name || topic.slug,
+        };
+      });
+    }
+
     if (topic.kind !== "creator") {
       return [];
     }
@@ -143,18 +182,17 @@ async function buildSitemap(siteUrl) {
     (topic) => topic.kind === "source" && publicDataSourceIds.has(topic.targetId)
   );
   const { creators, visits } = filterVisibleCreatorData([], []);
-  const visibleRestaurantIds = new Set([
-    ...topicEnrichments.flatMap((dataset) =>
-      (dataset.sourceLinks || [])
-        .filter((link) => publicDataSourceIds.has(link.sourceId))
-        .map((link) => link.restaurantId)
-        .filter(Boolean)
-    ),
-  ]);
+  const visibleSourceLinks = topicEnrichments.flatMap((dataset) =>
+    (dataset.sourceLinks || []).filter((link) => publicDataSourceIds.has(link.sourceId))
+  );
+  const visibleRestaurantIds = new Set(
+    visibleSourceLinks.map((link) => link.restaurantId).filter(Boolean)
+  );
   const topicEpisodes = buildTopicEpisodes(
     discoveryTopics,
     creators,
-    visits
+    visits,
+    visibleSourceLinks
   );
   const restaurants = [
     ...(baseDataset.restaurants || []),

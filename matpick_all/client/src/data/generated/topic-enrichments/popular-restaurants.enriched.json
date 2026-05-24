@@ -18,7 +18,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄순환대로5길 5-15 1층 101호",
       "category": "일식",
-      "representativeMenu": "회전초밥 / 후토마끼 / 카이센동",
+      "representativeMenu": "모듬초밥 / 후토마끼 / 카이센동",
       "lat": 37.1658837,
       "lng": 127.0992869,
       "imageUrl": "/card-data/popular-restaurants/dongtan-babwie-saengseon.webp",
@@ -26,16 +26,19 @@
       "menus": [
         {
           "id": "popular_restaurants_dongtan_babwie_saengseon_menu_1",
-          "name": "회전초밥",
+          "name": "모듬초밥",
+          "price": "17,000원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_babwie_saengseon_menu_2",
-          "name": "후토마끼"
+          "name": "후토마끼",
+          "price": "23,000원"
         },
         {
           "id": "popular_restaurants_dongtan_babwie_saengseon_menu_3",
-          "name": "카이센동"
+          "name": "카이센동",
+          "price": "26,000원"
         }
       ]
     },
@@ -45,7 +48,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄역로 160 롯데백화점 B1 게이트나인",
       "category": "태국",
-      "representativeMenu": "팟타이 / 쌀국수 / 뿌팟봉커리",
+      "representativeMenu": "팟타이 / 베트남쌀국수 / 뿌팟봉커리",
       "lat": 37.2006675,
       "lng": 127.0982031,
       "imageUrl": "/card-data/popular-restaurants/dongtan-gate9.webp",
@@ -54,15 +57,18 @@
         {
           "id": "popular_restaurants_dongtan_gate9_menu_1",
           "name": "팟타이",
+          "price": "16,000원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_gate9_menu_2",
-          "name": "쌀국수"
+          "name": "베트남쌀국수",
+          "price": "13,000원"
         },
         {
           "id": "popular_restaurants_dongtan_gate9_menu_3",
-          "name": "뿌팟봉커리"
+          "name": "뿌팟봉커리",
+          "price": "32,000원"
         }
       ]
     },
@@ -72,7 +78,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 왕배산1길 3-16 1층",
       "category": "양식",
-      "representativeMenu": "시카고피자 / 생면파스타",
+      "representativeMenu": "시카고 피자 / 누룽지품은 토마토 생면파스타 / 명란크림 생면파스타",
       "lat": 37.180703,
       "lng": 127.1239328,
       "imageUrl": "/card-data/popular-restaurants/dongtan-nongga.webp",
@@ -80,12 +86,19 @@
       "menus": [
         {
           "id": "popular_restaurants_dongtan_nongga_menu_1",
-          "name": "시카고피자",
+          "name": "시카고 피자",
+          "price": "21,000원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_nongga_menu_2",
-          "name": "생면파스타"
+          "name": "누룽지품은 토마토 생면파스타",
+          "price": "21,000원"
+        },
+        {
+          "id": "popular_restaurants_dongtan_nongga_menu_3",
+          "name": "명란크림 생면파스타",
+          "price": "22,000원"
         }
       ]
     },
@@ -95,7 +108,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄공원로3길 14-14 1층",
       "category": "양식",
-      "representativeMenu": "파케리 / 광어레몬 / 파스타",
+      "representativeMenu": "살시차 파케리 / 광어레몬 / 단호박 하몽 뇨끼",
       "lat": 37.2071583,
       "lng": 127.0616121,
       "imageUrl": "/card-data/popular-restaurants/dongtan-oh-italian.webp",
@@ -103,16 +116,19 @@
       "menus": [
         {
           "id": "popular_restaurants_dongtan_oh_italian_menu_1",
-          "name": "파케리",
+          "name": "살시차 파케리",
+          "price": "19,900원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_oh_italian_menu_2",
-          "name": "광어레몬"
+          "name": "광어레몬",
+          "price": "20,900원"
         },
         {
           "id": "popular_restaurants_dongtan_oh_italian_menu_3",
-          "name": "파스타"
+          "name": "단호박 하몽 뇨끼",
+          "price": "22,900원"
         }
       ]
     },
@@ -122,7 +138,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄공원로1길 12-33 101호 카페마이아",
       "category": "카페",
-      "representativeMenu": "피넛크림라떼 / 마이아라떼",
+      "representativeMenu": "피넛크림라떼 / 마이아커피",
       "lat": 37.2024513,
       "lng": 127.061731,
       "imageUrl": "/card-data/popular-restaurants/dongtan-caffe-maia.webp",
@@ -131,11 +147,13 @@
         {
           "id": "popular_restaurants_dongtan_caffe_maia_menu_1",
           "name": "피넛크림라떼",
+          "price": "6,000원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_caffe_maia_menu_2",
-          "name": "마이아라떼"
+          "name": "마이아커피",
+          "price": "6,000원"
         }
       ]
     },
@@ -145,7 +163,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄대로 181 레이크꼬모 지하3층",
       "category": "양식",
-      "representativeMenu": "돌문어 콜드파스타 / 호박크림뇨끼",
+      "representativeMenu": "돌문어 콜드 파스타 / 공원블루스 뇨끼",
       "lat": 37.1720762,
       "lng": 127.104078,
       "imageUrl": "/card-data/popular-restaurants/dongtan-gongwon-blues.webp",
@@ -153,12 +171,14 @@
       "menus": [
         {
           "id": "popular_restaurants_dongtan_gongwon_blues_menu_1",
-          "name": "돌문어 콜드파스타",
+          "name": "돌문어 콜드 파스타",
+          "price": "23,000원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_gongwon_blues_menu_2",
-          "name": "호박크림뇨끼"
+          "name": "공원블루스 뇨끼",
+          "price": "21,000원"
         }
       ]
     },
@@ -168,7 +188,7 @@
       "region": "경기 화성시",
       "address": "경기 화성시 동탄순환대로3길 28-26 1층",
       "category": "베이커리",
-      "representativeMenu": "소금빵 / 휘낭시에 / 카야버터",
+      "representativeMenu": "시그니쳐소금빵 / 휘낭시에 / 카야버터소금빵",
       "lat": 37.1673024,
       "lng": 127.0942199,
       "imageUrl": "/card-data/popular-restaurants/dongtan-jogakdal.webp",
@@ -176,24 +196,29 @@
       "menus": [
         {
           "id": "popular_restaurants_dongtan_jogakdal_menu_1",
-          "name": "소금빵",
+          "name": "시그니쳐소금빵",
+          "price": "2,800원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_dongtan_jogakdal_menu_2",
-          "name": "휘낭시에"
+          "name": "휘낭시에",
+          "price": "2,500원"
         },
         {
           "id": "popular_restaurants_dongtan_jogakdal_menu_3",
-          "name": "카야버터"
+          "name": "카야버터소금빵",
+          "price": "5,500원"
         },
         {
           "id": "popular_restaurants_dongtan_jogakdal_menu_4",
-          "name": "명란대파"
+          "name": "명란대파소금빵",
+          "price": "4,500원"
         },
         {
           "id": "popular_restaurants_dongtan_jogakdal_menu_5",
-          "name": "초코"
+          "name": "초코소금빵",
+          "price": "4,000원"
         }
       ]
     },
@@ -203,7 +228,7 @@
       "region": "서울 마포구",
       "address": "서울 마포구 독막로19길 43",
       "category": "일식",
-      "representativeMenu": "돈코츠라멘",
+      "representativeMenu": "인라멘 / 청라멘 / 챠슈덮밥",
       "lat": 37.5489195,
       "lng": 126.9237589,
       "imageUrl": "/card-data/popular-restaurants/hongdae-hakata-bunko.webp",
@@ -211,8 +236,19 @@
       "menus": [
         {
           "id": "popular_restaurants_hongdae_hakata_bunko_menu_1",
-          "name": "돈코츠라멘",
+          "name": "인라멘",
+          "price": "10,000원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_hongdae_hakata_bunko_menu_2",
+          "name": "청라멘",
+          "price": "10,000원"
+        },
+        {
+          "id": "popular_restaurants_hongdae_hakata_bunko_menu_3",
+          "name": "챠슈덮밥",
+          "price": "6,000원"
         }
       ]
     },
@@ -222,7 +258,7 @@
       "region": "서울 마포구",
       "address": "서울 마포구 와우산로23길 18-7 2층 202호",
       "category": "일식",
-      "representativeMenu": "돈코츠라멘 / 매운라멘",
+      "representativeMenu": "돈코츠라멘 / 카라이돈코츠라멘 / 카라이토리라멘",
       "lat": 37.5539978,
       "lng": 126.9246008,
       "imageUrl": "/card-data/popular-restaurants/hongdae-itsumo-ramen.webp",
@@ -231,11 +267,18 @@
         {
           "id": "popular_restaurants_hongdae_itsumo_ramen_menu_1",
           "name": "돈코츠라멘",
+          "price": "10,500원",
           "isSignature": true
         },
         {
           "id": "popular_restaurants_hongdae_itsumo_ramen_menu_2",
-          "name": "매운라멘"
+          "name": "카라이돈코츠라멘",
+          "price": "11,000원"
+        },
+        {
+          "id": "popular_restaurants_hongdae_itsumo_ramen_menu_3",
+          "name": "카라이토리라멘",
+          "price": "11,000원"
         }
       ]
     },
@@ -245,7 +288,7 @@
       "region": "서울 마포구",
       "address": "서울 마포구 연남로3길 33",
       "category": "일식",
-      "representativeMenu": "지로계 라멘",
+      "representativeMenu": "大라멘 / 小 라멘 / 大 시루나시 지로",
       "lat": 37.5605973,
       "lng": 126.9208825,
       "imageUrl": "/card-data/popular-restaurants/hongdae-566-ramen.webp",
@@ -253,8 +296,19 @@
       "menus": [
         {
           "id": "popular_restaurants_hongdae_566_ramen_menu_1",
-          "name": "지로계 라멘",
+          "name": "大라멘",
+          "price": "12,000원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_hongdae_566_ramen_menu_2",
+          "name": "小 라멘",
+          "price": "11,000원"
+        },
+        {
+          "id": "popular_restaurants_hongdae_566_ramen_menu_3",
+          "name": "大 시루나시 지로",
+          "price": "12,000원"
         }
       ]
     },
@@ -264,7 +318,7 @@
       "region": "서울 마포구",
       "address": "서울 마포구 연남로 15 1층",
       "category": "일식",
-      "representativeMenu": "창작 라멘",
+      "representativeMenu": "명물 바지락라멘 / 명물 바지락라멘 + 미니 돈부리 세트",
       "lat": 37.5610778,
       "lng": 126.9226848,
       "imageUrl": "/card-data/popular-restaurants/hongdae-sarukame.webp",
@@ -272,8 +326,19 @@
       "menus": [
         {
           "id": "popular_restaurants_hongdae_sarukame_menu_1",
-          "name": "창작 라멘",
+          "name": "명물 바지락라멘",
+          "price": "13,000원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_hongdae_sarukame_menu_2",
+          "name": "명물 바지락라멘 + 미니 돈부리 세트",
+          "price": "16,800원"
+        },
+        {
+          "id": "popular_restaurants_hongdae_sarukame_menu_3",
+          "name": "계란 추가",
+          "price": "1,000원"
         }
       ]
     },
@@ -283,7 +348,7 @@
       "region": "서울 종로구",
       "address": "서울특별시 종로구 대명길 4 지하1층",
       "category": "분식",
-      "representativeMenu": "즉석떡볶이",
+      "representativeMenu": "즉석떡볶이 / 버터갈릭감자세트 / 모둠튀김세트",
       "lat": 37.5838101,
       "lng": 127.0011936,
       "imageUrl": "/card-data/popular-restaurants/daehakro-bongjju-tteokbokki.webp",
@@ -292,7 +357,18 @@
         {
           "id": "popular_restaurants_daehakro_bongjju_tteokbokki_menu_1",
           "name": "즉석떡볶이",
+          "price": "7,500원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_daehakro_bongjju_tteokbokki_menu_2",
+          "name": "버터갈릭감자세트",
+          "price": "21,000원"
+        },
+        {
+          "id": "popular_restaurants_daehakro_bongjju_tteokbokki_menu_3",
+          "name": "모둠튀김세트",
+          "price": "21,000원"
         }
       ]
     },
@@ -302,7 +378,7 @@
       "region": "서울 종로구",
       "address": "서울특별시 종로구 성균관로 9-1",
       "category": "분식",
-      "representativeMenu": "쌀떡볶이",
+      "representativeMenu": "쌀떡볶이 / 김밥 / 찹쌀순대",
       "lat": 37.5837192,
       "lng": 126.9979248,
       "imageUrl": "/card-data/popular-restaurants/daehakro-nanumi-tteokbokki.webp",
@@ -311,7 +387,18 @@
         {
           "id": "popular_restaurants_daehakro_nanumi_tteokbokki_menu_1",
           "name": "쌀떡볶이",
+          "price": "5,000원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_daehakro_nanumi_tteokbokki_menu_2",
+          "name": "김밥",
+          "price": "5,000원"
+        },
+        {
+          "id": "popular_restaurants_daehakro_nanumi_tteokbokki_menu_3",
+          "name": "찹쌀순대",
+          "price": "5,000원"
         }
       ]
     },
@@ -321,7 +408,7 @@
       "region": "서울 종로구",
       "address": "서울특별시 종로구 동숭길 68 1층 코야코",
       "category": "분식",
-      "representativeMenu": "치즈즉석떡볶이",
+      "representativeMenu": "치즈떡볶이 / 야채떡볶이 / 해물떡볶이",
       "lat": 37.5813142,
       "lng": 127.0043232,
       "imageUrl": "/card-data/popular-restaurants/daehakro-koyako.webp",
@@ -329,8 +416,19 @@
       "menus": [
         {
           "id": "popular_restaurants_daehakro_koyako_menu_1",
-          "name": "치즈즉석떡볶이",
+          "name": "치즈떡볶이",
+          "price": "7,000원",
           "isSignature": true
+        },
+        {
+          "id": "popular_restaurants_daehakro_koyako_menu_2",
+          "name": "야채떡볶이",
+          "price": "6,500원"
+        },
+        {
+          "id": "popular_restaurants_daehakro_koyako_menu_3",
+          "name": "해물떡볶이",
+          "price": "6,500원"
         }
       ]
     }

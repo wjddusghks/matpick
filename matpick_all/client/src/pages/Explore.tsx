@@ -50,6 +50,11 @@ import {
   type DiscoveryTopicEpisode,
   type Restaurant,
 } from "@/data";
+import {
+  featuredMapCollections,
+  getMapCollectionPath,
+  type MapCollectionTopic,
+} from "@/data/mapCollections";
 import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import MonetizationSlot, {
@@ -329,17 +334,6 @@ function buildEpisodeStorySlides({
       background: getEpisodeCardPalette(0),
     },
     ...restaurantSlides,
-    {
-      id: "map",
-      eyebrow: locale === "en" ? "Open on map" : "지도에서 한 번에",
-      title: locale === "en" ? "See every place on the map" : `${episode.count}곳을 지도에서 보기`,
-      description:
-        locale === "en"
-          ? "Open this episode as a map-based restaurant list."
-          : "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해보세요.",
-      tags: [locale === "en" ? "Map" : "지도 보기", topic.name],
-      background: getEpisodeCardPalette(2),
-    },
   ];
 }
 
@@ -605,6 +599,98 @@ function TtoganjipEpisodeGrid({
             locale={locale}
             onOpen={() => onOpen(index)}
           />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PopularRestaurantCollectionGrid({
+  topic,
+  collections,
+  locale,
+}: {
+  topic: DiscoveryTopic;
+  collections: MapCollectionTopic[];
+  locale: AppLocale;
+}) {
+  const title =
+    locale === "en" ? `${topic.name} card collections` : `${topic.name} 카드 묶음`;
+  const description =
+    locale === "en"
+      ? "Popular restaurant content is organized as card collections first. Open a card to see only the matching restaurants on the map."
+      : "인기맛집은 식당을 한꺼번에 늘어놓지 않고 카드 묶음 단위로 정리합니다. 카드를 열면 해당 카드에 연결된 맛집만 지도에서 볼 수 있어요.";
+
+  return (
+    <section className="mb-10">
+      <div className="mb-5 flex flex-col gap-2 sm:mb-6">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
+          Popular
+        </p>
+        <h2 className="break-keep text-2xl font-black leading-tight text-[#171717] sm:text-3xl">
+          {title}
+        </h2>
+        <p className="max-w-3xl break-keep text-sm leading-6 text-[#7f7f7f] sm:text-base">
+          {description}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {collections.map((collection, index) => (
+          <Link
+            key={collection.slug}
+            href={getMapCollectionPath(collection.slug)}
+            onClick={() =>
+              trackMarketingEvent("popular_collection_card_click", {
+                collection_slug: collection.slug,
+                collection_title: collection.title,
+              })
+            }
+            className="group relative aspect-[4/5] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
+            style={{ background: collection.palette.background }}
+            aria-label={`${collection.title} ${locale === "en" ? "open map" : "지도 보기"}`}
+          >
+            {collection.imageUrl ? (
+              <img
+                src={collection.imageUrl}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+              />
+            ) : null}
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.22)_44%,rgba(0,0,0,0.62))]" />
+            <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
+              <div>
+                <p className="text-sm font-black leading-5 text-white/80">
+                  {locale === "en" ? `Card ${index + 1}` : `카드 ${index + 1}`}
+                </p>
+                <h3 className="mt-8 break-keep text-[28px] font-black leading-[1.08] tracking-normal sm:text-[31px]">
+                  {collection.title}
+                </h3>
+              </div>
+
+              <div>
+                <div className="mb-3 flex flex-wrap gap-1.5">
+                  <span className="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-black">
+                    {locale === "en"
+                      ? `${collection.targetCount} places`
+                      : `${collection.targetCount}곳`}
+                  </span>
+                  {collection.purposeTags.slice(0, 2).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-black"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="line-clamp-2 break-keep text-[13px] font-semibold leading-5 text-white/80">
+                  {collection.description}
+                </p>
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>
@@ -1304,6 +1390,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const isTtoganjipOverview = presetTopic?.slug === "ttoganjip" && !presetEpisode;
+  const isPopularRestaurantsOverview =
+    presetTopic?.slug === "popular-restaurants" && !presetEpisode;
+  const isCardTopicOverview = isTtoganjipOverview || isPopularRestaurantsOverview;
 
   const seoContent = useMemo(
     () =>
@@ -1622,7 +1711,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     ? locale === "en"
       ? "Ttoganjip is shown first as episode cards. More themes such as Michelin can be added here later."
       : "지금은 또간집 회차별 맛집 카드를 먼저 보여드리고, 이후 미쉐린 같은 주제도 이 영역에 추가할 예정입니다."
-    : copy.pageDescription;
+    : isPopularRestaurantsOverview
+      ? locale === "en"
+        ? "Popular restaurants are grouped into card collections instead of a long restaurant list."
+        : "인기맛집은 식당을 한꺼번에 펼치지 않고 카드 묶음 단위로 정리해서 보여드립니다."
+      : copy.pageDescription;
   const contextDescription = presetEpisode?.description || presetTopic?.description || "";
   const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";
 
@@ -1793,9 +1886,17 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
           />
         ) : null}
 
+        {isPopularRestaurantsOverview && presetTopic ? (
+          <PopularRestaurantCollectionGrid
+            topic={presetTopic}
+            collections={featuredMapCollections}
+            locale={locale}
+          />
+        ) : null}
+
         <section
           className={`mb-8 rounded-[28px] border border-[#f0ebec] bg-white p-4 shadow-[0_10px_36px_rgba(0,0,0,0.04)] sm:p-5 ${
-            isTtoganjipOverview ? "hidden" : ""
+            isCardTopicOverview ? "hidden" : ""
           }`}
         >
           <div className="mb-4">
@@ -1995,7 +2096,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
 
         <div
           className={`mb-6 flex flex-wrap items-center justify-between gap-3 ${
-            isTtoganjipOverview ? "hidden" : ""
+            isCardTopicOverview ? "hidden" : ""
           }`}
         >
           <p className="text-sm text-[#888]">
@@ -2013,11 +2114,11 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
           ) : null}
         </div>
 
-        <div className={`mb-6 ${isTtoganjipOverview ? "hidden" : ""}`}>
+        <div className={`mb-6 ${isCardTopicOverview ? "hidden" : ""}`}>
           <MonetizationSlot label={copy.sponsoredLabel} />
         </div>
 
-        {!isTtoganjipOverview && filteredRestaurants.length > 0 ? (
+        {!isCardTopicOverview && filteredRestaurants.length > 0 ? (
           <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {visibleRestaurants.flatMap((restaurant, index) => {
               const items = [
@@ -2044,7 +2145,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               return items;
             })}
           </div>
-        ) : !isTtoganjipOverview ? (
+        ) : !isCardTopicOverview ? (
           <div className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
             <p className="text-5xl">⌕</p>
             <p className="mt-4 text-lg font-semibold text-[#333]">{copy.emptyTitle}</p>
@@ -2068,7 +2169,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             )
           : null}
 
-        {!isTtoganjipOverview && visibleCount < deferredRestaurants.length ? (
+        {!isCardTopicOverview && visibleCount < deferredRestaurants.length ? (
           <div ref={loadMoreRef} className="py-8 text-center text-sm font-medium text-[#9a8f92]">
             {copy.loadMore}
           </div>

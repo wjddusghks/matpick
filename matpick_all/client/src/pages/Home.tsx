@@ -38,6 +38,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
   publicDiscoveryTopics,
+  getDiscoveryTopicByTarget,
   mockSearchData,
   type DiscoveryTopic,
   type SearchResult,
@@ -380,17 +381,7 @@ function getCollectionStorySlides(collection: MapCollectionTopic): CollectionSto
   })) satisfies CollectionStorySlide[];
 
   if (photoSlides.length > 0) {
-    return [
-      ...photoSlides,
-      {
-        id: "map",
-        eyebrow: "지도에서 한 번에",
-        title: `${collection.targetCount}곳을 지도 위에서 바로 보기`,
-        body: "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해 보세요.",
-        tags: ["지도 보기", collection.areaLabel],
-        variant: "map",
-      },
-    ];
+    return photoSlides;
   }
 
   return [
@@ -417,14 +408,6 @@ function getCollectionStorySlides(collection: MapCollectionTopic): CollectionSto
       body: "데이트, 여행, 약속 전처럼 시간이 없을 때 먼저 열어보기 좋은 주제형 맛집 리스트입니다.",
       tags: collection.purposeTags,
       variant: "list",
-    },
-    {
-      id: "map",
-      eyebrow: "지도에서 한 번에",
-      title: `${collection.targetCount}곳을 지도 위에서 바로 보기`,
-      body: "카드를 넘겨본 뒤 마음에 들면 지도에서 거리와 위치를 비교해 보세요.",
-      tags: ["지도 보기", collection.areaLabel],
-      variant: "map",
     },
   ];
 }
@@ -1126,6 +1109,12 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "source") {
+        const topic = getDiscoveryTopicByTarget("source", normalizedItem.id);
+        if (topic) {
+          navigate(topic.path);
+          return;
+        }
+
         navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
@@ -2029,14 +2018,14 @@ function FeaturedCollectionModal({
 
   return (
     <div
-      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[#070b10] px-3 py-4 text-white sm:px-6"
+      className="fixed inset-0 z-[2147483647] flex items-center justify-center overflow-hidden bg-[#fff7f8]/82 px-3 py-4 text-white backdrop-blur-[6px] sm:px-6"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label={collection.title}
     >
       <div
-        className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
+        className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#101418] shadow-[0_28px_90px_rgba(44,24,30,0.24)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button

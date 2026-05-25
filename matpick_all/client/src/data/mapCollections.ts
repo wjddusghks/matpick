@@ -30,100 +30,290 @@ type ResolveCollectionOptions = {
 
 export const featuredMapCollections: MapCollectionTopic[] = [
   {
-    slug: "popular-dongtan-best7",
-    title: "동탄 맛집 BEST7",
-    shortTitle: "동탄 BEST7",
-    eyebrow: "동탄에서 뭐 먹을지 고민될 때",
-    description: "동탄호수공원과 동탄역 근처에서 바로 고르기 좋은 인기 맛집 7곳입니다.",
-    areaLabel: "동탄",
-    purposeTags: ["동탄", "데이트", "가족"],
-    targetCount: 7,
-    restaurantIds: [
-      "popular_restaurants_dongtan_babwie_saengseon",
-      "popular_restaurants_dongtan_gate9",
-      "popular_restaurants_dongtan_nongga",
-      "popular_restaurants_dongtan_oh_italian",
-      "popular_restaurants_dongtan_caffe_maia",
-      "popular_restaurants_dongtan_gongwon_blues",
-      "popular_restaurants_dongtan_jogakdal",
-    ],
-    regionKeywords: ["동탄", "화성"],
-    imageUrl: "/card-data/popular-restaurants/dongtan-main.webp",
-    cardImageUrls: [
-      "/card-data/popular-restaurants/dongtan-main.webp",
-      "/card-data/popular-restaurants/dongtan-babwie-saengseon.webp",
-      "/card-data/popular-restaurants/dongtan-gate9.webp",
-      "/card-data/popular-restaurants/dongtan-nongga.webp",
-      "/card-data/popular-restaurants/dongtan-oh-italian.webp",
-      "/card-data/popular-restaurants/dongtan-caffe-maia.webp",
-      "/card-data/popular-restaurants/dongtan-gongwon-blues.webp",
-      "/card-data/popular-restaurants/dongtan-jogakdal.webp",
-    ],
-    palette: {
-      background: "linear-gradient(145deg, #26372f 0%, #3f7d63 52%, #ffd27a 100%)",
-      accent: "#ff7b83",
-    },
-  },
-  {
     slug: "popular-hongdae-ramen-best4",
-    title: "홍대라멘 맛집 BEST4",
-    shortTitle: "홍대라멘 BEST4",
-    eyebrow: "진한 국물 라멘이 당길 때",
-    description: "홍대와 연남동 근처에서 라멘으로 먼저 열어볼 만한 인기 맛집 4곳입니다.",
+    title: "EP1 홍대 라멘 맛집 BEST4",
+    shortTitle: "홍대 라멘 BEST4",
+    eyebrow: "진한 국물 라멘으로 먼저 떠오르는 코스",
+    description: "홍대와 연남동 근처에서 라멘으로 고르기 좋은 인기 맛집 4곳입니다.",
     areaLabel: "홍대",
-    purposeTags: ["홍대", "라멘", "혼밥"],
+    purposeTags: [
+      "홍대",
+      "라멘",
+      "일식"
+    ],
     targetCount: 4,
     restaurantIds: [
       "popular_restaurants_hongdae_hakata_bunko",
       "popular_restaurants_hongdae_itsumo_ramen",
       "popular_restaurants_hongdae_566_ramen",
-      "popular_restaurants_hongdae_sarukame",
+      "popular_restaurants_hongdae_sarukame"
     ],
-    regionKeywords: ["홍대", "마포", "연남"],
-    cuisineKeywords: ["라멘", "일식"],
+    regionKeywords: [
+      "홍대",
+      "연남",
+      "마포"
+    ],
+    cuisineKeywords: [
+      "라멘",
+      "일식"
+    ],
     imageUrl: "/card-data/popular-restaurants/hongdae-ramen-main.webp",
     cardImageUrls: [
       "/card-data/popular-restaurants/hongdae-ramen-main.webp",
       "/card-data/popular-restaurants/hongdae-hakata-bunko.webp",
       "/card-data/popular-restaurants/hongdae-itsumo-ramen.webp",
       "/card-data/popular-restaurants/hongdae-566-ramen.webp",
-      "/card-data/popular-restaurants/hongdae-sarukame.webp",
+      "/card-data/popular-restaurants/hongdae-sarukame.webp"
     ],
     palette: {
       background: "linear-gradient(145deg, #2d211c 0%, #6f3a29 48%, #f17b55 100%)",
-      accent: "#ff8c66",
-    },
+      accent: "#ff8c66"
+    }
+  },
+  {
+    slug: "popular-gangnam-tonkatsu-best3",
+    title: "EP2 강남 돈가스 맛집 BEST3",
+    shortTitle: "강남 돈가스 BEST3",
+    eyebrow: "강남에서 바삭한 카츠가 생각날 때",
+    description: "강남과 압구정 근처에서 돈가스로 고르기 좋은 인기 맛집 3곳입니다.",
+    areaLabel: "강남",
+    purposeTags: [
+      "돈가스",
+      "일식",
+      "강남"
+    ],
+    targetCount: 3,
+    restaurantIds: [
+      "popular_restaurants_gangnam_just_katsu",
+      "popular_restaurants_gangnam_katsuwang",
+      "popular_restaurants_gangnam_katsu_by_konban"
+    ],
+    regionKeywords: [
+      "강남",
+      "역삼",
+      "압구정",
+      "논현"
+    ],
+    cuisineKeywords: [
+      "돈가스",
+      "돈카츠",
+      "일식"
+    ],
+    imageUrl: "/card-data/popular-restaurants/gangnam-tonkatsu-main.webp",
+    cardImageUrls: [
+      "/card-data/popular-restaurants/gangnam-tonkatsu-main.webp",
+      "/card-data/popular-restaurants/gangnam-just-katsu.webp",
+      "/card-data/popular-restaurants/gangnam-katsuwang.webp",
+      "/card-data/popular-restaurants/gangnam-katsu-by-konban.webp"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #1f1f1f 0%, #5a2b2b 52%, #ff6b74 100%)",
+      accent: "#ff6b74"
+    }
   },
   {
     slug: "popular-daehakro-tteokbokki-best3",
-    title: "대학로 떡볶이 BEST3",
-    shortTitle: "대학로 떡볶이",
-    eyebrow: "혜화에서 가볍게 먹고 싶을 때",
-    description: "대학로와 혜화 근처에서 즉석떡볶이와 분식을 고르기 좋은 인기 맛집 3곳입니다.",
+    title: "EP3 대학로 떡볶이 맛집 BEST3",
+    shortTitle: "대학로 떡볶이 BEST3",
+    eyebrow: "대학로에서 가볍게 먹고 싶을 때",
+    description: "대학로와 혜화 근처에서 즉석떡볶이와 분식으로 고르기 좋은 인기 맛집 3곳입니다.",
     areaLabel: "대학로",
-    purposeTags: ["대학로", "떡볶이", "분식"],
+    purposeTags: [
+      "대학로",
+      "떡볶이",
+      "분식"
+    ],
     targetCount: 3,
     restaurantIds: [
       "popular_restaurants_daehakro_bongjju_tteokbokki",
       "popular_restaurants_daehakro_nanumi_tteokbokki",
-      "popular_restaurants_daehakro_koyako",
+      "popular_restaurants_daehakro_koyako"
     ],
-    regionKeywords: ["대학로", "혜화", "종로"],
-    cuisineKeywords: ["떡볶이", "분식"],
+    regionKeywords: [
+      "대학로",
+      "혜화",
+      "종로"
+    ],
+    cuisineKeywords: [
+      "떡볶이",
+      "분식"
+    ],
     imageUrl: "/card-data/popular-restaurants/daehakro-tteokbokki-main.webp",
     cardImageUrls: [
       "/card-data/popular-restaurants/daehakro-tteokbokki-main.webp",
       "/card-data/popular-restaurants/daehakro-bongjju-tteokbokki.webp",
       "/card-data/popular-restaurants/daehakro-nanumi-tteokbokki.webp",
-      "/card-data/popular-restaurants/daehakro-koyako.webp",
+      "/card-data/popular-restaurants/daehakro-koyako.webp"
     ],
     palette: {
       background: "linear-gradient(145deg, #251f3b 0%, #6b4ab3 48%, #ff93a7 100%)",
-      accent: "#ff93a7",
-    },
+      accent: "#ff93a7"
+    }
   },
+  {
+    slug: "popular-yeongdeungpo-jjamppong-best4",
+    title: "EP4 영등포 짬뽕 맛집 BEST4",
+    shortTitle: "영등포 짬뽕 BEST4",
+    eyebrow: "불향 있는 국물이 당기는 날",
+    description: "영등포 노포부터 매운맛까지 짬뽕으로 비교해보기 좋은 인기 맛집 4곳입니다.",
+    areaLabel: "영등포",
+    purposeTags: [
+      "짬뽕",
+      "중식",
+      "매운맛"
+    ],
+    targetCount: 4,
+    restaurantIds: [
+      "popular_restaurants_yeongdeungpo_songjukjang",
+      "popular_restaurants_yeongdeungpo_shinchai",
+      "popular_restaurants_yeongdeungpo_dongsungak",
+      "popular_restaurants_yeongdeungpo_singil_spicy_jjamppong"
+    ],
+    regionKeywords: [
+      "영등포",
+      "문래",
+      "신길"
+    ],
+    cuisineKeywords: [
+      "짬뽕",
+      "중식"
+    ],
+    imageUrl: "/card-data/popular-restaurants/yeongdeungpo-jjamppong-main.webp",
+    cardImageUrls: [
+      "/card-data/popular-restaurants/yeongdeungpo-jjamppong-main.webp",
+      "/card-data/popular-restaurants/yeongdeungpo-songjukjang.webp",
+      "/card-data/popular-restaurants/yeongdeungpo-shinchai.webp",
+      "/card-data/popular-restaurants/yeongdeungpo-dongsungak.webp",
+      "/card-data/popular-restaurants/yeongdeungpo-singil-spicy-jjamppong.webp"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #260707 0%, #7b1711 52%, #ff4236 100%)",
+      accent: "#ff4236"
+    }
+  },
+  {
+    slug: "popular-suwon-chicken-best4",
+    title: "EP5 수원 통닭 맛집 BEST4",
+    shortTitle: "수원 통닭 BEST4",
+    eyebrow: "수원 통닭거리에서 먼저 고를 곳",
+    description: "수원 통닭거리와 행궁 근처에서 고르기 좋은 통닭 맛집 4곳입니다.",
+    areaLabel: "수원",
+    purposeTags: [
+      "통닭",
+      "치킨",
+      "수원"
+    ],
+    targetCount: 4,
+    restaurantIds: [
+      "popular_restaurants_suwon_jinmi_chicken",
+      "popular_restaurants_suwon_maehyang_chicken",
+      "popular_restaurants_suwon_jangan_chicken",
+      "popular_restaurants_suwon_haenggung_chicken"
+    ],
+    regionKeywords: [
+      "수원",
+      "팔달",
+      "행궁"
+    ],
+    cuisineKeywords: [
+      "통닭",
+      "치킨"
+    ],
+    imageUrl: "/card-data/popular-restaurants/suwon-chicken-main.webp",
+    cardImageUrls: [
+      "/card-data/popular-restaurants/suwon-chicken-main.webp",
+      "/card-data/popular-restaurants/suwon-jinmi-chicken.webp",
+      "/card-data/popular-restaurants/suwon-maehyang-chicken.webp",
+      "/card-data/popular-restaurants/suwon-jangan-chicken.webp",
+      "/card-data/popular-restaurants/suwon-haenggung-chicken.webp"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #21140b 0%, #8c431d 52%, #ff7c2e 100%)",
+      accent: "#ff7c2e"
+    }
+  },
+  {
+    slug: "popular-jeonju-bibimbap-best3",
+    title: "EP6 전주 비빔밥 맛집 BEST3",
+    shortTitle: "전주 비빔밥 BEST3",
+    eyebrow: "전주에서 첫 끼를 고른다면",
+    description: "전주 여행에서 비빔밥과 한상차림으로 고르기 좋은 인기 맛집 3곳입니다.",
+    areaLabel: "전주",
+    purposeTags: [
+      "비빔밥",
+      "한식",
+      "전주"
+    ],
+    targetCount: 3,
+    restaurantIds: [
+      "popular_restaurants_jeonju_gajok_hoegwan",
+      "popular_restaurants_jeonju_seongmidang",
+      "popular_restaurants_jeonju_gogung"
+    ],
+    regionKeywords: [
+      "전주",
+      "완산",
+      "덕진"
+    ],
+    cuisineKeywords: [
+      "비빔밥",
+      "한식"
+    ],
+    imageUrl: "/card-data/popular-restaurants/jeonju-bibimbap-main.webp",
+    cardImageUrls: [
+      "/card-data/popular-restaurants/jeonju-bibimbap-main.webp",
+      "/card-data/popular-restaurants/jeonju-gajok-hoegwan.webp",
+      "/card-data/popular-restaurants/jeonju-seongmidang.webp",
+      "/card-data/popular-restaurants/jeonju-gogung.webp"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #32231b 0%, #9b6341 52%, #ff7b86 100%)",
+      accent: "#ff7b86"
+    }
+  },
+  {
+    slug: "popular-cheongju-spicy-galbijjim-best3",
+    title: "EP7 충북 매운 갈비찜 맛집 BEST3",
+    shortTitle: "충북 매운 갈비찜 BEST3",
+    eyebrow: "청주에서 매운 갈비찜이 당기는 날",
+    description: "청주 성안길, 율량동, 봉명동에서 매운 갈비찜으로 고르기 좋은 인기 맛집 3곳입니다.",
+    areaLabel: "청주",
+    purposeTags: [
+      "청주",
+      "매운갈비찜",
+      "한식"
+    ],
+    targetCount: 3,
+    restaurantIds: [
+      "popular_restaurants_cheongju_hwang_grandma_galbijip",
+      "popular_restaurants_cheongju_changsu_spicy_galbijjim",
+      "popular_restaurants_cheongju_ttabong_sikdang"
+    ],
+    regionKeywords: [
+      "청주",
+      "충북",
+      "성안길",
+      "율량동",
+      "봉명동"
+    ],
+    cuisineKeywords: [
+      "매운갈비찜",
+      "갈비찜",
+      "한식"
+    ],
+    imageUrl: "/card-data/popular-restaurants/cheongju-spicy-galbijjim-main.webp",
+    cardImageUrls: [
+      "/card-data/popular-restaurants/cheongju-spicy-galbijjim-main.webp",
+      "/card-data/popular-restaurants/cheongju-hwang-grandma-galbijip.webp",
+      "/card-data/popular-restaurants/cheongju-changsu-spicy-galbijjim.webp",
+      "/card-data/popular-restaurants/cheongju-ttabong-sikdang.webp"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #25110c 0%, #7d241a 52%, #ff5b3f 100%)",
+      accent: "#ff5b3f"
+    }
+  }
 ];
-
 function normalizeLookupText(value: string) {
   return value.replace(/\s+/g, " ").trim().toLowerCase();
 }

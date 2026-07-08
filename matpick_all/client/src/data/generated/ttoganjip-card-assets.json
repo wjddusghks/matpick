@@ -1,0 +1,2897 @@
+{
+  "generatedAt": "2026-07-08T22:44:45.872Z",
+  "sourceFolderName": "또간집_카드형",
+  "format": "jpg",
+  "maxWidth": 720,
+  "quality": 78,
+  "episodes": [
+    {
+      "episodeNumber": 1,
+      "label": "EP.1",
+      "folderName": "1화(연남동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-001/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "뉴오더클럽 연남",
+          "originalFileName": "02_뉴오더클럽_연남.png",
+          "imageUrl": "/card-data/ttoganjip/ep-001/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "경양카츠 연남점",
+          "originalFileName": "03_경양카츠_연남점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-001/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "카쿠시타 연남",
+          "originalFileName": "04_카쿠시타_연남.png",
+          "imageUrl": "/card-data/ttoganjip/ep-001/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 2,
+      "label": "EP.2",
+      "folderName": "02화(한남)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-002/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "라도집",
+          "originalFileName": "02_라도집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-002/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "한남부대찌개",
+          "originalFileName": "03_한남부대찌개.png",
+          "imageUrl": "/card-data/ttoganjip/ep-002/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 3,
+      "label": "EP.3",
+      "folderName": "03화(광장시장)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-003/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "할머니순대",
+          "originalFileName": "02_할머니순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "모녀김밥",
+          "originalFileName": "03_모녀김밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "원조누드치즈김밥",
+          "originalFileName": "04_원조누드치즈김밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "원조순희네빈대떡",
+          "originalFileName": "05_원조순희네빈대떡.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "광장시장 찹쌀꽈배기",
+          "originalFileName": "06_광장시장_찹쌀꽈배기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-06.jpg"
+        },
+        {
+          "ordinal": 7,
+          "title": "형제육회 본점",
+          "originalFileName": "07_형제육회_본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-003/card-07.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 4,
+      "label": "EP.4",
+      "folderName": "04화(성수)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-004/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "성수부두",
+          "originalFileName": "02_성수부두.png",
+          "imageUrl": "/card-data/ttoganjip/ep-004/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "소바식당",
+          "originalFileName": "03_소바식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-004/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 5,
+      "label": "EP.5",
+      "folderName": "05화(신촌)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-005/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "유야케도쿄",
+          "originalFileName": "02_유야케도쿄.png",
+          "imageUrl": "/card-data/ttoganjip/ep-005/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "카라멘야",
+          "originalFileName": "03_카라멘야.png",
+          "imageUrl": "/card-data/ttoganjip/ep-005/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "고삼이 신촌점",
+          "originalFileName": "04_고삼이_신촌점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-005/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 6,
+      "label": "EP.6",
+      "folderName": "06화(문래)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-006/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "오복순대국",
+          "originalFileName": "02_오복순대국.png",
+          "imageUrl": "/card-data/ttoganjip/ep-006/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "무슨클럽",
+          "originalFileName": "03_무슨클럽.png",
+          "imageUrl": "/card-data/ttoganjip/ep-006/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "문래 골목집",
+          "originalFileName": "04_문래_골목집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-006/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 7,
+      "label": "EP.7",
+      "folderName": "07화(망원동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-007/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "순대일번지",
+          "originalFileName": "02_순대일번지.png",
+          "imageUrl": "/card-data/ttoganjip/ep-007/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "소금집델리",
+          "originalFileName": "03_소금집델리.png",
+          "imageUrl": "/card-data/ttoganjip/ep-007/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "산청엔흑돼지",
+          "originalFileName": "04_산청엔흑돼지.png",
+          "imageUrl": "/card-data/ttoganjip/ep-007/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "망원동칼짬뽕",
+          "originalFileName": "05_망원동칼짬뽕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-007/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 8,
+      "label": "EP.8",
+      "folderName": "08화(대구)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-008/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "왕거미식당",
+          "originalFileName": "02_왕거미식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-008/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "여원찜갈비",
+          "originalFileName": "03_여원찜갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-008/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "고인돌",
+          "originalFileName": "04_고인돌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-008/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 9,
+      "label": "EP.9",
+      "folderName": "09화(부산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-009/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "해운대밀면",
+          "originalFileName": "02_해운대밀면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-009/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "아저씨대구탕",
+          "originalFileName": "03_아저씨대구탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-009/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "원조전복죽",
+          "originalFileName": "04_원조전복죽.png",
+          "imageUrl": "/card-data/ttoganjip/ep-009/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "상국이네",
+          "originalFileName": "05_상국이네.png",
+          "imageUrl": "/card-data/ttoganjip/ep-009/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 10,
+      "label": "EP.10",
+      "folderName": "10화(강남)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-010/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "떡도리탕",
+          "originalFileName": "02_떡도리탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-010/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "천진영감",
+          "originalFileName": "03_천진영감.png",
+          "imageUrl": "/card-data/ttoganjip/ep-010/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "브릭오븐",
+          "originalFileName": "04_브릭오븐.png",
+          "imageUrl": "/card-data/ttoganjip/ep-010/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "고메스시",
+          "originalFileName": "05_고메스시.png",
+          "imageUrl": "/card-data/ttoganjip/ep-010/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 11,
+      "label": "EP.11",
+      "folderName": "11화(을지로)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-011/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "토리카미",
+          "originalFileName": "02_토리카미.png",
+          "imageUrl": "/card-data/ttoganjip/ep-011/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "청와옥",
+          "originalFileName": "03_청와옥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-011/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "화육계",
+          "originalFileName": "04_화육계.png",
+          "imageUrl": "/card-data/ttoganjip/ep-011/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 12,
+      "label": "EP.12",
+      "folderName": "12화(이태원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-012/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "쟈니덤플링",
+          "originalFileName": "02_쟈니덤플링.png",
+          "imageUrl": "/card-data/ttoganjip/ep-012/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "더테이블키친",
+          "originalFileName": "03_더테이블키친.png",
+          "imageUrl": "/card-data/ttoganjip/ep-012/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "자코비버거",
+          "originalFileName": "04_자코비버거.png",
+          "imageUrl": "/card-data/ttoganjip/ep-012/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 13,
+      "label": "EP.13",
+      "folderName": "13화(홍대)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-013/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "후계동",
+          "originalFileName": "02_후계동.png",
+          "imageUrl": "/card-data/ttoganjip/ep-013/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "카미야",
+          "originalFileName": "03_카미야.png",
+          "imageUrl": "/card-data/ttoganjip/ep-013/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "산울림1992",
+          "originalFileName": "04_산울림1992.png",
+          "imageUrl": "/card-data/ttoganjip/ep-013/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 14,
+      "label": "EP.14",
+      "folderName": "14화(용산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-014/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "섬집",
+          "originalFileName": "02_섬집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-014/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "정성손칼국수",
+          "originalFileName": "03_정성손칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-014/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "어항로",
+          "originalFileName": "04_어항로.png",
+          "imageUrl": "/card-data/ttoganjip/ep-014/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 15,
+      "label": "EP.15",
+      "folderName": "15화(수원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-015/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "대가주점",
+          "originalFileName": "02_대가주점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-015/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "유동골뱅이",
+          "originalFileName": "03_유동골뱅이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-015/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "정철황소곱창",
+          "originalFileName": "04_정철황소곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-015/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 16,
+      "label": "EP.16",
+      "folderName": "16화(잠실)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-016/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "그리지하우스",
+          "originalFileName": "02_그리지하우스.png",
+          "imageUrl": "/card-data/ttoganjip/ep-016/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "더빛남",
+          "originalFileName": "03_더빛남.png",
+          "imageUrl": "/card-data/ttoganjip/ep-016/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "조박사토종순대국",
+          "originalFileName": "04_조박사토종순대국.png",
+          "imageUrl": "/card-data/ttoganjip/ep-016/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 17,
+      "label": "EP.17",
+      "folderName": "17화",
+      "mainImageUrl": "/card-data/ttoganjip/ep-017/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "까폼",
+          "originalFileName": "02_까폼.png",
+          "imageUrl": "/card-data/ttoganjip/ep-017/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "우정",
+          "originalFileName": "03_우정.png",
+          "imageUrl": "/card-data/ttoganjip/ep-017/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "칼리프하우스",
+          "originalFileName": "04_칼리프하우스.png",
+          "imageUrl": "/card-data/ttoganjip/ep-017/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 18,
+      "label": "EP.18",
+      "folderName": "18화",
+      "mainImageUrl": "/card-data/ttoganjip/ep-018/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "마지아레스토",
+          "originalFileName": "02_마지아레스토.png",
+          "imageUrl": "/card-data/ttoganjip/ep-018/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "선경준치회집",
+          "originalFileName": "03_선경준치회집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-018/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "태동반점",
+          "originalFileName": "04_태동반점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-018/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 19,
+      "label": "EP.19",
+      "folderName": "19화",
+      "mainImageUrl": "/card-data/ttoganjip/ep-019/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "25시참숯구이",
+          "originalFileName": "02_25시참숯구이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-019/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "꾸꾸붕어빵",
+          "originalFileName": "03_꾸꾸붕어빵.png",
+          "imageUrl": "/card-data/ttoganjip/ep-019/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "맛삼",
+          "originalFileName": "04_맛삼.png",
+          "imageUrl": "/card-data/ttoganjip/ep-019/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "엄마네돼지찌개",
+          "originalFileName": "05_엄마네돼지찌개.png",
+          "imageUrl": "/card-data/ttoganjip/ep-019/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 20,
+      "label": "EP.20",
+      "folderName": "20화",
+      "mainImageUrl": "/card-data/ttoganjip/ep-020/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "가원망원본점",
+          "originalFileName": "02_가원망원본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-020/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "나나",
+          "originalFileName": "03_나나.png",
+          "imageUrl": "/card-data/ttoganjip/ep-020/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "육장",
+          "originalFileName": "04_육장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-020/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "코랏",
+          "originalFileName": "05_코랏.png",
+          "imageUrl": "/card-data/ttoganjip/ep-020/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 21,
+      "label": "EP.21",
+      "folderName": "21화(대전)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-021/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "광천식당",
+          "originalFileName": "02_광천식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-021/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "와타요업",
+          "originalFileName": "03_와타요업.png",
+          "imageUrl": "/card-data/ttoganjip/ep-021/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "현암뚝방구이",
+          "originalFileName": "04_현암뚝방구이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-021/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 22,
+      "label": "EP.22",
+      "folderName": "22화(인천)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-022/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "남동어시장",
+          "originalFileName": "02_남동어시장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-022/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "에픽",
+          "originalFileName": "03_에픽.png",
+          "imageUrl": "/card-data/ttoganjip/ep-022/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "일미화평동냉면",
+          "originalFileName": "04_일미화평동냉면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-022/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 23,
+      "label": "EP.23",
+      "folderName": "23화(속초)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-023/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "도문집",
+          "originalFileName": "02_도문집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-023/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "돈우마을",
+          "originalFileName": "03_돈우마을.png",
+          "imageUrl": "/card-data/ttoganjip/ep-023/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "송정희어머니순두부",
+          "originalFileName": "04_송정희어머니순두부.png",
+          "imageUrl": "/card-data/ttoganjip/ep-023/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 24,
+      "label": "EP.24",
+      "folderName": "24화(삼성동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-024/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "길목",
+          "originalFileName": "02_길목.png",
+          "imageUrl": "/card-data/ttoganjip/ep-024/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "김인복의광평",
+          "originalFileName": "03_김인복의광평.png",
+          "imageUrl": "/card-data/ttoganjip/ep-024/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 25,
+      "label": "EP.25",
+      "folderName": "25화(원주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-025/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "고향칼국수",
+          "originalFileName": "02_고향칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-025/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "대복추어탕",
+          "originalFileName": "03_대복추어탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-025/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "신혼부부",
+          "originalFileName": "04_신혼부부.png",
+          "imageUrl": "/card-data/ttoganjip/ep-025/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "장군본가",
+          "originalFileName": "05_장군본가.png",
+          "imageUrl": "/card-data/ttoganjip/ep-025/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 26,
+      "label": "EP.26",
+      "folderName": "26화(종로)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-026/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "경춘자의라면땡기는날",
+          "originalFileName": "02_경춘자의라면땡기는날.png",
+          "imageUrl": "/card-data/ttoganjip/ep-026/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "밀양손만두",
+          "originalFileName": "03_밀양손만두.png",
+          "imageUrl": "/card-data/ttoganjip/ep-026/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "이태리재",
+          "originalFileName": "04_이태리재.png",
+          "imageUrl": "/card-data/ttoganjip/ep-026/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "토속촌삼계탕",
+          "originalFileName": "05_토속촌삼계탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-026/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 27,
+      "label": "EP.27",
+      "folderName": "27화(제주시)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-027/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "다담",
+          "originalFileName": "02_다담.png",
+          "imageUrl": "/card-data/ttoganjip/ep-027/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "명물",
+          "originalFileName": "03_명물.png",
+          "imageUrl": "/card-data/ttoganjip/ep-027/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "제주객주리조림",
+          "originalFileName": "04_제주객주리조림.png",
+          "imageUrl": "/card-data/ttoganjip/ep-027/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 28,
+      "label": "EP.28",
+      "folderName": "28화(제주표선)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-028/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "표선우동가게",
+          "originalFileName": "02_표선우동가게.png",
+          "imageUrl": "/card-data/ttoganjip/ep-028/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "표선칼국수",
+          "originalFileName": "03_표선칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-028/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "희신이네",
+          "originalFileName": "04_희신이네.png",
+          "imageUrl": "/card-data/ttoganjip/ep-028/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 29,
+      "label": "EP.29",
+      "folderName": "29화(홍콩)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-029/main.jpg",
+      "cards": [
+        {
+          "ordinal": 1,
+          "title": "퐁생앵, 주소없음",
+          "originalFileName": "1. 퐁생앵, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-01.jpg"
+        },
+        {
+          "ordinal": 2,
+          "title": "사워도우, 주소없음",
+          "originalFileName": "2. 사워도우, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "해피베이커리, 주소없음",
+          "originalFileName": "3. 해피베이커리, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "마카오레스토랑, 주소없음",
+          "originalFileName": "4. 마카오레스토랑, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "아렁카레, 주소없음",
+          "originalFileName": "5. 아렁카레, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "죽가장, 주소없음",
+          "originalFileName": "6. 죽가장, 주소없음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-029/card-06.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 30,
+      "label": "EP.30",
+      "folderName": "30화(여의도)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-030/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "가양칼국수버섯매운탕",
+          "originalFileName": "02_가양칼국수버섯매운탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-030/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "진주집",
+          "originalFileName": "03_진주집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-030/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "천안식당",
+          "originalFileName": "04_천안식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-030/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 31,
+      "label": "EP.31",
+      "folderName": "31화(혜화)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-031/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "성균관감자탕",
+          "originalFileName": "02_성균관감자탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-031/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "혜화도담",
+          "originalFileName": "03_혜화도담.png",
+          "imageUrl": "/card-data/ttoganjip/ep-031/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 32,
+      "label": "EP.32",
+      "folderName": "32화(전주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-032/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "길거리야",
+          "originalFileName": "02_길거리야.png",
+          "imageUrl": "/card-data/ttoganjip/ep-032/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "다가양조장",
+          "originalFileName": "03_다가양조장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-032/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "본소바",
+          "originalFileName": "04_본소바.png",
+          "imageUrl": "/card-data/ttoganjip/ep-032/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "우정식당",
+          "originalFileName": "05_우정식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-032/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 33,
+      "label": "EP.33",
+      "folderName": "33화(경주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-033/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "남정부일기사식당",
+          "originalFileName": "02_남정부일기사식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-033/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "빼돌린뒷고기",
+          "originalFileName": "03_빼돌린뒷고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-033/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "승진식당",
+          "originalFileName": "04_승진식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-033/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 34,
+      "label": "EP.34",
+      "folderName": "34화(부산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-034/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "부산갈매기",
+          "originalFileName": "02_부산갈매기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-034/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "삼오불고기",
+          "originalFileName": "03_삼오불고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-034/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "세정",
+          "originalFileName": "04_세정.png",
+          "imageUrl": "/card-data/ttoganjip/ep-034/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 35,
+      "label": "EP.35",
+      "folderName": "35화(건대)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-035/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "대흥양다리바베큐 건대점",
+          "originalFileName": "02_대흥양다리바베큐 건대점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-035/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "봉자마라탕",
+          "originalFileName": "03_봉자마라탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-035/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "심야식당 하리",
+          "originalFileName": "04_심야식당 하리.png",
+          "imageUrl": "/card-data/ttoganjip/ep-035/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 36,
+      "label": "EP.36",
+      "folderName": "36화(용인)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-036/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "명태인생 수지본점",
+          "originalFileName": "02_명태인생 수지본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-036/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "산사랑",
+          "originalFileName": "03_산사랑.png",
+          "imageUrl": "/card-data/ttoganjip/ep-036/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "엄마손칼국수",
+          "originalFileName": "04_엄마손칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-036/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 37,
+      "label": "EP.37",
+      "folderName": "37화(마포)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-037/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "낭만식탁",
+          "originalFileName": "02_낭만식탁.png",
+          "imageUrl": "/card-data/ttoganjip/ep-037/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "담택",
+          "originalFileName": "03_담택.png",
+          "imageUrl": "/card-data/ttoganjip/ep-037/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "신김치생삼겹살",
+          "originalFileName": "04_신김치생삼겹살.png",
+          "imageUrl": "/card-data/ttoganjip/ep-037/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 38,
+      "label": "EP.38",
+      "folderName": "38화(여수)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-038/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "밀터",
+          "originalFileName": "02_밀터.png",
+          "imageUrl": "/card-data/ttoganjip/ep-038/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "백금식당",
+          "originalFileName": "03_백금식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-038/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "여수 명동게장",
+          "originalFileName": "04_여수 명동게장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-038/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 39,
+      "label": "EP.39",
+      "folderName": "39화(순천)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-039/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "강변장어",
+          "originalFileName": "02_강변장어.png",
+          "imageUrl": "/card-data/ttoganjip/ep-039/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "대숲골농원",
+          "originalFileName": "03_대숲골농원.png",
+          "imageUrl": "/card-data/ttoganjip/ep-039/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "소라편의점",
+          "originalFileName": "04_소라편의점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-039/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 40,
+      "label": "EP.40",
+      "folderName": "40화(구로)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-040/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "금성관나주곰탕 구로직영점",
+          "originalFileName": "02_금성관나주곰탕 구로직영점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-040/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "낭만부대찌개",
+          "originalFileName": "03_낭만부대찌개.png",
+          "imageUrl": "/card-data/ttoganjip/ep-040/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "하이탕 마라탕",
+          "originalFileName": "04_하이탕 마라탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-040/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 41,
+      "label": "EP.41",
+      "folderName": "41화(방콕)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-041/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "카우뚬쿤렉",
+          "originalFileName": "02_카우뚬쿤렉.png",
+          "imageUrl": "/card-data/ttoganjip/ep-041/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "란쿤나이타래덩",
+          "originalFileName": "03_란쿤나이타래덩.png",
+          "imageUrl": "/card-data/ttoganjip/ep-041/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "하피드레스토랑",
+          "originalFileName": "04_하피드레스토랑.png",
+          "imageUrl": "/card-data/ttoganjip/ep-041/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "째완",
+          "originalFileName": "05_째완.png",
+          "imageUrl": "/card-data/ttoganjip/ep-041/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 42,
+      "label": "EP.42",
+      "folderName": "42화(태국)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-042/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "랭쎕",
+          "originalFileName": "02_랭쎕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "오믈렛",
+          "originalFileName": "03_오믈렛.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "오징어꼬치",
+          "originalFileName": "04_오징어꼬치.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "코코아밀크티",
+          "originalFileName": "05_코코아밀크티.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "철판아이스크림",
+          "originalFileName": "06_철판아이스크림.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-06.jpg"
+        },
+        {
+          "ordinal": 7,
+          "title": "롱간주스",
+          "originalFileName": "07_롱간주스.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-07.jpg"
+        },
+        {
+          "ordinal": 8,
+          "title": "에그누들",
+          "originalFileName": "08_에그누들.png",
+          "imageUrl": "/card-data/ttoganjip/ep-042/card-08.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 43,
+      "label": "EP.43",
+      "folderName": "43화(종로)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-043/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "대련집",
+          "originalFileName": "02_대련집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-043/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "진중 우육면관 본점",
+          "originalFileName": "03_진중 우육면관 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-043/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "함박웃음순대국",
+          "originalFileName": "04_함박웃음순대국.png",
+          "imageUrl": "/card-data/ttoganjip/ep-043/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 44,
+      "label": "EP.44",
+      "folderName": "44화(포항)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-044/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "시장식육식당",
+          "originalFileName": "02_시장식육식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-044/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "인천식당",
+          "originalFileName": "03_인천식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-044/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "철규분식",
+          "originalFileName": "04_철규분식.png",
+          "imageUrl": "/card-data/ttoganjip/ep-044/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 45,
+      "label": "EP.45",
+      "folderName": "45화(울산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-045/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "성원분식",
+          "originalFileName": "02_성원분식.png",
+          "imageUrl": "/card-data/ttoganjip/ep-045/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "순례국밥",
+          "originalFileName": "03_순례국밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-045/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "하동식당",
+          "originalFileName": "04_하동식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-045/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "함경면옥 울산본점",
+          "originalFileName": "05_함경면옥 울산본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-045/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 46,
+      "label": "EP.46",
+      "folderName": "46화(왕십리)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-046/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "스마일즉석떡볶이",
+          "originalFileName": "02_스마일즉석떡볶이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-046/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "유태",
+          "originalFileName": "03_유태.png",
+          "imageUrl": "/card-data/ttoganjip/ep-046/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "일번지",
+          "originalFileName": "04_일번지.png",
+          "imageUrl": "/card-data/ttoganjip/ep-046/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "한양양곱창 본점",
+          "originalFileName": "05_한양양곱창 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-046/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 47,
+      "label": "EP.47",
+      "folderName": "47화(충주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-047/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "고추장송어",
+          "originalFileName": "02_고추장송어.png",
+          "imageUrl": "/card-data/ttoganjip/ep-047/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "대전얼큰한칼국수",
+          "originalFileName": "03_대전얼큰한칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-047/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "오뚜기분식",
+          "originalFileName": "04_오뚜기분식.png",
+          "imageUrl": "/card-data/ttoganjip/ep-047/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "이씨식당 충주점",
+          "originalFileName": "05_이씨식당 충주점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-047/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 48,
+      "label": "EP.48",
+      "folderName": "48화(의정부)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-048/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "돈까스Gallery 본점",
+          "originalFileName": "02_돈까스Gallery 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-048/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "정통부대고기",
+          "originalFileName": "03_정통부대고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-048/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "황포연탄구이 의정부본점",
+          "originalFileName": "04_황포연탄구이 의정부본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-048/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 49,
+      "label": "EP.49",
+      "folderName": "49화(명동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-049/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "란주칼면",
+          "originalFileName": "02_란주칼면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-049/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "소공바지락칼국수",
+          "originalFileName": "03_소공바지락칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-049/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "신세계떡볶이",
+          "originalFileName": "04_신세계떡볶이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-049/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 50,
+      "label": "EP.50",
+      "folderName": "50화(대구)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-050/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "걸리버막창",
+          "originalFileName": "02_걸리버막창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-050/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "남산에",
+          "originalFileName": "03_남산에.png",
+          "imageUrl": "/card-data/ttoganjip/ep-050/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "대구아리조나막창 수성못 본점",
+          "originalFileName": "04_대구아리조나막창 수성못 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-050/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "앞산큰골집 앞산본점",
+          "originalFileName": "05_앞산큰골집 앞산본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-050/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 51,
+      "label": "EP.51",
+      "folderName": "51화(부산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-051/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "밀양집",
+          "originalFileName": "02_밀양집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-051/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "합천식당",
+          "originalFileName": "03_합천식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-051/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "합천일류돼지국밥",
+          "originalFileName": "04_합천일류돼지국밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-051/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 52,
+      "label": "EP.52",
+      "folderName": "52화(성수)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-052/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "대성갈비",
+          "originalFileName": "02_대성갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-052/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "레츠잇치킨 성수",
+          "originalFileName": "03_레츠잇치킨 성수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-052/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "버섯집",
+          "originalFileName": "04_버섯집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-052/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 53,
+      "label": "EP.53",
+      "folderName": "53화(청주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-053/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "봉용불고기",
+          "originalFileName": "02_봉용불고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-053/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "용용생고기",
+          "originalFileName": "03_용용생고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-053/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "진천집생고기 금천광장점",
+          "originalFileName": "04_진천집생고기 금천광장점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-053/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 54,
+      "label": "EP.54",
+      "folderName": "54화(춘천)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-054/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "1.5닭갈비 본점",
+          "originalFileName": "02_1.5닭갈비 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-054/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "우성닭갈비",
+          "originalFileName": "03_우성닭갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-054/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "학곡리막국수닭갈비",
+          "originalFileName": "04_학곡리막국수닭갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-054/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 55,
+      "label": "EP.55",
+      "folderName": "55화(영등포)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-055/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "강촌마을",
+          "originalFileName": "02_강촌마을.png",
+          "imageUrl": "/card-data/ttoganjip/ep-055/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "태양생고기",
+          "originalFileName": "03_태양생고기.png",
+          "imageUrl": "/card-data/ttoganjip/ep-055/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 56,
+      "label": "EP.56",
+      "folderName": "56화(양양)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-056/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "물치손칼국수",
+          "originalFileName": "02_물치손칼국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-056/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "상운메밀촌",
+          "originalFileName": "03_상운메밀촌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-056/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "함경면옥",
+          "originalFileName": "04_함경면옥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-056/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 57,
+      "label": "EP.57",
+      "folderName": "57화(강릉)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-057/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "버드나무 브루어리",
+          "originalFileName": "02_버드나무 브루어리.png",
+          "imageUrl": "/card-data/ttoganjip/ep-057/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "옛카나리아",
+          "originalFileName": "03_옛카나리아.png",
+          "imageUrl": "/card-data/ttoganjip/ep-057/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "장안횟집",
+          "originalFileName": "04_장안횟집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-057/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 58,
+      "label": "EP.58",
+      "folderName": "58화(분당)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-058/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "델리슈샤",
+          "originalFileName": "02_델리슈샤.png",
+          "imageUrl": "/card-data/ttoganjip/ep-058/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "돌판하나 분당본점",
+          "originalFileName": "03_돌판하나 분당본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-058/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "미가 들깨수제비 충무김밥 본점",
+          "originalFileName": "04_미가 들깨수제비 충무김밥 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-058/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 59,
+      "label": "EP.59",
+      "folderName": "59화(사당)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-059/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "논고을",
+          "originalFileName": "02_논고을.png",
+          "imageUrl": "/card-data/ttoganjip/ep-059/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "복돈이 부추삼겹살",
+          "originalFileName": "03_복돈이 부추삼겹살.png",
+          "imageUrl": "/card-data/ttoganjip/ep-059/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "쭈꾸미술관 본점",
+          "originalFileName": "04_쭈꾸미술관 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-059/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 60,
+      "label": "EP.60",
+      "folderName": "60화(천안)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-060/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "긍정식당",
+          "originalFileName": "02_긍정식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-060/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "진주회관",
+          "originalFileName": "03_진주회관.png",
+          "imageUrl": "/card-data/ttoganjip/ep-060/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "충남집순대",
+          "originalFileName": "04_충남집순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-060/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 61,
+      "label": "EP.61",
+      "folderName": "61화(대전)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-061/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "성심당 본점",
+          "originalFileName": "02_성심당 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-061/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "하레하레 둔산점",
+          "originalFileName": "03_하레하레 둔산점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-061/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "하루팡",
+          "originalFileName": "04_하루팡.png",
+          "imageUrl": "/card-data/ttoganjip/ep-061/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 62,
+      "label": "EP.62",
+      "folderName": "62화(은평)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-062/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "고향순대국밥",
+          "originalFileName": "02_고향순대국밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-062/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "두꺼비집",
+          "originalFileName": "03_두꺼비집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-062/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "떡산",
+          "originalFileName": "04_떡산.png",
+          "imageUrl": "/card-data/ttoganjip/ep-062/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "옥이네김밥",
+          "originalFileName": "05_옥이네김밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-062/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 63,
+      "label": "EP.63",
+      "folderName": "63화(군산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-063/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "군산소바 청사초롱",
+          "originalFileName": "02_군산소바 청사초롱.png",
+          "imageUrl": "/card-data/ttoganjip/ep-063/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "빈해원",
+          "originalFileName": "03_빈해원.png",
+          "imageUrl": "/card-data/ttoganjip/ep-063/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "조촌이층집",
+          "originalFileName": "04_조촌이층집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-063/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 64,
+      "label": "EP.64",
+      "folderName": "64화(전주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-064/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "돼지박사1997",
+          "originalFileName": "02_돼지박사1997.png",
+          "imageUrl": "/card-data/ttoganjip/ep-064/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "또순이네집",
+          "originalFileName": "03_또순이네집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-064/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "스시미라이",
+          "originalFileName": "04_스시미라이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-064/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "큰집피순대",
+          "originalFileName": "05_큰집피순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-064/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 65,
+      "label": "EP.65",
+      "folderName": "65화(해방촌)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-065/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "면마루",
+          "originalFileName": "02_면마루.png",
+          "imageUrl": "/card-data/ttoganjip/ep-065/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "세몰리나클럽",
+          "originalFileName": "03_세몰리나클럽.png",
+          "imageUrl": "/card-data/ttoganjip/ep-065/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 66,
+      "label": "EP.66",
+      "folderName": "66화(일산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-066/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "굴토리",
+          "originalFileName": "02_굴토리.png",
+          "imageUrl": "/card-data/ttoganjip/ep-066/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "일산칼국수본점",
+          "originalFileName": "03_일산칼국수본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-066/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "포폴로피자",
+          "originalFileName": "04_포폴로피자.png",
+          "imageUrl": "/card-data/ttoganjip/ep-066/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 67,
+      "label": "EP.67",
+      "folderName": "67화(목포)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-067/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "곰집갈비",
+          "originalFileName": "02_곰집갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-067/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "대명관",
+          "originalFileName": "03_대명관.png",
+          "imageUrl": "/card-data/ttoganjip/ep-067/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "우정식육식당",
+          "originalFileName": "04_우정식육식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-067/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "율석수산",
+          "originalFileName": "05_율석수산.png",
+          "imageUrl": "/card-data/ttoganjip/ep-067/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 68,
+      "label": "EP.68",
+      "folderName": "68화(통영)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-068/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "강변다찌",
+          "originalFileName": "02_강변다찌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-068/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "되뫼골부대찌개",
+          "originalFileName": "03_되뫼골부대찌개.png",
+          "imageUrl": "/card-data/ttoganjip/ep-068/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "밥상마당",
+          "originalFileName": "04_밥상마당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-068/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 69,
+      "label": "EP.69",
+      "folderName": "69화(창원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-069/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "상남 수제 돈까스",
+          "originalFileName": "02_상남 수제 돈까스.png",
+          "imageUrl": "/card-data/ttoganjip/ep-069/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "울트라반점 귀산본점",
+          "originalFileName": "03_울트라반점 귀산본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-069/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "청춘키친",
+          "originalFileName": "04_청춘키친.png",
+          "imageUrl": "/card-data/ttoganjip/ep-069/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 70,
+      "label": "EP.70",
+      "folderName": "70화(동대문)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-070/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "구렌몽골",
+          "originalFileName": "02_구렌몽골.png",
+          "imageUrl": "/card-data/ttoganjip/ep-070/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "진옥화할매원조닭한마리",
+          "originalFileName": "03_진옥화할매원조닭한마리.png",
+          "imageUrl": "/card-data/ttoganjip/ep-070/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "초당",
+          "originalFileName": "04_초당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-070/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "효제동소머리국밥 본점",
+          "originalFileName": "05_효제동소머리국밥 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-070/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 71,
+      "label": "EP.71",
+      "folderName": "71화(동탄)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-071/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "농가의하루 동탄 본점",
+          "originalFileName": "02_농가의하루 동탄 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-071/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "육돈",
+          "originalFileName": "03_육돈.png",
+          "imageUrl": "/card-data/ttoganjip/ep-071/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "황소곱창",
+          "originalFileName": "04_황소곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-071/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 72,
+      "label": "EP.72",
+      "folderName": "72화(마산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-072/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "본질 닭도리탕",
+          "originalFileName": "02_본질 닭도리탕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-072/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "부산이화양곱창",
+          "originalFileName": "03_부산이화양곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-072/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "어전",
+          "originalFileName": "04_어전.png",
+          "imageUrl": "/card-data/ttoganjip/ep-072/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "해동식육식당",
+          "originalFileName": "05_해동식육식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-072/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 73,
+      "label": "EP.73",
+      "folderName": "73화(진해)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-073/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "고향소갈비찜 용원본점",
+          "originalFileName": "02_고향소갈비찜 용원본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-073/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "부산문현곱창",
+          "originalFileName": "03_부산문현곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-073/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "아구훈감",
+          "originalFileName": "04_아구훈감.png",
+          "imageUrl": "/card-data/ttoganjip/ep-073/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 74,
+      "label": "EP.74",
+      "folderName": "74화(신림)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-074/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "목포수산",
+          "originalFileName": "02_목포수산.png",
+          "imageUrl": "/card-data/ttoganjip/ep-074/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "오삼숙이",
+          "originalFileName": "03_오삼숙이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-074/card-03.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 75,
+      "label": "EP.75",
+      "folderName": "75화(안양)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-075/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "거부기식당 범계점",
+          "originalFileName": "02_거부기식당 범계점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-075/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "마당바베큐",
+          "originalFileName": "03_마당바베큐.png",
+          "imageUrl": "/card-data/ttoganjip/ep-075/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "범계참치",
+          "originalFileName": "04_범계참치.png",
+          "imageUrl": "/card-data/ttoganjip/ep-075/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "옥돌양곱창구이 본점",
+          "originalFileName": "05_옥돌양곱창구이 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-075/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "정통춘천닭갈비",
+          "originalFileName": "06_정통춘천닭갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-075/card-06.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 76,
+      "label": "EP.76",
+      "folderName": "76화(김포)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-076/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "성원농장",
+          "originalFileName": "02_성원농장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-076/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "육더쿠",
+          "originalFileName": "03_육더쿠.png",
+          "imageUrl": "/card-data/ttoganjip/ep-076/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "통영해물뚝배기 장기점",
+          "originalFileName": "04_통영해물뚝배기 장기점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-076/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 77,
+      "label": "EP.77",
+      "folderName": "77화(오사카)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-077/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "이제이보쿠조",
+          "originalFileName": "02_이제이보쿠조.png",
+          "imageUrl": "/card-data/ttoganjip/ep-077/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "퐁퐁야",
+          "originalFileName": "03_퐁퐁야.png",
+          "imageUrl": "/card-data/ttoganjip/ep-077/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "아지쿠라야",
+          "originalFileName": "04_아지쿠라야.png",
+          "imageUrl": "/card-data/ttoganjip/ep-077/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "카페포켓",
+          "originalFileName": "05_카페포켓.png",
+          "imageUrl": "/card-data/ttoganjip/ep-077/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 78,
+      "label": "EP.78",
+      "folderName": "78화(교토)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-078/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "멘야유코",
+          "originalFileName": "02_멘야유코.png",
+          "imageUrl": "/card-data/ttoganjip/ep-078/card-02.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 79,
+      "label": "EP.79",
+      "folderName": "79화(안양 재촬영)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-079/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "동해오징어보쌈",
+          "originalFileName": "02_동해오징어보쌈.png",
+          "imageUrl": "/card-data/ttoganjip/ep-079/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "미림식가",
+          "originalFileName": "03_미림식가.png",
+          "imageUrl": "/card-data/ttoganjip/ep-079/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "얼룩말식당",
+          "originalFileName": "04_얼룩말식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-079/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "홍두깨손칼국수 2호점",
+          "originalFileName": "05_홍두깨손칼국수 2호점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-079/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 80,
+      "label": "EP.80",
+      "folderName": "80화(안동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-080/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "길풍",
+          "originalFileName": "02_길풍.png",
+          "imageUrl": "/card-data/ttoganjip/ep-080/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "안동국시",
+          "originalFileName": "03_안동국시.png",
+          "imageUrl": "/card-data/ttoganjip/ep-080/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "안동서문찜닭",
+          "originalFileName": "04_안동서문찜닭.png",
+          "imageUrl": "/card-data/ttoganjip/ep-080/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "일직식당",
+          "originalFileName": "05_일직식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-080/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 81,
+      "label": "EP.81",
+      "folderName": "81화(구미)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-081/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "선산순대",
+          "originalFileName": "02_선산순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-081/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "푸차이로오",
+          "originalFileName": "03_푸차이로오.png",
+          "imageUrl": "/card-data/ttoganjip/ep-081/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "한채쭈꾸미",
+          "originalFileName": "04_한채쭈꾸미.png",
+          "imageUrl": "/card-data/ttoganjip/ep-081/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 82,
+      "label": "EP.82",
+      "folderName": "82화(파주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-082/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "신간짬뽕 본점",
+          "originalFileName": "02_신간짬뽕 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-082/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "심학산닭갈비",
+          "originalFileName": "03_심학산닭갈비.png",
+          "imageUrl": "/card-data/ttoganjip/ep-082/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "심학산도토리국수",
+          "originalFileName": "04_심학산도토리국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-082/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "일호집",
+          "originalFileName": "05_일호집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-082/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 83,
+      "label": "EP.83",
+      "folderName": "83화(여수)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-083/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "시전돌곱창",
+          "originalFileName": "02_시전돌곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-083/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "웅천부일식당",
+          "originalFileName": "03_웅천부일식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-083/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "풀뿌리흑두부",
+          "originalFileName": "04_풀뿌리흑두부.png",
+          "imageUrl": "/card-data/ttoganjip/ep-083/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 84,
+      "label": "EP.84",
+      "folderName": "84화(남원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-084/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "금생춘",
+          "originalFileName": "02_금생춘.png",
+          "imageUrl": "/card-data/ttoganjip/ep-084/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "남원밀면",
+          "originalFileName": "03_남원밀면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-084/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "명문제과",
+          "originalFileName": "04_명문제과.png",
+          "imageUrl": "/card-data/ttoganjip/ep-084/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 85,
+      "label": "EP.85",
+      "folderName": "85화(평택)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-085/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "된장박이진성집",
+          "originalFileName": "02_된장박이진성집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-085/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "타쿠미우동",
+          "originalFileName": "03_타쿠미우동.png",
+          "imageUrl": "/card-data/ttoganjip/ep-085/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "포호치민",
+          "originalFileName": "04_포호치민.png",
+          "imageUrl": "/card-data/ttoganjip/ep-085/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "호성식당",
+          "originalFileName": "05_호성식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-085/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 86,
+      "label": "EP.86",
+      "folderName": "86화(남대문시장)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-086/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "곰냉면 남대문본점",
+          "originalFileName": "02_곰냉면 남대문본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-086/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "막내회집 본점",
+          "originalFileName": "03_막내회집 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-086/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "왕성식당",
+          "originalFileName": "04_왕성식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-086/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 87,
+      "label": "EP.87",
+      "folderName": "87화(서촌)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-087/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "사직로 서울",
+          "originalFileName": "02_사직로 서울.png",
+          "imageUrl": "/card-data/ttoganjip/ep-087/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "영화루",
+          "originalFileName": "03_영화루.png",
+          "imageUrl": "/card-data/ttoganjip/ep-087/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "체부동잔치집",
+          "originalFileName": "04_체부동잔치집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-087/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 88,
+      "label": "EP.88",
+      "folderName": "88화(남양주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-088/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "오리촌",
+          "originalFileName": "02_오리촌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-088/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "피렌체테이블",
+          "originalFileName": "03_피렌체테이블.png",
+          "imageUrl": "/card-data/ttoganjip/ep-088/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "PUD",
+          "originalFileName": "04_PUD.png",
+          "imageUrl": "/card-data/ttoganjip/ep-088/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 89,
+      "label": "EP.89",
+      "folderName": "89화(서산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-089/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "뚱이네포차",
+          "originalFileName": "02_뚱이네포차.png",
+          "imageUrl": "/card-data/ttoganjip/ep-089/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "옥경이네",
+          "originalFileName": "03_옥경이네.png",
+          "imageUrl": "/card-data/ttoganjip/ep-089/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "촌식당",
+          "originalFileName": "04_촌식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-089/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "풍전뚝집",
+          "originalFileName": "05_풍전뚝집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-089/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 90,
+      "label": "EP.90",
+      "folderName": "90화(안산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-090/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "마마교자관",
+          "originalFileName": "02_마마교자관.png",
+          "imageUrl": "/card-data/ttoganjip/ep-090/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "미락식당",
+          "originalFileName": "03_미락식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-090/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "미오또닭강정",
+          "originalFileName": "04_미오또닭강정.png",
+          "imageUrl": "/card-data/ttoganjip/ep-090/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 91,
+      "label": "EP.91",
+      "folderName": "91화(망원동)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-091/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "얼큰이왕냉면",
+          "originalFileName": "02_얼큰이왕냉면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "이치젠",
+          "originalFileName": "03_이치젠.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "망원돈까스",
+          "originalFileName": "04_망원돈까스.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "정각 서울망원본점",
+          "originalFileName": "05_정각 서울망원본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "망원동즉석우동 본점",
+          "originalFileName": "06_망원동즉석우동 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-06.jpg"
+        },
+        {
+          "ordinal": 7,
+          "title": "일등식당",
+          "originalFileName": "07_일등식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-091/card-07.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 92,
+      "label": "EP.92",
+      "folderName": "92화(해남)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-092/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "우래정",
+          "originalFileName": "02_우래정.png",
+          "imageUrl": "/card-data/ttoganjip/ep-092/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "영심횟집",
+          "originalFileName": "03_영심횟집.png",
+          "imageUrl": "/card-data/ttoganjip/ep-092/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "서성식당",
+          "originalFileName": "04_서성식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-092/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 93,
+      "label": "EP.93",
+      "folderName": "93화(광주 양동시장)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-093/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "진수식당",
+          "originalFileName": "02_진수식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "1969양동통닭",
+          "originalFileName": "03_1969양동통닭.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "양동순대",
+          "originalFileName": "04_양동순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "동광수산",
+          "originalFileName": "05_동광수산.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-05.jpg"
+        },
+        {
+          "ordinal": 6,
+          "title": "하나분식",
+          "originalFileName": "06_하나분식.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-06.jpg"
+        },
+        {
+          "ordinal": 7,
+          "title": "길거리 토스트",
+          "originalFileName": "07_길거리 토스트.png",
+          "imageUrl": "/card-data/ttoganjip/ep-093/card-07.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 94,
+      "label": "EP.94",
+      "folderName": "94화(상암)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-094/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "다가이순대국 상암점",
+          "originalFileName": "02_다가이순대국 상암점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-094/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "온타이키친",
+          "originalFileName": "03_온타이키친.png",
+          "imageUrl": "/card-data/ttoganjip/ep-094/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "류정닭개장",
+          "originalFileName": "04_류정닭개장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-094/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 95,
+      "label": "EP.95",
+      "folderName": "95화(철원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-095/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "화강송어회",
+          "originalFileName": "02_화강송어회.png",
+          "imageUrl": "/card-data/ttoganjip/ep-095/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "든든한추어탕 힘나는낙지볶음",
+          "originalFileName": "03_든든한추어탕 힘나는낙지볶음.png",
+          "imageUrl": "/card-data/ttoganjip/ep-095/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "동송칡냉면",
+          "originalFileName": "04_동송칡냉면.png",
+          "imageUrl": "/card-data/ttoganjip/ep-095/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 96,
+      "label": "EP.96",
+      "folderName": "96화(노원)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-096/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "쭈꾸미달인 노원본점",
+          "originalFileName": "02_쭈꾸미달인 노원본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-096/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "돈까스먹는용만이",
+          "originalFileName": "03_돈까스먹는용만이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-096/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "칠성해물통짬뽕",
+          "originalFileName": "04_칠성해물통짬뽕.png",
+          "imageUrl": "/card-data/ttoganjip/ep-096/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "원조이모네연탄불곱창",
+          "originalFileName": "05_원조이모네연탄불곱창.png",
+          "imageUrl": "/card-data/ttoganjip/ep-096/card-05.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 97,
+      "label": "EP.97",
+      "folderName": "97화(분당)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-097/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "봄날에청국장",
+          "originalFileName": "02_봄날에청국장.png",
+          "imageUrl": "/card-data/ttoganjip/ep-097/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "예돈돈까스 정자본점",
+          "originalFileName": "03_예돈돈까스 정자본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-097/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "돈멜 본점",
+          "originalFileName": "04_돈멜 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-097/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 98,
+      "label": "EP.98",
+      "folderName": "98화(김해)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-098/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "쫀삼곱",
+          "originalFileName": "02_쫀삼곱.png",
+          "imageUrl": "/card-data/ttoganjip/ep-098/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "마창수산직영횟집 내동점",
+          "originalFileName": "03_마창수산직영횟집 내동점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-098/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "부엌",
+          "originalFileName": "04_부엌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-098/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 99,
+      "label": "EP.99",
+      "folderName": "99화(울산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-099/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "장터순대국",
+          "originalFileName": "02_장터순대국.png",
+          "imageUrl": "/card-data/ttoganjip/ep-099/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "형제식당",
+          "originalFileName": "03_형제식당.png",
+          "imageUrl": "/card-data/ttoganjip/ep-099/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "갓포이찌",
+          "originalFileName": "04_갓포이찌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-099/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 100,
+      "label": "EP.100",
+      "folderName": "100화(부산 가덕도)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-100/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "천성삼거리장어구이",
+          "originalFileName": "02_천성삼거리장어구이.png",
+          "imageUrl": "/card-data/ttoganjip/ep-100/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "1966정원",
+          "originalFileName": "03_1966정원.png",
+          "imageUrl": "/card-data/ttoganjip/ep-100/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "밀양산내돼지국밥",
+          "originalFileName": "04_밀양산내돼지국밥.png",
+          "imageUrl": "/card-data/ttoganjip/ep-100/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 101,
+      "label": "EP.101",
+      "folderName": "101화(진주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-101/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "진양호짬뽕 본점",
+          "originalFileName": "02_진양호짬뽕 본점.png",
+          "imageUrl": "/card-data/ttoganjip/ep-101/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "장수촌",
+          "originalFileName": "03_장수촌.png",
+          "imageUrl": "/card-data/ttoganjip/ep-101/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "숙이네국수",
+          "originalFileName": "04_숙이네국수.png",
+          "imageUrl": "/card-data/ttoganjip/ep-101/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 102,
+      "label": "EP.102",
+      "folderName": "102화(공주)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-102/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "진토랑",
+          "originalFileName": "02_진토랑.png",
+          "imageUrl": "/card-data/ttoganjip/ep-102/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "숙골순대",
+          "originalFileName": "03_숙골순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-102/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "북경탕수육",
+          "originalFileName": "04_북경탕수육.png",
+          "imageUrl": "/card-data/ttoganjip/ep-102/card-04.jpg"
+        }
+      ]
+    },
+    {
+      "episodeNumber": 103,
+      "label": "EP.103",
+      "folderName": "103화(논산)",
+      "mainImageUrl": "/card-data/ttoganjip/ep-103/main.jpg",
+      "cards": [
+        {
+          "ordinal": 2,
+          "title": "팔복순대",
+          "originalFileName": "02_팔복순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-103/card-02.jpg"
+        },
+        {
+          "ordinal": 3,
+          "title": "홍가네순대",
+          "originalFileName": "03_홍가네순대.png",
+          "imageUrl": "/card-data/ttoganjip/ep-103/card-03.jpg"
+        },
+        {
+          "ordinal": 4,
+          "title": "함지박",
+          "originalFileName": "04_함지박.png",
+          "imageUrl": "/card-data/ttoganjip/ep-103/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "다락가든",
+          "originalFileName": "05_다락가든.png",
+          "imageUrl": "/card-data/ttoganjip/ep-103/card-05.jpg"
+        }
+      ]
+    }
+  ]
+}

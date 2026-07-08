@@ -22,6 +22,7 @@ import {
   Share2,
 } from "lucide-react";
 import { Link, useLocation, useSearch } from "wouter";
+import ttoganjipCardAssets from "@/data/generated/ttoganjip-card-assets.json";
 import {
   creators,
   discoveryTopics,
@@ -106,6 +107,18 @@ type EpisodeStorySlide = {
   imageUrl?: string;
 };
 
+type TtoganjipCardAssetEpisode = {
+  episodeNumber: number;
+  label: string;
+  mainImageUrl?: string | null;
+  cards: Array<{
+    ordinal: number;
+    title: string;
+    originalFileName: string;
+    imageUrl: string;
+  }>;
+};
+
 type EpisodeComment = {
   id: string;
   text: string;
@@ -127,6 +140,12 @@ const EPISODE_CARD_PALETTES = [
 ];
 
 const EPISODE_SOCIAL_STORAGE_KEY = "matpick:episode-card-social:v1";
+const ttoganjipCardAssetsByLabel = new Map(
+  (ttoganjipCardAssets.episodes as TtoganjipCardAssetEpisode[]).map((episode) => [
+    episode.label,
+    episode,
+  ])
+);
 const POPULAR_RESTAURANT_TOPIC_EXCLUDED_COLLECTION_SLUGS = new Set([
   "popular-dongtan-best7",
 ]);
@@ -295,6 +314,14 @@ function getEpisodeCardPalette(index: number) {
   return EPISODE_CARD_PALETTES[index % EPISODE_CARD_PALETTES.length];
 }
 
+function getEpisodeMainImageUrl(episode: DiscoveryTopicEpisode) {
+  if (episode.topicSlug !== "ttoganjip") {
+    return "";
+  }
+
+  return ttoganjipCardAssetsByLabel.get(episode.episode)?.mainImageUrl ?? "";
+}
+
 function buildEpisodeStorySlides({
   episode,
   topic,
@@ -336,6 +363,7 @@ function buildEpisodeStorySlides({
         locale === "en" ? "Episode" : "회차별 카드",
       ],
       background: getEpisodeCardPalette(0),
+      imageUrl: getEpisodeMainImageUrl(episode) || undefined,
     },
     ...restaurantSlides,
   ];
@@ -715,6 +743,8 @@ function EpisodeCollectionCard({
   locale: AppLocale;
   onOpen: () => void;
 }) {
+  const mainImageUrl = getEpisodeMainImageUrl(episode);
+
   return (
     <button
       type="button"
@@ -729,8 +759,13 @@ function EpisodeCollectionCard({
       style={{ background: getEpisodeCardPalette(index) }}
       aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_18%,rgba(255,255,255,0.28),transparent_22%),linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.62))]" />
-      <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-white/15 blur-2xl" />
+      {mainImageUrl ? (
+        <img src={mainImageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      ) : null}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.16),rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.72))]" />
+      {!mainImageUrl ? (
+        <div className="absolute -right-10 top-8 h-36 w-36 rounded-full bg-white/15 blur-2xl" />
+      ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
         <div>
           <p className="text-sm font-black leading-5 text-white/80">{episode.episode}</p>

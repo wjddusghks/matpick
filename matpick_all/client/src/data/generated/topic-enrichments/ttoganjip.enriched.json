@@ -1,6 +1,6 @@
 {
   "datasetId": "ttoganjip",
-  "generatedAt": "2026-03-22T10:52:11.615Z",
+  "generatedAt": "2026-07-08T23:11:42.325Z",
   "restaurants": [
     {
       "id": "topic_enrichment_ttoganjip_7682de14575b",
@@ -14912,6 +14912,3439 @@
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJr6_G1Ui3fDURBYMvTEj5VSM",
       "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_03c64fd22039",
+      "name": "얼큰이왕냉면",
+      "region": "서울 마포구",
+      "address": "서울 마포구 희우정로 76 마포아파트",
+      "category": "냉면",
+      "representativeMenu": "수제왕돈까스 (10,000원)",
+      "lat": 37.55279467,
+      "lng": 126.90405504,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_1",
+          "name": "수제왕돈까스",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_2",
+          "name": "제육덮밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_3",
+          "name": "김치찌개",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_4",
+          "name": "수제카레밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_5",
+          "name": "돌솥비빔밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_6",
+          "name": "양푼비빔밥",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_7",
+          "name": "얼큰칼국수",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_8",
+          "name": "바지락왕칼국수",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_9",
+          "name": "떡만두국",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_10",
+          "name": "돈까스+냉면/우동",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_11",
+          "name": "물냉면",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_12",
+          "name": "비빔냉면",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_13",
+          "name": "어린이냉면",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_14",
+          "name": "비빔국수",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_15",
+          "name": "잔치국수",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_16",
+          "name": "왕만두 6개",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_03c64fd22039_menu_17",
+          "name": "물만두",
+          "isSignature": false,
+          "price": "5,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_ed9b6e91f365",
+      "name": "이치젠",
+      "region": "서울 마포구",
+      "address": "서울 마포구 포은로 109",
+      "category": "일식",
+      "representativeMenu": "이치젠텐동 (11,000원)",
+      "lat": 37.55665855,
+      "lng": 126.90454806,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_1",
+          "name": "이치젠텐동",
+          "isSignature": true,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_2",
+          "name": "아나고텐동",
+          "isSignature": false,
+          "price": "14,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_3",
+          "name": "스페셜텐동",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_4",
+          "name": "에비텐동",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_5",
+          "name": "바질토마토",
+          "isSignature": false,
+          "price": "3,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_6",
+          "name": "오이꼬수",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_7",
+          "name": "토로지간장 (대)",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_8",
+          "name": "토로지간장 (소)",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ed9b6e91f365_menu_9",
+          "name": "바질레몽소금",
+          "isSignature": false,
+          "price": "4,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_6c33e6471e3d",
+      "name": "망원돈까스",
+      "region": "서울 마포구",
+      "address": "서울 마포구 망원로8길 74",
+      "category": "돈까스,우동",
+      "representativeMenu": "성북동돈까스 (13,500원)",
+      "lat": 37.55445388,
+      "lng": 126.90576181,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_1",
+          "name": "성북동돈까스",
+          "isSignature": true,
+          "price": "13,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_2",
+          "name": "치즈고구마돈까스",
+          "isSignature": false,
+          "price": "13,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_3",
+          "name": "돈까스 얼큰소우동정식",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_4",
+          "name": "등심까스",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_5",
+          "name": "오징어덮밥",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_6",
+          "name": "치킨카레",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_7",
+          "name": "가츠동",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_8",
+          "name": "돈까스 비빔모밀정식",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_9",
+          "name": "소고기열무밥",
+          "isSignature": false,
+          "price": "10,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_10",
+          "name": "새우후라이",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_11",
+          "name": "성주돈까스",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_12",
+          "name": "돈까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_13",
+          "name": "레이디까스C",
+          "isSignature": false,
+          "price": "14,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_14",
+          "name": "레이디까스B",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_15",
+          "name": "일본가케+소우동",
+          "isSignature": false,
+          "price": "8,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_16",
+          "name": "얼큰김치우동+왕새우",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_17",
+          "name": "일본가케우동",
+          "isSignature": false,
+          "price": "8,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_18",
+          "name": "카레한공기",
+          "isSignature": false,
+          "price": "3,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_19",
+          "name": "일반소우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_20",
+          "name": "얼큰김치우동",
+          "isSignature": false,
+          "price": "8,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_21",
+          "name": "반두부김치우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_22",
+          "name": "안심(가라아게)",
+          "isSignature": false,
+          "price": "3,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_23",
+          "name": "옐로치서가츠동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_24",
+          "name": "소우동",
+          "isSignature": false,
+          "price": "3,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_25",
+          "name": "야육우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_26",
+          "name": "얼큰소우동",
+          "isSignature": false,
+          "price": "3,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_27",
+          "name": "제육덮밥",
+          "isSignature": false,
+          "price": "10,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_28",
+          "name": "냉모밀",
+          "isSignature": false,
+          "price": "9,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_29",
+          "name": "일본카레우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_30",
+          "name": "돈까스카레",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_31",
+          "name": "치킨까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_32",
+          "name": "에비동",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_33",
+          "name": "어묵우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_34",
+          "name": "코로케카레",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_35",
+          "name": "냉모밀+왕새우2마리",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_36",
+          "name": "안심까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_37",
+          "name": "냉모밀+치즈고로케2",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_38",
+          "name": "돈까스 모밀정식",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_39",
+          "name": "카레덮밥",
+          "isSignature": false,
+          "price": "10,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_40",
+          "name": "생선까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_41",
+          "name": "만두김치우동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_42",
+          "name": "안·생까스",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_43",
+          "name": "돈까스 우동정식",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_44",
+          "name": "냉모밀+돈까스안심1/2",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_45",
+          "name": "우동",
+          "isSignature": false,
+          "price": "8,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_46",
+          "name": "안덕김치가츠동",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6c33e6471e3d_menu_47",
+          "name": "얼큰소우동정식",
+          "isSignature": false,
+          "price": "13,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_2c53554250cb",
+      "name": "정각 서울망원본점",
+      "region": "서울 마포구",
+      "address": "서울 마포구 망원로6길 57 2층 정각",
+      "category": "삼겹살",
+      "representativeMenu": "직화소갈비된장찌개 (8,000원)",
+      "lat": 37.55449126,
+      "lng": 126.90406758,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-05.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_2c53554250cb_menu_1",
+          "name": "직화소갈비된장찌개",
+          "isSignature": true,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2c53554250cb_menu_2",
+          "name": "눈꽃육회",
+          "isSignature": false,
+          "price": "19,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2c53554250cb_menu_3",
+          "name": "숙성삼겹살",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2c53554250cb_menu_4",
+          "name": "꽃목살",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2c53554250cb_menu_5",
+          "name": "육사시미",
+          "isSignature": false,
+          "price": "19,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_73f1a7dc73e7",
+      "name": "망원동즉석우동 본점",
+      "region": "서울 마포구",
+      "address": "서울 마포구 동교로 83",
+      "category": "돈까스,우동",
+      "representativeMenu": "즉석우동 (7,000원)",
+      "lat": 37.55424541,
+      "lng": 126.91113319,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-06.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_73f1a7dc73e7_menu_1",
+          "name": "즉석우동",
+          "isSignature": true,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_73f1a7dc73e7_menu_2",
+          "name": "돈까스",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_73f1a7dc73e7_menu_3",
+          "name": "어묵우동",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_73f1a7dc73e7_menu_4",
+          "name": "어묵(1인분)",
+          "isSignature": false,
+          "price": "7,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_3486b3c4dccd",
+      "name": "일등식당",
+      "region": "서울 마포구",
+      "address": "서울 마포구 방울내로 82",
+      "category": "해장국",
+      "representativeMenu": "해장국 (8,000원)",
+      "lat": 37.56054708,
+      "lng": 126.90433937,
+      "imageUrl": "/card-data/ttoganjip/ep-091/card-07.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_3486b3c4dccd_menu_1",
+          "name": "해장국",
+          "isSignature": true,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_3486b3c4dccd_menu_2",
+          "name": "해장국(특)",
+          "isSignature": false,
+          "price": "11,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_7f14959e1d62",
+      "name": "우래정",
+      "region": "전남 해남군",
+      "address": "전남 해남군 송지면 산정1길 117",
+      "category": "한식",
+      "representativeMenu": "백반 (12,000원)",
+      "lat": 34.36876579,
+      "lng": 126.51871656,
+      "imageUrl": "/card-data/ttoganjip/ep-092/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_1",
+          "name": "백반",
+          "isSignature": true,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_2",
+          "name": "제육볶음",
+          "isSignature": false,
+          "price": "50,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_3",
+          "name": "생선구이(1인)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_4",
+          "name": "순두부",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_5",
+          "name": "김치찌개",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_6",
+          "name": "된장찌개",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_7",
+          "name": "생삼겹살",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_8",
+          "name": "오리주물럭",
+          "isSignature": false,
+          "price": "65,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_9",
+          "name": "오리로스",
+          "isSignature": false,
+          "price": "65,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_10",
+          "name": "오리탕",
+          "isSignature": false,
+          "price": "75,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_11",
+          "name": "매운탕",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_12",
+          "name": "닭도리탕",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_13",
+          "name": "갈치찜",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_14",
+          "name": "동태탕",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_15",
+          "name": "산낙지",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_16",
+          "name": "삼치회",
+          "isSignature": false,
+          "price": "계절메뉴"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_17",
+          "name": "삼계탕 (계절메뉴)",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_18",
+          "name": "비빔밥",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7f14959e1d62_menu_19",
+          "name": "닭발",
+          "isSignature": false,
+          "price": "30,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_10b294abbc2b",
+      "name": "영심횟집",
+      "region": "전남 해남군",
+      "address": "전남 해남군 해남읍 북부순환로 178 영심횟집",
+      "category": "회",
+      "representativeMenu": "광어회",
+      "lat": 34.57646745,
+      "lng": 126.59313865,
+      "imageUrl": "/card-data/ttoganjip/ep-092/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_1",
+          "name": "광어회",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_2",
+          "name": "모둠회",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_3",
+          "name": "우럭회",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_4",
+          "name": "활어물회",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_5",
+          "name": "회덮밥",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_6",
+          "name": "뼈매운탕",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_7",
+          "name": "연어회",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_8",
+          "name": "연어",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_9",
+          "name": "새우튀김",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_10",
+          "name": "해물라면",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_11",
+          "name": "계란라면",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_12",
+          "name": "생선까스",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_13",
+          "name": "날치알주먹밥",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_46256dca3adb",
+      "name": "서성식당",
+      "region": "전남 해남군",
+      "address": "전남 해남군 해남읍 중앙1로 282",
+      "category": "한식",
+      "representativeMenu": "애호박찌개(중) (32,000원)",
+      "lat": 34.57386739,
+      "lng": 126.59250616,
+      "imageUrl": "/card-data/ttoganjip/ep-092/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_1",
+          "name": "애호박찌개(중)",
+          "isSignature": true,
+          "price": "32,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_2",
+          "name": "돼지머리고기(대)",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_3",
+          "name": "감자탕(대)",
+          "isSignature": false,
+          "price": "49,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_4",
+          "name": "감자탕(중)",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_5",
+          "name": "감자탕(소)",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_6",
+          "name": "애호박찌개(대)",
+          "isSignature": false,
+          "price": "42,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_7",
+          "name": "애호박찌개(소)",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_8",
+          "name": "돼지머리고기(중)",
+          "isSignature": false,
+          "price": "34,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_9",
+          "name": "돼지머리고기(소)",
+          "isSignature": false,
+          "price": "26,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_46256dca3adb_menu_10",
+          "name": "해장국",
+          "isSignature": false,
+          "price": "12,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_b1c5724cc924",
+      "name": "진수식당",
+      "region": "광주 서구",
+      "address": "광주 서구 천변좌로254번길 8 2층",
+      "category": "한식",
+      "representativeMenu": "백반 (9,000원)",
+      "lat": 35.15299906,
+      "lng": 126.90309702,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_1",
+          "name": "백반",
+          "isSignature": true,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_2",
+          "name": "김치찌개",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_3",
+          "name": "주물럭(소)",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_4",
+          "name": "주물럭(중)",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_5",
+          "name": "주물럭(대)",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b1c5724cc924_menu_6",
+          "name": "닭볶음",
+          "isSignature": false,
+          "price": "50,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_d6b482f03575",
+      "name": "1969양동통닭",
+      "region": "광주 서구",
+      "address": "광주 서구 천변좌로 260-1 1층",
+      "category": "치킨",
+      "representativeMenu": "반반치킨 (25,000원)",
+      "lat": 35.15286293,
+      "lng": 126.90419026,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_d6b482f03575_menu_1",
+          "name": "반반치킨",
+          "isSignature": true,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d6b482f03575_menu_2",
+          "name": "양념치킨",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d6b482f03575_menu_3",
+          "name": "후라이드치킨",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d6b482f03575_menu_4",
+          "name": "후라이드 반마리",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d6b482f03575_menu_5",
+          "name": "양념 반마리",
+          "isSignature": false,
+          "price": "16,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_637b61a13ba0",
+      "name": "양동순대",
+      "region": "광주 서구",
+      "address": "광주 서구 천변좌로246번길 11 1층",
+      "category": "순대",
+      "representativeMenu": "소머리국밥 (10,000원)",
+      "lat": 35.15301459,
+      "lng": 126.9022256,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_1",
+          "name": "소머리국밥",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_2",
+          "name": "왕족발 (소)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_3",
+          "name": "돼지머리국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_4",
+          "name": "콩나물국밥",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_5",
+          "name": "머리고기수육",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_6",
+          "name": "선지국밥",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_7",
+          "name": "곱창볶음 (2인분)",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_8",
+          "name": "새끼보국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_9",
+          "name": "막창볶음 (소)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_10",
+          "name": "막창볶음 (대)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_11",
+          "name": "순대 (소)",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_12",
+          "name": "순대 (대)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_13",
+          "name": "족발 (소)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_14",
+          "name": "족발 (대)",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_15",
+          "name": "왕족발 (대)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_16",
+          "name": "옛날순대 (소)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_17",
+          "name": "옛날순대 (대)",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_637b61a13ba0_menu_18",
+          "name": "새끼보",
+          "isSignature": false,
+          "price": "10,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_267fb5420331",
+      "name": "동광수산",
+      "region": "광주 서구",
+      "address": "광주 서구 양동시장2길 17",
+      "category": "해물,생선",
+      "representativeMenu": "홍어애",
+      "lat": 35.15318516,
+      "lng": 126.90249867,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-05.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_267fb5420331_menu_1",
+          "name": "홍어애",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_267fb5420331_menu_2",
+          "name": "홍어",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_267fb5420331_menu_3",
+          "name": "생선회",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_07714d287959",
+      "name": "하나분식",
+      "region": "광주 서구",
+      "address": "광주 서구 양동시장2길 2 1층",
+      "category": "분식",
+      "representativeMenu": "장터 국밥 (8,000원)",
+      "lat": 35.15412988,
+      "lng": 126.90149333,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-06.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_1",
+          "name": "장터 국밥",
+          "isSignature": true,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_2",
+          "name": "동지죽",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_3",
+          "name": "소선지 국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_4",
+          "name": "내장 국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_5",
+          "name": "머리 국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_6",
+          "name": "순대 국밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_7",
+          "name": "모듬 국밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_8",
+          "name": "육개장",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_9",
+          "name": "추어탕",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_10",
+          "name": "팥죽",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_11",
+          "name": "칼국수",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_12",
+          "name": "잔치국수",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_13",
+          "name": "비빔국수",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_14",
+          "name": "콩물국수",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_15",
+          "name": "떡국",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_16",
+          "name": "냉면",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_17",
+          "name": "쫄면",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_18",
+          "name": "떡볶이",
+          "isSignature": false,
+          "price": "3,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_19",
+          "name": "김밥",
+          "isSignature": false,
+          "price": "2,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_20",
+          "name": "라면",
+          "isSignature": false,
+          "price": "4,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_21",
+          "name": "잡채",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_22",
+          "name": "순대",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_23",
+          "name": "순대+내장",
+          "isSignature": false,
+          "price": "5,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_24",
+          "name": "내장탕(대)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_25",
+          "name": "새끼보수육(대)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_26",
+          "name": "족발(대)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_07714d287959_menu_27",
+          "name": "머리고기(대)",
+          "isSignature": false,
+          "price": "20,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_e651c9e527db",
+      "name": "길거리 토스트",
+      "region": "광주 양동시장",
+      "address": "광주 양동시장 중앙통로 3층 사무실 가는 길",
+      "category": "토스트",
+      "representativeMenu": "길거리 토스트",
+      "lat": 35.15453767,
+      "lng": 126.90196038,
+      "imageUrl": "/card-data/ttoganjip/ep-093/card-07.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_e651c9e527db_menu_1",
+          "name": "길거리 토스트",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_a7ab07f86851",
+      "name": "다가이순대국 상암점",
+      "region": "서울 마포구",
+      "address": "서울 마포구 월드컵북로44길 67",
+      "category": "순대",
+      "representativeMenu": "순대국 (10,000원)",
+      "lat": 37.57732923,
+      "lng": 126.89404329,
+      "imageUrl": "/card-data/ttoganjip/ep-094/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_1",
+          "name": "순대국",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_2",
+          "name": "순대국 (특)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_3",
+          "name": "황태콩나물해장국",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_4",
+          "name": "내장탕",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_5",
+          "name": "술국",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_6",
+          "name": "머리고기 (대)",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_7",
+          "name": "머리고기 (소)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_8",
+          "name": "모듬",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_9",
+          "name": "순대한접시",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_10",
+          "name": "순대곱창볶음",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_11",
+          "name": "순대볶음",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_12",
+          "name": "곱창볶음",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a7ab07f86851_menu_13",
+          "name": "내장탕 (특)",
+          "isSignature": false,
+          "price": "12,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_a17995c19e3d",
+      "name": "온타이키친",
+      "region": "서울 마포구",
+      "address": "서울 마포구 월드컵북로54길 17 사보이시티 B동 지하1층 B126호",
+      "category": "태국음식",
+      "representativeMenu": "팟타이꿍",
+      "lat": 37.58132458,
+      "lng": 126.88854795,
+      "imageUrl": "/card-data/ttoganjip/ep-094/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_1",
+          "name": "팟타이꿍",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_2",
+          "name": "팟카파오무쌉",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_3",
+          "name": "텃만꿍",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_4",
+          "name": "뿌님팟퐁커리",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_5",
+          "name": "나시고랭",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_6",
+          "name": "쌀국수",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_d792423fbca1",
+      "name": "류정닭개장",
+      "region": "서울 마포구",
+      "address": "서울 마포구 월드컵북로54길 17 1층 123호",
+      "category": "한식",
+      "representativeMenu": "닭개장/닭곰탕 (9,500원)",
+      "lat": 37.58101209,
+      "lng": 126.88871031,
+      "imageUrl": "/card-data/ttoganjip/ep-094/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_1",
+          "name": "닭개장/닭곰탕",
+          "isSignature": true,
+          "price": "9,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_2",
+          "name": "닭개장칼국수",
+          "isSignature": false,
+          "price": "9,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_3",
+          "name": "영양들깨닭개장",
+          "isSignature": false,
+          "price": "10,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_4",
+          "name": "1인닭도리탕",
+          "isSignature": false,
+          "price": "13,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_5",
+          "name": "초계메밀국수",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_6",
+          "name": "왕만두튀김(4개)",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_7",
+          "name": "닭도리탕(소)",
+          "isSignature": false,
+          "price": "28,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_8",
+          "name": "닭도리탕(중)",
+          "isSignature": false,
+          "price": "36,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_9",
+          "name": "닭도리탕(대)",
+          "isSignature": false,
+          "price": "44,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_10",
+          "name": "매콤무뼈불닭발",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_d792423fbca1_menu_11",
+          "name": "닭껍질튀김",
+          "isSignature": false,
+          "price": "9,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_9904a648346e",
+      "name": "화강송어회",
+      "region": "강원 철원군",
+      "address": "강원 철원군 서면 와수1로19번길 4-13 화강송어회",
+      "category": "회",
+      "representativeMenu": "송어회(2인분) (40,000원)",
+      "lat": 38.23814122,
+      "lng": 127.43487523,
+      "imageUrl": "/card-data/ttoganjip/ep-095/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_1",
+          "name": "송어회(2인분)",
+          "isSignature": true,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_2",
+          "name": "송어튀김",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_3",
+          "name": "송어무침",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_4",
+          "name": "송어덮밥 (2인이상)",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_5",
+          "name": "송어초밥 (2인이상)",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_6",
+          "name": "닭볶음탕",
+          "isSignature": false,
+          "price": "하루 전날 예약"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_9904a648346e_menu_7",
+          "name": "닭백숙",
+          "isSignature": false,
+          "price": "하루 전날 예약"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_331de197e8df",
+      "name": "든든한추어탕 힘나는낙지볶음",
+      "region": "강원 철원군",
+      "address": "강원 철원군 갈말읍 문혜1길 4-1",
+      "category": "추어",
+      "representativeMenu": "추어탕 (10,000원)",
+      "lat": 38.18466844,
+      "lng": 127.32043607,
+      "imageUrl": "/card-data/ttoganjip/ep-095/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_1",
+          "name": "추어탕",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_2",
+          "name": "낙지덮밥",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_3",
+          "name": "추어튀김",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_4",
+          "name": "아구찜",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_5",
+          "name": "추어군만두",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_6",
+          "name": "왕새우튀김",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_7",
+          "name": "알볶음밥",
+          "isSignature": false,
+          "price": "3,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_8",
+          "name": "낙지전골(1인)",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_9",
+          "name": "낙지철판(1인)",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_10",
+          "name": "통추어탕",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_331de197e8df_menu_11",
+          "name": "쭈꾸미왕만두",
+          "isSignature": false,
+          "price": "8,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_23eeac72a139",
+      "name": "동송칡냉면",
+      "region": "강원 철원군",
+      "address": "강원 철원군 동송읍 오대로 4",
+      "category": "냉면",
+      "representativeMenu": "물냉면 (9,000원)",
+      "lat": 38.20460278,
+      "lng": 127.24082313,
+      "imageUrl": "/card-data/ttoganjip/ep-095/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_1",
+          "name": "물냉면",
+          "isSignature": true,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_2",
+          "name": "물냉면(곱배기)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_3",
+          "name": "비빔냉면",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_4",
+          "name": "비빔냉면(곱배기)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_5",
+          "name": "해물칼국수 (2인이상)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_6",
+          "name": "해물칼만두(2인이상)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_7",
+          "name": "얼큰수제비만두(2인이상)",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_8",
+          "name": "김치손만두(8개)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_9",
+          "name": "고기손만두(8개)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_23eeac72a139_menu_10",
+          "name": "반반손만두(8개)",
+          "isSignature": false,
+          "price": "10,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_2b00a10000f6",
+      "name": "쭈꾸미달인 노원본점",
+      "region": "서울 노원구",
+      "address": "서울 노원구 상계로 71-1 1층",
+      "category": "해물,생선",
+      "representativeMenu": "쭈꾸미삼겹살(1인분) (17,000원)",
+      "lat": 37.65664692,
+      "lng": 127.06301876,
+      "imageUrl": "/card-data/ttoganjip/ep-096/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_2b00a10000f6_menu_1",
+          "name": "쭈꾸미삼겹살(1인분)",
+          "isSignature": true,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2b00a10000f6_menu_2",
+          "name": "매운쭈꾸미(1인분)",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2b00a10000f6_menu_3",
+          "name": "쭈꾸미새우(1인분)",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_2b00a10000f6_menu_4",
+          "name": "모듬쭈꾸미(쭈꾸미+새우+삼겹살) (1인분)",
+          "isSignature": false,
+          "price": "18,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_36dadf90e554",
+      "name": "돈까스먹는용만이",
+      "region": "서울 노원구",
+      "address": "서울 노원구 한글비석로20길 52",
+      "category": "돈까스,우동",
+      "representativeMenu": "까르보돈가스 (13,000원)",
+      "lat": 37.66123154,
+      "lng": 127.07464161,
+      "imageUrl": "/card-data/ttoganjip/ep-096/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_1",
+          "name": "까르보돈가스",
+          "isSignature": true,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_2",
+          "name": "칠리마늘돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_3",
+          "name": "로즈돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_4",
+          "name": "해물칠리돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_5",
+          "name": "해물크림카레돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_6",
+          "name": "HOT돈까스",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_7",
+          "name": "데리야끼돈까스",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_8",
+          "name": "듀얼돈가스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_9",
+          "name": "비프크림카레돈가스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_10",
+          "name": "생선까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_11",
+          "name": "왕돈까스",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_12",
+          "name": "치킨까스",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_13",
+          "name": "치킨듀얼까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_14",
+          "name": "칠리돈까스",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_15",
+          "name": "칠리듀얼돈까스",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_16",
+          "name": "HOT마늘돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_17",
+          "name": "해물HOT돈까스",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_18",
+          "name": "눈꽃치즈칠리",
+          "isSignature": false,
+          "price": "13,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_19",
+          "name": "특 생선",
+          "isSignature": false,
+          "price": "15,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_20",
+          "name": "슬라이스치즈 돈까스",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_21",
+          "name": "모짜렐라치즈 돈까스",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_36dadf90e554_menu_22",
+          "name": "고구마치즈 돈까스",
+          "isSignature": false,
+          "price": "13,500원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_ce8dbe7952aa",
+      "name": "칠성해물통짬뽕",
+      "region": "서울 노원구",
+      "address": "서울 노원구 덕릉로83길 5 401(상가)동 2층 206호",
+      "category": "중국요리",
+      "representativeMenu": "찹쌀탕수육(소) (16,000원)",
+      "lat": 37.65975503,
+      "lng": 127.07502546,
+      "imageUrl": "/card-data/ttoganjip/ep-096/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_1",
+          "name": "찹쌀탕수육(소)",
+          "isSignature": true,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_2",
+          "name": "통오징어짬뽕",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_3",
+          "name": "짜장면",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_4",
+          "name": "홍합짬뽕",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_5",
+          "name": "짜장밥",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_6",
+          "name": "양장피",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_7",
+          "name": "삼선짬뽕",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_8",
+          "name": "통낙지짬뽕",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_9",
+          "name": "간짜장",
+          "isSignature": false,
+          "price": "7,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_10",
+          "name": "해물간짜장",
+          "isSignature": false,
+          "price": "8,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_11",
+          "name": "팔보채",
+          "isSignature": false,
+          "price": "24,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_12",
+          "name": "깐쇼새우(중새우)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_13",
+          "name": "유산슬",
+          "isSignature": false,
+          "price": "24,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_14",
+          "name": "고추잡채",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_15",
+          "name": "해물누룽지탕",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_16",
+          "name": "삼선술국(짬뽕탕)",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_17",
+          "name": "탕수육+짜장2",
+          "isSignature": false,
+          "price": "22,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_18",
+          "name": "탕수육+양장피",
+          "isSignature": false,
+          "price": "29,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_19",
+          "name": "탕수육+팔보채",
+          "isSignature": false,
+          "price": "29,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_20",
+          "name": "팔보채+양장피",
+          "isSignature": false,
+          "price": "31,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_21",
+          "name": "매운짬뽕",
+          "isSignature": false,
+          "price": "11,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_22",
+          "name": "문어짬뽕",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_23",
+          "name": "차돌짬뽕",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_24",
+          "name": "칠성왕짬뽕",
+          "isSignature": false,
+          "price": "15,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_ce8dbe7952aa_menu_25",
+          "name": "전복짬뽕",
+          "isSignature": false,
+          "price": "15,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_23c71a43eb1e",
+      "name": "원조이모네연탄불곱창",
+      "region": "서울 노원구",
+      "address": "서울 노원구 동일로192길 46 송암빌딩",
+      "category": "곱창,막창",
+      "representativeMenu": "소금구이 (1인분) (20,000원)",
+      "lat": 37.62658264,
+      "lng": 127.07567632,
+      "imageUrl": "/card-data/ttoganjip/ep-096/card-05.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_23c71a43eb1e_menu_1",
+          "name": "소금구이 (1인분)",
+          "isSignature": true,
+          "price": "20,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_8f0ba4340122",
+      "name": "봄날에청국장",
+      "region": "경기 성남시",
+      "address": "경기 성남시 분당구 정자일로 210 동양정자파라곤 102동 지하상가 102호",
+      "category": "한식",
+      "representativeMenu": "청국장과보리비빔밥(토종콩) (13,000원)",
+      "lat": 37.3690921,
+      "lng": 127.10623778,
+      "imageUrl": "/card-data/ttoganjip/ep-097/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_1",
+          "name": "청국장과보리비빔밥(토종콩)",
+          "isSignature": true,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_2",
+          "name": "청국장비빔밥과 두루치기 정식 (토종콩)(2인이상) (토종콩)",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_3",
+          "name": "청국장비빔밥과 바싹불고기 정식(토종콩) (2인이상) (토종콩)",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_4",
+          "name": "연입정찬<한상차림>",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_5",
+          "name": "청국장비빔밥과수제떡갈비",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_6",
+          "name": "삼합보쌈",
+          "isSignature": false,
+          "price": "60,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_7",
+          "name": "한돈보쌈(소)",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_8",
+          "name": "낙지볶음",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_9",
+          "name": "제육두루치기",
+          "isSignature": false,
+          "price": "28,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_10",
+          "name": "더덕제육두루치기",
+          "isSignature": false,
+          "price": "35,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_11",
+          "name": "바싹불고기",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_12",
+          "name": "김치콩비지탕",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_13",
+          "name": "수제떡갈비(3편)",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_14",
+          "name": "고랭지김치찌개전골(2인이상)",
+          "isSignature": false,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_15",
+          "name": "고랭지김치찌개",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_16",
+          "name": "고등어조림",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_8f0ba4340122_menu_17",
+          "name": "추어탕",
+          "isSignature": false,
+          "price": "12,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_3b43058e2106",
+      "name": "예돈돈까스 정자본점",
+      "region": "경기 성남시",
+      "address": "경기 성남시 분당구 내정로7번길 13 1층",
+      "category": "돈까스,우동",
+      "representativeMenu": "생등심 돈까스 (14,000원)",
+      "lat": 37.36057548,
+      "lng": 127.11316,
+      "imageUrl": "/card-data/ttoganjip/ep-097/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_3b43058e2106_menu_1",
+          "name": "생등심 돈까스",
+          "isSignature": true,
+          "price": "14,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_3b43058e2106_menu_2",
+          "name": "생등심특돈까스",
+          "isSignature": false,
+          "price": "18,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_97a4c7198c89",
+      "name": "돈멜 본점",
+      "region": "경기 성남시",
+      "address": "경기 성남시 분당구 느티로63번길 6 1층 돈멜",
+      "category": "삼겹살",
+      "representativeMenu": "인생 근고기 한판 (600g) (62,000원)",
+      "lat": 37.36908967,
+      "lng": 127.11180904,
+      "imageUrl": "/card-data/ttoganjip/ep-097/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_97a4c7198c89_menu_1",
+          "name": "인생 근고기 한판 (600g)",
+          "isSignature": true,
+          "price": "62,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_97a4c7198c89_menu_2",
+          "name": "목살 (400g)",
+          "isSignature": false,
+          "price": "42,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_97a4c7198c89_menu_3",
+          "name": "오겹살 (200g)",
+          "isSignature": false,
+          "price": "21,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_97a4c7198c89_menu_4",
+          "name": "껍항정살 (170g)",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_97a4c7198c89_menu_5",
+          "name": "특가브리살 (170g)",
+          "isSignature": false,
+          "price": "21,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f",
+      "name": "쫀삼곱",
+      "region": "경남 김해시",
+      "address": "경남 김해시 금관대로1335번길 6-1",
+      "category": "삼겹살",
+      "representativeMenu": "쫀득살 (100g) (8,000원)",
+      "lat": 35.24297698,
+      "lng": 128.86409669,
+      "imageUrl": "/card-data/ttoganjip/ep-098/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_1",
+          "name": "쫀득살 (100g)",
+          "isSignature": true,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_2",
+          "name": "생삼겹살 (100g)",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_3",
+          "name": "대패삼겹살 (100g)",
+          "isSignature": false,
+          "price": "6,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_4",
+          "name": "돼지갈비 (100g)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_5",
+          "name": "곱창전골 (소)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_6",
+          "name": "곱창전골 (중)",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_7",
+          "name": "곱창전골 (대)",
+          "isSignature": false,
+          "price": "40,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_58ecd8d0ef3f_menu_8",
+          "name": "뒷고기",
+          "isSignature": false,
+          "price": "6,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_f3e84eac8444",
+      "name": "마창수산직영횟집 내동점",
+      "region": "경남 김해시",
+      "address": "경남 김해시 내외로11번길 7-3",
+      "category": "회",
+      "representativeMenu": "모둠회",
+      "lat": 35.23683755,
+      "lng": 128.85938787,
+      "imageUrl": "/card-data/ttoganjip/ep-098/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_1",
+          "name": "모둠회",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_2",
+          "name": "매운탕",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_3",
+          "name": "복분자",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_4",
+          "name": "우럭",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_24cc1fdffb8d",
+      "name": "부엌",
+      "region": "경남 김해시",
+      "address": "경남 김해시 해반천로144번길 29-39 1층",
+      "category": "호프,요리주점",
+      "representativeMenu": "하몽 플레이트 (26,000원)",
+      "lat": 35.26302801,
+      "lng": 128.87024863,
+      "imageUrl": "/card-data/ttoganjip/ep-098/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_24cc1fdffb8d_menu_1",
+          "name": "하몽 플레이트",
+          "isSignature": true,
+          "price": "26,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_991cd4f40390",
+      "name": "장터순대국",
+      "region": "울산 울주군",
+      "address": "울산 울주군 청량읍 덕하로 228",
+      "category": "순대",
+      "representativeMenu": "세가지섞어 (돼지+순대+내장) (10,000원)",
+      "lat": 35.49115571,
+      "lng": 129.30474536,
+      "imageUrl": "/card-data/ttoganjip/ep-099/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_1",
+          "name": "세가지섞어 (돼지+순대+내장)",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_2",
+          "name": "내장+순대",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_3",
+          "name": "순대국밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_4",
+          "name": "돼지국밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_5",
+          "name": "내장국밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_6",
+          "name": "섞어국밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_7",
+          "name": "올순대국밥",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_8",
+          "name": "수육 (대)",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_9",
+          "name": "순대수육",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_10",
+          "name": "반반수육",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_991cd4f40390_menu_11",
+          "name": "머리수육",
+          "isSignature": false,
+          "price": "20,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_28affd085ecd",
+      "name": "형제식당",
+      "region": "울산 중구",
+      "address": "울산 중구 젊음의거리 68",
+      "category": "찌개,전골",
+      "representativeMenu": "낙곱전골(1인) (2인이상) (11,000원)",
+      "lat": 35.55388148,
+      "lng": 129.3207189,
+      "imageUrl": "/card-data/ttoganjip/ep-099/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_1",
+          "name": "낙곱전골(1인) (2인이상)",
+          "isSignature": true,
+          "price": "11,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_2",
+          "name": "곱창전골(1인) (2인이상)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_3",
+          "name": "김치찌개",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_4",
+          "name": "순두부찌개",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_5",
+          "name": "된장찌개",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_6",
+          "name": "열무비빔밥",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_7",
+          "name": "돌솥비빔밥",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_8",
+          "name": "갈비탕",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_9",
+          "name": "두루치기정식",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_10",
+          "name": "낙지볶음정식",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_11",
+          "name": "낙지덮밥",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_12",
+          "name": "낙새전골(1인) (2인이상)",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_13",
+          "name": "낙곱새전골(1인) (2인이상)",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_14",
+          "name": "낙지전골(1인) (2인이상)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_15",
+          "name": "낙지볶음(1인) (2인이상)",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_28affd085ecd_menu_16",
+          "name": "두루치기(1인) (2인이상)",
+          "isSignature": false,
+          "price": "10,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_7c0f62483ca6",
+      "name": "갓포이찌",
+      "region": "울산 남구",
+      "address": "울산 남구 왕생로20번길 19 1층 갓포이찌",
+      "category": "일본식주점",
+      "representativeMenu": "일본식스지수육 (18,000원)",
+      "lat": 35.53580233,
+      "lng": 129.33487036,
+      "imageUrl": "/card-data/ttoganjip/ep-099/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_1",
+          "name": "일본식스지수육",
+          "isSignature": true,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_2",
+          "name": "어종별로 모듬회 (1인)",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_3",
+          "name": "어종별로 모듬회 (2인)",
+          "isSignature": false,
+          "price": "45,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_4",
+          "name": "모듬회+참치뱃살 (2인)",
+          "isSignature": false,
+          "price": "60,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_5",
+          "name": "우니+단새우",
+          "isSignature": false,
+          "price": "45,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_6",
+          "name": "타코와사비",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_7",
+          "name": "참치아보카도",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_8",
+          "name": "보리된장+오이",
+          "isSignature": false,
+          "price": "8,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_9",
+          "name": "일본식고기튀김",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_10",
+          "name": "생전복통구이",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_11",
+          "name": "장흥 삼합",
+          "isSignature": false,
+          "price": "27,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_12",
+          "name": "치킨난방",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_13",
+          "name": "새우 후타미아게",
+          "isSignature": false,
+          "price": "22,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_14",
+          "name": "가지카츠",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_15",
+          "name": "돈페이야끼",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_16",
+          "name": "청어 사시미",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_17",
+          "name": "청어 이소베바끼",
+          "isSignature": false,
+          "price": "17,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_18",
+          "name": "고등어 보우스시",
+          "isSignature": false,
+          "price": "18,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_19",
+          "name": "시샤모구이",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_20",
+          "name": "활우럭 조림",
+          "isSignature": false,
+          "price": "30,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_21",
+          "name": "활 아나고 튀김",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_22",
+          "name": "활 아나고 샤브",
+          "isSignature": false,
+          "price": "45,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_23",
+          "name": "가지된장구이",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_24",
+          "name": "가지 아나고 구이",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_25",
+          "name": "새우 그라탕",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_26",
+          "name": "간장 아나고 튀김",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_27",
+          "name": "일본식 하루마끼",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_28",
+          "name": "메로구이",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_29",
+          "name": "치즈 멘츠카츠",
+          "isSignature": false,
+          "price": "16,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_30",
+          "name": "조개술찜",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_31",
+          "name": "스지 오뎅나베",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_32",
+          "name": "나가사끼 짬뽕",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_33",
+          "name": "일본식 소고기전골",
+          "isSignature": false,
+          "price": "25,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_7c0f62483ca6_menu_34",
+          "name": "탄탄나베",
+          "isSignature": false,
+          "price": "25,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_19cc475bdf0b",
+      "name": "천성삼거리장어구이",
+      "region": "부산 강서구",
+      "address": "부산 강서구 가덕해안로 715",
+      "category": "장어",
+      "representativeMenu": "장어탕 (15,000원)",
+      "lat": 35.03322693,
+      "lng": 128.81176172,
+      "imageUrl": "/card-data/ttoganjip/ep-100/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_1",
+          "name": "장어탕",
+          "isSignature": true,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_2",
+          "name": "장어구이 (특)",
+          "isSignature": false,
+          "price": "60,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_3",
+          "name": "장어구이 (대)",
+          "isSignature": false,
+          "price": "50,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_4",
+          "name": "삼식이매운탕",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_5",
+          "name": "우럭매운탕",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_6",
+          "name": "생선구이",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_7",
+          "name": "추어탕",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_8",
+          "name": "된장찌개",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_9",
+          "name": "고랑치",
+          "isSignature": false,
+          "price": "23,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_10",
+          "name": "봄도다리쑥국",
+          "isSignature": false,
+          "price": "20,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_11",
+          "name": "대구탕",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_12",
+          "name": "물메기탕",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_13",
+          "name": "굴떡국",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_19cc475bdf0b_menu_14",
+          "name": "닭발",
+          "isSignature": false,
+          "price": "15,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_342c66e46ffc",
+      "name": "1966정원",
+      "region": "부산 강서구",
+      "address": "부산 강서구 가덕해안로 787-1 1,2층 1966정원 천성항점",
+      "category": "양식",
+      "representativeMenu": "칠리 쉬림프 버거 (13,000원)",
+      "lat": 35.02817374,
+      "lng": 128.81580257,
+      "imageUrl": "/card-data/ttoganjip/ep-100/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_1",
+          "name": "칠리 쉬림프 버거",
+          "isSignature": true,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_2",
+          "name": "클랙식 버거 Classic Burger",
+          "isSignature": false,
+          "price": "10,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_3",
+          "name": "머쉬룸 버거 Mushroom Burger",
+          "isSignature": false,
+          "price": "12,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_4",
+          "name": "아보카도 버거 Avocado Burger",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_5",
+          "name": "칠리 쉬림프 버거 Chilli Shrimp Burger",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_6",
+          "name": "블랙 피쉬 버거 Black Fish Burger",
+          "isSignature": false,
+          "price": "12,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_7",
+          "name": "정원 필라프 Beef Pilaf",
+          "isSignature": false,
+          "price": "15,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_8",
+          "name": "새우 필라프 Shrimp pilaf",
+          "isSignature": false,
+          "price": "15,500원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_342c66e46ffc_menu_9",
+          "name": "정원 샐러드 Garden Salad",
+          "isSignature": false,
+          "price": "11,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_671e266392ac",
+      "name": "밀양산내돼지국밥",
+      "region": "부산 강서구",
+      "address": "부산 강서구 동선1길 12-19",
+      "category": "국밥",
+      "representativeMenu": "돼지국밥 (10,000원)",
+      "lat": 35.05531209,
+      "lng": 128.83371979,
+      "imageUrl": "/card-data/ttoganjip/ep-100/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_1",
+          "name": "돼지국밥",
+          "isSignature": true,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_2",
+          "name": "수육백반",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_3",
+          "name": "하동재첩국",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_4",
+          "name": "내장국밥",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_5",
+          "name": "순대국밥",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_6",
+          "name": "섞어국밥",
+          "isSignature": false,
+          "price": "10,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_7",
+          "name": "맛보기순대",
+          "isSignature": false,
+          "price": "9,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_8",
+          "name": "두루치기백반(2인이상)",
+          "isSignature": false,
+          "price": "13,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_9",
+          "name": "수육(대)",
+          "isSignature": false,
+          "price": "43,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_10",
+          "name": "수육(중)",
+          "isSignature": false,
+          "price": "37,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_11",
+          "name": "수육(소)",
+          "isSignature": false,
+          "price": "28,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_12",
+          "name": "내장수육(대)",
+          "isSignature": false,
+          "price": "43,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_13",
+          "name": "내장수육(중)",
+          "isSignature": false,
+          "price": "37,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_14",
+          "name": "내장수육(소)",
+          "isSignature": false,
+          "price": "28,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_15",
+          "name": "두루치기(대)",
+          "isSignature": false,
+          "price": "43,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_16",
+          "name": "두루치기(중)",
+          "isSignature": false,
+          "price": "37,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_17",
+          "name": "두루치기(소)",
+          "isSignature": false,
+          "price": "28,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_18",
+          "name": "홍어회(대)",
+          "isSignature": false,
+          "price": "48,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_19",
+          "name": "홍어회(소)",
+          "isSignature": false,
+          "price": "38,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_20",
+          "name": "홍어삼합(대)",
+          "isSignature": false,
+          "price": "55,000원"
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_671e266392ac_menu_21",
+          "name": "홍어삼합(소)",
+          "isSignature": false,
+          "price": "45,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_62c4eb83f851",
+      "name": "진양호짬뽕 본점",
+      "region": "경남 진주시",
+      "address": "경남 진주시 진양호로 17-4",
+      "category": "중국요리",
+      "representativeMenu": "짬뽕 12,000원, 짬뽕밥",
+      "lat": 35.16793713,
+      "lng": 128.04157967,
+      "imageUrl": "/card-data/ttoganjip/ep-101/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_62c4eb83f851_menu_1",
+          "name": "짬뽕 12,000원, 짬뽕밥",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_6d3e3dbe1fde",
+      "name": "장수촌",
+      "region": "경남 진주시",
+      "address": "경남 진주시 진주대로1032번길 4",
+      "category": "한식",
+      "representativeMenu": "두루치기정식 2인 20,000원, 돌솥비빔밥 10,000원",
+      "lat": 35.1917003,
+      "lng": 128.08517447,
+      "imageUrl": "/card-data/ttoganjip/ep-101/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_6d3e3dbe1fde_menu_1",
+          "name": "두루치기정식 2인 20,000원, 돌솥비빔밥 10,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_e5a02e36cf76",
+      "name": "숙이네국수",
+      "region": "경남 진주시",
+      "address": "경남 진주시 신안로 161",
+      "category": "국수",
+      "representativeMenu": "갈치조림 2인 28,000원",
+      "lat": 35.19148966,
+      "lng": 128.06668251,
+      "imageUrl": "/card-data/ttoganjip/ep-101/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_e5a02e36cf76_menu_1",
+          "name": "갈치조림 2인 28,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_08b18b9afa68",
+      "name": "진토랑",
+      "region": "충남 공주시",
+      "address": "충남 공주시 봉황로 86 1층",
+      "category": "한식",
+      "representativeMenu": "돌솥비빔밥 10,000원",
+      "lat": 36.45368199,
+      "lng": 127.12128693,
+      "imageUrl": "/card-data/ttoganjip/ep-102/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_08b18b9afa68_menu_1",
+          "name": "돌솥비빔밥 10,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_47ac3fa3d348",
+      "name": "숙골순대",
+      "region": "충남 공주시",
+      "address": "충남 공주시 전막1길 6-23",
+      "category": "순대",
+      "representativeMenu": "순대국밥 10,000원",
+      "lat": 36.47087868,
+      "lng": 127.12921778,
+      "imageUrl": "/card-data/ttoganjip/ep-102/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_47ac3fa3d348_menu_1",
+          "name": "순대국밥 10,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_113818458933",
+      "name": "북경탕수육",
+      "region": "충남 공주시",
+      "address": "충남 공주시 중동1길 5-18",
+      "category": "중국요리",
+      "representativeMenu": "김치 치즈 탕수육",
+      "lat": 36.45510296,
+      "lng": 127.1249403,
+      "imageUrl": "/card-data/ttoganjip/ep-102/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_113818458933_menu_1",
+          "name": "김치 치즈 탕수육",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_654d925af207",
+      "name": "팔복순대",
+      "region": "충남 논산시",
+      "address": "충남 논산시 관촉로94번길 34-30",
+      "category": "순대",
+      "representativeMenu": "얼큰이 곱창칼국수 10,000원",
+      "lat": 36.19925398,
+      "lng": 127.11337796,
+      "imageUrl": "/card-data/ttoganjip/ep-103/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_654d925af207_menu_1",
+          "name": "얼큰이 곱창칼국수 10,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_425e0fad52cd",
+      "name": "홍가네순대",
+      "region": "충남 논산시",
+      "address": "충남 논산시 연무읍 안심로 151",
+      "category": "순대",
+      "representativeMenu": "막창국밥, 김치막창국밥",
+      "lat": 36.13460961,
+      "lng": 127.1000153,
+      "imageUrl": "/card-data/ttoganjip/ep-103/card-03.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_425e0fad52cd_menu_1",
+          "name": "막창국밥, 김치막창국밥",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_c6852aa28c0d",
+      "name": "함지박",
+      "region": "충남 논산시",
+      "address": "충남 논산시 계백로665번길 5",
+      "category": "국수",
+      "representativeMenu": "물막국수 10,000원, 보쌈 대 40,000원",
+      "lat": 36.17979106,
+      "lng": 127.06590143,
+      "imageUrl": "/card-data/ttoganjip/ep-103/card-04.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_c6852aa28c0d_menu_1",
+          "name": "물막국수 10,000원, 보쌈 대 40,000원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_0bd6f7545e3b",
+      "name": "다락가든",
+      "region": "충남 논산시",
+      "address": "충남 논산시 원앙로 1382",
+      "category": "한식",
+      "representativeMenu": "제육정식 9,500원",
+      "lat": 36.19098315,
+      "lng": 127.11482025,
+      "imageUrl": "/card-data/ttoganjip/ep-103/card-05.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_0bd6f7545e3b_menu_1",
+          "name": "제육정식 9,500원",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "googlePlaceId": null,
+      "isOverseas": false
     }
   ],
   "sources": [
@@ -16828,6 +20261,335 @@
       "sourceId": "ttoganjip",
       "ordinal": 272,
       "label": "EP.88"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_03c64fd22039",
+      "restaurantId": "topic_enrichment_ttoganjip_03c64fd22039",
+      "sourceId": "ttoganjip",
+      "ordinal": 273,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ed9b6e91f365",
+      "restaurantId": "topic_enrichment_ttoganjip_ed9b6e91f365",
+      "sourceId": "ttoganjip",
+      "ordinal": 274,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6c33e6471e3d",
+      "restaurantId": "topic_enrichment_ttoganjip_6c33e6471e3d",
+      "sourceId": "ttoganjip",
+      "ordinal": 275,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2c53554250cb",
+      "restaurantId": "topic_enrichment_ttoganjip_2c53554250cb",
+      "sourceId": "ttoganjip",
+      "ordinal": 276,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_73f1a7dc73e7",
+      "restaurantId": "topic_enrichment_ttoganjip_73f1a7dc73e7",
+      "sourceId": "ttoganjip",
+      "ordinal": 277,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3486b3c4dccd",
+      "restaurantId": "topic_enrichment_ttoganjip_3486b3c4dccd",
+      "sourceId": "ttoganjip",
+      "ordinal": 278,
+      "label": "EP.91"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7f14959e1d62",
+      "restaurantId": "topic_enrichment_ttoganjip_7f14959e1d62",
+      "sourceId": "ttoganjip",
+      "ordinal": 279,
+      "label": "EP.92"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_10b294abbc2b",
+      "restaurantId": "topic_enrichment_ttoganjip_10b294abbc2b",
+      "sourceId": "ttoganjip",
+      "ordinal": 280,
+      "label": "EP.92"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_46256dca3adb",
+      "restaurantId": "topic_enrichment_ttoganjip_46256dca3adb",
+      "sourceId": "ttoganjip",
+      "ordinal": 281,
+      "label": "EP.92"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_b1c5724cc924",
+      "restaurantId": "topic_enrichment_ttoganjip_b1c5724cc924",
+      "sourceId": "ttoganjip",
+      "ordinal": 282,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d6b482f03575",
+      "restaurantId": "topic_enrichment_ttoganjip_d6b482f03575",
+      "sourceId": "ttoganjip",
+      "ordinal": 283,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_637b61a13ba0",
+      "restaurantId": "topic_enrichment_ttoganjip_637b61a13ba0",
+      "sourceId": "ttoganjip",
+      "ordinal": 284,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_267fb5420331",
+      "restaurantId": "topic_enrichment_ttoganjip_267fb5420331",
+      "sourceId": "ttoganjip",
+      "ordinal": 285,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_07714d287959",
+      "restaurantId": "topic_enrichment_ttoganjip_07714d287959",
+      "sourceId": "ttoganjip",
+      "ordinal": 286,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e651c9e527db",
+      "restaurantId": "topic_enrichment_ttoganjip_e651c9e527db",
+      "sourceId": "ttoganjip",
+      "ordinal": 287,
+      "label": "EP.93"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a7ab07f86851",
+      "restaurantId": "topic_enrichment_ttoganjip_a7ab07f86851",
+      "sourceId": "ttoganjip",
+      "ordinal": 288,
+      "label": "EP.94"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_a17995c19e3d",
+      "restaurantId": "topic_enrichment_ttoganjip_a17995c19e3d",
+      "sourceId": "ttoganjip",
+      "ordinal": 289,
+      "label": "EP.94"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_d792423fbca1",
+      "restaurantId": "topic_enrichment_ttoganjip_d792423fbca1",
+      "sourceId": "ttoganjip",
+      "ordinal": 290,
+      "label": "EP.94"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_9904a648346e",
+      "restaurantId": "topic_enrichment_ttoganjip_9904a648346e",
+      "sourceId": "ttoganjip",
+      "ordinal": 291,
+      "label": "EP.95"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_331de197e8df",
+      "restaurantId": "topic_enrichment_ttoganjip_331de197e8df",
+      "sourceId": "ttoganjip",
+      "ordinal": 292,
+      "label": "EP.95"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_23eeac72a139",
+      "restaurantId": "topic_enrichment_ttoganjip_23eeac72a139",
+      "sourceId": "ttoganjip",
+      "ordinal": 293,
+      "label": "EP.95"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_2b00a10000f6",
+      "restaurantId": "topic_enrichment_ttoganjip_2b00a10000f6",
+      "sourceId": "ttoganjip",
+      "ordinal": 294,
+      "label": "EP.96"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_36dadf90e554",
+      "restaurantId": "topic_enrichment_ttoganjip_36dadf90e554",
+      "sourceId": "ttoganjip",
+      "ordinal": 295,
+      "label": "EP.96"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_ce8dbe7952aa",
+      "restaurantId": "topic_enrichment_ttoganjip_ce8dbe7952aa",
+      "sourceId": "ttoganjip",
+      "ordinal": 296,
+      "label": "EP.96"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_23c71a43eb1e",
+      "restaurantId": "topic_enrichment_ttoganjip_23c71a43eb1e",
+      "sourceId": "ttoganjip",
+      "ordinal": 297,
+      "label": "EP.96"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_8f0ba4340122",
+      "restaurantId": "topic_enrichment_ttoganjip_8f0ba4340122",
+      "sourceId": "ttoganjip",
+      "ordinal": 298,
+      "label": "EP.97"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_3b43058e2106",
+      "restaurantId": "topic_enrichment_ttoganjip_3b43058e2106",
+      "sourceId": "ttoganjip",
+      "ordinal": 299,
+      "label": "EP.97"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_97a4c7198c89",
+      "restaurantId": "topic_enrichment_ttoganjip_97a4c7198c89",
+      "sourceId": "ttoganjip",
+      "ordinal": 300,
+      "label": "EP.97"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_58ecd8d0ef3f",
+      "restaurantId": "topic_enrichment_ttoganjip_58ecd8d0ef3f",
+      "sourceId": "ttoganjip",
+      "ordinal": 301,
+      "label": "EP.98"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_f3e84eac8444",
+      "restaurantId": "topic_enrichment_ttoganjip_f3e84eac8444",
+      "sourceId": "ttoganjip",
+      "ordinal": 302,
+      "label": "EP.98"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_24cc1fdffb8d",
+      "restaurantId": "topic_enrichment_ttoganjip_24cc1fdffb8d",
+      "sourceId": "ttoganjip",
+      "ordinal": 303,
+      "label": "EP.98"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_991cd4f40390",
+      "restaurantId": "topic_enrichment_ttoganjip_991cd4f40390",
+      "sourceId": "ttoganjip",
+      "ordinal": 304,
+      "label": "EP.99"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_28affd085ecd",
+      "restaurantId": "topic_enrichment_ttoganjip_28affd085ecd",
+      "sourceId": "ttoganjip",
+      "ordinal": 305,
+      "label": "EP.99"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_7c0f62483ca6",
+      "restaurantId": "topic_enrichment_ttoganjip_7c0f62483ca6",
+      "sourceId": "ttoganjip",
+      "ordinal": 306,
+      "label": "EP.99"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_19cc475bdf0b",
+      "restaurantId": "topic_enrichment_ttoganjip_19cc475bdf0b",
+      "sourceId": "ttoganjip",
+      "ordinal": 307,
+      "label": "EP.100"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_342c66e46ffc",
+      "restaurantId": "topic_enrichment_ttoganjip_342c66e46ffc",
+      "sourceId": "ttoganjip",
+      "ordinal": 308,
+      "label": "EP.100"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_671e266392ac",
+      "restaurantId": "topic_enrichment_ttoganjip_671e266392ac",
+      "sourceId": "ttoganjip",
+      "ordinal": 309,
+      "label": "EP.100"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_62c4eb83f851",
+      "restaurantId": "topic_enrichment_ttoganjip_62c4eb83f851",
+      "sourceId": "ttoganjip",
+      "ordinal": 310,
+      "label": "EP.101"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_6d3e3dbe1fde",
+      "restaurantId": "topic_enrichment_ttoganjip_6d3e3dbe1fde",
+      "sourceId": "ttoganjip",
+      "ordinal": 311,
+      "label": "EP.101"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_e5a02e36cf76",
+      "restaurantId": "topic_enrichment_ttoganjip_e5a02e36cf76",
+      "sourceId": "ttoganjip",
+      "ordinal": 312,
+      "label": "EP.101"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_08b18b9afa68",
+      "restaurantId": "topic_enrichment_ttoganjip_08b18b9afa68",
+      "sourceId": "ttoganjip",
+      "ordinal": 313,
+      "label": "EP.102"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_47ac3fa3d348",
+      "restaurantId": "topic_enrichment_ttoganjip_47ac3fa3d348",
+      "sourceId": "ttoganjip",
+      "ordinal": 314,
+      "label": "EP.102"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_113818458933",
+      "restaurantId": "topic_enrichment_ttoganjip_113818458933",
+      "sourceId": "ttoganjip",
+      "ordinal": 315,
+      "label": "EP.102"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_654d925af207",
+      "restaurantId": "topic_enrichment_ttoganjip_654d925af207",
+      "sourceId": "ttoganjip",
+      "ordinal": 316,
+      "label": "EP.103"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_425e0fad52cd",
+      "restaurantId": "topic_enrichment_ttoganjip_425e0fad52cd",
+      "sourceId": "ttoganjip",
+      "ordinal": 317,
+      "label": "EP.103"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_c6852aa28c0d",
+      "restaurantId": "topic_enrichment_ttoganjip_c6852aa28c0d",
+      "sourceId": "ttoganjip",
+      "ordinal": 318,
+      "label": "EP.103"
+    },
+    {
+      "id": "ttoganjip_topic_enrichment_ttoganjip_0bd6f7545e3b",
+      "restaurantId": "topic_enrichment_ttoganjip_0bd6f7545e3b",
+      "sourceId": "ttoganjip",
+      "ordinal": 319,
+      "label": "EP.103"
     }
   ]
 }

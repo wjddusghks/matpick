@@ -13,6 +13,11 @@ interface NaverMapProps {
 
 const KOREA_CENTER = { lat: 36.35, lng: 127.85 };
 const MARKER_AGGREGATION_THRESHOLD = 260;
+const DETAIL_MARKER_ZOOM = 14;
+const FOCUSED_MARKER_ZOOM = 16;
+const MAP_MAX_ZOOM = 19;
+const DUPLICATE_COORDINATE_PRECISION = 5;
+const DUPLICATE_MARKER_OFFSET = 0.000045;
 
 type RestaurantMarkerEntry = {
   id: string;
@@ -38,7 +43,78 @@ function getClusterCellSize(zoom: number) {
   if (zoom <= 9) return 0.14;
   if (zoom <= 10) return 0.09;
   if (zoom <= 11) return 0.05;
-  return 0.025;
+  if (zoom <= 12) return 0.02;
+  return 0.01;
+}
+
+function getDuplicateCoordinateKey(restaurant: Restaurant) {
+  return `${restaurant.lat.toFixed(DUPLICATE_COORDINATE_PRECISION)}:${restaurant.lng.toFixed(
+    DUPLICATE_COORDINATE_PRECISION
+  )}`;
+}
+
+function getOffsetCoordinates(
+  restaurant: Restaurant,
+  index: number,
+  count: number
+) {
+  if (count <= 1) {
+    return { lat: restaurant.lat, lng: restaurant.lng };
+  }
+
+  const angle = (Math.PI * 2 * index) / count;
+  const ring = Math.floor(index / 8) + 1;
+  const radius = DUPLICATE_MARKER_OFFSET * ring;
+  const latOffset = Math.sin(angle) * radius;
+  const lngOffset =
+    Math.cos(angle) *
+    radius /
+    Math.max(Math.cos((restaurant.lat * Math.PI) / 180), 0.35);
+
+  return {
+    lat: restaurant.lat + latOffset,
+    lng: restaurant.lng + lngOffset,
+  };
+}
+
+function buildRestaurantMarkerEntries(restaurants: Restaurant[]) {
+  const duplicateGroups = new Map<string, Restaurant[]>();
+
+  restaurants.forEach((restaurant) => {
+    const key = getDuplicateCoordinateKey(restaurant);
+    const group = duplicateGroups.get(key) ?? [];
+    group.push(restaurant);
+    duplicateGroups.set(key, group);
+  });
+
+  const coordinatesByRestaurantId = new Map<string, { lat: number; lng: number }>();
+
+  duplicateGroups.forEach((group) => {
+    [...group]
+      .sort((left, right) => left.id.localeCompare(right.id))
+      .forEach((restaurant, index, sortedGroup) => {
+        coordinatesByRestaurantId.set(
+          restaurant.id,
+          getOffsetCoordinates(restaurant, index, sortedGroup.length)
+        );
+      });
+  });
+
+  return restaurants.map((restaurant) => {
+    const coordinates =
+      coordinatesByRestaurantId.get(restaurant.id) ?? {
+        lat: restaurant.lat,
+        lng: restaurant.lng,
+      };
+
+    return {
+      id: `restaurant:${restaurant.id}`,
+      type: "restaurant",
+      restaurant,
+      lat: coordinates.lat,
+      lng: coordinates.lng,
+    } satisfies RestaurantMarkerEntry;
+  });
 }
 
 function createMarkerIcon({
@@ -189,14 +265,12 @@ export default function NaverMap({
       ? validRestaurants.filter((restaurant) => restaurant.id !== selectedRestaurant.id)
       : validRestaurants;
 
-    if (!selectedRestaurant && validRestaurants.length <= MARKER_AGGREGATION_THRESHOLD) {
-      return validRestaurants.map((restaurant) => ({
-        id: `restaurant:${restaurant.id}`,
-        type: "restaurant",
-        restaurant,
-        lat: restaurant.lat,
-        lng: restaurant.lng,
-      }));
+    const shouldAggregate =
+      validRestaurants.length > MARKER_AGGREGATION_THRESHOLD &&
+      viewZoom < DETAIL_MARKER_ZOOM;
+
+    if (!shouldAggregate) {
+      return buildRestaurantMarkerEntries(validRestaurants);
     }
 
     const cellSize = getClusterCellSize(viewZoom);
@@ -347,6 +421,7 @@ export default function NaverMap({
       const map = new naver.maps.Map(containerRef.current, {
         center: new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng),
         zoom: 7,
+        maxZoom: MAP_MAX_ZOOM,
         zoomControl: true,
         zoomControlOptions: {
           position: naver.maps.Position.TOP_RIGHT,
@@ -516,7 +591,7 @@ export default function NaverMap({
           }
 
           map.panTo(position, { duration: 250 });
-          map.setZoom(Math.min(map.getZoom() + 2, 16));
+          map.setZoom(Math.min(map.getZoom() + 2, DETAIL_MARKER_ZOOM));
           return;
         }
 
@@ -577,7 +652,7 @@ export default function NaverMap({
 
     if (selectedRestaurant) {
       map.setCenter(new naver.maps.LatLng(selectedRestaurant.lat, selectedRestaurant.lng));
-      map.setZoom(16);
+      map.setZoom(FOCUSED_MARKER_ZOOM);
       return;
     }
 
@@ -589,7 +664,7 @@ export default function NaverMap({
 
     if (singleRestaurant) {
       map.setCenter(new naver.maps.LatLng(singleRestaurant.lat, singleRestaurant.lng));
-      map.setZoom(16);
+      map.setZoom(FOCUSED_MARKER_ZOOM);
       return;
     }
 

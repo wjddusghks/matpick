@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T22:44:45.872Z",
+  "generatedAt": "2026-07-09T01:26:07.964Z",
   "sourceFolderName": "또간집_카드형",
   "format": "jpg",
   "maxWidth": 720,
@@ -390,6 +390,12 @@
           "title": "어항로",
           "originalFileName": "04_어항로.png",
           "imageUrl": "/card-data/ttoganjip/ep-014/card-04.jpg"
+        },
+        {
+          "ordinal": 5,
+          "title": "고두리 용산점",
+          "originalFileName": "05_고두리 용산점.generated.jpg",
+          "imageUrl": "/card-data/ttoganjip/ep-014/card-05.jpg"
         }
       ]
     },

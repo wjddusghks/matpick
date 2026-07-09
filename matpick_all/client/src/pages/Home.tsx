@@ -79,6 +79,12 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     path: "/explore/topic/popular-restaurants",
     imageUrl: popularRestaurantsShortcutImage,
   },
+  {
+    slug: "old-korean-100",
+    name: "한국인 100선",
+    path: "/explore/topic/old-korean-100",
+    imageUrl: "/source-covers/old-korean-100.jpg",
+  },
 ];
 
 const HOME_UI_KO = {

@@ -13,7 +13,11 @@ const generatedDir = path.join(clientRoot, "src", "data", "generated");
 const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
 const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
 const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set(["ttoganjip", "popular-restaurants"]);
+const publicDataSourceIds = new Set([
+  "ttoganjip",
+  "popular-restaurants",
+  "old-korean-100",
+]);
 const episodicSourceIds = new Set(["ttoganjip"]);
 
 function normalizeUrl(value) {

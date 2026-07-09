@@ -405,7 +405,11 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set(["ttoganjip", "popular-restaurants"]);
+const publicDataSourceIds = new Set([
+  "ttoganjip",
+  "popular-restaurants",
+  "old-korean-100",
+]);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
   const visibleCreators = dataset.creators.filter(
@@ -1003,7 +1007,11 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
-const publicDiscoveryTopicSlugs = new Set(["ttoganjip", "popular-restaurants"]);
+const publicDiscoveryTopicSlugs = new Set([
+  "ttoganjip",
+  "popular-restaurants",
+  "old-korean-100",
+]);
 
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
   publicDiscoveryTopicSlugs.has(topic.slug)

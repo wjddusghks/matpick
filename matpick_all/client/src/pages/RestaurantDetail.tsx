@@ -512,6 +512,7 @@ export default function RestaurantDetail() {
           "Open the destination directly in Naver Map or KakaoMap and continue with directions there.",
         actionNaver: "Naver Map",
         actionKakao: "KakaoMap",
+        actionCopyAddress: "Copy address",
         actionReview: "Write a review",
       }
     : {
@@ -532,6 +533,7 @@ export default function RestaurantDetail() {
           "\uB124\uC774\uBC84\uC9C0\uB3C4\uB098 \uCE74\uCE74\uC624\uB9F5\uC5D0\uC11C \uC2DD\uB2F9 \uC704\uCE58\uB97C \uBC14\uB85C \uC5F4\uACE0 \uAE38\uC548\uB0B4\uB97C \uC774\uC5B4\uAC00\uC138\uC694.",
         actionNaver: "\uB124\uC774\uBC84\uC9C0\uB3C4 \uAE38\uC548\uB0B4",
         actionKakao: "\uCE74\uCE74\uC624\uB9F5 \uC5F4\uAE30",
+        actionCopyAddress: "\uC8FC\uC18C \uBCF5\uC0AC",
         actionReview: "\uB9AC\uBDF0 \uC4F0\uAE30",
       };
   const naverNavigation = buildNaverNavigationUrls(restaurant);
@@ -558,6 +560,32 @@ export default function RestaurantDetail() {
     }
 
     window.open(target.webUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const copyRestaurantAddress = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(restaurant.address);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = restaurant.address;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+
+      toast.success(isEnglish ? "Address copied." : "\uC8FC\uC18C\uB97C \uBCF5\uC0AC\uD588\uC5B4\uC694.");
+    } catch {
+      toast.error(
+        isEnglish
+          ? "Could not copy the address."
+          : "\uC8FC\uC18C\uB97C \uBCF5\uC0AC\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694."
+      );
+    }
   };
 
   const removeRestaurantFromTopic = (topicId: string, topicName: string) => {
@@ -789,6 +817,15 @@ export default function RestaurantDetail() {
           {uiCopy.actionKakao}
         </button>
       </div>
+
+      <button
+        type="button"
+        onClick={copyRestaurantAddress}
+        className="mt-2.5 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-xl border border-[#ece7e8] bg-white px-4 py-3 text-sm font-semibold text-[#4d4749] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
+      >
+        <Copy className="h-4 w-4" />
+        {uiCopy.actionCopyAddress}
+      </button>
     </div>
   );
 
@@ -851,8 +888,7 @@ export default function RestaurantDetail() {
                 <button
                   type="button"
                   onClick={async () => {
-                    await navigator.clipboard.writeText(restaurant.address);
-                    toast.success("주소를 복사했어요.");
+                    await copyRestaurantAddress();
                     setMoreOpen(false);
                   }}
                   className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-[#252525] transition hover:bg-[#fff6f7]"

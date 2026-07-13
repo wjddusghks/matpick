@@ -17,6 +17,33 @@ function parseBannerDimension(value: string, fallback: number) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 }
 
+function useCompactViewport() {
+  const [isCompactViewport, setIsCompactViewport] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+    const updateViewportMode = () => {
+      setIsCompactViewport(mediaQuery.matches);
+    };
+
+    updateViewportMode();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", updateViewportMode);
+      return () => mediaQuery.removeEventListener("change", updateViewportMode);
+    }
+
+    mediaQuery.addListener(updateViewportMode);
+    return () => mediaQuery.removeListener(updateViewportMode);
+  }, []);
+
+  return isCompactViewport;
+}
+
 function SlotFrame({
   label,
   children,
@@ -107,20 +134,38 @@ export function AdsenseSlot({
 export function KakaoAdfitSlot({
   label,
   unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "",
+  mobileUnit = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_UNIT?.trim() ?? "",
   width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320",
   height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100",
+  mobileWidth = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_WIDTH?.trim() ?? "320",
+  mobileHeight = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_HEIGHT?.trim() ?? "100",
 }: {
   label?: string;
   unit?: string;
+  mobileUnit?: string;
   width?: string;
   height?: string;
+  mobileWidth?: string;
+  mobileHeight?: string;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const adWidth = parseBannerDimension(width, 320);
-  const adHeight = parseBannerDimension(height, 100);
+  const isCompactViewport = useCompactViewport();
+  const selectedUnit = isCompactViewport && mobileUnit ? mobileUnit : unit;
+  const configuredAdWidth = parseBannerDimension(
+    isCompactViewport && mobileUnit ? mobileWidth : width,
+    320
+  );
+  const configuredAdHeight = parseBannerDimension(
+    isCompactViewport && mobileUnit ? mobileHeight : height,
+    100
+  );
+  const adWidth =
+    isCompactViewport && configuredAdWidth > 360 ? 320 : configuredAdWidth;
+  const adHeight =
+    isCompactViewport && configuredAdWidth > 360 ? 100 : configuredAdHeight;
 
   useEffect(() => {
-    if (!unit || !containerRef.current) {
+    if (!selectedUnit || !containerRef.current) {
       return;
     }
 
@@ -130,7 +175,7 @@ export function KakaoAdfitSlot({
     const adElement = document.createElement("ins");
     adElement.className = "kakao_ad_area";
     adElement.style.display = "none";
-    adElement.setAttribute("data-ad-unit", unit);
+    adElement.setAttribute("data-ad-unit", selectedUnit);
     adElement.setAttribute("data-ad-width", String(adWidth));
     adElement.setAttribute("data-ad-height", String(adHeight));
 
@@ -144,27 +189,27 @@ export function KakaoAdfitSlot({
     return () => {
       container.innerHTML = "";
     };
-  }, [adHeight, adWidth, unit]);
+  }, [adHeight, adWidth, selectedUnit]);
 
   useEffect(() => {
-    if (!unit) {
+    if (!selectedUnit) {
       return;
     }
 
     trackAnalyticsEvent("ad_impression", {
       provider: "adfit",
-      targetLabel: unit,
+      targetLabel: selectedUnit,
     });
-  }, [unit]);
+  }, [selectedUnit]);
 
-  if (!unit) {
+  if (!selectedUnit) {
     return null;
   }
 
   const handleAdfitClick = () => {
     trackAnalyticsEvent("ad_click", {
       provider: "adfit",
-      targetLabel: unit,
+      targetLabel: selectedUnit,
     });
   };
 
@@ -212,12 +257,19 @@ export function CoupangSlot({
 }) {
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
-  const [isCompactViewport, setIsCompactViewport] = useState(false);
+  const isCompactViewport = useCompactViewport();
   const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
   const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
   const configuredBannerHeight = parseBannerDimension(dynamicBannerHeight, 140);
+  const effectiveBannerHeight = isCompactViewport
+    ? Math.min(configuredBannerHeight, 120)
+    : configuredBannerHeight;
+  const viewportFallbackWidth =
+    isCompactViewport && typeof window !== "undefined"
+      ? Math.max(300, Math.floor(window.innerWidth - 32))
+      : configuredBannerWidth;
   const effectiveBannerWidth =
-    measuredBannerWidth > 0 ? measuredBannerWidth : configuredBannerWidth;
+    measuredBannerWidth > 0 ? measuredBannerWidth : viewportFallbackWidth;
 
   useEffect(() => {
     if (!hasDynamicBanner || !dynamicBannerRef.current || typeof ResizeObserver === "undefined") {
@@ -226,7 +278,7 @@ export function CoupangSlot({
 
     const container = dynamicBannerRef.current;
     const updateWidth = () => {
-      const nextWidth = Math.max(280, Math.floor(container.clientWidth));
+      const nextWidth = Math.max(300, Math.floor(container.clientWidth));
       setMeasuredBannerWidth((prev) => (prev === nextWidth ? prev : nextWidth));
     };
 
@@ -242,27 +294,6 @@ export function CoupangSlot({
       observer.disconnect();
     };
   }, [hasDynamicBanner]);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
-      return;
-    }
-
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
-    const updateViewportMode = () => {
-      setIsCompactViewport(mediaQuery.matches);
-    };
-
-    updateViewportMode();
-
-    if (typeof mediaQuery.addEventListener === "function") {
-      mediaQuery.addEventListener("change", updateViewportMode);
-      return () => mediaQuery.removeEventListener("change", updateViewportMode);
-    }
-
-    mediaQuery.addListener(updateViewportMode);
-    return () => mediaQuery.removeListener(updateViewportMode);
-  }, []);
 
   const dynamicBannerSrcDoc = `<!doctype html>
 <html>
@@ -288,15 +319,15 @@ export function CoupangSlot({
         template: dynamicBannerTemplate,
         trackingCode: dynamicBannerTrackingCode,
         width: String(effectiveBannerWidth),
-        height: String(configuredBannerHeight),
+        height: String(effectiveBannerHeight),
       })});
     <\/script>
   </body>
 </html>`;
 
-  const shouldRenderDynamicBanner = hasDynamicBanner && !isCompactViewport;
+  const shouldRenderDynamicBanner = hasDynamicBanner;
   const shouldRenderFallbackCard =
-    Boolean(link) && (!hasDynamicBanner || isCompactViewport);
+    Boolean(link) && !hasDynamicBanner;
 
   useEffect(() => {
     if (shouldRenderDynamicBanner) {
@@ -327,13 +358,13 @@ export function CoupangSlot({
           className="overflow-hidden rounded-[18px] bg-[#fffafb]"
           style={{
             width: "100%",
-            height: `${configuredBannerHeight}px`,
-            maxHeight: `${configuredBannerHeight}px`,
+            height: `${effectiveBannerHeight}px`,
+            maxHeight: `${effectiveBannerHeight}px`,
             contain: "layout paint",
           }}
         >
           <iframe
-            key={`${dynamicBannerId}-${dynamicBannerTemplate}-${dynamicBannerTrackingCode}-${effectiveBannerWidth}-${configuredBannerHeight}`}
+            key={`${dynamicBannerId}-${dynamicBannerTemplate}-${dynamicBannerTrackingCode}-${effectiveBannerWidth}-${effectiveBannerHeight}`}
             title={label || "Coupang partner banner"}
             srcDoc={dynamicBannerSrcDoc}
             className="block h-full w-full border-0"

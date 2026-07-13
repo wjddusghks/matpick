@@ -1827,13 +1827,13 @@ function RestaurantMarqueeCard({
     <button
       type="button"
       onClick={onOpen}
-      className="group relative aspect-[1122/1402] w-[178px] flex-shrink-0 overflow-hidden rounded-[10px] border border-white/75 bg-[#211f22] p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
+      className="group relative w-[178px] flex-shrink-0 self-start overflow-hidden rounded-[10px] border border-white/75 bg-transparent p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
       aria-label={`${card.name} 식당 카드 보기`}
     >
       <img
         src={card.imageUrl}
         alt=""
-        className="h-full w-full object-contain"
+        className="block h-auto w-full"
         loading={duplicateIndex < 8 ? "eager" : "lazy"}
       />
       <span className="pointer-events-none absolute inset-0 rounded-[10px] ring-1 ring-inset ring-white/0 transition group-hover:bg-black/5 group-hover:ring-white/70" />

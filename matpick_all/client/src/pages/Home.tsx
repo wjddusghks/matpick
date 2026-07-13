@@ -55,6 +55,7 @@ import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.png";
+import michelinShortcutImage from "@/assets/source-thumbnails/michelin.png";
 import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.png";
 import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.png";
 
@@ -79,6 +80,12 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     name: "인기맛집",
     path: "/explore/topic/popular-restaurants",
     imageUrl: popularRestaurantsShortcutImage,
+  },
+  {
+    slug: "michelin",
+    name: "미쉐린",
+    path: "/explore/topic/michelin",
+    imageUrl: michelinShortcutImage,
   },
   {
     slug: "old-korean-100",

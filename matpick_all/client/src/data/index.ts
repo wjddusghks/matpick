@@ -408,6 +408,7 @@ const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
 const publicDataSourceIds = new Set([
   "ttoganjip",
   "popular-restaurants",
+  "michelin",
   "old-korean-100",
   "baekjong-wok",
 ]);
@@ -1011,6 +1012,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
 const publicDiscoveryTopicSlugs = new Set([
   "ttoganjip",
   "popular-restaurants",
+  "michelin",
   "old-korean-100",
   "baekjong-wok",
 ]);

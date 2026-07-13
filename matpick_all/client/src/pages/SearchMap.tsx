@@ -451,11 +451,6 @@ export default function SearchMap() {
     () => deferredRestaurants.filter((restaurant) => !restaurant.isOverseas),
     [deferredRestaurants]
   );
-  const overseasCount = useMemo(
-    () => filteredRestaurants.filter((restaurant) => restaurant.isOverseas === true).length,
-    [filteredRestaurants]
-  );
-
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
@@ -745,7 +740,7 @@ export default function SearchMap() {
   );
 
   const searchControls = (
-    <div className="mb-3 flex items-center gap-3">
+    <div className="flex items-center gap-3">
       <button
         type="button"
         onClick={() => navigate("/")}
@@ -785,28 +780,6 @@ export default function SearchMap() {
           </div>
         ) : null}
       </div>
-    </div>
-  );
-
-  const titleSummary = (
-    <div className="mb-3 rounded-2xl border border-[#ffe0e5] bg-[#fff8f9] px-4 py-3">
-      <p className="text-base font-bold leading-6 text-[#171717]">{title}</p>
-      {description ? (
-        <p className="mt-1 text-xs leading-5 text-[#887d80]">{description}</p>
-      ) : null}
-    </div>
-  );
-
-  const resultSummary = (
-    <div className="flex flex-wrap items-center gap-2">
-      <span className="text-lg font-bold text-[#ff7b83]">
-        {copy.resultCount(filteredRestaurants.length)}
-      </span>
-      {overseasCount > 0 ? (
-        <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-blue-600">
-          {copy.overseasCount(overseasCount)}
-        </span>
-      ) : null}
     </div>
   );
 
@@ -859,7 +832,7 @@ export default function SearchMap() {
   );
 
   const mobileSheetHeight =
-    deferredRestaurants.length === 0 ? "26dvh" : mobileSheetExpanded ? "74dvh" : "34dvh";
+    deferredRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
 
   return (
     <div className="h-[100dvh] overflow-hidden bg-white">
@@ -870,8 +843,6 @@ export default function SearchMap() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3">
             <div className="pointer-events-auto rounded-[28px] border border-[#f0e5e6] bg-white/96 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur">
               {searchControls}
-              {titleSummary}
-              {resultSummary}
             </div>
           </div>
 
@@ -889,9 +860,6 @@ export default function SearchMap() {
                 <div className="flex flex-1 flex-col gap-1">
                   <div className="h-1.5 w-12 rounded-full bg-[#eadfe1]" />
                   <p className="text-sm font-semibold text-[#1a1a1a]">{title}</p>
-                  <p className="text-xs text-[#8d8587]">
-                    {copy.resultCount(filteredRestaurants.length)}
-                  </p>
                 </div>
                 <span className="rounded-full border border-[#f1d8db] bg-[#fff6f7] p-2 text-[#ff7b83]">
                   {mobileSheetExpanded ? (
@@ -916,8 +884,6 @@ export default function SearchMap() {
           <aside className="flex h-full w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
             <div className="border-b border-[#f0f0f0] p-4">
               {searchControls}
-              {titleSummary}
-              {resultSummary}
 
               <div className="mt-4">
                 <KakaoAdfitSlot label={copy.sponsoredLabel} />

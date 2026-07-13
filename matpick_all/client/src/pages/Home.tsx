@@ -40,6 +40,7 @@ import { useLocale } from "@/contexts/LocaleContext";
 import {
   publicDiscoveryTopics,
   getDiscoveryTopicByTarget,
+  getSearchSuggestions,
   mockSearchData,
   restaurants,
   type DiscoveryTopic,
@@ -548,7 +549,10 @@ function SearchResultItem({
   let accentLabel: string = ui.restaurantLabel;
   let detailText = "";
 
-  if (item.type === "creator") {
+  if (item.type === "query") {
+    accentLabel = item.matchLabel ?? (ui.foodLabel === "Cuisine" ? "All matches" : "통합 검색");
+    detailText = item.matchedText ?? `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+  } else if (item.type === "creator") {
     accentLabel = item.platform ?? "Creator";
     detailText = `${ui.subscriberPrefix}${item.subscribers ?? "-"}`;
   } else if (item.type === "region") {
@@ -561,8 +565,8 @@ function SearchResultItem({
     accentLabel = item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
-    accentLabel = item.category ?? ui.restaurantLabel;
-    detailText = item.address ?? "";
+    accentLabel = item.matchLabel ?? item.category ?? ui.restaurantLabel;
+    detailText = item.matchedText ?? item.address ?? "";
   }
 
   return (
@@ -598,6 +602,10 @@ function SearchResultItem({
         ) : item.type === "region" ? (
           <div className="flex h-full w-full items-center justify-center rounded-full bg-[#ececec] text-[#111111]">
             <MapPin className="h-8 w-8" strokeWidth={2.2} />
+          </div>
+        ) : item.type === "query" ? (
+          <div className="flex h-full w-full items-center justify-center rounded-full bg-[#fff0f2] text-[#ff6f7c]">
+            <Search className="h-8 w-8" strokeWidth={2.1} />
           </div>
         ) : item.type === "restaurant" ? (
           <div className="flex h-full w-full items-center justify-center rounded-full bg-[#ffecee] text-[#ff7b83]">
@@ -870,7 +878,7 @@ export default function Home() {
         url: buildAbsoluteUrl("/"),
         potentialAction: {
           "@type": "SearchAction",
-          target: `${buildAbsoluteUrl("/map")}?type=all&value={search_term_string}`,
+          target: `${buildAbsoluteUrl("/map")}?type=query&value={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       },
@@ -887,27 +895,10 @@ export default function Home() {
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  const filteredResults = normalizedQuery
-    ? mockSearchData
-        .filter((item) => {
-          const searchableFields = [
-            item.name,
-            item.platform,
-            item.subscribers,
-            item.parentRegion,
-            item.category,
-            item.address,
-            item.sourceTypeLabel,
-            item.restaurantCount?.toString(),
-          ]
-            .filter(Boolean)
-            .join(" ")
-            .toLowerCase();
-
-          return searchableFields.includes(normalizedQuery);
-        })
-        .slice(0, 8)
-    : [];
+  const filteredResults = useMemo(
+    () => (normalizedQuery ? getSearchSuggestions(query, 8) : []),
+    [normalizedQuery, query]
+  );
 
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
   const hasSearchQuery = Boolean(normalizedQuery);
@@ -1218,6 +1209,11 @@ export default function Home() {
         return;
       }
 
+      if (normalizedItem.type === "query") {
+        navigate(`/map?type=query&value=${encodeURIComponent(normalizedItem.name)}`);
+        return;
+      }
+
       if (normalizedItem.type === "creator") {
         navigate(`/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
@@ -1275,14 +1271,15 @@ export default function Home() {
     }
 
     const selectedItem =
-      filteredResults[hoveredIndex >= 0 ? hoveredIndex : 0] ?? filteredResults[0];
+      (hoveredIndex >= 0 ? filteredResults[hoveredIndex] : undefined) ??
+      filteredResults.find((item) => item.type === "query");
 
     if (selectedItem) {
       handleSelect(selectedItem);
       return;
     }
 
-    navigate(`/map?type=region&value=${encodeURIComponent(query.trim())}`);
+    navigate(`/map?type=query&value=${encodeURIComponent(query.trim())}`);
   }, [filteredResults, handleSelect, hoveredIndex, navigate, normalizedQuery, query]);
 
   const handleSearchKeyDown = useCallback(
@@ -1314,12 +1311,7 @@ export default function Home() {
       if (event.key === "Enter") {
         event.preventDefault();
 
-        if (!normalizedQuery) {
-          handlePrimarySearch();
-          return;
-        }
-
-        const selectedItem = activeItems[hoveredIndex] ?? activeItems[0];
+        const selectedItem = hoveredIndex >= 0 ? activeItems[hoveredIndex] : undefined;
 
         if (selectedItem) {
           handleSelect(selectedItem);
@@ -1329,7 +1321,7 @@ export default function Home() {
         handlePrimarySearch();
       }
     },
-    [activeItems, handlePrimarySearch, handleSelect, hoveredIndex, normalizedQuery]
+    [activeItems, handlePrimarySearch, handleSelect, hoveredIndex]
   );
 
   const requestLocationPermission = useCallback(async () => {

@@ -1561,6 +1561,246 @@ export function getSeriesList(): string[] {
   return Array.from(new Set(visits.map((visit) => visit.series).filter(Boolean))).sort(sortText);
 }
 
+export type RestaurantSearchMatchType =
+  | "name"
+  | "menu"
+  | "category"
+  | "location"
+  | "source";
+
+export type RestaurantSearchMatch = {
+  restaurant: Restaurant;
+  score: number;
+  matchTypes: RestaurantSearchMatchType[];
+  matchedMenus: string[];
+  matchLabel: string;
+  matchedText: string;
+};
+
+function normalizeRestaurantSearchText(value: string) {
+  return value
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[-._,/#!$%^&*;:{}=`~()'"?<>+\[\]\\|·ㆍ]/g, "");
+}
+
+function getRestaurantSearchVariants(value: string) {
+  const normalized = normalizeRestaurantSearchText(value);
+  const variants = new Set<string>();
+
+  if (normalized) {
+    variants.add(normalized);
+  }
+
+  ["맛집", "식당", "음식점"].forEach((suffix) => {
+    if (normalized.endsWith(suffix) && normalized.length > suffix.length) {
+      variants.add(normalized.slice(0, -suffix.length));
+    }
+  });
+
+  if (normalized.endsWith("살") && normalized.length >= 3) {
+    variants.add(normalized.slice(0, -1));
+  }
+
+  const aliases: Record<string, string[]> = {
+    삼겹살: ["삼겹", "대패삼겹", "생삼겹"],
+    돼지고기: ["돼지", "삼겹", "목살", "제육"],
+    소고기: ["소고기", "한우", "갈비", "등심"],
+    닭고기: ["닭", "치킨", "백숙"],
+  };
+
+  aliases[normalized]?.forEach((alias) => {
+    variants.add(normalizeRestaurantSearchText(alias));
+  });
+
+  return Array.from(variants).filter(Boolean);
+}
+
+function getRestaurantSearchTerms(query: string) {
+  const rawTerms = query.trim().split(/\s+/).filter(Boolean);
+  return (rawTerms.length > 0 ? rawTerms : [query])
+    .map(getRestaurantSearchVariants)
+    .filter((variants) => variants.length > 0);
+}
+
+function getFieldMatchScore(value: string, variants: string[], weight: number) {
+  const normalizedValue = normalizeRestaurantSearchText(value);
+  if (!normalizedValue) {
+    return 0;
+  }
+
+  let score = 0;
+  variants.forEach((variant) => {
+    if (normalizedValue === variant) {
+      score = Math.max(score, weight + 24);
+    } else if (normalizedValue.includes(variant)) {
+      score = Math.max(score, weight);
+    }
+  });
+
+  return score;
+}
+
+const restaurantSearchIndex = restaurants.map((restaurant) => {
+  const menuNames = Array.from(
+    new Set(
+      [restaurant.representativeMenu, ...(restaurant.menus ?? []).map((menu) => menu.name)]
+        .map((value) => value?.trim())
+        .filter((value): value is string => Boolean(value))
+    )
+  );
+  const sourceNames = getSourcesByRestaurant(restaurant.id).map(getSourceDisplayName);
+  const creatorNames = getCreatorsByRestaurant(restaurant.id).flatMap((creator) => [
+    creator.name,
+    creator.channelName,
+    getCreatorDisplayName(creator),
+  ]);
+  const fields: Array<{
+    type: RestaurantSearchMatchType;
+    value: string;
+    weight: number;
+  }> = [
+    { type: "name", value: restaurant.name, weight: 120 },
+    ...menuNames.map((value) => ({ type: "menu" as const, value, weight: 98 })),
+    { type: "category", value: restaurant.category, weight: 82 },
+    { type: "location", value: restaurant.region, weight: 76 },
+    { type: "location", value: restaurant.address, weight: 72 },
+    ...sourceNames.map((value) => ({ type: "source" as const, value, weight: 54 })),
+    ...creatorNames.map((value) => ({ type: "source" as const, value, weight: 48 })),
+  ];
+
+  return { restaurant, fields };
+});
+
+export function searchRestaurants(query: string): RestaurantSearchMatch[] {
+  const terms = getRestaurantSearchTerms(query);
+  if (terms.length === 0) {
+    return [];
+  }
+
+  return restaurantSearchIndex
+    .map(({ restaurant, fields }) => {
+      const matchTypes = new Set<RestaurantSearchMatchType>();
+      const matchedMenus = new Set<string>();
+      let totalScore = 0;
+
+      for (const variants of terms) {
+        let bestScore = 0;
+        let bestType: RestaurantSearchMatchType | null = null;
+
+        fields.forEach((field) => {
+          const fieldScore = getFieldMatchScore(field.value, variants, field.weight);
+          if (fieldScore > bestScore) {
+            bestScore = fieldScore;
+            bestType = field.type;
+          }
+
+          if (field.type === "menu" && fieldScore > 0) {
+            matchedMenus.add(field.value);
+          }
+        });
+
+        if (bestScore === 0 || !bestType) {
+          return null;
+        }
+
+        totalScore += bestScore;
+        matchTypes.add(bestType);
+      }
+
+      const orderedTypes = Array.from(matchTypes);
+      const matchedMenuList = Array.from(matchedMenus).slice(0, 3);
+      const matchLabel = matchedMenuList.length > 0
+        ? "메뉴 일치"
+        : orderedTypes.includes("location")
+          ? "지역 일치"
+          : orderedTypes.includes("category")
+            ? "카테고리 일치"
+            : orderedTypes.includes("source")
+              ? "방송·출처 일치"
+              : "식당명 일치";
+      const matchedText = matchedMenuList.length > 0
+        ? matchedMenuList.join(" · ")
+        : orderedTypes.includes("location")
+          ? restaurant.address || restaurant.region
+          : orderedTypes.includes("category")
+            ? restaurant.category
+            : restaurant.address || restaurant.region;
+
+      return {
+        restaurant,
+        score: totalScore,
+        matchTypes: orderedTypes,
+        matchedMenus: matchedMenuList,
+        matchLabel,
+        matchedText,
+      } satisfies RestaurantSearchMatch;
+    })
+    .filter((match): match is RestaurantSearchMatch => Boolean(match))
+    .sort(
+      (left, right) =>
+        right.score - left.score ||
+        getRecommendationCount(right.restaurant.id) -
+          getRecommendationCount(left.restaurant.id) ||
+        sortText(left.restaurant.name, right.restaurant.name)
+    );
+}
+
+export function getSearchSuggestions(query: string, limit = 8): SearchResult[] {
+  const trimmedQuery = query.trim();
+  if (!trimmedQuery) {
+    return [];
+  }
+
+  const restaurantMatches = searchRestaurants(trimmedQuery);
+  const queryVariants = getRestaurantSearchVariants(trimmedQuery);
+  const aggregateResult: SearchResult = {
+    id: `query:${normalizeRestaurantSearchText(trimmedQuery)}`,
+    type: "query",
+    name: trimmedQuery,
+    restaurantCount: restaurantMatches.length,
+    matchLabel: "통합 검색",
+    matchedText: `메뉴·카테고리·지역에서 ${restaurantMatches.length.toLocaleString()}곳`,
+  };
+  const directMatches = mockSearchData
+    .filter((item) => item.type !== "restaurant")
+    .filter((item) => {
+      const searchable = normalizeRestaurantSearchText(
+        [
+          item.name,
+          item.platform,
+          item.parentRegion,
+          item.sourceTypeLabel,
+        ]
+          .filter(Boolean)
+          .join(" ")
+      );
+      return queryVariants.some((variant) => searchable.includes(variant));
+    });
+  const restaurantResults = restaurantMatches.map<SearchResult>((match) => ({
+    id: match.restaurant.id,
+    type: "restaurant",
+    name: match.restaurant.name,
+    category: match.restaurant.category,
+    address: match.restaurant.address,
+    matchLabel: match.matchLabel,
+    matchedText: match.matchedText,
+  }));
+  const seen = new Set<string>();
+
+  return [aggregateResult, ...directMatches, ...restaurantResults]
+    .filter((item) => {
+      const key = `${item.type}:${item.id}`;
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    })
+    .slice(0, Math.max(1, limit));
+}
+
 const regionCounts = countBy(restaurants.map((restaurant) => restaurant.region));
 const categoryCounts = countBy(
   restaurants.map((restaurant) => getCuisineCategory(restaurant.category))

@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Copy,
   ImagePlus,
+  MessageCircle,
   MessageSquarePlus,
   Navigation,
   MoreVertical,
@@ -57,6 +58,14 @@ import {
   type SharedReview,
 } from "@/lib/reviews";
 import { trackMarketingEvent } from "@/lib/marketing";
+import {
+  fetchRestaurantComments,
+  mergeComments,
+  postRestaurantComment,
+  readStoredComments,
+  saveStoredComments,
+  type RestaurantComment,
+} from "@/lib/comments";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import {
   loadStoredLocation,
@@ -65,7 +74,7 @@ import {
 } from "@/lib/location";
 import type { Restaurant } from "@/data/types";
 
-type DetailTab = "menu" | "videos" | "reviews" | "details";
+type DetailTab = "menu" | "comments" | "reviews" | "videos" | "details";
 type ReviewItem = SharedReview;
 type RelatedSortMode = "related" | "nearby";
 const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?? "";
@@ -248,7 +257,10 @@ async function toDataUrl(file: File) {
 }
 
 function formatDate() {
-  return new Date().toISOString().slice(0, 10).replace(/-/g, ".");
+  return new Date(Date.now() + 9 * 60 * 60 * 1000)
+    .toISOString()
+    .slice(0, 10)
+    .replace(/-/g, ".");
 }
 
 function formatDistance(distanceKm: number | null) {
@@ -416,6 +428,9 @@ export default function RestaurantDetail() {
   const [personalRating, setPersonalRating] = useState(0);
   const [hoveredPersonalRating, setHoveredPersonalRating] = useState(0);
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [comments, setComments] = useState<RestaurantComment[]>([]);
+  const [commentDraft, setCommentDraft] = useState("");
+  const [isSubmittingComment, setIsSubmittingComment] = useState(false);
   const [topicPickerOpen, setTopicPickerOpen] = useState(false);
   const [authFeatureDialogOpen, setAuthFeatureDialogOpen] = useState(false);
   const [authFeatureMode, setAuthFeatureMode] =
@@ -477,6 +492,35 @@ export default function RestaurantDetail() {
       })
       .catch(() => {
         // Keep local reviews when the remote review store is unavailable.
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, [restaurant?.id]);
+
+  useEffect(() => {
+    if (!restaurant) {
+      return;
+    }
+
+    const localComments = readStoredComments(restaurant.id);
+    setComments(localComments);
+    setCommentDraft("");
+    let ignore = false;
+
+    void fetchRestaurantComments(restaurant.id)
+      .then((remoteComments) => {
+        if (ignore) {
+          return;
+        }
+
+        const merged = mergeComments(remoteComments, localComments);
+        setComments(merged);
+        saveStoredComments(restaurant.id, merged);
+      })
+      .catch(() => {
+        // Keep locally cached comments when the shared store is unavailable.
       });
 
     return () => {
@@ -714,10 +758,6 @@ export default function RestaurantDetail() {
       openAuthFeatureDialog("review");
       return;
     }
-    if (!isLoggedIn) {
-      toast("리뷰 작성은 로그인 후에 이용할 수 있어요.");
-      return;
-    }
     trackMarketingEvent("review_composer_open", {
       restaurant_id: restaurant.id,
     });
@@ -728,10 +768,6 @@ export default function RestaurantDetail() {
   const saveRating = (stars: number) => {
     if (!isLoggedIn || !user) {
       openAuthFeatureDialog("rating");
-      return;
-    }
-    if (!isLoggedIn || !user) {
-      toast("내 평점은 로그인 후에 저장할 수 있어요.");
       return;
     }
 
@@ -838,37 +874,69 @@ export default function RestaurantDetail() {
     }
   };
 
-  const submitReview = () => {
+  const handleSubmitComment = async () => {
+    const text = commentDraft.trim();
+
     if (!isLoggedIn || !user) {
-      openAuthFeatureDialog("review");
-      return;
-    }
-    if (!isLoggedIn || !user) {
-      toast("리뷰 작성은 로그인 후에 이용할 수 있어요.");
-      return;
-    }
-    if (!reviewDraft.trim() && reviewPhotos.length === 0) {
-      toast("리뷰 내용이나 사진을 하나 이상 남겨주세요.");
+      openAuthFeatureDialog("comment");
       return;
     }
 
-    const nextReview: ReviewItem = {
-      id: `${Date.now()}`,
+    if (!text) {
+      toast(
+        isEnglish
+          ? "Write a comment first."
+          : "\uB313\uAE00 \uB0B4\uC6A9\uC744 \uC785\uB825\uD574 \uC8FC\uC138\uC694."
+      );
+      return;
+    }
+
+    const nextComment: RestaurantComment = {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       user: getDisplayName(user),
       date: formatDate(),
-      stars: reviewStars,
-      text: reviewDraft.trim(),
-      photos: reviewPhotos,
+      text: text.slice(0, 500),
+      createdAt: Date.now(),
     };
+    const optimisticComments = mergeComments([nextComment], comments);
+    setComments(optimisticComments);
+    saveStoredComments(restaurant.id, optimisticComments);
+    setCommentDraft("");
+    setIsSubmittingComment(true);
 
-    const nextReviews = [nextReview, ...storedReviews];
-    setStoredReviews(nextReviews);
-    saveStoredReviews(restaurant.id, nextReviews);
-    setReviewDraft("");
-    setReviewStars(5);
-    setReviewPhotos([]);
-    setComposerOpen(false);
-    toast.success("리뷰를 등록했어요.");
+    try {
+      if (!user.syncToken) {
+        throw new Error("Missing sync token");
+      }
+
+      const savedComment = await postRestaurantComment({
+        restaurantId: restaurant.id,
+        userId: user.id,
+        syncToken: user.syncToken,
+        comment: nextComment,
+      });
+      const syncedComments = mergeComments(
+        [savedComment],
+        optimisticComments.filter((comment) => comment.id !== nextComment.id)
+      );
+      setComments(syncedComments);
+      saveStoredComments(restaurant.id, syncedComments);
+      trackMarketingEvent("restaurant_comment_submit", {
+        restaurant_id: restaurant.id,
+      });
+      toast.success(
+        isEnglish ? "Comment posted." : "\uB313\uAE00\uC744 \uB4F1\uB85D\uD588\uC5B4\uC694."
+      );
+    } catch (error) {
+      console.error(error);
+      toast.error(
+        isEnglish
+          ? "The comment is saved on this device, but could not be shared yet."
+          : "\uB313\uAE00\uC740 \uC774 \uAE30\uAE30\uC5D0 \uC800\uC7A5\uD588\uC9C0\uB9CC \uC11C\uBC84\uC5D0 \uC62C\uB9AC\uC9C0 \uBABB\uD588\uC5B4\uC694."
+      );
+    } finally {
+      setIsSubmittingComment(false);
+    }
   };
 
   const renderQuickActionPanel = () => (
@@ -909,7 +977,7 @@ export default function RestaurantDetail() {
   );
 
   return (
-    <div className="min-h-screen bg-[linear-gradient(135deg,#f8f9fa_0%,#f0f2f5_100%)]">
+    <div className="min-h-screen bg-[#f6f6f5]">
       <ShareSheet
         open={shareOpen}
         onClose={() => setShareOpen(false)}
@@ -981,7 +1049,7 @@ export default function RestaurantDetail() {
         </div>
       </nav>
 
-      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-[1fr_420px] lg:px-8">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-5 p-4 sm:gap-6 sm:p-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8">
         <div className="flex flex-col gap-6">
           <div className="lg:hidden">
             <div className="rounded-2xl border border-[#ffe1e6] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
@@ -996,7 +1064,7 @@ export default function RestaurantDetail() {
             <div className="mt-4">{renderQuickActionPanel()}</div>
           </div>
 
-          <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:p-7">
+          <div className="rounded-lg border border-[#e8e5e5] bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-7">
             <div className="mb-6 border-b border-[#f0f0f0] pb-5">
               <h1 className="mb-2 text-[24px] font-[800] text-[#1a1a1a] sm:text-[28px]">{restaurant.name}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-[#666]">
@@ -1053,7 +1121,46 @@ export default function RestaurantDetail() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
+          <div className="overflow-hidden rounded-lg border border-[#e8e5e5] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
+            <div className="border-b border-[#ebe7e8] px-3 py-3 sm:px-5">
+              <div
+                role="tablist"
+                aria-label={isEnglish ? "Restaurant details" : "\uC2DD\uB2F9 \uC0C1\uC138 \uBA54\uB274"}
+                className="grid grid-cols-5 gap-1"
+              >
+                {[
+                  { key: "menu" as const, label: isEnglish ? "Menu" : "\uBA54\uB274" },
+                  {
+                    key: "comments" as const,
+                    label: isEnglish ? `Comments ${comments.length}` : `\uB313\uAE00 ${comments.length}`,
+                  },
+                  {
+                    key: "reviews" as const,
+                    label: isEnglish
+                      ? `Reviews ${publicReviewSummary.count}`
+                      : `\uB9AC\uBDF0 ${publicReviewSummary.count}`,
+                  },
+                  { key: "videos" as const, label: isEnglish ? "Media" : "\uBC29\uC1A1" },
+                  { key: "details" as const, label: isEnglish ? "Info" : "\uC815\uBCF4" },
+                ].map((tab) => (
+                  <button
+                    key={tab.key}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeTab === tab.key}
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`min-h-10 border-b-2 px-1 py-2 text-xs font-bold transition sm:text-sm ${
+                      activeTab === tab.key
+                        ? "border-[#ff6f7c] text-[#202020]"
+                        : "border-transparent text-[#8a8587] hover:text-[#3f3a3c]"
+                    }`}
+                  >
+                    <span className="block truncate">{tab.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            {activeTab === "menu" ? (
             <div className="border-b border-[#f0f0f0] px-5 py-5 sm:px-7">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
                 MENU
@@ -1063,19 +1170,29 @@ export default function RestaurantDetail() {
                 방문 전에 확인하기 좋은 메뉴와 가격만 간단하게 정리했어요.
               </p>
             </div>
+            ) : null}
 
             <div className="p-5 sm:p-7">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {activeTab === "menu" ? (
+              <div className="divide-y divide-[#ece8e9] border-y border-[#dedadb]">
                   {getRestaurantMenuItems(restaurant).length > 0 ? (
                     getRestaurantMenuItems(restaurant).map((menu) => (
-                      <div key={menu.id} className="rounded-[20px] border border-[#f0f0f0] bg-[#fffdfd] p-5">
-                        <p className="text-base font-black text-[#171717]">{menu.name}</p>
-                        <p className="mt-1 text-sm text-[#8a8a8a]">{menu.isSignature ? "대표 메뉴" : "메뉴"}</p>
-                        <p className="mt-4 text-lg font-black text-[#ff6f7c]">{menu.price || "가격 문의"}</p>
+                      <div key={menu.id} className="flex min-h-[72px] items-center justify-between gap-5 py-4">
+                        <div className="min-w-0">
+                          <p className="text-[15px] font-bold text-[#202020] sm:text-base">{menu.name}</p>
+                          {menu.isSignature ? (
+                            <p className="mt-1 text-xs font-semibold text-[#ff6f7c]">
+                              {isEnglish ? "Signature" : "대표 메뉴"}
+                            </p>
+                          ) : null}
+                        </div>
+                        <p className="shrink-0 text-[15px] font-bold tabular-nums text-[#242122] sm:text-base">
+                          {menu.price || (isEnglish ? "Ask" : "가격 문의")}
+                        </p>
                       </div>
                     ))
                   ) : (
-                    <div className="sm:col-span-2 rounded-[20px] border border-dashed border-[#e3e3e3] bg-[#fffdfd] px-6 py-12 text-center">
+                    <div className="px-6 py-12 text-center">
                       <p className="text-base font-bold text-[#171717]">메뉴 정보가 아직 준비 중이에요.</p>
                       <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">
                         사진 없이도 어색하지 않도록 메뉴 데이터가 들어오면 이 영역에 바로 정리됩니다.
@@ -1083,6 +1200,105 @@ export default function RestaurantDetail() {
                     </div>
                   )}
                 </div>
+              ) : null}
+
+              {activeTab === "comments" ? (
+                <section aria-labelledby="restaurant-comments-title">
+                  <div className="flex flex-col gap-2 border-b border-[#e9e5e6] pb-5 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                      <p className="text-xs font-black uppercase text-[#ff6f7c]">COMMUNITY</p>
+                      <h2
+                        id="restaurant-comments-title"
+                        className="mt-2 text-xl font-black text-[#202020]"
+                      >
+                        {isEnglish ? "Restaurant comments" : "식당 댓글"}
+                      </h2>
+                    </div>
+                    <p className="text-sm font-semibold tabular-nums text-[#777173]">
+                      {isEnglish ? `${comments.length} comments` : `댓글 ${comments.length}개`}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 rounded-lg border border-[#ddd8d9] bg-[#faf9f9] p-4 sm:p-5">
+                    <label htmlFor="restaurant-comment" className="text-sm font-bold text-[#292526]">
+                      {isLoggedIn
+                        ? isEnglish
+                          ? "Share a short note"
+                          : "이 식당에 대한 이야기를 남겨보세요"
+                        : isEnglish
+                          ? "Sign in to leave a comment"
+                          : "로그인 후 댓글을 남길 수 있어요"}
+                    </label>
+                    <textarea
+                      id="restaurant-comment"
+                      value={commentDraft}
+                      maxLength={500}
+                      onChange={(event) => setCommentDraft(event.target.value)}
+                      onFocus={() => {
+                        if (!isLoggedIn) {
+                          openAuthFeatureDialog("comment");
+                        }
+                      }}
+                      placeholder={
+                        isEnglish
+                          ? "Menu recommendations, waiting tips, or a short visit note"
+                          : "추천 메뉴, 대기 팁, 방문 소감 등을 자유롭게 적어주세요"
+                      }
+                      className="mt-3 min-h-[112px] w-full resize-y rounded-md border border-[#d8d2d4] bg-white px-4 py-3 text-sm leading-6 text-[#242122] outline-none transition placeholder:text-[#aaa4a6] focus:border-[#ff8c97] focus:ring-2 focus:ring-[#ffe6e9]"
+                    />
+                    <div className="mt-3 flex items-center justify-between gap-4">
+                      <span className="text-xs tabular-nums text-[#9a9496]">
+                        {commentDraft.length}/500
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => void handleSubmitComment()}
+                        disabled={isSubmittingComment || !commentDraft.trim()}
+                        className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-[#242122] px-5 text-sm font-bold text-white transition hover:bg-[#3a3537] disabled:cursor-not-allowed disabled:opacity-45"
+                      >
+                        <MessageCircle className="h-4 w-4" />
+                        {isSubmittingComment
+                          ? isEnglish
+                            ? "Posting..."
+                            : "등록 중..."
+                          : isEnglish
+                            ? "Post"
+                            : "댓글 등록"}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 divide-y divide-[#ece8e9] border-y border-[#dedadb]">
+                    {comments.length > 0 ? (
+                      comments.map((comment) => (
+                        <article key={comment.id} className="flex gap-3 py-5">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ffe9ec] text-sm font-black text-[#e86674]">
+                            {comment.user.slice(0, 1).toUpperCase()}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                              <p className="text-sm font-bold text-[#262223]">{comment.user}</p>
+                              <time className="text-xs text-[#999395]">{comment.date}</time>
+                            </div>
+                            <p className="mt-2 whitespace-pre-wrap break-words text-sm leading-6 text-[#565052]">
+                              {comment.text}
+                            </p>
+                          </div>
+                        </article>
+                      ))
+                    ) : (
+                      <div className="py-12 text-center">
+                        <MessageCircle className="mx-auto h-6 w-6 text-[#c7c1c3]" />
+                        <p className="mt-3 text-sm font-semibold text-[#777173]">
+                          {isEnglish
+                            ? "No comments yet. Start the conversation."
+                            : "아직 댓글이 없어요. 첫 이야기를 남겨보세요."}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              ) : null}
 
               {activeTab === "videos" ? (
                 visits.length > 0 ? (

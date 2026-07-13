@@ -1,4 +1,12 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent,
+} from "react";
 import {
   ArrowLeft,
   ChevronDown,
@@ -19,14 +27,14 @@ import {
   getDiscoveryTopicEpisodeBySlug,
   getRestaurantBroadcastMeta,
   getRestaurantMenuSummary,
-  getRestaurantsByCategory,
   getRestaurantsByCreator,
   getRestaurantsBySource,
+  getSearchSuggestions,
   getSourceById,
   getSourceDisplayName,
   getSourcesByRestaurant,
-  mockSearchData,
   restaurants,
+  searchRestaurants,
   type Restaurant,
   type SearchResult,
 } from "@/data";
@@ -216,14 +224,25 @@ function filterRestaurants(
         title: copy.creatorRestaurants(getCreatorDisplayName(creator)),
       };
     }
+    case "query":
+      return {
+        restaurants: searchRestaurants(value).map((match) => match.restaurant),
+        title: isEnglish ? `Results for “${value}”` : `“${value}” 관련 맛집`,
+      };
     case "region":
       return {
-        restaurants: restaurants.filter((restaurant) => restaurant.region?.includes(value)),
+        restaurants: searchRestaurants(value)
+          .filter((match) => match.matchTypes.includes("location"))
+          .map((match) => match.restaurant),
         title: copy.regionRestaurants(value),
       };
     case "food":
       return {
-        restaurants: getRestaurantsByCategory(value),
+        restaurants: searchRestaurants(value)
+          .filter((match) =>
+            match.matchTypes.some((type) => type === "menu" || type === "category")
+          )
+          .map((match) => match.restaurant),
         title: copy.cuisineRestaurants(
           isEnglish ? translateCuisineLabel(value, "en") : value
         ),
@@ -269,7 +288,10 @@ function SearchDropdownItem({
   let accentLabel: string = copy.creatorLabel;
   let detailText = "";
 
-  if (item.type === "creator") {
+  if (item.type === "query") {
+    accentLabel = item.matchLabel ?? (isEnglish ? "All matches" : "통합 검색");
+    detailText = item.matchedText ?? copy.resultCount(item.restaurantCount ?? 0);
+  } else if (item.type === "creator") {
     accentLabel = item.platform ?? copy.creatorLabel;
     detailText = item.subscribers ?? "";
   } else if (item.type === "region") {
@@ -288,10 +310,10 @@ function SearchDropdownItem({
       ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
       : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else {
-    accentLabel = item.category
-      ? translateCuisineLabel(item.category, locale)
-      : copy.searchResults;
-    detailText = item.address ?? "";
+    accentLabel = item.matchLabel ?? (
+      item.category ? translateCuisineLabel(item.category, locale) : copy.searchResults
+    );
+    detailText = item.matchedText ?? item.address ?? "";
   }
 
   return (
@@ -309,6 +331,8 @@ function SearchDropdownItem({
           <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
         ) : item.type === "region" ? (
           <MapPin className="h-5 w-5 text-[#777]" />
+        ) : item.type === "query" ? (
+          <Search className="h-5 w-5 text-[#ff7b83]" />
         ) : (
           <UtensilsCrossed className="h-5 w-5 text-[#ff7b83]" />
         )}
@@ -678,30 +702,11 @@ export default function SearchMap() {
   }, [orderedRestaurants.length, resultPageSize, visibleListCount]);
 
   const searchResults = useMemo(() => {
-    const normalized = searchQuery.trim().toLowerCase();
-    if (!normalized) {
+    if (!searchQuery.trim()) {
       return [];
     }
 
-    return mockSearchData
-      .filter((item) => {
-        const fields = [
-          item.name,
-          item.platform,
-          item.subscribers,
-          item.parentRegion,
-          item.category,
-          item.address,
-          item.sourceTypeLabel,
-          item.restaurantCount?.toString(),
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase();
-
-        return fields.includes(normalized);
-      })
-      .slice(0, 8);
+    return getSearchSuggestions(searchQuery, 8);
   }, [searchQuery]);
 
   const showSearchDropdown =
@@ -832,6 +837,11 @@ export default function SearchMap() {
     setSearchQuery("");
     setIsSearchFocused(false);
 
+    if (item.type === "query") {
+      navigate(`/map?type=query&value=${encodeURIComponent(item.name)}`);
+      return;
+    }
+
     if (item.type === "restaurant") {
       navigate(`/map?type=restaurant&value=${encodeURIComponent(item.id)}`);
       return;
@@ -857,6 +867,46 @@ export default function SearchMap() {
     }
   };
 
+  const submitMapSearch = () => {
+    const trimmedQuery = searchQuery.trim();
+    if (!trimmedQuery) {
+      return;
+    }
+
+    setSearchQuery("");
+    setIsSearchFocused(false);
+    navigate(`/map?type=query&value=${encodeURIComponent(trimmedQuery)}`);
+  };
+
+  const handleSearchKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setHoveredIdx((current) =>
+        searchResults.length === 0 ? -1 : Math.min(current + 1, searchResults.length - 1)
+      );
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setHoveredIdx((current) => Math.max(current - 1, 0));
+      return;
+    }
+
+    if (event.key !== "Enter") {
+      return;
+    }
+
+    event.preventDefault();
+    const selected = hoveredIdx >= 0 ? searchResults[hoveredIdx] : undefined;
+    if (selected) {
+      handleSearchSelect(selected);
+      return;
+    }
+
+    submitMapSearch();
+  };
+
   const restaurantsWithCoords = restaurantsForMap.filter(
     (restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0
   );
@@ -880,10 +930,18 @@ export default function SearchMap() {
             setHoveredIdx(-1);
           }}
           onFocus={() => setIsSearchFocused(true)}
+          onKeyDown={handleSearchKeyDown}
           placeholder={title}
           className="w-full rounded-xl border border-[#ffd4d9] bg-white px-4 py-2.5 pr-11 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.1)]"
         />
-        <Search className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#b4b4b4]" />
+        <button
+          type="button"
+          onClick={submitMapSearch}
+          aria-label={locale === "en" ? "Search" : "검색"}
+          className="absolute right-1.5 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md text-[#9d9698] transition hover:bg-[#fff1f3] hover:text-[#ff6f7c]"
+        >
+          <Search className="h-4 w-4" />
+        </button>
 
         {showSearchDropdown ? (
           <div className="absolute left-0 right-0 top-full z-20 mt-2 overflow-hidden rounded-2xl border border-[#ffd4d9] bg-white shadow-[0_12px_36px_rgba(255,123,131,0.12)]">

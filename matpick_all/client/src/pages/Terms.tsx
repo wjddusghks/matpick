@@ -24,7 +24,7 @@ const koreanSections: TermsSection[] = [
   {
     title: "1. 목적과 적용",
     paragraphs: [
-      "이 약관은 Matpick 운영자(이하 ‘운영자’)가 matpick.co.kr에서 제공하는 맛집 탐색, 지도, 회원, 즐겨찾기, 리뷰 및 관련 서비스의 이용 조건을 정합니다. 서비스를 이용하면 이 약관과 개인정보처리방침의 적용을 받습니다.",
+      "이 약관은 Matpick 운영자(이하 ‘운영자’)가 matpick.co.kr에서 제공하는 맛집 탐색, 지도, 회원, 즐겨찾기, 댓글·리뷰 및 관련 서비스의 이용 조건을 정합니다. 서비스를 이용하면 이 약관과 개인정보처리방침의 적용을 받습니다.",
     ],
   },
   {
@@ -47,9 +47,9 @@ const koreanSections: TermsSection[] = [
     ],
   },
   {
-    title: "5. 이용자 리뷰와 사진",
+    title: "5. 이용자 댓글·리뷰와 사진",
     paragraphs: [
-      "이용자는 자신이 작성하거나 적법한 권리를 가진 리뷰와 사진만 게시해야 합니다. 이용자는 게시물을 서비스에서 저장, 표시, 크기 조정 및 전송하는 데 필요한 비독점적이고 무상인 이용 권한을 운영자에게 부여합니다. 이 권한은 게시물 삭제 시 종료되지만 백업, 법적 의무 또는 이미 처리된 신고 기록에는 합리적인 기간 동안 남을 수 있습니다.",
+      "이용자는 자신이 작성하거나 적법한 권리를 가진 댓글·리뷰와 사진만 게시해야 합니다. 이용자는 게시물을 서비스에서 저장, 표시, 크기 조정 및 전송하는 데 필요한 비독점적이고 무상인 이용 권한을 운영자에게 부여합니다. 이 권한은 게시물 삭제 시 종료되지만 백업, 법적 의무 또는 이미 처리된 신고 기록에는 합리적인 기간 동안 남을 수 있습니다.",
     ],
     bullets: [
       "허위 사실, 광고성 도배, 명예훼손, 혐오·불법 정보 게시 금지",
@@ -160,7 +160,7 @@ export default function Terms() {
   const title = isEnglish ? "Terms of Service" : "이용약관";
   const description = isEnglish
     ? "Rules for Matpick accounts, restaurant information, reviews, images, advertising, and service use."
-    : "Matpick 회원, 식당 정보, 리뷰·사진, 광고 및 서비스 이용에 적용되는 기준입니다.";
+    : "Matpick 회원, 식당 정보, 댓글·리뷰·사진, 광고 및 서비스 이용에 적용되는 기준입니다.";
   const sections = isEnglish ? englishSections : koreanSections;
 
   useSeo({

@@ -68,7 +68,7 @@ export interface Visit {
 
 export interface SearchResult {
   id: string;
-  type: "creator" | "region" | "food" | "restaurant" | "source";
+  type: "query" | "creator" | "region" | "food" | "restaurant" | "source";
   name: string;
   platform?: string;
   subscribers?: string;
@@ -78,6 +78,8 @@ export interface SearchResult {
   category?: string;
   address?: string;
   sourceTypeLabel?: string;
+  matchLabel?: string;
+  matchedText?: string;
 }
 
 export interface Source {

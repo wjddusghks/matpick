@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
-export type AuthFeatureMode = "rating" | "review" | "topic";
+export type AuthFeatureMode = "rating" | "review" | "comment" | "topic";
 
 const contentByMode: Record<
   AuthFeatureMode,
@@ -34,6 +34,12 @@ const contentByMode: Record<
     title: "로그인하고 리뷰를 남겨보세요",
     description:
       "맛있었던 메뉴와 분위기, 사진까지 함께 기록하면 나중에 다시 찾을 때 훨씬 편하고 다른 사람에게도 도움이 돼요.",
+  },
+  comment: {
+    badge: "로그인하면 식당별 댓글에 참여할 수 있어요",
+    title: "로그인하고 댓글을 남겨보세요",
+    description:
+      "추천 메뉴, 대기 팁, 방문 소감처럼 짧게 나누고 싶은 정보를 식당별 댓글에서 다른 이용자와 공유할 수 있어요.",
   },
   topic: {
     badge: "로그인하면 주제별로 맛집을 모아둘 수 있어요",
@@ -136,7 +142,7 @@ export default function AuthFeatureDialog({
                 지금 로그인하고 이어서 사용해보세요
               </p>
               <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
-                로그인 후에는 지금 보던 식당 페이지로 바로 돌아와서 이어서 평점, 리뷰, 주제 저장을 할 수 있어요.
+                로그인 후에는 지금 보던 식당 페이지로 바로 돌아와서 이어서 평점, 댓글, 리뷰, 주제 저장을 할 수 있어요.
               </p>
               <SocialLoginButtons redirectTo={redirectTo} className="mt-4" />
             </div>

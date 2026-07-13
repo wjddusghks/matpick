@@ -8,6 +8,8 @@ interface NaverMapProps {
   selectedId: string | null;
   currentLocation: StoredLocation | null;
   nearestRestaurantId: string | null;
+  focusCurrentLocation: boolean;
+  locationFocusRequest: number;
   onMarkerClick: (id: string) => void;
 }
 
@@ -15,6 +17,7 @@ const KOREA_CENTER = { lat: 36.35, lng: 127.85 };
 const MARKER_AGGREGATION_THRESHOLD = 260;
 const DETAIL_MARKER_ZOOM = 14;
 const FOCUSED_MARKER_ZOOM = 16;
+const CURRENT_LOCATION_ZOOM = 15;
 const MAP_MAX_ZOOM = 19;
 const DUPLICATE_COORDINATE_PRECISION = 5;
 const DUPLICATE_MARKER_OFFSET = 0.000045;
@@ -238,6 +241,8 @@ export default function NaverMap({
   selectedId,
   currentLocation,
   nearestRestaurantId,
+  focusCurrentLocation,
+  locationFocusRequest,
   onMarkerClick,
 }: NaverMapProps) {
   const mapRef = useRef<naver.maps.Map | null>(null);
@@ -245,6 +250,7 @@ export default function NaverMap({
   const markerEntryRef = useRef<Map<string, MapMarkerEntry>>(new Map());
   const restaurantLookupRef = useRef<Map<string, Restaurant>>(new Map());
   const currentLocationMarkerRef = useRef<naver.maps.Marker | null>(null);
+  const currentLocationAccuracyRef = useRef<naver.maps.Circle | null>(null);
   const infoWindowRef = useRef<naver.maps.InfoWindow | null>(null);
   const mapIdleListenerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -498,6 +504,15 @@ export default function NaverMap({
         currentLocationMarkerRef.current = null;
       }
 
+      if (currentLocationAccuracyRef.current) {
+        try {
+          currentLocationAccuracyRef.current.setMap(null);
+        } catch {
+          // noop
+        }
+        currentLocationAccuracyRef.current = null;
+      }
+
       if (mapRef.current) {
         try {
           (mapRef.current as any).destroy?.();
@@ -628,18 +643,38 @@ export default function NaverMap({
     }
 
     if (currentLocation) {
+      const position = new naver.maps.LatLng(currentLocation.lat, currentLocation.lng);
+
       if (!currentLocationMarkerRef.current) {
         currentLocationMarkerRef.current = new naver.maps.Marker({
-          position: new naver.maps.LatLng(currentLocation.lat, currentLocation.lng),
+          position,
           map,
-          title: "Current location",
+          title: `Current location (accuracy ${Math.round(currentLocation.accuracy)}m)`,
           icon: createCurrentLocationIcon(),
           zIndex: 300,
         });
       } else {
         currentLocationMarkerRef.current.setMap(map);
-        currentLocationMarkerRef.current.setPosition(
-          new naver.maps.LatLng(currentLocation.lat, currentLocation.lng)
+        currentLocationMarkerRef.current.setPosition(position);
+      }
+
+      if (!currentLocationAccuracyRef.current) {
+        currentLocationAccuracyRef.current = new naver.maps.Circle({
+          map,
+          center: position,
+          radius: Math.max(currentLocation.accuracy, 20),
+          strokeColor: "#2563eb",
+          strokeOpacity: 0.42,
+          strokeWeight: 1,
+          fillColor: "#3b82f6",
+          fillOpacity: 0.12,
+          clickable: false,
+        });
+      } else {
+        currentLocationAccuracyRef.current.setMap(map);
+        currentLocationAccuracyRef.current.setCenter(position);
+        currentLocationAccuracyRef.current.setRadius(
+          Math.max(currentLocation.accuracy, 20)
         );
       }
       return;
@@ -652,6 +687,15 @@ export default function NaverMap({
         // noop
       }
       currentLocationMarkerRef.current = null;
+    }
+
+    if (currentLocationAccuracyRef.current) {
+      try {
+        currentLocationAccuracyRef.current.setMap(null);
+      } catch {
+        // noop
+      }
+      currentLocationAccuracyRef.current = null;
     }
   }, [currentLocation, sdkReady]);
 
@@ -669,6 +713,12 @@ export default function NaverMap({
       return;
     }
 
+    if (focusCurrentLocation && currentLocation) {
+      map.setCenter(new naver.maps.LatLng(currentLocation.lat, currentLocation.lng));
+      map.setZoom(CURRENT_LOCATION_ZOOM);
+      return;
+    }
+
     if (validRestaurants.length === 0) {
       map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
       map.setZoom(7);
@@ -683,7 +733,19 @@ export default function NaverMap({
 
     map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
     map.setZoom(7);
-  }, [sdkReady, selectedId, validRestaurants]);
+  }, [currentLocation, focusCurrentLocation, sdkReady, selectedId, validRestaurants]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !sdkReady || !currentLocation || locationFocusRequest === 0) {
+      return;
+    }
+
+    map.panTo(new naver.maps.LatLng(currentLocation.lat, currentLocation.lng), {
+      duration: 300,
+    });
+    map.setZoom(CURRENT_LOCATION_ZOOM);
+  }, [currentLocation, locationFocusRequest, sdkReady]);
 
   useEffect(() => {
     if (!sdkReady || !mapRef.current) {

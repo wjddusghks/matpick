@@ -52,7 +52,12 @@ import {
 } from "@/data/mapCollections";
 import { getDisplayName } from "@/lib/authProfile";
 import { isAdminUser } from "@/lib/admin";
-import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
+import {
+  clearStoredLocation,
+  LocationRequestError,
+  requestBestCurrentLocation,
+  saveStoredLocation,
+} from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
 import {
   PRIVACY_PREFERENCES_EVENT,
@@ -156,6 +161,8 @@ const HOME_UI_KO = {
       "\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC704\uCE58 \uAD8C\uD55C\uC774 \uCC28\uB2E8\uB410\uC5B4\uC694. \uBE0C\uB77C\uC6B0\uC800 \uC124\uC815\uC5D0\uC11C \uB2E4\uC2DC \uD5C8\uC6A9\uD558\uBA74 \uB0B4 \uC8FC\uBCC0 \uAC80\uC0C9\uC744 \uB354 \uC815\uD655\uD558\uAC8C \uBCF4\uC5EC\uB4DC\uB9B4 \uC218 \uC788\uC5B4\uC694.",
     failedFeedback:
       "\uC704\uCE58\uB97C \uD655\uC778\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uC7A0\uC2DC \uD6C4 \uB2E4\uC2DC \uC2DC\uB3C4\uD574 \uC8FC\uC138\uC694.",
+    inaccurateFeedback:
+      "\uC815\uD655\uD55C \uC704\uCE58\uB97C \uD655\uC778\uD558\uC9C0 \uBABB\uD588\uC5B4\uC694. \uD734\uB300\uD3F0 \uC124\uC815\uC5D0\uC11C \uC774 \uBE0C\uB77C\uC6B0\uC800\uC758 '\uC815\uD655\uD55C \uC704\uCE58 \uC0AC\uC6A9'\uC744 \uCF1C\uACE0 \uB2E4\uC2DC \uC2DC\uB3C4\uD574 \uC8FC\uC138\uC694.",
   },
   header: {
     logoAlt: "\uB9DB\uD53D \uB85C\uACE0",
@@ -253,6 +260,8 @@ const HOME_UI_EN = {
       "Location access was denied in your browser. If you allow it later, Matpick can show better nearby discovery results.",
     failedFeedback:
       "We could not confirm your location. Please try again in a moment.",
+    inaccurateFeedback:
+      "We could not get a precise location. Enable precise location for this browser in your phone settings and try again.",
   },
   header: {
     logoAlt: "Matpick logo",
@@ -820,6 +829,7 @@ export default function Home() {
   const accountRef = useRef<HTMLDivElement>(null);
   const loginTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const locationRequestRef = useRef<AbortController | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
@@ -834,6 +844,13 @@ export default function Home() {
       : isEnglish
         ? "Naver account"
         : "네이버 계정";
+
+  useEffect(
+    () => () => {
+      locationRequestRef.current?.abort();
+    },
+    []
+  );
 
   useSeo({
     title: isEnglish
@@ -998,6 +1015,7 @@ export default function Home() {
     }
 
     let ignore = false;
+    let locationController: AbortController | null = null;
     const timerId = window.setTimeout(async () => {
       const dismissed = window.localStorage.getItem(LOCATION_DISMISSED_KEY) === "true";
 
@@ -1045,26 +1063,16 @@ export default function Home() {
       persistLocationStatus(nextState);
 
       if (nextState === "granted") {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            if (ignore) {
-              return;
+        locationController = new AbortController();
+        requestBestCurrentLocation({ signal: locationController.signal })
+          .then((location) => {
+            if (!ignore) {
+              saveStoredLocation(location);
             }
-
-            saveStoredLocation({
-              lat: position.coords.latitude,
-              lng: position.coords.longitude,
-            });
-          },
-          () => {
-            // Ignore background refresh failures and keep the last known location.
-          },
-          {
-            enableHighAccuracy: true,
-            timeout: 10000,
-            maximumAge: 0,
-          }
-        );
+          })
+          .catch(() => {
+            // Keep the last verified location when a background refresh is unavailable.
+          });
       }
 
       if (nextState !== "granted") {
@@ -1074,6 +1082,7 @@ export default function Home() {
 
     return () => {
       ignore = true;
+      locationController?.abort();
       window.clearTimeout(timerId);
     };
   }, [hasPrivacyChoice]);
@@ -1323,7 +1332,7 @@ export default function Home() {
     [activeItems, handlePrimarySearch, handleSelect, hoveredIndex, normalizedQuery]
   );
 
-  const requestLocationPermission = useCallback(() => {
+  const requestLocationPermission = useCallback(async () => {
     if (!("geolocation" in navigator)) {
       setLocationState("unsupported");
       setLocationFeedback(ui.location.unsupportedMessage);
@@ -1333,41 +1342,45 @@ export default function Home() {
 
     setIsRequestingLocation(true);
     setLocationFeedback(null);
+    locationRequestRef.current?.abort();
+    const controller = new AbortController();
+    locationRequestRef.current = controller;
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setIsRequestingLocation(false);
-        setLocationState("granted");
-        persistLocationStatus("granted");
-        saveStoredLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        });
-        window.localStorage.removeItem(LOCATION_DISMISSED_KEY);
-        setShowLocationPrompt(false);
-      },
-      (error) => {
-        setIsRequestingLocation(false);
-
-        if (error.code === error.PERMISSION_DENIED) {
-          setLocationState("denied");
-          persistLocationStatus("denied");
-          clearStoredLocation();
-          setLocationFeedback(ui.location.deniedFeedback);
-          return;
-        }
-
-        setLocationState("prompt");
-        persistLocationStatus("prompt");
-        setLocationFeedback(ui.location.failedFeedback);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0,
+    try {
+      const location = await requestBestCurrentLocation({ signal: controller.signal });
+      saveStoredLocation(location);
+      setLocationState("granted");
+      persistLocationStatus("granted");
+      window.localStorage.removeItem(LOCATION_DISMISSED_KEY);
+      setShowLocationPrompt(false);
+    } catch (error) {
+      if (error instanceof LocationRequestError && error.code === "aborted") {
+        return;
       }
-    );
-  }, []);
+
+      if (error instanceof LocationRequestError && error.code === "permission-denied") {
+        setLocationState("denied");
+        persistLocationStatus("denied");
+        clearStoredLocation();
+        setLocationFeedback(ui.location.deniedFeedback);
+        return;
+      }
+
+      setLocationState("prompt");
+      persistLocationStatus("prompt");
+      clearStoredLocation();
+      setLocationFeedback(
+        error instanceof LocationRequestError && error.code === "inaccurate"
+          ? ui.location.inaccurateFeedback
+          : ui.location.failedFeedback
+      );
+    } finally {
+      if (locationRequestRef.current === controller) {
+        locationRequestRef.current = null;
+        setIsRequestingLocation(false);
+      }
+    }
+  }, [ui.location]);
 
   const handleDismissLocation = useCallback(() => {
     window.localStorage.setItem(LOCATION_DISMISSED_KEY, "true");

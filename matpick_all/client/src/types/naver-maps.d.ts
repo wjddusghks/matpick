@@ -58,6 +58,25 @@ declare namespace naver {
       zIndex?: number;
     }
 
+    class Circle {
+      constructor(opts?: CircleOptions);
+      setMap(map: Map | null): void;
+      setCenter(center: LatLng): void;
+      setRadius(radius: number): void;
+    }
+
+    interface CircleOptions {
+      map?: Map;
+      center?: LatLng;
+      radius?: number;
+      strokeColor?: string;
+      strokeOpacity?: number;
+      strokeWeight?: number;
+      fillColor?: string;
+      fillOpacity?: number;
+      clickable?: boolean;
+    }
+
     class InfoWindow {
       constructor(opts?: InfoWindowOptions);
       open(map: Map, anchor?: Marker | LatLng): void;

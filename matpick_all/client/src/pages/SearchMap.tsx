@@ -3,10 +3,13 @@ import {
   ArrowLeft,
   ChevronDown,
   ChevronUp,
+  LocateFixed,
+  LoaderCircle,
   MapPin,
   Search,
   UtensilsCrossed,
 } from "lucide-react";
+import { toast } from "sonner";
 import { useLocation, useSearch } from "wouter";
 import {
   creators,
@@ -36,9 +39,12 @@ import HeartButton from "@/components/HeartButton";
 import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
+  clearStoredLocation,
   getDistanceInMeters,
   loadStoredLocation,
+  LocationRequestError,
   LOCATION_UPDATED_EVENT,
+  requestBestCurrentLocation,
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
@@ -81,6 +87,14 @@ const MAP_COPY = {
     priceLabel: "대표 가격",
     expandResults: "목록 펼치기",
     collapseResults: "목록 접기",
+    refreshLocation: "현재 위치 다시 찾기",
+    locating: "정확한 위치 확인 중",
+    locationUpdated: "현재 위치를 새로 확인했습니다.",
+    locationDenied:
+      "위치 권한이 차단되어 있습니다. 브라우저 설정에서 위치 접근을 허용해 주세요.",
+    locationInaccurate:
+      "정확한 위치를 확인하지 못했습니다. 휴대폰 설정에서 이 브라우저의 '정확한 위치 사용'을 켠 뒤 다시 시도해 주세요.",
+    locationFailed: "현재 위치를 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.",
     pageTitle: (title: string) => `${title} 지도`,
     pageDescription: (title: string) =>
       `${title} 관련 맛집을 지도와 리스트로 한 번에 확인할 수 있는 Matpick 검색 결과 페이지입니다.`,
@@ -115,6 +129,13 @@ const MAP_COPY = {
     priceLabel: "From",
     expandResults: "Expand results",
     collapseResults: "Collapse results",
+    refreshLocation: "Refresh current location",
+    locating: "Finding precise location",
+    locationUpdated: "Your current location was refreshed.",
+    locationDenied: "Location access is blocked. Allow it in your browser settings.",
+    locationInaccurate:
+      "A precise location was unavailable. Enable precise location for this browser in your phone settings and try again.",
+    locationFailed: "Your current location could not be determined. Please try again.",
     pageTitle: (title: string) => `${title} map`,
     pageDescription: (title: string) =>
       `Browse ${title} restaurants on the map and in the list view on Matpick.`,
@@ -333,7 +354,21 @@ function RestaurantCard({
         selected ? "bg-[#fff7f1]" : "bg-white hover:bg-[#fafafa]"
       }`}
     >
-      <button type="button" onClick={onSelect} className="flex w-full items-start gap-3 text-left">
+      <div
+        role="button"
+        tabIndex={0}
+        onClick={onSelect}
+        onKeyDown={(event) => {
+          if (
+            event.target === event.currentTarget &&
+            (event.key === "Enter" || event.key === " ")
+          ) {
+            event.preventDefault();
+            onSelect();
+          }
+        }}
+        className="flex w-full items-start gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#ffb8bf]"
+      >
         <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
           <img src={displayImage.src} alt={restaurant.name} className="h-full w-full object-cover" />
         </div>
@@ -399,7 +434,7 @@ function RestaurantCard({
             ))}
           </div>
         </div>
-      </button>
+      </div>
 
       {selected ? (
         <div className="mt-3 flex justify-center">
@@ -447,14 +482,12 @@ export default function SearchMap() {
     },
   });
 
-  const domesticRestaurants = useMemo(
-    () => deferredRestaurants.filter((restaurant) => !restaurant.isOverseas),
-    [deferredRestaurants]
-  );
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [currentLocation, setCurrentLocation] = useState<StoredLocation | null>(() =>
     loadStoredLocation()
   );
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationFocusRequest, setLocationFocusRequest] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState(-1);
@@ -469,6 +502,110 @@ export default function SearchMap() {
   const searchRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const listLoadMoreRef = useRef<HTMLDivElement>(null);
+  const locationRequestRef = useRef<AbortController | null>(null);
+  const hasShownLocationWarningRef = useRef(false);
+
+  const acquireCurrentLocation = useCallback(
+    async ({
+      feedback = "silent",
+      focusMap = false,
+    }: {
+      feedback?: "silent" | "errors" | "all";
+      focusMap?: boolean;
+    } = {}) => {
+      if (!("geolocation" in navigator)) {
+        if (feedback !== "silent") {
+          toast.error(copy.locationFailed);
+        }
+        return null;
+      }
+
+      locationRequestRef.current?.abort();
+      const controller = new AbortController();
+      locationRequestRef.current = controller;
+      setIsLocating(true);
+
+      try {
+        const location = await requestBestCurrentLocation({ signal: controller.signal });
+        saveStoredLocation(location);
+        setCurrentLocation(location);
+        hasShownLocationWarningRef.current = false;
+
+        if (focusMap) {
+          setSelectedId(null);
+          setLocationFocusRequest((current) => current + 1);
+        }
+
+        if (feedback === "all") {
+          toast.success(copy.locationUpdated);
+        }
+
+        return location;
+      } catch (error) {
+        if (error instanceof LocationRequestError && error.code === "aborted") {
+          return null;
+        }
+
+        const errorCode =
+          error instanceof LocationRequestError ? error.code : "unavailable";
+
+        if (errorCode === "permission-denied" || errorCode === "inaccurate") {
+          clearStoredLocation();
+          setCurrentLocation(null);
+        }
+
+        if (
+          feedback !== "silent" &&
+          (feedback === "all" || !hasShownLocationWarningRef.current)
+        ) {
+          const message =
+            errorCode === "permission-denied"
+              ? copy.locationDenied
+              : errorCode === "inaccurate"
+                ? copy.locationInaccurate
+                : copy.locationFailed;
+          toast.error(message);
+          if (feedback !== "all") {
+            hasShownLocationWarningRef.current = true;
+          }
+        }
+
+        return null;
+      } finally {
+        if (locationRequestRef.current === controller) {
+          locationRequestRef.current = null;
+          setIsLocating(false);
+        }
+      }
+    },
+    [copy]
+  );
+
+  const orderedRestaurants = useMemo(() => {
+    if (type !== "nearby" || !currentLocation) {
+      return deferredRestaurants;
+    }
+
+    return deferredRestaurants
+      .map((restaurant, index) => ({
+        restaurant,
+        index,
+        distance:
+          !restaurant.isOverseas && restaurant.lat !== 0 && restaurant.lng !== 0
+            ? getDistanceInMeters(currentLocation, {
+                lat: restaurant.lat,
+                lng: restaurant.lng,
+              })
+            : Number.POSITIVE_INFINITY,
+      }))
+      .sort((left, right) => left.distance - right.distance || left.index - right.index)
+      .map(({ restaurant }) => restaurant);
+  }, [currentLocation, deferredRestaurants, type]);
+
+  const domesticRestaurants = useMemo(
+    () => orderedRestaurants.filter((restaurant) => !restaurant.isOverseas),
+    [orderedRestaurants]
+  );
 
   useEffect(() => {
     if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
@@ -516,7 +653,7 @@ export default function SearchMap() {
     const root = listRef.current;
     const target = listLoadMoreRef.current;
 
-    if (!root || !target || visibleListCount >= deferredRestaurants.length) {
+    if (!root || !target || visibleListCount >= orderedRestaurants.length) {
       return;
     }
 
@@ -527,7 +664,7 @@ export default function SearchMap() {
             return;
           }
 
-          setVisibleListCount((prev) => Math.min(prev + resultPageSize, deferredRestaurants.length));
+          setVisibleListCount((prev) => Math.min(prev + resultPageSize, orderedRestaurants.length));
         });
       },
       {
@@ -538,7 +675,7 @@ export default function SearchMap() {
 
     observer.observe(target);
     return () => observer.disconnect();
-  }, [deferredRestaurants.length, resultPageSize, visibleListCount]);
+  }, [orderedRestaurants.length, resultPageSize, visibleListCount]);
 
   const searchResults = useMemo(() => {
     const normalized = searchQuery.trim().toLowerCase();
@@ -599,7 +736,7 @@ export default function SearchMap() {
     let cancelled = false;
 
     async function hydrateCurrentLocation() {
-      let permissionState: PermissionState | "prompt" = "prompt";
+      let permissionState: PermissionState | "unknown" = "unknown";
 
       if ("permissions" in navigator && typeof navigator.permissions.query === "function") {
         try {
@@ -608,51 +745,36 @@ export default function SearchMap() {
           });
           permissionState = permission.state;
         } catch {
-          permissionState = "prompt";
+          permissionState = "unknown";
         }
       }
 
-      if (permissionState !== "granted" || cancelled) {
+      if (
+        cancelled ||
+        permissionState === "denied" ||
+        (permissionState !== "granted" && type !== "nearby" && !loadStoredLocation())
+      ) {
         return;
       }
 
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          if (cancelled) {
-            return;
-          }
-
-          const nextLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          saveStoredLocation(nextLocation);
-          setCurrentLocation({
-            ...nextLocation,
-            updatedAt: Date.now(),
-          });
-        },
-        () => {},
-        {
-          enableHighAccuracy: true,
-          timeout: 15000,
-          maximumAge: 0,
-        }
-      );
+      await acquireCurrentLocation({
+        feedback: type === "nearby" ? "errors" : "silent",
+        focusMap: type === "nearby",
+      });
     }
 
     void hydrateCurrentLocation();
 
     return () => {
       cancelled = true;
+      locationRequestRef.current?.abort();
     };
-  }, []);
+  }, [acquireCurrentLocation, type]);
 
   const restaurantsForMap = domesticRestaurants;
   const visibleRestaurants = useMemo(
-    () => deferredRestaurants.slice(0, visibleListCount),
-    [deferredRestaurants, visibleListCount]
+    () => orderedRestaurants.slice(0, visibleListCount),
+    [orderedRestaurants, visibleListCount]
   );
 
   const nearestRestaurantId = useMemo<string | null>(() => {
@@ -783,7 +905,7 @@ export default function SearchMap() {
     </div>
   );
 
-  const restaurantList = deferredRestaurants.length > 0 ? (
+  const restaurantList = orderedRestaurants.length > 0 ? (
     <>
       {visibleRestaurants.map((restaurant) => (
         <RestaurantCard
@@ -793,7 +915,7 @@ export default function SearchMap() {
           onSelect={() => handleRestaurantSelect(restaurant.id)}
         />
       ))}
-      {visibleListCount < deferredRestaurants.length ? (
+      {visibleListCount < orderedRestaurants.length ? (
         <div
           ref={listLoadMoreRef}
           className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
@@ -817,8 +939,30 @@ export default function SearchMap() {
         selectedId={selectedId}
         currentLocation={currentLocation}
         nearestRestaurantId={nearestRestaurantId}
+        focusCurrentLocation={type === "nearby"}
+        locationFocusRequest={locationFocusRequest}
         onMarkerClick={handleMarkerClick}
       />
+
+      <button
+        type="button"
+        onClick={() =>
+          void acquireCurrentLocation({
+            feedback: "all",
+            focusMap: true,
+          })
+        }
+        disabled={isLocating}
+        aria-label={isLocating ? copy.locating : copy.refreshLocation}
+        title={isLocating ? copy.locating : copy.refreshLocation}
+        className="absolute right-3 top-24 z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8e1e3] bg-white text-[#ff6f7c] shadow-[0_8px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#fff6f7] disabled:cursor-wait disabled:opacity-70"
+      >
+        {isLocating ? (
+          <LoaderCircle className="h-5 w-5 animate-spin" />
+        ) : (
+          <LocateFixed className="h-5 w-5" />
+        )}
+      </button>
 
       {restaurantsForMap.length > 0 && restaurantsWithCoords.length === 0 ? (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -832,7 +976,7 @@ export default function SearchMap() {
   );
 
   const mobileSheetHeight =
-    deferredRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
+    orderedRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
 
   return (
     <div className="h-[100dvh] overflow-hidden bg-white">

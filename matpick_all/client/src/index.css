@@ -197,7 +197,7 @@
 .matpick-marquee-track {
   display: flex;
   width: max-content;
-  animation: matpick-marquee 44s linear infinite;
+  animation: matpick-marquee 128s linear infinite;
   will-change: transform;
 }
 

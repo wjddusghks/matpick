@@ -1,6 +1,7 @@
 ﻿import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type FormEvent,
@@ -40,11 +41,12 @@ import {
   publicDiscoveryTopics,
   getDiscoveryTopicByTarget,
   mockSearchData,
+  restaurants,
   type DiscoveryTopic,
+  type Restaurant,
   type SearchResult,
 } from "@/data";
 import {
-  featuredMapCollections,
   getMapCollectionPath,
   type MapCollectionTopic,
 } from "@/data/mapCollections";
@@ -63,10 +65,16 @@ const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
+const RESTAURANT_MARQUEE_CARD_LIMIT = 36;
 
 type HomeShortcutTopic = Pick<DiscoveryTopic, "slug" | "name" | "path"> & {
   imageUrl?: string;
 };
+
+type RestaurantMarqueeCardItem = Pick<
+  Restaurant,
+  "id" | "name" | "category" | "region" | "imageUrl"
+>;
 
 const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
   {
@@ -407,6 +415,32 @@ function saveCollectionSocialState(state: CollectionSocialState) {
   }
 
   window.localStorage.setItem(COLLECTION_SOCIAL_KEY, JSON.stringify(state));
+}
+
+function getRandomRestaurantMarqueeCards(): RestaurantMarqueeCardItem[] {
+  const seenImageUrls = new Set<string>();
+  const candidates = restaurants.filter((restaurant) => {
+    const imageUrl = restaurant.imageUrl?.trim();
+
+    if (!imageUrl || !imageUrl.startsWith("/card-data/")) {
+      return false;
+    }
+
+    if (seenImageUrls.has(imageUrl)) {
+      return false;
+    }
+
+    seenImageUrls.add(imageUrl);
+    return true;
+  });
+
+  const shuffled = [...candidates];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+
+  return shuffled.slice(0, RESTAURANT_MARQUEE_CARD_LIMIT);
 }
 
 function getCollectionStorySlides(collection: MapCollectionTopic): CollectionStorySlide[] {
@@ -783,6 +817,7 @@ export default function Home() {
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
   const isAdmin = isAdminUser(user);
+  const restaurantMarqueeCards = useMemo(() => getRandomRestaurantMarqueeCards(), []);
   const providerLabel =
     user?.provider === "kakao"
       ? isEnglish
@@ -1702,7 +1737,7 @@ export default function Home() {
 
         <FeaturedCollectionMarquee
           label={ui.collectionMarqueeLabel}
-          collections={featuredMapCollections}
+          cards={restaurantMarqueeCards}
         />
 
         <div className="mt-8 w-full max-w-[840px] sm:mt-10">
@@ -1723,80 +1758,86 @@ export default function Home() {
 
 function FeaturedCollectionMarquee({
   label,
-  collections,
+  cards,
 }: {
   label: string;
-  collections: MapCollectionTopic[];
+  cards: RestaurantMarqueeCardItem[];
 }) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+  const [, navigate] = useLocation();
 
-  useEffect(() => {
-    setPortalRoot(document.body);
-  }, []);
-
-  useEffect(() => {
-    if (activeIndex === null) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [activeIndex]);
-
-  const openCollection = useCallback(
-    (index: number) => {
-      if (collections.length === 0) {
-        return;
-      }
-
-      setActiveIndex(index % collections.length);
+  const openRestaurant = useCallback(
+    (card: RestaurantMarqueeCardItem, duplicateIndex: number) => {
+      trackMarketingEvent("home_restaurant_marquee_click", {
+        restaurant_id: card.id,
+        restaurant_name: card.name,
+        duplicate_index: duplicateIndex,
+      });
+      navigate(`/restaurant/${card.id}`);
     },
-    [collections.length]
+    [navigate]
   );
 
-  return (
-    <>
-      <section className="relative left-1/2 mt-9 w-screen -translate-x-1/2 overflow-hidden border-y border-[#ffe1e7] bg-[#fff0f3] py-5 text-left sm:mt-11 sm:py-6">
-        <div className="mx-auto mb-4 flex w-full max-w-[980px] items-center justify-between px-4 sm:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
-            {label}
-          </p>
-        </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fff0f3] to-transparent sm:w-28" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fff0f3] to-transparent sm:w-28" />
-        <div className="overflow-hidden px-3 sm:px-4">
-          <div className="matpick-marquee-track">
-            {[0, 1].map((groupIndex) => (
-              <div className="matpick-marquee-group" key={groupIndex}>
-                {collections.map((collection, index) => (
-                  <MapCollectionCard
-                    key={`${collection.slug}_${groupIndex}`}
-                    collection={collection}
-                    duplicateIndex={groupIndex * collections.length + index}
-                    onOpen={() => openCollection(index)}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  if (cards.length === 0) {
+    return null;
+  }
 
-      {activeIndex !== null && portalRoot
-        ? createPortal(
-            <FeaturedCollectionModal
-              collection={collections[activeIndex]}
-              onClose={() => setActiveIndex(null)}
-            />,
-            portalRoot
-          )
-        : null}
-    </>
+  return (
+    <section className="relative left-1/2 mt-9 w-screen -translate-x-1/2 overflow-hidden border-y border-[#ffe1e7] bg-[#fff0f3] py-5 text-left sm:mt-11 sm:py-6">
+      <div className="mx-auto mb-4 flex w-full max-w-[980px] items-center justify-between px-4 sm:px-8">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
+          {label}
+        </p>
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fff0f3] to-transparent sm:w-28" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fff0f3] to-transparent sm:w-28" />
+      <div className="overflow-hidden px-3 sm:px-4">
+        <div className="matpick-marquee-track">
+          {[0, 1].map((groupIndex) => (
+            <div className="matpick-marquee-group" key={groupIndex}>
+              {cards.map((card, index) => {
+                const duplicateIndex = groupIndex * cards.length + index;
+
+                return (
+                  <RestaurantMarqueeCard
+                    key={`${card.id}_${card.imageUrl}_${groupIndex}`}
+                    card={card}
+                    duplicateIndex={duplicateIndex}
+                    onOpen={() => openRestaurant(card, duplicateIndex)}
+                  />
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RestaurantMarqueeCard({
+  card,
+  duplicateIndex,
+  onOpen,
+}: {
+  card: RestaurantMarqueeCardItem;
+  duplicateIndex: number;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group relative aspect-[1122/1402] w-[178px] flex-shrink-0 overflow-hidden rounded-[10px] border border-white/75 bg-[#211f22] p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
+      aria-label={`${card.name} 식당 카드 보기`}
+    >
+      <img
+        src={card.imageUrl}
+        alt=""
+        className="h-full w-full object-contain"
+        loading={duplicateIndex < 8 ? "eager" : "lazy"}
+      />
+      <span className="pointer-events-none absolute inset-0 rounded-[10px] ring-1 ring-inset ring-white/0 transition group-hover:bg-black/5 group-hover:ring-white/70" />
+    </button>
   );
 }
 

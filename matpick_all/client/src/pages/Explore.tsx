@@ -752,7 +752,9 @@ function SourceRestaurantCollectionGrid({
       ? "Korean 100"
       : topic.slug === "baekjong-wok"
         ? "Baekjong"
-        : "Topic";
+        : topic.slug === "michelin"
+          ? "Michelin"
+          : "Topic";
   const title =
     locale === "en" ? `${topic.name} restaurant cards` : `${topic.name} 맛집 카드`;
   const description =
@@ -1527,7 +1529,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const isSourceRestaurantCardOverview =
     Boolean(presetTopic) &&
     !presetEpisode &&
-    (presetTopic?.slug === "old-korean-100" || presetTopic?.slug === "baekjong-wok");
+    (presetTopic?.slug === "old-korean-100" ||
+      presetTopic?.slug === "baekjong-wok" ||
+      presetTopic?.slug === "michelin");
   const isCardTopicOverview =
     isTtoganjipOverview || isPopularRestaurantsOverview || isSourceRestaurantCardOverview;
 

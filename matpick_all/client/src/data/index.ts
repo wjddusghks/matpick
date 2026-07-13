@@ -2,10 +2,10 @@ import rawDataset from "./matpick-data.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import { sourceProfileImageOverrides } from "./sourceProfileImages";
-import baekjongWokDataset from "./generated/baekjong-wok.generated.json";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
 import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
+import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
 import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
 import michelin1StarTopicEnrichment from "./generated/topic-enrichments/michelin-1-star.enriched.json";
 import michelin2StarsTopicEnrichment from "./generated/topic-enrichments/michelin-2-stars.enriched.json";
@@ -455,7 +455,7 @@ const baseDataset = rawDataset as MatpickDataSet;
 const dataset = filterDatasetForVisibleContent(
   mergeDatasets(baseDataset, [
   oldKorean100Dataset as SourceDataset,
-  baekjongWokDataset as SourceDataset,
+  baekjongWokTopicEnrichment as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
   wednesdayGourmetDataset as SourceDataset,
   ttoganjipTopicEnrichment as SourceDataset,

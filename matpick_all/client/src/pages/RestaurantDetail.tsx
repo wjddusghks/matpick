@@ -72,6 +72,19 @@ const APP_URL = import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") ?
 const MAX_REVIEW_PHOTOS = 3;
 const MATPICK_FALLBACK_APP_URL = "https://matpick.co.kr";
 const MOBILE_MAP_FALLBACK_DELAY_MS = 900;
+const KOREAN_CITY_BY_ENGLISH_NAME: Record<string, string> = {
+  busan: "\uBD80\uC0B0",
+  daegu: "\uB300\uAD6C",
+  daejeon: "\uB300\uC804",
+  gangwon: "\uAC15\uC6D0",
+  gwangju: "\uAD11\uC8FC",
+  gyeonggi: "\uACBD\uAE30",
+  incheon: "\uC778\uCC9C",
+  jeju: "\uC81C\uC8FC",
+  sejong: "\uC138\uC885",
+  seoul: "\uC11C\uC6B8",
+  ulsan: "\uC6B8\uC0B0",
+};
 const GUIDE_REVIEW_USERS = new Set(["맛픽가이드", "맛픽 가이드"]);
 
 function getRestaurantUrl(restaurantId: string) {
@@ -248,6 +261,70 @@ function formatDistance(distanceKm: number | null) {
   }
 
   return `${distanceKm.toFixed(1)}km`;
+}
+
+function formatAddressForClipboard(address: string) {
+  const normalized = address.replace(/\s+/g, " ").trim();
+  if (!normalized.includes(",")) {
+    return normalized;
+  }
+
+  const parts = normalized
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  if (parts.length <= 1) {
+    return normalized;
+  }
+
+  let changed = false;
+  let cityPrefix = "";
+  const countryPattern = /^(?:\uD55C\uAD6D|\uB300\uD55C\uBBFC\uAD6D|korea|south korea|republic of korea)$/i;
+  const postalCodePattern = /^\d{5}(?:-\d{4})?$/;
+  const englishSegmentPattern = /^[a-z][a-z\s.'-]*$/i;
+
+  while (parts.length > 1 && countryPattern.test(parts[parts.length - 1])) {
+    parts.pop();
+    changed = true;
+  }
+
+  while (parts.length > 1 && postalCodePattern.test(parts[parts.length - 1])) {
+    parts.pop();
+    changed = true;
+  }
+
+  const tail = parts[parts.length - 1];
+  const mappedCity = KOREAN_CITY_BY_ENGLISH_NAME[tail?.toLowerCase() ?? ""];
+  if (parts.length > 1 && mappedCity) {
+    cityPrefix = mappedCity;
+    parts.pop();
+    changed = true;
+  } else if (changed && parts.length > 1 && englishSegmentPattern.test(tail)) {
+    parts.pop();
+    changed = true;
+  }
+
+  if (!changed) {
+    return normalized;
+  }
+
+  const koreanAddress = parts.join(", ").trim();
+  if (!cityPrefix || !koreanAddress) {
+    return koreanAddress || normalized;
+  }
+
+  if (
+    koreanAddress === cityPrefix ||
+    koreanAddress.startsWith(`${cityPrefix} `) ||
+    koreanAddress.startsWith(`${cityPrefix}\uC2DC`) ||
+    koreanAddress.startsWith(`${cityPrefix}\uAD11\uC5ED\uC2DC`) ||
+    koreanAddress.startsWith(`${cityPrefix}\uD2B9\uBCC4\uC2DC`)
+  ) {
+    return koreanAddress;
+  }
+
+  return `${cityPrefix} ${koreanAddress}`;
 }
 
 function isMobileMapContext() {
@@ -563,12 +640,14 @@ export default function RestaurantDetail() {
   };
 
   const copyRestaurantAddress = async () => {
+    const addressForClipboard = formatAddressForClipboard(restaurant.address);
+
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(restaurant.address);
+        await navigator.clipboard.writeText(addressForClipboard);
       } else {
         const textarea = document.createElement("textarea");
-        textarea.value = restaurant.address;
+        textarea.value = addressForClipboard;
         textarea.setAttribute("readonly", "");
         textarea.style.position = "fixed";
         textarea.style.left = "-9999px";

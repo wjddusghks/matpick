@@ -498,11 +498,11 @@ function RestaurantCard({
       }}
       className="group self-start overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
     >
-      <div className="relative h-52 overflow-hidden">
+      <div className="relative aspect-[2/3] overflow-hidden bg-[#211f22]">
         <img
           src={displayImage.src}
           alt={restaurant.name}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.18)_100%)]" />
 
@@ -689,7 +689,7 @@ function PopularRestaurantCollectionGrid({
               <img
                 src={collection.imageUrl}
                 alt=""
-                className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                className="absolute inset-0 h-full w-full object-contain"
                 loading="lazy"
               />
             ) : null}
@@ -732,6 +732,76 @@ function PopularRestaurantCollectionGrid({
   );
 }
 
+function SourceRestaurantCollectionGrid({
+  topic,
+  restaurants,
+  totalCount,
+  locale,
+  copy,
+  onSelect,
+}: {
+  topic: DiscoveryTopic;
+  restaurants: Restaurant[];
+  totalCount: number;
+  locale: AppLocale;
+  copy: (typeof EXPLORE_COPY)[AppLocale];
+  onSelect: (restaurant: Restaurant) => void;
+}) {
+  const eyebrow =
+    topic.slug === "old-korean-100"
+      ? "Korean 100"
+      : topic.slug === "baekjong-wok"
+        ? "Baekjong"
+        : "Topic";
+  const title =
+    locale === "en" ? `${topic.name} restaurant cards` : `${topic.name} 맛집 카드`;
+  const description =
+    topic.description ||
+    (locale === "en"
+      ? "Browse the restaurants in this topic as visual cards."
+      : "이 주제에 포함된 맛집을 카드 형태로 모아봤어요.");
+
+  if (restaurants.length === 0) {
+    return (
+      <section className="rounded-[28px] border border-dashed border-[#ecdfe2] bg-white px-6 py-16 text-center sm:py-20">
+        <p className="text-lg font-semibold text-[#333]">{copy.emptyTitle}</p>
+        <p className="mt-2 text-sm leading-6 text-[#8a8a8a]">{copy.emptyDescription}</p>
+      </section>
+    );
+  }
+
+  return (
+    <section className="mb-10">
+      <div className="mb-5 flex flex-col gap-2 sm:mb-6">
+        <p className="text-xs font-black uppercase tracking-[0.18em] text-[#ff7b83]">
+          {eyebrow}
+        </p>
+        <h2 className="break-keep text-2xl font-black leading-tight text-[#171717] sm:text-3xl">
+          {title}
+        </h2>
+        <p className="max-w-3xl break-keep text-sm leading-6 text-[#7f7f7f] sm:text-base">
+          {description}
+        </p>
+        <p className="text-sm font-bold text-[#ff7b83]">
+          {copy.resultsCount(totalCount)}
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+        {restaurants.map((restaurant) => (
+          <RestaurantCard
+            key={restaurant.id}
+            restaurant={restaurant}
+            locale={locale}
+            copy={copy}
+            onSelect={onSelect}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function EpisodeCollectionCard({
   episode,
   index,
@@ -755,12 +825,12 @@ function EpisodeCollectionCard({
         });
         onOpen();
       }}
-      className="group relative aspect-[4/5] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
+      className="group relative aspect-[2/3] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
       style={{ background: getEpisodeCardPalette(index) }}
       aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
       {mainImageUrl ? (
-        <img src={mainImageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={mainImageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.16),rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.72))]" />
       {!mainImageUrl ? (
@@ -994,7 +1064,7 @@ function EpisodeStoryModal({
           <div className="flex min-w-0 flex-col items-center">
             <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
               <div
-                className="relative aspect-[4/5] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
+                className="relative aspect-[2/3] h-full max-h-[640px] max-w-full overflow-hidden rounded-[6px] bg-[#070b10] shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
                 onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
                 onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
               >
@@ -1238,7 +1308,7 @@ function EpisodeStorySlideView({ slide }: { slide: EpisodeStorySlide }) {
       style={{ background: slide.background }}
     >
       {slide.imageUrl ? (
-        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.68))]" />
       {!hasImage ? (
@@ -1454,7 +1524,12 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const isTtoganjipOverview = presetTopic?.slug === "ttoganjip" && !presetEpisode;
   const isPopularRestaurantsOverview =
     presetTopic?.slug === "popular-restaurants" && !presetEpisode;
-  const isCardTopicOverview = isTtoganjipOverview || isPopularRestaurantsOverview;
+  const isSourceRestaurantCardOverview =
+    Boolean(presetTopic) &&
+    !presetEpisode &&
+    (presetTopic?.slug === "old-korean-100" || presetTopic?.slug === "baekjong-wok");
+  const isCardTopicOverview =
+    isTtoganjipOverview || isPopularRestaurantsOverview || isSourceRestaurantCardOverview;
 
   const seoContent = useMemo(
     () =>
@@ -1777,7 +1852,9 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
       ? locale === "en"
         ? "Popular restaurants are grouped into card collections instead of a long restaurant list."
         : "인기맛집은 식당을 한꺼번에 펼치지 않고 카드 묶음 단위로 정리해서 보여드립니다."
-      : copy.pageDescription;
+      : isSourceRestaurantCardOverview && presetTopic
+        ? presetTopic.description || copy.pageDescription
+        : copy.pageDescription;
   const contextDescription = presetEpisode?.description || presetTopic?.description || "";
   const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";
 
@@ -1953,6 +2030,17 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             topic={presetTopic}
             collections={featuredMapCollections}
             locale={locale}
+          />
+        ) : null}
+
+        {isSourceRestaurantCardOverview && presetTopic ? (
+          <SourceRestaurantCollectionGrid
+            topic={presetTopic}
+            restaurants={visibleRestaurants}
+            totalCount={filteredRestaurants.length}
+            locale={locale}
+            copy={copy}
+            onSelect={handleRestaurantSelect}
           />
         ) : null}
 
@@ -2231,7 +2319,8 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
             )
           : null}
 
-        {!isCardTopicOverview && visibleCount < deferredRestaurants.length ? (
+        {(!isCardTopicOverview || isSourceRestaurantCardOverview) &&
+        visibleCount < deferredRestaurants.length ? (
           <div ref={loadMoreRef} className="py-8 text-center text-sm font-medium text-[#9a8f92]">
             {copy.loadMore}
           </div>

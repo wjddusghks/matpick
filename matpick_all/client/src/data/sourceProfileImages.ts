@@ -1,8 +1,8 @@
 import tateguysImage from "@/assets/creator-thumbnails/tateguys.jpg";
-import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.png";
-import baekjongWokImage from "@/assets/source-thumbnails/baekjong-wok.png";
-import michelinImage from "@/assets/source-thumbnails/michelin.png";
-import popularRestaurantsImage from "@/assets/source-thumbnails/popular-restaurants.png";
+import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
+import baekjongWokImage from "@/assets/source-thumbnails/baekjong-wok.webp";
+import michelinImage from "@/assets/source-thumbnails/michelin.webp";
+import popularRestaurantsImage from "@/assets/source-thumbnails/popular-restaurants.webp";
 
 export const sourceProfileImageOverrides: Record<string, string> = {
   ttoganjip: ttoganjipImage,

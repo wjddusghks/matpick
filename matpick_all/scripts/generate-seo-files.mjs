@@ -257,6 +257,7 @@ Allow: /
 User-agent: Googlebot-Image
 Disallow: /card-data/
 Disallow: /card-previews/
+Disallow: /restaurant-image-previews/
 Disallow: /source-covers/
 Disallow: /baekjong-wok/
 Disallow: /michelin/

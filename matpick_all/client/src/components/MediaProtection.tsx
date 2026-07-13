@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 const PROTECTED_IMAGE_SELECTOR = [
   'img[src*="/card-data/"]',
+  'img[src*="/restaurant-image-previews/"]',
   'img[src*="/source-covers/"]',
   'img[src*="/baekjong-wok/"]',
   'img[src*="/michelin/"]',

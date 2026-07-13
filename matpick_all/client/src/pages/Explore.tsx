@@ -64,6 +64,7 @@ import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
+import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 import {
   formatRestaurantBroadcastBadge,
   getRestaurantDisplayImage,
@@ -692,7 +693,7 @@ function PopularRestaurantCollectionGrid({
           >
             {collection.imageUrl ? (
               <img
-                src={collection.imageUrl}
+                src={getOptimizedCardImageUrl(collection.imageUrl)}
                 alt=""
                 className="absolute inset-0 h-full w-full object-contain"
                 width={1122}
@@ -843,7 +844,7 @@ function EpisodeCollectionCard({
     >
       {mainImageUrl ? (
         <img
-          src={mainImageUrl}
+          src={getOptimizedCardImageUrl(mainImageUrl)}
           alt=""
           className="absolute inset-0 h-full w-full object-contain"
           width={1122}
@@ -1329,7 +1330,11 @@ function EpisodeStorySlideView({ slide }: { slide: EpisodeStorySlide }) {
       style={{ background: slide.background }}
     >
       {slide.imageUrl ? (
-        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
+        <img
+          src={getOptimizedCardImageUrl(slide.imageUrl)}
+          alt=""
+          className="absolute inset-0 h-full w-full object-contain"
+        />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.68))]" />
       {!hasImage ? (

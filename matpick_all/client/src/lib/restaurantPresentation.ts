@@ -1,4 +1,5 @@
 import type { MenuItem, Restaurant } from "@/data/types";
+import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 
 type RestaurantImageOptions = {
   width?: number;
@@ -244,7 +245,7 @@ export function getRestaurantDisplayImage(
 
   if (hasRestaurantPhoto(restaurant)) {
     return {
-      src: restaurant.imageUrl,
+      src: getOptimizedCardImageUrl(restaurant.imageUrl),
       hasPhoto: true,
       source: "restaurant",
     };

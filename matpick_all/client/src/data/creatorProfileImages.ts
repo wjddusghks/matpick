@@ -1,5 +1,5 @@
 import tateguysImage from "@/assets/creator-thumbnails/tateguys.jpg";
-import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.png";
+import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import tzuyangImage from "@/assets/creator-thumbnails/tzuyang.jpg";
 
 export const creatorProfileImageOverrides: Record<string, string> = {

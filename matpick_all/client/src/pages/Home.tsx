@@ -61,6 +61,7 @@ import {
   saveStoredLocation,
 } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
+import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 import {
   PRIVACY_PREFERENCES_EVENT,
   readPrivacyPreferences,
@@ -68,10 +69,10 @@ import {
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
-import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.png";
-import michelinShortcutImage from "@/assets/source-thumbnails/michelin.png";
-import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.png";
-import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.png";
+import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.webp";
+import michelinShortcutImage from "@/assets/source-thumbnails/michelin.webp";
+import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.webp";
+import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.webp";
 
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
@@ -1944,7 +1945,7 @@ function MapCollectionCard({
     >
       {collection.imageUrl ? (
         <img
-          src={collection.imageUrl}
+          src={getOptimizedCardImageUrl(collection.imageUrl)}
           alt=""
           className="absolute inset-0 h-full w-full object-contain"
           loading="lazy"
@@ -2444,7 +2445,11 @@ function CollectionInstagramSlide({
       style={{ background: isCover || isPhoto ? collection.palette.background : "#ffffff" }}
     >
       {slide.imageUrl ? (
-        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
+        <img
+          src={getOptimizedCardImageUrl(slide.imageUrl)}
+          alt=""
+          className="absolute inset-0 h-full w-full object-contain"
+        />
       ) : null}
       {isCover || isPhoto ? (
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.58))]" />

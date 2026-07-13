@@ -47,6 +47,7 @@ import {
   type Restaurant,
   type SearchResult,
 } from "@/data";
+import marqueeCardPreviews from "@/data/generated/marquee-card-previews.json";
 import {
   getMapCollectionPath,
   type MapCollectionTopic,
@@ -85,7 +86,11 @@ type HomeShortcutTopic = Pick<DiscoveryTopic, "slug" | "name" | "path"> & {
 type RestaurantMarqueeCardItem = Pick<
   Restaurant,
   "id" | "name" | "category" | "region" | "imageUrl"
->;
+> & {
+  previewImageUrl: string;
+};
+
+const MARQUEE_CARD_PREVIEWS = marqueeCardPreviews as Record<string, string>;
 
 const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
   {
@@ -434,19 +439,29 @@ function saveCollectionSocialState(state: CollectionSocialState) {
 
 function getRandomRestaurantMarqueeCards(): RestaurantMarqueeCardItem[] {
   const seenImageUrls = new Set<string>();
-  const candidates = restaurants.filter((restaurant) => {
-    const imageUrl = restaurant.imageUrl?.trim();
+  const candidates: RestaurantMarqueeCardItem[] = [];
 
-    if (!imageUrl || !imageUrl.startsWith("/card-data/")) {
-      return false;
+  restaurants.forEach((restaurant) => {
+    const imageUrl = restaurant.imageUrl?.trim();
+    const previewImageUrl = imageUrl ? MARQUEE_CARD_PREVIEWS[imageUrl] : undefined;
+
+    if (!imageUrl || !previewImageUrl) {
+      return;
     }
 
     if (seenImageUrls.has(imageUrl)) {
-      return false;
+      return;
     }
 
     seenImageUrls.add(imageUrl);
-    return true;
+    candidates.push({
+      id: restaurant.id,
+      name: restaurant.name,
+      category: restaurant.category,
+      region: restaurant.region,
+      imageUrl,
+      previewImageUrl,
+    });
   });
 
   const shuffled = [...candidates];
@@ -1830,15 +1845,20 @@ function FeaturedCollectionMarquee({
       <div className="overflow-hidden px-3 sm:px-4">
         <div className="matpick-marquee-track">
           {[0, 1].map((groupIndex) => (
-            <div className="matpick-marquee-group" key={groupIndex}>
+            <div
+              className="matpick-marquee-group"
+              key={groupIndex}
+              aria-hidden={groupIndex === 1}
+            >
               {cards.map((card, index) => {
                 const duplicateIndex = groupIndex * cards.length + index;
 
                 return (
                   <RestaurantMarqueeCard
-                    key={`${card.id}_${card.imageUrl}_${groupIndex}`}
+                    key={`${card.id}_${card.previewImageUrl}_${groupIndex}`}
                     card={card}
                     duplicateIndex={duplicateIndex}
+                    isDuplicate={groupIndex === 1}
                     onOpen={() => openRestaurant(card, duplicateIndex)}
                   />
                 );
@@ -1854,26 +1874,41 @@ function FeaturedCollectionMarquee({
 function RestaurantMarqueeCard({
   card,
   duplicateIndex,
+  isDuplicate,
   onOpen,
 }: {
   card: RestaurantMarqueeCardItem;
   duplicateIndex: number;
+  isDuplicate: boolean;
   onOpen: () => void;
 }) {
   return (
     <button
       type="button"
       onClick={onOpen}
-      className="group relative w-[178px] flex-shrink-0 self-start overflow-hidden rounded-[10px] border border-white/75 bg-transparent p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
-      aria-label={`${card.name} 식당 카드 보기`}
+      className="group relative aspect-[2/3] w-[178px] flex-shrink-0 self-start overflow-hidden rounded-[10px] border border-white/75 bg-[#1d181a] p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
+      aria-label={isDuplicate ? undefined : `${card.name} 식당 카드 보기`}
+      tabIndex={isDuplicate ? -1 : 0}
+      data-marquee-card={card.id}
     >
+      <span
+        className="pointer-events-none absolute -inset-5 scale-110 bg-cover bg-center opacity-55 blur-2xl"
+        style={{ backgroundImage: `url("${card.previewImageUrl}")` }}
+        aria-hidden="true"
+      />
+      <span
+        className="pointer-events-none absolute inset-0 bg-black/25"
+        aria-hidden="true"
+      />
       <img
-        src={card.imageUrl}
+        src={card.previewImageUrl}
         alt=""
-        className="block h-auto w-full"
-        loading={duplicateIndex < 8 ? "eager" : "lazy"}
+        className="absolute inset-0 block h-full w-full object-contain"
+        width={720}
+        height={1080}
+        loading="eager"
         decoding="async"
-        fetchPriority={duplicateIndex < 2 ? "auto" : "low"}
+        fetchPriority={duplicateIndex < 2 ? "high" : "low"}
         draggable={false}
       />
       <span className="pointer-events-none absolute inset-0 rounded-[10px] ring-1 ring-inset ring-white/0 transition group-hover:bg-black/5 group-hover:ring-white/70" />

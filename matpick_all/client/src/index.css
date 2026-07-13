@@ -186,18 +186,20 @@
 
 @keyframes matpick-marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .matpick-marquee-track {
+  backface-visibility: hidden;
   display: flex;
   width: max-content;
   animation: matpick-marquee 72s linear infinite;
+  transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
@@ -221,6 +223,7 @@
 }
 
 img[src*="/card-data/"],
+img[src*="/card-previews/"],
 img[src*="/source-covers/"],
 img[src*="/baekjong-wok/"],
 img[src*="/michelin/"],

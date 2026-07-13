@@ -468,11 +468,13 @@ function FilterChip({
 
 function RestaurantCard({
   restaurant,
+  imageIndex,
   locale,
   copy,
   onSelect,
 }: {
   restaurant: Restaurant;
+  imageIndex: number;
   locale: AppLocale;
   copy: (typeof EXPLORE_COPY)[AppLocale];
   onSelect?: (restaurant: Restaurant) => void;
@@ -501,6 +503,11 @@ function RestaurantCard({
           src={displayImage.src}
           alt={restaurant.name}
           className="h-full w-full object-contain"
+          width={1122}
+          height={1402}
+          loading={imageIndex < 3 ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={imageIndex === 0 ? "high" : imageIndex < 3 ? "auto" : "low"}
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.18)_100%)]" />
 
@@ -688,7 +695,11 @@ function PopularRestaurantCollectionGrid({
                 src={collection.imageUrl}
                 alt=""
                 className="absolute inset-0 h-full w-full object-contain"
-                loading="lazy"
+                width={1122}
+                height={1402}
+                loading={index < 3 ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={index === 0 ? "high" : index < 3 ? "auto" : "low"}
               />
             ) : null}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.22)_44%,rgba(0,0,0,0.62))]" />
@@ -788,10 +799,11 @@ function SourceRestaurantCollectionGrid({
       </div>
 
       <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-        {restaurants.map((restaurant) => (
+        {restaurants.map((restaurant, index) => (
           <RestaurantCard
             key={restaurant.id}
             restaurant={restaurant}
+            imageIndex={index}
             locale={locale}
             copy={copy}
             onSelect={onSelect}
@@ -830,7 +842,16 @@ function EpisodeCollectionCard({
       aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
       {mainImageUrl ? (
-        <img src={mainImageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
+        <img
+          src={mainImageUrl}
+          alt=""
+          className="absolute inset-0 h-full w-full object-contain"
+          width={1122}
+          height={1402}
+          loading={index < 4 ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={index === 0 ? "high" : index < 4 ? "auto" : "low"}
+        />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.16),rgba(0,0,0,0.28)_42%,rgba(0,0,0,0.72))]" />
       {!mainImageUrl ? (
@@ -2277,6 +2298,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 <RestaurantCard
                   key={restaurant.id}
                   restaurant={restaurant}
+                  imageIndex={index}
                   locale={locale}
                   copy={copy}
                   onSelect={handleRestaurantSelect}

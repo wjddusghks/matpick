@@ -5,7 +5,7 @@
 import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Youtube, Users } from "lucide-react";
-import MonetizationSlot from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import {
   creators,
   getCreatorDisplayName,
@@ -188,7 +188,7 @@ export default function CreatorDetail() {
           추천한 맛집 ({recommendedRestaurants.length}곳)
         </h2>
         <div className="mb-6">
-          <MonetizationSlot label="Sponsored" />
+          <RevenuePlacement providers={["kakao", "coupang"]} />
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {recommendedRestaurants.map((restaurant, i) => (

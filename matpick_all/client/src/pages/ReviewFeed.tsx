@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Camera, MessageSquareText, Star } from "lucide-react";
-import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { getRestaurantById } from "@/data";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
@@ -206,7 +206,7 @@ export default function ReviewFeed() {
               </section>
             ) : null}
 
-            <AdsenseSlot label="Sponsored" />
+            <RevenuePlacement providers={["kakao"]} />
 
             <section className="space-y-4">
               {isLoading ? (
@@ -341,8 +341,8 @@ export default function ReviewFeed() {
                       </div>
                       </div>
                     </article>
-                    {(index + 1) % 8 === 0 && index + 1 < visibleReviews.length ? (
-                      <AdsenseSlot label="Sponsored" />
+                    {index + 1 === 12 && index + 1 < visibleReviews.length ? (
+                      <RevenuePlacement providers={["adsense"]} />
                     ) : null}
                   </div>
                 );
@@ -351,6 +351,7 @@ export default function ReviewFeed() {
           </div>
 
           <aside className="space-y-5 lg:sticky lg:top-6 lg:h-fit">
+            <RevenuePlacement providers={["coupang"]} />
             <div className="rounded-[30px] border border-[#f3e3e6] bg-white px-5 py-5 shadow-[0_22px_60px_rgba(0,0,0,0.05)]">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#c98b95]">
                 Community Snapshot

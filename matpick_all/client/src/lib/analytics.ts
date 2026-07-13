@@ -1,3 +1,5 @@
+import { hasAnalyticsConsent } from "@/lib/privacyConsent";
+
 const VISITOR_ID_KEY = "matpick_analytics_visitor_id";
 const SESSION_ID_KEY = "matpick_analytics_session_id";
 const SESSION_STARTED_KEY = "matpick_analytics_session_started";
@@ -78,7 +80,7 @@ export function getAnalyticsSessionId() {
 }
 
 export function markAnalyticsSessionStarted() {
-  if (typeof window === "undefined") {
+  if (typeof window === "undefined" || !hasAnalyticsConsent()) {
     return false;
   }
 
@@ -105,6 +107,10 @@ export function trackAnalyticsEvent(
   options: { keepalive?: boolean } = {}
 ) {
   if (typeof window === "undefined") {
+    return;
+  }
+
+  if (!hasAnalyticsConsent()) {
     return;
   }
 

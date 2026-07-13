@@ -32,7 +32,7 @@ import { toast } from "sonner";
 import { Link, useLocation } from "wouter";
 import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
-import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
@@ -54,6 +54,11 @@ import { getDisplayName } from "@/lib/authProfile";
 import { isAdminUser } from "@/lib/admin";
 import { clearStoredLocation, saveStoredLocation } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
+import {
+  PRIVACY_PREFERENCES_EVENT,
+  readPrivacyPreferences,
+  type PrivacyPreferences,
+} from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.png";
@@ -65,7 +70,7 @@ const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
-const RESTAURANT_MARQUEE_CARD_LIMIT = 36;
+const RESTAURANT_MARQUEE_CARD_LIMIT = 18;
 
 type HomeShortcutTopic = Pick<DiscoveryTopic, "slug" | "name" | "path"> & {
   imageUrl?: string;
@@ -802,6 +807,9 @@ export default function Home() {
   const [isTopicDeleteMode, setIsTopicDeleteMode] = useState(false);
   const [selectedTopicIdsForDelete, setSelectedTopicIdsForDelete] = useState<string[]>([]);
   const [showLocationPrompt, setShowLocationPrompt] = useState(false);
+  const [hasPrivacyChoice, setHasPrivacyChoice] = useState(
+    () => readPrivacyPreferences() !== null
+  );
   const [locationState, setLocationState] = useState<LocationPermissionState>(
     getStoredLocationStatus
   );
@@ -965,6 +973,30 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const handlePrivacyPreferences = (event: Event) => {
+      const preferences = (event as CustomEvent<PrivacyPreferences>).detail;
+      if (preferences?.version === 1) {
+        setHasPrivacyChoice(true);
+      }
+    };
+
+    window.addEventListener(
+      PRIVACY_PREFERENCES_EVENT,
+      handlePrivacyPreferences as EventListener
+    );
+    return () =>
+      window.removeEventListener(
+        PRIVACY_PREFERENCES_EVENT,
+        handlePrivacyPreferences as EventListener
+      );
+  }, []);
+
+  useEffect(() => {
+    if (!hasPrivacyChoice) {
+      setShowLocationPrompt(false);
+      return;
+    }
+
     let ignore = false;
     const timerId = window.setTimeout(async () => {
       const dismissed = window.localStorage.getItem(LOCATION_DISMISSED_KEY) === "true";
@@ -1044,7 +1076,7 @@ export default function Home() {
       ignore = true;
       window.clearTimeout(timerId);
     };
-  }, []);
+  }, [hasPrivacyChoice]);
 
   const handleLoginEnter = useCallback(() => {
     if (loginTimeoutRef.current) {
@@ -1741,7 +1773,7 @@ export default function Home() {
         />
 
         <div className="mt-8 w-full max-w-[840px] sm:mt-10">
-          <AdsenseSlot label="Sponsored" />
+          <RevenuePlacement providers={["kakao", "coupang"]} />
         </div>
       </main>
 
@@ -1835,6 +1867,9 @@ function RestaurantMarqueeCard({
         alt=""
         className="block h-auto w-full"
         loading={duplicateIndex < 8 ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={duplicateIndex < 2 ? "auto" : "low"}
+        draggable={false}
       />
       <span className="pointer-events-none absolute inset-0 rounded-[10px] ring-1 ring-inset ring-white/0 transition group-hover:bg-black/5 group-hover:ring-white/70" />
     </button>

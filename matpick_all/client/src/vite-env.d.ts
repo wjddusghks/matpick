@@ -11,9 +11,19 @@ interface ImportMetaEnv {
   readonly VITE_KAKAO_ADFIT_UNIT?: string;
   readonly VITE_KAKAO_ADFIT_WIDTH?: string;
   readonly VITE_KAKAO_ADFIT_HEIGHT?: string;
+  readonly VITE_KAKAO_ADFIT_MOBILE_UNIT?: string;
+  readonly VITE_KAKAO_ADFIT_MOBILE_WIDTH?: string;
+  readonly VITE_KAKAO_ADFIT_MOBILE_HEIGHT?: string;
   readonly VITE_COUPANG_PARTNERS_URL?: string;
   readonly VITE_COUPANG_BANNER_IMAGE_URL?: string;
   readonly VITE_COUPANG_BANNER_TITLE?: string;
+  readonly VITE_COUPANG_DYNAMIC_BANNER_ID?: string;
+  readonly VITE_COUPANG_DYNAMIC_BANNER_TEMPLATE?: string;
+  readonly VITE_COUPANG_DYNAMIC_BANNER_TRACKING_CODE?: string;
+  readonly VITE_COUPANG_DYNAMIC_BANNER_WIDTH?: string;
+  readonly VITE_COUPANG_DYNAMIC_BANNER_HEIGHT?: string;
+  readonly VITE_GOOGLE_TAG_IDS?: string;
+  readonly VITE_META_PIXEL_ID?: string;
   readonly VITE_ADMIN_USER_IDS?: string;
 }
 

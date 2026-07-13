@@ -53,6 +53,9 @@ Before pushing changes to the production branch:
    - `VITE_ADSENSE_SLOT_INLINE=...`
    - `VITE_GOOGLE_TAG_IDS=G-...,AW-...`
    - `VITE_META_PIXEL_ID=...`
+   - `AUTH_PROFILE_SIGNING_SECRET=...`
+   - `AUTH_ALLOW_LEGACY_SYNC_TOKEN=0`
+   - `ADMIN_USER_IDS=kakao:...,naver:...`
 2. If you want Excel imports to auto-fill and persist map coordinates:
    - Set `NAVER_MAP_CLIENT_SECRET`
    - Set `NAVER_MAP_CLIENT_ID` or `VITE_NAVER_MAP_CLIENT_ID`
@@ -61,6 +64,9 @@ Before pushing changes to the production branch:
 3. Run `corepack pnpm build` inside `matpick_all/`
 4. Confirm that `matpick_all/client/public/ads.txt` contains your real AdSense publisher line
 5. Confirm that `matpick_all/client/public/sitemap.xml` and prerendered `dist/restaurant/*` pages were regenerated
+6. Enable a Google-certified consent management platform in AdSense Privacy & messaging before serving ads in the EEA, UK, or Switzerland
+
+See `docs/monetization-privacy-operations.md` for the AdSense resubmission, advertising, privacy, image-protection, and cost checklist.
 
 ### Search Ops Checklist
 

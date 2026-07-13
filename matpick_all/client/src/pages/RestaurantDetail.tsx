@@ -18,7 +18,7 @@ import AuthFeatureDialog, { type AuthFeatureMode } from "@/components/AuthFeatur
 import HeartButton from "@/components/HeartButton";
 import FavoriteTopicPickerDialog from "@/components/FavoriteTopicPickerDialog";
 import ShareSheet from "@/components/ShareSheet";
-import { AdsenseSlot } from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -1464,7 +1464,7 @@ export default function RestaurantDetail() {
             ) : null}
           </div>
 
-          <AdsenseSlot label="Sponsored" />
+          <RevenuePlacement providers={["kakao", "coupang"]} />
 
           <div className="hidden lg:block">{renderQuickActionPanel()}</div>
 

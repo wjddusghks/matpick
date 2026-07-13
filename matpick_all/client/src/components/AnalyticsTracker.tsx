@@ -6,6 +6,10 @@ import {
   trackAnalyticsEvent,
 } from "@/lib/analytics";
 import { getMarketingEventName, type MarketingEventDetail } from "@/lib/marketing";
+import {
+  PRIVACY_PREFERENCES_EVENT,
+  type PrivacyPreferences,
+} from "@/lib/privacyConsent";
 
 function isMapEvent(name: string) {
   return name.includes("map") || name.includes("directions");
@@ -94,6 +98,26 @@ export default function AnalyticsTracker() {
     if (markAnalyticsSessionStarted()) {
       trackAnalyticsEvent("session_start");
     }
+  }, []);
+
+  useEffect(() => {
+    const handlePreferences = (event: Event) => {
+      const preferences = (event as CustomEvent<PrivacyPreferences>).detail;
+      if (!preferences?.analytics) {
+        return;
+      }
+
+      if (markAnalyticsSessionStarted()) {
+        trackAnalyticsEvent("session_start");
+      }
+      activePathRef.current = getCurrentAnalyticsPath();
+      pageStartedAtRef.current = Date.now();
+      trackAnalyticsEvent("page_view", { path: activePathRef.current });
+    };
+
+    window.addEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+    return () =>
+      window.removeEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
   }, []);
 
   useEffect(() => {

@@ -1,9 +1,14 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
 import {
   getMarketingEventName,
   type MarketingEventDetail,
 } from "@/lib/marketing";
+import {
+  PRIVACY_PREFERENCES_EVENT,
+  readPrivacyPreferences,
+  type PrivacyPreferences,
+} from "@/lib/privacyConsent";
 
 declare global {
   interface Window {
@@ -161,7 +166,15 @@ function ensureMetaPixel(metaPixelId: string) {
 
 export default function MarketingScripts() {
   const [location] = useLocation();
+  const [preferences, setPreferences] = useState(() => readPrivacyPreferences());
   const googleTagIds = useMemo(() => normalizeGoogleTagIds(), []);
+  const activeGoogleTagIds = useMemo(
+    () =>
+      googleTagIds.filter((tagId) =>
+        tagId.startsWith("G-") ? preferences?.analytics : preferences?.advertising
+      ),
+    [googleTagIds, preferences?.advertising, preferences?.analytics]
+  );
   const metaPixelId = import.meta.env.VITE_META_PIXEL_ID?.trim() ?? "";
   const googleSiteVerification =
     import.meta.env.VITE_GOOGLE_SITE_VERIFICATION?.trim() ?? "";
@@ -169,12 +182,47 @@ export default function MarketingScripts() {
     import.meta.env.VITE_NAVER_SITE_VERIFICATION?.trim() ?? "";
 
   useEffect(() => {
-    ensureGoogleTag(googleTagIds);
-  }, [googleTagIds]);
+    const handlePreferences = (event: Event) => {
+      const next = (event as CustomEvent<PrivacyPreferences>).detail;
+      if (next?.version === 1) {
+        setPreferences(next);
+      }
+    };
+
+    window.addEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+    return () =>
+      window.removeEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+  }, []);
 
   useEffect(() => {
+    if (activeGoogleTagIds.length === 0) {
+      window.gtag?.("consent", "update", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+      });
+      return;
+    }
+
+    ensureGoogleTag(activeGoogleTagIds);
+    window.gtag?.("consent", "update", {
+      analytics_storage: preferences?.analytics ? "granted" : "denied",
+      ad_storage: preferences?.advertising ? "granted" : "denied",
+      ad_user_data: preferences?.advertising ? "granted" : "denied",
+      ad_personalization: preferences?.advertising ? "granted" : "denied",
+    });
+  }, [activeGoogleTagIds, preferences?.advertising, preferences?.analytics]);
+
+  useEffect(() => {
+    if (!preferences?.advertising) {
+      window.fbq?.("revokeConsent");
+      return;
+    }
+
     ensureMetaPixel(metaPixelId);
-  }, [metaPixelId]);
+    window.fbq?.("grantConsent");
+  }, [metaPixelId, preferences?.advertising]);
 
   useEffect(() => {
     const cleanups: Array<() => void> = [];
@@ -208,17 +256,17 @@ export default function MarketingScripts() {
     const timer = window.setTimeout(() => {
       const payload = getPagePayload(location);
 
-      if (googleTagIds.length > 0 && window.gtag) {
+      if (activeGoogleTagIds.length > 0 && window.gtag) {
         window.gtag("event", "page_view", payload);
       }
 
-      if (metaPixelId && window.fbq) {
+      if (preferences?.advertising && metaPixelId && window.fbq) {
         window.fbq("track", "PageView");
       }
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, [googleTagIds, location, metaPixelId]);
+  }, [activeGoogleTagIds, location, metaPixelId, preferences?.advertising]);
 
   useEffect(() => {
     const eventName = getMarketingEventName();
@@ -232,11 +280,11 @@ export default function MarketingScripts() {
 
       const params = detail.params ?? {};
 
-      if (googleTagIds.length > 0 && window.gtag) {
+      if (activeGoogleTagIds.length > 0 && window.gtag) {
         window.gtag("event", detail.name, params);
       }
 
-      if (metaPixelId && window.fbq) {
+      if (preferences?.advertising && metaPixelId && window.fbq) {
         const metaPixelPayload = toMetaPixelPayload(detail.name, params);
         if (metaPixelPayload.mode === "standard") {
           window.fbq("track", metaPixelPayload.name, params);
@@ -250,7 +298,7 @@ export default function MarketingScripts() {
     return () => {
       window.removeEventListener(eventName, handleTrack as EventListener);
     };
-  }, [googleTagIds, metaPixelId]);
+  }, [activeGoogleTagIds, metaPixelId, preferences?.advertising]);
 
   return null;
 }

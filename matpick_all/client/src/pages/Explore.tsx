@@ -59,9 +59,7 @@ import {
 } from "@/data/mapCollections";
 import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
-import MonetizationSlot, {
-  AdsenseSlot,
-} from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
@@ -2269,7 +2267,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         </div>
 
         <div className={`mb-6 ${isCardTopicOverview ? "hidden" : ""}`}>
-          <MonetizationSlot label={copy.sponsoredLabel} />
+          <RevenuePlacement providers={["kakao"]} label={copy.sponsoredLabel} />
         </div>
 
         {!isCardTopicOverview && filteredRestaurants.length > 0 ? (
@@ -2285,13 +2283,20 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 />,
               ];
 
-              if ((index + 1) % 12 === 0 && index + 1 < visibleRestaurants.length) {
+              if (
+                (index + 1 === 12 || index + 1 === 24) &&
+                index + 1 < visibleRestaurants.length
+              ) {
+                const providers = index + 1 === 12 ? (["coupang"] as const) : (["adsense"] as const);
                 items.push(
                   <div
-                    key={`adsense-inline-${restaurant.id}`}
+                    key={`revenue-inline-${restaurant.id}`}
                     className="sm:col-span-2 lg:col-span-3"
                   >
-                    <AdsenseSlot label={copy.sponsoredLabel} />
+                    <RevenuePlacement
+                      providers={[...providers]}
+                      label={copy.sponsoredLabel}
+                    />
                   </div>
                 );
               }

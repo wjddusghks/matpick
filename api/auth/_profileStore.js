@@ -2,7 +2,7 @@ const crypto = require("node:crypto");
 
 const PROFILE_KEY_PREFIX = "matpick:auth-profile:";
 const SYNC_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
-const ALLOW_LEGACY_SYNC_TOKEN = process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN !== "0";
+const ALLOW_LEGACY_SYNC_TOKEN = process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN === "1";
 
 function getKvConfig() {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";

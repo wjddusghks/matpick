@@ -206,7 +206,6 @@ async function buildSitemap(siteUrl) {
     (restaurant) =>
       visibleRestaurantIds.size === 0 || visibleRestaurantIds.has(restaurant.id)
   );
-  const today = new Date().toISOString();
   const seen = new Set();
 
   const staticUrls = ["/", "/explore", "/map", "/reviews", "/about", "/privacy", "/terms", "/contact"];
@@ -242,7 +241,6 @@ ${entries
   .map(
     (entry) => `  <url>
     <loc>${xmlEscape(`${siteUrl}${entry}`)}</loc>
-    <lastmod>${today}</lastmod>
   </url>`
   )
   .join("\n")}
@@ -255,6 +253,15 @@ ${entries
 async function buildRobots(siteUrl) {
   const content = `User-agent: *
 Allow: /
+
+User-agent: Googlebot-Image
+Disallow: /card-data/
+Disallow: /source-covers/
+Disallow: /baekjong-wok/
+Disallow: /michelin/
+Disallow: /old-korean-100/
+Disallow: /popular-restaurants/
+Disallow: /ttoganjip/
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;

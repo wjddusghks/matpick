@@ -1,5 +1,5 @@
 const { readMembersDashboard } = require("../auth/_memberStore");
-const { isAllowedAdminKey } = require("./_adminAuth");
+const { authorizeAdminRequest } = require("./_adminAuth");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
@@ -35,11 +35,16 @@ module.exports = async function handler(req, res) {
     }
 
     const adminKey = getHeader(req, "x-matpick-admin-key");
-    if (!isAllowedAdminKey(adminKey)) {
+    const authorization = authorizeAdminRequest({
+      adminKey,
+      syncToken: getHeader(req, "x-matpick-admin-token"),
+    });
+    if (!authorization.valid) {
       logSecurityEvent("warn", "admin-members-rejected", {
         route: "/api/admin/members",
         ip: maskValue(getClientIp(req)),
         adminKey: maskValue(adminKey),
+        reason: authorization.reason,
       });
       return res.status(403).json({ error: "Admin access is required." });
     }

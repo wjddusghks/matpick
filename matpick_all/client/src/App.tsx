@@ -7,6 +7,8 @@ import AnalyticsTracker from "./components/AnalyticsTracker";
 import MarketingScripts from "./components/marketing/MarketingScripts";
 import AuthOnboardingModal from "./components/AuthOnboardingModal";
 import MonetizationScripts from "./components/monetization/MonetizationScripts";
+import MediaProtection from "./components/MediaProtection";
+import PrivacyConsentBanner from "./components/PrivacyConsentBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
@@ -78,9 +80,11 @@ function App() {
               <TooltipProvider>
                 <Toaster />
                 <MonetizationScripts />
+                <MediaProtection />
                 <MarketingScripts />
                 <AnalyticsTracker />
                 <AuthOnboardingModal />
+                <PrivacyConsentBanner />
                 <Router />
               </TooltipProvider>
             </FavoritesProvider>

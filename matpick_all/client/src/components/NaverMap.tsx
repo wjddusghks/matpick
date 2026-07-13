@@ -192,8 +192,21 @@ function createCurrentLocationIcon() {
   };
 }
 
+function escapeHtml(value: unknown) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function createInfoContent(restaurant: Restaurant) {
-  const menuSummary = getRestaurantMenuSummary(restaurant);
+  const name = escapeHtml(restaurant.name);
+  const category = escapeHtml(restaurant.category);
+  const address = escapeHtml(restaurant.address || restaurant.region || "");
+  const menuSummary = escapeHtml(getRestaurantMenuSummary(restaurant));
+  const restaurantHref = `/restaurant/${encodeURIComponent(restaurant.id)}`;
 
   return `
     <div style="
@@ -203,11 +216,11 @@ function createInfoContent(restaurant: Restaurant) {
       font-family: 'Noto Sans KR', sans-serif;
       line-height: 1.5;
     ">
-      <div style="font-size:15px;font-weight:700;color:#FD7979;margin-bottom:4px;">${restaurant.name}</div>
-      ${restaurant.category ? `<span style="display:inline-block;font-size:11px;color:#888;background:#FEEAC9;padding:1px 6px;border-radius:4px;margin-bottom:6px;">${restaurant.category}</span>` : ""}
-      <div style="font-size:12px;color:#666;margin-bottom:4px;">${restaurant.address || restaurant.region || ""}</div>
+      <div style="font-size:15px;font-weight:700;color:#FD7979;margin-bottom:4px;">${name}</div>
+      ${category ? `<span style="display:inline-block;font-size:11px;color:#888;background:#FEEAC9;padding:1px 6px;border-radius:4px;margin-bottom:6px;">${category}</span>` : ""}
+      <div style="font-size:12px;color:#666;margin-bottom:4px;">${address}</div>
       ${menuSummary ? `<div style="font-size:12px;color:#999;margin-bottom:8px;">${menuSummary}</div>` : ""}
-      <a href="/restaurant/${restaurant.id}" style="
+      <a href="${restaurantHref}" style="
         display:inline-block;
         font-size:12px;
         color:#FD7979;

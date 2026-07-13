@@ -9,8 +9,10 @@ const instagramUrl = "https://www.instagram.com/matpick.co.kr/";
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl font-bold tracking-[-0.03em] text-[#1f1718]">{title}</h2>
-      <div className="space-y-3 text-sm leading-7 text-[#5f5556] sm:text-[15px]">{children}</div>
+      <h2 className="text-xl font-bold text-[#1f1718]">{title}</h2>
+      <div className="space-y-3 text-sm leading-7 text-[#5f5556] sm:text-[15px]">
+        {children}
+      </div>
     </section>
   );
 }
@@ -19,61 +21,57 @@ export default function Contact() {
   const { isEnglish, locale } = useLocale();
   const page = isEnglish
     ? {
-        seoTitle: "Contact",
-        seoDescription:
-          "Get in touch about Matpick data fixes, partnerships, bug reports, and service feedback.",
         title: "Contact",
         description:
-          "Use the channels below for service feedback, data corrections, partnerships, and operational inquiries.",
-        section1Title: "What you can report",
-        section1Intro: "You can contact us about topics such as:",
-        section1Items: [
-          "Incorrect restaurant names, addresses, categories, or map positions",
-          "Missing source links, duplicate entries, or mismatched restaurant data",
-          "Product feedback, accessibility issues, and page errors",
-          "Content partnerships, data collaboration, and operational inquiries",
+          "Private support for data corrections, privacy rights, content removal, partnerships, and service issues.",
+        reportTitle: "What you can report",
+        reportItems: [
+          "Incorrect restaurant names, addresses, menus, prices, closures, or map positions",
+          "Missing sources, duplicate records, broken images, accessibility issues, or page errors",
+          "Privacy access, correction, deletion, consent withdrawal, or account deletion requests",
+          "Copyright, portrait, trademark, or other content removal requests",
+          "Content partnerships, data collaboration, and advertising inquiries",
         ],
-        section2Title: "Fastest contact route",
-        section2Body1:
-          "If Matpick information is inaccurate or needs an update, Instagram DM is the fastest way to reach us.",
-        section2Body2:
-          "For product structure discussions or issue tracking, you can also use the public repository below.",
-        section2InstagramLink: "Open Instagram DM",
-        section2RepoLink: "Open the GitHub repository",
-        section3Title: "How requests are reviewed",
-        section3Body1:
-          "Submitted requests are reviewed based on accuracy, reproducibility, and current product priorities. Not every request can be answered or applied immediately, but issues that improve data quality and user experience are prioritized.",
+        privateTitle: "Private requests",
+        privateBody:
+          "Use Instagram DM for any request that includes an account, identity, personal data, or evidence of rights. Include the affected URL, the requested action, and enough information for us to verify the request.",
+        instagram: "Open Instagram DM",
+        publicTitle: "Public issue tracking",
+        publicBody:
+          "The GitHub repository may be used for reproducible technical bugs that contain no personal or confidential information. GitHub issues are public, so never include account IDs, email addresses, phone numbers, private photos, or identity documents.",
+        github: "Open the GitHub repository",
+        reviewTitle: "Review process",
+        reviewBody:
+          "We prioritize privacy, rights, security, and clearly reproducible data errors. Response time depends on verification and scope. We may ask for account-provider details or proof of authority and will retain only what is needed to resolve the request.",
       }
     : {
-        seoTitle: "문의 안내",
-        seoDescription:
-          "Matpick 서비스 관련 제보, 데이터 수정 요청, 제휴 제안, 운영 문의를 보낼 수 있는 안내 페이지입니다.",
         title: "문의 안내",
         description:
-          "서비스 운영, 데이터 수정 제안, 콘텐츠 제휴 문의는 아래 안내를 참고해 전달해 주세요.",
-        section1Title: "문의 가능한 내용",
-        section1Intro: "다음과 같은 내용을 제보하거나 문의하실 수 있습니다.",
-        section1Items: [
-          "잘못된 식당명, 주소, 카테고리, 지도 위치 정보 수정 요청",
-          "누락된 출처 정보, 중복 데이터, 잘못 연결된 맛집 제보",
-          "서비스 개선 제안, 접근성 문제, 화면 오류 신고",
-          "콘텐츠 제휴, 데이터 협업, 운영 관련 문의",
+          "데이터 정정, 개인정보 권리 행사, 콘텐츠 삭제, 제휴 및 서비스 오류를 비공개 채널로 접수할 수 있습니다.",
+        reportTitle: "문의 가능한 내용",
+        reportItems: [
+          "식당명, 주소, 메뉴, 가격, 폐업 여부 또는 지도 위치 정정",
+          "누락 출처, 중복 데이터, 깨진 이미지, 접근성 문제 또는 화면 오류",
+          "개인정보 열람·정정·삭제·동의 철회 또는 계정 삭제 요청",
+          "저작권, 초상권, 상표권 등 권리 침해 및 콘텐츠 삭제 요청",
+          "콘텐츠 제휴, 데이터 협업 및 광고 운영 문의",
         ],
-        section2Title: "가장 빠른 연락 방법",
-        section2Body1:
-          "맛픽 정보가 정확하지 않거나 업데이트가 필요하다면 Instagram DM이 가장 빠른 문의 채널입니다.",
-        section2Body2:
-          "제품 구조 논의나 이슈 트래킹이 필요하면 아래 GitHub 저장소도 함께 이용하실 수 있습니다.",
-        section2InstagramLink: "인스타그램 DM 열기",
-        section2RepoLink: "GitHub 저장소 바로가기",
-        section3Title: "검토 및 반영 기준",
-        section3Body1:
-          "접수된 문의는 내용의 정확성, 재현 가능성, 서비스 운영 우선순위에 따라 검토됩니다. 모든 제안에 즉시 답변하거나 반영하지 못할 수 있지만, 데이터 정확성과 사용자 경험을 높이는 내용은 우선적으로 확인합니다.",
+        privateTitle: "개인정보·권리 관련 비공개 문의",
+        privateBody:
+          "계정, 신원, 개인정보 또는 권리 입증 자료가 포함된 요청은 Instagram DM을 이용해 주세요. 대상 URL, 원하는 조치, 요청 권한을 확인할 수 있는 최소한의 정보를 함께 보내면 검토가 빨라집니다.",
+        instagram: "Instagram DM 열기",
+        publicTitle: "공개 오류 제보",
+        publicBody:
+          "개인정보나 비공개 자료가 전혀 없는 재현 가능한 기술 오류는 GitHub 저장소에 남길 수 있습니다. GitHub 이슈는 공개되므로 계정 식별값, 이메일, 전화번호, 비공개 사진, 신분증 자료를 절대 올리지 마세요.",
+        github: "GitHub 저장소 열기",
+        reviewTitle: "검토 및 처리 기준",
+        reviewBody:
+          "개인정보·권리·보안 요청과 명확히 재현되는 데이터 오류를 우선 검토합니다. 확인 범위에 따라 처리 시간이 달라질 수 있고, 본인 또는 권리자 확인을 위한 추가 정보를 요청할 수 있습니다. 접수 자료는 요청 처리에 필요한 범위에서만 보관합니다.",
       };
 
   useSeo({
-    title: page.seoTitle,
-    description: page.seoDescription,
+    title: page.title,
+    description: page.description,
     path: "/contact",
     locale,
     jsonLd: {
@@ -86,42 +84,40 @@ export default function Contact() {
 
   return (
     <InfoPageLayout eyebrow="Contact" title={page.title} description={page.description}>
-      <Section title={page.section1Title}>
-        <p>{page.section1Intro}</p>
+      <Section title={page.reportTitle}>
         <ul className="list-disc space-y-2 pl-5">
-          {page.section1Items.map((item) => (
+          {page.reportItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       </Section>
 
-      <Section title={page.section2Title}>
-        <p>{page.section2Body1}</p>
-        <p>
-          <a
-            href={instagramUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-[#ff7b83] underline decoration-[#ffc5cb] underline-offset-4"
-          >
-            {page.section2InstagramLink}
-          </a>
-        </p>
-        <p>{page.section2Body2}</p>
-        <p>
-          <a
-            href={repoUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-[#ff7b83] underline decoration-[#ffc5cb] underline-offset-4"
-          >
-            {page.section2RepoLink}
-          </a>
-        </p>
+      <Section title={page.privateTitle}>
+        <p>{page.privateBody}</p>
+        <a
+          href={instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-10 items-center rounded-[8px] bg-[#f45f70] px-4 font-bold text-white no-underline"
+        >
+          {page.instagram}
+        </a>
       </Section>
 
-      <Section title={page.section3Title}>
-        <p>{page.section3Body1}</p>
+      <Section title={page.publicTitle}>
+        <p>{page.publicBody}</p>
+        <a
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-[#e75b6c] underline"
+        >
+          {page.github}
+        </a>
+      </Section>
+
+      <Section title={page.reviewTitle}>
+        <p>{page.reviewBody}</p>
       </Section>
     </InfoPageLayout>
   );

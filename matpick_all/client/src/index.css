@@ -197,7 +197,7 @@
 .matpick-marquee-track {
   display: flex;
   width: max-content;
-  animation: matpick-marquee 128s linear infinite;
+  animation: matpick-marquee 72s linear infinite;
   will-change: transform;
 }
 
@@ -218,4 +218,16 @@
     gap: 1rem;
     padding-right: 1rem;
   }
+}
+
+img[src*="/card-data/"],
+img[src*="/source-covers/"],
+img[src*="/baekjong-wok/"],
+img[src*="/michelin/"],
+img[src*="/old-korean-100/"],
+img[src*="/popular-restaurants/"],
+img[src*="/ttoganjip/"] {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }

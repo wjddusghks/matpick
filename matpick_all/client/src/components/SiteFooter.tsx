@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { useLocale } from "@/contexts/LocaleContext";
+import { openPrivacySettings } from "@/lib/privacyConsent";
 
 const footerLinks = {
   ko: {
@@ -18,7 +19,8 @@ const footerLinks = {
     description:
       "Matpick은 크리에이터, 가이드, 방송에 소개된 맛집을 한곳에서 비교하고 지도 위에서 찾을 수 있도록 정리한 맛집 탐색 서비스입니다.",
     note:
-      "일부 콘텐츠와 리뷰 기능은 브라우저 저장소 기반 방식으로 제공되며, 데이터 출처와 운영 정책은 서비스 소개 및 정책 문서에서 확인할 수 있습니다.",
+      "카드 이미지와 편집 데이터의 무단 복제·재배포·대량 수집을 금지합니다. 출처, 광고 및 운영 기준은 소개와 정책 문서에서 확인할 수 있습니다.",
+    privacySettings: "광고·분석 설정",
     domainLabel: "운영 도메인: matpick.co.kr",
     copyright: (year: number) => `© ${year} Matpick. Curated dining discovery for Korea.`,
   },
@@ -38,7 +40,8 @@ const footerLinks = {
     description:
       "Matpick helps you compare restaurants featured by creators, guides, and TV shows in one place and continue the journey on the map.",
     note:
-      "Some content and review features still rely on browser storage. Source attribution and operating policies are documented in the about and policy pages.",
+      "Unauthorized copying, redistribution, or bulk collection of card artwork and editorial data is prohibited. Sources, ads, and operating rules are documented in the policy pages.",
+    privacySettings: "Advertising and analytics settings",
     domainLabel: "Live domain: matpick.co.kr",
     copyright: (year: number) => `© ${year} Matpick. Curated dining discovery for Korea.`,
   },
@@ -100,6 +103,13 @@ export default function SiteFooter() {
                     {link.label}
                   </Link>
                 ))}
+                <button
+                  type="button"
+                  onClick={openPrivacySettings}
+                  className="w-fit text-left text-sm font-medium text-[#3a3031] transition hover:text-[#ff7b83]"
+                >
+                  {copy.privacySettings}
+                </button>
               </div>
             </div>
           </div>

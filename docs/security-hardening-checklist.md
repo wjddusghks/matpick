@@ -3,7 +3,8 @@
 ## Already addressed in code
 
 - Replace permanently reusable sync tokens with expiring signed tokens for new logins.
-- Keep temporary legacy-token validation only as a migration bridge for existing logged-in users.
+- Keep legacy sync-token validation disabled by default. It can only be enabled temporarily with `AUTH_ALLOW_LEGACY_SYNC_TOKEN=1` during a controlled migration.
+- Require both an allowlisted admin identity and a valid signed login token for admin metrics and member APIs.
 - Add structured security logs for:
   - rate-limit blocks
   - invalid sync-token writes
@@ -17,6 +18,9 @@
   - `/api/reviews/upload`
 - Add same-origin validation to mutating routes.
 - Add no-store / noindex API response protections.
+- Add CSP, frame denial, referrer, permissions, MIME-sniffing, and origin isolation headers.
+- Escape restaurant values before inserting them into NAVER Map info-window HTML.
+- Add same-origin and anti-indexing headers to protected card image directories.
 - Return clearer session-expired messages for review/profile write actions.
 - Fix garbled Korean text on:
   - social login buttons
@@ -47,7 +51,6 @@
 
 ## Next code hardening steps
 
-- Remove legacy sync-token fallback after active-user migration.
 - Consider server-side session storage instead of client-stored write tokens.
 - Route structured security logs into a real log sink / alerting pipeline.
 - Review whether stricter CSP can be introduced without breaking ads/maps/social login.

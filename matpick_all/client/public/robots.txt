@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot-Image
+Disallow: /card-data/
+Disallow: /source-covers/
+Disallow: /baekjong-wok/
+Disallow: /michelin/
+Disallow: /old-korean-100/
+Disallow: /popular-restaurants/
+Disallow: /ttoganjip/
+
 Sitemap: https://matpick.co.kr/sitemap.xml

@@ -3,99 +3,134 @@ import InfoPageLayout from "@/components/InfoPageLayout";
 import { useLocale } from "@/contexts/LocaleContext";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 
+type AboutSection = {
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+};
+
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl font-bold tracking-[-0.03em] text-[#1f1718]">{title}</h2>
-      <div className="space-y-3 text-sm leading-7 text-[#5f5556] sm:text-[15px]">{children}</div>
+      <h2 className="text-xl font-bold text-[#1f1718]">{title}</h2>
+      <div className="space-y-3 text-sm leading-7 text-[#5f5556] sm:text-[15px]">
+        {children}
+      </div>
     </section>
   );
 }
 
+const koreanSections: AboutSection[] = [
+  {
+    title: "Matpick이 하는 일",
+    paragraphs: [
+      "Matpick은 방송, 크리에이터, 가이드와 편집 목록에 소개된 식당을 같은 기준으로 비교하고 지도에서 찾을 수 있게 정리하는 맛집 탐색 서비스입니다. 단순한 이미지 모음이 아니라 출처, 소개 회차, 지역, 음식 종류, 대표 메뉴와 주소를 연결해 ‘왜 이 식당이 목록에 있는지’를 확인할 수 있게 만드는 것이 목표입니다.",
+      "이용자는 주제와 회차를 먼저 고르거나, 지역·카테고리·식당명으로 검색한 뒤 상세 페이지에서 출처와 지도 이동 경로를 확인할 수 있습니다.",
+    ],
+  },
+  {
+    title: "데이터 편집 원칙",
+    paragraphs: [
+      "공개된 방송·가이드의 식당 목록을 출발점으로 삼되, 서비스에 올리기 전에 식당명을 통일하고 지점 여부, 도로명 주소, 지역, 음식 카테고리와 대표 메뉴를 구조화합니다. 좌표는 주소와 실제 지점이 일치하는지 확인한 뒤 반영하고, 중복 항목은 출처 관계를 유지한 채 하나의 식당 정보로 연결합니다.",
+    ],
+    bullets: [
+      "출처와 회차를 식당 데이터와 함께 보존",
+      "동일 상호의 지점과 본점을 구분",
+      "메뉴·가격은 확인 가능한 자료의 기준 시점을 반영",
+      "폐업이 확인된 식당은 삭제하지 않고 폐업 상태로 표시",
+      "오류 제보를 검토해 주소·메뉴·좌표와 이미지를 계속 보정",
+    ],
+  },
+  {
+    title: "카드 이미지와 실제 사진의 구분",
+    paragraphs: [
+      "회차·식당 카드 이미지는 목록을 빠르게 구분하기 위해 Matpick이 자체 편집한 시각 자료입니다. 일부 카드는 생성형 이미지 도구의 도움을 받아 제작될 수 있으며, 실제 매장에서 촬영한 메뉴 사진이나 방송 원본 화면을 의미하지 않습니다. 실제 방문 판단은 식당의 최신 메뉴와 공식 안내를 함께 확인해야 합니다.",
+      "외부 권리자가 제공하거나 이용자가 업로드한 사진은 해당 권리와 요청 절차에 따라 관리합니다. 권리 침해 또는 잘못 연결된 이미지가 있으면 문의 페이지에서 대상 URL과 함께 알려 주세요.",
+    ],
+  },
+  {
+    title: "정확성, 독립성 및 업데이트",
+    paragraphs: [
+      "식당 정보는 시간이 지나며 달라질 수 있습니다. Matpick은 확인된 기준일의 정보를 제공하고 정정 요청을 반영하지만 영업시간, 가격, 휴무, 예약 가능 여부를 보증하지 않습니다. 방문 직전 식당 또는 공식 지도 정보를 확인해 주세요.",
+      "목록 포함 여부는 출처와 편집 기준에 따라 정하며 광고 구매 여부와 분리합니다. 광고 또는 제휴 배너는 광고로 표시하고, 쿠팡 파트너스 링크를 통한 구매가 발생하면 운영 수수료를 받을 수 있습니다.",
+    ],
+  },
+  {
+    title: "자주 묻는 질문",
+    paragraphs: [
+      "Q. 배달·예약 서비스인가요?\nA. 아닙니다. Matpick은 식당 정보와 출처를 탐색하는 서비스이며 예약·주문·결제를 직접 처리하지 않습니다.",
+      "Q. 현재 위치는 저장되나요?\nA. 브라우저에서 허용했을 때 주변 식당 정렬과 거리 계산에 사용하며 좌표 자체를 회원 프로필에 저장하지 않는 것이 원칙입니다.",
+      "Q. 정보가 틀리거나 사진 삭제가 필요하면 어떻게 하나요?\nA. 문의 페이지의 Instagram DM으로 식당명과 대상 URL, 확인 근거를 보내면 검토합니다. 개인정보는 공개 GitHub 이슈에 남기지 마세요.",
+    ],
+  },
+];
+
+const englishSections: AboutSection[] = [
+  {
+    title: "What Matpick does",
+    paragraphs: [
+      "Matpick organizes restaurants featured by TV programs, creators, guides, and editorial lists so they can be compared under consistent filters and found on a map. Each entry connects its source and episode with region, cuisine, representative menu, and address instead of acting as a simple image gallery.",
+      "Visitors can start from a topic or episode, search by restaurant, region, or cuisine, and then review source context and map links on the detail page.",
+    ],
+  },
+  {
+    title: "Editorial method",
+    paragraphs: [
+      "Public source lists are normalized before publication. We distinguish branches, standardize road addresses and categories, verify coordinates against the intended location, preserve source relationships, and connect duplicate references to one restaurant record.",
+    ],
+    bullets: [
+      "Preserve source and episode context",
+      "Distinguish branches with similar names",
+      "Record the verification point for menus and prices",
+      "Mark confirmed closures instead of silently deleting history",
+      "Review reports and continuously correct addresses, menus, coordinates, and images",
+    ],
+  },
+  {
+    title: "Card artwork versus restaurant photography",
+    paragraphs: [
+      "Episode and restaurant cards are original editorial artwork created to make lists easy to scan. Some cards may be produced with assistance from generative image tools. They are visual references, not claims that the image was photographed at the restaurant or taken from a broadcast.",
+      "Third-party or user-uploaded photographs remain subject to their owners' rights and the removal process on the contact page.",
+    ],
+  },
+  {
+    title: "Accuracy and independence",
+    paragraphs: [
+      "Restaurant details change. Matpick publishes information verified at a point in time and reviews correction requests, but does not guarantee current hours, prices, closures, or reservations. Confirm critical details before visiting.",
+      "Editorial inclusion follows source and curation rules and is separate from ad purchases. Ads and affiliate placements are labeled; Matpick may earn a commission from qualifying Coupang Partners purchases.",
+    ],
+  },
+  {
+    title: "Frequently asked questions",
+    paragraphs: [
+      "Is Matpick a delivery or reservation service? No. It is a restaurant information and source-discovery service and does not process orders or payments.",
+      "Is current location stored? It is used after browser permission for nearby sorting and distance calculations and is not normally saved in the member profile.",
+      "How can I correct data or request image removal? Send the restaurant name, affected URL, and supporting details through Instagram DM on the contact page. Never post personal data in a public GitHub issue.",
+    ],
+  },
+];
+
 export default function About() {
   const { isEnglish, locale } = useLocale();
-  const page = isEnglish
-    ? {
-        seoTitle: "About Matpick",
-        seoDescription:
-          "Learn how Matpick organizes restaurant data, where the data comes from, and how the service is operated.",
-        title: "About Matpick",
-        description:
-          "Matpick is designed to turn curated restaurant data into a discovery experience with context, sources, and practical filters.",
-        section1Title: "What Matpick does",
-        section1Body1:
-          "Matpick helps people explore restaurants featured by creators, guides, TV shows, and editorial curation in one place with map-based browsing.",
-        section1Body2:
-          "You can search by region, cuisine, source, and restaurant, then review representative menus, location details, and recommendation sources on each restaurant page.",
-        section2Title: "How data is organized",
-        section2Body1:
-          "Some information shown on Matpick comes from publicly available source material, curated guides, and metadata prepared by the team. Restaurant names, addresses, categories, sources, and map coordinates may be normalized into structured data for a better browsing experience.",
-        section2Body2:
-          "When coordinates are missing, Matpick may enrich the dataset directly or verify map coordinates through supported lookup tools. Data quality is continuously improved as the service grows.",
-        section3Title: "Ads and monetization",
-        section3Body1:
-          "Matpick may include ads or affiliate links to support operating costs. Ad placements are designed to stay visually separate from editorial content and not overwhelm discovery.",
-        section3Body2:
-          "More details about ads, consent messaging, and tracking tools are explained in the privacy policy and related notices.",
-        section4Title: "Frequently asked questions",
-        faq1Question: "Is Matpick a delivery app or reservation platform?",
-        faq1Answer:
-          "No. Matpick is an information and discovery service focused on curated restaurant exploration.",
-        faq2Question: "How are user reviews stored?",
-        faq2Answer:
-          "Some review and saved-place features may still rely on browser storage depending on the feature, and storage behavior can change as the product evolves.",
-        faq3Question: "What if restaurant information is wrong?",
-        faq3Answer:
-          "You can report issues through the contact page and the team will review and update the data when needed.",
-        jsonLdDescription:
-          "Overview of Matpick, a curated restaurant discovery service built around creators, guides, and structured source data.",
-      }
-    : {
-        seoTitle: "서비스 소개",
-        seoDescription:
-          "Matpick이 어떤 방식으로 맛집 데이터를 정리하고 사용자에게 제공하는지, 데이터 출처와 운영 기준을 소개합니다.",
-        title: "Matpick 서비스 소개",
-        description:
-          "Matpick은 한국의 맛집 데이터를 단순한 목록이 아니라, 출처와 맥락을 함께 볼 수 있는 탐색 경험으로 정리하는 것을 목표로 합니다.",
-        section1Title: "Matpick이 하는 일",
-        section1Body1:
-          "Matpick은 크리에이터, 가이드, 방송, 큐레이션 자료에 소개된 맛집을 한곳에서 비교하고 지도 위에서 탐색할 수 있도록 구성한 맛집 탐색 서비스입니다.",
-        section1Body2:
-          "사용자는 지역, 음식 종류, 출처, 개별 식당 기준으로 맛집을 찾을 수 있고, 각 식당 상세 페이지에서 대표 메뉴, 위치, 추천 출처를 함께 확인할 수 있습니다.",
-        section2Title: "데이터 출처와 정리 방식",
-        section2Body1:
-          "서비스에 노출되는 일부 정보는 공개된 원본 자료, 가이드성 문서, 운영자가 정리한 메타데이터를 기반으로 구성됩니다. 식당명, 주소, 카테고리, 추천 출처, 지도 좌표 등은 사용성을 높이기 위해 구조화된 데이터 형태로 재정리될 수 있습니다.",
-        section2Body2:
-          "좌표 정보가 누락된 경우에는 데이터 파일에 보강 저장하거나 지도 제공사의 좌표 조회 기능을 통해 확인한 값을 반영합니다. 서비스 운영 중 데이터 정확도 개선을 위해 계속 업데이트될 수 있습니다.",
-        section3Title: "광고와 수익화 정책",
-        section3Body1:
-          "Matpick은 사이트 운영비 충당을 위해 광고 또는 제휴 링크를 포함할 수 있습니다. 광고가 표시되는 영역은 콘텐츠와 구분되도록 설계하며, 광고로 인해 사용자 경험이 과도하게 저해되지 않도록 배치합니다.",
-        section3Body2:
-          "광고 및 분석 관련 세부 사항은 개인정보처리방침과 동의 메시지 정책에 따라 고지됩니다.",
-        section4Title: "자주 묻는 질문",
-        faq1Question: "Q. Matpick은 배달앱이나 예약 플랫폼인가요?",
-        faq1Answer: "A. 아닙니다. Matpick은 맛집 탐색과 큐레이션에 초점을 맞춘 정보형 서비스입니다.",
-        faq2Question: "Q. 사용자 리뷰는 어떻게 저장되나요?",
-        faq2Answer:
-          "A. 현재 일부 리뷰 및 즐겨찾기 기능은 브라우저 저장소 기반으로 동작할 수 있으며, 서비스 구조 변경 시 별도 고지될 수 있습니다.",
-        faq3Question: "Q. 잘못된 식당 정보가 보이면 어떻게 하나요?",
-        faq3Answer: "A. 문의 안내 페이지에 적힌 채널을 통해 제보해주시면 검토 후 반영합니다.",
-        jsonLdDescription:
-          "크리에이터와 가이드 기반 맛집 탐색 서비스 Matpick의 데이터 출처와 운영 기준 소개",
-      };
+  const title = isEnglish ? "About Matpick" : "Matpick 서비스 소개";
+  const description = isEnglish
+    ? "How Matpick researches, structures, illustrates, verifies, and updates curated restaurant information."
+    : "Matpick이 큐레이션 맛집 정보를 조사하고 구조화하며 이미지·좌표·출처를 검증하는 방식을 소개합니다.";
+  const sections = isEnglish ? englishSections : koreanSections;
 
   useSeo({
-    title: page.seoTitle,
-    description: page.seoDescription,
+    title,
+    description,
     path: "/about",
     locale,
     jsonLd: [
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        name: page.title,
+        name: title,
         url: buildAbsoluteUrl("/about"),
-        description: page.jsonLdDescription,
+        description,
+        dateModified: "2026-07-14",
       },
       {
         "@context": "https://schema.org",
@@ -103,38 +138,22 @@ export default function About() {
         mainEntity: [
           {
             "@type": "Question",
-            name: isEnglish
-              ? "What kind of restaurant data does Matpick show?"
-              : "Matpick은 어떤 데이터를 보여주나요?",
+            name: isEnglish ? "Is Matpick a delivery service?" : "Matpick은 배달 서비스인가요?",
             acceptedAnswer: {
               "@type": "Answer",
               text: isEnglish
-                ? "Matpick provides restaurant data curated from creators, guides, TV programs, and editorial lists together with map-based discovery tools."
-                : "크리에이터, 가이드, 방송, 큐레이션 출처로부터 정리한 맛집 데이터와 지도 기반 탐색 정보를 제공합니다.",
+                ? "No. Matpick is a curated restaurant information and discovery service."
+                : "아닙니다. Matpick은 큐레이션 맛집 정보와 출처를 탐색하는 서비스입니다.",
             },
           },
           {
             "@type": "Question",
-            name: isEnglish
-              ? "Is restaurant information collected automatically?"
-              : "맛집 정보는 자동으로 수집되나요?",
+            name: isEnglish ? "How does Matpick verify data?" : "식당 데이터는 어떻게 확인하나요?",
             acceptedAnswer: {
               "@type": "Answer",
               text: isEnglish
-                ? "Some data is gathered from source material and some is manually refined or enriched by the Matpick team."
-                : "일부 데이터는 원본 자료를 기반으로 수집하고, 일부는 운영자가 정리 및 보강한 정보가 함께 반영됩니다.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: isEnglish
-              ? "How is location data used?"
-              : "사용자 위치 정보는 어떻게 쓰이나요?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: isEnglish
-                ? "Location is used only when the browser permission is granted, and only to support nearby discovery and distance calculations."
-                : "브라우저에서 위치 권한을 허용한 경우에만 주변 맛집 탐색과 거리 계산에 사용되며, 기능 제공 목적 외에 사용하지 않습니다.",
+                ? "Source lists are normalized, branches are distinguished, and addresses and coordinates are checked before publication."
+                : "출처 목록을 구조화하고 지점을 구분한 뒤 주소와 좌표를 확인해 반영합니다.",
             },
           },
         ],
@@ -143,43 +162,23 @@ export default function About() {
   });
 
   return (
-    <InfoPageLayout
-      eyebrow="About"
-      title={page.title}
-      description={page.description}
-    >
-      <Section title={page.section1Title}>
-        <p>{page.section1Body1}</p>
-        <p>{page.section1Body2}</p>
-      </Section>
-
-      <Section title={page.section2Title}>
-        <p>{page.section2Body1}</p>
-        <p>{page.section2Body2}</p>
-      </Section>
-
-      <Section title={page.section3Title}>
-        <p>{page.section3Body1}</p>
-        <p>{page.section3Body2}</p>
-      </Section>
-
-      <Section title={page.section4Title}>
-        <p>
-          <strong>{page.faq1Question}</strong>
-          <br />
-          {page.faq1Answer}
-        </p>
-        <p>
-          <strong>{page.faq2Question}</strong>
-          <br />
-          {page.faq2Answer}
-        </p>
-        <p>
-          <strong>{page.faq3Question}</strong>
-          <br />
-          {page.faq3Answer}
-        </p>
-      </Section>
+    <InfoPageLayout eyebrow="About" title={title} description={description}>
+      {sections.map((section) => (
+        <Section key={section.title} title={section.title}>
+          {section.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="whitespace-pre-line">
+              {paragraph}
+            </p>
+          ))}
+          {section.bullets ? (
+            <ul className="list-disc space-y-2 pl-5">
+              {section.bullets.map((bullet) => (
+                <li key={bullet}>{bullet}</li>
+              ))}
+            </ul>
+          ) : null}
+        </Section>
+      ))}
     </InfoPageLayout>
   );
 }

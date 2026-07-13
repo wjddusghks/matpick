@@ -454,6 +454,7 @@ export default function AdminDashboard() {
     fetch(`/api/admin/metrics?scope=${analyticsScope}`, {
       headers: {
         "x-matpick-admin-key": getAdminRegistrationKey(user),
+        "x-matpick-admin-token": user.syncToken ?? "",
       },
       signal: controller.signal,
     })
@@ -495,6 +496,7 @@ export default function AdminDashboard() {
     fetch("/api/admin/members", {
       headers: {
         "x-matpick-admin-key": getAdminRegistrationKey(user),
+        "x-matpick-admin-token": user.syncToken ?? "",
       },
       signal: controller.signal,
     })

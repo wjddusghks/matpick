@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { Link } from "wouter";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   getDisplayName,
@@ -85,7 +86,27 @@ export default function AuthOnboardingModal() {
               }}
               className="mt-1 h-4 w-4 rounded border-[#ffb8c1] text-[#ff7b83] focus:ring-[#ffb8c1]"
             />
-            <span>[필수] 서비스 이용 안내와 개인정보 처리 안내를 확인했습니다.</span>
+            <span>
+              [필수]{" "}
+              <Link
+                href="/terms"
+                target="_blank"
+                onClick={(event) => event.stopPropagation()}
+                className="font-bold text-[#e75b6c] underline"
+              >
+                이용약관
+              </Link>
+              과{" "}
+              <Link
+                href="/privacy"
+                target="_blank"
+                onClick={(event) => event.stopPropagation()}
+                className="font-bold text-[#e75b6c] underline"
+              >
+                개인정보처리방침
+              </Link>
+              을 확인하고 동의합니다.
+            </span>
           </label>
 
           <label className="flex cursor-pointer items-start gap-3 text-sm text-[#333333]">

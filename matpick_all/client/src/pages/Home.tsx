@@ -56,6 +56,7 @@ import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.png";
 import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.png";
+import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.png";
 
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
@@ -84,6 +85,12 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     name: "한국인 100선",
     path: "/explore/topic/old-korean-100",
     imageUrl: "/source-covers/old-korean-100.jpg",
+  },
+  {
+    slug: "baekjong-wok",
+    name: "백종원의 3대천왕",
+    path: "/explore/topic/baekjong-wok",
+    imageUrl: baekjongWokShortcutImage,
   },
 ];
 
@@ -1808,7 +1815,7 @@ function MapCollectionCard({
         });
         onOpen();
       }}
-      className="group relative flex aspect-[4/5] h-[286px] w-[229px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[314px] sm:w-[251px]"
+      className="group relative flex aspect-[1122/1402] h-[286px] w-[229px] flex-shrink-0 overflow-hidden rounded-[20px] border border-white/70 bg-[#2b2525] p-5 text-white shadow-[0_16px_36px_rgba(255,98,124,0.18)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.24)] sm:h-[314px] sm:w-[251px]"
       style={{ background: collection.palette.background }}
       aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
     >
@@ -1816,7 +1823,7 @@ function MapCollectionCard({
         <img
           src={collection.imageUrl}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+          className="absolute inset-0 h-full w-full object-contain"
           loading="lazy"
         />
       ) : null}
@@ -2076,7 +2083,7 @@ function FeaturedCollectionModal({
           <div className="flex min-w-0 flex-col items-center">
             <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
               <div
-                className="relative aspect-[4/5] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-white shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
+                className="relative aspect-[1122/1402] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-[#070b10] shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
                 onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
                 onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
               >
@@ -2314,7 +2321,7 @@ function CollectionInstagramSlide({
       style={{ background: isCover || isPhoto ? collection.palette.background : "#ffffff" }}
     >
       {slide.imageUrl ? (
-        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={slide.imageUrl} alt="" className="absolute inset-0 h-full w-full object-contain" />
       ) : null}
       {isCover || isPhoto ? (
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.04),rgba(0,0,0,0.18)_42%,rgba(0,0,0,0.58))]" />

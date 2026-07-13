@@ -681,7 +681,7 @@ function PopularRestaurantCollectionGrid({
                 collection_title: collection.title,
               })
             }
-            className="group relative aspect-[4/5] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
+            className="group relative aspect-[1122/1402] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
             style={{ background: collection.palette.background }}
             aria-label={`${collection.title} ${locale === "en" ? "open map" : "지도 보기"}`}
           >

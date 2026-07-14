@@ -6,11 +6,23 @@ import {
   type PrivacyPreferences,
 } from "@/lib/privacyConsent";
 
+type CoupangBannerConfig = {
+  id: string;
+  template: string;
+  trackingCode: string;
+  width: string;
+  height: string;
+  container: HTMLElement;
+  onLoaded?: (hasAd: boolean) => void;
+  onDisplayed?: () => void;
+  onClicked?: () => void;
+};
+
 declare global {
   interface Window {
     adsbygoogle?: unknown[];
     PartnersCoupang?: {
-      G?: new (config: Record<string, string>) => unknown;
+      G?: new (config: CoupangBannerConfig) => unknown;
     };
   }
 }
@@ -19,6 +31,49 @@ export type MonetizationProvider = "adsense" | "kakao" | "coupang";
 
 const COUPANG_DISCLOSURE =
   "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
+const COUPANG_SDK_ID = "matpick-coupang-partners-sdk";
+
+let coupangSdkPromise: Promise<NonNullable<Window["PartnersCoupang"]>["G"] | null> | null =
+  null;
+
+function loadCoupangSdk() {
+  if (typeof document === "undefined") {
+    return Promise.resolve(null);
+  }
+
+  if (window.PartnersCoupang?.G) {
+    return Promise.resolve(window.PartnersCoupang.G);
+  }
+
+  if (coupangSdkPromise) {
+    return coupangSdkPromise;
+  }
+
+  coupangSdkPromise = new Promise((resolve) => {
+    const existing = document.getElementById(COUPANG_SDK_ID) as HTMLScriptElement | null;
+    const script = existing ?? document.createElement("script");
+
+    const resolveSdk = () => {
+      resolve(window.PartnersCoupang?.G ?? null);
+    };
+    const handleFailure = () => {
+      coupangSdkPromise = null;
+      resolve(null);
+    };
+
+    script.addEventListener("load", resolveSdk, { once: true });
+    script.addEventListener("error", handleFailure, { once: true });
+
+    if (!existing) {
+      script.id = COUPANG_SDK_ID;
+      script.async = true;
+      script.src = "https://ads-partners.coupang.com/g.js";
+      document.head.appendChild(script);
+    }
+  });
+
+  return coupangSdkPromise;
+}
 
 function parseBannerDimension(value: string, fallback: number) {
   const parsed = Number.parseInt(value, 10);
@@ -350,6 +405,9 @@ export function CoupangSlot({
 }) {
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
+  const [dynamicBannerStatus, setDynamicBannerStatus] = useState<
+    "loading" | "ready" | "failed"
+  >("loading");
   const isCompactViewport = useCompactViewport();
   const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
   const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
@@ -367,7 +425,7 @@ export function CoupangSlot({
   );
 
   useEffect(() => {
-    if (!hasDynamicBanner || !dynamicBannerRef.current || typeof ResizeObserver === "undefined") {
+    if (!hasDynamicBanner || !dynamicBannerRef.current) {
       return;
     }
 
@@ -378,6 +436,10 @@ export function CoupangSlot({
     };
 
     updateWidth();
+
+    if (typeof ResizeObserver === "undefined") {
+      return;
+    }
 
     const observer = new ResizeObserver(() => {
       updateWidth();
@@ -390,49 +452,95 @@ export function CoupangSlot({
     };
   }, [hasDynamicBanner]);
 
-  const dynamicBannerSrcDoc = `<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background: transparent;
-      }
-    </style>
-  </head>
-  <body>
-    <script src="https://ads-partners.coupang.com/g.js"><\/script>
-    <script>
-      new PartnersCoupang.G(${JSON.stringify({
-        id: dynamicBannerId,
-        template: dynamicBannerTemplate,
-        trackingCode: dynamicBannerTrackingCode,
-        width: String(effectiveBannerWidth),
-        height: String(effectiveBannerHeight),
-      })});
-    <\/script>
-  </body>
-</html>`;
-
-  const shouldRenderDynamicBanner = hasDynamicBanner;
-  const shouldRenderFallbackCard =
-    Boolean(link) && !hasDynamicBanner;
-
   useEffect(() => {
-    if (shouldRenderDynamicBanner) {
-      trackAnalyticsEvent("ad_impression", {
-        provider: "coupang",
-        targetLabel: dynamicBannerId || "dynamic-banner",
-      });
+    if (!hasDynamicBanner || !dynamicBannerRef.current || measuredBannerWidth <= 0) {
       return;
     }
 
+    let cancelled = false;
+    const container = dynamicBannerRef.current;
+    container.innerHTML = "";
+    setDynamicBannerStatus("loading");
+
+    let fallbackTimer = 0;
+    const markFailed = () => {
+      if (cancelled) {
+        return;
+      }
+      cancelled = true;
+      window.clearTimeout(fallbackTimer);
+      container.innerHTML = "";
+      setDynamicBannerStatus("failed");
+    };
+    fallbackTimer = window.setTimeout(markFailed, 8000);
+
+    void loadCoupangSdk().then((Banner) => {
+      if (cancelled || !Banner) {
+        if (!cancelled) {
+          markFailed();
+        }
+        return;
+      }
+
+      try {
+        new Banner({
+          id: dynamicBannerId,
+          template: dynamicBannerTemplate,
+          trackingCode: dynamicBannerTrackingCode,
+          width: String(effectiveBannerWidth),
+          height: String(effectiveBannerHeight),
+          container,
+          onLoaded: (hasAd) => {
+            if (cancelled) {
+              return;
+            }
+            window.clearTimeout(fallbackTimer);
+            if (hasAd) {
+              setDynamicBannerStatus("ready");
+            } else {
+              markFailed();
+            }
+          },
+          onDisplayed: () => {
+            trackAnalyticsEvent("ad_impression", {
+              provider: "coupang",
+              targetLabel: dynamicBannerId || "dynamic-banner",
+            });
+          },
+          onClicked: () => {
+            trackAnalyticsEvent("ad_click", {
+              provider: "coupang",
+              targetLabel: dynamicBannerId || "dynamic-banner",
+            });
+          },
+        });
+      } catch {
+        markFailed();
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(fallbackTimer);
+      container.innerHTML = "";
+    };
+  }, [
+    dynamicBannerHeight,
+    dynamicBannerId,
+    dynamicBannerTemplate,
+    dynamicBannerTrackingCode,
+    effectiveBannerHeight,
+    effectiveBannerWidth,
+    hasDynamicBanner,
+    measuredBannerWidth,
+  ]);
+
+  const shouldRenderDynamicBanner =
+    hasDynamicBanner && dynamicBannerStatus !== "failed";
+  const shouldRenderFallbackCard =
+    Boolean(link) && (!hasDynamicBanner || dynamicBannerStatus === "failed");
+
+  useEffect(() => {
     if (shouldRenderFallbackCard) {
       trackAnalyticsEvent("ad_impression", {
         provider: "coupang",
@@ -440,9 +548,7 @@ export function CoupangSlot({
       });
     }
   }, [
-    dynamicBannerId,
     link,
-    shouldRenderDynamicBanner,
     shouldRenderFallbackCard,
     title,
   ]);
@@ -465,15 +571,6 @@ export function CoupangSlot({
             contain: "layout paint",
           }}
         >
-          <iframe
-            key={`${dynamicBannerId}-${dynamicBannerTemplate}-${dynamicBannerTrackingCode}-${effectiveBannerWidth}-${effectiveBannerHeight}`}
-            title={label || "Coupang partner banner"}
-            srcDoc={dynamicBannerSrcDoc}
-            className="block h-full w-full border-0"
-            loading="lazy"
-            scrolling="no"
-            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
-          />
         </div>
         <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
           {COUPANG_DISCLOSURE}

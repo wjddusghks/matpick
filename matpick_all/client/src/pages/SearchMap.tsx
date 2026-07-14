@@ -44,7 +44,7 @@ import {
 } from "@/data/mapCollections";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
-import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
+import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
   clearStoredLocation,
@@ -1088,7 +1088,7 @@ export default function SearchMap() {
               {searchControls}
 
               <div className="mt-4">
-                <KakaoAdfitSlot label={copy.sponsoredLabel} />
+                <RevenuePlacement providers={["kakao"]} label={copy.sponsoredLabel} />
               </div>
             </div>
 

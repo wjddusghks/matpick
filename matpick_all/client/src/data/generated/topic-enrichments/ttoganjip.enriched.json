@@ -27,7 +27,7 @@
       "representativeMenu": "오돌뼈",
       "lat": 35.2074238,
       "lng": 126.8789447,
-      "imageUrl": "/card-data/ttoganjip/ep-019/card-02.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-019/card-02.png",
       "foundingYear": null,
       "menus": [
         {
@@ -135,13 +135,32 @@
       "name": "가원 망원본점",
       "region": "서울특별시 마포구",
       "address": "서울특별시 마포구 월드컵로 65 양경회관 1층",
-      "category": "",
-      "representativeMenu": "",
+      "category": "중식",
+      "representativeMenu": "탕수육(S)",
       "lat": 37.5548715,
       "lng": 126.91082809999999,
-      "imageUrl": "/card-data/ttoganjip/ep-020/card-02.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-020/card-02.png",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_4f6134c23aef_menu_1",
+          "name": "탕수육(S)",
+          "price": "19,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_4f6134c23aef_menu_2",
+          "name": "짜장",
+          "price": "7,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_4f6134c23aef_menu_3",
+          "name": "마파두부밥",
+          "price": "10,000원",
+          "isSignature": false
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJe5mr9ieZfDURYzq-FB8pMj8",
       "isOverseas": false
@@ -1424,7 +1443,7 @@
       "representativeMenu": "갈릭 햄버그 스테이크",
       "lat": 37.5087305,
       "lng": 127.10495089999999,
-      "imageUrl": "/card-data/ttoganjip/ep-016/card-02.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-016/card-02.png",
       "foundingYear": null,
       "menus": [
         {
@@ -1875,7 +1894,7 @@
       "representativeMenu": "태국식 매콤새콤 등뼈찜",
       "lat": 37.52485540000001,
       "lng": 127.0380967,
-      "imageUrl": "/card-data/ttoganjip/ep-017/card-02.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-017/card-02.png",
       "foundingYear": null,
       "menus": [
         {
@@ -1979,12 +1998,31 @@
       "region": "광주광역시 동구",
       "address": "광주광역시 동구 충장로 77-1 꾸꾸붕어빵",
       "category": "카페,디저트",
-      "representativeMenu": "",
+      "representativeMenu": "피자붕어빵",
       "lat": 35.1472401,
       "lng": 126.91822499999999,
-      "imageUrl": "/card-data/ttoganjip/ep-019/card-03.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-019/card-03.png",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_a1b8bb0f730c_menu_1",
+          "name": "피자붕어빵",
+          "price": "2,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a1b8bb0f730c_menu_2",
+          "name": "팥크림치즈붕어빵",
+          "price": "2,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a1b8bb0f730c_menu_3",
+          "name": "고구마모짜렐라붕어빵",
+          "price": "2,000원",
+          "isSignature": false
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJuWBk8jqNcTURY7s1n0OduOA",
       "isOverseas": false
@@ -1994,13 +2032,74 @@
       "name": "나나",
       "region": "서울특별시 마포구",
       "address": "서울특별시 마포구 희우정로20길 75 1층 나나",
-      "category": "",
-      "representativeMenu": "",
+      "category": "이자카야",
+      "representativeMenu": "삿뽀로 라멘 샐러드",
       "lat": 37.556250999999996,
       "lng": 126.9043676,
-      "imageUrl": "/card-data/ttoganjip/ep-020/card-03.jpg",
+      "imageUrl": "/card-data/ttoganjip/ep-020/card-03.png",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_1",
+          "name": "삿뽀로 라멘 샐러드",
+          "price": "17,000원",
+          "isSignature": true
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_2",
+          "name": "육즙가득 멘치 까스",
+          "price": "14,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_3",
+          "name": "숙성연어 사시미",
+          "price": "29,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_4",
+          "name": "나가사키 해물짬뽕나베",
+          "price": "26,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_5",
+          "name": "저염명란구이와 마, 감태",
+          "price": "17,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_6",
+          "name": "튀긴 가지요리와 수란(아게다시나스)",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_7",
+          "name": "타코와사비",
+          "price": "10,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_8",
+          "name": "얼그레이 하이볼",
+          "price": "8,500원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_9",
+          "name": "사케 독구리",
+          "price": "9,000원",
+          "isSignature": false
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_0aaed731512e_menu_10",
+          "name": "클라우드 생맥주",
+          "price": "5,500원",
+          "isSignature": false
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJfUx2f2yZfDURagxzydp-wNY",
       "isOverseas": false

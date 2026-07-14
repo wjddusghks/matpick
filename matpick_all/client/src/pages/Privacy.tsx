@@ -67,21 +67,22 @@ const koreanSections: PolicySection[] = [
   {
     title: "5. 쿠키, 로컬 저장소와 맞춤형 광고",
     paragraphs: [
-      "Matpick은 필수 저장소와 선택형 분석·광고 도구를 구분합니다. Google Analytics·광고 태그와 Meta Pixel, Google AdSense, 카카오 애드핏, 쿠팡 파트너스 광고는 이용자가 분석 또는 광고 사용을 허용한 경우에만 사이트 코드에서 실행됩니다.",
-      "이용자는 아래 버튼으로 선택을 언제든 변경할 수 있고, 브라우저 설정에서도 쿠키와 로컬 저장소를 삭제하거나 제3자 쿠키를 차단할 수 있습니다. 필수 저장소를 차단하면 로그인, 즐겨찾기 등 일부 기능이 정상 동작하지 않을 수 있습니다.",
+      "Matpick은 필수 저장소와 선택형 분석·맞춤형 광고 도구를 구분합니다. Google Analytics·광고 태그와 Meta Pixel, Google AdSense는 이용자가 분석 또는 맞춤형 광고 사용을 허용한 경우에만 사이트 코드에서 실행됩니다.",
+      "카카오 애드핏과 쿠팡 파트너스 제휴 광고는 사이트의 기본 광고 지면에 표시될 수 있습니다. 해당 사업자는 광고 제공·부정 이용 방지·성과 확인을 위해 익명화된 이용 정보, IP 주소, 기기 정보 또는 쿠키를 자체 정책에 따라 처리할 수 있습니다.",
+      "이용자는 아래 버튼으로 선택형 분석·맞춤형 광고 설정을 언제든 변경할 수 있고, 브라우저 설정에서 쿠키와 로컬 저장소를 삭제하거나 제3자 쿠키를 차단할 수 있습니다. 필수 저장소를 차단하면 로그인, 즐겨찾기 등 일부 기능이 정상 동작하지 않을 수 있습니다.",
     ],
   },
   {
     title: "6. 외부 서비스와 처리 위탁·연동",
     paragraphs: [
-      "서비스 제공을 위해 아래 사업자의 도구를 사용합니다. 각 사업자는 이용자의 요청, 동의 및 자체 정책에 따라 IP 주소, 기기 정보, 쿠키 식별자 또는 로그인 정보를 처리할 수 있습니다.",
+      "서비스 제공을 위해 아래 사업자의 도구를 사용합니다. 각 사업자는 페이지 접속, 이용자의 요청·선택 및 자체 정책에 따라 IP 주소, 기기 정보, 쿠키 식별자 또는 로그인 정보를 처리할 수 있습니다.",
     ],
     bullets: [
       "NAVER·Kakao: 소셜 로그인, 지도 또는 공유 기능",
       "NAVER Maps: 지도 화면과 위치 기반 탐색",
       "Google: AdSense, Analytics·Google 태그, 사이트 확인 및 동의 메시지",
-      "Kakao AdFit: 광고 제공과 성과 측정",
-      "Coupang Partners: 제휴 광고 제공과 제휴 성과 확인",
+      "Kakao AdFit: 광고 지면 제공, 부정 이용 방지와 성과 측정",
+      "Coupang Partners: 제휴 광고 지면 제공과 제휴 성과 확인",
       "Meta: 이용자가 허용한 경우의 광고·성과 측정",
       "Vercel 및 연결된 Blob/KV 인프라, Upstash: 웹 호스팅, 파일·회원 프로필·집계 데이터 저장, 보안 로그 처리",
     ],
@@ -89,7 +90,7 @@ const koreanSections: PolicySection[] = [
   {
     title: "7. 국외 처리 가능성",
     paragraphs: [
-      "Vercel, Google, Meta, Upstash 등 글로벌 사업자의 인프라를 이용하는 과정에서 정보가 대한민국 밖의 서버에서 전송·보관·처리될 수 있습니다. 처리 국가와 센터는 사업자의 인프라 구성에 따라 달라질 수 있으며, 전송은 암호화된 HTTPS 통신으로 이루어집니다. 선택형 분석·광고 처리는 이용자의 허용 이후 시작되고, 보유기간은 이 방침과 각 사업자의 정책에 따릅니다.",
+      "Vercel, Google, Meta, Upstash 등 글로벌 사업자의 인프라를 이용하는 과정에서 정보가 대한민국 밖의 서버에서 전송·보관·처리될 수 있습니다. 처리 국가와 센터는 사업자의 인프라 구성에 따라 달라질 수 있으며, 전송은 암호화된 HTTPS 통신으로 이루어집니다. Google·Meta의 선택형 분석·맞춤형 광고 처리는 이용자의 허용 이후 시작되고, 보유기간은 이 방침과 각 사업자의 정책에 따릅니다.",
     ],
   },
   {
@@ -109,7 +110,7 @@ const koreanSections: PolicySection[] = [
     title: "10. 아동, 변경 고지와 시행일",
     paragraphs: [
       "Matpick은 만 14세 미만 아동을 대상으로 회원 서비스를 제공하지 않습니다. 만 14세 미만 이용자의 정보가 법정대리인 동의 없이 수집된 사실을 확인하면 지체 없이 삭제합니다.",
-      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 7월 14일입니다.",
+      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 7월 15일입니다.",
     ],
   },
 ];
@@ -152,15 +153,16 @@ const englishSections: PolicySection[] = [
   {
     title: "4. Cookies and advertising choices",
     paragraphs: [
-      "Essential storage is separated from optional analytics and advertising. Google measurement tags, Meta Pixel, Google AdSense, Kakao AdFit, and Coupang Partners run from the site only after the relevant choice is allowed.",
-      "You can reopen the settings below at any time or clear browser storage. Blocking essential storage may prevent login or favorites from working.",
+      "Essential storage is separated from optional analytics and personalized advertising. Google measurement tags, Meta Pixel, and Google AdSense run only after the relevant choice is allowed.",
+      "Kakao AdFit and Coupang Partners placements may appear by default in the site's advertising areas. Those providers may process anonymized usage data, IP addresses, device information, or cookies for ad delivery, fraud prevention, and performance reporting under their own policies.",
+      "You can reopen optional analytics and personalized-ad settings below at any time, clear browser storage, or block third-party cookies. Blocking essential storage may prevent login or favorites from working.",
     ],
   },
   {
     title: "5. Service providers and international processing",
     paragraphs: [
-      "We use NAVER and Kakao for sign-in, maps, or sharing; Google, Kakao AdFit, Coupang Partners, and Meta for consented ads or measurement; and Vercel, Blob/KV infrastructure, and Upstash for hosting and storage.",
-      "Global providers may process information outside Korea according to their infrastructure and policies. Transfers use HTTPS, and optional analytics or advertising starts only after permission.",
+      "We use NAVER and Kakao for sign-in, maps, or sharing; Kakao AdFit and Coupang Partners for standard advertising placements; Google and Meta for consented analytics or personalized-ad measurement; and Vercel, Blob/KV infrastructure, and Upstash for hosting and storage.",
+      "Global providers may process information outside Korea according to their infrastructure and policies. Transfers use HTTPS, and optional Google or Meta analytics and personalized advertising start only after permission.",
     ],
   },
   {
@@ -173,7 +175,7 @@ const englishSections: PolicySection[] = [
     title: "7. Security, children, and effective date",
     paragraphs: [
       "We use HTTPS, origin checks, rate limits, allowlisted and signed-token admin access, security headers, limited logs, and same-origin image controls. No internet service can eliminate all risk.",
-      "Matpick does not target children under 14. This policy is effective July 14, 2026, and material changes will be announced on this page or in the service.",
+      "Matpick does not target children under 14. This policy is effective July 15, 2026, and material changes will be announced on this page or in the service.",
     ],
   },
 ];
@@ -196,7 +198,7 @@ export default function Privacy() {
       "@type": "WebPage",
       name: `Matpick ${title}`,
       url: buildAbsoluteUrl("/privacy"),
-      dateModified: "2026-07-14",
+      dateModified: "2026-07-15",
     },
   });
 

@@ -60,9 +60,10 @@ Account checks:
 
 Implemented in code:
 
-- Optional analytics and advertising remain off until the visitor makes a choice.
+- Optional analytics, Google/Meta measurement, and personalized advertising remain off until the visitor makes a choice.
 - Choices can be reopened from the footer and privacy page.
-- First-party analytics, Google tags, Meta Pixel, AdSense, AdFit, and Coupang slots follow the saved choice.
+- First-party analytics, Google tags, Meta Pixel, and AdSense follow the saved choice.
+- Kakao AdFit and Coupang Partners placements load by default. Their data handling and browser-level cookie controls are disclosed in the privacy policy.
 - Privacy policy states actual data categories, purposes, 45-day analytics retention, 180-day member metric retention, service providers, international processing, rights, security controls, and the effective date.
 - Terms cover user content, card artwork, scraping, ads, affiliates, corrections, takedowns, and limitations.
 

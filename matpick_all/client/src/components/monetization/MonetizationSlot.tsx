@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { SlidersHorizontal } from "lucide-react";
-import { useLocale } from "@/contexts/LocaleContext";
 import { trackAnalyticsEvent } from "@/lib/analytics";
 import {
   PRIVACY_PREFERENCES_EVENT,
   hasAdvertisingConsent,
-  openPrivacySettings,
-  readPrivacyPreferences,
   type PrivacyPreferences,
 } from "@/lib/privacyConsent";
 
@@ -73,29 +69,6 @@ function useAdvertisingConsent() {
   return isAllowed;
 }
 
-function useAdvertisingConsentState() {
-  const [state, setState] = useState(() => ({
-    isAllowed: hasAdvertisingConsent(),
-    hasChoice: readPrivacyPreferences() !== null,
-  }));
-
-  useEffect(() => {
-    const handlePreferences = (event: Event) => {
-      const preferences = (event as CustomEvent<PrivacyPreferences>).detail;
-      setState({
-        isAllowed: preferences?.advertising === true,
-        hasChoice: Boolean(preferences),
-      });
-    };
-
-    window.addEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
-    return () =>
-      window.removeEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
-  }, []);
-
-  return state;
-}
-
 function DeferredSlot({
   children,
   minHeight = 100,
@@ -150,30 +123,6 @@ function SlotFrame({
       ) : null}
       {children}
     </div>
-  );
-}
-
-function AdvertisingConsentPrompt({ label }: { label: string }) {
-  const { isEnglish } = useLocale();
-
-  return (
-    <SlotFrame label={label}>
-      <div className="flex items-center justify-between gap-4 rounded-[8px] bg-[#faf7f8] px-4 py-3">
-        <p className="break-keep text-xs leading-5 text-[#756b6d]">
-          {isEnglish
-            ? "Advertising is disabled in your privacy settings."
-            : "개인정보 설정에서 광고 표시가 꺼져 있습니다."}
-        </p>
-        <button
-          type="button"
-          onClick={openPrivacySettings}
-          className="inline-flex h-9 shrink-0 items-center gap-2 rounded-[8px] border border-[#ead9dc] bg-white px-3 text-xs font-bold text-[#e75b6c] hover:bg-[#fff4f6]"
-        >
-          <SlidersHorizontal className="h-4 w-4" aria-hidden="true" />
-          {isEnglish ? "Ad settings" : "광고 설정"}
-        </button>
-      </div>
-    </SlotFrame>
   );
 }
 
@@ -289,7 +238,6 @@ export function KakaoAdfitSlot({
   mobileWidth?: string;
   mobileHeight?: string;
 }) {
-  const advertisingAllowed = useAdvertisingConsent();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isCompactViewport = useCompactViewport();
   const usesMobileUnit = isCompactViewport && Boolean(mobileUnit);
@@ -308,7 +256,7 @@ export function KakaoAdfitSlot({
     isCompactViewport && configuredAdWidth > 360 ? 100 : configuredAdHeight;
 
   useEffect(() => {
-    if (!advertisingAllowed || !selectedUnit || !containerRef.current) {
+    if (!selectedUnit || !containerRef.current) {
       return;
     }
 
@@ -332,10 +280,10 @@ export function KakaoAdfitSlot({
     return () => {
       container.innerHTML = "";
     };
-  }, [adHeight, adWidth, advertisingAllowed, selectedUnit]);
+  }, [adHeight, adWidth, selectedUnit]);
 
   useEffect(() => {
-    if (!advertisingAllowed || !selectedUnit) {
+    if (!selectedUnit) {
       return;
     }
 
@@ -343,9 +291,9 @@ export function KakaoAdfitSlot({
       provider: "adfit",
       targetLabel: selectedUnit,
     });
-  }, [advertisingAllowed, selectedUnit]);
+  }, [selectedUnit]);
 
-  if (!advertisingAllowed || !selectedUnit) {
+  if (!selectedUnit) {
     return null;
   }
 
@@ -400,7 +348,6 @@ export function CoupangSlot({
   dynamicBannerWidth?: string;
   dynamicBannerHeight?: string;
 }) {
-  const advertisingAllowed = useAdvertisingConsent();
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
   const isCompactViewport = useCompactViewport();
@@ -478,10 +425,6 @@ export function CoupangSlot({
     Boolean(link) && !hasDynamicBanner;
 
   useEffect(() => {
-    if (!advertisingAllowed) {
-      return;
-    }
-
     if (shouldRenderDynamicBanner) {
       trackAnalyticsEvent("ad_impression", {
         provider: "coupang",
@@ -497,7 +440,6 @@ export function CoupangSlot({
       });
     }
   }, [
-    advertisingAllowed,
     dynamicBannerId,
     link,
     shouldRenderDynamicBanner,
@@ -505,7 +447,7 @@ export function CoupangSlot({
     title,
   ]);
 
-  if (!advertisingAllowed || (!shouldRenderDynamicBanner && !shouldRenderFallbackCard)) {
+  if (!shouldRenderDynamicBanner && !shouldRenderFallbackCard) {
     return null;
   }
 
@@ -604,23 +546,18 @@ export function RevenuePlacement({
   label?: string;
   className?: string;
 }) {
-  const { isAllowed: advertisingAllowed, hasChoice } = useAdvertisingConsentState();
+  const advertisingAllowed = useAdvertisingConsent();
   const enabledProviders = providers.filter(isProviderConfigured);
-  if (enabledProviders.length === 0 || (!advertisingAllowed && !hasChoice)) {
+  const visibleProviders = enabledProviders.filter(
+    (provider) => provider !== "adsense" || advertisingAllowed
+  );
+  if (visibleProviders.length === 0) {
     return null;
-  }
-
-  if (!advertisingAllowed) {
-    return (
-      <aside className={className} aria-label={label}>
-        <AdvertisingConsentPrompt label={label} />
-      </aside>
-    );
   }
 
   return (
     <aside className={`space-y-4 ${className}`} aria-label={label}>
-      {enabledProviders.map((provider) => (
+      {visibleProviders.map((provider) => (
         <DeferredSlot key={provider} minHeight={provider === "coupang" ? 140 : 100}>
           <MonetizationSlot provider={provider} label={provider === "coupang" ? "제휴 광고" : label} />
         </DeferredSlot>

@@ -17,7 +17,7 @@
     "geocode:wednesday-gourmet": "node scripts/geocode-source-dataset.mjs wednesday-gourmet",
     "matpick:research-topic": "node scripts/content-automation/research-topic.mjs",
     "matpick:prepare-card-topic": "node scripts/content-automation/prepare-card-topic.mjs",
-    "images:restaurant-previews": "python scripts/generate-restaurant-image-previews.py",
+    "images:restaurant-previews": "python scripts/generate-restaurant-image-previews.py && python scripts/generate-home-runtime-data.py",
     "prebuild": "node scripts/generate-seo-files.mjs",
     "build": "vite build",
     "postbuild": "node scripts/prerender-seo-pages.mjs",

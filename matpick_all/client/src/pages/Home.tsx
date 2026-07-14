@@ -37,17 +37,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import {
-  publicDiscoveryTopics,
-  getDiscoveryTopicByTarget,
-  getSearchSuggestions,
-  mockSearchData,
-  restaurants,
-  type DiscoveryTopic,
-  type Restaurant,
-  type SearchResult,
-} from "@/data";
-import marqueeCardPreviews from "@/data/generated/marquee-card-previews.json";
+import homeMarqueeRestaurantCards from "@/data/generated/home-marquee-restaurant-cards.json";
 import {
   getMapCollectionPath,
   type MapCollectionTopic,
@@ -61,13 +51,13 @@ import {
   saveStoredLocation,
 } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
-import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 import {
   PRIVACY_PREFERENCES_EVENT,
   readPrivacyPreferences,
   type PrivacyPreferences,
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
+import type { SearchResult } from "@/data/types";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import michelinShortcutImage from "@/assets/source-thumbnails/michelin.webp";
@@ -80,18 +70,41 @@ const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
 const RESTAURANT_MARQUEE_CARD_LIMIT = 18;
 
-type HomeShortcutTopic = Pick<DiscoveryTopic, "slug" | "name" | "path"> & {
+type HomeShortcutTopic = {
+  slug: string;
+  name: string;
+  path: string;
   imageUrl?: string;
 };
 
-type RestaurantMarqueeCardItem = Pick<
-  Restaurant,
-  "id" | "name" | "category" | "region" | "imageUrl"
-> & {
+type RestaurantMarqueeCardItem = {
+  id: string;
+  name: string;
+  category: string;
+  region: string;
+  imageUrl: string;
   previewImageUrl: string;
 };
 
-const MARQUEE_CARD_PREVIEWS = marqueeCardPreviews as Record<string, string>;
+type HomeDataModule = typeof import("@/data");
+
+const HOME_MARQUEE_RESTAURANT_CARDS =
+  homeMarqueeRestaurantCards as RestaurantMarqueeCardItem[];
+
+const SOURCE_TOPIC_PATHS: Record<string, string> = {
+  ttoganjip: "/explore/topic/ttoganjip",
+  "popular-restaurants": "/explore/topic/popular-restaurants",
+  michelin: "/explore/topic/michelin",
+  "old-korean-100": "/explore/topic/old-korean-100",
+  "baekjong-wok": "/explore/topic/baekjong-wok",
+};
+
+let homeDataModulePromise: Promise<HomeDataModule> | null = null;
+
+function loadHomeDataModule() {
+  homeDataModulePromise ??= import("@/data");
+  return homeDataModulePromise;
+}
 
 const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
   {
@@ -367,8 +380,8 @@ function getSearchResultKey(item: Pick<SearchResult, "type" | "id">) {
   return `${item.type}:${item.id}`;
 }
 
-function normalizeSearchResult(item: SearchResult) {
-  const latest = mockSearchData.find(
+function normalizeSearchResult(item: SearchResult, dataModule?: HomeDataModule | null) {
+  const latest = dataModule?.mockSearchData.find(
     (entry) => getSearchResultKey(entry) === getSearchResultKey(item)
   );
 
@@ -382,7 +395,9 @@ function getRecentSearches(): SearchResult[] {
 
   try {
     const raw = window.localStorage.getItem(RECENT_KEY);
-    return raw ? (JSON.parse(raw) as SearchResult[]).map(normalizeSearchResult) : [];
+    return raw
+      ? (JSON.parse(raw) as SearchResult[]).map((item) => normalizeSearchResult(item))
+      : [];
   } catch {
     return [];
   }
@@ -395,7 +410,7 @@ function saveRecentSearches(items: SearchResult[]) {
 
   window.localStorage.setItem(
     RECENT_KEY,
-    JSON.stringify(items.slice(0, 8).map(normalizeSearchResult))
+    JSON.stringify(items.slice(0, 8))
   );
 }
 
@@ -439,39 +454,27 @@ function saveCollectionSocialState(state: CollectionSocialState) {
 }
 
 function getRandomRestaurantMarqueeCards(): RestaurantMarqueeCardItem[] {
-  const seenImageUrls = new Set<string>();
-  const candidates: RestaurantMarqueeCardItem[] = [];
-
-  restaurants.forEach((restaurant) => {
-    const imageUrl = restaurant.imageUrl?.trim();
-    const previewImageUrl = imageUrl ? MARQUEE_CARD_PREVIEWS[imageUrl] : undefined;
-
-    if (!imageUrl || !previewImageUrl) {
-      return;
-    }
-
-    if (seenImageUrls.has(imageUrl)) {
-      return;
-    }
-
-    seenImageUrls.add(imageUrl);
-    candidates.push({
-      id: restaurant.id,
-      name: restaurant.name,
-      category: restaurant.category,
-      region: restaurant.region,
-      imageUrl,
-      previewImageUrl,
-    });
-  });
-
-  const shuffled = [...candidates];
+  const shuffled = [...HOME_MARQUEE_RESTAURANT_CARDS];
   for (let index = shuffled.length - 1; index > 0; index -= 1) {
     const swapIndex = Math.floor(Math.random() * (index + 1));
     [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
   }
 
   return shuffled.slice(0, RESTAURANT_MARQUEE_CARD_LIMIT);
+}
+
+function getHomeOptimizedCardImageUrl(imageUrl?: string | null) {
+  const trimmed = imageUrl?.trim() ?? "";
+
+  if (!trimmed.startsWith("/card-data/")) {
+    return trimmed;
+  }
+
+  const relativePath = trimmed
+    .slice("/card-data/".length)
+    .replace(/\.[a-z0-9]+$/i, ".webp");
+
+  return `/restaurant-image-previews/${relativePath}`;
 }
 
 function getCollectionStorySlides(collection: MapCollectionTopic): CollectionStorySlide[] {
@@ -832,6 +835,8 @@ export default function Home() {
   const [isFocused, setIsFocused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
+  const [searchDataModule, setSearchDataModule] = useState<HomeDataModule | null>(null);
+  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
@@ -911,25 +916,47 @@ export default function Home() {
 
   const normalizedQuery = query.trim().toLowerCase();
 
-  const filteredResults = useMemo(
-    () => (normalizedQuery ? getSearchSuggestions(query, 8) : []),
-    [normalizedQuery, query]
-  );
-
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
   const hasSearchQuery = Boolean(normalizedQuery);
-  const homeShortcutTopics = HOME_TOPIC_SHORTCUTS.map((shortcut) => {
-    const liveTopic = publicDiscoveryTopics.find((topic) => topic.slug === shortcut.slug);
-
-    return {
-      ...shortcut,
-      imageUrl: liveTopic?.imageUrl ?? shortcut.imageUrl,
-    };
-  });
+  const homeShortcutTopics = HOME_TOPIC_SHORTCUTS;
 
   useEffect(() => {
+    if (!normalizedQuery) {
+      setFilteredResults([]);
+      return;
+    }
+
+    let ignore = false;
+
+    loadHomeDataModule()
+      .then((dataModule) => {
+        if (ignore) {
+          return;
+        }
+
+        setSearchDataModule(dataModule);
+        setFilteredResults(dataModule.getSearchSuggestions(query, 8));
+      })
+      .catch(() => {
+        if (!ignore) {
+          setFilteredResults([]);
+        }
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, [normalizedQuery, query]);
+
+  useEffect(() => {
+    if (!searchDataModule) {
+      return;
+    }
+
     setRecentSearches((prev) => {
-      const normalized = prev.map(normalizeSearchResult);
+      const normalized = prev.map((item) =>
+        normalizeSearchResult(item, searchDataModule)
+      );
       const changed = normalized.some(
         (item, index) => JSON.stringify(item) !== JSON.stringify(prev[index])
       );
@@ -941,7 +968,7 @@ export default function Home() {
 
       return prev;
     });
-  }, []);
+  }, [searchDataModule]);
 
   const closeLoginPanel = useCallback(() => {
     if (loginTimeoutRef.current) {
@@ -1198,9 +1225,19 @@ export default function Home() {
     [closeAccountPanel, navigate]
   );
 
+  const primeSearchData = useCallback(() => {
+    loadHomeDataModule()
+      .then((dataModule) => {
+        setSearchDataModule(dataModule);
+      })
+      .catch(() => {
+        // Search falls back to the map query route if the data chunk is unavailable.
+      });
+  }, []);
+
   const handleSelect = useCallback(
-    (item: SearchResult) => {
-      const normalizedItem = normalizeSearchResult(item);
+    async (item: SearchResult) => {
+      const normalizedItem = normalizeSearchResult(item, searchDataModule);
       trackMarketingEvent("search_result_click", {
         query: normalizedQuery || "recent",
         result_type: normalizedItem.type,
@@ -1246,7 +1283,24 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "source") {
-        const topic = getDiscoveryTopicByTarget("source", normalizedItem.id);
+        const staticTopicPath = SOURCE_TOPIC_PATHS[normalizedItem.id];
+        if (staticTopicPath) {
+          navigate(staticTopicPath);
+          return;
+        }
+
+        let dataModule = searchDataModule;
+        if (!dataModule) {
+          try {
+            dataModule = await loadHomeDataModule();
+            setSearchDataModule(dataModule);
+          } catch {
+            navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
+            return;
+          }
+        }
+
+        const topic = dataModule.getDiscoveryTopicByTarget("source", normalizedItem.id);
         if (topic) {
           navigate(topic.path);
           return;
@@ -1258,7 +1312,7 @@ export default function Home() {
 
       navigate("/map");
     },
-    [navigate, normalizedQuery]
+    [navigate, normalizedQuery, searchDataModule]
   );
 
   const handleDeleteRecent = useCallback((id: string) => {
@@ -1661,7 +1715,10 @@ export default function Home() {
                     setQuery(event.target.value);
                     setHoveredIndex(-1);
                   }}
-                  onFocus={() => setIsFocused(true)}
+                  onFocus={() => {
+                    setIsFocused(true);
+                    primeSearchData();
+                  }}
                   onKeyDown={handleSearchKeyDown}
                   placeholder={ui.searchPlaceholder}
                   className="w-full bg-transparent text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:text-[21px]"
@@ -1945,7 +2002,7 @@ function MapCollectionCard({
     >
       {collection.imageUrl ? (
         <img
-          src={getOptimizedCardImageUrl(collection.imageUrl)}
+          src={getHomeOptimizedCardImageUrl(collection.imageUrl)}
           alt=""
           className="absolute inset-0 h-full w-full object-contain"
           loading="lazy"
@@ -2446,7 +2503,7 @@ function CollectionInstagramSlide({
     >
       {slide.imageUrl ? (
         <img
-          src={getOptimizedCardImageUrl(slide.imageUrl)}
+          src={getHomeOptimizedCardImageUrl(slide.imageUrl)}
           alt=""
           className="absolute inset-0 h-full w-full object-contain"
         />

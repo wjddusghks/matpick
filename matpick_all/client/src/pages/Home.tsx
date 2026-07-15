@@ -97,6 +97,7 @@ const SOURCE_TOPIC_PATHS: Record<string, string> = {
   michelin: "/explore/topic/michelin",
   "old-korean-100": "/explore/topic/old-korean-100",
   "baekjong-wok": "/explore/topic/baekjong-wok",
+  "sikgaek-baekban-trip": "/explore/topic/sikgaek-baekban-trip",
 };
 
 let homeDataModulePromise: Promise<HomeDataModule> | null = null;
@@ -136,6 +137,12 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     name: "백종원의 3대천왕",
     path: "/explore/topic/baekjong-wok",
     imageUrl: baekjongWokShortcutImage,
+  },
+  {
+    slug: "sikgaek-baekban-trip",
+    name: "백반기행",
+    path: "/explore/topic/sikgaek-baekban-trip",
+    imageUrl: "/source-covers/sikgaek-baekban-trip-menu-v2.jpg",
   },
 ];
 

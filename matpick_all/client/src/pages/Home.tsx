@@ -98,6 +98,7 @@ const SOURCE_TOPIC_PATHS: Record<string, string> = {
   "old-korean-100": "/explore/topic/old-korean-100",
   "baekjong-wok": "/explore/topic/baekjong-wok",
   "sikgaek-baekban-trip": "/explore/topic/sikgaek-baekban-trip",
+  "wednesday-gourmet": "/explore/topic/wednesday-gourmet",
 };
 
 let homeDataModulePromise: Promise<HomeDataModule> | null = null;
@@ -143,6 +144,13 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     name: "백반기행",
     path: "/explore/topic/sikgaek-baekban-trip",
     imageUrl: "/source-covers/sikgaek-baekban-trip-menu-v2.jpg",
+  },
+  {
+    slug: "wednesday-gourmet",
+    name: "수요미식회",
+    path: "/explore/topic/wednesday-gourmet",
+    imageUrl:
+      "/card-data/wednesday-gourmet/wednesday-gourmet_restaurant_001.jpg",
   },
 ];
 

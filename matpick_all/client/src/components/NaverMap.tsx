@@ -14,7 +14,10 @@ interface NaverMapProps {
 }
 
 const KOREA_CENTER = { lat: 36.35, lng: 127.85 };
-const MARKER_AGGREGATION_THRESHOLD = 260;
+const MAX_VISIBLE_MARKERS = 180;
+const VIEWPORT_PADDING_RATIO = 0.25;
+const VIEWPORT_GRID_COLUMNS = 14;
+const VIEWPORT_GRID_ROWS = 12;
 const DETAIL_MARKER_ZOOM = 14;
 const FOCUSED_MARKER_ZOOM = 16;
 const CURRENT_LOCATION_ZOOM = 15;
@@ -40,14 +43,94 @@ type ClusterMarkerEntry = {
 
 type MapMarkerEntry = RestaurantMarkerEntry | ClusterMarkerEntry;
 
-function getClusterCellSize(zoom: number) {
-  if (zoom <= 7) return 0.34;
-  if (zoom <= 8) return 0.22;
-  if (zoom <= 9) return 0.14;
-  if (zoom <= 10) return 0.09;
-  if (zoom <= 11) return 0.05;
-  if (zoom <= 12) return 0.02;
-  return 0.01;
+type MapViewportBounds = {
+  north: number;
+  south: number;
+  east: number;
+  west: number;
+};
+
+const MAP_FALLBACK_BOUNDS: MapViewportBounds = {
+  north: 39,
+  south: 32,
+  east: 132,
+  west: 124,
+};
+
+function readMapViewportBounds(map: naver.maps.Map): MapViewportBounds | null {
+  try {
+    const bounds = map.getBounds();
+    const northEast = bounds.getNE();
+    const southWest = bounds.getSW();
+    const north = Math.max(northEast.lat(), southWest.lat());
+    const south = Math.min(northEast.lat(), southWest.lat());
+    const east = Math.max(northEast.lng(), southWest.lng());
+    const west = Math.min(northEast.lng(), southWest.lng());
+
+    if (
+      ![north, south, east, west].every(Number.isFinite) ||
+      north <= south ||
+      east <= west
+    ) {
+      return null;
+    }
+
+    return { north, south, east, west };
+  } catch {
+    return null;
+  }
+}
+
+function getPaddedViewportBounds(bounds: MapViewportBounds): MapViewportBounds {
+  const latitudePadding = (bounds.north - bounds.south) * VIEWPORT_PADDING_RATIO;
+  const longitudePadding = (bounds.east - bounds.west) * VIEWPORT_PADDING_RATIO;
+
+  return {
+    north: bounds.north + latitudePadding,
+    south: bounds.south - latitudePadding,
+    east: bounds.east + longitudePadding,
+    west: bounds.west - longitudePadding,
+  };
+}
+
+function isRestaurantInViewport(
+  restaurant: Restaurant,
+  bounds: MapViewportBounds
+) {
+  return (
+    restaurant.lat >= bounds.south &&
+    restaurant.lat <= bounds.north &&
+    restaurant.lng >= bounds.west &&
+    restaurant.lng <= bounds.east
+  );
+}
+
+function getViewportBucketKey(
+  restaurant: Restaurant,
+  bounds: MapViewportBounds
+) {
+  const latitudeSpan = Math.max(bounds.north - bounds.south, Number.EPSILON);
+  const longitudeSpan = Math.max(bounds.east - bounds.west, Number.EPSILON);
+  const row = Math.max(
+    0,
+    Math.min(
+      VIEWPORT_GRID_ROWS - 1,
+      Math.floor(
+        ((restaurant.lat - bounds.south) / latitudeSpan) * VIEWPORT_GRID_ROWS
+      )
+    )
+  );
+  const column = Math.max(
+    0,
+    Math.min(
+      VIEWPORT_GRID_COLUMNS - 1,
+      Math.floor(
+        ((restaurant.lng - bounds.west) / longitudeSpan) * VIEWPORT_GRID_COLUMNS
+      )
+    )
+  );
+
+  return `${row}:${column}`;
 }
 
 function getDuplicateCoordinateKey(restaurant: Restaurant) {
@@ -262,7 +345,7 @@ export default function NaverMap({
   const nearestRestaurantIdRef = useRef<string | null>(nearestRestaurantId);
   const [sdkReady, setSdkReady] = useState(isNaverMapsReady());
   const [sdkError, setSdkError] = useState<string | null>(null);
-  const [viewZoom, setViewZoom] = useState(7);
+  const [viewBounds, setViewBounds] = useState<MapViewportBounds | null>(null);
 
   const validRestaurants = useMemo(
     () =>
@@ -280,28 +363,42 @@ export default function NaverMap({
     const selectedRestaurant = selectedId
       ? validRestaurants.find((restaurant) => restaurant.id === selectedId) ?? null
       : null;
-    const restaurantsToAggregate = selectedRestaurant
-      ? validRestaurants.filter((restaurant) => restaurant.id !== selectedRestaurant.id)
+    const paddedViewBounds = viewBounds ? getPaddedViewportBounds(viewBounds) : null;
+    const restaurantsInView = paddedViewBounds
+      ? validRestaurants.filter((restaurant) =>
+          isRestaurantInViewport(restaurant, paddedViewBounds)
+        )
       : validRestaurants;
+    const restaurantsToAggregate = selectedRestaurant
+      ? restaurantsInView.filter((restaurant) => restaurant.id !== selectedRestaurant.id)
+      : restaurantsInView;
 
-    const shouldAggregate =
-      validRestaurants.length > MARKER_AGGREGATION_THRESHOLD &&
-      viewZoom < DETAIL_MARKER_ZOOM;
+    const shouldAggregate = restaurantsToAggregate.length > MAX_VISIBLE_MARKERS;
 
     if (!shouldAggregate) {
-      return buildRestaurantMarkerEntries(validRestaurants);
+      const restaurantEntries = buildRestaurantMarkerEntries(restaurantsToAggregate);
+      return selectedRestaurant
+        ? [
+            {
+              id: `restaurant:${selectedRestaurant.id}`,
+              type: "restaurant",
+              restaurant: selectedRestaurant,
+              lat: selectedRestaurant.lat,
+              lng: selectedRestaurant.lng,
+            } satisfies RestaurantMarkerEntry,
+            ...restaurantEntries,
+          ]
+        : restaurantEntries;
     }
 
-    const cellSize = getClusterCellSize(viewZoom);
+    const aggregationBounds = paddedViewBounds ?? MAP_FALLBACK_BOUNDS;
     const buckets = new Map<
       string,
       { latSum: number; lngSum: number; count: number; restaurants: Restaurant[] }
     >();
 
     restaurantsToAggregate.forEach((restaurant) => {
-      const latKey = Math.round(restaurant.lat / cellSize);
-      const lngKey = Math.round(restaurant.lng / cellSize);
-      const bucketKey = `${latKey}:${lngKey}`;
+      const bucketKey = getViewportBucketKey(restaurant, aggregationBounds);
       const current =
         buckets.get(bucketKey) ?? { latSum: 0, lngSum: 0, count: 0, restaurants: [] };
 
@@ -345,7 +442,7 @@ export default function NaverMap({
           ...aggregatedEntries,
         ]
       : aggregatedEntries;
-  }, [selectedId, validRestaurants, viewZoom]);
+  }, [selectedId, validRestaurants, viewBounds]);
 
   useEffect(() => {
     restaurantLookupRef.current = new Map(
@@ -464,9 +561,12 @@ export default function NaverMap({
         disableAnchor: false,
       });
 
-      mapIdleListenerRef.current = naver.maps.Event.addListener(map, "idle", () => {
-        setViewZoom(map.getZoom());
-      });
+      const syncMapView = () => {
+        setViewBounds(readMapViewportBounds(map));
+      };
+
+      syncMapView();
+      mapIdleListenerRef.current = naver.maps.Event.addListener(map, "idle", syncMapView);
 
       window.setTimeout(scheduleResizeSync, 100);
       window.setTimeout(scheduleResizeSync, 350);
@@ -619,7 +719,7 @@ export default function NaverMap({
           }
 
           map.panTo(position, { duration: 250 });
-          map.setZoom(Math.min(map.getZoom() + 2, DETAIL_MARKER_ZOOM));
+          map.setZoom(Math.min(map.getZoom() + 2, MAP_MAX_ZOOM));
           return;
         }
 

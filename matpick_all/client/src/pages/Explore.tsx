@@ -1555,7 +1555,8 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     !presetEpisode &&
     (presetTopic?.slug === "old-korean-100" ||
       presetTopic?.slug === "baekjong-wok" ||
-      presetTopic?.slug === "michelin");
+      presetTopic?.slug === "michelin" ||
+      presetTopic?.slug === "wednesday-gourmet");
   const isCardTopicOverview =
     isTtoganjipOverview || isPopularRestaurantsOverview || isSourceRestaurantCardOverview;
 

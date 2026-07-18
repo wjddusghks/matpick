@@ -39,6 +39,8 @@ declare namespace naver {
       constructor(sw: LatLng, ne: LatLng);
       extend(latlng: LatLng): LatLngBounds;
       getCenter(): LatLng;
+      getNE(): LatLng;
+      getSW(): LatLng;
     }
 
     class Marker {

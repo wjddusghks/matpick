@@ -412,6 +412,7 @@ const publicDataSourceIds = new Set([
   "old-korean-100",
   "baekjong-wok",
   "sikgaek-baekban-trip",
+  "wednesday-gourmet",
 ]);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
@@ -1012,6 +1013,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
 
 const publicDiscoveryTopicSlugs = new Set([
   "ttoganjip",
+  "wednesday-gourmet",
   "popular-restaurants",
   "michelin",
   "old-korean-100",

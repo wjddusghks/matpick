@@ -1,0 +1,3213 @@
+{
+  "source": "Kakao Maps place panel and manually reviewed secondary sources",
+  "collectedAt": "2026-07-15T23:14:32.921Z",
+  "targetCount": 64,
+  "kakaoDetailCount": 63,
+  "errors": [],
+  "details": [
+    {
+      "kakaoPlaceId": "1741047218",
+      "name": "도시곳간 본점",
+      "address": "서울 광진구 능동로 18 이튼타워리버3차 지하1층 04~05호",
+      "parcelAddress": "자양동 855",
+      "lat": 37.53311819805647,
+      "lng": 127.06804215691672,
+      "phone": "02-499-9040",
+      "homepages": [
+        "https://dosigotgan.co.kr"
+      ],
+      "menus": [
+        {
+          "name": "반찬",
+          "price": "2,000원"
+        },
+        {
+          "name": "샐러드",
+          "price": "4,500원"
+        },
+        {
+          "name": "돈까스",
+          "price": "2,000원"
+        }
+      ],
+      "menusUpdatedAt": "2021-04-16 13:34:18",
+      "placeUpdatedAt": "2026-07-06 05:02:15",
+      "placeUrl": "https://place.map.kakao.com/1741047218"
+    },
+    {
+      "kakaoPlaceId": "1469290862",
+      "name": "스와니예",
+      "address": "서울 강남구 강남대로 652 신사스퀘어 2층 201호",
+      "parcelAddress": "신사동 504-11",
+      "lat": 37.51950949810079,
+      "lng": 127.01910807130793,
+      "phone": "02-3477-9386",
+      "homepages": [
+        "http://soignerestaurantgroup.com/wp/soigneseoul/",
+        "https://www.instagram.com/soigneseoul"
+      ],
+      "menus": [
+        {
+          "name": "서래 달팽이",
+          "price": "25,000원"
+        },
+        {
+          "name": "SOIGNE Lunch",
+          "price": "240,000원"
+        },
+        {
+          "name": "SOINGE Dinner",
+          "price": "380,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-12 10:50:41",
+      "placeUpdatedAt": "2026-03-12 14:09:55",
+      "placeUrl": "https://place.map.kakao.com/1469290862"
+    },
+    {
+      "kakaoPlaceId": "27306169",
+      "name": "도우룸 서래마을점",
+      "address": "서울 서초구 동광로 99 2층",
+      "parcelAddress": "방배동 797-20",
+      "lat": 37.493825002817545,
+      "lng": 126.99334635456067,
+      "phone": "02-535-9386",
+      "homepages": [
+        "http://soignerestaurantgroup.com",
+        "https://www.instagram.com/doughroom/",
+        "https://app.catchtable.co.kr/ct/shop/doughroomseoul"
+      ],
+      "menus": [
+        {
+          "name": "먹물 카펠리니",
+          "price": "29,000원"
+        },
+        {
+          "name": "감자 뇨끼",
+          "price": "30,000원"
+        },
+        {
+          "name": "부카티니 아마트리치아나",
+          "price": "30,000원"
+        },
+        {
+          "name": "쭈꾸미 레지네티",
+          "price": "32,000원"
+        },
+        {
+          "name": "리코타이거 라비올로",
+          "price": "25,000원"
+        },
+        {
+          "name": "봉골레 링귀니",
+          "price": "26,000원"
+        },
+        {
+          "name": "참나물 따야린",
+          "price": "29,000원"
+        },
+        {
+          "name": "백겹의 라자냐(한정수량)",
+          "price": "38,000원"
+        },
+        {
+          "name": "치킨 디아볼라",
+          "price": "40,000원"
+        },
+        {
+          "name": "브란치노",
+          "price": "53,000원"
+        },
+        {
+          "name": "아쿠아파짜",
+          "price": "60,000원"
+        },
+        {
+          "name": "이베리코프레사",
+          "price": "65,000원"
+        },
+        {
+          "name": "시저샐러드",
+          "price": "24,000원"
+        },
+        {
+          "name": "토마토 샐러드",
+          "price": "26,000원"
+        },
+        {
+          "name": "광어 크루도",
+          "price": "31,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-07-08 13:52:32",
+      "placeUpdatedAt": "2026-07-08 13:52:32",
+      "placeUrl": "https://place.map.kakao.com/27306169"
+    },
+    {
+      "kakaoPlaceId": "741962073",
+      "name": "도우룸 광화문",
+      "address": "서울 종로구 세종대로 178 KT광화문빌딩 West 2층 213-1호",
+      "parcelAddress": "세종로 100",
+      "lat": 37.57214892697915,
+      "lng": 126.97779042950376,
+      "phone": "02-732-9386",
+      "homepages": [
+        "https://www.instagram.com/doughroom/"
+      ],
+      "menus": [
+        {
+          "name": "시저샐러드",
+          "price": "24,000원"
+        },
+        {
+          "name": "토마토샐러드",
+          "price": "26,000원"
+        },
+        {
+          "name": "다이브샐러드",
+          "price": "28,000원"
+        },
+        {
+          "name": "문어샐러드",
+          "price": "30,000원"
+        },
+        {
+          "name": "애호박콘킬리에",
+          "price": "28,000원"
+        },
+        {
+          "name": "우니버터링귀니",
+          "price": "40,000원"
+        },
+        {
+          "name": "푸타네스카",
+          "price": "28,000원"
+        },
+        {
+          "name": "봉골레링귀니",
+          "price": "29,000원"
+        },
+        {
+          "name": "살시챠파파르델레",
+          "price": "33,000원"
+        },
+        {
+          "name": "백겹의라자냐",
+          "price": "38,000원"
+        },
+        {
+          "name": "랍스타라비올리(디너한정)",
+          "price": "42,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-02-23 17:34:37",
+      "placeUpdatedAt": "2026-03-17 08:12:35",
+      "placeUrl": "https://place.map.kakao.com/741962073"
+    },
+    {
+      "kakaoPlaceId": "877868443",
+      "name": "루드베키아",
+      "address": "서울 종로구 세종대로 178 별관 1층 111호",
+      "parcelAddress": "세종로 100",
+      "lat": 37.572134522967545,
+      "lng": 126.97785382499892,
+      "phone": "0507-1313-9386",
+      "homepages": [
+        "https://www.instagram.com/rudbeckia.seoul/",
+        "https://app.catchtable.co.kr/ct/shop/rudbeckia"
+      ],
+      "menus": [
+        {
+          "name": "구운 채소 샐러드",
+          "price": "23,000원"
+        },
+        {
+          "name": "팬 크러스트 파스타",
+          "price": "23,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-09-11 10:34:38",
+      "placeUpdatedAt": "2026-03-03 16:29:02",
+      "placeUrl": "https://place.map.kakao.com/877868443"
+    },
+    {
+      "kakaoPlaceId": "651104505",
+      "name": "고료리켄",
+      "address": "서울 강남구 언주로152길 15-3 2층",
+      "parcelAddress": "신사동 631-28",
+      "lat": 37.52300901428518,
+      "lng": 127.03480609700759,
+      "phone": "02-511-7809",
+      "homepages": [
+        "https://www.instagram.com/ichieseoul/",
+        "https://app.catchtable.co.kr/ct/shop/Y2F0Y2hfSXpnY1lHN3FBVW54aHZDcXZFWEk4QT09"
+      ],
+      "menus": [
+        {
+          "name": "오마카세코스",
+          "price": "250,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-02-28 23:17:02",
+      "placeUpdatedAt": "2026-04-29 19:31:48",
+      "placeUrl": "https://place.map.kakao.com/651104505"
+    },
+    {
+      "kakaoPlaceId": "1572703534",
+      "name": "회현식당",
+      "address": "서울 중구 퇴계로2길 9-8 2층",
+      "parcelAddress": "남창동 205-72",
+      "lat": 37.55701215953266,
+      "lng": 126.97762742273235,
+      "phone": "02-318-8011",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "아나고후라이",
+          "price": "30,000원"
+        },
+        {
+          "name": "야리이카텐푸라",
+          "price": "27,000원"
+        },
+        {
+          "name": "에비텐푸라",
+          "price": "27,000원"
+        },
+        {
+          "name": "고로케",
+          "price": "15,000원"
+        },
+        {
+          "name": "하루마키",
+          "price": "25,000원"
+        },
+        {
+          "name": "아게다시",
+          "price": "27,000원"
+        },
+        {
+          "name": "사카무시",
+          "price": "30,000원"
+        },
+        {
+          "name": "오뎅",
+          "price": "25,000원"
+        },
+        {
+          "name": "타키코미고항",
+          "price": "40,000원"
+        },
+        {
+          "name": "야키사바차항",
+          "price": "22,000원"
+        },
+        {
+          "name": "이나리즈시",
+          "price": "15,000원"
+        },
+        {
+          "name": "에비텐소바",
+          "price": "23,000원"
+        },
+        {
+          "name": "아와비파스타",
+          "price": "30,000원"
+        },
+        {
+          "name": "아나니와우동",
+          "price": "18,000원"
+        },
+        {
+          "name": "아나고큐리마키",
+          "price": "33,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-01-08 08:36:59",
+      "placeUpdatedAt": "2026-04-29 19:47:13",
+      "placeUrl": "https://place.map.kakao.com/1572703534"
+    },
+    {
+      "kakaoPlaceId": "18835270",
+      "name": "이치에",
+      "address": "서울 강남구 선릉로155길 23-3 2층",
+      "parcelAddress": "신사동 656-7",
+      "lat": 37.52537236241542,
+      "lng": 127.03768064375643,
+      "phone": "070-4273-4087",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "사시미모리아와세 (3인)",
+          "price": "79,000원"
+        },
+        {
+          "name": "사시미모리아와세 (2인)",
+          "price": "59,000원"
+        },
+        {
+          "name": "시로미고노와다",
+          "price": "28,000원"
+        },
+        {
+          "name": "노도구로시오야키",
+          "price": "30,000원"
+        },
+        {
+          "name": "마나가츠오미소야키",
+          "price": "30,000원"
+        },
+        {
+          "name": "사시미모리아와세 (4인)",
+          "price": "95,000원"
+        },
+        {
+          "name": "사시미폰즈",
+          "price": "50,000원"
+        },
+        {
+          "name": "치카리모노",
+          "price": "40,000원"
+        },
+        {
+          "name": "카이루이",
+          "price": "50,000원"
+        },
+        {
+          "name": "혼마구로",
+          "price": "33,000원"
+        },
+        {
+          "name": "광어",
+          "price": "25,000원"
+        },
+        {
+          "name": "아마에비",
+          "price": "30,000원"
+        },
+        {
+          "name": "시메사바",
+          "price": "25,000원"
+        },
+        {
+          "name": "방어",
+          "price": "33,000원"
+        },
+        {
+          "name": "아지",
+          "price": "25,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-30 11:24:15",
+      "placeUpdatedAt": "2026-06-30 11:24:15",
+      "placeUrl": "https://place.map.kakao.com/18835270"
+    },
+    {
+      "kakaoPlaceId": "1168689188",
+      "name": "라망시크레",
+      "address": "서울 중구 퇴계로 67 레스케이프호텔 26층",
+      "parcelAddress": "회현동1가 210",
+      "lat": 37.55967223863914,
+      "lng": 126.9794737208547,
+      "phone": "02-317-4003",
+      "homepages": [
+        "https://www.lescapehotel.com/dining/lamantsecret",
+        "https://www.instagram.com/lamant_secret",
+        "https://app.catchtable.co.kr/ct/shop/lamantsecret"
+      ],
+      "menus": [
+        {
+          "name": "소고기 창펀",
+          "price": "27,000원"
+        },
+        {
+          "name": "홍국 새우 창펀",
+          "price": "27,000원"
+        },
+        {
+          "name": "초당 옥수수 크리스피 새우 창펀",
+          "price": "28,000원"
+        },
+        {
+          "name": "모둠버섯 창펀",
+          "price": "27,000원"
+        },
+        {
+          "name": "건관자 해물 부용 교자",
+          "price": "23,000원"
+        },
+        {
+          "name": "크랩 날치알 하가우",
+          "price": "22,000원"
+        },
+        {
+          "name": "하가우",
+          "price": "21,000원"
+        },
+        {
+          "name": "블랙 트러플 쇼마이",
+          "price": "21,000원"
+        },
+        {
+          "name": "코스 (런치)",
+          "price": "170,000원"
+        },
+        {
+          "name": "코스 (디너)",
+          "price": "270,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-12 11:49:46",
+      "placeUpdatedAt": "2026-03-12 11:49:46",
+      "placeUrl": "https://place.map.kakao.com/1168689188"
+    },
+    {
+      "kakaoPlaceId": "2044587542",
+      "name": "이타닉 가든",
+      "address": "서울 강남구 테헤란로 231 조선팰리스 36층",
+      "parcelAddress": "역삼동 676",
+      "lat": 37.50286411505516,
+      "lng": 127.04118428869863,
+      "phone": "02-727-7610",
+      "homepages": [
+        "https://jpy.josunhotel.com/dining/EatanicGarden.do",
+        "https://www.instagram.com/eatanicgarden/"
+      ],
+      "menus": [
+        {
+          "name": "LUNCH COURSE",
+          "price": "250,000원"
+        },
+        {
+          "name": "DINNER COURSE",
+          "price": "370,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-12 15:14:32",
+      "placeUpdatedAt": "2026-06-07 18:20:01",
+      "placeUrl": "https://place.map.kakao.com/2044587542"
+    },
+    {
+      "kakaoPlaceId": "752409345",
+      "name": "오스테리아샘킴",
+      "address": "서울 마포구 월드컵로1길 14 딜라이트스퀘어A동 1차 2층",
+      "parcelAddress": "합정동 472",
+      "lat": 37.550043849151024,
+      "lng": 126.91206160440171,
+      "phone": "02-324-3338",
+      "homepages": [
+        "https://www.instagram.com/osteriasamkim",
+        "https://app.catchtable.co.kr/ct/shop/samkim"
+      ],
+      "menus": [
+        {
+          "name": "멜란자네",
+          "price": "22,000원"
+        },
+        {
+          "name": "구운새우&가지요리",
+          "price": "25,000원"
+        },
+        {
+          "name": "오스테리아 뇨끼",
+          "price": "25,000원"
+        },
+        {
+          "name": "엔쵸비오일파스타",
+          "price": "27,000원"
+        },
+        {
+          "name": "한우트러플라자냐",
+          "price": "35,000원"
+        },
+        {
+          "name": "봉골레파스타",
+          "price": "28,000원"
+        },
+        {
+          "name": "마해산물링귀니",
+          "price": "29,000원"
+        },
+        {
+          "name": "채끝등심스테이크",
+          "price": "95,000원"
+        },
+        {
+          "name": "양갈비스테이크",
+          "price": "80,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-18 00:06:58",
+      "placeUpdatedAt": "2026-06-19 11:26:11",
+      "placeUrl": "https://place.map.kakao.com/752409345"
+    },
+    {
+      "kakaoPlaceId": "2054936882",
+      "name": "뜨라또리아샘킴",
+      "address": "서울 강남구 도산대로49길 10-3 2층",
+      "parcelAddress": "신사동 653-12",
+      "lat": 37.523808225535184,
+      "lng": 127.0376708070383,
+      "phone": "02-511-3334",
+      "homepages": [
+        "https://www.instagram.com/trattoriasamkim/",
+        "https://app.catchtable.co.kr/ct/shop/trattoriasamkim"
+      ],
+      "menus": [
+        {
+          "name": "에스프레소",
+          "price": "5,000원"
+        },
+        {
+          "name": "아메리카노",
+          "price": "6,000원"
+        },
+        {
+          "name": "카페라떼",
+          "price": "7,000원"
+        },
+        {
+          "name": "오늘의티",
+          "price": "6,000원"
+        },
+        {
+          "name": "레몬에이드",
+          "price": "8,000원"
+        },
+        {
+          "name": "오렌지에이드",
+          "price": "8,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-02-21 10:23:32",
+      "placeUpdatedAt": "2026-04-29 20:25:14",
+      "placeUrl": "https://place.map.kakao.com/2054936882"
+    },
+    {
+      "kakaoPlaceId": "312810588",
+      "name": "윤서울",
+      "address": "서울 강남구 선릉로 805 W빌딩 1층",
+      "parcelAddress": "신사동 666-8",
+      "lat": 37.52412134847773,
+      "lng": 127.03898322625301,
+      "phone": "02-336-3323",
+      "homepages": [
+        "https://www.instagram.com/yunseoul.restaurant",
+        "https://app.catchtable.co.kr/ct/shop/yoonseoul"
+      ],
+      "menus": [
+        {
+          "name": "디너코스",
+          "price": "240,000원"
+        },
+        {
+          "name": "런치",
+          "price": "120,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-02-28 15:54:55",
+      "placeUpdatedAt": "2026-04-29 22:47:13",
+      "placeUrl": "https://place.map.kakao.com/312810588"
+    },
+    {
+      "kakaoPlaceId": "2114917980",
+      "name": "면서울",
+      "address": "서울 강남구 선릉로 805 W빌딩 1층",
+      "parcelAddress": "신사동 666-8",
+      "lat": 37.524067268912745,
+      "lng": 127.03904202359914,
+      "phone": "010-8377-5156",
+      "homepages": [
+        "https://www.instagram.com/myeonseoul/",
+        "https://app.catchtable.co.kr/ct/shop/myeonseoul"
+      ],
+      "menus": [
+        {
+          "name": "생들기름면",
+          "price": "13,000원"
+        },
+        {
+          "name": "안성제면(히든메뉴)",
+          "price": "16,000원"
+        },
+        {
+          "name": "골동면",
+          "price": "16,000원"
+        },
+        {
+          "name": "제육반접시",
+          "price": "18,000원"
+        },
+        {
+          "name": "매콤비빔면",
+          "price": "14,000원"
+        },
+        {
+          "name": "한우모듬수육 150g",
+          "price": "33,000원"
+        },
+        {
+          "name": "넙적고사리면",
+          "price": "14,000원"
+        },
+        {
+          "name": "5색 나물면",
+          "price": "15,000원"
+        },
+        {
+          "name": "고기나물면",
+          "price": "15,000원"
+        },
+        {
+          "name": "만두한접시 (8알)",
+          "price": "9,000원"
+        },
+        {
+          "name": "밀냉면(한우찬면)",
+          "price": "13,000원"
+        },
+        {
+          "name": "콩국수(여름한정메뉴)",
+          "price": "13,000원"
+        },
+        {
+          "name": "제육한접시 (240g)",
+          "price": "36,000원"
+        },
+        {
+          "name": "설렁탕",
+          "price": "14,000원"
+        },
+        {
+          "name": "만두한접시 (4알)",
+          "price": null
+        }
+      ],
+      "menusUpdatedAt": "2026-03-16 23:49:39",
+      "placeUpdatedAt": "2026-06-23 15:19:00",
+      "placeUrl": "https://place.map.kakao.com/2114917980"
+    },
+    {
+      "kakaoPlaceId": "1838545503",
+      "name": "에그앤플라워",
+      "address": "서울 용산구 신흥로26길 35 1-2층",
+      "parcelAddress": "용산동2가 1-549",
+      "lat": 37.54535432744492,
+      "lng": 126.98437512972082,
+      "phone": "",
+      "homepages": [
+        "https://www.instagram.com/eggnflour_pasta"
+      ],
+      "menus": [
+        {
+          "name": "홍새우 &먹물 카펠리니",
+          "price": "30,000원"
+        },
+        {
+          "name": "레몬버터살시챠 & 노른자 파파델레",
+          "price": "27,000원"
+        },
+        {
+          "name": "부라따치즈와감태",
+          "price": "17,000원"
+        },
+        {
+          "name": "홈메이드 리코타 플래터",
+          "price": "20,000원"
+        },
+        {
+          "name": "바질페스토 계절 조개찜",
+          "price": "27,000원"
+        },
+        {
+          "name": "트러플포르치니 & 노른자 딸리아뗄레",
+          "price": "27,000원"
+        },
+        {
+          "name": "흑돼지라구 & 먹물 리가토니",
+          "price": "27,000원"
+        },
+        {
+          "name": "이베리코 뼈 등심 스테이크(100g)",
+          "price": "32,000원"
+        },
+        {
+          "name": "프라임 살치살 스테이크(100g)",
+          "price": "38,000원"
+        },
+        {
+          "name": "런치 시그니쳐 2인세트",
+          "price": "109,000원"
+        },
+        {
+          "name": "Bottle 2인세트",
+          "price": "250,000원"
+        },
+        {
+          "name": "수란과 시저샐러드",
+          "price": "17,000원"
+        },
+        {
+          "name": "트러플아이올리와 감자튀김",
+          "price": "15,000원"
+        },
+        {
+          "name": "계절 조개 봉골레 & 파프리카 토르끼오",
+          "price": "27,000원"
+        },
+        {
+          "name": "이베리코 뼈 등심 스테이크(500g)",
+          "price": "59,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-04-14 12:27:16",
+      "placeUpdatedAt": "2026-04-14 12:27:16",
+      "placeUrl": "https://place.map.kakao.com/1838545503"
+    },
+    {
+      "kakaoPlaceId": "404432674",
+      "name": "소울",
+      "address": "서울 용산구 신흥로26길 35 바나힐 지하1층",
+      "parcelAddress": "용산동2가 1-549",
+      "lat": 37.545390368009876,
+      "lng": 126.98437964852477,
+      "phone": "02-318-7685",
+      "homepages": [
+        "https://www.instagram.com/souldining_seoul",
+        "https://app.catchtable.co.kr/ct/shop/souldining"
+      ],
+      "menus": [
+        {
+          "name": "Lunch",
+          "price": "170,000원"
+        },
+        {
+          "name": "Dinner",
+          "price": "270,000원"
+        },
+        {
+          "name": "별미진미 Set",
+          "price": "50,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-12 13:28:00",
+      "placeUpdatedAt": "2026-03-12 13:28:00",
+      "placeUrl": "https://place.map.kakao.com/404432674"
+    },
+    {
+      "kakaoPlaceId": "2057523686",
+      "name": "크라운돼지",
+      "address": "서울 강남구 강남대로156길 17-1 지상1층,2층",
+      "parcelAddress": "신사동 510-9",
+      "lat": 37.51852177044802,
+      "lng": 127.02046975493539,
+      "phone": "02-512-5700",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/crownpig"
+      ],
+      "menus": [
+        {
+          "name": "오겹살 (160g)",
+          "price": "19,000원"
+        },
+        {
+          "name": "쫄데기살 (160g)",
+          "price": "19,000원"
+        },
+        {
+          "name": "티돈스테이크세트 (670g)",
+          "price": "67,000원"
+        },
+        {
+          "name": "돈마호크세트 (570g)",
+          "price": "67,000원"
+        },
+        {
+          "name": "돈마호크 (250g)",
+          "price": "32,000원"
+        },
+        {
+          "name": "티돈스테이크 (350g)",
+          "price": "32,000원"
+        },
+        {
+          "name": "매콤김치찌개",
+          "price": "8,000원"
+        },
+        {
+          "name": "된장짜글이(술밥)",
+          "price": "8,000원"
+        },
+        {
+          "name": "흑돼지찌짐이",
+          "price": "8,000원"
+        },
+        {
+          "name": "계란찜",
+          "price": "5,000원"
+        },
+        {
+          "name": "갈치속젓볶음밥",
+          "price": "8,000원"
+        },
+        {
+          "name": "물비빔냉면(비냉x)",
+          "price": "7,000원"
+        },
+        {
+          "name": "해장라면",
+          "price": "5,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-05-19 23:03:40",
+      "placeUpdatedAt": "2026-06-18 16:57:05",
+      "placeUrl": "https://place.map.kakao.com/2057523686"
+    },
+    {
+      "kakaoPlaceId": "993566256",
+      "name": "크라운돼지 제주점",
+      "address": "제주특별자치도 제주시 애월읍 상가목장길 84 1층 8호",
+      "parcelAddress": "애월읍 상가리 산 106",
+      "lat": 33.393679444084476,
+      "lng": 126.38287146169556,
+      "phone": "064-805-5091",
+      "homepages": [
+        "http://instagram.com/song_hoon_park"
+      ],
+      "menus": [
+        {
+          "name": "난축맛돈 세트 A",
+          "price": "67,000원"
+        },
+        {
+          "name": "난축맛돈 세트 B",
+          "price": "99,000원"
+        },
+        {
+          "name": "크라운 짜글이",
+          "price": "9,000원"
+        },
+        {
+          "name": "크라운 볶음밥",
+          "price": "8,000원"
+        },
+        {
+          "name": "크라운 물비빔냉면",
+          "price": "7,000원"
+        },
+        {
+          "name": "오겹살",
+          "price": "19,000원"
+        },
+        {
+          "name": "쫄데기살 (160g)",
+          "price": "20,000원"
+        },
+        {
+          "name": "돈마호크",
+          "price": "34,000원"
+        },
+        {
+          "name": "크라운 김치찌개",
+          "price": "10,000원"
+        },
+        {
+          "name": "크라운 흑돼지 세트",
+          "price": "63,000원"
+        },
+        {
+          "name": "흑목살 (제주흑돼지)",
+          "price": "18,000원"
+        },
+        {
+          "name": "흑오겹살 (제주흑돼지)",
+          "price": "18,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-18 18:34:19",
+      "placeUpdatedAt": "2026-06-30 13:52:03",
+      "placeUrl": "https://place.map.kakao.com/993566256"
+    },
+    {
+      "kakaoPlaceId": "14650440",
+      "name": "테이블포포",
+      "address": "서울 용산구 대사관로31길 25-12 5층",
+      "parcelAddress": "한남동 657-138",
+      "lat": 37.53466217682236,
+      "lng": 127.00524073474392,
+      "phone": "010-2533-6832",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/tablefor4",
+        "https://www.instagram.com/tableforfour_official",
+        "https://www.instagram.com/tableforfour_chef"
+      ],
+      "menus": [
+        {
+          "name": "런치코스",
+          "price": "150,000원"
+        },
+        {
+          "name": "디너코스",
+          "price": "250,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-17 16:35:46",
+      "placeUpdatedAt": "2026-05-16 14:41:01",
+      "placeUrl": "https://place.map.kakao.com/14650440"
+    },
+    {
+      "kakaoPlaceId": "1140215039",
+      "name": "뽀모",
+      "address": "서울 강남구 선릉로 334 1층 102호",
+      "parcelAddress": "대치동 921-2",
+      "lat": 37.49958755740784,
+      "lng": 127.05163191172973,
+      "phone": "",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "새우고르곤크림뇨끼",
+          "price": "12,900원"
+        },
+        {
+          "name": "라자냐",
+          "price": "13,500원"
+        },
+        {
+          "name": "꼬막봉글레 스파게티",
+          "price": "12,900원"
+        },
+        {
+          "name": "라구스파게티",
+          "price": "12,900원"
+        },
+        {
+          "name": "뽀모도로스파게티",
+          "price": "9,500원"
+        },
+        {
+          "name": "뽀모도로 펜네 파스타",
+          "price": "9,500원"
+        },
+        {
+          "name": "뽀모세트",
+          "price": "14,500원"
+        },
+        {
+          "name": "호주산안심스테이크&와인세트",
+          "price": "30,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-25 09:32:43",
+      "placeUpdatedAt": "2026-04-29 17:53:44",
+      "placeUrl": "https://place.map.kakao.com/1140215039"
+    },
+    {
+      "kakaoPlaceId": "1514634581",
+      "name": "콩두 명동",
+      "address": "서울 중구 명동7길 13 호텔28 6층",
+      "parcelAddress": "명동1가 59-1",
+      "lat": 37.56435451296531,
+      "lng": 126.9839682171446,
+      "phone": "02-3789-2010",
+      "homepages": [
+        "https://congdu.co.kr/",
+        "https://www.instagram.com/congdu.myeongdong",
+        "https://app.catchtable.co.kr/ct/shop/congdu_myeongdong/"
+      ],
+      "menus": [
+        {
+          "name": "Chef's Selection Dinner 1",
+          "price": "99,000원"
+        },
+        {
+          "name": "Chef's Selection Dinner 2",
+          "price": "129,000원"
+        },
+        {
+          "name": "Breakfast",
+          "price": "30,000원"
+        },
+        {
+          "name": "Lunch Course 1",
+          "price": "49,000원"
+        },
+        {
+          "name": "Lunch Course 2",
+          "price": "59,000원"
+        },
+        {
+          "name": "Lunch Course 3",
+          "price": "69,000원"
+        },
+        {
+          "name": "Sunday Brunch",
+          "price": "40,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-04-17 17:13:45",
+      "placeUpdatedAt": "2026-04-29 20:42:20",
+      "placeUrl": "https://place.map.kakao.com/1514634581"
+    },
+    {
+      "kakaoPlaceId": "7907275",
+      "name": "메이필드 서울 봉래헌",
+      "address": "서울 강서구 방화대로 94 별관",
+      "parcelAddress": "외발산동 426",
+      "lat": 37.54809492885996,
+      "lng": 126.81815288301594,
+      "phone": "02-2660-9020",
+      "homepages": [
+        "https://www.mayfield.co.kr/2017/kor/html/restaurants/bongraeheon.asp"
+      ],
+      "menus": [
+        {
+          "name": "봉래",
+          "price": "300,000원"
+        },
+        {
+          "name": "진연(평일)",
+          "price": "100,000원"
+        },
+        {
+          "name": "수라(평일)",
+          "price": "130,000원"
+        },
+        {
+          "name": "금강(평일)",
+          "price": "150,000원"
+        },
+        {
+          "name": "풍악(평일)",
+          "price": "170,000원"
+        },
+        {
+          "name": "어연(주말 및 공휴일)",
+          "price": "190,000원"
+        },
+        {
+          "name": "수연(주말 및 공휴일)",
+          "price": "160,000원"
+        },
+        {
+          "name": "청연(주말 및 공휴일)",
+          "price": "140,000원"
+        }
+      ],
+      "menusUpdatedAt": "2024-07-04 11:48:01",
+      "placeUpdatedAt": "2026-01-15 11:08:49",
+      "placeUrl": "https://place.map.kakao.com/7907275"
+    },
+    {
+      "kakaoPlaceId": "108813188",
+      "name": "임성근국가공인진갈비 오산점",
+      "address": "경기 오산시 원동로 56 1층",
+      "parcelAddress": "원동 299-10",
+      "lat": 37.142456108204605,
+      "lng": 127.07468258389503,
+      "phone": "031-376-4913",
+      "homepages": [
+        "http://마루벌.com",
+        "https://app.catchtable.co.kr/ct/shop/jingalbi_osan"
+      ],
+      "menus": [
+        {
+          "name": "돼지 왕갈비(180g)",
+          "price": "17,900원"
+        },
+        {
+          "name": "소 생갈비살(180g)",
+          "price": "19,900원"
+        },
+        {
+          "name": "소 양념갈비살(180g)",
+          "price": "19,900원"
+        },
+        {
+          "name": "A. 스페셜 세트 ( 2-3인 )",
+          "price": "59,900원"
+        },
+        {
+          "name": "B. 스페셜 세트 ( 3-4인 )",
+          "price": "77,700원"
+        },
+        {
+          "name": "C. 스페셜 세트 ( 4-5인 )",
+          "price": "99,900원"
+        },
+        {
+          "name": "꽃갈비살(150g)",
+          "price": "23,900원"
+        }
+      ],
+      "menusUpdatedAt": "2026-05-07 22:33:46",
+      "placeUpdatedAt": "2026-07-09 13:28:03",
+      "placeUrl": "https://place.map.kakao.com/108813188"
+    },
+    {
+      "kakaoPlaceId": "174778252",
+      "name": "앰배서더서울풀만 호빈",
+      "address": "서울 중구 동호로 287 2층",
+      "parcelAddress": "장충동2가 186-54",
+      "lat": 37.560146123869124,
+      "lng": 127.00225002765808,
+      "phone": "02-2270-3141",
+      "homepages": [
+        "https://www.ambatel.com/theambassador/seoul/ko/diningView.do?dining_contents_seq=158"
+      ],
+      "menus": [
+        {
+          "name": "북경오리",
+          "price": "160,000원"
+        },
+        {
+          "name": "유린기(S)",
+          "price": "58,000원"
+        },
+        {
+          "name": "황궁연(1인)",
+          "price": "400,000원"
+        },
+        {
+          "name": "불도장연(1인)",
+          "price": "250,000원"
+        },
+        {
+          "name": "제비집연(1인)",
+          "price": "180,000원"
+        },
+        {
+          "name": "건해삼연(1인)",
+          "price": "220,000원"
+        },
+        {
+          "name": "보해연(1인)",
+          "price": "150,000원"
+        },
+        {
+          "name": "점심 궁(1인)",
+          "price": "150,000원"
+        },
+        {
+          "name": "점심 호(1인)",
+          "price": "120,000원"
+        },
+        {
+          "name": "점심 빈(1인)",
+          "price": "100,000원"
+        },
+        {
+          "name": "양장피전채(S)",
+          "price": "78,000원"
+        },
+        {
+          "name": "호빈통전복찜",
+          "price": "75,000원"
+        },
+        {
+          "name": "전가래복(S)",
+          "price": "130,000원"
+        },
+        {
+          "name": "유산슬덮밥",
+          "price": "58,000원"
+        },
+        {
+          "name": "잡탕덮밥",
+          "price": "58,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-15 14:45:17",
+      "placeUpdatedAt": "2026-06-15 14:45:17",
+      "placeUrl": "https://place.map.kakao.com/174778252"
+    },
+    {
+      "kakaoPlaceId": "1136269268",
+      "name": "코자차",
+      "address": "서울 강남구 학동로97길 17 진흥빌딩 1층",
+      "parcelAddress": "청담동 70-6",
+      "lat": 37.52088208380251,
+      "lng": 127.05520310963055,
+      "phone": "",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/kojacha"
+      ],
+      "menus": [
+        {
+          "name": "일품진로(병)",
+          "price": "50,000원"
+        },
+        {
+          "name": "진저위스키하이볼(Glass)",
+          "price": "40,000원"
+        },
+        {
+          "name": "콜라",
+          "price": "5,000원"
+        },
+        {
+          "name": "코자차 점심 코스",
+          "price": "135,000원"
+        },
+        {
+          "name": "코자차 저녁 코스",
+          "price": "225,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-17 14:55:14",
+      "placeUpdatedAt": "2026-04-29 16:51:47",
+      "placeUrl": "https://place.map.kakao.com/1136269268"
+    },
+    {
+      "kakaoPlaceId": "1052903179",
+      "name": "회현카페",
+      "address": "서울 중구 퇴계로2길 9-8 1-2층",
+      "parcelAddress": "남창동 205-72",
+      "lat": 37.55701216981378,
+      "lng": 126.97768174707645,
+      "phone": "02-318-8012",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/hhsd?from=share&type=DINING"
+      ],
+      "menus": [
+        {
+          "name": "두근두근 스테미나정식",
+          "price": "21,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-08-25 09:26:24",
+      "placeUpdatedAt": "2026-02-11 08:13:52",
+      "placeUrl": "https://place.map.kakao.com/1052903179"
+    },
+    {
+      "kakaoPlaceId": "1256702713",
+      "name": "카덴",
+      "address": "서울 서대문구 연희로 173 거화빌딩 2층",
+      "parcelAddress": "연희동 81-1",
+      "lat": 37.57249354530387,
+      "lng": 126.9350463320697,
+      "phone": "02-3142-6362",
+      "homepages": [
+        "https://www.caden.co.kr/"
+      ],
+      "menus": [
+        {
+          "name": "4인사시미",
+          "price": "88,000원"
+        },
+        {
+          "name": "3인사시미",
+          "price": "58,000원"
+        },
+        {
+          "name": "2인사시미",
+          "price": "42,000원"
+        },
+        {
+          "name": "문어초회",
+          "price": "28,000원"
+        },
+        {
+          "name": "고노와다",
+          "price": "34,000원"
+        },
+        {
+          "name": "시메사바",
+          "price": "34,000원"
+        },
+        {
+          "name": "연어사시미",
+          "price": "36,000원"
+        },
+        {
+          "name": "한우채끝살규카츠",
+          "price": "34,000원"
+        },
+        {
+          "name": "트러플육회",
+          "price": "34,000원"
+        },
+        {
+          "name": "삼겹살숙주볶음",
+          "price": "22,000원"
+        },
+        {
+          "name": "도미머리조림",
+          "price": "28,000원"
+        },
+        {
+          "name": "닭날개만두",
+          "price": "25,000원"
+        },
+        {
+          "name": "니싱(청어)소바",
+          "price": "25,000원"
+        },
+        {
+          "name": "장어덮밥",
+          "price": "30,000원"
+        },
+        {
+          "name": "나가사끼짬뽕",
+          "price": "28,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-02-09 23:50:22",
+      "placeUpdatedAt": "2026-06-07 19:31:01",
+      "placeUrl": "https://place.map.kakao.com/1256702713"
+    },
+    {
+      "kakaoPlaceId": "1111103493",
+      "name": "천상현의천상",
+      "address": "서울 서초구 매헌로 16 라시따델라모다 6층 6164호",
+      "parcelAddress": "양재동 215",
+      "lat": 37.46319600739092,
+      "lng": 127.03662306924642,
+      "phone": "02-2155-2404",
+      "homepages": [
+        "https://www.instagram.com/chunsang.21/"
+      ],
+      "menus": [
+        {
+          "name": "런치 A 코스",
+          "price": "40,000원"
+        },
+        {
+          "name": "런치 B 코스",
+          "price": "60,000원"
+        },
+        {
+          "name": "디너 코스 수복",
+          "price": "80,000원"
+        },
+        {
+          "name": "디너 코스 강녕",
+          "price": "120,000원"
+        },
+        {
+          "name": "디너 코스 천상",
+          "price": "150,000원"
+        },
+        {
+          "name": "디너 코스 청풍명월",
+          "price": "180,000원"
+        },
+        {
+          "name": "냉채 및 스프",
+          "price": null
+        },
+        {
+          "name": "해삼, 상어 지느러미",
+          "price": null
+        },
+        {
+          "name": "해산물",
+          "price": null
+        },
+        {
+          "name": "소고기 및 돼지고기",
+          "price": null
+        },
+        {
+          "name": "닭고기 및 새우",
+          "price": null
+        },
+        {
+          "name": "면류",
+          "price": null
+        },
+        {
+          "name": "밥류",
+          "price": null
+        }
+      ],
+      "menusUpdatedAt": "2025-06-27 10:33:11",
+      "placeUpdatedAt": "2026-05-13 08:37:16",
+      "placeUrl": "https://place.map.kakao.com/1111103493"
+    },
+    {
+      "kakaoPlaceId": "1449183784",
+      "name": "우동카덴 연희점",
+      "address": "서울 서대문구 연희로 173 거화빌딩 1층",
+      "parcelAddress": "연희동 81-1",
+      "lat": 37.57240343339889,
+      "lng": 126.93502377053203,
+      "phone": "02-3142-6362",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "삼미우동",
+          "price": "14,000원"
+        },
+        {
+          "name": "카케우동",
+          "price": "9,000원"
+        },
+        {
+          "name": "타마고토지",
+          "price": "11,000원"
+        },
+        {
+          "name": "카레우동",
+          "price": "12,000원"
+        },
+        {
+          "name": "키쯔네우동",
+          "price": "11,000원"
+        },
+        {
+          "name": "멘타이코타마고토지",
+          "price": "13,000원"
+        },
+        {
+          "name": "돈카츠카레",
+          "price": "14,000원"
+        },
+        {
+          "name": "한우스지",
+          "price": "14,000원"
+        },
+        {
+          "name": "아사리우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "가마타마버터",
+          "price": "13,000원"
+        },
+        {
+          "name": "굴우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "에비후라이카레",
+          "price": "14,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-02-13 00:13:12",
+      "placeUpdatedAt": "2026-01-15 11:08:53",
+      "placeUrl": "https://place.map.kakao.com/1449183784"
+    },
+    {
+      "kakaoPlaceId": "24065719",
+      "name": "우동카덴 합정점",
+      "address": "서울 마포구 양화로7안길 2-1 1-2층",
+      "parcelAddress": "서교동 391-5",
+      "lat": 37.551675049315115,
+      "lng": 126.91506089320667,
+      "phone": "02-6463-6362",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "카케우동",
+          "price": "8,000원"
+        },
+        {
+          "name": "키쯔네(유부)우동",
+          "price": "10,000원"
+        },
+        {
+          "name": "아사리(모시조개)우동",
+          "price": "11,000원"
+        },
+        {
+          "name": "텐뿌라우동",
+          "price": "11,000원"
+        },
+        {
+          "name": "타마고토지우동",
+          "price": "10,000원"
+        },
+        {
+          "name": "멘타이코(명란)앙카케타마고 토지우동",
+          "price": "12,000원"
+        },
+        {
+          "name": "가마타마버터우동",
+          "price": "11,000원"
+        },
+        {
+          "name": "에비(새우)크림우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "카레우동",
+          "price": "11,000원"
+        },
+        {
+          "name": "돈카츠카레우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "에비후라이카레우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "니싱(청어)우동",
+          "price": "12,000원"
+        },
+        {
+          "name": "굴우동",
+          "price": "12,000원"
+        },
+        {
+          "name": "한우스지우동",
+          "price": "13,000원"
+        },
+        {
+          "name": "흑돼지우동",
+          "price": "11,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-29 23:32:57",
+      "placeUpdatedAt": "2026-06-29 23:32:57",
+      "placeUrl": "https://place.map.kakao.com/24065719"
+    },
+    {
+      "kakaoPlaceId": "324283198",
+      "name": "갓포아키 삼성점",
+      "address": "서울 강남구 테헤란로 610 호텔글래드강남코엑스센터 지하2층",
+      "parcelAddress": "대치동 995-16",
+      "lat": 37.50882192311934,
+      "lng": 127.06453652773446,
+      "phone": "02-6203-8660",
+      "homepages": [
+        "https://www.instagram.com/kappo_akii/"
+      ],
+      "menus": [
+        {
+          "name": "제철 생선회(2인)",
+          "price": "65,000원"
+        },
+        {
+          "name": "한우 스키야키 우동전골",
+          "price": "45,000원"
+        },
+        {
+          "name": "마구로슈토아에",
+          "price": "25,000원"
+        },
+        {
+          "name": "시메사바이소베마키",
+          "price": "25,000원"
+        },
+        {
+          "name": "아까무츠시오야키",
+          "price": null
+        },
+        {
+          "name": "난코츠가라아게",
+          "price": "12,000원"
+        },
+        {
+          "name": "후토마키",
+          "price": "25,000원"
+        },
+        {
+          "name": "갈치솥밥",
+          "price": "45,000원"
+        },
+        {
+          "name": "야키사바보우즈시",
+          "price": "27,000원"
+        },
+        {
+          "name": "샤퀴테리 아보카도 샐러드",
+          "price": "32,000원"
+        },
+        {
+          "name": "타이노아타마시오야키",
+          "price": "38,000원"
+        },
+        {
+          "name": "징키스칸(양갈비) 숯불구이",
+          "price": "39,000원"
+        },
+        {
+          "name": "치즈츠쿠네야키",
+          "price": "8,000원"
+        },
+        {
+          "name": "카라이토마토스튜",
+          "price": "35,000원"
+        },
+        {
+          "name": "후타미아게앙가케",
+          "price": "26,000원"
+        }
+      ],
+      "menusUpdatedAt": "2024-02-28 17:33:35",
+      "placeUpdatedAt": "2026-04-29 19:10:55",
+      "placeUrl": "https://place.map.kakao.com/324283198"
+    },
+    {
+      "kakaoPlaceId": "1267900736",
+      "name": "옥돌현옥",
+      "address": "서울 송파구 법원로 55 송파아이파크 D동 1층",
+      "parcelAddress": "문정동 624",
+      "lat": 37.479515865700385,
+      "lng": 127.12161048355931,
+      "phone": "02-404-4824",
+      "homepages": [
+        "https://www.instagram.com/okdol.hyun"
+      ],
+      "menus": [
+        {
+          "name": "평양 물냉면",
+          "price": "15,000원"
+        },
+        {
+          "name": "평양 비빔냉면",
+          "price": "15,000원"
+        },
+        {
+          "name": "소고기신국밥",
+          "price": "11,000원"
+        },
+        {
+          "name": "만둣국",
+          "price": "13,000원"
+        },
+        {
+          "name": "손만두 한접시(6개)",
+          "price": "15,000원"
+        },
+        {
+          "name": "돼지곰탕(계절메뉴)",
+          "price": "12,000원"
+        },
+        {
+          "name": "평양온면(계절메뉴)",
+          "price": "15,000원"
+        },
+        {
+          "name": "한우어복쟁반(380g)",
+          "price": "75,000원"
+        },
+        {
+          "name": "우수육한접시(240g)",
+          "price": "35,000원"
+        },
+        {
+          "name": "제수육한접시(240g)",
+          "price": "28,000원"
+        },
+        {
+          "name": "가자미식해(250g)",
+          "price": "20,000원"
+        },
+        {
+          "name": "이합(가자미식해+제수육 반)",
+          "price": "25,000원"
+        },
+        {
+          "name": "돼지곰탕특(계절메뉴)",
+          "price": "16,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-29 14:35:40",
+      "placeUpdatedAt": "2026-07-06 09:19:22",
+      "placeUrl": "https://place.map.kakao.com/1267900736"
+    },
+    {
+      "kakaoPlaceId": "164170230",
+      "name": "어물전청 한남점",
+      "address": "서울 용산구 한남대로 104 2층",
+      "parcelAddress": "한남동 722-16",
+      "lat": 37.537743609609485,
+      "lng": 127.00499202787672,
+      "phone": "010-7470-0137",
+      "homepages": [
+        "https://instagram.com/eomuljeon_chung",
+        "https://app.catchtable.co.kr/ct/shop/eomuljeonchunghannam"
+      ],
+      "menus": [
+        {
+          "name": "맡김차림(1인)",
+          "price": "89,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-11-27 10:37:56",
+      "placeUpdatedAt": "2026-05-04 16:39:17",
+      "placeUrl": "https://place.map.kakao.com/164170230"
+    },
+    {
+      "kakaoPlaceId": "89814110",
+      "name": "힙한식",
+      "address": "경남 남해군 미조면 동부대로 2 2층",
+      "parcelAddress": "미조면 송정리 615-1",
+      "lat": 34.72864709643121,
+      "lng": 128.03148086663293,
+      "phone": "070-8810-1966",
+      "homepages": [
+        "https://www.instagram.com/hip_hansik"
+      ],
+      "menus": [
+        {
+          "name": "남해돌문어 고추장 삼겹구이",
+          "price": "23,000원"
+        },
+        {
+          "name": "바삭 해물파전",
+          "price": "18,000원"
+        },
+        {
+          "name": "힙한식 솥밥(2인)",
+          "price": "32,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-07-02 20:32:13",
+      "placeUpdatedAt": "2026-04-29 22:43:18",
+      "placeUrl": "https://place.map.kakao.com/89814110"
+    },
+    {
+      "kakaoPlaceId": "15884436",
+      "name": "비스트로드욘트빌",
+      "address": "서울 강남구 선릉로158길 13-7 이안빌딩 1층",
+      "parcelAddress": "청담동 83-6",
+      "lat": 37.526077558060706,
+      "lng": 127.04124229837937,
+      "phone": "02-541-1550",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/yountville",
+        "https://www.instagram.com/yountvillebistro"
+      ],
+      "menus": [
+        {
+          "name": "런치",
+          "price": "65,000원"
+        },
+        {
+          "name": "디너",
+          "price": "110,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-03-10 14:36:27",
+      "placeUpdatedAt": "2026-06-19 11:02:38",
+      "placeUrl": "https://place.map.kakao.com/15884436"
+    },
+    {
+      "kakaoPlaceId": "25744352",
+      "name": "중식당 청 한남점",
+      "address": "서울 용산구 한남대로20길 47-24 리플레이스 D동 2층",
+      "parcelAddress": "한남동 31-3",
+      "lat": 37.535332214136716,
+      "lng": 127.01000183712941,
+      "phone": "02-720-3396",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/chung_hn",
+        "https://www.instagram.com/chung.hannam"
+      ],
+      "menus": [
+        {
+          "name": "런치 B코스",
+          "price": "38,000원"
+        },
+        {
+          "name": "디너 B코스",
+          "price": "79,000원"
+        },
+        {
+          "name": "런치 A코스",
+          "price": "25,000원"
+        },
+        {
+          "name": "런치 C코스",
+          "price": "50,000원"
+        },
+        {
+          "name": "디너 A코스",
+          "price": "59,000원"
+        },
+        {
+          "name": "디너 C코스",
+          "price": "109,000원"
+        }
+      ],
+      "menusUpdatedAt": "2024-12-01 12:17:10",
+      "placeUpdatedAt": "2026-01-15 11:08:52",
+      "placeUrl": "https://place.map.kakao.com/25744352"
+    },
+    {
+      "kakaoPlaceId": "734520863",
+      "name": "호시우보 여의도본점",
+      "address": "서울 영등포구 의사당대로 96 TP타워 2층 203~204호",
+      "parcelAddress": "여의도동 27-2",
+      "lat": 37.521547400598315,
+      "lng": 126.92294120748828,
+      "phone": "02-6373-2203",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "한우 설화 안심",
+          "price": "68,000원"
+        },
+        {
+          "name": "우보모듬",
+          "price": "78,000원"
+        },
+        {
+          "name": "프리미엄 한우 솥밥",
+          "price": "29,000원"
+        },
+        {
+          "name": "암소 한우 불고기전골",
+          "price": "24,000원"
+        },
+        {
+          "name": "매운 갈비찜",
+          "price": "26,000원"
+        },
+        {
+          "name": "한우 숙성 등심",
+          "price": "58,000원"
+        },
+        {
+          "name": "한우 살치살",
+          "price": "72,000원"
+        },
+        {
+          "name": "한우 새우살",
+          "price": "75,000원"
+        },
+        {
+          "name": "한우 치마살",
+          "price": "75,000원"
+        },
+        {
+          "name": "한우 안창살",
+          "price": "89,000원"
+        },
+        {
+          "name": "호시모듬",
+          "price": "67,000원"
+        },
+        {
+          "name": "명품 한우 육회",
+          "price": "35,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-19 23:24:22",
+      "placeUpdatedAt": "2026-04-29 21:08:56",
+      "placeUrl": "https://place.map.kakao.com/734520863"
+    },
+    {
+      "kakaoPlaceId": "1701818961",
+      "name": "더이탈리안클럽 판교테크원점",
+      "address": "경기 성남시 분당구 분당내곡로 131 1층 5-2호",
+      "parcelAddress": "백현동 534",
+      "lat": 37.39555783010126,
+      "lng": 127.11213293372467,
+      "phone": "0507-1345-2928",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/coresociety2021",
+        "https://www.instagram.com/the_italianclub_pangyo"
+      ],
+      "menus": [
+        {
+          "name": "화이트 라구 파스타",
+          "price": "33,000원"
+        },
+        {
+          "name": "해산물 토마토 파스타",
+          "price": "32,000원"
+        },
+        {
+          "name": "오늘의 수프",
+          "price": "5,000원"
+        },
+        {
+          "name": "하우스 샐러드",
+          "price": "13,000원"
+        },
+        {
+          "name": "판자넬라",
+          "price": "16,000원"
+        },
+        {
+          "name": "시저 샐러드",
+          "price": "19,000원"
+        },
+        {
+          "name": "부라타 치즈 샐러드",
+          "price": "23,000원"
+        },
+        {
+          "name": "트러플 감자튀김",
+          "price": "16,000원"
+        },
+        {
+          "name": "깔라마리",
+          "price": "21,000원"
+        },
+        {
+          "name": "비프 카리파치오",
+          "price": "33,000원"
+        },
+        {
+          "name": "라자냐",
+          "price": "28,000원"
+        },
+        {
+          "name": "트러플 버터 세이지 파스타",
+          "price": "39,000원"
+        },
+        {
+          "name": "푸타네스카",
+          "price": "28,000원"
+        },
+        {
+          "name": "봉골레",
+          "price": "28,000원"
+        },
+        {
+          "name": "명란 파스타",
+          "price": "28,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-07-07 16:03:47",
+      "placeUpdatedAt": "2026-07-07 16:03:48",
+      "placeUrl": "https://place.map.kakao.com/1701818961"
+    },
+    {
+      "kakaoPlaceId": "485505101",
+      "name": "이목스모크다이닝",
+      "address": "서울 강남구 압구정로2길 6",
+      "parcelAddress": "신사동 505-7",
+      "lat": 37.52114929112197,
+      "lng": 127.01930758337272,
+      "phone": "",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/imok"
+      ],
+      "menus": [
+        {
+          "name": "런치 룸",
+          "price": "180,000원"
+        },
+        {
+          "name": "홀/바",
+          "price": "150,000원"
+        },
+        {
+          "name": "디너 룸",
+          "price": "220,000원"
+        },
+        {
+          "name": "Signature 4 Glass",
+          "price": "150,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-03-18 14:00:40",
+      "placeUpdatedAt": "2026-05-18 14:24:53",
+      "placeUrl": "https://place.map.kakao.com/485505101"
+    },
+    {
+      "kakaoPlaceId": "63387122",
+      "name": "유용욱바베큐연구소",
+      "address": "서울 용산구 한강대로84길 5-7",
+      "parcelAddress": "남영동 28-11",
+      "lat": 37.54395747578395,
+      "lng": 126.97277466959667,
+      "phone": "",
+      "homepages": [
+        "https://instagram.com/yooyongwook",
+        "https://app.catchtable.co.kr/ct/shop/yyw"
+      ],
+      "menus": [
+        {
+          "name": "바베큐코스",
+          "price": "150,000원"
+        }
+      ],
+      "menusUpdatedAt": "2023-02-27 17:08:36",
+      "placeUpdatedAt": "2026-04-29 19:16:27",
+      "placeUrl": "https://place.map.kakao.com/63387122"
+    },
+    {
+      "kakaoPlaceId": "1797997961",
+      "name": "옥동식 서교점",
+      "address": "서울 마포구 양화로7길 44-10 1층",
+      "parcelAddress": "서교동 385-6",
+      "lat": 37.55267656940555,
+      "lng": 126.91452107150735,
+      "phone": "010-5571-9915",
+      "homepages": [
+        "https://instagram.com/okdongsik"
+      ],
+      "menus": [
+        {
+          "name": "돼지곰탕 (보통)",
+          "price": "14,000원"
+        },
+        {
+          "name": "김치만두",
+          "price": "7,000원"
+        },
+        {
+          "name": "돼지곰탕 (특)",
+          "price": "19,000원"
+        },
+        {
+          "name": "돼지곰탕 (포장. 2인분)",
+          "price": "20,000원"
+        },
+        {
+          "name": "김치만두(4개)",
+          "price": "7,000원"
+        },
+        {
+          "name": "김치만두포장(1kg)",
+          "price": "20,000원"
+        },
+        {
+          "name": "벼꽃향미 식혜",
+          "price": "2,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-15 13:44:55",
+      "placeUpdatedAt": "2026-06-15 13:44:55",
+      "placeUrl": "https://place.map.kakao.com/1797997961"
+    },
+    {
+      "kakaoPlaceId": "995068389",
+      "name": "옥동식 송파하남",
+      "address": "경기 하남시 감일로 17 1층",
+      "parcelAddress": "감일동 364",
+      "lat": 37.50774367207318,
+      "lng": 127.14316358940481,
+      "phone": "0507-1460-9921",
+      "homepages": [
+        "https://www.instagram.com/okdongsikgrill"
+      ],
+      "menus": [
+        {
+          "name": "돼지곰탕 (특)",
+          "price": "19,000원"
+        },
+        {
+          "name": "돼지곰탕",
+          "price": "14,000원"
+        },
+        {
+          "name": "김치만두",
+          "price": "7,000원"
+        },
+        {
+          "name": "1인 상차림(0-7 무료) 정육 메뉴 이용시",
+          "price": "5,000원"
+        },
+        {
+          "name": "보성녹돈 돼지갈비 (500g)",
+          "price": "50,000원"
+        },
+        {
+          "name": "된장찌게 (2인)",
+          "price": "11,000원"
+        },
+        {
+          "name": "옥동식 평양 밀면",
+          "price": "14,000원"
+        },
+        {
+          "name": "옥동식 비빔면",
+          "price": "14,000원"
+        },
+        {
+          "name": "솥밥",
+          "price": "3,000원"
+        },
+        {
+          "name": "올리브 한우암소모듬 600g(4인분)",
+          "price": "170,000원"
+        },
+        {
+          "name": "안창/토시/제비추리 300g 한정판매",
+          "price": "120,000원"
+        },
+        {
+          "name": "올리브 한우 암소 육회 200g",
+          "price": "30,000원"
+        },
+        {
+          "name": "올리브 한우 암소 안심 150g",
+          "price": "48,000원"
+        },
+        {
+          "name": "올리브 한우 암소 꽃등심 150g",
+          "price": "45,000원"
+        },
+        {
+          "name": "올리브 한우 암소 채끝등심 150g",
+          "price": "45,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-15 13:40:32",
+      "placeUpdatedAt": "2026-06-15 13:40:32",
+      "placeUrl": "https://place.map.kakao.com/995068389"
+    },
+    {
+      "kakaoPlaceId": "1281283194",
+      "name": "동경밥상",
+      "address": "부산 수영구 남천바다로 34-6 1층",
+      "parcelAddress": "남천동 3-25",
+      "lat": 35.14838023198937,
+      "lng": 129.11387014722436,
+      "phone": "070-7576-1428",
+      "homepages": [
+        "https://www.instagram.com/begoing22/"
+      ],
+      "menus": [
+        {
+          "name": "우나쥬 상(한마리)",
+          "price": "43,000원"
+        },
+        {
+          "name": "히츠마부시",
+          "price": "39,000원"
+        },
+        {
+          "name": "우나돈",
+          "price": "28,000원"
+        },
+        {
+          "name": "우유푸딩",
+          "price": "4,000원"
+        },
+        {
+          "name": "우나쥬 특상(한마리 반)",
+          "price": "52,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-01-06 23:57:32",
+      "placeUpdatedAt": "2026-04-30 01:14:14",
+      "placeUrl": "https://place.map.kakao.com/1281283194"
+    },
+    {
+      "kakaoPlaceId": "80872994",
+      "name": "동경밥상",
+      "address": "제주특별자치도 제주시 애월읍 하귀14길 11-1 1층",
+      "parcelAddress": "애월읍 하귀1리 1620-5",
+      "lat": 33.48544317719911,
+      "lng": 126.40793261999141,
+      "phone": "",
+      "homepages": [
+        "https://www.instagram.com/tokyotable.jeju/"
+      ],
+      "menus": [
+        {
+          "name": "우나쥬(특상)",
+          "price": "52,000원"
+        },
+        {
+          "name": "히츠마부시",
+          "price": "39,000원"
+        },
+        {
+          "name": "닭고기 숯불구이 덮밥(어린이메뉴)",
+          "price": "14,000원"
+        },
+        {
+          "name": "우나쥬(상)",
+          "price": "43,000원"
+        },
+        {
+          "name": "우나돈(소)",
+          "price": "28,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-11-26 23:58:00",
+      "placeUpdatedAt": "2026-04-29 17:22:20",
+      "placeUrl": "https://place.map.kakao.com/80872994"
+    },
+    {
+      "kakaoPlaceId": "878058276",
+      "name": "쌤쌤쌤",
+      "address": "서울 용산구 한강대로50길 25 1층",
+      "parcelAddress": "한강로2가 47-3",
+      "lat": 37.531570379837156,
+      "lng": 126.97215918056317,
+      "phone": "02-797-1077",
+      "homepages": [
+        "https://www.instagram.com/samsamsam.kr/",
+        "https://app.catchtable.co.kr/ct/shop/samsamsam_kr"
+      ],
+      "menus": [
+        {
+          "name": "RICOTTA TOMATO SALAD",
+          "price": "13,000원"
+        },
+        {
+          "name": "PUMPKIN GNOCCHI",
+          "price": "13,000원"
+        },
+        {
+          "name": "JAMBON BEURRE PASTA",
+          "price": "23,000원"
+        },
+        {
+          "name": "CALIFORNIA ST LASAGNA",
+          "price": "23,000원"
+        },
+        {
+          "name": "HELLO AUNTIE SHRIMP PASTA",
+          "price": "25,000원"
+        },
+        {
+          "name": "CUTTLEFISH RISOTTO",
+          "price": "21,000원"
+        },
+        {
+          "name": "BACON RISOTTO",
+          "price": "19,000원"
+        },
+        {
+          "name": "철판 스테이크",
+          "price": "38,000원"
+        },
+        {
+          "name": "I HATE CHOCOLATE",
+          "price": "9,000원"
+        },
+        {
+          "name": "쌔미가 사랑하는 콘치즈볼",
+          "price": "11,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-12-30 23:58:35",
+      "placeUpdatedAt": "2026-07-14 14:11:02",
+      "placeUrl": "https://place.map.kakao.com/878058276"
+    },
+    {
+      "kakaoPlaceId": "1019370614",
+      "name": "쌤쌤쌤 광화문점",
+      "address": "서울 종로구 종로3길 17 D타워 1층",
+      "parcelAddress": "청진동 246",
+      "lat": 37.570833680006224,
+      "lng": 126.97891373067752,
+      "phone": "0507-1426-8222",
+      "homepages": [
+        "https://www.instagram.com/samsamsam.kr/"
+      ],
+      "menus": [
+        {
+          "name": "단호박 뇨끼",
+          "price": "23,000원"
+        },
+        {
+          "name": "잠봉뵈르 파스타",
+          "price": "26,000원"
+        },
+        {
+          "name": "미서부 클래식 라자냐",
+          "price": "26,000원"
+        },
+        {
+          "name": "🍷콜키지 프리🍷",
+          "price": null
+        },
+        {
+          "name": "쌤 하우스 스테이크",
+          "price": "52,000원"
+        },
+        {
+          "name": "트러플 브리 플랫",
+          "price": "26,000원"
+        },
+        {
+          "name": "치킨 시저 샐러드",
+          "price": "23,000원"
+        },
+        {
+          "name": "새우파스타",
+          "price": "28,000원"
+        },
+        {
+          "name": "갑오징어 먹물리조또",
+          "price": "24,000원"
+        },
+        {
+          "name": "바질 통베이컨 리조또",
+          "price": "24,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-10-28 17:37:12",
+      "placeUpdatedAt": "2026-07-14 14:13:02",
+      "placeUrl": "https://place.map.kakao.com/1019370614"
+    },
+    {
+      "kakaoPlaceId": "698575660",
+      "name": "독도16도",
+      "address": "서울 종로구 필운대로5가길 2 3층",
+      "parcelAddress": "누하동 56-1",
+      "lat": 37.579470117523975,
+      "lng": 126.9685775132719,
+      "phone": "",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/dokdo.16.celsius",
+        "https://www.instagram.com/dokdo.16.celsius"
+      ],
+      "menus": [],
+      "menusUpdatedAt": "",
+      "placeUpdatedAt": "2026-04-29 20:27:11",
+      "placeUrl": "https://place.map.kakao.com/698575660"
+    },
+    {
+      "kakaoPlaceId": "345093504",
+      "name": "독립밀방",
+      "address": "서울 종로구 통일로12길 10-18 1층",
+      "parcelAddress": "행촌동 209-11",
+      "lat": 37.57268504810936,
+      "lng": 126.96062923606698,
+      "phone": "02-722-3418",
+      "homepages": [
+        "http://www.instagram.com/dongnip_millbang",
+        "https://app.catchtable.co.kr/ct/shop/protaiji"
+      ],
+      "menus": [
+        {
+          "name": "쉬림프 갈릭 스파이시 스파게티니",
+          "price": "20,000원"
+        },
+        {
+          "name": "엔쵸비 베이컨 스파게티니",
+          "price": "20,000원"
+        },
+        {
+          "name": "훈제햄 라따뚜이와 수란",
+          "price": "21,000원"
+        },
+        {
+          "name": "부챗살 스테이크",
+          "price": "37,000원"
+        },
+        {
+          "name": "부라타치즈샐러드",
+          "price": "17,000원"
+        },
+        {
+          "name": "베이컨 스테이크 시저샐러드",
+          "price": "17,000원"
+        },
+        {
+          "name": "연어 크림치즈 타르틴",
+          "price": "19,000원"
+        },
+        {
+          "name": "연어 그라브락스",
+          "price": "19,500원"
+        },
+        {
+          "name": "토마토 소스 해산물 스파게티니",
+          "price": "22,000원"
+        },
+        {
+          "name": "화이트 라구 리조또",
+          "price": "20,000원"
+        },
+        {
+          "name": "프로슈토 단호박 크림 리조또",
+          "price": "21,000원"
+        },
+        {
+          "name": "레몬 버터소스 연어 스테이크",
+          "price": "33,000원"
+        },
+        {
+          "name": "트러플향 프렌치 프라이",
+          "price": "10,000원"
+        },
+        {
+          "name": "구운 야채 플레이트",
+          "price": "9,000원"
+        },
+        {
+          "name": "랍스터 비스크 소스 생면 파스타",
+          "price": "33,000원"
+        }
+      ],
+      "menusUpdatedAt": "2024-11-19 16:36:06",
+      "placeUpdatedAt": "2026-04-30 00:37:06",
+      "placeUrl": "https://place.map.kakao.com/345093504"
+    },
+    {
+      "kakaoPlaceId": "57913604",
+      "name": "떡산",
+      "address": "서울 은평구 연서로 247-1 1층",
+      "parcelAddress": "불광동 310-192",
+      "lat": 37.619553682927936,
+      "lng": 126.92238708629974,
+      "phone": "02-6082-4321",
+      "homepages": [
+        "https://www.instagram.com/tteoksan/"
+      ],
+      "menus": [
+        {
+          "name": "야채 튀김",
+          "price": "1,500원"
+        },
+        {
+          "name": "오징어튀김",
+          "price": "1,500원"
+        },
+        {
+          "name": "고추튀김",
+          "price": "1,500원"
+        },
+        {
+          "name": "깻잎튀김",
+          "price": "1,000원"
+        },
+        {
+          "name": "떡볶이",
+          "price": "3,500원"
+        }
+      ],
+      "menusUpdatedAt": "2022-11-12 03:53:49",
+      "placeUpdatedAt": "2026-04-29 17:34:17",
+      "placeUrl": "https://place.map.kakao.com/57913604"
+    },
+    {
+      "kakaoPlaceId": "1280616163",
+      "name": "떡산 롯데백화점잠실점",
+      "address": "서울 송파구 올림픽로 240 지하1층",
+      "parcelAddress": "잠실동 40-1",
+      "lat": 37.5121207563693,
+      "lng": 127.09925443733832,
+      "phone": "02-411-6950",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "떡산 가마솥 떡볶이",
+          "price": "8,000원"
+        },
+        {
+          "name": "대파 김말이",
+          "price": "3,500원"
+        },
+        {
+          "name": "왕오징어튀김",
+          "price": "3,500원"
+        },
+        {
+          "name": "신선로 모둠튀김 (8개)",
+          "price": "21,000원"
+        },
+        {
+          "name": "부산미도어묵탕(대)",
+          "price": "9,000원"
+        },
+        {
+          "name": "부산미도어묵탕(소)",
+          "price": "5,000원"
+        },
+        {
+          "name": "찹쌀순대",
+          "price": "7,000원"
+        },
+        {
+          "name": "고기왕고추튀김",
+          "price": "3,500원"
+        },
+        {
+          "name": "왕야채튀김",
+          "price": "3,500원"
+        },
+        {
+          "name": "왕새우튀김",
+          "price": "3,000원"
+        },
+        {
+          "name": "왕고구마튀김",
+          "price": "3,000원"
+        },
+        {
+          "name": "납작만두",
+          "price": "2,000원"
+        },
+        {
+          "name": "계란",
+          "price": "1,500원"
+        },
+        {
+          "name": "물국수",
+          "price": "10,000원"
+        },
+        {
+          "name": "비빔국수",
+          "price": "11,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-29 15:41:44",
+      "placeUpdatedAt": "2026-06-29 15:41:44",
+      "placeUrl": "https://place.map.kakao.com/1280616163"
+    },
+    {
+      "kakaoPlaceId": "1772796561",
+      "name": "무탄 코엑스점",
+      "address": "서울 강남구 영동대로 513 지하1층 H121호",
+      "parcelAddress": "삼성동 159",
+      "lat": 37.511344260308064,
+      "lng": 127.05853047055174,
+      "phone": "02-551-7774",
+      "homepages": [
+        "https://www.instagram.com/mutandining",
+        "https://app.catchtable.co.kr/ct/shop/mutandining"
+      ],
+      "menus": [
+        {
+          "name": "스테이크 트러플 자장면",
+          "price": "35,000원"
+        },
+        {
+          "name": "마카롱 멘보샤(2P)",
+          "price": "22,000원"
+        },
+        {
+          "name": "고추유린기",
+          "price": "49,000원"
+        },
+        {
+          "name": "쉬림프투움바볶음짬뽕",
+          "price": "29,000원"
+        },
+        {
+          "name": "[하프사이즈]농후한 대파 차돌짬뽕",
+          "price": "25,000원"
+        },
+        {
+          "name": "농후한 대파 차돌짬뽕",
+          "price": "35,000원"
+        },
+        {
+          "name": "완도산전복과 해물누룽지탕(1인)",
+          "price": "33,000원"
+        },
+        {
+          "name": "해물 누룽지탕(1인)",
+          "price": "29,000원"
+        },
+        {
+          "name": "[트러플x6배]스테이크 트러플 자장면",
+          "price": "55,000원"
+        },
+        {
+          "name": "비밀이야 캐비아 한입 멘보샤(4P)",
+          "price": "48,000원"
+        },
+        {
+          "name": "투뿔한우 초당옥수수 볶음밥",
+          "price": "23,000원"
+        },
+        {
+          "name": "구룡포 오징어 특선짬뽕",
+          "price": "38,000원"
+        },
+        {
+          "name": "구룡포 크리스피오징어 탕수",
+          "price": "55,000원"
+        },
+        {
+          "name": "구룡포 오징어덴뿌라",
+          "price": "49,000원"
+        },
+        {
+          "name": "애사비 오이탕탕 유린기",
+          "price": "49,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-30 17:36:40",
+      "placeUpdatedAt": "2026-06-30 17:36:40",
+      "placeUrl": "https://place.map.kakao.com/1772796561"
+    },
+    {
+      "kakaoPlaceId": "1222388584",
+      "name": "무탄 광화문점",
+      "address": "서울 종로구 새문안로 68 흥국생명빌딩 지하1층",
+      "parcelAddress": "신문로1가 226",
+      "lat": 37.56964296204995,
+      "lng": 126.97214048762852,
+      "phone": "02-730-7773",
+      "homepages": [
+        "https://www.instagram.com/mutandining/",
+        "https://app.catchtable.co.kr/ct/shop/mutan_gwanghwamoon"
+      ],
+      "menus": [
+        {
+          "name": "스테이크 트러플 자장면",
+          "price": "35,000원"
+        },
+        {
+          "name": "고추유린기",
+          "price": "49,000원"
+        },
+        {
+          "name": "마카롱 멘보샤(2P)",
+          "price": "22,000원"
+        },
+        {
+          "name": "애사비 오이탕탕 유린기",
+          "price": "49,000원"
+        },
+        {
+          "name": "쉬림프투움바볶음짬뽕",
+          "price": "29,000원"
+        },
+        {
+          "name": "스테이크 트러플 자장면(하프사이즈)",
+          "price": "25,000원"
+        },
+        {
+          "name": "쇠고기 안심탕수육",
+          "price": "58,000원"
+        },
+        {
+          "name": "어니언 꿔바로우",
+          "price": "55,000원"
+        },
+        {
+          "name": "뚝배기마파두부",
+          "price": "55,000원"
+        },
+        {
+          "name": "의성마늘 스테미너 유린기",
+          "price": "49,000원"
+        },
+        {
+          "name": "100% 수제 군만두(3P)",
+          "price": "18,000원"
+        },
+        {
+          "name": "100% 수제 군만두(5P)",
+          "price": "29,000원"
+        },
+        {
+          "name": "해산물 전가복",
+          "price": "68,000원"
+        },
+        {
+          "name": "약돌돼지 볶음탕수육",
+          "price": "49,000원"
+        },
+        {
+          "name": "칠리새우",
+          "price": "58,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-30 17:36:39",
+      "placeUpdatedAt": "2026-06-30 17:36:39",
+      "placeUrl": "https://place.map.kakao.com/1222388584"
+    },
+    {
+      "kakaoPlaceId": "1952752710",
+      "name": "칸티크",
+      "address": "서울 강남구 도산대로55길 24 1층",
+      "parcelAddress": "청담동 88-2",
+      "lat": 37.52509744847729,
+      "lng": 127.04072137237826,
+      "phone": "02-545-1777",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/original_numbers"
+      ],
+      "menus": [
+        {
+          "name": "런치코스",
+          "price": null
+        },
+        {
+          "name": "디너코스",
+          "price": null
+        }
+      ],
+      "menusUpdatedAt": "2026-06-24 14:25:03",
+      "placeUpdatedAt": "2026-06-24 16:28:02",
+      "placeUrl": "https://place.map.kakao.com/1952752710"
+    },
+    {
+      "kakaoPlaceId": "26457126",
+      "name": "수퍼판",
+      "address": "서울 강남구 논현로167길 15 휴에프빌딩 2층",
+      "parcelAddress": "신사동 570-3",
+      "lat": 37.52443828157013,
+      "lng": 127.02683813063683,
+      "phone": "02-515-3848",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/superpan",
+        "https://instagram.com/superpan_seoul"
+      ],
+      "menus": [
+        {
+          "name": "런치세트A(1인)",
+          "price": "75,000원"
+        },
+        {
+          "name": "런치세트B(1인)",
+          "price": "52,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-04-23 16:51:16",
+      "placeUpdatedAt": "2026-04-29 22:15:18",
+      "placeUrl": "https://place.map.kakao.com/26457126"
+    },
+    {
+      "kakaoPlaceId": "901356055",
+      "name": "윤주당",
+      "address": "서울 용산구 신흥로 81-1 1층",
+      "parcelAddress": "용산동2가 18-2",
+      "lat": 37.545347320600094,
+      "lng": 126.98597744970316,
+      "phone": "070-8151-5765",
+      "homepages": [
+        "http://www.instagram.com/yunjudang"
+      ],
+      "menus": [
+        {
+          "name": "윤주당 탁주",
+          "price": "28,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-09-22 11:42:16",
+      "placeUpdatedAt": "2026-04-29 22:53:54",
+      "placeUrl": "https://place.map.kakao.com/901356055"
+    },
+    {
+      "kakaoPlaceId": "8578395",
+      "name": "까델루뽀",
+      "address": "서울 종로구 자하문로16길 5-5 1층",
+      "parcelAddress": "효자동 39-1",
+      "lat": 37.58182423574451,
+      "lng": 126.97142044124784,
+      "phone": "02-734-5233",
+      "homepages": [
+        "https://blog.naver.com/zerv0"
+      ],
+      "menus": [
+        {
+          "name": "마늘과 이탈리아 파슬리, 고추를 넣은 알리오 올리오",
+          "price": "18,500원"
+        },
+        {
+          "name": "진한 크림소스와 베이컨을 넣은 까르보나라",
+          "price": "19,500원"
+        },
+        {
+          "name": "3가지 조개들을 듬뿍 넣은 오일소스의 봉골레",
+          "price": "19,500원"
+        },
+        {
+          "name": "감자로 직접 반죽한 이탈리아 시골풍의 뇨끼와 호두를 넣은 고르곤졸라 소스",
+          "price": "19,500원"
+        },
+        {
+          "name": "껍질을 제거한 조갯살과 바질을 갈아만든 페스토 소스를 곁들인 스파게티",
+          "price": "21,000원"
+        },
+        {
+          "name": "풍성한 해산물을 넣은 해산물 토마토 스파게티",
+          "price": "22,000원"
+        },
+        {
+          "name": "다진 모듬 해산물과 감자, 파마산치즈로 속을 채운 따듯한 토마토 소스 까넬로니(3pcs)",
+          "price": "23,000원"
+        },
+        {
+          "name": "국내산 안심구이와 루꼴라, 고르곤 졸라 크림소스를 넣은 크림소스 스파게티",
+          "price": "23,000원"
+        },
+        {
+          "name": "진한 송로버섯 크림소스와 포르치니 버섯으로 속을 채운 또뗄리",
+          "price": "24,000원"
+        },
+        {
+          "name": "허브빵가루와 페타치즈를 넣은 왕새우 오일 스파게티",
+          "price": "35,000원"
+        },
+        {
+          "name": "포르치니버섯, 다진소고기를 듬뿍 넣은 화이트라구 소스 스파게티",
+          "price": "25,000원"
+        },
+        {
+          "name": "종 야채와 발사믹 소스의 찹스테이크",
+          "price": "31,000원"
+        },
+        {
+          "name": "허브로 잡냄새를 제거한 양갈비 구이(2pc)",
+          "price": "45,000원"
+        },
+        {
+          "name": "한우 채끝등심 스테이크와 레드와인 소스",
+          "price": "52,000원"
+        },
+        {
+          "name": "국내산 안심 스테이크와 깊은 향을 내는 데미그라스 소스",
+          "price": "48,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-08-14 14:46:37",
+      "placeUpdatedAt": "2026-04-30 01:54:07",
+      "placeUrl": "https://place.map.kakao.com/8578395"
+    },
+    {
+      "kakaoPlaceId": "386208392",
+      "name": "계향각",
+      "address": "서울 종로구 동숭길 86 1층",
+      "parcelAddress": "동숭동 31-37",
+      "lat": 37.58210152105622,
+      "lng": 127.004247777819,
+      "phone": "02-3674-7770",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/heestoryfood"
+      ],
+      "menus": [
+        {
+          "name": "삼선누룽지탕",
+          "price": "44,000원"
+        },
+        {
+          "name": "초염새우",
+          "price": "39,000원"
+        },
+        {
+          "name": "블랙빈랍스타볶음",
+          "price": "88,000원"
+        },
+        {
+          "name": "전가복",
+          "price": "250,000원"
+        },
+        {
+          "name": "샤미배추찜(1인)",
+          "price": "32,000원"
+        },
+        {
+          "name": "양고기파볶음",
+          "price": "38,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-04-08 15:32:47",
+      "placeUpdatedAt": "2026-04-29 22:56:44",
+      "placeUrl": "https://place.map.kakao.com/386208392"
+    },
+    {
+      "kakaoPlaceId": "1815611132",
+      "name": "드레스덴그린",
+      "address": "서울 강남구 도산대로 420 청담스퀘어 B동 2층 222호",
+      "parcelAddress": "청담동 3",
+      "lat": 37.523190410007686,
+      "lng": 127.04219548075358,
+      "phone": "02-6480-8870",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/dresden_",
+        "https://dresdengreenseoul.com/",
+        "https://www.instagram.com/dresdengreen.dining"
+      ],
+      "menus": [
+        {
+          "name": "스탠다드 코스",
+          "price": "180,000원"
+        },
+        {
+          "name": "시그니처 코스",
+          "price": "280,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-19 09:40:28",
+      "placeUpdatedAt": "2026-06-19 09:40:28",
+      "placeUrl": "https://place.map.kakao.com/1815611132"
+    },
+    {
+      "kakaoPlaceId": "18691534",
+      "name": "급이다른부대찌개",
+      "address": "대전 유성구 은구비서로23번길 8-14 1층",
+      "parcelAddress": "지족동 912-6",
+      "lat": 36.37486271318618,
+      "lng": 127.32032027380086,
+      "phone": "0503-7151-3513",
+      "homepages": [
+        "https://www.instagram.com/anotherlv.buzzi/#",
+        "https://blog.naver.com/2180018/"
+      ],
+      "menus": [
+        {
+          "name": "발칸포생햄부대찌개",
+          "price": "14,000원"
+        },
+        {
+          "name": "급부찌[급이다른부대찌개]",
+          "price": "11,500원"
+        },
+        {
+          "name": "발칸포 3인세트",
+          "price": "45,000원"
+        },
+        {
+          "name": "발칸포 2인세트+이벤트",
+          "price": "31,000원"
+        },
+        {
+          "name": "급부찌 2인세트+이벤트",
+          "price": "26,000원"
+        },
+        {
+          "name": "급부찌포장",
+          "price": "22,000원"
+        },
+        {
+          "name": "발칸포생햄포장",
+          "price": "24,000원"
+        },
+        {
+          "name": "햄슈니첼",
+          "price": "7,000원"
+        },
+        {
+          "name": "독일햄전",
+          "price": "3,000원"
+        },
+        {
+          "name": "월컴소시지서비스",
+          "price": null
+        },
+        {
+          "name": "독일햄 계란말이",
+          "price": "9,000원"
+        },
+        {
+          "name": "갓구운뉘근베르크부어스트",
+          "price": "8,000원"
+        },
+        {
+          "name": "발칸포 4인세트",
+          "price": "59,000원"
+        },
+        {
+          "name": "급부찌 3인세트",
+          "price": "37,500원"
+        },
+        {
+          "name": "급부찌 4인세트",
+          "price": "49,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-15 12:04:06",
+      "placeUpdatedAt": "2026-06-15 12:04:06",
+      "placeUrl": "https://place.map.kakao.com/18691534"
+    },
+    {
+      "kakaoPlaceId": "1154617034",
+      "name": "히카리모노 스타필드애비뉴그랑서울점",
+      "address": "서울 종로구 종로 33 2층",
+      "parcelAddress": "청진동 70",
+      "lat": 37.57111160293178,
+      "lng": 126.98139040389465,
+      "phone": "",
+      "homepages": [],
+      "menus": [
+        {
+          "name": "쿠시카츠 6종 세트",
+          "price": "22,000원"
+        },
+        {
+          "name": "에비 텐푸라(6pcs)",
+          "price": "20,000원"
+        },
+        {
+          "name": "우엉 가라아게",
+          "price": "8,000원"
+        },
+        {
+          "name": "새우깡",
+          "price": "8,000원"
+        },
+        {
+          "name": "닭 가라아게",
+          "price": "18,000원"
+        },
+        {
+          "name": "게 내장 고로케(3pcs)",
+          "price": "14,000원"
+        },
+        {
+          "name": "2인 모듬 사시미(10종 구성)",
+          "price": "59,000원"
+        },
+        {
+          "name": "3인 모듬 사시미(10종 구성)",
+          "price": "89,000원"
+        },
+        {
+          "name": "4인 모듬 사시미(10종 구성)",
+          "price": "119,000원"
+        },
+        {
+          "name": "와라야키(볏짚구이)",
+          "price": "27,000원"
+        },
+        {
+          "name": "혼마구로 사시미",
+          "price": "32,000원"
+        },
+        {
+          "name": "장어 한마리 구이",
+          "price": "35,000원"
+        },
+        {
+          "name": "옥돔 구이",
+          "price": "24,000원"
+        },
+        {
+          "name": "삼치 구이",
+          "price": "16,000원"
+        },
+        {
+          "name": "흑돼지 숯불 구이",
+          "price": "26,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-06-10 17:35:18",
+      "placeUpdatedAt": "2026-06-10 17:35:18",
+      "placeUrl": "https://place.map.kakao.com/1154617034"
+    },
+    {
+      "kakaoPlaceId": "1199807469",
+      "name": "양출서울",
+      "address": "서울 강남구 언주로135길 34",
+      "parcelAddress": "논현동 77-8",
+      "lat": 37.51662697563686,
+      "lng": 127.03246392062155,
+      "phone": "02-547-4420",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/yangchulseoul",
+        "https://www.instagram.com/yangchulseoul/"
+      ],
+      "menus": [
+        {
+          "name": "모듬야채",
+          "price": "10,000원"
+        },
+        {
+          "name": "계절샐러드",
+          "price": "13,000원"
+        },
+        {
+          "name": "컬리플라워튀김",
+          "price": "17,000원"
+        },
+        {
+          "name": "5코스",
+          "price": "55,000원"
+        },
+        {
+          "name": "7코스",
+          "price": "75,000원"
+        }
+      ],
+      "menusUpdatedAt": "2022-12-05 13:31:21",
+      "placeUpdatedAt": "2026-01-15 11:08:55",
+      "placeUrl": "https://place.map.kakao.com/1199807469"
+    },
+    {
+      "kakaoPlaceId": "1073426061",
+      "name": "죠죠 용산점",
+      "address": "서울 용산구 한강대로 135 1-2층",
+      "parcelAddress": "한강로2가 249-1",
+      "lat": 37.531605854392744,
+      "lng": 126.96985569151923,
+      "phone": "070-7537-3140",
+      "homepages": [
+        "https://www.instagram.com/jyojyo.kr"
+      ],
+      "menus": [
+        {
+          "name": "죠죠 오코노미야끼",
+          "price": "17,000원"
+        },
+        {
+          "name": "시그니처SET (2인)",
+          "price": "39,000원"
+        },
+        {
+          "name": "카라이 야끼소바",
+          "price": "14,000원"
+        },
+        {
+          "name": "명란 몬자야끼",
+          "price": "19,500원"
+        },
+        {
+          "name": "카이센 오코노미야끼",
+          "price": "15,000원"
+        },
+        {
+          "name": "죠죠 야끼소바",
+          "price": "14,000원"
+        },
+        {
+          "name": "돈페이야끼",
+          "price": "9,000원"
+        },
+        {
+          "name": "폭포테이토",
+          "price": "7,000원"
+        },
+        {
+          "name": "버터새우구이",
+          "price": "15,000원"
+        },
+        {
+          "name": "명란교자",
+          "price": "8,000원"
+        },
+        {
+          "name": "시오 야끼소바",
+          "price": "14,000원"
+        },
+        {
+          "name": "시그니처 3인",
+          "price": "52,000원"
+        },
+        {
+          "name": "라이스 2인",
+          "price": "36,000원"
+        },
+        {
+          "name": "베이직 야끼소바",
+          "price": "10,000원"
+        },
+        {
+          "name": "부타 (돼지) 치즈 오코노미야끼",
+          "price": "15,000원"
+        }
+      ],
+      "menusUpdatedAt": "2026-04-06 22:39:51",
+      "placeUpdatedAt": "2026-04-30 02:27:32",
+      "placeUrl": "https://place.map.kakao.com/1073426061"
+    },
+    {
+      "kakaoPlaceId": "619030447",
+      "name": "소바쥬",
+      "address": "서울 마포구 큰우물로 75 성지빌딩 지하1층 22호",
+      "parcelAddress": "도화동 538",
+      "lat": 37.54126702659323,
+      "lng": 126.94629357394976,
+      "phone": "",
+      "homepages": [
+        "https://app.catchtable.co.kr/ct/shop/sauvage",
+        "https://www.instagram.com/sobajuu"
+      ],
+      "menus": [
+        {
+          "name": "점심코스",
+          "price": "55,000원"
+        },
+        {
+          "name": "저녁코스",
+          "price": "80,000원"
+        }
+      ],
+      "menusUpdatedAt": "2025-12-23 08:54:29",
+      "placeUpdatedAt": "2026-04-30 00:36:01",
+      "placeUrl": "https://place.map.kakao.com/619030447"
+    }
+  ]
+}

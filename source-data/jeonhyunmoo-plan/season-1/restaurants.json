@@ -1,0 +1,2822 @@
+[
+  {
+    "id": "jhmp-s1-e01-namdojip",
+    "season": 1,
+    "episode": 1,
+    "restaurantRecordNo": null,
+    "name": "남도집",
+    "aliases": [],
+    "address": "서울 영등포구 여의대방로 379 제일빌딩 2층",
+    "region": "서울 영등포구",
+    "phone": "0507-1331-8295",
+    "category": "한식백반",
+    "representativeMenu": "애호박찌개 12,000원, 제육볶음 26,000원, 청국장찌개 12,000원, 보쌈 (예약) 60,000원",
+    "menus": [
+      {
+        "name": "애호박찌개",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "제육볶음",
+        "price": "26,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "청국장찌개",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "보쌈 (예약)",
+        "price": "60,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-02-16",
+    "sourceUrl": "https://rich-mimyhanself.tistory.com/entry/57",
+    "evidenceText": "전현무계획 1회 전현무 비밀 맛집으로 남도집을 명시하고 주소·전화 및 김장아찌, 애호박찌개, 제육볶음을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 MBN 맛집 기록 번호와 상세 URL 미확정. MBN 원문 대조 필요. / 카카오 공개 메뉴판 4개 항목 수집",
+    "lat": 37.519134050881775,
+    "lng": 126.93092985317456,
+    "kakaoPlaceId": "1358508245",
+    "placeUrl": "https://place.map.kakao.com/1358508245",
+    "matchedPlaceName": "남도집",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/1358508245"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e01-namhaebada",
+    "season": 1,
+    "episode": 1,
+    "restaurantRecordNo": null,
+    "name": "남해바다",
+    "aliases": [],
+    "address": "서울 마포구 토정로37길 46 정우맨션 1층",
+    "region": "서울 마포구",
+    "phone": "02-707-3101",
+    "category": "해산물·횟집",
+    "representativeMenu": "삼치회(소) 66,000원, 병어회(소) 58,000원, 민어회(소) 90,000원, 병어조림(소) 55,000원",
+    "menus": [
+      {
+        "name": "삼치회(소)",
+        "price": "66,000원",
+        "isSignature": true,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "병어회(소)",
+        "price": "58,000원",
+        "isSignature": true,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어회(소)",
+        "price": "90,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "병어조림(소)",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "대방어회(소)",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "우럭매운탕(3인)",
+        "price": "54,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어전(소)",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "전어회(소)",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "새조개",
+        "price": "130,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어회(중)",
+        "price": "130,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어회(대)",
+        "price": "160,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어전(대)",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어매운탕",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어지리탕",
+        "price": "32,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "민어조림",
+        "price": "80,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갯장어회(소)",
+        "price": "85,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갯장어회(대)",
+        "price": "100,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갯장어샤브",
+        "price": "95,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갯장어탕",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갈치회",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갈치조림",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "대방어회(중)",
+        "price": "85,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "대방어회(대)",
+        "price": "105,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "벌교참꼬막",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "호래기",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생굴",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "굴전(소)",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "굴전(대)",
+        "price": "48,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "물메기탕(2인)",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도다리새꼬치(소)",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도다리세꼬시(대)",
+        "price": "90,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도다리쑥국",
+        "price": "24,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "멸치회",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "정어리쌈밥",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "삼베체굴",
+        "price": "48,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "세마탕(2인)",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "전어회(대)",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "전어구이또는무침",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "삼치회(중)",
+        "price": "77,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "삼치회(대)",
+        "price": "88,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "병어회(중)",
+        "price": "68,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "병어회(대)",
+        "price": "85,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "병어조림(대)",
+        "price": "90,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참돔회(소)",
+        "price": "90,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참돔회(대)",
+        "price": "120,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갑오징어숙회",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "문어숙회",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "멍게비빔밥",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "재첩국",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "장어탕(기본)",
+        "price": "16,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "장어탕(특)",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "금풍생이(소)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "금풍생이(대)",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참가자미구이(소)",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참가자미구이(중)",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참가자미구이(대)",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "먹갈치구이",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "건민어구이",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "서대구이",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "서대조림(소)",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "서대조림(대)",
+        "price": "58,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "서대무침또는찜",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "간재미무침",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "우럭매운탕(2인)",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-02-16",
+    "sourceUrl": "https://rich-mimyhanself.tistory.com/entry/54",
+    "evidenceText": "전현무계획 1회 마포 뒷골목 제철 해산물 식당으로 남해바다를 명시하고 주소·전화와 방송 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 MBN 맛집 기록 번호와 상세 URL 미확정. MBN 원문 대조 필요. / 카카오 공개 메뉴판 64개 항목 수집",
+    "lat": 37.54255774465837,
+    "lng": 126.94737439899754,
+    "kakaoPlaceId": "12288962",
+    "placeUrl": "https://place.map.kakao.com/12288962",
+    "matchedPlaceName": "남해바다",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/12288962"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e01-bubuyoridan",
+    "season": 1,
+    "episode": 1,
+    "restaurantRecordNo": null,
+    "name": "부부요리단",
+    "aliases": [],
+    "address": "서울 성동구 독서당로40길 25-1 1층",
+    "region": "서울 성동구",
+    "phone": "02-2295-5886",
+    "category": "한식주점·퓨전한식",
+    "representativeMenu": "제주산 생선 구이 28,000원, 갑오징어 파전 35,000원, 완도산 문어숙회 36,000원, 갑오징어 숙회 25,000원",
+    "menus": [
+      {
+        "name": "제주산 생선 구이",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갑오징어 파전",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "완도산 문어숙회",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갑오징어 숙회",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "나가사끼풍 해물오뎅탕(계절요리)",
+        "price": "43,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-02-16",
+    "sourceUrl": "https://rich-mimyhanself.tistory.com/entry/58",
+    "evidenceText": "전현무계획 1회 세 번째 식당으로 부부요리단을 명시하고 주소·전화와 문어삼겹찜 등 방송 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 MBN 맛집 기록 번호와 상세 URL 미확정. MBN 원문 대조 필요. / 카카오 공개 메뉴판 5개 항목 수집",
+    "lat": 37.54279882175138,
+    "lng": 127.0175570112861,
+    "kakaoPlaceId": "24506795",
+    "placeUrl": "https://place.map.kakao.com/24506795",
+    "matchedPlaceName": "부부요리단",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/24506795"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e02-gohyangpocha",
+    "season": 1,
+    "episode": 2,
+    "restaurantRecordNo": null,
+    "name": "고향포차",
+    "aliases": [
+      "순덕이네",
+      "고향포차 순덕이네"
+    ],
+    "address": "서울 용산구 만리재로 184",
+    "region": "서울 용산구",
+    "phone": "",
+    "category": "실내포장마차·한식주점",
+    "representativeMenu": "부추잡채 30,000원, 매운양푼갈비(1인) 30,000원, 생선찜 70,000원, 아귀찜 60,000원",
+    "menus": [
+      {
+        "name": "부추잡채",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "매운양푼갈비(1인)",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생선찜",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "아귀찜",
+        "price": "60,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "코다리찜",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "닭도리탕",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "동태찌개",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "골뱅이무침",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "간재미무침",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "제육볶음",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "오징어볶음",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "고추잡채",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "삼겹살(1인)",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "번데기",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "계란말이",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-02-23",
+    "sourceUrl": "https://rich-mimyhanself.tistory.com/entry/TV-%EB%A7%9B%EC%A7%91-%EC%A0%95%EB%B3%B4%EF%BD%9C%EC%A0%84%ED%98%84%EB%AC%B4%EA%B3%84%ED%9A%8D-2%ED%9A%8C-%EC%84%9C%EC%9A%B8%EC%97%AD-%EB%85%B8%ED%8F%AC-%ED%95%A0%EB%A7%A4%EC%B9%B4%EC%84%B8-%EB%A7%9B%EC%A7%91-%EC%A0%95%EB%B3%B4%EF%BD%9C%EA%B3%A0%EC%B6%94%EC%9E%A1%EC%B1%84-%EA%B3%A8%EB%B1%85%EC%9D%B4-%EB%AC%B4%EC%B9%A8%EF%BD%9C%EB%8B%AC%EA%B1%80%EB%A7%90%EC%9D%B4-%EB%90%9C%EC%9E%A5%EC%B0%8C%EA%B0%9C-%EA%B0%84%EC%9E%A5%EA%B2%8C%EC%9E%A5-%EC%84%9C%EB%B9%84%EC%8A%A4",
+    "evidenceText": "전현무계획 2회 서울역 노포 할매카세로 고향포차를 명시하며 주소, 대표 메뉴와 당시 가격을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "전화 미공개. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 15개 항목 수집",
+    "lat": 37.5542416817488,
+    "lng": 126.96656912885392,
+    "kakaoPlaceId": "1192005498",
+    "placeUrl": "https://place.map.kakao.com/1192005498",
+    "matchedPlaceName": "순덕이네 고향포차",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/1192005498"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e03-somunnanjukjip",
+    "season": 1,
+    "episode": 3,
+    "restaurantRecordNo": null,
+    "name": "소문난죽집",
+    "aliases": [
+      "소문난 죽집"
+    ],
+    "address": "부산 중구 중구로43번길 36",
+    "region": "부산 중구",
+    "phone": "051-244-7485",
+    "category": "죽",
+    "representativeMenu": "호박죽 소 5,000원, 호박죽 대 6,000원, 녹두죽 소 5,000원, 녹두죽 대 6,000원",
+    "menus": [
+      {
+        "name": "호박죽 소",
+        "price": "5,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "호박죽 대",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "녹두죽 소",
+        "price": "5,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "녹두죽 대",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "팥죽",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "깨죽",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-famous-porridge",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-03-01",
+    "sourceUrl": "https://minisama.tistory.com/137",
+    "evidenceText": "전현무계획 3회 부산 식당으로 소문난죽집을 명시하고 주소·전화와 녹두죽, 팥죽, 호박죽을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "죽 종류와 사이즈별 가격을 분리해 전체 반영",
+    "lat": 35.10192201210321,
+    "lng": 129.0259719841645,
+    "kakaoPlaceId": "10560889",
+    "placeUrl": "https://place.map.kakao.com/10560889",
+    "matchedPlaceName": "2대째소문난죽집",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "소문난죽집 공개 전체 메뉴",
+        "url": "https://keriai.com/793"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e03-baekhwagopchang1",
+    "season": 1,
+    "episode": 3,
+    "restaurantRecordNo": null,
+    "name": "백화양곱창 1호",
+    "aliases": [
+      "백화양곱창"
+    ],
+    "address": "부산 중구 자갈치로 23",
+    "region": "부산 중구",
+    "phone": "051-245-0105",
+    "category": "양곱창구이",
+    "representativeMenu": "양 45,000원, 양(모듬) 소금구이 39,000원, 양(모듬) 양념 39,000원, 볶음밥 12,000원",
+    "menus": [
+      {
+        "name": "양",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-baekhwa",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "양(모듬) 소금구이",
+        "price": "39,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-baekhwa",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "양(모듬) 양념",
+        "price": "39,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-baekhwa",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "볶음밥",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-baekhwa",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-03-01",
+    "sourceUrl": "https://minisama.tistory.com/137",
+    "evidenceText": "전현무계획 3회 부산 양곱창집으로 백화양곱창 1호를 명시하고 주소·전화와 소금·양념구이를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "2025년 이후 공개 메뉴판의 4개 메뉴와 가격을 반영",
+    "lat": 35.096933901074706,
+    "lng": 129.02700204451276,
+    "kakaoPlaceId": "2061622071",
+    "placeUrl": "https://place.map.kakao.com/2061622071",
+    "matchedPlaceName": "백화양곱창 1호",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "백화양곱창 1호 현재 전체 메뉴",
+        "url": "https://www.diningcode.com/profile.php?rid=80jX1ehlNV0I"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e04-naehonaengmyeon",
+    "season": 1,
+    "episode": 4,
+    "restaurantRecordNo": null,
+    "name": "내호냉면",
+    "aliases": [],
+    "address": "부산 남구 우암번영로26번길 17",
+    "region": "부산 남구",
+    "phone": "051-646-6195",
+    "category": "밀면·냉면",
+    "representativeMenu": "밀면(대) 10,000원, 비빔밀면(대) 10,500원, 비빔냉면(대) 14,000원, 비빔냉면(소) 12,000원",
+    "menus": [
+      {
+        "name": "밀면(대)",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔밀면(대)",
+        "price": "10,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔냉면(대)",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔냉면(소)",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "물냉면(대)",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "물냉면(소)",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "밀면(소)",
+        "price": "9,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔밀면(소)",
+        "price": "9,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "양념가오리회",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "만두",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "온면(대)",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "온면(소)",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "국수(대)(겨울메뉴)",
+        "price": "7,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "국수(소)(겨울메뉴)",
+        "price": "6,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔국수(대)(겨울메뉴)",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔국수(소)(겨울메뉴)",
+        "price": "7,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-03-08",
+    "sourceUrl": "https://traveller-poou.tistory.com/5400",
+    "evidenceText": "전현무계획 4회 부산 최초 밀면집으로 내호냉면을 명시하고 주소와 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "전화 및 공식 MBN 맛집 기록 번호·상세 URL 미확정. / 카카오 공개 메뉴판 16개 항목 수집",
+    "lat": 35.12647510246654,
+    "lng": 129.0708678807656,
+    "kakaoPlaceId": "11023144",
+    "placeUrl": "https://place.map.kakao.com/11023144",
+    "matchedPlaceName": "내호냉면",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/11023144"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e04-dolgoraesundubu",
+    "season": 1,
+    "episode": 4,
+    "restaurantRecordNo": null,
+    "name": "돌고래순두부",
+    "aliases": [],
+    "address": "부산 중구 중구로40번길 15",
+    "region": "부산 중구",
+    "phone": "051-246-1825",
+    "category": "순두부·한식",
+    "representativeMenu": "순두부백반 8,000원, 된장지개백반 8,000원, 낙지볶음 13,000원, 낙새볶음 14,000원",
+    "menus": [
+      {
+        "name": "순두부백반",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "된장지개백반",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "낙지볶음",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "낙새볶음",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-03-08",
+    "sourceUrl": "https://traveller-poou.tistory.com/5400",
+    "evidenceText": "전현무계획 4회 국제시장 순두부찌개 식당으로 돌고래순두부를 명시하고 주소와 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "전화 및 공식 MBN 맛집 기록 번호·상세 URL 미확정. / 카카오 공개 메뉴판 4개 항목 수집",
+    "lat": 35.10154396703007,
+    "lng": 129.02960757346324,
+    "kakaoPlaceId": "8916998",
+    "placeUrl": "https://place.map.kakao.com/8916998",
+    "matchedPlaceName": "돌고래순두부",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/8916998"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e04-dongbaekseomhoetjip",
+    "season": 1,
+    "episode": 4,
+    "restaurantRecordNo": null,
+    "name": "동백섬횟집",
+    "aliases": [],
+    "address": "부산 해운대구 해운대해변로209번나길 17",
+    "region": "부산 해운대구",
+    "phone": "051-741-3888",
+    "category": "횟집",
+    "representativeMenu": "대게 시가, 계절자연산 시가, 코스 150,000원 구성 150,000원, 코스 120,000원 구성 120,000원",
+    "menus": [
+      {
+        "name": "대게",
+        "price": "시가",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "계절자연산",
+        "price": "시가",
+        "isSignature": true,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 150,000원 구성",
+        "price": "150,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 120,000원 구성",
+        "price": "120,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 100,000원 구성",
+        "price": "100,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 80,000원 구성",
+        "price": "80,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 70,000원 구성",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "코스 55,000원 구성",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "세꼬시",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "회정식(점심특선)",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "물회(점심특선)",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "특회덮밥(점심특선)",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "회덮밥(점심특선)",
+        "price": "23,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "식사",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-dongbaek",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-03-08",
+    "sourceUrl": "https://traveller-poou.tistory.com/5400",
+    "evidenceText": "전현무계획 4회 줄가자미회 식당으로 동백섬횟집을 명시하고 주소와 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "가격 없는 제철 항목은 시가로 명시하고 코스·점심특선·추가 식사까지 전체 반영",
+    "lat": 35.16043614090158,
+    "lng": 129.1546557041097,
+    "kakaoPlaceId": "14735817",
+    "placeUrl": "https://place.map.kakao.com/14735817",
+    "matchedPlaceName": "동백섬횟집",
+    "menuPriceStatus": "current-public-full-menu-with-market-prices",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "동백섬횟집 현재 전체 메뉴",
+        "url": "https://polle.com/place/36A7Fm/%EB%8F%99%EB%B0%B1%EC%84%AC%20%ED%9A%9F%EC%A7%91"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e05-myeongpum",
+    "season": 1,
+    "episode": 5,
+    "restaurantRecordNo": null,
+    "name": "명품맛집",
+    "aliases": [],
+    "address": "전남 여수시 동문로 129-1 1층",
+    "region": "전남 여수시",
+    "phone": "061-662-0292",
+    "category": "백반·게장",
+    "representativeMenu": "게장백반 15,000원, 갈치조림 25,000원, 고등어구이 15,000원, 낙지볶음 25,000원",
+    "menus": [
+      {
+        "name": "게장백반",
+        "price": "15,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "갈치조림",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "고등어구이",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "낙지볶음",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "서대회무침",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "갈치구이",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "제육볶음",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "백반",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "생낙지탕탕이",
+        "price": "30,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-luxury",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-03-15",
+    "sourceUrl": "https://rich-mimyhanself.tistory.com/entry/TV-%EB%A7%9B%EC%A7%91-%EC%A0%95%EB%B3%B4%EF%BD%9C%EC%A0%84%ED%98%84%EB%AC%B4%EA%B3%84%ED%9A%8D-5%ED%9A%8C-%EC%97%AC%EC%88%98-%EB%B0%B1%EB%B0%98-%EA%B0%84%EC%9E%A5%EA%B2%8C%EC%9E%A5-%ED%98%84%EC%A7%80%EC%9D%B8-%EB%A7%9B%EC%A7%91-%EB%AA%85%ED%92%88%EB%A7%9B%EC%A7%91-%EA%B0%80%EA%B2%A9-%EC%A0%95%EB%B3%B4",
+    "evidenceText": "전현무계획 5회 여수 백반·간장게장 식당으로 명품맛집을 명시하고 상호, 주소, 전화, 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "가격 없는 카카오 항목 16개를 제거하고 현재 공개 메뉴판 9개로 교체",
+    "lat": 34.74783468973769,
+    "lng": 127.74427108937344,
+    "kakaoPlaceId": "532484189",
+    "placeUrl": "https://place.map.kakao.com/532484189",
+    "matchedPlaceName": "명품맛집",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "명품맛집 현재 전체 메뉴",
+        "url": "https://polle.com/place/2guxyk/%EB%AA%85%ED%92%88%EB%A7%9B%EC%A7%91"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e06-namjin",
+    "season": 1,
+    "episode": 6,
+    "restaurantRecordNo": null,
+    "name": "남진이네게장갈치명가",
+    "aliases": [
+      "남진이네 장갈치명가"
+    ],
+    "address": "전남 여수시 봉산1로 49 1층",
+    "region": "전남 여수시",
+    "phone": "061-642-6080",
+    "category": "갈치요리",
+    "representativeMenu": "순살갈치조림 15,000원, 게장정식 22,000원, 갈치회무침 정식 28,000원, 갈치회 코스요리 35,000원",
+    "menus": [
+      {
+        "name": "순살갈치조림",
+        "price": "15,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "게장정식",
+        "price": "22,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "갈치회무침 정식",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "갈치회 코스요리",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "생 갈치구이",
+        "price": "15,000원부터(크기별 변동)",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "특대 갈치구이",
+        "price": "시가",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "포장판매·전국택배",
+        "price": "품목·중량별 변동",
+        "isSignature": false,
+        "sourceId": "current-menu-namjin",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-03-22",
+    "sourceUrl": "https://skyroad.tistory.com/2000",
+    "evidenceText": "전현무계획 6회 여수 식당으로 남진이네장갈치명가를 명시하고 주소와 갈치회·갈치회무침·순살갈치조림을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "방송 당시 음식명 3개만 있던 원본을 현재 주문 메뉴 7개와 고정가·변동가로 교체하고 상호·전화번호를 현행 정보로 교정",
+    "lat": 34.73541462,
+    "lng": 127.72404041,
+    "menuPriceStatus": "current-public-full-menu-with-market-prices",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "남진이네게장갈치명가 현재 전체 메뉴",
+        "url": "https://www.diningcode.com/profile.php?rid=75kF6HgGIYyA"
+      }
+    ],
+    "kakaoPlaceId": "427562430",
+    "placeUrl": "https://place.map.kakao.com/427562430",
+    "matchedPlaceName": "남진이네게장갈치명가"
+  },
+  {
+    "id": "jhmp-s1-e07-oyangsikgwan",
+    "season": 1,
+    "episode": 7,
+    "restaurantRecordNo": null,
+    "name": "오양식관",
+    "aliases": [],
+    "address": "서울 중구 세종대로21길 49 오양수산빌딩 지하",
+    "region": "서울 중구",
+    "phone": "02-732-8088",
+    "category": "김치찌개·한식",
+    "representativeMenu": "오양정식(2인이상) 13,000원, 매운등갈비찜(300g)(2인이상) 15,000원, 족발(특대) 42,000원, 족발(대) 36,000원",
+    "menus": [
+      {
+        "name": "오양정식(2인이상)",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "매운등갈비찜(300g)(2인이상)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "족발(특대)",
+        "price": "42,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "족발(대)",
+        "price": "36,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "보쌈(2인이상)",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "제육직화(2인이상)",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "해물파전",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "통돼지김치두루찌개",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "뚝배기불고기(200g)",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "계란말이",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-03-29",
+    "sourceUrl": "https://minisama.tistory.com/118",
+    "evidenceText": "전현무계획 7회 광화문 김치두루찌개 식당으로 오양식관을 명시하고 상호, 주소, 전화, 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "보조 출처 확인. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 10개 항목 수집",
+    "lat": 37.568616608738324,
+    "lng": 126.97567702791386,
+    "kakaoPlaceId": "19972929",
+    "placeUrl": "https://place.map.kakao.com/19972929",
+    "matchedPlaceName": "오양식관",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/19972929"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e08-daehwajeong",
+    "season": 1,
+    "episode": 8,
+    "restaurantRecordNo": null,
+    "name": "대화정 진짜해장국",
+    "aliases": [
+      "대화정"
+    ],
+    "address": "서울 중구 장충단로 249-20 1층",
+    "region": "서울 중구",
+    "phone": "0507-1348-8485",
+    "category": "해장국",
+    "representativeMenu": "진짜해장국(특) 15,000원, 진짜해장국 11,000원, 삼겹살(1인분 18,000원",
+    "menus": [
+      {
+        "name": "진짜해장국(특)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "진짜해장국",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "삼겹살(1인분",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-04-05",
+    "sourceUrl": "https://www.wikitree.co.kr/articles/940960",
+    "evidenceText": "전현무계획 8회 동대문 해장국 식당으로 대화정 진짜해장국을 명시하고 주소와 한우 소뼈 해장국을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "전화 및 공식 MBN 맛집 기록 번호·상세 URL 미확정. / 카카오 공개 메뉴판 3개 항목 수집",
+    "lat": 37.567537664098374,
+    "lng": 127.00776494708423,
+    "kakaoPlaceId": "8895765",
+    "placeUrl": "https://place.map.kakao.com/8895765",
+    "matchedPlaceName": "대화정진짜해장국",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/8895765"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e09-gaboja",
+    "season": 1,
+    "episode": 9,
+    "restaurantRecordNo": null,
+    "name": "가보자토종순대국밥뼈다귀해장국",
+    "aliases": [
+      "가보자"
+    ],
+    "address": "강원 홍천군 홍천읍 홍천로3길 6",
+    "region": "강원 홍천군",
+    "phone": "0507-1386-1577",
+    "category": "순댓국·뼈해장국",
+    "representativeMenu": "순대국 보통 10,000원, 순대국 특 12,000원, 얼큰이순대국 보통 11,000원, 얼큰이순대국 특 13,000원",
+    "menus": [
+      {
+        "name": "순대국 보통",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "순대국 특",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "얼큰이순대국 보통",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "얼큰이순대국 특",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "뼈해장국 보통",
+        "price": "11,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "뼈해장국 특",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "술국",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "얼큰술국",
+        "price": "28,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "순대찜 소",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "순대찜 대",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "수육 중",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "수육 대",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "곱창전골 중",
+        "price": "33,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "곱창전골 대",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "곱창볶음 중",
+        "price": "33,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "곱창볶음 대",
+        "price": "38,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "감자탕 소",
+        "price": "32,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "감자탕 중",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "감자탕 대",
+        "price": "48,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "공기밥",
+        "price": "1,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "배추김치 추가",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "깍두기 추가",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "양념 추가",
+        "price": "500원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "들깨 추가",
+        "price": "500원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "새우젓 추가",
+        "price": "500원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "다진고추 추가",
+        "price": "500원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "고추기름 추가",
+        "price": "500원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "콜라",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "사이다",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-gaboja",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-04-12",
+    "sourceUrl": "https://traveller-poou.tistory.com/5439",
+    "evidenceText": "전현무계획 9회 홍천 식당으로 가보자토종순대국밥뼈다귀해장국을 명시하고 주소와 라면을 넣은 뼈해장국을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "대표 뼈해장국 1개만 있던 원본을 식사·전골·탕·추가 메뉴 29개로 보완",
+    "lat": null,
+    "lng": null,
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "가보자토종순대국밥 현재 전체 메뉴",
+        "url": "https://www.diningcode.com/profile.php?rid=I57MFabIMePn"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e10-beombu",
+    "season": 1,
+    "episode": 10,
+    "restaurantRecordNo": null,
+    "name": "범부메밀국수",
+    "aliases": [],
+    "address": "강원 양양군 서면 고인돌길 6",
+    "region": "강원 양양군",
+    "phone": "033-671-0743",
+    "category": "메밀국수",
+    "representativeMenu": "물 메밀국수 10,000원, 비빔 메밀국수 10,000원, 수육(반) 13,000원, 메밀국수(곱배기) 12,000원",
+    "menus": [
+      {
+        "name": "물 메밀국수",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔 메밀국수",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "수육(반)",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "메밀국수(곱배기)",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "수육",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "촌두부",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "메밀찐만두(4개)",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도토리냉면 (물/비빔)",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도토리냉면 (곱배기)",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-04-19",
+    "sourceUrl": "https://traveller-poou.tistory.com/5441",
+    "evidenceText": "전현무계획 10회 양양 식당으로 범부메밀국수를 명시하고 주소와 메밀물국수·비빔메밀국수·수육을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "전화 및 공식 MBN 맛집 기록 번호·상세 URL 미확정. / 카카오 공개 메뉴판 9개 항목 수집",
+    "lat": 38.064064096550226,
+    "lng": 128.59000029531583,
+    "kakaoPlaceId": "21342177",
+    "placeUrl": "https://place.map.kakao.com/21342177",
+    "matchedPlaceName": "범부메밀국수",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/21342177"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e11-umiga",
+    "season": 1,
+    "episode": 11,
+    "restaurantRecordNo": null,
+    "name": "우미가",
+    "aliases": [],
+    "address": "대구 남구 대덕로40길 2",
+    "region": "대구 남구",
+    "phone": "0507-1470-9037",
+    "category": "갈비찜·곰탕",
+    "representativeMenu": "꼬리곰탕(특) 22,000원, 수육(소) 40,000원, 꼬리수육(대) 70,000원, 꼬리수육(소) 50,000원",
+    "menus": [
+      {
+        "name": "꼬리곰탕(특)",
+        "price": "22,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "수육(소)",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "꼬리수육(대)",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "꼬리수육(소)",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "수육(대)",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "꼬리곰탕(보통)",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "양곰탕(특)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "양곰탕(보통)",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "곰탕(특)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "곰탕(보통)",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갈비탕(특)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갈비탕(보통)",
+        "price": "13,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "갈비찜 1인분 (매운/간장)",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-04-26",
+    "sourceUrl": "https://future8to.tistory.com/490",
+    "evidenceText": "전현무계획 11회 대구 봉덕동 매운갈비찜·꼬리곰탕 식당으로 우미가를 명시하며, 식당 정보 출처에서 주소와 전화를 교차 확인했다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "주소·전화는 식당 디렉터리와 교차 확인. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 13개 항목 수집",
+    "lat": 35.840830780470625,
+    "lng": 128.6037496998734,
+    "kakaoPlaceId": "11795171",
+    "placeUrl": "https://place.map.kakao.com/11795171",
+    "matchedPlaceName": "우미가",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/11795171"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e12-bangchon",
+    "season": 1,
+    "episode": 12,
+    "restaurantRecordNo": null,
+    "name": "방촌시장원조떡볶이",
+    "aliases": [
+      "방떡"
+    ],
+    "address": "대구 동구 동촌로46길 2",
+    "region": "대구 동구",
+    "phone": "053-984-3651",
+    "category": "떡볶이·분식",
+    "representativeMenu": "떡볶이(1인) 2,500원, 납작만두(1인) 2,500원, 군만두(1인) 2,500원, 김밥(1인) 5,000원",
+    "menus": [
+      {
+        "name": "떡볶이(1인)",
+        "price": "2,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "납작만두(1인)",
+        "price": "2,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "군만두(1인)",
+        "price": "2,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "김밥(1인)",
+        "price": "5,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "튀김(1인)",
+        "price": "4,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "물오뎅(1인)",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "쿨피스",
+        "price": "1,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-05-03",
+    "sourceUrl": "https://coin.chosun-honeybee.com/entry/%EC%A0%84%ED%98%84%EB%AC%B4%EA%B3%84%ED%9A%8D-12%ED%9A%8C-%EB%8C%80%EA%B5%AC-4%EB%8C%80-%EB%96%A1%EB%B3%B6%EC%9D%B4-%EC%9C%A4%EB%96%A1-%EB%8B%AC%EB%96%A1-%EC%A4%91%EB%96%A1-%EB%B0%A9%EB%96%A1-%EC%96%B4%EB%AC%B5%ED%8A%80%EA%B9%80-%ED%8A%80%EA%B9%80%EB%A7%8C%EB%91%90-%EB%82%A9%EC%9E%91%EB%A7%8C%EB%91%90-%EA%B9%80%EB%B0%A5%ED%8A%80%EA%B9%80",
+    "evidenceText": "전현무계획 12회 대구 4대 떡볶이 중 방떡으로 방촌시장원조떡볶이를 명시하고 주소, 떡볶이와 김밥튀김을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "manual-review-required",
+    "notes": "기존 카카오 연결은 식당이 아닌 방촌시장 전체 장소로 확인되어 제거함. 방송 확인 메뉴는 보존함.",
+    "lat": 35.881202548605195,
+    "lng": 128.6643704744945,
+    "kakaoPlaceId": null,
+    "placeUrl": null,
+    "matchedPlaceName": null,
+    "menuPriceStatus": "broadcast-menu-partial-prices",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "전현무계획 시즌1 방영 당시 메뉴",
+        "url": "https://www.mbn.co.kr/vod/programContents/966/6052"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e13-noanjip",
+    "season": 1,
+    "episode": 13,
+    "restaurantRecordNo": null,
+    "name": "나주곰탕 노안집",
+    "aliases": [
+      "노안집"
+    ],
+    "address": "전남 나주시 금성관길 1-3",
+    "region": "전남 나주시",
+    "phone": "061-333-2053",
+    "category": "곰탕",
+    "representativeMenu": "나주곰탕 12,000원, 수육곰탕 14,000원, 수육 소 35,000원, 수육 대 50,000원",
+    "menus": [
+      {
+        "name": "나주곰탕",
+        "price": "12,000원",
+        "isSignature": true,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "수육곰탕",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "수육 소",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "수육 대",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "소주",
+        "price": "4,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      },
+      {
+        "name": "막걸리",
+        "price": "4,000원",
+        "isSignature": false,
+        "sourceId": "current-menu-noanjip",
+        "observedAt": "2026-07-18",
+        "confidence": 0.9
+      }
+    ],
+    "broadcastDate": "2024-05-10",
+    "sourceUrl": "https://blueplastic.tistory.com/8619",
+    "evidenceText": "전현무계획 13회 나주 식당으로 나주곰탕 노안집을 명시하고 주소와 곰탕·수육곰탕·수육을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "최근 공개 메뉴판 6개와 가격을 반영",
+    "lat": null,
+    "lng": null,
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "나주곰탕 노안집 현재 전체 메뉴",
+        "url": "https://polle.com/place/2VvnVe/%EB%82%98%EC%A3%BC%EA%B3%B0%ED%83%95%20%EB%85%B8%EC%95%88%EC%A7%91"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e14-daeunhoegwan",
+    "season": 1,
+    "episode": 14,
+    "restaurantRecordNo": null,
+    "name": "다은회관",
+    "aliases": [],
+    "address": "전북 고창군 고창읍 동산7길 1",
+    "region": "전북 고창군",
+    "phone": "063-564-3304",
+    "category": "백합요리·한정식",
+    "representativeMenu": "생선찜(중) 50,000원, 생선찜(대) 60,000원, 생선탕(중) 45,000원, 생선탕(대) 55,000원",
+    "menus": [
+      {
+        "name": "생선찜(중)",
+        "price": "50,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생선찜(대)",
+        "price": "60,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생선탕(중)",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생선탕(대)",
+        "price": "55,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "백합정식(1인) 2인이상",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "약오리찜",
+        "price": "70,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "백합삼탕",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "백합비빔밥",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "백합 비빔국수",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-05-17",
+    "sourceUrl": "https://gabozago.com/entry/%EC%A0%84%ED%98%84%EB%AC%B4%EA%B3%84%ED%9A%8D-14%ED%9A%8C-%EB%A7%9B%EC%A7%91-%EC%B4%9D%EC%A0%95%EB%A6%AC-%EB%8B%B4%EC%96%91-%EC%9B%90%EC%A1%B0%EB%8C%80%EB%82%98%EB%AC%B4%EA%B5%AD%EC%88%98%C2%B7%EA%B3%A0%EC%B0%BD-%EB%8B%A4%EC%9D%80%ED%9A%8C%EA%B4%80-%EB%B0%B1%ED%95%A9%EC%A0%95%EC%8B%9D%C2%B7%EC%A0%84%EC%A3%BC-%EB%B0%B1%EA%B9%80%EC%B9%98%EC%83%88%EC%8B%B9%EB%A7%89%ED%9A%8C-%EC%A3%BC%EC%86%8C%C2%B7%EA%B0%80%EA%B2%A9",
+    "evidenceText": "전현무계획 14회 고창 백합정식 식당으로 다은회관을 명시하고 주소, 전화, 메뉴와 당시 가격을 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "가격은 2024-05 관찰값. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 9개 항목 수집",
+    "lat": 35.43235235671234,
+    "lng": 126.70944499639114,
+    "kakaoPlaceId": "8217977",
+    "placeUrl": "https://place.map.kakao.com/8217977",
+    "matchedPlaceName": "다은회관",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/8217977"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e15-donghae",
+    "season": 1,
+    "episode": 15,
+    "restaurantRecordNo": null,
+    "name": "동해식당",
+    "aliases": [],
+    "address": "인천 중구 축항대로2번길 55",
+    "region": "인천 중구",
+    "phone": "",
+    "category": "게장·꽃게요리",
+    "representativeMenu": "게장정식 (1인) 22,000원",
+    "menus": [
+      {
+        "name": "게장정식 (1인)",
+        "price": "22,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-05-24",
+    "sourceUrl": "https://keriai.com/473",
+    "evidenceText": "전현무계획 인천 편 게장정식 식당으로 동해식당을 명시하고 도로명 주소와 게장정식·간장게장·양념게장을 기재하며, 15회 안내 자료와 교차 확인했다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "가격은 보조 출처 관찰값이며 변동 가능. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 1개 항목 수집",
+    "lat": 37.45778719689007,
+    "lng": 126.59628547985403,
+    "kakaoPlaceId": "21373100",
+    "placeUrl": "https://place.map.kakao.com/21373100",
+    "matchedPlaceName": "동해식당",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/21373100"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e16-sandong",
+    "season": 1,
+    "episode": 16,
+    "restaurantRecordNo": null,
+    "name": "산동주방",
+    "aliases": [],
+    "address": "인천 중구 차이나타운로 38",
+    "region": "인천 중구",
+    "phone": "0507-1369-6567",
+    "category": "산동요리·중식",
+    "representativeMenu": "수제군만두 9,000원, 탕수육 25,000원, 샤오롱바오 6,500원, 탄탄면 9,000원",
+    "menus": [
+      {
+        "name": "수제군만두",
+        "price": "9,000원",
+        "isSignature": true,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "탕수육",
+        "price": "25,000원",
+        "isSignature": true,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "샤오롱바오",
+        "price": "6,500원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "탄탄면",
+        "price": "9,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "각종 만두 딤섬 실속 세트",
+        "price": "가격 미공개",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "신메뉴 스즈터우, 동파육.가지만두",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-05-31",
+    "sourceUrl": "https://skyroad.tistory.com/2115",
+    "evidenceText": "전현무계획 16회 인천 차이나타운 산동요리 식당으로 산동주방을 명시하고 주소, 전화와 방송 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "보조 출처 확인. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 6개 항목 수집",
+    "lat": 37.47587325134764,
+    "lng": 126.61941372900375,
+    "kakaoPlaceId": "22452229",
+    "placeUrl": "https://place.map.kakao.com/22452229",
+    "matchedPlaceName": "산동주방",
+    "menuPriceStatus": "current-public-menu-partial-prices",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/22452229"
+      }
+    ],
+    "menuPriceNote": "가격 미공개는 현재 공개 출처에서 고정가를 확인하지 못한 메뉴이며, 포함 메뉴·시가는 별도로 표시함"
+  },
+  {
+    "id": "jhmp-s1-e17-wonjojip",
+    "season": 1,
+    "episode": 17,
+    "restaurantRecordNo": null,
+    "name": "원조집",
+    "aliases": [],
+    "address": "울산 남구 남산로 20",
+    "region": "울산 남구",
+    "phone": "0507-1328-1453",
+    "category": "곱창구이",
+    "representativeMenu": "모둠곱창구이(160g)(2인이상) 14,000원, 곱창전골(2인이상) 14,000원, 전골볶음밥 2,000원, 횟간 10,000원",
+    "menus": [
+      {
+        "name": "모둠곱창구이(160g)(2인이상)",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "곱창전골(2인이상)",
+        "price": "14,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "전골볶음밥",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "횟간",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "토시살불고기(100g)",
+        "price": "24,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "사골선지국",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-06-07",
+    "sourceUrl": "https://traveller-poou.tistory.com/5466",
+    "evidenceText": "전현무계획 17회 울산 원조 곱창 식당으로 원조집을 명시하고 주소와 모둠곱창구이·선짓국을 기재하며 전화는 식당 정보 출처로 교차 확인했다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 6개 항목 수집",
+    "lat": 35.552420001661545,
+    "lng": 129.27291736743618,
+    "kakaoPlaceId": "8508403",
+    "placeUrl": "https://place.map.kakao.com/8508403",
+    "matchedPlaceName": "원조집",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/8508403"
+      }
+    ]
+  },
+  {
+    "id": "jhmp-s1-e18-songgol",
+    "season": 1,
+    "episode": 18,
+    "restaurantRecordNo": null,
+    "name": "송골횟집",
+    "aliases": [
+      "송골회식당"
+    ],
+    "address": "경북 포항시 북구 해안로 521",
+    "region": "경북 포항시",
+    "phone": "0507-1343-4072",
+    "category": "횟집·물회",
+    "representativeMenu": "물회 18,000원, 참가자미 특대 120,000원, 도다리 특대 120,000원, 모듬회 특대 120,000원",
+    "menus": [
+      {
+        "name": "물회",
+        "price": "18,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "참가자미 특대",
+        "price": "120,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "도다리 특대",
+        "price": "120,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "모듬회 특대",
+        "price": "120,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "회덮밥",
+        "price": "23,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "전복물회",
+        "price": "23,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2024-06-14",
+    "sourceUrl": "https://skyroad.tistory.com/2063",
+    "evidenceText": "전현무계획 18회 포항 고추장 물회 식당으로 송골횟집을 명시하고 주소, 전화와 메뉴를 기재한다.",
+    "confidence": 0.9,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "보조 출처 확인. 공식 MBN 맛집 기록 번호와 상세 URL 미확정. / 카카오 공개 메뉴판 6개 항목 수집",
+    "lat": 36.0724997260854,
+    "lng": 129.41360881185688,
+    "kakaoPlaceId": "9153716",
+    "placeUrl": "https://place.map.kakao.com/9153716",
+    "matchedPlaceName": "송골횟집",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/9153716"
+      }
+    ]
+  }
+]

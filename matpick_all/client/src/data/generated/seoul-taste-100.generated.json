@@ -1,0 +1,4723 @@
+{
+  "restaurants": [
+    {
+      "id": "seoul-taste-100-2025-598",
+      "name": "강민철 레스토랑",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로63길 18 5층",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-598_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩220,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-598_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩360,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1387-2511",
+      "hours": "화-토요일 12:00-14:30, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=598&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 강민철 레스토랑 05 | 서울 강남구 도산대로63길 18 5층 | 0507-1387-2511",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-619",
+      "name": "계향각",
+      "region": "종로구",
+      "address": "서울 종로구 동숭길 86 1층",
+      "category": "아시아",
+      "representativeMenu": "동파육",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-619_menu_1",
+          "name": "동파육",
+          "price": "₩22,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-619_menu_2",
+          "name": "라즈지",
+          "price": "₩35,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-619_menu_3",
+          "name": "다진홍고추생선찜",
+          "price": "₩79,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-619_menu_4",
+          "name": "팔보오리 (사전예약)",
+          "price": "₩180,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1319-7830",
+      "hours": "화-일요일 11:30-15:00, 17:00-22:00, 라스트오더 14:00, 21:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=619&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 계향각 05 | 서울 종로구 동숭길 86 1층 | 0507-1319-7830",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-671",
+      "name": "고료리 켄",
+      "region": "강남구",
+      "address": "서울 강남구 언주로152길 15-3 2층",
+      "category": "아시아",
+      "representativeMenu": "오마카세 코스",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-671_menu_1",
+          "name": "오마카세 코스",
+          "price": "₩250,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-511-7809",
+      "hours": "화-토요일 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "재패니스 컨템퍼러리의 새로운 가능성을 보여주는 김건 셰프의 공간이다. 오랫동안 해왔던 일본 요리를 기반으로 서양식 조리법과 창의적인 아이디어를 더해 조화와 균형을 찾는다 육류 없이 오로지 생선, 해산물, 채소만을 사용하며 한국의 다채로운 바다와 지역적 특성을 코스에 담아낸다. 요리 인생 최고의 커리어는 화려한 경력 없이도 이룬 성과라는 셰프의 정직한 열정이 담겨있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=671&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 고료리 켄 | 서울 강남구 언주로152길 15-3 2층 | 02-511-7809",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-570",
+      "name": "곰탕랩",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로 153 1층",
+      "category": "한식",
+      "representativeMenu": "콜라겐사골곰탕 (일 20그릇 한정)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-570_menu_1",
+          "name": "콜라겐사골곰탕 (일 20그릇 한정)",
+          "price": "₩25,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-570_menu_2",
+          "name": "양곰탕",
+          "price": "₩20,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-570_menu_3",
+          "name": "냉면",
+          "price": "₩15,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-517-4656",
+      "hours": "월-토요일 11:00-15:00, 17:00-22:00, 라스트오더 20:30",
+      "closingDays": "일요일 정기휴무, 매월 첫째 월요일 21시 영업종료",
+      "description": "*재오픈: 2025년 10월 (예정) 현대백화점 무역센터점 10층",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=570&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 곰탕랩 | 서울 강남구 도산대로 153 1층 | 02-517-4656",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-571",
+      "name": "권숙수",
+      "region": "강남구",
+      "address": "서울 강남구 압구정로80길 37 이에스 빌딩 4층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-571_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩220,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-571_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩350,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1354-6268",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=571&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 권숙수 05 | 서울 강남구 압구정로80길 37 이에스 빌딩 4층 | 0507-1354-6268",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-633",
+      "name": "금돼지식당",
+      "region": "중구",
+      "address": "서울 중구 다산로 149",
+      "category": "그릴",
+      "representativeMenu": "눈꽃목살(1인분 150g)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-633_menu_1",
+          "name": "눈꽃목살(1인분 150g)",
+          "price": "₩19,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-633_menu_2",
+          "name": "본삼겹 (1인분 150g)",
+          "price": "₩19,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1307-8750",
+      "hours": "11:30-23:00, 라스트오더 22:20",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=633&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 금돼지식당 05 | 서울 중구 다산로 149 | 0507-1307-8750",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-599",
+      "name": "기가스",
+      "region": "중구",
+      "address": "서울 중구 퇴계로6가길 30 피크닉 3층",
+      "category": "양식",
+      "representativeMenu": "와니테이블 12코스",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-599_menu_1",
+          "name": "와니테이블 12코스",
+          "price": "₩220,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-599_menu_2",
+          "name": "와니테이블 12코스 (베지테리안)",
+          "price": "₩220,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1392-9935",
+      "hours": "수요일 18:00-22:00, 목-토요일 12:00-15:00, 18:00-22:00, 일요일 12:00-15:00, 라스트오더 20:00, 13:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=599&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 기가스 05 | 서울 중구 퇴계로6가길 30 피크닉 3층 | 0507-1392-9935",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-572",
+      "name": "기와강",
+      "region": "강남구",
+      "address": "서울 강남구 논현로152길 9 4층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-572_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩180,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-572_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩320,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1338-2511",
+      "hours": "화-토요일 12:00-14:30, 18:00-22:00, 라스트오더 21:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=572&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 기와강 05 | 서울 강남구 논현로152길 9 4층 | 0507-1338-2511",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-653",
+      "name": "김씨부인",
+      "region": "서초구",
+      "address": "서울 서초구 서래로1길 8 트윈빌 B동 2층",
+      "category": "디저트&카페",
+      "representativeMenu": "소반차림",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-653_menu_1",
+          "name": "소반차림",
+          "price": "₩28,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-653_menu_2",
+          "name": "백자합",
+          "price": "₩38",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1386-5327",
+      "hours": "월-토요일 09:00-19:00, 라스트오더 18:00",
+      "closingDays": "일요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=653&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 김씨부인 05 | 서울 서초구 서래로1길 8 트윈빌 B동 2층 | 0507-1386-5327",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-634",
+      "name": "김인복의광평 삼성본점",
+      "region": "강남구",
+      "address": "서울 강남구 영동대로106길 45 김인복의광평 삼성본점",
+      "category": "그릴",
+      "representativeMenu": "평양냉면 (물/비빔)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-634_menu_1",
+          "name": "평양냉면 (물/비빔)",
+          "price": "₩17,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-634_menu_2",
+          "name": "골동면",
+          "price": "₩19,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-634_menu_3",
+          "name": "난축맛돈 구이",
+          "price": "₩33,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-634_menu_4",
+          "name": "양념돼지갈비",
+          "price": "₩33,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-634_menu_5",
+          "name": "육회한우니",
+          "price": "₩68,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1488-0271",
+      "hours": "화-금요일 11:00-15:00, 17:00-22:00, 토-일요일 12:00-21:30",
+      "closingDays": "월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=634&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 김인복의광평 삼성본점 05 | 서울 강남구 영동대로106길 45 김인복의광평 삼성본점 | 0507-1488-0271",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-663",
+      "name": "까사델비노 청담점",
+      "region": "강남구",
+      "address": "서울 강남구 선릉로162길 43 유경빌딩 1층",
+      "category": "바&펍",
+      "representativeMenu": "이베리코 스테이크 Iberico Pork Steake",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-663_menu_1",
+          "name": "이베리코 스테이크 Iberico Pork Steake",
+          "price": "₩58,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-542-8003",
+      "hours": "월-일요일 18:00-02:00, 라스트오더 00:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-일요일 18:00-02:00, 라스트오더 00:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=663&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 까사델비노 청담점 | 서울 강남구 선릉로162길 43 유경빌딩 1층 | 02-542-8003",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-573",
+      "name": "꽃밥에피다",
+      "region": "종로구",
+      "address": "서울 종로구 인사동16길 3-6",
+      "category": "한식",
+      "representativeMenu": "비건 풀코스 Vegan Full Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-573_menu_1",
+          "name": "비건 풀코스 Vegan Full Course",
+          "price": "₩59,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-573_menu_2",
+          "name": "점심 코스 Lunch Course",
+          "price": "₩25,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1362-0276",
+      "hours": "11:30-15:00, 17:30-21:00, 라스트오더 20:10",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=573&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 꽃밥에피다 05 | 서울 종로구 인사동16길 3-6 | 0507-1362-0276",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-635",
+      "name": "남영돈",
+      "region": "용산구",
+      "address": "서울 용산구 한강대로80길 17 남영돈",
+      "category": "그릴",
+      "representativeMenu": "육즙가득 삼겹살",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-635_menu_1",
+          "name": "육즙가득 삼겹살",
+          "price": "₩19,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-635_menu_2",
+          "name": "탱글탱글 목살",
+          "price": "₩19,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1351-3598",
+      "hours": "월, 화, 금요일 16:00-22:00, 수, 목, 토, 일요일 12:00-21:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=635&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 남영돈 05 | 서울 용산구 한강대로80길 17 남영돈 | 0507-1351-3598",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-644",
+      "name": "달리아 다이닝",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로45길 14 2층 달리아 다이닝",
+      "category": "채식",
+      "representativeMenu": "트러플 크림 뇨끼",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-644_menu_1",
+          "name": "트러플 크림 뇨끼",
+          "price": "₩29,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-644_menu_2",
+          "name": "미트 소스 라자냐",
+          "price": "₩26,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "070-4482-0102",
+      "hours": "12:00-15:00, 18:00-21:30, 라스트오더 20:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "12:00-15:00, 18:00-21:30, 라스트오더 20:30",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=644&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 달리아 다이닝 | 서울 강남구 도산대로45길 14 2층 달리아 다이닝 | 070-4482-0102",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-600",
+      "name": "더 그린테이블",
+      "region": "종로구",
+      "address": "서울 종로구 율곡로 83 5층",
+      "category": "양식",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-591-2672",
+      "hours": "수-토요일 12:00-15:00, 18:00-22:00, 일요일 12:00-15:00, 18:00-21:00",
+      "closingDays": "월·화요일 휴무",
+      "description": "사찰 음식, 궁중 음식 등을 직접 배우며 한국 식문화의 조리 기법을 접목해 오직 서울에서만 만날 수 있는 섬세한 코리안 프렌치를 선보이는 김은희 셰프의 솜씨를 경험할 수 있는 곳이다. 최근 창덕궁이 아름답게 보이는 아라리오 뮤지엄 4층으로 옮겨 자연주의 음식에 풍경을 더했다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=600&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 더 그린테이블 | 서울 종로구 율곡로 83 5층 | 02-591-2672",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-618",
+      "name": "두오모",
+      "region": "종로구",
+      "address": "서울 종로구 자하문로16길 5 1층",
+      "category": "양식",
+      "representativeMenu": "오늘의 메뉴",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-618_menu_1",
+          "name": "오늘의 메뉴",
+          "price": "₩33,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-730-0902",
+      "hours": "화-토요일 12:00-15:00, 18:00-21:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "화-토요일 12:00-15:00, 18:00-21:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=618&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 두오모 | 서울 종로구 자하문로16길 5 1층 | 02-730-0902",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-636",
+      "name": "뜨락",
+      "region": "강남구",
+      "address": "서울 강남구 영동대로142길 13-3",
+      "category": "그릴",
+      "representativeMenu": "안심(130g)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-636_menu_1",
+          "name": "안심(130g)",
+          "price": "₩62,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-636_menu_2",
+          "name": "안창살(120g)",
+          "price": "₩76,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-543-2987",
+      "hours": "11:30-23:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=636&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 뜨락 | 서울 강남구 영동대로142길 13-3 | 02-543-2987",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-601",
+      "name": "라미띠에",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로67길 30 2층",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-601_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩160,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-601_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩260,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-546-9621",
+      "hours": "수-월요일 12:00-15:00, 17:00-22:00, 라스트오더 21:30",
+      "closingDays": "화요일 정기휴무 (휴무일 변동 있음)",
+      "description": "2006년부터 거의 20년 가까이 파인 다이닝 업계를 이끌어가는 장명식 셰프의 부띠끄 프렌치 레스토랑. 라미띠에는 프랑스어로 &lsquo;우정&rsquo;이라는 뜻으로, 고객으로 하여금 오래된 좋은 친구처럼 편안한 느낌이 들기를 원하는 마음이 엿보인다. 코스 구성에서 제철 식재료 선정, 온도감과 차림새까지 변함없는 초심의 열정을 느낄 수 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=601&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 라미띠에 | 서울 강남구 도산대로67길 30 2층 | 02-546-9621",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-574",
+      "name": "라연",
+      "region": "중구",
+      "address": "서울 중구 동호로 249",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-574_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩200,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-574_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩320,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2230-3367",
+      "hours": "12:00-14:30, 17:30-21:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "전망 좋은 신라호텔 23층의 라연은 시원한 남산 경관을 감상할 수 있는 곳으로 전국의 고급 제철 식재료를 활용한 한식 정찬과 세심한 서비스를 제공한다. 고급 식기와 섬세한 백자 등 한국의 유명 도예가들의 작품을 만날 수 있으며 물 흐르듯 편안한 서비스는 한국인은 물론이고 외국인들에게도 한국에서의 인상적인 다이닝 경험을 선사한다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=574&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 라연 | 서울 중구 동호로 249 | 02-2230-3367",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-645",
+      "name": "레귬",
+      "region": "강남구",
+      "address": "서울 강남구 강남대로 652 신사스퀘어 2층 207-2호",
+      "category": "채식",
+      "representativeMenu": "100% 식물성 런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-645_menu_1",
+          "name": "100% 식물성 런치 코스 Lunch Course",
+          "price": "₩110,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-645_menu_2",
+          "name": "100% 식물성 디너 코스 Dinner Course",
+          "price": "₩190,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1365-1567",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00, 라스트오더 점심 13:00, 저녁 19:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=645&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 레귬 05 | 서울 강남구 강남대로 652 신사스퀘어 2층 207-2호 | 0507-1365-1567",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-602",
+      "name": "레브어",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로58길 12 K2빌딩 2층",
+      "category": "양식",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "070-7547-9784",
+      "hours": "화-금요일 17:00-24:00, 라스트오더 22:00, 토-일요일 12:00-15:00, 17:30-22:30, 라스트오더 13:30, 21:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "국내 식재료를 활용한 독창적인 프렌치 요리가 특징적인 레스토랑으로 섬세한 터치로 퀄리티 높은 요리를 제공합니다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=602&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 레브어 | 서울 강남구 도산대로58길 12 K2빌딩 2층 | 070-7547-9784",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-603",
+      "name": "레스쁘아",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로56길 10 2층 레스쁘아",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-603_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩160,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-603_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩260,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-517-6034",
+      "hours": "수-월요일 12:00-15:00, 17:30-22:00",
+      "closingDays": "화요일 정기휴무",
+      "description": "기본에 충실한 클래식 프렌치 메뉴를 선보이는 정통 프렌치 비스트로. 독특한 네이밍은 &lsquo;부엉이의 희망&rsquo;이라는 뜻으로, 아늑한 실내도 매력적이지만 날씨가 좋은 날이면 테라스 자리가 특별한 분위기를 선사한다. 프렌치 어니언 수프 등 고전 메뉴는 물론 콩피에서 테린, 파테까지 임기학 셰프가 직접 만든 프랑스 전통 육가공 제품도 맛볼 수 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=603&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 레스쁘아 | 서울 강남구 도산대로56길 10 2층 레스쁘아 | 02-517-6034",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-604",
+      "name": "레스토랑 산 SAN",
+      "region": "강남구",
+      "address": "서울 강남구 언주로168길 6 지하1층",
+      "category": "양식",
+      "representativeMenu": "Tasting Menu",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-604_menu_1",
+          "name": "Tasting Menu",
+          "price": "₩350,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-540-1729",
+      "hours": "화-금요일 18:00-22:00, 토요일 12:00-15:00, 18:00-22:00, 라스트오더 19:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "미국 나파 밸리의 프렌치 런드리, 샌프란시스코의 베누 등 유수의 레스토랑에서 실력을 쌓은 조승현 셰프와 CJ제일제당이 선보이는 이노베이티브 파인 다이닝 레스토랑. 정통 프렌치와 모던 한식을 넘나드는 정제되고 세련된 플레이팅을 경험할 수 있다. 런치와 디너 타임 모두 테이스팅과 주류 페어링 코스를 제공한다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=604&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 레스토랑 산 SAN | 서울 강남구 언주로168길 6 지하1층 | 02-540-1729",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-605",
+      "name": "레스토랑 알렌",
+      "region": "강남구",
+      "address": "서울 강남구 역삼동 676",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-605_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩200,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-605_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩310,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6985-7214",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "프렌치 테크닉을 기반으로 한국 식재료를 활용하여 사계절이 표현하는 섬세한 맛을 담은 요리를 선보인다. 상파뉴를 중심으로 프랑스의 와인 생산자들과 지속적인 관계를 통해 현지에서 각광받고 있는 와인들을 생생하게 만나볼수 있으며, 정교한 노력이 담아내는 요리와 식문화의 힘을 통해 서로를 연결하는 미식의 풍요로움을 구현한다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=605&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 레스토랑 알렌 | 서울 강남구 역삼동 676 | 02-6985-7214",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-646",
+      "name": "로컬릿",
+      "region": "성동구",
+      "address": "서울 성동구 한림말길 33 2층",
+      "category": "채식",
+      "representativeMenu": "채소테린 플레이트",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-646_menu_1",
+          "name": "채소테린 플레이트",
+          "price": "₩16,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-646_menu_2",
+          "name": "호박 까넬로니",
+          "price": "₩20,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1354-3399",
+      "hours": "목-월요일 11:00-13:00, 17:00-21:00, 라스트오더 20:30",
+      "closingDays": "화·수요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=646&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 로컬릿 05 | 서울 성동구 한림말길 33 2층 | 0507-1354-3399",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-664",
+      "name": "르챔버",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로55길 42 지하 1층 르챔버",
+      "category": "바&펍",
+      "representativeMenu": "입장료",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-664_menu_1",
+          "name": "입장료",
+          "price": "₩10,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-664_menu_2",
+          "name": "칵테일",
+          "price": "₩23,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-9903-3789",
+      "hours": "월-목요일 19:00-03:00, 금-토요일 19:00-04:00, 일요일 19:00-02:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-목요일 19:00-03:00, 금-토요일 19:00-04:00, 일요일 19:00-02:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=664&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 르챔버 | 서울 강남구 도산대로55길 42 지하 1층 르챔버 | 010-9903-3789",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-606",
+      "name": "리스토란테 에오",
+      "region": "영등포구",
+      "address": "서울 영등포구 여의대로 108 더현대 서울 6층 리스토란테 에오",
+      "category": "양식",
+      "representativeMenu": "컴팩트 런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-606_menu_1",
+          "name": "컴팩트 런치 코스 Lunch Course",
+          "price": "₩65,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-606_menu_2",
+          "name": "컴팩트 디너 코스 Dinner Course",
+          "price": "₩85,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-3277-0651",
+      "hours": "11:30-15:00, 17:20-22:00, 라스트오더 14:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "11:30-15:00, 17:20-22:00, 라스트오더 14:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=606&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 리스토란테 에오 | 서울 영등포구 여의대로 108 더현대 서울 6층 리스토란테 에오 | 02-3277-0651",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-647",
+      "name": "마지",
+      "region": "종로구",
+      "address": "서울 종로구 자하문로5길 19",
+      "category": "채식",
+      "representativeMenu": "오늘의 마지",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-647_menu_1",
+          "name": "오늘의 마지",
+          "price": "₩11,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-647_menu_2",
+          "name": "런치/디너 세트",
+          "price": "₩23,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1418-5228",
+      "hours": "수-토요일 11:30-13:00, 17:30-20:00, 일요일 11:30-15:00, 라스트오더 점심 14:10, 저녁 19:10",
+      "closingDays": "월요일, 화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=647&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 마지 05 | 서울 종로구 자하문로5길 19 | 0507-1418-5228",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-607",
+      "name": "마테르",
+      "region": "강남구",
+      "address": "서울 강남구 언주로154길 16 지하 1층",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-607_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩98,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-607_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩175,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-518-5879",
+      "hours": "수-월요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "화요일 정기휴무",
+      "description": "수-월요일 12:00-15:00, 18:00-22:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=607&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 마테르 | 서울 강남구 언주로154길 16 지하 1층 | 02-518-5879",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-654",
+      "name": "메종엠오",
+      "region": "서초구",
+      "address": "서울 서초구 방배로26길 22 1층 코너",
+      "category": "디저트&카페",
+      "representativeMenu": "밀푀유",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-654_menu_1",
+          "name": "밀푀유",
+          "price": "₩9,800",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-654_menu_2",
+          "name": "기본 마들렌",
+          "price": "₩3,500",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "070-4239-3335",
+      "hours": "목-일요일 11:30-20:00",
+      "closingDays": "월-수요일 정기휴무",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=654&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 메종엠오 | 서울 서초구 방배로26길 22 1층 코너 | 070-4239-3335",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-608",
+      "name": "메종조",
+      "region": "강남구",
+      "address": "서울 강남구 영동대로137길 6 지상1층 2호",
+      "category": "양식",
+      "representativeMenu": "잠봉샌드위치",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-608_menu_1",
+          "name": "잠봉샌드위치",
+          "price": "₩8,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-2854-4443",
+      "hours": "수-일요일 08:00-16:00, 18:00-22:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "프랑스 현지의 맛을 그대로 즐길 수 있는 육가공품과 빵을 판매하는 식료품점이자, 가벼운 프렌치 단품 메뉴들을 와인과 함께 즐길 수 있는 곳이다. 샤퀴테리를 만드는 조우람 셰프와 이은희 파티시에 부부가 함께 키친을 이끈다. 매일 아침 만드는 10여 가지의 샤퀴테리와 각종 베이커리류 등을 판매하며 식사 메뉴는 사전 예약이 필수다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=608&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 메종조 | 서울 강남구 영동대로137길 6 지상1층 2호 | 010-2854-4443",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-609",
+      "name": "모수 서울",
+      "region": "용산구",
+      "address": "서울 용산구 회나무로41길 4",
+      "category": "양식",
+      "representativeMenu": "디너 코스 Dinner Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-609_menu_1",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩420,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6272-5678",
+      "hours": "화-토요일 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "모수는 안성재 셰프가 운영하며 '이노베이티브 퀴진'을 선보인다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=609&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 모수 서울 | 서울 용산구 회나무로41길 4 | 02-6272-5678",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-620",
+      "name": "미토우",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로70길 24 1층",
+      "category": "아시아",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1306-9914",
+      "hours": "화-토요일 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=620&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 미토우 05 | 서울 강남구 도산대로70길 24 1층 | 0507-1306-9914",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-576",
+      "name": "밍글스",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로67길 19 힐탑빌딩 2층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-576_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩300,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-576_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩400,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-515-7306",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무, 월별 휴무일 변동",
+      "description": "오픈 초기부터 된장, 간장, 고추장에 기반한 한국적인 맛으로 전통과 현대를 넘나드는 고유한 메뉴를 선보인다. 최근 강민구 셰프가 직접 쓴 레시피 북을 통해 한국의 장을 세계인의 집에서 쉽게 쓸 수 있도록 했다는 평가를 받고 있다. 이처럼 한국뿐만 아니라 전 세계속에서 장 문화의 꽃을 피우기 위해 한 걸음씩 노력 중이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=576&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 밍글스 | 서울 강남구 도산대로67길 19 힐탑빌딩 2층 | 02-515-7306",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-648",
+      "name": "발우공양",
+      "region": "종로구",
+      "address": "서울 종로구 우정국로 56 템플스테이 통합정보센터 5층",
+      "category": "채식",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-733-2081",
+      "hours": "월-토요일 11:00-15:00, 17:00-21:00",
+      "closingDays": "일요일 정기휴무",
+      "description": "사찰음식 문화를 널리 알리기 위해 대한불교조계종 한국불교문화사업단에서 유일하게 직접 운영하고 있는 사찰음식 전문 레스토랑입니다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=648&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 발우공양 | 서울 종로구 우정국로 56 템플스테이 통합정보센터 5층 | 02-733-2081",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-649",
+      "name": "베이스이즈나이스",
+      "region": "마포구",
+      "address": "서울 마포구 도화2길 20",
+      "category": "채식",
+      "representativeMenu": "바삭 청무와 옥수수 밥",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-649_menu_1",
+          "name": "바삭 청무와 옥수수 밥",
+          "price": "₩23,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-649_menu_2",
+          "name": "홍고추퓨레의 구운 두부 밥",
+          "price": "₩23,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1306-6724",
+      "hours": "수-일요일 11:00-15:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=649&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 베이스이즈나이스 05 | 서울 마포구 도화2길 20 | 0507-1306-6724",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-637",
+      "name": "벽제갈비 더청담",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로81길 25 조은빌딩 1층",
+      "category": "그릴",
+      "representativeMenu": "꽃뼈생갈비(1kg)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-637_menu_1",
+          "name": "꽃뼈생갈비(1kg)",
+          "price": "₩620,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-637_menu_2",
+          "name": "한우맡김차림",
+          "price": "₩300,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-512-9593",
+      "hours": "11:30-15:00, 17:30-22:00, 라스트오더 21:15",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "38년의 역사를 자랑하는 벽제갈비의 프리미엄 한우 다이닝. 한우의 1번에서 7번 갈비를 선별해 본갈비살과 늑간살로 나뉘는 &lsquo;꽃뼈생갈비&rsquo;를 추천한다. 30여 년 경력의 육가공 전문 장인들의 손길로 눈 앞에서 갈비를 해체하여 알맞게 구워준다. 디너에는 한우뿐만 아니라 해산물 요리도 함께 어우러지는 한식 맡김차림도 준비된다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=637&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 벽제갈비 더청담 | 서울 강남구 도산대로81길 25 조은빌딩 1층 | 02-512-9593",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-610",
+      "name": "보르고 한남",
+      "region": "용산구",
+      "address": "서울 용산구 이태원로54길 31 3층 보르고한남",
+      "category": "양식",
+      "representativeMenu": "멜란자네",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-610_menu_1",
+          "name": "멜란자네",
+          "price": "₩25,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-610_menu_2",
+          "name": "밀라네제",
+          "price": "₩125,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6082-2727",
+      "hours": "화-일요일 17:00-22:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "'마을(Borgo)'이라는 이름처럼 이탈리아 각 지역 요리의 현대적인 재해석을 편안하게 경험하는 공간이다. 국내 유명 호텔 총주방장 출신인 스테파노 디 살보 셰프는 단순하고 명징한 요리를 통해 이탈리아 본연의 맛을 한눈에 드러낸다. 따뜻하고 정통적인 이탈리아 감성과 서울의 세련된 미감이 융합된 고전과 현대의 균형점을 제시하는 이탤리언 다이닝이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=610&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 보르고 한남 | 서울 용산구 이태원로54길 31 3층 보르고한남 | 02-6082-2727",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-621",
+      "name": "보보식당",
+      "region": "강남구",
+      "address": "서울 강남구 언주로174길 30 로빈명품관 1층 103호",
+      "category": "아시아",
+      "representativeMenu": "가을 숫꽃게찜 1kg",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-621_menu_1",
+          "name": "가을 숫꽃게찜 1kg",
+          "price": "₩84,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-621_menu_2",
+          "name": "살치살 스테이크와 고추잡채",
+          "price": "₩48,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1346-7436",
+      "hours": "11:30-15:00, 17:30-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=621&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 보보식당 05 | 서울 강남구 언주로174길 30 로빈명품관 1층 103호 | 0507-1346-7436",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-638",
+      "name": "본앤브레드",
+      "region": "성동구",
+      "address": "서울 성동구 마장로42길 1",
+      "category": "그릴",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-638_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩200,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-638_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩250,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2294-5005",
+      "hours": "12:00-15:00, 18:00-22:00, 라스트오더 21:00",
+      "closingDays": "화요일 정기휴무",
+      "description": "국내에서 프리미엄 한우 다이닝 열풍을 이끈 선두주자이다. 마장동에서 태어나고 자란 대표가 운영한다. 1층부터 3층까지 정육점, 캐주얼 다이닝, 프라이빗 다이닝 등 다양한 콘셉트를 선보인다. 특히 프라이빗 다이닝에서는 다양한 부위를 수준 높은 창작 요리와 함께 코스로 즐길 수 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=638&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 본앤브레드 | 서울 성동구 마장로42길 1 | 02-2294-5005",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-577",
+      "name": "봉래헌",
+      "region": "강서구",
+      "address": "서울 강서구 방화대로 94 메이필드호텔 봉래헌",
+      "category": "한식",
+      "representativeMenu": "평일 점심상차림",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-577_menu_1",
+          "name": "평일 점심상차림",
+          "price": "₩70,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1420-9020",
+      "hours": "화-일요일 11:30-14:30, 18:00-21:30",
+      "closingDays": "월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=577&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 봉래헌 05 | 서울 강서구 방화대로 94 메이필드호텔 봉래헌 | 0507-1420-9020",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-578",
+      "name": "봉우리 역삼본점",
+      "region": "강남구",
+      "address": "서울 강남구 논현로94길 25-3 2층",
+      "category": "한식",
+      "representativeMenu": "셰프 스페셜 정식 Chef&rsquo;s Special Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-578_menu_1",
+          "name": "셰프 스페셜 정식 Chef&rsquo;s Special Course",
+          "price": "₩98,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-578_menu_2",
+          "name": "명인 정식 Grand Master&rsquo;s Course",
+          "price": "₩150,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1402-8551",
+      "hours": "11:30-15:00, 17:30-21:20, 라스트오더 점심 14:00, 저녁 20:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=578&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 봉우리 역삼본점 05 | 서울 강남구 논현로94길 25-3 2층 | 0507-1402-8551",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-650",
+      "name": "비움",
+      "region": "강남구",
+      "address": "서울 강남구 학동로97길 41 1층",
+      "category": "채식",
+      "representativeMenu": "런치 춘하추동-지수화풍",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-650_menu_1",
+          "name": "런치 춘하추동-지수화풍",
+          "price": "₩160,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-650_menu_2",
+          "name": "디너 춘하추동-지수화풍",
+          "price": "₩280,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-549-8889",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "화-토요일 12:00-15:00, 18:00-22:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=650&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 비움 | 서울 강남구 학동로97길 41 1층 | 02-549-8889",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-579",
+      "name": "비채나",
+      "region": "송파구",
+      "address": "서울 송파구 올림픽로 300 롯데월드타워 81층",
+      "category": "한식",
+      "representativeMenu": "점심 산천코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-579_menu_1",
+          "name": "점심 산천코스 Lunch Course",
+          "price": "₩170,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-579_menu_2",
+          "name": "저녁 구학코스 Dinner Course",
+          "price": "₩270,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-3213-1261",
+      "hours": "11:30-15:00, 18:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "한국에서 가장 높은 곳에 자리한 한식 다이닝 레스토랑으로 서울의 전경을 즐길 수있다. 2012년 한남동에 문을 연 후 2017년 롯데월드타워 81층으로 이전했다. 전통 한식의 맛과 향을 계절에 맞게 모던하게 선보인다. 불로장생을 의미하는 십장생에서 따온 룸 이름과 코스 메뉴명에서 비채나의 철학, &lsquo;비우고, 채우고, 나눈다&rsquo;를 엿볼 수 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=579&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 비채나 | 서울 송파구 올림픽로 300 롯데월드타워 81층 | 02-3213-1261",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-611",
+      "name": "빈호",
+      "region": "강남구",
+      "address": "서울 강남구 학동로43길 38 논현웰스톤 지상 162호 VINHO",
+      "category": "양식",
+      "representativeMenu": "디너 코스 Dinner Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-611_menu_1",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩220,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-9677-2302",
+      "hours": "월-토요일 18:00-23:30, 라스트오더 22:00",
+      "closingDays": "일요일 정기휴무",
+      "description": "와인을 즐기는 사람들이 음식과 와인을 더욱 풍부하게 경험할 수 있는 곳. 출신 전성빈 셰프와 김진호 소믈리에가 의기투합해 만든 아시안 컨템퍼러리 다이닝이다. 전국에서 공수한 식재료에 한식, 일식, 동남아 등 다양한 아시안 터치를 가미해 선보이며 소믈리에가 추천하는 프로페셔널한 와인 페어링을 경험할 수 있는 것이 강점이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=611&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 빈호 | 서울 강남구 학동로43길 38 논현웰스톤 지상 162호 VINHO | 010-9677-2302",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-622",
+      "name": "산로",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로 518 2층",
+      "category": "아시아",
+      "representativeMenu": "런치 산로 장어덮밥",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-622_menu_1",
+          "name": "런치 산로 장어덮밥",
+          "price": "₩68,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-622_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩350,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0506-465-6292",
+      "hours": "화-토요일 12:30-14:00, 18:30-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=622&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 산로 05 | 서울 강남구 도산대로 518 2층 | 0506-465-6292",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-639",
+      "name": "산청숯불가든",
+      "region": "중구",
+      "address": "서울 중구 을지로 114-6 1층",
+      "category": "그릴",
+      "representativeMenu": "재래식 소금구이(500g)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-639_menu_1",
+          "name": "재래식 소금구이(500g)",
+          "price": "₩58,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-639_menu_2",
+          "name": "고초장 양념구이(160g)",
+          "price": "₩19,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2273-8188",
+      "hours": "11:30-23:00, 라스트오더 21:50",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "지리산 자락에 위치한 경남 산청 지역을 주제로 산청 흑돼지, 전통 숯가마, 제철 현지 식재료를 이용해 특별한 맛을 선사하는 구이 전문점. 숙성부터 손질까지 정통 방식을 고수해서 진한 육향을 선보이는 재래식 소금구이가 대표 메뉴다. 육질이 탄탄하고 식감이 쫄깃한 지리산 흑돼지의 고소한 비계 맛을 느껴보자.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=639&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 산청숯불가든 | 서울 중구 을지로 114-6 1층 | 02-2273-8188",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-652",
+      "name": "산촌",
+      "region": "종로구",
+      "address": "서울 종로구 인사동길 30-13",
+      "category": "채식",
+      "representativeMenu": "정식 a세트 메뉴",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-652_menu_1",
+          "name": "정식 a세트 메뉴",
+          "price": "₩29,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-652_menu_2",
+          "name": "비빔밥",
+          "price": "₩18,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1393-0312",
+      "hours": "월-일요일 11:30-21:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=652&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 산촌 05 | 서울 종로구 인사동길 30-13 | 0507-1393-0312",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-640",
+      "name": "삼원가든",
+      "region": "강남구",
+      "address": "서울 강남구 언주로 835",
+      "category": "그릴",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-548-3030",
+      "hours": "금-월요일 11:00-14:30, 17:00-21:00, 화-목요일 11:30-14:30, 17:30-21:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "1976년에 처음 설립된 고급 가든형 갈빗집으로, 2022년 총 600석 규모로 새로이 단장한 후 세대불문 다양한 고객들을 맞이하고 있다. 삼원가든만의 노하우를 담은 다이아몬드 모양 칼집의 양념갈비는 47년 전통의 달짝지근한 비법 양념에 절여 은은한 숯향과 함께 황동 불판에 구워내는 것으로 유명하다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=640&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 삼원가든 | 서울 강남구 언주로 835 | 02-548-3030",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-580",
+      "name": "세븐스도어",
+      "region": "강남구",
+      "address": "서울 강남구 학동로97길 41 4층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-580_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩180,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-580_menu_2",
+          "name": "주말 런치 코스 Weekend Lunch Course",
+          "price": "₩210,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-580_menu_3",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩320,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-9660-3011",
+      "hours": "화-토요일 12:00-15:00, 18:00-22:00, 라스트오더 13:00, 19:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "발효와 숙성을 주제로 김대천 셰프가 추구하는 한식의 새로운 방향성을 맛볼 수 있다. 레스토랑 오픈하기 전부터 만든 장, 식초, 효모 등이 세븐스도어의 근간을 이룬다. 주방 한편에 자리한 쇼케이스에는 40여 종의 발효 재료들이 시간을 벗삼아 천천히 익어가고 있으며 이 재료들로 김대천 셰프는 7가지의 감각을 깨우는 코스 요리를 선보이고 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=580&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 세븐스도어 | 서울 강남구 학동로97길 41 4층 | 010-9660-3011",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-641",
+      "name": "세스타",
+      "region": "용산구",
+      "address": "서울 용산구 한남대로20길 21-18 1층",
+      "category": "그릴",
+      "representativeMenu": "그릴 노르웨이킹크랩",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-641_menu_1",
+          "name": "그릴 노르웨이킹크랩",
+          "price": "₩450,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-641_menu_2",
+          "name": "오늘의 생선 통구이",
+          "price": "₩220,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1479-9402",
+      "hours": "월-수요일 13:00-16:00, 17:00-23:00, 목-토요일 13:00-16:00, 17:00-24:00, 일요일 13:00-16:00, 17:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=641&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 세스타 05 | 서울 용산구 한남대로20길 21-18 1층 | 0507-1479-9402",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-655",
+      "name": "소나",
+      "region": "강남구",
+      "address": "서울 강남구 강남대로162길 40 2층 SONA",
+      "category": "디저트&카페",
+      "representativeMenu": "소나 피그(무화과)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-655_menu_1",
+          "name": "소나 피그(무화과)",
+          "price": "₩18,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1345-3246",
+      "hours": "수-일요일 12:30-21:00, 라스트오더 20:30",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=655&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 소나 05 | 서울 강남구 강남대로162길 40 2층 SONA | 0507-1345-3246",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-581",
+      "name": "소설한남",
+      "region": "용산구",
+      "address": "서울 용산구 한남대로20길 21-18 B동 지하1층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-581_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩170,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-581_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩270,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-797-5995",
+      "hours": "수-일요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "'소박하고 정갈하며 아름다운 서울의 한식'이라는 의미를 담은 이름처럼 한국의 자연과 미학을 현대적으로 풀어낸다. 제철 식재료를 활용해 계절의 변화를 담아내는 섬세한 코스 요리가 특징이다. 한국 전통 건축의 요소를 차용한 공간 디자인은 차분하고 우아한 분위기를 연출하며 음식과 공간이 조화를 이루는 한국 미식의 미학을 보여준다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=581&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 소설한남 | 서울 용산구 한남대로20길 21-18 B동 지하1층 | 02-797-5995",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-623",
+      "name": "소수헌",
+      "region": "중구",
+      "address": "서울 중구 만리재로21길 8 소수헌빌딩",
+      "category": "아시아",
+      "representativeMenu": "런치 오마카세",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-623_menu_1",
+          "name": "런치 오마카세",
+          "price": "₩300,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-623_menu_2",
+          "name": "디너 오마카세",
+          "price": "₩500,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0502-1933-1337",
+      "hours": "화-금요일 12:00-14:00, 18:30-21:00, 토요일 12:00-14:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=623&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 소수헌 05 | 서울 중구 만리재로21길 8 소수헌빌딩 | 0502-1933-1337",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-582",
+      "name": "소울",
+      "region": "용산구",
+      "address": "서울 용산구 신흥로26길 35 바나힐 지하1층 소울",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-582_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩150,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-582_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩250,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1335-7685",
+      "hours": "목-월요일 10:00-15:00, 18:00-22:00, 라스트오더 13:00, 19:30",
+      "closingDays": "화·수요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=582&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 소울 05 | 서울 용산구 신흥로26길 35 바나힐 지하1층 소울 | 0507-1335-7685",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-667",
+      "name": "소코",
+      "region": "용산구",
+      "address": "서울 용산구 한남대로20길 47",
+      "category": "바&펍",
+      "representativeMenu": "커버차지",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-667_menu_1",
+          "name": "커버차지",
+          "price": "₩10,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-796-4486",
+      "hours": "월-일요일 19:00-02:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=667&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 소코 | 서울 용산구 한남대로20길 47 | 02-796-4486",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-583",
+      "name": "솔밤",
+      "region": "강남구",
+      "address": "서울 강남구 학동로 231 백영논현센터 2층 솔밤",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1385-7308",
+      "hours": "월-토요일 17:30-22:30",
+      "closingDays": "일요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=583&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 솔밤 05 | 서울 강남구 학동로 231 백영논현센터 2층 솔밤 | 0507-1385-7308",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-584",
+      "name": "수티문",
+      "region": "영등포구",
+      "address": "서울 영등포구 국제금융로8길 27-8 지하1층 수티문",
+      "category": "한식",
+      "representativeMenu": "꽃 화(花) 코스",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-584_menu_1",
+          "name": "꽃 화(花) 코스",
+          "price": "₩130,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-584_menu_2",
+          "name": "글월 문(文) 코스",
+          "price": "₩200,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-584_menu_3",
+          "name": "한상차림 A 코스 (평일 점심 한정)",
+          "price": "₩45,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-584_menu_4",
+          "name": "한상차림 B 코스 (평일 점심 한정)",
+          "price": "₩65,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1383-7323",
+      "hours": "월-금요일 11:30-15:00, 18:00-21:30, 토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=584&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 수티문 05 | 서울 영등포구 국제금융로8길 27-8 지하1층 수티문 | 0507-1383-7323",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-625",
+      "name": "스시조",
+      "region": "중구",
+      "address": "서울 중구 소공로 106",
+      "category": "아시아",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-625_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩165,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-625_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩189,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-317-0373",
+      "hours": "12:00-15:00, 17:30-22:00, 라스트오더 21:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "12:00-15:00, 17:30-22:00, 라스트오더 21:30",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=625&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 스시조 | 서울 중구 소공로 106 | 02-317-0373",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-585",
+      "name": "스와니예",
+      "region": "강남구",
+      "address": "서울 강남구 강남대로 652 신사스퀘어 2층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-585_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩220,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-585_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩340,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-3477-9386",
+      "hours": "화-일요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "이준 셰프는 한국인의 삶의 방식이 녹아 있는 인문학적 특징, 선대의 경험과 개인의 추억, 산&middot;바다&middot;땅을 아우르는 식문화 등 3가지 요소를 축으로 창의적인 요리를 내놓는다. 그가 선보이는 &lsquo;서울 퀴진&rsquo;에는 전통과 현대, 다양한 문화가 뒤섞인 서울을 닮은 요리라는 의미가 담겨 있다. 분기별로 다양한 주제의 코스를 선보인다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=585&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 스와니예 | 서울 강남구 강남대로 652 신사스퀘어 2층 | 02-3477-9386",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-626",
+      "name": "아리아께",
+      "region": "중구",
+      "address": "서울 중구 동호로 249 2층",
+      "category": "아시아",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-626_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩145,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-626_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩195,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2230-3356",
+      "hours": "12:00-14:30, 17:30-21:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=626&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 아리아께 | 서울 중구 동호로 249 2층 | 02-2230-3356",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-612",
+      "name": "알라프리마",
+      "region": "강남구",
+      "address": "서울 강남구 학동로17길 13 1층 (인본빌딩)",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-612_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩190,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-612_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩350,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-511-2555",
+      "hours": "수-월요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "화요일 정기휴무",
+      "description": "일본에서 일식과 양식을 배워온 김진혁 셰프의 창의적인 이노베이티브 퀴진 레스토랑이다. 일식, 프렌치, 이탤리언, 동남아 등 장르에 국한하지 않고 다양한 조리법으로 독창적인 맛의 조합을 담아낸 요리가 색다른 즐거움을 선사한다. 맛과 향, 식감의 밸런스가 정교하다는 평을 얻고 있으며 와인은 물론 사케에도 잘 어울린다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=612&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 알라프리마 | 서울 강남구 학동로17길 13 1층 (인본빌딩) | 02-511-2555",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-651",
+      "name": "양출서울",
+      "region": "강남구",
+      "address": "서울 강남구 언주로135길 34",
+      "category": "채식",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1466-4420",
+      "hours": "월-토요일 18:00-22:00",
+      "closingDays": "일요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=651&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "채식 | 양출서울 05 | 서울 강남구 언주로135길 34 | 0507-1466-4420",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-642",
+      "name": "영동장어",
+      "region": "강남구",
+      "address": "서울 강남구 언주로148길 8 1층 영동장어",
+      "category": "그릴",
+      "representativeMenu": "강화갯벌장어",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-642_menu_1",
+          "name": "강화갯벌장어",
+          "price": "₩85,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1454-9997",
+      "hours": "월-토요일 11:30-01:00, 일요일 11:30-24:00, 라스트오더 23:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=642&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 영동장어 05 | 서울 강남구 언주로148길 8 1층 영동장어 | 0507-1454-9997",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-627",
+      "name": "영동포차나",
+      "region": "강남구",
+      "address": "서울 강남구 언주로148길 14 나동 2층 208호",
+      "category": "아시아",
+      "representativeMenu": "크리스피 포크와 쏨땀 세트",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-627_menu_1",
+          "name": "크리스피 포크와 쏨땀 세트",
+          "price": "₩32,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-627_menu_2",
+          "name": "오징어 먹물 꿍옵운센",
+          "price": "₩29,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-627_menu_3",
+          "name": "쏨땀",
+          "price": "₩13,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1355-4883",
+      "hours": "월-금요일 18:00-24:00, 라스트오더 23:00",
+      "closingDays": "토·일요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=627&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 영동포차나 05 | 서울 강남구 언주로148길 14 나동 2층 208호 | 0507-1355-4883",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-586",
+      "name": "온지음",
+      "region": "종로구",
+      "address": "서울 종로구 효자로 49 온지음 4층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-586_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩170,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-586_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩250,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6952-0024",
+      "hours": "화-금요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "토-월요일 정기휴무",
+      "description": "조선왕조 궁중 음식 이수자 조은희 셰프와 박성배 셰프가 고조리서와 지역 반가에서 계승되는 조리법을 연구해 재현하면서 현대에 맞는 새로운 재료와 방식을 접목해 요즘에 맞도록 발전시킨 한식을 선보인다. 한식의 뿌리인 고려 음식 책을 편찬하는 등 오픈부터 지금까지 꾸준히 한식을 연구하고 있다. 전통문화연구소 온지음에서 운영하고 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=586&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 온지음 | 서울 종로구 효자로 49 온지음 4층 | 02-6952-0024",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-587",
+      "name": "용수산 비원점",
+      "region": "종로구",
+      "address": "서울 종로구 창덕궁1길 2",
+      "category": "한식",
+      "representativeMenu": "산정식 (평일 점심)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-587_menu_1",
+          "name": "산정식 (평일 점심)",
+          "price": "₩58,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-587_menu_2",
+          "name": "용정식 (주중, 주말 점심코스)",
+          "price": "₩78,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-587_menu_3",
+          "name": "궁정식 (주중, 주말 점심코스)",
+          "price": "₩108,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-587_menu_4",
+          "name": "시림정식 (주중, 주말 저녁코스)",
+          "price": "₩118,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-587_menu_5",
+          "name": "예절정식 (주중, 주말 저녁코스)",
+          "price": "₩168,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-587_menu_6",
+          "name": "석하산 (주중, 주말 저녁 사전예약 코스)",
+          "price": "₩208,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-743-5999",
+      "hours": "화-일요일 11:45-14:30, 17:30-22:00, 라스트오더 20:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "옛고려의 수도로써 명성을 떨쳤던 개성 미식의 정수를 느낄 수 있는 한정식 전문 업장. 1대 최상옥 회장에 이어 허정유 대표가 3대째 개성 대갓집의 맛을 이어오고 있다. 청포묵, 탕평채, 보쌈김치 등 10여 가지 요리를 코스로 내고 있으며 자극적이지 않고 슴슴한 간으로 재료 본연의 풍부한 맛을 그대로 음미할 수 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=587&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 용수산 비원점 | 서울 종로구 창덕궁1길 2 | 02-743-5999",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-588",
+      "name": "우래옥",
+      "region": "중구",
+      "address": "서울 중구 창경궁로 62-29",
+      "category": "한식",
+      "representativeMenu": "평양냉면",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-588_menu_1",
+          "name": "평양냉면",
+          "price": "₩16,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-588_menu_2",
+          "name": "비빔냉면",
+          "price": "₩16,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2265-0151",
+      "hours": "화-일요일 11:30-21:00, 라스트오더 20:20",
+      "closingDays": "월요일 정기휴무",
+      "description": "서울에서 가장 오래된 평양냉면 전문점. 평양의 유명 냉면집 을 운영하던 창업주 장원일이 월남해 1946년 을지로에 개업한 뒤 현재까지 이어져오고 있다. 한우를 우려낸 진한 육수와 툭툭 끊기는 메밀 면으로 지금까지 남녀노소를 불문하고 사랑받는 중이다. 평양냉면 이외에도 김치말이냉면, 불고기, 갈비 등의 인기 메뉴가 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=588&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 우래옥 | 서울 중구 창경궁로 62-29 | 02-2265-0151",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-628",
+      "name": "유유안",
+      "region": "종로구",
+      "address": "서울 종로구 새문안로 97 11층",
+      "category": "아시아",
+      "representativeMenu": "베이징 덕 (한 마리)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-628_menu_1",
+          "name": "베이징 덕 (한 마리)",
+          "price": "₩195,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-628_menu_2",
+          "name": "코스 요리",
+          "price": "₩138,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6388-5500",
+      "hours": "11:30-14:30, 17:30-21:30, 라스트오더 14:00, 21:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "포시즌스 호텔 서울의 광동식 중식 레스토랑. 불도장과 흑마늘쇠고기찜 등 다양한 정통 광둥 요리는 물론이고 중국에서 공수한 전문 화덕으로 베이징덕을 조리해 눈앞에서 직접 해체 쇼를 펼치는 퍼포먼스는 보는 재미까지 안겨준다. 제대로 베이징덕을 전문적으로 선보이는 몇 안 되는 업장 중 한 곳이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=628&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 유유안 | 서울 종로구 새문안로 97 11층 | 02-6388-5500",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-589",
+      "name": "윤서울",
+      "region": "강남구",
+      "address": "서울 강남구 선릉로 805 1층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-589_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩120,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-589_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩240,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-6742-4205",
+      "hours": "화-토요일 12:00-14:30, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "김도윤 셰프만의 창의적인 모던 한식 코스와 전통주 페어링을 경험할 수 있는 곳이다. 우리 밀을 자가 제면한 구수한 향의 들기름 면, 32개월 이상 사육해 풍미와 감칠맛이 탁월한 올리브 한우, 직접 말린 생선 등을 활용한 메뉴들로 한국인은 물론 외국인들에게도 사랑받고 있다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=589&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 윤서울 | 서울 강남구 선릉로 805 1층 | 010-6742-4205",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-643",
+      "name": "이목스모크다이닝",
+      "region": "강남구",
+      "address": "서울 강남구 압구정로2길 6 지하1층",
+      "category": "그릴",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-643_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩180,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-643_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩220,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1341-4729",
+      "hours": "화요일 18:00-21:00, 수-토요일 12:00-15:00, 18:00-21:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=643&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "그릴 | 이목스모크다이닝 05 | 서울 강남구 압구정로2길 6 지하1층 | 0507-1341-4729",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-613",
+      "name": "이스트",
+      "region": "강남구",
+      "address": "서울 강남구 언주로170길 26-6 3층",
+      "category": "양식",
+      "representativeMenu": "디너 코스 Dinner Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-613_menu_1",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩210,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "070-8855-0470",
+      "hours": "화-목요일 18:00-22:30, 금-토요일 17:00-22:30, 라스트오더 20:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "화-목요일 18:00-22:30, 금-토요일 17:00-22:30, 라스트오더 20:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=613&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 이스트 | 서울 강남구 언주로170길 26-6 3층 | 070-8855-0470",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-590",
+      "name": "이타닉가든",
+      "region": "강남구",
+      "address": "서울 강남구 테헤란로 231 조선팰리스 36층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-590_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩250,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-590_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩370,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-727-7610",
+      "hours": "수-일요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "도심 속 식물원 같은 공간에서 손종원 셰프가 풀어내는 한식과 프렌치를 접목시킨 이노베이티브 퀴진을 경험할 수 있는 곳. 발효와 숙성의 미학이라는 한식의 정체성에 새로운 감각을 입히며 보다 넓은 경지의 미식을 제공하는 중이다. 강남 한복판의 조선 팰리스 호텔 36층에 위치해 통창 너머로 내려다보이는 도심 뷰 또한 압권이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=590&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 이타닉가든 | 서울 강남구 테헤란로 231 조선팰리스 36층 | 02-727-7610",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-591",
+      "name": "자하손만두",
+      "region": "종로구",
+      "address": "서울 종로구 백석동길 12",
+      "category": "한식",
+      "representativeMenu": "만두국",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-591_menu_1",
+          "name": "만두국",
+          "price": "₩20,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-591_menu_2",
+          "name": "떡만두국",
+          "price": "₩20,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-379-2648",
+      "hours": "화-일요일 11:00-21:00, 라스트오더 20:15",
+      "closingDays": "월요일 정기휴무",
+      "description": "화-일요일 11:00-21:00, 라스트오더 20:15",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=591&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 자하손만두 | 서울 종로구 백석동길 12 | 02-379-2648",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-656",
+      "name": "재인",
+      "region": "용산구",
+      "address": "서울 용산구 이태원로54길 48 2층",
+      "category": "디저트&카페",
+      "representativeMenu": "나무",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-656_menu_1",
+          "name": "나무",
+          "price": "₩9,800",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-656_menu_2",
+          "name": "배샤를로뜨",
+          "price": "₩13,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1449-2454",
+      "hours": "수-일요일 13:00-19:00, 라스트오더 18:00",
+      "closingDays": "월·화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=656&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 재인 05 | 서울 용산구 이태원로54길 48 2층 | 0507-1449-2454",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-629",
+      "name": "정대",
+      "region": "종로구",
+      "address": "서울 종로구 경희궁길 36 2층 (신문로2가, 경희당빌딩)",
+      "category": "아시아",
+      "representativeMenu": "디너 코스 Dinner Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-629_menu_1",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩330,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-737-3204",
+      "hours": "17:30-23:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "서울 종로구 경희궁길 36 2층 (신문로2가, 경희당빌딩)",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=629&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 정대 | 서울 종로구 경희궁길 36 2층 (신문로2가, 경희당빌딩) | 02-737-3204",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-592",
+      "name": "정식당",
+      "region": "강남구",
+      "address": "서울 강남구 선릉로158길 11",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-592_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩200,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-592_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩300,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-517-4654",
+      "hours": "12:00-15:00, 17:30-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "한국은 물론 세계 미식씬에 &lsquo;뉴 코리안&rsquo;이라는 새로운 화두를 던진 임정식 셰프가 서울과 뉴욕에서 동시에 선보이는 한식 파인 다이닝이다. 익숙한 한식 메뉴와 식재료를 재기 발랄하게 보여주면서도 맛의 섬세함, 특유의 균형감은 비범하게 유지하며 한식의 경계를 허무는 중이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=592&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 정식당 | 서울 강남구 선릉로158길 11 | 02-517-4654",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-614",
+      "name": "제로컴플렉스",
+      "region": "용산구",
+      "address": "서울 용산구 서빙고로59길 11-8",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-614_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩190,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-614_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩270,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-532-0876",
+      "hours": "목-화요일 12:00-15:30, 18:00-22:30",
+      "closingDays": "수요일 정기휴무",
+      "description": "이충후 셰프의 서울식 코리안 비스트로. 국내 계절 채소와 로컬 허브가 가진 본연의 맛을 최대한 살려 미니멀하면서도 섬세한 복합미를 갖춘 요리를 선보인다. 국내 다이닝 신에서 내추럴 와인 전파의 선구자적인 역할을 해왔으며, 작년 6월에 서빙고동의 새로운 공간으로 이전하며 세 번째 시즌을 열었다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=614&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 제로컴플렉스 | 서울 용산구 서빙고로59길 11-8 | 02-532-0876",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-668",
+      "name": "제스트",
+      "region": "강남구",
+      "address": "서울 강남구 도산대로55길 26 하늘빌딩 1층",
+      "category": "바&펍",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-3177-8801",
+      "hours": "월-금요일 18:30-02:00, 토-일요일 15:00-02:00, 라스트오더 주방 12:00, 바 01:20",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-금요일 18:30-02:00, 토-일요일 15:00-02:00, 라스트오더 주방 12:00, 바 01:20",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=668&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 제스트 | 서울 강남구 도산대로55길 26 하늘빌딩 1층 | 010-3177-8801",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-657",
+      "name": "제이엘 디저트바",
+      "region": "용산구",
+      "address": "서울 용산구 대사관로31길 7-2 3층 제이엘디저트바",
+      "category": "디저트&카페",
+      "representativeMenu": "",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1405-6140",
+      "hours": "수-금요일 13:00-22:00, 라스트오더 21:10, 토요일 13:00-23:00, 라스트오더 22:10, 일요일 13:00-21:00, 라스트오더 20:10",
+      "closingDays": "월요일, 화요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=657&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 제이엘 디저트바 05 | 서울 용산구 대사관로31길 7-2 3층 제이엘디저트바 | 0507-1405-6140",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-658",
+      "name": "젠제로",
+      "region": "강남구",
+      "address": "서울 강남구 선릉로126길 14 예우빌딩 1층",
+      "category": "디저트&카페",
+      "representativeMenu": "소 포장(3 flavors)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-658_menu_1",
+          "name": "소 포장(3 flavors)",
+          "price": "₩25,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-658_menu_2",
+          "name": "대 포장(4 flavors)",
+          "price": "₩46,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-543-1261",
+      "hours": "월-일요일 12:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=658&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 젠제로 | 서울 강남구 선릉로126길 14 예우빌딩 1층 | 02-543-1261",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-575",
+      "name": "주은",
+      "region": "종로구",
+      "address": "서울 종로구 경희궁길 36 8층",
+      "category": "한식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-575_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩150,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-575_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩250,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-540-8580",
+      "hours": "화요일 18:00-22:00, 수-토요일 12:00-15:00, 18:00-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "한국의 사계절을 코스로 풀어내는 곳. 허상욱, 장웅복, 김상인 등 국내 유명 공예작가의 작품들을 한 곳에서 만날 수 있으며 민화를 주제로 한 미디어 아트를 감상할 수도 있다. 박주은 총괄 셰프가 자연 농법으로 재배한 다양한 농작물로 매 계절 지속가능한 한식 메뉴들을 선보인다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=575&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 주은 | 서울 종로구 경희궁길 36 8층 | 02-540-8580",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-665",
+      "name": "지화자",
+      "region": "종로구",
+      "address": "서울 종로구 자하문로 125",
+      "category": "한식",
+      "representativeMenu": "만찬 코스",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-665_menu_1",
+          "name": "만찬 코스",
+          "price": "₩150,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-665_menu_2",
+          "name": "정찬 코스",
+          "price": "₩110,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2269-5834",
+      "hours": "수-월요일 11:30-15:00, 17:00-21:30, 라스트오더 18:30",
+      "closingDays": "화요일 정기휴무",
+      "description": "수-월요일 11:30-15:00, 17:00-21:30, 라스트오더 18:30",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=665&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 지화자 | 서울 종로구 자하문로 125 | 02-2269-5834",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-630",
+      "name": "진진",
+      "region": "마포구",
+      "address": "서울 마포구 월드컵북로1길 60 1층 진진",
+      "category": "아시아",
+      "representativeMenu": "멘보샤(회원가)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-630_menu_1",
+          "name": "멘보샤(회원가)",
+          "price": "₩24,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-630_menu_2",
+          "name": "칭찡우럭(회원가)",
+          "price": "₩34,400",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1447-8879",
+      "hours": "월-토요일 11:30-15:00, 17:00-21:30, 일요일 12:00-15:00, 17:00-21:30, 라스트오더 14:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=630&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 진진 05 | 서울 마포구 월드컵북로1길 60 1층 진진 | 0507-1447-8879",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-669",
+      "name": "찰스 H.",
+      "region": "종로구",
+      "address": "서울 종로구 새문안로 97 LL층",
+      "category": "바&펍",
+      "representativeMenu": "Queen Of Diamond",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-669_menu_1",
+          "name": "Queen Of Diamond",
+          "price": "₩33,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-669_menu_2",
+          "name": "Spilled Milk",
+          "price": "₩33,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-669_menu_3",
+          "name": "Vixen Fix",
+          "price": "₩31,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6388-5500",
+      "hours": "월-일요일 18:00-01:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=669&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 찰스 H. | 서울 종로구 새문안로 97 LL층 | 02-6388-5500",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-615",
+      "name": "테이블포포",
+      "region": "용산구",
+      "address": "서울 용산구 대사관로31길 25-12 5층, 테이블포포",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-615_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩130,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-615_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩220,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-2905-6832",
+      "hours": "12:00-15:00, 18:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "100% 예약제로 운영되는 이탈리안 레스토랑. 테이블 포포와 파스타 포포를 운영하는 김성운 셰프의 고향인 태안에서 셰프의 가족이 직접 농사를 지은 식재료와 가장 신선한 제철 해산물을 이용한 유러피안 퀴진을 선보인다. 고향에 대한 사랑과 로컬 푸드를 추구하는 정신을 가장 정교한 형태로 맛볼 수 있는 레스토랑이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=615&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 테이블포포 | 서울 용산구 대사관로31길 25-12 5층, 테이블포포 | 010-2905-6832",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-659",
+      "name": "파티세리 뮤흐",
+      "region": "용산구",
+      "address": "서울 용산구 대사관로31길 25-12 2층",
+      "category": "디저트&카페",
+      "representativeMenu": "브랜디 케이크",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-659_menu_1",
+          "name": "브랜디 케이크",
+          "price": "₩85,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-659_menu_2",
+          "name": "피스타치오 파운드",
+          "price": "₩42,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1312-2953",
+      "hours": "월-일요일 12:00-21:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=659&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 파티세리 뮤흐 05 | 서울 용산구 대사관로31길 25-12 2층 | 0507-1312-2953",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-616",
+      "name": "페리지",
+      "region": "강남구",
+      "address": "서울 강남구 봉은사로68길 6-5 1층",
+      "category": "양식",
+      "representativeMenu": "테이스팅 코스",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-616_menu_1",
+          "name": "테이스팅 코스",
+          "price": "₩165,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-6550-8912",
+      "hours": "화-토요일 17:00-22:20, 라스트오더 20:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "미국의 요리 학교 CIA 출신인 신가영, 임홍근 셰프 부부가 창작 파스타를 선보이는 이탈리아 레스토랑이다. 고유한 식감이 있는 생면 파스타 면과 다양한 한국의 제철 재료들의 창의적인 조합을 경험할 수 있는 특별한 공간이다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=616&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 페리지 | 서울 강남구 봉은사로68길 6-5 1층 | 010-6550-8912",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-593",
+      "name": "평양면옥",
+      "region": "중구",
+      "address": "서울 중구 장충단로 207",
+      "category": "한식",
+      "representativeMenu": "냉면",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-593_menu_1",
+          "name": "냉면",
+          "price": "₩15,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-593_menu_2",
+          "name": "비빔냉면",
+          "price": "₩15,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-593_menu_3",
+          "name": "제육(돼지고기)",
+          "price": "₩34,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-2267-7784",
+      "hours": "화-일요일 11:00-21:30, 라스트오더 21:00",
+      "closingDays": "월요일 정기휴무",
+      "description": "화-일요일 11:00-21:30, 라스트오더 21:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=593&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 평양면옥 | 서울 중구 장충단로 207 | 02-2267-7784",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-660",
+      "name": "프릳츠 도화점",
+      "region": "마포구",
+      "address": "서울 마포구 새창로2길 17",
+      "category": "디저트&카페",
+      "representativeMenu": "에스프레소",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-660_menu_1",
+          "name": "에스프레소",
+          "price": "₩4,900",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-660_menu_2",
+          "name": "롱블랙",
+          "price": "₩4,900",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-660_menu_3",
+          "name": "아메리카노",
+          "price": "₩4,900",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-3275-2045",
+      "hours": "월-금요일 08:00-22:00, 토-일요일 10:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-금요일 08:00-22:00, 토-일요일 10:00-22:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=660&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 프릳츠 도화점 | 서울 마포구 새창로2길 17 | 02-3275-2045",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-632",
+      "name": "플레이버 타운",
+      "region": "성동구",
+      "address": "서울 성동구 서울숲4길 18-7 1층, 2층",
+      "category": "아시아",
+      "representativeMenu": "맛동산 시그니처 세트",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-632_menu_1",
+          "name": "맛동산 시그니처 세트",
+          "price": "₩79,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1367-9954",
+      "hours": "화-목요일 17:30-22:30, 금-토요일 12:00-15:30, 17:30-22:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=632&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 플레이버 타운 05 | 서울 성동구 서울숲4길 18-7 1층, 2층 | 0507-1367-9954",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-617",
+      "name": "피에르가니에르",
+      "region": "중구",
+      "address": "서울 중구 을지로 30 롯데호텔 신관 35층 피에르 가니에르",
+      "category": "양식",
+      "representativeMenu": "런치 코스 Lunch Course",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-617_menu_1",
+          "name": "런치 코스 Lunch Course",
+          "price": "₩120,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-617_menu_2",
+          "name": "디너 코스 Dinner Course",
+          "price": "₩200,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-317-7181",
+      "hours": "12:00-15:00, 18:00-22:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "서울 중구 을지로 30 롯데호텔 신관 35층 피에르 가니에르",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=617&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "양식 | 피에르가니에르 | 서울 중구 을지로 30 롯데호텔 신관 35층 피에르 가니에르 | 02-317-7181",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-661",
+      "name": "하우스오브신세계 디저트살롱",
+      "region": "중구",
+      "address": "서울 중구 남대문로 42 더 헤리티지 5층 하우스오브신세계 디저트살롱",
+      "category": "디저트&카페",
+      "representativeMenu": "대표 다과 세트",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-661_menu_1",
+          "name": "대표 다과 세트",
+          "price": "₩35,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-661_menu_2",
+          "name": "계절 다과 세트",
+          "price": "₩35,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-310-5060",
+      "hours": "월-목요일 10:30-20:00, 라스트오더 19:20, 금-일요일 10:30-20:30, 라스트오더 19:50",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-목요일 10:30-20:00, 라스트오더 19:20, 금-일요일 10:30-20:30, 라스트오더 19:50",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=661&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 하우스오브신세계 디저트살롱 | 서울 중구 남대문로 42 더 헤리티지 5층 하우스오브신세계 디저트살롱 | 02-310-5060",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-670",
+      "name": "한국술집 안씨막걸리",
+      "region": "용산구",
+      "address": "서울 용산구 회나무로 3 아름누리빌딩 1층",
+      "category": "바&펍",
+      "representativeMenu": "막걸리",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-670_menu_1",
+          "name": "막걸리",
+          "price": "₩40,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-4592-3609",
+      "hours": "월-일요일 17:30-23:30, 라스트오더 23:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-일요일 17:30-23:30, 라스트오더 23:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=670&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | 한국술집 안씨막걸리 | 서울 용산구 회나무로 3 아름누리빌딩 1층 | 010-4592-3609",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-595",
+      "name": "한국의집",
+      "region": "중구",
+      "address": "서울 중구 퇴계로36길 10 한국의집",
+      "category": "한식",
+      "representativeMenu": "한국의집 정식(오찬)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-595_menu_1",
+          "name": "한국의집 정식(오찬)",
+          "price": "₩150,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-595_menu_2",
+          "name": "한국의집 정식(만찬)",
+          "price": "₩250,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-3011-9200",
+      "hours": "26년 1월 재오픈 예정",
+      "closingDays": "일시 영업 중단",
+      "description": "한국의집은 제철 식재료, 궁중 진상품 등 귀한 식재료를 활용하여 조선왕조 궁중음식 기반의 파인다이닝을 선보인다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=595&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 한국의집 | 서울 중구 퇴계로36길 10 한국의집 | 02-3011-9200",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-596",
+      "name": "한성칼국수",
+      "region": "강남구",
+      "address": "서울 강남구 언주로148길 14 청호상가빌딩 가동 2층",
+      "category": "한식",
+      "representativeMenu": "칼국수",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-596_menu_1",
+          "name": "칼국수",
+          "price": "₩11,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-596_menu_2",
+          "name": "수육",
+          "price": "₩41,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-596_menu_3",
+          "name": "새우전",
+          "price": "₩26,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-544-0540",
+      "hours": "일-금요일 11:30-14:00, 17:00-20:00, 라스트오더 19:55",
+      "closingDays": "토요일 정기휴무",
+      "description": "1983년 강남 지역이 막 개발되던 당시 논현동에 자리 잡아 오랜 세월 동안 서울 시민들의 사랑을 받아 왔다.",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=596&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 한성칼국수 | 서울 강남구 언주로148길 14 청호상가빌딩 가동 2층 | 02-544-0540",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-597",
+      "name": "한일관",
+      "region": "강남구",
+      "address": "서울 강남구 압구정로38길 14",
+      "category": "한식",
+      "representativeMenu": "점심 상차림 (등심불고기)",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-597_menu_1",
+          "name": "점심 상차림 (등심불고기)",
+          "price": "₩37,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-597_menu_2",
+          "name": "점심 상차림 (갈비구이)",
+          "price": "₩45,000",
+          "isSignature": false
+        },
+        {
+          "id": "seoul-taste-100-2025-597_menu_3",
+          "name": "전통 갈비탕",
+          "price": "₩20,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "1577-9963",
+      "hours": "월-토요일 11:30-21:30, 일요일 11:00-21:30, 라스트오더 20:30",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "월-토요일 11:30-21:30, 일요일 11:00-21:30, 라스트오더 20:30",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=597&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "한식 | 한일관 | 서울 강남구 압구정로38길 14 | 1577-9963",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-662",
+      "name": "합 원서점",
+      "region": "종로구",
+      "address": "서울 종로구 율곡로 83 아라리오뮤지엄 신관2층",
+      "category": "디저트&카페",
+      "representativeMenu": "주악",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-662_menu_1",
+          "name": "주악",
+          "price": "₩3,000",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "010-5027-8190",
+      "hours": "수-일요일 12:00-18:00, 라스트오더 17:00",
+      "closingDays": "연중무휴, 상황에 따라 휴무 발생",
+      "description": "수-일요일 12:00-18:00, 라스트오더 17:00",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=662&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "디저트&카페 | 합 원서점 | 서울 종로구 율곡로 83 아라리오뮤지엄 신관2층 | 010-5027-8190",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-631",
+      "name": "호라파",
+      "region": "종로구",
+      "address": "서울 종로구 자하문로 37-1 2층",
+      "category": "아시아",
+      "representativeMenu": "까이고를레",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-631_menu_1",
+          "name": "까이고를레",
+          "price": "₩30,900",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-631_menu_2",
+          "name": "후무양",
+          "price": "₩18,900",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "0507-1414-0216",
+      "hours": "화-토요일 11:30-15:00, 18:00-22:00, 라스트오더 14:00, 21:00",
+      "closingDays": "일·월요일 정기휴무",
+      "description": "",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=631&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "아시아 | 호라파 05 | 서울 종로구 자하문로 37-1 2층 | 0507-1414-0216",
+          "confidence": 1
+        }
+      ]
+    },
+    {
+      "id": "seoul-taste-100-2025-666",
+      "name": "BAR CHAM",
+      "region": "종로구",
+      "address": "서울 종로구 자하문로7길 34",
+      "category": "바&펍",
+      "representativeMenu": "참 라자냐",
+      "lat": null,
+      "lng": null,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "seoul-taste-100-2025-666_menu_1",
+          "name": "참 라자냐",
+          "price": "₩14,000",
+          "isSignature": true
+        },
+        {
+          "id": "seoul-taste-100-2025-666_menu_2",
+          "name": "수육",
+          "price": "₩21,000",
+          "isSignature": false
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "02-6402-4750",
+      "hours": "수-월요일 18:00-01:00",
+      "closingDays": "화요일 정기휴무",
+      "description": "서울미식주간 2025 Email tasteofseoul.official@gmail.com",
+      "evidence": [
+        {
+          "sourceId": "seoul-taste-100-official-site",
+          "sourceUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=666&txt_search=",
+          "capturedAt": "2026-07-15",
+          "rawText": "바&펍 | BAR CHAM | 서울 종로구 자하문로7길 34 | 02-6402-4750",
+          "confidence": 1
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "seoul-taste-100-2025",
+      "name": "2025 서울미식 100선",
+      "type": "guide",
+      "provider": "서울특별시",
+      "description": "국내외 미식 전문가 60명이 선정한 서울 레스토랑·바 100곳"
+    }
+  ],
+  "sourceLinks": [
+    {
+      "id": "seoul-taste-100_link_1",
+      "restaurantId": "seoul-taste-100-2025-598",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 1,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_2",
+      "restaurantId": "seoul-taste-100-2025-619",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 2,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_3",
+      "restaurantId": "seoul-taste-100-2025-671",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 3,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_4",
+      "restaurantId": "seoul-taste-100-2025-570",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 4,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_5",
+      "restaurantId": "seoul-taste-100-2025-571",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 5,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_6",
+      "restaurantId": "seoul-taste-100-2025-633",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 6,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_7",
+      "restaurantId": "seoul-taste-100-2025-599",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 7,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_8",
+      "restaurantId": "seoul-taste-100-2025-572",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 8,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_9",
+      "restaurantId": "seoul-taste-100-2025-653",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 9,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_10",
+      "restaurantId": "seoul-taste-100-2025-634",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 10,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_11",
+      "restaurantId": "seoul-taste-100-2025-663",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 11,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_12",
+      "restaurantId": "seoul-taste-100-2025-573",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 12,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_13",
+      "restaurantId": "seoul-taste-100-2025-635",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 13,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_14",
+      "restaurantId": "seoul-taste-100-2025-644",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 14,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_15",
+      "restaurantId": "seoul-taste-100-2025-600",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 15,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_16",
+      "restaurantId": "seoul-taste-100-2025-618",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 16,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_17",
+      "restaurantId": "seoul-taste-100-2025-636",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 17,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_18",
+      "restaurantId": "seoul-taste-100-2025-601",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 18,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_19",
+      "restaurantId": "seoul-taste-100-2025-574",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 19,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_20",
+      "restaurantId": "seoul-taste-100-2025-645",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 20,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_21",
+      "restaurantId": "seoul-taste-100-2025-602",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 21,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_22",
+      "restaurantId": "seoul-taste-100-2025-603",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 22,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_23",
+      "restaurantId": "seoul-taste-100-2025-604",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 23,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_24",
+      "restaurantId": "seoul-taste-100-2025-605",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 24,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_25",
+      "restaurantId": "seoul-taste-100-2025-646",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 25,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_26",
+      "restaurantId": "seoul-taste-100-2025-664",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 26,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_27",
+      "restaurantId": "seoul-taste-100-2025-606",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 27,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_28",
+      "restaurantId": "seoul-taste-100-2025-647",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 28,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_29",
+      "restaurantId": "seoul-taste-100-2025-607",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 29,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_30",
+      "restaurantId": "seoul-taste-100-2025-654",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 30,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_31",
+      "restaurantId": "seoul-taste-100-2025-608",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 31,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_32",
+      "restaurantId": "seoul-taste-100-2025-609",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 32,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_33",
+      "restaurantId": "seoul-taste-100-2025-620",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 33,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_34",
+      "restaurantId": "seoul-taste-100-2025-576",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 34,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_35",
+      "restaurantId": "seoul-taste-100-2025-648",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 35,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_36",
+      "restaurantId": "seoul-taste-100-2025-649",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 36,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_37",
+      "restaurantId": "seoul-taste-100-2025-637",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 37,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_38",
+      "restaurantId": "seoul-taste-100-2025-610",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 38,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_39",
+      "restaurantId": "seoul-taste-100-2025-621",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 39,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_40",
+      "restaurantId": "seoul-taste-100-2025-638",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 40,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_41",
+      "restaurantId": "seoul-taste-100-2025-577",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 41,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_42",
+      "restaurantId": "seoul-taste-100-2025-578",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 42,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_43",
+      "restaurantId": "seoul-taste-100-2025-650",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 43,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_44",
+      "restaurantId": "seoul-taste-100-2025-579",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 44,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_45",
+      "restaurantId": "seoul-taste-100-2025-611",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 45,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_46",
+      "restaurantId": "seoul-taste-100-2025-622",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 46,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_47",
+      "restaurantId": "seoul-taste-100-2025-639",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 47,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_48",
+      "restaurantId": "seoul-taste-100-2025-652",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 48,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_49",
+      "restaurantId": "seoul-taste-100-2025-640",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 49,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_50",
+      "restaurantId": "seoul-taste-100-2025-580",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 50,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_51",
+      "restaurantId": "seoul-taste-100-2025-641",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 51,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_52",
+      "restaurantId": "seoul-taste-100-2025-655",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 52,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_53",
+      "restaurantId": "seoul-taste-100-2025-581",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 53,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_54",
+      "restaurantId": "seoul-taste-100-2025-623",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 54,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_55",
+      "restaurantId": "seoul-taste-100-2025-582",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 55,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_56",
+      "restaurantId": "seoul-taste-100-2025-667",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 56,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_57",
+      "restaurantId": "seoul-taste-100-2025-583",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 57,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_58",
+      "restaurantId": "seoul-taste-100-2025-584",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 58,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_59",
+      "restaurantId": "seoul-taste-100-2025-625",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 59,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_60",
+      "restaurantId": "seoul-taste-100-2025-585",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 60,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_61",
+      "restaurantId": "seoul-taste-100-2025-626",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 61,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_62",
+      "restaurantId": "seoul-taste-100-2025-612",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 62,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_63",
+      "restaurantId": "seoul-taste-100-2025-651",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 63,
+      "label": "채식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_64",
+      "restaurantId": "seoul-taste-100-2025-642",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 64,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_65",
+      "restaurantId": "seoul-taste-100-2025-627",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 65,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_66",
+      "restaurantId": "seoul-taste-100-2025-586",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 66,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_67",
+      "restaurantId": "seoul-taste-100-2025-587",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 67,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_68",
+      "restaurantId": "seoul-taste-100-2025-588",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 68,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_69",
+      "restaurantId": "seoul-taste-100-2025-628",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 69,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_70",
+      "restaurantId": "seoul-taste-100-2025-589",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 70,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_71",
+      "restaurantId": "seoul-taste-100-2025-643",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 71,
+      "label": "그릴 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_72",
+      "restaurantId": "seoul-taste-100-2025-613",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 72,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_73",
+      "restaurantId": "seoul-taste-100-2025-590",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 73,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_74",
+      "restaurantId": "seoul-taste-100-2025-591",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 74,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_75",
+      "restaurantId": "seoul-taste-100-2025-656",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 75,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_76",
+      "restaurantId": "seoul-taste-100-2025-629",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 76,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_77",
+      "restaurantId": "seoul-taste-100-2025-592",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 77,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_78",
+      "restaurantId": "seoul-taste-100-2025-614",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 78,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_79",
+      "restaurantId": "seoul-taste-100-2025-668",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 79,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_80",
+      "restaurantId": "seoul-taste-100-2025-657",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 80,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_81",
+      "restaurantId": "seoul-taste-100-2025-658",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 81,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_82",
+      "restaurantId": "seoul-taste-100-2025-575",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 82,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_83",
+      "restaurantId": "seoul-taste-100-2025-665",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 83,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_84",
+      "restaurantId": "seoul-taste-100-2025-630",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 84,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_85",
+      "restaurantId": "seoul-taste-100-2025-669",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 85,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_86",
+      "restaurantId": "seoul-taste-100-2025-615",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 86,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_87",
+      "restaurantId": "seoul-taste-100-2025-659",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 87,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_88",
+      "restaurantId": "seoul-taste-100-2025-616",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 88,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_89",
+      "restaurantId": "seoul-taste-100-2025-593",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 89,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_90",
+      "restaurantId": "seoul-taste-100-2025-660",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 90,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_91",
+      "restaurantId": "seoul-taste-100-2025-632",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 91,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_92",
+      "restaurantId": "seoul-taste-100-2025-617",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 92,
+      "label": "양식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_93",
+      "restaurantId": "seoul-taste-100-2025-661",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 93,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_94",
+      "restaurantId": "seoul-taste-100-2025-670",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 94,
+      "label": "바&펍 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_95",
+      "restaurantId": "seoul-taste-100-2025-595",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 95,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_96",
+      "restaurantId": "seoul-taste-100-2025-596",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 96,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_97",
+      "restaurantId": "seoul-taste-100-2025-597",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 97,
+      "label": "한식 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_98",
+      "restaurantId": "seoul-taste-100-2025-662",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 98,
+      "label": "디저트&카페 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_99",
+      "restaurantId": "seoul-taste-100-2025-631",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 99,
+      "label": "아시아 · 2025 서울미식 100선"
+    },
+    {
+      "id": "seoul-taste-100_link_100",
+      "restaurantId": "seoul-taste-100-2025-666",
+      "sourceId": "seoul-taste-100-2025",
+      "ordinal": 100,
+      "label": "바&펍 · 2025 서울미식 100선"
+    }
+  ],
+  "meta": {
+    "generatedAt": "2026-07-18T11:11:57.473Z",
+    "restaurantCount": 100,
+    "categoryCounts": {
+      "양식": 21,
+      "아시아": 14,
+      "한식": 28,
+      "그릴": 11,
+      "디저트&카페": 10,
+      "바&펍": 7,
+      "채식": 9
+    }
+  }
+}

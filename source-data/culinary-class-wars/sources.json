@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ccw-s1-netflix",
+    "season": 1,
+    "type": "official-cast",
+    "publisher": "Netflix Tudum",
+    "url": "https://www.netflix.com/tudum/articles/culinary-class-wars-season-1-release-date-news"
+  },
+  {
+    "id": "ccw-s1-directory",
+    "season": 1,
+    "type": "secondary-restaurant-directory",
+    "publisher": "류진창2",
+    "url": "https://ryoojin2.tistory.com/m/8592"
+  },
+  {
+    "id": "ccw-s2-netflix",
+    "season": 2,
+    "type": "official-cast",
+    "publisher": "About Netflix",
+    "url": "https://about.netflix.com/en/news/culinary-class-wars-season-2-premieres-december-16"
+  },
+  {
+    "id": "ccw-s2-white-directory",
+    "season": 2,
+    "type": "secondary-restaurant-directory",
+    "publisher": "ODDY",
+    "url": "https://www.oddy.kr/white-spoon"
+  },
+  {
+    "id": "ccw-s2-black-directory",
+    "season": 2,
+    "type": "secondary-restaurant-directory",
+    "publisher": "ODDY",
+    "url": "https://www.oddy.kr/black-spoon"
+  }
+]

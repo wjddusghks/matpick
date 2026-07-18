@@ -407,17 +407,23 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set([
-  "ttoganjip",
-  "popular-restaurants",
-  "michelin",
-  "old-korean-100",
-  "baekjong-wok",
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
+const sourceIdsPendingCardImages = new Set<string>([
   "culinary-class-wars",
   "jeonhyunmoo-plan",
 ]);
+const publicDataSourceIds = new Set(
+  [
+    "ttoganjip",
+    "popular-restaurants",
+    "michelin",
+    "old-korean-100",
+    "baekjong-wok",
+    "sikgaek-baekban-trip",
+    "wednesday-gourmet",
+    "culinary-class-wars",
+    "jeonhyunmoo-plan",
+  ].filter((sourceId) => !sourceIdsPendingCardImages.has(sourceId))
+);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
   const visibleCreators = dataset.creators.filter(
@@ -1025,12 +1031,12 @@ const publicDiscoveryTopicSlugs = new Set([
   "old-korean-100",
   "baekjong-wok",
   "sikgaek-baekban-trip",
-  "culinary-class-wars",
-  "jeonhyunmoo-plan",
 ]);
 
-export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
-  publicDiscoveryTopicSlugs.has(topic.slug)
+export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter(
+  (topic) =>
+    publicDiscoveryTopicSlugs.has(topic.slug) &&
+    (topic.kind !== "source" || !sourceIdsPendingCardImages.has(topic.targetId))
 );
 
 export function getDiscoveryTopicBySlug(slug: string) {

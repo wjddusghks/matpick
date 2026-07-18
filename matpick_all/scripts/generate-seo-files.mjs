@@ -16,7 +16,11 @@ const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
 const publicDataSourceIds = new Set([
   "ttoganjip",
   "popular-restaurants",
+  "michelin",
   "old-korean-100",
+  "baekjong-wok",
+  "sikgaek-baekban-trip",
+  "wednesday-gourmet",
 ]);
 const episodicSourceIds = new Set(["ttoganjip"]);
 
@@ -186,9 +190,9 @@ async function buildSitemap(siteUrl) {
     (topic) => topic.kind === "source" && publicDataSourceIds.has(topic.targetId)
   );
   const { creators, visits } = filterVisibleCreatorData([], []);
-  const visibleSourceLinks = topicEnrichments.flatMap((dataset) =>
-    (dataset.sourceLinks || []).filter((link) => publicDataSourceIds.has(link.sourceId))
-  );
+  const visibleSourceLinks = [baseDataset, ...generatedDatasets, ...topicEnrichments]
+    .flatMap((dataset) => dataset.sourceLinks || [])
+    .filter((link) => publicDataSourceIds.has(link.sourceId));
   const visibleRestaurantIds = new Set(
     visibleSourceLinks.map((link) => link.restaurantId).filter(Boolean)
   );

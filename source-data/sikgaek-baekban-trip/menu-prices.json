@@ -1,6 +1,6 @@
 {
   "source": "Kakao Maps public place search and place panel",
-  "collectedAt": "2026-07-18T07:29:49.895Z",
+  "collectedAt": "2026-07-18T12:40:24.494Z",
   "runStatus": "complete",
   "matchingMethod": "restaurant name + address + coordinate distance",
   "totalRestaurantCount": 705,
@@ -438,7 +438,7 @@
       "name": "서산 광진상회",
       "address": "충남 서산시 운산면 해운로 761 (원벌리 49-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.163Z",
+      "verifiedAt": "2026-07-18T12:32:13.704Z",
       "menus": [],
       "candidates": []
     },
@@ -1142,7 +1142,7 @@
       "name": "서울 에빈의커피이야기",
       "address": "서울 중구 퇴계로42길 35 (필동2가 70-5)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.196Z",
+      "verifiedAt": "2026-07-18T12:32:13.722Z",
       "menus": [],
       "candidates": []
     },
@@ -4339,7 +4339,7 @@
       "name": "삼척 길모퉁이 포차",
       "address": "강원 삼척시 봉황로 9-22 (남양동 341)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.019Z",
+      "verifiedAt": "2026-07-18T12:32:13.684Z",
       "menus": [],
       "candidates": []
     },
@@ -4408,7 +4408,7 @@
       "name": "삼척 남궁스넥",
       "address": "강원 삼척시 성당길 93-14 (당저동 143-2)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.011Z",
+      "verifiedAt": "2026-07-18T12:32:13.693Z",
       "menus": [],
       "candidates": []
     },
@@ -5069,7 +5069,7 @@
       "name": "서울 구이마당",
       "address": "서울 용산구 대사관로 58 (한남동 639-8)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.957Z",
+      "verifiedAt": "2026-07-18T12:32:13.652Z",
       "menus": [],
       "candidates": [
         {
@@ -5958,7 +5958,7 @@
       "name": "대전 탑집",
       "address": "대전 중구 선화서로19번길 44 (선화동 430-6)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.970Z",
+      "verifiedAt": "2026-07-18T12:32:13.670Z",
       "menus": [],
       "candidates": []
     },
@@ -6092,7 +6092,7 @@
       "name": "대전 뽀뽀분식",
       "address": "대전 중구 계룡로881번길 44 (용두동 13-18)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.970Z",
+      "verifiedAt": "2026-07-18T12:32:13.648Z",
       "menus": [],
       "candidates": []
     },
@@ -6485,7 +6485,7 @@
       "name": "서울 진가식탁 (복춘정)",
       "address": "서울 마포구 월드컵로21길 18 (망원동 57-498)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.092Z",
+      "verifiedAt": "2026-07-18T12:32:13.819Z",
       "menus": [],
       "candidates": []
     },
@@ -6783,7 +6783,7 @@
       "name": "서울 진주식당",
       "address": "서울 용산구 한강대로62나길 2 (한강로1가 196-2)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:27.948Z",
+      "verifiedAt": "2026-07-18T12:32:14.180Z",
       "menus": [],
       "candidates": [
         {
@@ -7564,7 +7564,7 @@
       "name": "순천 풍미통닭",
       "address": "전남 순천시 성남뒷길 3 (장천동 19-16)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.765Z",
+      "verifiedAt": "2026-07-18T12:32:14.166Z",
       "menus": [],
       "candidates": [
         {
@@ -8378,7 +8378,7 @@
       "name": "서울 금문장",
       "address": "서울 종로구 지봉로8길 45 (숭인동 61-30)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.826Z",
+      "verifiedAt": "2026-07-18T12:32:14.233Z",
       "menus": [],
       "candidates": []
     },
@@ -8422,7 +8422,7 @@
       "name": "서울 경상도식당 (경상도집)",
       "address": "서울 중구 을지로39길 29 (을지로6가 1-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.897Z",
+      "verifiedAt": "2026-07-18T12:32:14.330Z",
       "menus": [],
       "candidates": [
         {
@@ -9416,7 +9416,7 @@
       "name": "수원 남보원불고기",
       "address": "경기 수원시 장안구 정조로922번길 20 (영화동 279-5)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.814Z",
+      "verifiedAt": "2026-07-18T12:32:14.225Z",
       "menus": [],
       "candidates": []
     },
@@ -11035,7 +11035,7 @@
       "name": "광주 창신식당",
       "address": "광주 서구 금화로492번길 18-1 (농성동 627-16)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.848Z",
+      "verifiedAt": "2026-07-18T12:32:14.243Z",
       "menus": [],
       "candidates": []
     },
@@ -11043,7 +11043,7 @@
       "name": "진해 경화당제과",
       "address": "경남 창원시 진해구 충장로321번길 26 (경화동 548)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:28.765Z",
+      "verifiedAt": "2026-07-18T12:32:14.180Z",
       "menus": [],
       "candidates": [
         {
@@ -11862,7 +11862,7 @@
       "name": "제주 몰고랑식당",
       "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.356Z",
+      "verifiedAt": "2026-07-18T12:32:14.175Z",
       "menus": [],
       "candidates": [
         {
@@ -13109,7 +13109,7 @@
       "name": "구례 청천슈퍼(주민 전용공간)",
       "address": "전남 구례군 마산면 당몰샘로 18 (마산리 670-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.449Z",
+      "verifiedAt": "2026-07-18T12:32:14.790Z",
       "menus": [],
       "candidates": [
         {
@@ -13222,7 +13222,7 @@
       "name": "서울 욕쟁이할머니집 신신식당",
       "address": "서울 성북구 보문로30라길 3 (동선동2가 77)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.359Z",
+      "verifiedAt": "2026-07-18T12:32:14.703Z",
       "menus": [],
       "candidates": []
     },
@@ -13454,7 +13454,7 @@
       "name": "서울 달밝은집",
       "address": "서울 성북구 정릉로6길 35 (정릉동 957-4)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.348Z",
+      "verifiedAt": "2026-07-18T12:32:14.682Z",
       "menus": [],
       "candidates": [
         {
@@ -14062,7 +14062,7 @@
       "name": "서울 우화식당",
       "address": "서울 중구 충무로11길 18-4 (입정동 250)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.347Z",
+      "verifiedAt": "2026-07-18T12:32:14.686Z",
       "menus": [],
       "candidates": [
         {
@@ -14240,7 +14240,7 @@
       "name": "서울 나드리식품",
       "address": "서울 중구 을지로33길 38 (주교동 208)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.441Z",
+      "verifiedAt": "2026-07-18T12:32:14.748Z",
       "menus": [],
       "candidates": []
     },
@@ -15342,7 +15342,7 @@
       "name": "여수 정다운식당",
       "address": "전남 여수시 봉산남8길 7 (봉산동 275-18)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:29.362Z",
+      "verifiedAt": "2026-07-18T12:32:14.707Z",
       "menus": [],
       "candidates": [
         {
@@ -18768,7 +18768,7 @@
       "name": "함양 조센집",
       "address": "경남 함양군 함양읍 학사루길 36 (운림리 35-5)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.164Z",
+      "verifiedAt": "2026-07-18T12:32:14.728Z",
       "menus": [],
       "candidates": []
     },
@@ -18802,7 +18802,7 @@
       "name": "서울 해장국사람들",
       "address": "서울 종로구 자하문로 50-1 (창성동 98-6)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.187Z",
+      "verifiedAt": "2026-07-18T12:32:14.763Z",
       "menus": [],
       "candidates": []
     },
@@ -18845,7 +18845,7 @@
       "name": "서울 서촌통영",
       "address": "서울 종로구 필운대로 47 (누하동 8-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.169Z",
+      "verifiedAt": "2026-07-18T12:32:15.185Z",
       "menus": [],
       "candidates": [
         {
@@ -19349,7 +19349,7 @@
       "name": "담양 미소댓잎국수 (담양국수거리)",
       "address": "전남 담양군 담양읍 객사3길 20 (객사리 208)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.191Z",
+      "verifiedAt": "2026-07-18T12:32:15.206Z",
       "menus": [],
       "candidates": [
         {
@@ -19370,7 +19370,7 @@
       "name": "담양 부부식당",
       "address": "전남 담양군 담양읍 중앙로 18 (지침리 668)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.144Z",
+      "verifiedAt": "2026-07-18T12:32:15.128Z",
       "menus": [],
       "candidates": [
         {
@@ -19484,7 +19484,7 @@
       "name": "담양 목화식당",
       "address": "전남 담양군 담양읍 천변5길 3 (천변리 137)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.165Z",
+      "verifiedAt": "2026-07-18T12:32:15.156Z",
       "menus": [],
       "candidates": [
         {
@@ -20703,7 +20703,7 @@
       "name": "서울 할매보리밥집",
       "address": "서울 용산구 보광로14길 12-4 (보광동 10-9)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.818Z",
+      "verifiedAt": "2026-07-18T12:32:15.214Z",
       "menus": [],
       "candidates": []
     },
@@ -21032,7 +21032,7 @@
       "name": "서울 시장회집",
       "address": "서울 용산구 소월로20길 38 (용산동2가 1-76)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.813Z",
+      "verifiedAt": "2026-07-18T12:32:15.219Z",
       "menus": [],
       "candidates": []
     },
@@ -21151,7 +21151,7 @@
       "name": "강릉 항구마차",
       "address": "강원 강릉시 옥계면 금진리 149-3",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.797Z",
+      "verifiedAt": "2026-07-18T12:32:15.199Z",
       "menus": [],
       "candidates": []
     },
@@ -21220,7 +21220,7 @@
       "name": "강릉 주문진해물국수",
       "address": "강원 강릉시 성덕포남로188번길 10 (포남동 1167)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.765Z",
+      "verifiedAt": "2026-07-18T12:32:15.184Z",
       "menus": [],
       "candidates": [
         {
@@ -21277,7 +21277,7 @@
       "name": "강릉 미경이네 횟집",
       "address": "강원 강릉시 주문진읍 해안로 2017-1 (주문리 829-72)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.774Z",
+      "verifiedAt": "2026-07-18T12:32:15.620Z",
       "menus": [],
       "candidates": []
     },
@@ -21632,7 +21632,7 @@
       "name": "양평 표미숙국수",
       "address": "경기 양평군 옥천면 백현길 4 (옥천리 141-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.741Z",
+      "verifiedAt": "2026-07-18T12:32:15.588Z",
       "menus": [],
       "candidates": []
     },
@@ -23162,7 +23162,7 @@
       "name": "서울 갯마을",
       "address": "서울 송파구 백제고분로34길 41 (석촌동 226)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:30.708Z",
+      "verifiedAt": "2026-07-18T12:32:15.572Z",
       "menus": [],
       "candidates": [
         {
@@ -24500,7 +24500,7 @@
       "name": "홍천 오복식당",
       "address": "강원도 홍천군 남면 한서로 3395 (양덕원리 156-14)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.146Z",
+      "verifiedAt": "2026-07-18T12:32:15.574Z",
       "menus": [],
       "candidates": [
         {
@@ -24566,7 +24566,7 @@
       "name": "양주 부일기사식당 (부일부대찌개)",
       "address": "경기 양주시 장흥면 호국로 557-2 (부곡리 540-35)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.212Z",
+      "verifiedAt": "2026-07-18T12:32:15.628Z",
       "menus": [],
       "candidates": [
         {
@@ -24727,7 +24727,7 @@
       "name": "양주 동언집 (동언식당)",
       "address": "경기 양주시 덕정1길 15-3 (덕정동 350-63)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.292Z",
+      "verifiedAt": "2026-07-18T12:32:15.684Z",
       "menus": [],
       "candidates": []
     },
@@ -24735,7 +24735,7 @@
       "name": "양주 노고산로뎀나무",
       "address": "경기 양주시 장흥면 유원지로 83 (삼상리 146-7)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.186Z",
+      "verifiedAt": "2026-07-18T12:32:15.586Z",
       "menus": [],
       "candidates": []
     },
@@ -24835,7 +24835,7 @@
       "name": "태안 산장가든",
       "address": "충남 태안군 태안읍 상도로 49-57 (상옥리 1156)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.156Z",
+      "verifiedAt": "2026-07-18T12:32:15.569Z",
       "menus": [],
       "candidates": [
         {
@@ -25362,7 +25362,7 @@
       "name": "서울 골목집",
       "address": "서울 영등포구 도림로139가길 11-1 (문래동2가 42-6)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.170Z",
+      "verifiedAt": "2026-07-18T12:32:16.086Z",
       "menus": [],
       "candidates": [
         {
@@ -25715,7 +25715,7 @@
       "name": "서울 덕원",
       "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.148Z",
+      "verifiedAt": "2026-07-18T12:32:16.050Z",
       "menus": [],
       "candidates": [
         {
@@ -25986,7 +25986,7 @@
       "name": "인천 중국물만두",
       "address": "인천 부평구 주부토로32번길 27 (부평동 252-56)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.887Z",
+      "verifiedAt": "2026-07-18T12:32:16.077Z",
       "menus": [],
       "candidates": [
         {
@@ -27006,7 +27006,7 @@
       "name": "완도 장도식당슈퍼",
       "address": "전남 완도군 완도읍 청해진로1369번길 38-3 (장좌리 152-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.927Z",
+      "verifiedAt": "2026-07-18T12:32:16.087Z",
       "menus": [],
       "candidates": []
     },
@@ -27443,7 +27443,7 @@
       "name": "고성 해녀세자매",
       "address": "강원 고성군 현내면 대진항길 147 (대진리 5-10)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.957Z",
+      "verifiedAt": "2026-07-18T12:32:16.099Z",
       "menus": [],
       "candidates": []
     },
@@ -27915,7 +27915,7 @@
       "name": "순창 장본가식품",
       "address": "전북 순창군 순창읍 민속마을길 16 (백산리 265-15)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.877Z",
+      "verifiedAt": "2026-07-18T12:32:16.038Z",
       "menus": [],
       "candidates": [
         {
@@ -28141,7 +28141,7 @@
       "name": "순창 함양식당",
       "address": "전북 순창군 구림면 구림로 472 (운남리 264-16)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.872Z",
+      "verifiedAt": "2026-07-18T12:32:16.031Z",
       "menus": [],
       "candidates": [
         {
@@ -28316,7 +28316,7 @@
       "name": "충주 올뱅이식당",
       "address": "충북 충주시 신대1길 1 (단월동 451-4)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:31.872Z",
+      "verifiedAt": "2026-07-18T12:32:16.059Z",
       "menus": [],
       "candidates": [
         {
@@ -29468,7 +29468,7 @@
       "name": "서울 향가",
       "address": "서울 종로구 계동길 19-6 (재동 84-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.585Z",
+      "verifiedAt": "2026-07-18T12:32:16.499Z",
       "menus": [],
       "candidates": []
     },
@@ -30486,7 +30486,7 @@
       "name": "서울 장수식당",
       "address": "서울 서초구 서래로 50 (반포동 93-7)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.561Z",
+      "verifiedAt": "2026-07-18T12:32:16.488Z",
       "menus": [],
       "candidates": [
         {
@@ -31541,7 +31541,7 @@
       "name": "영암 구림떡방아",
       "address": "전남 영암군 군서면 도갑사로 6-7 (동구림리 48-13)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.561Z",
+      "verifiedAt": "2026-07-18T12:32:16.476Z",
       "menus": [],
       "candidates": []
     },
@@ -32118,7 +32118,7 @@
       "name": "영덕 시장밥집",
       "address": "경북 영덕군 영덕읍 남석길 23-10 (남석리 26-50)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.562Z",
+      "verifiedAt": "2026-07-18T12:32:16.473Z",
       "menus": [],
       "candidates": []
     },
@@ -32210,7 +32210,7 @@
       "name": "청송 팔팔식당 (88식당)",
       "address": "경북 청송군 진보면 경동로 5157 (신촌리 32-7)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.658Z",
+      "verifiedAt": "2026-07-18T12:32:16.566Z",
       "menus": [],
       "candidates": []
     },
@@ -33820,7 +33820,7 @@
       "name": "경주 할매문어집 (성동시장)",
       "address": "경북 경주시 원화로281번길 11 (성동동 57-3)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.631Z",
+      "verifiedAt": "2026-07-18T12:32:16.563Z",
       "menus": [],
       "candidates": []
     },
@@ -36388,7 +36388,7 @@
       "name": "영동 선미식당",
       "address": "충북 영동군 학산면 서산로 39-1 (서산리 810-5)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:32.586Z",
+      "verifiedAt": "2026-07-18T12:32:16.461Z",
       "menus": [],
       "candidates": [
         {
@@ -36915,7 +36915,7 @@
       "name": "홍성 갈매기횟집",
       "address": "충남 홍성군 서부면 남당항로 852 (궁리 540-62)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.075Z",
+      "verifiedAt": "2026-07-18T12:32:16.450Z",
       "menus": [],
       "candidates": [
         {
@@ -37194,7 +37194,7 @@
       "name": "전주 성가떡집",
       "address": "전북 전주시 완산구 팔달로 249 (서노송동 639-40)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.102Z",
+      "verifiedAt": "2026-07-18T12:32:16.957Z",
       "menus": [],
       "candidates": []
     },
@@ -38191,7 +38191,7 @@
       "name": "서울 나뭇잎스시",
       "address": "서울 종로구 창의문로5길 2 (부암동 314-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.166Z",
+      "verifiedAt": "2026-07-18T12:32:16.986Z",
       "menus": [],
       "candidates": []
     },
@@ -38199,7 +38199,7 @@
       "name": "서울 미인과 자연",
       "address": "서울 종로구 세검정로9길 78 (구기동 20-14)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.152Z",
+      "verifiedAt": "2026-07-18T12:32:16.985Z",
       "menus": [],
       "candidates": []
     },
@@ -39581,7 +39581,7 @@
       "name": "영월 노루목상회식당",
       "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.168Z",
+      "verifiedAt": "2026-07-18T12:32:16.969Z",
       "menus": [],
       "candidates": []
     },
@@ -39934,7 +39934,7 @@
       "name": "익산 고려당",
       "address": "전북 익산시 중앙로 52 (갈산동 25)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.094Z",
+      "verifiedAt": "2026-07-18T12:32:16.899Z",
       "menus": [],
       "candidates": [
         {
@@ -41189,7 +41189,7 @@
       "name": "부안 모꼬지바지락요리전문점",
       "address": "전북 고창군 부안면 인촌로 60 (선운리 721-12)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.084Z",
+      "verifiedAt": "2026-07-18T12:32:16.926Z",
       "menus": [],
       "candidates": []
     },
@@ -41240,7 +41240,7 @@
       "name": "고창 싱싱수산식당",
       "address": "전북 고창군 고창읍 시장안길 26 (읍내리 368-11)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.851Z",
+      "verifiedAt": "2026-07-18T12:32:16.938Z",
       "menus": [],
       "candidates": []
     },
@@ -41248,7 +41248,7 @@
       "name": "고창 뭉치네 풍천장어전문",
       "address": "전북 고창군 아산면 중촌길 13 (삼인리 287-10)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.842Z",
+      "verifiedAt": "2026-07-18T12:32:16.933Z",
       "menus": [],
       "candidates": []
     },
@@ -42486,7 +42486,7 @@
       "name": "하남 마방집",
       "address": "경기 하남시 하남대로 674 (천현동 428-4)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.862Z",
+      "verifiedAt": "2026-07-18T12:32:17.358Z",
       "menus": [],
       "candidates": []
     },
@@ -42494,7 +42494,7 @@
       "name": "광주 포비엣",
       "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.947Z",
+      "verifiedAt": "2026-07-18T12:32:17.409Z",
       "menus": [],
       "candidates": []
     },
@@ -44196,7 +44196,7 @@
       "name": "하동 마루솔한정식식당",
       "address": "경남 하동군 하동읍 시장1길 26-8 (읍내리 225-5)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.897Z",
+      "verifiedAt": "2026-07-18T12:32:17.384Z",
       "menus": [],
       "candidates": []
     },
@@ -47041,7 +47041,7 @@
       "name": "고성 남경식당",
       "address": "강원 고성군 토성면 성대로 183 (성대리 497)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:33.907Z",
+      "verifiedAt": "2026-07-18T12:32:17.410Z",
       "menus": [],
       "candidates": []
     },
@@ -47691,7 +47691,7 @@
       "name": "남양주 광천정육점식당",
       "address": "경기 남양주시 진접읍 광릉내로 52 (부평리 525-8)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.605Z",
+      "verifiedAt": "2026-07-18T12:32:17.367Z",
       "menus": [],
       "candidates": []
     },
@@ -48859,7 +48859,7 @@
       "name": "서울 영덕식당",
       "address": "서울 용산구 한강대로62나길 14 (용산동3가 1-68)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.657Z",
+      "verifiedAt": "2026-07-18T12:32:17.389Z",
       "menus": [],
       "candidates": []
     },
@@ -48867,7 +48867,7 @@
       "name": "울산 밀양시골밥상",
       "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.559Z",
+      "verifiedAt": "2026-07-18T12:32:17.342Z",
       "menus": [],
       "candidates": [
         {
@@ -49330,7 +49330,7 @@
       "name": "서울 한우다이닝 울릉",
       "address": "서울 서초구 서운로 135 (서초동 1322-11)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.675Z",
+      "verifiedAt": "2026-07-18T12:32:17.424Z",
       "menus": [],
       "candidates": []
     },
@@ -50213,7 +50213,7 @@
       "name": "보령 샘물식당",
       "address": "충남 보령시 청라면 원모루길 245 (나원리 942-4)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.599Z",
+      "verifiedAt": "2026-07-18T12:32:17.790Z",
       "menus": [],
       "candidates": []
     },
@@ -50625,7 +50625,7 @@
       "name": "횡성 작은밥집 소소반",
       "address": "강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:34.665Z",
+      "verifiedAt": "2026-07-18T12:32:17.876Z",
       "menus": [],
       "candidates": [
         {
@@ -50879,7 +50879,7 @@
       "name": "성남 남해소반",
       "address": "경기 성남시 분당구 내정로165번길 38 (수내동 32)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.436Z",
+      "verifiedAt": "2026-07-18T12:32:17.827Z",
       "menus": [],
       "candidates": []
     },
@@ -51496,7 +51496,7 @@
       "name": "태안 자연산횟집오대감튀김",
       "address": "충남 태안군 안면읍 백사장1길 117 (창기리 1269-25)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.414Z",
+      "verifiedAt": "2026-07-18T12:32:17.816Z",
       "menus": [],
       "candidates": []
     },
@@ -51647,7 +51647,7 @@
       "name": "대전 홍두깨칼국수",
       "address": "대전 중구 충무로107번길 15 (대흥동 378-25)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.396Z",
+      "verifiedAt": "2026-07-18T12:32:17.793Z",
       "menus": [],
       "candidates": [
         {
@@ -52533,7 +52533,7 @@
       "name": "구리 우미관",
       "address": "경기 구리시 아차산로 57 (아천동 300-10)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.364Z",
+      "verifiedAt": "2026-07-18T12:32:17.766Z",
       "menus": [],
       "candidates": [
         {
@@ -52711,7 +52711,7 @@
       "name": "서울 나드리식품",
       "address": "서울 중구 을지로33길 38 (주교동 208)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.449Z",
+      "verifiedAt": "2026-07-18T12:32:17.810Z",
       "menus": [],
       "candidates": []
     },
@@ -54573,7 +54573,7 @@
       "name": "갈비탕집(갈비탕)",
       "address": "서울 성동구 청계천로10가길 10-7 (마장동 443-23)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.413Z",
+      "verifiedAt": "2026-07-18T12:32:17.816Z",
       "menus": [],
       "candidates": [
         {
@@ -55108,7 +55108,7 @@
       "name": "여주 팔남매",
       "address": "경기 여주시 여흥로11번길 57 (하동 249-8)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:35.371Z",
+      "verifiedAt": "2026-07-18T12:32:18.281Z",
       "menus": [],
       "candidates": [
         {
@@ -55922,7 +55922,7 @@
       "name": "대구 산골기사식당",
       "address": "대구 동구 팔공산로 1666 (백안동 573)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:36.033Z",
+      "verifiedAt": "2026-07-18T12:32:18.282Z",
       "menus": [],
       "candidates": []
     },
@@ -57543,7 +57543,7 @@
       "name": "부산 양가네양곱창",
       "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:36.068Z",
+      "verifiedAt": "2026-07-18T12:32:18.309Z",
       "menus": [],
       "candidates": [
         {
@@ -57917,7 +57917,7 @@
       "name": "서울 리숨두부",
       "address": "서울 서초구 원터4길 7 (원지동 374-1)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:36.053Z",
+      "verifiedAt": "2026-07-18T12:32:18.308Z",
       "menus": [],
       "candidates": [
         {
@@ -57938,7 +57938,7 @@
       "name": "성남 고미꽃시래",
       "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
       "status": "unmatched",
-      "verifiedAt": "2026-07-15T23:10:36.092Z",
+      "verifiedAt": "2026-07-18T12:32:18.308Z",
       "menus": [],
       "candidates": []
     },

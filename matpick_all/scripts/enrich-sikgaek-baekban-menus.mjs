@@ -6,18 +6,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const workspaceRoot = path.resolve(projectRoot, "..");
+const supportedDatasetIds = new Set([
+  "sikgaek-baekban-trip",
+  "wednesday-gourmet",
+]);
+const datasetArgumentIndex = process.argv.indexOf("--dataset");
+const datasetId =
+  datasetArgumentIndex >= 0 ? process.argv[datasetArgumentIndex + 1] : "sikgaek-baekban-trip";
+if (!supportedDatasetIds.has(datasetId)) {
+  throw new Error(`Unsupported dataset: ${datasetId}`);
+}
 const datasetPath = path.join(
   projectRoot,
   "client",
   "src",
   "data",
   "generated",
-  "sikgaek-baekban-trip.generated.json"
+  `${datasetId}.generated.json`
 );
 const outputPath = path.join(
   workspaceRoot,
   "source-data",
-  "sikgaek-baekban-trip",
+  datasetId,
   "menu-prices.json"
 );
 const generatedDataRoot = path.join(
@@ -35,6 +45,8 @@ const appDataPath = path.join(
   "matpick-data.json"
 );
 const localFallbackDatasets = [
+  ["sikgaek-baekban-trip", path.join(generatedDataRoot, "sikgaek-baekban-trip.generated.json")],
+  ["wednesday-gourmet", path.join(generatedDataRoot, "wednesday-gourmet.generated.json")],
   ["baekjong-wok", path.join(generatedDataRoot, "baekjong-wok.generated.json")],
   ["old-korean-100", path.join(generatedDataRoot, "old-korean-100.generated.json")],
   ["seoul-taste-100", path.join(generatedDataRoot, "seoul-taste-100.generated.json")],
@@ -81,6 +93,7 @@ function parseArgs(argv) {
     if (argument === "--refresh") options.refresh = true;
     if (argument === "--retry-unmatched") options.retryUnmatched = true;
     if (argument === "--reuse-local") options.reuseLocal = true;
+    if (argument === "--dataset") index += 1;
     if (argument === "--concurrency") {
       options.concurrency = Math.max(1, Number(argv[index + 1]) || 1);
       index += 1;
@@ -105,7 +118,7 @@ function normalize(value = "") {
 }
 
 function isKnownClosedRestaurant(restaurant) {
-  return /(?:현재\s*폐업|영업\s*종료)/.test(String(restaurant?.name ?? ""));
+  return /(?:폐업|영업\s*종료)/.test(String(restaurant?.name ?? ""));
 }
 
 function toClosedRecord(restaurant) {
@@ -115,7 +128,7 @@ function toClosedRecord(restaurant) {
     status: "closed",
     operationStatus: "폐업",
     verifiedAt: new Date().toISOString(),
-    note: "원본 식당명에 현재 폐업으로 명시되어 맛픽 공개 목록에서 제외함.",
+    note: "원본 식당명에 폐업으로 명시되어 맛픽 공개 목록에서 제외함.",
     menus: [],
   };
 }
@@ -660,7 +673,7 @@ function buildOutput(restaurants, records, runStatus) {
     collectedAt: new Date().toISOString(),
     runStatus,
     matchingMethod: "restaurant name + address + coordinate distance",
-    totalRestaurantCount: restaurants.length,
+    totalRestaurantCount: values.length,
     processedCount: values.length,
     matchedCount: values.filter((record) =>
       record.status.startsWith("matched_")

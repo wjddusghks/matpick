@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_035",
+  "restaurantName": "수원 옛맛청국장손두부",
+  "address": "경기 수원시 팔달구 권광로 274 (인계동 368-7)",
+  "status": "needs-review",
+  "representativeMenu": "제육세트(2인이상)",
+  "menus": [
+    {
+      "name": "제육세트(2인이상)",
+      "price": "11,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "청국장",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "순두부",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "생두부/두부부침",
+      "price": "14,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EC%88%98%EC%9B%90%20%EC%98%9B%EB%A7%9B%EC%B2%AD%EA%B5%AD%EC%9E%A5%EC%86%90%EB%91%90%EB%B6%80",
+      "title": "수원 옛맛청국장손두부 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/20504136?placePath=/menu",
+      "title": "수원 옛맛청국장손두부 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

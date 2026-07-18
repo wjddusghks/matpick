@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_329",
+  "restaurantName": "서울 네키드윙즈",
+  "address": "서울 용산구 녹사평대로 174-11 (이태원동 34-8)",
+  "status": "needs-review",
+  "representativeMenu": "더블 플래터",
+  "menus": [
+    {
+      "name": "더블 플래터",
+      "price": "37,900원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "슈스트링 감자튀김",
+      "price": "5,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "시저 샐러드",
+      "price": "5,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "버팔로윙 10개",
+      "price": "14,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "싱글 플래터",
+      "price": "19,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "코울슬로",
+      "price": "4,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "크링클컷 감자튀김",
+      "price": "5,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "비프칠리",
+      "price": "6,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "대왕 양파링 크로켓",
+      "price": "6,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "파티 플래터",
+      "price": "71,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "버팔로윙 15개",
+      "price": "21,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "버팔로윙 20개",
+      "price": "28,500원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=XHxO3YUwBoM0",
+      "title": "서울 네키드윙즈 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 15개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EB%84%A4%ED%82%A4%EB%93%9C%EC%9C%99%EC%A6%88%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 네키드윙즈 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

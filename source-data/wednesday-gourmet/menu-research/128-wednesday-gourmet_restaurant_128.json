@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_128",
+  "restaurantName": "군산 대정소바",
+  "address": "전북 군산시 구영7길 34-1 (월명동 5-8)",
+  "status": "verified",
+  "representativeMenu": "소바정식세트",
+  "menus": [
+    {
+      "name": "만두",
+      "price": "6,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "떡국",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "소바정식세트",
+      "price": "13,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "자루소바",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=TJfczFo8mcCt",
+      "title": "군산 대정소바 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 12개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/17485826?placePath=/menu",
+      "title": "군산 대정소바 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 4개 항목을 반영함."
+}

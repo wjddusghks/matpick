@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_419",
+  "restaurantName": "서울 배꼽집",
+  "address": "서울 마포구 월드컵북로54길 17 (상암동 1597)",
+  "status": "needs-review",
+  "representativeMenu": "평양냉면",
+  "menus": [
+    {
+      "name": "평양냉면",
+      "price": "13,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "1++미경산 암소스페셜 (大)",
+      "price": "140,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "한우차돌된장",
+      "price": "14,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "비빔냉면",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "양곰탕",
+      "price": "15,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "1++ 미경산 암소 갈비살",
+      "price": "49,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "육회냉면",
+      "price": "16,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "(런치) 참갈비맛정식",
+      "price": "29,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "(런치) 한우 주물럭 정식",
+      "price": "39,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "한우 1++ 특안심",
+      "price": "63,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "명품갈비탕",
+      "price": "18,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "한우석쇠주물럭",
+      "price": "49,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=1lXMTuzKMjCo",
+      "title": "서울 배꼽집 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 24개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EB%B0%B0%EA%BC%BD%EC%A7%91%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 배꼽집 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

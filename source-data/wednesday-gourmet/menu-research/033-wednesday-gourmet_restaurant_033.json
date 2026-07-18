@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_033",
+  "restaurantName": "성남 평양면옥 분당점",
+  "address": "경기 성남시 분당구 안골로 27 (서현동 203-1)",
+  "status": "needs-review",
+  "representativeMenu": "냉면(물/비빔)",
+  "menus": [
+    {
+      "name": "냉면(물/비빔)",
+      "price": "16,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "만두국",
+      "price": "16,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "제육",
+      "price": "34,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "편육",
+      "price": "36,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EC%84%B1%EB%82%A8%20%ED%8F%89%EC%96%91%EB%A9%B4%EC%98%A5%20%EB%B6%84%EB%8B%B9%EC%A0%90",
+      "title": "성남 평양면옥 분당점 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/11728025?placePath=/menu",
+      "title": "성남 평양면옥 분당점 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

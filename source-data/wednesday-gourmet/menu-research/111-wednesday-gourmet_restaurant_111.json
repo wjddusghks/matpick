@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_111",
+  "restaurantName": "통영 만성복집",
+  "address": "경남 통영시 새터길 12-13 (서호동 177-65)",
+  "status": "verified",
+  "representativeMenu": "참복국(지리)",
+  "menus": [
+    {
+      "name": "참복국(지리)",
+      "price": "17,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "참복매운탕",
+      "price": "20,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "밀복지리",
+      "price": "17,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "졸복국(지리)",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=Xeh7RkcZELkD",
+      "title": "통영 만성복집 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 6개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/19809664?placePath=/menu",
+      "title": "통영 만성복집 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 4개 항목을 반영함."
+}

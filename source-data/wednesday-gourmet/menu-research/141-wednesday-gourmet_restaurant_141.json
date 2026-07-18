@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_141",
+  "restaurantName": "제주 삼보식당",
+  "address": "제주 서귀포시 중정로 25 (서귀동 319-8)",
+  "status": "verified",
+  "representativeMenu": "전복뚝배기",
+  "menus": [
+    {
+      "name": "자리회 무침",
+      "price": "25,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "옥돔구이 (중)",
+      "price": "60,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "전복뚝배기",
+      "price": "19,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "특전복뚝배기",
+      "price": "25,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=5JaSq0o4xZxo",
+      "title": "제주 삼보식당 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 20개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/19873072?placePath=/menu",
+      "title": "제주 삼보식당 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 4개 항목을 반영함."
+}

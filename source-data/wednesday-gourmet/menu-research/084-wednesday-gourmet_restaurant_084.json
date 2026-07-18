@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_084",
+  "restaurantName": "안동 문화갈비",
+  "address": "경북 안동시 음식의길 32-9 (동부동 115-4)",
+  "status": "verified",
+  "representativeMenu": "갈비(국산한우, 1인분 200g)",
+  "menus": [
+    {
+      "name": "갈비(국산한우, 1인분 200g)",
+      "price": "32,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "공기밥",
+      "price": "1,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "된장찌개만",
+      "price": "2,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "안동소주일품 17%",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=8s7DLSWDu8C8",
+      "title": "안동 문화갈비 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 9개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/37108541?placePath=/menu",
+      "title": "안동 문화갈비 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 4개 항목을 반영함."
+}

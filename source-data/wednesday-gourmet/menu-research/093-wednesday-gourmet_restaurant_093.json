@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_093",
+  "restaurantName": "포항 해구식당",
+  "address": "경북 포항시 북구 중앙상가2길 18 (남빈동 526)",
+  "status": "verified",
+  "representativeMenu": "청어과메기",
+  "menus": [
+    {
+      "name": "꽁치과메기",
+      "price": "30,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "청어과메기",
+      "price": "30,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=irR2bvohm8IQ",
+      "title": "포항 해구식당 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 2개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/15136029?placePath=/menu",
+      "title": "포항 해구식당 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 2개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 2개 항목을 반영함."
+}

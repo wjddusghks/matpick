@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_209",
+  "restaurantName": "서울 농민백암순대 본점",
+  "address": "서울 강남구 선릉로86길 40-4 (대치동 896-33)",
+  "status": "needs-review",
+  "representativeMenu": "국밥",
+  "menus": [
+    {
+      "name": "국밥",
+      "price": "11,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "토종순대",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "모둠 수육",
+      "price": "39,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "국밥 특",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EC%84%9C%EC%9A%B8%20%EB%86%8D%EB%AF%BC%EB%B0%B1%EC%95%94%EC%88%9C%EB%8C%80%20%EB%B3%B8%EC%A0%90",
+      "title": "서울 농민백암순대 본점 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/13149768?placePath=/menu",
+      "title": "서울 농민백암순대 본점 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

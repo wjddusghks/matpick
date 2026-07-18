@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_049",
+  "restaurantName": "이천 임금님쌀밥집",
+  "address": "경기 이천시 신둔면 경충대로 3134 (수광리 152-9)",
+  "status": "needs-review",
+  "representativeMenu": "👑수라정식(2인분씩 주문가능)",
+  "menus": [
+    {
+      "name": "👑수라정식(2인분씩 주문가능)",
+      "price": "46,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "떡갈비",
+      "price": "33,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "제육정식",
+      "price": "24,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "간장게장",
+      "price": "33,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "불고기정식",
+      "price": "29,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "👑임금님정식",
+      "price": "61,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "소불고기",
+      "price": "28,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "보쌈",
+      "price": "29,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "👑간장게장정식",
+      "price": "50,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "👑떡갈비정식",
+      "price": "39,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "쌀밥정식(평일만 주문 가능)",
+      "price": "19,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "어린이정식",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=xDghdHQM2n0a",
+      "title": "이천 임금님쌀밥집 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 13개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%9D%B4%EC%B2%9C%20%EC%9E%84%EA%B8%88%EB%8B%98%EC%8C%80%EB%B0%A5%EC%A7%91%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "이천 임금님쌀밥집 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

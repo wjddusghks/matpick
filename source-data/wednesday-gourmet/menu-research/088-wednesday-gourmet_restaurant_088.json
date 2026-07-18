@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_088",
+  "restaurantName": "포항 구룡포할매국수집",
+  "address": "경북 포항시 남구 구룡포읍 구룡포길 60-4 (구룡포리 963-120)",
+  "status": "needs-review",
+  "representativeMenu": "치즈",
+  "menus": [
+    {
+      "name": "치즈",
+      "price": "5,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "잔치국수",
+      "price": "6,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "어묵잔치국수 소",
+      "price": "6,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%ED%8F%AC%ED%95%AD%20%EA%B5%AC%EB%A3%A1%ED%8F%AC%ED%95%A0%EB%A7%A4%EA%B5%AD%EC%88%98%EC%A7%91",
+      "title": "포항 구룡포할매국수집 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/34203303?placePath=/menu",
+      "title": "포항 구룡포할매국수집 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 3개 확인"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

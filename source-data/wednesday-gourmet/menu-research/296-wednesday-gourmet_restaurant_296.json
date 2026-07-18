@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_296",
+  "restaurantName": "서울 남도음식전문점",
+  "address": "서울 관악구 관악로28길 7 (행운동 36-20)",
+  "status": "needs-review",
+  "representativeMenu": "낙지연포탕",
+  "menus": [
+    {
+      "name": "낙지연포탕",
+      "price": "70000~75000",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "추어탕",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "장어양념구이",
+      "price": "90,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "간재미무침 대",
+      "price": "60,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "서대무침 대",
+      "price": "60,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "서대무침 소",
+      "price": "30,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "낙지.쭈꾸미1인분",
+      "price": "30,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "갑오징어",
+      "price": "45,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "낙지탕탕이",
+      "price": "40,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "민어탕",
+      "price": "17,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "낙지덮밥",
+      "price": "11,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=9ga5m0YvYv7x",
+      "title": "서울 남도음식전문점 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 11개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EB%82%A8%EB%8F%84%EC%9D%8C%EC%8B%9D%EC%A0%84%EB%AC%B8%EC%A0%90%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 남도음식전문점 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

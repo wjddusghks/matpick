@@ -17,6 +17,7 @@ import popularRestaurantsTopicEnrichment from "./generated/topic-enrichments/pop
 import ttoganjipTopicEnrichment from "./generated/topic-enrichments/ttoganjip.enriched.json";
 import wednesdayGourmetTopicEnrichment from "./generated/topic-enrichments/wednesday-gourmet.enriched.json";
 import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
+import wednesdayGourmetMenuResearchDataset from "./generated/wednesday-gourmet.menu-research.generated.json";
 import type {
   Creator,
   MatpickDataSet,
@@ -465,6 +466,7 @@ const dataset = filterDatasetForVisibleContent(
   deliciousGuysTopicEnrichment as SourceDataset,
   baekbanTripTopicEnrichment as SourceDataset,
   wednesdayGourmetTopicEnrichment as SourceDataset,
+  wednesdayGourmetMenuResearchDataset as SourceDataset,
   oldKorean100TopicEnrichment as SourceDataset,
   michelin3StarsTopicEnrichment as SourceDataset,
   michelin2StarsTopicEnrichment as SourceDataset,

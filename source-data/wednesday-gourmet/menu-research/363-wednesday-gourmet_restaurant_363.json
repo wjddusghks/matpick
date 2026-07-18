@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_363",
+  "restaurantName": "서울 치즈플로",
+  "address": "서울 용산구 이태원로49길 19 (한남동 744-2)",
+  "status": "needs-review",
+  "representativeMenu": "부라타치즈 샐러드",
+  "menus": [
+    {
+      "name": "부라타치즈 샐러드",
+      "price": "25,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "염소치즈와 배",
+      "price": "19,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "계절수프",
+      "price": "9,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "할루미 치즈와 구운 야채",
+      "price": "21,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "치즈플레이트",
+      "price": "19000~39000",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "이탈리안 샌드위치",
+      "price": "15,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "칼라브리안 피자(은두야,부라타)",
+      "price": "24,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "대구브란다대 피자(훈제대구,스팔라코타",
+      "price": "24,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "아티장치즈와 샤퀴테리",
+      "price": "38000~69000",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "훈제 대구 새우 갑오징어 알 아히요 스파게티",
+      "price": "25,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "티라미수",
+      "price": "10,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=zoDL8RRgLHhV",
+      "title": "서울 치즈플로 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 11개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EC%B9%98%EC%A6%88%ED%94%8C%EB%A1%9C%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 치즈플로 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

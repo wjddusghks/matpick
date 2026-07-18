@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_054",
+  "restaurantName": "강릉 이모네생선찜",
+  "address": "강원 강릉시 가작로 8 (교1동 1817-2)",
+  "status": "verified",
+  "representativeMenu": "가오리찜(소)",
+  "menus": [
+    {
+      "name": "가오리찜(소)",
+      "price": "50,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "가오리찜(중)",
+      "price": "60,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "가오리찜(대)",
+      "price": "70,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=SkWEtgeSym6u",
+      "title": "강릉 이모네생선찜 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 9개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/15377620?placePath=/menu",
+      "title": "강릉 이모네생선찜 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 3개 항목을 반영함. 같은 이름이지만 가격이 다른 1개 항목은 제외함."
+}

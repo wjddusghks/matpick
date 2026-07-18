@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_026",
+  "restaurantName": "김포 락원이북만두",
+  "address": "경기 김포시 김포한강1로97번길 32-22 (장기동 1899-15)",
+  "status": "not-found",
+  "representativeMenu": "",
+  "menus": [],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EA%B9%80%ED%8F%AC%20%EB%9D%BD%EC%9B%90%EC%9D%B4%EB%B6%81%EB%A7%8C%EB%91%90",
+      "title": "김포 락원이북만두 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EA%B9%80%ED%8F%AC%20%EB%9D%BD%EC%9B%90%EC%9D%B4%EB%B6%81%EB%A7%8C%EB%91%90%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "김포 락원이북만두 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 조사 출처에서 가격이 표시된 메뉴를 찾지 못함."
+}

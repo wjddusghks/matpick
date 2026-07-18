@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_021",
+  "restaurantName": "고양 두리원손두부",
+  "address": "경기 고양시 일산동구 장진천길46번길 22-11 (설문동 197-6)",
+  "status": "verified",
+  "representativeMenu": "콩국수",
+  "menus": [
+    {
+      "name": "콩국수",
+      "price": "16,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=2S7qNJncHWzA",
+      "title": "고양 두리원손두부 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 1개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/20136339?placePath=/menu",
+      "title": "고양 두리원손두부 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 1개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 1개 항목을 반영함."
+}

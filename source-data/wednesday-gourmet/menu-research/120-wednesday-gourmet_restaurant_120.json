@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_120",
+  "restaurantName": "목포 뜰채",
+  "address": "전남 목포시 해양대학로 229 (죽교동 538-31)",
+  "status": "not-found",
+  "representativeMenu": "",
+  "menus": [],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EB%AA%A9%ED%8F%AC%20%EB%9C%B0%EC%B1%84",
+      "title": "목포 뜰채 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EB%AA%A9%ED%8F%AC%20%EB%9C%B0%EC%B1%84%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "목포 뜰채 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 조사 출처에서 가격이 표시된 메뉴를 찾지 못함."
+}

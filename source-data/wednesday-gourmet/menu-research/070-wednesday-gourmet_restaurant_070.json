@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_070",
+  "restaurantName": "평창 쌍둥이네 가벼슬식당",
+  "address": "강원 평창군 봉평면 이효석길 118-8 (창동리 525-1)",
+  "status": "not-found",
+  "representativeMenu": "",
+  "menus": [],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%ED%8F%89%EC%B0%BD%20%EC%8C%8D%EB%91%A5%EC%9D%B4%EB%84%A4%20%EA%B0%80%EB%B2%BC%EC%8A%AC%EC%8B%9D%EB%8B%B9",
+      "title": "평창 쌍둥이네 가벼슬식당 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%ED%8F%89%EC%B0%BD%20%EC%8C%8D%EB%91%A5%EC%9D%B4%EB%84%A4%20%EA%B0%80%EB%B2%BC%EC%8A%AC%EC%8B%9D%EB%8B%B9%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "평창 쌍둥이네 가벼슬식당 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 조사 출처에서 가격이 표시된 메뉴를 찾지 못함."
+}

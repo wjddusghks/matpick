@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_299",
+  "restaurantName": "서울 논밭골",
+  "address": "서울 관악구 청룡길 30 (봉천동 915-26)",
+  "status": "verified",
+  "representativeMenu": "왕갈비탕",
+  "menus": [
+    {
+      "name": "왕갈비탕",
+      "price": "14,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=CL4fr4csdkOE",
+      "title": "서울 논밭골 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 1개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/21597866?placePath=/menu",
+      "title": "서울 논밭골 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 1개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 1개 항목을 반영함."
+}

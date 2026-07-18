@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_009",
+  "restaurantName": "인천 화선횟집",
+  "address": "인천 중구 우현로49번길 11-25 (신포동 5-10)",
+  "status": "needs-review",
+  "representativeMenu": "민어회 / 민어 한상차림",
+  "menus": [
+    {
+      "name": "민어회 소",
+      "price": "80,000원 또는 90,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["diningcode", "siksin", "perfectday"],
+      "observedAt": "2026-07-18",
+      "confidence": 58
+    },
+    {
+      "name": "민어전",
+      "price": "40,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "siksin", "perfectday"],
+      "observedAt": "2026-07-18",
+      "confidence": 90
+    },
+    {
+      "name": "민어무침",
+      "price": "40,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "siksin", "perfectday"],
+      "observedAt": "2026-07-18",
+      "confidence": 90
+    },
+    {
+      "name": "민어탕",
+      "price": "16,000원 또는 18,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "siksin", "perfectday"],
+      "observedAt": "2026-07-18",
+      "confidence": 55
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=l2SIJMAMCEAQ",
+      "title": "화선횟집 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "민어 한상과 민어회 크기별 가격, 전·무침·탕 가격 표시"
+    },
+    {
+      "id": "siksin",
+      "url": "https://www.siksinhot.com/P/265850",
+      "title": "화선횟집 메뉴",
+      "publisher": "식신",
+      "capturedAt": "2026-07-18",
+      "evidence": "민어회 소 90,000원부터 특 150,000원, 전·무침·탕 가격 표시"
+    },
+    {
+      "id": "perfectday",
+      "url": "https://xn--2s2b33eb3kgvpta.com/store/S200814_1599104389039",
+      "title": "화선횟집 메뉴",
+      "publisher": "완벽한하루",
+      "capturedAt": "2026-07-18",
+      "evidence": "민어회 소 80,000원, 민어탕 16,000원, 전·무침 40,000원 표시"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "민어회 크기별 가격과 민어탕 가격이 출처마다 달라 최근 메뉴판 사진 또는 전화 확인이 필요함."
+}

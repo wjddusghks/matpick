@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_023",
+  "restaurantName": "광주 산성대가",
+  "address": "경기 광주시 남한산성면 남한산성로792번길 11-12 (산성리 1002-1)",
+  "status": "needs-review",
+  "representativeMenu": "엄나무백숙",
+  "menus": [
+    {
+      "name": "엄나무백숙",
+      "price": "68,000원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "능이버섯닭백숙",
+      "price": "78,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "능이버섯오리백숙",
+      "price": "83,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "엄나무오리백숙",
+      "price": "73,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EA%B4%91%EC%A3%BC%20%EC%82%B0%EC%84%B1%EB%8C%80%EA%B0%80",
+      "title": "광주 산성대가 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/13547274?placePath=/menu",
+      "title": "광주 산성대가 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

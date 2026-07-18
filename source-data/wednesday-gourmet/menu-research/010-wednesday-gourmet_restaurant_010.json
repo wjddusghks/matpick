@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_010",
+  "restaurantName": "인천 원조신포닭강정",
+  "address": "인천 중구 우현로49번길 3 (신포동 1-12)",
+  "status": "verified",
+  "representativeMenu": "닭강정",
+  "menus": [
+    {
+      "name": "닭강정 대",
+      "price": "24,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["diningcode", "keriai"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "닭강정 중",
+      "price": "19,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "keriai"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "후라이드 대",
+      "price": "24,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "keriai"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "후라이드 중",
+      "price": "19,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "keriai"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "반반 포장",
+      "price": "25,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "keriai"],
+      "observedAt": "2026-07-18",
+      "confidence": 94
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=liUMq8nht6i2",
+      "title": "원조신포닭강정 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "닭강정과 후라이드 대·중, 반반 포장 가격 표시"
+    },
+    {
+      "id": "keriai",
+      "url": "https://keriai.com/966",
+      "title": "신포시장 원조신포닭강정 메뉴 가격",
+      "publisher": "케리아이",
+      "capturedAt": "2026-07-18",
+      "evidence": "매장 메뉴판 사진을 바탕으로 닭강정·후라이드 크기별 가격 표시"
+    },
+    {
+      "id": "official",
+      "url": "https://www.sinpochicken.com/",
+      "title": "원조신포닭강정 공식 홈페이지",
+      "publisher": "원조신포닭강정",
+      "capturedAt": "2026-07-18",
+      "evidence": "닭강정과 후라이드 제품 구성 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "가격은 다이닝코드와 최근 메뉴판 기반 게시물에서 교차 확인하고, 제품 구성은 공식 홈페이지에서 확인함."
+}

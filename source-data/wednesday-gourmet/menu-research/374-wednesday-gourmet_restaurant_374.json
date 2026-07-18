@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_374",
+  "restaurantName": "서울 대원식당",
+  "address": "서울 용산구 한강대로62나길 16-1 (용산동3가 1-64)",
+  "status": "verified",
+  "representativeMenu": "두루치기 생선백반 2인세트",
+  "menus": [
+    {
+      "name": "두루치기 생선백반 2인세트",
+      "price": "38,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=lg6bIHYBXzyM",
+      "title": "서울 대원식당 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 5개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/19873567?placePath=/menu",
+      "title": "서울 대원식당 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 1개 항목을 반영함. 같은 이름이지만 가격이 다른 3개 항목은 제외함."
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_004",
+  "restaurantName": "인천 부암갈비",
+  "address": "인천 남동구 용천로 149 (간석동 130-12)",
+  "status": "verified",
+  "representativeMenu": "돼지생갈비 (200g)",
+  "menus": [
+    {
+      "name": "돼지생갈비 (200g)",
+      "price": "19,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "갈치속젓볶음밥",
+      "price": "3,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "된장찌개",
+      "price": "1,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "계란말이",
+      "price": "2,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 88
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=azLtj08bZUsQ",
+      "title": "부암갈비 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "돼지생갈비 19,000원, 젓갈볶음밥 3,000원, 된장찌개 1,000원 표시"
+    },
+    {
+      "id": "tabling",
+      "url": "https://www.tabling.co.kr/place/677cc91366de5f0698784433",
+      "title": "부암갈비 메뉴",
+      "publisher": "테이블링",
+      "capturedAt": "2026-07-18",
+      "evidence": "돼지생갈비와 사이드 메뉴의 메뉴명 및 가격 표시"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "대표 메뉴와 주요 사이드 가격을 두 출처에서 교차 확인함."
+}

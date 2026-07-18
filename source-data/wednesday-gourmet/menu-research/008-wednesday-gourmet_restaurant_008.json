@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_008",
+  "restaurantName": "인천 신성루",
+  "address": "인천 중구 우현로 19-14 (신생동 9-12)",
+  "status": "verified",
+  "representativeMenu": "자춘걸 / 삼선 굴 짬뽕",
+  "menus": [
+    {
+      "name": "자춘걸 중",
+      "price": "42,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["tabling", "polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "삼선 굴 짬뽕",
+      "price": "12,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "면보하 (멘보샤) 중",
+      "price": "37,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["tabling", "polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "탕수육 중",
+      "price": "24,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["tabling", "polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "유니자장면",
+      "price": "11,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["tabling", "polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "삼선볶음밥",
+      "price": "13,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "팔보채 중",
+      "price": "38,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["polle", "diningcode"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    }
+  ],
+  "sources": [
+    {
+      "id": "tabling",
+      "url": "https://www.tabling.co.kr/place/677cc92c66de5f06987878e6",
+      "title": "신성루 메뉴",
+      "publisher": "테이블링",
+      "capturedAt": "2026-07-18",
+      "evidence": "자춘걸, 면보하, 탕수육, 유니자장면 가격 표시"
+    },
+    {
+      "id": "polle",
+      "url": "https://polle.com/place/18QBcy/%EC%8B%A0%EC%84%B1%EB%A3%A8",
+      "title": "신성루 메뉴",
+      "publisher": "폴레",
+      "capturedAt": "2026-07-18",
+      "evidence": "요리 및 식사류의 메뉴명과 가격 표시"
+    },
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=8TSiqJ3V2gIz",
+      "title": "신성루 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "자춘걸과 주요 중식 메뉴 가격 표시"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "세 출처의 메뉴판 가격을 교차 확인함."
+}

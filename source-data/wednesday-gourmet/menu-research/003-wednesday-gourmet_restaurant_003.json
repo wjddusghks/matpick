@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_003",
+  "restaurantName": "인천 원조선창집장어구이",
+  "address": "인천 강화군 선원면 해안동로 1199 (신정리 319-10)",
+  "status": "needs-review",
+  "representativeMenu": "강화갯벌장어 / 민물장어구이",
+  "menus": [
+    {
+      "name": "민물장어구이 1kg (2인분)",
+      "price": "90,000원 또는 100,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["menupan", "siksin"],
+      "observedAt": "2026-07-18",
+      "confidence": 55
+    },
+    {
+      "name": "강화갯벌장어구이",
+      "price": "110,000원 또는 120,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["menupan", "siksin"],
+      "observedAt": "2026-07-18",
+      "confidence": 55
+    }
+  ],
+  "sources": [
+    {
+      "id": "menupan",
+      "url": "https://www.menupan.com/restaurant/onepage.asp?acode=H491527",
+      "title": "원조선창집장어구이 메뉴",
+      "publisher": "메뉴판닷컴",
+      "capturedAt": "2026-07-18",
+      "evidence": "민물장어구이 1kg 90,000원, 강화갯벌장어구이 110,000원으로 표시"
+    },
+    {
+      "id": "siksin",
+      "url": "https://www.siksinhot.com/P/263172",
+      "title": "원조선창집장어구이 메뉴",
+      "publisher": "식신",
+      "capturedAt": "2026-07-18",
+      "evidence": "민물장어구이 1kg 100,000원, 강화갯벌장어 120,000원으로 표시"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 메뉴 출처의 현재 가격이 각각 10,000원씩 달라 전화 또는 최근 메뉴판 사진 확인이 필요함."
+}

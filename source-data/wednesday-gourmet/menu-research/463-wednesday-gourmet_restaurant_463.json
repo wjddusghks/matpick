@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_463",
+  "restaurantName": "서울 마산해물아구찜 통나무식당",
+  "address": "서울 종로구 삼일대로 436-1 (낙원동 45-3)",
+  "status": "needs-review",
+  "representativeMenu": "볶음밥 (1공기)",
+  "menus": [
+    {
+      "name": "볶음밥 (1공기)",
+      "price": "3,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "세상의아침 해물찜 소 (2인분)",
+      "price": "42,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    },
+    {
+      "name": "수요미식회 아구찜 소 (2인분)",
+      "price": "39,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 65
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=91Gj7W4EvjO5",
+      "title": "서울 마산해물아구찜 통나무식당 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 3개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EB%A7%88%EC%82%B0%ED%95%B4%EB%AC%BC%EC%95%84%EA%B5%AC%EC%B0%9C%20%ED%86%B5%EB%82%98%EB%AC%B4%EC%8B%9D%EB%8B%B9%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 마산해물아구찜 통나무식당 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "가격 메뉴는 찾았지만 두 출처에서 같은 메뉴명·가격을 교차 확인하지 못함."
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_314",
+  "restaurantName": "서울 당산오돌 본점",
+  "address": "서울 영등포구 국회대로37길 6 (당산동4가 1-145)",
+  "status": "not-found",
+  "representativeMenu": "",
+  "menus": [],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EC%84%9C%EC%9A%B8%20%EB%8B%B9%EC%82%B0%EC%98%A4%EB%8F%8C%20%EB%B3%B8%EC%A0%90",
+      "title": "서울 당산오돌 본점 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%84%9C%EC%9A%B8%20%EB%8B%B9%EC%82%B0%EC%98%A4%EB%8F%8C%20%EB%B3%B8%EC%A0%90%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "서울 당산오돌 본점 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 조사 출처에서 가격이 표시된 메뉴를 찾지 못함."
+}

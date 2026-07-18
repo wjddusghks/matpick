@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_144",
+  "restaurantName": "제주 돈사돈 별관",
+  "address": "제주 제주시 광평동로 15 (노형동 2470)",
+  "status": "not-found",
+  "representativeMenu": "",
+  "menus": [],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/list.dc?query=%EC%A0%9C%EC%A3%BC%20%EB%8F%88%EC%82%AC%EB%8F%88%20%EB%B3%84%EA%B4%80",
+      "title": "제주 돈사돈 별관 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "일치하는 식당의 가격 메뉴를 찾지 못함"
+    },
+    {
+      "id": "naver",
+      "url": "https://search.naver.com/search.naver?where=nexearch&query=%EC%A0%9C%EC%A3%BC%20%EB%8F%88%EC%82%AC%EB%8F%88%20%EB%B3%84%EA%B4%80%20%EB%A9%94%EB%89%B4%20%EA%B0%80%EA%B2%A9",
+      "title": "제주 돈사돈 별관 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "검색 결과에서 가격 메뉴를 찾지 못함"
+    }
+  ],
+  "verifiedAt": null,
+  "notes": "두 조사 출처에서 가격이 표시된 메뉴를 찾지 못함."
+}

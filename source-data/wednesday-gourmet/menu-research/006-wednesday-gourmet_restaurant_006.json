@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_006",
+  "restaurantName": "인천 성진물텀벙",
+  "address": "인천 미추홀구 독배로403번길 10 (용현동 509-17)",
+  "status": "verified",
+  "representativeMenu": "아귀찜 / 생물아귀탕",
+  "menus": [
+    {
+      "name": "아귀찜·생물아귀탕·생물지리탕 소",
+      "price": "37,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["diningcode", "tabling", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "아귀찜·생물아귀탕·생물지리탕 중",
+      "price": "51,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "아귀찜·생물아귀탕·생물지리탕 대",
+      "price": "63,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 97
+    },
+    {
+      "name": "순살아귀강정",
+      "price": "22,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    },
+    {
+      "name": "순살아귀튀김",
+      "price": "17,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 93
+    },
+    {
+      "name": "생물아귀수육 (겨울 한정)",
+      "price": "50,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling", "polle"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=9YBZoqkV7GQr",
+      "title": "성진물텀벙 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "아귀찜·탕 크기별 가격과 아귀 요리 가격 표시"
+    },
+    {
+      "id": "tabling",
+      "url": "https://www.tabling.co.kr/place/677cc90e66de5f06987838a2",
+      "title": "성진물텀벙 메뉴",
+      "publisher": "테이블링",
+      "capturedAt": "2026-07-18",
+      "evidence": "아귀찜·탕과 순살아귀강정, 계절 메뉴 가격 표시"
+    },
+    {
+      "id": "polle",
+      "url": "https://polle.com/place/1VD0qW/%EC%84%B1%EC%A7%84%20%EB%AC%BC%ED%85%80%EB%B2%99",
+      "title": "성진 물텀벙 메뉴",
+      "publisher": "폴레",
+      "capturedAt": "2026-07-18",
+      "evidence": "주요 아귀 요리의 메뉴명과 가격 표시"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "세 출처에서 주요 메뉴 가격이 일치함."
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_159",
+  "restaurantName": "서울 무화잠",
+  "address": "서울 강남구 강남대로 292 (도곡동 943)",
+  "status": "verified",
+  "representativeMenu": "대게찜 코스(100g)",
+  "menus": [
+    {
+      "name": "대게찜 코스(100g)",
+      "price": "16,900원",
+      "isSignature": true,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    },
+    {
+      "name": "랍스터 코스(100g)",
+      "price": "16,900원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=jco4Tz3p6ymn",
+      "title": "서울 무화잠 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 25개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/18783735?placePath=/menu",
+      "title": "서울 무화잠 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 3개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 2개 항목을 반영함."
+}

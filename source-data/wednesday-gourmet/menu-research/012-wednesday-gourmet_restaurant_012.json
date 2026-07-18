@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_012",
+  "restaurantName": "인천 잉글랜드돈까스",
+  "address": "인천 중구 우현로90번길 7 (인현동 26-8)",
+  "status": "verified",
+  "representativeMenu": "옛날 경양식돈가스 1981",
+  "menus": [
+    {
+      "name": "옛날 경양식돈가스 1981",
+      "price": "13,000원",
+      "isSignature": true,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "원조 경양식 치즈돈가스",
+      "price": "16,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "반까스",
+      "price": "15,500원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "생선까스",
+      "price": "15,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 96
+    },
+    {
+      "name": "1981 왕돈까스",
+      "price": "19,000원",
+      "isSignature": false,
+      "evidenceSourceIds": ["diningcode", "tabling"],
+      "observedAt": "2026-07-18",
+      "confidence": 95
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=64qHUPIalC0Q",
+      "title": "잉글랜드돈까스 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "경양식돈가스, 치즈돈가스, 반까스, 생선까스, 왕돈까스 가격 표시"
+    },
+    {
+      "id": "tabling",
+      "url": "https://www.tabling.co.kr/place/677cc92c66de5f069878796d",
+      "title": "잉글랜드돈까스 메뉴",
+      "publisher": "테이블링",
+      "capturedAt": "2026-07-18",
+      "evidence": "대표 돈가스 메뉴명과 가격 표시"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "두 최근 메뉴 출처의 가격이 일치함."
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "restaurantId": "wednesday-gourmet_restaurant_240",
+  "restaurantName": "서울 삼성원조양곱창",
+  "address": "서울 강남구 학동로101길 7 (청담동 133-6)",
+  "status": "verified",
+  "representativeMenu": "막창",
+  "menus": [
+    {
+      "name": "막창",
+      "price": "26,000원",
+      "isSignature": false,
+      "evidenceSourceIds": [
+        "diningcode",
+        "naver"
+      ],
+      "observedAt": "2026-07-18",
+      "confidence": 92
+    }
+  ],
+  "sources": [
+    {
+      "id": "diningcode",
+      "url": "https://www.diningcode.com/profile.php?rid=mM54PW6bulZO",
+      "title": "서울 삼성원조양곱창 메뉴 및 가격",
+      "publisher": "다이닝코드",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 9개 확인"
+    },
+    {
+      "id": "naver",
+      "url": "https://map.naver.com/p/entry/place/19877522?placePath=/menu",
+      "title": "서울 삼성원조양곱창 네이버 플레이스 메뉴",
+      "publisher": "네이버 플레이스",
+      "capturedAt": "2026-07-18",
+      "evidence": "가격이 있는 메뉴 4개 확인"
+    }
+  ],
+  "verifiedAt": "2026-07-18",
+  "notes": "다이닝코드와 네이버 플레이스에서 메뉴명과 가격이 일치한 1개 항목을 반영함. 같은 이름이지만 가격이 다른 3개 항목은 제외함."
+}

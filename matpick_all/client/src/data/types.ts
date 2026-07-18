@@ -31,7 +31,30 @@ export interface MenuItem {
   id: string;
   name: string;
   price?: string;
+  description?: string;
   isSignature?: boolean;
+  sourceOrdinal?: number;
+}
+
+export interface RestaurantWeeklyHours {
+  day: string;
+  hours: string[];
+}
+
+export interface RestaurantFacilities {
+  reservation?: boolean;
+  delivery?: boolean;
+  accessible?: boolean;
+  takeout?: boolean;
+  parking?: boolean;
+  pets?: boolean;
+  wifi?: boolean;
+}
+
+export interface RestaurantMenuPriceSource {
+  url: string;
+  label?: string;
+  publishedAt?: string;
 }
 
 export interface Restaurant {
@@ -49,6 +72,22 @@ export interface Restaurant {
   thumbnailFileName?: string | null;
   googlePlaceId?: string | null;
   isOverseas?: boolean;
+  country?: string;
+  phone?: string;
+  operationStatus?: string;
+  operationSummary?: string;
+  weeklyHours?: RestaurantWeeklyHours[];
+  kakaoPlaceId?: string;
+  placeUrl?: string;
+  facilities?: RestaurantFacilities;
+  rating?: number | null;
+  reviewCount?: number | null;
+  officialDescriptionAddress?: string;
+  detailCollectedAt?: string;
+  menuPriceStatus?: string;
+  menuPriceVerifiedAt?: string;
+  menuPriceNote?: string;
+  menuPriceSources?: RestaurantMenuPriceSource[];
 }
 
 export interface Visit {

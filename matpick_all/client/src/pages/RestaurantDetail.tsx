@@ -1185,6 +1185,11 @@ export default function RestaurantDetail() {
                               {isEnglish ? "Signature" : "대표 메뉴"}
                             </p>
                           ) : null}
+                          {menu.description ? (
+                            <p className="mt-1.5 max-w-2xl text-xs leading-5 text-[#777173]">
+                              {menu.description}
+                            </p>
+                          ) : null}
                         </div>
                         <p className="shrink-0 text-[15px] font-bold tabular-nums text-[#242122] sm:text-base">
                           {menu.price || (isEnglish ? "Ask" : "가격 문의")}
@@ -1578,7 +1583,61 @@ export default function RestaurantDetail() {
                         <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">카테고리</span>
                         <span className="text-[#1d1d1d]">{restaurant.category}</span>
                       </div>
+                      {restaurant.phone ? (
+                        <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                          <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">전화</span>
+                          <a className="font-semibold text-[#1d1d1d] hover:text-[#ff6f7c]" href={`tel:${restaurant.phone}`}>
+                            {restaurant.phone}
+                          </a>
+                        </div>
+                      ) : null}
+                      {restaurant.operationStatus || restaurant.operationSummary ? (
+                        <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                          <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">영업 상태</span>
+                          <span className="text-[#1d1d1d]">
+                            {[restaurant.operationStatus, restaurant.operationSummary].filter(Boolean).join(" · ")}
+                          </span>
+                        </div>
+                      ) : null}
+                      {(restaurant.weeklyHours?.length ?? 0) > 0 ? (
+                        <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                          <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">영업시간</span>
+                          <div className="space-y-1 text-[#1d1d1d]">
+                            {restaurant.weeklyHours?.map((item) => (
+                              <p key={`${restaurant.id}_${item.day}`}>
+                                <span className="mr-2 inline-block w-4 font-semibold">{item.day}</span>
+                                {item.hours.join(" · ")}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+                      {restaurant.officialDescriptionAddress &&
+                      restaurant.officialDescriptionAddress !== restaurant.address ? (
+                        <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                          <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">방송 당시</span>
+                          <span className="text-[#1d1d1d]">{restaurant.officialDescriptionAddress}</span>
+                        </div>
+                      ) : null}
+                      {restaurant.placeUrl ? (
+                        <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
+                          <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">지도 정보</span>
+                          <a
+                            className="font-semibold text-[#ff6f7c] hover:underline"
+                            href={restaurant.placeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            카카오맵에서 확인
+                          </a>
+                        </div>
+                      ) : null}
                     </div>
+                    {restaurant.detailCollectedAt ? (
+                      <p className="mt-4 text-xs leading-5 text-[#9a9597]">
+                        영업시간과 메뉴 가격은 {restaurant.detailCollectedAt.slice(0, 10)} 수집 기준이며, 방문 전 매장에 다시 확인해 주세요.
+                      </p>
+                    ) : null}
                   </div>
                 </div>
               ) : null}

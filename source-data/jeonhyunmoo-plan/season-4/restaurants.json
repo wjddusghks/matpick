@@ -1,0 +1,438 @@
+[
+  {
+    "id": "jeonhyunmoo-plan-s4-no306",
+    "season": 4,
+    "episode": 1,
+    "restaurantRecordNo": 306,
+    "name": "명랑식당",
+    "aliases": [],
+    "region": "대전 동구",
+    "address": "대전 동구 태전로 56-20",
+    "phone": "042-623-5031",
+    "category": "한식, 육개장",
+    "representativeMenu": "육개장 10,000원",
+    "menus": [
+      {
+        "name": "육개장",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-03",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345626/1",
+    "evidenceText": "MBN 1회 맛집기록에 상호, 육개장, 주소, 전화번호가 공개됨.",
+    "lat": 36.335508768874256,
+    "lng": 127.4288727300703,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 페이지는 주차장이 없으므로 대중교통 이용을 권고함. / 카카오 공개 메뉴판 1개 항목 수집 / 카카오 공개 메뉴판 1개 항목 수집",
+    "kakaoPlaceId": "11891952",
+    "placeUrl": "https://place.map.kakao.com/11891952",
+    "matchedPlaceName": "명랑식당",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/11891952"
+      }
+    ]
+  },
+  {
+    "id": "jeonhyunmoo-plan-s4-no307",
+    "season": 4,
+    "episode": 1,
+    "restaurantRecordNo": 307,
+    "name": "숯골원냉면 본점",
+    "aliases": [],
+    "region": "대전 유성구",
+    "address": "대전 유성구 신성로84번길 18",
+    "phone": "042-861-3287",
+    "category": "냉면, 만두",
+    "representativeMenu": "꿩냉면 15,000원, 물냉면 11,000원, 평양식왕만두 8,000원, 꿩온면 15,000원",
+    "menus": [
+      {
+        "name": "꿩냉면",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "물냉면",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "평양식왕만두",
+        "price": "8,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "꿩온면",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔냉면",
+        "price": "12,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "토종닭백숙",
+        "price": "40,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "만두국(겨울)",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "사리",
+        "price": "6,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "꿩만두국(겨울)",
+        "price": "15,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-03",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345626/1",
+    "evidenceText": "MBN 1회 맛집기록에 상호, 꿩냉면과 왕만두, 주소, 전화번호가 공개됨.",
+    "lat": 36.390134708331345,
+    "lng": 127.3502364679536,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "카카오 공개 메뉴판 9개 항목 수집 / 카카오 공개 메뉴판 9개 항목 수집",
+    "kakaoPlaceId": "11892114",
+    "placeUrl": "https://place.map.kakao.com/11892114",
+    "matchedPlaceName": "숯골원냉면 본점",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/11892114"
+      }
+    ]
+  },
+  {
+    "id": "jeonhyunmoo-plan-s4-no308",
+    "season": 4,
+    "episode": 1,
+    "restaurantRecordNo": 308,
+    "name": "용진식당",
+    "aliases": [],
+    "region": "대전 유성구",
+    "address": "대전 유성구 박산로140번길 201-2",
+    "phone": "042-823-8181",
+    "category": "한우구이",
+    "representativeMenu": "안창살(130g) 45,000원, 토시살(130g) 45,000원, 탕국 2,000원, 치마살(150g) 35,000원",
+    "menus": [
+      {
+        "name": "안창살(130g)",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "토시살(130g)",
+        "price": "45,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "탕국",
+        "price": "2,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "치마살(150g)",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "부채살(150g)",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "업진살(150g)",
+        "price": "35,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-03",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345626/1",
+    "evidenceText": "MBN 1회 맛집기록에 상호, 한우 메뉴, 주소, 전화번호가 공개됨.",
+    "lat": 36.3484535800361,
+    "lng": 127.32473494450383,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "카카오 공개 메뉴판 6개 항목 수집 / 카카오 공개 메뉴판 6개 항목 수집",
+    "kakaoPlaceId": "12351942",
+    "placeUrl": "https://place.map.kakao.com/12351942",
+    "matchedPlaceName": "용진식당",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/12351942"
+      }
+    ]
+  },
+  {
+    "id": "jeonhyunmoo-plan-s4-no309",
+    "season": 4,
+    "episode": 2,
+    "restaurantRecordNo": 309,
+    "name": "서울북어전문",
+    "aliases": [],
+    "region": "대전 중구",
+    "address": "대전 중구 목중로20번길 54",
+    "phone": "042-253-1374",
+    "category": "한식, 북어·황태요리",
+    "representativeMenu": "북어탕 11,000원, 황태구이(중) 20,000원, 황태구이(대) 29,000원, 북어찜(중) 20,000원",
+    "menus": [
+      {
+        "name": "북어탕",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "황태구이(중)",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "황태구이(대)",
+        "price": "29,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "북어찜(중)",
+        "price": "20,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "북어찜(대)",
+        "price": "25,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "황태찜",
+        "price": "27,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-10",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345711/1",
+    "evidenceText": "MBN 2회 맛집기록에 상호, 북어탕과 황태구이, 주소, 전화번호가 공개됨.",
+    "lat": 36.33743629950124,
+    "lng": 127.41381514259572,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "카카오 공개 메뉴판 6개 항목 수집 / 카카오 공개 메뉴판 6개 항목 수집",
+    "kakaoPlaceId": "9819500",
+    "placeUrl": "https://place.map.kakao.com/9819500",
+    "matchedPlaceName": "서울북어",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/9819500"
+      }
+    ]
+  },
+  {
+    "id": "jeonhyunmoo-plan-s4-no310",
+    "season": 4,
+    "episode": 2,
+    "restaurantRecordNo": 310,
+    "name": "대성콩국수",
+    "aliases": [],
+    "region": "대전 서구",
+    "address": "대전 서구 도산로 141",
+    "phone": "042-533-4586",
+    "category": "콩국수",
+    "representativeMenu": "콩국수 10,000원, 계란말이 10,000원, 비빔국수 11,000원, 생두부 10,000원",
+    "menus": [
+      {
+        "name": "콩국수",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "계란말이",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "비빔국수",
+        "price": "11,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "생두부",
+        "price": "10,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "콩물",
+        "price": "17,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-10",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345711/1",
+    "evidenceText": "MBN 2회 맛집기록에 상호, 콩국수와 달걀말이, 주소, 전화번호가 공개됨.",
+    "lat": 36.32107574695437,
+    "lng": 127.37750933824523,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "공식 페이지 기준 달걀말이는 하루 40개 한정. / 카카오 공개 메뉴판 5개 항목 수집 / 카카오 공개 메뉴판 5개 항목 수집",
+    "kakaoPlaceId": "16275679",
+    "placeUrl": "https://place.map.kakao.com/16275679",
+    "matchedPlaceName": "대성콩국수",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/16275679"
+      }
+    ]
+  },
+  {
+    "id": "jeonhyunmoo-plan-s4-no311",
+    "season": 4,
+    "episode": 2,
+    "restaurantRecordNo": 311,
+    "name": "한영식당",
+    "aliases": [],
+    "region": "대전 중구",
+    "address": "대전 중구 계룡로874번길 6",
+    "phone": "042-533-2644",
+    "category": "닭볶음탕",
+    "representativeMenu": "닭도리탕 (대) 48,000원, 닭도리탕 (소) 33,000원",
+    "menus": [
+      {
+        "name": "닭도리탕 (대)",
+        "price": "48,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      },
+      {
+        "name": "닭도리탕 (소)",
+        "price": "33,000원",
+        "isSignature": false,
+        "sourceId": "kakao-place-menu",
+        "observedAt": "2026-07-18",
+        "confidence": 0.94
+      }
+    ],
+    "broadcastDate": "2026-07-10",
+    "sourceUrl": "https://www.mbn.co.kr/totalCastView/345711/1",
+    "evidenceText": "MBN 2회 맛집기록에 상호, 닭볶음탕, 주소, 전화번호가 공개됨.",
+    "lat": 36.323420856195284,
+    "lng": 127.41077872199683,
+    "confidence": 1,
+    "reviewStatus": "menu-address-reviewed",
+    "notes": "카카오 공개 메뉴판 2개 항목 수집 / 카카오 공개 메뉴판 2개 항목 수집",
+    "kakaoPlaceId": "9589060",
+    "placeUrl": "https://place.map.kakao.com/9589060",
+    "matchedPlaceName": "한영식당",
+    "menuPriceStatus": "current-public-full-menu",
+    "menuPriceVerifiedAt": "2026-07-18",
+    "menuPriceSources": [
+      {
+        "label": "카카오맵 전체 메뉴판",
+        "url": "https://place.map.kakao.com/9589060"
+      }
+    ]
+  }
+]

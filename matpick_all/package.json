@@ -11,6 +11,8 @@
     "dev": "vite --host",
     "sync:old-korean-100": "node scripts/sync-source-dataset.mjs old-korean-100",
     "sync:sikgaek-baekban-trip": "node scripts/sync-source-dataset.mjs sikgaek-baekban-trip",
+    "enrich:sikgaek-baekban-trip:menus": "node scripts/enrich-sikgaek-baekban-menus.mjs",
+    "enrich:wednesday-gourmet:menus": "node scripts/enrich-sikgaek-baekban-menus.mjs --dataset wednesday-gourmet",
     "sync:wednesday-gourmet": "node scripts/sync-source-dataset.mjs wednesday-gourmet",
     "geocode:old-korean-100": "node scripts/geocode-source-dataset.mjs old-korean-100",
     "geocode:sikgaek-baekban-trip": "node scripts/geocode-source-dataset.mjs sikgaek-baekban-trip",

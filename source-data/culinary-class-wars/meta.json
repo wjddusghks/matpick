@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-07-15T00:08:39.104Z",
+  "capturedAt": "2026-07-15",
+  "scope": "시즌 1은 100인 목록의 식당 연결, 시즌 2는 백수저 및 2라운드 진출 흑수저 공개 식당 목록",
+  "season1ParticipantRowsParsed": 100,
+  "season1RestaurantCount": 132,
+  "season2WhiteRestaurantCount": 29,
+  "season2BlackRestaurantCount": 34,
+  "totalRestaurantAffiliations": 183,
+  "nonPublicOrClosedAffiliations": 12,
+  "caveats": [
+    "출연 이력은 넷플릭스 공식 출처, 식당 연결은 보조 디렉터리 출처를 사용했다.",
+    "시즌 2 흑수저는 2라운드 진출자 식당 중심으로, 80인 전원 목록이 아니다.",
+    "현재 운영·폐업·이전·셰프 재직 여부는 실제 게시 직전 재확인해야 한다."
+  ]
+}

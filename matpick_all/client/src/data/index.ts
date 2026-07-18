@@ -4,6 +4,8 @@ import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import { sourceProfileImageOverrides } from "./sourceProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
+import culinaryClassWarsDataset from "./generated/culinary-class-wars.generated.json";
+import jeonhyunmooPlanDataset from "./generated/jeonhyunmoo-plan.generated.json";
 import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
 import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
 import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
@@ -413,6 +415,8 @@ const publicDataSourceIds = new Set([
   "baekjong-wok",
   "sikgaek-baekban-trip",
   "wednesday-gourmet",
+  "culinary-class-wars",
+  "jeonhyunmoo-plan",
 ]);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
@@ -456,6 +460,8 @@ function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet
 const baseDataset = rawDataset as MatpickDataSet;
 const dataset = filterDatasetForVisibleContent(
   mergeDatasets(baseDataset, [
+  culinaryClassWarsDataset as SourceDataset,
+  jeonhyunmooPlanDataset as SourceDataset,
   oldKorean100Dataset as SourceDataset,
   baekjongWokTopicEnrichment as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
@@ -1019,6 +1025,8 @@ const publicDiscoveryTopicSlugs = new Set([
   "old-korean-100",
   "baekjong-wok",
   "sikgaek-baekban-trip",
+  "culinary-class-wars",
+  "jeonhyunmoo-plan",
 ]);
 
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>

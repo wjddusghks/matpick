@@ -277,21 +277,6 @@
       "googlePlaceId": null
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_019",
-      "name": "서울 필동과자점(현재 폐업)",
-      "region": "서울 중구",
-      "address": "서울 중구 서애로 14-1 (필동3가 17-2)",
-      "category": "컵케이크",
-      "representativeMenu": "",
-      "lat": 37.5611149,
-      "lng": 126.9978625,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "isOverseas": false
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_020",
       "name": "부산 중리해녀촌",
       "region": "부산 영도구",
@@ -572,22 +557,6 @@
       "googlePlaceId": "ChIJu2km5YiifDURgiVPf5B1QyU"
     },
     {
-      "id": "topic_enrichment_baekban-trip_3ee04120e76d",
-      "name": "홍가네면옥(현재 폐업)",
-      "region": "서울 서대문구",
-      "address": "서울 서대문구 영천시장길 31 (영천동 301)",
-      "category": "기계식 냉면",
-      "representativeMenu": "",
-      "lat": 37.5708338,
-      "lng": 126.9612328,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "isOverseas": false,
-      "googlePlaceId": null
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_039",
       "name": "서울 연희미식",
       "region": "서울 서대문구",
@@ -663,22 +632,6 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_baekban-trip_059ee18728ef",
-      "name": "서울 서대문 원조 통술집(현재 폐업)",
-      "region": "서울 서대문구",
-      "address": "서울 서대문구 통일로 107-4 (미근동 171)",
-      "category": "돼지갈비",
-      "representativeMenu": "",
-      "lat": 37.5646976,
-      "lng": 126.9672932,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "isOverseas": false,
-      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_043",
@@ -1758,22 +1711,6 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_baekban-trip_09de8ea4ec40",
-      "name": "서울 우남식당(현재 폐업)",
-      "region": "서울 중구",
-      "address": "서울 중구 을지로42길 28 (광희동1가 96)",
-      "category": "한식",
-      "representativeMenu": "",
-      "lat": 37.5650437,
-      "lng": 127.0055103,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "isOverseas": false,
-      "googlePlaceId": null
     },
     {
       "id": "topic_enrichment_baekban-trip_ab02ff497eba",
@@ -4462,22 +4399,6 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false
-    },
-    {
-      "id": "topic_enrichment_baekban-trip_930b5d237bcc",
-      "name": "진도 우림 (현재 폐업)",
-      "region": "전남 진도군",
-      "address": "전남 진도군 진도읍 동외1길 50 (동외리 1036-2)",
-      "category": "보리간재미애국",
-      "representativeMenu": "",
-      "lat": 34.4823949,
-      "lng": 126.2729983,
-      "imageUrl": "",
-      "foundingYear": null,
-      "menus": [],
-      "thumbnailFileName": null,
-      "isOverseas": false,
-      "googlePlaceId": null
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_269",
@@ -11481,14 +11402,6 @@
       "note": ""
     },
     {
-      "id": "sikgaek-baekban-trip_link_019",
-      "restaurantId": "sikgaek-baekban-trip_restaurant_019",
-      "sourceId": "sikgaek-baekban-trip",
-      "ordinal": 19,
-      "label": "EP.10",
-      "note": ""
-    },
-    {
       "id": "sikgaek-baekban-trip_link_020",
       "restaurantId": "sikgaek-baekban-trip_restaurant_020",
       "sourceId": "sikgaek-baekban-trip",
@@ -11633,14 +11546,6 @@
       "note": ""
     },
     {
-      "id": "sikgaek-baekban-trip_link_038",
-      "restaurantId": "sikgaek-baekban-trip_restaurant_038",
-      "sourceId": "sikgaek-baekban-trip",
-      "ordinal": 38,
-      "label": "EP.7",
-      "note": ""
-    },
-    {
       "id": "sikgaek-baekban-trip_link_039",
       "restaurantId": "sikgaek-baekban-trip_restaurant_039",
       "sourceId": "sikgaek-baekban-trip",
@@ -11662,14 +11567,6 @@
       "sourceId": "sikgaek-baekban-trip",
       "ordinal": 41,
       "label": "EP.21",
-      "note": ""
-    },
-    {
-      "id": "sikgaek-baekban-trip_link_042",
-      "restaurantId": "sikgaek-baekban-trip_restaurant_042",
-      "sourceId": "sikgaek-baekban-trip",
-      "ordinal": 42,
-      "label": "EP.7",
       "note": ""
     },
     {
@@ -12150,14 +12047,6 @@
       "sourceId": "sikgaek-baekban-trip",
       "ordinal": 102,
       "label": "EP.61",
-      "note": ""
-    },
-    {
-      "id": "sikgaek-baekban-trip_link_103",
-      "restaurantId": "sikgaek-baekban-trip_restaurant_103",
-      "sourceId": "sikgaek-baekban-trip",
-      "ordinal": 103,
-      "label": "EP.19",
       "note": ""
     },
     {
@@ -13470,14 +13359,6 @@
       "sourceId": "sikgaek-baekban-trip",
       "ordinal": 267,
       "label": "식객 허영만의 백반기행",
-      "note": ""
-    },
-    {
-      "id": "sikgaek-baekban-trip_link_268",
-      "restaurantId": "sikgaek-baekban-trip_restaurant_268",
-      "sourceId": "sikgaek-baekban-trip",
-      "ordinal": 268,
-      "label": "EP.48",
       "note": ""
     },
     {

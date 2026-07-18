@@ -1500,6 +1500,14 @@ export default function Home() {
         </button>
 
         <div className="flex flex-wrap items-start justify-end gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => navigate("/community")}
+            className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-3 text-xs font-semibold text-[#ff6575] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
+          >
+            <MessageCircleMore className="mr-1.5 h-4 w-4 sm:mr-2" />
+            라운지
+          </button>
           {isLoggedIn ? (
             <>
               <button
@@ -1860,6 +1868,8 @@ export default function Home() {
           </div>
         </section>
 
+        <CommunityEntryCards />
+
         <FeaturedCollectionMarquee
           label={ui.collectionMarqueeLabel}
           cards={restaurantMarqueeCards}
@@ -1878,6 +1888,41 @@ export default function Home() {
         <SiteFooter />
       </div>
     </div>
+  );
+}
+
+function CommunityEntryCards() {
+  return (
+    <section className="mt-8 grid w-full max-w-[840px] gap-3 text-left sm:mt-10 sm:grid-cols-2">
+      <Link
+        href="/community"
+        className="group flex items-center gap-4 rounded-[24px] border border-[#ffdce2] bg-white/90 p-5 no-underline shadow-[0_14px_36px_rgba(42,27,31,0.05)] transition hover:-translate-y-0.5 hover:border-[#ffb5c0] hover:shadow-[0_18px_42px_rgba(42,27,31,0.09)]"
+      >
+        <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#fff0f3] text-[#ff6f7c]">
+          <MessageCircleMore className="h-6 w-6" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-xs font-bold text-[#ff7483]">맛픽 라운지</span>
+          <span className="mt-1 block text-base font-black text-[#282223]">맛집 이야기와 토론</span>
+          <span className="mt-1 block text-xs leading-5 text-[#8d8385]">식당을 태그하고 추천·질문·후기를 나눠보세요.</span>
+        </span>
+        <ChevronRight className="h-5 w-5 flex-shrink-0 text-[#c4b9bb] transition group-hover:translate-x-0.5 group-hover:text-[#ff7483]" />
+      </Link>
+      <Link
+        href="/suggest"
+        className="group flex items-center gap-4 rounded-[24px] border border-[#ffdce2] bg-white/90 p-5 no-underline shadow-[0_14px_36px_rgba(42,27,31,0.05)] transition hover:-translate-y-0.5 hover:border-[#ffb5c0] hover:shadow-[0_18px_42px_rgba(42,27,31,0.09)]"
+      >
+        <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#292425] text-white">
+          <Plus className="h-6 w-6" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-xs font-bold text-[#ff7483]">회원 추천 맛집</span>
+          <span className="mt-1 block text-base font-black text-[#282223]">내가 아는 맛집 제보</span>
+          <span className="mt-1 block text-xs leading-5 text-[#8d8385]">맛픽에 없는 식당을 회원이 직접 알려주세요.</span>
+        </span>
+        <ChevronRight className="h-5 w-5 flex-shrink-0 text-[#c4b9bb] transition group-hover:translate-x-0.5 group-hover:text-[#ff7483]" />
+      </Link>
+    </section>
   );
 }
 

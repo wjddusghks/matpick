@@ -1588,6 +1588,25 @@ export default function RestaurantDetail() {
         </div>
 
         <div className="flex h-fit flex-col gap-5 lg:sticky lg:top-[80px]">
+          <div className="rounded-2xl border border-[#ffe0e5] bg-[linear-gradient(135deg,#fff7f8_0%,#ffffff_100%)] p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
+            <div className="flex items-start gap-3">
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#fff0f3] text-[#ff7483]">
+                <MessageCircle className="h-5 w-5" />
+              </span>
+              <div>
+                <h3 className="text-sm font-bold text-[#1a1a1a]">이 식당 이야기하기</h3>
+                <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
+                  {restaurant.name}을 태그해 질문, 추천, 방문 후기를 맛픽 라운지에 남겨보세요.
+                </p>
+              </div>
+            </div>
+            <Link
+              href={`/community/new?restaurantId=${encodeURIComponent(restaurant.id)}`}
+              className="mt-4 flex h-10 items-center justify-center rounded-full bg-[#ff7483] text-xs font-bold text-white no-underline transition hover:brightness-95"
+            >
+              이 식당으로 글쓰기
+            </Link>
+          </div>
           <div className="rounded-2xl bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.06)]">
             <div className="flex items-center justify-between gap-3">
               <div>

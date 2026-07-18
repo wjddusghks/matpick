@@ -26,7 +26,7 @@ const koreanSections: PolicySection[] = [
   {
     title: "1. 처리 주체와 적용 범위",
     paragraphs: [
-      "Matpick 운영자(이하 ‘운영자’)는 개인정보 보호법 등 관련 법령에 따라 서비스에서 처리하는 개인정보를 보호합니다. 이 방침은 matpick.co.kr 웹 서비스, 회원 기능, 댓글·리뷰와 문의 처리에 적용됩니다.",
+      "Matpick 운영자(이하 ‘운영자’)는 개인정보 보호법 등 관련 법령에 따라 서비스에서 처리하는 개인정보를 보호합니다. 이 방침은 matpick.co.kr 웹 서비스, 회원 기능, 댓글·리뷰, 커뮤니티, 회원 맛집 제보와 문의 처리에 적용됩니다.",
       "개인정보 보호 담당 창구는 Instagram @matpick.co.kr DM입니다. 개인정보가 포함된 요청은 공개 GitHub 이슈에 작성하지 말아 주세요.",
     ],
   },
@@ -37,7 +37,7 @@ const koreanSections: PolicySection[] = [
     ],
     bullets: [
       "소셜 로그인 및 회원 관리: 로그인 제공자, 제공자가 발급한 이용자 식별값, 이름·닉네임, 제공되는 경우 이메일과 프로필 이미지, 동의 시각 및 선택 설정. 로그인 유지, 계정 식별, 저장·댓글·리뷰 기능, 부정 이용 방지에 사용합니다.",
-      "이용자 콘텐츠: 댓글·리뷰 본문, 평점, 업로드 사진, 작성·수정 시각, 연결된 식당 정보. 콘텐츠 표시, 수정·삭제 처리와 서비스 품질 관리에 사용합니다.",
+      "이용자 콘텐츠: 커뮤니티 글과 댓글·리뷰 본문, 평점, 업로드 사진, 맛집 제보의 식당명·주소·지도 링크·추천 이유, 작성·수정 시각과 연결된 식당 정보. 콘텐츠 표시, 중복 확인, 공식 식당 정보 병합, 수정·삭제 처리와 서비스 품질 관리에 사용합니다.",
       "자동 생성 정보: IP 주소, 브라우저·기기 정보, 요청 시각, 페이지 경로, 검색어, 클릭·광고 상호작용, 무작위 방문자·세션 식별값. 보안, 오류 대응, 이용 통계와 성능 개선에 사용합니다.",
       "위치 정보: 브라우저에서 이용자가 직접 권한을 허용한 경우의 현재 좌표. 주변 식당 정렬과 지도 표시를 위해 현재 세션에서 사용하며, 원칙적으로 회원 프로필에 좌표 자체를 저장하지 않습니다.",
       "브라우저 저장소: 로그인 상태, 즐겨찾기, 최근 이용 상태, 개인정보·쿠키 선택값. 선택한 기능 유지와 사용자 경험 제공에 사용합니다.",
@@ -56,7 +56,7 @@ const koreanSections: PolicySection[] = [
     ],
     bullets: [
       "회원 프로필과 회원 식별 정보: 회원 탈퇴 또는 삭제 요청 처리 시까지",
-      "댓글·리뷰와 업로드 사진: 이용자가 삭제하거나 권리 침해·삭제 요청이 처리될 때까지",
+      "커뮤니티 글·댓글·리뷰·맛집 제보와 업로드 사진: 이용자가 삭제하거나 권리 침해·삭제 요청이 처리될 때까지",
       "일자별 익명·가명 이용 통계: 45일",
       "일자별 회원 운영 통계: 180일",
       "개인을 직접 식별하지 않는 누적 집계 통계: 서비스 운영 기간",
@@ -110,7 +110,7 @@ const koreanSections: PolicySection[] = [
     title: "10. 아동, 변경 고지와 시행일",
     paragraphs: [
       "Matpick은 만 14세 미만 아동을 대상으로 회원 서비스를 제공하지 않습니다. 만 14세 미만 이용자의 정보가 법정대리인 동의 없이 수집된 사실을 확인하면 지체 없이 삭제합니다.",
-      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 7월 15일입니다.",
+      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 7월 18일입니다.",
     ],
   },
 ];
@@ -119,7 +119,7 @@ const englishSections: PolicySection[] = [
   {
     title: "1. Controller and scope",
     paragraphs: [
-      "The Matpick operator protects personal data under applicable privacy laws. This policy applies to matpick.co.kr, account features, reviews, and support requests.",
+      "The Matpick operator protects personal data under applicable privacy laws. This policy applies to matpick.co.kr, account features, reviews, community posts, member restaurant suggestions, and support requests.",
       "Privacy requests are handled through Instagram DM at @matpick.co.kr. Never post personal information in a public GitHub issue.",
     ],
   },
@@ -130,7 +130,7 @@ const englishSections: PolicySection[] = [
     ],
     bullets: [
       "Accounts: provider, provider-issued user ID, name or nickname, optional email and profile image, consent time, and settings for login, account management, saved places, and abuse prevention.",
-      "User content: review text, ratings, photos, timestamps, and restaurant references for publishing and moderation.",
+      "User content: community posts, comments, review text, ratings, photos, restaurant suggestions, addresses, map links, reasons, timestamps, and restaurant references for publishing, duplicate checks, data merging, and moderation.",
       "Usage and security: IP address, browser or device data, request time, paths, searches, clicks, ad interactions, and random visitor or session IDs for security and aggregated analytics.",
       "Location: current coordinates only after browser permission, used for nearby sorting and maps and not normally stored in the member profile.",
       "Browser storage: login state, favorites, recent state, and privacy choices needed to preserve requested features.",
@@ -143,7 +143,7 @@ const englishSections: PolicySection[] = [
     ],
     bullets: [
       "Account profile and identifiers: until account deletion is requested",
-      "Reviews and uploaded photos: until deleted or a valid removal request is resolved",
+      "Community posts, comments, reviews, restaurant suggestions, and uploaded photos: until deleted or a valid removal request is resolved",
       "Daily pseudonymous analytics: 45 days; daily member operations metrics: 180 days",
       "Non-identifying aggregate totals: while the service operates",
       "Browser identifiers and choices: until storage is cleared or choices are changed",
@@ -175,7 +175,7 @@ const englishSections: PolicySection[] = [
     title: "7. Security, children, and effective date",
     paragraphs: [
       "We use HTTPS, origin checks, rate limits, allowlisted and signed-token admin access, security headers, limited logs, and same-origin image controls. No internet service can eliminate all risk.",
-      "Matpick does not target children under 14. This policy is effective July 15, 2026, and material changes will be announced on this page or in the service.",
+      "Matpick does not target children under 14. This policy is effective July 18, 2026, and material changes will be announced on this page or in the service.",
     ],
   },
 ];
@@ -185,7 +185,7 @@ export default function Privacy() {
   const title = isEnglish ? "Privacy Policy" : "개인정보처리방침";
   const description = isEnglish
     ? "How Matpick handles account, review, location, analytics, advertising, and browser data."
-    : "Matpick의 회원, 댓글·리뷰, 위치, 이용 통계, 광고 및 브라우저 데이터 처리 기준을 안내합니다.";
+    : "Matpick의 회원, 커뮤니티·맛집 제보·댓글·리뷰, 위치, 이용 통계, 광고 및 브라우저 데이터 처리 기준을 안내합니다.";
   const sections = isEnglish ? englishSections : koreanSections;
 
   useSeo({
@@ -198,7 +198,7 @@ export default function Privacy() {
       "@type": "WebPage",
       name: `Matpick ${title}`,
       url: buildAbsoluteUrl("/privacy"),
-      dateModified: "2026-07-15",
+      dateModified: "2026-07-18",
     },
   });
 

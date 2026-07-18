@@ -9,6 +9,8 @@ const footerLinks = {
     discover: [
       { href: "/explore", label: "맛집 탐색" },
       { href: "/map", label: "지도 보기" },
+      { href: "/community", label: "맛픽 라운지" },
+      { href: "/suggest", label: "맛집 제보" },
       { href: "/about", label: "서비스 소개" },
     ],
     policy: [
@@ -30,6 +32,8 @@ const footerLinks = {
     discover: [
       { href: "/explore", label: "Explore" },
       { href: "/map", label: "Map search" },
+      { href: "/community", label: "Community" },
+      { href: "/suggest", label: "Suggest a restaurant" },
       { href: "/about", label: "About Matpick" },
     ],
     policy: [

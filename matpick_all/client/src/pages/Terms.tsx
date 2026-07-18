@@ -24,7 +24,7 @@ const koreanSections: TermsSection[] = [
   {
     title: "1. 목적과 적용",
     paragraphs: [
-      "이 약관은 Matpick 운영자(이하 ‘운영자’)가 matpick.co.kr에서 제공하는 맛집 탐색, 지도, 회원, 즐겨찾기, 댓글·리뷰 및 관련 서비스의 이용 조건을 정합니다. 서비스를 이용하면 이 약관과 개인정보처리방침의 적용을 받습니다.",
+      "이 약관은 Matpick 운영자(이하 ‘운영자’)가 matpick.co.kr에서 제공하는 맛집 탐색, 지도, 회원, 즐겨찾기, 댓글·리뷰, 커뮤니티와 회원 맛집 제보 및 관련 서비스의 이용 조건을 정합니다. 서비스를 이용하면 이 약관과 개인정보처리방침의 적용을 받습니다.",
     ],
   },
   {
@@ -47,9 +47,9 @@ const koreanSections: TermsSection[] = [
     ],
   },
   {
-    title: "5. 이용자 댓글·리뷰와 사진",
+    title: "5. 이용자 게시물·맛집 제보와 사진",
     paragraphs: [
-      "이용자는 자신이 작성하거나 적법한 권리를 가진 댓글·리뷰와 사진만 게시해야 합니다. 이용자는 게시물을 서비스에서 저장, 표시, 크기 조정 및 전송하는 데 필요한 비독점적이고 무상인 이용 권한을 운영자에게 부여합니다. 이 권한은 게시물 삭제 시 종료되지만 백업, 법적 의무 또는 이미 처리된 신고 기록에는 합리적인 기간 동안 남을 수 있습니다.",
+      "이용자는 자신이 작성하거나 적법한 권리를 가진 커뮤니티 글, 댓글·리뷰, 맛집 제보와 사진만 게시해야 합니다. 제보한 식당 정보는 중복 확인, 검토 및 기존 식당과의 병합을 거쳐 공식 식당 정보로 반영될 수 있습니다. 이용자는 게시물을 서비스에서 저장, 표시, 크기 조정 및 전송하는 데 필요한 비독점적이고 무상인 이용 권한을 운영자에게 부여합니다. 이 권한은 게시물 삭제 시 종료되지만 백업, 법적 의무 또는 이미 처리된 신고 기록에는 합리적인 기간 동안 남을 수 있습니다.",
     ],
     bullets: [
       "허위 사실, 광고성 도배, 명예훼손, 혐오·불법 정보 게시 금지",
@@ -98,7 +98,7 @@ const koreanSections: TermsSection[] = [
     title: "12. 준거법, 문의와 시행일",
     paragraphs: [
       "이 약관은 대한민국 법률을 준거법으로 하며 분쟁은 민사소송법 등 관계 법령이 정한 관할 법원에서 해결합니다. 약관과 서비스 운영 문의는 Instagram @matpick.co.kr DM을 이용해 주세요.",
-      "본 약관의 시행일은 2026년 7월 14일입니다.",
+      "본 약관의 시행일은 2026년 7월 18일입니다.",
     ],
   },
 ];
@@ -107,7 +107,7 @@ const englishSections: TermsSection[] = [
   {
     title: "1. Scope and service",
     paragraphs: [
-      "These terms govern Matpick restaurant discovery, maps, accounts, favorites, reviews, and related features at matpick.co.kr. Matpick is a curated information service and does not directly provide or broker reservations, orders, delivery, payments, or restaurant operations.",
+      "These terms govern Matpick restaurant discovery, maps, accounts, favorites, reviews, community posts, and member restaurant suggestions at matpick.co.kr. Matpick is a curated information service and does not directly provide or broker reservations, orders, delivery, payments, or restaurant operations.",
     ],
   },
   {
@@ -123,9 +123,9 @@ const englishSections: TermsSection[] = [
     ],
   },
   {
-    title: "4. Reviews and photos",
+    title: "4. Community content, restaurant suggestions, and photos",
     paragraphs: [
-      "Users may upload only content they created or have the right to use. You grant Matpick a non-exclusive, royalty-free license needed to store, display, resize, and transmit the post in the service. The license ends when the post is deleted, subject to reasonable backups, legal duties, and completed moderation records.",
+      "Users may upload only content they created or have the right to use. Suggested restaurant information may be checked for duplicates, reviewed, and merged into the official restaurant data. You grant Matpick a non-exclusive, royalty-free license needed to store, display, resize, and transmit the post in the service. The license ends when the post is deleted, subject to reasonable backups, legal duties, and completed moderation records.",
     ],
   },
   {
@@ -150,7 +150,7 @@ const englishSections: TermsSection[] = [
     title: "8. Changes, disclaimers, and law",
     paragraphs: [
       "Features may change or stop because of quality, cost, security, law, or external API policy. Matpick does not guarantee a restaurant's quality, safety, operation, price, or outcome. Liability is limited only to the extent permitted by law and mandatory consumer rights remain intact.",
-      "Korean law governs these terms. The effective date is July 14, 2026. Contact Instagram @matpick.co.kr for service or policy questions.",
+      "Korean law governs these terms. The effective date is July 18, 2026. Contact Instagram @matpick.co.kr for service or policy questions.",
     ],
   },
 ];
@@ -160,7 +160,7 @@ export default function Terms() {
   const title = isEnglish ? "Terms of Service" : "이용약관";
   const description = isEnglish
     ? "Rules for Matpick accounts, restaurant information, reviews, images, advertising, and service use."
-    : "Matpick 회원, 식당 정보, 댓글·리뷰·사진, 광고 및 서비스 이용에 적용되는 기준입니다.";
+    : "Matpick 회원, 식당 정보, 커뮤니티·맛집 제보·댓글·리뷰·사진, 광고 및 서비스 이용에 적용되는 기준입니다.";
   const sections = isEnglish ? englishSections : koreanSections;
 
   useSeo({
@@ -173,7 +173,7 @@ export default function Terms() {
       "@type": "WebPage",
       name: `Matpick ${title}`,
       url: buildAbsoluteUrl("/terms"),
-      dateModified: "2026-07-14",
+      dateModified: "2026-07-18",
     },
   });
 

@@ -27,6 +27,10 @@ const Terms = lazy(() => import("./pages/Terms"));
 const CreatorDetail = lazy(() => import("./pages/CreatorDetail"));
 const MyFavorites = lazy(() => import("./pages/MyFavorites"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const Community = lazy(() => import("./pages/Community"));
+const CommunityComposer = lazy(() => import("./pages/CommunityComposer"));
+const CommunityPost = lazy(() => import("./pages/CommunityPost"));
+const RestaurantSuggestion = lazy(() => import("./pages/RestaurantSuggestion"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -72,6 +76,12 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/restaurant/:id" component={RestaurantDetail} />
         <Route path="/reviews" component={ReviewFeed} />
+        <Route path="/community/new" component={CommunityComposer} />
+        <Route path="/community/post/:postId">
+          {(params) => <CommunityPost postId={params.postId} />}
+        </Route>
+        <Route path="/community" component={Community} />
+        <Route path="/suggest" component={RestaurantSuggestion} />
         <Route path="/creator/:id" component={CreatorDetail} />
         <Route path="/my/favorites" component={MyFavorites} />
         <Route path="/admin" component={AdminDashboard} />

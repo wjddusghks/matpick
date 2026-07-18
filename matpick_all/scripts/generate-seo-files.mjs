@@ -208,7 +208,18 @@ async function buildSitemap(siteUrl) {
   );
   const seen = new Set();
 
-  const staticUrls = ["/", "/explore", "/map", "/reviews", "/about", "/privacy", "/terms", "/contact"];
+  const staticUrls = [
+    "/",
+    "/explore",
+    "/map",
+    "/reviews",
+    "/community",
+    "/suggest",
+    "/about",
+    "/privacy",
+    "/terms",
+    "/contact",
+  ];
   const entries = [];
 
   for (const item of staticUrls) {

@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$SourceDir = (Join-Path $PSScriptRoot "..\..\source-data\old-korean-100"),
   [string]$OutputJson = (Join-Path $PSScriptRoot "..\client\src\data\generated\old-korean-100.generated.json"),
   [string]$CoverOutput = (Join-Path $PSScriptRoot "..\client\public\source-covers\old-korean-100.jpg"),
@@ -123,6 +123,25 @@ function Normalize-Text {
   return ($Value -replace "\s+", " ").Trim()
 }
 
+function Get-ObjectPropertyValue {
+  param(
+    [object]$Object,
+    [string]$Name,
+    [object]$DefaultValue = $null
+  )
+
+  if ($null -eq $Object) {
+    return $DefaultValue
+  }
+
+  $property = $Object.PSObject.Properties[$Name]
+  if ($null -eq $property -or $null -eq $property.Value) {
+    return $DefaultValue
+  }
+
+  return $property.Value
+}
+
 function Normalize-HeaderText {
   param([string]$Value)
 
@@ -228,11 +247,11 @@ function Build-MenuItems {
     [string]$PriceListRaw
   )
 
-  $menuLines = Split-ListText -Value $MenuListRaw
-  $priceLines = Split-ListText -Value $PriceListRaw
+  $menuLines = @(Split-ListText -Value $MenuListRaw)
+  $priceLines = @(Split-ListText -Value $PriceListRaw)
 
   if ($menuLines.Count -eq 0) {
-    $menuLines = Split-ListText -Value $RepresentativeMenuRaw -AllowSlash
+    $menuLines = @(Split-ListText -Value $RepresentativeMenuRaw -AllowSlash)
   }
 
   $menuItems = New-Object System.Collections.Generic.List[object]
@@ -264,7 +283,7 @@ function Build-MenuItems {
       })
   }
 
-  return $menuItems
+  return ,$menuItems
 }
 
 function Get-RepresentativeMenuText {
@@ -275,10 +294,10 @@ function Get-RepresentativeMenuText {
 
   $normalizedRepresentative = Normalize-Text $RepresentativeMenuRaw
   if (-not [string]::IsNullOrWhiteSpace($normalizedRepresentative)) {
-    $candidateMenus = Split-ListText -Value $normalizedRepresentative -AllowSlash | ForEach-Object {
+    $candidateMenus = @(Split-ListText -Value $normalizedRepresentative -AllowSlash | ForEach-Object {
       $parsed = Parse-MenuLine -Value $_
       if ($parsed) { $parsed.name }
-    } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+    } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
 
     if ($candidateMenus.Count -gt 0) {
       return (($candidateMenus | Select-Object -First 3) -join " / ")
@@ -348,6 +367,27 @@ function Load-CoordinateOverrides {
   return $lookup
 }
 
+function Load-MenuPriceOverrides {
+  param([string]$Path)
+
+  $lookup = @{}
+  if (-not (Test-Path $Path)) {
+    return $lookup
+  }
+
+  $rawText = [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
+  $raw = $rawText | ConvertFrom-Json
+  if ($null -eq $raw -or $null -eq $raw.restaurants) {
+    return $lookup
+  }
+
+  foreach ($property in $raw.restaurants.PSObject.Properties) {
+    $lookup[$property.Name] = $property.Value
+  }
+
+  return $lookup
+}
+
 $sourceDirPath = [System.IO.Path]::GetFullPath($SourceDir)
 $sourceMetaPath = Join-Path $sourceDirPath "source.json"
 if (-not (Test-Path $sourceMetaPath)) {
@@ -370,7 +410,8 @@ if ($headerRow.Count -lt 5) {
   throw "The source Excel file must contain at least five columns."
 }
 
-$ordinalColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("회차", "번호", "순번", "ordinal", "order", "ep", "episode")
+$ordinalColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("순번", "번호", "ordinal", "order", "회차", "ep", "episode")
+$episodeColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("회차", "episode", "ep")
 $foundingYearColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("개업연도", "개업년도", "개업", "창업연도", "창업년도", "창업", "foundingyear")
 $categoryColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("카테고리", "분류", "유형", "음식종류", "장르", "category")
 $nameColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("식당명", "맛집명", "업체명", "상호", "가게명", "식당이름", "name")
@@ -383,6 +424,7 @@ $sourceId = [string]$sourceMeta.id
 $sourceName = $xlsxFile.BaseName
 $coverPublicPath = $CoverPublicPath
 $coordinateLookup = Load-CoordinateOverrides -Path $CoordinateOverrides
+$menuPriceLookup = Load-MenuPriceOverrides -Path (Join-Path $sourceDirPath "menu-prices.json")
 
 $restaurants = New-Object System.Collections.Generic.List[object]
 $sourceLinks = New-Object System.Collections.Generic.List[object]
@@ -394,6 +436,7 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   }
 
   $ordinalRaw = Get-CellValue -Row $row -Index $ordinalColumnIndex -FallbackIndex 0
+  $episodeRaw = Get-CellValue -Row $row -Index $episodeColumnIndex
   $foundingYearRaw = Get-CellValue -Row $row -Index $foundingYearColumnIndex -FallbackIndex 1
   $category = Get-CellValue -Row $row -Index $categoryColumnIndex -FallbackIndex 2
   $name = Get-CellValue -Row $row -Index $nameColumnIndex -FallbackIndex 3
@@ -410,6 +453,12 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   [void][int]::TryParse($ordinalRaw, [ref]$ordinalNumber)
   $ordinalLabel = if ($ordinalNumber -gt 0) { $ordinalNumber.ToString("D3") } else { ($rowIndex).ToString("D3") }
 
+  $episodeNumber = 0
+  $episodeMatch = [regex]::Match($episodeRaw, "\d+")
+  if ($episodeMatch.Success) {
+    [void][int]::TryParse($episodeMatch.Value, [ref]$episodeNumber)
+  }
+
   $foundingYear = $null
   $foundingYearValue = 0
   if ([int]::TryParse($foundingYearRaw, [ref]$foundingYearValue)) {
@@ -418,7 +467,32 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
 
   $restaurantId = "${sourceId}_restaurant_${ordinalLabel}"
   $menuItems = Build-MenuItems -RestaurantId $restaurantId -RepresentativeMenuRaw $representativeMenuRaw -MenuListRaw $menuListRaw -PriceListRaw $priceListRaw
-  $representativeMenu = Get-RepresentativeMenuText -RepresentativeMenuRaw $representativeMenuRaw -MenuItems $menuItems
+  $menuPriceOverride = $menuPriceLookup[$restaurantId]
+  $overrideStatus = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "status" -DefaultValue "")
+  $overrideOperationStatus = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "operationStatus" -DefaultValue "")
+  if ($overrideStatus -eq "closed" -or $overrideOperationStatus -eq "폐업") {
+    continue
+  }
+  $overrideMenus = @(Get-ObjectPropertyValue -Object $menuPriceOverride -Name "menus" -DefaultValue @())
+  if ($menuPriceOverride -and $overrideMenus.Count -gt 0) {
+    $menuItems = New-Object System.Collections.Generic.List[object]
+    foreach ($menu in $overrideMenus) {
+      $menuItems.Add([ordered]@{
+          id = [string](Get-ObjectPropertyValue -Object $menu -Name "id" -DefaultValue "")
+          name = [string](Get-ObjectPropertyValue -Object $menu -Name "name" -DefaultValue "")
+          price = [string](Get-ObjectPropertyValue -Object $menu -Name "price" -DefaultValue "")
+          description = Get-ObjectPropertyValue -Object $menu -Name "description" -DefaultValue $null
+          isSignature = [bool](Get-ObjectPropertyValue -Object $menu -Name "isSignature" -DefaultValue $false)
+          sourceOrdinal = Get-ObjectPropertyValue -Object $menu -Name "sourceOrdinal" -DefaultValue $null
+        })
+    }
+  }
+  $overrideRepresentativeMenu = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "representativeMenu" -DefaultValue "")
+  $representativeMenu = if ($menuPriceOverride -and -not [string]::IsNullOrWhiteSpace($overrideRepresentativeMenu)) {
+    Normalize-Text $overrideRepresentativeMenu
+  } else {
+    Get-RepresentativeMenuText -RepresentativeMenuRaw $representativeMenuRaw -MenuItems $menuItems
+  }
   $coordinateOverride = $coordinateLookup[(Get-CoordinateLookupKey -Name $name -Address $address)]
   $lat = if ($coordinateOverride) { [double]$coordinateOverride.lat } else { 0 }
   $lng = if ($coordinateOverride) { [double]$coordinateOverride.lng } else { 0 }
@@ -437,13 +511,30 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
       menus = $menuItems
       thumbnailFileName = $null
       isOverseas = $false
+      phone = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "phone" -DefaultValue "")
+      operationStatus = $overrideOperationStatus
+      kakaoPlaceId = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "kakaoPlaceId" -DefaultValue "")
+      placeUrl = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "placeUrl" -DefaultValue "")
+      menuPriceStatus = $overrideStatus
+      menuPriceVerifiedAt = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "verifiedAt" -DefaultValue "")
+      menuPriceNote = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "note" -DefaultValue "")
+      menuPriceSources = @(if (-not [string]::IsNullOrWhiteSpace([string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "sourceUrl" -DefaultValue ""))) {
+          [ordered]@{
+            url = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "sourceUrl" -DefaultValue "")
+            label = "카카오맵 공개 장소 패널"
+            publishedAt = if (-not [string]::IsNullOrWhiteSpace([string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "menuUpdatedAt" -DefaultValue ""))) {
+              $menuUpdatedAt = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "menuUpdatedAt" -DefaultValue "")
+              $menuUpdatedAt.Substring(0, [Math]::Min(10, $menuUpdatedAt.Length))
+            } else { "" }
+          }
+      })
     })
 
   $sourceLinks.Add([ordered]@{
       id = "${sourceId}_link_${ordinalLabel}"
       restaurantId = $restaurantId
       sourceId = $sourceId
-      ordinal = if ($ordinalNumber -gt 0) { $ordinalNumber } else { $null }
+      ordinal = if ($episodeNumber -gt 0) { $episodeNumber } elseif ($ordinalNumber -gt 0) { $ordinalNumber } else { $rowIndex }
       label = $sourceName
       note = if ($foundingYear) { "Founded in $foundingYear" } else { "" }
     })

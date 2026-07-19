@@ -1,6 +1,6 @@
 {
   "datasetId": "old-korean-100",
-  "generatedAt": "2026-07-18T21:45:12.273Z",
+  "generatedAt": "2026-07-19T03:48:15.569Z",
   "restaurants": [
     {
       "id": "old-korean-100_restaurant_001",
@@ -1754,37 +1754,155 @@
     },
     {
       "id": "topic_enrichment_old-korean-100_b149d950faf7",
-      "name": "영암 영명식당",
-      "region": "전남 영암군",
-      "address": "전남 영암군 학산면 독천로 164 (독천리 184-1)",
-      "category": "갈낙탕",
-      "representativeMenu": "갈낙탕 / 연포탕",
-      "lat": 34.724786,
-      "lng": 126.5671667,
+      "name": "영명국밥",
+      "region": "전남광주통합특별시 광산구",
+      "address": "전남광주통합특별시 광산구 송정로8번길 5",
+      "category": "국밥",
+      "representativeMenu": "모듬국밥 / 새끼보국밥 / 암뽕순대국밥",
+      "lat": null,
+      "lng": null,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_024.jpg",
       "foundingYear": 1940,
       "menus": [
         {
           "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_001",
-          "name": "갈낙탕",
-          "price": "19,000원",
+          "name": "모듬국밥",
+          "price": "11,000원",
           "isSignature": true,
           "sourceOrdinal": 1
         },
         {
           "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_002",
-          "name": "연포탕",
-          "price": "19,000원",
+          "name": "새끼보국밥",
+          "price": "11,000원",
           "isSignature": false,
           "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_003",
+          "name": "암뽕순대국밥",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_004",
+          "name": "살고기국밥",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_005",
+          "name": "머리국밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_006",
+          "name": "모듬수육",
+          "price": "변동",
+          "description": "대 38,000원 / 중 33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_007",
+          "name": "머리고기수육",
+          "price": "변동",
+          "description": "대 33,000원 / 중 28,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_008",
+          "name": "순대국밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_009",
+          "name": "순대+내장국밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_010",
+          "name": "내장국밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_011",
+          "name": "콩나물국밥",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_012",
+          "name": "술국",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_013",
+          "name": "새끼보수육",
+          "price": "33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_014",
+          "name": "암뽕순대",
+          "price": "변동",
+          "description": "대 38,000원 / 중 33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_015",
+          "name": "모듬전골",
+          "price": "변동",
+          "description": "대 43,000원 / 중 38,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_016",
+          "name": "막창전골",
+          "price": "변동",
+          "description": "대 38,000원 / 중 33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_017",
+          "name": "내장전골",
+          "price": "변동",
+          "description": "대 38,000원 / 중 33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_018",
+          "name": "찹쌀순대",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
         }
       ],
       "thumbnailFileName": null,
       "isOverseas": false,
       "googlePlaceId": null,
-      "menuPriceStatus": "matched_with_priced_menu_cross_dataset",
-      "menuPriceVerifiedAt": "2026-07-18T21:45:06.484Z",
-      "menuPriceNote": "식당명·주소·좌표가 일치하는 맛픽 old-korean-100 데이터의 검증 메뉴·가격을 재사용함."
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:46:40.384Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "topic_enrichment_old-korean-100_18ac3372c278",
@@ -3187,47 +3305,97 @@
       "id": "old-korean-100_restaurant_048",
       "name": "울산 고래고기원조할매집",
       "region": "울산 남구",
-      "address": "울산 남구 장생포고래로 135 (장생포동 335-2)",
+      "address": "울산 남구 장생포고래로 135",
       "category": "고래수육",
-      "representativeMenu": "수육",
+      "representativeMenu": "수육 / 모듬 / 육회",
       "lat": 35.5017393,
       "lng": 129.3695602,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_048.jpg",
       "foundingYear": 1951,
       "menus": [
         {
-          "id": "old-korean-100_restaurant_048_menu_1",
-          "name": "찌개",
-          "isSignature": true
+          "id": "old-korean-100_restaurant_048_menu_001",
+          "name": "수육 小",
+          "price": "70,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "old-korean-100_restaurant_048_menu_2",
-          "name": "우네",
-          "isSignature": false
+          "id": "old-korean-100_restaurant_048_menu_002",
+          "name": "수육 中",
+          "price": "100,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "old-korean-100_restaurant_048_menu_3",
+          "id": "old-korean-100_restaurant_048_menu_003",
+          "name": "수육 大",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_004",
           "name": "육회",
-          "isSignature": false
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "old-korean-100_restaurant_048_menu_4",
-          "name": "두루치기",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_048_menu_5",
-          "name": "수육",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_048_menu_6",
+          "id": "old-korean-100_restaurant_048_menu_005",
           "name": "생고기",
-          "isSignature": false
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_006",
+          "name": "우네",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_007",
+          "name": "오베기",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_008",
+          "name": "모듬 小",
+          "price": "80,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_009",
+          "name": "모듬 中",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_010",
+          "name": "모듬 大",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "old-korean-100_restaurant_048_menu_011",
+          "name": "모듬 특大",
+          "price": "200,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
         }
       ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:46:40.384Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "old-korean-100_restaurant_049",

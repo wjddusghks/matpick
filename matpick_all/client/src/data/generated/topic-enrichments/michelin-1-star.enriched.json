@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-1-star",
-  "generatedAt": "2026-07-18T21:45:12.354Z",
+  "generatedAt": "2026-07-19T03:43:05.922Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-1-star_d4132c79cb30",
@@ -8,15 +8,33 @@
       "region": "강남구 압구정로",
       "address": "강남구 압구정로 80길 19-1, 2층, Seoul, 06015, 한국",
       "category": "일식당",
-      "representativeMenu": "",
+      "representativeMenu": "오마카세",
       "lat": 37.524513299999995,
       "lng": 127.04523669999999,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-1-star_d4132c79cb30.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_d4132c79cb30_menu_001",
+          "name": "오마카세",
+          "price": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJKzILV7ulfDUR4-cgf86P2s4",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://map.naver.com/p/entry/place/1618063021",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T00:37:00.000Z",
+      "menuPriceNote": "네이버지도 공개 메뉴에서 확인함.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1618063021",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_michelin-1-star_a9eddb623b77",
@@ -452,18 +470,29 @@
     {
       "id": "topic_enrichment_michelin-1-star_4b63750d045e",
       "name": "레스토랑 산",
-      "region": "강남구 언주로",
-      "address": "강남구 언주로 168길 6, 지하1층, Seoul, 06020, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 언주로168길 6 지하1층",
       "category": "이노베이티브",
-      "representativeMenu": "",
+      "representativeMenu": "Tasting Menu",
       "lat": 37.526329,
       "lng": 127.03393759999999,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-1-star_4b63750d045e.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_4b63750d045e_menu_001",
+          "name": "Tasting Menu",
+          "price": "380,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJr__jo2OjfDURT4N0VNw62MM",
-      "isOverseas": false
+      "isOverseas": false,
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:42:04.924Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "topic_enrichment_michelin-1-star_afdacbada4bd",
@@ -1031,18 +1060,50 @@
     {
       "id": "topic_enrichment_michelin-1-star_717da4a81695",
       "name": "스시 카네사카",
-      "region": "강남구 테헤란로",
-      "address": "강남구 테헤란로 521, 그랜드 인터컨티넨탈 서울 파르나스 1층, 히노츠키 레스토랑 내부, Seoul, 06164, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스 1층",
       "category": "스시",
-      "representativeMenu": "",
+      "representativeMenu": "(화-토요일) 점심 오마카세 / (화-토요일) 저녁 오마카세",
       "lat": 35.6679854,
       "lng": 139.7626302,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-1-star_717da4a81695.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_001",
+          "name": "(화-토요일) 점심 오마카세",
+          "price": "280,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_002",
+          "name": "(화-토요일) 저녁 오마카세",
+          "price": "380,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_003",
+          "name": "(일-월요일) 점심 오마카세",
+          "price": "230,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_004",
+          "name": "(일-월요일) 저녁 오마카세",
+          "price": "330,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:42:04.924Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "topic_enrichment_michelin-1-star_2a2e4a184f14",
@@ -1668,18 +1729,50 @@
     {
       "id": "topic_enrichment_michelin-1-star_8ac2bff03407",
       "name": "피오또",
-      "region": "해운대구 달맞이길",
-      "address": "해운대구 달맞이길 117번가길 219, 2층, Busan, 48105, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 달맞이길117번가길 219 에케 2층 H호",
       "category": "이탤리언 컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "피오또 테이스팅 코스",
       "lat": 35.161867099999995,
       "lng": 129.1735612,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-1-star_8ac2bff03407.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_001",
+          "name": "피오또 테이스팅 코스",
+          "price": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_002",
+          "name": "논알콜 페어링(콤부차 페어링)",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_003",
+          "name": "피오또 콤부차",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_004",
+          "name": "와인",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJVds1KMWNaDUR0eBDjoc3IfM",
-      "isOverseas": false
+      "isOverseas": false,
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:42:04.924Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "topic_enrichment_michelin-1-star_6a880d627fe6",

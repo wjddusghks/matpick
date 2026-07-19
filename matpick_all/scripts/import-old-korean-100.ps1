@@ -383,6 +383,10 @@ function Load-MenuPriceOverrides {
 
   foreach ($property in $raw.restaurants.PSObject.Properties) {
     $lookup[$property.Name] = $property.Value
+    $sourceRestaurantId = Normalize-Text ([string](Get-ObjectPropertyValue -Object $property.Value -Name "sourceRestaurantId" -DefaultValue ""))
+    if (-not [string]::IsNullOrWhiteSpace($sourceRestaurantId)) {
+      $lookup[$sourceRestaurantId] = $property.Value
+    }
   }
 
   return $lookup
@@ -468,6 +472,18 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   $restaurantId = "${sourceId}_restaurant_${ordinalLabel}"
   $menuItems = Build-MenuItems -RestaurantId $restaurantId -RepresentativeMenuRaw $representativeMenuRaw -MenuListRaw $menuListRaw -PriceListRaw $priceListRaw
   $menuPriceOverride = $menuPriceLookup[$restaurantId]
+  $overrideName = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "name" -DefaultValue "")
+  $overrideAddress = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "address" -DefaultValue "")
+  $overrideCategory = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "category" -DefaultValue "")
+  if (-not [string]::IsNullOrWhiteSpace($overrideName)) {
+    $name = Normalize-Text $overrideName
+  }
+  if (-not [string]::IsNullOrWhiteSpace($overrideAddress)) {
+    $address = Normalize-Text $overrideAddress
+  }
+  if (-not [string]::IsNullOrWhiteSpace($overrideCategory)) {
+    $category = Normalize-Text $overrideCategory
+  }
   $overrideStatus = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "status" -DefaultValue "")
   $overrideOperationStatus = [string](Get-ObjectPropertyValue -Object $menuPriceOverride -Name "operationStatus" -DefaultValue "")
   if ($overrideStatus -eq "closed" -or $overrideOperationStatus -eq "폐업") {

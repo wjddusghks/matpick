@@ -1,0 +1,6287 @@
+{
+  "collectedAt": "2026-07-19T04:53:39.041Z",
+  "results": [
+    {
+      "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+      "name": "거인통닭",
+      "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "8688860",
+          "name": "거인통닭 본점",
+          "roadAddress": "부산 서구 부용로38번길 3",
+          "parcelAddress": "부산 서구 부용동2가 30-8 1층",
+          "phone": "051-246-6079",
+          "category": "치킨",
+          "query": "거인통닭 부산 중구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "8855217",
+          "name": "뉴거인통닭 부민점",
+          "roadAddress": "부산 서구 구덕로193번길 25",
+          "parcelAddress": "부산 서구 아미동2가 1-3 1층",
+          "phone": "051-248-5404",
+          "category": "치킨",
+          "query": "거인통닭 부산 중구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1645584306",
+          "name": "달인거인통닭",
+          "roadAddress": "부산 남구 수영로 195-5",
+          "parcelAddress": "부산 남구 대연동 1758-2 1층",
+          "phone": "051-611-6079",
+          "category": "치킨",
+          "query": "거인통닭 부산 중구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "45951878",
+          "name": "거인통닭 서면점",
+          "roadAddress": "부산 부산진구 서전로9번길 56",
+          "parcelAddress": "부산 부산진구 부전동 98-8 1층",
+          "phone": "051-803-5383",
+          "category": "치킨",
+          "query": "거인통닭 부산 중구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "828980307",
+          "name": "거인통닭",
+          "roadAddress": "대구 달서구 월배로28안길 8",
+          "parcelAddress": "대구 달서구 진천동 228-5 1층",
+          "phone": "053-638-6079",
+          "category": "치킨",
+          "query": "거인통닭",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "22895371",
+          "name": "거인통닭 성서본점",
+          "roadAddress": "대구 달서구 성서서로 357",
+          "parcelAddress": "대구 달서구 신당동 1763-2 1층",
+          "phone": "053-587-6079",
+          "category": "치킨",
+          "query": "거인통닭",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1862794764",
+          "name": "거인통닭 경대북문점",
+          "roadAddress": "대구 북구 산격로6길 6-1",
+          "parcelAddress": "대구 북구 산격동 1418 1층",
+          "phone": "053-248-6079",
+          "category": "치킨",
+          "query": "거인통닭",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1965605478",
+          "name": "깡통시장바리스타",
+          "roadAddress": "부산 중구 중구로47번길 34",
+          "parcelAddress": "부산 중구 부평동2가 11-2 1층",
+          "phone": "",
+          "category": "카페",
+          "query": "부산 중구 중구로47번길 34",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "8688860",
+          "name": "거인통닭 본점",
+          "roadAddress": "부산 서구 부용로38번길 3 1층",
+          "parcelAddress": "부용동2가 30-8",
+          "phone": "051-246-6079",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-04-14 13:08:16",
+          "menus": [
+            {
+              "name": "후라이드치킨",
+              "price": "26,000원",
+              "sourceUpdatedAt": "2025-04-14 13:08:16"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "8855217",
+          "name": "뉴거인통닭 부민점",
+          "roadAddress": "부산 서구 구덕로193번길 25 1층",
+          "parcelAddress": "아미동2가 1-3",
+          "phone": "051-248-5404",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-10-14 23:55:02",
+          "menus": [
+            {
+              "name": "양념치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "켄터키+양념",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "켄터치키친",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2023-01-09 17:41:46"
+            },
+            {
+              "name": "간장+양념",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "순살 켄터키",
+              "price": "25,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "순살켄터키+간장",
+              "price": "26,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "순살양념",
+              "price": "27,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "순살켄터키+양념",
+              "price": "26,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "켄터키+간장",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "간장치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2025-10-14 17:21:44"
+            },
+            {
+              "name": "순살간장+양념",
+              "price": "27,000원",
+              "sourceUpdatedAt": "2025-10-14 22:48:34"
+            },
+            {
+              "name": "순살간장",
+              "price": "27,000원",
+              "sourceUpdatedAt": "2025-10-14 23:55:02"
+            },
+            {
+              "name": "닭똥집",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2025-10-14 23:48:05"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1645584306",
+          "name": "달인거인통닭",
+          "roadAddress": "부산 남구 수영로 195-5 1층",
+          "parcelAddress": "대연동 1758-2",
+          "phone": "051-611-6079",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-09-20 18:05:58",
+          "menus": [
+            {
+              "name": "켄터키+양념",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2022-10-12 09:49:38"
+            },
+            {
+              "name": "켄터키치킨",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2022-10-12 09:49:38"
+            },
+            {
+              "name": "양념치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2024-09-20 18:05:58"
+            },
+            {
+              "name": "간장치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2024-09-20 18:05:58"
+            },
+            {
+              "name": "간장+양념",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2023-09-08 12:32:18"
+            },
+            {
+              "name": "켄터키+간장",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2024-01-04 16:34:24"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "45951878",
+          "name": "거인통닭 서면점",
+          "roadAddress": "부산 부산진구 서전로9번길 56 1층",
+          "parcelAddress": "부전동 98-8",
+          "phone": "051-803-5383",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-02-24 00:08:16",
+          "menus": [
+            {
+              "name": "후라이드치킨",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2026-02-23 22:56:21"
+            },
+            {
+              "name": "반반치킨",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2026-02-23 22:33:35"
+            },
+            {
+              "name": "양념치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2026-02-23 22:43:30"
+            },
+            {
+              "name": "순살후라이드치킨",
+              "price": "25,000원",
+              "sourceUpdatedAt": "2026-02-23 22:46:33"
+            },
+            {
+              "name": "순살반반치킨",
+              "price": "26,000원",
+              "sourceUpdatedAt": "2026-02-23 22:51:42"
+            },
+            {
+              "name": "순살양념치킨",
+              "price": "27,000원",
+              "sourceUpdatedAt": "2026-02-24 00:02:34"
+            },
+            {
+              "name": "똥집후라이드",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2026-02-24 00:08:16"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "828980307",
+          "name": "거인통닭",
+          "roadAddress": "대구 달서구 월배로28안길 8 1층",
+          "parcelAddress": "진천동 228-5",
+          "phone": "053-638-6079",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-04-04 23:30:07",
+          "menus": [
+            {
+              "name": "반반 치킨",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2024-04-04 23:22:43"
+            },
+            {
+              "name": "켄터키 치킨",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2024-04-04 22:55:59"
+            },
+            {
+              "name": "양념 치킨",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2024-04-04 23:30:07"
+            },
+            {
+              "name": "뼈 반마리",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2024-04-04 13:11:42"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "22895371",
+          "name": "거인통닭 성서본점",
+          "roadAddress": "대구 달서구 성서서로 357 1층",
+          "parcelAddress": "신당동 1763-2",
+          "phone": "053-587-6079",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-03-31 20:32:23",
+          "menus": [
+            {
+              "name": "순살켄터키치킨(후라이드)",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2026-03-27 10:32:41"
+            },
+            {
+              "name": "순살반반치킨",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2026-03-27 23:14:40"
+            },
+            {
+              "name": "뼈켄터키치킨(후라이드)",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2026-03-31 20:32:23"
+            },
+            {
+              "name": "뼈반반치킨",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2026-03-28 00:06:55"
+            },
+            {
+              "name": "뼈양념치킨",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2026-03-27 23:49:48"
+            },
+            {
+              "name": "순살양념치킨",
+              "price": "24,000원",
+              "sourceUpdatedAt": "2026-03-28 00:11:57"
+            },
+            {
+              "name": "뼈켄터키치킨(후라이드) 반마리",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2026-03-27 10:32:41"
+            },
+            {
+              "name": "뼈양념치킨 반마리",
+              "price": "14,000원",
+              "sourceUpdatedAt": "2026-03-27 10:32:41"
+            },
+            {
+              "name": "순살켄터키치킨(후라이드) 반마리",
+              "price": "14,000원",
+              "sourceUpdatedAt": "2026-03-27 10:32:41"
+            },
+            {
+              "name": "순살양념치킨 반마리",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-27 10:32:41"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b52a0e6ece80",
+      "name": "고단백식당",
+      "address": "대전 중구 대종로517번길 62 (선화동 282-11)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "10159821",
+          "name": "고단백식당",
+          "roadAddress": "대전 중구 충무로92번길 50",
+          "parcelAddress": "대전 중구 부사동 209-73 1층",
+          "phone": "042-257-3681",
+          "category": "국수",
+          "query": "고단백식당 대전 중구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1318041607",
+          "name": "고단백참치",
+          "roadAddress": "경기 수원시 장안구 연무로42번길 46",
+          "parcelAddress": "경기 수원시 장안구 연무동 215-9",
+          "phone": "",
+          "category": "참치회",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1941545376",
+          "name": "하이프로틴고단백파스타",
+          "roadAddress": "경기 고양시 덕양구 화중로 60",
+          "parcelAddress": "경기 고양시 덕양구 화정동 983 화정종합상가 지하1층 B120호",
+          "phone": "",
+          "category": "양식",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "365236902",
+          "name": "잭버드고단백패스트푸드 강서구청점",
+          "roadAddress": "서울 강서구 화곡로 296",
+          "parcelAddress": "서울 강서구 화곡동 980-21",
+          "phone": "",
+          "category": "음식점",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2138479376",
+          "name": "하이프로틴고단백파스타 대화점",
+          "roadAddress": "경기 고양시 일산서구 대산로 220",
+          "parcelAddress": "경기 고양시 일산서구 대화동 2127-1 1층 일부호",
+          "phone": "",
+          "category": "양식",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1650389149",
+          "name": "윤소인 남산고단백장어죽집",
+          "roadAddress": "대구 중구 동성로 19-11",
+          "parcelAddress": "대구 중구 사일동 72 1층",
+          "phone": "053-255-7097",
+          "category": "죽",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2016284516",
+          "name": "밸런스랩 고단백다이어트식단",
+          "roadAddress": "인천 부평구 시장로12번길 30",
+          "parcelAddress": "인천 부평구 부평동 159-49 2층",
+          "phone": "",
+          "category": "양식",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1618239002",
+          "name": "헬키푸키 사당방배점",
+          "roadAddress": "서울 동작구 동작대로 49",
+          "parcelAddress": "서울 동작구 사당동 1019-46 1층",
+          "phone": "02-6958-7370",
+          "category": "헬키푸키",
+          "query": "고단백식당",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "10159821",
+          "name": "고단백식당",
+          "roadAddress": "대전 중구 충무로92번길 50 1층",
+          "parcelAddress": "부사동 209-73",
+          "phone": "042-257-3681",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-07-03 22:33:47",
+          "menus": [
+            {
+              "name": "검은콩국수",
+              "price": "12,000원",
+              "sourceUpdatedAt": "2025-07-03 09:58:18"
+            },
+            {
+              "name": "노란콩국수",
+              "price": "11,000원",
+              "sourceUpdatedAt": "2025-07-03 22:33:47"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b7b4d097d081",
+      "name": "공주분식",
+      "address": "대전 중구 문창로 97 (문창동 37-2)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "284882361",
+          "name": "공주분식",
+          "roadAddress": "인천 부평구 부흥북로15번길 18",
+          "parcelAddress": "인천 부평구 부평동 433-153 명승아파트 1층 101호",
+          "phone": "070-7576-0098",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "21393112",
+          "name": "공주분식",
+          "roadAddress": "서울 용산구 이촌로22길 9",
+          "parcelAddress": "서울 용산구 이촌동 199-12 1층",
+          "phone": "02-3274-1425",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1326481747",
+          "name": "공주분식",
+          "roadAddress": "세종특별자치시 조치원읍 조치원10길 9",
+          "parcelAddress": "세종특별자치시 조치원읍 상리 71-4",
+          "phone": "044-868-2673",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1351899794",
+          "name": "공주분식",
+          "roadAddress": "울산 동구 미포1길 56",
+          "parcelAddress": "울산 동구 동부동 194-87 1층",
+          "phone": "010-6415-1496",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "537847951",
+          "name": "공주분식",
+          "roadAddress": "경북 고령군 대가야읍 우륵로 41",
+          "parcelAddress": "경북 고령군 대가야읍 연조리 115-1",
+          "phone": "",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2053102030",
+          "name": "공주분식",
+          "roadAddress": "경남 하동군 하동읍 시장2길 15-9",
+          "parcelAddress": "경남 하동군 하동읍 읍내리 242-13 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "21530834",
+          "name": "공주분식",
+          "roadAddress": "부산 기장군 장안읍 해맞이로 250-17",
+          "parcelAddress": "부산 기장군 장안읍 임랑리 14-10 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1452722856",
+          "name": "공주주막",
+          "roadAddress": "대전 서구 월평중로13번길 17-6",
+          "parcelAddress": "대전 서구 월평동 895",
+          "phone": "0507-1861-2339",
+          "category": "분식",
+          "query": "공주분식 대전 중구",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "26307144",
+          "name": "떡볶이왕자튀김공주",
+          "roadAddress": "대전 서구 관저북로51번길 8-10",
+          "parcelAddress": "대전 서구 관저동 1836",
+          "phone": "042-541-7766",
+          "category": "떡볶이",
+          "query": "공주분식 대전 중구",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1996902643",
+          "name": "삼첩분식 공주점",
+          "roadAddress": "충남 공주시 번영2로 68-10",
+          "parcelAddress": "충남 공주시 신관동 640-2 2층",
+          "phone": "041-881-4343",
+          "category": "삼첩분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1690071726",
+          "name": "공주김밥왕자문구",
+          "roadAddress": "경기 군포시 고산로539번길 7-6",
+          "parcelAddress": "경기 군포시 산본동 1148 107호",
+          "phone": "031-392-3314",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16971867",
+          "name": "공주김밥",
+          "roadAddress": "경기 안양시 만안구 장내로119번길 17",
+          "parcelAddress": "경기 안양시 만안구 안양동 676-192",
+          "phone": "",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1528652694",
+          "name": "공주상회",
+          "roadAddress": "경기 안양시 만안구 장내로119번길 17",
+          "parcelAddress": "경기 안양시 만안구 안양동 676-192",
+          "phone": "010-4137-9120",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1095584386",
+          "name": "김밥먹는백설공주",
+          "roadAddress": "경기 광명시 하안로 172",
+          "parcelAddress": "경기 광명시 소하동 48-13 105호",
+          "phone": "02-899-0222",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "664866532",
+          "name": "공주떡볶이",
+          "roadAddress": "충남 예산군 예산읍 예산로 68",
+          "parcelAddress": "충남 예산군 예산읍 주교리 136-4 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "공주분식",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "284882361",
+          "name": "공주분식",
+          "roadAddress": "인천 부평구 부흥북로15번길 18 명승아파트 1층 101호",
+          "parcelAddress": "부평동 433-153",
+          "phone": "070-7576-0098",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-06-23 17:35:24",
+          "menus": [
+            {
+              "name": "공주떡볶이",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            },
+            {
+              "name": "순대 내장",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-09-05 05:26:38"
+            },
+            {
+              "name": "꽃튀김",
+              "price": "9,500원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            },
+            {
+              "name": "매콤 로제떡볶이",
+              "price": "5,500원",
+              "sourceUpdatedAt": "2025-09-05 05:04:00"
+            },
+            {
+              "name": "모듬 어묵",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2025-09-05 07:25:21"
+            },
+            {
+              "name": "참치마요 비벼밥",
+              "price": "5,500원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            },
+            {
+              "name": "눈꽃 계란토스트",
+              "price": "5,900원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            },
+            {
+              "name": "얼큰 우동",
+              "price": "7,900원",
+              "sourceUpdatedAt": "2026-06-23 17:35:24"
+            },
+            {
+              "name": "알곱창 순대볶음",
+              "price": "15,900원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            },
+            {
+              "name": "슈프림 떡꼬치",
+              "price": "2,000원",
+              "sourceUpdatedAt": "2025-08-24 23:33:15"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "21393112",
+          "name": "공주분식",
+          "roadAddress": "서울 용산구 이촌로22길 9 1층",
+          "parcelAddress": "이촌동 199-12",
+          "phone": "02-3274-1425",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1326481747",
+          "name": "공주분식",
+          "roadAddress": "세종특별자치시 조치원읍 조치원10길 9",
+          "parcelAddress": "조치원읍 상리 71-4",
+          "phone": "044-868-2673",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1351899794",
+          "name": "공주분식",
+          "roadAddress": "울산 동구 미포1길 56 1층",
+          "parcelAddress": "동부동 194-87",
+          "phone": "010-6415-1496",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-02-11 23:30:31",
+          "menus": [
+            {
+              "name": "떡볶이 (1인분)",
+              "price": "3,500원",
+              "sourceUpdatedAt": "2025-02-11 09:07:35"
+            },
+            {
+              "name": "순대(1인분)",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-02-11 23:05:58"
+            },
+            {
+              "name": "어묵(1개)",
+              "price": "800원",
+              "sourceUpdatedAt": "2025-02-11 23:30:31"
+            },
+            {
+              "name": "계란(1개)",
+              "price": "500원",
+              "sourceUpdatedAt": "2025-02-11 09:07:35"
+            },
+            {
+              "name": "김밥(1줄)",
+              "price": "3,500원",
+              "sourceUpdatedAt": "2025-02-11 23:07:22"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "537847951",
+          "name": "공주분식",
+          "roadAddress": "경북 고령군 대가야읍 우륵로 41",
+          "parcelAddress": "대가야읍 연조리 115-1",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "2053102030",
+          "name": "공주분식",
+          "roadAddress": "경남 하동군 하동읍 시장2길 15-9 1층",
+          "parcelAddress": "하동읍 읍내리 242-13",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_58613205c46d",
+      "name": "꼬메이베베",
+      "address": "서울 마포구 연희로1길 55 (연남동 383-72)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1028726001",
+          "name": "꼬메이베베",
+          "roadAddress": "경기 남양주시 진접읍 해밀예당1로 322-1",
+          "parcelAddress": "경기 남양주시 진접읍 금곡리 594-5 가,나,다동",
+          "phone": "",
+          "category": "식품판매",
+          "query": "꼬메이베베",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1707839290",
+          "name": "해브",
+          "roadAddress": "서울 마포구 연희로1길 55",
+          "parcelAddress": "서울 마포구 연남동 383-72 1층",
+          "phone": "02-6404-9994",
+          "category": "양식",
+          "query": "서울 마포구 연희로1길 55",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1455452713",
+          "name": "무심",
+          "roadAddress": "서울 마포구 연희로1길 55",
+          "parcelAddress": "서울 마포구 연남동 383-72 2.5-4층",
+          "phone": "0502-5550-5676",
+          "category": "카페",
+          "query": "서울 마포구 연희로1길 55",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "103649147",
+          "name": "광계",
+          "roadAddress": "서울 마포구 연희로1길 55",
+          "parcelAddress": "서울 마포구 연남동 383-72 2층",
+          "phone": "",
+          "category": "닭요리",
+          "query": "서울 마포구 연희로1길 55",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1028726001",
+          "name": "꼬메이베베",
+          "roadAddress": "경기 남양주시 진접읍 해밀예당1로 322-1 가,나,다동",
+          "parcelAddress": "진접읍 금곡리 594-5",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_88ee18fc3f75",
+      "name": "노량진수제비",
+      "address": "서울 동작구 여의대방로22길 121 (신대방동 724)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "25129918",
+          "name": "보라매자이더포레스트아파트",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724",
+          "phone": "",
+          "category": "아파트",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1622236507",
+          "name": "GS25 보라매자이점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 1층 1124호",
+          "phone": "080-999-5425",
+          "category": "GS25",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1641875565",
+          "name": "런드리24 신대방삼거리역점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 상가 1층 1429호",
+          "phone": "1544-4335",
+          "category": "런드리24",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1865732348",
+          "name": "세븐일레븐 보라매자이점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 102동 1층 상가1453호",
+          "phone": "",
+          "category": "세븐일레븐",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "830571629",
+          "name": "견생냥품 24시 무인펫샵 서울신대방삼거리점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 상가 1층 1202호",
+          "phone": "0507-1463-0458",
+          "category": "견생냥품 24시 무인펫샵",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "627187886",
+          "name": "말랑놀이터 대방1호점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이 더 포레스트 1층 1443호",
+          "phone": "0507-1414-5331",
+          "category": "말랑놀이터",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "214798580",
+          "name": "박만배아리랑보쌈 신대방삼거리점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 상가동 1층 1409~1410호",
+          "phone": "02-3280-0319",
+          "category": "족발,보쌈",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1358637783",
+          "name": "혼미 신대방삼거리직영점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 1층",
+          "phone": "",
+          "category": "일본식주점",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1926857667",
+          "name": "심야식당중도",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이 더 포레스트 상가동 1층 1428호",
+          "phone": "010-7572-1505",
+          "category": "일식",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "969952160",
+          "name": "윤윤차이나",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 상가동 1446, 1447호",
+          "phone": "02-3280-8895",
+          "category": "중식",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "403712748",
+          "name": "커피집도씨",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 1층 1114호",
+          "phone": "",
+          "category": "커피전문점",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1726624511",
+          "name": "보라매자이더포레스트아파트 후문",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724",
+          "phone": "",
+          "category": "입출구",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1894165880",
+          "name": "고향 엄마손 생바지락 칼국수 신대방삼거리점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 상가동 1층 1405호",
+          "phone": "02-3280-0605",
+          "category": "칼국수",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "915836564",
+          "name": "마코 신대방삼거리역점",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 보라매자이더포레스트 102동 상가 1층 1416호",
+          "phone": "",
+          "category": "일본식주점",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1689134823",
+          "name": "일등수제비",
+          "roadAddress": "서울 동작구 여의대방로22길 121",
+          "parcelAddress": "서울 동작구 신대방동 724 상가 1층 1420호",
+          "phone": "02-3280-7666",
+          "category": "수제비",
+          "query": "서울 동작구 여의대방로22길 121",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_f2fc96d3b48f",
+      "name": "대우분식",
+      "address": "충북 충주시 공설시장길 13 (봉방동 773-2)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "24005763",
+          "name": "대우분식",
+          "roadAddress": "전북특별자치도 부안군 부안읍 시장길 6",
+          "parcelAddress": "전북특별자치도 부안군 부안읍 서외리 21 1층",
+          "phone": "063-584-1805",
+          "category": "분식",
+          "query": "대우분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "8293452",
+          "name": "대우분식",
+          "roadAddress": "경남 창원시 성산구 정동로162번길 74",
+          "parcelAddress": "경남 창원시 성산구 남산동 601-25",
+          "phone": "055-282-7609",
+          "category": "분식",
+          "query": "대우분식",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1502405701",
+          "name": "현아네만두",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "한식",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "258178206",
+          "name": "사과막걸리사과와인",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "010-4488-8260",
+          "category": "주류판매",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "9585129",
+          "name": "한양분식",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "043-843-4495",
+          "category": "분식",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1858402874",
+          "name": "미현분식",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "043-847-2022",
+          "category": "분식",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1938167353",
+          "name": "대성만두야채도소매",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231",
+          "phone": "",
+          "category": "식품판매",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "63542219",
+          "name": "중원잡화",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231",
+          "phone": "",
+          "category": "장난감,완구",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "722195022",
+          "name": "소태순대",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "순대",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "721036939",
+          "name": "동현상회",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "식품판매",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "720108412",
+          "name": "의성닭집",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "043-848-4654",
+          "category": "식품판매",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "26956185",
+          "name": "달천분식",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "720685300",
+          "name": "쌍둥분식",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8743519",
+          "name": "공설정육점",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "043-844-1005",
+          "category": "식품",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "720068979",
+          "name": "대우닭집",
+          "roadAddress": "충북 충주시 공설시장길 13",
+          "parcelAddress": "충북 충주시 충의동 231 1층",
+          "phone": "",
+          "category": "식품판매",
+          "query": "충북 충주시 공설시장길 13",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "24005763",
+          "name": "대우분식",
+          "roadAddress": "전북특별자치도 부안군 부안읍 시장길 6 1층",
+          "parcelAddress": "부안읍 서외리 21",
+          "phone": "063-584-1805",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2022-11-12 05:16:19",
+          "menus": [
+            {
+              "name": "보리밥",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2021-04-14 18:37:15"
+            },
+            {
+              "name": "칼국수",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2021-04-14 12:47:18"
+            },
+            {
+              "name": "쌀팥죽",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2022-11-11 14:57:27"
+            },
+            {
+              "name": "새알죽",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2022-11-12 05:16:19"
+            },
+            {
+              "name": "비빔국수",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2021-04-13 11:51:27"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "8293452",
+          "name": "대우분식",
+          "roadAddress": "경남 창원시 성산구 정동로162번길 74",
+          "parcelAddress": "남산동 601-25",
+          "phone": "055-282-7609",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_6806254363fb",
+      "name": "돈파스팔레",
+      "address": "서울 관악구 남부순환로 1947 (봉천동 1688-127)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1033840304",
+          "name": "역전할머니맥주 서울낙성대역점",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127 1층 101,102호",
+          "phone": "02-877-0206",
+          "category": "역전할머니맥주",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1920179791",
+          "name": "캄앤심플",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127 소크라테스빌딩 4층",
+          "phone": "02-883-7929",
+          "category": "모임공간",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "649531902",
+          "name": "규수방가구",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127",
+          "phone": "02-889-8647",
+          "category": "가구판매",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "15235295",
+          "name": "금강보청기 관악센터",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127 201호",
+          "phone": "02-872-7008",
+          "category": "보청기",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16991511",
+          "name": "어린이철학 교육연구소",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127",
+          "phone": "02-2643-7959",
+          "category": "연구소",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "7957550",
+          "name": "소크라테스빌딩",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127",
+          "phone": "",
+          "category": "빌딩",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "854503309",
+          "name": "빅앤빅 큰옷크레빅낙성대점",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127",
+          "phone": "",
+          "category": "기업",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "20690120",
+          "name": "봉천동구두수선소",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127",
+          "phone": "",
+          "category": "구두수선",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1133370049",
+          "name": "로스터리안밀",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127 지하1층",
+          "phone": "0507-1353-8108",
+          "category": "차,커피",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "12921144",
+          "name": "시드원 커뮤니케이션스",
+          "roadAddress": "서울 관악구 남부순환로 1947",
+          "parcelAddress": "서울 관악구 봉천동 1688-127 소크라테스빌딩 2층",
+          "phone": "02-557-7313",
+          "category": "번역,통역",
+          "query": "서울 관악구 남부순환로 1947",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_7d54f4dd5491",
+      "name": "마녀커리크림치킨",
+      "address": "서울 마포구 마포구 동교로 227-5 (연남동 373-14)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "841974108",
+          "name": "우리할매떡볶이 홍대점",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 1층",
+          "phone": "02-335-3356",
+          "category": "우리할매떡볶이",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1137293442",
+          "name": "노체",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 2층 201호",
+          "phone": "0503-7151-3597",
+          "category": "카페",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1950486292",
+          "name": "고릴라파이프 연남동점",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 1층",
+          "phone": "070-4795-2011",
+          "category": "전자담배",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2114227215",
+          "name": "나비잠안마의자 연남점",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 지하1층 3호",
+          "phone": "",
+          "category": "테마카페",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "683888212",
+          "name": "홍익타로 3호점",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 1층",
+          "phone": "02-335-1550",
+          "category": "운명감정",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "26624141",
+          "name": "이누아이",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14 3층",
+          "phone": "02-332-5578",
+          "category": "반려동물",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1801761091",
+          "name": "호네일",
+          "roadAddress": "서울 마포구 동교로 227-5",
+          "parcelAddress": "서울 마포구 연남동 373-14",
+          "phone": "02-813-6888",
+          "category": "네일샵",
+          "query": "서울 마포구 연남동 373-14",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_e20430d65c36",
+      "name": "마라케쉬나이트",
+      "address": "서울 용산구 이태원로 164-1 (이태원동 72-32)",
+      "currentStatus": "matched_no_priced_menu",
+      "candidates": [
+        {
+          "kakaoPlaceId": "17103394",
+          "name": "마라케쉬나이트",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 3층",
+          "phone": "",
+          "category": "양식",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "14500573",
+          "name": "트로이카",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-33 5층",
+          "phone": "02-797-7724",
+          "category": "양식",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "152467261",
+          "name": "더크랙하우스",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 2층",
+          "phone": "",
+          "category": "호프,요리주점",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2016500444",
+          "name": "정글수산 이태원본점",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32",
+          "phone": "070-4032-6599",
+          "category": "회",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "774874021",
+          "name": "이태원회관",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 2층 1호",
+          "phone": "070-8866-6599",
+          "category": "한식",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "130077434",
+          "name": "제이크 이태원",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 지하1층",
+          "phone": "0502-5551-7251",
+          "category": "양식",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "899097895",
+          "name": "이태원3 공중화장실",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32",
+          "phone": "",
+          "category": "화장실",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "314304193",
+          "name": "마라케쉬 레스토랑",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 1층",
+          "phone": "",
+          "category": "양식",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "860549100",
+          "name": "백련사주&타로",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32 1층",
+          "phone": "010-8949-0007",
+          "category": "운명감정",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1691448400",
+          "name": "실버벨",
+          "roadAddress": "서울 용산구 이태원로 164-1",
+          "parcelAddress": "서울 용산구 이태원동 72-32",
+          "phone": "",
+          "category": "의류판매",
+          "query": "서울 용산구 이태원로 164-1",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "17103394",
+          "name": "마라케쉬나이트",
+          "roadAddress": "서울 용산구 이태원로 164-1 3층",
+          "parcelAddress": "이태원동 72-32",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-02-15 17:34:40",
+          "menus": [
+            {
+              "name": "쿠스쿠스",
+              "price": "",
+              "sourceUpdatedAt": "2021-06-04 15:36:29"
+            },
+            {
+              "name": "새우샐러드",
+              "price": "",
+              "sourceUpdatedAt": "2024-02-15 17:34:40"
+            },
+            {
+              "name": "티파야타진",
+              "price": "",
+              "sourceUpdatedAt": "2021-06-04 15:36:29"
+            },
+            {
+              "name": "맘 플라트샌드위치",
+              "price": "",
+              "sourceUpdatedAt": "2021-06-04 15:36:29"
+            },
+            {
+              "name": "호머스",
+              "price": "",
+              "sourceUpdatedAt": "2021-06-04 15:36:29"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_8ee8283cae53",
+      "name": "미성복어불고기",
+      "address": "대구 수성구 들안로 87 (상동 12-7)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "8991526",
+          "name": "미성복어불고기 들안길 본점",
+          "roadAddress": "대구 수성구 들안로 87",
+          "parcelAddress": "대구 수성구 상동 12-7",
+          "phone": "053-767-8877",
+          "category": "복어",
+          "query": "대구 수성구 들안로 87",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1745988621",
+          "name": "미성복어불고기 들안길본점 주차장",
+          "roadAddress": "대구 수성구 들안로 87",
+          "parcelAddress": "대구 수성구 상동 12-7",
+          "phone": "",
+          "category": "주차장",
+          "query": "대구 수성구 들안로 87",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "660368155",
+          "name": "미성복어불고기 영천점",
+          "roadAddress": "경북 영천시 시청남1길 12-21",
+          "parcelAddress": "경북 영천시 문외동 40-18",
+          "phone": "054-336-0313",
+          "category": "복어",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1643755075",
+          "name": "미성복어불고기 여수점",
+          "roadAddress": "전남광주통합특별시 여수시 대치1길 100",
+          "parcelAddress": "전남광주통합특별시 여수시 여서동 768-3 1층",
+          "phone": "061-653-8889",
+          "category": "복어",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "374323990",
+          "name": "미성복어",
+          "roadAddress": "대구 달서구 두류공원로 245",
+          "parcelAddress": "대구 달서구 두류동 2355 빌리브파크뷰 301동 지하1층 B108~109호",
+          "phone": "",
+          "category": "복어",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "10250795",
+          "name": "대상에프앤",
+          "roadAddress": "서울 영등포구 여의동로3길 10",
+          "parcelAddress": "서울 영등포구 여의도동 47 501동 22층 2207호",
+          "phone": "02-409-3433",
+          "category": "식품가공,제조",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2063562568",
+          "name": "미성복어 앞산점",
+          "roadAddress": "대구 남구 앞산순환로 369",
+          "parcelAddress": "대구 남구 대명동 585 1-2층",
+          "phone": "053-623-3300",
+          "category": "복어",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1641944743",
+          "name": "웰빙",
+          "roadAddress": "전북특별자치도 군산시 소룡2길 12-2",
+          "parcelAddress": "전북특별자치도 군산시 산북동 3531 1층",
+          "phone": "063-467-2244",
+          "category": "한식",
+          "query": "미성복어불고기",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "8991526",
+          "name": "미성복어불고기 들안길 본점",
+          "roadAddress": "대구 수성구 들안로 87",
+          "parcelAddress": "상동 12-7",
+          "phone": "053-767-8877",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-02-01 21:21:01",
+          "menus": [
+            {
+              "name": "까치복어콩나물불고기(1인)",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "복어 맑은탕(1인)",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "복어튀김",
+              "price": "27,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "복어탕(1인)",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "껍질무침",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2023-01-07 12:22:09"
+            },
+            {
+              "name": "세트(1인)",
+              "price": "33,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "콩나물불고기(1인)",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "런치 세트(1인)",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "얼큰복어탕",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            },
+            {
+              "name": "참복탕,지리",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2026-02-01 21:21:01"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1745988621",
+          "name": "미성복어불고기 들안길본점 주차장",
+          "roadAddress": "대구 수성구 들안로 87",
+          "parcelAddress": "상동 12-7",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "660368155",
+          "name": "미성복어불고기 영천점",
+          "roadAddress": "경북 영천시 시청남1길 12-21",
+          "parcelAddress": "문외동 40-18",
+          "phone": "054-336-0313",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2023-07-24 16:21:57",
+          "menus": [
+            {
+              "name": "고급밀복복어불고기",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2023-07-24 16:21:57"
+            },
+            {
+              "name": "성코스",
+              "price": "26,000원",
+              "sourceUpdatedAt": "2022-06-06 19:07:06"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1643755075",
+          "name": "미성복어불고기 여수점",
+          "roadAddress": "전남광주통합특별시 여수시 대치1길 100 1층",
+          "parcelAddress": "여서동 768-3",
+          "phone": "061-653-8889",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-03-18 14:33:09",
+          "menus": [
+            {
+              "name": "까치복어콩나물불고기",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "밀복어탕/지리",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "까치복어모듬불고기",
+              "price": "23,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "까치복어탕/지리",
+              "price": "14,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "참복어탕/지리",
+              "price": "21,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "밀복어불고기",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "참복어불고기",
+              "price": "30,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "복어튀김",
+              "price": "25,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "껍질무침회",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2024-03-18 14:33:09"
+            },
+            {
+              "name": "까치복까스(어린이메뉴)",
+              "price": "12,000원",
+              "sourceUpdatedAt": "2024-03-16 16:05:03"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "374323990",
+          "name": "미성복어",
+          "roadAddress": "대구 달서구 두류공원로 245 빌리브파크뷰 301동 지하1층 B108~109호",
+          "parcelAddress": "두류동 2355",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-07-04 22:43:10",
+          "menus": [
+            {
+              "name": "밀복탕",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-20 22:32:18"
+            },
+            {
+              "name": "밀복불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-29 13:55:54"
+            },
+            {
+              "name": "볶음밥",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "까치복탕",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-29 13:55:54"
+            },
+            {
+              "name": "까치복불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-29 13:55:54"
+            },
+            {
+              "name": "참복불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "복껍질무침",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "밀복수육",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "대구탕",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "어린이돈까스",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "대구뽈불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "납짝만두",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "라면사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "콩나물",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "참복탕",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-30 00:05:47"
+            },
+            {
+              "name": "복어불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 06:09:25"
+            },
+            {
+              "name": "참복수육",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-04 22:43:10"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_295d210602ba",
+      "name": "미스터칠드런",
+      "address": "서울 영등포구 양평로20길 4-1 (양평동4가 145-1)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1697152079",
+          "name": "미스터칠드런 목동점",
+          "roadAddress": "서울 양천구 목동동로 293",
+          "parcelAddress": "서울 양천구 목동 917-9 현대41타워 지하1층",
+          "phone": "02-2647-7957",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런 서울 영등포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "20805588",
+          "name": "미스터칠드런 분당점",
+          "roadAddress": "경기 성남시 분당구 정자일로213번길 5",
+          "parcelAddress": "경기 성남시 분당구 정자동 11 아이파크분당 301동 213호",
+          "phone": "031-785-0600",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "680533299",
+          "name": "미스터칠드런안경",
+          "roadAddress": "경기 성남시 분당구 정자일로213번길 5",
+          "parcelAddress": "경기 성남시 분당구 정자동 11",
+          "phone": "",
+          "category": "패션",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1175799345",
+          "name": "미스터칠드런",
+          "roadAddress": "서울 강남구 도산대로55길 43",
+          "parcelAddress": "서울 강남구 청담동 84-25 지하 1층",
+          "phone": "",
+          "category": "칵테일바",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "19668554",
+          "name": "미스터칠드런",
+          "roadAddress": "서울 송파구 올림픽로 119",
+          "parcelAddress": "서울 송파구 잠실동 19-9",
+          "phone": "02-511-7907",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "18479911",
+          "name": "미스터칠드런 반포점",
+          "roadAddress": "서울 서초구 서초중앙로 238",
+          "parcelAddress": "서울 서초구 반포동 30-25 가든리체프라자 2층 211호",
+          "phone": "02-534-7907",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "764607693",
+          "name": "미스터칠드런 롯데잠실직영점",
+          "roadAddress": "서울 송파구 올림픽로 240",
+          "parcelAddress": "서울 송파구 잠실동 40-1 9층",
+          "phone": "02-2143-7957",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1167204067",
+          "name": "미스터칠드런 전주점",
+          "roadAddress": "전북특별자치도 전주시 완산구 홍산1길 7",
+          "parcelAddress": "전북특별자치도 전주시 완산구 효자동2가 1157-4 SK리더스뷰 2층 209호",
+          "phone": "063-225-7957",
+          "category": "안경,렌즈",
+          "query": "미스터칠드런",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "3421919",
+          "name": "서울미트볼 선유도역점",
+          "roadAddress": "서울 영등포구 양평로20길 4-1",
+          "parcelAddress": "서울 영등포구 양평동4가 145-1 2층",
+          "phone": "02-6448-0836",
+          "category": "양식",
+          "query": "서울 영등포구 양평로20길 4-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2044387088",
+          "name": "카페공존",
+          "roadAddress": "서울 영등포구 양평로20길 4-1",
+          "parcelAddress": "서울 영등포구 양평동4가 145-1",
+          "phone": "",
+          "category": "카페",
+          "query": "서울 영등포구 양평로20길 4-1",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2042730484",
+          "name": "선유예술공방",
+          "roadAddress": "서울 영등포구 양평로20길 4-1",
+          "parcelAddress": "서울 영등포구 양평동4가 145-1 지하1층",
+          "phone": "",
+          "category": "미술,공예",
+          "query": "서울 영등포구 양평로20길 4-1",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1697152079",
+          "name": "미스터칠드런 목동점",
+          "roadAddress": "서울 양천구 목동동로 293 현대41타워 지하1층",
+          "parcelAddress": "목동 917-9",
+          "phone": "02-2647-7957",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "20805588",
+          "name": "미스터칠드런 분당점",
+          "roadAddress": "경기 성남시 분당구 정자일로213번길 5 아이파크분당 301동 213호",
+          "parcelAddress": "정자동 11",
+          "phone": "031-785-0600",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "680533299",
+          "name": "미스터칠드런안경",
+          "roadAddress": "경기 성남시 분당구 정자일로213번길 5",
+          "parcelAddress": "정자동 11",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1175799345",
+          "name": "미스터칠드런",
+          "roadAddress": "서울 강남구 도산대로55길 43 지하 1층",
+          "parcelAddress": "청담동 84-25",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "19668554",
+          "name": "미스터칠드런",
+          "roadAddress": "서울 송파구 올림픽로 119",
+          "parcelAddress": "잠실동 19-9",
+          "phone": "02-511-7907",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "18479911",
+          "name": "미스터칠드런 반포점",
+          "roadAddress": "서울 서초구 서초중앙로 238 가든리체프라자 2층 211호",
+          "parcelAddress": "반포동 30-25",
+          "phone": "02-534-7907",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_edf94f28e740",
+      "name": "발리비스트로",
+      "address": "서울 마포구 백범로1길 8-15 (노고산동 31-74)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1920277019",
+          "name": "카페토브",
+          "roadAddress": "서울 마포구 백범로1길 8-15",
+          "parcelAddress": "서울 마포구 노고산동 31-74 1층",
+          "phone": "010-2483-6019",
+          "category": "카페",
+          "query": "서울 마포구 백범로1길 8-15",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "636956565",
+          "name": "엘토브",
+          "roadAddress": "서울 마포구 백범로1길 8-15",
+          "parcelAddress": "서울 마포구 노고산동 31-74 토브빌딩 2~4층",
+          "phone": "02-1544-2538",
+          "category": "통신장비",
+          "query": "서울 마포구 백범로1길 8-15",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73",
+      "name": "보배집",
+      "address": "경기 파주시 시청로 13 (금촌동 947-30)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "847483106",
+          "name": "보배집",
+          "roadAddress": "부산 부산진구 새싹로8번길 69",
+          "parcelAddress": "부산 부산진구 부전동 272-1",
+          "phone": "051-805-8287",
+          "category": "한식",
+          "query": "보배집",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1615895787",
+          "name": "보배집",
+          "roadAddress": "부산 중구 중앙대로 지하 17",
+          "parcelAddress": "부산 중구 중앙동6가 9-1",
+          "phone": "",
+          "category": "의류판매",
+          "query": "보배집",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "18442232",
+          "name": "보배",
+          "roadAddress": "경남 김해시 전하로133번길 9",
+          "parcelAddress": "경남 김해시 흥동 390-4 1층",
+          "phone": "055-328-4599",
+          "category": "한식",
+          "query": "보배집",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "465526438",
+          "name": "대박해물탕",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30",
+          "phone": "031-946-4989",
+          "category": "매운탕,해물탕",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "968653865",
+          "name": "동물보육원 파주지부",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30",
+          "phone": "",
+          "category": "반려동물",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "640932846",
+          "name": "클라운지 경기파주1호점",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30 백운빌딩 2층",
+          "phone": "",
+          "category": "화장품",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1029016476",
+          "name": "가온건설 가온인력",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30 3층",
+          "phone": "031-945-8382",
+          "category": "건설,건축",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11853231",
+          "name": "고래고래노래연습장",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30 지하1층",
+          "phone": "",
+          "category": "노래방",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1706180931",
+          "name": "본가에이엠씨",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30",
+          "phone": "",
+          "category": "시공업체",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "339283803",
+          "name": "세상생명그린",
+          "roadAddress": "경기 파주시 시청로 13",
+          "parcelAddress": "경기 파주시 금촌동 947-30 2층",
+          "phone": "031-943-8888",
+          "category": "시공업체",
+          "query": "경기 파주시 시청로 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1694259549",
+          "name": "보배로운집",
+          "roadAddress": "강원특별자치도 춘천시 남면 윗박암길 32-1",
+          "parcelAddress": "강원특별자치도 춘천시 남면 박암리 280",
+          "phone": "033-263-8617",
+          "category": "요양원",
+          "query": "보배집",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11340694",
+          "name": "보배로운집",
+          "roadAddress": "전남광주통합특별시 영광군 군서면 복호로 147",
+          "parcelAddress": "전남광주통합특별시 영광군 군서면 만곡리 145-3",
+          "phone": "",
+          "category": "장애인복지시설",
+          "query": "보배집",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "847483106",
+          "name": "보배집",
+          "roadAddress": "부산 부산진구 새싹로8번길 69",
+          "parcelAddress": "부전동 272-1",
+          "phone": "051-805-8287",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-05-07 16:34:55",
+          "menus": [
+            {
+              "name": "선지국밥",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-05-02 22:56:20"
+            },
+            {
+              "name": "소고기국밥",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-05-02 23:03:56"
+            },
+            {
+              "name": "호박죽",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 23:35:06"
+            },
+            {
+              "name": "녹두죽",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 23:50:13"
+            },
+            {
+              "name": "팥죽",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 23:34:51"
+            },
+            {
+              "name": "선지국수",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-05-02 23:08:00"
+            },
+            {
+              "name": "선지밥따로",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-05-07 16:34:55"
+            },
+            {
+              "name": "소고기국수",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-05-03 00:10:23"
+            },
+            {
+              "name": "소고기밥따로",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-05-02 10:13:55"
+            },
+            {
+              "name": "열무국수",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 22:38:55"
+            },
+            {
+              "name": "비빔국수",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 22:41:46"
+            },
+            {
+              "name": "콩국수",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-02 23:33:35"
+            },
+            {
+              "name": "냉국수",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-05-02 23:52:26"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1615895787",
+          "name": "보배집",
+          "roadAddress": "부산 중구 중앙대로 지하 17",
+          "parcelAddress": "중앙동6가 9-1",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "18442232",
+          "name": "보배",
+          "roadAddress": "경남 김해시 전하로133번길 9 1층",
+          "parcelAddress": "흥동 390-4",
+          "phone": "055-328-4599",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-09-03 00:43:22",
+          "menus": [
+            {
+              "name": "비빔밥",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2024-09-03 00:43:22"
+            },
+            {
+              "name": "한우국밥",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2024-09-03 00:06:23"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_89266777bbf7",
+      "name": "북경통닭",
+      "address": "울산 동구 바드래1길 3 (전하동 300-264)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "18383033",
+          "name": "동울산대학약국",
+          "roadAddress": "울산 동구 바드래1길 3",
+          "parcelAddress": "울산 동구 전하동 300-264",
+          "phone": "052-236-8789",
+          "category": "약국",
+          "query": "울산 동구 바드래1길 3",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1829630936",
+          "name": "찜닭세상",
+          "roadAddress": "울산 동구 바드래1길 3",
+          "parcelAddress": "울산 동구 전하동 300-264",
+          "phone": "",
+          "category": "음식점",
+          "query": "울산 동구 바드래1길 3",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11317267",
+          "name": "모앤모",
+          "roadAddress": "울산 동구 바드래1길 3",
+          "parcelAddress": "울산 동구 전하동 300-264 울산광역시 동구 바드래1길 3",
+          "phone": "052-251-2468",
+          "category": "산업용품",
+          "query": "울산 동구 바드래1길 3",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "7909000",
+          "name": "북경깐풍기 충북대본점",
+          "roadAddress": "충북 청주시 서원구 내수동로108번길 40",
+          "parcelAddress": "충북 청주시 서원구 사창동 447 1층",
+          "phone": "043-272-0066",
+          "category": "치킨",
+          "query": "북경통닭",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "24115808",
+          "name": "북경깐풍기",
+          "roadAddress": "인천 미추홀구 경인남길30번길 71",
+          "parcelAddress": "인천 미추홀구 용현동 182-24 지하1층",
+          "phone": "",
+          "category": "술집",
+          "query": "북경통닭",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "9805680",
+          "name": "북경깐풍기 청대정문점",
+          "roadAddress": "충북 청주시 청원구 대성로 289",
+          "parcelAddress": "충북 청주시 청원구 우암동 226-9 1층",
+          "phone": "043-254-5160",
+          "category": "호프,요리주점",
+          "query": "북경통닭",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "10461973",
+          "name": "북경깐풍기 청대본점",
+          "roadAddress": "충북 청주시 청원구 안덕벌로 63",
+          "parcelAddress": "충북 청주시 청원구 내덕동 121-21 1층",
+          "phone": "",
+          "category": "중국요리",
+          "query": "북경통닭",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8728614",
+          "name": "간이역 달동북경역점",
+          "roadAddress": "울산 남구 달삼로 8",
+          "parcelAddress": "울산 남구 달동 1272-3 1층",
+          "phone": "052-269-8898",
+          "category": "간이역",
+          "query": "북경통닭",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_135d7666fa1b",
+      "name": "소담",
+      "address": "서울 성북구 지봉로24길 31 (보문동5가 3-3)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "212725476",
+          "name": "소담",
+          "roadAddress": "서울 성북구 돌곶이로22길 46",
+          "parcelAddress": "서울 성북구 석관동 208-4 1층",
+          "phone": "",
+          "category": "한식",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1701028101",
+          "name": "소담소담",
+          "roadAddress": "서울 성북구 동소문로13가길 71-1",
+          "parcelAddress": "서울 성북구 동소문동4가 15 엠디사이언스빌딩 3층 301호",
+          "phone": "010-8650-7621",
+          "category": "민박",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1786698128",
+          "name": "소담유부",
+          "roadAddress": "서울 성북구 화랑로13길 28",
+          "parcelAddress": "서울 성북구 하월곡동 21-78 1층",
+          "phone": "",
+          "category": "일식집",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1594268587",
+          "name": "월곡소담한의원",
+          "roadAddress": "서울 성북구 종암로34길 7",
+          "parcelAddress": "서울 성북구 하월곡동 90-1793 1층",
+          "phone": "0503-7150-8759",
+          "category": "한의원",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1669364361",
+          "name": "소담샵",
+          "roadAddress": "",
+          "parcelAddress": "서울 성북구 삼선동5가 152-2 1층",
+          "phone": "02-2297-0575",
+          "category": "피부관리",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "16529879",
+          "name": "소담식당",
+          "roadAddress": "서울 성북구 삼양로2길 15",
+          "parcelAddress": "서울 성북구 길음동 1083",
+          "phone": "02-989-5305",
+          "category": "해물,생선",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "11317426",
+          "name": "소담출판사",
+          "roadAddress": "서울 성북구 성북로5길 12",
+          "parcelAddress": "서울 성북구 성북동1가 39 3층",
+          "phone": "02-745-8566",
+          "category": "출판사",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1183609120",
+          "name": "소담김밥",
+          "roadAddress": "서울 성북구 돌곶이로22가길 37",
+          "parcelAddress": "서울 성북구 석관동 299-2",
+          "phone": "",
+          "category": "분식",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "605075704",
+          "name": "소담인터내셔널",
+          "roadAddress": "서울 성북구 장월로5길 4",
+          "parcelAddress": "서울 성북구 장위동 246-189",
+          "phone": "",
+          "category": "식품",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1711615774",
+          "name": "소담식당",
+          "roadAddress": "서울 성북구 화랑로 92",
+          "parcelAddress": "서울 성북구 하월곡동 37-74 1층",
+          "phone": "",
+          "category": "한식",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1491109582",
+          "name": "소담",
+          "roadAddress": "서울 동대문구 제기로 10-1",
+          "parcelAddress": "서울 동대문구 제기동 139-11 1층",
+          "phone": "",
+          "category": "한식",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1828088437",
+          "name": "소담바디케어",
+          "roadAddress": "서울 종로구 창경궁로35길 26",
+          "parcelAddress": "서울 종로구 혜화동 62-1",
+          "phone": "02-766-7677",
+          "category": "체형관리",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "901727937",
+          "name": "창신소담도서관",
+          "roadAddress": "서울 종로구 창신길 83",
+          "parcelAddress": "서울 종로구 창신동 641 1층",
+          "phone": "02-3672-0234",
+          "category": "국공립도서관",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "612972930",
+          "name": "창신소담공영주차장",
+          "roadAddress": "",
+          "parcelAddress": "서울 종로구 창신동 641",
+          "phone": "",
+          "category": "공영주차장",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "374580317",
+          "name": "소담포차",
+          "roadAddress": "서울 종로구 종로 385",
+          "parcelAddress": "서울 종로구 숭인동 183-13",
+          "phone": "02-929-0620",
+          "category": "음식점",
+          "query": "소담 서울 성북구",
+          "addressExact": false,
+          "nameRelated": true
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "212725476",
+          "name": "소담",
+          "roadAddress": "서울 성북구 돌곶이로22길 46 1층",
+          "parcelAddress": "석관동 208-4",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-03-14 22:37:25",
+          "menus": [
+            {
+              "name": "감자전",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "골뱅이무침",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "우동사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "오징어초무침",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "순두부탕",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "파전",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "골뱅이",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "옛날분홍소세지",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "오징어파전",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 22:37:11"
+            },
+            {
+              "name": "오징어",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 14:15:53"
+            },
+            {
+              "name": "과일화채",
+              "price": "",
+              "sourceUpdatedAt": "2026-03-14 22:37:25"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1701028101",
+          "name": "소담소담",
+          "roadAddress": "서울 성북구 동소문로13가길 71-1 엠디사이언스빌딩 3층 301호",
+          "parcelAddress": "동소문동4가 15",
+          "phone": "010-8650-7621",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1786698128",
+          "name": "소담유부",
+          "roadAddress": "서울 성북구 화랑로13길 28 1층",
+          "parcelAddress": "하월곡동 21-78",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-07-04 17:34:26",
+          "menus": [
+            {
+              "name": "단짠우삼겹",
+              "price": "3,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "치볶동",
+              "price": "7,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "생연어",
+              "price": "3,800원",
+              "sourceUpdatedAt": "2024-01-24 23:31:46"
+            },
+            {
+              "name": "구운연어",
+              "price": "3,800원",
+              "sourceUpdatedAt": "2024-01-24 22:32:47"
+            },
+            {
+              "name": "한우육회",
+              "price": "3,600원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "고추장삼겹",
+              "price": "3,000원",
+              "sourceUpdatedAt": "2024-01-24 23:48:23"
+            },
+            {
+              "name": "크림새우(맵)",
+              "price": "3,000원",
+              "sourceUpdatedAt": "2024-01-24 23:13:46"
+            },
+            {
+              "name": "톡톡날치알",
+              "price": "2,800원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "타코와사비",
+              "price": "2,800원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "참치마요",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "소고기김치",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "쌈장삼겹",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-01-24 22:44:18"
+            },
+            {
+              "name": "소불고기",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "고소크래미",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "달달타마고",
+              "price": "2,300원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "차돌치볶동",
+              "price": "9,500원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "우육우동",
+              "price": "8,500원",
+              "sourceUpdatedAt": "2024-01-24 22:51:55"
+            },
+            {
+              "name": "게새라동",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2024-01-24 12:48:30"
+            },
+            {
+              "name": "어우동",
+              "price": "6,500원",
+              "sourceUpdatedAt": "2024-01-24 23:13:55"
+            },
+            {
+              "name": "소담유부추천(4p)",
+              "price": "11,000원",
+              "sourceUpdatedAt": "2025-05-09 16:36:19"
+            },
+            {
+              "name": "소담유부 고기만추천(4p)",
+              "price": "12,000원",
+              "sourceUpdatedAt": "2025-07-04 17:34:26"
+            },
+            {
+              "name": "소담유부추천(8p)",
+              "price": "22,500원",
+              "sourceUpdatedAt": "2025-05-09 16:36:22"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1594268587",
+          "name": "월곡소담한의원",
+          "roadAddress": "서울 성북구 종암로34길 7 1층",
+          "parcelAddress": "하월곡동 90-1793",
+          "phone": "0503-7150-8759",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-10-07 18:48:10",
+          "menus": [
+            {
+              "name": "침구치료",
+              "price": "8,500원",
+              "sourceUpdatedAt": "2025-10-07 18:48:10"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1669364361",
+          "name": "소담샵",
+          "roadAddress": "",
+          "parcelAddress": "서울 성북구 삼선동5가 152-2 1층",
+          "phone": "02-2297-0575",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "16529879",
+          "name": "소담식당",
+          "roadAddress": "서울 성북구 삼양로2길 15",
+          "parcelAddress": "길음동 1083",
+          "phone": "02-989-5305",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_5a1237af7f4b",
+      "name": "송탄시장 붕어빵",
+      "address": "경기 평택시 탄현로 336 (지산동 753-1)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "9214845",
+          "name": "송탄우체국",
+          "roadAddress": "경기 평택시 탄현로 336",
+          "parcelAddress": "경기 평택시 지산동 753-1",
+          "phone": "031-662-0100",
+          "category": "우체국",
+          "query": "경기 평택시 탄현로 336",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "76655922",
+          "name": "우체통",
+          "roadAddress": "경기 평택시 탄현로 336",
+          "parcelAddress": "경기 평택시 지산동 753-1",
+          "phone": "",
+          "category": "우체통",
+          "query": "경기 평택시 탄현로 336",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1102714680",
+          "name": "송탄우체국ATM점내외",
+          "roadAddress": "경기 평택시 탄현로 336",
+          "parcelAddress": "경기 평택시 지산동 753-1 송탄우체국 1층 365코너 내",
+          "phone": "",
+          "category": "ATM",
+          "query": "경기 평택시 탄현로 336",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_de1345dcdc05",
+      "name": "수와래",
+      "address": "서울 종로구 삼청로 82 (삼청동 35-116)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "23357128",
+          "name": "수와래애견동반펜션",
+          "roadAddress": "강원특별자치도 강릉시 사천면 순포안길 24",
+          "parcelAddress": "강원특별자치도 강릉시 사천면 산대월리 152-1",
+          "phone": "1833-9306",
+          "category": "펜션",
+          "query": "수와래",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "19387076",
+          "name": "수와래헤어",
+          "roadAddress": "전북특별자치도 전주시 완산구 새터로 78",
+          "parcelAddress": "전북특별자치도 전주시 완산구 서신동 962-2 중흥아파트 상가 1층",
+          "phone": "063-272-9025",
+          "category": "미용실",
+          "query": "수와래",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "788032163",
+          "name": "수와래베이커리",
+          "roadAddress": "제주특별자치도 서귀포시 남원읍 태위로 17",
+          "parcelAddress": "제주특별자치도 서귀포시 남원읍 위미리 4149-2",
+          "phone": "064-805-0006",
+          "category": "제과,베이커리",
+          "query": "수와래",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1904602021",
+          "name": "바빌론",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116 2층",
+          "phone": "02-722-1228",
+          "category": "아시아음식",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1514377439",
+          "name": "갤러리라온제",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116",
+          "phone": "",
+          "category": "화랑",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2142648965",
+          "name": "조선미녀 플래그십스토어",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116 1층",
+          "phone": "0507-1388-7412",
+          "category": "화장품",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1343904659",
+          "name": "조선미녀 삼청동매장",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116",
+          "phone": "070-4213-7412",
+          "category": "화장품",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1473125666",
+          "name": "BEAUTYOFJOSEON",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116",
+          "phone": "070-4213-7412",
+          "category": "미용",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1967747212",
+          "name": "아트공간 artGONGGAN",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116 3층 artGONGGAN",
+          "phone": "0507-1358-3076",
+          "category": "화랑",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2085638556",
+          "name": "위드",
+          "roadAddress": "서울 종로구 삼청로 82",
+          "parcelAddress": "서울 종로구 삼청동 35-116",
+          "phone": "02-739-2122",
+          "category": "의류판매",
+          "query": "서울 종로구 삼청로 82",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "23357128",
+          "name": "수와래애견동반펜션",
+          "roadAddress": "강원특별자치도 강릉시 사천면 순포안길 24",
+          "parcelAddress": "사천면 산대월리 152-1",
+          "phone": "1833-9306",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "19387076",
+          "name": "수와래헤어",
+          "roadAddress": "전북특별자치도 전주시 완산구 새터로 78 중흥아파트 상가 1층",
+          "parcelAddress": "서신동 962-2",
+          "phone": "063-272-9025",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "788032163",
+          "name": "수와래베이커리",
+          "roadAddress": "제주특별자치도 서귀포시 남원읍 태위로 17",
+          "parcelAddress": "남원읍 위미리 4149-2",
+          "phone": "064-805-0006",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2023-07-03 08:02:10",
+          "menus": [
+            {
+              "name": "바게트",
+              "price": "3,900원",
+              "sourceUpdatedAt": "2023-07-03 08:02:10"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a1c6c2c6bac4",
+      "name": "수유시장 만두명가",
+      "address": "서울 강북구 도봉로71길 17 (수유1동 54-1)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1918062817",
+          "name": "상현달 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 포-8",
+          "phone": "0503-7150-7827",
+          "category": "술집",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "83563242",
+          "name": "오빠가만든한끼만두 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 15,17호",
+          "phone": "02-3491-8273",
+          "category": "분식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2020513834",
+          "name": "영신이네 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 포-9",
+          "phone": "02-945-8949",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "13725120",
+          "name": "명가홍어",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유전통시장 C동 1호",
+          "phone": "02-945-6167",
+          "category": "수산물판매",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "446396514",
+          "name": "농부네 정미소",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유시장 a-46호",
+          "phone": "010-2282-1553",
+          "category": "식품판매",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "446714308",
+          "name": "금여사네닭발 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 1층 가-19호",
+          "phone": "010-2023-1344",
+          "category": "닭요리",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "627915881",
+          "name": "엉클스치킨 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 가-20",
+          "phone": "02-981-1344",
+          "category": "치킨",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1938047492",
+          "name": "복자의주방",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 1층 13호",
+          "phone": "",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16793221",
+          "name": "일호전집",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 29, 30호",
+          "phone": "02-984-6042",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "980226593",
+          "name": "영진식당",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 1층 A6호",
+          "phone": "010-5858-1444",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1893959951",
+          "name": "고향집",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 1층 2호",
+          "phone": "",
+          "category": "술집",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "630801106",
+          "name": "숙이네",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 A05호",
+          "phone": "",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "36353921",
+          "name": "전주전집 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 수유재래시장 푸-2",
+          "phone": "010-8843-2329",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1045663314",
+          "name": "홈스마일 수유재래시장점",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1 1층 가-24호",
+          "phone": "02-996-5164",
+          "category": "침구판매",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "792608802",
+          "name": "조개듬뿍닭한마리",
+          "roadAddress": "서울 강북구 도봉로71길 17",
+          "parcelAddress": "서울 강북구 수유동 54-1",
+          "phone": "",
+          "category": "한식",
+          "query": "서울 강북구 도봉로71길 17",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_bcc3d4b990f7",
+      "name": "어우동",
+      "address": "경기 구리시 안골로103번길 7 (수택동 425-18)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1982284435",
+          "name": "어우동가요장",
+          "roadAddress": "경기 구리시 안골로97번길 15",
+          "parcelAddress": "경기 구리시 수택동 426-33",
+          "phone": "031-554-7877",
+          "category": "유흥주점",
+          "query": "어우동 경기 구리시",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2018957588",
+          "name": "어우동",
+          "roadAddress": "서울 광진구 면목로 181",
+          "parcelAddress": "서울 광진구 중곡동 211-22",
+          "phone": "",
+          "category": "유흥주점",
+          "query": "어우동 경기 구리시",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "17001390",
+          "name": "어우동",
+          "roadAddress": "서울 강동구 진황도로43길 9",
+          "parcelAddress": "서울 강동구 길동 413-20",
+          "phone": "02-478-5027",
+          "category": "유흥주점",
+          "query": "어우동 경기 구리시",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "21321013",
+          "name": "어우동",
+          "roadAddress": "경기 평택시 세교상가1길 91",
+          "parcelAddress": "경기 평택시 세교동 567-1",
+          "phone": "",
+          "category": "음식점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "11102798",
+          "name": "민속주점 어우동 죽전점",
+          "roadAddress": "경기 용인시 수지구 현암로 15",
+          "parcelAddress": "경기 용인시 수지구 죽전동 510-4 1층",
+          "phone": "031-264-4888",
+          "category": "호프,요리주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "9247903",
+          "name": "어우동",
+          "roadAddress": "경기 안성시 공도읍 진사길 20",
+          "parcelAddress": "경기 안성시 공도읍 진사리 20-20",
+          "phone": "031-657-2837",
+          "category": "호프,요리주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "16623013",
+          "name": "어우동",
+          "roadAddress": "경기 안성시 공도읍 진사길 34",
+          "parcelAddress": "경기 안성시 공도읍 진사리 36-1",
+          "phone": "",
+          "category": "한식",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "12580518",
+          "name": "어우동 이충점",
+          "roadAddress": "경기 평택시 이충로35번길 28-22",
+          "parcelAddress": "경기 평택시 이충동 667 리치프라자 112호,113호",
+          "phone": "031-663-9399",
+          "category": "호프,요리주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1999188736",
+          "name": "어우동",
+          "roadAddress": "경기 이천시 애련정로103번길 43",
+          "parcelAddress": "경기 이천시 창전동 464",
+          "phone": "",
+          "category": "유흥주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "119650340",
+          "name": "어우동노래연습장",
+          "roadAddress": "경기 용인시 처인구 모현읍 곡현로 660",
+          "parcelAddress": "경기 용인시 처인구 모현읍 매산리 196-5",
+          "phone": "",
+          "category": "노래방",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2110303605",
+          "name": "어우동",
+          "roadAddress": "경기 안양시 만안구 장내로140번길 34",
+          "parcelAddress": "경기 안양시 만안구 안양동 622-252 지하1층",
+          "phone": "",
+          "category": "유흥주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "9235002",
+          "name": "어우동",
+          "roadAddress": "충북 음성군 대소읍 대금로 536",
+          "parcelAddress": "충북 음성군 대소읍 태생리 79-8",
+          "phone": "",
+          "category": "호프,요리주점",
+          "query": "어우동",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "162320001",
+          "name": "구리냉삼집",
+          "roadAddress": "경기 구리시 안골로103번길 7",
+          "parcelAddress": "경기 구리시 수택동 425-19 선수빌딩 1층 2호",
+          "phone": "",
+          "category": "삼겹살",
+          "query": "경기 구리시 안골로103번길 7",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "695869490",
+          "name": "숙이네곱창&막창",
+          "roadAddress": "경기 구리시 안골로103번길 7",
+          "parcelAddress": "경기 구리시 수택동 425-19 1층",
+          "phone": "031-569-9792",
+          "category": "곱창,막창",
+          "query": "경기 구리시 안골로103번길 7",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1800671601",
+          "name": "감동까스 구리점",
+          "roadAddress": "경기 구리시 안골로103번길 7",
+          "parcelAddress": "경기 구리시 수택동 425-19 1층",
+          "phone": "010-9579-0605",
+          "category": "감동까스",
+          "query": "경기 구리시 안골로103번길 7",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1982284435",
+          "name": "어우동가요장",
+          "roadAddress": "경기 구리시 안골로97번길 15",
+          "parcelAddress": "수택동 426-33",
+          "phone": "031-554-7877",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "2018957588",
+          "name": "어우동",
+          "roadAddress": "서울 광진구 면목로 181",
+          "parcelAddress": "중곡동 211-22",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "17001390",
+          "name": "어우동",
+          "roadAddress": "서울 강동구 진황도로43길 9",
+          "parcelAddress": "길동 413-20",
+          "phone": "02-478-5027",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "21321013",
+          "name": "어우동",
+          "roadAddress": "경기 평택시 세교상가1길 91",
+          "parcelAddress": "세교동 567-1",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "11102798",
+          "name": "민속주점 어우동 죽전점",
+          "roadAddress": "경기 용인시 수지구 현암로 15 1층",
+          "parcelAddress": "죽전동 510-4",
+          "phone": "031-264-4888",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-06-29 15:39:41",
+          "menus": [
+            {
+              "name": "해물부추전",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "닭볶음탕",
+              "price": "32,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "파닭",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "감자전",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "해물김치전",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "부대찌개",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "김치전골",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "알탕",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "아이스황도",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "한치포",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "육포",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "통노가리",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "쥐포",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2026-06-24 16:53:56"
+            },
+            {
+              "name": "순살파닭",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "순살후라이드",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "훈제치킨",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "모듬감자튀김",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "왕새우튀김",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2026-06-29 15:39:41"
+            },
+            {
+              "name": "해물떡볶이",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "반건조오징어",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "두부김치",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "모듬소시지",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "닭똥집튀김",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "돈가스",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "핫윙",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "오삼불고기",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "낙지볶음소면",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "핫불닭",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "닭강정",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "도토리묵",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "동태매운탕",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "양념치킨",
+              "price": "20,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "후라이드치킨",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "골뱅이소면",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-02-27 17:31:46"
+            },
+            {
+              "name": "오징어볶음소면",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "마른오징어",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "무뼈닭발",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "돼지껍데기볶음",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "닭모래집볶음",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "해물우동볶음",
+              "price": "19,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "오도독뼈",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "번데기탕",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2024-03-04 17:34:24"
+            },
+            {
+              "name": "과메기/청어.꽁치(소)",
+              "price": "28,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            },
+            {
+              "name": "과메기/청어.꽁치(대)",
+              "price": "35,000원",
+              "sourceUpdatedAt": "2024-01-19 09:06:13"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "9247903",
+          "name": "어우동",
+          "roadAddress": "경기 안성시 공도읍 진사길 20",
+          "parcelAddress": "공도읍 진사리 20-20",
+          "phone": "031-657-2837",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_29f7bffd4126",
+      "name": "영돈분식버거",
+      "address": "경기 이천시 이섭대천로 1200 (중리동 219)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "11171622",
+          "name": "이천터미널",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219-1",
+          "phone": "1688-3320",
+          "category": "고속,시외버스터미널",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2023766865",
+          "name": "세븐일레븐 이천터미널점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219",
+          "phone": "02-2679-6860(팩스)",
+          "category": "세븐일레븐",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11832197",
+          "name": "정관장 중리점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219",
+          "phone": "",
+          "category": "정관장",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1808201058",
+          "name": "개미인력개발",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219-1 302호",
+          "phone": "031-637-9887",
+          "category": "직업소개,인력파견",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "7888837",
+          "name": "배스킨라빈스 이천터미널점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 종합버스터미널 상가 1층 148호",
+          "phone": "031-633-4321",
+          "category": "배스킨라빈스",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "21683204",
+          "name": "뚜레쥬르 이천터미널점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 종합버스터미널 160~162,216호",
+          "phone": "031-636-9734",
+          "category": "뚜레쥬르",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "690373744",
+          "name": "수경왕만두찐빵",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 1층",
+          "phone": "",
+          "category": "분식",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "15872807",
+          "name": "번쩍서점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219",
+          "phone": "031-635-0338",
+          "category": "서점",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11301496",
+          "name": "던킨 이천터미널점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 1층",
+          "phone": "031-635-2784",
+          "category": "던킨",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "9837232",
+          "name": "세광사",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 터미날상가 2층",
+          "phone": "010-9666-9033",
+          "category": "열쇠,도장",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8047501",
+          "name": "이디야커피 이천터미널점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 1층",
+          "phone": "031-634-8087",
+          "category": "이디야커피",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8788815",
+          "name": "김밥천국 터미널이천점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 1층",
+          "phone": "031-635-1444",
+          "category": "분식",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "22763149",
+          "name": "외국인마트",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219 1층",
+          "phone": "031-632-5444",
+          "category": "휴대폰판매",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "18651745",
+          "name": "한국스피치아카데미 이천점",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219-1 이천종합터미널 2층",
+          "phone": "031-882-7798",
+          "category": "웅변,스피치학원",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "11249725",
+          "name": "송도 부동산중개사무소",
+          "roadAddress": "경기 이천시 이섭대천로 1200",
+          "parcelAddress": "경기 이천시 중리동 219-1",
+          "phone": "031-633-6647",
+          "category": "부동산중개업",
+          "query": "경기 이천시 이섭대천로 1200",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_4556e0c0aebd",
+      "name": "영천시장 원조떡볶이",
+      "address": "서울 서대문구 통일로 205-5 (영천동 290)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "8322640",
+          "name": "민내과의원",
+          "roadAddress": "서울 서대문구 통일로 205-5",
+          "parcelAddress": "서울 서대문구 영천동 290 3층",
+          "phone": "02-363-7273",
+          "category": "내과",
+          "query": "서울 서대문구 통일로 205-5",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "21329686",
+          "name": "자갈치수산시장",
+          "roadAddress": "서울 서대문구 통일로 205-5",
+          "parcelAddress": "서울 서대문구 영천동 290",
+          "phone": "02-365-1233",
+          "category": "수산물판매",
+          "query": "서울 서대문구 통일로 205-5",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1202372205",
+          "name": "시장청과",
+          "roadAddress": "서울 서대문구 통일로 205-5",
+          "parcelAddress": "서울 서대문구 영천동 290-1 시장청과",
+          "phone": "02-392-8076",
+          "category": "과일,채소가게",
+          "query": "서울 서대문구 통일로 205-5",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1192583358",
+          "name": "진이떡방",
+          "roadAddress": "서울 서대문구 통일로 205-5",
+          "parcelAddress": "서울 서대문구 영천동 290-1",
+          "phone": "",
+          "category": "식품가공,제조",
+          "query": "서울 서대문구 통일로 205-5",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_28f264d7f33b",
+      "name": "온천할머니집",
+      "address": "광주 동구 지호로127번길 29 (지산동 67-21)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "11193838",
+          "name": "온천보리밥집",
+          "roadAddress": "전남광주통합특별시 동구 지호로127번길 29",
+          "parcelAddress": "전남광주통합특별시 동구 지산동 67-21",
+          "phone": "062-225-0776",
+          "category": "한식",
+          "query": "광주 동구 지호로127번길 29",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_fa72469d5025",
+      "name": "왕타이",
+      "address": "서울 용산구 이태원로 151 (이태원동 176-2)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1210504789",
+          "name": "왕타이무카타뷔페",
+          "roadAddress": "대전 서구 갈마중로 13-10",
+          "parcelAddress": "대전 서구 갈마동 343-32 1층",
+          "phone": "010-3916-7345",
+          "category": "태국음식",
+          "query": "왕타이",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "864443947",
+          "name": "왕타이마사지",
+          "roadAddress": "대구 달서구 구마로 233",
+          "parcelAddress": "대구 달서구 성당동 829-20",
+          "phone": "",
+          "category": "체형관리",
+          "query": "왕타이",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1134104552",
+          "name": "카페도코로",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2 1층",
+          "phone": "070-7516-1953",
+          "category": "카페",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "24784705",
+          "name": "선양복점",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "02-794-0794",
+          "category": "남성의류,양복",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "9360482",
+          "name": "장스",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "",
+          "category": "액세서리",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16794176",
+          "name": "아메코",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "02-790-0667",
+          "category": "의류판매",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "10574492",
+          "name": "에쓰에쓰 공인중개사사무소",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "02-794-0049",
+          "category": "부동산중개업",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "9973388",
+          "name": "선테일러",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2 영화빌딩 2층",
+          "phone": "02-794-0794",
+          "category": "남성의류,양복",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "10358219",
+          "name": "루디아",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "",
+          "category": "스포츠의류",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "20230952",
+          "name": "녹구",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2 영화빌딩",
+          "phone": "",
+          "category": "피부관리",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8086898",
+          "name": "진양공예",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "02-793-0844",
+          "category": "기념품판매",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1863263809",
+          "name": "유진가방",
+          "roadAddress": "서울 용산구 이태원로 151",
+          "parcelAddress": "서울 용산구 이태원동 176-2",
+          "phone": "",
+          "category": "패션잡화점",
+          "query": "서울 용산구 이태원로 151",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1210504789",
+          "name": "왕타이무카타뷔페",
+          "roadAddress": "대전 서구 갈마중로 13-10 1층",
+          "parcelAddress": "갈마동 343-32",
+          "phone": "010-3916-7345",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-05-02 16:35:24",
+          "menus": [
+            {
+              "name": "카나무껍",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우무",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우까이",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우무껍",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우타레",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우무쌉너마이",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우느아",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "까파우느아너마이",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "카우팟무",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 22:53:30"
+            },
+            {
+              "name": "카우팟꿍",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 23:51:36"
+            },
+            {
+              "name": "카우팟무껍",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "카우무텃까티얌",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "팟씨유",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-05-01 00:05:14"
+            },
+            {
+              "name": "팟타이꿍썻",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "똠얌꿍",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 23:34:04"
+            },
+            {
+              "name": "똠얌타레",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-05-02 16:35:24"
+            },
+            {
+              "name": "똠쌥까둑언",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "똠쌥크앙나이",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "엄무",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            },
+            {
+              "name": "엄느아",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-04-30 08:55:48"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "864443947",
+          "name": "왕타이마사지",
+          "roadAddress": "대구 달서구 구마로 233",
+          "parcelAddress": "성당동 829-20",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_c2fb2621bd82",
+      "name": "용수천농원",
+      "address": "대구 동구 용수동 468",
+      "currentStatus": "matched_no_priced_menu",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1989443210",
+          "name": "용수천농원",
+          "roadAddress": "",
+          "parcelAddress": "대구 동구 용수동 468",
+          "phone": "",
+          "category": "농장,목장",
+          "query": "대구 동구 용수동 468",
+          "addressExact": true,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1017567806",
+          "name": "용수천농원",
+          "roadAddress": "대구 동구 용천로 283",
+          "parcelAddress": "대구 동구 용수동 649",
+          "phone": "",
+          "category": "한식",
+          "query": "용수천농원 대구 동구",
+          "addressExact": false,
+          "nameRelated": true
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1989443210",
+          "name": "용수천농원",
+          "roadAddress": "",
+          "parcelAddress": "대구 동구 용수동 468",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1017567806",
+          "name": "용수천농원",
+          "roadAddress": "대구 동구 용천로 283",
+          "parcelAddress": "용수동 649",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_212c028dc6f7",
+      "name": "원조40번",
+      "address": "전남 여수시 공화북3길 11 (공화동 1364)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "951631352",
+          "name": "꽃님다락방",
+          "roadAddress": "전남광주통합특별시 여수시 공화북3길 11",
+          "parcelAddress": "전남광주통합특별시 여수시 공화동 1364",
+          "phone": "",
+          "category": "인테리어장식판매",
+          "query": "전남 여수시 공화북3길 11",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1914392706",
+          "name": "어블리스풀데이 스웨븐",
+          "roadAddress": "전남광주통합특별시 여수시 공화북3길 11",
+          "parcelAddress": "전남광주통합특별시 여수시 공화동 1364",
+          "phone": "",
+          "category": "꽃집,꽃배달",
+          "query": "전남 여수시 공화북3길 11",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "783960391",
+          "name": "까까미용실",
+          "roadAddress": "전남광주통합특별시 여수시 공화북3길 11",
+          "parcelAddress": "전남광주통합특별시 여수시 공화동 1364 1층",
+          "phone": "",
+          "category": "미용실",
+          "query": "전남 여수시 공화북3길 11",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "421250025",
+          "name": "코스트노쉬",
+          "roadAddress": "전남광주통합특별시 여수시 공화북3길 11",
+          "parcelAddress": "전남광주통합특별시 여수시 공화동 1364",
+          "phone": "",
+          "category": "음식점",
+          "query": "전남 여수시 공화북3길 11",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_43e5c84f86d6",
+      "name": "원조범일동매떡",
+      "address": "부산 부산진구 골드테마길 52-2 (범천동 844-35)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "8033712",
+          "name": "범일동매떡",
+          "roadAddress": "부산 부산진구 골드테마길 52-2",
+          "parcelAddress": "부산 부산진구 범천동 844-35",
+          "phone": "",
+          "category": "떡볶이",
+          "query": "부산 부산진구 골드테마길 52-2",
+          "addressExact": false,
+          "nameRelated": true
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "8033712",
+          "name": "범일동매떡",
+          "roadAddress": "부산 부산진구 골드테마길 52-2",
+          "parcelAddress": "범천동 844-35",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-12-04 23:33:28",
+          "menus": [
+            {
+              "name": "매떡(7)",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-05-30 10:40:17"
+            },
+            {
+              "name": "어묵(5)",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-30 00:10:27"
+            },
+            {
+              "name": "순떡(7)",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-05-29 10:40:23"
+            },
+            {
+              "name": "팥빙수",
+              "price": "5,000원",
+              "sourceUpdatedAt": "2025-05-29 10:40:23"
+            },
+            {
+              "name": "오찡어(6)",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-12-04 10:36:09"
+            },
+            {
+              "name": "애기김밥(8)",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-12-04 23:30:54"
+            },
+            {
+              "name": "튀만두(6)",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-12-04 23:33:28"
+            },
+            {
+              "name": "튀김밥(6)",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-12-04 10:36:09"
+            },
+            {
+              "name": "모듬튀김set(9)",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-12-04 10:36:09"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_291c9dfd8ca9",
+      "name": "위드유",
+      "address": "경기 안산시 단원구 광덕3로 167-12 (고잔동 726-9)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1698456633",
+          "name": "위드유",
+          "roadAddress": "경기 안산시 상록구 감골1로 27",
+          "parcelAddress": "경기 안산시 상록구 사동 1346",
+          "phone": "",
+          "category": "남성의류,양복",
+          "query": "위드유 경기 안산시",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "433241574",
+          "name": "위드유수학교습소",
+          "roadAddress": "경기 화성시 만세구 수노을중앙로 142",
+          "parcelAddress": "경기 화성시 만세구 새솔동 76-8",
+          "phone": "",
+          "category": "수학학원",
+          "query": "위드유 경기 안산시",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1495110613",
+          "name": "엔케이위드유",
+          "roadAddress": "경기 용인시 기흥구 한일로17번길 5",
+          "parcelAddress": "경기 용인시 기흥구 공세동 476-144 1층",
+          "phone": "010-8782-7437",
+          "category": "기업",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "611046132",
+          "name": "위드유피아노음악학원",
+          "roadAddress": "경기 화성시 동탄구 동탄대로6길 17",
+          "parcelAddress": "경기 화성시 동탄구 산척동 727-5 2층",
+          "phone": "010-7925-4257",
+          "category": "음악학원",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1690159300",
+          "name": "위드유피아노 음악학원",
+          "roadAddress": "경기 화성시 동탄구 동탄중앙로 220",
+          "parcelAddress": "경기 화성시 동탄구 반송동 96",
+          "phone": "",
+          "category": "학원",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2049952529",
+          "name": "위드유로또",
+          "roadAddress": "경기 화성시 동탄구 동탄하나1길 61",
+          "parcelAddress": "경기 화성시 동탄구 능동 1065-1 동탄헤리움오피스텔 상가동 1층 109호",
+          "phone": "",
+          "category": "복권",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2017580923",
+          "name": "위드유",
+          "roadAddress": "경기 수원시 영통구 영통로 127",
+          "parcelAddress": "경기 수원시 영통구 망포동 543-2",
+          "phone": "",
+          "category": "관리,운영",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1783942996",
+          "name": "테크위드유",
+          "roadAddress": "경기 수원시 영통구 반달로 105",
+          "parcelAddress": "경기 수원시 영통구 영통동 1011-3 영통프라자 2층",
+          "phone": "031-203-9351",
+          "category": "제조업",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "2014224676",
+          "name": "위드유인터내셔널",
+          "roadAddress": "경기 수원시 영통구 반달로 94",
+          "parcelAddress": "경기 수원시 영통구 영통동 1034-5",
+          "phone": "",
+          "category": "식품",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "60104142",
+          "name": "위드유",
+          "roadAddress": "경기 오산시 수목원로88번길 35",
+          "parcelAddress": "경기 오산시 가수동 399",
+          "phone": "",
+          "category": "전기자재,부품",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "339921982",
+          "name": "위드유도관",
+          "roadAddress": "경기 수원시 영통구 태장로 81",
+          "parcelAddress": "경기 수원시 영통구 망포동 382-3",
+          "phone": "",
+          "category": "학원",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1625180195",
+          "name": "위드유솔루션",
+          "roadAddress": "경기 화성시 병점구 효행로 1072",
+          "parcelAddress": "경기 화성시 병점구 병점동 844-7",
+          "phone": "",
+          "category": "금융서비스",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1849227336",
+          "name": "감성헤어스튜디오 위드유",
+          "roadAddress": "경기 오산시 대호로 93",
+          "parcelAddress": "경기 오산시 궐동 682-5",
+          "phone": "",
+          "category": "미용실",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "133302551",
+          "name": "위드유수학학원",
+          "roadAddress": "경기 수원시 영통구 망포로84번길 10",
+          "parcelAddress": "경기 수원시 영통구 망포동 790",
+          "phone": "",
+          "category": "수학학원",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "13270837",
+          "name": "위드유",
+          "roadAddress": "경기 수원시 권선구 효원로230번길 38",
+          "parcelAddress": "경기 수원시 권선구 권선동 1011-14 대우미래사랑 101-1402",
+          "phone": "",
+          "category": "인터넷,IT",
+          "query": "위드유",
+          "addressExact": false,
+          "nameRelated": true
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1698456633",
+          "name": "위드유",
+          "roadAddress": "경기 안산시 상록구 감골1로 27",
+          "parcelAddress": "사동 1346",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "433241574",
+          "name": "위드유수학교습소",
+          "roadAddress": "경기 화성시 만세구 수노을중앙로 142",
+          "parcelAddress": "새솔동 76-8",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1495110613",
+          "name": "엔케이위드유",
+          "roadAddress": "경기 용인시 기흥구 한일로17번길 5 1층",
+          "parcelAddress": "공세동 476-144",
+          "phone": "010-8782-7437",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "611046132",
+          "name": "위드유피아노음악학원",
+          "roadAddress": "경기 화성시 동탄구 동탄대로6길 17 2층",
+          "parcelAddress": "산척동 727-5",
+          "phone": "010-7925-4257",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1690159300",
+          "name": "위드유피아노 음악학원",
+          "roadAddress": "경기 화성시 동탄구 동탄중앙로 220",
+          "parcelAddress": "반송동 96",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "2049952529",
+          "name": "위드유로또",
+          "roadAddress": "경기 화성시 동탄구 동탄하나1길 61 동탄헤리움오피스텔 상가동 1층 109호",
+          "parcelAddress": "능동 1065-1",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_5c52f09e0973",
+      "name": "윌리엄스버거",
+      "address": "경기 성남시 분당구 판교역로10번길 14-5 (백현동 579-4)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "578610807",
+          "name": "리틀윌리엄스버거카페",
+          "roadAddress": "경기 용인시 수지구 고기로 497",
+          "parcelAddress": "경기 용인시 수지구 고기동 224 1층",
+          "phone": "0507-1316-6439",
+          "category": "햄버거",
+          "query": "윌리엄스버거",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1658927045",
+          "name": "까사파스토",
+          "roadAddress": "경기 성남시 분당구 판교역로10번길 14-5",
+          "parcelAddress": "경기 성남시 분당구 백현동 579-4 1층 102호",
+          "phone": "031-726-9155",
+          "category": "이탈리안",
+          "query": "경기 성남시 분당구 판교역로10번길 14-5",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1363867448",
+          "name": "아이예쁨속눈썹스튜디오",
+          "roadAddress": "경기 성남시 분당구 판교역로10번길 14-5",
+          "parcelAddress": "경기 성남시 분당구 백현동 579-4 1층 103호",
+          "phone": "0502-5550-3884",
+          "category": "네일샵",
+          "query": "경기 성남시 분당구 판교역로10번길 14-5",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "511955048",
+          "name": "디에이그룹",
+          "roadAddress": "경기 성남시 분당구 판교역로10번길 14-5",
+          "parcelAddress": "경기 성남시 분당구 백현동 579-4",
+          "phone": "",
+          "category": "미용용품",
+          "query": "경기 성남시 분당구 판교역로10번길 14-5",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "578610807",
+          "name": "리틀윌리엄스버거카페",
+          "roadAddress": "경기 용인시 수지구 고기로 497 1층",
+          "parcelAddress": "고기동 224",
+          "phone": "0507-1316-6439",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_45be58e3ebae",
+      "name": "윤씨밀방",
+      "address": "서울 마포구 와우산로15길 15 (서교동 411-6)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "398631428",
+          "name": "레이어룸빈티지",
+          "roadAddress": "서울 마포구 와우산로15길 15",
+          "parcelAddress": "서울 마포구 서교동 411-6",
+          "phone": "",
+          "category": "의류판매",
+          "query": "서울 마포구 와우산로15길 15",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "673722819",
+          "name": "더 베니(TheBenny)",
+          "roadAddress": "서울 마포구 와우산로15길 15",
+          "parcelAddress": "서울 마포구 서교동 411-6",
+          "phone": "",
+          "category": "양식",
+          "query": "서울 마포구 와우산로15길 15",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_23d8db79a450",
+      "name": "진미식육식당",
+      "address": "대구 서구 달서천로83길 13 (원대동3가 1223-13)",
+      "currentStatus": "matched_no_priced_menu",
+      "candidates": [
+        {
+          "kakaoPlaceId": "21226094",
+          "name": "진미식육식당",
+          "roadAddress": "대구 서구 고성로 105-1",
+          "parcelAddress": "대구 서구 원대동3가 1221-10 1층",
+          "phone": "053-352-5219",
+          "category": "육류,고기",
+          "query": "진미식육식당 대구 서구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "9442342",
+          "name": "진미식육식당",
+          "roadAddress": "경북 김천시 평화길 40",
+          "parcelAddress": "경북 김천시 평화동 350-4",
+          "phone": "",
+          "category": "육류,고기",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "10082276",
+          "name": "진미식육식당",
+          "roadAddress": "전남광주통합특별시 남구 방림로 20-1",
+          "parcelAddress": "전남광주통합특별시 남구 방림동 107-32 1층",
+          "phone": "062-652-2792",
+          "category": "육류,고기",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "239813525",
+          "name": "LG뉴하이샤시 현대건업",
+          "roadAddress": "대구 서구 달서천로83길 13",
+          "parcelAddress": "대구 서구 원대동3가 1223-13",
+          "phone": "053-356-8650",
+          "category": "셔터,샷시",
+          "query": "대구 서구 달서천로83길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "21313980",
+          "name": "의성참기름",
+          "roadAddress": "대구 서구 달서천로83길 13",
+          "parcelAddress": "대구 서구 원대동3가 1223-13",
+          "phone": "053-358-7235",
+          "category": "전통식품제조",
+          "query": "대구 서구 달서천로83길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1951176437",
+          "name": "강산장의장묘",
+          "roadAddress": "대구 서구 달서천로83길 13",
+          "parcelAddress": "대구 서구 원대동3가 1223-13",
+          "phone": "010-8589-8730",
+          "category": "장례",
+          "query": "대구 서구 달서천로83길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2006444660",
+          "name": "더동행 서구센터",
+          "roadAddress": "대구 서구 달서천로83길 13",
+          "parcelAddress": "대구 서구 원대동3가 1223-13",
+          "phone": "",
+          "category": "학원",
+          "query": "대구 서구 달서천로83길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1166121447",
+          "name": "소망TEX",
+          "roadAddress": "대구 서구 달서천로83길 13",
+          "parcelAddress": "대구 서구 원대동3가 1223-13",
+          "phone": "",
+          "category": "기업",
+          "query": "대구 서구 달서천로83길 13",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "19541125",
+          "name": "진미식육타운",
+          "roadAddress": "울산 울주군 청량읍 덕하장터길 4",
+          "parcelAddress": "울산 울주군 청량읍 상남리 553-3 1층",
+          "phone": "052-265-4204",
+          "category": "육류,고기",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1539617483",
+          "name": "한우한우식육식당",
+          "roadAddress": "경북 구미시 인동26길 33",
+          "parcelAddress": "경북 구미시 진평동 89-9",
+          "phone": "054-473-5892",
+          "category": "육류,고기",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "19704040",
+          "name": "초원삼겹살 2호점",
+          "roadAddress": "경북 구미시 인동남길 6",
+          "parcelAddress": "경북 구미시 진평동 618 1층",
+          "phone": "054-472-7020",
+          "category": "삼겹살",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16215277",
+          "name": "태산손만두칼국수",
+          "roadAddress": "부산 동래구 시실로 209-1",
+          "parcelAddress": "부산 동래구 명장동 22-21 1층",
+          "phone": "051-522-2597",
+          "category": "칼국수",
+          "query": "진미식육식당",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "21226094",
+          "name": "진미식육식당",
+          "roadAddress": "대구 서구 고성로 105-1 1층",
+          "parcelAddress": "원대동3가 1221-10",
+          "phone": "053-352-5219",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-07-13 22:05:25",
+          "menus": [
+            {
+              "name": "대창불고기전골",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "대창전골 (250g)",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "볶음밥",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "정식",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-02 10:01:12"
+            },
+            {
+              "name": "사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "라면",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "우동",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "우동사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "당면사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "라면사리",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "전골",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "대창전골",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "우동리",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "육회",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "비빔밥",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "옛날불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "버섯불고기전골",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "잔치국수",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "비빔국수",
+              "price": "",
+              "sourceUpdatedAt": "2026-06-14 06:09:54"
+            },
+            {
+              "name": "육개장",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "닭개장",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "해물파전",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "콩국수",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "버섯불고기",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-07 21:15:29"
+            },
+            {
+              "name": "불고기추가",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            },
+            {
+              "name": "야채추가",
+              "price": "",
+              "sourceUpdatedAt": "2026-07-13 22:05:25"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "9442342",
+          "name": "진미식육식당",
+          "roadAddress": "경북 김천시 평화길 40",
+          "parcelAddress": "평화동 350-4",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "10082276",
+          "name": "진미식육식당",
+          "roadAddress": "전남광주통합특별시 남구 방림로 20-1 1층",
+          "parcelAddress": "방림동 107-32",
+          "phone": "062-652-2792",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2024-12-12 02:58:57",
+          "menus": [
+            {
+              "name": "생삼겹살",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "돼지갈비",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "소등심",
+              "price": "40,000원",
+              "sourceUpdatedAt": "2024-12-11 23:45:48"
+            },
+            {
+              "name": "불백",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "소생고기",
+              "price": "25,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "돼지주물럭",
+              "price": "13,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "김치찌개",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "익힌비빔밥",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2024-12-12 02:58:57"
+            },
+            {
+              "name": "곰탕",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2024-12-12 01:59:15"
+            },
+            {
+              "name": "육회비빔밥",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2024-12-12 01:01:54"
+            },
+            {
+              "name": "돌솥비빔밥",
+              "price": "10,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "갈치조림",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "병어조림",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            },
+            {
+              "name": "조기매운탕",
+              "price": "12,000원",
+              "sourceUpdatedAt": "2024-12-11 17:25:56"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_8223004f0ea2",
+      "name": "토스트킹",
+      "address": "경기 평택시 송탄로 63 (이충동 517-3)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "408435884",
+          "name": "토스트킹",
+          "roadAddress": "경기 용인시 기흥구 사은로126번길 52",
+          "parcelAddress": "경기 용인시 기흥구 보라동 560 1층",
+          "phone": "031-274-2177",
+          "category": "패스트푸드",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "572588645",
+          "name": "송정토스트킹",
+          "roadAddress": "전남광주통합특별시 광산구 송도로 320",
+          "parcelAddress": "전남광주통합특별시 광산구 송정동 596-2 1층",
+          "phone": "062-943-8538",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "378726973",
+          "name": "세종문고",
+          "roadAddress": "경기 평택시 송탄로 63",
+          "parcelAddress": "경기 평택시 이충동 517-3 1층",
+          "phone": "031-667-3134",
+          "category": "서점",
+          "query": "경기 평택시 송탄로 63",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1947774309",
+          "name": "중고폰마트",
+          "roadAddress": "경기 평택시 송탄로 63",
+          "parcelAddress": "경기 평택시 이충동 517-3 1층",
+          "phone": "0502-5550-9418",
+          "category": "중고가전",
+          "query": "경기 평택시 송탄로 63",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "111350386",
+          "name": "킹토스트",
+          "roadAddress": "서울 용산구 한강대로23길 55",
+          "parcelAddress": "서울 용산구 한강로3가 40-999 지하2층",
+          "phone": "",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "391709183",
+          "name": "더킹토스트",
+          "roadAddress": "충북 청주시 서원구 구룡산로 400-2",
+          "parcelAddress": "충북 청주시 서원구 수곡동 52-5 1층",
+          "phone": "",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "228080804",
+          "name": "빈스킹토스트 철원점",
+          "roadAddress": "강원특별자치도 철원군 갈말읍 두루미로 88",
+          "parcelAddress": "강원특별자치도 철원군 갈말읍 문혜리 885 1층",
+          "phone": "033-452-9943",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1452667510",
+          "name": "빈스킹토스트 휘닉스평창점",
+          "roadAddress": "강원특별자치도 평창군 봉평면 태기로 174",
+          "parcelAddress": "강원특별자치도 평창군 봉평면 면온리 1120 휘닉스평창 스키하우스 1층",
+          "phone": "",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1058318498",
+          "name": "빈스킹토스트 커피 정관점",
+          "roadAddress": "부산 기장군 정관읍 정관중앙로 48",
+          "parcelAddress": "부산 기장군 정관읍 매학리 748-5",
+          "phone": "051-717-0279",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1379788865",
+          "name": "빈스킹토스트 다대점",
+          "roadAddress": "부산 사하구 몰운대2길 17",
+          "parcelAddress": "부산 사하구 다대동 468-10 1층",
+          "phone": "051-262-5800",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1724107440",
+          "name": "빈스킹토스트 시민공원점",
+          "roadAddress": "부산 부산진구 중앙대로 821",
+          "parcelAddress": "부산 부산진구 범전동 450 삼한골든뷰 센트럴파크 201동 지하2층 B221호",
+          "phone": "",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "930831128",
+          "name": "빈스킹토스트 제주점",
+          "roadAddress": "제주특별자치도 제주시 신설로2길 1-3",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 1970-18 1층",
+          "phone": "064-755-4824",
+          "category": "토스트",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1347361784",
+          "name": "카페빈스킹",
+          "roadAddress": "부산 부산진구 서면로68번길 44",
+          "parcelAddress": "부산 부산진구 부전동 242-7 1층",
+          "phone": "051-807-7266",
+          "category": "카페",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "518791829",
+          "name": "킹프레소 서면점",
+          "roadAddress": "부산 부산진구 신암로 66",
+          "parcelAddress": "부산 부산진구 범천동 1644 범천엘에이치아파트 판매시설동 1층 108호",
+          "phone": "070-7620-0675",
+          "category": "카페",
+          "query": "토스트킹",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "408435884",
+          "name": "토스트킹",
+          "roadAddress": "경기 용인시 기흥구 사은로126번길 52 1층",
+          "parcelAddress": "보라동 560",
+          "phone": "031-274-2177",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "572588645",
+          "name": "송정토스트킹",
+          "roadAddress": "전남광주통합특별시 광산구 송도로 320 1층",
+          "parcelAddress": "송정동 596-2",
+          "phone": "062-943-8538",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-02-25 21:34:58",
+          "menus": [
+            {
+              "name": "야채토스트",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-02-07 22:56:26"
+            },
+            {
+              "name": "햄야채토스트",
+              "price": "2,900원",
+              "sourceUpdatedAt": "2024-02-07 22:45:37"
+            },
+            {
+              "name": "햄치즈야채토스트",
+              "price": "3,200원",
+              "sourceUpdatedAt": "2024-02-07 11:43:44"
+            },
+            {
+              "name": "불고기토스트",
+              "price": "3,900원",
+              "sourceUpdatedAt": "2024-02-07 23:03:20"
+            },
+            {
+              "name": "더블치즈토스트",
+              "price": "4,900원",
+              "sourceUpdatedAt": "2024-02-07 11:43:44"
+            },
+            {
+              "name": "더블치즈매운치킨토스트",
+              "price": "5,300원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "아메리카노",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2025-06-16 12:55:35"
+            },
+            {
+              "name": "카페라떼",
+              "price": "3,300원",
+              "sourceUpdatedAt": "2024-02-07 23:04:46"
+            },
+            {
+              "name": "바닐라라떼",
+              "price": "3,700원",
+              "sourceUpdatedAt": "2024-02-07 22:42:25"
+            },
+            {
+              "name": "카페모카",
+              "price": "4,300원",
+              "sourceUpdatedAt": "2024-02-07 22:56:38"
+            },
+            {
+              "name": "과일쥬스",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2024-02-07 11:43:44"
+            },
+            {
+              "name": "허브차",
+              "price": "3,000원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "건강수제차",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "에이드",
+              "price": "3,700원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "플레인요거트스무디",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "딸기요거트스무디",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2025-07-09 14:34:58"
+            },
+            {
+              "name": "라떼",
+              "price": "4,000원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "감자토스트",
+              "price": "3,600원",
+              "sourceUpdatedAt": "2024-02-07 23:48:13"
+            },
+            {
+              "name": "더블치즈감자토스트",
+              "price": "4,800원",
+              "sourceUpdatedAt": "2025-11-19 23:16:19"
+            },
+            {
+              "name": "콜라/사이다",
+              "price": "2,000원",
+              "sourceUpdatedAt": "2026-02-25 21:34:58"
+            },
+            {
+              "name": "복숭아아이스티",
+              "price": "3,000원",
+              "sourceUpdatedAt": "2024-02-07 22:37:27"
+            },
+            {
+              "name": "햄토스트",
+              "price": "2,500원",
+              "sourceUpdatedAt": "2024-02-07 22:50:33"
+            },
+            {
+              "name": "치즈야채토스트",
+              "price": "2,900원",
+              "sourceUpdatedAt": "2024-02-07 23:45:35"
+            },
+            {
+              "name": "햄치즈토스트",
+              "price": "2,900원",
+              "sourceUpdatedAt": "2024-02-07 22:58:24"
+            },
+            {
+              "name": "매운치킨토스트",
+              "price": "4,300원",
+              "sourceUpdatedAt": "2025-06-16 12:55:35"
+            },
+            {
+              "name": "피자토스트",
+              "price": "3,900원",
+              "sourceUpdatedAt": "2024-02-07 22:33:11"
+            },
+            {
+              "name": "더블치즈불고기토스트",
+              "price": "4,900원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "카푸치노",
+              "price": "3,300원",
+              "sourceUpdatedAt": "2024-02-07 23:50:15"
+            },
+            {
+              "name": "카라멜라떼",
+              "price": "3,700원",
+              "sourceUpdatedAt": "2024-02-07 23:14:24"
+            },
+            {
+              "name": "헤이즐넛라떼",
+              "price": "3,700원",
+              "sourceUpdatedAt": "2024-02-07 22:57:42"
+            },
+            {
+              "name": "카라멜마키아또",
+              "price": "4,300원",
+              "sourceUpdatedAt": "2024-02-07 22:44:54"
+            },
+            {
+              "name": "화이트초코렛모카",
+              "price": "4,300원",
+              "sourceUpdatedAt": "2024-02-07 23:42:22"
+            },
+            {
+              "name": "망고요거트스무디",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2025-07-11 10:05:22"
+            },
+            {
+              "name": "블루베리요거트스무디",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2024-02-07 23:07:33"
+            },
+            {
+              "name": "더블치즈치킨토스트",
+              "price": "5,300원",
+              "sourceUpdatedAt": "2025-11-19 11:40:46"
+            },
+            {
+              "name": "헤즐럿아메리카노",
+              "price": "3,000원",
+              "sourceUpdatedAt": "2025-11-19 23:21:17"
+            },
+            {
+              "name": "딸기라떼",
+              "price": "4,500원",
+              "sourceUpdatedAt": "2025-11-19 23:50:25"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_f47ee86282d2",
+      "name": "통영식도락",
+      "address": "경남 통영시 발개로 131 (도남동 560-1)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "166685917",
+          "name": "루지당구클럽",
+          "roadAddress": "경남 통영시 발개로 131",
+          "parcelAddress": "경남 통영시 도남동 560-1 2층",
+          "phone": "010-9321-6857",
+          "category": "당구장,포켓볼",
+          "query": "경남 통영시 발개로 131",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1491598283",
+          "name": "오늘도바다해",
+          "roadAddress": "경남 통영시 발개로 131",
+          "parcelAddress": "경남 통영시 도남동 560-1",
+          "phone": "",
+          "category": "한식",
+          "query": "경남 통영시 발개로 131",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+      "name": "팥빙수, 단팥죽 골목",
+      "address": "부산 중구 신창동 국제시장 단팥죽거리",
+      "currentStatus": "unmatched",
+      "candidates": [],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
+      "name": "하하",
+      "address": "서울 마포구 동교로 263 (연남동 229-12)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "244669873",
+          "name": "하하 공덕점",
+          "roadAddress": "서울 마포구 새창로 28",
+          "parcelAddress": "서울 마포구 도화동 4-39 1층",
+          "phone": "02-706-0212",
+          "category": "중식",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1150128584",
+          "name": "하하&김종국의 401정육식당 홍대본점",
+          "roadAddress": "서울 마포구 잔다리로 23",
+          "parcelAddress": "서울 마포구 서교동 395-17 에이치포빌딩 1층",
+          "phone": "",
+          "category": "육류,고기",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1080843481",
+          "name": "하하빌리지",
+          "roadAddress": "서울 마포구 백범로21길 15",
+          "parcelAddress": "서울 마포구 염리동 85-18",
+          "phone": "",
+          "category": "빌라,주택",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "835704684",
+          "name": "하하비샵",
+          "roadAddress": "서울 마포구 와우산로22길 42",
+          "parcelAddress": "서울 마포구 상수동 86-1",
+          "phone": "0506-369-6787",
+          "category": "의류판매",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1040186901",
+          "name": "하하호호그룹",
+          "roadAddress": "서울 마포구 토정로 161",
+          "parcelAddress": "서울 마포구 하중동 10-1",
+          "phone": "",
+          "category": "서비스,산업",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1629185236",
+          "name": "하하헤어샵",
+          "roadAddress": "서울 마포구 월드컵로25길 26",
+          "parcelAddress": "서울 마포구 망원동 517 마포영화블렌하임 101동 1층 1-007호",
+          "phone": "",
+          "category": "미용실",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "318172149",
+          "name": "하하어패럴",
+          "roadAddress": "서울 서대문구 모래내로 225",
+          "parcelAddress": "서울 서대문구 남가좌동 331-24 금채빌딩 3층",
+          "phone": "02-2295-1245",
+          "category": "의류",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "27371037",
+          "name": "하하호호어린이집",
+          "roadAddress": "서울 강서구 공항대로75길 30",
+          "parcelAddress": "서울 강서구 염창동 282 삼정그린코아 102-106",
+          "phone": "070-8815-9885",
+          "category": "어린이집",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "1459276546",
+          "name": "하하공간미술",
+          "roadAddress": "서울 은평구 은평로3길 24",
+          "parcelAddress": "서울 은평구 역촌동 83-30 2층",
+          "phone": "",
+          "category": "미술학원",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "751969779",
+          "name": "하하호호홍제마을활력소",
+          "roadAddress": "서울 서대문구 통일로 483",
+          "parcelAddress": "서울 서대문구 홍제동 294-84 1층",
+          "phone": "02-395-0056",
+          "category": "단체,협회",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "682460270",
+          "name": "하하호호 견인차량보관소 개방화장실",
+          "roadAddress": "서울 서대문구 통일로 484",
+          "parcelAddress": "서울 서대문구 홍제동 294-46",
+          "phone": "02-330-1344",
+          "category": "화장실",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "18843171",
+          "name": "하하치과의원",
+          "roadAddress": "서울 강서구 등촌로5길 80",
+          "parcelAddress": "서울 강서구 화곡동 830-1 1층",
+          "phone": "02-2061-2875",
+          "category": "치과",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "27506684",
+          "name": "카페메리하하",
+          "roadAddress": "서울 강서구 강서로33길 32",
+          "parcelAddress": "서울 강서구 화곡동 1049-47 1층",
+          "phone": "02-2699-9399",
+          "category": "카페",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "27189373",
+          "name": "하하비어",
+          "roadAddress": "서울 서대문구 세무서2길 18",
+          "parcelAddress": "서울 서대문구 홍제동 216-1",
+          "phone": "",
+          "category": "호프,요리주점",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "823785660",
+          "name": "하하빵집",
+          "roadAddress": "서울 영등포구 영등포로74길 14",
+          "parcelAddress": "서울 영등포구 신길동 95-51 1층",
+          "phone": "",
+          "category": "제과,베이커리",
+          "query": "하하 서울 마포구",
+          "addressExact": false,
+          "nameRelated": true
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "244669873",
+          "name": "하하 공덕점",
+          "roadAddress": "서울 마포구 새창로 28 1층",
+          "parcelAddress": "도화동 4-39",
+          "phone": "02-706-0212",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2025-04-21 13:49:41",
+          "menus": [
+            {
+              "name": "유니짜장(점심)",
+              "price": "7,000원",
+              "sourceUpdatedAt": "2025-04-21 13:49:41"
+            },
+            {
+              "name": "짬뽕(점심)",
+              "price": "8,000원",
+              "sourceUpdatedAt": "2025-04-21 13:49:41"
+            },
+            {
+              "name": "짬뽕밥(점심)",
+              "price": "8,000원",
+              "sourceUpdatedAt": "2025-04-21 13:49:41"
+            },
+            {
+              "name": "잡채밥(점심)",
+              "price": "9,000원",
+              "sourceUpdatedAt": "2025-04-21 13:49:41"
+            },
+            {
+              "name": "마파두부밥(점심)",
+              "price": "9,000원",
+              "sourceUpdatedAt": "2025-04-21 13:49:41"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1150128584",
+          "name": "하하&김종국의 401정육식당 홍대본점",
+          "roadAddress": "서울 마포구 잔다리로 23 에이치포빌딩 1층",
+          "parcelAddress": "서교동 395-17",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-06-15 13:50:59",
+          "menus": [
+            {
+              "name": "꽃삼겹(400g)",
+              "price": "39,000원",
+              "sourceUpdatedAt": "2025-04-10 22:36:53"
+            },
+            {
+              "name": "꽃목살(300g)",
+              "price": "29,000원",
+              "sourceUpdatedAt": "2025-04-11 00:35:10"
+            },
+            {
+              "name": "항정살(160g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-10 22:46:23"
+            },
+            {
+              "name": "삼겹살(180g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-11 01:29:00"
+            },
+            {
+              "name": "목살(180g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-11 01:02:27"
+            },
+            {
+              "name": "가브리살(160g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-11 00:28:55"
+            },
+            {
+              "name": "양념갈비(250g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-10 23:02:53"
+            },
+            {
+              "name": "차돌박이(150g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2025-04-11 00:53:16"
+            },
+            {
+              "name": "생막창(160g)",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2026-06-15 13:50:59"
+            },
+            {
+              "name": "껍데기(100g)",
+              "price": "6,000원",
+              "sourceUpdatedAt": "2025-04-10 23:54:01"
+            }
+          ]
+        },
+        {
+          "kakaoPlaceId": "1080843481",
+          "name": "하하빌리지",
+          "roadAddress": "서울 마포구 백범로21길 15",
+          "parcelAddress": "염리동 85-18",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "835704684",
+          "name": "하하비샵",
+          "roadAddress": "서울 마포구 와우산로22길 42",
+          "parcelAddress": "상수동 86-1",
+          "phone": "0506-369-6787",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1040186901",
+          "name": "하하호호그룹",
+          "roadAddress": "서울 마포구 토정로 161",
+          "parcelAddress": "하중동 10-1",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        },
+        {
+          "kakaoPlaceId": "1629185236",
+          "name": "하하헤어샵",
+          "roadAddress": "서울 마포구 월드컵로25길 26 마포영화블렌하임 101동 1층 1-007호",
+          "parcelAddress": "망원동 517",
+          "phone": "",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "",
+          "menus": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b014cf66b6ba",
+      "name": "한성옥해장국",
+      "address": "서울 용산구 백범로 283 (효창동 81-1)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1555674629",
+          "name": "효창동짜장우동",
+          "roadAddress": "서울 용산구 백범로 283",
+          "parcelAddress": "서울 용산구 효창동 81-1 1층",
+          "phone": "",
+          "category": "중국요리",
+          "query": "서울 용산구 백범로 283",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "897951663",
+          "name": "역전부동산",
+          "roadAddress": "서울 용산구 백범로 283",
+          "parcelAddress": "서울 용산구 효창동 81-1 1층",
+          "phone": "02-704-9964",
+          "category": "부동산중개업",
+          "query": "서울 용산구 백범로 283",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1545813234",
+          "name": "비가(biga)",
+          "roadAddress": "서울 용산구 백범로 283",
+          "parcelAddress": "서울 용산구 효창동 81-1",
+          "phone": "",
+          "category": "일식",
+          "query": "서울 용산구 백범로 283",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [],
+      "errors": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a966fb1dc9aa",
+      "name": "화순반점",
+      "address": "인천 동구 만석부두로 3 (만석동 2-70)",
+      "currentStatus": "unmatched",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1462554610",
+          "name": "화순반점 신세계프리미엄아울렛여주점",
+          "roadAddress": "경기 여주시 명품로 360",
+          "parcelAddress": "경기 여주시 상거동 460 EAST LOW 테이스트빌리지 1층 123호",
+          "phone": "031-880-1375",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": true
+        },
+        {
+          "kakaoPlaceId": "272967208",
+          "name": "장강",
+          "roadAddress": "인천 제물포구 만석부두로 3",
+          "parcelAddress": "인천 제물포구 만석동 2-70",
+          "phone": "032-763-0633",
+          "category": "중국요리",
+          "query": "인천 동구 만석부두로 3",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "717469649",
+          "name": "만홍반점 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 진각로 175",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 훈리 16-9 1층",
+          "phone": "061-927-4006",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "21350737",
+          "name": "용광반점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 중앙로 20-1",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 향청리 153-17 1층",
+          "phone": "061-374-2278",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1960661974",
+          "name": "효산반점",
+          "roadAddress": "전남광주통합특별시 화순군 도곡면 지석로 1110-1",
+          "parcelAddress": "전남광주통합특별시 화순군 도곡면 효산리 712-3",
+          "phone": "",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "2072480138",
+          "name": "명장수타 옛날손짜장 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 칠충로 45",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 대리 108 1층",
+          "phone": "061-371-7300",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1324600338",
+          "name": "도곡반점",
+          "roadAddress": "전남광주통합특별시 화순군 도곡면 천태로 1129",
+          "parcelAddress": "전남광주통합특별시 화순군 도곡면 쌍옥리 146-4 1층",
+          "phone": "061-372-1007",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1893961535",
+          "name": "도야짬뽕 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 쌍충로 27",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 삼천리 683 2층",
+          "phone": "061-374-1233",
+          "category": "도야짬뽕",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "1573716659",
+          "name": "얌차반점",
+          "roadAddress": "전남광주통합특별시 화순군 도곡면 지석로 1122",
+          "parcelAddress": "전남광주통합특별시 화순군 도곡면 효산리 713-1 1층",
+          "phone": "061-375-8875",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "8746581",
+          "name": "고향반점",
+          "roadAddress": "전남광주통합특별시 화순군 능주면 죽수길 54",
+          "parcelAddress": "전남광주통합특별시 화순군 능주면 관영리 337-3",
+          "phone": "",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "963057418",
+          "name": "짬뽕관 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 일심2길 7",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 일심리 801 1층",
+          "phone": "061-372-5696",
+          "category": "짬뽕관",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "383744175",
+          "name": "탕화쿵푸마라탕 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 만연로 66-10",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 만연리 239-5 1층",
+          "phone": "061-373-3949",
+          "category": "탕화쿵푸마라탕",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "16605689",
+          "name": "춘양반점",
+          "roadAddress": "전남광주통합특별시 화순군 춘양면 춘양로 102",
+          "parcelAddress": "전남광주통합특별시 화순군 춘양면 석정리 573-62",
+          "phone": "",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "266176669",
+          "name": "마녀마라 화순점",
+          "roadAddress": "전남광주통합특별시 화순군 화순읍 천변좌길 87",
+          "parcelAddress": "전남광주통합특별시 화순군 화순읍 만연리 205-5 1층 1~2호",
+          "phone": "",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        },
+        {
+          "kakaoPlaceId": "18148467",
+          "name": "동면반점",
+          "roadAddress": "전남광주통합특별시 화순군 동면 충의로 761",
+          "parcelAddress": "전남광주통합특별시 화순군 동면 장동리 338-4",
+          "phone": "",
+          "category": "중국요리",
+          "query": "화순반점",
+          "addressExact": false,
+          "nameRelated": false
+        }
+      ],
+      "panels": [
+        {
+          "kakaoPlaceId": "1462554610",
+          "name": "화순반점 신세계프리미엄아울렛여주점",
+          "roadAddress": "경기 여주시 명품로 360 EAST LOW 테이스트빌리지 1층 123호",
+          "parcelAddress": "상거동 460",
+          "phone": "031-880-1375",
+          "status": "Y",
+          "category": "",
+          "menuUpdatedAt": "2026-03-24 00:04:15",
+          "menus": [
+            {
+              "name": "차돌짬뽕",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-23 14:08:33"
+            },
+            {
+              "name": "돼지고기탕수육",
+              "price": "22,000원",
+              "sourceUpdatedAt": "2026-03-23 23:25:34"
+            },
+            {
+              "name": "유니짜장",
+              "price": "11,000원",
+              "sourceUpdatedAt": "2024-12-07 01:30:26"
+            },
+            {
+              "name": "홍콩식탄탄면",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2024-12-07 01:38:21"
+            },
+            {
+              "name": "홍콩식볶음국수",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-23 14:08:33"
+            },
+            {
+              "name": "마라탕면",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2026-03-23 14:08:33"
+            },
+            {
+              "name": "마파가지덮밥",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-23 14:08:33"
+            },
+            {
+              "name": "삼선짬뽕",
+              "price": "17,000원",
+              "sourceUpdatedAt": "2026-03-23 23:04:33"
+            },
+            {
+              "name": "삼선조개짬뽕",
+              "price": "16,000원",
+              "sourceUpdatedAt": "2026-03-23 14:08:33"
+            },
+            {
+              "name": "마파두부밥",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-23 23:33:06"
+            },
+            {
+              "name": "잡탕밥",
+              "price": "18,000원",
+              "sourceUpdatedAt": "2026-03-24 00:04:15"
+            },
+            {
+              "name": "새우볶음밥",
+              "price": "15,000원",
+              "sourceUpdatedAt": "2026-03-23 23:00:10"
+            }
+          ]
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -223,18 +223,19 @@
     "topic_enrichment_michelin-bib-gourmand_175611706310": {
       "name": "게방식당",
       "address": "강남구 선릉로 131길 17, Seoul, 06060, 한국",
-      "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:29.100Z",
-      "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/272055162",
-      "placeUrl": "https://place.map.kakao.com/272055162",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:37:00.000Z",
+      "representativeMenu": "간장게장 정식 / 양념게장 정식 / 게알 막국수",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/793407871/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/793407871",
+      "naverPlaceId": "793407871",
       "kakaoPlaceId": "272055162",
       "pageName": "게방식당",
       "pageAddress": "서울 강남구 선릉로131길 17 에이치빌딩 1층 (논현동)",
       "phone": "010-8479-1107",
       "operationStatus": "영업",
-      "menuUpdatedAt": "2026-04-06 22:43:02",
+      "menuUpdatedAt": "2026-07-19",
       "match": {
         "query": "게방식당 강남구 선릉로",
         "total": 220,
@@ -244,15 +245,214 @@
         "localityPenalty": -160,
         "distanceMeters": 2
       },
-      "menus": []
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_001",
+          "name": "간장게장 정식",
+          "price": "변동",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_002",
+          "name": "양념게장 정식",
+          "price": "변동",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_003",
+          "name": "게알 막국수",
+          "price": "19,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_004",
+          "name": "전복장 정식",
+          "price": "29,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_005",
+          "name": "간장/양념 새우장 정식",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_006",
+          "name": "새우장 비빔밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_007",
+          "name": "양념새우장 비빔밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_008",
+          "name": "장조림 덮밥",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_009",
+          "name": "연어장 비빔밥",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_010",
+          "name": "전복장 비빔밥",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_011",
+          "name": "게알비빔밥",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_012",
+          "name": "양념게알 비빔밥",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_013",
+          "name": "감바스",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_014",
+          "name": "오징어 타파스",
+          "price": "48,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_015",
+          "name": "꽃게 범벅",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_175611706310_menu_016",
+          "name": "해물 타파스",
+          "price": "51,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 16
+        }
+      ]
     },
     "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6": {
       "name": "계월",
       "address": "성동구 성덕정 3길 8, Seoul, 04774, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:28.908Z",
-      "menus": [],
-      "candidates": []
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:44:00.000Z",
+      "representativeMenu": "백곰탕 / 홍곰탕 / 닭무침 (홍)",
+      "note": "네이버지도 검색 결과의 도로명·지번 주소를 대조하고 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1317631172/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1317631172",
+      "naverPlaceId": "1317631172",
+      "pageName": "계월",
+      "pageAddress": "서울 성동구 성덕정3길 8 1층 우측 (성수동1가 72-41)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_001",
+          "name": "백곰탕",
+          "price": "11,000원",
+          "description": "맑은 육수로 기본 닭곰탕과 육수의 깊이감이 차이가 큰 계월곰탕의 대표 메뉴",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_002",
+          "name": "홍곰탕",
+          "price": "12,000원",
+          "description": "매콤하고 얼큰하며 찜기에 쪄내 식감과 맛을 살린 고사리와 파채, 특제양념 닭다리살 메뉴",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_003",
+          "name": "닭무침 (홍)",
+          "price": "18,000원",
+          "description": "깔끔하고 매콤 새콤한 양념으로 무쳐낸 계월의 시그니처 닭무침",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_004",
+          "name": "닭수육 (한정 수량)",
+          "price": "18,000원",
+          "description": "허벅다리를 된장 양념으로 하루 재운 뒤 압력으로 단시간 조리한 메뉴",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_005",
+          "name": "곁들임 닭무침",
+          "price": "8,000원",
+          "description": "점심영업 한정 판매, 포장 불가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_006",
+          "name": "곁들임 닭수육",
+          "price": "8,000원",
+          "description": "점심영업 한정 판매, 포장 불가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6_menu_007",
+          "name": "계월 탁주(병/잔술)",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        }
+      ]
     },
     "topic_enrichment_michelin-bib-gourmand_31ddfb59ecf0": {
       "name": "고사리 익스프레스",
@@ -855,9 +1055,28 @@
     "topic_enrichment_michelin-bib-gourmand_0eb12b158603": {
       "name": "꿉당",
       "address": "서초구 강남대로 615, Seoul, 06524, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:29.512Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:47:00.000Z",
+      "representativeMenu": "KOKUMI 목살(180g) / 오겹살(180g) / 갈매기살(150g)",
+      "note": "네이버지도 검색 결과의 도로명·지번 주소를 대조하고 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1082960799/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1082960799",
+      "naverPlaceId": "1082960799",
+      "pageName": "꿉당",
+      "pageAddress": "서울 서초구 강남대로 615 1층 (잠원동 12-21)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_001", "name": "KOKUMI 목살(180g)", "price": "21,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_002", "name": "오겹살(180g)", "price": "21,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_003", "name": "갈매기살(150g)", "price": "21,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_004", "name": "가브리살(150g)", "price": "21,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_005", "name": "꿉살(150g)", "price": "21,000원", "description": "테이블당 2인분 한정", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_006", "name": "오세트라캐비아", "price": "65,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_007", "name": "강변외할머니 된장찌개", "price": "10,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_008", "name": "KOKUMI 쌀밥", "price": "3,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_009", "name": "생트러플 짜파게티", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_0eb12b158603_menu_010", "name": "팔도 비빔면", "price": "7,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1407082787",
@@ -929,9 +1148,44 @@
     "topic_enrichment_michelin-bib-gourmand_1b58b1582f57": {
       "name": "능동미나리",
       "address": "용산구 한강대로 40길 28, Seoul, 04386, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:30.053Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:49:00.000Z",
+      "representativeMenu": "[프리미엄] 차돌 모둠 곰탕 / 능동 미나리 곰탕 / 능동 육회 비빔밥",
+      "note": "네이버지도 검색 결과의 도로명·지번 주소를 대조하고 메뉴 더보기까지 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1036043935/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1036043935",
+      "naverPlaceId": "1036043935",
+      "pageName": "능동미나리 신용산점",
+      "pageAddress": "서울 용산구 한강대로40길 28 1, 2층 (한강로2가 148-6)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_001", "name": "[프리미엄] 차돌 모둠 곰탕", "price": "26,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_002", "name": "능동 미나리 곰탕", "price": "15,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_003", "name": "능동 육회 비빔밥", "price": "15,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_004", "name": "미나리 (특) 곰탕", "price": "20,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_005", "name": "능동 곰탕", "price": "14,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_006", "name": "능동 육회", "price": "27,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_007", "name": "능동 접시 수육", "price": "29,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_008", "name": "미나리 수육 전골 (소)", "price": "48,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_009", "name": "미나리 수육 전골 (중)", "price": "65,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_010", "name": "미나리 곱창 전골 (중)", "price": "58,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_011", "name": "미나리 곱창 전골 (대)", "price": "86,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 11 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_012", "name": "미나리 꼬리찜 (소)", "price": "56,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 12 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_013", "name": "미나리 꼬리찜 (대)", "price": "78,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 13 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_014", "name": "미나리 숙회", "price": "9,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 14 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_015", "name": "칼국수면 추가", "price": "2,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 15 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_016", "name": "소면 추가", "price": "2,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 16 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_017", "name": "전골 야채 추가", "price": "2,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 17 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_018", "name": "곱창+야채 추가", "price": "18,000원", "description": "100g", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 18 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_019", "name": "능동 더덕 막걸리", "price": "6,000원", "description": "750ml", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 19 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_020", "name": "소주", "price": "5,500원", "description": "참이슬 / 진로 / 처음처럼 / 새로", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 20 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_021", "name": "맥주", "price": "6,000원", "description": "카스 / 테라", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 21 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_022", "name": "프리미엄 소주", "price": "30,000원", "description": "일품진로 / 화요25 / 이강주 / 경복궁소주 / 안동소주(올소)", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 22 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_023", "name": "과실주", "price": "30,000원", "description": "고흥유자주 / 복분자주(복분자음)", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 23 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_024", "name": "하이볼", "price": "7,000원", "description": "짐빔하이볼 / 산토리하이볼", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 24 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_025", "name": "에이드", "price": "5,500원", "description": "복숭아 / 청포도 / 자몽", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 25 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_1b58b1582f57_menu_026", "name": "음료", "price": "2,000원", "description": "콜라 / 사이다 / 토닉워터", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 26 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "596181447",
@@ -1002,9 +1256,24 @@
     "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5": {
       "name": "담택",
       "address": "마포구 동교로12안길 51, Seoul, 04029, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:30.051Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:51:00.000Z",
+      "representativeMenu": "시오라멘 / 유자시오라멘 / 와사비라멘",
+      "note": "네이버지도 공개 주소와 저장 주소를 대조하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1068351637/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1068351637",
+      "naverPlaceId": "1068351637",
+      "pageName": "담택",
+      "pageAddress": "서울 마포구 동교로12안길 51 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_001", "name": "시오라멘", "price": "9,500원", "description": "능이+닭스프, 목살차슈, 닭고기차슈, 맛계란, 파", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_002", "name": "유자시오라멘", "price": "10,500원", "description": "능이+닭스프, 목살차슈, 닭고기차슈, 맛계란, 파, 유자소스", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_003", "name": "와사비라멘", "price": "11,500원", "description": "능이+닭스프, 지등심차슈, 닭고기차슈, 맛계란, 파, 부추, 양송이, 와사비 오일", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_004", "name": "새우시오라멘", "price": "11,500원", "description": "능이+닭스프, 지등심차슈, 닭고기차슈, 맛계란, 파, 미역, 가쓰오부시, 새우 오일", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_005", "name": "능이 고마멘", "price": "12,000원", "description": "능이, 검은깨, 검은깨소스, 고추기름, 맛계란, 샐러리, 자색양파, 민찌, 쪽파", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_2d1b7d6e99d5_menu_006", "name": "능이덮밥", "price": "4,500원", "description": "능이버섯, 차슈, 버터, 맛간장", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1534943798",
@@ -1570,10 +1839,28 @@
     "topic_enrichment_michelin-bib-gourmand_731b2b5dae10": {
       "name": "미필담",
       "address": "마포구 성지 3길 22, Seoul, 04083, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:31.220Z",
-      "menus": [],
-      "candidates": []
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:53:00.000Z",
+      "representativeMenu": "이북식 손만둣국 / 김치말이 국수 (하절기 메뉴) / 수육 무침 (반접시)",
+      "note": "네이버지도 공개 주소와 저장 주소를 대조하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1006791410/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1006791410",
+      "naverPlaceId": "1006791410",
+      "pageName": "미필담",
+      "pageAddress": "서울 마포구 성지3길 22 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_001", "name": "이북식 손만둣국", "price": "12,000원", "description": "슴슴한 이북식 손만두와 양지고기 육수로 맛을 낸 황해도식 만둣국", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_002", "name": "김치말이 국수 (하절기 메뉴)", "price": "12,000원", "description": "직접 담근 물김치에 소면과 찬밥을 말아 만든 김치말이 국수", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_003", "name": "수육 무침 (반접시)", "price": "15,000원", "description": "돼지고기와 미나리, 양파, 오이 등을 새콤달콤한 양념으로 버무린 메뉴", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_004", "name": "접시 만두 (6알)", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_005", "name": "접시 만두 (3알)", "price": "6,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_006", "name": "서주 감자술", "price": "10,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_007", "name": "잔술", "price": "2,000원", "description": "이강주 50ml", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_008", "name": "탄산음료", "price": "2,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_009", "name": "양지 온반 (동절기 메뉴)", "price": "13,000원", "description": "맑은 양지육수에 나물무침과 녹두전이 올라간 이북식 국밥", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_731b2b5dae10_menu_010", "name": "봄 비빔밥 (봄 한정)", "price": "13,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 }
+      ]
     },
     "topic_enrichment_michelin-bib-gourmand_7603a482f8ab": {
       "name": "바오하우스",
@@ -3178,9 +3465,26 @@
     "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff": {
       "name": "안목",
       "address": "수영구 광남로 22번길 3, Busan, 48307, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:33.528Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:54:00.000Z",
+      "representativeMenu": "돼지국밥 / 삼겹수육 대 / 돼지국밥(머릿고기)",
+      "note": "네이버지도 검색 결과의 도로명·지번 주소를 대조하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1194149183/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1194149183",
+      "naverPlaceId": "1194149183",
+      "pageName": "안목",
+      "pageAddress": "부산 수영구 광남로22번길 3 1층 101호 (남천동 8-16)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_001", "name": "삼겹수육 대", "price": "32,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_002", "name": "삼겹수육 소", "price": "16,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_003", "name": "맛보기수육", "price": "5,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_004", "name": "맛보기머릿고기", "price": "5,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_005", "name": "돼지국밥", "price": "10,000원", "description": "순수 돼지뼈를 24시간 이상 고은 돼지국밥", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_006", "name": "돼지국밥(머릿고기)", "price": "11,000원", "description": "꼬독꼬독한 식감의 머릿고기가 들어간 돼지국밥", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_007", "name": "돼지국밥(섞어)", "price": "10,500원", "description": "기본 고기와 머릿고기가 섞인 국밥", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_dfbcb81b0bff_menu_008", "name": "돼지라면", "price": "10,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1679374898",
@@ -4011,9 +4315,24 @@
     "topic_enrichment_michelin-bib-gourmand_ec81b148db70": {
       "name": "오레노 라멘",
       "address": "마포구 독막로 8길 16, Seoul, 04072, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:34.546Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:56:00.000Z",
+      "representativeMenu": "토리빠이탄 라멘 / 카라빠이탄 라멘 / 쯔꾸네차슈",
+      "note": "네이버지도 검색 결과의 도로명·지번 주소를 대조하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/814481697/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/814481697",
+      "naverPlaceId": "814481697",
+      "pageName": "오레노라멘 본점",
+      "pageAddress": "서울 마포구 독막로8길 16 1층 (합정동 362-3)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_001", "name": "토리빠이탄 라멘", "price": "13,000원", "description": "닭으로 만든 진하고 고소한 라멘", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_002", "name": "카라빠이탄 라멘", "price": "13,000원", "description": "매콤한 토리빠이탄 라멘", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_003", "name": "쯔꾸네차슈", "price": "3,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_004", "name": "계란추가", "price": "1,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_005", "name": "하이볼", "price": "7,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_ec81b148db70_menu_006", "name": "콜라", "price": "2,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1916682638",
@@ -4067,10 +4386,30 @@
     },
     "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7": {
       "name": "옥돌현옥",
-      "address": "송파구 오금로 36길 26-1, Seoul, 05700, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:34.477Z",
-      "menus": [],
+      "address": "송파구 법원로 55, Seoul, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:57:00.000Z",
+      "representativeMenu": "평양 물냉면 / 돼지곰탕 / 어복쟁반",
+      "note": "네이버지도에서 동일 식당과 미쉐린 표기를 확인해 이전 주소를 현재 주소로 교체하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1101561233/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1101561233",
+      "naverPlaceId": "1101561233",
+      "pageName": "옥돌현옥",
+      "pageAddress": "서울 송파구 법원로 55 송파아이파크 D존 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_001", "name": "평양 물냉면", "price": "15,000원", "description": "진한 육향과 어우러지는 슴슴한 맛의 평양식 물냉면", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_002", "name": "돼지곰탕", "price": "11,000원", "description": "진한 육향과 천연 감칠맛의 맑은 돼지곰탕", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_003", "name": "가자미 식해", "price": "20,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_004", "name": "어복쟁반", "price": "75,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_005", "name": "평양비빔냉면", "price": "15,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_006", "name": "소고기국밥", "price": "11,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_007", "name": "우수육 한접시", "price": "35,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_008", "name": "제수육 한접시", "price": "28,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_009", "name": "만둣국", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_010", "name": "손만두 한접시", "price": "15,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7_menu_011", "name": "손만두 4개", "price": "10,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 11 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "829656024",
@@ -4089,9 +4428,28 @@
     "topic_enrichment_michelin-bib-gourmand_948a029ffc18": {
       "name": "옥동식",
       "address": "마포구 양화로 7길 44-10, Seoul, 04035, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:34.485Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:58:00.000Z",
+      "representativeMenu": "돼지곰탕 (보통) / 돼지곰탕 (특) / 김치만두",
+      "note": "네이버지도 공개 주소와 저장 주소를 대조하고 전체 메뉴를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/859857359/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/859857359",
+      "naverPlaceId": "859857359",
+      "pageName": "옥동식",
+      "pageAddress": "서울 마포구 양화로7길 44-10",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_001", "name": "김치만두포장(냉동600g)", "price": "15,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_002", "name": "김치만두포장1kg", "price": "20,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_003", "name": "김치만두", "price": "7,000원", "description": "옥동식의 김치로 만든 매콤한 맛의 김치만두", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_004", "name": "돼지곰탕 (보통)", "price": "14,000원", "description": "버크셔K 앞다리와 뒷다리를 넣어 끓인 맑은 육수의 곰탕", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_005", "name": "돼지곰탕 (특)", "price": "19,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_006", "name": "곰탕포장", "price": "25,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_007", "name": "잔술", "price": "3,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_008", "name": "가펠생맥주 200cc", "price": "8,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_009", "name": "가펠생맥주 300cc", "price": "9,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "id": "topic_enrichment_michelin-bib-gourmand_948a029ffc18_menu_010", "name": "콤부차", "price": "6,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1797997961",
@@ -4634,9 +4992,142 @@
     "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3": {
       "name": "정인면옥",
       "address": "영등포구 국회대로 76길 10, Seoul, 07238, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:35.657Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T01:00:00.000Z",
+      "representativeMenu": "평양냉면(물,비빔) / 순면(물,비빔) / 어복쟁반",
+      "note": "네이버 지도에서 도로명 주소와 지번 주소를 대조하고 메뉴 탭 전체를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/34883067/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/34883067",
+      "naverPlaceId": "34883067",
+      "pageName": "정인면옥 본점",
+      "pageAddress": "서울 영등포구 국회대로76길 10 기독교침례회총회빌딩 1층 (여의도동 13-1)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_001",
+          "name": "평양냉면(물,비빔)",
+          "price": "15,000원",
+          "description": "물, 비빔, 온면",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_002",
+          "name": "순면(물,비빔)",
+          "price": "17,000원",
+          "description": "물, 비빔, 온면",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_003",
+          "name": "한우아롱사태수육 반접시",
+          "price": "22,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_004",
+          "name": "암퇘지편육 반접시",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_005",
+          "name": "접시만두 반접시",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_006",
+          "name": "한우 불고기",
+          "price": "38,000원",
+          "description": "한우 1++로 슴슴하고 자극적이지 않은 담백한 맛",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_007",
+          "name": "만두국/떡만두국",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_008",
+          "name": "한우아롱사태수육",
+          "price": "42,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_009",
+          "name": "녹두전",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_010",
+          "name": "암퇘지편육",
+          "price": "32,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_011",
+          "name": "냉면사리",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_012",
+          "name": "순면사리",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_013",
+          "name": "한우육개장",
+          "price": "15,000원",
+          "description": "1++등급 한우로 만든 시원한 평양식 육개장, 1일 50그릇 한정",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_014",
+          "name": "접시만두",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
+        },
+        {
+          "menuId": "topic_enrichment_michelin-bib-gourmand_49fe9eca81a3_menu_015",
+          "name": "어복쟁반",
+          "price": "78,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 15
+        }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "23699720",
@@ -4655,9 +5146,39 @@
     "topic_enrichment_michelin-bib-gourmand_c013858f8af2": {
       "name": "정짓간",
       "address": "사하구 비봉로 6, Busan, 49419, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:35.648Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T01:05:00.000Z",
+      "representativeMenu": "방아국밥(고기+방아잎) / 의성마늘국밥(고기+의성다진마늘) / 수육백반(항정살)",
+      "note": "네이버 지도에서 도로명·지번 주소를 대조하고 주문 메뉴의 국밥·파삼겹·막국수·사이드 메뉴 분류를 모두 확인함.",
+      "sourceUrl": "https://m.booking.naver.com/order/bizes/326874/items/4901412",
+      "placeUrl": "https://map.naver.com/p/entry/place/33860365",
+      "naverPlaceId": "33860365",
+      "pageName": "정짓간 신평본점",
+      "pageAddress": "부산 사하구 비봉로 6 1층 정짓간 (신평동 408-2)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_001", "name": "방아국밥(고기+방아잎)", "price": "11,500원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_002", "name": "의성마늘국밥(고기+의성다진마늘)", "price": "11,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_003", "name": "수육백반(항정살)", "price": "15,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_004", "name": "물막국수(자가제면)", "price": "10,500원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_005", "name": "파삼겹 2인분", "price": "29,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_006", "name": "만디국밥(고기+만두)", "price": "11,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_007", "name": "마라국밥(고기+마라소스)", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_008", "name": "돼지국밥(고기)", "price": "10,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_009", "name": "순대국밥(고기+순대)", "price": "10,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_010", "name": "내장국밥(고기+내장)", "price": "10,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_011", "name": "섞어국밥(고기+순대+내장)", "price": "11,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 11 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_012", "name": "어린이국밥", "price": "5,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 12 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_013", "name": "항정살 보쌈 中", "price": "36,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 13 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_014", "name": "항정살 보쌈 大", "price": "51,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 14 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_015", "name": "급냉대패삼겹 5인분", "price": "22,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 15 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_016", "name": "비빔막국수(자가제면)", "price": "10,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 16 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_017", "name": "왕만두 3개", "price": "5,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 17 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_018", "name": "왕만두 5개", "price": "8,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 18 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_019", "name": "맛보기수육", "price": "14,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 19 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_020", "name": "맛순대", "price": "9,500원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 20 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_c013858f8af2_menu_021", "name": "모듬순대(순대+오소리감투)", "price": "18,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 21 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1372738122",
@@ -5026,9 +5547,24 @@
     "topic_enrichment_michelin-bib-gourmand_ee623682524d": {
       "name": "평양집",
       "address": "북구 금곡대로 20번길 21, Busan, 46547, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:36.246Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T01:10:00.000Z",
+      "representativeMenu": "만두백반 김치만두 / 만두백반 두부만두 / 녹두빈대떡 2장",
+      "note": "네이버 지도에서 도로명·지번 주소를 대조하고 메뉴 탭 전체를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1390963010/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1390963010",
+      "naverPlaceId": "1390963010",
+      "pageName": "평양집",
+      "pageAddress": "부산 북구 금곡대로20번길 21 1층 (덕천동 333-25)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_001", "name": "만두백반 김치만두", "price": "10,000원", "description": "아삭한 김치가 들어간 평양식 만두국", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_002", "name": "만두백반 두부만두", "price": "10,000원", "description": "담백하고 깔끔한 이북식 만두", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_003", "name": "녹두빈대떡 2장", "price": "12,000원", "description": "매일 맷돌로 곱게 간 녹두 빈대떡", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_004", "name": "녹두전재료 100%녹두", "price": "20,000원", "description": "100% 녹두, 굽기만 하면 되는 포장 재료", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_005", "name": "포장만두국육수(양지고기양념포함)", "price": "15,000원", "description": "5인분 분량", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_ee623682524d_menu_006", "name": "포장냉동만두 1kg 약15개", "price": "15,000원", "description": "5인분 분량", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "12293207",
@@ -5624,9 +6160,28 @@
     "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a": {
       "name": "합천국밥집",
       "address": "남구 용호로 235, Busan, 48593, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:37.371Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T01:15:00.000Z",
+      "representativeMenu": "따로국밥 / 수육백반 / 수육 대",
+      "note": "네이버 지도에서 저장 주소와 도로명·지번 주소를 대조하고 메뉴 탭 전체를 확인함. 카카오 후보의 용호로 237이 아닌 네이버 미쉐린 등록 매장의 용호로 235가 일치함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/11872316/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/11872316",
+      "naverPlaceId": "11872316",
+      "pageName": "합천국밥집",
+      "pageAddress": "부산 남구 용호로 235 (용호동 554-3)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_001", "name": "따로국밥", "price": "12,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_002", "name": "수육백반", "price": "14,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_003", "name": "수육 대", "price": "45,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_004", "name": "수육 소", "price": "40,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_005", "name": "섞어따로국밥", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 5 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_006", "name": "내장따로국밥", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 6 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_007", "name": "순대따로국밥", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 7 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_008", "name": "모듬따로국밥", "price": "12,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 8 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_009", "name": "순대 소", "price": "30,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 9 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a_menu_010", "name": "순대 대", "price": "35,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 10 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "1420643780",
@@ -5945,9 +6500,22 @@
     "topic_enrichment_michelin-bib-gourmand_9fb7650c0147": {
       "name": "화해당",
       "address": "영등포구 국회대로 62길 15, Seoul, 07236, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:37.385Z",
-      "menus": [],
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T01:20:00.000Z",
+      "representativeMenu": "간장게장과 돌솥밥 / 우럭포 찜 / 1마리 추가",
+      "note": "네이버 지도에서 도로명·지번 주소를 대조하고 메뉴 탭 전체를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/35379094/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/35379094",
+      "naverPlaceId": "35379094",
+      "pageName": "화해당 여의도점",
+      "pageAddress": "서울 영등포구 국회대로62길 15 광복회관 1층 3호 (여의도동 17-6)",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147_menu_001", "name": "간장게장과 돌솥밥", "price": "50,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 1 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147_menu_002", "name": "우럭포 찜", "price": "75,000원", "isSignature": true, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 2 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147_menu_003", "name": "1마리 추가", "price": "42,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 3 },
+        { "menuId": "topic_enrichment_michelin-bib-gourmand_9fb7650c0147_menu_004", "name": "포장 1kg", "price": "165,000원", "isSignature": false, "sourceUpdatedAt": "2026-07-19", "sourceOrdinal": 4 }
+      ],
       "candidates": [
         {
           "kakaoPlaceId": "25148510",

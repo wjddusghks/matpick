@@ -1,6 +1,6 @@
 {
   "datasetId": "baekban-trip",
-  "generatedAt": "2026-03-22T10:52:11.657Z",
+  "generatedAt": "2026-07-19T04:56:10.388Z",
   "restaurants": [
     {
       "id": "sikgaek-baekban-trip_restaurant_001",
@@ -10932,16 +10932,113 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_688",
-      "name": "부산 양가네양곱창",
-      "region": "부산 해운대구",
-      "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
+      "name": "양가네양곱창",
+      "region": "부산 수영구",
+      "address": "부산 수영구 감포로 106 세화빌딩 1층",
       "category": "양곱창구이",
-      "representativeMenu": "",
-      "lat": 35.1628248,
-      "lng": 129.1589788,
+      "representativeMenu": "모듬구이 170g / 대창구이 170g / 특양구이 150g",
+      "lat": 35.16794155086493,
+      "lng": 129.11783994670986,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_001",
+          "name": "특양구이 150g",
+          "price": "29,000원",
+          "description": "부드러우면서 소주가 생각나는 아삭한 특양구이, 플러스 건강에도 좋다.",
+          "isSignature": false,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_002",
+          "name": "모듬구이 170g",
+          "price": "28,000원",
+          "description": "특양+대창+곱창",
+          "isSignature": true,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_003",
+          "name": "대창구이 170g",
+          "price": "27,000원",
+          "description": "고소하면서 쫄깃하니 입안에서 부드럽게 녹아버리는 대창구이",
+          "isSignature": true,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_004",
+          "name": "곱창구이 170g",
+          "price": "27,000원",
+          "description": "쌉쌀하니 쫄깃하면서 고소한 곱창구이",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_005",
+          "name": "양볶음밥(1인분)",
+          "price": "10,000원",
+          "description": "식사와 안주로도 인기만점인 메뉴.",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_006",
+          "name": "된장찌개",
+          "price": "7,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_007",
+          "name": "우동",
+          "price": "7,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_008",
+          "name": "화요25도",
+          "price": "25,000원",
+          "description": "적절한 냉장보관으로 가장 시원하게 드실 수 있도록 만들었습니다. 여러종의 맥주가 있습니다.",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_009",
+          "name": "화요41도",
+          "price": "50,000원",
+          "description": "여러 냉장고에 시원한 온도를 유지하기위해 저온으로 보관해 놓습니다. 부산 지역술, 진로있음",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_010",
+          "name": "매취순",
+          "price": "15,000원",
+          "description": "매취순",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_011",
+          "name": "청하",
+          "price": "6,000원",
+          "description": "청하",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_688_menu_012",
+          "name": "칭따오",
+          "price": "6,000원",
+          "description": "칭따오",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },
@@ -10992,46 +11089,537 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_692",
-      "name": "순천 대박집",
+      "name": "대박집",
       "region": "전남 순천시",
       "address": "전남 순천시 대석3길 10 (연향동 1473-8)",
       "category": "붕장어회",
-      "representativeMenu": "",
+      "representativeMenu": "닭도리탕(중) / 돼지주물럭(중) / 김치찌개(중)",
       "lat": 34.946752,
       "lng": 127.5258197,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_001",
+          "name": "닭도리탕(중)",
+          "price": "26,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_002",
+          "name": "닭도리탕(대)",
+          "price": "35,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_003",
+          "name": "돼지주물럭(중)",
+          "price": "26,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_004",
+          "name": "돼지주물럭(대)",
+          "price": "35,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_005",
+          "name": "김치찌개(중)",
+          "price": "25,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_006",
+          "name": "김치찌개(대)",
+          "price": "32,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_007",
+          "name": "두부김치",
+          "price": "25,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_008",
+          "name": "물메기탕(대)",
+          "price": "52,000원",
+          "description": "반건조",
+          "isSignature": true,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_009",
+          "name": "물메기탕(중)",
+          "price": "38,000원",
+          "description": "반건조",
+          "isSignature": true,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_010",
+          "name": "동태탕(러시아산)(중)",
+          "price": "28,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_011",
+          "name": "동태탕(러시아산)(대)",
+          "price": "38,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_012",
+          "name": "갑오징어데침",
+          "price": "15,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_013",
+          "name": "갑오징어회무침",
+          "price": "30,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_014",
+          "name": "계란말이",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_015",
+          "name": "닭 한마리",
+          "price": "35,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_016",
+          "name": "닭 반마리",
+          "price": "26,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_017",
+          "name": "닭한마리+문어",
+          "price": "65,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_018",
+          "name": "닭반마리+문어",
+          "price": "51,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_019",
+          "name": "서대조림",
+          "price": "50,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_020",
+          "name": "서대회무침",
+          "price": "40,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_021",
+          "name": "공기밥",
+          "price": "1,500원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_022",
+          "name": "계란후라이(4p)",
+          "price": "3,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_023",
+          "name": "김밥2줄(2줄)",
+          "price": "5,000원",
+          "description": "단무지+계란+이것저것",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_024",
+          "name": "칼국수사리",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_025",
+          "name": "볶음밥",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_026",
+          "name": "눌린누룽지",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_027",
+          "name": "떡 사리",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 27
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_028",
+          "name": "두부사리",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 28
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_029",
+          "name": "감자사리",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 29
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_030",
+          "name": "라면사리",
+          "price": "1,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 30
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_031",
+          "name": "코카콜라(355ml)",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 31
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_032",
+          "name": "스프라이트(355ml)",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 32
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_033",
+          "name": "환타(355ml)",
+          "price": "2,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 33
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_034",
+          "name": "배추묵은지(2kg)",
+          "price": "15,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 34
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_692_menu_035",
+          "name": "익은갓김치(1kg500g)",
+          "price": "15,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 35
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_693",
-      "name": "서울 리숨두부",
+      "name": "리두부로",
       "region": "서울 서초구",
       "address": "서울 서초구 원터4길 7 (원지동 374-1)",
       "category": "숨두부, 콩탕",
-      "representativeMenu": "",
+      "representativeMenu": "더블두부 버섯전골 (홍탕 / 백탕) / 더블두부 손만두전골 (홍탕 / 백탕) / 더블 짜박두부",
       "lat": 37.4437312,
       "lng": 127.0557498,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_001",
+          "name": "더블두부 버섯전골 (홍탕 / 백탕)",
+          "price": "25,000~35,000원",
+          "description": "풍성한 버섯과 우리 콩으로 만든 두부, 신선한 채소로 완성한 자연의 감칠맛, 두부 버섯전골",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_002",
+          "name": "더블두부 손만두전골 (홍탕 / 백탕)",
+          "price": "35,000~45,000원",
+          "description": "8시간 우려낸 사골의 깊은 풍미, 우리 콩 두부와 손만두의 화려한 조화, 두부 손만두전골",
+          "isSignature": true,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_003",
+          "name": "더블 짜박두부",
+          "price": "22,000원",
+          "description": "우리 콩으로 만든 우리 두부를 리두부로 비법 양념으로 졸여 감칠맛을 살린 짜박두부",
+          "isSignature": true,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_004",
+          "name": "대패삼겹 짜박두부",
+          "price": "26,000원",
+          "description": "부드러운 대패삼겹과 시그니처 두부를 특제 양념장으로 짜박하게 졸여 만든 스페셜 두부요리",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_005",
+          "name": "차돌양지 짜박두부",
+          "price": "28,000원",
+          "description": "우리 콩 두부와 고소한 차돌양지를 듬뿍 넣어 특제 양념장으로 맛을 낸 감칠맛 폭탄 두부요리",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_006",
+          "name": "더블 보쌈",
+          "price": "38,000~48,000원",
+          "description": "국내산 최상급 한돈으로 정성껏 삶아낸 수육과 우리콩 서리태, 백태로 만든 흑백두부",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_007",
+          "name": "남다른 육전",
+          "price": "25,000원",
+          "description": "부드러운 소고기를 달걀물과 함께 부쳐낸 육즙 가득, 고소함 가득 남다른 육전",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_008",
+          "name": "남다른 해물파전",
+          "price": "20,000원",
+          "description": "도토리 가루의 고소함과 해물의 감칠맛이 만난 해물파전 [곁들임: 야채간장]",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_009",
+          "name": "남다른 구운 두부",
+          "price": "18,000원",
+          "description": "향긋한 송이버섯 구이와 부추무침, 우리 두부를 노릇하게 구워 만든 남다른 구운 두부",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_010",
+          "name": "색다른 두부김치",
+          "price": "16,000원",
+          "description": "우리 콩 서리태, 백태로 만든 두부와 알맞게 익은 김치를 볶아 검은깨 송송 색다른 두부김치",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_011",
+          "name": "더블콩 더블두부",
+          "price": "10,000원",
+          "description": "맛, 향이 다른 두 개의 콩! 우리 콩 서리태 백태로 만든 투 톤의 색다른 시그니처 두부",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_012",
+          "name": "더블 콩탕",
+          "price": "9,000원",
+          "description": "우리 콩 서리태, 백태 2가지 콩의 영양성분이 그대로 들어간 담백하고 달큰한 콩스프",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_013",
+          "name": "더블콩 더블순두부",
+          "price": "9,000원",
+          "description": "서리태 백태 두가지 콩으로 만든 영양 가득, 부드러운 스페셜 시그니처 순두부",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_014",
+          "name": "까망까망 콩국수(온/냉)",
+          "price": "12,000원",
+          "description": "우리 콩 서리태 백태를 직화로 쪄내 갈아 만들어 더 맛좋고 영양성분 가득한 까망 콩국수",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_015",
+          "name": "색다른 순두부 짬뽕",
+          "price": "13,000원",
+          "description": "깊고 얼큰한 국물에 우리 콩 순두부와 신선한 채소, 풍성한 해산물이 어우러진 한 그릇",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_016",
+          "name": "시래기 콩비지탕",
+          "price": "10,000원",
+          "description": "3번 우려낸 사골 육수에 양구 시래기와 재래식 된장, 영양 가득 비지를 담은 시래기 콩비지",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_017",
+          "name": "더블 콩물 - Takeaway",
+          "price": "변동",
+          "description": "국내산 100% 서리태와 백태를 각각 직화로 쪄 내 통째로 갈아서 만든 리두부로의 콩물",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_018",
+          "name": "까만콩 리두유 - Takeaway",
+          "price": "6,000원",
+          "description": "블랙푸드인 검은콩의 대명사로 불리는 서리태로 만든 순수 손두유",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_019",
+          "name": "하얀콩 리두유 - Takeaway",
+          "price": "6,000원",
+          "description": "100% 순수한 우리 콩 원액과 정제수로 만든 리두부로의 수제 두유",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_020",
+          "name": "더블콩 더블두부 - Takeaway",
+          "price": "변동",
+          "description": "성분, 질감, 색, 맛, 향이 다른 두 개의 콩으로 만든 투 톤의 색다른 두부",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_021",
+          "name": "시래기 콩비지탕 - Takeaway",
+          "price": "변동",
+          "description": "사골 베이스에 양구 시래기, 영양 가득 비지, 재래식 된장으로 조리한 영양 콩비지탕",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_693_menu_022",
+          "name": "더블콩 더블순두부 - Takeaway",
+          "price": "변동",
+          "description": "백태의 구수함과 서리태의 부드러운 단맛이 어우러져 더욱 특별해진 순두부",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_694",
-      "name": "성남 고미꽃시래",
-      "region": "경기 성남시",
-      "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
+      "name": "고미꽃시래 오포능평본점",
+      "region": "경기 광주시",
+      "address": "경기 광주시 오포로 141-5 리치마트 진입후 뒤 골프존건물1층 고미꽃시래오포능평본점",
       "category": "시래기요리",
-      "representativeMenu": "",
-      "lat": 37.376667,
-      "lng": 127.1404097,
+      "representativeMenu": "묵은지시래기고등어조림 직화제육 들깨탕세트 / LA갈비구이 직화쭈꾸미 시래기들깨탕 세트 / 생선구이 직화제육 시래기들깨탕 세트",
+      "lat": 0,
+      "lng": 0,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_694_menu_001",
+          "name": "묵은지시래기고등어조림 직화제육 들깨탕세트[식객허영만]",
+          "price": "21,800원",
+          "description": "노르웨이 고등어 조림(부드러운 양구시래기, 부드러운 묵은지, 달큰한 무), 주문과 동시에 불맛을 입힌 직화제육, 시래기청국장. 2인부터 주문",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_694_menu_002",
+          "name": "LA갈비구이 직화쭈꾸미 시래기들깨탕 세트",
+          "price": "28,800원",
+          "description": "미국산 최상위 프라임 초이스등급 LA갈비, 부드러운 양구시래기, 직화쭈꾸미, 시래기들깨탕 세트. 2인부터 주문",
+          "isSignature": true,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_694_menu_003",
+          "name": "생선구이 직화제육 시래기들깨탕 세트",
+          "price": "22,800원",
+          "description": "노르웨이 고등어구이와 임연수구이, 직화제육, 양구시래기들깨탕. 2인부터 주문",
+          "isSignature": true,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_694_menu_004",
+          "name": "제주갈치조림 직화제육 시래기들깨탕 세트",
+          "price": "25,800원",
+          "description": "항공편 냉장 직송 제주산 갈치 조림(부드러운 양구시래기, 달큰한 무), 직화제육, 양구산 시래기들깨탕. 2인부터 주문",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },
@@ -11082,16 +11670,25 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_698",
-      "name": "고성 송암현대떡방앗간",
+      "name": "송암현대떡방앗간",
       "region": "강원 고성군",
-      "address": "강원 고성군 죽왕면 동해대로 5623 (송암리 237)",
+      "address": "강원 고성군 죽왕면 동해대로 5623",
       "category": "감자시루떡",
-      "representativeMenu": "",
+      "representativeMenu": "감자시루떡",
       "lat": 38.3064031,
       "lng": 128.5359703,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_698_menu_001",
+          "name": "감자시루떡(1판)",
+          "price": "32,000원",
+          "description": "1판 기준",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },
@@ -11157,16 +11754,97 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_703",
-      "name": "가평 황보네주막",
+      "name": "황보네주막",
       "region": "경기 가평군",
-      "address": "경기 가평군 설악면 다락재로 8 (회곡리 산22-1)",
+      "address": "경기 가평군 설악면 유명로 1833-9",
       "category": "두부김치",
-      "representativeMenu": "",
+      "representativeMenu": "허파볶음 / 소내장탕 / 제육볶음",
       "lat": 37.6765703,
       "lng": 127.4699579,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_001",
+          "name": "허파볶음",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_002",
+          "name": "소내장탕",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_003",
+          "name": "제육볶음",
+          "price": "13,000원",
+          "description": null,
+          "isSignature": true,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_004",
+          "name": "삼겹살",
+          "price": "17,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_005",
+          "name": "골뱅이무침",
+          "price": "15,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_006",
+          "name": "코다리",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_007",
+          "name": "도토리묵",
+          "price": "13,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_008",
+          "name": "해물파전",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_009",
+          "name": "감자전",
+          "price": "12,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_703_menu_010",
+          "name": "멸치국수",
+          "price": "8,000원",
+          "description": null,
+          "isSignature": false,
+          "sourceOrdinal": 10
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false
     },

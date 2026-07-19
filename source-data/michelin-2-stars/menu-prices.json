@@ -1,35 +1,45 @@
 {
   "source": "Kakao Maps public place search and place panel",
-  "collectedAt": "2026-07-18T21:45:06.473Z",
-  "runStatus": "partial",
+  "collectedAt": "2026-07-19T03:38:04.331Z",
+  "runStatus": "complete",
   "matchingMethod": "restaurant name + address + coordinate distance",
   "totalRestaurantCount": 3,
   "processedCount": 3,
-  "matchedCount": 2,
-  "pricedRestaurantCount": 2,
-  "pricedMenuCount": 12,
-  "unmatchedCount": 1,
+  "matchedCount": 3,
+  "pricedRestaurantCount": 3,
+  "pricedMenuCount": 15,
+  "unmatchedCount": 0,
   "closedCount": 0,
   "errorCount": 0,
   "restaurants": {
     "topic_enrichment_michelin-2-stars_d2dd9eeff8be": {
       "name": "모수",
-      "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:28.887Z",
-      "menus": [],
-      "candidates": [
+      "address": "서울 용산구 회나무로41길 4 1층 2층",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T03:38:04.331Z",
+      "representativeMenu": "Lunch Tasting Course / Dinner Tasting Course",
+      "note": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함.",
+      "menus": [
         {
-          "kakaoPlaceId": "1791830911",
-          "name": "모수 서울",
-          "address": "서울 용산구 회나무로41길 4",
-          "query": "모수 서울시 용산구",
-          "total": 170,
-          "nameScore": 130,
-          "addressScore": 60,
-          "distanceScore": 140,
-          "localityPenalty": -160,
-          "distanceMeters": 5
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_001",
+          "name": "Lunch Tasting Course",
+          "price": "320,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_002",
+          "name": "Dinner Tasting Course",
+          "price": "420,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_003",
+          "name": "Corkage",
+          "price": "200,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
         }
       ]
     },

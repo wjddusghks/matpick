@@ -1,6 +1,6 @@
 {
   "datasetId": "baekjong-wok",
-  "generatedAt": "2026-07-18T21:45:12.295Z",
+  "generatedAt": "2026-07-19T05:36:27.125Z",
   "restaurants": [
     {
       "id": "topic_enrichment_baekjong-wok_6a00fbce20f8",
@@ -43,7 +43,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/29907814",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -574,19 +574,48 @@
     },
     {
       "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
-      "name": "거인통닭",
-      "region": "부산 중구",
-      "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+      "name": "거인통닭 본점",
+      "region": "부산 서구",
+      "address": "부산 서구 부용로38번길 3 1층",
       "category": "치킨,닭강정",
       "representativeMenu": "치킨",
-      "lat": 35.1023409,
-      "lng": 129.02611539999998,
+      "lat": 35.10752399593097,
+      "lng": 129.01904394244934,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_a77a994d11bc.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_a77a994d11bc_menu_001",
+          "name": "치킨",
+          "price": "26,000원",
+          "description": "후라이드치킨",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_a77a994d11bc_menu_002",
+          "name": "음료수",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJr5nLYp_paDUR3os__LRqtm0",
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "8688860",
+      "placeUrl": "https://m.place.naver.com/restaurant/16425005/menu/list",
+      "operationStatus": "영업(이전)",
+      "operationSummary": "부산 서구 부용로38번길 3으로 이전해 거인통닭 본점으로 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에서는 영업하지 않으며 부산 서구 부용로38번길 3의 이전 매장 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/16425005/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_b57649123232",
@@ -925,7 +954,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16217060",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1121,7 +1150,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16043925",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1170,17 +1199,66 @@
       "id": "topic_enrichment_baekjong-wok_b52a0e6ece80",
       "name": "고단백식당",
       "region": "대전 중구",
-      "address": "대전 중구 대종로517번길 62 (선화동 282-11)",
+      "address": "대전 중구 충무로92번길 50 1층",
       "category": "국수",
-      "representativeMenu": "콩국수",
-      "lat": 36.328643199999995,
-      "lng": 127.42111440000001,
+      "representativeMenu": "검은콩국수",
+      "lat": 36.315579702511556,
+      "lng": 127.42849183483388,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_b52a0e6ece80.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_b52a0e6ece80_menu_001",
+          "name": "검은콩국수",
+          "price": "12,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_b52a0e6ece80_menu_002",
+          "name": "노란콩국수",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_b52a0e6ece80_menu_003",
+          "name": "사리 1인분",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_b52a0e6ece80_menu_004",
+          "name": "검정콩물 1.5L(3인)",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_b52a0e6ece80_menu_005",
+          "name": "노랑콩물 1.5L(3인)",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJF25gEyZJZTURhkvWm6t8E0w",
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "10159821",
+      "placeUrl": "https://m.place.naver.com/restaurant/16049935/menu/list",
+      "operationStatus": "영업(이전)",
+      "operationSummary": "대전 중구 충무로92번길 50으로 이전해 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소가 아닌 대전 중구 충무로92번길 50의 이전 매장 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/16049935/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_372971463e2d",
@@ -1301,7 +1379,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8646891",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1382,7 +1460,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8751538",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1597,7 +1675,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16213903",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1692,7 +1770,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16936771",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -1851,7 +1929,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJTy9h3NBIZTURP2IkgDcHn9U",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://polle.com/place/1xXdkk/%EA%B3%B5%EC%A3%BC%EB%B6%84%EC%8B%9D",
+      "operationStatus": "폐업 확인",
+      "operationSummary": "뽈레가 저장 주소의 공주분식을 폐점으로 표시함.",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "뽈레가 저장 주소의 공주분식을 폐점으로 표시함.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/1xXdkk/%EA%B3%B5%EC%A3%BC%EB%B6%84%EC%8B%9D",
+          "label": "뽈레 폐점 표기"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_3546bc8a1002",
@@ -2014,7 +2104,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8204729",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -2160,7 +2250,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/15938912",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -2567,7 +2657,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/26884074",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -3025,7 +3115,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/27220184",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -3262,7 +3352,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/14592386",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -3280,7 +3370,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJ5dVXQemYfDURWB4bCz12x-0",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1707839290",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "연남동 식당은 지도에서 사라졌고 저장 주소에는 해브·무심·광계가 영업 중. 동명 법인은 남양주의 식품판매업으로 확인됨.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "연남동 식당은 지도에서 사라졌고 저장 주소에는 해브·무심·광계가 영업 중. 동명 법인은 남양주의 식품판매업으로 확인됨.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1707839290",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_450fee165f74",
@@ -3535,7 +3637,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16634139",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -3821,7 +3923,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/1427378789",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -4097,7 +4199,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/25036332",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -4105,17 +4207,51 @@
       "id": "topic_enrichment_baekjong-wok_88ee18fc3f75",
       "name": "노량진수제비",
       "region": "서울 동작구",
-      "address": "서울 동작구 여의대방로22길 121 (신대방동 724)",
+      "address": "서울 동작구 성대로1길 8 1층",
       "category": "",
-      "representativeMenu": "수제비",
-      "lat": 37.4983814,
-      "lng": 126.9265683,
+      "representativeMenu": "오리지널수제비",
+      "lat": 37.50047722789794,
+      "lng": 126.93297362061516,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_88ee18fc3f75.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_88ee18fc3f75_menu_001",
+          "name": "오리지널수제비",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_88ee18fc3f75_menu_002",
+          "name": "들깨수제비",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_88ee18fc3f75_menu_003",
+          "name": "얼큰수제비",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJQ_0FL_GffDURCCv5xXkfV-c",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/restaurant/2006095781/menu/list",
+      "operationStatus": "영업(이전)",
+      "operationSummary": "서울 동작구 성대로1길 8 1층으로 이전해 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소가 아닌 상도동 이전 매장의 공개 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/2006095781/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_35a4a0af6d81",
@@ -4485,7 +4621,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10288996",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -4802,7 +4938,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10262460",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -4847,7 +4983,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/19966829",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -4934,7 +5070,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/18951226",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -5117,7 +5253,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJqRf8KwCHZDURm0Ghez1gSCo",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.bizno.net/",
+      "operationStatus": "폐업 확인",
+      "operationSummary": "사업자 상태 조회에서 2021-07-29 폐업으로 확인됨.",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "사업자 상태 조회에서 2021-07-29 폐업으로 확인됨.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.bizno.net/",
+          "label": "사업자 상태 조회"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_76ba297c5082",
@@ -5607,7 +5755,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJJXi3SxqhfDURmVM-svRZNFE",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1033840304",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소의 현 음식점은 역전할머니맥주 서울낙성대역점이며 돈파스팔레의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소의 현 음식점은 역전할머니맥주 서울낙성대역점이며 돈파스팔레의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1033840304",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_2d3ae8c6337e",
@@ -5979,7 +6139,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/1254789229",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -6196,7 +6356,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/7850373",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -6428,7 +6588,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJDSJiWeiYfDURNLzrV1UpqN4",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/841974108",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소 1층은 우리할매떡볶이 홍대점 등으로 교체됐고 마녀커리크림치킨의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소 1층은 우리할매떡볶이 홍대점 등으로 교체됐고 마녀커리크림치킨의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/841974108",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_e20430d65c36",
@@ -6436,15 +6608,258 @@
       "region": "서울 용산구",
       "address": "서울 용산구 이태원로 164-1 (이태원동 72-32)",
       "category": "양식",
-      "representativeMenu": "아랍음식",
+      "representativeMenu": "레몬치킨",
       "lat": 37.5340263,
       "lng": 126.99232269999999,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_e20430d65c36.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_001",
+          "name": "레몬치킨",
+          "price": "20,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_002",
+          "name": "소고기코프타",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_003",
+          "name": "포테이토 타진",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_004",
+          "name": "쉬림프 타진",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_005",
+          "name": "그린피 타진",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_006",
+          "name": "트파야 타진",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_007",
+          "name": "비프 코프타 타진",
+          "price": "2,000원",
+          "description": "공개 표기값. 오기 가능성이 있어 주문 전 확인 필요",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_008",
+          "name": "그릴드 비프 스테이크 위드 브라운 소스",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_009",
+          "name": "그릴드 살몬 위드 타르타르 소스",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_010",
+          "name": "로얄 쿠스쿠스",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_011",
+          "name": "쉬림프 샐러드",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_012",
+          "name": "올리브 샐러드",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_013",
+          "name": "타블리 샐러드",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_014",
+          "name": "가든 튜나 샐러드",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_015",
+          "name": "잘룩 샐러드",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_016",
+          "name": "호무스",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_017",
+          "name": "호무스 위드 비프 코프타",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_018",
+          "name": "하리라 스프",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_019",
+          "name": "모로칸 샌드위치",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_020",
+          "name": "샤크쉬우커 샐러드",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_021",
+          "name": "팔라펠 세트",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_022",
+          "name": "스파게티 위드 미트볼",
+          "price": "2,000원",
+          "description": "공개 표기값. 오기 가능성이 있어 주문 전 확인 필요",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_023",
+          "name": "쿠스쿠스 위드 비프·램·치킨 중 선택",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_024",
+          "name": "비프 꼬치 요리",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_025",
+          "name": "램 꼬치 요리",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_026",
+          "name": "치킨 꼬치 요리",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_027",
+          "name": "믹스 그릴",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 27
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_028",
+          "name": "램 챱",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 28
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_029",
+          "name": "바스티야",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 29
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_030",
+          "name": "모로칸 쿠키",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 30
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_031",
+          "name": "민트티",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 31
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_e20430d65c36_menu_032",
+          "name": "모로칸 커피",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 32
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJVbhQkKyifDUROpBWSNJc_IQ",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/restaurant/11893060/menu/list",
+      "phone": "02-795-9441",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "공개 메뉴 32개를 반영함. 비프 코프타 타진과 스파게티 위드 미트볼의 2,000원 표기는 여러 공개 서비스에 동일하게 노출되지만 오기 가능성이 있어 확인 필요.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/11893060/menu/list",
+          "label": "네이버 플레이스 공개 메뉴"
+        },
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=60KA3TpMspJ1",
+          "label": "다이닝코드 공개 메뉴 교차 확인"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_e0c80c818252",
@@ -7227,7 +7642,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10343718",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -7679,7 +8094,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/7878450",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -7983,7 +8398,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/846133409",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -8123,15 +8538,92 @@
       "region": "대구 수성구",
       "address": "대구 수성구 들안로 87 (상동 12-7)",
       "category": "복어요리",
-      "representativeMenu": "복어불고기",
+      "representativeMenu": "까치콩나물불고기",
       "lat": 35.8326253,
       "lng": 128.5662762,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_8ee8283cae53.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_001",
+          "name": "까치콩나물불고기",
+          "price": "21,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_002",
+          "name": "까치모듬불고기",
+          "price": "24,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_003",
+          "name": "참복어탕 또는 맑은탕",
+          "price": "21,000원",
+          "description": "국내산",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_004",
+          "name": "복어튀김",
+          "price": "27,000~35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_005",
+          "name": "콩나물불고기",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_006",
+          "name": "밀복어탕 또는 맑은탕",
+          "price": "16,000원",
+          "description": "국내산",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_007",
+          "name": "얼큰복어탕",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_008",
+          "name": "껍질무침회",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_8ee8283cae53_menu_009",
+          "name": "어린이 메뉴 복까스",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJIXVBPJHlZTURbop_8Z8xs-s",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/restaurant/11724371/menu/list",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "네이버 플레이스의 현재 공개 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/11724371/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_968fe9b9aa2a",
@@ -8242,7 +8734,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJxeo3saSffDURv3X7p8uTm8E",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/3421919",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 서울미트볼 선유도역점이 영업 중이며 해당 식당의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 서울미트볼 선유도역점이 영업 중이며 해당 식당의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/3421919",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_bac317ab1944",
@@ -8862,7 +9366,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9835230",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9104,7 +9608,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1920277019",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 카페토브가 영업 중이며 발리비스트로의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 카페토브가 영업 중이며 발리비스트로의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1920277019",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_42ed76417b00",
@@ -9303,7 +9819,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/7886148",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9362,7 +9878,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/7886000",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9561,7 +10077,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8336134",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9798,7 +10314,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/21326439",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9813,10 +10329,56 @@
       "lng": 126.7751349,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_2c7e4e9fcf73.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73_menu_001",
+          "name": "육개장",
+          "price": "8,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73_menu_002",
+          "name": "뚝배기불고기",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73_menu_003",
+          "name": "선지해장국",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73_menu_004",
+          "name": "전통삼계탕",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJpdl-wIyNfDURPmY6A2nf8AU",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://stay-gyo.tistory.com/entry/%ED%8C%8C%EC%A3%BC-%EB%85%B8%ED%8F%AC-%EB%B3%B4%EB%B0%B0%EC%A7%91-%EA%B5%AD%EA%B0%80%EA%B0%80-%ED%97%88%EB%9D%BD%ED%95%9C-%EC%9C%A1%EA%B0%9C%EC%9E%A5-%EB%85%B8%ED%8F%AC",
+      "phone": "031-941-3660",
+      "operationStatus": "영업 여부 주의",
+      "operationSummary": "파주시 공개 가맹점·식품영업 자료에는 남아 있으나 포털 지도 등록은 확인되지 않음.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "2026년 공개 가맹점 자료에는 사업장이 남아 있으나 지도 등록을 확인하지 못함. 가격은 2022년 1월 방문 메뉴판 기준이므로 방문 전 전화 확인 필요.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.paju.go.kr/",
+          "label": "파주시 공개 가맹점 자료"
+        },
+        {
+          "url": "https://stay-gyo.tistory.com/entry/%ED%8C%8C%EC%A3%BC-%EB%85%B8%ED%8F%AC-%EB%B3%B4%EB%B0%B0%EC%A7%91-%EA%B5%AD%EA%B0%80%EA%B0%80-%ED%97%88%EB%9D%BD%ED%95%9C-%EC%9C%A1%EA%B0%9C%EC%9E%A5-%EB%85%B8%ED%8F%AC",
+          "label": "2022년 방문 메뉴판"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_924d781488b1",
@@ -9881,7 +10443,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/11055444",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -9983,7 +10545,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/15470522",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -10373,7 +10935,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/25737281",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -10497,7 +11059,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1829630936",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 찜닭세상·동울산대학약국 등이 등록돼 있고 북경통닭의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 찜닭세상·동울산대학약국 등이 등록돼 있고 북경통닭의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1829630936",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_8bed4f6defba",
@@ -10555,7 +11129,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10719333",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -10707,7 +11281,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/12085051",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -11004,7 +11578,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/13302525",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -11323,7 +11897,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9089301",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -11699,7 +12273,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10500536",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -11961,7 +12535,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9878379",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -12101,7 +12675,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/15414766",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -12721,7 +13295,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/11679613",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -12739,7 +13313,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJzZnMkYBFezURlUx9Ey8y6K4",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/212725476",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소와 일치하는 현재 식당 등록을 찾지 못했고 동명의 다른 성북구 식당만 확인됨.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소와 일치하는 현재 식당 등록을 찾지 못했고 동명의 다른 성북구 식당만 확인됨.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/212725476",
+          "label": "동명 타 주소 매장"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
@@ -12866,7 +13452,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/1687773183",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -13242,7 +13828,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10552956",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -13260,7 +13846,12 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJH6e41yA5ezURPzJu1qynRaY",
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 여부 미확인",
+      "operationSummary": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음."
     },
     {
       "id": "topic_enrichment_baekjong-wok_416156cd1d89",
@@ -13451,15 +14042,110 @@
       "region": "서울 종로구",
       "address": "서울 종로구 삼청로 82 (삼청동 35-116)",
       "category": "미용실",
-      "representativeMenu": "빠네파스타",
+      "representativeMenu": "2인 스테이크 SET B",
       "lat": 37.5826208,
       "lng": 126.98199149999999,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_de1345dcdc05.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_001",
+          "name": "2인 스테이크 SET B",
+          "price": "50,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_002",
+          "name": "마르게리따 피자",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_003",
+          "name": "깔조네 피자",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_004",
+          "name": "페스카토레",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_005",
+          "name": "치킨아라비아따",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_006",
+          "name": "페페론 알리오 올리오",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_007",
+          "name": "빠네스파게티",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_008",
+          "name": "오징어먹물리조또",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_009",
+          "name": "안심스테이크",
+          "price": "39,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_010",
+          "name": "등심스테이크",
+          "price": "39,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_de1345dcdc05_menu_011",
+          "name": "라자냐",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJndug7sWifDURpylkh941zr0",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.siksinhot.com/P/33320",
+      "phone": "02-739-2122",
+      "operationStatus": "영업 여부 주의",
+      "operationSummary": "공공 음식점 인허가 자료와 관광 정보에는 남아 있으나 포털 지도 등록은 확인되지 않음.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "식신은 운영 여부 미확인 안내를 표시하고 있어 방문 전 전화 확인 필요. 공개 메뉴 가격을 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/33320",
+          "label": "식신 공개 메뉴·운영 여부 주의"
+        },
+        {
+          "url": "https://opengo.kr/5601fb4e0e887edf2ce6c1f1",
+          "label": "공개 음식점 인허가 자료"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_a1c6c2c6bac4",
@@ -13475,7 +14161,12 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJiztNcGu8fDURwdmwliKBSqQ",
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 여부 미확인",
+      "operationSummary": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음."
     },
     {
       "id": "topic_enrichment_baekjong-wok_800341d42722",
@@ -13554,7 +14245,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16794970",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -13796,7 +14487,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8438142",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -13855,7 +14546,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/27034329",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -14378,7 +15069,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/27327527",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -14719,7 +15410,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9251549",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -14864,7 +15555,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/14546463",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -14932,7 +15623,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9894824",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -15157,7 +15848,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/11280269",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -15175,7 +15866,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJDTnc0vRXYzURKmk-YZDQS3k",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/162320001",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소 일대에는 구리냉삼집·숙이네곱창&막창 등이 영업 중이며 해당 어우동의 현재 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소 일대에는 구리냉삼집·숙이네곱창&막창 등이 영업 중이며 해당 어우동의 현재 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/162320001",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_da9f5c0fef80",
@@ -15605,7 +16308,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/297968799",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -15615,15 +16318,127 @@
       "region": "경기 이천시",
       "address": "경기 이천시 이섭대천로 1200 (중리동 219)",
       "category": "",
-      "representativeMenu": "주먹밥탕수육",
+      "representativeMenu": "떡볶이",
       "lat": 37.2777089,
       "lng": 127.4471754,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_29f7bffd4126.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_001",
+          "name": "떡볶이",
+          "price": "4,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_002",
+          "name": "만두",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_003",
+          "name": "순대",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_004",
+          "name": "오징어튀김",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_005",
+          "name": "오탕만",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_006",
+          "name": "오탕순떡볶이",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_007",
+          "name": "주순스페셜",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_008",
+          "name": "주오탕만",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_009",
+          "name": "주탕순만떡볶이",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_010",
+          "name": "주탕순오떡볶이",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_011",
+          "name": "주탕스페셜",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_012",
+          "name": "참치주먹밥",
+          "price": "2,500원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_013",
+          "name": "탕수육",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_29f7bffd4126_menu_014",
+          "name": "탕순만떡볶이",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJi6zmg1hXYzURfdQ0uiKzZ9U",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.siksinhot.com/P/479906",
+      "phone": "031-635-5089",
+      "operationStatus": "영업 여부 주의",
+      "operationSummary": "이천종합터미널 내 점포로 포털 지도 등록은 없으나 공개 식당 정보에 영업시간·전화·메뉴가 남아 있음.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "터미널 입점 점포라 독립 지도 등록이 확인되지 않음. 공개 메뉴 가격을 반영했으며 방문 전 전화 확인 권장.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/479906",
+          "label": "식신 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_d3613e8a8174",
@@ -15709,7 +16524,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/23985599",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -15914,15 +16729,63 @@
       "region": "서울 서대문구",
       "address": "서울 서대문구 통일로 205-5 (영천동 290)",
       "category": "",
-      "representativeMenu": "떡볶이",
+      "representativeMenu": "김밥",
       "lat": 37.5709326,
       "lng": 126.96078949999999,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_4556e0c0aebd.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_4556e0c0aebd_menu_001",
+          "name": "김밥",
+          "price": "3,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_4556e0c0aebd_menu_002",
+          "name": "떡볶이",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_4556e0c0aebd_menu_003",
+          "name": "순대",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_4556e0c0aebd_menu_004",
+          "name": "어묵",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_4556e0c0aebd_menu_005",
+          "name": "튀김",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJydEycJOjfDURpII0imhlsvc",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.siksinhot.com/P/1341229",
+      "operationStatus": "영업 여부 주의",
+      "operationSummary": "영천시장 노점형 점포로 현재 운영 여부가 독립 지도에서 확인되지 않음.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "식신이 운영 여부 미확인 안내를 표시함. 공개 메뉴 가격을 반영했으며 방문 전 확인 필요.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/1341229",
+          "label": "식신 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_479cfb43b77b",
@@ -16148,7 +17011,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/15778204",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -16201,7 +17064,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/12514224",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -16456,19 +17319,52 @@
     },
     {
       "id": "topic_enrichment_baekjong-wok_28f264d7f33b",
-      "name": "온천할머니집",
+      "name": "온천할머니보리밥",
       "region": "광주 동구",
-      "address": "광주 동구 지호로127번길 29 (지산동 67-21)",
+      "address": "광주 동구 지호로127번길 29",
       "category": "",
       "representativeMenu": "보리밥",
       "lat": 35.1496555,
       "lng": 126.94470910000001,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_28f264d7f33b.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_28f264d7f33b_menu_001",
+          "name": "보리밥",
+          "price": "12,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_28f264d7f33b_menu_002",
+          "name": "제육볶음",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_28f264d7f33b_menu_003",
+          "name": "도토리묵",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/restaurant/1135838529/menu/list",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "현재 상호 온천할머니보리밥의 공개 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/1135838529/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_decbb10607f0",
@@ -16774,7 +17670,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://polle.com/place/2mIrJD/%EC%99%95%20%ED%83%80%EC%9D%B4",
+      "operationStatus": "폐업 확인",
+      "operationSummary": "뽈레가 저장 주소의 왕타이를 폐점으로 표시함.",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "뽈레가 저장 주소의 왕타이를 폐점으로 표시함.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/2mIrJD/%EC%99%95%20%ED%83%80%EC%9D%B4",
+          "label": "뽈레 폐점 표기"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_49fa4a8fd044",
@@ -17054,15 +17962,46 @@
       "region": "대구 동구",
       "address": "대구 동구 용수동 468",
       "category": "유기농산물",
-      "representativeMenu": "미나리삼겹살",
+      "representativeMenu": "미나리 1kg",
       "lat": 35.9722767,
       "lng": 128.6747304,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_c2fb2621bd82.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_c2fb2621bd82_menu_001",
+          "name": "미나리 1kg",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_c2fb2621bd82_menu_002",
+          "name": "불판대여",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJO6BoTr11ZjURajVzLY9gfo0",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.siksinhot.com/P/382834",
+      "operationStatus": "영업",
+      "operationSummary": "미나리 제철(통상 2~5월)에 운영하는 농원형 매장.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "카카오맵 영업 상태와 식신 공개 가격을 교차 확인함. 계절 운영 가능성이 있어 방문 전 확인 필요.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1989443210",
+          "label": "카카오맵 영업 상태"
+        },
+        {
+          "url": "https://www.siksinhot.com/P/382834",
+          "label": "식신 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_f69f2e03b2cd",
@@ -17367,7 +18306,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJL0Jtk63fbTURYpYadCrk9ZU",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/421250025",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 코스트노쉬·꽃님다락방 등 다른 업체가 등록돼 있고 원조40번의 현재 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 코스트노쉬·꽃님다락방 등 다른 업체가 등록돼 있고 원조40번의 현재 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/421250025",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_ee3194aae292",
@@ -17465,7 +18416,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/1221415771",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -17657,7 +18608,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/25037411",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -17667,15 +18618,91 @@
       "region": "부산 부산진구",
       "address": "부산 부산진구 골드테마길 52-2 (범천동 844-35)",
       "category": "",
-      "representativeMenu": "떡볶이",
+      "representativeMenu": "매떡(7)",
       "lat": 35.1440681,
       "lng": 129.0602685,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_43e5c84f86d6.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_001",
+          "name": "매떡(7)",
+          "price": "7,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_002",
+          "name": "어묵(5)",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_003",
+          "name": "순떡(7)",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_004",
+          "name": "팥빙수",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_005",
+          "name": "오찡어(6)",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_006",
+          "name": "애기김밥(8)",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_007",
+          "name": "튀만두(6)",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_008",
+          "name": "튀김밥(6)",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_43e5c84f86d6_menu_009",
+          "name": "모듬튀김 set(9)",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJJwMXNp3raDURndKJrxwhqLM",
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "8033712",
+      "placeUrl": "https://place.map.kakao.com/8033712",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "카카오맵에서 2025-12-04 갱신된 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/8033712",
+          "label": "카카오맵 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_eae2d8899788",
@@ -17876,7 +18903,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/15657241",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -18147,7 +19174,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8449040",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -18165,23 +19192,154 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1698456633",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소와 일치하는 현재 음식점 등록을 찾지 못했고 동명의 타 업종·타 주소 업체만 확인됨.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소와 일치하는 현재 음식점 등록을 찾지 못했고 동명의 타 업종·타 주소 업체만 확인됨.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1698456633",
+          "label": "동명 타 업종 업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_5c52f09e0973",
-      "name": "윌리엄스버거",
-      "region": "경기 성남시",
-      "address": "경기 성남시 분당구 판교역로10번길 14-5 (백현동 579-4)",
+      "name": "리틀윌리엄스버거카페",
+      "region": "경기 용인시",
+      "address": "경기 용인시 수지구 고기로 497 1층",
       "category": "",
-      "representativeMenu": "햄버거",
-      "lat": 37.506279899999996,
-      "lng": 127.0978714,
+      "representativeMenu": "베이컨 클램차우더수프",
+      "lat": 37.35985661168228,
+      "lng": 127.05445282637879,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_5c52f09e0973.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_001",
+          "name": "베이컨 클램차우더수프",
+          "price": "9,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_002",
+          "name": "베이컨에그인헬",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_003",
+          "name": "베이컨 치킨시저샐러드",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_004",
+          "name": "비프타코샐러드",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_005",
+          "name": "B.L.T 샌드위치",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_006",
+          "name": "루꼴라 살루미화덕피자샌드위치",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_007",
+          "name": "살루미화덕피자",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_008",
+          "name": "브룩클린버거",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_009",
+          "name": "하와이안버거",
+          "price": "19,500원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_010",
+          "name": "미트러버스버거",
+          "price": "19,500원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_011",
+          "name": "타코버거",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_012",
+          "name": "LWC 프렌치토스트",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_013",
+          "name": "라구볼로네제파스타",
+          "price": "22,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_014",
+          "name": "토마토비프함박스테이크",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_5c52f09e0973_menu_015",
+          "name": "베이컨 칠리콘카르네 갈릭라이스",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJl9MEg2mlfDURgiZc232HdRQ",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/restaurant/2029751438/menu/list",
+      "operationStatus": "영업(이전·상호변경)",
+      "operationSummary": "리틀윌리엄스버거카페로 상호를 바꾸고 경기 용인시 수지구 고기로 497에서 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "판교 저장 주소가 아닌 용인 고기리 이전·상호변경 매장의 현재 공개 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/2029751438/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ],
+      "kakaoPlaceId": "578610807"
     },
     {
       "id": "topic_enrichment_baekjong-wok_b1388b477441",
@@ -18267,7 +19425,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10196083",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -18598,7 +19756,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJf5xwsteZfDURF3GGhCNGkJw",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://polle.com/place/51N1GC/%EC%9C%A4%EC%94%A8%EB%B0%80%EB%B0%A9",
+      "operationStatus": "폐업 확인",
+      "operationSummary": "뽈레가 저장 주소의 윤씨밀방을 폐점으로 표시함.",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "뽈레가 저장 주소의 윤씨밀방을 폐점으로 표시함.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/51N1GC/%EC%9C%A4%EC%94%A8%EB%B0%80%EB%B0%A9",
+          "label": "뽈레 폐점 표기"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_a12a49cb9504",
@@ -19053,7 +20223,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8048823",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -19584,7 +20754,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/14522801",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -19939,7 +21109,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/21328210",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -20169,7 +21339,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8077740",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -20387,7 +21557,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10787627",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -20510,7 +21680,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10773119",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -20952,7 +22122,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8087902",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -21359,17 +22529,108 @@
       "id": "topic_enrichment_baekjong-wok_23d8db79a450",
       "name": "진미식육식당",
       "region": "대구 서구",
-      "address": "대구 서구 달서천로83길 13 (원대동3가 1223-13)",
+      "address": "대구 서구 고성로 105-1 1층",
       "category": "육류,고기요리",
-      "representativeMenu": "대창불고기",
-      "lat": 35.8826951,
-      "lng": 128.5775308,
+      "representativeMenu": "대창불고기전골 500g(2인분)",
+      "lat": 35.88259410077485,
+      "lng": 128.57756839608422,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_23d8db79a450.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_001",
+          "name": "대창불고기전골 500g(2인분)",
+          "price": "30,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_002",
+          "name": "대창불고기전골(3인분)",
+          "price": "45,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_003",
+          "name": "대창불고기전골(4인분)",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_004",
+          "name": "불고기전골 500g(2인분)",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_005",
+          "name": "대창추가(1인분)",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_006",
+          "name": "불고기추가(1인분)",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_007",
+          "name": "라면사리",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_008",
+          "name": "공기밥",
+          "price": "1,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_009",
+          "name": "생면사리(우동·1인분)",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_010",
+          "name": "콜라 500ml",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_23d8db79a450_menu_011",
+          "name": "사이다 500ml",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJbQ_dYfvjZTUR4jOgr3wsJPI",
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "21226094",
+      "placeUrl": "https://m.place.naver.com/restaurant/37842383/menu/list",
+      "operationStatus": "영업(이전)",
+      "operationSummary": "대구 서구 고성로 105-1로 이전해 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소가 아닌 대구 서구 고성로 105-1 이전 매장의 공개 배달 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/37842383/menu/list",
+          "label": "네이버 플레이스 현재 배달 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_e233f034091a",
@@ -21555,7 +22816,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/406816688",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -21661,7 +22922,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10765610",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22143,7 +23404,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/16787927",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22238,7 +23499,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10838986",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22646,7 +23907,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10893639",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22664,7 +23925,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJz-Wpyl45ezURjhAJjEflKGA",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/378726973",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 세종문고·중고폰마트가 영업 중이며 해당 토스트킹의 현재 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 세종문고·중고폰마트가 영업 중이며 해당 토스트킹의 현재 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/378726973",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_c15ca1a635f5",
@@ -22771,7 +24044,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8107636",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22781,15 +24054,85 @@
       "region": "경남 통영시",
       "address": "경남 통영시 발개로 131 (도남동 560-1)",
       "category": "",
-      "representativeMenu": "해물뚝배기",
+      "representativeMenu": "굴해초비빔밥",
       "lat": 34.8267758,
       "lng": 128.4187026,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_f47ee86282d2.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_001",
+          "name": "굴해초비빔밥",
+          "price": "15,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_002",
+          "name": "꼬막비빔밥",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_003",
+          "name": "꼬막전",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_004",
+          "name": "멍게해초비빔밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_005",
+          "name": "생멸치회덮밥",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_006",
+          "name": "성게 해초 비빔밥(돌솥)",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_007",
+          "name": "왕꼬막 무침",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_f47ee86282d2_menu_008",
+          "name": "해물뚝배기(소)",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJG-2KMBXHbjURdNq3Ms0lYWs",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.siksinhot.com/P/258178",
+      "phone": "055-644-0663",
+      "operationStatus": "영업 여부 주의",
+      "operationSummary": "식신·관광 정보에는 영업 정보가 남아 있으나 현재 지도에는 다른 상호가 등록돼 있어 방문 전 확인 필요.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "식신 공개 메뉴를 반영했으나 저장 주소의 현 지도 상호가 달라 영업 승계·상호변경 여부를 전화로 확인해야 함.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/258178",
+          "label": "식신 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_7a9a794ad373",
@@ -22852,7 +24195,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/10042350",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -22870,7 +24213,23 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://m.place.naver.com/place/19497305/home",
+      "operationStatus": "장소 운영",
+      "operationSummary": "국제시장 단팥죽거리 전체를 가리키는 장소로 단일 식당·단일 가격표가 아님.",
+      "menuPriceStatus": "not_single_restaurant",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "국제시장 단팥죽거리는 여러 노점의 집합이라 식당별 전체 메뉴·통합 가격표가 존재하지 않음. 2025년 방문 정보로 거리 운영은 확인되지만 가격은 점포별 현장가.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/place/19497305/home",
+          "label": "네이버 플레이스 장소 정보"
+        },
+        {
+          "url": "https://www.reddit.com/r/busan/comments/1lctqfb",
+          "label": "2025년 국제시장 단팥죽거리 방문 언급"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_edd8db666e60",
@@ -23212,7 +24571,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/21513162",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -23378,19 +24737,187 @@
     },
     {
       "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
-      "name": "하하",
+      "name": "하하 공덕점",
       "region": "서울 마포구",
-      "address": "서울 마포구 동교로 263 (연남동 229-12)",
+      "address": "서울 마포구 새창로 28 1층",
       "category": "",
-      "representativeMenu": "군만두",
-      "lat": 37.5552853,
-      "lng": 126.9168429,
+      "representativeMenu": "가지튀김",
+      "lat": 37.54165548566211,
+      "lng": 126.95292855775158,
       "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_0b24555abc6a.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_001",
+          "name": "가지튀김",
+          "price": "18,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_002",
+          "name": "군만두",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_003",
+          "name": "찐만두",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_004",
+          "name": "새우볶음밥",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_005",
+          "name": "피단두부",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_006",
+          "name": "돼지귀무침",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_007",
+          "name": "해파리무침",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_008",
+          "name": "산라탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_009",
+          "name": "짬뽕탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_010",
+          "name": "완자탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_011",
+          "name": "물만두",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_012",
+          "name": "칠리새우",
+          "price": "22,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_013",
+          "name": "고추잡채",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_014",
+          "name": "동파육",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_015",
+          "name": "새우튀김",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_016",
+          "name": "탕수육",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_017",
+          "name": "깐풍기",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_018",
+          "name": "유림기",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_019",
+          "name": "라조기",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_020",
+          "name": "오향장육",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_021",
+          "name": "멘보샤 8개",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_baekjong-wok_0b24555abc6a_menu_022",
+          "name": "멘보샤 4개",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJmcSEHACZfDURX59HhvMt79I",
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "244669873",
+      "placeUrl": "https://m.place.naver.com/restaurant/147393801/menu/list",
+      "operationStatus": "영업(이전)",
+      "operationSummary": "하하 공덕점으로 이전해 서울 마포구 새창로 28 1층에서 영업 중.",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "연남동 저장 주소가 아닌 공덕 이전 매장의 현재 공개 메뉴를 반영함.",
+      "menuPriceSources": [
+        {
+          "url": "https://m.place.naver.com/restaurant/147393801/menu/list",
+          "label": "네이버 플레이스 현재 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_651d9358ff7f",
@@ -23740,7 +25267,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/19923930",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -23758,7 +25285,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJEWyevQ6ifDURI2ozGGDgM7w",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://place.map.kakao.com/1555674629",
+      "operationStatus": "폐업 추정",
+      "operationSummary": "저장 주소에는 효창동짜장우동·비가 등이 등록돼 있고 한성옥해장국의 현재 지도 등록이 없음.",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "저장 주소에는 효창동짜장우동·비가 등이 등록돼 있고 한성옥해장국의 현재 지도 등록이 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1555674629",
+          "label": "저장 주소 현 입점업체"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_1fce8339fb10",
@@ -23955,7 +25494,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/9573537",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -24363,7 +25902,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8146434",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -25129,7 +26668,7 @@
       "menuPriceSources": [
         {
           "url": "https://place.map.kakao.com/8661979",
-          "label": "카카오맵 공개 메뉴"
+          "label": "공개 메뉴"
         }
       ]
     },
@@ -25359,7 +26898,19 @@
       "menus": [],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJLbLzvN5cejURsYIh_do84cs",
-      "isOverseas": false
+      "isOverseas": false,
+      "placeUrl": "https://www.incheontoday.com/news/articleView.html?idxno=261238",
+      "operationStatus": "폐업 확인",
+      "operationSummary": "인천투데이가 화순반점 폐점 후 장강이 이전해 영업 중이라고 현장 취재로 확인함.",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
+      "menuPriceNote": "인천투데이가 화순반점 폐점 후 장강이 이전해 영업 중이라고 현장 취재로 확인함.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.incheontoday.com/news/articleView.html?idxno=261238",
+          "label": "인천투데이 현장 기사"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_baekjong-wok_9e951b769635",

@@ -227,18 +227,19 @@
     "topic_enrichment_ttoganjip_6a1a6bada12c": {
       "name": "경양카츠 연남점",
       "address": "서울특별시 마포구 동교로 238-1 1층 경양카츠",
-      "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:08.033Z",
-      "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1271052621",
-      "placeUrl": "https://place.map.kakao.com/1271052621",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:19:00.000Z",
+      "representativeMenu": "안심카츠 / 치즈카츠 / 제육 왕돈까스",
+      "note": "네이버지도 공개 메뉴 탭의 메뉴명·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1128364627/menu",
+      "placeUrl": "https://map.naver.com/p/entry/place/1128364627",
+      "naverPlaceId": "1128364627",
       "kakaoPlaceId": "1271052621",
-      "pageName": "빌리어네어스토어즈 경양카츠 연남점",
-      "pageAddress": "서울 마포구 동교로 238-1 (연남동)",
+      "pageName": "경양카츠 연남점",
+      "pageAddress": "서울특별시 마포구 동교로 238-1",
       "phone": "",
       "operationStatus": "영업",
-      "menuUpdatedAt": "",
+      "menuUpdatedAt": "2026-07-19",
       "match": {
         "query": "경양카츠 연남점 서울특별시 마포구",
         "total": 357,
@@ -248,7 +249,200 @@
         "localityPenalty": 0,
         "distanceMeters": 1
       },
-      "menus": []
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_001",
+          "name": "안심카츠",
+          "price": "16,400원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_002",
+          "name": "치즈카츠",
+          "price": "16,400원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_003",
+          "name": "제육 왕돈까스",
+          "price": "16,500원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_004",
+          "name": "경양식 돈까스&미니국수",
+          "price": "14,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_005",
+          "name": "서울 수비드 수육카츠",
+          "price": "23,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_006",
+          "name": "서울 수비드 족발카츠",
+          "price": "20,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_007",
+          "name": "등심카츠",
+          "price": "16,400원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_008",
+          "name": "특등심카츠",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_009",
+          "name": "안심등심카츠",
+          "price": "17,400원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_010",
+          "name": "바질치즈카츠",
+          "price": "16,600원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_011",
+          "name": "돈카츠 나베 (※겨울 한정※)",
+          "price": "13,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_012",
+          "name": "대파 매콤 크림 파스타 & 안심카츠",
+          "price": "17,400원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_013",
+          "name": "트러플 버섯 크림 파스타 & 안심카츠",
+          "price": "17,400원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_014",
+          "name": "경양 어묵우동",
+          "price": "8,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_015",
+          "name": "경양 포차 우동",
+          "price": "7,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_016",
+          "name": "경양 냉 소바",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_017",
+          "name": "경양 카레 (소)",
+          "price": "3,500원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_018",
+          "name": "경양 카레 (대)",
+          "price": "6,500원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_019",
+          "name": "키리모찌",
+          "price": "3,500원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_020",
+          "name": "고구마 치즈 고로케",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_021",
+          "name": "한우 고로케",
+          "price": "6,500원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_022",
+          "name": "경양 안심 가라아게",
+          "price": "6,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_023",
+          "name": "새우튀김",
+          "price": "5,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_6a1a6bada12c_menu_024",
+          "name": "경양식혜",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 24
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_60a0c1c47e08": {
       "name": "고메스시",
@@ -356,9 +550,9 @@
       "name": "구렌몽골",
       "address": "서울특별시 중구 을지로44길 18-4",
       "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:08.204Z",
+      "verifiedAt": "2026-07-19T00:25:00.000Z",
       "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
+      "note": "카카오맵 공개 가격 메뉴가 없고, 네이버지도에서 식당명·주소 일치를 확인했으나 메뉴 탭이 없음.",
       "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1725662348",
       "placeUrl": "https://place.map.kakao.com/1725662348",
       "kakaoPlaceId": "1725662348",
@@ -4494,45 +4688,104 @@
     "topic_enrichment_ttoganjip_b74499a167f6": {
       "name": "신간짬뽕 본점",
       "address": "경기도 파주시 문화로 32 1층 신간짬뽕 금촌점",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:11.874Z",
-      "menus": [],
-      "candidates": [
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:31:00.000Z",
+      "representativeMenu": "간짬뽕 / 매운짬뽕 / 짬뽕",
+      "note": "네이버지도 공개 메뉴 탭의 메뉴명·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/33060656/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/33060656",
+      "naverPlaceId": "33060656",
+      "pageName": "신간짬뽕 본점",
+      "pageAddress": "경기도 파주시 문화로 32 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
         {
-          "kakaoPlaceId": "697857290",
-          "name": "물고뚝 본점",
-          "address": "경기 파주시 문산읍 문향로 99",
-          "query": "본점 경기도 파주시",
-          "total": -55,
-          "nameScore": 122,
-          "addressScore": 43,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 72166
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_001",
+          "name": "간짬뽕",
+          "price": "11,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
         },
         {
-          "kakaoPlaceId": "1699097",
-          "name": "착한대패 본점",
-          "address": "경기 파주시 가람로51번길 16-3",
-          "query": "본점 경기도 파주시",
-          "total": -60,
-          "nameScore": 117,
-          "addressScore": 43,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 60632
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_002",
+          "name": "매운짬뽕",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
         },
         {
-          "kakaoPlaceId": "386056076",
-          "name": "청담 파주본점",
-          "address": "경기 파주시 돌곶이길 8-41",
-          "query": "본점 경기도 파주시",
-          "total": -60,
-          "nameScore": 117,
-          "addressScore": 43,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 61285
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_003",
+          "name": "짬뽕",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_004",
+          "name": "짜장",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_005",
+          "name": "군만두",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_006",
+          "name": "탕수육 (소)",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_007",
+          "name": "탕수육 (대)",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_008",
+          "name": "A세트 (짜장2+탕수육+군만두)",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_009",
+          "name": "B세트 (짬뽕+짜장+탕수육+군만두)",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_010",
+          "name": "C세트 (짬뽕2+탕수육+군만두)",
+          "price": "31,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_b74499a167f6_menu_011",
+          "name": "D세트 (간짬뽕2+탕수육+군만두)",
+          "price": "33,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
         }
       ]
     },
@@ -5168,10 +5421,66 @@
     "topic_enrichment_ttoganjip_227bc19c1b0a": {
       "name": "옥돌양곱창구이 본점",
       "address": "경기도 안양시 동안구 귀인로190번길 61-17",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:12.319Z",
-      "menus": [],
-      "candidates": []
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:31:00.000Z",
+      "representativeMenu": "양 / 대창 / 알곱창",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/32799833/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/32799833",
+      "naverPlaceId": "32799833",
+      "pageName": "옥돌양곱창구이 본점",
+      "pageAddress": "경기도 안양시 동안구 귀인로190번길 61-17",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_001",
+          "name": "양",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_002",
+          "name": "대창",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_003",
+          "name": "알곱창",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_004",
+          "name": "한우곱창",
+          "price": "29,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_005",
+          "name": "막창",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_227bc19c1b0a_menu_006",
+          "name": "염통",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_40f8c258bad6": {
       "name": "와타요업 갈마본점",
@@ -5290,45 +5599,128 @@
     "topic_enrichment_ttoganjip_af541292429e": {
       "name": "우정",
       "address": "서울특별시 강남구 도산대로55길 23 1층 우정",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:12.865Z",
-      "menus": [],
-      "candidates": [
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:32:00.000Z",
+      "representativeMenu": "한우곱창전골 / 한우 불고기 / 우개장",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1642364450/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1642364450",
+      "naverPlaceId": "1642364450",
+      "pageName": "우정",
+      "pageAddress": "서울특별시 강남구 도산대로55길 23 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
         {
-          "kakaoPlaceId": "1615184494",
-          "name": "우정",
-          "address": "서울 강남구 도산대로55길 23",
-          "query": "우정 서울특별시 강남구",
-          "total": 206,
-          "nameScore": 180,
-          "addressScore": 116,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 7459
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_001",
+          "name": "한우곱창전골",
+          "price": "62,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
         },
         {
-          "kakaoPlaceId": "1120567503",
-          "name": "우정양곱창",
-          "address": "서울 강남구 도산대로30길 23",
-          "query": "우정 서울특별시 강남구",
-          "total": 120,
-          "nameScore": 122,
-          "addressScore": 88,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 7498
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_002",
+          "name": "한우 불고기",
+          "price": "43,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
         },
         {
-          "kakaoPlaceId": "16417461",
-          "name": "우정마트",
-          "address": "서울 강남구 도산대로49길 8",
-          "query": "우정 서울특별시 강남구",
-          "total": 83,
-          "nameScore": 130,
-          "addressScore": 43,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 7438
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_003",
+          "name": "우개장",
+          "price": "15,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_004",
+          "name": "낙지볶음",
+          "price": "38,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_005",
+          "name": "접시수육",
+          "price": "42,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_006",
+          "name": "스지찜",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_007",
+          "name": "등골",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_008",
+          "name": "한우스지된장전골",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_009",
+          "name": "한우더덕육회",
+          "price": "45,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_010",
+          "name": "한우육전",
+          "price": "38,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_011",
+          "name": "사골양지곰탕",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_012",
+          "name": "우정 물냉면",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_013",
+          "name": "우정 비빔냉면",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_af541292429e_menu_014",
+          "name": "양지무침",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
         }
       ]
     },
@@ -5533,10 +5925,82 @@
     "topic_enrichment_ttoganjip_c9f1e4066d53": {
       "name": "울트라반점 귀산본점",
       "address": "경상남도 창원시 성산구 삼귀로 135",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:12.930Z",
-      "menus": [],
-      "candidates": []
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:32:00.000Z",
+      "representativeMenu": "짜장밥 / 새우볶음밥 / 울트라짬뽕",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/205701181/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/205701181",
+      "naverPlaceId": "205701181",
+      "pageName": "울트라반점 귀산본점",
+      "pageAddress": "경상남도 창원시 성산구 삼귀로 135",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_001",
+          "name": "짜장밥",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_002",
+          "name": "새우볶음밥",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_003",
+          "name": "짜장밥곱빼기",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_004",
+          "name": "새우볶음밥곱빼기",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_005",
+          "name": "맑은짬뽕밥",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_006",
+          "name": "울트라짬뽕",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_007",
+          "name": "울트라짜장면",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_c9f1e4066d53_menu_008",
+          "name": "짬뽕밥",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_8825fe7477fa": {
       "name": "육돈",
@@ -5735,91 +6199,522 @@
     },
     "topic_enrichment_ttoganjip_2bbd45ba4e1f": {
       "name": "일직식당",
-      "address": "경상북도 안동시 경동로 676 일직식당",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:13.574Z",
-      "menus": [],
-      "candidates": [
+      "address": "경상북도 안동시 관광단지로 346-29",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:35:00.000Z",
+      "representativeMenu": "안동간고등어구이정식 / 안동간고등어 조림정식",
+      "note": "네이버지도 공개 메뉴와 변경 주소를 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/15355074/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/15355074",
+      "naverPlaceId": "15355074",
+      "kakaoPlaceId": "666964150",
+      "pageName": "일직식당",
+      "pageAddress": "경상북도 안동시 관광단지로 346-29",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
         {
-          "kakaoPlaceId": "666964150",
-          "name": "일직식당",
-          "address": "경북 안동시 관광단지로 346-29",
-          "query": "일직식당 경상북도 안동시",
-          "total": 105,
-          "nameScore": 180,
-          "addressScore": 15,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 4295
+          "id": "topic_enrichment_ttoganjip_2bbd45ba4e1f_menu_001",
+          "name": "안동간고등어구이정식",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
         },
         {
-          "kakaoPlaceId": "491068842",
-          "name": "정원식당",
-          "address": "경북 안동시 일직면 경북대로 7636",
-          "query": "일직식당 경상북도 안동시",
-          "total": -33,
-          "nameScore": 42,
-          "addressScore": 15,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 9482
-        },
-        {
-          "kakaoPlaceId": "318549812",
-          "name": "솔식당",
-          "address": "경북 안동시 일직면 돌고개길 64-1",
-          "query": "일직식당 경상북도 안동시",
-          "total": -155,
-          "nameScore": 50,
-          "addressScore": 15,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 11825
+          "id": "topic_enrichment_ttoganjip_2bbd45ba4e1f_menu_002",
+          "name": "안동간고등어 조림정식",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
         }
       ]
     },
     "topic_enrichment_ttoganjip_cc57af7d3de9": {
       "name": "자코비버거 본점",
       "address": "서울특별시 용산구 신흥로 38 1층 자코비버거",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:13.743Z",
-      "menus": [],
-      "candidates": [
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:36:00.000Z",
+      "representativeMenu": "클래식 더블 치즈 버거 / 자코비 버거 / 15cm 독일 수제소세지 핫도그",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/13000071/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/13000071",
+      "naverPlaceId": "13000071",
+      "pageName": "자코비버거 본점",
+      "pageAddress": "서울특별시 용산구 신흥로 38 1층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
         {
-          "kakaoPlaceId": "1369752416",
-          "name": "남매국밥 이태원본점",
-          "address": "서울 용산구 회나무로 9",
-          "query": "본점 서울특별시 용산구",
-          "total": 221,
-          "nameScore": 108,
-          "addressScore": 43,
-          "distanceScore": 70,
-          "localityPenalty": 0,
-          "distanceMeters": 346
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_001",
+          "name": "클래식 더블 치즈 버거",
+          "price": "10,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
         },
         {
-          "kakaoPlaceId": "1640206069",
-          "name": "fwd 본점",
-          "address": "서울 용산구 소월로20길 22",
-          "query": "본점 서울특별시 용산구",
-          "total": 207,
-          "nameScore": 122,
-          "addressScore": 15,
-          "distanceScore": 70,
-          "localityPenalty": 0,
-          "distanceMeters": 461
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_002",
+          "name": "자코비 버거",
+          "price": "11,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
         },
         {
-          "kakaoPlaceId": "181575114",
-          "name": "욱이족발 본점",
-          "address": "서울 용산구 녹사평대로32길 22",
-          "query": "본점 서울특별시 용산구",
-          "total": 190,
-          "nameScore": 117,
-          "addressScore": 43,
-          "distanceScore": 30,
-          "localityPenalty": 0,
-          "distanceMeters": 955
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_003",
+          "name": "15cm 독일 수제소세지 핫도그",
+          "price": "11,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_004",
+          "name": "클래식 트리플 치즈 버거",
+          "price": "14,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_005",
+          "name": "아보카도 베이컨 버거",
+          "price": "13,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_006",
+          "name": "발사믹 치킨 샐러드",
+          "price": "17,900원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_007",
+          "name": "고수 더블 치즈 버거",
+          "price": "11,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_008",
+          "name": "버섯 버거",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_009",
+          "name": "클래식 더블 치즈 버거 세트",
+          "price": "20,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_010",
+          "name": "자코비 버거 세트",
+          "price": "21,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_011",
+          "name": "고수 더블 치즈 버거 세트",
+          "price": "21,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_012",
+          "name": "클래식 트리플 치즈 버거 세트",
+          "price": "24,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_013",
+          "name": "버섯 버거 세트",
+          "price": "22,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_014",
+          "name": "자코비 더블 패티 버거 세트",
+          "price": "26,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_015",
+          "name": "블루 하와이언 베이컨 버거 세트",
+          "price": "22,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_016",
+          "name": "더블 치즈 베이컨 버거 세트",
+          "price": "22,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_017",
+          "name": "칠리 베이컨 버거 세트",
+          "price": "22,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_018",
+          "name": "칠리치킨 버거 세트",
+          "price": "22,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_019",
+          "name": "아보카도 베이컨 버거 세트",
+          "price": "23,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_020",
+          "name": "새우 버거 세트",
+          "price": "23,800원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_021",
+          "name": "소고기 타코 (2pcs)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_022",
+          "name": "소고기 비리야 타코 (2pcs)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_023",
+          "name": "치킨 타코 (2pcs)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_024",
+          "name": "칠리 치킨 타코 (2pcs)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_025",
+          "name": "새우 타코 (2pcs)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_026",
+          "name": "치킨 퀘사디아",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_027",
+          "name": "15cm 독일 수제소세지 칠리 베이컨 핫도그",
+          "price": "13,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 27
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_028",
+          "name": "30cm 독일 수제소세지 핫도그",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 28
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_029",
+          "name": "30cm 독일 수제소세지 칠리 베이컨 핫도그",
+          "price": "17,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 29
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_030",
+          "name": "까르보나라 파스타",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 30
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_031",
+          "name": "(작은사이즈) 까르보나라 파스타",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 31
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_032",
+          "name": "할라피뇨 올리브 파스타",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 32
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_033",
+          "name": "(작은사이즈) 할라피뇨 올리브 파스타",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 33
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_034",
+          "name": "뽀모도로 파스타",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 34
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_035",
+          "name": "(작은사이즈) 뽀모도로 파스타",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 35
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_036",
+          "name": "씨푸드 파스타",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 36
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_037",
+          "name": "(작은사이즈) 씨푸드 파스타",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 37
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_038",
+          "name": "칠리 새우 파스타",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 38
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_039",
+          "name": "(작은사이즈) 칠리 새우 파스타",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 39
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_040",
+          "name": "1/2 발사믹 치킨 샐러드",
+          "price": "14,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 40
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_041",
+          "name": "1/2 시저 치킨 샐러드",
+          "price": "14,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 41
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_042",
+          "name": "1/2 아보카도 샐러드",
+          "price": "15,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 42
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_043",
+          "name": "시저 치킨 샐러드",
+          "price": "17,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 43
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_044",
+          "name": "아보카도 샐러드",
+          "price": "18,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 44
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_045",
+          "name": "핫윙(8조각)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 45
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_046",
+          "name": "마일드윙(8조각)",
+          "price": "12,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 46
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_047",
+          "name": "감자튀김",
+          "price": "11,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 47
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_048",
+          "name": "치즈감자튀김",
+          "price": "14,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 48
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_049",
+          "name": "마늘감자튀김",
+          "price": "14,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 49
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_050",
+          "name": "과카몰리 감자튀김",
+          "price": "16,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 50
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_051",
+          "name": "칠리치즈 감자튀김",
+          "price": "16,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 51
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_052",
+          "name": "베이컨치즈 감자튀김 with 사워크림",
+          "price": "16,900원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 52
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_053",
+          "name": "생수(500ml)",
+          "price": "1,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 53
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_054",
+          "name": "콜라(355ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 54
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_055",
+          "name": "제로콜라(355ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 55
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_056",
+          "name": "스프라이트(355ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 56
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_057",
+          "name": "웰치스 포도(355ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 57
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_058",
+          "name": "닥터페퍼(355ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 58
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_cc57af7d3de9_menu_059",
+          "name": "진저엘(250ml)",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 59
         }
       ]
     },
@@ -6201,14 +7096,6 @@
           "sourceOrdinal": 9
         }
       ]
-    },
-    "topic_enrichment_ttoganjip_a0987f1eb4e5": {
-      "name": "천진영감",
-      "address": "서울특별시 강남구 봉은사로6길 26 1층",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:14.149Z",
-      "menus": [],
-      "candidates": []
     },
     "topic_enrichment_ttoganjip_9c48872a168a": {
       "name": "청춘키친",
@@ -7822,18 +8709,19 @@
     "topic_enrichment_ttoganjip_10b294abbc2b": {
       "name": "영심횟집",
       "address": "전남 해남군 해남읍 북부순환로 178 영심횟집",
-      "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:15.645Z",
-      "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/2140799580",
-      "placeUrl": "https://place.map.kakao.com/2140799580",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:31:00.000Z",
+      "representativeMenu": "광어회 / 우럭회 / 연어회",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1535068285/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1535068285",
+      "naverPlaceId": "1535068285",
       "kakaoPlaceId": "2140799580",
       "pageName": "영심횟집",
       "pageAddress": "전남광주통합특별시 해남군 해남읍 북부순환로 178 (해남읍 구교리)",
       "phone": "",
       "operationStatus": "영업",
-      "menuUpdatedAt": "2026-02-28 22:45:39",
+      "menuUpdatedAt": "2026-07-19",
       "match": {
         "query": "영심횟집 전남 해남군",
         "total": 430,
@@ -7843,7 +8731,72 @@
         "localityPenalty": 0,
         "distanceMeters": 0
       },
-      "menus": []
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_001",
+          "name": "광어회",
+          "price": "45,000~65,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_002",
+          "name": "우럭회",
+          "price": "45,000~65,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_003",
+          "name": "연어회",
+          "price": "45,000~65,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_004",
+          "name": "회Set",
+          "price": "45,000~65,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_005",
+          "name": "모듬회",
+          "price": "55,000~75,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_006",
+          "name": "오징어회",
+          "price": "변동",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_007",
+          "name": "삼치회",
+          "price": "변동",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_10b294abbc2b_menu_008",
+          "name": "방어회",
+          "price": "변동",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_267fb5420331": {
       "name": "동광수산",
@@ -7919,18 +8872,19 @@
     "topic_enrichment_ttoganjip_a17995c19e3d": {
       "name": "온타이키친",
       "address": "서울 마포구 월드컵북로54길 17 사보이시티 B동 지하1층 B126호",
-      "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:15.816Z",
-      "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1526604428",
-      "placeUrl": "https://place.map.kakao.com/1526604428",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:31:00.000Z",
+      "representativeMenu": "팟타이 / 뿌님팟퐁커리 / 텃만꿍(3ps)",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1440369014/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1440369014",
+      "naverPlaceId": "1440369014",
       "kakaoPlaceId": "1526604428",
       "pageName": "온타이키친",
       "pageAddress": "서울 마포구 월드컵북로54길 17 사보이시티디엠씨 지하1층 126호 (상암동)",
       "phone": "02-304-5009",
       "operationStatus": "영업",
-      "menuUpdatedAt": "",
+      "menuUpdatedAt": "2026-07-19",
       "match": {
         "query": "온타이키친 서울 마포구",
         "total": 440,
@@ -7940,15 +8894,248 @@
         "localityPenalty": 0,
         "distanceMeters": 0
       },
-      "menus": []
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_001",
+          "name": "카오팟까이",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_002",
+          "name": "팟타이",
+          "price": "13,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_003",
+          "name": "뿌님팟퐁커리",
+          "price": "20,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_004",
+          "name": "텃만꿍(3ps)",
+          "price": "11,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_005",
+          "name": "팟카파오무쌉",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_006",
+          "name": "카오팟 꿍",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_007",
+          "name": "카오팟 무",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_008",
+          "name": "나시고랭",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_009",
+          "name": "꾸웨이띠여우 똠얌꿍",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_010",
+          "name": "꾸웨이띠여우 느어",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_011",
+          "name": "쏨땀타이",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_a17995c19e3d_menu_012",
+          "name": "태국닭튀김 까이텃(4ps)",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_f3e84eac8444": {
       "name": "마창수산직영횟집 내동점",
       "address": "경남 김해시 내외로11번길 7-3",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:16.255Z",
-      "menus": [],
-      "candidates": []
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:29:00.000Z",
+      "representativeMenu": "모듬회 특대 / 잡어 대 / 잡어 중",
+      "note": "네이버지도 메뉴판 사진에서 사용자가 확인한 메뉴명·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1845669492/photo",
+      "placeUrl": "https://map.naver.com/p/entry/place/1845669492",
+      "naverPlaceId": "1845669492",
+      "pageName": "마창수산직영횟집 내동점",
+      "pageAddress": "경남 김해시 내외로11번길 7-3",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_001",
+          "name": "모듬회 특대",
+          "price": "80,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_002",
+          "name": "잡어 대",
+          "price": "70,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_003",
+          "name": "잡어 중",
+          "price": "60,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_004",
+          "name": "잡어 소",
+          "price": "50,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_005",
+          "name": "매운탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_006",
+          "name": "공기밥",
+          "price": "1,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_007",
+          "name": "광어",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_008",
+          "name": "우럭",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_009",
+          "name": "농어",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_010",
+          "name": "돔",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_011",
+          "name": "도다리",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_012",
+          "name": "전어",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_013",
+          "name": "하모",
+          "price": "싯가",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_014",
+          "name": "복분자",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_015",
+          "name": "매실마을",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_f3e84eac8444_menu_016",
+          "name": "청하",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 16
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_19cc475bdf0b": {
       "name": "천성삼거리장어구이",
@@ -8240,18 +9427,19 @@
     "topic_enrichment_ttoganjip_e5a02e36cf76": {
       "name": "숙이네국수",
       "address": "경남 진주시 신안로 161",
-      "status": "matched_no_priced_menu",
-      "verifiedAt": "2026-07-18T21:44:16.481Z",
-      "representativeMenu": "",
-      "note": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/14974801",
-      "placeUrl": "https://place.map.kakao.com/14974801",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:32:00.000Z",
+      "representativeMenu": "생갈치조림 / 두루치기",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/15517007/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/15517007",
+      "naverPlaceId": "15517007",
       "kakaoPlaceId": "14974801",
       "pageName": "숙이네국수",
       "pageAddress": "경남 진주시 신안로 161 (이현동)",
       "phone": "055-742-4472",
       "operationStatus": "영업",
-      "menuUpdatedAt": "",
+      "menuUpdatedAt": "2026-07-19",
       "match": {
         "query": "숙이네국수 경남 진주시",
         "total": 416,
@@ -8261,7 +9449,24 @@
         "localityPenalty": 0,
         "distanceMeters": 0
       },
-      "menus": []
+      "menus": [
+        {
+          "id": "topic_enrichment_ttoganjip_e5a02e36cf76_menu_001",
+          "name": "생갈치조림",
+          "price": "변동",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_ttoganjip_e5a02e36cf76_menu_002",
+          "name": "두루치기",
+          "price": "변동",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 2
+        }
+      ]
     },
     "topic_enrichment_ttoganjip_08b18b9afa68": {
       "name": "진토랑",

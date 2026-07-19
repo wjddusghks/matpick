@@ -1,35 +1,38 @@
 {
   "source": "Kakao Maps public place search and place panel",
-  "collectedAt": "2026-07-18T21:45:06.528Z",
-  "runStatus": "partial",
+  "collectedAt": "2026-07-19T03:42:04.924Z",
+  "runStatus": "complete",
   "matchingMethod": "restaurant name + address + coordinate distance",
   "totalRestaurantCount": 34,
   "processedCount": 34,
-  "matchedCount": 30,
-  "pricedRestaurantCount": 30,
-  "pricedMenuCount": 104,
-  "unmatchedCount": 4,
+  "matchedCount": 34,
+  "pricedRestaurantCount": 34,
+  "pricedMenuCount": 114,
+  "unmatchedCount": 0,
   "closedCount": 0,
   "errorCount": 0,
   "restaurants": {
     "topic_enrichment_michelin-1-star_d4132c79cb30": {
       "name": "가겐 바이 최준호",
       "address": "강남구 압구정로 80길 19-1, 2층, Seoul, 06015, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:28.965Z",
-      "menus": [],
-      "candidates": [
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T00:37:00.000Z",
+      "representativeMenu": "오마카세",
+      "note": "네이버지도 공개 메뉴에서 확인함.",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1618063021/menu/list",
+      "placeUrl": "https://map.naver.com/p/entry/place/1618063021",
+      "naverPlaceId": "1618063021",
+      "pageName": "가겐",
+      "pageAddress": "서울 강남구 압구정로80길 19-1 2층",
+      "menuUpdatedAt": "2026-07-19",
+      "menus": [
         {
-          "kakaoPlaceId": "100755563",
-          "name": "가겐by최준호",
-          "address": "서울 강남구 압구정로80길 19-1",
-          "query": "가겐 바이 최준호 강남구 압구정로",
-          "total": 131,
-          "nameScore": 63,
-          "addressScore": 88,
-          "distanceScore": 140,
-          "localityPenalty": -160,
-          "distanceMeters": 1
+          "id": "topic_enrichment_michelin-1-star_d4132c79cb30_menu_001",
+          "name": "오마카세",
+          "price": "변동",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-07-19",
+          "sourceOrdinal": 1
         }
       ]
     },
@@ -462,22 +465,18 @@
     },
     "topic_enrichment_michelin-1-star_4b63750d045e": {
       "name": "레스토랑 산",
-      "address": "강남구 언주로 168길 6, 지하1층, Seoul, 06020, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:30.117Z",
-      "menus": [],
-      "candidates": [
+      "address": "서울 강남구 언주로168길 6 지하1층",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T03:42:04.924Z",
+      "representativeMenu": "Tasting Menu",
+      "note": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함.",
+      "menus": [
         {
-          "kakaoPlaceId": "1828674706",
-          "name": "레스토랑 산 SAN",
-          "address": "서울 강남구 언주로168길 6",
-          "query": "레스토랑 산 강남구 언주로",
-          "total": 208,
-          "nameScore": 140,
-          "addressScore": 88,
-          "distanceScore": 140,
-          "localityPenalty": -160,
-          "distanceMeters": 3
+          "id": "topic_enrichment_michelin-1-star_4b63750d045e_menu_001",
+          "name": "Tasting Menu",
+          "price": "380,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
         }
       ]
     },
@@ -1039,22 +1038,39 @@
     },
     "topic_enrichment_michelin-1-star_717da4a81695": {
       "name": "스시 카네사카",
-      "address": "강남구 테헤란로 521, 그랜드 인터컨티넨탈 서울 파르나스 1층, 히노츠키 레스토랑 내부, Seoul, 06164, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:31.716Z",
-      "menus": [],
-      "candidates": [
+      "address": "서울 강남구 테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스 1층",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T03:42:04.924Z",
+      "representativeMenu": "(화-토요일) 점심 오마카세 / (화-토요일) 저녁 오마카세",
+      "note": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함.",
+      "menus": [
         {
-          "kakaoPlaceId": "548205674",
-          "name": "스시 카네사카",
-          "address": "서울 강남구 테헤란로 521",
-          "query": "스시 카네사카 강남구 테헤란로",
-          "total": -64,
-          "nameScore": 180,
-          "addressScore": 136,
-          "distanceScore": -220,
-          "localityPenalty": -160,
-          "distanceMeters": 1151440
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_001",
+          "name": "(화-토요일) 점심 오마카세",
+          "price": "280,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_002",
+          "name": "(화-토요일) 저녁 오마카세",
+          "price": "380,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_003",
+          "name": "(일-월요일) 점심 오마카세",
+          "price": "230,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_717da4a81695_menu_004",
+          "name": "(일-월요일) 저녁 오마카세",
+          "price": "330,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
         }
       ]
     },
@@ -1678,22 +1694,39 @@
     },
     "topic_enrichment_michelin-1-star_8ac2bff03407": {
       "name": "피오또",
-      "address": "해운대구 달맞이길 117번가길 219, 2층, Busan, 48105, 한국",
-      "status": "unmatched",
-      "verifiedAt": "2026-07-18T21:44:33.345Z",
-      "menus": [],
-      "candidates": [
+      "address": "부산 해운대구 달맞이길117번가길 219 에케 2층 H호",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-19T03:42:04.924Z",
+      "representativeMenu": "피오또 테이스팅 코스",
+      "note": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함.",
+      "menus": [
         {
-          "kakaoPlaceId": "1975930393",
-          "name": "피오또",
-          "address": "부산 해운대구 달맞이길117번가길 219",
-          "query": "피오또 해운대구 달맞이길",
-          "total": 138,
-          "nameScore": 180,
-          "addressScore": 88,
-          "distanceScore": 30,
-          "localityPenalty": -160,
-          "distanceMeters": 884
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_001",
+          "name": "피오또 테이스팅 코스",
+          "price": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_002",
+          "name": "논알콜 페어링(콤부차 페어링)",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_003",
+          "name": "피오또 콤부차",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8ac2bff03407_menu_004",
+          "name": "와인",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 4
         }
       ]
     },

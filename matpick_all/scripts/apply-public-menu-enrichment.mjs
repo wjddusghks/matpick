@@ -56,6 +56,28 @@ function normalizeMenus(restaurantId, menus) {
     }));
 }
 
+function normalizeSources(record, placeUrl) {
+  const sources = (Array.isArray(record?.sources) ? record.sources : [])
+    .map((source) => ({
+      url: String(source?.url ?? "").trim(),
+      label: String(source?.label ?? "").trim(),
+    }))
+    .filter((source) => source.url && source.label);
+
+  if (sources.length > 0) return sources;
+  if (!placeUrl) return [];
+  return [
+    {
+      url: placeUrl,
+      label: String(record?.sourceLabel ?? "공개 메뉴").trim(),
+    },
+  ];
+}
+
+function getRegion(address) {
+  return String(address ?? "").trim().split(/\s+/).slice(0, 2).join(" ");
+}
+
 async function readJson(filePath) {
   return JSON.parse((await fs.readFile(filePath, "utf8")).replace(/^\uFEFF/, ""));
 }
@@ -107,18 +129,33 @@ async function main() {
     payload.restaurants = (payload.restaurants ?? []).map((restaurant) => {
       const record = records[restaurant.id];
       const menus = normalizeMenus(restaurant.id, record?.menus);
-      if (menus.length === 0) return restaurant;
+      const status = String(record?.status ?? "").trim();
+      const resolvedWithoutMenus = new Set([
+        "closed_confirmed",
+        "closed_likely",
+        "operation_unverified",
+        "not_single_restaurant",
+      ]).has(status);
+      if (menus.length === 0 && !resolvedWithoutMenus) return restaurant;
 
       fileChanged = true;
       updatedRestaurantCount += 1;
       updatedMenuCount += menus.length;
       const placeUrl = String(record.placeUrl ?? "").trim();
       const verifiedAt = String(record.verifiedAt ?? research.collectedAt ?? "").trim();
+      const menuPriceSources = normalizeSources(record, placeUrl);
 
       return {
         ...restaurant,
+        name: String(record.name ?? restaurant.name).trim() || restaurant.name,
+        region: record.address ? getRegion(record.address) : restaurant.region,
+        address: String(record.address ?? restaurant.address).trim() || restaurant.address,
+        lat: Number.isFinite(record.currentLat) ? record.currentLat : restaurant.lat,
+        lng: Number.isFinite(record.currentLng) ? record.currentLng : restaurant.lng,
         representativeMenu:
-          String(record.representativeMenu ?? "").trim() || menus[0].name,
+          String(record.representativeMenu ?? "").trim() ||
+          menus[0]?.name ||
+          restaurant.representativeMenu,
         menus,
         kakaoPlaceId: record.kakaoPlaceId
           ? String(record.kakaoPlaceId)
@@ -136,19 +173,13 @@ async function main() {
           : record.sourceLabel
             ? undefined
             : restaurant.operationStatus,
-        menuPriceStatus: String(record.status ?? "matched_with_priced_menu"),
+        ...(record.operationSummary
+          ? { operationSummary: String(record.operationSummary) }
+          : {}),
+        menuPriceStatus: status || "matched_with_priced_menu",
         ...(verifiedAt ? { menuPriceVerifiedAt: verifiedAt } : {}),
         ...(record.note ? { menuPriceNote: String(record.note) } : {}),
-        ...(placeUrl
-          ? {
-              menuPriceSources: [
-                {
-                  url: placeUrl,
-                  label: String(record.sourceLabel ?? "카카오맵 공개 메뉴"),
-                },
-              ],
-            }
-          : {}),
+        ...(menuPriceSources.length ? { menuPriceSources } : {}),
       };
     });
 

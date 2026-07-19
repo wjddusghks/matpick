@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-selected",
-  "generatedAt": "2026-07-18T21:45:12.349Z",
+  "generatedAt": "2026-07-19T04:49:13.686Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-selected_9cba981aa9c5",
@@ -52,15 +52,81 @@
     {
       "id": "topic_enrichment_michelin-selected_dfcc6abb53a9",
       "name": "곰바위",
-      "region": "강남구 영동대로",
-      "address": "강남구 영동대로 115길 10, Seoul, 06087, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 영동대로115길 10",
       "category": "바비큐",
-      "representativeMenu": "",
+      "representativeMenu": "양 / 대창 / 곱창전골(1인-저녁)",
       "lat": 37.51484800000001,
       "lng": 127.058769,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_dfcc6abb53a9.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_001",
+          "name": "양",
+          "price": "49,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_002",
+          "name": "대창",
+          "price": "45,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_003",
+          "name": "곱창전골(1인-저녁)",
+          "price": "45,000원",
+          "description": "2인분 이상 주문가능합니다.",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_004",
+          "name": "곱창전골(1인-점심)",
+          "price": "35,000원",
+          "description": "2인분 이상 주문가능합니다.",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_005",
+          "name": "막창구이",
+          "price": "43,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_006",
+          "name": "한우양념갈비",
+          "price": "77,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_007",
+          "name": "한우 주물럭",
+          "price": "67,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_008",
+          "name": "한우제비추리",
+          "price": "59,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_dfcc6abb53a9_menu_009",
+          "name": "우대갈비",
+          "price": "54,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJi7TvdWmkfDURzu_8K9y8RRQ",
       "isOverseas": false
@@ -68,15 +134,114 @@
     {
       "id": "topic_enrichment_michelin-selected_0476aa088e94",
       "name": "광화문 국밥",
-      "region": "중구 세종대로",
-      "address": "중구 세종대로 21길 53, Seoul, 04519, 한국",
+      "region": "서울 중구",
+      "address": "서울 중구 세종대로21길 53",
       "category": "돼지국밥",
-      "representativeMenu": "",
+      "representativeMenu": "평양냉면 / 돼지국밥 / 어린이돼지국밥",
       "lat": 37.5690078,
       "lng": 126.9753997,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_0476aa088e94.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_001",
+          "name": "평양냉면",
+          "price": "15,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_002",
+          "name": "돼지국밥",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_003",
+          "name": "어린이돼지국밥",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_004",
+          "name": "돼지국밥특",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_005",
+          "name": "돼지수육",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_006",
+          "name": "저염명란오이무침",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_007",
+          "name": "피순대",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_008",
+          "name": "소왕갈비찜",
+          "price": "59,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_009",
+          "name": "가자미식해",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_010",
+          "name": "한우스지찜",
+          "price": "38,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_011",
+          "name": "소곱창순대볶음",
+          "price": "39,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_012",
+          "name": "매콤양무침",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_013",
+          "name": "얼큰소국밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_0476aa088e94_menu_014",
+          "name": "메밀온면",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJ8YClzZKifDURP7QLq67jXGk",
       "isOverseas": false
@@ -152,15 +317,44 @@
     {
       "id": "topic_enrichment_michelin-selected_e35ef71e95ff",
       "name": "구복만두",
-      "region": "용산구 두텁바위로",
-      "address": "용산구 두텁바위로 7, Seoul, 04335, 한국",
+      "region": "서울 용산구",
+      "address": "서울 용산구 두텁바위로 7",
       "category": "딤섬",
-      "representativeMenu": "",
+      "representativeMenu": "구복전통만두6개 / 통새우만두 / 김치만두6개",
       "lat": 37.545377699999996,
       "lng": 126.9729766,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_e35ef71e95ff.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_e35ef71e95ff_menu_001",
+          "name": "구복전통만두6개",
+          "price": "8,500원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e35ef71e95ff_menu_002",
+          "name": "통새우만두",
+          "price": "9,500원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e35ef71e95ff_menu_003",
+          "name": "김치만두6개",
+          "price": "8,500원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e35ef71e95ff_menu_004",
+          "name": "샤오롱바오",
+          "price": "9,500원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJyWM5KmqifDUR7ftzNHpjrz0",
       "isOverseas": false
@@ -168,15 +362,32 @@
     {
       "id": "topic_enrichment_michelin-selected_e7dc971c60da",
       "name": "구찌 오스테리아 다 마시모 보투라",
-      "region": "강남구 압구정로",
-      "address": "강남구 압구정로 462, 5층, Seoul, 06015, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 압구정로 462 5층 구찌오스테리아",
       "category": "이탤리언 컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "Lunch Tasting Course / Dinner Tasting Cours",
       "lat": 37.5250777,
       "lng": 127.04654850000001,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_e7dc971c60da.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_e7dc971c60da_menu_001",
+          "name": "Lunch Tasting Course",
+          "price": "150,000원",
+          "description": "전형규 셰프의 스토리를 기반으로 제철 식재를 활용한 이탈리안 컨템프러리 디쉬",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e7dc971c60da_menu_002",
+          "name": "Dinner Tasting Cours",
+          "price": "220,000원",
+          "description": "전형규 셰프의 스토리를 기반으로 제철 식재를 활용한 이탈리안 컨템프러리 디쉬",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -360,15 +571,214 @@
     {
       "id": "topic_enrichment_michelin-selected_391f996a6f59",
       "name": "금수복국",
-      "region": "해운대구 중동",
-      "address": "해운대구 중동 1로 43번길 23, Busan, 48095, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 중동1로43번길 23",
       "category": "복어",
-      "representativeMenu": "",
+      "representativeMenu": "은복국 [지리, 탕] / 밀복국 [지리,탕] / 까치복국 [지리,탕]",
       "lat": 35.162420499999996,
       "lng": 129.16450609999998,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_391f996a6f59.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_001",
+          "name": "은복국 [지리, 탕]",
+          "price": "15,000원",
+          "description": "가장 기본적이지만 고객분들이 제일 많이 찾는 은복국 (매운탕1,000원/특3,000원추가)",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_002",
+          "name": "밀복국 [지리,탕]",
+          "price": "22,000원",
+          "description": "시원한 국물맛과 쫄깃한 식감이 특징인 밀복국 (매운탕1,000원/특4,000원추가)",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_003",
+          "name": "까치복국 [지리,탕]",
+          "price": "23,000원",
+          "description": "부드러운 육질이 일품인 까치복 (매운탕1,000원/특4,000원추가)",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_004",
+          "name": "활복국 [지리,탕]",
+          "price": "50,000원",
+          "description": "복어 중에 가장 맛이 좋은 일품 활참복국 (매운탕1,000원/특15,000원추가)",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_005",
+          "name": "커플세트1",
+          "price": "20,000원",
+          "description": "복껍질무침 + 복튀김을 합리적인 가격에!",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_006",
+          "name": "커플세트2",
+          "price": "30,000원",
+          "description": "복회무침과 복껍질튀김을 합리적인 가격에!",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_007",
+          "name": "복껍질무침",
+          "price": "18,000원",
+          "description": "새콤달콤 콜라겐이 풍부한 복껍질무침",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_008",
+          "name": "복회무침",
+          "price": "35,000원",
+          "description": "새콤달콤한 양념에 쫄깃한 복어살을 무친 복회무침",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_009",
+          "name": "철판복불고기",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_010",
+          "name": "복사시미",
+          "price": "70,000원",
+          "description": "[진미] 얇게 떠진 쫄깃한 식감에 복사시미 중)100,000원 / 대)150,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_011",
+          "name": "복튀김",
+          "price": "30,000원",
+          "description": "부드러운 복어살이 바삭하게 튀겨진 복튀김",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_012",
+          "name": "복껍질튀김",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_013",
+          "name": "복찜",
+          "price": "38,000원",
+          "description": "은복 : 38,000 밀복 : 70,000 까치복 : 70,000 활참복 : 150,000",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_014",
+          "name": "복수육 (은복, 밀복, 활복)",
+          "price": "38,000원",
+          "description": "은복 : 38,000 밀복 : 70,000 까치복 : 70,000 활참복 : 150,000",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_015",
+          "name": "복육회",
+          "price": "33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_016",
+          "name": "복물회",
+          "price": "22,000원",
+          "description": "특) 33,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_017",
+          "name": "복까스",
+          "price": "15,000원",
+          "description": "아이들에게 인기만점 복까스",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_018",
+          "name": "복불고기덮밥",
+          "price": "13,000원",
+          "description": "든든하고 건강한 한끼 복불고기덮밥",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_019",
+          "name": "매생이복죽",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_020",
+          "name": "복조림",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_021",
+          "name": "점심특선 / 까치복국 정식",
+          "price": "33,000원",
+          "description": "정식시간 : 11:00 ~15:00 정식 라스트오더 : 14:00",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_022",
+          "name": "점심특선 / 활참복국 정식",
+          "price": "53,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_023",
+          "name": "점심특선 / 복사시미 정식",
+          "price": "55,000원",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_024",
+          "name": "금수 코스",
+          "price": "77,000원",
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_025",
+          "name": "오마카세 코스",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_391f996a6f59_menu_026",
+          "name": "활복 코스",
+          "price": "180,000원",
+          "isSignature": false,
+          "sourceOrdinal": 26
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJb6ju4GeNaDURuR1LsbcI5lw",
       "isOverseas": false
@@ -470,15 +880,87 @@
     {
       "id": "topic_enrichment_michelin-selected_a9edbe86daff",
       "name": "나인스 게이트",
-      "region": "중구 소공로",
-      "address": "중구 소공로 106, 웨스틴 조선 호텔 1층, Seoul, 04533, 한국",
+      "region": "서울 중구",
+      "address": "서울 중구 소공로 106 L층 나인스게이트",
       "category": "프렌치",
-      "representativeMenu": "",
+      "representativeMenu": "9th Gate Course / Herendy Course / Weekend Delights",
       "lat": 37.564406399999996,
       "lng": 126.97969710000001,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_a9edbe86daff.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_001",
+          "name": "9th Gate Course",
+          "price": "170,000원",
+          "description": "제철 식재료와 주방장의 노하우가 담긴 나인스게이트 시그니처 코스 메뉴(주중 저녁)",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_002",
+          "name": "Herendy Course",
+          "price": "250,000원",
+          "description": "한우 안심 스테이크와 트러플을 포함한 스페셜 디너 코스(주중 저녁)",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_003",
+          "name": "Weekend Delights",
+          "price": "105,000원",
+          "description": "에피타이저, 디저트를 포함한 3가지 메뉴와 1가지 메인 메뉴를 포함한 코스(주말 점심)",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_004",
+          "name": "Weekend Delights",
+          "price": "135,000원",
+          "description": "에피타이저, 메인를 포함한 5가지 코스를 원하는대로 선택할 수 있는 코스(주말 저녁)",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_005",
+          "name": "Family Feast",
+          "price": "390,000원",
+          "description": "가족들과 함께 즐기기 좋은 풍성한 구성의 패밀리 플래터",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_006",
+          "name": "Surf &Turf Delights",
+          "price": "155,000원",
+          "description": "랍스터 구이, 한우 안심스테이크를 즐길 수 있는 스페셜 런치 코스 메뉴 (주중 점심)",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_007",
+          "name": "Prix Fixe Lunch",
+          "price": "변동",
+          "description": "먹고 싶은 메뉴를 골라 다채롭게 구성할 수 있는 코스 메뉴(주중 점심) 변동",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_008",
+          "name": "A La Carte",
+          "price": "변동",
+          "description": "여럿이 쉐어할 수 있는 그릴 또는 씨푸드 요리부터, 가벼운 안주 요리가 준비되어 있습니다. 변동",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_a9edbe86daff_menu_009",
+          "name": "Kids Menu",
+          "price": "78,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJaeJIP_KifDURoY0DjBxaIj8",
       "isOverseas": false
@@ -1081,15 +1563,178 @@
     {
       "id": "topic_enrichment_michelin-selected_5d88a1c726c6",
       "name": "딤타오",
-      "region": "해운대구 우동",
-      "address": "해운대구 우동 1로 25, Busan, 48088, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 우동1로 25 딤타오",
       "category": "딤섬",
-      "representativeMenu": "",
+      "representativeMenu": "소롱포 / 하가우 / 부추 새우 교자",
       "lat": 35.1639406,
       "lng": 129.156471,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_5d88a1c726c6.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_001",
+          "name": "소롱포",
+          "price": "8,500원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_002",
+          "name": "하가우",
+          "price": "9,200원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_003",
+          "name": "부추 새우 교자",
+          "price": "9,700원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_004",
+          "name": "가지튀김",
+          "price": "9,500원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_005",
+          "name": "슈마이",
+          "price": "8,800원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_006",
+          "name": "춘권",
+          "price": "8,700원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_007",
+          "name": "새우창펀",
+          "price": "9,800원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_008",
+          "name": "안거쓰창펀",
+          "price": "10,300원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_009",
+          "name": "차슈바오",
+          "price": "8,900원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_010",
+          "name": "흑번",
+          "price": "7,300원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_011",
+          "name": "차슈바오번",
+          "price": "8,300원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_012",
+          "name": "LA갈비딤섬",
+          "price": "10,500원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_013",
+          "name": "표고버섯닭고기 종판",
+          "price": "8,500원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_014",
+          "name": "벌집양딤섬",
+          "price": "8,500원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_015",
+          "name": "연잎밥",
+          "price": "8,900원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_016",
+          "name": "청경채 볶음",
+          "price": "9,800원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_017",
+          "name": "완탕",
+          "price": "10,800원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_018",
+          "name": "매운완탕",
+          "price": "10,800원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_019",
+          "name": "완탕면/매운완탕면",
+          "price": "10,800원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_020",
+          "name": "새우 돼지고기 볶음밥",
+          "price": "8,800원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_021",
+          "name": "오이피클s",
+          "price": "1,500원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_022",
+          "name": "오이피클",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_5d88a1c726c6_menu_023",
+          "name": "광동식 돼지고기 비빔면",
+          "price": "14,000원",
+          "description": "딤타오 특별 소스에 돼지고기,면을 버무린 음식",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJS5an2neNaDURb_N_xPpxiTQ",
       "isOverseas": false
@@ -1875,15 +2520,56 @@
     {
       "id": "topic_enrichment_michelin-selected_6c0413fd0259",
       "name": "명동 교자",
-      "region": "중구 명동",
-      "address": "중구 명동 10길 29, Seoul, 04537, 한국",
+      "region": "서울 중구",
+      "address": "서울 중구 명동10길 29",
       "category": "칼국수",
-      "representativeMenu": "",
+      "representativeMenu": "칼국수 / 만두 / 비빔국수",
       "lat": 37.5625266,
       "lng": 126.98560900000001,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_6c0413fd0259.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_6c0413fd0259_menu_001",
+          "name": "칼국수",
+          "price": "12,000원",
+          "description": "구수하고 진한 닭 육수, 부드러운 국수와 고명이 어우러져 환상적인 맛 명동교자 만의 칼국수",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6c0413fd0259_menu_002",
+          "name": "만두",
+          "price": "13,000원",
+          "description": "속이 비칠 정도로 얇은 피에 최고급 암퇘지 고기, 채소, 갓 짠 참기름으로 만든 만두",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6c0413fd0259_menu_003",
+          "name": "비빔국수",
+          "price": "12,000원",
+          "description": "매콤,새콤,감칠맛이 어울린 양념장과 갓 짠 참기름의 향미가 조화를 이루는 소박한 맛의 국수",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6c0413fd0259_menu_004",
+          "name": "콩국수(4월~10월 계절메뉴)",
+          "price": "13,000원",
+          "description": "콩과 검은콩을 맷돌로 갈아 만든 콩물에 클로렐라 국수, 영양 만점의 시원한 여름철 건강식",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6c0413fd0259_menu_005",
+          "name": "포장만두",
+          "price": "13,000원",
+          "description": "언제 어디서나 즐길 수 있는 포장만두",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJW7FBDfCifDURHTpisLbVUH0",
       "isOverseas": false
@@ -2284,15 +2970,209 @@
     {
       "id": "topic_enrichment_michelin-selected_f0bf275c7ac7",
       "name": "미미 면가",
-      "region": "강남구 강남대로",
-      "address": "강남구 강남대로 160길 29, Seoul, 06028, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 강남대로160길 29",
       "category": "국수",
-      "representativeMenu": "",
+      "representativeMenu": "고등어구이 온소바 / 성게알 냉소바 / 붕장어온소바",
       "lat": 37.5200294,
       "lng": 127.0211239,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_f0bf275c7ac7.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_001",
+          "name": "고등어구이 온소바",
+          "price": "20,000원",
+          "description": "제철 (가을~겨울)이 아닐 때는 주문이 안될 수 있어요.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_002",
+          "name": "성게알 냉소바",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_003",
+          "name": "붕장어온소바",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_004",
+          "name": "야채온소바",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_005",
+          "name": "고수소고기온소바",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_006",
+          "name": "계절)소고기숙주온소바",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_007",
+          "name": "마즙과성게알온소바",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_008",
+          "name": "성게알온소바",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_009",
+          "name": "새우 온소바",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_010",
+          "name": "가지온소바",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_011",
+          "name": "기본 냉/온소바",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_012",
+          "name": "단새우와성게알",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_013",
+          "name": "마즙과성게알",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_014",
+          "name": "마즙냉소바",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_015",
+          "name": "새우튀김 냉소바",
+          "price": "13,000원",
+          "description": "새우튀김과 냉소바입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_016",
+          "name": "가지튀김 냉소바",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_017",
+          "name": "붕장어튀김 냉소바",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_018",
+          "name": "우메보시 냉소바",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_019",
+          "name": "소고기냉소바",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_020",
+          "name": "연어아보카도롤",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_021",
+          "name": "장어롤",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_022",
+          "name": "단새우성게알롤",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_023",
+          "name": "연근새우튀김",
+          "price": "15,000원",
+          "description": "다진새우살과 아삭한 연근튀김",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_024",
+          "name": "까망베르치즈 튀김",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_025",
+          "name": "연어모밀쌈",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_026",
+          "name": "소바마끼 (2p)",
+          "price": "3,000원",
+          "description": "계란말이와 말아낸 메밀김밥",
+          "isSignature": false,
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f0bf275c7ac7_menu_027",
+          "name": "유부초밥",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 27
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJL7y3vumjfDURCmnvoBAjfVw",
       "isOverseas": false
@@ -2300,15 +3180,101 @@
     {
       "id": "topic_enrichment_michelin-selected_e88816f27063",
       "name": "버드나무집",
-      "region": "서초구 효령로",
-      "address": "서초구 효령로 434, Seoul, 06729, 한국",
+      "region": "서울 서초구",
+      "address": "서울 서초구 효령로 434",
       "category": "바비큐",
-      "representativeMenu": "",
+      "representativeMenu": "갈비정식 / 주물럭 / 양념갈비",
       "lat": 37.4965718,
       "lng": 127.01984369999998,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_e88816f27063.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_001",
+          "name": "갈비정식",
+          "price": "49,000원",
+          "description": "120g",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_002",
+          "name": "주물럭",
+          "price": "85,000원",
+          "description": "130g",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_003",
+          "name": "양념갈비",
+          "price": "85,000원",
+          "description": "250g",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_004",
+          "name": "등심",
+          "price": "88,000원",
+          "description": "130g",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_005",
+          "name": "안창살",
+          "price": "98,000원",
+          "description": "130g",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_006",
+          "name": "육회",
+          "price": "53,000원",
+          "description": "130g",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_007",
+          "name": "갈비탕",
+          "price": "28,000원",
+          "description": "갈비탕특 35000",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_008",
+          "name": "소고기국밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_009",
+          "name": "비빔밥",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_010",
+          "name": "육회비빔밥",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_e88816f27063_menu_011",
+          "name": "생갈비230g",
+          "price": "150,000원",
+          "description": "국내산한우",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJDxJuR12hfDURXsZs6VskY-U",
       "isOverseas": false
@@ -2511,15 +3477,230 @@
     {
       "id": "topic_enrichment_michelin-selected_400a8557759b",
       "name": "보름쇠",
-      "region": "강남구 테헤란로",
-      "address": "강남구 테헤란로 81길 36, Seoul, 06167, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 테헤란로81길 36",
       "category": "바비큐",
-      "representativeMenu": "",
+      "representativeMenu": "흑우 구이정식(평일점심) / 흑우 생불고기정식 (평일점심) / 흑우 보양전골 (평일점심)",
       "lat": 37.5092786,
       "lng": 127.056619,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_400a8557759b.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_001",
+          "name": "흑우 구이정식(평일점심)",
+          "price": "45,000원",
+          "description": "점심특선",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_002",
+          "name": "흑우 생불고기정식 (평일점심)",
+          "price": "32,000원",
+          "description": "점심특선",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_003",
+          "name": "흑우 보양전골 (평일점심)",
+          "price": "32,000원",
+          "description": "점심특선",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_004",
+          "name": "특등심",
+          "price": "70,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_005",
+          "name": "특수부위",
+          "price": "65,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_006",
+          "name": "부채살",
+          "price": "65,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_007",
+          "name": "특안심",
+          "price": "89,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_008",
+          "name": "특토시살",
+          "price": "99,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_009",
+          "name": "치마살",
+          "price": "79,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_010",
+          "name": "꽃등심",
+          "price": "83,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_011",
+          "name": "갈비살",
+          "price": "85,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_012",
+          "name": "특살치",
+          "price": "89,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_013",
+          "name": "새우살",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_014",
+          "name": "특안심(숙성)",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_015",
+          "name": "특안창",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_016",
+          "name": "육회",
+          "price": "41,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_017",
+          "name": "육사시미",
+          "price": "43,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_018",
+          "name": "흑우 보양전골 (디너)",
+          "price": "42,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_019",
+          "name": "흑우 생불고기 (디너)",
+          "price": "42,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_020",
+          "name": "흑우 사태냉채 (디너)",
+          "price": "45,000원",
+          "description": "지방이 적고 고단백, 콜라겐 또한 풍부한 흑우사태와 야채,새콤달콤 겨자소스의 완벽한 조합",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_021",
+          "name": "흑우 육전 (디너)",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_022",
+          "name": "흑우 보양탕",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_023",
+          "name": "흑우 차돌된장찌개",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_024",
+          "name": "차돌 순두부찌개",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_025",
+          "name": "흑우 부추국밥",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_026",
+          "name": "곰탕",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_027",
+          "name": "육회비빔밥+된장찌개",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 27
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_028",
+          "name": "소고기비빔밥+된장찌개",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 28
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_029",
+          "name": "함흥 물냉면",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 29
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_400a8557759b_menu_030",
+          "name": "함흥 비빔냉면",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 30
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -2527,15 +3708,118 @@
     {
       "id": "topic_enrichment_michelin-selected_579c203c7bed",
       "name": "본 앤 브레드",
-      "region": "해운대구 해운대해변로",
-      "address": "해운대구 해운대해변로 296 파라다이스호텔 지하 1층, Busan, 48099, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 해운대해변로 296 파라다이스호텔 부산 본관 지하 1층",
       "category": "스테이크하우스",
-      "representativeMenu": "",
+      "representativeMenu": "포터하우스 / 토마호크 / 한우 맡김차림 디너",
       "lat": 35.19564,
       "lng": 129.1286776,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_579c203c7bed.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_001",
+          "name": "포터하우스",
+          "price": "변동",
+          "description": "포터하우스와 토마호크는 약 600-800g 컷으로 제공되며, 실중량 기준으로 판매됩니다. 변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_002",
+          "name": "토마호크",
+          "price": "변동",
+          "description": "포터하우스와 토마호크는 약 600-800g 컷으로 제공되며, 실중량 기준으로 판매됩니다. 변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_003",
+          "name": "한우 맡김차림 디너",
+          "price": "320,000원",
+          "description": "프라이빗 룸에서 최상급 한우와 다양한 요리를 코스로 즐기실 수 있습니다. (전화 문의만)",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_004",
+          "name": "한우 맡김차림 런치",
+          "price": "220,000원",
+          "description": "프라이빗 룸에서 최상급 한우와 다양한 요리를 코스로 즐기실 수 있습니다. (전화 문의만)",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_005",
+          "name": "본앤브레드 햄버거",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_006",
+          "name": "한우 카츠 샌드",
+          "price": "43,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_007",
+          "name": "RIBEYE 꽂등심, 350g",
+          "price": "190,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_008",
+          "name": "STRIP LOIN 채끝, 250g",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_009",
+          "name": "TENDER LOIN 안심, 180g",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_010",
+          "name": "HANGER 토시살, 180g",
+          "price": "140,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_011",
+          "name": "CHUCK FLAP TAIL 살치살",
+          "price": "140,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_012",
+          "name": "FLANK 치마살, 200g",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_013",
+          "name": "FLAT IRON 부채살, 250g",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_579c203c7bed_menu_014",
+          "name": "자갈치 시장 해산물 플레터",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -2543,15 +3827,72 @@
     {
       "id": "topic_enrichment_michelin-selected_b6512ce876de",
       "name": "본 앤 브레드",
-      "region": "성동구 마장로",
-      "address": "성동구 마장로 42길 1, 2층, Seoul, 04757, 한국",
+      "region": "서울 성동구",
+      "address": "서울 성동구 마장로42길 1",
       "category": "바비큐",
-      "representativeMenu": "",
+      "representativeMenu": "(지하1층) 한우 맡김차림 / (3F) 프라이빗 룸 - 디너 코스 / (3F) 프라이빗 룸 - 런치 코스",
       "lat": 37.5667249,
       "lng": 127.0445221,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_b6512ce876de.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_001",
+          "name": "(지하1층) 한우 맡김차림",
+          "price": "380,000원",
+          "description": "대한민국 최고급 암소의 12가지 부위를 내어 드립니다. 다양한 요리와 다채로운 구성으로 고객님의 오감을 만족시켜 드리며 잊을 수 없는 경험을 선사해 드립니다.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_002",
+          "name": "(3F) 프라이빗 룸 - 디너 코스",
+          "price": "280,000원",
+          "description": "최고급 한우와 다양한 부위를 포함한 총 13개의 코스로 구성되어 있습니다.(점심에도 가능)",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_003",
+          "name": "(3F) 프라이빗 룸 - 런치 코스",
+          "price": "230,000원",
+          "description": "최고급 한우와 다양한 부위를 포함한 총 8개의 코스로 구성되어 있습니다.",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_004",
+          "name": "(2F) 홀 - 캐주얼 테이스팅 메뉴",
+          "price": "165,000원",
+          "description": "5가지의 메뉴로 구성된 코스 요리입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_005",
+          "name": "(2F) 홀 - 한우모듬 300g",
+          "price": "130,000원",
+          "description": "인당 300g 최상급 한우모듬으로 구성되어 있습니다.",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_006",
+          "name": "(2F) 홀 - 한우모듬 200g",
+          "price": "100,000원",
+          "description": "인당 200g 최상급 한우모듬으로 구성되어 있습니다.",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_b6512ce876de_menu_007",
+          "name": "(2F) 홀 - 선택차림",
+          "price": "변동",
+          "description": "단품 주문 가능하며, 인당 한우 200g 이상 주문 필수입니다. 차림비 1만원 별도입니다. 변동",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -2666,15 +4007,24 @@
     {
       "id": "topic_enrichment_michelin-selected_a9953d60b184",
       "name": "비네토",
-      "region": "수영구 수영로",
-      "address": "수영구 수영로 522번길 55, Busan, 48299, 한국",
+      "region": "부산 수영구",
+      "address": "부산 수영구 수영로522번길 55 1층",
       "category": "이탤리언",
-      "representativeMenu": "",
+      "representativeMenu": "와인",
       "lat": 35.1518204,
       "lng": 129.1147382,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_a9953d60b184.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_a9953d60b184_menu_001",
+          "name": "와인",
+          "price": "변동",
+          "description": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -3247,15 +4597,59 @@
     {
       "id": "topic_enrichment_michelin-selected_fd30be1c667a",
       "name": "스테이",
-      "region": "송파구 올림픽로",
-      "address": "송파구 올림픽로 300, 롯데월드 타워 81층, Seoul, 05551, 한국",
+      "region": "서울 송파구",
+      "address": "서울 송파구 올림픽로 300 롯데월드타워 81층 스테이",
       "category": "프렌치",
-      "representativeMenu": "",
+      "representativeMenu": "L'Essence de STAY / STAY Fun / STAY Emotion",
       "lat": 37.5125689,
       "lng": 127.1025792,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_fd30be1c667a.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_001",
+          "name": "L'Essence de STAY",
+          "price": "1,500,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_002",
+          "name": "STAY Fun",
+          "price": "135,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_003",
+          "name": "STAY Emotion",
+          "price": "165,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_004",
+          "name": "STAY Modern",
+          "price": "225,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_005",
+          "name": "STAY Must Try",
+          "price": "275,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a_menu_006",
+          "name": "A LA CARTE",
+          "price": "변동",
+          "description": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJCRrErCClfDUR1urQD2jmQKw",
       "isOverseas": false
@@ -3263,15 +4657,40 @@
     {
       "id": "topic_enrichment_michelin-selected_f2ad1953ca86",
       "name": "시오",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 54길 33, Seoul, 06056, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 도산대로54길 33 시오",
       "category": "컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "런치 6코스 / 디너 9코스 / 와인 페어링",
       "lat": 37.5472853,
       "lng": 126.91427909999999,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_f2ad1953ca86.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_f2ad1953ca86_menu_001",
+          "name": "런치 6코스",
+          "price": "85,000원",
+          "description": "가성비 좋은 파인다이닝 코스",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f2ad1953ca86_menu_002",
+          "name": "디너 9코스",
+          "price": "175,000원",
+          "description": "가성비 좋은 파인다이닝 코스",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_f2ad1953ca86_menu_003",
+          "name": "와인 페어링",
+          "price": "변동",
+          "description": "3glass, 5glass Paring 변동",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJjdPrYciZfDURJYueWagp2DU",
       "isOverseas": false
@@ -3418,15 +4837,58 @@
     {
       "id": "topic_enrichment_michelin-selected_28e6f98565fe",
       "name": "안씨 막걸리",
-      "region": "용산구 회나무로",
-      "address": "용산구 회나무로 3, Seoul, 04343, 한국",
+      "region": "서울 용산구",
+      "address": "서울 용산구 회나무로 3 아름누리빌딩 1층",
       "category": "한식",
-      "representativeMenu": "",
+      "representativeMenu": "한치순대 / 육회 / 두부한상",
       "lat": 37.538580599999996,
       "lng": 126.98740860000001,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_28e6f98565fe.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_001",
+          "name": "한치순대",
+          "price": "30,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_002",
+          "name": "육회",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_003",
+          "name": "두부한상",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_004",
+          "name": "전복",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_005",
+          "name": "한입거리 송고버섯",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_28e6f98565fe_menu_006",
+          "name": "한입거리 밀전병",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -3434,15 +4896,23 @@
     {
       "id": "topic_enrichment_michelin-selected_02984ce7e69c",
       "name": "알고리즘",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 49길 8, 2층, Seoul, 06019, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 도산대로49길 8 2층",
       "category": "컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "디너 코스",
       "lat": 37.517482699999995,
       "lng": 127.0423331,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_02984ce7e69c.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_02984ce7e69c_menu_001",
+          "name": "디너 코스",
+          "price": "150,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJvzEmNrulfDURiHlaTyz42T8",
       "isOverseas": false
@@ -4176,31 +5646,62 @@
     {
       "id": "topic_enrichment_michelin-selected_7448c5082e39",
       "name": "오니바",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 75길 15, 지하 1층, Seoul, 06015, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 도산대로75길 15 B1층",
       "category": "프렌치",
-      "representativeMenu": "",
+      "representativeMenu": "MENU CARTE BLANCHE / MENU À LA CARTE",
       "lat": 37.5251521,
       "lng": 127.04570199999999,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_7448c5082e39.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_7448c5082e39_menu_001",
+          "name": "MENU CARTE BLANCHE",
+          "price": "99,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_7448c5082e39_menu_002",
+          "name": "MENU À LA CARTE",
+          "price": "변동",
+          "description": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
     },
     {
       "id": "topic_enrichment_michelin-selected_9c276901269d",
-      "name": "오리지널 넘버스",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 55길 24, Seoul, 06014, 한국",
+      "name": "칸티크",
+      "region": "서울 강남구",
+      "address": "서울 강남구 도산대로55길 24",
       "category": "컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "디저트 테이스팅 코스 / 런치 테이스팅 코스",
       "lat": 37.525098299999996,
       "lng": 127.04071849999998,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_9c276901269d.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_9c276901269d_menu_001",
+          "name": "디저트 테이스팅 코스",
+          "price": "170,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_9c276901269d_menu_002",
+          "name": "런치 테이스팅 코스",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJOYhJNwClfDURpvnZIIPjZes",
       "isOverseas": false
@@ -4394,15 +5895,24 @@
     {
       "id": "topic_enrichment_michelin-selected_481548d630df",
       "name": "오프닝",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 34길 22, 지하1층, Seoul, 06049, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 도산대로34길 22 빌딩 모노폴 지하1층",
       "category": "컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "디너코스 '에너지'",
       "lat": 37.342067,
       "lng": 126.935865,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_481548d630df.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_481548d630df_menu_001",
+          "name": "디너코스 '에너지'",
+          "price": "175,000원",
+          "description": "디너 코스 *추가메뉴와 메인변경은 현장에서 가능하며 당일 한정수량으로 제공됩니다.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJjzynz5lnezUR5uvJ1DphNUM",
       "isOverseas": false
@@ -4410,15 +5920,40 @@
     {
       "id": "topic_enrichment_michelin-selected_c83cbdf6e43e",
       "name": "온",
-      "region": "강남구 도산대로",
-      "address": "강남구 도산대로 92길 42, 지하 1층, Seoul, 06070, 한국",
+      "region": "서울 강남구",
+      "address": "서울 강남구 선릉로148길 48 미준빌딩 3층",
       "category": "프렌치",
-      "representativeMenu": "",
-      "lat": 37.2080828,
-      "lng": 127.11236659999999,
+      "representativeMenu": "Course A(평일 점심만 운영) / Course B(상시운영) / Special Course(상시운영)",
+      "lat": 0,
+      "lng": 0,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_c83cbdf6e43e.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_c83cbdf6e43e_menu_001",
+          "name": "Course A(평일 점심만 운영)",
+          "price": "120,000원",
+          "description": "평일 점심에만 준비하는 부담 없는 점심 코스입니다",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_c83cbdf6e43e_menu_002",
+          "name": "Course B(상시운영)",
+          "price": "180,000원",
+          "description": "프렌치 코스 6가지 요리와 2가지의 디저트를 준비합니다",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_c83cbdf6e43e_menu_003",
+          "name": "Special Course(상시운영)",
+          "price": "250,000원",
+          "description": "캐비어, 랍스터, 전복, 트러플 등 레스토랑에서 특별하게 준비하는 코스입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -4657,15 +6192,45 @@
     {
       "id": "topic_enrichment_michelin-selected_6f5e417073ba",
       "name": "울트라 바이트",
-      "region": "수영구 민락로",
-      "address": "수영구 민락로 14번길 28, Busan, 48286, 한국",
+      "region": "부산 수영구",
+      "address": "부산 수영구 민락로14번길 28 1층 ULTRA BITE 울트라바이트",
       "category": "컨템퍼러리",
-      "representativeMenu": "",
+      "representativeMenu": "ENTREE / MAIN / DESSERT",
       "lat": 35.1577384,
       "lng": 129.1228784,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_6f5e417073ba.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_6f5e417073ba_menu_001",
+          "name": "ENTREE",
+          "price": "20,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6f5e417073ba_menu_002",
+          "name": "MAIN",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6f5e417073ba_menu_003",
+          "name": "DESSERT",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_6f5e417073ba_menu_004",
+          "name": "SIDE",
+          "price": "변동",
+          "description": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJE14UxFrtaDURj5GqLL-IclY",
       "isOverseas": false
@@ -5197,15 +6762,23 @@
     {
       "id": "topic_enrichment_michelin-selected_a36f115381a3",
       "name": "으뜸 이로리바타",
-      "region": "수영구 수영로",
-      "address": "수영구 수영로 408번길 20, Busan, 48308, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 구남로 21 해운대 경동리인뷰 2차 상가208호",
       "category": "일식당",
-      "representativeMenu": "",
-      "lat": 35.162763399999996,
-      "lng": 129.1605802,
+      "representativeMenu": "오마카세",
+      "lat": 0,
+      "lng": 0,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_a36f115381a3.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_a36f115381a3_menu_001",
+          "name": "오마카세",
+          "price": "150,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": null,
       "isOverseas": false
@@ -6312,15 +7885,73 @@
     {
       "id": "topic_enrichment_michelin-selected_98f9ab0f789f",
       "name": "차애전 할매 칼국수",
-      "region": "연제구 과정로",
-      "address": "연제구 과정로 191번가길 70, Busan, 47558, 한국",
+      "region": "부산 연제구",
+      "address": "부산 연제구 과정로191번가길 70 차애전할매칼국수",
       "category": "칼국수",
-      "representativeMenu": "",
+      "representativeMenu": "할매칼국수 소 / 할매칼국수 중 / 할매칼국수 대",
       "lat": 35.1871694,
       "lng": 129.1024846,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_98f9ab0f789f.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_001",
+          "name": "할매칼국수 소",
+          "price": "7,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_002",
+          "name": "할매칼국수 중",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_003",
+          "name": "할매칼국수 대",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_004",
+          "name": "비빔칼국수 중",
+          "price": "8,500원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_005",
+          "name": "비빔칼국수 대",
+          "price": "9,500원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_006",
+          "name": "콩칼국수",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_007",
+          "name": "맷돌콩칼국수 대",
+          "price": "9,500원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_98f9ab0f789f_menu_008",
+          "name": "맛비빔",
+          "price": "6,000원",
+          "description": "1인 1주문시 추가 가능한 맛보기용 비빔칼국수",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJz56MJxiTaDURYtC_CJarU0o",
       "isOverseas": false
@@ -6669,15 +8300,31 @@
     {
       "id": "topic_enrichment_michelin-selected_31d72c17b326",
       "name": "토오루",
-      "region": "부산진구 동성로",
-      "address": "부산진구 동성로 49번길 38-1, Busan, 47304, 한국",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 구남로 21 경동리인뷰2차301동(상가동)203호",
       "category": "일식",
-      "representativeMenu": "",
-      "lat": 35.1551348,
-      "lng": 129.06638809999998,
+      "representativeMenu": "저녁1부 코스(18:30~21:00) / 2부 코스 (21:30~새벽2:00)",
+      "lat": 0,
+      "lng": 0,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_31d72c17b326.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_31d72c17b326_menu_001",
+          "name": "저녁1부 코스(18:30~21:00)",
+          "price": "150,000원",
+          "description": "제철 식재료를 이용한 8품 코스로 1부는 캐치테이블에서 예약제로만 운영되고 있습니다.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_31d72c17b326_menu_002",
+          "name": "2부 코스 (21:30~새벽2:00)",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJ6Rt7nF7raDURsyK3wlebMFE",
       "isOverseas": false
@@ -6869,15 +8516,121 @@
     {
       "id": "topic_enrichment_michelin-selected_472601101a28",
       "name": "평양면옥",
-      "region": "중구 장충단로",
-      "address": "중구 장충단로 207, Seoul, 04615, 한국",
+      "region": "서울 중구",
+      "address": "서울 중구 장충단로 207",
       "category": "냉면",
-      "representativeMenu": "",
+      "representativeMenu": "냉면 / 비빔냉면 / 온면",
       "lat": 37.5189036,
       "lng": 127.0291479,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_472601101a28.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_001",
+          "name": "냉면",
+          "price": "16,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_002",
+          "name": "비빔냉면",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_003",
+          "name": "온면",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_004",
+          "name": "냉면곱배기",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_005",
+          "name": "만두국",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_006",
+          "name": "접시만두/한접시",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_007",
+          "name": "추가만두/반접시",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_008",
+          "name": "제육 한접시",
+          "price": "38,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_009",
+          "name": "제육 반접시",
+          "price": "19,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_010",
+          "name": "소고기편육 한접시",
+          "price": "39,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_011",
+          "name": "소고기편육 반접시",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_012",
+          "name": "한우불고기",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_013",
+          "name": "어복쟁반 대",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_014",
+          "name": "어복쟁반 중",
+          "price": "80,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_472601101a28_menu_015",
+          "name": "쟁반 추가 고기",
+          "price": "65,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJMcnUX-2jfDURvSSGbYjqQdI",
       "isOverseas": false
@@ -7181,15 +8934,155 @@
     {
       "id": "topic_enrichment_michelin-selected_d5099d7e2265",
       "name": "호빈",
-      "region": "중구 동호로",
-      "address": "중구 동호로 287, 앰배서더 서울 풀만 2층, Seoul, 04618, 한국",
+      "region": "서울 중구",
+      "address": "서울 중구 동호로 287 앰배서더 서울 풀만 호텔 2층",
       "category": "중식",
-      "representativeMenu": "",
+      "representativeMenu": "후 불도장 / 황궁연 / 후사부 추천",
       "lat": 37.5601792,
       "lng": 127.00239529999999,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_d5099d7e2265.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_001",
+          "name": "후 불도장",
+          "price": "175,000원",
+          "description": "불도장을 처음 전파한 후덕죽 마스터 셰프의 최고급 보양 요리입니다.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_002",
+          "name": "황궁연",
+          "price": "400,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_003",
+          "name": "후사부 추천",
+          "price": "290,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_004",
+          "name": "불도장연",
+          "price": "260,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_005",
+          "name": "건해삼연",
+          "price": "230,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_006",
+          "name": "제비집연",
+          "price": "190,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_007",
+          "name": "보해연",
+          "price": "160,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_008",
+          "name": "빈코스",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_009",
+          "name": "호코스",
+          "price": "140,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_010",
+          "name": "궁코스",
+          "price": "170,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_011",
+          "name": "북경오리",
+          "price": "165,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_012",
+          "name": "양장피 전채",
+          "price": "90,000원",
+          "description": "*Small dish 기준 금액입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_013",
+          "name": "호빈 통전복 찜",
+          "price": "78,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_014",
+          "name": "전가래복",
+          "price": "148,000원",
+          "description": "*Small dish 기준 금액입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_015",
+          "name": "유린기",
+          "price": "60,000원",
+          "description": "*Small dish 기준 금액입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_016",
+          "name": "탕수소스 흑돼지고기",
+          "price": "68,000원",
+          "description": "*Small dish 기준 금액입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_017",
+          "name": "호빈짬뽕",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_018",
+          "name": "고구마탕",
+          "price": "24,000원",
+          "description": "*Small dish 기준 금액입니다.",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_d5099d7e2265_menu_019",
+          "name": "세가지 맛 모둠 딤섬",
+          "price": "24,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJN4BClAKjfDUR_ear9V64CTc",
       "isOverseas": false

@@ -1,6 +1,6 @@
 {
   "datasetId": "michelin-2-stars",
-  "generatedAt": "2026-07-18T21:45:12.330Z",
+  "generatedAt": "2026-07-19T03:38:48.950Z",
   "restaurants": [
     {
       "id": "topic_enrichment_michelin-2-stars_fbce08263974",
@@ -104,18 +104,43 @@
     {
       "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be",
       "name": "모수",
-      "region": "서울시 용산구",
-      "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
+      "region": "서울 용산구",
+      "address": "서울 용산구 회나무로41길 4 1층 2층",
       "category": "양식",
-      "representativeMenu": "",
+      "representativeMenu": "Lunch Tasting Course / Dinner Tasting Course",
       "lat": 37.5411532,
       "lng": 126.9961548,
       "imageUrl": "/card-data/michelin/topic_enrichment_michelin-2-stars_d2dd9eeff8be.webp",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_001",
+          "name": "Lunch Tasting Course",
+          "price": "320,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_002",
+          "name": "Dinner Tasting Course",
+          "price": "420,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be_menu_003",
+          "name": "Corkage",
+          "price": "200,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJJeNdcbOjfDURCzyDecCVK7o",
-      "isOverseas": false
+      "isOverseas": false,
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-19T03:38:04.331Z",
+      "menuPriceNote": "사용자가 네이버 지도 매장 메뉴 정보를 직접 확인해 제공함."
     },
     {
       "id": "topic_enrichment_michelin-2-stars_2663deda0dab",

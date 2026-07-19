@@ -23,6 +23,22 @@ const researchDatasetIds = [
   "michelin-bib-gourmand",
   "michelin-selected",
 ];
+const priorityResearchSourceGroups = [
+  { label: "백반기행", ids: ["sikgaek-baekban-trip"] },
+  { label: "수요미식회", ids: ["wednesday-gourmet"] },
+  { label: "백종원의 3대천왕", ids: ["baekjong-wok"] },
+  {
+    label: "미슐랭",
+    ids: [
+      "michelin",
+      "michelin-3-stars",
+      "michelin-2-stars",
+      "michelin-1-star",
+      "michelin-bib-gourmand",
+      "michelin-selected",
+    ],
+  },
+];
 
 function normalize(value) {
   return String(value ?? "")
@@ -99,6 +115,10 @@ function getResearchLabel(record) {
     panel_mismatch: "장소 상세 불일치",
     matched_no_priced_menu: "공개 가격 메뉴 없음",
     closed: "폐업 확인",
+    closed_confirmed: "폐업 확인",
+    closed_likely: "폐업 추정",
+    operation_unverified: "영업 여부 미확인",
+    not_single_restaurant: "단일 식당 아님",
     error: "조회 오류",
   };
   return labels[record.status] ?? record.status ?? "미확인";
@@ -113,13 +133,20 @@ async function main() {
     const gaps = data.restaurants
       .map((restaurant) => {
         const menus = Array.isArray(restaurant.menus) ? restaurant.menus : [];
+        const record = findResearchRecord(restaurant, researchRecords);
+        if (
+          ["closed_confirmed", "closed_likely", "not_single_restaurant"].includes(
+            record?.status
+          )
+        ) {
+          return null;
+        }
         const missingPriceCount = menus.filter(
           (menu) => !String(menu.price ?? "").trim()
         ).length;
         if (menus.length > 0 && missingPriceCount === 0) return null;
 
         const sources = data.getSourcesByRestaurant(restaurant.id);
-        const record = findResearchRecord(restaurant, researchRecords);
         return {
           id: restaurant.id,
           name: restaurant.name,
@@ -177,6 +204,21 @@ async function main() {
       ),
     };
 
+    const priorityResearchTargets = [];
+    const seenPriorityRestaurantIds = new Set();
+    for (const group of priorityResearchSourceGroups) {
+      for (const gap of gaps) {
+        if (
+          seenPriorityRestaurantIds.has(gap.id) ||
+          !gap.sources.some((source) => group.ids.includes(source.id))
+        ) {
+          continue;
+        }
+        seenPriorityRestaurantIds.add(gap.id);
+        priorityResearchTargets.push({ ...gap, topic: group.label });
+      }
+    }
+
     const jsonOutput = { summary, restaurants: gaps };
     const jsonPath = path.join(
       workspaceRoot,
@@ -232,7 +274,72 @@ ${detailRows}
     );
     await fs.writeFile(markdownPath, markdown, "utf8");
 
-    console.log(JSON.stringify(summary, null, 2));
+    const priorityCounts = priorityResearchSourceGroups.map((group) => {
+      const targets = priorityResearchTargets.filter(
+        (target) => target.topic === group.label
+      );
+      return {
+        topic: group.label,
+        total: targets.length,
+        noMenu: targets.filter((target) => target.menuCount === 0).length,
+        allPricesMissing: targets.filter(
+          (target) =>
+            target.menuCount > 0 && target.missingPriceCount === target.menuCount
+        ).length,
+        partialPrice: targets.filter(
+          (target) =>
+            target.menuCount > 0 && target.missingPriceCount < target.menuCount
+        ).length,
+      };
+    });
+    const prioritySummaryRows = priorityCounts
+      .map(
+        (row) =>
+          `| ${row.topic} | ${row.total} | ${row.noMenu} | ${row.allPricesMissing} | ${row.partialPrice} |`
+      )
+      .join("\n");
+    const priorityDetailRows = priorityResearchTargets
+      .map((target, index) => {
+        const research = target.placeUrl
+          ? `[${target.researchStatus}](${target.placeUrl})`
+          : target.researchStatus;
+        const place = target.placeUrl ? `[조사 링크](${target.placeUrl})` : "-";
+        return `| ${index + 1} | ${escapeCell(target.topic)} | ${escapeCell(target.name)} | ${escapeCell(target.address)} | ${escapeCell(target.gapType)} | ${research} | ${place} |`;
+      })
+      .join("\n");
+    const priorityMarkdown = `# 메뉴·가격 재조사 대상 ${priorityResearchTargets.length}곳 (${reportDate})
+
+- 대상 주제: 백반기행, 수요미식회, 백종원의 3대천왕, 미슐랭
+- 총 재조사 대상: ${priorityResearchTargets.length}곳
+- 폐업 확인·폐업 추정·단일 식당이 아닌 항목은 공개 목록과 재조사 대상에서 제외했습니다.
+- 주소는 현재 맛픽 저장값입니다. 네이버 지도에서 도로명·지번 주소를 함께 대조한 뒤 전체 메뉴와 가격을 확인합니다.
+
+## 주제별 현황
+
+| 주제 | 합계 | 메뉴 없음 | 전체 가격 없음 | 일부 가격 없음 |
+| --- | ---: | ---: | ---: | ---: |
+${prioritySummaryRows}
+
+## 식당 목록
+
+| 번호 | 주제 | 식당 | 저장 주소 | 누락 유형 | 기존 조사 상태 | 조사 링크 |
+| ---: | --- | --- | --- | --- | --- | --- |
+${priorityDetailRows}
+`;
+    const priorityMarkdownPath = path.join(
+      workspaceRoot,
+      "docs",
+      `menu-price-research-targets-${priorityResearchTargets.length}-${reportDate}.md`
+    );
+    await fs.writeFile(priorityMarkdownPath, priorityMarkdown, "utf8");
+
+    console.log(
+      JSON.stringify(
+        { ...summary, priorityResearchTargetCount: priorityResearchTargets.length },
+        null,
+        2
+      )
+    );
   } finally {
     await server.close();
   }

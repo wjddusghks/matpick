@@ -103,6 +103,76 @@ function normalizeAddressForLookup(address: string) {
   return normalizeLookupValue(address.replace(/\([^)]*\)/g, " "));
 }
 
+function normalizeLocalityToken(value: string) {
+  return value
+    .replace(/[()[\],]/g, "")
+    .replace(
+      /(특별자치도|특별자치시|특별시|광역시|자치구|도|시|군|구|읍|면|동|리)$/,
+      ""
+    )
+    .trim();
+}
+
+const localityShortNames = new Set([
+  "서울",
+  "부산",
+  "대구",
+  "인천",
+  "광주",
+  "대전",
+  "울산",
+  "세종",
+  "제주",
+  "경기",
+  "강원",
+  "충북",
+  "충남",
+  "전북",
+  "전남",
+  "경북",
+  "경남",
+]);
+
+function isAdministrativeLocalityToken(value: string) {
+  const cleaned = value.replace(/[()[\],]/g, "").trim();
+  return (
+    localityShortNames.has(cleaned) ||
+    /(특별자치도|특별자치시|특별시|광역시|자치구|도|시|군|구)$/.test(
+      cleaned
+    )
+  );
+}
+
+function stripRestaurantLocalityAffixes(restaurant: Restaurant): Restaurant {
+  const localityTokens = `${restaurant.region || ""} ${restaurant.address || ""}`
+    .replace(/\([^)]*\)/g, " ")
+    .split(/\s+/)
+    .filter(isAdministrativeLocalityToken)
+    .map(normalizeLocalityToken)
+    .filter(Boolean);
+  const localitySet = new Set(localityTokens);
+  const nameTokens = restaurant.name.trim().split(/\s+/).filter(Boolean);
+
+  while (
+    nameTokens.length > 1 &&
+    localitySet.has(normalizeLocalityToken(nameTokens[0]))
+  ) {
+    nameTokens.shift();
+  }
+
+  while (
+    nameTokens.length > 1 &&
+    localitySet.has(normalizeLocalityToken(nameTokens[nameTokens.length - 1]))
+  ) {
+    nameTokens.pop();
+  }
+
+  const normalizedName = nameTokens.join(" ").trim();
+  return normalizedName && normalizedName !== restaurant.name
+    ? { ...restaurant, name: normalizedName }
+    : restaurant;
+}
+
 function buildRestaurantNameLookupCandidates(
   restaurant: Pick<Restaurant, "name" | "address" | "region">
 ) {
@@ -430,8 +500,18 @@ function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet
     (creator) => !hiddenCreatorIds.has(creator.id)
   );
   const visibleVisits: Visit[] = [];
+  const hiddenRestaurantIds = new Set(
+    dataset.restaurants
+      .filter(
+        (restaurant) =>
+          ["closed", "closed_confirmed", "closed_likely", "not_single_restaurant"].includes(
+            restaurant.menuPriceStatus ?? ""
+          ) || ["폐업", "폐업 확인", "폐업 추정"].includes(restaurant.operationStatus ?? "")
+      )
+      .map((restaurant) => restaurant.id)
+  );
   const visibleSourceLinks = (dataset.sourceLinks ?? []).filter((link) =>
-    publicDataSourceIds.has(link.sourceId)
+    publicDataSourceIds.has(link.sourceId) && !hiddenRestaurantIds.has(link.restaurantId)
   );
   const referencedRestaurantIds = new Set<string>();
 
@@ -529,6 +609,7 @@ const sourceBackedCreatorIds = new Set(
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
   creators: creatorsWithProfileImages,
+  restaurants: dataset.restaurants.map(stripRestaurantLocalityAffixes),
   sources: sourcesWithProfileImages,
 };
 

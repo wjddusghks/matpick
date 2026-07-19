@@ -1,15 +1,15 @@
 {
   "datasetId": "sikgaek-baekban-trip",
   "datasetName": "식객 허영만의 백반기행",
-  "verifiedAt": "2026-07-18T12:40:24.494Z",
+  "verifiedAt": "2026-07-19T04:56:10.388Z",
   "source": "Kakao Maps public place search and place panel",
   "totals": {
     "restaurants": 705,
-    "restaurantsWithPricedMenus": 569,
-    "pricedMenus": 5049,
-    "restaurantsWithoutPricedMenus": 136,
-    "unmatched": 85,
-    "matched_no_priced_menu": 46,
+    "restaurantsWithPricedMenus": 616,
+    "pricedMenus": 5435,
+    "restaurantsWithoutPricedMenus": 89,
+    "unmatched": 62,
+    "matched_no_priced_menu": 22,
     "closed": 5,
     "error": 0
   },
@@ -64,20 +64,6 @@
           "distanceMeters": 437
         }
       ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_253",
-      "name": "강릉 미경이네 횟집",
-      "address": "강원 강릉시 주문진읍 해안로 2017-1 (주문리 829-72)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:15.620Z",
-      "candidates": []
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_251",
@@ -191,20 +177,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_130",
-      "name": "광주 창신식당",
-      "address": "광주 서구 금화로492번길 18-1 (농성동 627-16)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:14.243Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_517",
       "name": "광주 포비엣",
       "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
@@ -244,59 +216,6 @@
           "distanceMeters": 33
         }
       ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_632",
-      "name": "구리 우미관",
-      "address": "경기 구리시 아차산로 57 (아천동 300-10)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:17.766Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "1288071561",
-          "name": "우미관",
-          "address": "경기 구리시 아차산로 293",
-          "query": "구리 우미관 경기 구리시",
-          "total": 231,
-          "nameScore": 180,
-          "addressScore": 51,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2324
-        },
-        {
-          "kakaoPlaceId": "1635854487",
-          "name": "우미관 미사점",
-          "address": "경기 하남시 미사강변중앙로 165",
-          "query": "우미관 경기 구리시",
-          "total": -16,
-          "nameScore": 130,
-          "addressScore": 4,
-          "distanceScore": -90,
-          "localityPenalty": -60,
-          "distanceMeters": 6686
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_576",
-      "name": "남양주 광천정육점식당",
-      "address": "경기 남양주시 진접읍 광릉내로 52 (부평리 525-8)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:17.367Z",
-      "candidates": []
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_230",
@@ -361,57 +280,6 @@
           "distanceScore": 30,
           "localityPenalty": 0,
           "distanceMeters": 1696
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_228",
-      "name": "담양 부부식당",
-      "address": "전남 담양군 담양읍 중앙로 18 (지침리 668)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:15.128Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "27393454",
-          "name": "원조부부찹쌀도너츠",
-          "address": "전남광주통합특별시 담양군 담양읍 메타프로방스1길 19",
-          "query": "담양 부부식당 전남 담양군",
-          "total": 86,
-          "nameScore": 23,
-          "addressScore": 33,
-          "distanceScore": 30,
-          "localityPenalty": 0,
-          "distanceMeters": 1850
-        },
-        {
-          "kakaoPlaceId": "25040582",
-          "name": "부부식당국밥순대",
-          "address": "전남광주통합특별시 동구 제봉로17번길 8-1",
-          "query": "부부식당 전남 담양군",
-          "total": -90,
-          "nameScore": 130,
-          "addressScore": 0,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 20258
-        },
-        {
-          "kakaoPlaceId": "252934088",
-          "name": "부부장어",
-          "address": "전남광주통합특별시 북구 대자로 48-2",
-          "query": "부부식당 전남 담양군",
-          "total": -178,
-          "nameScore": 42,
-          "addressScore": 0,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 18447
         }
       ]
     },
@@ -523,33 +391,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_688",
-      "name": "부산 양가네양곱창",
-      "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:18.309Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "15897470",
-          "name": "양가네양곱창",
-          "address": "부산 수영구 감포로 106",
-          "query": "양가네양곱창 부산 해운대구",
-          "total": 14,
-          "nameScore": 180,
-          "addressScore": 4,
-          "distanceScore": -90,
-          "localityPenalty": -80,
-          "distanceMeters": 3783
-        }
-      ]
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_499",
       "name": "부안 모꼬지바지락요리전문점",
       "address": "전북 고창군 부안면 인촌로 60 (선운리 721-12)",
@@ -604,135 +445,6 @@
       "placeUrl": "",
       "verifiedAt": "2026-07-18T12:32:13.704Z",
       "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_276",
-      "name": "서울 갯마을",
-      "address": "서울 송파구 백제고분로34길 41 (석촌동 226)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:15.572Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "1365694915",
-          "name": "청정갯마을 잠실점",
-          "address": "서울 송파구 올림픽로 329",
-          "query": "서울 갯마을 서울 송파구",
-          "total": 139,
-          "nameScore": 120,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2050
-        },
-        {
-          "kakaoPlaceId": "8171555",
-          "name": "원조갯마을낙지전문점",
-          "address": "서울 송파구 백제고분로9길 6",
-          "query": "서울 갯마을 서울 송파구",
-          "total": 133,
-          "nameScore": 114,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2038
-        },
-        {
-          "kakaoPlaceId": "8378418",
-          "name": "산낙지갯마을",
-          "address": "서울 강남구 광평로 226",
-          "query": "갯마을 서울 송파구",
-          "total": 84,
-          "nameScore": 130,
-          "addressScore": 4,
-          "distanceScore": 30,
-          "localityPenalty": -80,
-          "distanceMeters": 1526
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_106",
-      "name": "서울 경상도식당 (경상도집)",
-      "address": "서울 중구 을지로39길 29 (을지로6가 1-1)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:14.330Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "25770170",
-          "name": "경상도식당",
-          "address": "서울 중구 을지로39길 41",
-          "query": "서울경상도식당 서울 중구",
-          "total": 194,
-          "nameScore": 147,
-          "addressScore": 47,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_304",
-      "name": "서울 골목집",
-      "address": "서울 영등포구 도림로139가길 11-1 (문래동2가 42-6)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.086Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "218867054",
-          "name": "골목오리집",
-          "address": "서울 영등포구 도림로139가길 11",
-          "query": "골목집 서울 영등포구",
-          "total": 229,
-          "nameScore": 42,
-          "addressScore": 47,
-          "distanceScore": 140,
-          "localityPenalty": 0,
-          "distanceMeters": 14
-        },
-        {
-          "kakaoPlaceId": "62149761",
-          "name": "골목집",
-          "address": "서울 영등포구 선유로49길 15-4",
-          "query": "서울 골목집 서울 영등포구",
-          "total": 199,
-          "nameScore": 180,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2550
-        },
-        {
-          "kakaoPlaceId": "629255707",
-          "name": "선유골목집",
-          "address": "서울 영등포구 양평로22가길 4-1",
-          "query": "서울 골목집 서울 영등포구",
-          "total": 157,
-          "nameScore": 138,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2818
-        }
-      ]
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_063",
@@ -841,84 +553,6 @@
           "distanceScore": -90,
           "localityPenalty": 0,
           "distanceMeters": 4179
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_308",
-      "name": "서울 덕원",
-      "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.050Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "1653115762",
-          "name": "덕원식당",
-          "address": "서울 영등포구 버드나루로6길 6",
-          "query": "서울 덕원 서울 영등포구",
-          "total": 194,
-          "nameScore": 130,
-          "addressScore": 64,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        },
-        {
-          "kakaoPlaceId": "1318781477",
-          "name": "홍익덕원",
-          "address": "서울 영등포구 영등포로5길 19",
-          "query": "서울 덕원 서울 영등포구",
-          "total": 149,
-          "nameScore": 130,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        },
-        {
-          "kakaoPlaceId": "8897461",
-          "name": "연세덕원치과",
-          "address": "서울 영등포구 당산로 77",
-          "query": "서울 덕원 서울 영등포구",
-          "total": 136,
-          "nameScore": 117,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_693",
-      "name": "서울 리숨두부",
-      "address": "서울 서초구 원터4길 7 (원지동 374-1)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:18.308Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "1259258049",
-          "name": "리숨두부",
-          "address": "서울 강남구 봉은사로114길 12",
-          "query": "리숨두부 서울 서초구",
-          "total": 14,
-          "nameScore": 180,
-          "addressScore": 4,
-          "distanceScore": -90,
-          "localityPenalty": -80,
-          "distanceMeters": 7908
         }
       ]
     },
@@ -1199,20 +833,6 @@
       ]
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_593",
-      "name": "서울 한우다이닝 울릉",
-      "address": "서울 서초구 서운로 135 (서초동 1322-11)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:17.424Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_243",
       "name": "서울 할매보리밥집",
       "address": "서울 용산구 보광로14길 12-4 (보광동 10-9)",
@@ -1252,20 +872,6 @@
       "phone": "",
       "placeUrl": "",
       "verifiedAt": "2026-07-18T12:32:16.499Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_694",
-      "name": "성남 고미꽃시래",
-      "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:18.308Z",
       "candidates": []
     },
     {
@@ -1351,33 +957,6 @@
       ]
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_093",
-      "name": "순천 풍미통닭",
-      "address": "전남 순천시 성남뒷길 3 (장천동 19-16)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:14.166Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "21513162",
-          "name": "풍미통닭",
-          "address": "전남광주통합특별시 순천시 팔마1길 2",
-          "query": "순천 풍미통닭 전남 순천시",
-          "total": 195,
-          "nameScore": 180,
-          "addressScore": 15,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": 2621
-        }
-      ]
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_297",
       "name": "양주 노고산로뎀나무",
       "address": "경기 양주시 장흥면 유원지로 83 (삼상리 146-7)",
@@ -1390,47 +969,6 @@
       "placeUrl": "",
       "verifiedAt": "2026-07-18T12:32:15.586Z",
       "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_296",
-      "name": "양주 동언집 (동언식당)",
-      "address": "경기 양주시 덕정1길 15-3 (덕정동 350-63)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:15.684Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_294",
-      "name": "양주 부일기사식당 (부일부대찌개)",
-      "address": "경기 양주시 장흥면 호국로 557-2 (부곡리 540-35)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:15.628Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "25037219",
-          "name": "송추부일기사식당",
-          "address": "경기 양주시 부흥로 1338",
-          "query": "양주 부일기사식당 (부일부대찌개) 경기 양주시",
-          "total": 18,
-          "nameScore": 89,
-          "addressScore": 19,
-          "distanceScore": -90,
-          "localityPenalty": 0,
-          "distanceMeters": 8507
-        }
-      ]
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_259",
@@ -1498,33 +1036,6 @@
       ]
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_662",
-      "name": "여주 팔남매",
-      "address": "경기 여주시 여흥로11번길 57 (하동 249-8)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:18.281Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "18258778",
-          "name": "8남매만두찐빵도나스 여주점",
-          "address": "경기 여주시 여흥로11번길 57",
-          "query": "여주 팔남매 경기 여주시",
-          "total": 263,
-          "nameScore": 31,
-          "addressScore": 92,
-          "distanceScore": 140,
-          "localityPenalty": 0,
-          "distanceMeters": 4
-        }
-      ]
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_396",
       "name": "영덕 시장밥집",
       "address": "경북 영덕군 영덕읍 남석길 23-10 (남석리 26-50)",
@@ -1537,33 +1048,6 @@
       "placeUrl": "",
       "verifiedAt": "2026-07-18T12:32:16.473Z",
       "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_442",
-      "name": "영동 선미식당",
-      "address": "충북 영동군 학산면 서산로 39-1 (서산리 810-5)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.461Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "1414831204",
-          "name": "선미네올갱이",
-          "address": "충북 옥천군 이원면 묘목로 118",
-          "query": "선미식당 충북 영동군",
-          "total": -185,
-          "nameScore": 31,
-          "addressScore": 4,
-          "distanceScore": -220,
-          "localityPenalty": 0,
-          "distanceMeters": 17710
-        }
-      ]
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_389",
@@ -1580,20 +1064,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_479",
-      "name": "영월 노루목상회식당",
-      "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.969Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_326",
       "name": "완도 장도식당슈퍼",
       "address": "전남 완도군 완도읍 청해진로1369번길 38-3 (장좌리 152-1)",
@@ -1606,33 +1076,6 @@
       "placeUrl": "",
       "verifiedAt": "2026-07-18T12:32:16.087Z",
       "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_588",
-      "name": "울산 밀양시골밥상",
-      "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:17.342Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "24812530",
-          "name": "밀양시골밥상 태화점",
-          "address": "울산 중구 태화강국가정원길 163",
-          "query": "울산 밀양시골밥상 울산 중구",
-          "total": 162,
-          "nameScore": 143,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        }
-      ]
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_484",
@@ -1670,33 +1113,6 @@
           "distanceScore": -220,
           "localityPenalty": -220,
           "distanceMeters": 24833
-        }
-      ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_311",
-      "name": "인천 중국물만두",
-      "address": "인천 부평구 주부토로32번길 27 (부평동 252-56)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.077Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "817239146",
-          "name": "중국쌀국수",
-          "address": "인천 부평구 경인로 959-1",
-          "query": "인천 중국물만두 인천 부평구",
-          "total": 80,
-          "nameScore": 31,
-          "addressScore": 19,
-          "distanceScore": 30,
-          "localityPenalty": 0,
-          "distanceMeters": 1136
         }
       ]
     },
@@ -1795,33 +1211,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_348",
-      "name": "충주 올뱅이식당",
-      "address": "충북 충주시 신대1길 1 (단월동 451-4)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:16.059Z",
-      "candidates": [
-        {
-          "kakaoPlaceId": "841702538",
-          "name": "단월올뱅이",
-          "address": "충북 충주시 달천강변1길 8",
-          "query": "충주 올뱅이식당 충북 충주시",
-          "total": 82,
-          "nameScore": 63,
-          "addressScore": 19,
-          "distanceScore": 0,
-          "localityPenalty": 0,
-          "distanceMeters": null
-        }
-      ]
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_299",
       "name": "태안 산장가든",
       "address": "충남 태안군 태안읍 상도로 49-57 (상옥리 1156)",
@@ -1847,20 +1236,6 @@
           "distanceMeters": 7738
         }
       ]
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_621",
-      "name": "태안 자연산횟집오대감튀김",
-      "address": "충남 태안군 안면읍 백사장1길 117 (창기리 1269-25)",
-      "status": "unmatched",
-      "statusLabel": "식당 검색 불일치",
-      "reason": "주소와 상호가 모두 일치하는 공개 장소 정보를 확인하지 못함",
-      "matchedName": "",
-      "matchedAddress": "",
-      "phone": "",
-      "placeUrl": "",
-      "verifiedAt": "2026-07-18T12:32:17.816Z",
-      "candidates": []
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_516",
@@ -1986,90 +1361,6 @@
       ]
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_703",
-      "name": "가평 황보네주막",
-      "address": "경기 가평군 설악면 다락재로 8 (회곡리 산22-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "황보네주막",
-      "matchedAddress": "경기 가평군 설악면 유명로 1833-9 1층 (설악면 선촌리)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/1691373357",
-      "verifiedAt": "2026-07-15T22:59:25.467Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_422",
-      "name": "경주 평양냉면집",
-      "address": "경북 경주시 원효로 109-2 (노동동 81-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "평양냉면집",
-      "matchedAddress": "경북 경주시 원효로105번길 10 1층 (노동동)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/1386924387",
-      "verifiedAt": "2026-07-15T22:59:01.480Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_698",
-      "name": "고성 송암현대떡방앗간",
-      "address": "강원 고성군 죽왕면 동해대로 5623 (송암리 237)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "송암현대방앗간",
-      "matchedAddress": "강원특별자치도 고성군 죽왕면 동해대로 5623 (죽왕면 송암리)",
-      "phone": "033-632-2300",
-      "placeUrl": "https://place.map.kakao.com/9592374",
-      "verifiedAt": "2026-07-15T22:59:25.503Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_431",
-      "name": "고흥 화정상회",
-      "address": "전남 고흥군 고흥읍 시장천변길 29-16 (남계리 625-2)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "화정상회",
-      "matchedAddress": "전남광주통합특별시 고흥군 고흥읍 시장천변길 29-16 어물전 1층 22호 (고흥읍 남계리)",
-      "phone": "061-835-4761",
-      "placeUrl": "https://place.map.kakao.com/703904938",
-      "verifiedAt": "2026-07-15T22:59:02.295Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_323",
-      "name": "광양 시장국밥",
-      "address": "전남 광양시 광양읍 백운로 3 (목성리 696-3)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "시장식당",
-      "matchedAddress": "전남광주통합특별시 광양시 광양읍 백운로 3 62호 (광양읍 목성리)",
-      "phone": "061-763-3533",
-      "placeUrl": "https://place.map.kakao.com/1712204655",
-      "verifiedAt": "2026-07-15T23:10:32.193Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_321",
-      "name": "광양 예촌식당",
-      "address": "전남 광양시 남산1길 27 (광영동 729-12)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "예촌식당",
-      "matchedAddress": "전남광주통합특별시 광양시 남산1길 27 (광영동)",
-      "phone": "061-794-4737",
-      "placeUrl": "https://place.map.kakao.com/9883273",
-      "verifiedAt": "2026-07-15T22:58:53.162Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_319",
       "name": "광양 홍쌍리 청매실농원",
       "address": "전남 광양시 다압면 지막1길 55 (도사리 403)",
@@ -2095,20 +1386,6 @@
       "phone": "061-782-7949",
       "placeUrl": "https://place.map.kakao.com/12190529",
       "verifiedAt": "2026-07-15T22:58:38.286Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_617",
-      "name": "군산 서수해장국",
-      "address": "전북 군산시 서수면 남산로 306 (서수리 1383-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "서수해장국",
-      "matchedAddress": "전북특별자치도 군산시 서수면 남산로 306 (서수면 서수리)",
-      "phone": "063-453-3926",
-      "placeUrl": "https://place.map.kakao.com/13616512",
-      "verifiedAt": "2026-07-15T22:59:17.912Z",
       "candidates": []
     },
     {
@@ -2151,34 +1428,6 @@
       "phone": "",
       "placeUrl": "https://place.map.kakao.com/1208645842",
       "verifiedAt": "2026-07-15T22:58:29.196Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_527",
-      "name": "무안 곰솔낙지 (곰솔가든)",
-      "address": "전남 무안군 망운면 운해로 1447 (목동리 388-4)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "곰솔가든",
-      "matchedAddress": "전남광주통합특별시 무안군 망운면 운해로 1447 (망운면 목동리)",
-      "phone": "061-452-1073",
-      "placeUrl": "https://place.map.kakao.com/8664642",
-      "verifiedAt": "2026-07-15T22:59:10.367Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_529",
-      "name": "무안 삼부자낙지",
-      "address": "전남 무안군 삼향읍 남악5로52번길 13-7 (남악리 1721)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "삼부자신안뻘낙지",
-      "matchedAddress": "전남광주통합특별시 무안군 삼향읍 남악5로52번길 13-7 남악시장 36호 (삼향읍 남악리)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/14972588",
-      "verifiedAt": "2026-07-15T23:10:33.975Z",
       "candidates": []
     },
     {
@@ -2252,20 +1501,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_020",
-      "name": "부산 중리해녀촌",
-      "address": "부산 영도구 절영로 355 (동삼동 628-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "중리해녀촌",
-      "matchedAddress": "부산 영도구 중리남로 2-36 (동삼동)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/273038784",
-      "verifiedAt": "2026-07-15T22:58:27.331Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_006",
       "name": "서산 가야슈퍼",
       "address": "충남 서산시 운산면 개심사로 322 (신창리 18-2)",
@@ -2294,104 +1529,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_008",
-      "name": "서산 정성맛집",
-      "address": "충남 서산시 시장3길 3 (동문동 900)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "정성맛집",
-      "matchedAddress": "충남 서산시 시장2로 6 동부시장 A동 1층 519,520,540,541호 (동문동)",
-      "phone": "010-4830-9083",
-      "placeUrl": "https://place.map.kakao.com/12194342",
-      "verifiedAt": "2026-07-15T22:58:26.656Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_017",
-      "name": "서울 성원식품",
-      "address": "서울 중구 을지로20길 36 (인현동2가 92-10)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "성원식품",
-      "matchedAddress": "서울 중구 을지로20길 36 1층 (인현동2가)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/2051110417",
-      "verifiedAt": "2026-07-15T22:58:27.183Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_083",
-      "name": "서울 퓨전선술집",
-      "address": "서울 마포구 월드컵로1길 7 (합정동 383-9)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "퓨전선술집",
-      "matchedAddress": "서울 마포구 월드컵로1길 7 1층 (합정동)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/17079032",
-      "verifiedAt": "2026-07-15T22:58:32.874Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_012",
-      "name": "서울 학다방",
-      "address": "서울 중구 퇴계로37길 19 (필동1가 47-2)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "학다방",
-      "matchedAddress": "서울 중구 퇴계로37길 19 2층 (필동1가)",
-      "phone": "02-2279-0031",
-      "placeUrl": "https://place.map.kakao.com/21442938",
-      "verifiedAt": "2026-07-15T22:58:26.558Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_404",
-      "name": "속초 경진호",
-      "address": "강원 속초시 동해대로 3666 (대포동 178-75)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "경진호",
-      "matchedAddress": "강원특별자치도 속초시 동해대로 3666 설악항 1층 26호 (대포동)",
-      "phone": "033-633-9775",
-      "placeUrl": "https://place.map.kakao.com/14583348",
-      "verifiedAt": "2026-07-15T22:59:00.221Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_344",
-      "name": "순창 백야촌",
-      "address": "전북 순창군 팔덕면 담순로 889-13 (덕천리 245-23)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "백야촌",
-      "matchedAddress": "전북특별자치도 순창군 팔덕면 담순로 889-13 (팔덕면 덕천리)",
-      "phone": "063-653-7029",
-      "placeUrl": "https://place.map.kakao.com/12113862",
-      "verifiedAt": "2026-07-15T22:58:54.508Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_692",
-      "name": "순천 대박집",
-      "address": "전남 순천시 대석3길 10 (연향동 1473-8)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "대박집",
-      "matchedAddress": "전남광주통합특별시 순천시 대석3길 10 1층 (연향동)",
-      "phone": "061-722-7507",
-      "placeUrl": "https://place.map.kakao.com/12610242",
-      "verifiedAt": "2026-07-15T22:59:24.901Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_164",
       "name": "안동 수정식당",
       "address": "경북 안동시 중앙시장2길 26-1 (옥야동 305-10)",
@@ -2403,20 +1540,6 @@
       "phone": "054-841-0150",
       "placeUrl": "https://place.map.kakao.com/25999527",
       "verifiedAt": "2026-07-15T22:58:39.449Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_504",
-      "name": "안성 한경식당",
-      "address": "경기 안성시 중앙로372번길 21 (서인동 104)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "한경식당",
-      "matchedAddress": "경기 안성시 중앙로372번길 21 1층 (서인동)",
-      "phone": "031-676-7377",
-      "placeUrl": "https://place.map.kakao.com/1171116433",
-      "verifiedAt": "2026-07-15T22:59:08.319Z",
       "candidates": []
     },
     {
@@ -2445,20 +1568,6 @@
       "phone": "061-641-7004",
       "placeUrl": "https://place.map.kakao.com/2116812212",
       "verifiedAt": "2026-07-15T22:59:06.322Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_179",
-      "name": "여수 자봉식당",
-      "address": "전남 여수시 충무로 19 (교동 599-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "자봉식당",
-      "matchedAddress": "전남광주통합특별시 여수시 교동시장7길 2-4 (교동)",
-      "phone": "061-663-3263",
-      "placeUrl": "https://place.map.kakao.com/8542972",
-      "verifiedAt": "2026-07-15T22:58:41.065Z",
       "candidates": []
     },
     {
@@ -2504,34 +1613,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_068",
-      "name": "인천 인천당",
-      "address": "인천 중구 참외전로 138 (용동 2)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "인천당",
-      "matchedAddress": "인천 제물포구 참외전로 138 (용동)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/16033110",
-      "verifiedAt": "2026-07-15T22:58:31.248Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_641",
-      "name": "장흥 본전식당",
-      "address": "전남 장흥군 회진면 노력도2길 1-1 (덕산리 2018-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "본전식당",
-      "matchedAddress": "전남광주통합특별시 장흥군 회진면 노력도2길 1-1 (회진면 덕산리)",
-      "phone": "061-867-6196",
-      "placeUrl": "https://place.map.kakao.com/12607231",
-      "verifiedAt": "2026-07-15T22:59:20.099Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_416",
       "name": "정읍 옛날팥죽",
       "address": "전북 정읍시 중앙로 162 (시기동 356-1)",
@@ -2546,34 +1627,6 @@
       "candidates": []
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_403",
-      "name": "진주 송가네",
-      "address": "경남 진주시 촉석로202번길 7 (대안동 8-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "송가네",
-      "matchedAddress": "경남 진주시 촉석로202번길 7 (대안동)",
-      "phone": "",
-      "placeUrl": "https://place.map.kakao.com/477904113",
-      "verifiedAt": "2026-07-15T22:59:00.213Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_401",
-      "name": "진주 평양빈대떡",
-      "address": "경남 진주시 진양호로 513 (중안동 13-18)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "평양빈대떡",
-      "matchedAddress": "경남 진주시 진양호로 513 1층 (중안동)",
-      "phone": "055-742-3412",
-      "placeUrl": "https://place.map.kakao.com/9543703",
-      "verifiedAt": "2026-07-15T22:58:59.368Z",
-      "candidates": []
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_669",
       "name": "태백 김서방네닭갈비",
       "address": "강원 태백시 시장남1길 7-1 (황지동 30-17)",
@@ -2585,20 +1638,6 @@
       "phone": "",
       "placeUrl": "https://place.map.kakao.com/398021523",
       "verifiedAt": "2026-07-15T22:59:22.799Z",
-      "candidates": []
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_520",
-      "name": "평창 오복가든",
-      "address": "강원 평창군 용평면 운두령로 377-81 (속사리 984-1)",
-      "status": "matched_no_priced_menu",
-      "statusLabel": "가격 메뉴판 비공개",
-      "reason": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
-      "matchedName": "오복가든",
-      "matchedAddress": "강원특별자치도 평창군 용평면 운두령로 377-81 1층 (용평면 속사리)",
-      "phone": "033-333-8726",
-      "placeUrl": "https://place.map.kakao.com/21447338",
-      "verifiedAt": "2026-07-15T22:59:09.731Z",
       "candidates": []
     },
     {

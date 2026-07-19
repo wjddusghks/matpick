@@ -6,6 +6,12 @@
     "targetId": "ttoganjip"
   },
   {
+    "slug": "mogeultende",
+    "name": "먹을텐데",
+    "kind": "creator",
+    "targetId": "UCfpaSruWW3S4dibonKXENjA"
+  },
+  {
     "slug": "popular-restaurants",
     "name": "인기맛집",
     "kind": "source",
@@ -52,5 +58,23 @@
     "name": "백종원의 3대천왕",
     "kind": "source",
     "targetId": "baekjong-wok"
+  },
+  {
+    "slug": "culinary-class-wars",
+    "name": "흑백요리사 셰프 식당",
+    "kind": "source",
+    "targetId": "culinary-class-wars"
+  },
+  {
+    "slug": "jeonhyunmoo-plan",
+    "name": "전현무계획",
+    "kind": "source",
+    "targetId": "jeonhyunmoo-plan"
+  },
+  {
+    "slug": "seoul-taste-100",
+    "name": "서울미식 100선",
+    "kind": "source",
+    "targetId": "seoul-taste-100-2025"
   }
 ]

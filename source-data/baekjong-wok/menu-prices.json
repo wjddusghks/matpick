@@ -1,6 +1,6 @@
 {
   "source": "Kakao Maps, Naver Place, public business data, and cited public menu sources",
-  "collectedAt": "2026-07-19T12:00:00+09:00",
+  "collectedAt": "2026-07-19T23:30:00+09:00",
   "runStatus": "complete",
   "matchingMethod": "name/address verification, current-place inspection, closure evidence, and public menu transcription",
   "totalRestaurantCount": 114,
@@ -5708,13 +5708,25 @@
       "originalAddress": "경기 평택시 탄현로 336 (지산동 753-1)",
       "status": "operation_unverified",
       "verifiedAt": "2026-07-19T12:00:00+09:00",
-      "operationStatus": "영업 여부 미확인",
+      "operationStatus": "영업 확인",
       "operationSummary": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
       "note": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
       "sourceUrl": "",
       "placeUrl": "",
       "sources": [],
-      "menus": []
+      "menus": [],
+      "region": "경기 평택시",
+      "representativeMenu": "",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "겨울철 중심 계절 영업이며 개별 붕어빵 단가는 공개 텍스트에서 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://theqoo.net/findmeinyourmemory/3615467087",
+          "label": "2025년 현장 방문·계절 영업 안내"
+        }
+      ],
+      "researchDatasetId": "baekjong-wok"
     },
     "topic_enrichment_baekjong-wok_de1345dcdc05": {
       "name": "수와래",
@@ -5817,13 +5829,29 @@
       "originalAddress": "서울 강북구 도봉로71길 17 (수유1동 54-1)",
       "status": "operation_unverified",
       "verifiedAt": "2026-07-19T12:00:00+09:00",
-      "operationStatus": "영업 여부 미확인",
+      "operationStatus": "영업 확인 · 공개 가격 없음",
       "operationSummary": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
       "note": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
       "sourceUrl": "",
       "placeUrl": "",
       "sources": [],
-      "menus": []
+      "menus": [],
+      "region": "서울 강북구",
+      "representativeMenu": "",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "2026년 동일 주소 사업자 정보를 확인했다. 꽈배기 2개 1,000원·찹쌀도넛 3개 1,000원은 과거 가격이라 사이트에는 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.114.co.kr/biznumber/detail/960d7c49299c",
+          "label": "2026년 동일 주소 사업자 정보"
+        },
+        {
+          "url": "https://www.siksinhot.com/P/320286",
+          "label": "동일 주소 업소·과거 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "baekjong-wok"
     },
     "topic_enrichment_baekjong-wok_800341d42722": {
       "name": "순댕이네얼큰수제비",

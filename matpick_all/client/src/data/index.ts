@@ -504,7 +504,13 @@ function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet
     dataset.restaurants
       .filter(
         (restaurant) =>
-          ["closed", "closed_confirmed", "closed_likely", "not_single_restaurant"].includes(
+          [
+            "closed",
+            "closed_confirmed",
+            "closed_likely",
+            "not_single_restaurant",
+            "excluded_no_public_price",
+          ].includes(
             restaurant.menuPriceStatus ?? ""
           ) || ["폐업", "폐업 확인", "폐업 추정"].includes(restaurant.operationStatus ?? "")
       )

@@ -203,6 +203,10 @@ export function createNaverMenuInspector(tab) {
       dom = await tab.dom_cua.get_visible_dom();
       lines = dom.split("\n");
     }
+    const pageNameLine = lines.find((line) => /role="heading"[^>]*>/.test(line));
+    const pageName =
+      pageNameLine?.replace(/^.*role="heading"[^>]*>/, "").replace(/<\/[^>]+>.*$/, "").trim() ??
+      "";
     const addressLine = lines.find(
       (line) =>
         /role="button">(?:서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주)/.test(
@@ -233,6 +237,17 @@ export function createNaverMenuInspector(tab) {
 
     dom = await tab.dom_cua.get_visible_dom();
     lines = dom.split("\n");
+    if (lines.some((line) => /폐업/.test(line))) {
+      return {
+        ...item,
+        outcome: "closed_confirmed",
+        placeId,
+        pageName,
+        pageAddress,
+        jibun,
+        url,
+      };
+    }
     const menuLine = lines.find((line) => /role="tab">메뉴/.test(line));
     const menuNodeId = nodeIdFromLine(menuLine);
 
@@ -241,6 +256,7 @@ export function createNaverMenuInspector(tab) {
         ...item,
         outcome: "no_menu_tab",
         placeId,
+        pageName,
         pageAddress,
         jibun,
         url,
@@ -282,6 +298,7 @@ export function createNaverMenuInspector(tab) {
       ...item,
       outcome: menus.length > 0 ? "menus" : "menu_tab_empty",
       placeId,
+      pageName,
       pageAddress,
       jibun,
       url,

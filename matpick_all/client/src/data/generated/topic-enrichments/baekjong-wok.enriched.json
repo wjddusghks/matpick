@@ -1,6 +1,6 @@
 {
   "datasetId": "baekjong-wok",
-  "generatedAt": "2026-07-19T05:36:27.125Z",
+  "generatedAt": "2026-07-19T23:30:00+09:00",
   "restaurants": [
     {
       "id": "topic_enrichment_baekjong-wok_6a00fbce20f8",
@@ -13847,11 +13847,18 @@
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJH6e41yA5ezURPzJu1qynRaY",
       "isOverseas": false,
-      "operationStatus": "영업 여부 미확인",
+      "operationStatus": "영업 확인",
       "operationSummary": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
-      "menuPriceStatus": "operation_unverified",
-      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
-      "menuPriceNote": "송탄시장 노점으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음."
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "겨울철 중심 계절 영업이며 개별 붕어빵 단가는 공개 텍스트에서 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://theqoo.net/findmeinyourmemory/3615467087",
+          "label": "2025년 현장 방문·계절 영업 안내"
+        }
+      ],
+      "researchDatasetId": "baekjong-wok"
     },
     {
       "id": "topic_enrichment_baekjong-wok_416156cd1d89",
@@ -14162,11 +14169,22 @@
       "thumbnailFileName": null,
       "googlePlaceId": "ChIJiztNcGu8fDURwdmwliKBSqQ",
       "isOverseas": false,
-      "operationStatus": "영업 여부 미확인",
+      "operationStatus": "영업 확인 · 공개 가격 없음",
       "operationSummary": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음.",
-      "menuPriceStatus": "operation_unverified",
-      "menuPriceVerifiedAt": "2026-07-19T12:00:00+09:00",
-      "menuPriceNote": "수유재래시장 노점형 매장으로 보이며 현재 지도 등록·최근 가격표를 확인하지 못함. 폐업으로 단정하지 않음."
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "2026년 동일 주소 사업자 정보를 확인했다. 꽈배기 2개 1,000원·찹쌀도넛 3개 1,000원은 과거 가격이라 사이트에는 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.114.co.kr/biznumber/detail/960d7c49299c",
+          "label": "2026년 동일 주소 사업자 정보"
+        },
+        {
+          "url": "https://www.siksinhot.com/P/320286",
+          "label": "동일 주소 업소·과거 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "baekjong-wok"
     },
     {
       "id": "topic_enrichment_baekjong-wok_800341d42722",

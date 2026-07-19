@@ -4950,78 +4950,93 @@
     },
     {
       "id": "old-korean-100_restaurant_072",
-      "name": "경주 원조콩국",
+      "name": "원조콩국",
       "region": "경북 경주시",
       "address": "경북 경주시 첨성로 113 (황남동 142-2)",
       "category": "콩국수",
-      "representativeMenu": "콩국수",
+      "representativeMenu": "따뜻한콩국1 검은깨,검은콩,꿀,찹쌀도너츠 / 따뜻한콩국2 참기름,들깨,계란노른자,흑설탕 / 따뜻한콩국3 찹쌀도너츠,들깨,계란노른자,흑설탕",
       "lat": 35.833449,
       "lng": 129.2147152,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_072.jpg",
       "foundingYear": 1956,
       "menus": [
         {
-          "id": "old-korean-100_restaurant_072_menu_1",
-          "name": "따뜻한콩국1",
-          "price": "8,000원",
-          "isSignature": true
-        },
-        {
-          "id": "old-korean-100_restaurant_072_menu_2",
-          "name": "따뜻한콩국3",
-          "price": "7,000원",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_072_menu_3",
-          "name": "콩국수",
+          "id": "old-korean-100_restaurant_072_menu_001",
+          "name": "따뜻한콩국1 검은깨,검은콩,꿀,찹쌀도너츠",
           "price": "9,000원",
-          "isSignature": false
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "old-korean-100_restaurant_072_menu_4",
+          "id": "old-korean-100_restaurant_072_menu_002",
+          "name": "따뜻한콩국2 참기름,들깨,계란노른자,흑설탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "old-korean-100_restaurant_072_menu_003",
+          "name": "따뜻한콩국3 찹쌀도너츠,들깨,계란노른자,흑설탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "old-korean-100_restaurant_072_menu_004",
           "name": "냉우무콩국",
-          "price": "7,000원",
-          "isSignature": false
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "old-korean-100_restaurant_072_menu_5",
-          "name": "따뜻한콩국2",
-          "price": "7,000원",
-          "isSignature": false
+          "id": "old-korean-100_restaurant_072_menu_005",
+          "name": "콩국수",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
         },
         {
-          "id": "old-korean-100_restaurant_072_menu_6",
-          "name": "생콩우거지탕",
+          "id": "old-korean-100_restaurant_072_menu_006",
+          "name": "콩국수 대",
           "price": "12,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 6
         },
         {
-          "id": "old-korean-100_restaurant_072_menu_7",
-          "name": "생콩해물파전",
-          "price": "13,000원",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_072_menu_8",
+          "id": "old-korean-100_restaurant_072_menu_007",
           "name": "순두부찌개",
           "price": "12,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 7
         },
         {
-          "id": "old-korean-100_restaurant_072_menu_9",
-          "name": "콩국수 (대)",
-          "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_072_menu_10",
+          "id": "old-korean-100_restaurant_072_menu_008",
           "name": "들깨순두부",
-          "isSignature": false
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "old-korean-100_restaurant_072_menu_009",
+          "name": "생콩해물파전",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
         }
       ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%9B%90%EC%A1%B0%EC%BD%A9%EA%B5%AD%20%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%A3%BC%EC%8B%9C/place/11889476?c=15.00,0,0,0,dh&placePath=%3Fbk_query%253D%2525EC%25259B%252590%2525EC%2525A1%2525B0%2525EC%2525BD%2525A9%2525EA%2525B5%2525AD%252520%2525EA%2525B2%2525BD%2525EB%2525B6%252581%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2525EC%25258B%25259C%2526entry%253Dbmp",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "old-korean-100"
     },
     {
       "id": "old-korean-100_restaurant_073",
@@ -7629,5 +7644,6 @@
       "label": "한국인이 사랑하는 오래된 한식당 100선",
       "note": "Founded in 1967"
     }
-  ]
+  ],
+  "generatedAt": "2026-07-19T23:30:00+09:00"
 }

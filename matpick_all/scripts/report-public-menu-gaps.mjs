@@ -119,6 +119,7 @@ function getResearchLabel(record) {
     closed_likely: "폐업 추정",
     operation_unverified: "영업 여부 미확인",
     not_single_restaurant: "단일 식당 아님",
+    excluded_no_public_price: "영업 확인·공개 가격 없음(공개 제외)",
     error: "조회 오류",
   };
   return labels[record.status] ?? record.status ?? "미확인";

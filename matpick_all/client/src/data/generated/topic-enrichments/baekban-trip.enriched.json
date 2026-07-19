@@ -1,6 +1,6 @@
 {
   "datasetId": "baekban-trip",
-  "generatedAt": "2026-07-19T04:56:10.388Z",
+  "generatedAt": "2026-07-19T23:30:00+09:00",
   "restaurants": [
     {
       "id": "sikgaek-baekban-trip_restaurant_001",
@@ -64,7 +64,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_005",
-      "name": "서산 삼길포수산물직매장 (지은이네)",
+      "name": "삼길포수산물직매장 (지은이네)",
       "region": "충남 서산시",
       "address": "충남 서산시 대산읍 삼길포1로 72-2 (화곡리 1883)",
       "category": "상인용 식사",
@@ -75,11 +75,26 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 여부 미확인",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "삼길포수산물직매장 건물의 현행 영업은 확인했지만, 개별 점포 ‘지은이네’의 현행 영업과 고정 가격표는 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=wu6gGR4mQqyM",
+          "label": "동일 주소 수산물직매장 현행 자료"
+        },
+        {
+          "url": "https://place.udanax.org/place.php?id=1257359&placeName=%EB%8C%80%EC%82%B0%ED%95%AD%EC%88%98%EC%82%B0.%EC%82%BC%EA%B8%B8%ED%8F%AC%EC%88%98%EC%82%B0%EB%AC%BC%EC%A7%81%EB%A7%A4%EC%9E%A5",
+          "label": "동일 주소 직매장 교차 확인"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_006",
-      "name": "서산 가야슈퍼",
+      "name": "가야슈퍼",
       "region": "충남 서산시",
       "address": "충남 서산시 운산면 개심사로 322 (신창리 18-2)",
       "category": "쑥전",
@@ -90,7 +105,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/17590634?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_007",
@@ -109,18 +135,51 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_008",
-      "name": "서산 정성맛집",
+      "name": "정성맛집",
       "region": "충남 서산시",
-      "address": "충남 서산시 시장3길 3 (동문동 900)",
+      "address": "충남 서산시 시장2로 6",
       "category": "바지락초무침",
-      "representativeMenu": "",
+      "representativeMenu": "꽃게찌개 / 바지락초무침 / 대하",
       "lat": 36.7824743,
       "lng": 126.4553543,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_008_menu_001",
+          "name": "꽃게찌개",
+          "price": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_008_menu_002",
+          "name": "바지락초무침",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_008_menu_003",
+          "name": "대하",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%A0%95%EC%84%B1%EB%A7%9B%EC%A7%91%20%EC%B6%A9%EB%82%A8%20%EC%84%9C%EC%82%B0%EC%8B%9C/place/1960933209?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%A0%95%EC%84%B1%EB%A7%9B%EC%A7%91%20%EC%B6%A9%EB%82%A8%20%EC%84%9C%EC%82%B0%EC%8B%9C%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191459%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%A0%95%EC%84%B1%EB%A7%9B%EC%A7%91%20%EC%B6%A9%EB%82%A8%20%EC%84%9C%EC%82%B0%EC%8B%9C",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_009",
@@ -139,7 +198,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_010",
-      "name": "서산 광진상회",
+      "name": "광진상회",
       "region": "충남 서산시",
       "address": "충남 서산시 운산면 해운로 761 (원벌리 49-1)",
       "category": "게국지",
@@ -150,7 +209,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1163487481?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_011",
@@ -274,7 +344,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "메뉴판 이미지는 있으나 정확한 텍스트 가격표는 공개되지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://app.passorder.co.kr/advance/f74f104f-8cec-4543-91c3-d5199fe41337",
+          "label": "현행 주문 페이지·동일 주소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_020",
@@ -360,15 +441,76 @@
       "region": "부산 남구",
       "address": "부산 남구 용호3동 6-5",
       "category": "장어,먹장어요리",
-      "representativeMenu": "",
+      "representativeMenu": "장어구이 / 곰장어 / 모듬회",
       "lat": 35.128298,
       "lng": 129.11719399999998,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_001",
+          "name": "장어구이",
+          "price": "40,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_002",
+          "name": "곰장어",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_003",
+          "name": "모듬회",
+          "price": "40,000~80,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_004",
+          "name": "가리비",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_005",
+          "name": "매운탕",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_006",
+          "name": "장어탕",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_861773db15ca_menu_007",
+          "name": "생선구이",
+          "price": "10,000~20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJU_ZOLyjtaDUR9cInCe6gT1k"
+      "googlePlaceId": "ChIJU_ZOLyjtaDUR9cInCe6gT1k",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://busan7.com/entry/%EC%8B%9D%EA%B0%9D-%ED%97%88%EC%98%81%EB%A7%8C%EC%9D%98-%EB%B0%B1%EB%B0%98%EA%B8%B0%ED%96%89-%EB%82%B4%ED%98%B8%EB%83%89%EB%A9%B4-%ED%95%A9%EC%B2%9C%EA%B5%AD%EB%B0%A5%EC%A7%91-%EA%B8%88%EC%84%B1%ED%98%B8-%EA%B3%B0%EC%9E%A5%EC%96%B4-%EB%B6%80%EC%82%B0%EB%82%A8%EA%B5%AC%EB%A7%9B%EC%A7%91",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_026",
@@ -665,7 +807,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_045",
-      "name": "목포 보리마당 가맥집",
+      "name": "보리마당 가맥집",
       "region": "전남 목포시",
       "address": "전남 목포시 보리마당로 29 (서산동 14-45)",
       "category": "가맥집",
@@ -676,7 +818,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "가맥집 특성상 고정 공개 가격표를 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.tabling.co.kr/place/677ccc1566de5f06987e68ef",
+          "label": "동일 주소 현행 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_046",
@@ -889,19 +1042,129 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_8da51d880418",
-      "name": "삼척 길모퉁이 포차",
+      "name": "길모퉁이",
       "region": "강원 삼척시",
       "address": "강원 삼척시 봉황로 9-22 (남양동 341)",
       "category": "돼지껍데기",
-      "representativeMenu": "",
+      "representativeMenu": "생두부 / 두부조림 / 계란말이",
       "lat": 37.440115,
       "lng": 129.1687151,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_001",
+          "name": "생두부",
+          "price": "4,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_002",
+          "name": "두부조림",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_003",
+          "name": "계란말이",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_004",
+          "name": "두루치기",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_005",
+          "name": "꽁치구이",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_006",
+          "name": "고등어",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_007",
+          "name": "김치전",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_008",
+          "name": "오징어",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_009",
+          "name": "돼지껍데기",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_010",
+          "name": "닭발",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_011",
+          "name": "도루묵구이",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_012",
+          "name": "두부김치",
+          "price": "24,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_013",
+          "name": "도루묵조림",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_8da51d880418_menu_014",
+          "name": "가자미조림",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/4klVzr/%EA%B8%B8%EB%AA%A8%ED%89%81%EC%9D%B4",
+          "label": "현행 상호·메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_056",
@@ -920,7 +1183,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_bb67d263a37a",
-      "name": "삼척 남궁스넥",
+      "name": "남궁스넥",
       "region": "강원 삼척시",
       "address": "강원 삼척시 성당길 93-14 (당저동 143-2)",
       "category": "감자보리밥",
@@ -932,7 +1195,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 여부 미확인",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "보리밥·만두국 각 5,000원 자료는 있으나 현재 영업을 확인할 근거가 부족해 사이트에는 가격을 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/881259",
+          "label": "과거 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_058",
@@ -1012,7 +1286,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_063",
-      "name": "서울 구이마당",
+      "name": "구이마당",
       "region": "서울 용산구",
       "address": "서울 용산구 대사관로 58 (한남동 639-8)",
       "category": "숯불불고기백반",
@@ -1023,7 +1297,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/2aUaz1/%EA%B5%AC%EC%9D%B4%EB%A7%88%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_236a86542929",
@@ -1216,19 +1501,45 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_f3737050fbd7",
-      "name": "대전 탑집",
+      "name": "탑집",
       "region": "대전 중구",
       "address": "대전 중구 선화서로19번길 44 (선화동 430-6)",
       "category": "콩나물밥",
-      "representativeMenu": "",
+      "representativeMenu": "정식 2인 / 정식 4인",
       "lat": 36.3253663,
       "lng": 127.4169263,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_f3737050fbd7_menu_001",
+          "name": "정식 2인",
+          "price": "35,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_f3737050fbd7_menu_002",
+          "name": "정식 4인",
+          "price": "70,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "예약 중심 운영으로 방문 전 확인이 필요하다.",
+      "menuPriceSources": [
+        {
+          "url": "https://enjoyholic.tistory.com/4918",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_8839d010138c",
@@ -1248,18 +1559,37 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_075",
-      "name": "대전 뽀뽀분식",
+      "name": "뽀뽀분식",
       "region": "대전 중구",
       "address": "대전 중구 계룡로881번길 44 (용두동 13-18)",
       "category": "비빔칼국수",
-      "representativeMenu": "",
+      "representativeMenu": "비빔칼국수",
       "lat": 36.3231154,
       "lng": 127.4141481,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_075_menu_001",
+          "name": "비빔칼국수",
+          "price": "6,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://hanis.tistory.com/76",
+          "label": "방송 식당 목록·가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_5e6a29e6908f",
@@ -1324,7 +1654,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_52d266dd8cf6",
-      "name": "서울 진가식탁 (복춘정)",
+      "name": "복춘정",
       "region": "서울 마포구",
       "address": "서울 마포구 월드컵로21길 18 (망원동 57-498)",
       "category": "오늘의 정식",
@@ -1336,7 +1666,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "진가식탁/복춘정의 동일 주소 영업 종료가 확인됐다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/5rJPLH/%EB%B3%B5%EC%B6%98%EC%A0%95",
+          "label": "폐점·영업종료 공지"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_081",
@@ -1402,7 +1743,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_085",
-      "name": "서울 진주식당",
+      "name": "진주식당",
       "region": "서울 용산구",
       "address": "서울 용산구 한강대로62나길 2 (한강로1가 196-2)",
       "category": "생선구이백반",
@@ -1413,7 +1754,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 노량진 동명 식당 메뉴는 제외했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/30LBjM/%EC%A7%84%EC%A3%BC%EC%8B%9D%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_ffec09aa5893",
@@ -1523,18 +1875,136 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_093",
-      "name": "순천 풍미통닭",
+      "name": "풍미통닭",
       "region": "전남 순천시",
-      "address": "전남 순천시 성남뒷길 3 (장천동 19-16)",
+      "address": "전남 순천시 팔마1길 2 1층",
       "category": "마늘통닭",
-      "representativeMenu": "",
+      "representativeMenu": "마늘통닭 / 풍미런치정식(15시까지) / 풍미실비세트",
       "lat": 34.9464358,
       "lng": 127.4909734,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_001",
+          "name": "마늘통닭",
+          "price": "23,000원",
+          "description": "생강외 5가지가 첨가된 육수를 24시간 숙성시켜 밀가루와 함께 튀긴후 그위에 마늘소스를 발라 알싸 하면서도 겉은 바삭하고 속은 촉촉한 통닭맛을 볼수있습니다.",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_002",
+          "name": "풍미런치정식(15시까지)",
+          "price": "28,000원",
+          "description": "마늘통닭+새싹주먹밥+음료수",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_003",
+          "name": "풍미실비세트",
+          "price": "30,000원",
+          "description": "마늘통닭+한강라면+음료수+실비김치",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_004",
+          "name": "풍미가족세트",
+          "price": "49,500원",
+          "description": "마늘통닭+후라이드통닭+주먹밥1+음료1.25",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_005",
+          "name": "후라이드통닭",
+          "price": "21,000원",
+          "description": "풍미통닭과 가장 오랜시간 함께한 정통 켄터키후라이드 통닭",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_006",
+          "name": "풍미단짝세트",
+          "price": "39,000원",
+          "description": "마늘통닭+똥집(소)+생맥주300CC 2잔",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_007",
+          "name": "풍미짝궁세트",
+          "price": "42,000원",
+          "description": "마늘통닭+똥집(소)+풍미수제맥주1병",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_008",
+          "name": "풍미주당세트",
+          "price": "55,500원",
+          "description": "마늘통닭+딸기맥주+풍미수제맥주+트리플베리맥주 ※마늘통닭과 함께 이색적인치맥세트",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_009",
+          "name": "닭똥집(소)",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_010",
+          "name": "닭똥집(대)",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_011",
+          "name": "닭똥집(매운맛,순한맛)",
+          "price": "17,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_012",
+          "name": "새싹주먹밥(단품)",
+          "price": "4,500원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_013",
+          "name": "공기밥",
+          "price": "1,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093_menu_014",
+          "name": "소주,맥주",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/17087256?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_9571885ac3e2",
@@ -1714,7 +2184,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_ab02ff497eba",
-      "name": "서울 금문장",
+      "name": "금문장",
       "region": "서울 종로구",
       "address": "서울 종로구 지봉로8길 45 (숭인동 61-30)",
       "category": "짜장면",
@@ -1726,7 +2196,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/5m4nPp/%EA%B8%88%EB%AC%B8%EC%9E%A5",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_046bef524aff",
@@ -1890,19 +2371,52 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_23beb182e1cd",
-      "name": "수원 남보원불고기",
+      "name": "남보원불고기",
       "region": "경기 수원시",
       "address": "경기 수원시 장안구 정조로922번길 20 (영화동 279-5)",
       "category": "소불고기",
-      "representativeMenu": "",
+      "representativeMenu": "치마살 / 토시살 / 안창살 2인",
       "lat": 37.290385799999996,
       "lng": 127.0143456,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_23beb182e1cd_menu_001",
+          "name": "치마살",
+          "price": "45,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_23beb182e1cd_menu_002",
+          "name": "토시살",
+          "price": "45,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_23beb182e1cd_menu_003",
+          "name": "안창살 2인",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJs8cRUclcezUR9csP1shhgW4"
+      "googlePlaceId": "ChIJs8cRUclcezUR9csP1shhgW4",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/273741",
+          "label": "현행 업소·메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_116",
@@ -2134,18 +2648,41 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_131",
-      "name": "진해 경화당제과",
+      "name": "경화당제과",
       "region": "경남 창원시",
-      "address": "경남 창원시 진해구 충장로321번길 26 (경화동 548)",
+      "address": "경남 창원시 진해구 자은로96번길 10",
       "category": "콩과자",
-      "representativeMenu": "",
+      "representativeMenu": "콩과자 1봉",
       "lat": 35.1559056,
       "lng": 128.6871463,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_131_menu_001",
+          "name": "콩과자 1봉",
+          "price": "1,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/1563856",
+          "label": "이전 주소 확인"
+        },
+        {
+          "url": "https://www.factory-platform.com/member/login?category_code=&nature_url=manufacturer%2Fai-recommended-manufacturers&orderBy=rand&page=95&return_url=%2Fmain%2Fmember%2Flogin%3Freturn_url%3D%2Fmanufacturer%2Fai-recommended-manufacturers%3Ftpf%3Dproduct%2Flist_ai&tpf=&url=manufacturer%2Fai-recommended-manufacturers",
+          "label": "현행 제품 가격 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_132",
@@ -2254,18 +2791,79 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_139",
-      "name": "제주 몰고랑식당",
+      "name": "몰고랑식당",
       "region": "제주 서귀포시",
-      "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
+      "address": "제주 서귀포시 중앙로 111 1층",
       "category": "몸국",
-      "representativeMenu": "",
+      "representativeMenu": "순대 한접시 / 두루치기 / 몸국",
       "lat": 33.2562425,
       "lng": 126.5602398,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_001",
+          "name": "순대 한접시",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_002",
+          "name": "두루치기",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_003",
+          "name": "몸국",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_004",
+          "name": "흑도새기국",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_005",
+          "name": "보말국",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_006",
+          "name": "순두부",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_139_menu_007",
+          "name": "고등어조림",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EB%AA%B0%EA%B3%A0%EB%9E%91%EC%8B%9D%EB%8B%B9%20%EC%A0%9C%EC%A3%BC%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C/place/16918445?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EB%AA%B0%EA%B3%A0%EB%9E%91%EC%8B%9D%EB%8B%B9%20%EC%A0%9C%EC%A3%BC%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191457%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%AA%B0%EA%B3%A0%EB%9E%91%EC%8B%9D%EB%8B%B9%20%EC%A0%9C%EC%A3%BC%20%EC%84%9C%EA%B7%80%ED%8F%AC%EC%8B%9C",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_140",
@@ -2394,18 +2992,65 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_148",
-      "name": "구례 당치민박산장",
+      "name": "당치민박산장",
       "region": "전남 구례군",
       "address": "전남 구례군 토지면 당치길 145 (내동리 137-1)",
       "category": "산닭구이",
-      "representativeMenu": "",
+      "representativeMenu": "닭구이 / 항아리오리훈제 / 도토리묵",
       "lat": 35.2576946,
       "lng": 127.599978,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_148_menu_001",
+          "name": "닭구이",
+          "price": "80,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_148_menu_002",
+          "name": "항아리오리훈제",
+          "price": "75,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_148_menu_003",
+          "name": "도토리묵",
+          "price": "13,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_148_menu_004",
+          "name": "파전",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_148_menu_005",
+          "name": "약초막걸리",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/11823178?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_149",
@@ -2469,7 +3114,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_02efe3316f8f",
-      "name": "구례 청천슈퍼(주민 전용공간)",
+      "name": "청천슈퍼(주민 전용공간)",
       "region": "전남 구례군",
       "address": "전남 구례군 마산면 당몰샘로 18 (마산리 670-1)",
       "category": "슈퍼,마트",
@@ -2481,7 +3126,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "일반 방문 제한",
+      "menuPriceStatus": "not_single_restaurant",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "일반 방문객 대상 식당이 아닌 주민 전용 공간으로 안내되어 고정 메뉴·가격을 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://cookmos.tistory.com/entry/%EB%B0%B1%EB%B0%98%EA%B8%B0%ED%96%89-27%ED%9A%8C-%EA%B5%AC%EB%A1%80-%EC%8B%9D%EB%8B%B9-%EC%A0%95%EB%B3%B4",
+          "label": "주민 전용 안내"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_008aa451ba34",
@@ -2501,19 +3157,73 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0",
-      "name": "서울 욕쟁이할머니집 신신식당",
+      "name": "신신식당",
       "region": "서울 성북구",
-      "address": "서울 성북구 보문로30라길 3 (동선동2가 77)",
+      "address": "서울 성북구 보문로30라길 3",
       "category": "우렁쌈밥",
-      "representativeMenu": "",
+      "representativeMenu": "우렁쌈밥 / 제육쌈밥 / 우렁무침",
       "lat": 37.5899876,
       "lng": 127.0195913,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_001",
+          "name": "우렁쌈밥",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_002",
+          "name": "제육쌈밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_003",
+          "name": "우렁무침",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_004",
+          "name": "우렁초장회",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_005",
+          "name": "청국장",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c2d2ca61a1a0_menu_006",
+          "name": "고등어김치",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://jin2fly.tistory.com/17",
+          "label": "이전 주소·현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_156",
@@ -2547,18 +3257,44 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_158",
-      "name": "서울 달밝은집",
+      "name": "달밝은집",
       "region": "서울 성북구",
-      "address": "서울 성북구 정릉로6길 35 (정릉동 957-4)",
+      "address": "서울 성북구 종암로 19 102호",
       "category": "숙성 돼지고기",
-      "representativeMenu": "",
+      "representativeMenu": "돼지불고기 160g / 생껍질",
       "lat": 37.6102264,
       "lng": 126.9945975,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_158_menu_001",
+          "name": "돼지불고기 160g",
+          "price": "16,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_158_menu_002",
+          "name": "생껍질",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1996298465?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_159",
@@ -2648,7 +3384,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "동일 주소는 안성식당으로 대체 영업 중이며 수정식당으로의 동일성은 확인되지 않아 폐업 처리했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=qxq6SWodqzmI",
+          "label": "동일 주소 대체 업소 확인"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_165",
@@ -2682,7 +3429,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_167",
-      "name": "서울 우화식당",
+      "name": "우화식당",
       "region": "서울 중구",
       "address": "서울 중구 충무로11길 18-4 (입정동 250)",
       "category": "코다리찜",
@@ -2693,7 +3440,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/24ktN5/%EC%9A%B0%ED%99%94%EC%8B%9D%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_168",
@@ -2712,7 +3470,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_0e8db8f0019b",
-      "name": "서울 나드리식품",
+      "name": "나드리식품",
       "region": "서울 중구",
       "address": "서울 중구 을지로33길 38 (주교동 208)",
       "category": "백반",
@@ -2724,7 +3482,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/3nAg2Q/%EB%82%98%EB%93%9C%EB%A6%AC%EC%8B%9D%ED%92%88",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_170",
@@ -2863,18 +3632,37 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_179",
-      "name": "여수 자봉식당",
+      "name": "자봉식당",
       "region": "전남 여수시",
-      "address": "전남 여수시 충무로 19 (교동 599-1)",
+      "address": "전남 여수시 교동시장7길 2-4",
       "category": "백반",
-      "representativeMenu": "",
+      "representativeMenu": "백반",
       "lat": 34.7382751,
       "lng": 127.7311932,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_179_menu_001",
+          "name": "백반",
+          "price": "6,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%9E%90%EB%B4%89%EC%8B%9D%EB%8B%B9%20%EC%A0%84%EB%82%A8%20%EC%97%AC%EC%88%98%EC%8B%9C/place/1982826704?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607191459%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%9E%90%EB%B4%89%EC%8B%9D%EB%8B%B9%20%EC%A0%84%EB%82%A8%20%EC%97%AC%EC%88%98%EC%8B%9C",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_180",
@@ -2893,7 +3681,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_181",
-      "name": "여수 정다운식당",
+      "name": "정다운식당",
       "region": "전남 여수시",
       "address": "전남 여수시 봉산남8길 7 (봉산동 275-18)",
       "category": "물메기탕",
@@ -2904,7 +3692,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 돌산 동명 식당 메뉴는 제외했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://kor.clubrichtour.co.kr/bbs/board.php?bo_table=datagokr_Kor&wr_id=29808",
+          "label": "동일 주소 현행 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_182",
@@ -2953,18 +3752,205 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_185",
-      "name": "여수 추억꺼리",
+      "name": "추억꺼리",
       "region": "전남 여수시",
       "address": "전남 여수시 시전6길 22 (신기동 73-6)",
       "category": "장어대가리구이",
-      "representativeMenu": "",
+      "representativeMenu": "삼치(소(2인)) / 삼치(중(3인)) / 삼치(대(4인))",
       "lat": 34.760672,
       "lng": 127.6732958,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_001",
+          "name": "삼치(소(2인))",
+          "price": "40,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_002",
+          "name": "삼치(중(3인))",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_003",
+          "name": "삼치(대(4인))",
+          "price": "70,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_004",
+          "name": "병어(소(2인))",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_005",
+          "name": "병어(중(3인))",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_006",
+          "name": "도다리(소(2인))",
+          "price": "70,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_007",
+          "name": "도다리(중(3인))",
+          "price": "90,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_008",
+          "name": "도다리(대(4인))",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_009",
+          "name": "도다리(특대)",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_010",
+          "name": "감성돔(소(2인))",
+          "price": "70,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_011",
+          "name": "전어회 셋트(소(2인))",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_012",
+          "name": "전어회 셋트(중(3인))",
+          "price": "80,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_013",
+          "name": "전어회 셋트(대(4인))",
+          "price": "100,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_014",
+          "name": "전어회(소(2인))",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_015",
+          "name": "전어회(중(3인))",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_016",
+          "name": "동태머리찜",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_017",
+          "name": "장어머리찜",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_018",
+          "name": "낙지탕탕",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_019",
+          "name": "낙지볶음(소)",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_020",
+          "name": "낙지볶음(중)",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_021",
+          "name": "서대회무침(소)",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_022",
+          "name": "서대회무침(중)",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_023",
+          "name": "공기밥",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_024",
+          "name": "코카콜라(355ml)",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_185_menu_025",
+          "name": "칠성사이다(355ml)",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 25
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1665192378?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_186",
@@ -3630,22 +4616,62 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_218",
-      "name": "함양 조센집",
+      "name": "조센집",
       "region": "경남 함양군",
       "address": "경남 함양군 함양읍 학사루길 36 (운림리 35-5)",
       "category": "어탕국수",
-      "representativeMenu": "",
+      "representativeMenu": "민물고기 튀김(대) / 민물고기 튀김(소) / 어탕국수",
       "lat": 35.5196263,
       "lng": 127.7246123,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_218_menu_001",
+          "name": "민물고기 튀김(대)",
+          "price": "40,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_218_menu_002",
+          "name": "민물고기 튀김(소)",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_218_menu_003",
+          "name": "어탕국수",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_218_menu_004",
+          "name": "어탕밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%A1%B0%EC%84%BC%EC%A7%91%20%EA%B2%BD%EB%82%A8%20%ED%95%A8%EC%96%91%EA%B5%B0/place/11842660?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_219",
-      "name": "함양 안의뻥튀기",
+      "name": "안의뻥튀기",
       "region": "경남 함양군",
       "address": "경남 함양군 안의면 석천길 3-29 (이전리 14)",
       "category": "뻥튀기",
@@ -3656,11 +4682,22 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%95%88%EC%9D%98%EB%BB%A5%ED%8A%80%EA%B8%B0%20%EA%B2%BD%EB%82%A8%20%ED%95%A8%EC%96%91%EA%B5%B0/place/1555653902?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607191458%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%95%88%EC%9D%98%EB%BB%A5%ED%8A%80%EA%B8%B0%20%EA%B2%BD%EB%82%A8%20%ED%95%A8%EC%96%91%EA%B5%B0",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_220",
-      "name": "서울 해장국사람들",
+      "name": "해장국사람들",
       "region": "서울 종로구",
       "address": "서울 종로구 자하문로 50-1 (창성동 98-6)",
       "category": "선지해장국",
@@ -3671,7 +4708,22 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "동일 주소의 계속사업자 정보와 한국관광공사 업소 안내를 확인했지만 최신 공개 가격표는 찾지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=6e9b26aa-0764-4cc3-a9cd-ceeed31991e1",
+          "label": "한국관광공사 동일 주소 업소 안내"
+        },
+        {
+          "url": "https://findby.co.kr/details/03043-111103100012-st-652c0c2df27008be2c5567b8",
+          "label": "동일 주소 계속사업자 정보"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_221",
@@ -3690,7 +4742,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_bbcaac080e83",
-      "name": "서울 서촌통영",
+      "name": "서촌통영",
       "region": "서울 종로구",
       "address": "서울 종로구 필운대로 47 (누하동 8-1)",
       "category": "굴국밥",
@@ -3702,7 +4754,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/3jbO21/%EC%84%9C%EC%B4%8C%ED%86%B5%EC%98%81",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_7568e7b77db9",
@@ -3768,19 +4831,59 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_20beec462001",
-      "name": "담양 미소댓잎국수 (담양국수거리)",
+      "name": "미소댓잎국수",
       "region": "전남 담양군",
       "address": "전남 담양군 담양읍 객사3길 20 (객사리 208)",
       "category": "죽순비빔국수",
-      "representativeMenu": "",
+      "representativeMenu": "다슬기들깨수제비 / 우렁죽순비빔국수 / 국수",
       "lat": 35.323963,
       "lng": 126.9831,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_20beec462001_menu_001",
+          "name": "다슬기들깨수제비",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_20beec462001_menu_002",
+          "name": "우렁죽순비빔국수",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_20beec462001_menu_003",
+          "name": "국수",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_20beec462001_menu_004",
+          "name": "비빔국수",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://hilring.tistory.com/96",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_228",
@@ -3814,18 +4917,37 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_230",
-      "name": "담양 목화식당",
+      "name": "목화식당",
       "region": "전남 담양군",
       "address": "전남 담양군 담양읍 천변5길 3 (천변리 137)",
       "category": "백반",
-      "representativeMenu": "",
+      "representativeMenu": "백반",
       "lat": 35.3193185,
       "lng": 126.9798237,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_230_menu_001",
+          "name": "백반",
+          "price": "8,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 광주 동명 식당 메뉴는 제외했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.emmaru.com/matzip/matzip.do?code=M190606181143986510V",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_231",
@@ -4009,7 +5131,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_33677e42ec45",
-      "name": "서울 할매보리밥집",
+      "name": "할매보리밥집",
       "region": "서울 용산구",
       "address": "서울 용산구 보광로14길 12-4 (보광동 10-9)",
       "category": "육개장",
@@ -4021,7 +5143,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 여부 미확인",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "육개장 7,000원 과거 자료는 있으나 현재 영업 근거가 부족해 사이트에 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://hanis.tistory.com/60",
+          "label": "과거 방송 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_48ae46509372",
@@ -4057,18 +5190,100 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_246",
-      "name": "서울 시장회집",
+      "name": "시장회집",
       "region": "서울 용산구",
       "address": "서울 용산구 소월로20길 38 (용산동2가 1-76)",
       "category": "알탕, 알찜",
-      "representativeMenu": "",
+      "representativeMenu": "꼬막비빔밥 / 생연어덮밥 / 멍게비빔밥",
       "lat": 37.5449168,
       "lng": 126.9851637,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_001",
+          "name": "꼬막비빔밥",
+          "price": "8,000~10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_002",
+          "name": "생연어덮밥",
+          "price": "8,000~10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_003",
+          "name": "멍게비빔밥",
+          "price": "8,000~10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_004",
+          "name": "간장게장백반",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_005",
+          "name": "꽁치구이",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_006",
+          "name": "알탕",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_007",
+          "name": "동태찌개 2인",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_008",
+          "name": "오징어볶음 2인",
+          "price": "16,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_009",
+          "name": "아귀찜",
+          "price": "28,000~38,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_246_menu_010",
+          "name": "곤이알찜",
+          "price": "14,000~26,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://new.emmaru.com/matzip/matzip.do?code=M181129201606614648L&f=1&s=0&t=0",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_247",
@@ -4102,7 +5317,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_704624a38904",
-      "name": "강릉 항구마차",
+      "name": "항구마차",
       "region": "강원 강릉시",
       "address": "강원 강릉시 옥계면 금진리 149-3",
       "category": "문어숙회",
@@ -4114,7 +5329,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJRYg32KPDYTURyU5YEXAPAHQ"
+      "googlePlaceId": "ChIJRYg32KPDYTURyU5YEXAPAHQ",
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/3rpsPn/%ED%95%AD%EA%B5%AC%EB%A7%88%EC%B0%A8",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_250",
@@ -4133,7 +5359,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_251",
-      "name": "강릉 주문진해물국수",
+      "name": "주문진해물국수",
       "region": "강원 강릉시",
       "address": "강원 강릉시 성덕포남로188번길 10 (포남동 1167)",
       "category": "소라찜",
@@ -4144,7 +5370,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/20715506?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_252",
@@ -4253,18 +5490,58 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_259",
-      "name": "양평 표미숙국수",
+      "name": "표미숙국수",
       "region": "경기 양평군",
       "address": "경기 양평군 옥천면 백현길 4 (옥천리 141-1)",
       "category": "열무비빔국수",
-      "representativeMenu": "",
+      "representativeMenu": "열무비빔국수 / 통마늘노가리 소 / 통마늘노가리 중",
       "lat": 37.528052,
       "lng": 127.4747023,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_259_menu_001",
+          "name": "열무비빔국수",
+          "price": "5,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_259_menu_002",
+          "name": "통마늘노가리 소",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_259_menu_003",
+          "name": "통마늘노가리 중",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_259_menu_004",
+          "name": "통마늘노가리 대",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "임시 휴업",
+      "menuPriceStatus": "temporarily_closed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://triple.guide/restaurants/0e857e0d-90e9-44a8-a4ba-9b1289fd257e",
+          "label": "임시휴업·메뉴 가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_1bcdc3a98b9a",
@@ -4507,7 +5784,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_276",
-      "name": "서울 갯마을",
+      "name": "갯마을",
       "region": "서울 송파구",
       "address": "서울 송파구 백제고분로34길 41 (석촌동 226)",
       "category": "게장정식",
@@ -4518,7 +5795,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 추정",
+      "menuPriceStatus": "closed_likely",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "기존 석촌동 주소가 다른 업종으로 확인되고 동일 식당의 현재 영업 근거를 찾지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.placeview.co.kr/id/NDgzODU0OTEx",
+          "label": "기존 주소의 현재 입점 업소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_57f2e15a3cce",
@@ -4749,7 +6037,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_291",
-      "name": "홍천 오복식당",
+      "name": "오복식당",
       "region": "강원도 홍천군",
       "address": "강원도 홍천군 남면 한서로 3395 (양덕원리 156-14)",
       "category": "추어탕",
@@ -4760,7 +6048,22 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "홍천군 문화관광포털에서 동일 주소 업소를 확인했다. 갈추어탕 8,000원·통추어탕 9,000원·수제비 1,000원은 과거 가격이라 사이트에는 반영하지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.hongcheon.go.kr/tour/selectTourCntntsWebList.do?key=1856&pageIndex=201&pageUnit=6&searchCnd=all&searchShowAt=Y&sortTy=NM",
+          "label": "홍천군 문화관광포털 현행 업소 목록"
+        },
+        {
+          "url": "https://manyfactory.tistory.com/393",
+          "label": "과거 방송 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_293",
@@ -4825,19 +6128,80 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_1ea6e155c4c4",
-      "name": "양주 노고산로뎀나무",
+      "name": "노고산로뎀나무",
       "region": "경기 양주시",
       "address": "경기 양주시 장흥면 유원지로 83 (삼상리 146-7)",
       "category": "바베큐모듬",
-      "representativeMenu": "",
+      "representativeMenu": "모듬구이 소세지 500g / 스모크소세지 500g / 숯불소세지핫도그",
       "lat": 37.698573499999995,
       "lng": 126.938553,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_001",
+          "name": "모듬구이 소세지 500g",
+          "price": "13,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_002",
+          "name": "스모크소세지 500g",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_003",
+          "name": "숯불소세지핫도그",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_004",
+          "name": "허브훈제삼겹살 500g",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_005",
+          "name": "베이컨 500g",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_006",
+          "name": "바베큐포크립 500g",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1ea6e155c4c4_menu_007",
+          "name": "바베큐 모듬구이 세트 1kg",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJLRNQhuyVfDURf2YjC86DN5Y"
+      "googlePlaceId": "ChIJLRNQhuyVfDURf2YjC86DN5Y",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://manyfactory.tistory.com/395",
+          "label": "동일 주소 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_298",
@@ -4856,18 +6220,37 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_299",
-      "name": "태안 산장가든",
+      "name": "옥당",
       "region": "충남 태안군",
-      "address": "충남 태안군 태안읍 상도로 49-57 (상옥리 1156)",
+      "address": "충남 태안군 남면 안면대로 605-8",
       "category": "연잎정식",
-      "representativeMenu": "",
+      "representativeMenu": "연잎밥 정식",
       "lat": 36.7639188,
       "lng": 126.3107822,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_299_menu_001",
+          "name": "연잎밥 정식",
+          "price": "15,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://triple.guide/restaurants/9c19813a-3f3f-4fdd-8e50-138f41cea67c",
+          "label": "이전·상호변경·현행 가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_300",
@@ -5161,7 +6544,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_319",
-      "name": "광양 홍쌍리 청매실농원",
+      "name": "홍쌍리 청매실농원",
       "region": "전남 광양시",
       "address": "전남 광양시 다압면 지막1길 55 (도사리 403)",
       "category": "매실비빔밥",
@@ -5172,7 +6555,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%ED%99%8D%EC%8C%8D%EB%A6%AC%20%EC%B2%AD%EB%A7%A4%EC%8B%A4%EB%86%8D%EC%9B%90%20%EC%A0%84%EB%82%A8%20%EA%B4%91%EC%96%91%EC%8B%9C/place/11402050?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_320",
@@ -5277,7 +6671,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "민박·슈퍼를 겸한 계절 식당으로 고정 공개 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/1269569",
+          "label": "동일 주소 계절 식당 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_327",
@@ -5372,7 +6777,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_333",
-      "name": "고성 해녀세자매",
+      "name": "해녀세자매",
       "region": "강원 고성군",
       "address": "강원 고성군 현내면 대진항길 147 (대진리 5-10)",
       "category": "수산시장",
@@ -5383,23 +6788,60 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "해산물 시세형 판매로 고정 공개 가격표를 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/P/1276201",
+          "label": "동일 주소 해산물 판매점 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_28a9f1bba873",
       "name": "금정산성막걸리 본점",
       "region": "부산 금정구",
-      "address": "부산 금정구 산성로 453",
+      "address": "부산 금정구 산성로 453 (금성동 554-1)",
       "category": "주류제조",
-      "representativeMenu": "",
+      "representativeMenu": "누룩 빚기 체험 / 막걸리 빚기 체험",
       "lat": 35.250401,
       "lng": 129.05637300000004,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_28a9f1bba873_menu_001",
+          "name": "누룩 빚기 체험",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_28a9f1bba873_menu_002",
+          "name": "막걸리 빚기 체험",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJPULTFRqUaDURiUWLn2FBI9Q"
+      "googlePlaceId": "ChIJPULTFRqUaDURiUWLn2FBI9Q",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=ababe38d-29af-4214-9c55-ead23bbc011d",
+          "label": "한국관광공사 현행 안내"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_335",
@@ -5478,7 +6920,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_340",
-      "name": "순창 장본가식품",
+      "name": "장본가식품",
       "region": "전북 순창군",
       "address": "전북 순창군 순창읍 민속마을길 16 (백산리 265-15)",
       "category": "순창고추장",
@@ -5489,7 +6931,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%9E%A5%EB%B3%B8%EA%B0%80%EC%8B%9D%ED%92%88%20%EC%A0%84%EB%B6%81%20%EC%88%9C%EC%B0%BD%EA%B5%B0/place/1642482061?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%9E%A5%EB%B3%B8%EA%B0%80%EC%8B%9D%ED%92%88%20%EC%A0%84%EB%B6%81%20%EC%88%9C%EC%B0%BD%EA%B5%B0%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191459%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%9E%A5%EB%B3%B8%EA%B0%80%EC%8B%9D%ED%92%88%20%EC%A0%84%EB%B6%81%20%EC%88%9C%EC%B0%BD%EA%B5%B0",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_341",
@@ -5553,7 +7006,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_345",
-      "name": "순창 함양식당",
+      "name": "함양식당",
       "region": "전북 순창군",
       "address": "전북 순창군 구림면 구림로 472 (운남리 264-16)",
       "category": "21첩 백반",
@@ -5564,7 +7017,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 여부 미확인",
+      "menuPriceStatus": "operation_unverified",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "동일 주소 업소 기록은 확인했으나 현행 영업과 가격표를 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.koobig.com/3733",
+          "label": "동일 주소 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_346",
@@ -5780,7 +7244,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_360",
-      "name": "서울 향가",
+      "name": "향가",
       "region": "서울 종로구",
       "address": "서울 종로구 계동길 19-6 (재동 84-1)",
       "category": "한정식",
@@ -5791,7 +7255,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/2zDOti/%ED%96%A5%EA%B0%80",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_361",
@@ -5975,7 +7450,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_373",
-      "name": "서울 장수식당",
+      "name": "장수식당",
       "region": "서울 서초구",
       "address": "서울 서초구 서래로 50 (반포동 93-7)",
       "category": "민물잡어탕",
@@ -5986,7 +7461,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/3uving/%EC%9E%A5%EC%88%98%EC%8B%9D%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_374",
@@ -6065,7 +7551,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_379",
-      "name": "보령 일등수산",
+      "name": "일등수산",
       "region": "충남 보령시",
       "address": "충남 보령시 대천항1길 182 (신흑동 950-22)",
       "category": "수산시장",
@@ -6076,11 +7562,22 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%9D%BC%EB%93%B1%EC%88%98%EC%82%B0%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C/place/1668462994?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%9D%BC%EB%93%B1%EC%88%98%EC%82%B0%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191459%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%9D%BC%EB%93%B1%EC%88%98%EC%82%B0%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_381",
-      "name": "보령 못난이강정",
+      "name": "못난이강정",
       "region": "충남 보령시",
       "address": "충남 보령시 대천항로 382 (신흑동 1396-11)",
       "category": "오란다과자",
@@ -6091,7 +7588,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1775063092?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_382",
@@ -6200,7 +7708,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_389",
-      "name": "영암 구림떡방아",
+      "name": "구림떡방아",
       "region": "전남 영암군",
       "address": "전남 영암군 군서면 도갑사로 6-7 (동구림리 48-13)",
       "category": "방앗간",
@@ -6211,7 +7719,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/1314038507?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607191455%26locale%3Dko%26svcName%3Dmap_pcv5",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_390",
@@ -6245,18 +7764,44 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_392",
-      "name": "남원 인동할머니민박",
+      "name": "인동할머니민박",
       "region": "전북 남원시",
       "address": "전북 남원시 운봉읍 삼산길 8-4 (산덕리 790-5)",
       "category": "민박집 백반",
-      "representativeMenu": "",
+      "representativeMenu": "민박 1인 / 숙박객 식사 1인",
       "lat": 35.4221473,
       "lng": 127.5235029,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_392_menu_001",
+          "name": "민박 1인",
+          "price": "40,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_392_menu_002",
+          "name": "숙박객 식사 1인",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://enjoyholic.tistory.com/5952",
+          "label": "동일 주소 이용 가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_393",
@@ -6305,18 +7850,44 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_396",
-      "name": "영덕 시장밥집",
+      "name": "시장밥집",
       "region": "경북 영덕군",
-      "address": "경북 영덕군 영덕읍 남석길 23-10 (남석리 26-50)",
+      "address": "경북 영덕군 영덕읍 남석길 23-48",
       "category": "백반",
-      "representativeMenu": "",
+      "representativeMenu": "모둠해산물 / 문어",
       "lat": 36.4068113,
       "lng": 129.3699995,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_396_menu_001",
+          "name": "모둠해산물",
+          "price": "변동",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_396_menu_002",
+          "name": "문어",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=E9MoTaFQzQcf",
+          "label": "2026년 영업시간·메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_397",
@@ -6633,16 +8204,42 @@
       "id": "sikgaek-baekban-trip_restaurant_416",
       "name": "정읍 옛날팥죽",
       "region": "전북 정읍시",
-      "address": "전북 정읍시 중앙로 162 (시기동 356-1)",
+      "address": "전북 정읍시 태평7길 24",
       "category": "새알팥죽",
-      "representativeMenu": "",
+      "representativeMenu": "팥칼국수 / 새알팥죽",
       "lat": 35.5649862,
       "lng": 126.8558979,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_416_menu_001",
+          "name": "팥칼국수",
+          "price": "5,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_416_menu_002",
+          "name": "새알팥죽",
+          "price": "6,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://todaytrip.tistory.com/113",
+          "label": "동일 상호 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_417",
@@ -6661,35 +8258,136 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_0eaa493192ac",
-      "name": "경주 원조콩국",
+      "name": "원조콩국",
       "region": "경북 경주시",
-      "address": "경북 경주시 첨성로 113",
+      "address": "경북 경주시 첨성로 113 (황남동 142-2)",
       "category": "콩국",
-      "representativeMenu": "",
+      "representativeMenu": "따뜻한콩국1 검은깨,검은콩,꿀,찹쌀도너츠 / 따뜻한콩국2 참기름,들깨,계란노른자,흑설탕 / 따뜻한콩국3 찹쌀도너츠,들깨,계란노른자,흑설탕",
       "lat": 35.8334295,
       "lng": 129.2147573,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_001",
+          "name": "따뜻한콩국1 검은깨,검은콩,꿀,찹쌀도너츠",
+          "price": "9,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_002",
+          "name": "따뜻한콩국2 참기름,들깨,계란노른자,흑설탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_003",
+          "name": "따뜻한콩국3 찹쌀도너츠,들깨,계란노른자,흑설탕",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_004",
+          "name": "냉우무콩국",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_005",
+          "name": "콩국수",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_006",
+          "name": "콩국수 대",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_007",
+          "name": "순두부찌개",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_008",
+          "name": "들깨순두부",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_0eaa493192ac_menu_009",
+          "name": "생콩해물파전",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y"
+      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%9B%90%EC%A1%B0%EC%BD%A9%EA%B5%AD%20%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%A3%BC%EC%8B%9C/place/11889476?c=15.00,0,0,0,dh&placePath=%3Fbk_query%253D%2525EC%25259B%252590%2525EC%2525A1%2525B0%2525EC%2525BD%2525A9%2525EA%2525B5%2525AD%252520%2525EA%2525B2%2525BD%2525EB%2525B6%252581%252520%2525EA%2525B2%2525BD%2525EC%2525A3%2525BC%2525EC%25258B%25259C%2526entry%253Dbmp",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_c44e52bc6943",
-      "name": "경주 할매문어집 (성동시장)",
+      "name": "할매문어집",
       "region": "경북 경주시",
       "address": "경북 경주시 원화로281번길 11 (성동동 57-3)",
       "category": "해물,생선요리",
-      "representativeMenu": "",
+      "representativeMenu": "문어 소포장 / 문어 대포장",
       "lat": 35.8453995,
       "lng": 129.216311,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_c44e52bc6943_menu_001",
+          "name": "문어 소포장",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_c44e52bc6943_menu_002",
+          "name": "문어 대포장",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://kr.trip.com/moments/theme/poi-seongdong-market-61792228-restaurant-993134/",
+          "label": "2026년 성동시장 방문 가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_19167b917685",
@@ -7145,18 +8843,72 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_449",
-      "name": "홍성 갈매기횟집",
+      "name": "갈매기횟집",
       "region": "충남 홍성군",
       "address": "충남 홍성군 서부면 남당항로 852 (궁리 540-62)",
       "category": "굴물회",
-      "representativeMenu": "",
+      "representativeMenu": "굴밥 / 굴전 / 물회",
       "lat": 36.5887232,
       "lng": 126.458428,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_001",
+          "name": "굴밥",
+          "price": "12,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_002",
+          "name": "굴전",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_003",
+          "name": "물회",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_004",
+          "name": "활어회덮밥",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_005",
+          "name": "모듬회",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_449_menu_006",
+          "name": "게장백반",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 홍북읍 동명 식당 메뉴는 제외하고 남당항 주소 자료만 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://mforu.tistory.com/644",
+          "label": "식당명·지역 일치 메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_450",
@@ -7220,7 +8972,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_454",
-      "name": "전주 성가떡집",
+      "name": "성가떡집",
       "region": "전북 전주시",
       "address": "전북 전주시 완산구 팔달로 249 (서노송동 639-40)",
       "category": "떡볶이",
@@ -7231,7 +8983,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/13511865?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607191458%26locale%3Dko%26svcName%3Dmap_pcv5",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_455",
@@ -7385,7 +9148,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_9c22a8b63d91",
-      "name": "서울 나뭇잎스시",
+      "name": "나뭇잎스시",
       "region": "서울 종로구",
       "address": "서울 종로구 창의문로5길 2 (부암동 314-1)",
       "category": "초밥",
@@ -7397,11 +9160,22 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJsxpiM66ifDURIUSN9GcHZA8"
+      "googlePlaceId": "ChIJsxpiM66ifDURIUSN9GcHZA8",
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/1UqABw/%EB%82%98%EB%AD%87%EC%9E%8E%20%EC%8A%A4%EC%8B%9C",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_02945f24f770",
-      "name": "서울 미인과 자연",
+      "name": "미인과 자연",
       "region": "서울 종로구",
       "address": "서울 종로구 세검정로9길 78 (구기동 20-14)",
       "category": "꼬막비빔밥",
@@ -7413,7 +9187,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/26rXk7/%EB%AF%B8%EC%9D%B8%EA%B3%BC%20%EC%9E%90%EC%97%B0",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_467",
@@ -7554,23 +9339,42 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_4acfdf70f82b",
-      "name": "여수 주부떡집 (서시장)",
+      "name": "주부떡집",
       "region": "전남 여수시",
       "address": "전남 여수시 서교4길 9 (서교동 280-76)",
       "category": "떡,한과",
-      "representativeMenu": "",
+      "representativeMenu": "늙은 호박 시루떡 1팩",
       "lat": 34.741571,
       "lng": 127.7288973,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_4acfdf70f82b_menu_001",
+          "name": "늙은 호박 시루떡 1팩",
+          "price": "5,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=R9ytBffwY9Ju",
+          "label": "2026년 동일 주소 방문·가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_477",
-      "name": "여수 산들네 전집 (서시장)",
+      "name": "산들네 전집",
       "region": "전남 여수시",
       "address": "전남 여수시 서교4길 9-1 (서교동 280-104)",
       "category": "서대, 조기전",
@@ -7581,7 +9385,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%82%B0%EB%93%A4%EB%84%A4%20%EC%A0%84%EC%A7%91%20(%EC%84%9C%EC%8B%9C%EC%9E%A5)%20%EC%A0%84%EB%82%A8%20%EC%97%AC%EC%88%98%EC%8B%9C/place/1149797845?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=%2Fhome%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202607191457%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%82%B0%EB%93%A4%EB%84%A4%20%EC%A0%84%EC%A7%91%20(%EC%84%9C%EC%8B%9C%EC%9E%A5)%20%EC%A0%84%EB%82%A8%20%EC%97%AC%EC%88%98%EC%8B%9C",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_478",
@@ -7675,18 +9490,55 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_484",
-      "name": "익산 고려당",
+      "name": "고려당",
       "region": "전북 익산시",
       "address": "전북 익산시 중앙로 52 (갈산동 25)",
       "category": "찐빵",
-      "representativeMenu": "",
+      "representativeMenu": "만두 6개 / 찐빵 6개 / 온소바",
       "lat": 35.938305,
       "lng": 126.9523411,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_484_menu_001",
+          "name": "만두 6개",
+          "price": "5,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_484_menu_002",
+          "name": "찐빵 6개",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_484_menu_003",
+          "name": "온소바",
+          "price": "5,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버가 반환한 서동로32길 동명 식당 메뉴는 제외했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://pglog.tistory.com/m/502",
+          "label": "2025년 동일 주소 방문 자료"
+        },
+        {
+          "url": "https://www.placeview.co.kr/id/ODY0Njg5MSAg",
+          "label": "동일 주소 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_485",
@@ -7912,7 +9764,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 고창읍 동명 식당 메뉴는 제외했다. 바지락돌솥밥·정식·초무침·칼국수·죽의 공개 가격은 확인되지 않았다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.tripinfo.co.kr/info.html?content_id=2950522&content_type_id=39&device=pc&navi=food_rank-jeonbuk",
+          "label": "동일 주소 현행 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_500",
@@ -7931,7 +9794,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_8c1d3e0996ce",
-      "name": "고창 싱싱수산식당",
+      "name": "싱싱수산식당",
       "region": "전북 고창군",
       "address": "전북 고창군 고창읍 시장안길 26 (읍내리 368-11)",
       "category": "생선회",
@@ -7943,23 +9806,151 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJU_kvhrSYcTURUTuWSiUit8o"
+      "googlePlaceId": "ChIJU_kvhrSYcTURUTuWSiUit8o",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "회·수산물은 시세형으로 고정 가격을 확인하지 못했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.gochang.go.kr/board/view.gochang?boardId=BBS_TOUR_FOOD&dataSid=7307&menuCd=DOM_000000404001000000",
+          "label": "고창군 공식 음식점 안내"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_fe31c726e83d",
-      "name": "고창 뭉치네 풍천장어전문",
+      "name": "뭉치네 풍천장어전문",
       "region": "전북 고창군",
       "address": "전북 고창군 아산면 중촌길 13 (삼인리 287-10)",
       "category": "산채비빔밥",
-      "representativeMenu": "",
+      "representativeMenu": "처림상 / 풍천장어구이 / 낙지쭈꾸미전골",
       "lat": 35.5031253,
       "lng": 126.5858304,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_001",
+          "name": "처림상",
+          "price": "32,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_002",
+          "name": "풍천장어구이",
+          "price": "48,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_003",
+          "name": "낙지쭈꾸미전골",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_004",
+          "name": "산채비빔밥",
+          "price": "14,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_005",
+          "name": "제육볶음",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_006",
+          "name": "우렁된장찌개",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_007",
+          "name": "김치찌개",
+          "price": "11,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_008",
+          "name": "돌솥비빔밥",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_009",
+          "name": "우거지해장국",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_010",
+          "name": "콩나물해장국",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_011",
+          "name": "순두부해장국",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_012",
+          "name": "닭도리탕",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_013",
+          "name": "촌닭백숙",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_014",
+          "name": "더덕무침",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_fe31c726e83d_menu_015",
+          "name": "두부김치",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 15
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJtYvqqQoLcTURzwR6SNeeFOs"
+      "googlePlaceId": "ChIJtYvqqQoLcTURzwR6SNeeFOs",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://new.emmaru.com/matzip/matzip.do?code=M230129154946268275Q&f=1&s=1&t=1",
+          "label": "현행 주소·메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_503",
@@ -8160,9 +10151,9 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_516",
-      "name": "하남 마방집",
-      "region": "경기 하남시",
-      "address": "경기 하남시 하남대로 674 (천현동 428-4)",
+      "name": "마방집",
+      "region": "경기 광주시",
+      "address": "경기 광주시 남한산성면 엄미길 93-4",
       "category": "소장작불고기",
       "representativeMenu": "",
       "lat": 37.5321812,
@@ -8171,11 +10162,22 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.siksinhot.com/theme/magazine/5535",
+          "label": "현행 주소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_517",
-      "name": "광주 포비엣",
+      "name": "포비엣",
       "region": "경기 광주시",
       "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
       "category": "베트남쌀국수",
@@ -8186,7 +10188,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://triple.guide/restaurants/1bac7f22-9de6-462e-b4a0-12ff368f5a7a",
+          "label": "동일 주소 현행 업소 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_0cd29770cab5",
@@ -8470,15 +10483,115 @@
       "region": "경남 하동군",
       "address": "경남 하동군 하동읍 시장1길 26-8 (읍내리 225-5)",
       "category": "생선구이백반",
-      "representativeMenu": "",
+      "representativeMenu": "정식 / 정식 특 / 재첩국",
       "lat": 35.068586,
       "lng": 127.7487351,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_001",
+          "name": "정식",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_002",
+          "name": "정식 특",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_003",
+          "name": "재첩국",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_004",
+          "name": "김치찌개",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_005",
+          "name": "된장찌개",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_006",
+          "name": "동태탕",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_007",
+          "name": "조기매운탕",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_008",
+          "name": "갈치조림",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_009",
+          "name": "아구찜 중",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_010",
+          "name": "아구찜 대",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_011",
+          "name": "돼지두루치기 중",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_83fbe7425ae8_menu_012",
+          "name": "돼지두루치기 대",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "임시 휴업",
+      "menuPriceStatus": "temporarily_closed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://restaurantguru.com/%EB%A7%88%EB%A3%A8%EC%86%94%ED%95%9C%EC%A0%95%EC%8B%9D%EC%8B%9D%EB%8B%B9-Hadong-gun",
+          "label": "임시휴업 표기"
+        },
+        {
+          "url": "https://new.emmaru.com/matzip/matzip.do?code=M230201135100938610F&f=1&s=1&t=1",
+          "label": "메뉴 가격 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_537",
@@ -8950,18 +11063,62 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_567",
-      "name": "고성 남경식당",
+      "name": "남경식당",
       "region": "강원 고성군",
       "address": "강원 고성군 토성면 성대로 183 (성대리 497)",
       "category": "문어곱창전골",
-      "representativeMenu": "",
+      "representativeMenu": "문어곱창전골 소 / 섭국 / 청어알비빔밥",
       "lat": 38.2543507,
       "lng": 128.5089661,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_567_menu_001",
+          "name": "문어곱창전골 소",
+          "price": "45,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_567_menu_002",
+          "name": "섭국",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_567_menu_003",
+          "name": "청어알비빔밥",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_567_menu_004",
+          "name": "감자만두",
+          "price": "10,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버의 미시령옛길 동명 식당은 제외했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://impresident.tistory.com/797",
+          "label": "동일 주소 현행 메뉴 자료"
+        },
+        {
+          "url": "https://todaytrip.tistory.com/106",
+          "label": "주소·메뉴 교차 확인"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_568",
@@ -9097,19 +11254,115 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_9b6548d8c890",
-      "name": "남양주 옹기장터백화점 (옹기찻집)",
+      "name": "옹기장터백화점 (옹기찻집)",
       "region": "경기 남양주시",
       "address": "경기 남양주시 화도읍 북한강로 1619 (금남리 198-11)",
       "category": "도자기",
-      "representativeMenu": "",
+      "representativeMenu": "팥빙수 / 팥죽 / 인절미",
       "lat": 37.6527194,
       "lng": 127.368325,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_001",
+          "name": "팥빙수",
+          "price": "16,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_002",
+          "name": "팥죽",
+          "price": "12,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_003",
+          "name": "인절미",
+          "price": "4,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_004",
+          "name": "대추차",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_005",
+          "name": "보이차",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_006",
+          "name": "쌍화차",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_007",
+          "name": "생강차",
+          "price": "8,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_008",
+          "name": "레몬차",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_009",
+          "name": "유자차",
+          "price": "7,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_010",
+          "name": "커피",
+          "price": "3,500원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_011",
+          "name": "녹차",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_9b6548d8c890_menu_012",
+          "name": "시루떡",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 12
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=7B4qemXzni4b",
+          "label": "2025년 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_576",
@@ -9374,7 +11627,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_9bfb0ddccd99",
-      "name": "서울 영덕식당",
+      "name": "영덕식당",
       "region": "서울 용산구",
       "address": "서울 용산구 한강대로62나길 14 (용산동3가 1-68)",
       "category": "생선회",
@@ -9386,7 +11639,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/3OzmX5/%EC%98%81%EB%8D%95%EC%8B%9D%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "topic_enrichment_baekban-trip_3360e177da0a",
@@ -9575,7 +11839,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_600",
-      "name": "보령 대성식당",
+      "name": "대성식당",
       "region": "충남 보령시",
       "address": "충남 보령시 대천항1길 180 (신흑동 950-26)",
       "category": "전어구이",
@@ -9586,7 +11850,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인 · 공개 가격 없음",
+      "menuPriceStatus": "excluded_no_public_price",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EB%8C%80%EC%84%B1%EC%8B%9D%EB%8B%B9%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C/place/17493296?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EB%8C%80%EC%84%B1%EC%8B%9D%EB%8B%B9%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191456%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EB%8C%80%EC%84%B1%EC%8B%9D%EB%8B%B9%20%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C",
+          "label": "네이버 지도 현행 장소"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_601",
@@ -9620,7 +11895,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_603",
-      "name": "보령 샘물식당",
+      "name": "샘물식당",
       "region": "충남 보령시",
       "address": "충남 보령시 청라면 원모루길 245 (나원리 942-4)",
       "category": "쫄복탕",
@@ -9631,7 +11906,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/5B4grR/%EC%83%98%EB%AC%BC%EC%8B%9D%EB%8B%B9",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_604",
@@ -9650,19 +11936,66 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_5fae57cc1892",
-      "name": "안양 호계분식",
+      "name": "호계식당",
       "region": "경기 안양시",
       "address": "경기 안양시 동안구 엘에스로45번길 6 (호계동 707-3)",
       "category": "분식",
-      "representativeMenu": "",
+      "representativeMenu": "백반 / 된장찌개 / 김치찌개",
       "lat": 37.3677025,
       "lng": 126.9544427,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_5fae57cc1892_menu_001",
+          "name": "백반",
+          "price": "8,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_5fae57cc1892_menu_002",
+          "name": "된장찌개",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_5fae57cc1892_menu_003",
+          "name": "김치찌개",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_5fae57cc1892_menu_004",
+          "name": "조기찌개",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_5fae57cc1892_menu_005",
+          "name": "동태찌개",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://hsj8404.tistory.com/2732",
+          "label": "상호 변경·동일 주소 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_606",
@@ -9746,19 +12079,49 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_1d49f78a446d",
-      "name": "횡성 작은밥집 소소반",
+      "name": "소소반",
       "region": "강원 횡성군",
-      "address": "강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1)",
+      "address": "강원 횡성군 서원면 옥계9길 119",
       "category": "송아지갈비",
-      "representativeMenu": "",
+      "representativeMenu": "서울불고기정식 1인 / 서울불고기 정식 1인",
       "lat": 37.4516487,
       "lng": 127.85500069999999,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "topic_enrichment_baekban-trip_1d49f78a446d_menu_001",
+          "name": "서울불고기정식 1인",
+          "price": "27,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_baekban-trip_1d49f78a446d_menu_002",
+          "name": "서울불고기 정식 1인",
+          "price": "34,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        }
+      ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJ7w264f4MYzURgqRQgvTMaso"
+      "googlePlaceId": "ChIJ7w264f4MYzURgqRQgvTMaso",
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "기존 옥계사일길 27에서 옥계9길 119로 이전한 현행 업소와 공개 메뉴를 확인했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.tabling.co.kr/place/677ccf8f66de5f06988471d2",
+          "label": "현행 상호·이전 주소·메뉴 가격"
+        },
+        {
+          "url": "https://www.saramin.co.kr/zf_user/company-info/view/csn/VzVxckNqajlYbkVUOWhPUWFscFduUT09/company_nm/%EC%86%8C%EC%86%8C%EB%B0%98",
+          "label": "기존 주소 사업자 정보 교차 확인"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_611",
@@ -9792,7 +12155,7 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_ce91f6501fcc",
-      "name": "성남 남해소반",
+      "name": "남해소반",
       "region": "경기 성남시",
       "address": "경기 성남시 분당구 내정로165번길 38 (수내동 32)",
       "category": "갯마을정식",
@@ -9804,7 +12167,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJAZjU7CJYezURPyrX45Ujc_I"
+      "googlePlaceId": "ChIJAZjU7CJYezURPyrX45Ujc_I",
+      "operationStatus": "폐업 확인",
+      "menuPriceStatus": "closed_confirmed",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://polle.com/place/1qwiM8/%EB%82%A8%ED%95%B4%EC%86%8C%EB%B0%98",
+          "label": "폐점 표기"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_614",
@@ -9958,9 +12332,9 @@
     },
     {
       "id": "topic_enrichment_baekban-trip_3901c6ceae71",
-      "name": "대전 홍두깨칼국수",
+      "name": "홍두깨칼국수",
       "region": "대전 중구",
-      "address": "대전 중구 충무로107번길 15 (대흥동 378-25)",
+      "address": "대전 중구 대종로 258",
       "category": "얼큰이칼국수",
       "representativeMenu": "",
       "lat": 36.3109799,
@@ -9970,7 +12344,18 @@
       "menus": [],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 지도에서 식당명·주소가 일치하는 현행 장소를 찾지 못했고, 추가 웹 검색에서도 현재 영업을 단정할 근거가 부족했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=w6THXSDWun9B",
+          "label": "현행 주소·메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_625",
@@ -10645,18 +13030,72 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_669",
-      "name": "태백 김서방네닭갈비",
+      "name": "김서방네닭갈비",
       "region": "강원 태백시",
-      "address": "강원 태백시 시장남1길 7-1 (황지동 30-17)",
+      "address": "강원 태백시 시장북2길 5-2",
       "category": "물닭갈비",
-      "representativeMenu": "",
+      "representativeMenu": "물닭갈비(1인분) / 우동사리 / 쫄면사리",
       "lat": 37.1718851,
       "lng": 128.9928896,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_001",
+          "name": "물닭갈비(1인분)",
+          "price": "11,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_002",
+          "name": "우동사리",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_003",
+          "name": "쫄면사리",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_004",
+          "name": "당면사리",
+          "price": "2,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_005",
+          "name": "볶음밥",
+          "price": "3,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_669_menu_006",
+          "name": "공기밥",
+          "price": "1,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "네이버 현행 장소와 메뉴가 확인되어 현행 도로명 주소를 사용했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/entry/place/11851739?c=15.00,0,0,0,dh&isCorrectAnswer=true",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_670",
@@ -10690,7 +13129,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_672",
-      "name": "대구 산골기사식당",
+      "name": "산골기사식당",
       "region": "대구 동구",
       "address": "대구 동구 팔공산로 1666 (백안동 573)",
       "category": "송이순두부",
@@ -10701,7 +13140,18 @@
       "foundingYear": null,
       "menus": [],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "public_menu_unavailable",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "현행 공개 메뉴 9개를 확인했으나 원문 가격 구조의 자동 추출 신뢰도가 낮아 보고서 상태만 갱신했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=X3tfYxnpq7TT",
+          "label": "현행 주소·메뉴 자료"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_673",
@@ -10796,33 +13246,85 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_679",
-      "name": "영광 장보고굴비",
+      "name": "장보고굴비",
       "region": "전남 영광군",
       "address": "전남 영광군 법성면 굴비로1길 46 (진내리 482-64)",
       "category": "굴비유통판매",
-      "representativeMenu": "",
+      "representativeMenu": "백반",
       "lat": 35.3616989,
       "lng": 126.439112,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_679_menu_001",
+          "name": "백반",
+          "price": "8,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소가 일치하는 현행 장소는 확인했지만 공개 메뉴 탭 또는 가격표가 없다.",
+      "menuPriceSources": [
+        {
+          "url": "https://korea-hotplace.tistory.com/4702",
+          "label": "동일 주소 방송 메뉴 가격"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_680",
-      "name": "함평 제일식당",
+      "name": "제일식당",
       "region": "전남 함평군",
       "address": "전남 함평군 월야면 전하길 65-1 (월야리 259-70)",
       "category": "굴비백반",
-      "representativeMenu": "",
+      "representativeMenu": "백반 / 삼겹살 / 생고기한접시",
       "lat": 35.1796905,
       "lng": 126.6321248,
       "imageUrl": "",
       "foundingYear": null,
-      "menus": [],
+      "menus": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_680_menu_001",
+          "name": "백반",
+          "price": "10,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_680_menu_002",
+          "name": "삼겹살",
+          "price": "변동",
+          "isSignature": false,
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_680_menu_003",
+          "name": "생고기한접시",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        }
+      ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "operationStatus": "영업 확인",
+      "menuPriceStatus": "matched_with_priced_menu_secondary_source",
+      "menuPriceVerifiedAt": "2026-07-19T23:30:00+09:00",
+      "menuPriceNote": "식당명과 주소를 대조한 네이버 지도 현행 메뉴를 반영했다.",
+      "menuPriceSources": [
+        {
+          "url": "https://map.naver.com/p/search/%EC%A0%9C%EC%9D%BC%EC%8B%9D%EB%8B%B9%20%EC%A0%84%EB%82%A8%20%ED%95%A8%ED%8F%89%EA%B5%B0/place/17145272?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%A0%9C%EC%9D%BC%EC%8B%9D%EB%8B%B9%20%EC%A0%84%EB%82%A8%20%ED%95%A8%ED%8F%89%EA%B5%B0%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202607191500%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%A0%9C%EC%9D%BC%EC%8B%9D%EB%8B%B9%20%EC%A0%84%EB%82%A8%20%ED%95%A8%ED%8F%89%EA%B5%B0",
+          "label": "네이버 지도 현행 메뉴"
+        }
+      ],
+      "researchDatasetId": "sikgaek-baekban-trip"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_681",

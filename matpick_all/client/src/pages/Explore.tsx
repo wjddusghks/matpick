@@ -138,6 +138,34 @@ const EPISODE_CARD_PALETTES = [
   "linear-gradient(145deg, #252525 0%, #59606b 52%, #f7b267 100%)",
 ];
 
+const RESTAURANT_DATA_CARD_PALETTES = [
+  "linear-gradient(145deg, #321b2a 0%, #8b3f60 58%, #ee9279 100%)",
+  "linear-gradient(145deg, #17283e 0%, #356c87 58%, #74b9a7 100%)",
+  "linear-gradient(145deg, #243126 0%, #5c7450 58%, #c99c65 100%)",
+  "linear-gradient(145deg, #2f2543 0%, #725a93 58%, #e39aaa 100%)",
+  "linear-gradient(145deg, #3a251c 0%, #965a3b 58%, #e7b45f 100%)",
+];
+
+const RESTAURANT_CARD_TOPIC_SLUGS = new Set([
+  "mogeultende",
+  "jeonhyunmoo-plan",
+  "culinary-class-wars",
+  "old-korean-100",
+  "seoul-taste-100",
+  "baekjong-wok",
+  "michelin",
+]);
+
+const RESTAURANT_CARD_TOPIC_EYEBROWS: Record<string, string> = {
+  mogeultende: "Sung Si Kyung",
+  "jeonhyunmoo-plan": "Jeon Hyunmoo Plan",
+  "culinary-class-wars": "Chef Guide",
+  "old-korean-100": "Korean Heritage 100",
+  "seoul-taste-100": "Taste of Seoul 2025",
+  "baekjong-wok": "Baekjong",
+  michelin: "Michelin",
+};
+
 const EPISODE_SOCIAL_STORAGE_KEY = "matpick:episode-card-social:v1";
 const ttoganjipCardAssetsByLabel = new Map(
   (ttoganjipCardAssets.episodes as TtoganjipCardAssetEpisode[]).map((episode) => [
@@ -311,6 +339,39 @@ function getEpisodeCardTitle(episode: DiscoveryTopicEpisode) {
 
 function getEpisodeCardPalette(index: number) {
   return EPISODE_CARD_PALETTES[index % EPISODE_CARD_PALETTES.length];
+}
+
+function getRestaurantDataCardPalette(index: number) {
+  return RESTAURANT_DATA_CARD_PALETTES[
+    index % RESTAURANT_DATA_CARD_PALETTES.length
+  ];
+}
+
+function getRestaurantCardMenuItems(restaurant: Restaurant) {
+  const explicitMenus = (restaurant.menus ?? [])
+    .filter((menu) => menu.name?.trim())
+    .map((menu) => ({
+      id: menu.id,
+      name: menu.name.trim(),
+      price: menu.price?.trim() || "",
+      isSignature: Boolean(menu.isSignature),
+    }));
+
+  if (explicitMenus.length > 0) {
+    return explicitMenus.slice(0, 3);
+  }
+
+  return restaurant.representativeMenu
+    .split("/")
+    .map((name) => name.trim())
+    .filter(Boolean)
+    .slice(0, 3)
+    .map((name, index) => ({
+      id: `${restaurant.id}-card-menu-${index}`,
+      name,
+      price: "",
+      isSignature: index === 0,
+    }));
 }
 
 function getEpisodeMainImageUrl(episode: DiscoveryTopicEpisode) {
@@ -489,6 +550,12 @@ function RestaurantCard({
   const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
   const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
   const broadcastBadge = formatRestaurantBroadcastBadge(broadcastMeta, locale);
+  const menuItems = getRestaurantCardMenuItems(restaurant);
+  const heroMenu = menuItems.find((menu) => menu.isSignature) ?? menuItems[0];
+  const isPortraitCardAsset =
+    displayImage.hasPhoto &&
+    (displayImage.src.includes("/card-data/") ||
+      displayImage.src.includes("/card-previews/"));
 
   return (
     <button
@@ -497,70 +564,141 @@ function RestaurantCard({
         onSelect?.(restaurant);
         navigate(`/restaurant/${restaurant.id}`);
       }}
-      className="group self-start overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
+      className="group flex h-full w-full flex-col overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
     >
-      <div className="relative aspect-[2/3] overflow-hidden bg-[#211f22]">
-        <img
-          src={displayImage.src}
-          alt={restaurant.name}
-          className="h-full w-full object-contain"
-          width={1122}
-          height={1402}
-          loading={imageIndex < 3 ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={imageIndex === 0 ? "high" : imageIndex < 3 ? "auto" : "low"}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.18)_100%)]" />
+      <div
+        className={`relative flex-shrink-0 overflow-hidden ${
+          isPortraitCardAsset ? "aspect-[2/3] bg-[#211f22]" : "aspect-[4/3]"
+        }`}
+        style={
+          displayImage.hasPhoto
+            ? undefined
+            : { background: getRestaurantDataCardPalette(imageIndex) }
+        }
+      >
+        {displayImage.hasPhoto ? (
+          <>
+            <img
+              src={displayImage.src}
+              alt={restaurant.name}
+              className={`h-full w-full ${
+                isPortraitCardAsset ? "object-contain" : "object-cover"
+              }`}
+              width={1122}
+              height={isPortraitCardAsset ? 1402 : 842}
+              loading={imageIndex < 3 ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={imageIndex === 0 ? "high" : imageIndex < 3 ? "auto" : "low"}
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.22)_100%)]" />
 
-        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-          {!displayImage.hasPhoto ? (
-            <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-              {copy.photoPending}
-            </span>
-          ) : null}
-          <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
-            {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
-          </span>
-          {foundingBadge ? (
-            <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
-              {foundingBadge}
-            </span>
-          ) : null}
-          {broadcastBadge ? (
-            <span className="rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
-              {broadcastBadge}
-            </span>
-          ) : null}
-        </div>
+            <div className="absolute left-4 top-4 flex max-w-[calc(100%-4.5rem)] flex-wrap gap-2">
+              <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
+                {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
+              </span>
+              {foundingBadge ? (
+                <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
+                  {foundingBadge}
+                </span>
+              ) : null}
+              {broadcastBadge ? (
+                <span className="rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
+                  {broadcastBadge}
+                </span>
+              ) : null}
+            </div>
+          </>
+        ) : (
+          <div className="absolute inset-0 flex flex-col p-5 text-white sm:p-6">
+            <span className="pointer-events-none absolute -right-9 -top-12 h-40 w-40 rounded-full border border-white/16 bg-white/8" />
+            <span className="pointer-events-none absolute -bottom-16 left-8 h-36 w-36 rounded-full border border-white/10 bg-black/10" />
+
+            <div className="relative flex max-w-[calc(100%-3rem)] flex-wrap items-center gap-2 text-[10px] font-black uppercase tracking-[0.14em] text-white/72">
+              <span>{locale === "en" ? "Matpick data card" : "맛픽 데이터 카드"}</span>
+              {restaurant.region ? <span>· {restaurant.region}</span> : null}
+            </div>
+            <div className="relative mt-auto pr-3">
+              <p className="text-xs font-bold text-white/72">
+                {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
+              </p>
+              <h3 className="mt-1.5 line-clamp-2 break-keep text-2xl font-black leading-[1.12] tracking-[-0.04em] sm:text-[28px]">
+                {restaurant.name}
+              </h3>
+              {heroMenu ? (
+                <div className="mt-4 border-t border-white/22 pt-3">
+                  <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white/58">
+                    {locale === "en" ? "Signature menu" : "대표 메뉴"}
+                  </p>
+                  <div className="mt-1.5 flex items-baseline justify-between gap-3">
+                    <span className="line-clamp-1 text-sm font-bold text-white">
+                      {heroMenu.name}
+                    </span>
+                    {heroMenu.price ? (
+                      <span className="shrink-0 text-xs font-black text-white/86">
+                        {heroMenu.price}
+                      </span>
+                    ) : null}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        )}
 
         <div className="absolute right-4 top-4">
           <HeartButton restaurantId={restaurant.id} size="sm" className="shadow-md" />
         </div>
 
-        {recommendationCount > 1 ? (
+        {displayImage.hasPhoto && recommendationCount > 1 ? (
           <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/72 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
             {copy.recommendLabel(recommendationCount)}
           </div>
         ) : null}
       </div>
 
-      <div className="space-y-4 p-5">
+      <div className="flex flex-1 flex-col gap-4 p-5">
         <div className="space-y-2">
           <h3 className="line-clamp-1 text-lg font-bold text-[#181818]">{restaurant.name}</h3>
-          <p className="line-clamp-2 min-h-[2.625rem] text-sm text-[#8a8a8a]">
-            {restaurant.address}
-          </p>
-          {priceHint ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b2a2a6]">
-              {copy.priceLabel} {priceHint}
-            </p>
-          ) : null}
-          <p className="line-clamp-3 min-h-[3.9375rem] text-sm font-medium text-[#ff7b83]">
-            {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
+          <p className="flex min-h-[2.625rem] items-start gap-1.5 text-sm leading-[1.35rem] text-[#8a8a8a]">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#c8b5b9]" />
+            <span className="line-clamp-2">{restaurant.address || restaurant.region}</span>
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="rounded-[18px] border border-[#f2e9eb] bg-[#fffafb] px-4 py-3.5">
+          <div className="mb-2.5 flex items-center justify-between gap-3">
+            <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#bd8f98]">
+              {locale === "en" ? "Menu & price" : "메뉴 · 가격"}
+            </p>
+            {priceHint ? (
+              <span className="text-[11px] font-bold text-[#ff7582]">{priceHint}</span>
+            ) : null}
+          </div>
+
+          {menuItems.length > 0 ? (
+            <div className="space-y-2">
+              {menuItems.map((menu, menuIndex) => (
+                <div
+                  key={menu.id || `${restaurant.id}-menu-preview-${menuIndex}`}
+                  className="flex items-baseline justify-between gap-3 text-sm"
+                >
+                  <span className="line-clamp-1 min-w-0 font-semibold text-[#40383a]">
+                    {menu.name}
+                  </span>
+                  <span className="shrink-0 text-xs font-bold text-[#8b7a7d]">
+                    {menu.price || (locale === "en" ? "Check price" : "가격 확인")}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="line-clamp-2 text-sm font-medium text-[#8b7a7d]">
+              {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
+            </p>
+          )}
+        </div>
+
+        <div className="mt-auto flex flex-wrap gap-2">
           {creatorsForRestaurant.map((creator) => (
             <span
               key={creator.id}
@@ -583,6 +721,130 @@ function RestaurantCard({
         </div>
       </div>
     </button>
+  );
+}
+
+function TopicRestaurantDataCard({
+  topic,
+  restaurant,
+  index,
+  locale,
+  copy,
+  onSelect,
+}: {
+  topic: DiscoveryTopic;
+  restaurant: Restaurant;
+  index: number;
+  locale: AppLocale;
+  copy: (typeof EXPLORE_COPY)[AppLocale];
+  onSelect: (restaurant: Restaurant) => void;
+}) {
+  const [, navigate] = useLocation();
+  const menuItems = getRestaurantCardMenuItems(restaurant);
+  const cuisineLabel = translateCuisineLabel(
+    getCuisineCategory(restaurant.category),
+    locale
+  );
+  const broadcastBadge = formatRestaurantBroadcastBadge(
+    getRestaurantBroadcastMeta(restaurant.id),
+    locale
+  );
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
+  const topicEyebrow = RESTAURANT_CARD_TOPIC_EYEBROWS[topic.slug] ?? topic.name;
+
+  return (
+    <article className="relative h-full overflow-hidden rounded-[24px] border border-[#eee7e8] bg-white shadow-[0_10px_28px_rgba(38,28,31,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#f3cbd1] hover:shadow-[0_18px_42px_rgba(227,96,115,0.13)]">
+      <button
+        type="button"
+        onClick={() => {
+          onSelect(restaurant);
+          navigate(`/restaurant/${restaurant.id}`);
+        }}
+        className="group flex h-full w-full flex-col text-left"
+      >
+        <div
+          className="relative h-[72px] flex-shrink-0 overflow-hidden sm:h-[78px]"
+          style={{ background: getRestaurantDataCardPalette(index) }}
+        >
+          <span className="pointer-events-none absolute -right-8 -top-14 h-36 w-36 rounded-full border border-white/16 bg-white/8" />
+          <span className="pointer-events-none absolute inset-y-0 left-[58%] w-px rotate-[24deg] bg-white/15" />
+
+          <span className="absolute left-5 top-1/2 flex h-9 w-9 -translate-y-1/2 rotate-45 items-center justify-center rounded-[11px] border border-[#f5d37d]/90 bg-black/10 text-white shadow-sm">
+            <span className="-rotate-45 text-[11px] font-black tabular-nums">
+              {index + 1}
+            </span>
+          </span>
+          <span className="absolute left-[74px] top-1/2 max-w-[calc(100%-8.5rem)] -translate-y-1/2 truncate text-[10px] font-black uppercase tracking-[0.16em] text-white/78">
+            {topicEyebrow}
+          </span>
+        </div>
+
+        <div className="grid flex-1 grid-cols-[minmax(0,0.86fr)_1px_minmax(0,1.14fr)] gap-4 p-5 sm:grid-cols-[minmax(0,0.82fr)_1px_minmax(0,1.18fr)] sm:gap-5 sm:p-6">
+          <div className="min-w-0 self-center">
+            <h3 className="line-clamp-2 break-keep text-[20px] font-black leading-[1.16] tracking-[-0.04em] text-[#211d1e] sm:text-[22px]">
+              {restaurant.name}
+            </h3>
+            <p className="mt-2 line-clamp-1 text-xs font-semibold text-[#817579]">
+              {[restaurant.region, cuisineLabel].filter(Boolean).join(" · ")}
+            </p>
+            <p className="mt-1.5 line-clamp-2 text-[11px] leading-4 text-[#aaa0a3]">
+              {restaurant.address}
+            </p>
+            {foundingBadge || broadcastBadge ? (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {foundingBadge ? (
+                  <span className="rounded-full bg-[#fff2f4] px-2 py-1 text-[9px] font-bold text-[#dc6d7c]">
+                    {foundingBadge}
+                  </span>
+                ) : null}
+                {broadcastBadge ? (
+                  <span className="rounded-full bg-[#eff7ff] px-2 py-1 text-[9px] font-bold text-[#4f86b2]">
+                    {broadcastBadge}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
+
+          <span className="h-full min-h-[92px] bg-[#eee8e9]" aria-hidden="true" />
+
+          <div className="min-w-0 self-center">
+            <p className="mb-2.5 text-[9px] font-black uppercase tracking-[0.16em] text-[#bc8b94]">
+              {locale === "en" ? "Menu & price" : "메뉴 · 가격"}
+            </p>
+            {menuItems.length > 0 ? (
+              <div className="space-y-2.5">
+                {menuItems.map((menu, menuIndex) => (
+                  <div
+                    key={menu.id || `${restaurant.id}-compact-menu-${menuIndex}`}
+                    className="flex items-baseline justify-between gap-2"
+                  >
+                    <span className="line-clamp-1 min-w-0 text-[12px] font-bold text-[#40383a] sm:text-[13px]">
+                      {menu.name}
+                    </span>
+                    <span className="shrink-0 text-[11px] font-black tabular-nums text-[#766b6e] sm:text-xs">
+                      {menu.price || (locale === "en" ? "Check" : "확인")}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="line-clamp-3 text-xs font-medium leading-5 text-[#8b7a7d]">
+                {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
+              </p>
+            )}
+          </div>
+        </div>
+      </button>
+
+      <div className="absolute right-4 top-[18px] z-10 sm:top-[21px]">
+        <HeartButton
+          restaurantId={restaurant.id}
+          size="sm"
+          className="border-white/35 bg-white/92 shadow-md"
+        />
+      </div>
+    </article>
   );
 }
 
@@ -757,14 +1019,7 @@ function SourceRestaurantCollectionGrid({
   copy: (typeof EXPLORE_COPY)[AppLocale];
   onSelect: (restaurant: Restaurant) => void;
 }) {
-  const eyebrow =
-    topic.slug === "old-korean-100"
-      ? "Korean 100"
-      : topic.slug === "baekjong-wok"
-        ? "Baekjong"
-        : topic.slug === "michelin"
-          ? "Michelin"
-          : "Topic";
+  const eyebrow = RESTAURANT_CARD_TOPIC_EYEBROWS[topic.slug] ?? "Matpick Topic";
   const title =
     locale === "en" ? `${topic.name} restaurant cards` : `${topic.name} 맛집 카드`;
   const description =
@@ -799,12 +1054,13 @@ function SourceRestaurantCollectionGrid({
         </p>
       </div>
 
-      <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-2 lg:gap-5">
         {restaurants.map((restaurant, index) => (
-          <RestaurantCard
+          <TopicRestaurantDataCard
             key={restaurant.id}
+            topic={topic}
             restaurant={restaurant}
-            imageIndex={index}
+            index={index}
             locale={locale}
             copy={copy}
             onSelect={onSelect}
@@ -1553,9 +1809,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   const isSourceRestaurantCardOverview =
     Boolean(presetTopic) &&
     !presetEpisode &&
-    (presetTopic?.slug === "old-korean-100" ||
-      presetTopic?.slug === "baekjong-wok" ||
-      presetTopic?.slug === "michelin");
+    RESTAURANT_CARD_TOPIC_SLUGS.has(presetTopic?.slug ?? "");
   const isCardTopicOverview =
     isTtoganjipOverview || isPopularRestaurantsOverview || isSourceRestaurantCardOverview;
 
@@ -2297,7 +2551,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         </div>
 
         {!isCardTopicOverview && filteredRestaurants.length > 0 ? (
-          <div className="grid grid-cols-1 items-start gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {visibleRestaurants.flatMap((restaurant, index) => {
               const items = [
                 <RestaurantCard

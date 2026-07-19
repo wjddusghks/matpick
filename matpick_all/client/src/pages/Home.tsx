@@ -59,6 +59,11 @@ import {
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
+import sungsikyungShortcutImage from "@/assets/creator-thumbnails/sungsikyung.jpg";
+import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.webp";
+import michelinShortcutImage from "@/assets/source-thumbnails/michelin.webp";
+import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.webp";
+import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.webp";
 
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
@@ -73,6 +78,8 @@ type HomeShortcutTopic = {
   eyebrow: string;
   description: string;
   background: string;
+  imageUrl?: string;
+  imageFit?: "cover" | "contain";
 };
 
 type RestaurantMarqueeCardItem = {
@@ -117,6 +124,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "SUNG SI KYUNG · YOUTUBE",
     description: "음식과 이야기가 함께 쌓인 국내 맛집 기록",
     background: "linear-gradient(145deg, #2f1726 0%, #8d365a 58%, #ff947d 100%)",
+    imageUrl: sungsikyungShortcutImage,
   },
   {
     slug: "jeonhyunmoo-plan",
@@ -141,6 +149,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "KOREAN HERITAGE 100",
     description: "오랜 시간 한 자리를 지켜온 한국의 맛",
     background: "linear-gradient(145deg, #203329 0%, #55735b 56%, #c79a62 100%)",
+    imageUrl: "/source-covers/old-korean-100.jpg",
   },
   {
     slug: "seoul-taste-100",
@@ -157,6 +166,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "LOCAL REVISIT GUIDE",
     description: "다시 찾고 싶은 동네 대표 맛집",
     background: "linear-gradient(145deg, #531e35 0%, #dd5575 58%, #ffb06d 100%)",
+    imageUrl: ttoganjipShortcutImage,
   },
   {
     slug: "popular-restaurants",
@@ -165,6 +175,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "MATPICK CURATION",
     description: "지역과 메뉴로 빠르게 찾는 인기 식당",
     background: "linear-gradient(145deg, #3d234a 0%, #7d4e98 58%, #ef8eae 100%)",
+    imageUrl: popularRestaurantsShortcutImage,
   },
   {
     slug: "michelin",
@@ -173,6 +184,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "MICHELIN GUIDE",
     description: "스타부터 빕 구르망까지 한눈에",
     background: "linear-gradient(145deg, #5e151b 0%, #b72532 58%, #e9a16f 100%)",
+    imageUrl: michelinShortcutImage,
   },
   {
     slug: "baekjong-wok",
@@ -181,6 +193,8 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "KOREAN FOOD ARCHIVE",
     description: "전국을 뜨겁게 달군 메뉴별 대표 맛집",
     background: "linear-gradient(145deg, #472316 0%, #a14d2e 55%, #efb14a 100%)",
+    imageUrl: baekjongWokShortcutImage,
+    imageFit: "contain",
   },
   {
     slug: "sikgaek-baekban-trip",
@@ -189,6 +203,7 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     eyebrow: "KOREAN TABLE JOURNEY",
     description: "지역의 삶과 손맛을 담은 백반 한 상",
     background: "linear-gradient(145deg, #29301f 0%, #687546 56%, #d4a85c 100%)",
+    imageUrl: "/source-covers/sikgaek-baekban-trip-menu-v2.jpg",
   },
 ];
 
@@ -747,6 +762,26 @@ function TopicShortcutButton({
       <span className="relative line-clamp-2 text-[8px] font-black uppercase leading-3 tracking-[0.15em] text-white/68 sm:text-[9px] sm:leading-4 sm:tracking-[0.17em]">
         {topic.eyebrow}
       </span>
+
+      {topic.imageUrl ? (
+        <span className="relative mt-4 block h-[82px] w-full overflow-hidden rounded-[17px] border border-white/20 bg-white/12 shadow-[0_12px_24px_rgba(24,14,20,0.18)] sm:mt-5 sm:h-[104px] sm:rounded-[20px]">
+          <img
+            src={topic.imageUrl}
+            alt=""
+            className={`h-full w-full ${
+              topic.imageFit === "contain" ? "object-contain p-2" : "object-cover"
+            }`}
+            loading="lazy"
+            decoding="async"
+          />
+          <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(18,9,14,0.14))]" />
+        </span>
+      ) : (
+        <span className="relative mt-5 flex h-[74px] items-end overflow-hidden border-y border-white/14 pb-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/42 sm:h-[96px]">
+          MATPICK DATA
+        </span>
+      )}
+
       <span className="relative mt-auto break-keep text-[20px] font-black leading-[1.2] tracking-[-0.04em] sm:text-[24px]">
         {topic.name}
       </span>

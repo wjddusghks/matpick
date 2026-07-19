@@ -6,7 +6,6 @@ import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
 import culinaryClassWarsDataset from "./generated/culinary-class-wars.generated.json";
 import jeonhyunmooPlanDataset from "./generated/jeonhyunmoo-plan.generated.json";
-import seoulTaste100Dataset from "./generated/seoul-taste-100.generated.json";
 import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
 import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
 import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
@@ -48,7 +47,6 @@ export type DiscoveryTopicKind = "creator" | "source";
 
 type DiscoveryTopicDefinition = {
   slug: string;
-  name?: string;
   kind: DiscoveryTopicKind;
   targetId: string;
 };
@@ -180,9 +178,7 @@ function mergeRestaurantMenus(currentMenus: MenuItem[] = [], nextMenus: MenuItem
         id: menu.id || `merged_menu_${index}`,
         name: normalizedName,
         price: menu.price?.trim() || undefined,
-        description: menu.description?.trim() || undefined,
         isSignature: Boolean(menu.isSignature),
-        sourceOrdinal: menu.sourceOrdinal,
       });
       return;
     }
@@ -190,9 +186,7 @@ function mergeRestaurantMenus(currentMenus: MenuItem[] = [], nextMenus: MenuItem
     mergedMenus.set(key, {
       ...existing,
       price: existing.price || menu.price?.trim() || undefined,
-      description: existing.description || menu.description?.trim() || undefined,
       isSignature: existing.isSignature || Boolean(menu.isSignature),
-      sourceOrdinal: existing.sourceOrdinal ?? menu.sourceOrdinal,
     });
   });
 
@@ -412,27 +406,30 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   };
 }
 
-const publicCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set([
-  "ttoganjip",
-  "popular-restaurants",
-  "michelin",
-  "old-korean-100",
-  "baekjong-wok",
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
+const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
+const sourceIdsPendingCardImages = new Set<string>([
   "culinary-class-wars",
   "jeonhyunmoo-plan",
-  "seoul-taste-100-2025",
 ]);
+const publicDataSourceIds = new Set(
+  [
+    "ttoganjip",
+    "popular-restaurants",
+    "michelin",
+    "old-korean-100",
+    "baekjong-wok",
+    "sikgaek-baekban-trip",
+    "wednesday-gourmet",
+    "culinary-class-wars",
+    "jeonhyunmoo-plan",
+  ].filter((sourceId) => !sourceIdsPendingCardImages.has(sourceId))
+);
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
-  const visibleCreators = dataset.creators.filter((creator) =>
-    publicCreatorIds.has(creator.id)
+  const visibleCreators = dataset.creators.filter(
+    (creator) => !hiddenCreatorIds.has(creator.id)
   );
-  const visibleVisits = dataset.visits.filter(
-    (visit) => publicCreatorIds.has(visit.creatorId) && Boolean(visit.restaurantId)
-  );
+  const visibleVisits: Visit[] = [];
   const visibleSourceLinks = (dataset.sourceLinks ?? []).filter((link) =>
     publicDataSourceIds.has(link.sourceId)
   );
@@ -471,7 +468,6 @@ const dataset = filterDatasetForVisibleContent(
   mergeDatasets(baseDataset, [
   culinaryClassWarsDataset as SourceDataset,
   jeonhyunmooPlanDataset as SourceDataset,
-  seoulTaste100Dataset as unknown as SourceDataset,
   oldKorean100Dataset as SourceDataset,
   baekjongWokTopicEnrichment as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
@@ -823,14 +819,7 @@ export function getRestaurantMenuItems(restaurant: Restaurant): MenuItem[] {
 
   const items: MenuItem[] = [];
 
-  const isSikgaekBaekbanTripRestaurant = sourceIdsByRestaurantId
-    .get(restaurant.id)
-    ?.has("sikgaek-baekban-trip");
-  const fallbackMenuText =
-    restaurant.representativeMenu ||
-    (isSikgaekBaekbanTripRestaurant ? restaurant.category : "");
-
-  fallbackMenuText.split(/[\/,·ㆍ]+/).forEach((chunk, index) => {
+  (restaurant.representativeMenu || "").split("/").forEach((chunk, index) => {
     const trimmed = chunk.trim();
     if (!trimmed) {
       return;
@@ -1002,7 +991,7 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
         kind: definition.kind,
         targetId: definition.targetId,
         key: buildDiscoveryTopicKey(definition.kind, definition.targetId),
-        name: definition.name?.trim() || getCreatorDisplayName(creator),
+        name: getCreatorDisplayName(creator),
         description: buildCreatorTopicDescription(creator, count),
         path: buildDiscoveryTopicPath(definition.slug),
         count,
@@ -1037,19 +1026,17 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
 const publicDiscoveryTopicSlugs = new Set([
   "ttoganjip",
   "wednesday-gourmet",
-  "mogeultende",
   "popular-restaurants",
   "michelin",
   "old-korean-100",
   "baekjong-wok",
   "sikgaek-baekban-trip",
-  "culinary-class-wars",
-  "jeonhyunmoo-plan",
-  "seoul-taste-100",
 ]);
 
-export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter((topic) =>
-  publicDiscoveryTopicSlugs.has(topic.slug)
+export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter(
+  (topic) =>
+    publicDiscoveryTopicSlugs.has(topic.slug) &&
+    (topic.kind !== "source" || !sourceIdsPendingCardImages.has(topic.targetId))
 );
 
 export function getDiscoveryTopicBySlug(slug: string) {

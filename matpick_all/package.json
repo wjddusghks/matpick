@@ -9,6 +9,10 @@
   },
   "scripts": {
     "dev": "vite --host",
+    "collect:mogeultende": "node scripts/collect-mogeultende-youtube.mjs",
+    "enrich:mogeultende:kakao": "node scripts/enrich-mogeultende-kakao.mjs",
+    "build:mogeultende": "node scripts/build-mogeultende-source.mjs",
+    "apply:mogeultende": "node scripts/apply-mogeultende-to-matpick.mjs",
     "sync:old-korean-100": "node scripts/sync-source-dataset.mjs old-korean-100",
     "sync:sikgaek-baekban-trip": "node scripts/sync-source-dataset.mjs sikgaek-baekban-trip",
     "enrich:sikgaek-baekban-trip:menus": "node scripts/enrich-sikgaek-baekban-menus.mjs",

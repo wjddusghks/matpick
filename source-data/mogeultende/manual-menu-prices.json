@@ -1,0 +1,488 @@
+{
+  "source": "Manual public menu-price research for Matpick",
+  "collectedAt": "2026-07-15T00:00:00+09:00",
+  "restaurants": {
+    "mogeultende_71a66beca5ef": {
+      "name": "육개옥",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "한우육개장, 양지온반, 한우수육, 수제동그랑땡",
+      "note": "최근 공개 메뉴 안내와 2025년 방문 기록에서 가격을 교차 확인함.",
+      "sources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=xQBMOE0PkRF0",
+          "label": "다이닝코드 육개옥 메뉴 및 최근 방문 기록",
+          "publishedAt": "2025-07-17"
+        }
+      ],
+      "menus": [
+        { "name": "한우육개장", "price": "11,000원", "isSignature": true },
+        { "name": "양지온반", "price": "12,000원", "isSignature": true },
+        { "name": "막국수", "price": "8,000원" },
+        { "name": "한우수육(소)", "price": "33,000원", "isSignature": true },
+        { "name": "한우수육(중)", "price": "55,000원" },
+        { "name": "한우수육(대)", "price": "75,000원" },
+        { "name": "수제동그랑땡", "price": "22,000원", "isSignature": true }
+      ]
+    },
+    "mogeultende_1681d8fe90b9": {
+      "name": "히말라야 어죽",
+      "replaceMenus": true,
+      "status": "last_known_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "어죽, 파김치 붕장어 전골, 우럭구이, 닭볶음탕",
+      "note": "현재 공개 메뉴판을 찾지 못해 2022년 8월 공개된 최종 확인 가격을 기록함. 방문 전 가격 확인 권장.",
+      "sources": [
+        {
+          "url": "https://title2.tistory.com/24",
+          "label": "2022년 히말라야 어죽 방문 메뉴판",
+          "publishedAt": "2022-08-31"
+        },
+        {
+          "url": "https://ns2.joodns.com/matzip/matzip.do?code=M180328213218235221Y&f=1&s=0&t=0",
+          "label": "히말라야 어죽 공개 메뉴 정보"
+        }
+      ],
+      "menus": [
+        { "name": "어죽", "price": "15,000원", "isSignature": true },
+        { "name": "파김치 붕장어 전골", "price": "58,000원", "isSignature": true },
+        { "name": "우럭구이", "price": "76,000원" },
+        { "name": "닭볶음탕", "price": "48,000원" }
+      ]
+    },
+    "mogeultende_1e6e35c19f83": {
+      "name": "완도전복",
+      "replaceMenus": true,
+      "status": "current_public_menu_variable_price",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "전복죽, 전복회, 전복구이, 전복버터구이",
+      "note": "공개 메뉴의 기본가이며 회·구이는 선택하는 전복 크기와 수량에 따라 실제 가격이 올라갈 수 있음.",
+      "sources": [
+        {
+          "url": "https://www.tel-co.net/food/spot/1258",
+          "label": "완도전복 공개 메뉴"
+        },
+        {
+          "url": "https://02-2234-8538.ezbuilder.co.kr/index.html",
+          "label": "완도전복 공식 홈페이지"
+        },
+        {
+          "url": "https://polle.com/place/2LVYEN/%EC%99%84%EB%8F%84%EC%A0%84%EB%B3%B5",
+          "label": "완도전복 가격 변동 안내"
+        }
+      ],
+      "menus": [
+        { "name": "전복죽", "price": "15,000원", "isSignature": true },
+        { "name": "전복회", "price": "13,000원부터", "isSignature": true },
+        { "name": "전복구이", "price": "13,000원부터" },
+        { "name": "전복버터구이", "price": "13,000원부터", "isSignature": true }
+      ]
+    },
+    "mogeultende_58110d34c352": {
+      "name": "동강나루터",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "참게메기매운탕, 참게간장게장",
+      "note": "점심 1인 메뉴와 저녁 크기별 메뉴를 구분해 기록함.",
+      "sources": [
+        {
+          "url": "https://www.tel-co.net/food/spot/7616",
+          "label": "동강나루터 공개 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "참게메기매운탕(점심·1인)", "price": "15,000원", "isSignature": true },
+        { "name": "참게메기매운탕(저녁·소)", "price": "33,000원", "isSignature": true },
+        { "name": "참게메기매운탕(저녁·중)", "price": "48,000원" },
+        { "name": "참게메기매운탕(저녁·대)", "price": "58,000원" },
+        { "name": "참게간장게장(1마리)", "price": "9,000원" }
+      ]
+    },
+    "mogeultende_9ffcb2347abb": {
+      "name": "농부와닭동네 여의도MBC점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "후라이드치킨, 양념치킨, 치킨떡볶이, 통골뱅이무침",
+      "note": "최근 공개된 전체 음식·주류 메뉴를 기록함.",
+      "sources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=dbHwsadi8j3P",
+          "label": "다이닝코드 농부와닭동네 전체 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "후라이드", "price": "22,000원", "isSignature": true },
+        { "name": "양념치킨", "price": "23,000원", "isSignature": true },
+        { "name": "뼈후반양반", "price": "23,000원" },
+        { "name": "순살후라이드", "price": "24,000원" },
+        { "name": "순살양념", "price": "25,000원" },
+        { "name": "순살반반", "price": "25,000원" },
+        { "name": "날개튀김", "price": "21,000원" },
+        { "name": "치킨떡볶이", "price": "15,000원", "description": "라면사리 추가 3,000원", "isSignature": true },
+        { "name": "라볶이", "price": "15,000원" },
+        { "name": "통골뱅이무침", "price": "28,000원" },
+        { "name": "먹태", "price": "18,000원" },
+        { "name": "노가리", "price": "18,000원" },
+        { "name": "쥐포", "price": "18,000원" },
+        { "name": "오징어", "price": "20,000원" },
+        { "name": "생맥주", "price": "5,000원" },
+        { "name": "소주", "price": "5,000원" },
+        { "name": "병맥주", "price": "6,000원" },
+        { "name": "음료", "price": "3,000원" }
+      ]
+    },
+    "mogeultende_084ae5fe20ab": {
+      "name": "함덕골목 본점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "해장국, 내장탕",
+      "note": "본점 주소와 현재 공개 메뉴를 교차 확인함.",
+      "sources": [
+        {
+          "url": "https://www.tabling.co.kr/place/677cc89b66de5f0698773ec6",
+          "label": "테이블링 함덕골목 본점 전체 메뉴"
+        },
+        {
+          "url": "https://www.tel-co.net/food/spot/755",
+          "label": "함덕골목 본점 메뉴판"
+        }
+      ],
+      "menus": [
+        { "name": "해장국", "price": "11,000원", "isSignature": true },
+        { "name": "내장탕", "price": "12,000원", "isSignature": true }
+      ]
+    },
+    "mogeultende_3799afbaaee1": {
+      "name": "스테이지 바이 고디바",
+      "replaceMenus": true,
+      "status": "last_known_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "디저트 2코스, 디저트 5코스",
+      "note": "시즌별 메뉴가 바뀌는 업장으로 2023년 공개된 코스 가격을 최종 공개가로 기록함. 현재 운영·가격은 방문 전 확인 권장.",
+      "sources": [
+        {
+          "url": "https://stibee.com/api/v1.0/emails/share/JfdDY5oOsQ4b5zDYU07X0LrwKOM1P2U",
+          "label": "스테이지 바이 고디바 코스 가격 안내"
+        },
+        {
+          "url": "https://artist-yoo.tistory.com/73",
+          "label": "2023년 스테이지 바이 고디바 방문 메뉴",
+          "publishedAt": "2023-11-26"
+        }
+      ],
+      "menus": [
+        { "name": "디저트 2코스", "price": "28,000원", "isSignature": true },
+        { "name": "디저트 5코스", "price": "55,000원", "isSignature": true },
+        { "name": "샴페인(1잔)", "price": "15,000원" },
+        { "name": "하이볼(1잔)", "price": "15,000원" },
+        { "name": "포트와인(1잔)", "price": "18,000원" }
+      ]
+    },
+    "mogeultende_f5da4582da4e": {
+      "name": "하남 숯불닭갈비 미사본점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "숯불닭갈비, 닭목살, 불닭발, 더덕구이, 막국수",
+      "note": "최근 공개된 전체 매장 메뉴를 기록함. 포장·반려동물 메뉴는 설명을 붙여 구분함.",
+      "sources": [
+        {
+          "url": "https://polle.com/place/4KojnQ/%ED%95%98%EB%82%A8%20%EC%88%AF%EB%B6%88%EB%8B%AD%EA%B0%88%EB%B9%84",
+          "label": "하남 숯불닭갈비 최신 공개 메뉴"
+        },
+        {
+          "url": "https://www.tabling.co.kr/place/677ccd1866de5f0698805ba5",
+          "label": "테이블링 하남 숯불닭갈비 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "불닭발", "price": "16,000원", "isSignature": true },
+        { "name": "닭목살", "price": "16,000원", "isSignature": true },
+        { "name": "더덕구이", "price": "15,000원", "isSignature": true },
+        { "name": "고추장 닭갈비", "price": "16,000원", "isSignature": true },
+        { "name": "간장 닭갈비", "price": "16,000원" },
+        { "name": "소금 닭갈비", "price": "16,000원" },
+        { "name": "닭개장", "price": "11,000원" },
+        { "name": "꾸덕 깻잎 페스토 막국수", "price": "10,000원" },
+        { "name": "골뱅이막국수", "price": "21,000원" },
+        { "name": "시원한 물 막국수", "price": "10,000원" },
+        { "name": "2인세트", "price": "52,000원" },
+        { "name": "3인세트", "price": "71,000원" },
+        { "name": "포장 닭갈비(1인분)", "price": "12,000원", "description": "포장 메뉴" },
+        { "name": "포장 고추장아치(1팩)", "price": "10,000원", "description": "포장 메뉴" },
+        { "name": "포장 샐러리장아치(1팩)", "price": "10,000원", "description": "포장 메뉴" },
+        { "name": "도그꼬꼬", "price": "6,900원", "description": "반려동물 전용 메뉴" }
+      ]
+    },
+    "mogeultende_ce61f4d76d89": {
+      "name": "고다이 한남본점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "생양갈비, 생양등심, 생양살치살, 양설",
+      "note": "최근 예약·맛집 페이지의 메뉴 가격을 교차 확인함.",
+      "sources": [
+        {
+          "url": "https://youtubeplace.co.kr/restaurant/detail/godae-hannam-main",
+          "label": "고다이 한남본점 공개 메뉴"
+        },
+        {
+          "url": "https://autoreserve.com/ko/restaurants/JjwEqRHt5tVH3gW2rJwW",
+          "label": "고다이 한남본점 예약 페이지 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "생양갈비(210g)", "price": "35,000원", "isSignature": true },
+        { "name": "생양등심(150g)", "price": "30,000원", "isSignature": true },
+        { "name": "생양살치살(150g)", "price": "33,000원", "isSignature": true },
+        { "name": "생양특등심", "price": "38,000원" },
+        { "name": "고급 생프렌치렉", "price": "39,000원" },
+        { "name": "양설(130g)", "price": "27,000원" },
+        { "name": "고다이 오뎅탕", "price": "25,000원" },
+        { "name": "생명란구이", "price": "15,000원" },
+        { "name": "간장 계란밥", "price": "4,000원" }
+      ]
+    },
+    "mogeultende_e6a74e5cf967": {
+      "name": "삼계탕마을 래미안퍼스티지점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "삼계탕, 닭볶음탕",
+      "note": "최근 공개 메뉴에서 가격을 확인함.",
+      "sources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=r2mIcWjUnjhS",
+          "label": "삼계탕마을 래미안퍼스티지점 메뉴"
+        },
+        {
+          "url": "https://youtubeplace.co.kr/restaurant/detail/samgyetangmaeul-raemian",
+          "label": "삼계탕마을 공개 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "삼계탕", "price": "19,000원", "isSignature": true },
+        { "name": "닭볶음탕(소)", "price": "35,000원" }
+      ]
+    },
+    "mogeultende_f20fe148a8bb": {
+      "name": "만우장",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "짜장면, 간짜장, 짬뽕, 탕수육",
+      "note": "최근 공개 메뉴를 기준으로 주요 식사·요리 메뉴를 기록함.",
+      "sources": [
+        {
+          "url": "https://www.siksinhot.com/P/396630",
+          "label": "식신 만우장 전체 메뉴"
+        },
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=I7bP1nHx21RL",
+          "label": "다이닝코드 만우장 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "짜장면", "price": "7,000원", "isSignature": true },
+        { "name": "간짜장", "price": "8,000원", "isSignature": true },
+        { "name": "짬뽕", "price": "8,000원", "isSignature": true },
+        { "name": "우동", "price": "8,000원" },
+        { "name": "울면", "price": "8,000원" },
+        { "name": "볶음밥", "price": "8,000원" },
+        { "name": "오므라이스", "price": "9,000원" },
+        { "name": "잡채밥", "price": "9,000원" },
+        { "name": "사천짜장", "price": "10,000원" },
+        { "name": "삼선간짜장", "price": "10,000원" },
+        { "name": "삼선우동", "price": "10,000원" },
+        { "name": "삼선짜장", "price": "10,000원" },
+        { "name": "삼선짬뽕", "price": "10,000원" },
+        { "name": "삼선볶음밥", "price": "11,000원" },
+        { "name": "만두", "price": "7,000원" },
+        { "name": "잡채", "price": "22,000원" },
+        { "name": "계란탕", "price": "22,000원" },
+        { "name": "탕수육(소)", "price": "24,000원", "isSignature": true },
+        { "name": "탕수육(중)", "price": "30,000원" },
+        { "name": "탕수육(대)", "price": "35,000원" },
+        { "name": "깐풍기", "price": "35,000원" },
+        { "name": "라조기", "price": "35,000원" },
+        { "name": "라조육", "price": "35,000원" }
+      ]
+    },
+    "mogeultende_1ed03d4bc911": {
+      "name": "전라도시네마",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "원조백순대, 양념순대, 곱창볶음",
+      "note": "2025년 방문 기록과 최근 공개 메뉴가 일치함.",
+      "sources": [
+        {
+          "url": "https://youtubeplace.co.kr/restaurant/detail/jeollado-cinema",
+          "label": "전라도시네마 공개 메뉴"
+        },
+        {
+          "url": "https://lonelyeating.tistory.com/332",
+          "label": "2025년 전라도시네마 방문 메뉴",
+          "publishedAt": "2025-06-17"
+        }
+      ],
+      "menus": [
+        { "name": "원조백순대(2인분)", "price": "20,000원", "isSignature": true },
+        { "name": "양념순대(2인분)", "price": "20,000원", "isSignature": true },
+        { "name": "곱창볶음(2인분)", "price": "22,000원" },
+        { "name": "볶음밥", "price": "3,000원" },
+        { "name": "소주", "price": "4,000원" }
+      ]
+    },
+    "mogeultende_2dd75bd993eb": {
+      "name": "신천지대반점",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "짜장면, 야끼짬뽕, 잡채밥, 탕수육",
+      "note": "최근 공개 메뉴 중 명백한 오기 가능성이 있는 항목은 제외함.",
+      "sources": [
+        {
+          "url": "https://www.diningcode.com/profile.php?rid=ueQ2cWMSHzFT",
+          "label": "다이닝코드 신천지대반점 전체 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "짜장면", "price": "6,000원", "isSignature": true },
+        { "name": "간짜장", "price": "8,000원" },
+        { "name": "우동", "price": "8,000원" },
+        { "name": "볶음밥", "price": "8,000원" },
+        { "name": "울면", "price": "9,000원" },
+        { "name": "잡채밥", "price": "10,000원", "isSignature": true },
+        { "name": "야끼짬뽕", "price": "12,000원", "isSignature": true },
+        { "name": "사천짜장", "price": "12,000원" },
+        { "name": "삼선짜장면", "price": "12,000원" },
+        { "name": "삼선간짜장", "price": "12,000원" },
+        { "name": "삼선짬뽕", "price": "12,000원" },
+        { "name": "삼선우동", "price": "12,000원" },
+        { "name": "고기볶음밥", "price": "12,000원" },
+        { "name": "탕수육(소)", "price": "20,000원", "isSignature": true },
+        { "name": "마파두부(소)", "price": "20,000원" },
+        { "name": "고기튀김(소)", "price": "20,000원" },
+        { "name": "잡채(소)", "price": "20,000원" },
+        { "name": "깐풍육(소)", "price": "25,000원" },
+        { "name": "고추잡채(소)", "price": "25,000원" },
+        { "name": "토마토탕수육(소)", "price": "25,000원" },
+        { "name": "새우탕수육(소)", "price": "28,000원" },
+        { "name": "양장피(소)", "price": "28,000원" },
+        { "name": "팔보채(소)", "price": "28,000원" },
+        { "name": "유산슬(소)", "price": "28,000원" },
+        { "name": "공보새우(소)", "price": "30,000원" },
+        { "name": "해삼탕(소)", "price": "50,000원" }
+      ]
+    },
+    "mogeultende_2002cabc3678": {
+      "name": "감초식당",
+      "replaceMenus": true,
+      "status": "current_public_menu_conflict",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "돼지불갈비, 생선구이, 순두부",
+      "note": "최근 공개 메뉴는 돼지불갈비 17,000원이나 2026년 2월 방문 영수증에는 16,000원으로 표기되어 있음. 앱에는 더 최근 갱신된 공개가를 반영하고 방문 전 확인을 권장함.",
+      "sources": [
+        {
+          "url": "https://polle.com/place/14lntZ/%EA%B0%90%EC%B4%88%EC%8B%9D%EB%8B%B9",
+          "label": "감초식당 최신 공개 메뉴"
+        },
+        {
+          "url": "https://www.keyzard.cc/iamwinmir/nb/224243888431",
+          "label": "2026년 2월 감초식당 방문 영수증",
+          "publishedAt": "2026-03-01"
+        }
+      ],
+      "menus": [
+        { "name": "돼지불갈비(1인분·2인 이상)", "price": "17,000원", "description": "2026년 2월 방문 기록에는 16,000원 표기", "isSignature": true },
+        { "name": "물냉면", "price": "8,000원" },
+        { "name": "비빔냉면", "price": "8,000원" },
+        { "name": "삼치구이", "price": "12,000원" },
+        { "name": "고등어구이", "price": "12,000원" },
+        { "name": "순두부(한우·홍합)", "price": "10,000원" },
+        { "name": "공기밥", "price": "1,000원" }
+      ]
+    },
+    "mogeultende_1f06ad1d8990": {
+      "name": "참조은콩",
+      "replaceMenus": true,
+      "status": "current_public_menu_partial",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "오리구이 반마리",
+      "note": "최근 공개 자료에서 가격까지 확인 가능한 방송 대표 메뉴만 반영함. 전체 현장 메뉴판은 공개 확인되지 않음.",
+      "sources": [
+        {
+          "url": "https://food.stolencheese.com/ko-KR/%40sungsikyung-fooding/posts/%EC%B0%B8%EC%A1%B0%EC%9D%80-%EC%BD%A9-ihdC1cIdDHgR",
+          "label": "참조은콩 먹을텐데 메뉴",
+          "publishedAt": "2026-01-29"
+        }
+      ],
+      "menus": [
+        { "name": "오리구이 반마리", "price": "8,000원", "isSignature": true }
+      ]
+    },
+    "mogeultende_7300011aa39a": {
+      "name": "시경양꼬치",
+      "replaceMenus": true,
+      "status": "current_public_menu_renamed",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "고급양갈비살, 고급양갈비, 양늑간꽃살, 꿔바로우",
+      "note": "방송 당시 시경양꼬치에서 현재 시경양갈비로 상호·위치가 변경된 것으로 확인되어 현행 메뉴를 기록함.",
+      "sources": [
+        {
+          "url": "https://food.stolencheese.com/ko-KR/%40sungsikyung-fooding/posts/%EC%8B%9C%EA%B2%BD%EC%96%91%EA%B0%88%EB%B9%84-%EC%8B%9C%EA%B2%BD%EC%96%91%EA%BC%AC%EC%B9%98-SCBeT5T50APp",
+          "label": "시경양갈비 현행 메뉴",
+          "publishedAt": "2026-01-29"
+        },
+        {
+          "url": "https://food.stolencheese.com/ko-KR/restaurants/%EC%8B%9C%EA%B2%BD%EC%96%91%EA%B0%88%EB%B9%84-692da9ff8028635dbf0b9c99",
+          "label": "시경양갈비 현재 매장 정보"
+        }
+      ],
+      "menus": [
+        { "name": "고급양갈비살", "price": "27,000원", "isSignature": true },
+        { "name": "고급양갈비", "price": "26,000원", "isSignature": true },
+        { "name": "양늑간꽃살", "price": "25,000원" },
+        { "name": "바지락볶음", "price": "17,000원" },
+        { "name": "가지튀김볶음", "price": "16,000원" },
+        { "name": "마라샹궈", "price": "20,000원" },
+        { "name": "꿔바로우", "price": "18,000원", "isSignature": true },
+        { "name": "옥수수온면", "price": "6,000원" },
+        { "name": "연변냉면", "price": "9,000원" }
+      ]
+    },
+    "mogeultende_6fd0c95c4043": {
+      "name": "번동전주피순대추어탕",
+      "replaceMenus": true,
+      "status": "current_public_menu",
+      "verifiedAt": "2026-07-15",
+      "representativeMenu": "피순대국밥, 피순대, 모둠순대, 추어탕",
+      "note": "최근 공개된 식사·안주 메뉴를 기록함.",
+      "sources": [
+        {
+          "url": "https://www.siksinhot.com/P/822792",
+          "label": "번동전주피순대추어탕 전체 메뉴"
+        }
+      ],
+      "menus": [
+        { "name": "피순대국밥", "price": "10,000원", "isSignature": true },
+        { "name": "피순대만국밥", "price": "12,000원" },
+        { "name": "돼지머리국밥", "price": "11,000원" },
+        { "name": "모둠국밥", "price": "11,000원" },
+        { "name": "추어탕", "price": "10,000원", "isSignature": true },
+        { "name": "피순대(소)", "price": "18,000원", "isSignature": true },
+        { "name": "피순대(중)", "price": "25,000원" },
+        { "name": "머리고기", "price": "25,000원" },
+        { "name": "모둠순대", "price": "35,000원" },
+        { "name": "술국", "price": "20,000원" },
+        { "name": "염통·곱창·감투", "price": "20,000원" },
+        { "name": "피순대전골", "price": "40,000원" }
+      ]
+    }
+  }
+}

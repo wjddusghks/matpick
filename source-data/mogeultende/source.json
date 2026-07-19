@@ -1,0 +1,13 @@
+{
+  "id": "mogeultende",
+  "type": "creator",
+  "provider": "YouTube",
+  "creatorId": "UCfpaSruWW3S4dibonKXENjA",
+  "creatorName": "성시경",
+  "channelName": "성시경 SUNG SI KYUNG",
+  "series": "먹을텐데",
+  "channelUrl": "https://www.youtube.com/@sungsikyung",
+  "domesticOnly": true,
+  "scopeNote": "맛픽 공개 데이터와 회차별 CSV에는 대한민국 식당만 포함",
+  "episodeNumberRule": "공식 채널 일반 동영상 중 제목에 '먹을텐데'가 포함된 영상을 업로드일 오름차순으로 번호 부여"
+}

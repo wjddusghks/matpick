@@ -1,0 +1,267 @@
+{
+  "excludedDescriptionHeadings": [
+    {
+      "videoId": "QakFqXFK2Xs",
+      "name": "서울중앙시장",
+      "reason": "시장 위치 표기이며 개별 식당이 아님"
+    },
+    {
+      "videoId": "d6zoTmkiyf0",
+      "name": "KYUNG DRINKING PUB⛵",
+      "reason": "영상 설명 하단의 자체 프로모션 문구이며 방문 식당이 아님"
+    }
+  ],
+  "episodeOverrides": {
+    "9M30E6sf90g": {
+      "contentType": "restaurant",
+      "restaurants": [
+        {
+          "name": "나진국밥",
+          "address": "전남 여수시 화양면 화양로 1391 (나진리 430-4)",
+          "country": "대한민국",
+          "verification": "official_description"
+        }
+      ]
+    },
+    "ZZAqSGZjiPo": {
+      "contentType": "restaurant",
+      "restaurants": [
+        {
+          "name": "복춘식당",
+          "address": "전남 여수시 교동남1길 5-8 (교동 472)",
+          "country": "대한민국",
+          "verification": "official_description"
+        }
+      ]
+    },
+    "EMR0Aot9yUI": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "히마와리",
+          "address": "일본 〒542-0083 Osaka, Chuo Ward, Higashishinsaibashi, 1 Chome-19-5 ウイステリア心斎橋 2F",
+          "country": "일본",
+          "representativeMenu": "철판구이",
+          "verification": "secondary_web",
+          "sourceUrl": "https://blog.sjmts.com/3"
+        }
+      ]
+    },
+    "kSoZA3FPOQs": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "타코우메 본점",
+          "address": "일본 오사카 도톤보리",
+          "country": "일본",
+          "representativeMenu": "오뎅, 고래요리",
+          "verification": "secondary_web",
+          "sourceUrl": "https://triple.guide/restaurants/e7dcb5ae-d472-4d66-81af-069e54edea27"
+        }
+      ]
+    },
+    "Cydpf6p5f9g": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "스시야 쇼타",
+          "address": "3-chome-3-10 Azabujuban, Minato City, Tokyo 106-0045 일본",
+          "country": "일본",
+          "representativeMenu": "스시 오마카세",
+          "verification": "secondary_web",
+          "sourceUrl": "https://blog.sjmts.com/3"
+        }
+      ]
+    },
+    "Mt6_HILLJRQ": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "Pho Bui Gia",
+          "address": "Thao Dien, Thu Duc, Ho Chi Minh City, Vietnam",
+          "country": "베트남",
+          "representativeMenu": "쌀국수",
+          "verification": "secondary_web",
+          "sourceUrl": "https://foodfighterlife.tistory.com/169"
+        },
+        {
+          "name": "Hai Hoi Quan",
+          "address": "51 Xuan Thuy, Thao Dien, Thu Duc, Ho Chi Minh City, Vietnam",
+          "country": "베트남",
+          "representativeMenu": "분짜",
+          "menus": [
+            {
+              "name": "분짜",
+              "price": "70,000 VND",
+              "isSignature": true
+            }
+          ],
+          "verification": "secondary_web",
+          "sourceUrl": "https://vnguide.co.kr/bbs/board.php?bo_table=hochiminh&wr_id=609"
+        },
+        {
+          "name": "Tuyen Ky",
+          "address": "Thao Dien, Thu Duc, Ho Chi Minh City, Vietnam",
+          "country": "베트남",
+          "representativeMenu": "반미, 반호이",
+          "menus": [
+            {
+              "name": "BÁNH HỎI",
+              "price": "30,000 VND",
+              "isSignature": true
+            },
+            {
+              "name": "BÁNH MÌ",
+              "price": "20,000 VND"
+            }
+          ],
+          "verification": "secondary_web",
+          "sourceUrl": "https://vnguide.co.kr/bbs/board.php?bo_table=hochiminh&wr_id=609"
+        }
+      ]
+    },
+    "2auTxa9o2Ts": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "Phong Cua 1",
+          "address": "Ho Chi Minh City, Vietnam",
+          "country": "베트남",
+          "representativeMenu": "크랩, 타이거새우",
+          "verification": "secondary_web",
+          "sourceUrl": "https://foodfighterlife.tistory.com/171"
+        },
+        {
+          "name": "Quan Bui Garden",
+          "address": "55A Ngo Quang Huy, Thao Dien, Thu Duc, Ho Chi Minh City, Vietnam",
+          "country": "베트남",
+          "representativeMenu": "베트남 전통요리 플래터",
+          "verification": "secondary_web",
+          "sourceUrl": "https://6ixgo.com/ko-VN/Quan-Bui-Garden.ri162"
+        }
+      ]
+    },
+    "kvMW__eO_9c": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "타케짱",
+          "address": "5 Chome-20-19 Shiba, Minato City, Tokyo 108-0014 일본",
+          "country": "일본",
+          "representativeMenu": "쿠시아게",
+          "verification": "secondary_web",
+          "sourceUrl": "https://blog.sjmts.com/3"
+        }
+      ]
+    },
+    "pCnG7O_mbCs": {
+      "contentType": "promotion",
+      "notes": "더 디저트 협업 홍보편으로 특정 방문 식당 없음"
+    },
+    "RjcQinmGQWE": {
+      "contentType": "event",
+      "notes": "하와이 푸드 앤 와인 페스티벌 소개편으로 특정 방문 식당 없음"
+    },
+    "KXyO94mk2y8": {
+      "contentType": "travel_special",
+      "notes": "베를린 길거리 음식 특집. 공식 설명에 상호와 주소가 공개되지 않아 식당 행은 보류"
+    },
+    "5ZUmZiQYZLo": {
+      "contentType": "restaurant",
+      "restaurants": [
+        {
+          "name": "이식당",
+          "address": "서울 종로구 평창문화로 94 1층",
+          "country": "대한민국",
+          "representativeMenu": "한우 육사시미, 양지국밥",
+          "menus": [
+            {
+              "name": "한우 육사시미",
+              "price": "30,000원",
+              "isSignature": true
+            },
+            {
+              "name": "육회",
+              "price": "28,000원"
+            },
+            {
+              "name": "벌집양무침",
+              "price": "16,000원"
+            },
+            {
+              "name": "양대창구이",
+              "price": "25,000원"
+            },
+            {
+              "name": "양지국밥",
+              "price": "11,000원",
+              "isSignature": true
+            },
+            {
+              "name": "갈비정식",
+              "price": "15,000원"
+            },
+            {
+              "name": "양지국수+한우초밥",
+              "price": "16,000원"
+            },
+            {
+              "name": "양지국수+갈비덮밥",
+              "price": "15,000원"
+            }
+          ],
+          "verification": "secondary_web",
+          "sourceUrl": "https://choi2meal.tistory.com/178"
+        }
+      ]
+    },
+    "uV6_Ore3MMU": {
+      "contentType": "travel_special",
+      "restaurants": [
+        {
+          "name": "Maxim's Palace City Hall",
+          "address": "2/F Low Block, Hong Kong City Hall, Central, Hong Kong",
+          "country": "홍콩",
+          "verification": "official_description"
+        },
+        {
+          "name": "Lau Hing Kee Pan Fried Buns",
+          "address": "Wah Fat Building, Tung Choi St, Mong Kok, Hong Kong",
+          "country": "홍콩",
+          "verification": "official_description"
+        },
+        {
+          "name": "Baker by LUBUDS",
+          "address": "Shop 307, 3/F, Cityplaza, Taikoo Shing, Hong Kong",
+          "country": "홍콩",
+          "verification": "official_description"
+        },
+        {
+          "name": "正斗 (Tasty Congee & Noodle Wantun Shop)",
+          "address": "Shop 3016-18, 3/F, IFC Mall, 8 Finance St, Central, Hong Kong",
+          "country": "홍콩",
+          "verification": "official_description"
+        }
+      ]
+    },
+    "dBjCfY2fKQc": {
+      "contentType": "restaurant",
+      "restaurants": [
+        {
+          "name": "금손1983",
+          "address": "부산",
+          "country": "대한민국",
+          "verification": "title_only"
+        }
+      ]
+    },
+    "d2iUM5UjT1Q": {
+      "contentType": "sponsored",
+      "notes": "버거킹 신메뉴 광고편으로 특정 지점 없음"
+    },
+    "JEp5JYGxWok": {
+      "contentType": "sponsored",
+      "notes": "버거리 제품 광고편으로 특정 지점 없음"
+    }
+  }
+}

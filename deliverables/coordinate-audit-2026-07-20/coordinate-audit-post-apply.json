@@ -1,0 +1,1420 @@
+{
+  "source": "Kakao Maps public place search",
+  "generatedAt": "2026-07-19T22:54:16.344Z",
+  "applied": false,
+  "distanceThresholdMeters": 150,
+  "visibleRestaurantCount": 2459,
+  "domesticRestaurantCount": 2448,
+  "statusCounts": {
+    "verified": 2374,
+    "review-needed": 35,
+    "unverified": 39
+  },
+  "correctionCount": 0,
+  "reviewNeededCount": 74,
+  "changedFiles": [],
+  "corrections": [],
+  "reviewNeeded": [
+    {
+      "id": "culinary-class-wars_restaurant_994afabd9f59",
+      "name": "묵정서울",
+      "address": "서울 중구 묵정동",
+      "lat": 37.56180758225877,
+      "lng": 127.00052064170345,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "548731018",
+        "name": "묵정",
+        "newAddress": "서울 중구 퇴계로48길 17",
+        "parcelAddress": "서울 중구 묵정동 28-14 1층",
+        "lat": 37.56180758,
+        "lng": 127.00052064,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 40,
+          "addressStrength": 0,
+          "nameSimilarity": 0.5,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 0
+    },
+    {
+      "id": "culinary-class-wars_restaurant_4d5e8a8b3838",
+      "name": "에그앤플라워 해방촌 본점",
+      "address": "서울 용산구 신흥로26길 35 1-2층",
+      "lat": 37.54535432744492,
+      "lng": 126.98437512972082,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_f3cd13fe500a",
+      "name": "호시우보 여의도본점(TP타워)",
+      "address": "서울 영등포구 의사당대로 96 TP타워 2층 203~204호",
+      "lat": 37.521547400598315,
+      "lng": 126.92294120748828,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_2da493e116c6",
+      "name": "만가타",
+      "address": "서울 종로구 삼청로2길 40-5",
+      "lat": 37.5801813093084,
+      "lng": 126.980982059626,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "jeonhyunmoo-plan_restaurant_130c5c0f1f2a",
+      "name": "서울 연남서식당",
+      "address": "서울 서대문구 연희맛로 15 (연희동 189-7)",
+      "lat": 37.5666418,
+      "lng": 126.9291318,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "jeonhyunmoo-plan_restaurant_96f35bb306bb",
+      "name": "또순이네집",
+      "address": "서울 영등포구 선유로47길 16 오오1004빌딩 1~2층",
+      "lat": 37.53577997065396,
+      "lng": 126.89529689943419,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_008",
+      "name": "서울 형제추어탕(현재 폐업, 영업종료)",
+      "address": "서울 종로구 평창동 281-1",
+      "lat": 37.6038386,
+      "lng": 126.9645921,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_016",
+      "name": "서울 곰보추탕(현재 폐업, 영업종료)",
+      "address": "서울 동대문구 용신동 767-6",
+      "lat": 37.5753595,
+      "lng": 127.04151739999999,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_039",
+      "name": "서울 옥돌집(현재 폐업, 영업종료)",
+      "address": "서울 성북구 길음동 1065",
+      "lat": 37.6065298,
+      "lng": 127.0272817,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_060",
+      "name": "서울 연남서식당(신촌에서 이전)",
+      "address": "서울 서대문구 연희맛로 15 (연희동 189-7)",
+      "lat": 37.5666456,
+      "lng": 126.9291305,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_066",
+      "name": "속초 고성회관(현재 폐업, 영업종료)",
+      "address": "강원도 속초시 중앙동 481-1",
+      "lat": 38.2025141,
+      "lng": 128.5909626,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_068",
+      "name": "통영 소문난3대할매김밥집",
+      "address": "경남 통영시 통영해안로 229 (서호동 177-360)",
+      "lat": 34.840774,
+      "lng": 128.4211438,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "old-korean-100_restaurant_074",
+      "name": "서울 마포진짜원조최대포",
+      "address": "서울 마포구 마포대로 112-4 (공덕동 255-5)",
+      "lat": 37.5445489,
+      "lng": 126.9519594,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "14615423",
+        "name": "마포진짜원조최대포 본점",
+        "newAddress": "서울 마포구 백범로 105",
+        "parcelAddress": "서울 마포구 대흥동 183",
+        "lat": 37.54761846,
+        "lng": 126.94306052,
+        "category": "한식",
+        "categoryDetail": "육류,고기",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 856
+    },
+    {
+      "id": "old-korean-100_restaurant_085",
+      "name": "강진 완도횟집(현재 폐업, 영업종료)",
+      "address": "전남 강진군 마량면 마량리 980-37",
+      "lat": 34.4491215,
+      "lng": 126.8204333,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b52a0e6ece80",
+      "name": "고단백식당",
+      "address": "대전 중구 대종로517번길 62 (선화동 282-11)",
+      "lat": 36.328643199999995,
+      "lng": 127.42111440000001,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "10159821",
+        "name": "고단백식당",
+        "newAddress": "대전 중구 충무로92번길 50",
+        "parcelAddress": "대전 중구 부사동 209-73 1층",
+        "lat": 36.3155779,
+        "lng": 127.42849182,
+        "category": "한식",
+        "categoryDetail": "국수",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 1596
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b7b4d097d081",
+      "name": "공주분식",
+      "address": "대전 중구 문창로 97 (문창동 37-2)",
+      "lat": 36.3217028,
+      "lng": 127.43185520000002,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "1452722856",
+        "name": "공주주막",
+        "newAddress": "대전 서구 월평중로13번길 17-6",
+        "parcelAddress": "대전 서구 월평동 895",
+        "lat": 36.35541458,
+        "lng": 127.3628374,
+        "category": "분식",
+        "categoryDetail": "분식",
+        "score": {
+          "total": 30,
+          "addressStrength": 0,
+          "nameSimilarity": 0.333,
+          "adminMismatch": true,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 7230
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b02c68ff3e33",
+      "name": "그린하우스",
+      "address": "충남 보령시 웅천읍 열린바다2길 22 (관당리 797-2)",
+      "lat": 36.246306499999996,
+      "lng": 126.5379256,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "24960856",
+        "name": "새그린하우스",
+        "newAddress": "충남 보령시 새마을1길 60-15",
+        "parcelAddress": "충남 보령시 신흑동 1775-172",
+        "lat": 36.30891235,
+        "lng": 126.51791683,
+        "category": "숙박",
+        "categoryDetail": "민박",
+        "score": {
+          "total": 63,
+          "addressStrength": 0,
+          "nameSimilarity": 0.889,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 7189
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_7d54f4dd5491",
+      "name": "마녀커리크림치킨",
+      "address": "서울 마포구 마포구 동교로 227-5 (연남동 373-14)",
+      "lat": 37.5605244,
+      "lng": 126.92364500000001,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_0a31490c0f8b",
+      "name": "성미가든",
+      "address": "제주 제주시 조천읍 교래1길 2 (교래리 532)",
+      "lat": 33.4376647,
+      "lng": 126.67696660000001,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "700106483",
+        "name": "성미가든 전기차충전소",
+        "newAddress": "제주특별자치도 제주시 조천읍 교래1길 3",
+        "parcelAddress": "제주특별자치도 제주시 조천읍 교래리 525-5",
+        "lat": 33.43784376,
+        "lng": 126.67703094,
+        "category": "자동차",
+        "categoryDetail": "전기차 충전소",
+        "score": {
+          "total": 140,
+          "addressStrength": 1,
+          "nameSimilarity": 0.5,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 21
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_abff3c6bf28a",
+      "name": "언양각식당",
+      "address": "경남 창원시 의창구 용지로 253-1 (용호동 16-1)",
+      "lat": 35.2361169,
+      "lng": 128.6872095,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "21027093",
+        "name": "언양각식당",
+        "newAddress": "경남 창원시 성산구 용지로 253-1",
+        "parcelAddress": "경남 창원시 성산구 용호동 16-1 1층",
+        "lat": 35.23610523,
+        "lng": 128.6872444,
+        "category": "한식",
+        "categoryDetail": "불고기,두루치기",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": true,
+          "exactRoad": true,
+          "exactParcel": true,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 3
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+      "name": "팥빙수, 단팥죽 골목",
+      "address": "부산 중구 신창동 국제시장 단팥죽거리",
+      "lat": 35.1002035,
+      "lng": 129.0303831,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
+      "name": "하하",
+      "address": "서울 마포구 동교로 263 (연남동 229-12)",
+      "lat": 37.5552853,
+      "lng": 126.9168429,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "835704684",
+        "name": "하하비샵",
+        "newAddress": "서울 마포구 와우산로22길 42",
+        "parcelAddress": "서울 마포구 상수동 86-1",
+        "lat": 37.55067121,
+        "lng": 126.92413003,
+        "category": "패션",
+        "categoryDetail": "의류판매",
+        "score": {
+          "total": 40,
+          "addressStrength": 0,
+          "nameSimilarity": 0.5,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 822
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_073",
+      "name": "대전 탑집",
+      "address": "대전 중구 선화서로19번길 44 (선화동 430-6)",
+      "lat": 36.3253663,
+      "lng": 127.4169263,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_075",
+      "name": "대전 뽀뽀분식",
+      "address": "대전 중구 계룡로881번길 44 (용두동 13-18)",
+      "lat": 36.3231154,
+      "lng": 127.4141481,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_101",
+      "name": "전주 서울집 (서울식당)",
+      "address": "전북 전주시 덕진구 모래내5길 10-4 (인후동2가 236-9)",
+      "lat": 35.8335434,
+      "lng": 127.1450479,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "16435013",
+        "name": "서울식당",
+        "newAddress": "전북특별자치도 전주시 덕진구 모래내6길 45",
+        "parcelAddress": "전북특별자치도 전주시 덕진구 금암동 121-20 1층",
+        "lat": 35.83760031,
+        "lng": 127.14429394,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 43,
+          "addressStrength": 0,
+          "nameSimilarity": 0.545,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 456
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_104",
+      "name": "서울 금문장",
+      "address": "서울 종로구 지봉로8길 45 (숭인동 61-30)",
+      "lat": 37.5766089,
+      "lng": 127.016174,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_106",
+      "name": "서울 경상도식당 (경상도집)",
+      "address": "서울 중구 을지로39길 29 (을지로6가 1-1)",
+      "lat": 37.5684788,
+      "lng": 127.0053786,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_109",
+      "name": "제주 복집식당",
+      "address": "제주 제주시 비룡길 5 (용담일동 109)",
+      "lat": 33.5125986,
+      "lng": 126.5183874,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "10372437",
+        "name": "복집식당",
+        "newAddress": "제주특별자치도 제주시 흥운길 85",
+        "parcelAddress": "제주특별자치도 제주시 용담이동 435 1층",
+        "lat": 33.51580235,
+        "lng": 126.51381015,
+        "category": "한식",
+        "categoryDetail": "해물,생선",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 554
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_130",
+      "name": "광주 창신식당",
+      "address": "광주 서구 금화로492번길 18-1 (농성동 627-16)",
+      "lat": 35.1502908,
+      "lng": 126.8930295,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_131",
+      "name": "진해 경화당제과",
+      "address": "경남 창원시 진해구 충장로321번길 26 (경화동 548)",
+      "lat": 35.1559056,
+      "lng": 128.6871463,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "159771557",
+        "name": "경화당제과",
+        "newAddress": "경남 창원시 진해구 자은로96번길 10",
+        "parcelAddress": "경남 창원시 진해구 자은동 287-5",
+        "lat": 35.15229312,
+        "lng": 128.71096939,
+        "category": "식품",
+        "categoryDetail": "식품가공,제조",
+        "score": {
+          "total": 58,
+          "addressStrength": 0,
+          "nameSimilarity": 0.8,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 2203
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_139",
+      "name": "제주 몰고랑식당",
+      "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
+      "lat": 33.2562425,
+      "lng": 126.5602398,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "11062000",
+        "name": "몰고랑",
+        "newAddress": "제주특별자치도 서귀포시 표선면 성읍정의현로101번길 14-6",
+        "parcelAddress": "제주특별자치도 서귀포시 표선면 성읍리 612",
+        "lat": 33.39042146,
+        "lng": 126.79964215,
+        "category": "분식",
+        "categoryDetail": "분식",
+        "score": {
+          "total": 50,
+          "addressStrength": 0,
+          "nameSimilarity": 0.667,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 26784
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_167",
+      "name": "서울 우화식당",
+      "address": "서울 중구 충무로11길 18-4 (입정동 250)",
+      "lat": 37.5674998,
+      "lng": 126.991495,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "2025909920",
+        "name": "우화로",
+        "newAddress": "서울 중구 서소문로11길 19",
+        "parcelAddress": "서울 중구 정동 34-5",
+        "lat": 37.56331812,
+        "lng": 126.97279026,
+        "category": "일식",
+        "categoryDetail": "일식",
+        "score": {
+          "total": 34,
+          "addressStrength": 0,
+          "nameSimilarity": 0.4,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 1713
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_169",
+      "name": "서울 나드리식품",
+      "address": "서울 중구 을지로33길 38 (주교동 208)",
+      "lat": 37.5674014,
+      "lng": 126.9985361,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_230",
+      "name": "담양 목화식당",
+      "address": "전남 담양군 담양읍 천변5길 3 (천변리 137)",
+      "lat": 35.3193185,
+      "lng": 126.9798237,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_238",
+      "name": "공주 청양분식",
+      "address": "충남 공주시 산성동 186-118",
+      "lat": 36.4577048,
+      "lng": 127.123808,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "2046540862",
+        "name": "청양분식",
+        "newAddress": "충남 공주시 산성시장2길 56-9",
+        "parcelAddress": "충남 공주시 산성동 186-134 1층",
+        "lat": 36.45777153,
+        "lng": 127.12386024,
+        "category": "한식",
+        "categoryDetail": "국수",
+        "score": {
+          "total": 55,
+          "addressStrength": 0,
+          "nameSimilarity": 0.75,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 9
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_249",
+      "name": "강릉 항구마차",
+      "address": "강원 강릉시 옥계면 금진리 149-3",
+      "lat": 37.6484422,
+      "lng": 129.0469042,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_259",
+      "name": "양평 표미숙국수",
+      "address": "경기 양평군 옥천면 백현길 4 (옥천리 141-1)",
+      "lat": 37.528052,
+      "lng": 127.4747023,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_296",
+      "name": "양주 동언집 (동언식당)",
+      "address": "경기 양주시 덕정1길 15-3 (덕정동 350-63)",
+      "lat": 37.8449742,
+      "lng": 127.0625316,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_297",
+      "name": "양주 노고산로뎀나무",
+      "address": "경기 양주시 장흥면 유원지로 83 (삼상리 146-7)",
+      "lat": 37.698573499999995,
+      "lng": 126.938553,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_299",
+      "name": "태안 산장가든",
+      "address": "충남 태안군 태안읍 상도로 49-57 (상옥리 1156)",
+      "lat": 36.7639188,
+      "lng": 126.3107822,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "629144464",
+        "name": "연옥당",
+        "newAddress": "충남 태안군 남면 안면대로 605-8",
+        "parcelAddress": "충남 태안군 남면 진산리 18-58 1층",
+        "lat": 36.69674965,
+        "lng": 126.28809485,
+        "category": "한식",
+        "categoryDetail": "한정식",
+        "score": {
+          "total": 10,
+          "addressStrength": 0,
+          "nameSimilarity": 0,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 7738
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_304",
+      "name": "서울 골목집",
+      "address": "서울 영등포구 도림로139가길 11-1 (문래동2가 42-6)",
+      "lat": 37.5133366,
+      "lng": 126.8932725,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "62149761",
+        "name": "골목집",
+        "newAddress": "서울 영등포구 선유로49길 15-4",
+        "parcelAddress": "서울 영등포구 양평동4가 78-5 2층",
+        "lat": 37.53619109,
+        "lng": 126.8955905,
+        "category": "한식",
+        "categoryDetail": "육류,고기",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 2550
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_326",
+      "name": "완도 장도식당슈퍼",
+      "address": "전남 완도군 완도읍 청해진로1369번길 38-3 (장좌리 152-1)",
+      "lat": 34.3598021,
+      "lng": 126.7288827,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_329",
+      "name": "고성 항포구",
+      "address": "강원 고성군 거진읍 거진항1길 13 (거진리 22-3)",
+      "lat": 38.4486482,
+      "lng": 128.4593976,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "1271550465",
+        "name": "항포구식당",
+        "newAddress": "강원특별자치도 고성군 거진읍 거탄진로 159",
+        "parcelAddress": "강원특별자치도 고성군 거진읍 거진리 155-65 1층",
+        "lat": 38.44847258,
+        "lng": 128.45750656,
+        "category": "한식",
+        "categoryDetail": "해물,생선",
+        "score": {
+          "total": 40,
+          "addressStrength": 0,
+          "nameSimilarity": 0.5,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 166
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_340",
+      "name": "순창 장본가식품",
+      "address": "전북 순창군 순창읍 민속마을길 16 (백산리 265-15)",
+      "lat": 35.3681334,
+      "lng": 127.1097985,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "11397149",
+        "name": "순창장본가전통식품 1호점",
+        "newAddress": "전북특별자치도 순창군 순창읍 민속마을길 5-16",
+        "parcelAddress": "전북특별자치도 순창군 순창읍 백산리 265-6 1층",
+        "lat": 35.36817785,
+        "lng": 127.11057534,
+        "category": "식품",
+        "categoryDetail": "장류",
+        "score": {
+          "total": 153,
+          "addressStrength": 1,
+          "nameSimilarity": 0.714,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 71
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_342",
+      "name": "순창 칠보식당",
+      "address": "전북 순창군 순창읍 순창7길 30 (순화리 260)",
+      "lat": 35.374591,
+      "lng": 127.1396999,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "21291303",
+        "name": "칠보식당",
+        "newAddress": "전북특별자치도 순창군 순창읍 옥천로 13-6",
+        "parcelAddress": "전북특별자치도 순창군 순창읍 순화리 263",
+        "lat": 35.37430268,
+        "lng": 127.13984839,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 55,
+          "addressStrength": 0,
+          "nameSimilarity": 0.75,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 35
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_345",
+      "name": "순창 함양식당",
+      "address": "전북 순창군 구림면 구림로 472 (운남리 264-16)",
+      "lat": 35.4520796,
+      "lng": 127.1022761,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "10055600",
+        "name": "함양식당",
+        "newAddress": "전북특별자치도 순창군 순창읍 장류로 55",
+        "parcelAddress": "전북특별자치도 순창군 순창읍 백산리 580 1동 2층",
+        "lat": 35.36778421,
+        "lng": 127.11129225,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 55,
+          "addressStrength": 0,
+          "nameSimilarity": 0.75,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 9409
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_348",
+      "name": "충주 올뱅이식당",
+      "address": "충북 충주시 신대1길 1 (단월동 451-4)",
+      "lat": 36.943003499999996,
+      "lng": 127.89924189999999,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "841702538",
+        "name": "단월올뱅이",
+        "newAddress": "충북 충주시 달천강변1길 8",
+        "parcelAddress": "충북 충주시 단월동 577-48 1층",
+        "lat": 36.94297483,
+        "lng": 127.89830364,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 34,
+          "addressStrength": 0,
+          "nameSimilarity": 0.4,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 83
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_396",
+      "name": "영덕 시장밥집",
+      "address": "경북 영덕군 영덕읍 남석길 23-10 (남석리 26-50)",
+      "lat": 36.4068113,
+      "lng": 129.3699995,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_442",
+      "name": "영동 선미식당",
+      "address": "충북 영동군 학산면 서산로 39-1 (서산리 810-5)",
+      "lat": 36.0966858,
+      "lng": 127.6840952,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_449",
+      "name": "홍성 갈매기횟집",
+      "address": "충남 홍성군 서부면 남당항로 852 (궁리 540-62)",
+      "lat": 36.5887232,
+      "lng": 126.458428,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "18495654",
+        "name": "갈매기횟집",
+        "newAddress": "충남 홍성군 홍북읍 용봉산2길 32",
+        "parcelAddress": "충남 홍성군 홍북읍 상하리 104-29 1층",
+        "lat": 36.64308997,
+        "lng": 126.66049296,
+        "category": "한식",
+        "categoryDetail": "회",
+        "score": {
+          "total": 58,
+          "addressStrength": 0,
+          "nameSimilarity": 0.8,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 19021
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_454",
+      "name": "전주 성가떡집",
+      "address": "전북 전주시 완산구 팔달로 249 (서노송동 639-40)",
+      "lat": 35.8243763,
+      "lng": 127.144442,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_479",
+      "name": "영월 노루목상회식당",
+      "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
+      "lat": 37.0814405,
+      "lng": 128.6019212,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_588",
+      "name": "울산 밀양시골밥상",
+      "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
+      "lat": 35.526174999999995,
+      "lng": 129.2519512,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "24812530",
+        "name": "밀양시골밥상 태화점",
+        "newAddress": "울산 중구 태화강국가정원길 163",
+        "parcelAddress": "울산 중구 태화동 431-23 1층",
+        "lat": 35.54981378,
+        "lng": 129.29267688,
+        "category": "한식",
+        "categoryDetail": "한식",
+        "score": {
+          "total": 56,
+          "addressStrength": 0,
+          "nameSimilarity": 0.769,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 4526
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_603",
+      "name": "보령 샘물식당",
+      "address": "충남 보령시 청라면 원모루길 245 (나원리 942-4)",
+      "lat": 36.3897093,
+      "lng": 126.6747564,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_610",
+      "name": "횡성 작은밥집 소소반",
+      "address": "강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1)",
+      "lat": 37.4516487,
+      "lng": 127.85500069999999,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_628",
+      "name": "수원 한봉석할머니순두부",
+      "address": "경기 수원시 팔달구 행궁로62번길 24-42 (팔달로3가 103-14)",
+      "lat": 37.2771177,
+      "lng": 127.0148631,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "14509628",
+        "name": "한봉석할머니순두부",
+        "newAddress": "경기 수원시 팔달구 행궁로 71",
+        "parcelAddress": "경기 수원시 팔달구 팔달로3가 84-5 1층",
+        "lat": 37.27615663,
+        "lng": 127.0158081,
+        "category": "한식",
+        "categoryDetail": "두부전문점",
+        "score": {
+          "total": 63,
+          "addressStrength": 0,
+          "nameSimilarity": 0.889,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 136
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_651",
+      "name": "강릉 북청해장국 (북청집)",
+      "address": "강원 강릉시 주문진읍 해안로 1766-2 (주문리 312-457)",
+      "lat": 37.892463,
+      "lng": 128.8292566,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_655",
+      "name": "갈비탕집(갈비탕)",
+      "address": "서울 성동구 청계천로10가길 10-7 (마장동 443-23)",
+      "lat": 37.5696503,
+      "lng": 127.0332838,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "15992890",
+        "name": "먹깨비식당",
+        "newAddress": "서울 성동구 금호산길 49-1",
+        "parcelAddress": "서울 성동구 금호동2가 500-17",
+        "lat": 37.5526699,
+        "lng": 127.01924555,
+        "category": "한식",
+        "categoryDetail": "육류,고기",
+        "score": {
+          "total": 10,
+          "addressStrength": 0,
+          "nameSimilarity": 0,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 2257
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_7187e958ecda",
+      "name": "고향소갈비찜 용원본점",
+      "address": "경상남도 창원시 진해구 용원로78번안길 24 1층 고향",
+      "lat": 35.188205499999995,
+      "lng": 128.6934679,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_0aaed731512e",
+      "name": "나나",
+      "address": "서울특별시 마포구 희우정로20길 75 1층 나나",
+      "lat": 37.556250999999996,
+      "lng": 126.9043676,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "770032387",
+        "name": "나나테이블",
+        "newAddress": "서울 마포구 희우정로20길 15",
+        "parcelAddress": "서울 마포구 망원동 417-22",
+        "lat": 37.55565388,
+        "lng": 126.90120279,
+        "category": "미술,공예",
+        "categoryDetail": "미술,공예",
+        "score": {
+          "total": 134,
+          "addressStrength": 1,
+          "nameSimilarity": 0.4,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 287
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_c460c5887a05",
+      "name": "남산에",
+      "address": "대구광역시 중구 중앙대로66길 20 효성해링턴 상가 1층 남산에",
+      "lat": 35.861111699999995,
+      "lng": 128.5941372,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "8863397",
+        "name": "대구남산교회",
+        "newAddress": "대구 중구 관덕정길 16",
+        "parcelAddress": "대구 중구 남산동 941-22",
+        "lat": 35.86507095,
+        "lng": 128.59050589,
+        "category": "종교",
+        "categoryDetail": "교회",
+        "score": {
+          "total": 34,
+          "addressStrength": 0,
+          "nameSimilarity": 0.4,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 549
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_8b8e2a094e37",
+      "name": "델리슈샤",
+      "address": "경기도 성남시 분당구 정자일로 136 1층 C109호",
+      "lat": 37.3621909,
+      "lng": 127.10653690000001,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_90df3b3b8dcf",
+      "name": "부산이화양곱창",
+      "address": "경상남도 창원시 마산회원구 양덕북18길 35 주택",
+      "lat": 35.2363014,
+      "lng": 128.5834908,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "131043643",
+        "name": "동광아트빌",
+        "newAddress": "경남 창원시 마산회원구 양덕북18길 46",
+        "parcelAddress": "경남 창원시 마산회원구 합성동 124-38",
+        "lat": 35.23601783,
+        "lng": 128.58299794,
+        "category": "주거시설",
+        "categoryDetail": "빌라,주택",
+        "score": {
+          "total": 100,
+          "addressStrength": 1,
+          "nameSimilarity": 0,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": false
+        }
+      },
+      "distanceMeters": 55
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_b74499a167f6",
+      "name": "신간짬뽕 본점",
+      "address": "경기도 파주시 문화로 32 1층 신간짬뽕 금촌점",
+      "lat": 37.2532101,
+      "lng": 127.0770852,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_70aadca01ed3",
+      "name": "육장",
+      "address": "서울특별시 마포구 월드컵로19길 74 어쩌다가게 지하 2층",
+      "lat": 37.554367899999995,
+      "lng": 126.9068762,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "64633006",
+        "name": "육장",
+        "newAddress": "서울 마포구 포은로 75",
+        "parcelAddress": "서울 마포구 망원동 395-4 1층",
+        "lat": 37.55391307,
+        "lng": 126.90550219,
+        "category": "한식",
+        "categoryDetail": "국밥",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 131
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_2bbd45ba4e1f",
+      "name": "일직식당",
+      "address": "경상북도 안동시 경동로 676 일직식당",
+      "lat": 36.5629632,
+      "lng": 128.73196149999998,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "666964150",
+        "name": "일직식당",
+        "newAddress": "경북 안동시 관광단지로 346-29",
+        "parcelAddress": "경북 안동시 성곡동 1538-1 1층",
+        "lat": 36.570484,
+        "lng": 128.77913871,
+        "category": "한식",
+        "categoryDetail": "해물,생선",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 4295
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_cc57af7d3de9",
+      "name": "자코비버거 본점",
+      "address": "서울특별시 용산구 신흥로 38 1층 자코비버거",
+      "lat": 37.5417729,
+      "lng": 126.9874017,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_854cafbd5ff1",
+      "name": "한양양곱창 본점",
+      "address": "서울특별시 성동구 마조로 17 51, 52호",
+      "lat": 37.5594649,
+      "lng": 127.04054719999998,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_ee68332fff00",
+      "name": "희신이네",
+      "address": "제주특별자치도 서귀포시 서홍로 175",
+      "lat": 33.263352399999995,
+      "lng": 126.5508701,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "27449497",
+        "name": "희신이네",
+        "newAddress": "제주특별자치도 서귀포시 호근서호로 190",
+        "parcelAddress": "제주특별자치도 서귀포시 서호동 680-3 1층",
+        "lat": 33.25764437,
+        "lng": 126.52063235,
+        "category": "한식",
+        "categoryDetail": "닭요리",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 2882
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_e651c9e527db",
+      "name": "길거리 토스트",
+      "address": "광주 양동시장 중앙통로 3층 사무실 가는 길",
+      "lat": 35.15453767,
+      "lng": 126.90196038,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "405467538",
+        "name": "카페샵",
+        "newAddress": "전남광주통합특별시 광양시 중마로 39",
+        "parcelAddress": "전남광주통합특별시 광양시 중동 1252 1층",
+        "lat": 34.92839314,
+        "lng": 127.68812749,
+        "category": "카페",
+        "categoryDetail": "카페",
+        "score": {
+          "total": 10,
+          "addressStrength": 0,
+          "nameSimilarity": 0,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 75861
+    },
+    {
+      "id": "popular_restaurants_cheongju_hwang_grandma_galbijip",
+      "name": "황할머니갈비집 청주성안길본점",
+      "address": "충북 청주시 상당구 남사로140번길 30",
+      "lat": 36.630433,
+      "lng": 127.4902387,
+      "status": "unverified",
+      "reason": "no-candidate"
+    },
+    {
+      "id": "topic_enrichment_michelin-2-stars_d2dd9eeff8be",
+      "name": "모수",
+      "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
+      "lat": 37.5411532,
+      "lng": 126.9961548,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "1791830911",
+        "name": "모수 서울",
+        "newAddress": "서울 용산구 회나무로41길 4",
+        "parcelAddress": "서울 용산구 이태원동 258-14 1-2층",
+        "lat": 37.54119719,
+        "lng": 126.99618113,
+        "category": "양식",
+        "categoryDetail": "양식",
+        "score": {
+          "total": 40,
+          "addressStrength": 0,
+          "nameSimilarity": 0.5,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 5
+    },
+    {
+      "id": "topic_enrichment_michelin-bib-gourmand_7165bdfda1e7",
+      "name": "옥돌현옥",
+      "address": "송파구 오금로 36길 26-1, Seoul, 05700, 한국",
+      "lat": 37.5015357,
+      "lng": 127.1240852,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "1267900736",
+        "name": "옥돌현옥",
+        "newAddress": "서울 송파구 법원로 55",
+        "parcelAddress": "서울 송파구 문정동 624 송파아이파크 D동 1층",
+        "lat": 37.47951497,
+        "lng": 127.12160935,
+        "category": "한식",
+        "categoryDetail": "냉면",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 2458
+    },
+    {
+      "id": "topic_enrichment_michelin-selected_6c0413fd0259",
+      "name": "명동 교자",
+      "address": "중구 명동 10길 29, Seoul, 04537, 한국",
+      "lat": 37.5625266,
+      "lng": 126.98560900000001,
+      "status": "review-needed",
+      "reason": "low-confidence-candidate",
+      "selected": {
+        "kakaoPlaceId": "1352361549",
+        "name": "명동교자 1호점",
+        "newAddress": "서울 중구 명동10길 10",
+        "parcelAddress": "서울 중구 명동2가 33-4 1층",
+        "lat": 37.5633924,
+        "lng": 126.98515008,
+        "category": "분식",
+        "categoryDetail": "분식",
+        "score": {
+          "total": 70,
+          "addressStrength": 0,
+          "nameSimilarity": 1,
+          "adminMismatch": false,
+          "exactRoad": false,
+          "exactParcel": false,
+          "normalizedMatch": false,
+          "foodCategory": true
+        }
+      },
+      "distanceMeters": 104
+    }
+  ]
+}

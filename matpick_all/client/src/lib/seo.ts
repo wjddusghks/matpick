@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { toSafeHttpUrl } from "@/lib/safeUrls";
 
 type SeoInput = {
   title: string;
@@ -16,19 +17,13 @@ const DEFAULT_OG_IMAGE = "/og-default.png";
 const SITE_NAME = "맛픽";
 
 function getSiteUrl() {
-  return import.meta.env.VITE_PUBLIC_APP_URL?.trim().replace(/\/$/, "") || DEFAULT_SITE_URL;
+  return toSafeHttpUrl(import.meta.env.VITE_PUBLIC_APP_URL)?.replace(/\/$/, "") || DEFAULT_SITE_URL;
 }
 
 function makeAbsoluteUrl(path = "/") {
   const siteUrl = getSiteUrl();
-  if (
-    path.startsWith("http://") ||
-    path.startsWith("https://") ||
-    path.startsWith("data:") ||
-    path.startsWith("blob:")
-  ) {
-    return path;
-  }
+  const externalUrl = toSafeHttpUrl(path);
+  if (externalUrl) return externalUrl;
 
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }

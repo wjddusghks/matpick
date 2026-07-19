@@ -4,20 +4,14 @@ const {
 } = require("./_profileStore");
 const { recordAuthMember } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  isAllowedRedirectUri,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
-
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
-
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
-  }
-
-  return req.body;
-}
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -54,11 +48,16 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { code, redirectUri } = readBody(req);
+    const { code, redirectUri } = readJsonBody(req, { maxBytes: 16_000 });
 
-    if (!code || !redirectUri) {
+    if (
+      typeof code !== "string" ||
+      code.length < 1 ||
+      code.length > 2_048 ||
+      !isAllowedRedirectUri(req, redirectUri, "/auth/callback/kakao")
+    ) {
       return res.status(400).json({
-        error: "Missing Kakao authorization payload.",
+        error: "Invalid Kakao authorization payload.",
       });
     }
 
@@ -73,7 +72,7 @@ module.exports = async function handler(req, res) {
       tokenParams.set("client_secret", clientSecret);
     }
 
-    const tokenResponse = await fetch("https://kauth.kakao.com/oauth/token", {
+    const tokenResponse = await fetchWithTimeout("https://kauth.kakao.com/oauth/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -81,7 +80,7 @@ module.exports = async function handler(req, res) {
       body: tokenParams,
     });
 
-    const tokenPayload = await tokenResponse.json();
+    const tokenPayload = await readJsonResponse(tokenResponse, 256_000);
     if (!tokenResponse.ok || !tokenPayload.access_token) {
       return res.status(502).json({
         error:
@@ -90,14 +89,14 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    const userResponse = await fetch("https://kapi.kakao.com/v2/user/me", {
+    const userResponse = await fetchWithTimeout("https://kapi.kakao.com/v2/user/me", {
       headers: {
         Authorization: `Bearer ${tokenPayload.access_token}`,
         "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
       },
     });
 
-    const userPayload = await userResponse.json();
+    const userPayload = await readJsonResponse(userResponse, 256_000);
     if (!userResponse.ok || !userPayload.id) {
       return res.status(502).json({
         error: userPayload.msg || "Failed to load the Kakao user profile.",
@@ -140,11 +139,12 @@ module.exports = async function handler(req, res) {
       ip: maskValue(getClientIp(req)),
       message: error instanceof Error ? error.message : "unknown",
     });
-    return res.status(500).json({
+    const status = Number(error?.statusCode) || 502;
+    return res.status(status).json({
       error:
-        error instanceof Error
+        status < 500
           ? error.message
-          : "An unknown error occurred while processing the Kakao login.",
+          : "Kakao login could not be completed. Please try again.",
     });
   }
 };

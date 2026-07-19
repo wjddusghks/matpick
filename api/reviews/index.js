@@ -1,19 +1,48 @@
+const crypto = require("node:crypto");
 const { validateProfileSyncToken } = require("../auth/_profileStore");
+const { readRemoteProfile } = require("../auth/_profileStore");
 const { appendRemoteReview, readRemoteReviews, readReviewFeed } = require("./_reviewStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  isSafeIdentifier,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
+function isAllowedReviewPhotoUrl(value, restaurantId) {
+  try {
+    const url = new URL(String(value || ""));
+    const configuredHost = (() => {
+      try {
+        return new URL(process.env.VITE_PUBLIC_APP_URL || "").hostname;
+      } catch {
+        return "";
+      }
+    })();
+    const extraHosts = String(process.env.REVIEW_IMAGE_ALLOWED_HOSTS || "")
+      .split(/[\s,]+/)
+      .map((host) => host.trim().toLowerCase())
+      .filter(Boolean);
+    const hostname = url.hostname.toLowerCase();
+    const allowedHost =
+      hostname.endsWith(".public.blob.vercel-storage.com") ||
+      (configuredHost && hostname === configuredHost.toLowerCase()) ||
+      extraHosts.includes(hostname);
+    const expectedPathPrefix = `/reviews/${restaurantId}/`;
 
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
+    return (
+      url.protocol === "https:" &&
+      !url.username &&
+      !url.password &&
+      allowedHost &&
+      url.pathname.startsWith(expectedPathPrefix) &&
+      url.href.length <= 1_000
+    );
+  } catch {
+    return false;
   }
-
-  return req.body;
 }
 
 module.exports = async function handler(req, res) {
@@ -41,8 +70,8 @@ module.exports = async function handler(req, res) {
       }
 
       const restaurantId = String(req.query?.restaurantId || "").trim();
-      if (!restaurantId) {
-        return res.status(400).json({ error: "restaurantId is required" });
+      if (!isSafeIdentifier(restaurantId, 160)) {
+        return res.status(400).json({ error: "A valid restaurantId is required" });
       }
 
       const reviews = await readRemoteReviews(restaurantId);
@@ -60,7 +89,14 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const { restaurantId, userId, syncToken, review } = readBody(req);
+      const { restaurantId, userId, syncToken, review } = readJsonBody(req, {
+        maxBytes: 32_000,
+      });
+      const stars = Number(review?.stars);
+      const text = typeof review?.text === "string" ? review.text.trim() : "";
+      const fallbackUser =
+        typeof review?.user === "string" ? review.user.trim() : "";
+      const photos = Array.isArray(review?.photos) ? review.photos : [];
 
       if (
         !(await enforceRateLimit(req, res, {
@@ -74,7 +110,20 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      if (!restaurantId || !userId || !review) {
+      if (
+        !isSafeIdentifier(restaurantId, 160) ||
+        !isSafeIdentifier(userId, 160) ||
+        typeof syncToken !== "string" ||
+        syncToken.length > 4_096 ||
+        !Number.isInteger(stars) ||
+        stars < 1 ||
+        stars > 5 ||
+        text.length > 2_000 ||
+        fallbackUser.length > 40 ||
+        /[\u0000-\u001f\u007f]/.test(text + fallbackUser) ||
+        photos.length > 6 ||
+        !photos.every((photo) => isAllowedReviewPhotoUrl(photo, restaurantId))
+      ) {
         return res.status(400).json({ error: "Invalid review payload" });
       }
 
@@ -116,7 +165,20 @@ module.exports = async function handler(req, res) {
         res.setHeader("X-Matpick-Legacy-Token", "1");
       }
 
-      const savedReview = await appendRemoteReview(String(restaurantId), review);
+      const profile = await readRemoteProfile(String(userId));
+      const serverReview = {
+        id: crypto.randomUUID(),
+        user: profile?.nickname || fallbackUser || "회원",
+        date: new Date(Date.now() + 9 * 60 * 60 * 1000)
+          .toISOString()
+          .slice(0, 10)
+          .replace(/-/g, "."),
+        stars,
+        text,
+        photos,
+        createdAt: Date.now(),
+      };
+      const savedReview = await appendRemoteReview(String(restaurantId), serverReview);
       return res.status(200).json({ ok: true, review: savedReview });
     } catch (error) {
       logSecurityEvent("error", "review-save-failed", {
@@ -124,8 +186,9 @@ module.exports = async function handler(req, res) {
         ip: maskValue(getClientIp(req)),
         message: error instanceof Error ? error.message : "unknown",
       });
-      return res.status(500).json({
-        error: error instanceof Error ? error.message : "Failed to save review",
+      const status = Number(error?.statusCode) || 500;
+      return res.status(status).json({
+        error: status < 500 ? error.message : "Failed to save review",
       });
     }
   }

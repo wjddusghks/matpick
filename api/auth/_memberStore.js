@@ -1,4 +1,5 @@
 const MEMBER_KEY_PREFIX = "matpick:members:user:";
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 const MEMBER_INDEX_KEY = "matpick:members:index";
 const MEMBER_DAY_PREFIX = "matpick:members:day:";
 const FALLBACK_STORE = globalThis.__MATPICK_MEMBER_STORE__ || {
@@ -31,7 +32,7 @@ async function requestRedis(command) {
   }
 
   const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -41,7 +42,7 @@ async function requestRedis(command) {
     throw new Error(`Member store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function getKoreaDay(timestamp = Date.now()) {

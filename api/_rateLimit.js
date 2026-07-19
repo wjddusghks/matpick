@@ -1,6 +1,7 @@
 const RATE_LIMIT_PREFIX = "matpick:rate-limit:";
 const FALLBACK_STORE = globalThis.__MATPICK_RATE_LIMIT_STORE__ || new Map();
 const { logSecurityEvent, maskValue } = require("./_securityLog");
+const { fetchWithTimeout, readJsonResponse } = require("./_safeFetch");
 
 if (!globalThis.__MATPICK_RATE_LIMIT_STORE__) {
   globalThis.__MATPICK_RATE_LIMIT_STORE__ = FALLBACK_STORE;
@@ -43,7 +44,7 @@ async function requestRedis(command) {
   }
 
   const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -53,7 +54,7 @@ async function requestRedis(command) {
     throw new Error(`Rate limit store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function getFallbackKey(bucket, subject) {
@@ -113,6 +114,21 @@ async function checkRateLimit(options) {
 }
 
 async function enforceRateLimit(req, res, options) {
+  if (
+    process.env.VERCEL_ENV === "production" &&
+    !getKvConfig() &&
+    process.env.RATE_LIMIT_ALLOW_MEMORY_FALLBACK !== "1"
+  ) {
+    logSecurityEvent("error", "distributed-rate-limit-unavailable", {
+      bucket: String(options.bucket || "default"),
+    });
+    res.setHeader("Retry-After", "60");
+    res.status(503).json({
+      error: "This service is temporarily unavailable. Please try again shortly.",
+    });
+    return false;
+  }
+
   const subject = String(options.subject || getClientIp(req));
   const message = options.message || "Too many requests. Please try again later.";
   const state = await checkRateLimit({

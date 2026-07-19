@@ -6,24 +6,42 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const workspaceRoot = path.resolve(projectRoot, "..");
-const supportedDatasetIds = new Set([
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
-]);
+const topicEnrichmentRoot = path.join(
+  projectRoot,
+  "client",
+  "src",
+  "data",
+  "generated",
+  "topic-enrichments"
+);
+const datasetInputs = {
+  "sikgaek-baekban-trip": [
+    path.join(projectRoot, "client", "src", "data", "generated", "sikgaek-baekban-trip.generated.json"),
+  ],
+  "wednesday-gourmet": [
+    path.join(projectRoot, "client", "src", "data", "generated", "wednesday-gourmet.generated.json"),
+  ],
+  ttoganjip: [path.join(topicEnrichmentRoot, "ttoganjip.enriched.json")],
+  "baekjong-wok": [path.join(topicEnrichmentRoot, "baekjong-wok.enriched.json")],
+  "old-korean-100": [path.join(topicEnrichmentRoot, "old-korean-100.enriched.json")],
+  "popular-restaurants": [
+    path.join(topicEnrichmentRoot, "popular-restaurants.enriched.json"),
+  ],
+  "michelin-3-stars": [path.join(topicEnrichmentRoot, "michelin-3-stars.enriched.json")],
+  "michelin-2-stars": [path.join(topicEnrichmentRoot, "michelin-2-stars.enriched.json")],
+  "michelin-1-star": [path.join(topicEnrichmentRoot, "michelin-1-star.enriched.json")],
+  "michelin-bib-gourmand": [
+    path.join(topicEnrichmentRoot, "michelin-bib-gourmand.enriched.json"),
+  ],
+  "michelin-selected": [path.join(topicEnrichmentRoot, "michelin-selected.enriched.json")],
+};
+const supportedDatasetIds = new Set(Object.keys(datasetInputs));
 const datasetArgumentIndex = process.argv.indexOf("--dataset");
 const datasetId =
   datasetArgumentIndex >= 0 ? process.argv[datasetArgumentIndex + 1] : "sikgaek-baekban-trip";
 if (!supportedDatasetIds.has(datasetId)) {
   throw new Error(`Unsupported dataset: ${datasetId}`);
 }
-const datasetPath = path.join(
-  projectRoot,
-  "client",
-  "src",
-  "data",
-  "generated",
-  `${datasetId}.generated.json`
-);
 const outputPath = path.join(
   workspaceRoot,
   "source-data",
@@ -51,6 +69,15 @@ const localFallbackDatasets = [
   ["old-korean-100", path.join(generatedDataRoot, "old-korean-100.generated.json")],
   ["seoul-taste-100", path.join(generatedDataRoot, "seoul-taste-100.generated.json")],
   ["matpick", appDataPath],
+  ["ttoganjip", path.join(topicEnrichmentRoot, "ttoganjip.enriched.json")],
+  ["baekjong-wok", path.join(topicEnrichmentRoot, "baekjong-wok.enriched.json")],
+  ["old-korean-100", path.join(topicEnrichmentRoot, "old-korean-100.enriched.json")],
+  ["popular-restaurants", path.join(topicEnrichmentRoot, "popular-restaurants.enriched.json")],
+  ["michelin-3-stars", path.join(topicEnrichmentRoot, "michelin-3-stars.enriched.json")],
+  ["michelin-2-stars", path.join(topicEnrichmentRoot, "michelin-2-stars.enriched.json")],
+  ["michelin-1-star", path.join(topicEnrichmentRoot, "michelin-1-star.enriched.json")],
+  ["michelin-bib-gourmand", path.join(topicEnrichmentRoot, "michelin-bib-gourmand.enriched.json")],
+  ["michelin-selected", path.join(topicEnrichmentRoot, "michelin-selected.enriched.json")],
 ];
 
 const SEARCH_ENDPOINT = "https://search.map.kakao.com/mapsearch/map.daum";
@@ -86,6 +113,7 @@ function parseArgs(argv) {
     refresh: false,
     retryUnmatched: false,
     reuseLocal: false,
+    missingOnly: false,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -93,6 +121,7 @@ function parseArgs(argv) {
     if (argument === "--refresh") options.refresh = true;
     if (argument === "--retry-unmatched") options.retryUnmatched = true;
     if (argument === "--reuse-local") options.reuseLocal = true;
+    if (argument === "--missing-only") options.missingOnly = true;
     if (argument === "--dataset") index += 1;
     if (argument === "--concurrency") {
       options.concurrency = Math.max(1, Number(argv[index + 1]) || 1);
@@ -341,8 +370,43 @@ function scoreCandidate(restaurant, candidate) {
   };
 }
 
-function isAcceptableMatch(restaurant, score) {
+function hasPlausibleNameMatch(leftName, rightName) {
+  const left = normalize(leftName);
+  const right = normalize(rightName);
+  if (!left || !right) return false;
+  if (left === right) return true;
+  if (Math.min(left.length, right.length) >= 3 && (left.includes(right) || right.includes(left))) {
+    return true;
+  }
+
+  const removeGenericParts = (value) =>
+    value.replace(/(?:본점|직영점|분점|지점|서울|부산|대구|인천|광주|대전|울산|식당|레스토랑|호텔)/g, "");
+  const leftCore = removeGenericParts(left);
+  const rightCore = removeGenericParts(right);
+  if (!leftCore || !rightCore) return false;
+  if (
+    Math.min(leftCore.length, rightCore.length) >= 3 &&
+    (leftCore.includes(rightCore) || rightCore.includes(leftCore))
+  ) {
+    return true;
+  }
+
+  return bigramDice(leftCore, rightCore) >= 0.48;
+}
+
+function isAcceptableMatch(restaurant, candidate, score) {
+  if (!hasPlausibleNameMatch(restaurant.name, candidate?.name)) {
+    return false;
+  }
   const hasCoordinates = Boolean(restaurant.lat && restaurant.lng);
+  if (
+    hasCoordinates &&
+    score.distanceMeters != null &&
+    score.distanceMeters > 300 &&
+    score.addressScore < 80
+  ) {
+    return false;
+  }
   const locationConfirmed = hasCoordinates
     ? score.distanceMeters != null && score.distanceMeters <= 1_200
     : score.addressScore >= 50;
@@ -442,8 +506,8 @@ async function matchRestaurant(restaurant) {
   const ranked = Array.from(candidatesById.values()).sort(
     (left, right) => right.score.total - left.score.total
   );
-  const selected = ranked.find(({ score }) =>
-    isAcceptableMatch(restaurant, score)
+  const selected = ranked.find(({ candidate, score }) =>
+    isAcceptableMatch(restaurant, candidate, score)
   );
   return { selected, ranked };
 }
@@ -519,6 +583,9 @@ async function loadLocalFallbackCandidates() {
 
 function findLocalFallback(restaurant, candidates) {
   return candidates
+    .filter((candidate) =>
+      hasPlausibleNameMatch(restaurant.name, candidate.restaurant.name)
+    )
     .map((candidate) => ({
       ...candidate,
       score: scoreCandidate(restaurant, {
@@ -592,7 +659,7 @@ async function enrichRestaurant(restaurant) {
     const { candidate, query, score } = selected;
     const panel = await fetchPanel(candidate.confirmid);
     const panelScore = scoreCandidate(restaurant, toPanelCandidate(panel));
-    if (!isAcceptableMatch(restaurant, panelScore)) {
+    if (!isAcceptableMatch(restaurant, toPanelCandidate(panel), panelScore)) {
       return {
         name: restaurant.name,
         address: restaurant.address,
@@ -666,6 +733,30 @@ async function readOptionalJson(filePath, fallback) {
   }
 }
 
+function needsMenuResearch(restaurant) {
+  const menus = Array.isArray(restaurant?.menus) ? restaurant.menus : [];
+  return menus.length === 0 || menus.some((menu) => !String(menu?.price ?? "").trim());
+}
+
+async function loadDataset() {
+  const restaurants = [];
+  const seenIds = new Set();
+
+  for (const inputPath of datasetInputs[datasetId]) {
+    const payload = JSON.parse(
+      (await fs.readFile(inputPath, "utf8")).replace(/^\uFEFF/, "")
+    );
+
+    for (const restaurant of payload.restaurants ?? []) {
+      if (!restaurant?.id || seenIds.has(restaurant.id)) continue;
+      seenIds.add(restaurant.id);
+      restaurants.push(restaurant);
+    }
+  }
+
+  return { datasetId, restaurants };
+}
+
 function buildOutput(restaurants, records, runStatus) {
   const values = Object.values(records);
   return {
@@ -695,17 +786,24 @@ function buildOutput(restaurants, records, runStatus) {
 
 async function writeCheckpoint(restaurants, records, runStatus) {
   const output = buildOutput(restaurants, records, runStatus);
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
 }
 
 async function main() {
   const options = parseArgs(process.argv.slice(2));
-  const dataset = JSON.parse(
-    (await fs.readFile(datasetPath, "utf8")).replace(/^\uFEFF/, "")
-  );
+  const dataset = await loadDataset();
+  const targetRestaurants = options.missingOnly
+    ? dataset.restaurants.filter(needsMenuResearch)
+    : dataset.restaurants;
+  const targetIds = new Set(targetRestaurants.map((restaurant) => restaurant.id));
   const previous = await readOptionalJson(outputPath, { restaurants: {} });
-  const records = options.refresh ? {} : { ...(previous.restaurants ?? {}) };
-  for (const restaurant of dataset.restaurants) {
+  const records = options.refresh
+    ? {}
+    : Object.fromEntries(
+        Object.entries(previous.restaurants ?? {}).filter(([id]) => targetIds.has(id))
+      );
+  for (const restaurant of targetRestaurants) {
     if (isKnownClosedRestaurant(restaurant)) {
       records[restaurant.id] = toClosedRecord(restaurant);
     }
@@ -713,7 +811,7 @@ async function main() {
   if (options.reuseLocal) {
     const fallbackCandidates = await loadLocalFallbackCandidates();
     let reusedCount = 0;
-    for (const restaurant of dataset.restaurants) {
+    for (const restaurant of targetRestaurants) {
       const current = records[restaurant.id];
       if (
         current &&
@@ -728,11 +826,11 @@ async function main() {
       records[restaurant.id] = toLocalFallbackRecord(restaurant, fallback);
       reusedCount += 1;
     }
-    await writeCheckpoint(dataset.restaurants, records, "complete");
+    await writeCheckpoint(targetRestaurants, records, "partial");
     console.log(`Reused local priced menus for ${reusedCount} restaurants.`);
     return;
   }
-  const pending = dataset.restaurants
+  const pending = targetRestaurants
     .filter(
       (restaurant) =>
         !isKnownClosedRestaurant(restaurant) &&
@@ -746,7 +844,7 @@ async function main() {
     .slice(0, options.limit);
 
   console.log(
-    `Restaurants: ${dataset.restaurants.length}, cached: ${Object.keys(records).length}, pending: ${pending.length}`
+    `Restaurants: ${dataset.restaurants.length}, targets: ${targetRestaurants.length}, cached: ${Object.keys(records).length}, pending: ${pending.length}`
   );
 
   for (let index = 0; index < pending.length; index += options.concurrency) {
@@ -759,12 +857,12 @@ async function main() {
     );
 
     for (const { id, record } of enriched) records[id] = record;
-    await writeCheckpoint(dataset.restaurants, records, "in_progress");
+    await writeCheckpoint(targetRestaurants, records, "in_progress");
 
     const processed = Math.min(index + batch.length, pending.length);
     const values = Object.values(records);
     console.log(
-      `Processed ${processed}/${pending.length} this run (${values.length}/${dataset.restaurants.length} total): ` +
+      `Processed ${processed}/${pending.length} this run (${values.length}/${targetRestaurants.length} total): ` +
         `${values.filter((record) => (record.menus?.length ?? 0) > 0).length} with prices, ` +
         `${values.filter((record) => record.status === "matched_no_priced_menu").length} matched without prices, ` +
         `${values.filter((record) => record.status === "unmatched").length} unmatched, ` +
@@ -773,9 +871,9 @@ async function main() {
     await sleep(120);
   }
 
-  const isComplete = Object.keys(records).length >= dataset.restaurants.length;
+  const isComplete = Object.keys(records).length >= targetRestaurants.length;
   await writeCheckpoint(
-    dataset.restaurants,
+    targetRestaurants,
     records,
     isComplete ? "complete" : "partial"
   );

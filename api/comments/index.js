@@ -5,23 +5,16 @@ const {
 } = require("../auth/_profileStore");
 const { appendRemoteComment, readRemoteComments } = require("./_commentStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  isSafeIdentifier,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
-
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
-  }
-
-  return req.body;
-}
-
 function isValidRestaurantId(value) {
-  return typeof value === "string" && /^[a-zA-Z0-9_:-]{1,160}$/.test(value);
+  return isSafeIdentifier(value, 160);
 }
 
 module.exports = async function handler(req, res) {
@@ -62,7 +55,13 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const { restaurantId, userId, syncToken, comment } = readBody(req);
+      const { restaurantId, userId, syncToken, comment } = readJsonBody(req, {
+        maxBytes: 16_000,
+      });
+      const commentText =
+        typeof comment?.text === "string" ? comment.text.trim() : "";
+      const fallbackUser =
+        typeof comment?.user === "string" ? comment.user.trim() : "";
 
       if (
         !(await enforceRateLimit(req, res, {
@@ -78,10 +77,13 @@ module.exports = async function handler(req, res) {
 
       if (
         !isValidRestaurantId(restaurantId) ||
-        !userId ||
-        !comment ||
-        typeof comment.text !== "string" ||
-        !comment.text.trim()
+        !isSafeIdentifier(userId, 160) ||
+        typeof syncToken !== "string" ||
+        syncToken.length > 4_096 ||
+        !commentText ||
+        commentText.length > 500 ||
+        fallbackUser.length > 40 ||
+        /[\u0000-\u001f\u007f]/.test(commentText + fallbackUser)
       ) {
         return res.status(400).json({ error: "Invalid comment payload" });
       }
@@ -119,13 +121,13 @@ module.exports = async function handler(req, res) {
 
       const profile = await readRemoteProfile(String(userId));
       const serverComment = {
-        ...comment,
         id: crypto.randomUUID(),
-        user: profile?.nickname || comment.user,
+        user: profile?.nickname || fallbackUser || "회원",
         date: new Date(Date.now() + 9 * 60 * 60 * 1000)
           .toISOString()
           .slice(0, 10)
           .replace(/-/g, "."),
+        text: commentText,
         createdAt: Date.now(),
       };
       const savedComment = await appendRemoteComment(
@@ -139,8 +141,9 @@ module.exports = async function handler(req, res) {
         ip: maskValue(getClientIp(req)),
         message: error instanceof Error ? error.message : "unknown",
       });
-      return res.status(500).json({
-        error: error instanceof Error ? error.message : "Failed to save comment",
+      const status = Number(error?.statusCode) || 500;
+      return res.status(status).json({
+        error: status < 500 ? error.message : "Failed to save comment",
       });
     }
   }

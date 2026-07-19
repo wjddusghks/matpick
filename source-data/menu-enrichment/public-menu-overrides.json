@@ -1,0 +1,51 @@
+{
+  "source": "Manual public menu research for records rejected by strict place matching",
+  "verifiedAt": "2026-07-19",
+  "restaurants": {
+    "topic_enrichment_ttoganjip_8825fe7477fa": {
+      "datasetId": "ttoganjip",
+      "name": "육돈",
+      "address": "경기도 화성시 동탄반송길 23 1층",
+      "status": "matched_with_priced_menu_secondary_source",
+      "verifiedAt": "2026-07-19T00:00:00+09:00",
+      "representativeMenu": "육돈 한판(삼겹,목살,항정) 600g / 삼겹살 180g / 소갈비살 150g",
+      "note": "동일 상호의 다른 주소 식당을 제외하고 식당명과 주소가 일치하는 공개 메뉴 페이지에서 확인함.",
+      "sourceUrl": "https://youtubeplace.co.kr/restaurant/detail/yukdon-grilled-meat-group-reservation",
+      "placeUrl": "https://youtubeplace.co.kr/restaurant/detail/yukdon-grilled-meat-group-reservation",
+      "sourceLabel": "식당명·주소 일치 공개 메뉴 페이지",
+      "menus": [
+        {
+          "name": "육돈 한판(삼겹,목살,항정) 600g",
+          "price": "51,000원",
+          "description": "2~3인용 세트",
+          "isSignature": true
+        },
+        {
+          "name": "삼겹살(도드람으뜸암퇘지) 180g",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "name": "소갈비살 150g",
+          "price": "16,500원",
+          "isSignature": false
+        },
+        {
+          "name": "차돌박이 150g",
+          "price": "12,000원",
+          "isSignature": false
+        },
+        {
+          "name": "목살 180g",
+          "price": "15,000원",
+          "isSignature": false
+        },
+        {
+          "name": "항정살 150g",
+          "price": "16,000원",
+          "isSignature": false
+        }
+      ]
+    }
+  }
+}

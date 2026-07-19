@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 
 const PROFILE_KEY_PREFIX = "matpick:auth-profile:";
 const SYNC_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
@@ -69,7 +70,7 @@ async function requestRedis(command) {
   }
 
   const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -79,7 +80,7 @@ async function requestRedis(command) {
     throw new Error(`Profile store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function normalizeStoredProfile(values) {

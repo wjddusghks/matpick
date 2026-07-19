@@ -1,6 +1,6 @@
 {
   "datasetId": "popular-restaurants",
-  "generatedAt": "2026-05-25T00:00:00+09:00",
+  "generatedAt": "2026-07-18T21:45:12.278Z",
   "sources": [
     {
       "id": "popular-restaurants",
@@ -752,28 +752,103 @@
       "region": "충북 청주",
       "address": "충북 청주시 흥덕구 봉명로 219 1층",
       "category": "한식",
-      "representativeMenu": "매운갈비찜 / 백반정식 / 제육정식",
+      "representativeMenu": "제육볶음 / 오징어볶음 / 짜박이찌개",
       "lat": 36.6382616,
       "lng": 127.4539319,
       "foundingYear": null,
       "menus": [
         {
-          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_1",
-          "name": "매운갈비찜",
-          "isSignature": true
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_001",
+          "name": "제육볶음",
+          "price": "18,000원",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_2",
-          "name": "백반정식",
-          "price": "8,000원"
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_002",
+          "name": "오징어볶음",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_3",
-          "name": "제육정식"
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_003",
+          "name": "짜박이찌개",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_004",
+          "name": "두부찌개",
+          "price": "20,000원",
+          "isSignature": false,
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_005",
+          "name": "골뱅이+소면",
+          "price": "32,000원",
+          "isSignature": false,
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_006",
+          "name": "오뎅탕",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_007",
+          "name": "김치전",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_008",
+          "name": "부추전",
+          "price": "9,000원",
+          "isSignature": false,
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_009",
+          "name": "해물파전",
+          "price": "15,000원",
+          "isSignature": false,
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_010",
+          "name": "모듬전(소)",
+          "price": "18,000원",
+          "isSignature": false,
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "popular_restaurants_cheongju_ttabong_sikdang_menu_011",
+          "name": "모듬전(대)",
+          "price": "25,000원",
+          "isSignature": false,
+          "sourceOrdinal": 11
         }
       ],
       "id": "popular_restaurants_cheongju_ttabong_sikdang",
-      "imageUrl": "/card-data/popular-restaurants/cheongju-ttabong-sikdang.webp"
+      "imageUrl": "/card-data/popular-restaurants/cheongju-ttabong-sikdang.webp",
+      "kakaoPlaceId": "1739737093",
+      "placeUrl": "https://place.map.kakao.com/1739737093",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T21:44:08.205Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/1739737093",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     }
   ],
   "sourceLinks": [

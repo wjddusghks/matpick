@@ -19,6 +19,15 @@ function getRequestOrigin(req) {
   return String(getHeader(req, "origin") || "").trim();
 }
 
+function normalizeOrigin(value) {
+  try {
+    const url = new URL(String(value || "").trim());
+    return url.origin;
+  } catch {
+    return "";
+  }
+}
+
 function getExpectedOrigin(req) {
   const host = getRequestHost(req);
   if (!host) {
@@ -29,9 +38,11 @@ function getExpectedOrigin(req) {
 }
 
 function getAllowedOrigins(req) {
-  const configured = String(process.env.VITE_PUBLIC_APP_URL || "")
-    .trim()
-    .replace(/\/$/, "");
+  const configured = normalizeOrigin(process.env.VITE_PUBLIC_APP_URL);
+  const additional = String(process.env.APP_ALLOWED_ORIGINS || "")
+    .split(/[\s,]+/)
+    .map(normalizeOrigin)
+    .filter(Boolean);
   const expected = getExpectedOrigin(req);
   const origins = new Set();
 
@@ -39,11 +50,101 @@ function getAllowedOrigins(req) {
     origins.add(configured);
   }
 
-  if (expected) {
+  additional.forEach((origin) => origins.add(origin));
+
+  if (expected && (!configured || process.env.VERCEL_ENV !== "production")) {
     origins.add(expected);
   }
 
   return origins;
+}
+
+class RequestPayloadError extends Error {
+  constructor(message, statusCode = 400) {
+    super(message);
+    this.name = "RequestPayloadError";
+    this.statusCode = statusCode;
+  }
+}
+
+function getRequestBodyByteLength(req) {
+  if (req.body == null) return 0;
+  if (Buffer.isBuffer(req.body)) return req.body.byteLength;
+  if (typeof req.body === "string") return Buffer.byteLength(req.body, "utf8");
+
+  try {
+    return Buffer.byteLength(JSON.stringify(req.body), "utf8");
+  } catch {
+    throw new RequestPayloadError("Invalid request payload.");
+  }
+}
+
+function enforceRequestBodySize(req, res, maxBytes) {
+  const declaredLength = Number(getHeader(req, "content-length"));
+  if (Number.isFinite(declaredLength) && declaredLength > maxBytes) {
+    res.status(413).json({ error: "Request payload is too large." });
+    return false;
+  }
+
+  try {
+    if (getRequestBodyByteLength(req) > maxBytes) {
+      res.status(413).json({ error: "Request payload is too large." });
+      return false;
+    }
+  } catch (error) {
+    res.status(error.statusCode || 400).json({ error: error.message });
+    return false;
+  }
+
+  return true;
+}
+
+function readJsonBody(req, options = {}) {
+  const maxBytes = Math.max(256, Number(options.maxBytes) || 64_000);
+  const contentType = String(getHeader(req, "content-type") || "").toLowerCase();
+  if (contentType && !contentType.includes("application/json")) {
+    throw new RequestPayloadError("Content-Type must be application/json.", 415);
+  }
+
+  if (getRequestBodyByteLength(req) > maxBytes) {
+    throw new RequestPayloadError("Request payload is too large.", 413);
+  }
+
+  let body = req.body;
+  if (typeof body === "string") {
+    try {
+      body = JSON.parse(body);
+    } catch {
+      throw new RequestPayloadError("Malformed JSON request payload.");
+    }
+  }
+
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    throw new RequestPayloadError("A JSON object payload is required.");
+  }
+
+  return body;
+}
+
+function isSafeIdentifier(value, maxLength = 160) {
+  return (
+    typeof value === "string" &&
+    value.length >= 1 &&
+    value.length <= maxLength &&
+    /^[a-zA-Z0-9_:-]+$/.test(value)
+  );
+}
+
+function isAllowedRedirectUri(req, value, expectedPath) {
+  try {
+    const url = new URL(String(value || ""));
+    if (url.username || url.password || url.hash || url.search) return false;
+    if (!getAllowedOrigins(req).has(url.origin)) return false;
+    if (expectedPath && url.pathname !== expectedPath) return false;
+    return url.protocol === "https:" || ["localhost", "127.0.0.1"].includes(url.hostname);
+  } catch {
+    return false;
+  }
 }
 
 function applyApiSecurityHeaders(res) {
@@ -81,8 +182,13 @@ function enforceSameOrigin(req, res) {
 }
 
 module.exports = {
+  RequestPayloadError,
   applyApiSecurityHeaders,
+  enforceRequestBodySize,
   enforceSameOrigin,
   getExpectedOrigin,
   getRequestOrigin,
+  isAllowedRedirectUri,
+  isSafeIdentifier,
+  readJsonBody,
 };

@@ -1,4 +1,5 @@
 const REVIEW_KEY_PREFIX = "matpick:reviews:restaurant:";
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 const REVIEW_FEED_KEY = "matpick:reviews:feed";
 const MAX_REVIEW_COUNT = 200;
 const MAX_FEED_COUNT = 240;
@@ -24,7 +25,7 @@ async function requestRedis(command) {
   }
 
   const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -34,11 +35,41 @@ async function requestRedis(command) {
     throw new Error(`Review store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function getReviewKey(restaurantId) {
   return `${REVIEW_KEY_PREFIX}${restaurantId}`;
+}
+
+function isSafeStoredPhotoUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    const configuredHost = (() => {
+      try {
+        return new URL(process.env.VITE_PUBLIC_APP_URL || "").hostname;
+      } catch {
+        return "";
+      }
+    })();
+    const extraHosts = String(process.env.REVIEW_IMAGE_ALLOWED_HOSTS || "")
+      .split(/[\s,]+/)
+      .map((host) => host.trim().toLowerCase())
+      .filter(Boolean);
+    const hostname = url.hostname.toLowerCase();
+
+    return (
+      url.protocol === "https:" &&
+      !url.username &&
+      !url.password &&
+      url.href.length <= 1_000 &&
+      (hostname.endsWith(".public.blob.vercel-storage.com") ||
+        (configuredHost && hostname === configuredHost.toLowerCase()) ||
+        extraHosts.includes(hostname))
+    );
+  } catch {
+    return false;
+  }
 }
 
 function normalizeReview(review) {
@@ -46,16 +77,18 @@ function normalizeReview(review) {
     return null;
   }
 
-  const id = typeof review.id === "string" ? review.id.trim() : "";
-  const user = typeof review.user === "string" ? review.user.trim() : "";
-  const date = typeof review.date === "string" ? review.date.trim() : "";
+  const id = typeof review.id === "string" ? review.id.trim().slice(0, 80) : "";
+  const user = typeof review.user === "string" ? review.user.trim().slice(0, 40) : "";
+  const date = typeof review.date === "string" ? review.date.trim().slice(0, 20) : "";
   const stars = Number(review.stars);
-  const text = typeof review.text === "string" ? review.text.trim() : "";
+  const text = typeof review.text === "string" ? review.text.trim().slice(0, 2_000) : "";
   const createdAt = Number(review.createdAt);
   const restaurantId =
-    typeof review.restaurantId === "string" ? review.restaurantId.trim() : "";
+    typeof review.restaurantId === "string"
+      ? review.restaurantId.trim().slice(0, 160)
+      : "";
   const photos = Array.isArray(review.photos)
-    ? review.photos.filter((photo) => typeof photo === "string" && photo.trim().length > 0)
+    ? review.photos.filter(isSafeStoredPhotoUrl).slice(0, 6)
     : [];
 
   if (!id || !user || !date || !Number.isFinite(stars) || stars < 1 || stars > 5) {

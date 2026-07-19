@@ -10,7 +10,12 @@ function parseAdminList(value) {
 }
 
 function getConfiguredAdminKeys() {
-  return parseAdminList(process.env.ADMIN_USER_IDS || process.env.VITE_ADMIN_USER_IDS);
+  const configured = process.env.ADMIN_USER_IDS;
+  const developmentFallback =
+    process.env.VERCEL_ENV === "production"
+      ? ""
+      : process.env.VITE_ADMIN_USER_IDS;
+  return parseAdminList(configured || developmentFallback);
 }
 
 function isAllowedAdminKey(value) {

@@ -35,7 +35,9 @@ export function normalizeSharedReview(review: SharedReview): SharedReview {
   return {
     ...review,
     createdAt: Number.isFinite(review.createdAt) ? review.createdAt : Date.now(),
-    photos: Array.isArray(review.photos) ? review.photos.filter(Boolean) : [],
+    photos: Array.isArray(review.photos)
+      ? review.photos.map(toSafeImageSource).filter(Boolean).slice(0, 6)
+      : [],
   };
 }
 
@@ -121,3 +123,4 @@ export function collectReviewPhotos(reviews: SharedReview[]): ReviewPhoto[] {
 export function getPrimaryReviewPhotoUrl(reviews: SharedReview[]) {
   return collectReviewPhotos(reviews)[0]?.url ?? "";
 }
+import { toSafeImageSource } from "@/lib/safeUrls";

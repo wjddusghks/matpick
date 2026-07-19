@@ -1,6 +1,6 @@
 {
   "datasetId": "old-korean-100",
-  "generatedAt": "2026-07-09T21:31:48.813Z",
+  "generatedAt": "2026-07-18T21:45:12.273Z",
   "restaurants": [
     {
       "id": "old-korean-100_restaurant_001",
@@ -1758,33 +1758,33 @@
       "region": "전남 영암군",
       "address": "전남 영암군 학산면 독천로 164 (독천리 184-1)",
       "category": "갈낙탕",
-      "representativeMenu": "갈낙탕",
+      "representativeMenu": "갈낙탕 / 연포탕",
       "lat": 34.724786,
       "lng": 126.5671667,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_024.jpg",
       "foundingYear": 1940,
       "menus": [
         {
-          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_1",
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_001",
           "name": "갈낙탕",
           "price": "19,000원",
-          "isSignature": true
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_2",
+          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_002",
           "name": "연포탕",
           "price": "19,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_b149d950faf7_menu_3",
-          "name": "세발낙지 (시가/변동)",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 2
         }
       ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": null
+      "googlePlaceId": null,
+      "menuPriceStatus": "matched_with_priced_menu_cross_dataset",
+      "menuPriceVerifiedAt": "2026-07-18T21:45:06.484Z",
+      "menuPriceNote": "식당명·주소·좌표가 일치하는 맛픽 old-korean-100 데이터의 검증 메뉴·가격을 재사용함."
     },
     {
       "id": "topic_enrichment_old-korean-100_18ac3372c278",
@@ -3421,80 +3421,100 @@
       "region": "경남 통영시",
       "address": "경남 통영시 새터길 49 (서호동 177-102)",
       "category": "복국",
-      "representativeMenu": "복국",
+      "representativeMenu": "복국 / 복매운탕 / 특복국",
       "lat": 34.8416544,
       "lng": 128.4193258,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_052.jpg",
       "foundingYear": 1951,
       "menus": [
         {
-          "id": "old-korean-100_restaurant_052_menu_1",
+          "id": "old-korean-100_restaurant_052_menu_001",
           "name": "복국",
           "price": "14,000원",
-          "isSignature": true
+          "description": "맑고 시원한 국물에 졸복과 미나리, 콩나물이 듬뿍 들어간 복국",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_2",
+          "id": "old-korean-100_restaurant_052_menu_002",
           "name": "복매운탕",
           "price": "16,000원",
-          "isSignature": false
+          "description": "칼칼하고 얼큰한 국물의 복매운탕",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_3",
+          "id": "old-korean-100_restaurant_052_menu_003",
           "name": "특복국",
           "price": "25,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 3
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_4",
+          "id": "old-korean-100_restaurant_052_menu_004",
           "name": "아구국",
           "price": "14,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_5",
+          "id": "old-korean-100_restaurant_052_menu_005",
           "name": "아구매운탕",
           "price": "16,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 5
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_6",
+          "id": "old-korean-100_restaurant_052_menu_006",
           "name": "특매운탕",
           "price": "27,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 6
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_7",
-          "name": "복찜",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_052_menu_8",
+          "id": "old-korean-100_restaurant_052_menu_007",
           "name": "복수육",
           "price": "70,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 7
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_9",
+          "id": "old-korean-100_restaurant_052_menu_008",
           "name": "아구수육",
           "price": "70,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 8
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_10",
+          "id": "old-korean-100_restaurant_052_menu_009",
           "name": "아구찜 (대)",
           "price": "60,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 9
         },
         {
-          "id": "old-korean-100_restaurant_052_menu_11",
+          "id": "old-korean-100_restaurant_052_menu_010",
           "name": "아구찜 (소)",
           "price": "40,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 10
         }
       ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "11892477",
+      "placeUrl": "https://place.map.kakao.com/11892477",
+      "phone": "055-645-3138",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T21:44:08.312Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/11892477",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "old-korean-100_restaurant_053",
@@ -4589,93 +4609,115 @@
       "region": "부산 중구",
       "address": "부산 중구 흑교로 60",
       "category": "비빔밥",
-      "representativeMenu": "육회비빔밥",
+      "representativeMenu": "육회비빔밥 / 돌솥비빔밥 / 회비빔밥",
       "lat": 35.1047588,
       "lng": 129.0248878,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_069.jpg",
       "foundingYear": 1955,
       "menus": [
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_1",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_001",
           "name": "육회비빔밥",
           "price": "15,000원",
-          "isSignature": true
+          "description": "신선한 한우 육회와 다양한 나물이 어우러진 비빔밥으로 고추장과 함께 비벼 먹는 메뉴",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_2",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_002",
           "name": "돌솥비빔밥",
           "price": "17,000원",
-          "isSignature": false
+          "description": "뜨거운 돌솥에 육회와 나물이 어우러져 누룽지까지 즐기는 비빔밥",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_3",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_003",
           "name": "회비빔밥",
           "price": "17,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 3
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_4",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_004",
           "name": "석쇠불고기(1-2인)",
           "price": "30,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_5",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_005",
           "name": "석쇠불고기(3-4인)",
           "price": "40,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 5
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_6",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_006",
           "name": "파전",
           "price": "25,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 6
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_7",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_007",
           "name": "육회(1-2인)",
           "price": "30,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 7
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_8",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_008",
           "name": "육회(3-4인)",
           "price": "50,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 8
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_9",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_009",
           "name": "수육",
           "price": "30,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 9
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_10",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_010",
           "name": "가오리무침(3-4인)",
           "price": "30,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 10
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_11",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_011",
           "name": "가오리찜(1-2인)",
           "price": "40,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 11
         },
         {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_12",
+          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_012",
           "name": "가오리찜(3-4인)",
           "price": "50,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_66aeb845216d_menu_13",
-          "name": "생선회",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 12
         }
       ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJ8f2UJZ_paDUR64ISm5UFCdU"
+      "googlePlaceId": "ChIJ8f2UJZ_paDUR64ISm5UFCdU",
+      "kakaoPlaceId": "11144580",
+      "placeUrl": "https://place.map.kakao.com/11144580",
+      "phone": "051-256-9110",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T21:44:08.270Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/11144580",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "old-korean-100_restaurant_070",
@@ -4811,75 +4853,94 @@
       "region": "경북 경주시",
       "address": "경북 경주시 첨성로 113",
       "category": "콩국수",
-      "representativeMenu": "콩국수",
+      "representativeMenu": "따뜻한콩국1 / 따뜻한콩국3 / 콩국수",
       "lat": 35.8334295,
       "lng": 129.2147573,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_072.jpg",
       "foundingYear": 1956,
       "menus": [
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_1",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_001",
           "name": "따뜻한콩국1",
           "price": "8,000원",
-          "isSignature": true
+          "description": "검은깨, 검은콩, 꿀, 찹쌀도너츠가 들어간 고소한 따뜻한 콩국",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_2",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_002",
           "name": "따뜻한콩국3",
           "price": "7,000원",
-          "isSignature": false
+          "description": "찹쌀도너츠, 들깨, 계란노른자, 흑설탕이 들어간 부드럽고 구수한 따뜻한 콩국",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_3",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_003",
           "name": "콩국수",
           "price": "9,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 3
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_4",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_004",
           "name": "냉우무콩국",
           "price": "7,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_5",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_005",
           "name": "따뜻한콩국2",
           "price": "7,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 5
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_6",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_006",
           "name": "생콩우거지탕",
           "price": "12,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 6
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_7",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_007",
           "name": "생콩해물파전",
           "price": "13,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 7
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_8",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_008",
           "name": "순두부찌개",
           "price": "12,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 8
         },
         {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_9",
+          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_009",
           "name": "콩국수 (대)",
           "price": "10,000원",
-          "isSignature": false
-        },
-        {
-          "id": "topic_enrichment_old-korean-100_c9f9e006d08b_menu_10",
-          "name": "들깨순두부",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 9
         }
       ],
       "thumbnailFileName": null,
       "isOverseas": false,
-      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y"
+      "googlePlaceId": "ChIJIayEZV5OZjURBa0nhl-1w_Y",
+      "kakaoPlaceId": "9959009",
+      "placeUrl": "https://place.map.kakao.com/9959009",
+      "phone": "054-743-9644",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T21:44:08.363Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/9959009",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "topic_enrichment_old-korean-100_496aa4ea70e5",
@@ -6418,127 +6479,149 @@
       "region": "전남 담양군",
       "address": "전남 담양군 담양읍 죽향대로 1121 (백동리 409-5)",
       "category": "떡갈비",
-      "representativeMenu": "명인 전통떡갈비 (120년 전통)",
+      "representativeMenu": "명인 전통떡갈비 (120년 전통) / 한우약선떡갈비 / 덕인관갈비살너비아니",
       "lat": 35.3059372,
       "lng": 126.9805235,
       "imageUrl": "/card-data/old-korean-100/old-korean-100_restaurant_097.jpg",
       "foundingYear": 1963,
       "menus": [
         {
-          "id": "old-korean-100_restaurant_097_menu_1",
+          "id": "old-korean-100_restaurant_097_menu_001",
           "name": "명인 전통떡갈비 (120년 전통)",
           "price": "37,000원",
-          "isSignature": true
+          "description": "한우로 전통 방식에 따라 촉촉하고 육즙 가득한 떡갈비",
+          "isSignature": true,
+          "sourceOrdinal": 1
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_2",
+          "id": "old-korean-100_restaurant_097_menu_002",
           "name": "한우약선떡갈비",
           "price": "22,000원",
-          "isSignature": false
+          "description": "한우와 닭가슴살을 섞어 만든 부드럽고 담백한 떡갈비",
+          "isSignature": false,
+          "sourceOrdinal": 2
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_3",
+          "id": "old-korean-100_restaurant_097_menu_003",
           "name": "덕인관갈비살너비아니",
           "price": "58,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 3
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_4",
-          "name": "한우 안창살/갈비모둠130g (예약)한우",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_097_menu_5",
+          "id": "old-korean-100_restaurant_097_menu_004",
           "name": "한우LA떡갈비",
           "price": "33,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 4
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_6",
+          "id": "old-korean-100_restaurant_097_menu_005",
           "name": "한우떡갈비",
           "price": "29,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 5
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_7",
+          "id": "old-korean-100_restaurant_097_menu_006",
           "name": "한우 약선떡갈비 (한우+육계)",
           "price": "22,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 6
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_8",
+          "id": "old-korean-100_restaurant_097_menu_007",
           "name": "덕인관 갈비살 떡불고기420g",
           "price": "58,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 7
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_9",
-          "name": "한우 안창살/갈비모둠130g (예약)",
-          "isSignature": false
-        },
-        {
-          "id": "old-korean-100_restaurant_097_menu_10",
+          "id": "old-korean-100_restaurant_097_menu_008",
           "name": "덕인관 죽순육회(한우)300g",
           "price": "45,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 8
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_11",
+          "id": "old-korean-100_restaurant_097_menu_009",
           "name": "죽순회(대)",
           "price": "30,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 9
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_12",
+          "id": "old-korean-100_restaurant_097_menu_010",
           "name": "죽순회(소)",
           "price": "16,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 10
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_13",
+          "id": "old-korean-100_restaurant_097_menu_011",
           "name": "대통밥정식",
           "price": "23,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 11
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_14",
+          "id": "old-korean-100_restaurant_097_menu_012",
           "name": "댓잎갈비탕(갈비:미국산, 육수: 국내산)",
           "price": "15,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 12
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_15",
+          "id": "old-korean-100_restaurant_097_menu_013",
           "name": "죽순추어탕/한우곰탕",
           "price": "11,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 13
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_16",
+          "id": "old-korean-100_restaurant_097_menu_014",
           "name": "대나무식이섬유를담은 대담국수(열무비빔국수or잔치국수)",
           "price": "6,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 14
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_17",
+          "id": "old-korean-100_restaurant_097_menu_015",
           "name": "(후식) 죽순추어탕/한우곰탕",
           "price": "8,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 15
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_18",
+          "id": "old-korean-100_restaurant_097_menu_016",
           "name": "한우 LA떡갈비(한우갈비)",
           "price": "33,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 16
         },
         {
-          "id": "old-korean-100_restaurant_097_menu_19",
+          "id": "old-korean-100_restaurant_097_menu_017",
           "name": "한우 떡갈비(한우갈비살+한우정육)",
           "price": "29,000원",
-          "isSignature": false
+          "isSignature": false,
+          "sourceOrdinal": 17
         }
       ],
       "thumbnailFileName": null,
-      "isOverseas": false
+      "isOverseas": false,
+      "kakaoPlaceId": "7836343",
+      "placeUrl": "https://place.map.kakao.com/7836343",
+      "phone": "0507-1342-7881",
+      "operationStatus": "영업",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T21:44:08.325Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place.map.kakao.com/7836343",
+          "label": "카카오맵 공개 메뉴"
+        }
+      ]
     },
     {
       "id": "old-korean-100_restaurant_098",

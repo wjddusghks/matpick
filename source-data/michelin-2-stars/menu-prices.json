@@ -1,0 +1,189 @@
+{
+  "source": "Kakao Maps public place search and place panel",
+  "collectedAt": "2026-07-18T21:45:06.473Z",
+  "runStatus": "partial",
+  "matchingMethod": "restaurant name + address + coordinate distance",
+  "totalRestaurantCount": 3,
+  "processedCount": 3,
+  "matchedCount": 2,
+  "pricedRestaurantCount": 2,
+  "pricedMenuCount": 12,
+  "unmatchedCount": 1,
+  "closedCount": 0,
+  "errorCount": 0,
+  "restaurants": {
+    "topic_enrichment_michelin-2-stars_d2dd9eeff8be": {
+      "name": "모수",
+      "address": "서울시 용산구 회나무로 41길 4, Seoul, 04344, 한국",
+      "status": "unmatched",
+      "verifiedAt": "2026-07-18T21:44:28.887Z",
+      "menus": [],
+      "candidates": [
+        {
+          "kakaoPlaceId": "1791830911",
+          "name": "모수 서울",
+          "address": "서울 용산구 회나무로41길 4",
+          "query": "모수 서울시 용산구",
+          "total": 170,
+          "nameScore": 130,
+          "addressScore": 60,
+          "distanceScore": 140,
+          "localityPenalty": -160,
+          "distanceMeters": 5
+        }
+      ]
+    },
+    "topic_enrichment_michelin-2-stars_1f775d4caaf7": {
+      "name": "소수헌",
+      "address": "중구 만리재로 21길 8, Seoul, 04500, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.240Z",
+      "representativeMenu": "런치 오마카세 / 디너 오마카세",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/512316559",
+      "placeUrl": "https://place.map.kakao.com/512316559",
+      "kakaoPlaceId": "512316559",
+      "pageName": "소수헌",
+      "pageAddress": "서울 중구 만리재로21길 8 소수헌빌딩 (만리동2가)",
+      "phone": "",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2024-03-15 23:59:18",
+      "match": {
+        "query": "소수헌 중구 만리재로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 1
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_1f775d4caaf7_menu_001",
+          "name": "런치 오마카세",
+          "price": "300,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2024-03-15 23:44:20",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_1f775d4caaf7_menu_002",
+          "name": "디너 오마카세",
+          "price": "500,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2024-03-15 23:59:18",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-2-stars_ee0ea1ef1717": {
+      "name": "정식당",
+      "address": "강남구 선릉로 158길 11, Seoul, 06014, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.275Z",
+      "representativeMenu": "모듬김밥 / 울릉도 메이플 / DINNER SIGNATURE",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/12747379",
+      "placeUrl": "https://place.map.kakao.com/12747379",
+      "kakaoPlaceId": "12747379",
+      "pageName": "정식당",
+      "pageAddress": "서울 강남구 선릉로158길 11 1-3층 (청담동)",
+      "phone": "02-517-4654",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 11:12:31",
+      "match": {
+        "query": "정식당 강남구 선릉로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 7
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_001",
+          "name": "모듬김밥",
+          "price": "200,000원",
+          "description": "김부각으로 감싼 밥 위에 육회, 줄전갱이, 단새우, 캐비어 등 고급 재료를 얹은 김밥",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_002",
+          "name": "울릉도 메이플",
+          "price": "30,000원",
+          "description": "고로쇠물 메이플 시럽과 판나코타로 구성된 디저트",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_003",
+          "name": "DINNER SIGNATURE",
+          "price": "330,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_004",
+          "name": "성게 구절판",
+          "price": "200,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_005",
+          "name": "성게 비빔밥",
+          "price": "89,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_006",
+          "name": "맛있는 김밥",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_007",
+          "name": "LUNCH SIGNATURE",
+          "price": "230,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_008",
+          "name": "봄나물 김밥",
+          "price": "33,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_009",
+          "name": "LUNCH VEGETARIAN",
+          "price": "200,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-2-stars_ee0ea1ef1717_menu_010",
+          "name": "DINNER VEGETARIAN",
+          "price": "300,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:12:31",
+          "sourceOrdinal": 10
+        }
+      ]
+    }
+  }
+}

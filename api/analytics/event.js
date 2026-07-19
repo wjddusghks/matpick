@@ -1,19 +1,11 @@
 const { recordAnalyticsEvent } = require("./_analyticsStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
-
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
-
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
-  }
-
-  return req.body;
-}
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -40,7 +32,7 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const payload = readBody(req);
+    const payload = readJsonBody(req, { maxBytes: 12_000 });
     const result = await recordAnalyticsEvent(payload);
     return res.status(200).json({ ok: true, ...result });
   } catch (error) {
@@ -49,8 +41,9 @@ module.exports = async function handler(req, res) {
       ip: maskValue(getClientIp(req)),
       message: error instanceof Error ? error.message : "unknown",
     });
-    return res.status(500).json({
-      error: error instanceof Error ? error.message : "Failed to record analytics event",
+    const status = Number(error?.statusCode) || 500;
+    return res.status(status).json({
+      error: status < 500 ? error.message : "Failed to record analytics event",
     });
   }
 };

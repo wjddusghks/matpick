@@ -4,20 +4,13 @@ const {
 } = require("./_profileStore");
 const { recordMemberProfileCompletion } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  isSafeIdentifier,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
-
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
-
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
-  }
-
-  return req.body;
-}
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -32,7 +25,15 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { userId, syncToken, profile } = readBody(req);
+    const { userId, syncToken, profile } = readJsonBody(req, { maxBytes: 16_000 });
+    const nickname =
+      typeof profile?.nickname === "string" ? profile.nickname.trim() : "";
+    const consentAcceptedAt = Number(profile?.consentAcceptedAt);
+    const safeProfile = {
+      nickname,
+      consentAcceptedAt,
+      allowLocationPersonalization: profile?.allowLocationPersonalization === true,
+    };
 
     if (
       !(await enforceRateLimit(req, res, {
@@ -46,7 +47,17 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    if (!userId || !profile?.nickname || !profile?.consentAcceptedAt) {
+    if (
+      !isSafeIdentifier(userId) ||
+      typeof syncToken !== "string" ||
+      syncToken.length > 4_096 ||
+      !nickname ||
+      nickname.length > 40 ||
+      /[\u0000-\u001f\u007f]/.test(nickname) ||
+      !Number.isFinite(consentAcceptedAt) ||
+      consentAcceptedAt < 1_577_836_800_000 ||
+      consentAcceptedAt > Date.now() + 5 * 60 * 1000
+    ) {
       return res.status(400).json({ error: "Invalid profile payload" });
     }
 
@@ -86,10 +97,10 @@ module.exports = async function handler(req, res) {
       res.setHeader("X-Matpick-Legacy-Token", "1");
     }
 
-    await writeRemoteProfile(userId, profile);
+    await writeRemoteProfile(userId, safeProfile);
 
     try {
-      await recordMemberProfileCompletion(userId, profile);
+      await recordMemberProfileCompletion(userId, safeProfile);
     } catch (error) {
       logSecurityEvent("warn", "member-profile-completion-record-failed", {
         route: "/api/auth/profile",
@@ -100,8 +111,9 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({ ok: true });
   } catch (error) {
-    return res.status(500).json({
-      error: error instanceof Error ? error.message : "Failed to save profile",
+    const status = Number(error?.statusCode) || 500;
+    return res.status(status).json({
+      error: status < 500 ? error.message : "Failed to save profile",
     });
   }
 };

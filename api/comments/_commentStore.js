@@ -1,4 +1,5 @@
 const COMMENT_KEY_PREFIX = "matpick:comments:restaurant:";
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 const MAX_COMMENT_COUNT = 200;
 
 function getKvConfig() {
@@ -24,7 +25,7 @@ async function requestRedis(command) {
   const endpoint = `${config.url}/${command
     .map((part) => encodeURIComponent(String(part)))
     .join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -34,7 +35,7 @@ async function requestRedis(command) {
     throw new Error(`Comment store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function getCommentKey(restaurantId) {

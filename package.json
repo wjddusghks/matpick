@@ -9,6 +9,7 @@
     "dev": "cd matpick_all && pnpm dev",
     "build": "cd matpick_all && pnpm build",
     "check": "cd matpick_all && pnpm check",
+    "test:security": "node scripts/security-smoke-test.cjs",
     "matpick:research-topic": "cd matpick_all && corepack pnpm matpick:research-topic",
     "format": "cd matpick_all && pnpm format"
   }

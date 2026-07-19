@@ -4,20 +4,14 @@ const {
 } = require("./_profileStore");
 const { recordAuthMember } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+  isAllowedRedirectUri,
+  readJsonBody,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
-
-function readBody(req) {
-  if (!req.body) {
-    return {};
-  }
-
-  if (typeof req.body === "string") {
-    return JSON.parse(req.body);
-  }
-
-  return req.body;
-}
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -54,11 +48,19 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { code, state } = readBody(req);
+    const { code, state, redirectUri } = readJsonBody(req, { maxBytes: 16_000 });
 
-    if (!code || !state) {
+    if (
+      typeof code !== "string" ||
+      code.length < 1 ||
+      code.length > 2_048 ||
+      typeof state !== "string" ||
+      state.length < 16 ||
+      state.length > 256 ||
+      !isAllowedRedirectUri(req, redirectUri, "/auth/callback/naver")
+    ) {
       return res.status(400).json({
-        error: "Missing Naver authorization payload.",
+        error: "Invalid Naver authorization payload.",
       });
     }
 
@@ -70,14 +72,14 @@ module.exports = async function handler(req, res) {
       state,
     });
 
-    const tokenResponse = await fetch(
+    const tokenResponse = await fetchWithTimeout(
       `https://nid.naver.com/oauth2.0/token?${tokenParams.toString()}`,
       {
         method: "GET",
       }
     );
 
-    const tokenPayload = await tokenResponse.json();
+    const tokenPayload = await readJsonResponse(tokenResponse, 256_000);
     if (!tokenResponse.ok || !tokenPayload.access_token) {
       return res.status(502).json({
         error:
@@ -86,13 +88,13 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    const userResponse = await fetch("https://openapi.naver.com/v1/nid/me", {
+    const userResponse = await fetchWithTimeout("https://openapi.naver.com/v1/nid/me", {
       headers: {
         Authorization: `Bearer ${tokenPayload.access_token}`,
       },
     });
 
-    const userPayload = await userResponse.json();
+    const userPayload = await readJsonResponse(userResponse, 256_000);
     if (!userResponse.ok || userPayload.resultcode !== "00") {
       return res.status(502).json({
         error: userPayload.message || "Failed to load the Naver user profile.",
@@ -133,11 +135,12 @@ module.exports = async function handler(req, res) {
       ip: maskValue(getClientIp(req)),
       message: error instanceof Error ? error.message : "unknown",
     });
-    return res.status(500).json({
+    const status = Number(error?.statusCode) || 502;
+    return res.status(status).json({
       error:
-        error instanceof Error
+        status < 500
           ? error.message
-          : "An unknown error occurred while processing the Naver login.",
+          : "Naver login could not be completed. Please try again.",
     });
   }
 };

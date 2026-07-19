@@ -52,6 +52,7 @@ import {
 import {
   collectReviewPhotos,
   getPrimaryReviewPhotoUrl,
+  normalizeSharedReview,
   sortReviews,
   summarizeReviews,
   type ReviewSortMode,
@@ -73,6 +74,7 @@ import {
   type StoredLocation,
 } from "@/lib/location";
 import type { Restaurant } from "@/data/types";
+import { toSafeHttpUrl } from "@/lib/safeUrls";
 
 type DetailTab = "menu" | "comments" | "reviews" | "videos" | "details";
 type ReviewItem = SharedReview;
@@ -124,11 +126,7 @@ function saveStoredReviews(restaurantId: string, reviews: ReviewItem[]) {
 }
 
 function normalizeReview(review: ReviewItem): ReviewItem {
-  return {
-    ...review,
-    createdAt: Number.isFinite(review.createdAt) ? review.createdAt : Date.now(),
-    photos: Array.isArray(review.photos) ? review.photos.filter(Boolean) : [],
-  };
+  return normalizeSharedReview(review);
 }
 
 function mergeReviews(...collections: ReviewItem[][]) {
@@ -370,7 +368,7 @@ function buildKakaoNavigationUrls(
 
     return {
       appUrl: `kakaomap://route?${routePath}`,
-      webUrl: `http://m.map.kakao.com/scheme/route?${routePath}`,
+      webUrl: `https://m.map.kakao.com/scheme/route?${routePath}`,
     };
   }
 
@@ -378,7 +376,7 @@ function buildKakaoNavigationUrls(
 
   return {
     appUrl: `kakaomap://look?p=${point}`,
-    webUrl: `http://m.map.kakao.com/scheme/look?p=${point}`,
+    webUrl: `https://m.map.kakao.com/scheme/look?p=${point}`,
   };
 }
 
@@ -849,7 +847,10 @@ export default function RestaurantDetail() {
           review: nextReview,
         });
 
-        const syncedReviews = mergeReviews([remoteSavedReview], localMerged);
+        const syncedReviews = mergeReviews(
+          [remoteSavedReview],
+          localMerged.filter((review) => review.id !== nextReview.id)
+        );
         setStoredReviews(syncedReviews);
         saveStoredReviews(restaurant.id, syncedReviews);
       } else {
@@ -1450,6 +1451,7 @@ export default function RestaurantDetail() {
                       </div>
                       <textarea
                         value={reviewDraft}
+                        maxLength={2000}
                         onChange={(event) => setReviewDraft(event.target.value)}
                         placeholder="음식 맛, 분위기, 서비스 등을 자유롭게 남겨주세요."
                         className="mt-4 min-h-[140px] w-full rounded-[20px] border border-[#e8dfe1] px-4 py-4 text-sm text-[#1a1a1a] outline-none transition focus:border-[#ff9ea9]"
@@ -1619,12 +1621,12 @@ export default function RestaurantDetail() {
                           <span className="text-[#1d1d1d]">{restaurant.officialDescriptionAddress}</span>
                         </div>
                       ) : null}
-                      {restaurant.placeUrl ? (
+                      {toSafeHttpUrl(restaurant.placeUrl) ? (
                         <div className="flex flex-col gap-1 sm:flex-row sm:gap-4">
                           <span className="w-full flex-shrink-0 text-[#8a8a8a] sm:w-[96px]">지도 정보</span>
                           <a
                             className="font-semibold text-[#ff6f7c] hover:underline"
-                            href={restaurant.placeUrl}
+                            href={toSafeHttpUrl(restaurant.placeUrl)}
                             target="_blank"
                             rel="noreferrer"
                           >

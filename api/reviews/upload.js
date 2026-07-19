@@ -1,6 +1,11 @@
 const { validateProfileSyncToken } = require("../auth/_profileStore");
 const { checkRateLimit, enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceRequestBodySize,
+  enforceSameOrigin,
+  isSafeIdentifier,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
 module.exports = async function handler(req, res) {
@@ -12,6 +17,10 @@ module.exports = async function handler(req, res) {
   }
 
   if (!enforceSameOrigin(req, res)) {
+    return;
+  }
+
+  if (!enforceRequestBodySize(req, res, 64_000)) {
     return;
   }
 
@@ -53,7 +62,12 @@ module.exports = async function handler(req, res) {
 
         const tokenValidation = validateProfileSyncToken(userId, syncToken);
 
-        if (!userId || !restaurantId || !tokenValidation.valid) {
+        if (
+          !isSafeIdentifier(userId, 160) ||
+          !isSafeIdentifier(restaurantId, 160) ||
+          syncToken.length > 4_096 ||
+          !tokenValidation.valid
+        ) {
           logSecurityEvent("warn", "review-upload-token-rejected", {
             route: "/api/reviews/upload",
             userId: maskValue(userId),
@@ -75,7 +89,10 @@ module.exports = async function handler(req, res) {
           res.setHeader("X-Matpick-Legacy-Token", "1");
         }
 
-        if (!pathname.startsWith(`reviews/${restaurantId}/`)) {
+        const expectedPath = new RegExp(
+          `^reviews/${restaurantId}/[a-zA-Z0-9_.-]{1,220}$`
+        );
+        if (!expectedPath.test(pathname)) {
           throw new Error("Invalid upload path");
         }
 

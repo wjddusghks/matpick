@@ -1,0 +1,15 @@
+{
+  "source": "Kakao Maps public place search and place panel",
+  "collectedAt": "2026-07-18T21:45:06.474Z",
+  "runStatus": "partial",
+  "matchingMethod": "restaurant name + address + coordinate distance",
+  "totalRestaurantCount": 0,
+  "processedCount": 0,
+  "matchedCount": 0,
+  "pricedRestaurantCount": 0,
+  "pricedMenuCount": 0,
+  "unmatchedCount": 0,
+  "closedCount": 0,
+  "errorCount": 0,
+  "restaurants": {}
+}

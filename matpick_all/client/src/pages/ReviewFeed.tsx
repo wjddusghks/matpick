@@ -7,6 +7,7 @@ import { trackMarketingEvent } from "@/lib/marketing";
 import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 import {
   collectReviewPhotos,
+  normalizeSharedReview,
   sortReviews,
   summarizeReviews,
   type ReviewSortMode,
@@ -41,10 +42,13 @@ export default function ReviewFeed() {
 
         setReviews(
           Array.isArray(payload.reviews)
-            ? payload.reviews.filter(
-                (review): review is FeedReview =>
-                  typeof review.restaurantId === "string" && review.restaurantId.length > 0
-              )
+            ? payload.reviews
+                .filter(
+                  (review): review is FeedReview =>
+                    typeof review.restaurantId === "string" &&
+                    /^[a-zA-Z0-9_:-]{1,160}$/.test(review.restaurantId)
+                )
+                .map((review) => normalizeSharedReview(review) as FeedReview)
             : []
         );
       })

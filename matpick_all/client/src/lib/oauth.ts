@@ -15,7 +15,12 @@ function createRandomState() {
     return crypto.randomUUID().replace(/-/g, "");
   }
 
-  return `${Date.now()}_${Math.random().toString(36).slice(2, 12)}`;
+  if (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function") {
+    const bytes = crypto.getRandomValues(new Uint8Array(24));
+    return Array.from(bytes, (value) => value.toString(16).padStart(2, "0")).join("");
+  }
+
+  throw new Error("Secure random values are unavailable in this browser.");
 }
 
 function readStoredStates(): OAuthStateMap {
@@ -29,6 +34,21 @@ function readStoredStates(): OAuthStateMap {
 
 function writeStoredStates(states: OAuthStateMap) {
   localStorage.setItem(OAUTH_STATE_STORAGE_KEY, JSON.stringify(states));
+}
+
+function sanitizeInternalRedirect(value: unknown) {
+  if (typeof value !== "string" || !value.startsWith("/") || value.startsWith("//")) {
+    return "/";
+  }
+
+  try {
+    const origin = typeof window === "undefined" ? "https://matpick.co.kr" : window.location.origin;
+    const url = new URL(value, origin);
+    if (url.origin !== origin) return "/";
+    return `${url.pathname}${url.search}${url.hash}`;
+  } catch {
+    return "/";
+  }
 }
 
 function getClientId(provider: OAuthProvider) {
@@ -98,7 +118,7 @@ export function beginOAuthLogin(provider: OAuthProvider, redirectTo = "/") {
   const states = readStoredStates();
   states[provider] = state;
   writeStoredStates(states);
-  localStorage.setItem(POST_LOGIN_REDIRECT_KEY, redirectTo);
+  localStorage.setItem(POST_LOGIN_REDIRECT_KEY, sanitizeInternalRedirect(redirectTo));
 
   window.location.assign(buildAuthorizeUrl(provider, state));
 }
@@ -114,7 +134,7 @@ export function consumeOAuthState(provider: OAuthProvider) {
 export function takeSavedPostLoginRedirect() {
   const value = localStorage.getItem(POST_LOGIN_REDIRECT_KEY);
   localStorage.removeItem(POST_LOGIN_REDIRECT_KEY);
-  return value;
+  return sanitizeInternalRedirect(value);
 }
 
 export function clearSavedPostLoginRedirect() {

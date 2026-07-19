@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const { fetchWithTimeout, readJsonResponse } = require("../_safeFetch");
 
 const ANALYTICS_PREFIX = "matpick:analytics";
 const FALLBACK_STORE = globalThis.__MATPICK_ANALYTICS_STORE__ || new Map();
@@ -28,7 +29,7 @@ async function requestRedis(command) {
   }
 
   const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetchWithTimeout(endpoint, {
     headers: {
       Authorization: `Bearer ${config.token}`,
     },
@@ -38,7 +39,7 @@ async function requestRedis(command) {
     throw new Error(`Analytics store request failed: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response);
 }
 
 function getKoreaDay(timestamp = Date.now()) {

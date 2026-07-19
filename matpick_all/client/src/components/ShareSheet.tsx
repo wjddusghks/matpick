@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Copy, Facebook, Instagram, Link2, X } from "lucide-react";
 import { toast } from "sonner";
 import matpickLogo from "@/assets/matpick-logo-final 2.png";
+import { toSafeHttpUrl, toSafeImageSource } from "@/lib/safeUrls";
 
 type ShareChannel = "copy" | "x" | "facebook" | "line" | "kakao" | "instagram";
 
@@ -158,11 +159,13 @@ export default function ShareSheet({
   imageUrl,
 }: ShareSheetProps) {
   const [isSharingKakao, setIsSharingKakao] = useState(false);
-  const trimmedUrl = useMemo(() => url.trim(), [url]);
+  const trimmedUrl = useMemo(
+    () => toSafeHttpUrl(url) || "https://matpick.co.kr",
+    [url]
+  );
   const resolvedImageUrl = useMemo(() => {
-    const candidate = (imageUrl || matpickLogo).trim();
+    const candidate = toSafeImageSource((imageUrl || matpickLogo).trim());
     if (
-      candidate.startsWith("http://") ||
       candidate.startsWith("https://") ||
       candidate.startsWith("data:") ||
       candidate.startsWith("blob:")

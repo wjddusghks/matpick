@@ -1,0 +1,1744 @@
+{
+  "source": "Kakao Maps public place search and place panel",
+  "collectedAt": "2026-07-18T21:45:06.528Z",
+  "runStatus": "partial",
+  "matchingMethod": "restaurant name + address + coordinate distance",
+  "totalRestaurantCount": 34,
+  "processedCount": 34,
+  "matchedCount": 30,
+  "pricedRestaurantCount": 30,
+  "pricedMenuCount": 104,
+  "unmatchedCount": 4,
+  "closedCount": 0,
+  "errorCount": 0,
+  "restaurants": {
+    "topic_enrichment_michelin-1-star_d4132c79cb30": {
+      "name": "가겐 바이 최준호",
+      "address": "강남구 압구정로 80길 19-1, 2층, Seoul, 06015, 한국",
+      "status": "unmatched",
+      "verifiedAt": "2026-07-18T21:44:28.965Z",
+      "menus": [],
+      "candidates": [
+        {
+          "kakaoPlaceId": "100755563",
+          "name": "가겐by최준호",
+          "address": "서울 강남구 압구정로80길 19-1",
+          "query": "가겐 바이 최준호 강남구 압구정로",
+          "total": 131,
+          "nameScore": 63,
+          "addressScore": 88,
+          "distanceScore": 140,
+          "localityPenalty": -160,
+          "distanceMeters": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_a9eddb623b77": {
+      "name": "강민철 레스토랑",
+      "address": "강남구 도산대로 63길 18, 5층, Seoul, 06064, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.279Z",
+      "representativeMenu": "테이스팅 런치 코스 / 테이스팅 디너 코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1734048185",
+      "placeUrl": "https://place.map.kakao.com/1734048185",
+      "kakaoPlaceId": "1734048185",
+      "pageName": "강민철레스토랑",
+      "pageAddress": "서울 강남구 도산대로63길 18 비케이빌딩 5층 (청담동)",
+      "phone": "02-545-2511",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-02-26 13:05:04",
+      "match": {
+        "query": "강민철 레스토랑 강남구 도산대로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 3
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_a9eddb623b77_menu_001",
+          "name": "테이스팅 런치 코스",
+          "price": "220,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-02-26 13:05:04",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_a9eddb623b77_menu_002",
+          "name": "테이스팅 디너 코스",
+          "price": "360,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-02-26 13:05:04",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_5114d1a96d52": {
+      "name": "고료리 켄",
+      "address": "강남구 언주로 152길 15-3, 2층, Seoul, 06021, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.251Z",
+      "representativeMenu": "오마카세코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/651104505",
+      "placeUrl": "https://place.map.kakao.com/651104505",
+      "kakaoPlaceId": "651104505",
+      "pageName": "고료리켄",
+      "pageAddress": "서울 강남구 언주로152길 15-3 2층 (신사동)",
+      "phone": "02-511-7809",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-02-28 23:17:02",
+      "match": {
+        "query": "고료리 켄 강남구 언주로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 2
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_5114d1a96d52_menu_001",
+          "name": "오마카세코스",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 23:17:02",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_c4b6327ff616": {
+      "name": "기가스",
+      "address": "중구 퇴계로 6가길 30, 3층, Seoul, 04635, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.110Z",
+      "representativeMenu": "와니테이블 / 와니팜",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/2072243503",
+      "placeUrl": "https://place.map.kakao.com/2072243503",
+      "kakaoPlaceId": "2072243503",
+      "pageName": "기가스",
+      "pageAddress": "서울 중구 퇴계로6가길 30 피크닉 3층 (남창동)",
+      "phone": "02-3448-9929",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-06-20 12:23:02",
+      "match": {
+        "query": "기가스 중구 퇴계로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 3
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_c4b6327ff616_menu_001",
+          "name": "와니테이블",
+          "price": "290,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-06-20 12:23:02",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_c4b6327ff616_menu_002",
+          "name": "와니팜",
+          "price": "260,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-06-20 12:23:02",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_b85a816dfd85": {
+      "name": "기와강",
+      "address": "강남구 논현로 152길 9, 4층, Seoul, 06025, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.787Z",
+      "representativeMenu": "Lunch Tasting Menu / Dinner Tasting Menu",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1522281632",
+      "placeUrl": "https://place.map.kakao.com/1522281632",
+      "kakaoPlaceId": "1522281632",
+      "pageName": "기와강",
+      "pageAddress": "서울 강남구 논현로152길 9 4층 (신사동)",
+      "phone": "02-517-2511",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-06-30 22:02:02",
+      "match": {
+        "query": "기와강 강남구 논현로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 7
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_b85a816dfd85_menu_001",
+          "name": "Lunch Tasting Menu",
+          "price": "220,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-06-30 22:02:02",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_b85a816dfd85_menu_002",
+          "name": "Dinner Tasting Menu",
+          "price": "360,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-06-30 22:02:02",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_3dc95d8efbc6": {
+      "name": "꼴라쥬",
+      "address": "강남구 논현로 136길 11, 아난티 앳 강남 2층, Seoul, 06051, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.818Z",
+      "representativeMenu": "코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/245774987",
+      "placeUrl": "https://place.map.kakao.com/245774987",
+      "kakaoPlaceId": "245774987",
+      "pageName": "꼴라쥬",
+      "pageAddress": "서울 강남구 논현로136길 11 살롱 드 아난티 2층 (논현동)",
+      "phone": "02-2190-4112",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-31 14:56:03",
+      "match": {
+        "query": "꼴라쥬 강남구 논현로",
+        "total": 252,
+        "nameScore": 180,
+        "addressScore": 92,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 11
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_3dc95d8efbc6_menu_001",
+          "name": "코스",
+          "price": "200,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-31 14:56:03",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_444ed38557b3": {
+      "name": "뛰뚜아멍",
+      "address": "성동구 광나루로 11길 20, Seoul, 04801, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.784Z",
+      "representativeMenu": "와인콜키지 1병(750ml)",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/994277176",
+      "placeUrl": "https://place.map.kakao.com/994277176",
+      "kakaoPlaceId": "994277176",
+      "pageName": "뛰뚜아멍",
+      "pageAddress": "서울 성동구 광나루로11길 20 1층 101호 (송정동)",
+      "phone": "02-499-9056",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-05-08 18:06:02",
+      "match": {
+        "query": "뛰뚜아멍 성동구 광나루로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 4
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_444ed38557b3_menu_001",
+          "name": "와인콜키지 1병(750ml)",
+          "price": "70,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-05-08 18:06:02",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_eede8621faa8": {
+      "name": "라망 시크레",
+      "address": "중구 퇴계로 67, 레스케이프 호텔 26층, Seoul, 04529, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:29.867Z",
+      "representativeMenu": "소고기 창펀 / 홍국 새우 창펀 / 초당 옥수수 크리스피 새우 창펀",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1168689188",
+      "placeUrl": "https://place.map.kakao.com/1168689188",
+      "kakaoPlaceId": "1168689188",
+      "pageName": "라망시크레",
+      "pageAddress": "서울 중구 퇴계로 67 레스케이프호텔 26층 (회현동1가)",
+      "phone": "02-317-4003",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 11:49:46",
+      "match": {
+        "query": "라망 시크레 중구 퇴계로",
+        "total": 280,
+        "nameScore": 180,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 19
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_001",
+          "name": "소고기 창펀",
+          "price": "27,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_002",
+          "name": "홍국 새우 창펀",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_003",
+          "name": "초당 옥수수 크리스피 새우 창펀",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_004",
+          "name": "모둠버섯 창펀",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_005",
+          "name": "건관자 해물 부용 교자",
+          "price": "23,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_006",
+          "name": "크랩 날치알 하가우",
+          "price": "22,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_007",
+          "name": "하가우",
+          "price": "21,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-05 05:04:10",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_008",
+          "name": "블랙 트러플 쇼마이",
+          "price": "21,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-09-01 12:46:20",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_009",
+          "name": "코스 (런치)",
+          "price": "170,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-01-02 15:48:02",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_eede8621faa8_menu_010",
+          "name": "코스 (디너)",
+          "price": "270,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 11:49:46",
+          "sourceOrdinal": 10
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_bf5e1ef750b9": {
+      "name": "라미띠에",
+      "address": "강남구 도산대로 67길 30, 2층, Seoul, 06015, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.400Z",
+      "representativeMenu": "Lunch / Dinner",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/270914334",
+      "placeUrl": "https://place.map.kakao.com/270914334",
+      "kakaoPlaceId": "270914334",
+      "pageName": "라미띠에",
+      "pageAddress": "서울 강남구 도산대로67길 30 2층 (청담동)",
+      "phone": "02-546-9621",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-02-28 16:02:08",
+      "match": {
+        "query": "라미띠에 강남구 도산대로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 4
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_bf5e1ef750b9_menu_001",
+          "name": "Lunch",
+          "price": "160,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 16:02:08",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_bf5e1ef750b9_menu_002",
+          "name": "Dinner",
+          "price": "250,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-02-28 16:02:08",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_f598df305b4f": {
+      "name": "레귬",
+      "address": "강남구 강남대로 652, 신사 스퀘어 2층, Seoul, 06027, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.318Z",
+      "representativeMenu": "런치 코스 / 디너 코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/335870716",
+      "placeUrl": "https://place.map.kakao.com/335870716",
+      "kakaoPlaceId": "335870716",
+      "pageName": "레귬",
+      "pageAddress": "서울 강남구 강남대로 652 신사스퀘어 2층 207호 (신사동)",
+      "phone": "0507-1365-1567",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-06-08 11:06:02",
+      "match": {
+        "query": "레귬 강남구 강남대로",
+        "total": 280,
+        "nameScore": 180,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 0
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_f598df305b4f_menu_001",
+          "name": "런치 코스",
+          "price": "150,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-06-08 11:06:02",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f598df305b4f_menu_002",
+          "name": "디너 코스",
+          "price": "250,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-06-08 11:06:02",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_4b63750d045e": {
+      "name": "레스토랑 산",
+      "address": "강남구 언주로 168길 6, 지하1층, Seoul, 06020, 한국",
+      "status": "unmatched",
+      "verifiedAt": "2026-07-18T21:44:30.117Z",
+      "menus": [],
+      "candidates": [
+        {
+          "kakaoPlaceId": "1828674706",
+          "name": "레스토랑 산 SAN",
+          "address": "서울 강남구 언주로168길 6",
+          "query": "레스토랑 산 강남구 언주로",
+          "total": 208,
+          "nameScore": 140,
+          "addressScore": 88,
+          "distanceScore": 140,
+          "localityPenalty": -160,
+          "distanceMeters": 3
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_afdacbada4bd": {
+      "name": "레스토랑 주은",
+      "address": "서울 종로구 경희궁길 36, 경희당 8층, Seoul, 03175, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.363Z",
+      "representativeMenu": "저녁 코스/Dinner Course / 점심 코스/Lunch Course",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/690680212",
+      "placeUrl": "https://place.map.kakao.com/690680212",
+      "kakaoPlaceId": "690680212",
+      "pageName": "레스토랑주은",
+      "pageAddress": "서울 종로구 경희궁길 36 8층 (신문로2가)",
+      "phone": "0502-5550-9312",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2024-02-01 08:57:03",
+      "match": {
+        "query": "레스토랑 주은 서울 종로구",
+        "total": 444,
+        "nameScore": 180,
+        "addressScore": 124,
+        "distanceScore": 140,
+        "localityPenalty": 0,
+        "distanceMeters": 22
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_afdacbada4bd_menu_001",
+          "name": "저녁 코스/Dinner Course",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2024-02-01 08:57:03",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_afdacbada4bd_menu_002",
+          "name": "점심 코스/Lunch Course",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2024-02-01 08:57:03",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_3fdc932a47c8": {
+      "name": "르도헤",
+      "address": "해운대구 마린시티 3로 37, 2층, Busan, 48118, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.962Z",
+      "representativeMenu": "Lunch Course / Dinner Course",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/709702396",
+      "placeUrl": "https://place.map.kakao.com/709702396",
+      "kakaoPlaceId": "709702396",
+      "pageName": "르도헤",
+      "pageAddress": "부산 해운대구 마린시티3로 37 한일오르듀 213~214호 (우동)",
+      "phone": "051-747-8522",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2024-12-31 00:51:06",
+      "match": {
+        "query": "르도헤 해운대구 마린시티",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 1
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_3fdc932a47c8_menu_001",
+          "name": "Lunch Course",
+          "price": "120,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2024-12-31 00:51:06",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_3fdc932a47c8_menu_002",
+          "name": "Dinner Course",
+          "price": "210,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2024-12-31 00:51:06",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_72d85597e5ae": {
+      "name": "모리",
+      "address": "해운대구 구남로 21 경동리인뷰2차 상가 3층 311호, Busan, 48095, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.880Z",
+      "representativeMenu": "1인코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1045569670",
+      "placeUrl": "https://place.map.kakao.com/1045569670",
+      "kakaoPlaceId": "1045569670",
+      "pageName": "모리",
+      "pageAddress": "부산 해운대구 구남로 21 경동리인뷰2차 상가 301동 3층 311호 (우동)",
+      "phone": "051-731-9889",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 15:55:44",
+      "match": {
+        "query": "모리 해운대구 구남로",
+        "total": 305,
+        "nameScore": 180,
+        "addressScore": 145,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 11
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_72d85597e5ae_menu_001",
+          "name": "1인코스",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 15:55:44",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_cb452a021e94": {
+      "name": "무니",
+      "address": "강남구 도산대로 72길 16, Seoul, 06063, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.864Z",
+      "representativeMenu": "오마카세",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/736291693",
+      "placeUrl": "https://place.map.kakao.com/736291693",
+      "kakaoPlaceId": "736291693",
+      "pageName": "무니",
+      "pageAddress": "서울 강남구 도산대로72길 16 1층 (청담동)",
+      "phone": "02-511-1303",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-02-28 23:06:13",
+      "match": {
+        "query": "무니 강남구 도산대로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 5
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_cb452a021e94_menu_001",
+          "name": "오마카세",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 23:06:13",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_9cca295d4b85": {
+      "name": "무오키",
+      "address": "강남구 학동로 55길 12-12, 2층, Seoul, 06065, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:30.922Z",
+      "representativeMenu": "DINNER / LUNCH",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/312947795",
+      "placeUrl": "https://place.map.kakao.com/312947795",
+      "kakaoPlaceId": "312947795",
+      "pageName": "무오키",
+      "pageAddress": "서울 강남구 학동로55길 12-12 2층 (청담동)",
+      "phone": "010-2948-4171",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 14:57:10",
+      "match": {
+        "query": "무오키 강남구 학동로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 7
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_9cca295d4b85_menu_001",
+          "name": "DINNER",
+          "price": "260,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 14:57:10",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_9cca295d4b85_menu_002",
+          "name": "LUNCH",
+          "price": "160,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 14:57:10",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_306c2c698efe": {
+      "name": "비채나",
+      "address": "송파구 올림픽로 300, 롯데월드 타워 81층, Seoul, 05551, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.476Z",
+      "representativeMenu": "산천코스(주중 점심) / 산천코스(주말/공휴일 점심) / 구학코스(저녁)",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/18313843",
+      "placeUrl": "https://place.map.kakao.com/18313843",
+      "kakaoPlaceId": "18313843",
+      "pageName": "시그니엘서울 비채나",
+      "pageAddress": "서울 송파구 올림픽로 300 롯데월드타워 81층 (신천동)",
+      "phone": "02-3213-1261",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 15:42:32",
+      "match": {
+        "query": "비채나 송파구 올림픽로",
+        "total": 217,
+        "nameScore": 117,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 1
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_001",
+          "name": "산천코스(주중 점심)",
+          "price": "135,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 14:13:29",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_002",
+          "name": "산천코스(주말/공휴일 점심)",
+          "price": "170,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-02-09 14:20:13",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_003",
+          "name": "구학코스(저녁)",
+          "price": "280,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:42:32",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_004",
+          "name": "런치 와인 페어링 5 Glasses",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:42:32",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_005",
+          "name": "디너 와인 페어링 3 Glasses",
+          "price": "110,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:42:32",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_006",
+          "name": "패밀리 스페셜코스 (점심)",
+          "price": "240,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:42:32",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe_menu_007",
+          "name": "패밀리 스페셜코스 (저녁)",
+          "price": "310,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:42:32",
+          "sourceOrdinal": 7
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_f427097e0c15": {
+      "name": "빈호",
+      "address": "강남구 학동로 43길 38, 논현웰스톤 162호, Seoul, 06059, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.477Z",
+      "representativeMenu": "디너 10 코스 / 와인페어링 8 글라스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1972526906",
+      "placeUrl": "https://place.map.kakao.com/1972526906",
+      "kakaoPlaceId": "1972526906",
+      "pageName": "빈호",
+      "pageAddress": "서울 강남구 학동로43길 38 논현웰스톤아파트 1층 162호 (논현동)",
+      "phone": "010-9677-2302",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-06-19 14:06:02",
+      "match": {
+        "query": "빈호 강남구 학동로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 6
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_f427097e0c15_menu_001",
+          "name": "디너 10 코스",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-06-19 14:06:02",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f427097e0c15_menu_002",
+          "name": "와인페어링 8 글라스",
+          "price": "240,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-06-19 14:06:02",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_e3a57371d986": {
+      "name": "세븐스도어",
+      "address": "강남구 학동로 97길 41, 4층, Seoul, 06072, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.406Z",
+      "representativeMenu": "런치코스(주중) / 런치코스(주말) / 디너코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1147571189",
+      "placeUrl": "https://place.map.kakao.com/1147571189",
+      "kakaoPlaceId": "1147571189",
+      "pageName": "세븐스도어",
+      "pageAddress": "서울 강남구 학동로97길 41 4층 (청담동)",
+      "phone": "02-542-3010",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-02-28 14:34:51",
+      "match": {
+        "query": "세븐스도어 강남구 학동로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 4
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_e3a57371d986_menu_001",
+          "name": "런치코스(주중)",
+          "price": "180,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 14:34:51",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_e3a57371d986_menu_002",
+          "name": "런치코스(주말)",
+          "price": "210,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-02-28 14:34:51",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_e3a57371d986_menu_003",
+          "name": "디너코스",
+          "price": "320,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-02-28 14:34:51",
+          "sourceOrdinal": 3
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_df44dbdfc983": {
+      "name": "소설한남",
+      "address": "용산구 한남대로 20길 21-18, 지하 1층, Seoul, 04419, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.461Z",
+      "representativeMenu": "Lunch / Dinner",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/2043675805",
+      "placeUrl": "https://place.map.kakao.com/2043675805",
+      "kakaoPlaceId": "2043675805",
+      "pageName": "소설한남",
+      "pageAddress": "서울 용산구 한남대로20길 21-18 B동 지하1층 (한남동)",
+      "phone": "02-797-5995",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-01-14 14:00:03",
+      "match": {
+        "query": "소설한남 용산구 한남대로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 19
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_df44dbdfc983_menu_001",
+          "name": "Lunch",
+          "price": "170,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-01-14 14:00:03",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_df44dbdfc983_menu_002",
+          "name": "Dinner",
+          "price": "270,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-01-14 14:00:03",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_07ba1760af28": {
+      "name": "소울",
+      "address": "용산구 신흥로 26길 35, 지하 1층, Seoul, 04337, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.966Z",
+      "representativeMenu": "Lunch / Dinner / 별미진미 Set",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/404432674",
+      "placeUrl": "https://place.map.kakao.com/404432674",
+      "kakaoPlaceId": "404432674",
+      "pageName": "소울",
+      "pageAddress": "서울 용산구 신흥로26길 35 바나힐 지하1층 (용산동2가)",
+      "phone": "02-318-7685",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 13:28:00",
+      "match": {
+        "query": "소울 용산구 신흥로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 8
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_07ba1760af28_menu_001",
+          "name": "Lunch",
+          "price": "170,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-02-25 17:48:49",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_07ba1760af28_menu_002",
+          "name": "Dinner",
+          "price": "270,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:28:00",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_07ba1760af28_menu_003",
+          "name": "별미진미 Set",
+          "price": "50,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:28:00",
+          "sourceOrdinal": 3
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_5261df72964d": {
+      "name": "솔밤",
+      "address": "강남구 학동로 231, 2층, Seoul, 06053, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:31.990Z",
+      "representativeMenu": "Solbam Tasting Menu / Cork charge",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/2007100531",
+      "placeUrl": "https://place.map.kakao.com/2007100531",
+      "kakaoPlaceId": "2007100531",
+      "pageName": "솔밤",
+      "pageAddress": "서울 강남구 학동로 231 백영논현센터 2층 (논현동)",
+      "phone": "070-4405-7788",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-07-09 22:18:02",
+      "match": {
+        "query": "솔밤 강남구 학동로",
+        "total": 280,
+        "nameScore": 180,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 10
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_5261df72964d_menu_001",
+          "name": "Solbam Tasting Menu",
+          "price": "370,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-07-09 22:18:02",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_5261df72964d_menu_002",
+          "name": "Cork charge",
+          "price": "150,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2023-01-06 22:14:10",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_b5d2780fa246": {
+      "name": "스시 마츠모토",
+      "address": "강남구 도산대로 75길 24, Seoul, 06015, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:32.003Z",
+      "representativeMenu": "오마카세(점심) / 오마카세(저녁)",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1784630600",
+      "placeUrl": "https://place.map.kakao.com/1784630600",
+      "kakaoPlaceId": "1784630600",
+      "pageName": "스시마츠모토",
+      "pageAddress": "서울 강남구 도산대로75길 24 1층 (청담동)",
+      "phone": "02-543-4334",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2023-03-21 10:07:13",
+      "match": {
+        "query": "스시 마츠모토 강남구 도산대로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 5
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_b5d2780fa246_menu_001",
+          "name": "오마카세(점심)",
+          "price": "180,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2023-03-21 10:07:13",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_b5d2780fa246_menu_002",
+          "name": "오마카세(저녁)",
+          "price": "330,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2023-03-21 10:07:13",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_717da4a81695": {
+      "name": "스시 카네사카",
+      "address": "강남구 테헤란로 521, 그랜드 인터컨티넨탈 서울 파르나스 1층, 히노츠키 레스토랑 내부, Seoul, 06164, 한국",
+      "status": "unmatched",
+      "verifiedAt": "2026-07-18T21:44:31.716Z",
+      "menus": [],
+      "candidates": [
+        {
+          "kakaoPlaceId": "548205674",
+          "name": "스시 카네사카",
+          "address": "서울 강남구 테헤란로 521",
+          "query": "스시 카네사카 강남구 테헤란로",
+          "total": -64,
+          "nameScore": 180,
+          "addressScore": 136,
+          "distanceScore": -220,
+          "localityPenalty": -160,
+          "distanceMeters": 1151440
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_2a2e4a184f14": {
+      "name": "에스콘디도",
+      "address": "용산구 한남대로 20길 61-7, 지하 1층, Seoul, 04419, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:32.461Z",
+      "representativeMenu": "디너 코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1088263038",
+      "placeUrl": "https://place.map.kakao.com/1088263038",
+      "kakaoPlaceId": "1088263038",
+      "pageName": "에스콘디도",
+      "pageAddress": "서울 용산구 한남대로20길 61-7 지하1층 (한남동)",
+      "phone": "0507-1347-8419",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 14:05:54",
+      "match": {
+        "query": "에스콘디도 용산구 한남대로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 6
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_2a2e4a184f14_menu_001",
+          "name": "디너 코스",
+          "price": "210,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 14:05:54",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_b92a964e6559": {
+      "name": "온지음",
+      "address": "종로구 효자로 49, 4층, Seoul, 03043, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:32.499Z",
+      "representativeMenu": "런치 / 디너",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/27050439",
+      "placeUrl": "https://place.map.kakao.com/27050439",
+      "kakaoPlaceId": "27050439",
+      "pageName": "온지음",
+      "pageAddress": "서울 종로구 효자로 49 4층 (창성동)",
+      "phone": "02-6952-0024",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 13:21:18",
+      "match": {
+        "query": "온지음 종로구 효자로",
+        "total": 280,
+        "nameScore": 180,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 4
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_b92a964e6559_menu_001",
+          "name": "런치",
+          "price": "200,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 13:21:18",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_b92a964e6559_menu_002",
+          "name": "디너",
+          "price": "300,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:21:18",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_f2108786a675": {
+      "name": "유 유안",
+      "address": "종로구 새문안로 97, 포시즌스 호텔 11층, Seoul, 03183, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:32.606Z",
+      "representativeMenu": "북경오리 / 허니소스 돼지고기 바비큐 / 블랙 트러플 북경오리 (한정 수량)",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/27464311",
+      "placeUrl": "https://place.map.kakao.com/27464311",
+      "kakaoPlaceId": "27464311",
+      "pageName": "포시즌스호텔 서울 유유안",
+      "pageAddress": "서울 종로구 새문안로 97 11층 (당주동)",
+      "phone": "02-6388-5500",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-06-29 12:33:25",
+      "match": {
+        "query": "유 유안 종로구 새문안로",
+        "total": 212,
+        "nameScore": 112,
+        "addressScore": 120,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 27
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_001",
+          "name": "북경오리",
+          "price": "115,000원",
+          "description": "바삭한 껍질과 촉촉한 오리고기를 밀전병에 싸서 먹는 북경오리",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_002",
+          "name": "허니소스 돼지고기 바비큐",
+          "price": "66,000원",
+          "description": "부드럽고 촉촉한 돼지고기 바비큐에 달콤한 허니소스가 잘 배어 있음",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 2
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_003",
+          "name": "블랙 트러플 북경오리 (한정 수량)",
+          "price": "370,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 3
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_004",
+          "name": "CHEF’S TASTE OF HARMONY",
+          "price": "318,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 4
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_005",
+          "name": "YU YUAN LUNCH DELIGHTS",
+          "price": "138,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 5
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_006",
+          "name": "황금 하가우",
+          "price": "36,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 6
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_007",
+          "name": "건관자 샤오마이",
+          "price": "35,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-06-29 12:33:25",
+          "sourceOrdinal": 7
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_008",
+          "name": "꽃게 알 샤오롱바오",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 8
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_009",
+          "name": "홍미쌀 새우튀김 청판",
+          "price": "46,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 9
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_010",
+          "name": "완탕피 새우 버섯 튀김 딤섬",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 10
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_011",
+          "name": "대파 돼지고기 지짐 딤섬",
+          "price": "29,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 11
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_012",
+          "name": "킹크랩 볶음밥",
+          "price": "60,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 12
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_013",
+          "name": "ESSENCE LUNCH DEGUSTATION",
+          "price": "188,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 13
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_014",
+          "name": "ESSENCE DINNER DEGUSTATION",
+          "price": "278,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 14
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_015",
+          "name": "청포 새우 딤섬",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 10:32:02",
+          "sourceOrdinal": 15
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_016",
+          "name": "흑송로 수정 딤섬",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 23:06:16",
+          "sourceOrdinal": 16
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_017",
+          "name": "흑후추 오리 파이",
+          "price": "28,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 17
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_018",
+          "name": "‘함소이곡’ 찹쌀피 튀김 딤섬",
+          "price": "30,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-18 18:35:16",
+          "sourceOrdinal": 18
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_019",
+          "name": "그물버섯 야채 춘권",
+          "price": "27,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 10:33:51",
+          "sourceOrdinal": 19
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_020",
+          "name": "한우 청판",
+          "price": "41,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 20
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_021",
+          "name": "머스터드소스를 곁들인 구운 삼겹살",
+          "price": "68,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 10:36:48",
+          "sourceOrdinal": 21
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_022",
+          "name": "홍소 건부레 해삼",
+          "price": "128,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 09:32:07",
+          "sourceOrdinal": 22
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_023",
+          "name": "꽃게 알 소스 다진 새우와 관자 조림",
+          "price": "79,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 23
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_024",
+          "name": "마늘소스 활 가리비 찜",
+          "price": "84,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 10:35:06",
+          "sourceOrdinal": 24
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_025",
+          "name": "검은콩 민물 장어 볶음",
+          "price": "85,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 25
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_026",
+          "name": "꿀소스 새우 튀김",
+          "price": "77,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-13 10:31:39",
+          "sourceOrdinal": 26
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_027",
+          "name": "흑후추소스 한우 볶음",
+          "price": "90,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 23:36:10",
+          "sourceOrdinal": 27
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_028",
+          "name": "양송이 한우 채끝 볶음",
+          "price": "92,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 28
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_029",
+          "name": "동충하초 건부레 닭고기 연잎 찜",
+          "price": "91,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 29
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_030",
+          "name": "마라 우화육 대파 볶음",
+          "price": "75,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 30
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_031",
+          "name": "해삼 돼지고기 마파두부",
+          "price": "79,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 31
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_032",
+          "name": "청경채 볶음",
+          "price": "45,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 23:50:19",
+          "sourceOrdinal": 32
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_033",
+          "name": "마늘소스 그물버섯과 카이란 볶음",
+          "price": "48,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 33
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_034",
+          "name": "모둠 채소 볶음",
+          "price": "40,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 34
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_035",
+          "name": "양주식 바닷가재 돼지고기 볶음밥",
+          "price": "61,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 35
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_036",
+          "name": "한우 볶음면",
+          "price": "63,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 22:33:42",
+          "sourceOrdinal": 36
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_037",
+          "name": "한우 채끝 마라 우육탕면",
+          "price": "66,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 13:48:54",
+          "sourceOrdinal": 37
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_f2108786a675_menu_038",
+          "name": "해산물 탕면",
+          "price": "55,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 23:03:05",
+          "sourceOrdinal": 38
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_d1afa7a20b1a": {
+      "name": "윤서울",
+      "address": "강남구 선릉로 805, Seoul, 06019, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:32.480Z",
+      "representativeMenu": "디너코스 / 런치",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/312810588",
+      "placeUrl": "https://place.map.kakao.com/312810588",
+      "kakaoPlaceId": "312810588",
+      "pageName": "윤서울",
+      "pageAddress": "서울 강남구 선릉로 805 W빌딩 1층 (신사동)",
+      "phone": "02-336-3323",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-02-28 15:54:55",
+      "match": {
+        "query": "윤서울 강남구 선릉로",
+        "total": 252,
+        "nameScore": 180,
+        "addressScore": 92,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 5
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_d1afa7a20b1a_menu_001",
+          "name": "디너코스",
+          "price": "240,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-02-28 15:54:55",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_d1afa7a20b1a_menu_002",
+          "name": "런치",
+          "price": "120,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-02-28 15:54:55",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_a3dccc40404c": {
+      "name": "이스트",
+      "address": "강남구 언주로 170길 26-6, 3층, Seoul, 06017, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:33.107Z",
+      "representativeMenu": "디너",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/853920783",
+      "placeUrl": "https://place.map.kakao.com/853920783",
+      "kakaoPlaceId": "853920783",
+      "pageName": "이스트",
+      "pageAddress": "서울 강남구 언주로170길 26-6 3층 (신사동)",
+      "phone": "070-8855-0470",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 11:20:33",
+      "match": {
+        "query": "이스트 강남구 언주로",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 4
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_a3dccc40404c_menu_001",
+          "name": "디너",
+          "price": "220,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 11:20:33",
+          "sourceOrdinal": 1
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_dbff87d1921f": {
+      "name": "이타닉 가든",
+      "address": "강남구 테헤란로 231, 조선팰리스 호텔 36층, Seoul, 06142, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:33.152Z",
+      "representativeMenu": "LUNCH COURSE / DINNER COURSE",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/2044587542",
+      "placeUrl": "https://place.map.kakao.com/2044587542",
+      "kakaoPlaceId": "2044587542",
+      "pageName": "이타닉 가든",
+      "pageAddress": "서울 강남구 테헤란로 231 조선팰리스 36층 (역삼동)",
+      "phone": "02-727-7610",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 15:14:32",
+      "match": {
+        "query": "이타닉 가든 강남구 테헤란로",
+        "total": 284,
+        "nameScore": 180,
+        "addressScore": 124,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 41
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_dbff87d1921f_menu_001",
+          "name": "LUNCH COURSE",
+          "price": "250,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 15:14:32",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_dbff87d1921f_menu_002",
+          "name": "DINNER COURSE",
+          "price": "370,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:14:32",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_8cd2db00c5cf": {
+      "name": "제로 컴플렉스",
+      "address": "용산구 서빙고로 59길 11-8, Seoul, 04384, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:33.164Z",
+      "representativeMenu": "Lunch / Dinner",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1327613685",
+      "placeUrl": "https://place.map.kakao.com/1327613685",
+      "kakaoPlaceId": "1327613685",
+      "pageName": "제로컴플렉스",
+      "pageAddress": "서울 용산구 서빙고로59길 11-8 (서빙고동)",
+      "phone": "02-532-0876",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2023-09-10 14:59:05",
+      "match": {
+        "query": "제로 컴플렉스 용산구 서빙고로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 5
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_8cd2db00c5cf_menu_001",
+          "name": "Lunch",
+          "price": "190,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2023-09-10 14:59:05",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8cd2db00c5cf_menu_002",
+          "name": "Dinner",
+          "price": "270,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2023-09-10 14:59:05",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_8c011f3d5409": {
+      "name": "팔레트",
+      "address": "해운대구 달맞이길 65번길 154, 3층, Busan, 48576, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:33.131Z",
+      "representativeMenu": "런치다이닝코스 / 디너다이닝코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1549531252",
+      "placeUrl": "https://place.map.kakao.com/1549531252",
+      "kakaoPlaceId": "1549531252",
+      "pageName": "팔레트",
+      "pageAddress": "부산 해운대구 달맞이길65번길 154 메르씨엘빌딩 3층 (중동)",
+      "phone": "051-626-2364",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2026-03-12 15:10:16",
+      "match": {
+        "query": "팔레트 해운대구 달맞이길",
+        "total": 248,
+        "nameScore": 180,
+        "addressScore": 88,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 22
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_8c011f3d5409_menu_001",
+          "name": "런치다이닝코스",
+          "price": "125,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2026-03-12 15:10:16",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_8c011f3d5409_menu_002",
+          "name": "디너다이닝코스",
+          "price": "250,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2026-03-12 15:10:16",
+          "sourceOrdinal": 2
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_8ac2bff03407": {
+      "name": "피오또",
+      "address": "해운대구 달맞이길 117번가길 219, 2층, Busan, 48105, 한국",
+      "status": "unmatched",
+      "verifiedAt": "2026-07-18T21:44:33.345Z",
+      "menus": [],
+      "candidates": [
+        {
+          "kakaoPlaceId": "1975930393",
+          "name": "피오또",
+          "address": "부산 해운대구 달맞이길117번가길 219",
+          "query": "피오또 해운대구 달맞이길",
+          "total": 138,
+          "nameScore": 180,
+          "addressScore": 88,
+          "distanceScore": 30,
+          "localityPenalty": -160,
+          "distanceMeters": 884
+        }
+      ]
+    },
+    "topic_enrichment_michelin-1-star_6a880d627fe6": {
+      "name": "하쿠시",
+      "address": "강남구 언주로 157길 8-4, 2, Seoul, 06024, 한국",
+      "status": "matched_with_priced_menu",
+      "verifiedAt": "2026-07-18T21:44:33.672Z",
+      "representativeMenu": "Tsuki (月)코스 / Hoshi (星) 코스",
+      "note": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "sourceUrl": "https://place-api.map.kakao.com/places/panel3/1036536748",
+      "placeUrl": "https://place.map.kakao.com/1036536748",
+      "kakaoPlaceId": "1036536748",
+      "pageName": "하쿠시",
+      "pageAddress": "서울 강남구 언주로157길 8-4 2층 (신사동)",
+      "phone": "010-7316-6212",
+      "operationStatus": "영업",
+      "menuUpdatedAt": "2025-06-30 16:21:09",
+      "match": {
+        "query": "하쿠시 강남구 언주로",
+        "total": 220,
+        "nameScore": 180,
+        "addressScore": 60,
+        "distanceScore": 140,
+        "localityPenalty": -160,
+        "distanceMeters": 3
+      },
+      "menus": [
+        {
+          "id": "topic_enrichment_michelin-1-star_6a880d627fe6_menu_001",
+          "name": "Tsuki (月)코스",
+          "price": "300,000원",
+          "isSignature": true,
+          "sourceUpdatedAt": "2025-06-30 16:21:09",
+          "sourceOrdinal": 1
+        },
+        {
+          "id": "topic_enrichment_michelin-1-star_6a880d627fe6_menu_002",
+          "name": "Hoshi (星) 코스",
+          "price": "220,000원",
+          "isSignature": false,
+          "sourceUpdatedAt": "2025-06-30 16:21:09",
+          "sourceOrdinal": 2
+        }
+      ]
+    }
+  }
+}

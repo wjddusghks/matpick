@@ -32,12 +32,10 @@ import { toast } from "sonner";
 import { Link, useLocation } from "wouter";
 import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
-import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import homeMarqueeRestaurantCards from "@/data/generated/home-marquee-restaurant-cards.json";
 import {
   getMapCollectionPath,
   type MapCollectionTopic,
@@ -59,42 +57,19 @@ import {
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
-import sungsikyungShortcutImage from "@/assets/creator-thumbnails/sungsikyung.jpg";
-import ttoganjipShortcutImage from "@/assets/creator-thumbnails/ttoganjip.webp";
-import michelinShortcutImage from "@/assets/source-thumbnails/michelin.webp";
-import popularRestaurantsShortcutImage from "@/assets/source-thumbnails/popular-restaurants.webp";
-import baekjongWokShortcutImage from "@/assets/source-thumbnails/baekjong-wok.webp";
 
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
-const RESTAURANT_MARQUEE_CARD_LIMIT = 18;
 
 type HomeShortcutTopic = {
   slug: string;
   name: string;
   path: string;
-  eyebrow: string;
-  description: string;
-  background: string;
-  imageUrl?: string;
-  imageFit?: "cover" | "contain";
-};
-
-type RestaurantMarqueeCardItem = {
-  id: string;
-  name: string;
-  category: string;
-  region: string;
-  imageUrl: string;
-  previewImageUrl: string;
 };
 
 type HomeDataModule = typeof import("@/data");
-
-const HOME_MARQUEE_RESTAURANT_CARDS =
-  homeMarqueeRestaurantCards as RestaurantMarqueeCardItem[];
 
 const SOURCE_TOPIC_PATHS: Record<string, string> = {
   ttoganjip: "/explore/topic/ttoganjip",
@@ -121,89 +96,51 @@ const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
     slug: "mogeultende",
     name: "성시경의 먹을텐데",
     path: "/explore/topic/mogeultende",
-    eyebrow: "SUNG SI KYUNG · YOUTUBE",
-    description: "음식과 이야기가 함께 쌓인 국내 맛집 기록",
-    background: "linear-gradient(145deg, #2f1726 0%, #8d365a 58%, #ff947d 100%)",
-    imageUrl: sungsikyungShortcutImage,
   },
   {
     slug: "jeonhyunmoo-plan",
     name: "전현무계획",
     path: "/explore/topic/jeonhyunmoo-plan",
-    eyebrow: "MBN · SEASON 1–4",
-    description: "길 위에서 직접 찾은 전국의 동네 맛집",
-    background: "linear-gradient(145deg, #17233d 0%, #315f87 56%, #ff9d62 100%)",
   },
   {
     slug: "culinary-class-wars",
     name: "흑백요리사 셰프 식당",
     path: "/explore/topic/culinary-class-wars",
-    eyebrow: "CHEF RESTAURANT GUIDE",
-    description: "화제의 셰프들이 운영하는 현재의 식당",
-    background: "linear-gradient(145deg, #151515 0%, #3d3d3d 58%, #b89458 100%)",
   },
   {
     slug: "old-korean-100",
     name: "오래된 한식당 100선",
     path: "/explore/topic/old-korean-100",
-    eyebrow: "KOREAN HERITAGE 100",
-    description: "오랜 시간 한 자리를 지켜온 한국의 맛",
-    background: "linear-gradient(145deg, #203329 0%, #55735b 56%, #c79a62 100%)",
-    imageUrl: "/source-covers/old-korean-100.jpg",
   },
   {
     slug: "seoul-taste-100",
     name: "서울미식 100선",
     path: "/explore/topic/seoul-taste-100",
-    eyebrow: "TASTE OF SEOUL · 2025",
-    description: "미식 전문가가 고른 서울의 레스토랑과 바",
-    background: "linear-gradient(145deg, #152b4f 0%, #246b8f 55%, #54c9b6 100%)",
   },
   {
     slug: "ttoganjip",
     name: "또간집",
     path: "/explore/topic/ttoganjip",
-    eyebrow: "LOCAL REVISIT GUIDE",
-    description: "다시 찾고 싶은 동네 대표 맛집",
-    background: "linear-gradient(145deg, #531e35 0%, #dd5575 58%, #ffb06d 100%)",
-    imageUrl: ttoganjipShortcutImage,
   },
   {
     slug: "popular-restaurants",
     name: "인기맛집",
     path: "/explore/topic/popular-restaurants",
-    eyebrow: "MATPICK CURATION",
-    description: "지역과 메뉴로 빠르게 찾는 인기 식당",
-    background: "linear-gradient(145deg, #3d234a 0%, #7d4e98 58%, #ef8eae 100%)",
-    imageUrl: popularRestaurantsShortcutImage,
   },
   {
     slug: "michelin",
     name: "미쉐린",
     path: "/explore/topic/michelin",
-    eyebrow: "MICHELIN GUIDE",
-    description: "스타부터 빕 구르망까지 한눈에",
-    background: "linear-gradient(145deg, #5e151b 0%, #b72532 58%, #e9a16f 100%)",
-    imageUrl: michelinShortcutImage,
   },
   {
     slug: "baekjong-wok",
     name: "백종원의 3대천왕",
     path: "/explore/topic/baekjong-wok",
-    eyebrow: "KOREAN FOOD ARCHIVE",
-    description: "전국을 뜨겁게 달군 메뉴별 대표 맛집",
-    background: "linear-gradient(145deg, #472316 0%, #a14d2e 55%, #efb14a 100%)",
-    imageUrl: baekjongWokShortcutImage,
-    imageFit: "contain",
   },
   {
     slug: "sikgaek-baekban-trip",
     name: "백반기행",
     path: "/explore/topic/sikgaek-baekban-trip",
-    eyebrow: "KOREAN TABLE JOURNEY",
-    description: "지역의 삶과 손맛을 담은 백반 한 상",
-    background: "linear-gradient(145deg, #29301f 0%, #687546 56%, #d4a85c 100%)",
-    imageUrl: "/source-covers/sikgaek-baekban-trip-menu-v2.jpg",
   },
 ];
 
@@ -263,17 +200,19 @@ const HOME_UI_KO = {
     login: "\uB85C\uADF8\uC778",
   },
   heroSubtitle:
-    "\uB0B4 \uC8FC\uBCC0 \uC720\uBA85\uD55C \uB9DB\uC9D1\uC744 \uD55C\uACF3\uC5D0\uC11C \uCC3E\uC544\uBCF4\uC138\uC694!",
+    "방송·유튜브·가이드에 소개된 유명 식당을 내 위치 주변에서 찾아보세요.",
   searchPlaceholder:
-    "\uC9C0\uC5ED, \uB9DB\uC9D1, \uC74C\uC2DD\uC744 \uAC80\uC0C9\uD574 \uBCF4\uC138\uC694!",
+    "평택시, 성수동, 식당명을 검색하세요",
   searchHelperText:
-    "\uAC80\uC0C9\uC5B4 \uC5C6\uC774 \uB3CB\uBCF4\uAE30\uB97C \uB204\uB974\uBA74 \uB0B4 \uC8FC\uBCC0 \uC720\uBA85 \uB9DB\uC9D1 \uC9C0\uB3C4\uAC00 \uBC14\uB85C \uC5F4\uB824\uC694.",
+    "지역이나 동네를 검색하면 그곳의 유명 식당을 지도에서 바로 보여드려요.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "어떤 이야기로 맛집을 찾아볼까요?",
   topicSectionAction: "전체 주제",
   topicCardCta: "맛집 보기",
   searchButtonLabel: "\uAC80\uC0C9",
-  nearbyMapButtonLabel: "주변 맛집 지도 보기",
+  nearbyMapButtonLabel: "현재 위치에서 찾기",
+  sourceProofLabel: "방송·유튜브·가이드에 소개된 식당만 모았습니다.",
+  allTopicsLabel: "전체 주제 보기",
   collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
     openAria: "주제 카드 자세히 보기",
@@ -366,16 +305,18 @@ const HOME_UI_EN = {
     login: "Sign in",
   },
   heroSubtitle:
-    "Find famous restaurants near you in one place.",
-  searchPlaceholder: "Search a region, restaurant, or cuisine",
+    "Find restaurants near you that were featured by creators, TV shows, and trusted guides.",
+  searchPlaceholder: "Search Pyeongtaek, Seongsu, or a restaurant",
   searchHelperText:
-    "Press search with an empty field to open the nearby famous restaurant map.",
+    "Search an area or neighborhood to see its famous restaurants directly on the map.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "Choose a story, then find a table",
   topicSectionAction: "All topics",
   topicCardCta: "View restaurants",
   searchButtonLabel: "Search",
-  nearbyMapButtonLabel: "Open nearby restaurant map",
+  nearbyMapButtonLabel: "Find near my location",
+  sourceProofLabel: "Only restaurants featured by creators, TV shows, or trusted guides.",
+  allTopicsLabel: "Browse all topics",
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
@@ -527,16 +468,6 @@ function saveCollectionSocialState(state: CollectionSocialState) {
   }
 
   window.localStorage.setItem(COLLECTION_SOCIAL_KEY, JSON.stringify(state));
-}
-
-function getRandomRestaurantMarqueeCards(): RestaurantMarqueeCardItem[] {
-  const shuffled = [...HOME_MARQUEE_RESTAURANT_CARDS];
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
-  }
-
-  return shuffled.slice(0, RESTAURANT_MARQUEE_CARD_LIMIT);
 }
 
 function getHomeOptimizedCardImageUrl(imageUrl?: string | null) {
@@ -736,67 +667,6 @@ function SearchResultItem({
   );
 }
 
-function TopicShortcutButton({
-  topic,
-  href,
-  onClick,
-  ctaLabel,
-}: {
-  topic: HomeShortcutTopic;
-  href: string;
-  onClick?: () => void;
-  ctaLabel: string;
-}) {
-  return (
-    <Link
-      href={href}
-      title={topic.name}
-      onClick={onClick}
-      className="group relative flex h-[268px] w-[132px] flex-shrink-0 flex-col overflow-hidden rounded-[24px] p-4 text-left text-white shadow-[0_16px_38px_rgba(38,24,31,0.16)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_54px_rgba(38,24,31,0.24)] sm:h-[310px] sm:w-[164px] sm:rounded-[28px] sm:p-5"
-      style={{ background: topic.background }}
-    >
-      <span className="pointer-events-none absolute -right-12 -top-10 h-32 w-32 rounded-full border border-white/20 bg-white/8 transition duration-500 group-hover:scale-110 sm:h-40 sm:w-40" />
-      <span className="pointer-events-none absolute -bottom-12 -left-10 h-28 w-28 rounded-full border border-white/12 bg-black/10 sm:h-36 sm:w-36" />
-      <span className="pointer-events-none absolute bottom-12 right-4 h-16 w-px bg-white/18" />
-
-      <span className="relative line-clamp-2 text-[8px] font-black uppercase leading-3 tracking-[0.15em] text-white/68 sm:text-[9px] sm:leading-4 sm:tracking-[0.17em]">
-        {topic.eyebrow}
-      </span>
-
-      {topic.imageUrl ? (
-        <span className="relative mt-4 block h-[82px] w-full overflow-hidden rounded-[17px] border border-white/20 bg-white/12 shadow-[0_12px_24px_rgba(24,14,20,0.18)] sm:mt-5 sm:h-[104px] sm:rounded-[20px]">
-          <img
-            src={topic.imageUrl}
-            alt=""
-            className={`h-full w-full ${
-              topic.imageFit === "contain" ? "object-contain p-2" : "object-cover"
-            }`}
-            loading="lazy"
-            decoding="async"
-          />
-          <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(18,9,14,0.14))]" />
-        </span>
-      ) : (
-        <span className="relative mt-5 flex h-[74px] items-end overflow-hidden border-y border-white/14 pb-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/42 sm:h-[96px]">
-          MATPICK DATA
-        </span>
-      )}
-
-      <span className="relative mt-auto break-keep text-[20px] font-black leading-[1.2] tracking-[-0.04em] sm:text-[24px]">
-        {topic.name}
-      </span>
-      <span className="relative mt-2 hidden line-clamp-2 break-keep text-[11px] font-medium leading-[1.05rem] text-white/68 sm:block">
-        {topic.description}
-      </span>
-
-      <span className="relative mt-4 flex items-center gap-1 text-[11px] font-black text-white sm:mt-5 sm:text-xs">
-        {ctaLabel}
-        <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 sm:h-4 sm:w-4" />
-      </span>
-    </Link>
-  );
-}
-
 function BenefitItem({
   icon,
   title,
@@ -962,7 +832,6 @@ export default function Home() {
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
   const userDisplayName = getDisplayName(user);
   const isAdmin = isAdminUser(user);
-  const restaurantMarqueeCards = useMemo(() => getRandomRestaurantMarqueeCards(), []);
   const providerLabel =
     user?.provider === "kakao"
       ? isEnglish
@@ -981,11 +850,11 @@ export default function Home() {
 
   useSeo({
     title: isEnglish
-      ? "Matpick | Discover creator-picked restaurants in Korea"
-      : "맛픽 Matpick | 크리에이터 추천 맛집 탐색",
+      ? "Matpick | Find famous restaurants near you"
+      : "맛픽 Matpick | 내 주변 유명 맛집 찾기",
     description: isEnglish
-      ? "Find restaurants featured by YouTube creators, TV shows, and curated guides in one place with maps, menus, and saved topics."
-      : "유튜브 방송, 미쉐린 가이드 같은 다양한 소스를 한곳에 모아 취향과 위치에 맞는 맛집을 찾는 서비스 맛픽.",
+      ? "Find restaurants near your current location or a searched place that were featured by creators, TV shows, and trusted guides."
+      : "방송·유튜브·미쉐린 가이드에 소개된 유명 식당을 현재 위치와 검색한 지역 주변에서 찾는 맛집 지도 서비스.",
     path: "/",
     locale,
     jsonLd: [
@@ -1160,7 +1029,6 @@ export default function Home() {
           clearStoredLocation();
           setLocationState("unsupported");
           persistLocationStatus("unsupported");
-          setShowLocationPrompt(true);
         }
         return;
       }
@@ -1205,10 +1073,6 @@ export default function Home() {
           .catch(() => {
             // Keep the last verified location when a background refresh is unavailable.
           });
-      }
-
-      if (nextState !== "granted") {
-        setShowLocationPrompt(true);
       }
     }, 450);
 
@@ -1426,6 +1290,21 @@ export default function Home() {
     window.localStorage.removeItem(RECENT_KEY);
   }, []);
 
+  const handleNearbySearch = useCallback(() => {
+    trackMarketingEvent("nearby_search_click", {
+      location_state: locationState,
+      source: "home",
+    });
+
+    if (locationState === "granted") {
+      navigate("/map?type=nearby");
+      return;
+    }
+
+    setLocationFeedback(null);
+    setShowLocationPrompt(true);
+  }, [locationState, navigate]);
+
   const handlePrimarySearch = useCallback(() => {
     trackMarketingEvent("search_submit", {
       query: normalizedQuery || "",
@@ -1434,7 +1313,7 @@ export default function Home() {
     });
 
     if (!normalizedQuery) {
-      navigate("/map?type=nearby");
+      handleNearbySearch();
       return;
     }
 
@@ -1448,7 +1327,7 @@ export default function Home() {
     }
 
     navigate(`/map?type=query&value=${encodeURIComponent(query.trim())}`);
-  }, [filteredResults, handleSelect, hoveredIndex, navigate, normalizedQuery, query]);
+  }, [filteredResults, handleNearbySearch, handleSelect, hoveredIndex, navigate, normalizedQuery, query]);
 
   const handleSearchKeyDown = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
@@ -1513,6 +1392,7 @@ export default function Home() {
       persistLocationStatus("granted");
       window.localStorage.removeItem(LOCATION_DISMISSED_KEY);
       setShowLocationPrompt(false);
+      navigate("/map?type=nearby");
     } catch (error) {
       if (error instanceof LocationRequestError && error.code === "aborted") {
         return;
@@ -1540,7 +1420,7 @@ export default function Home() {
         setIsRequestingLocation(false);
       }
     }
-  }, [ui.location]);
+  }, [navigate, ui.location]);
 
   const handleDismissLocation = useCallback(() => {
     window.localStorage.setItem(LOCATION_DISMISSED_KEY, "true");
@@ -1804,8 +1684,8 @@ export default function Home() {
           </p>
 
           <div ref={searchRef} className="relative mt-8 w-full max-w-[810px] sm:mt-10">
-            <div className="overflow-hidden rounded-[30px] border border-[#ff9ea9] bg-white/96 shadow-[0_18px_60px_rgba(255,102,132,0.14)] backdrop-blur-sm">
-              <div className="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-9 sm:py-4">
+            <div className="overflow-hidden rounded-[28px] border border-[#ff9ea9] bg-white/96 shadow-[0_18px_60px_rgba(255,102,132,0.14)] backdrop-blur-sm">
+              <div className="flex items-center gap-2 px-3 py-3 sm:gap-4 sm:px-5 sm:py-4">
                 <input
                   type="text"
                   value={query}
@@ -1819,21 +1699,18 @@ export default function Home() {
                   }}
                   onKeyDown={handleSearchKeyDown}
                   placeholder={ui.searchPlaceholder}
-                  className="w-full bg-transparent text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:text-[21px]"
+                  aria-label={ui.searchPlaceholder}
+                  className="min-w-0 flex-1 bg-transparent px-2 text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:px-4 sm:text-[20px]"
                 />
                 <button
                   type="button"
                   onClick={handlePrimarySearch}
-                  className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full text-[#111111] transition hover:bg-[#fff3f4] sm:h-12 sm:w-12"
-                  aria-label={
-                    hasSearchQuery ? ui.searchButtonLabel : ui.nearbyMapButtonLabel
-                  }
+                  disabled={!hasSearchQuery}
+                  className="inline-flex h-11 flex-shrink-0 items-center justify-center gap-1.5 rounded-[18px] bg-[#ff7b83] px-4 text-sm font-bold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:bg-[#eadfe1] sm:h-12 sm:px-6 sm:text-base"
+                  aria-label={ui.searchButtonLabel}
                 >
-                  {hasSearchQuery ? (
-                    <Search className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
-                  ) : (
-                    <MapPin className="h-7 w-7 sm:h-9 sm:w-9" strokeWidth={2.1} />
-                  )}
+                  <Search className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2.2} />
+                  <span>{ui.searchButtonLabel}</span>
                 </button>
               </div>
             </div>
@@ -1841,51 +1718,48 @@ export default function Home() {
               {ui.searchHelperText}
             </p>
 
-            <section className="mt-8 text-left sm:mt-10" aria-labelledby="home-topic-heading">
-              <div className="mb-4 flex items-end justify-between gap-4 px-1 sm:mb-5">
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#c08d96]">
-                    {ui.topicSectionEyebrow}
-                  </p>
-                  <h2
-                    id="home-topic-heading"
-                    className="mt-1.5 break-keep text-xl font-black tracking-[-0.035em] text-[#231f20] sm:text-2xl"
+            <button
+              type="button"
+              onClick={handleNearbySearch}
+              className="mx-auto mt-5 inline-flex h-12 w-full max-w-[360px] items-center justify-center gap-2 rounded-[20px] border border-[#ffd1d7] bg-white/92 px-5 text-[15px] font-bold text-[#353033] shadow-[0_10px_30px_rgba(80,46,56,0.07)] transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:mt-6 sm:h-14 sm:text-base"
+            >
+              <MapPin className="h-5 w-5 text-[#ff6f7c]" strokeWidth={2.2} />
+              {ui.nearbyMapButtonLabel}
+            </button>
+
+            <section className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7" aria-label={ui.sourceProofLabel}>
+              <p className="text-[13px] font-semibold text-[#8f8185] sm:text-sm">
+                {ui.sourceProofLabel}
+              </p>
+              <div className="mt-4 flex flex-wrap justify-center gap-2">
+                {homeShortcutTopics.slice(0, 6).map((topic) => (
+                  <Link
+                    key={topic.slug}
+                    href={topic.path}
+                    onClick={() =>
+                      trackMarketingEvent("topic_shortcut_click", {
+                        topic_slug: topic.slug,
+                        topic_name: topic.name,
+                        source: "home_pill",
+                      })
+                    }
+                    className="rounded-full border border-[#eee2e4] bg-white/86 px-3 py-2 text-xs font-semibold text-[#6f6266] transition hover:border-[#ffbbc4] hover:text-[#ff6677] sm:px-4 sm:text-sm"
                   >
-                    {ui.topicSectionTitle}
-                  </h2>
-                </div>
+                    {topic.name}
+                  </Link>
+                ))}
                 <Link
                   href="/explore"
-                  className="hidden shrink-0 items-center gap-1 text-xs font-bold text-[#8f7b7f] transition hover:text-[#ff6f7d] sm:flex"
+                  className="inline-flex items-center gap-1 rounded-full border border-[#ffd1d7] bg-[#fff6f7] px-3 py-2 text-xs font-bold text-[#ff6f7c] transition hover:bg-[#ffedf0] sm:px-4 sm:text-sm"
                 >
-                  {ui.topicSectionAction}
-                  <ChevronRight className="h-4 w-4" />
+                  {ui.allTopicsLabel}
+                  <ChevronRight className="h-3.5 w-3.5" />
                 </Link>
-              </div>
-
-              <div className="-mx-1 overflow-x-auto px-1 pb-5 pt-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                <div className="flex min-w-max gap-4">
-                  {homeShortcutTopics.map((topic) => (
-                    <TopicShortcutButton
-                      key={topic.slug}
-                      topic={topic}
-                      href={topic.path}
-                      ctaLabel={ui.topicCardCta}
-                      onClick={() =>
-                        trackMarketingEvent("topic_shortcut_click", {
-                          topic_slug: topic.slug,
-                          topic_name: topic.name,
-                          source: "home",
-                        })
-                      }
-                    />
-                  ))}
-                </div>
               </div>
             </section>
 
             {isFocused ? (
-              <div className="absolute left-0 right-0 top-full z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)]">
+              <div className="absolute left-0 right-0 top-[74px] z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)] sm:top-[84px]">
                 <div className="border-t border-[#ffb2ba] bg-white">
                   {normalizedQuery ? (
                     filteredResults.length > 0 ? (
@@ -1966,15 +1840,6 @@ export default function Home() {
             ) : null}
           </div>
         </section>
-
-        <FeaturedCollectionMarquee
-          label={ui.collectionMarqueeLabel}
-          cards={restaurantMarqueeCards}
-        />
-
-        <div className="mt-8 w-full max-w-[840px] sm:mt-10">
-          <RevenuePlacement providers={["kakao", "coupang"]} />
-        </div>
       </main>
 
       <div
@@ -1985,114 +1850,6 @@ export default function Home() {
         <SiteFooter />
       </div>
     </div>
-  );
-}
-
-function FeaturedCollectionMarquee({
-  label,
-  cards,
-}: {
-  label: string;
-  cards: RestaurantMarqueeCardItem[];
-}) {
-  const [, navigate] = useLocation();
-
-  const openRestaurant = useCallback(
-    (card: RestaurantMarqueeCardItem, duplicateIndex: number) => {
-      trackMarketingEvent("home_restaurant_marquee_click", {
-        restaurant_id: card.id,
-        restaurant_name: card.name,
-        duplicate_index: duplicateIndex,
-      });
-      navigate(`/restaurant/${card.id}`);
-    },
-    [navigate]
-  );
-
-  if (cards.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="relative left-1/2 mt-9 w-screen -translate-x-1/2 overflow-hidden border-y border-[#ffe1e7] bg-[#fff0f3] py-5 text-left sm:mt-11 sm:py-6">
-      <div className="mx-auto mb-4 flex w-full max-w-[980px] items-center justify-between px-4 sm:px-8">
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#ff7b83]">
-          {label}
-        </p>
-      </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#fff0f3] to-transparent sm:w-28" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#fff0f3] to-transparent sm:w-28" />
-      <div className="overflow-hidden px-3 sm:px-4">
-        <div className="matpick-marquee-track">
-          {[0, 1].map((groupIndex) => (
-            <div
-              className="matpick-marquee-group"
-              key={groupIndex}
-              aria-hidden={groupIndex === 1}
-            >
-              {cards.map((card, index) => {
-                const duplicateIndex = groupIndex * cards.length + index;
-
-                return (
-                  <RestaurantMarqueeCard
-                    key={`${card.id}_${card.previewImageUrl}_${groupIndex}`}
-                    card={card}
-                    duplicateIndex={duplicateIndex}
-                    isDuplicate={groupIndex === 1}
-                    onOpen={() => openRestaurant(card, duplicateIndex)}
-                  />
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function RestaurantMarqueeCard({
-  card,
-  duplicateIndex,
-  isDuplicate,
-  onOpen,
-}: {
-  card: RestaurantMarqueeCardItem;
-  duplicateIndex: number;
-  isDuplicate: boolean;
-  onOpen: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onOpen}
-      className="group relative aspect-[2/3] w-[178px] flex-shrink-0 self-start overflow-hidden rounded-[10px] border border-white/75 bg-[#1d181a] p-0 text-left shadow-[0_16px_36px_rgba(255,98,124,0.16)] transition hover:-translate-y-1 hover:shadow-[0_22px_44px_rgba(255,98,124,0.22)] sm:w-[218px] lg:w-[236px]"
-      aria-label={isDuplicate ? undefined : `${card.name} 식당 카드 보기`}
-      tabIndex={isDuplicate ? -1 : 0}
-      data-marquee-card={card.id}
-    >
-      <span
-        className="pointer-events-none absolute -inset-5 scale-110 bg-cover bg-center opacity-55 blur-2xl"
-        style={{ backgroundImage: `url("${card.previewImageUrl}")` }}
-        aria-hidden="true"
-      />
-      <span
-        className="pointer-events-none absolute inset-0 bg-black/25"
-        aria-hidden="true"
-      />
-      <img
-        src={card.previewImageUrl}
-        alt=""
-        className="absolute inset-0 block h-full w-full object-contain"
-        width={720}
-        height={1080}
-        loading="eager"
-        decoding="async"
-        fetchPriority={duplicateIndex < 2 ? "high" : "low"}
-        draggable={false}
-      />
-      <span className="pointer-events-none absolute inset-0 rounded-[10px] ring-1 ring-inset ring-white/0 transition group-hover:bg-black/5 group-hover:ring-white/70" />
-    </button>
   );
 }
 

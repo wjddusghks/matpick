@@ -44,7 +44,6 @@ import {
 } from "@/data/mapCollections";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
-import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
   clearStoredLocation,
@@ -91,7 +90,7 @@ const MAP_COPY = {
     regionLabel: "지역",
     cuisineLabel: "음식",
     sourceLabel: "주제",
-    sponsoredLabel: "Sponsored",
+    featuredByLabel: "유명한 이유",
     priceLabel: "대표 가격",
     expandResults: "목록 펼치기",
     collapseResults: "목록 접기",
@@ -133,7 +132,7 @@ const MAP_COPY = {
     regionLabel: "Region",
     cuisineLabel: "Cuisine",
     sourceLabel: "Topic",
-    sponsoredLabel: "Sponsored",
+    featuredByLabel: "Featured by",
     priceLabel: "From",
     expandResults: "Expand results",
     collapseResults: "Collapse results",
@@ -352,10 +351,12 @@ function SearchDropdownItem({
 function RestaurantCard({
   restaurant,
   selected,
+  distanceMeters,
   onSelect,
 }: {
   restaurant: Restaurant;
   selected: boolean;
+  distanceMeters?: number | null;
   onSelect: () => void;
 }) {
   const [, navigate] = useLocation();
@@ -407,6 +408,12 @@ function RestaurantCard({
             <span className="text-xs text-[#8c8c8c]">
               {translateCuisineLabel(restaurant.category, locale)}
             </span>
+            {distanceMeters != null ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-[#fff1f3] px-2 py-0.5 text-[11px] font-bold text-[#ff6f7c]">
+                <MapPin className="h-3 w-3" strokeWidth={2.2} />
+                {formatDistance(distanceMeters, locale)}
+              </span>
+            ) : null}
           </div>
 
           <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
@@ -437,26 +444,33 @@ function RestaurantCard({
             <p className="mt-1 text-[11px] font-medium text-[#9b9b9b]">{copy.photoPending}</p>
           ) : null}
 
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {creatorsForRestaurant.map((creator) => (
-              <span
-                key={creator.id}
-                className="inline-flex items-center rounded-full border border-[#ffd3d8] bg-[#fff7f8] px-2 py-0.5 text-[11px] font-medium text-[#ff7b83]"
-              >
-                {getCreatorDisplayName(creator)}
-              </span>
-            ))}
+          {creatorsForRestaurant.length > 0 || sourcesForRestaurant.length > 0 ? (
+            <div className="mt-2.5">
+              <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#a69a9d]">
+                {copy.featuredByLabel}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {creatorsForRestaurant.map((creator) => (
+                  <span
+                    key={creator.id}
+                    className="inline-flex items-center rounded-full border border-[#ffd3d8] bg-[#fff7f8] px-2 py-0.5 text-[11px] font-medium text-[#ff7b83]"
+                  >
+                    {getCreatorDisplayName(creator)}
+                  </span>
+                ))}
 
-            {sourcesForRestaurant.map((source) => (
-              <span
-                key={source.id}
-                title={getSourceDisplayName(source)}
-                className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
-              >
-                <span className="truncate">{getSourceDisplayName(source)}</span>
-              </span>
-            ))}
-          </div>
+                {sourcesForRestaurant.map((source) => (
+                  <span
+                    key={source.id}
+                    title={getSourceDisplayName(source)}
+                    className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
+                  >
+                    <span className="truncate">{getSourceDisplayName(source)}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
 
@@ -473,6 +487,18 @@ function RestaurantCard({
       ) : null}
     </div>
   );
+}
+
+function formatDistance(distanceMeters: number, locale: AppLocale) {
+  if (distanceMeters < 1000) {
+    return locale === "en"
+      ? `${Math.round(distanceMeters).toLocaleString()} m`
+      : `${Math.round(distanceMeters).toLocaleString()}m`;
+  }
+
+  const distanceKm = distanceMeters / 1000;
+  const formattedDistance = distanceKm < 10 ? distanceKm.toFixed(1) : Math.round(distanceKm).toString();
+  return locale === "en" ? `${formattedDistance} km` : `${formattedDistance}km`;
 }
 
 export default function SearchMap() {
@@ -630,6 +656,7 @@ export default function SearchMap() {
     () => orderedRestaurants.filter((restaurant) => !restaurant.isOverseas),
     [orderedRestaurants]
   );
+  const listRestaurants = type === "nearby" ? domesticRestaurants : orderedRestaurants;
 
   useEffect(() => {
     if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
@@ -677,7 +704,7 @@ export default function SearchMap() {
     const root = listRef.current;
     const target = listLoadMoreRef.current;
 
-    if (!root || !target || visibleListCount >= orderedRestaurants.length) {
+    if (!root || !target || visibleListCount >= listRestaurants.length) {
       return;
     }
 
@@ -688,7 +715,7 @@ export default function SearchMap() {
             return;
           }
 
-          setVisibleListCount((prev) => Math.min(prev + resultPageSize, orderedRestaurants.length));
+          setVisibleListCount((prev) => Math.min(prev + resultPageSize, listRestaurants.length));
         });
       },
       {
@@ -699,7 +726,7 @@ export default function SearchMap() {
 
     observer.observe(target);
     return () => observer.disconnect();
-  }, [orderedRestaurants.length, resultPageSize, visibleListCount]);
+  }, [listRestaurants.length, resultPageSize, visibleListCount]);
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) {
@@ -778,8 +805,30 @@ export default function SearchMap() {
 
   const restaurantsForMap = domesticRestaurants;
   const visibleRestaurants = useMemo(
-    () => orderedRestaurants.slice(0, visibleListCount),
-    [orderedRestaurants, visibleListCount]
+    () => listRestaurants.slice(0, visibleListCount),
+    [listRestaurants, visibleListCount]
+  );
+
+  const getRestaurantDistance = useCallback(
+    (restaurant: Restaurant) => {
+      if (
+        type !== "nearby" ||
+        !currentLocation ||
+        restaurant.isOverseas ||
+        restaurant.lat == null ||
+        restaurant.lng == null ||
+        restaurant.lat === 0 ||
+        restaurant.lng === 0
+      ) {
+        return null;
+      }
+
+      return getDistanceInMeters(currentLocation, {
+        lat: restaurant.lat,
+        lng: restaurant.lng,
+      });
+    },
+    [currentLocation, type]
   );
 
   const nearestRestaurantId = useMemo<string | null>(() => {
@@ -963,17 +1012,18 @@ export default function SearchMap() {
     </div>
   );
 
-  const restaurantList = orderedRestaurants.length > 0 ? (
+  const restaurantList = listRestaurants.length > 0 ? (
     <>
       {visibleRestaurants.map((restaurant) => (
         <RestaurantCard
           key={restaurant.id}
           restaurant={restaurant}
           selected={selectedId === restaurant.id}
+          distanceMeters={getRestaurantDistance(restaurant)}
           onSelect={() => handleRestaurantSelect(restaurant.id)}
         />
       ))}
-      {visibleListCount < orderedRestaurants.length ? (
+      {visibleListCount < listRestaurants.length ? (
         <div
           ref={listLoadMoreRef}
           className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
@@ -987,6 +1037,20 @@ export default function SearchMap() {
       <p className="text-4xl">🍽️</p>
       <p className="mt-4 text-sm font-semibold text-[#333]">{copy.noResultsTitle}</p>
       <p className="mt-2 text-xs leading-6 text-[#8a8a8a]">{copy.noResultsDescription}</p>
+    </div>
+  );
+
+  const resultSummary = (
+    <div className="mt-4 rounded-2xl border border-[#f1e7e9] bg-[#fffafa] px-4 py-3.5">
+      <div className="flex items-center justify-between gap-3">
+        <p className="truncate text-sm font-bold text-[#282426]">{title}</p>
+        <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#ff6f7c] shadow-sm">
+          {copy.resultCount(listRestaurants.length)}
+        </span>
+      </div>
+      {description ? (
+        <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-[#8b7f82]">{description}</p>
+      ) : null}
     </div>
   );
 
@@ -1034,7 +1098,7 @@ export default function SearchMap() {
   );
 
   const mobileSheetHeight =
-    orderedRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
+    listRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
 
   return (
     <div className="h-[100dvh] overflow-hidden bg-white">
@@ -1061,7 +1125,12 @@ export default function SearchMap() {
               >
                 <div className="flex flex-1 flex-col gap-1">
                   <div className="h-1.5 w-12 rounded-full bg-[#eadfe1]" />
-                  <p className="text-sm font-semibold text-[#1a1a1a]">{title}</p>
+                  <div className="flex items-center gap-2">
+                    <p className="truncate text-sm font-semibold text-[#1a1a1a]">{title}</p>
+                    <span className="shrink-0 text-xs font-bold text-[#ff6f7c]">
+                      {copy.resultCount(listRestaurants.length)}
+                    </span>
+                  </div>
                 </div>
                 <span className="rounded-full border border-[#f1d8db] bg-[#fff6f7] p-2 text-[#ff7b83]">
                   {mobileSheetExpanded ? (
@@ -1086,10 +1155,7 @@ export default function SearchMap() {
           <aside className="flex h-full w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
             <div className="border-b border-[#f0f0f0] p-4">
               {searchControls}
-
-              <div className="mt-4">
-                <RevenuePlacement providers={["kakao"]} label={copy.sponsoredLabel} />
-              </div>
+              {resultSummary}
             </div>
 
             <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto">

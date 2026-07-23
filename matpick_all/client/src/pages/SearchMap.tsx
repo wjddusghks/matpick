@@ -75,13 +75,15 @@ const RELATED_TOPICS_LABEL: Record<AppLocale, string> = {
   en: "Related topics",
 };
 
+const NEARBY_RESTAURANT_LIMIT = 100;
+
 const MAP_COPY = {
   ko: {
     searchResults: "검색 결과",
     allRestaurants: "전체 맛집",
     nearbyRestaurants: "내 주변 유명 맛집",
     nearbyDescription:
-      "현재 위치를 기준으로 방송·크리에이터·가이드에 소개된 맛집을 지도에서 먼저 보여드려요.",
+      "현재 위치에서 가까운 순서로 유명 맛집 100곳을 보여드려요.",
     regionRestaurants: (value: string) => `${value} 맛집`,
     cuisineRestaurants: (value: string) => `${value} 맛집`,
     sourceRestaurants: (value: string) => `${value} 맛집`,
@@ -123,7 +125,7 @@ const MAP_COPY = {
     allRestaurants: "All restaurants",
     nearbyRestaurants: "Famous restaurants near me",
     nearbyDescription:
-      "Browse restaurants near your current location that appeared in creator, TV, or guide sources.",
+      "Browse up to 100 famous restaurants ordered by distance from your current location.",
     regionRestaurants: (value: string) => `${value} restaurants`,
     cuisineRestaurants: (value: string) => `${value} restaurants`,
     sourceRestaurants: (value: string) => `${value} restaurants`,
@@ -731,23 +733,33 @@ export default function SearchMap() {
   );
 
   const orderedRestaurants = useMemo(() => {
-    if (type !== "nearby" || !currentLocation) {
+    if (type !== "nearby") {
       return deferredRestaurants;
     }
 
+    if (!currentLocation) {
+      return [];
+    }
+
     return deferredRestaurants
+      .filter(
+        (restaurant) =>
+          !restaurant.isOverseas &&
+          restaurant.lat != null &&
+          restaurant.lng != null &&
+          restaurant.lat !== 0 &&
+          restaurant.lng !== 0
+      )
       .map((restaurant, index) => ({
         restaurant,
         index,
-        distance:
-          !restaurant.isOverseas && restaurant.lat !== 0 && restaurant.lng !== 0
-            ? getDistanceInMeters(currentLocation, {
-                lat: restaurant.lat,
-                lng: restaurant.lng,
-              })
-            : Number.POSITIVE_INFINITY,
+        distance: getDistanceInMeters(currentLocation, {
+          lat: restaurant.lat,
+          lng: restaurant.lng,
+        }),
       }))
       .sort((left, right) => left.distance - right.distance || left.index - right.index)
+      .slice(0, NEARBY_RESTAURANT_LIMIT)
       .map(({ restaurant }) => restaurant);
   }, [currentLocation, deferredRestaurants, type]);
 
@@ -1139,6 +1151,11 @@ export default function SearchMap() {
         </div>
       ) : null}
     </>
+  ) : type === "nearby" && isLocating ? (
+    <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
+      <LoaderCircle className="h-7 w-7 animate-spin text-[#ff7b83]" />
+      <p className="mt-4 text-sm font-semibold text-[#333]">{copy.locating}</p>
+    </div>
   ) : (
     <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
       <p className="text-4xl">🍽️</p>

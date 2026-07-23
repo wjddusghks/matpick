@@ -21,6 +21,10 @@ const VIEWPORT_GRID_ROWS = 12;
 const DETAIL_MARKER_ZOOM = 14;
 const FOCUSED_MARKER_ZOOM = 16;
 const CURRENT_LOCATION_ZOOM = 15;
+const CURRENT_LOCATION_FIT_RESTAURANT_COUNT = 5;
+const CURRENT_LOCATION_FIT_MAX_ZOOM = 16;
+const CURRENT_LOCATION_FIT_PADDING = 56;
+const CURRENT_LOCATION_MIN_LATITUDE_SPAN = 0.0005;
 const MAP_MAX_ZOOM = 19;
 const DUPLICATE_COORDINATE_PRECISION = 5;
 const DUPLICATE_MARKER_OFFSET = 0.000045;
@@ -56,6 +60,63 @@ const MAP_FALLBACK_BOUNDS: MapViewportBounds = {
   east: 132,
   west: 124,
 };
+
+function fitMapToCurrentLocation(
+  map: naver.maps.Map,
+  currentLocation: StoredLocation,
+  restaurants: Restaurant[]
+) {
+  const nearestRestaurants = restaurants.slice(
+    0,
+    CURRENT_LOCATION_FIT_RESTAURANT_COUNT
+  );
+  const currentPosition = new naver.maps.LatLng(
+    currentLocation.lat,
+    currentLocation.lng
+  );
+
+  if (nearestRestaurants.length === 0) {
+    map.setCenter(currentPosition);
+    map.setZoom(CURRENT_LOCATION_ZOOM);
+    return;
+  }
+
+  const latitudeSpan = Math.max(
+    CURRENT_LOCATION_MIN_LATITUDE_SPAN,
+    ...nearestRestaurants.map((restaurant) =>
+      Math.abs(restaurant.lat - currentLocation.lat)
+    )
+  );
+  const longitudeScale = Math.max(
+    Math.cos((currentLocation.lat * Math.PI) / 180),
+    0.35
+  );
+  const longitudeSpan = Math.max(
+    CURRENT_LOCATION_MIN_LATITUDE_SPAN / longitudeScale,
+    ...nearestRestaurants.map((restaurant) =>
+      Math.abs(restaurant.lng - currentLocation.lng)
+    )
+  );
+  const bounds = new naver.maps.LatLngBounds(
+    new naver.maps.LatLng(
+      currentLocation.lat - latitudeSpan,
+      currentLocation.lng - longitudeSpan
+    ),
+    new naver.maps.LatLng(
+      currentLocation.lat + latitudeSpan,
+      currentLocation.lng + longitudeSpan
+    )
+  );
+
+  map.fitBounds(bounds, {
+    top: CURRENT_LOCATION_FIT_PADDING,
+    right: CURRENT_LOCATION_FIT_PADDING,
+    bottom: CURRENT_LOCATION_FIT_PADDING,
+    left: CURRENT_LOCATION_FIT_PADDING,
+    maxZoom: CURRENT_LOCATION_FIT_MAX_ZOOM,
+  });
+  map.setCenter(currentPosition);
+}
 
 function readMapViewportBounds(map: naver.maps.Map): MapViewportBounds | null {
   try {
@@ -814,8 +875,7 @@ export default function NaverMap({
     }
 
     if (focusCurrentLocation && currentLocation) {
-      map.setCenter(new naver.maps.LatLng(currentLocation.lat, currentLocation.lng));
-      map.setZoom(CURRENT_LOCATION_ZOOM);
+      fitMapToCurrentLocation(map, currentLocation, validRestaurants);
       return;
     }
 
@@ -841,11 +901,22 @@ export default function NaverMap({
       return;
     }
 
+    if (focusCurrentLocation) {
+      fitMapToCurrentLocation(map, currentLocation, validRestaurants);
+      return;
+    }
+
     map.panTo(new naver.maps.LatLng(currentLocation.lat, currentLocation.lng), {
       duration: 300,
     });
     map.setZoom(CURRENT_LOCATION_ZOOM);
-  }, [currentLocation, locationFocusRequest, sdkReady]);
+  }, [
+    currentLocation,
+    focusCurrentLocation,
+    locationFocusRequest,
+    sdkReady,
+    validRestaurants,
+  ]);
 
   useEffect(() => {
     if (!sdkReady || !mapRef.current) {

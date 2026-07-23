@@ -42,6 +42,12 @@ import {
   getMapCollectionTopicBySlug,
   getRestaurantsForMapCollection,
 } from "@/data/mapCollections";
+import {
+  getMapTopicDisplayName,
+  getMapTopicPath,
+  mapTopicShortcuts,
+  type MapTopicShortcut,
+} from "@/data/mapTopicShortcuts";
 import NaverMap from "@/components/NaverMap";
 import HeartButton from "@/components/HeartButton";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -63,6 +69,11 @@ import {
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
+
+const RELATED_TOPICS_LABEL: Record<AppLocale, string> = {
+  ko: "\uAD00\uB828 \uC8FC\uC81C",
+  en: "Related topics",
+};
 
 const MAP_COPY = {
   ko: {
@@ -501,6 +512,87 @@ function formatDistance(distanceMeters: number, locale: AppLocale) {
   return locale === "en" ? `${formattedDistance} km` : `${formattedDistance}km`;
 }
 
+function TopicNavigation({
+  locale,
+  selectedTopic,
+  variant,
+  onSelect,
+}: {
+  locale: AppLocale;
+  selectedTopic: MapTopicShortcut | null;
+  variant: "rail" | "strip";
+  onSelect: (topic: MapTopicShortcut) => void;
+}) {
+  const isRail = variant === "rail";
+
+  return (
+    <nav
+      aria-label={RELATED_TOPICS_LABEL[locale]}
+      className={isRail ? "flex h-full min-h-0 flex-col" : "mt-3"}
+    >
+      {isRail ? (
+        <p className="px-3 pb-2 pt-4 text-center text-[10px] font-black uppercase tracking-[0.15em] text-[#a29699]">
+          {RELATED_TOPICS_LABEL[locale]}
+        </p>
+      ) : null}
+      <div
+        className={
+          isRail
+            ? "min-h-0 flex-1 space-y-1 overflow-y-auto px-2 pb-4"
+            : "-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        }
+      >
+        {mapTopicShortcuts.map((topicItem) => {
+          const selected = selectedTopic?.slug === topicItem.slug;
+          const label = getMapTopicDisplayName(topicItem, locale);
+
+          return (
+            <button
+              key={topicItem.slug}
+              type="button"
+              onClick={() => onSelect(topicItem)}
+              aria-current={selected ? "page" : undefined}
+              title={label}
+              className={`group flex flex-shrink-0 flex-col items-center gap-1.5 rounded-2xl border px-2 py-2 text-center transition ${
+                isRail ? "w-full" : "w-[68px]"
+              } ${
+                selected
+                  ? "border-[#ffb8c1] bg-[#fff2f4] text-[#ff6071] shadow-[0_8px_20px_rgba(255,123,131,0.12)]"
+                  : "border-transparent text-[#6c6164] hover:border-[#f1e3e5] hover:bg-[#fff8f9]"
+              }`}
+            >
+              <span
+                className={`overflow-hidden rounded-full border-2 bg-white transition ${
+                  selected
+                    ? "border-[#ff8f9c]"
+                    : "border-white shadow-[0_4px_14px_rgba(31,20,23,0.12)] group-hover:border-[#ffd0d6]"
+                } ${isRail ? "h-12 w-12" : "h-11 w-11"}`}
+              >
+                <img
+                  src={topicItem.imageUrl}
+                  alt=""
+                  width={48}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              <span
+                className={`line-clamp-2 break-keep font-semibold leading-[1.2] ${
+                  isRail ? "text-[11px]" : "text-[10px]"
+                }`}
+              >
+                {label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
+
 export default function SearchMap() {
   const [, navigate] = useLocation();
   const { locale } = useLocale();
@@ -510,6 +602,13 @@ export default function SearchMap() {
   const type = params.get("type") || "all";
   const value = params.get("value") || "";
   const topic = params.get("topic") || "";
+  const selectedTopicShortcut = useMemo(
+    () =>
+      mapTopicShortcuts.find(
+        (topicItem) => topicItem.type === type && topicItem.value === value
+      ) ?? null,
+    [type, value]
+  );
 
   const { restaurants: filteredRestaurants, title, description } = useMemo(
     () => filterRestaurants(type, value, topic, locale),
@@ -882,6 +981,14 @@ export default function SearchMap() {
     [isMobileLayout]
   );
 
+  const handleTopicSelect = useCallback(
+    (topicItem: MapTopicShortcut) => {
+      setSelectedId(null);
+      navigate(getMapTopicPath(topicItem));
+    },
+    [navigate]
+  );
+
   const handleSearchSelect = (item: SearchResult) => {
     setSearchQuery("");
     setIsSearchFocused(false);
@@ -1077,7 +1184,9 @@ export default function SearchMap() {
         disabled={isLocating}
         aria-label={isLocating ? copy.locating : copy.refreshLocation}
         title={isLocating ? copy.locating : copy.refreshLocation}
-        className="absolute right-3 top-24 z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8e1e3] bg-white text-[#ff6f7c] shadow-[0_8px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#fff6f7] disabled:cursor-wait disabled:opacity-70"
+        className={`absolute right-3 z-10 flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8e1e3] bg-white text-[#ff6f7c] shadow-[0_8px_24px_rgba(15,23,42,0.16)] transition hover:bg-[#fff6f7] disabled:cursor-wait disabled:opacity-70 ${
+          isMobileLayout ? "top-44" : "top-24"
+        }`}
       >
         {isLocating ? (
           <LoaderCircle className="h-5 w-5 animate-spin" />
@@ -1109,6 +1218,12 @@ export default function SearchMap() {
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 p-3">
             <div className="pointer-events-auto rounded-[28px] border border-[#f0e5e6] bg-white/96 p-3 shadow-[0_18px_40px_rgba(0,0,0,0.12)] backdrop-blur">
               {searchControls}
+              <TopicNavigation
+                locale={locale}
+                selectedTopic={selectedTopicShortcut}
+                variant="strip"
+                onSelect={handleTopicSelect}
+              />
             </div>
           </div>
 
@@ -1152,14 +1267,27 @@ export default function SearchMap() {
         </div>
       ) : (
         <div className="flex h-full min-h-0 flex-row overflow-hidden">
-          <aside className="flex h-full w-[390px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
+          <aside className="flex h-full w-[500px] flex-shrink-0 flex-col border-r border-[#f0f0f0] bg-white">
             <div className="border-b border-[#f0f0f0] p-4">
               {searchControls}
-              {resultSummary}
             </div>
 
-            <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto">
-              {restaurantList}
+            <div className="flex min-h-0 flex-1">
+              <div className="h-full w-[126px] flex-shrink-0 border-r border-[#f3edef] bg-[#fffdfd]">
+                <TopicNavigation
+                  locale={locale}
+                  selectedTopic={selectedTopicShortcut}
+                  variant="rail"
+                  onSelect={handleTopicSelect}
+                />
+              </div>
+
+              <div className="flex min-w-0 flex-1 flex-col">
+                <div className="px-3 pb-3">{resultSummary}</div>
+                <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto">
+                  {restaurantList}
+                </div>
+              </div>
             </div>
           </aside>
 

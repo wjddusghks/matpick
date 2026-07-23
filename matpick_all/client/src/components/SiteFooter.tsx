@@ -7,7 +7,6 @@ const footerLinks = {
     discoverTitle: "Discover",
     policyTitle: "Policy",
     discover: [
-      { href: "/explore", label: "맛집 탐색" },
       { href: "/map", label: "지도 보기" },
       { href: "/about", label: "서비스 소개" },
     ],
@@ -28,7 +27,6 @@ const footerLinks = {
     discoverTitle: "Discover",
     policyTitle: "Policy",
     discover: [
-      { href: "/explore", label: "Explore" },
       { href: "/map", label: "Map search" },
       { href: "/about", label: "About Matpick" },
     ],

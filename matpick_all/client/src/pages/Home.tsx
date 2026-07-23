@@ -14,7 +14,6 @@ import {
   ChevronRight,
   CheckCircle2,
   Circle,
-  Compass,
   Heart,
   LayoutDashboard,
   MapPin,
@@ -40,6 +39,12 @@ import {
   getMapCollectionPath,
   type MapCollectionTopic,
 } from "@/data/mapCollections";
+import {
+  getMapTopicDisplayName,
+  getMapTopicPath,
+  mapTopicShortcuts,
+  type MapTopicShortcut,
+} from "@/data/mapTopicShortcuts";
 import { getDisplayName } from "@/lib/authProfile";
 import { isAdminUser } from "@/lib/admin";
 import {
@@ -63,26 +68,7 @@ const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
 
-type HomeShortcutTopic = {
-  slug: string;
-  name: string;
-  path: string;
-};
-
 type HomeDataModule = typeof import("@/data");
-
-const SOURCE_TOPIC_PATHS: Record<string, string> = {
-  ttoganjip: "/explore/topic/ttoganjip",
-  "popular-restaurants": "/explore/topic/popular-restaurants",
-  michelin: "/explore/topic/michelin",
-  "old-korean-100": "/explore/topic/old-korean-100",
-  "baekjong-wok": "/explore/topic/baekjong-wok",
-  "sikgaek-baekban-trip": "/explore/topic/sikgaek-baekban-trip",
-  "wednesday-gourmet": "/explore/topic/wednesday-gourmet",
-  "culinary-class-wars": "/explore/topic/culinary-class-wars",
-  "jeonhyunmoo-plan": "/explore/topic/jeonhyunmoo-plan",
-  "seoul-taste-100-2025": "/explore/topic/seoul-taste-100",
-};
 
 let homeDataModulePromise: Promise<HomeDataModule> | null = null;
 
@@ -90,49 +76,6 @@ function loadHomeDataModule() {
   homeDataModulePromise ??= import("@/data");
   return homeDataModulePromise;
 }
-
-const HOME_TOPIC_SHORTCUTS: HomeShortcutTopic[] = [
-  {
-    slug: "jeonhyunmoo-plan",
-    name: "전현무계획",
-    path: "/explore/topic/jeonhyunmoo-plan",
-  },
-  {
-    slug: "culinary-class-wars",
-    name: "흑백요리사 셰프 식당",
-    path: "/explore/topic/culinary-class-wars",
-  },
-  {
-    slug: "old-korean-100",
-    name: "오래된 한식당 100선",
-    path: "/explore/topic/old-korean-100",
-  },
-  {
-    slug: "ttoganjip",
-    name: "또간집",
-    path: "/explore/topic/ttoganjip",
-  },
-  {
-    slug: "popular-restaurants",
-    name: "인기맛집",
-    path: "/explore/topic/popular-restaurants",
-  },
-  {
-    slug: "michelin",
-    name: "미쉐린",
-    path: "/explore/topic/michelin",
-  },
-  {
-    slug: "baekjong-wok",
-    name: "백종원의 3대천왕",
-    path: "/explore/topic/baekjong-wok",
-  },
-  {
-    slug: "sikgaek-baekban-trip",
-    name: "백반기행",
-    path: "/explore/topic/sikgaek-baekban-trip",
-  },
-];
 
 const HOME_UI_KO = {
   brandFirst: "\uB9DB",
@@ -181,7 +124,6 @@ const HOME_UI_KO = {
   },
   header: {
     logoAlt: "\uB9DB\uD53D \uB85C\uACE0",
-    exploreLabel: "\uB9DB\uC9D1 \uD0D0\uC0C9",
     adminLabel: "대시보드",
     savedLabel: "\uC800\uC7A5\uD55C \uB9DB\uC9D1",
     logoutFallback: "\uB85C\uADF8\uC544\uC6C3",
@@ -202,7 +144,6 @@ const HOME_UI_KO = {
   searchButtonLabel: "\uAC80\uC0C9",
   nearbyMapButtonLabel: "현재 위치에서 찾기",
   sourceProofLabel: "방송·유튜브·가이드에 소개된 식당만 모았습니다.",
-  allTopicsLabel: "전체 주제 보기",
   collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
     openAria: "주제 카드 자세히 보기",
@@ -286,7 +227,6 @@ const HOME_UI_EN = {
   },
   header: {
     logoAlt: "Matpick logo",
-    exploreLabel: "Explore",
     adminLabel: "Dashboard",
     savedLabel: "Saved places",
     logoutFallback: "Log out",
@@ -306,7 +246,6 @@ const HOME_UI_EN = {
   searchButtonLabel: "Search",
   nearbyMapButtonLabel: "Find near my location",
   sourceProofLabel: "Only restaurants featured by creators, TV shows, or trusted guides.",
-  allTopicsLabel: "Browse all topics",
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
@@ -657,6 +596,43 @@ function SearchResultItem({
   );
 }
 
+function TopicShortcutButton({ topic }: { topic: MapTopicShortcut }) {
+  const { locale } = useLocale();
+  const label = getMapTopicDisplayName(topic, locale);
+
+  return (
+    <Link
+      href={getMapTopicPath(topic)}
+      title={label}
+      onClick={() =>
+        trackMarketingEvent("topic_shortcut_click", {
+          topic_slug: topic.slug,
+          topic_name: label,
+          source: "home_circle",
+        })
+      }
+      className="group flex w-[74px] flex-shrink-0 flex-col items-center gap-2 text-center sm:w-[82px]"
+    >
+      <span className="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)] p-[2px] transition group-hover:-translate-y-0.5 group-hover:shadow-[0_14px_30px_rgba(255,105,135,0.2)] sm:h-[68px] sm:w-[68px]">
+        <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white">
+          <img
+            src={topic.imageUrl}
+            alt=""
+            width={64}
+            height={64}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </span>
+      </span>
+      <span className="line-clamp-2 max-w-[82px] break-keep text-[11px] font-semibold leading-[1.25] text-[#5f5558] transition group-hover:text-[#ff6677] sm:text-xs">
+        {label}
+      </span>
+    </Link>
+  );
+}
+
 function BenefitItem({
   icon,
   title,
@@ -875,7 +851,7 @@ export default function Home() {
 
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
   const hasSearchQuery = Boolean(normalizedQuery);
-  const homeShortcutTopics = HOME_TOPIC_SHORTCUTS;
+  const homeShortcutTopics = mapTopicShortcuts;
 
   useEffect(() => {
     if (!normalizedQuery) {
@@ -1235,29 +1211,6 @@ export default function Home() {
       }
 
       if (normalizedItem.type === "source") {
-        const staticTopicPath = SOURCE_TOPIC_PATHS[normalizedItem.id];
-        if (staticTopicPath) {
-          navigate(staticTopicPath);
-          return;
-        }
-
-        let dataModule = searchDataModule;
-        if (!dataModule) {
-          try {
-            dataModule = await loadHomeDataModule();
-            setSearchDataModule(dataModule);
-          } catch {
-            navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
-            return;
-          }
-        }
-
-        const topic = dataModule.getDiscoveryTopicByTarget("source", normalizedItem.id);
-        if (topic) {
-          navigate(topic.path);
-          return;
-        }
-
         navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
         return;
       }
@@ -1455,14 +1408,6 @@ export default function Home() {
         <div className="flex flex-wrap items-start justify-end gap-2 sm:gap-3">
           {isLoggedIn ? (
             <>
-              <button
-                type="button"
-                onClick={() => navigate("/explore")}
-                className="flex h-10 items-center justify-center rounded-full border border-[#ffd1d7] bg-white/90 px-4 text-xs font-semibold text-[#4a4a4a] shadow-[0_10px_24px_rgba(0,0,0,0.05)] backdrop-blur transition hover:bg-white sm:h-11 sm:px-5 sm:text-sm"
-              >
-                <Compass className="mr-2 h-4 w-4" />
-                {ui.header.exploreLabel}
-              </button>
               {isAdmin ? (
                 <button
                   type="button"
@@ -1721,30 +1666,12 @@ export default function Home() {
               <p className="text-[13px] font-semibold text-[#8f8185] sm:text-sm">
                 {ui.sourceProofLabel}
               </p>
-              <div className="mt-4 flex flex-wrap justify-center gap-2">
-                {homeShortcutTopics.slice(0, 6).map((topic) => (
-                  <Link
-                    key={topic.slug}
-                    href={topic.path}
-                    onClick={() =>
-                      trackMarketingEvent("topic_shortcut_click", {
-                        topic_slug: topic.slug,
-                        topic_name: topic.name,
-                        source: "home_pill",
-                      })
-                    }
-                    className="rounded-full border border-[#eee2e4] bg-white/86 px-3 py-2 text-xs font-semibold text-[#6f6266] transition hover:border-[#ffbbc4] hover:text-[#ff6677] sm:px-4 sm:text-sm"
-                  >
-                    {topic.name}
-                  </Link>
-                ))}
-                <Link
-                  href="/explore"
-                  className="inline-flex items-center gap-1 rounded-full border border-[#ffd1d7] bg-[#fff6f7] px-3 py-2 text-xs font-bold text-[#ff6f7c] transition hover:bg-[#ffedf0] sm:px-4 sm:text-sm"
-                >
-                  {ui.allTopicsLabel}
-                  <ChevronRight className="h-3.5 w-3.5" />
-                </Link>
+              <div className="-mx-4 mt-5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:overflow-visible sm:px-0">
+                <div className="mx-auto flex w-max min-w-full items-start justify-start gap-3 sm:w-full sm:flex-wrap sm:justify-center sm:gap-x-4 sm:gap-y-5">
+                  {homeShortcutTopics.map((topic) => (
+                    <TopicShortcutButton key={topic.slug} topic={topic} />
+                  ))}
+                </div>
               </div>
             </section>
 

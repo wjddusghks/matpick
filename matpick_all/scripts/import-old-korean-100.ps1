@@ -423,6 +423,8 @@ $priceColumnIndex = Find-ColumnIndex -Headers $headerRow -Candidates @("가격�
 $sourceId = [string]$sourceMeta.id
 $sourceName = $xlsxFile.BaseName
 $coverPublicPath = $CoverPublicPath
+$projectRoot = Split-Path $PSScriptRoot -Parent
+$restaurantCardDirectory = Join-Path $projectRoot "client\public\card-data\$sourceId"
 $coordinateLookup = Load-CoordinateOverrides -Path $CoordinateOverrides
 $menuPriceLookup = Load-MenuPriceOverrides -Path (Join-Path $sourceDirPath "menu-prices.json")
 
@@ -496,6 +498,12 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
   $coordinateOverride = $coordinateLookup[(Get-CoordinateLookupKey -Name $name -Address $address)]
   $lat = if ($coordinateOverride) { [double]$coordinateOverride.lat } else { 0 }
   $lng = if ($coordinateOverride) { [double]$coordinateOverride.lng } else { 0 }
+  $restaurantCardPath = Join-Path $restaurantCardDirectory "$restaurantId.jpg"
+  $restaurantImageUrl = if (Test-Path -LiteralPath $restaurantCardPath -PathType Leaf) {
+    "/card-data/$sourceId/$restaurantId.jpg"
+  } else {
+    ""
+  }
 
   $restaurants.Add([ordered]@{
       id = $restaurantId
@@ -506,7 +514,7 @@ for ($rowIndex = 1; $rowIndex -lt $rows.Count; $rowIndex++) {
       representativeMenu = $representativeMenu
       lat = $lat
       lng = $lng
-      imageUrl = ""
+      imageUrl = $restaurantImageUrl
       foundingYear = $foundingYear
       menus = $menuItems
       thumbnailFileName = $null

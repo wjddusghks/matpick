@@ -395,7 +395,15 @@ function RestaurantCard({
         className="flex w-full items-start gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#ffb8bf]"
       >
         <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
-          <img src={displayImage.src} alt={restaurant.name} className="h-full w-full object-cover" />
+          <img
+            src={displayImage.src}
+            alt={restaurant.name}
+            width={80}
+            height={80}
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="pt-1">

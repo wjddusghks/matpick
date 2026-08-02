@@ -3,7 +3,6 @@ import michelinImage from "@/assets/source-thumbnails/michelin.webp";
 import popularRestaurantsImage from "@/assets/source-thumbnails/popular-restaurants.webp";
 import tateguysImage from "@/assets/creator-thumbnails/tateguys.jpg";
 import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
-import tzuyangImage from "@/assets/creator-thumbnails/tzuyang.jpg";
 import type { AppLocale } from "@/lib/locale";
 
 export type MapTopicShortcut = {
@@ -42,13 +41,6 @@ export const mapTopicShortcuts: MapTopicShortcut[] = [
     value: "michelin",
     name: { ko: "미쉐린", en: "Michelin" },
     imageUrl: michelinImage,
-  },
-  {
-    slug: "tzuyang",
-    type: "creator",
-    value: "UCfpaSruWW3S4dibonKXENjB",
-    name: { ko: "쯔양", en: "Tzuyang" },
-    imageUrl: tzuyangImage,
   },
   {
     slug: "old-korean-100",

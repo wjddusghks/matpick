@@ -415,6 +415,7 @@ const publicDataSourceIds = new Set(
   [
     "ttoganjip",
     "popular-restaurants",
+    "delicious-guys",
     "michelin",
     "old-korean-100",
     "baekjong-wok",

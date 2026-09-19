@@ -7,94 +7,4861 @@
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/card-data/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/card-previews/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/source-covers/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/baekjong-wok/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/michelin/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/old-korean-100/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/popular-restaurants/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/ttoganjip/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" },
-        { "key": "Cross-Origin-Resource-Policy", "value": "same-origin" },
-        { "key": "X-Robots-Tag", "value": "noimageindex, noarchive" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noimageindex, noarchive"
+        }
       ]
     },
     {
       "source": "/ads.txt",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(self), payment=(), usb=()" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-Permitted-Cross-Domain-Policies", "value": "none" },
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" },
-        { "key": "Origin-Agent-Cluster", "value": "?1" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https:; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https:; frame-src 'self' https:; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(self), payment=(), usb=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https:; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https:; frame-src 'self' https:; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_001",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_42ed76417b00",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_002",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_352c4edd960f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_003",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1c834bf68e16",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_004",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_27f62cebd23a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_005",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_416156cd1d89",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_006",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4faae9f8dc1f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_007",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0da8749d25cf",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_008",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_495494dd8378",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_009",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_daae2b1e4ae8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_010",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_99bc597be18f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_011",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a12a49cb9504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_012",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_67f5391e2675",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_013",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ff5c5c7222f0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_014",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ded49310d650",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_015",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e0c80c818252",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_016",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_02485dc3502d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_017",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_fcbce9fa34b4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_018",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c238c8eb5c74",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_019",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bfda38332bdb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_020",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4a2b2751d098",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_021",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c5566c1566b7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_022",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7583b60bd5d1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_023",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_aa8c550e0069",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_024",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2fcc28e01395",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_025",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b7b4d097d081",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_026",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2baf1e2b3ffb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_027",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1df4da04d3aa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_028",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_06baba5d4d2d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_029",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e88093633b08",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_030",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bbbfbc8f3951",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_031",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_bd401298fe23",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_032",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ba503454e92b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_033",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_fe3ac1e62022",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_034",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a31c17e591e1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_035",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_561c0df5aa70",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_036",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9f2349f14856",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_037",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a77a994d11bc",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_038",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_68b835b9d90e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_039",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_39ef5bb1684c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_040",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a13b2f526f74",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_041",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_01e2f132b695",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_042",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_303aa560a7c0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_043",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d7dcbeb8157d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_044",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4af874be2eb4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_045",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bbba54baea48",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_046",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_77cd6495619c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_047",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f2a43dc3ec28",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_048",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_76ba297c5082",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_049",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_620d9db667d1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_050",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b696369273e3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_051",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a9e7ee42a225",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_052",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_683b22634a6a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_053",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2a2e1f7e448e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_054",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d7ec91fe8b72",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_055",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_54c618a047c1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_056",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ff5a2b8b0477",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_057",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_deb27c91e90a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_058",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8bed4f6defba",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_059",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d29db9c0138a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_060",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_de24e9153ea9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_061",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ee3194aae292",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_062",
+      "destination": "/restaurant/old-korean-100_restaurant_023",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_063",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_35154d31ed3f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_064",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2ad3439caa3a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_065",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f978bebe77c2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_066",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4a251d1aeebd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_067",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_35a4a0af6d81",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_068",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a578275e115b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_069",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d424a834259f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_070",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7a3a4734a140",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_071",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_fff1b1ac6aa1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_072",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0e790ce92b82",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_073",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_52fd0cdb644f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_074",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e18df91f2f72",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_075",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1d65e1b5088e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_076",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2c7bf284fb09",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_077",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_270fa4902072",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_078",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_127f667f6d79",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_079",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b4312899d975",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_080",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2c2531d716fd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_081",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_852309b9816d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_082",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e4617623acfc",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_083",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5590a0031195",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_084",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4556e0c0aebd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_085",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4feb07797970",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_086",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f3bf2af941e3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_087",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_18634f9f7f23",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_088",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ca67e1ec9fe2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_089",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_89f8976c0155",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_090",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_cc3bddd40d0f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_091",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_eae2d8899788",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_092",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d3613e8a8174",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_093",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c8c665317426",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_094",
+      "destination": "/restaurant/r_be57cbae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_095",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b1388b477441",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_096",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_502ab5f4d46a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_097",
+      "destination": "/restaurant/r_25f0fe79",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_098",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_93a4c4db268a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_099",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b014cf66b6ba",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_100",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_435e88fafcfb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_101",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ec33d1a3b97c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_102",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f98670458f00",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_103",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_104",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f37d9ff802de",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_105",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a67108cfa2c2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_106",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6791d3637474",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_107",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_14807791defa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_108",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_372971463e2d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_109",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_68cdf3327224",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_110",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f2fc96d3b48f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_111",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_90443b0c81c7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_112",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8faa57e82f50",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_113",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8068ac7961f5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_114",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c9def5404592",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_115",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_badee8348991",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_116",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_57488fbb2c70",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_117",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_972b2093fc39",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_118",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f9f4a3d81b45",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_119",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_80677ba69fb0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_120",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ca387851b6f8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_121",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b3283f63424c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_122",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2d3ae8c6337e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_123",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_28a18cc3df68",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_124",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b2b1bc48bdef",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_125",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4afaba72cdea",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_126",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0a6c563f07e4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_127",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_651d9358ff7f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_128",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_45594b3b2bd7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_129",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7f1dab0a0e21",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_130",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_3b983a680c3f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_131",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_edd8db666e60",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_132",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f5ef23fd3d2b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_133",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2a6f1b4a72d9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_134",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8ac9e1c41519",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_135",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c15ca1a635f5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_136",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0d89ad34dc32",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_137",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_3546bc8a1002",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_138",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d88f9d94586f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_139",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_28105361cc7d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_140",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_46a91a34d837",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_141",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2e0601423655",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_142",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_141c591c7f71",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_143",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bc567c325676",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_144",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ad222ca63b79",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_145",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d8faf8de0173",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_146",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_038286bba16a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_147",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_719c0115e871",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_148",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a1c6c2c6bac4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_149",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_cb8dae9835c9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_150",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_207181ec3a5b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_151",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e71172729d20",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_152",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d952b93af284",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_153",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_4d5b6786454a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_154",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_49fa4a8fd044",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_155",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ceb270c08ab4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_156",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_02c0dd846eaa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_157",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7cd70200c2e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_158",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_abff3c6bf28a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_159",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f36a146bb796",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_160",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_23d8db79a450",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_161",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_690c2a6011ca",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_162",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_866e69306f38",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_163",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_479cfb43b77b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_164",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6d9d27a11520",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_165",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8d0e05f4b048",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_166",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bdc9d3331c0b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_167",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_05e6d21ef3f5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_168",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c4cb3653c2ac",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_169",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_23591d320de0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_170",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_34d12bc294a3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_171",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e446e6503033",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_172",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7a3fce29cce1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_173",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2faa9c5b8cdc",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_174",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_175",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dcfeb3bd66e9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_176",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_189a480a50d8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_177",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_fcc1f4428330",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_178",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c2382214de99",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_179",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b8c94b6558fa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_180",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_da9f5c0fef80",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_181",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2c09a0d98f9a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_182",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f4dc4110ab27",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_183",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_19fae3af5556",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_184",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_61efbaeae4e5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_185",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_510dab8a583f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_186",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b52a0e6ece80",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_187",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2bf72d3d366e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_188",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e0ce7db61d30",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_189",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_cfe36c5cc199",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_190",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_33c6ebfd6131",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_191",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8edf28b651ba",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_192",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a095532e1fd7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_193",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4fdc7a03d230",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_194",
+      "destination": "/restaurant/r_f2be38a5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_195",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d55b43db0937",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_196",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5127158fbbdd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_197",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_2bf7c9e68046",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_198",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_440b82ca2d51",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_199",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9d5b5b0ae7a7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_200",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9e951b769635",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_201",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1a972ff82d23",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_202",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_54f0433ffeb5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_203",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0f550111f4d3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_204",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_43e5c84f86d6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_205",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_295d210602ba",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_206",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a8f789424727",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_207",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f69f2e03b2cd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_208",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9d653185322b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_209",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ce4cd7fb22a9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_210",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6598dcdff014",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_211",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f3eebb10d1e3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_212",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8ec79f492954",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_213",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e8ec93fce918",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_214",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_86024cb2da59",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_215",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b192066c05f1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_216",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d9774daf447c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_217",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ab7e3bc2800e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_218",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b15658ee534c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_219",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_21e9d11eea64",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_220",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ebd1134cc8b4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_221",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9b52b83b3c91",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_222",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ffd367d1d627",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_223",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_581bf7007ae2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_224",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ba28a1999fe0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_225",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_699093ab5a6e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_226",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_312b5f5d3ef5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_227",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0833ae128639",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_228",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ef39019867d9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_229",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7e757266e9e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_230",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b57649123232",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_231",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f6146f703cc8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_232",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_69f8dc2c79ec",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_233",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e08e032aafa5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_234",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_fc2287749e25",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_235",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f6ef99b58332",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_236",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_800341d42722",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_237",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_88ee18fc3f75",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_238",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0b24555abc6a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_239",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_66256bf45936",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_240",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a966fb1dc9aa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_241",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_09533197aba4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_242",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_639ec6c0ceb6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_243",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_82a172a9be73",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_244",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_24a2c43471d6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_245",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_95181c782c95",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_246",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0f94ce8ffd78",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_247",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6e898b7880a4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_248",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ceb5551973c7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_249",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_beee29169a22",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_250",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_701afd9417f4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_251",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_aad324db8c73",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_252",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b8a279716f89",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_253",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_14555fade8e1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_254",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ea162d098ecb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_255",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d3059ad3877f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_256",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4c0ee2f66eda",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_257",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_34f32fd8de11",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_258",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bcc3d4b990f7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_259",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ef72d2275ca1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_260",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_135d7666fa1b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_261",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a44b24d6742d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_262",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ec42cfd2b8c1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_263",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_88f4ea35dd50",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_264",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_06ce3218b15d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_265",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_89266777bbf7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_266",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5a1237af7f4b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_267",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4845cc6e4ca1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_268",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5da245e3ee84",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_269",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_adbdaedec2ef",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_270",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_534d7d29965f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_271",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2c7e4e9fcf73",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_272",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_273",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6612899f2d64",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_274",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_69a1ff00a6ea",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_275",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5c52f09e0973",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_276",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5cbcdc78542e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_277",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_450fee165f74",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_278",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_758b98786bee",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_279",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e313f5d619aa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_280",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e34ed1ad1802",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_281",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8f6c67ed9af4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_282",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b563653f1fa5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_283",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_291c9dfd8ca9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_284",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7442b685ee72",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_285",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_45be58e3ebae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_286",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dd988ebca126",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_287",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_de1345dcdc05",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_288",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a4d70407953f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_289",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_029861fab962",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_290",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ffeffb429425",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_291",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c6e63c312b52",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_292",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7218922fa4b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_293",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_565cb9ee5160",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_294",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d0ddfd859fac",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_295",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_edf94f28e740",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_296",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_68b32e359685",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_297",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_008ca5ff5939",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_298",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_fa72469d5025",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_299",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_782f1b45d839",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_300",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9fb3895792b3",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_301",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7233545f3af5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_302",
+      "destination": "/restaurant/old-korean-100_restaurant_093",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_303",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ba9fa63bc2f8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_304",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e233f034091a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_305",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b3980f9cf5e0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_306",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7a6eb417984c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_307",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_72e558808846",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_308",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d27347a0a83a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_309",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_64cb792abe47",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_310",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c5f9f0d58cd8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_311",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_99af7181a57a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_312",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9022403d7507",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_313",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4ccd5aa24f3f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_314",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1394e7fd0956",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_315",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_15101773287b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_316",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5d8c4e23720f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_317",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8ee8283cae53",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_318",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c941a9ca47d9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_319",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_60741c7285b1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_320",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6b4986567446",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_321",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_3bffc4843efa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_322",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_eba2471e1e56",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_323",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5718c6369ee7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_324",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2e430d85dfa8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_325",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c2bae2c16e00",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_326",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_92cea30fa8bb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_327",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_28f264d7f33b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_328",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_acfa0874dc16",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_329",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6806254363fb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_330",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_565c4fa1194d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_331",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bfc6471f1f21",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_332",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c2fb2621bd82",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_333",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b02c68ff3e33",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_334",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_76523436d64e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_335",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_157ff0ffd371",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_336",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_968fe9b9aa2a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_337",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bac317ab1944",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_338",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_30a90b8fbfdb",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_339",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c393387b29fa",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_340",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_3cdcfa79bb19",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_341",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_275407cab79e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_342",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0a31490c0f8b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_343",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1183effaf83a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_344",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6a92af6cc396",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_345",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8888bce01626",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_346",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_af319650c368",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_347",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6bc25afd6b2b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_348",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f47ee86282d2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_349",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f2066715219f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_350",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_0eca4a59bada",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_351",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5cbeac0ccc42",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_352",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8448b2a82478",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_353",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_21017919455d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_354",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_29f7bffd4126",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_355",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_8223004f0ea2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_356",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_decbb10607f0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_357",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d487fc57754e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_358",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_355783772e11",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_359",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_16e72d1e6026",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_360",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6a00fbce20f8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_361",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_1ec66e2fc04b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_362",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_a6a3e3e36379",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_363",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4f134bd06669",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_364",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4b3bb1fe1fff",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_365",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e0dc93b0836b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_366",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dc5153978f59",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_367",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c182bdd8208f",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_368",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_5796d3c86511",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_369",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_212c028dc6f7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_370",
+      "destination": "/restaurant/r_67513efd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_371",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_9d6c4a564c2d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_372",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4d739c6ddb78",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_373",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_297998599a21",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_374",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7d54f4dd5491",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_375",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_416e2daab844",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_376",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ccc2a2966f1c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_377",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_58613205c46d",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_378",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e20430d65c36",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_379",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_7a9a794ad373",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_380",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_503b608be01c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_381",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_18cdf3ea57ee",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_382",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_af9ca732e9e5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_383",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_924d781488b1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_384",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c77fcf49d3fc",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_385",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f712ffe69f88",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_386",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_07d74363f9f9",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_387",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e4d22e240dfc",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_388",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e089b5d65612",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/baekjong_wok_restaurant_389",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_2acce0e57504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/jeonhyunmoo-plan_restaurant_2f2dc3444e2a",
+      "destination": "/restaurant/r_25f0fe79",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/jeonhyunmoo-plan_restaurant_335286c4ac97",
+      "destination": "/restaurant/r_be57cbae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/jeonhyunmoo-plan_restaurant_e56311a6b32a",
+      "destination": "/restaurant/r_9cbff2e7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_001",
+      "destination": "/restaurant/r_c4c986a6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_003",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_014",
+      "destination": "/restaurant/r_1991d71a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_019",
+      "destination": "/restaurant/r_673792be",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_021",
+      "destination": "/restaurant/r_1ddfc5bf",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_022",
+      "destination": "/restaurant/r_c057f8d4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_035",
+      "destination": "/restaurant/r_eb889504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_073",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_bc95e9c32328",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_084",
+      "destination": "/restaurant/r_81338e33",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/old-korean-100_restaurant_095",
+      "destination": "/restaurant/r_a831dbb6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/popular_restaurants_hongdae_hakata_bunko",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_384",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/popular_restaurants_jeonju_seongmidang",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ffeffb429425",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/r_14d42228",
+      "destination": "/restaurant/r_f6168fc8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/r_cf4d9eae",
+      "destination": "/restaurant/r_9aab737c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/r_d39018a6",
+      "destination": "/restaurant/r_9cbff2e7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/r_e59a8766",
+      "destination": "/restaurant/r_3fbf0871",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/seoul-taste-100-2025-588",
+      "destination": "/restaurant/r_eb889504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/seoul-taste-100-2025-591",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/seoul-taste-100-2025-597",
+      "destination": "/restaurant/r_c057f8d4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/seoul-taste-100-2025-636",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_234",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_022",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6e898b7880a4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_066",
+      "destination": "/restaurant/old-korean-100_restaurant_093",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_082",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_084",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_93a4c4db268a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_120",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e089b5d65612",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_192",
+      "destination": "/restaurant/r_3fbf0871",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_198",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e0dc93b0836b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_247",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_deb27c91e90a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_313",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_318",
+      "destination": "/restaurant/old-korean-100_restaurant_100",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_358",
+      "destination": "/restaurant/r_e1a8060c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_418",
+      "destination": "/restaurant/old-korean-100_restaurant_072",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_467",
+      "destination": "/restaurant/r_1991d71a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_468",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_472",
+      "destination": "/restaurant/old-korean-100_restaurant_045",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_513",
+      "destination": "/restaurant/old-korean-100_restaurant_033",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_528",
+      "destination": "/restaurant/old-korean-100_restaurant_091",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_532",
+      "destination": "/restaurant/r_5995d3b0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_543",
+      "destination": "/restaurant/old-korean-100_restaurant_031",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_598",
+      "destination": "/restaurant/r_f6168fc8",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_635",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_169",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/sikgaek-baekban-trip_restaurant_686",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_008aa451ba34",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_154",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_01cc7a016b45",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_201",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_02945f24f770",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_466",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_02efe3316f8f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_153",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_046bef524aff",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_105",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_059209e4f9de",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_106",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0743aa14d227",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_307",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_07a7d6c43e14",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_125",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0cd29770cab5",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_518",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0cf613d8d2f2",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_306",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0d026f34165a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_030",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0e8db8f0019b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_169",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_0eaa493192ac",
+      "destination": "/restaurant/old-korean-100_restaurant_072",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_106702d90602",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_067",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1334e0b198fe",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_425",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1413a20195c4",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_101",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_16759fd77e4d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_096",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_17160c8e15c1",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_583",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_19167b917685",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_420",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1ae620755938",
+      "destination": "/restaurant/old-korean-100_restaurant_093",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1bcdc3a98b9a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_260",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1d49f78a446d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_610",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_1ea6e155c4c4",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_297",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_20beec462001",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_227",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_236a86542929",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_064",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_23beb182e1cd",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_115",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2467534ed33d",
+      "destination": "/restaurant/r_5995d3b0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_25dee463683b",
+      "destination": "/restaurant/old-korean-100_restaurant_033",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2735663ed016",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_211",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_28a9f1bba873",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_334",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2e150d23a4e4",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_674",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2e626f1f0de6",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2ef385a6269c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_564",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_2f974438c2f2",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_051",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_302ed81ee2f5",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_142",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3360e177da0a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_588",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_33677e42ec45",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_243",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_353834e04f78",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_439",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3901c6ceae71",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_624",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3a4238cb7044",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_311",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3aedc92e7d4f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_068",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3c099ed93517",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_097",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3e394967c9af",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_197",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_3fbeffe08f4f",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_44bdb9c5a04b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_224",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_48ae46509372",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_244",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_4acfdf70f82b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_476",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_4f0b987e1065",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_437",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_50d5c5961879",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_590",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_52d266dd8cf6",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_080",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_546d6364065b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_469",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_56f7696ed27e",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_654",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_57f2e15a3cce",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_277",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_58a1ac69250b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_525",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_58df6045989d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_212",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_5b88ea9cef47",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6e898b7880a4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_5c98d09b537f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_581",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_5e6a29e6908f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_076",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_5fae57cc1892",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_605",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_601b2427b330",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_514",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_628c3ccfe9a3",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_656",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_694fe3af15f9",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_552",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_6a713ae0534c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_294",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_6db1ec80c8dc",
+      "destination": "/restaurant/r_3fbf0871",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_704624a38904",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_249",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_7568e7b77db9",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_223",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_773eeaeb5578",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_061",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_78031903189a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_202",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_78f10b9b6577",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_594",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_7aece4cfbf2b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_488",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8066af6d7104",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_035",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_80c9699d0aa8",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_533",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_83fbe7425ae8",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_536",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8432487c4d5d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_330",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_84da93ab373f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_146",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_857ffb93159e",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_584",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_861773db15ca",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_025",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8653deb9f81d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_017",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_87fd37d6b231",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_655",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8839d010138c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_074",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8c1d3e0996ce",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_501",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8da51d880418",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_055",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_8ed335809648",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_024",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_9245d78575f5",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_586",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_9571885ac3e2",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_094",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_971e87750dcc",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_144",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_98b9d052ebf7",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_609",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_9b6548d8c890",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_575",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_9bfb0ddccd99",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_587",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_9c22a8b63d91",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_465",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_a0bc3b656140",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_523",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_a6a4296c1a1e",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_a704b3fa0b06",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_018",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_a982c405fef2",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_083",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_a99ead543420",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_040",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ab02ff497eba",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_104",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ab37656f598c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_687",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_b0b0380e3f86",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_245",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_b3164cb7bc87",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_551",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_bb67d263a37a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_057",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_bbad183de023",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_126",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_bbcaac080e83",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_222",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c00e99bba9d6",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_591",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c1b7eedfd3c4",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_562",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c2d2ca61a1a0",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_155",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c44e52bc6943",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_419",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c70d4357521c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_147",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_c90dfcdca275",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_573",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ce91f6501fcc",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_613",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ce96f6e0ae42",
+      "destination": "/restaurant/old-korean-100_restaurant_031",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ced2ecd8b732",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_530",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d2b5016b9f27",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_027",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d6447d90e5d6",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_398",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d7ebcf503c47",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_145",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d87046c871d3",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_348",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d873f9a0eee1",
+      "destination": "/restaurant/r_e1a8060c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_d9c21b1ab369",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_127",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_dadf7abec696",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_037",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_dbf6dbfc1ac3",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_109",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_e058c4678b56",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_e3428126ee73",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_592",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_e7ae2ccf7c81",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_032",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_f3737050fbd7",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_073",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_f5ec3c9519b1",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_023",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_f77c257f3d7b",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_031",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_f9631b784347",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_308",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_fc3c2d5a2ca8",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_014",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_fe31c726e83d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_502",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_fe4f7e0edab6",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_572",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekban-trip_ffec09aa5893",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_086",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_0bb616acadbb",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_0ecf62ee70ef",
+      "destination": "/restaurant/r_25f0fe79",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_124baadc2fbf",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_4d5b6786454a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_12eedb2677b2",
+      "destination": "/restaurant/old-korean-100_restaurant_093",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_1fce8339fb10",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_495494dd8378",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_21b79c7cbbf7",
+      "destination": "/restaurant/r_f2be38a5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_5e9e8bd1bd6f",
+      "destination": "/restaurant/old-korean-100_restaurant_023",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_5eee6a7a6c3f",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_2bf7c9e68046",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_68f5e05cf557",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_fcbce9fa34b4",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_78abb1462a07",
+      "destination": "/restaurant/r_67513efd",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_cff3f6bf91f5",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_bd401298fe23",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_ec6b64ca8cbd",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_baekjong-wok_fe431e5868a1",
+      "destination": "/restaurant/r_be57cbae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_098de1a2608c",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_173",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_0a42b124d5cd",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_251",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_0c9ef30aca1f",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7e757266e9e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_0d01fc9d4b92",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_222",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_0e0637a1ec97",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_074",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_10e95b98899a",
+      "destination": "/restaurant/old-korean-100_restaurant_037",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_125cc7c56e2a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_490",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_14f02d084b63",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_716a9ac48647",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_17fd5ac07167",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_193",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_196013283e93",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_494",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_2837630e4944",
+      "destination": "/restaurant/old-korean-100_restaurant_100",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_28c8d10e3eda",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_030",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_29d1eb29ab03",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_330",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_2e10e9efef63",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_048",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_308b45a0f545",
+      "destination": "/restaurant/popular_restaurants_yeongdeungpo_songjukjang",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_313397cd7f49",
+      "destination": "/restaurant/r_9aab737c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_323616c92363",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_185",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_324b98c618a6",
+      "destination": "/restaurant/r_2400c388",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_334c951c8973",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_410",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_33ce14a26758",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_614",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_35604118fcda",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_411",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_3b43826ea368",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_323",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_40c326a743c3",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_130c5c0f1f2a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_4697edf1048d",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_48ad5992761c",
+      "destination": "/restaurant/r_b2b49897",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_4b18e8783a04",
+      "destination": "/restaurant/r_1991d71a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_4ca16e2271cb",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e0ce7db61d30",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_4ed460b332b2",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_462",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_5054bff60daf",
+      "destination": "/restaurant/r_9cbff2e7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_5487fd001f28",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_341",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_578c1415843c",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_049",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_5b1bfd451aa8",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d55b43db0937",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_5d0d100727b4",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f5ef23fd3d2b",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_5e77fcc90780",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_214",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_647651a03e33",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_196",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_659a91b262df",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_66653a9a002d",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_046",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_6ba987f158ae",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_246",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_6ebe2fec1dc2",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_6612899f2d64",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_6f56f74ff770",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_263",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_76e58fe69cae",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_791cd645c719",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_088",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_7fc945ade903",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_119",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_81412e3849eb",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_017",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_839628f54de3",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_065",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_8507b8527306",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_390",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_868b7ebe264e",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_381",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_8ff6fa0e7c35",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_92f114c98928",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_238",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_951ad21b75ca",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_256",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_a57017e2bdfb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_008",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_a8b4649c3269",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_382",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_aca1066612cf",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_253",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_b0907fb88509",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_e446e6503033",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_b4ba0199d711",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_456",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_b53c14242c0e",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_113",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_b913036627a8",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_471",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_b9623a45a338",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_baf59ab9fbd5",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_299",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_bba7fa6fe763",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_592",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_bbc31fb694aa",
+      "destination": "/restaurant/old-korean-100_restaurant_023",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_bbdbc03210cc",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_501",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_c1c862a8bde1",
+      "destination": "/restaurant/old-korean-100_restaurant_034",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_c7abd2c09c3e",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_202",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_c7cddd175900",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_315",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_c823ece88011",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_266",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_ca2f9bb06260",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_219",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_cbc2e4993ec1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_550",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_cc4302fc1684",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bac317ab1944",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_ceaa847a2340",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_485",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_d815bfccf18a",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_514",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_d8ba64e16332",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_488",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_dbb706befb2d",
+      "destination": "/restaurant/r_673792be",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_de762a69fcf2",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_222a9f7f7db6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_e10556f461b3",
+      "destination": "/restaurant/old-korean-100_restaurant_079",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_e2f454c15034",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_433",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_ecf3bb61cba7",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_356",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_f014c7b99dcb",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_436",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_f2d2fe45c9ac",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_548",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_f75c4d7c0ab8",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_ab7e3bc2800e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_f8c71c8096c7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_226",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_delicious-guys_fb7d61074105",
+      "destination": "/restaurant/old-korean-100_restaurant_012",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_054645c4d8f8",
+      "destination": "/restaurant/old-korean-100_restaurant_033",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_0e584aeab10c",
+      "destination": "/restaurant/old-korean-100_restaurant_016",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_18ac3372c278",
+      "destination": "/restaurant/old-korean-100_restaurant_025",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_244327bdb2a1",
+      "destination": "/restaurant/old-korean-100_restaurant_093",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_35fe45703768",
+      "destination": "/restaurant/old-korean-100_restaurant_082",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_496aa4ea70e5",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_bc95e9c32328",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_4996d3d6fa71",
+      "destination": "/restaurant/old-korean-100_restaurant_050",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_5147c1d7ed86",
+      "destination": "/restaurant/old-korean-100_restaurant_079",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_5a14522bedcf",
+      "destination": "/restaurant/old-korean-100_restaurant_037",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_5a9441ab2ebe",
+      "destination": "/restaurant/old-korean-100_restaurant_039",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_6490563e0dba",
+      "destination": "/restaurant/old-korean-100_restaurant_044",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_66aeb845216d",
+      "destination": "/restaurant/old-korean-100_restaurant_069",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_6c6414a87497",
+      "destination": "/restaurant/old-korean-100_restaurant_028",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_73cb618f82b4",
+      "destination": "/restaurant/old-korean-100_restaurant_066",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_760eeb197322",
+      "destination": "/restaurant/old-korean-100_restaurant_063",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_7d09b87318f7",
+      "destination": "/restaurant/old-korean-100_restaurant_017",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_8ab94556db8b",
+      "destination": "/restaurant/old-korean-100_restaurant_008",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_9928f9a2c2df",
+      "destination": "/restaurant/old-korean-100_restaurant_086",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_9b64fad725f4",
+      "destination": "/restaurant/r_a831dbb6",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_9e02ae1a9073",
+      "destination": "/restaurant/r_eb889504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_ac5f73e5c29f",
+      "destination": "/restaurant/old-korean-100_restaurant_061",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_ad7d521a1673",
+      "destination": "/restaurant/old-korean-100_restaurant_089",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_ade337ac5ae2",
+      "destination": "/restaurant/old-korean-100_restaurant_080",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_b149d950faf7",
+      "destination": "/restaurant/old-korean-100_restaurant_024",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_bf64e6dccbab",
+      "destination": "/restaurant/old-korean-100_restaurant_038",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_c07816d4c81b",
+      "destination": "/restaurant/old-korean-100_restaurant_031",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_c628a2673902",
+      "destination": "/restaurant/old-korean-100_restaurant_085",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_c9f9e006d08b",
+      "destination": "/restaurant/old-korean-100_restaurant_072",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_cce7fe85ffd0",
+      "destination": "/restaurant/old-korean-100_restaurant_060",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_cf9a2e0278a1",
+      "destination": "/restaurant/old-korean-100_restaurant_026",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_d328cccce561",
+      "destination": "/restaurant/old-korean-100_restaurant_043",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_old-korean-100_d3bec31ad91c",
+      "destination": "/restaurant/r_673792be",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_ttoganjip_23eeac72a139",
+      "destination": "/restaurant/r_e546e14e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_ttoganjip_3486b3c4dccd",
+      "destination": "/restaurant/jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_ttoganjip_36dadf90e554",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_46a91a34d837",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_ttoganjip_967647da4a35",
+      "destination": "/restaurant/r_417bbad0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_ttoganjip_b1c5724cc924",
+      "destination": "/restaurant/r_7a813793",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_02a06d562ccc",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_129",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_046e09d43b7f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_372",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0527627a31c4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_146",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_07513fac2aa4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_503",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0833fb345629",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_144",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_09759a63b907",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_530",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0b9d28ce95e1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_544",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0c509f3521cf",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_487",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0d23ff6b31f0",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_083",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0f64b4c20be1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_383",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_0fee0d6861bf",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_515",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_10baa18fa55b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_371",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_10f04a562592",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_247",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_11996eb5873a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_207",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_11a42fb62fb4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_425",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_16f302ddd2e8",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_365",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1725663286c4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_496",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_17c85fa4e7e4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_196",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_17cabcede32d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_491",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_19a9b59c254a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_390",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1a5b88d539e9",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4b3bb1fe1fff",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1a7b9cc65294",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_227",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1b9300730641",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_252",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1d14b85cf744",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_424",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1d72dfb1740d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_498",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1e45422f08ec",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_096",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1f04e995c9f3",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_470",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_1f317d893460",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_423",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2094f1bdd288",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_156",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_248f44621516",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_253",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_252735d51ebb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_461",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_25376e0d3937",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_310",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_26f361b4cdde",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_313",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_279ea092a937",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_370",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_27ad915e9be3",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_375",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_295b3cf29c20",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_361",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_29fd835859fe",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_543",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2ab8a6652635",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_381",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2ce7da0f9996",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_211",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2edc050595e6",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_418",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2f88668bc795",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_467",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2fe3e1e1d6a3",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_138",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_2feb822aa311",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_330",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_303f49bc76ce",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_459",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_30da557cbc82",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_316",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_32365a34a631",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_430",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3268f2c6bbe8",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_198",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_32e76424cb56",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_137",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_33780b5e33e4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_338",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_362fbcbaa26a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_495",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_36b80139fa37",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_332",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_37ed4ee1f8a7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_350",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_383a2703116d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_447",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_39af1387c931",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_102",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3a33a21362be",
+      "destination": "/restaurant/old-korean-100_restaurant_079",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3b69869d9477",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_014",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3c177c3d9c3d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_349",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3dc346b2a7db",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_293",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3efbdd692b8b",
+      "destination": "/restaurant/r_e46e2527",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_3f0aa7b1c437",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_472",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_40284f20b4fc",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_136",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_40df725c90c8",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_305",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_41aab56a0b6f",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_308",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_425df0add28a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_145",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_430867b9cb8b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_511",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_439f3890d86e",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_439",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_441f34eefd29",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_172",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4521ac81f11f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_394",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4580d03127b0",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_385",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_48929349bae7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_373",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4b754f129c98",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_362",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4b872c115260",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_403",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4bcd2b7ec0a2",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_339",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4d0fade5a704",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_368",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_4de5aae497e2",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_079",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_50e0e2cd49cd",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_345",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_5227338f0c9a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_548",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_53231af41bdd",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_53b4e9a48a42",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_063",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_5a04222e7fad",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_473",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_5f2dbe722da5",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_324",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_5ffe81c6f3cc",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_308",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6005e77da99d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_355",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6115e00ca7c7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_226",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_631f80f3ab67",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_301",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_648818f415fc",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b15658ee534c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6868600ecea0",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_243",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_69918457a686",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_270",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6ac8cb9a365d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_480",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6b6518ee699c",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_114",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6b96608ac01b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_154",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6c27df49b9b8",
+      "destination": "/restaurant/r_2360fd35",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_6e8ed8e4791a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_164",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_70a4d3ab5594",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_096",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_730c3065e490",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_334",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_753590a2afdf",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_002",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7940bcd021b7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_336",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_79a2690e4041",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_181",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7abf26e38c1d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_298",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7cfcfbc6ae9f",
+      "destination": "/restaurant/old-korean-100_restaurant_063",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7d2b41e27d86",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_485",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7d2d077e2c33",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_209",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7eba10e3bb1b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_364",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_7f36de7e0555",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_528",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_80161c728ff0",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_475",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_80b41ab5d57e",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_444",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_80c3b69f57d7",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_374",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8172bf7ef4e6",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_82a40df7633f",
+      "destination": "/restaurant/r_673792be",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_84e995bf7306",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_151",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_86ddefed8f2a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_488",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8896e1058d13",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_348",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8b6da964fae9",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_525",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8bdc538077a1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_139",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8ca32e4b03c1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_323",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8d388b48ee0c",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7e757266e9e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8ecf1f84d490",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_234",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_8fd72baed107",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_442",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_92cdb75a87cc",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_192",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_92d03bda93eb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_319",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_945848e80ba4",
+      "destination": "/restaurant/r_9aab737c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_985c7d107b04",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_329",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9a12adc24960",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_452",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9a9f487d8265",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_279",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9be818f3133e",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_392",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9c644c8caf50",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_343",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9d9eb286b42b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_529",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_9e99ac38139d",
+      "destination": "/restaurant/r_9cbff2e7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_a075f9cdb5b3",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_a2b46bc5ecb8",
+      "destination": "/restaurant/r_be57cbae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_a6ea7b8c5e4d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_527",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_a926f2f081d4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_233",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_aa1a36105603",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_592",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_aa7ed0485ba0",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_001",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ad6c5db700ee",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bbba54baea48",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ad821e2f63e8",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_095",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_b1631dea2d8d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_541",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_b16532409169",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_231",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_bae0783c8480",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_505",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_bd76db88cc06",
+      "destination": "/restaurant/r_dfe304f1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_bdd7d9749f5f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_262",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_c21d78997259",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_535",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_c247f04c2a0a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_506",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_c69955775613",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_482",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ce143f331a5f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_540",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_cf8688f613e6",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_331",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_cfb1b025150b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_519",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d04ad7017e4a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_081",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d15877bd8a61",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_278",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d33dbe274699",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_382",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d3866c0a6126",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_398",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d3ee13a15146",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d42e97188e50",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_261",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d4e5ab7b4672",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_082",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d56113cac7bb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_152",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d584299dd94f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_258",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d5aa147be4f4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_200",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d5cf2a04869c",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_325",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d74fac32e67f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_100",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_d872f3fa4933",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_464",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_dbf42a614cd4",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_333",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_deaf8654e584",
+      "destination": "/restaurant/topic_enrichment_delicious-guys_d408e66bf5d0",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e001b83d5e6f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_148",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e2cdae6deaa3",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_248",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e41fa7977c65",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_206",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e44e714f751c",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_502",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e54f854670a9",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_214",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e71ea43f1a0c",
+      "destination": "/restaurant/r_eb889504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e85759ebae9a",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_384",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_e990c04a637d",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_159",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ec4ce2988ffe",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_302",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ed462a6f4cfb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_015",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_ef87119070f3",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_154",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_efd002ee5116",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_295",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f14edff7e7d1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_402",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f1a3b27a3b83",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_213",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f2877addc6cb",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_434",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f2944a620caf",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_432",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f2f145b25fbd",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_409",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f385b37eb3cd",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_389",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f3ce32c4bd68",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_554",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f4c57dbd8253",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_522",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f79edeafd08f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_420",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f7c5ae2dbc0f",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_216",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f802523b73b1",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_241",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f822b2cbfd3b",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_476",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_f8f67fc42953",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_456",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_faa569b5fba0",
+      "destination": "/restaurant/wednesday-gourmet_restaurant_542",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/topic_enrichment_wednesday-gourmet_fe3e698aa7f4",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_142",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_004",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_012",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_c5566c1566b7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_028",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_574",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_043",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_281",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_067",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_173",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_099",
+      "destination": "/restaurant/old-korean-100_restaurant_063",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_101",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_524",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_116",
+      "destination": "/restaurant/old-korean-100_restaurant_011",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_132",
+      "destination": "/restaurant/old-korean-100_restaurant_058",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_133",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_096",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_134",
+      "destination": "/restaurant/old-korean-100_restaurant_030",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_140",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_142",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_141",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_107",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_143",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_bbba54baea48",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_149",
+      "destination": "/restaurant/r_2360fd35",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_153",
+      "destination": "/restaurant/r_e46e2527",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_163",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_195",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_217",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_193",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_235",
+      "destination": "/restaurant/r_9aab737c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_239",
+      "destination": "/restaurant/r_9cbff2e7",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_240",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_597",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_268",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_d3613e8a8174",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_320",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_308",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_322",
+      "destination": "/restaurant/old-korean-100_restaurant_079",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_337",
+      "destination": "/restaurant/r_5028bf04",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_353",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_4b3bb1fe1fff",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_357",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_deb27c91e90a",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_393",
+      "destination": "/restaurant/culinary-class-wars_restaurant_e58c5e7aef38",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_396",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_b15658ee534c",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_405",
+      "destination": "/restaurant/r_b2b49897",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_416",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_083",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_426",
+      "destination": "/restaurant/r_7917bd82",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_443",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_156",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_445",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_154",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_448",
+      "destination": "/restaurant/topic_enrichment_baekjong-wok_f7e757266e9e",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_449",
+      "destination": "/restaurant/r_74de9a09",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_451",
+      "destination": "/restaurant/r_7219cb87",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_469",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_592",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_479",
+      "destination": "/restaurant/r_2400c388",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_481",
+      "destination": "/restaurant/r_673792be",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_517",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_470",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_526",
+      "destination": "/restaurant/r_4aa36157",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_532",
+      "destination": "/restaurant/r_dfe304f1",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_546",
+      "destination": "/restaurant/r_be57cbae",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_547",
+      "destination": "/restaurant/r_eb889504",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_551",
+      "destination": "/restaurant/sikgaek-baekban-trip_restaurant_013",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/wednesday-gourmet_restaurant_553",
+      "destination": "/restaurant/r_677d7788",
+      "permanent": true
+    }
   ]
 }

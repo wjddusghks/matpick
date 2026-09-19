@@ -1,3 +1,4 @@
+import { getOperationNotice, isRestaurantRecommendable } from "@/lib/restaurantEligibility";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { upload } from "@vercel/blob/client";
 import { Link, useLocation, useParams } from "wouter";
@@ -32,6 +33,7 @@ import {
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
   getRecommendationCount,
+  getRestaurantById,
   getSourceDisplayName,
   getSourcesByRestaurant,
   getVisitsByRestaurant,
@@ -412,11 +414,14 @@ function openMobileMapApp(appUrl: string, fallbackUrl: string) {
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
   const { isLoggedIn, user } = useAuth();
-  const { isEnglish } = useLocale();
+  const { isEnglish, locale } = useLocale();
   const { topics, getTopicsForRestaurant, toggleRestaurantInTopic } = useFavorites();
-  const restaurant = restaurants.find((item) => item.id === id);
+  const restaurant = getRestaurantById(id ?? "");
+  useEffect(() => {
+    if (restaurant && id !== restaurant.id) navigate(`/restaurant/${restaurant.id}`, { replace: true });
+  }, [id, restaurant, navigate]);
   const [activeTab, setActiveTab] = useState<DetailTab>("menu");
   const [shareOpen, setShareOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -944,9 +949,19 @@ export default function RestaurantDetail() {
       <div className="mb-4">
         <h3 className="text-sm font-bold text-[#1a1a1a]">{uiCopy.directionsTitle}</h3>
         <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">{uiCopy.directionsDescription}</p>
+        {getOperationNotice(restaurant, locale) && (
+          <p role="status" className="mt-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-900">
+            {getOperationNotice(restaurant, locale)}
+            {restaurant.replacementRestaurantId && getRestaurantById(restaurant.replacementRestaurantId) && (
+              <Link href={`/restaurant/${restaurant.replacementRestaurantId}`} className="mt-2 block font-semibold underline">
+                {isEnglish ? "View the updated location" : "이전한 위치 보기"}
+              </Link>
+            )}
+          </p>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+      {isRestaurantRecommendable(restaurant) && <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
         <button
           type="button"
           onClick={() => openExternalDirections("naver")}
@@ -963,7 +978,7 @@ export default function RestaurantDetail() {
           <Navigation className="h-4 w-4" />
           {uiCopy.actionKakao}
         </button>
-      </div>
+      </div>}
 
       <button
         type="button"
@@ -1068,8 +1083,9 @@ export default function RestaurantDetail() {
             <div className="mb-6 border-b border-[#f0f0f0] pb-5">
               <h1 className="mb-2 text-[24px] font-[800] text-[#1a1a1a] sm:text-[28px]">{restaurant.name}</h1>
               <div className="flex flex-wrap items-center gap-4 text-sm text-[#666]">
+                {getOperationNotice(restaurant, locale) && <p role="status" className="rounded-xl bg-amber-50 p-3 text-sm text-amber-900">{getOperationNotice(restaurant, locale)}</p>}
                 {recommendationCount > 0 ? (
-                  <span className="font-bold text-[#FD7979]">추천 {recommendationCount}곳</span>
+                  <span className="font-bold text-[#FD7979]">{recommendationCount}개 출처에 소개</span>
                 ) : null}
                 <span>{restaurant.region}</span>
               </div>

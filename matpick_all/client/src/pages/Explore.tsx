@@ -1,3 +1,5 @@
+import RecommendationCard from "@/components/RecommendationCard";
+import { isRestaurantRecommendable } from "@/lib/restaurantEligibility";
 import {
   type FormEvent,
   type ReactNode,
@@ -225,7 +227,7 @@ const EXPLORE_COPY = {
     photoPending: "사진 준비 중",
     priceLabel: "대표 가격",
     menuFallback: "메뉴 정보가 아직 준비 중이에요.",
-    recommendLabel: (count: number) => `추천 ${count}곳`,
+    recommendLabel: (count: number) => `${count}개 출처에 소개`,
     seoTitle: "맛집 탐색",
     seoDescription:
       "채널, 주제, 카테고리, 지역 필터를 조합해서 원하는 맛집을 탐색해보세요.",
@@ -262,7 +264,7 @@ const EXPLORE_COPY = {
     photoPending: "Photo coming soon",
     priceLabel: "From",
     menuFallback: "Menu details are coming soon.",
-    recommendLabel: (count: number) => `${count} picks`,
+    recommendLabel: (count: number) => `Featured in ${count} sources`,
     seoTitle: "Explore restaurants",
     seoDescription:
       "Browse restaurants by creator, topic, cuisine, and region on Matpick.",
@@ -467,13 +469,7 @@ function FilterChip({
   );
 }
 
-function RestaurantCard({
-  restaurant,
-  imageIndex,
-  locale,
-  copy,
-  onSelect,
-}: {
+function RestaurantCard({ restaurant, onSelect }: {
   restaurant: Restaurant;
   imageIndex: number;
   locale: AppLocale;
@@ -481,109 +477,12 @@ function RestaurantCard({
   onSelect?: (restaurant: Restaurant) => void;
 }) {
   const [, navigate] = useLocation();
-  const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
-  const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
-  const recommendationCount = getRecommendationCount(restaurant.id);
-  const displayImage = getRestaurantDisplayImage(restaurant);
-  const priceHint = getRestaurantPrimaryPrice(restaurant);
-  const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
-  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
-  const broadcastBadge = formatRestaurantBroadcastBadge(broadcastMeta, locale);
-
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        onSelect?.(restaurant);
-        navigate(`/restaurant/${restaurant.id}`);
-      }}
-      className="group self-start overflow-hidden rounded-[26px] border border-[#f0ebec] bg-white text-left shadow-[0_8px_28px_rgba(0,0,0,0.06)] transition-all hover:-translate-y-0.5 hover:border-[#ffd0d5] hover:shadow-[0_16px_42px_rgba(253,121,121,0.14)]"
-    >
-      <div className="relative aspect-[2/3] overflow-hidden bg-[#211f22]">
-        <img
-          src={displayImage.src}
-          alt={restaurant.name}
-          className="h-full w-full object-contain"
-          width={1122}
-          height={1402}
-          loading={imageIndex < 3 ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={imageIndex === 0 ? "high" : imageIndex < 3 ? "auto" : "low"}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(16,16,16,0.02)_0%,rgba(16,16,16,0.18)_100%)]" />
-
-        <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-          {!displayImage.hasPhoto ? (
-            <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#6f7280] backdrop-blur">
-              {copy.photoPending}
-            </span>
-          ) : null}
-          <span className="rounded-full bg-white/92 px-3 py-1 text-xs font-semibold text-[#555] backdrop-blur">
-            {translateCuisineLabel(getCuisineCategory(restaurant.category), locale)}
-          </span>
-          {foundingBadge ? (
-            <span className="rounded-full bg-[#fff3f4] px-3 py-1 text-xs font-semibold text-[#ff7b83]">
-              {foundingBadge}
-            </span>
-          ) : null}
-          {broadcastBadge ? (
-            <span className="rounded-full bg-[#eef7ff] px-3 py-1 text-xs font-semibold text-[#3b82c4]">
-              {broadcastBadge}
-            </span>
-          ) : null}
-        </div>
-
-        <div className="absolute right-4 top-4">
-          <HeartButton restaurantId={restaurant.id} size="sm" className="shadow-md" />
-        </div>
-
-        {recommendationCount > 1 ? (
-          <div className="absolute bottom-4 left-4 rounded-full bg-[#111111]/72 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-            {copy.recommendLabel(recommendationCount)}
-          </div>
-        ) : null}
-      </div>
-
-      <div className="space-y-4 p-5">
-        <div className="space-y-2">
-          <h3 className="line-clamp-1 text-lg font-bold text-[#181818]">{restaurant.name}</h3>
-          <p className="line-clamp-2 min-h-[2.625rem] text-sm text-[#8a8a8a]">
-            {restaurant.address}
-          </p>
-          {priceHint ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b2a2a6]">
-              {copy.priceLabel} {priceHint}
-            </p>
-          ) : null}
-          <p className="line-clamp-3 min-h-[3.9375rem] text-sm font-medium text-[#ff7b83]">
-            {getRestaurantMenuSummary(restaurant) || copy.menuFallback}
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {creatorsForRestaurant.map((creator) => (
-            <span
-              key={creator.id}
-              title={getCreatorDisplayName(creator)}
-              className="inline-flex max-w-[140px] items-center rounded-full border border-[#ffd2d8] bg-[#fff7f8] px-3 py-1 text-xs font-semibold text-[#ff7b83]"
-            >
-              <span className="truncate">{getCreatorDisplayName(creator)}</span>
-            </span>
-          ))}
-
-          {sourcesForRestaurant.map((source) => (
-            <span
-              key={source.id}
-              title={getSourceDisplayName(source)}
-              className="inline-flex max-w-[170px] items-center rounded-full border border-[#f1ddaf] bg-[#fff8e8] px-3 py-1 text-xs font-semibold text-[#b67b19]"
-            >
-              <span className="truncate">{getSourceDisplayName(source)}</span>
-            </span>
-          ))}
-        </div>
-      </div>
-    </button>
-  );
+  return <div className="self-start overflow-hidden rounded-2xl border border-[#eee7e9] bg-white shadow-sm">
+    <RecommendationCard restaurant={restaurant} onSelect={() => {
+      onSelect?.(restaurant);
+      navigate(`/restaurant/${restaurant.id}`);
+    }} />
+  </div>;
 }
 
 function TtoganjipEpisodeGrid({
@@ -1708,7 +1607,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
   }, [activeMichelinSourceId, selectedSubdivision]);
 
   const filteredRestaurants = useMemo(() => {
-    let nextRestaurants = [...restaurants];
+    let nextRestaurants = restaurants.filter(isRestaurantRecommendable);
 
     if (selectedDiscoveryKeys.length > 0) {
       const selectedCreatorKeys = new Set(

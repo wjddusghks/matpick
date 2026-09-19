@@ -1,4 +1,5 @@
-import { copyFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { loadPublicData } from "./load-public-data.mjs";
+import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,22 +9,6 @@ const projectRoot = path.resolve(__dirname, "..");
 const clientRoot = path.join(projectRoot, "client");
 const publicDir = path.join(clientRoot, "public");
 const sourceAsset = path.join(clientRoot, "src", "assets", "matpick-logo-final 2.png");
-const baseDataPath = path.join(clientRoot, "src", "data", "matpick-data.json");
-const generatedDir = path.join(clientRoot, "src", "data", "generated");
-const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
-const discoveryTopicsPath = path.join(clientRoot, "src", "data", "discovery-topics.json");
-const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set([
-  "ttoganjip",
-  "popular-restaurants",
-  "michelin",
-  "old-korean-100",
-  "baekjong-wok",
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
-]);
-const episodicSourceIds = new Set(["ttoganjip"]);
-
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
 }
@@ -41,140 +26,6 @@ function stripAdsensePublisher(client) {
   return client.replace(/^ca-/, "");
 }
 
-async function readJson(filePath) {
-  const raw = await readFile(filePath, "utf8");
-  return JSON.parse(raw.replace(/^\uFEFF/, ""));
-}
-
-function slugifyTopicSegment(value) {
-  const normalized = String(value ?? "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim()
-    .toLowerCase();
-
-  const slug = normalized
-    .replace(/[^a-z0-9가-힣]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
-  return slug || "episode";
-}
-
-function sortVisitsByDate(a, b) {
-  return String(b.visitDate || "").localeCompare(String(a.visitDate || ""), "ko-KR");
-}
-
-function buildTopicEpisodes(discoveryTopics, creators, visits, sourceLinks = []) {
-  return discoveryTopics.flatMap((topic) => {
-    if (topic.kind === "source" && episodicSourceIds.has(topic.targetId)) {
-      const groupedSourceLinks = new Map();
-
-      sourceLinks
-        .filter((link) => link.sourceId === topic.targetId)
-        .forEach((link) => {
-          const episodeLabel =
-            link.label?.trim() ||
-            (Number.isFinite(link.ordinal) ? `EP.${link.ordinal}` : "");
-
-          if (!episodeLabel) {
-            return;
-          }
-
-          const current = groupedSourceLinks.get(episodeLabel) ?? [];
-          current.push(link);
-          groupedSourceLinks.set(episodeLabel, current);
-        });
-
-      const usedSlugs = new Set();
-
-      return Array.from(groupedSourceLinks.entries()).map(([episodeLabel, links]) => {
-        const baseSlug = slugifyTopicSegment(episodeLabel);
-        let episodeSlug = baseSlug;
-
-        if (usedSlugs.has(episodeSlug)) {
-          episodeSlug = `${baseSlug}-${links[0]?.ordinal ?? usedSlugs.size + 1}`;
-        }
-        usedSlugs.add(episodeSlug);
-
-        return {
-          topicSlug: topic.slug,
-          slug: episodeSlug,
-          name: topic.name || topic.slug,
-        };
-      });
-    }
-
-    if (topic.kind !== "creator") {
-      return [];
-    }
-
-    const creator = creators.find((entry) => entry.id === topic.targetId);
-    const creatorName = topic.name || creator?.name || topic.slug;
-    const groupedVisits = new Map();
-
-    visits
-      .filter((visit) => visit.creatorId === topic.targetId)
-      .sort(sortVisitsByDate)
-      .forEach((visit) => {
-        const groupKey = visit.videoId || visit.episode || visit.videoTitle || visit.id;
-        const current = groupedVisits.get(groupKey) ?? [];
-        current.push(visit);
-        groupedVisits.set(groupKey, current);
-      });
-
-    const usedSlugs = new Set();
-
-    return Array.from(groupedVisits.values())
-      .map((episodeVisits) => {
-        const firstVisit = [...episodeVisits].sort(sortVisitsByDate)[0];
-        const episodeLabel =
-          firstVisit?.episode?.trim() ||
-          firstVisit?.videoTitle?.trim() ||
-          firstVisit?.videoId?.trim() ||
-          "회차";
-        const baseSlug = slugifyTopicSegment(episodeLabel);
-        let episodeSlug = baseSlug;
-
-        if (usedSlugs.has(episodeSlug)) {
-          episodeSlug = `${baseSlug}-${slugifyTopicSegment(firstVisit.videoId || firstVisit.id)}`;
-        }
-        usedSlugs.add(episodeSlug);
-
-        return {
-          topicSlug: topic.slug,
-          slug: episodeSlug,
-          name: creatorName,
-        };
-      })
-      .filter(Boolean);
-  });
-}
-
-async function readGeneratedDatasets() {
-  const entries = await readdir(generatedDir, { withFileTypes: true });
-  const datasetFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".generated.json"))
-    .map((entry) => path.join(generatedDir, entry.name));
-
-  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
-}
-
-async function readTopicEnrichments() {
-  const entries = await readdir(topicEnrichmentDir, { withFileTypes: true });
-  const datasetFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".enriched.json"))
-    .map((entry) => path.join(topicEnrichmentDir, entry.name));
-
-  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
-}
-
-function filterVisibleCreatorData(creators = [], visits = []) {
-  return {
-    creators: creators.filter((creator) => !hiddenCreatorIds.has(creator.id)),
-    visits: visits.filter((visit) => !hiddenCreatorIds.has(visit.creatorId)),
-  };
-}
-
 async function ensurePublicAssets() {
   await mkdir(publicDir, { recursive: true });
   await copyFile(sourceAsset, path.join(publicDir, "favicon.png"));
@@ -183,33 +34,9 @@ async function ensurePublicAssets() {
 }
 
 async function buildSitemap(siteUrl) {
-  const baseDataset = await readJson(baseDataPath);
-  const generatedDatasets = await readGeneratedDatasets();
-  const topicEnrichments = await readTopicEnrichments();
-  const discoveryTopics = (await readJson(discoveryTopicsPath)).filter(
-    (topic) => topic.kind === "source" && publicDataSourceIds.has(topic.targetId)
-  );
-  const { creators, visits } = filterVisibleCreatorData([], []);
-  const visibleSourceLinks = [baseDataset, ...generatedDatasets, ...topicEnrichments]
-    .flatMap((dataset) => dataset.sourceLinks || [])
-    .filter((link) => publicDataSourceIds.has(link.sourceId));
-  const visibleRestaurantIds = new Set(
-    visibleSourceLinks.map((link) => link.restaurantId).filter(Boolean)
-  );
-  const topicEpisodes = buildTopicEpisodes(
-    discoveryTopics,
-    creators,
-    visits,
-    visibleSourceLinks
-  );
-  const restaurants = [
-    ...(baseDataset.restaurants || []),
-    ...generatedDatasets.flatMap((dataset) => dataset.restaurants || []),
-    ...topicEnrichments.flatMap((dataset) => dataset.restaurants || []),
-  ].filter(
-    (restaurant) =>
-      visibleRestaurantIds.size === 0 || visibleRestaurantIds.has(restaurant.id)
-  );
+  const data = await loadPublicData();
+  const { restaurants, creators, discoveryTopics } = data;
+  const topicEpisodes = discoveryTopics.flatMap((topic) => data.getDiscoveryTopicEpisodes(topic.slug));
   const seen = new Set();
 
   const staticUrls = ["/", "/explore", "/map", "/reviews", "/about", "/privacy", "/terms", "/contact"];

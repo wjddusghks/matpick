@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { useAuth } from "./AuthContext";
+import { resolveRestaurantId } from "@/data/restaurantAliases";
 import {
   createFavoriteTopicId,
   sanitizeFavoriteTopicName,
@@ -91,13 +92,22 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
       {}
     );
 
-    setFavorites(new Set(nextFavorites));
+    const migratedFavorites = Array.from(new Set(nextFavorites.map(resolveRestaurantId)));
+    const migratedAssignments = Object.fromEntries(Object.entries(nextAssignments)
+      .map(([topicId, ids]) => [topicId, Array.from(new Set(ids.map(resolveRestaurantId)))]));
+    setFavorites(new Set(migratedFavorites));
     setTopics(
       nextTopics
         .filter((topic) => sanitizeFavoriteTopicName(topic.name).length > 0)
         .sort((a, b) => a.createdAt - b.createdAt)
     );
-    setTopicAssignments(nextAssignments);
+    setTopicAssignments(migratedAssignments);
+    try {
+      window.localStorage.setItem(getFavoritesStorageKey(user.id), JSON.stringify(migratedFavorites));
+      window.localStorage.setItem(getTopicAssignmentsStorageKey(user.id), JSON.stringify(migratedAssignments));
+    } catch {
+      // Keep migrated references in memory when browser storage is unavailable.
+    }
   }, [isLoggedIn, user]);
 
   const persistFavorites = useCallback(

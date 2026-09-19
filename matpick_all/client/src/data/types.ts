@@ -75,6 +75,14 @@ export interface Restaurant {
   country?: string;
   phone?: string;
   operationStatus?: string;
+  operationState?: "unknown" | "operating" | "closed" | "moved" | "temporarily_closed";
+  operationVerifiedAt?: string;
+  operationSourceUrl?: string;
+  locationVerifiedAt?: string;
+  locationSourceUrls?: string[];
+  dataReviewNote?: string;
+  recommendationHold?: string;
+  replacementRestaurantId?: string;
   operationSummary?: string;
   weeklyHours?: RestaurantWeeklyHours[];
   kakaoPlaceId?: string;
@@ -141,6 +149,7 @@ export interface SourceLink {
 }
 
 export interface MatpickDataSet {
+  restaurantAliases?: Record<string, string>;
   creators: Creator[];
   restaurants: Restaurant[];
   visits: Visit[];

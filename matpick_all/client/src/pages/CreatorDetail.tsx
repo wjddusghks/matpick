@@ -55,7 +55,7 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
         )}
         {recCount > 1 && (
           <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg" style={{ background: "linear-gradient(135deg, #FD7979, #FDACAC)" }}>
-            🔥 {recCount}개 채널 추천
+            🔥 {recCount}개 출처에 소개
           </div>
         )}
         <div className="absolute left-3 bottom-3 flex max-w-[80%] flex-wrap gap-2">

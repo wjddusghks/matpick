@@ -1,0 +1,72 @@
+{
+  "topic_enrichment_baekjong-wok_135d7666fa1b": {
+    "lat": 37.583853,
+    "lng": 127.01964,
+    "category": "우동·소바",
+    "googlePlaceId": null,
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://www.koobig.com/461387", "https://market.koreacharts.com/store/content/20666194.html"],
+    "dataReviewNote": "보문동5가 3-3 주소의 지도 좌표로 정정. 용인 좌표 및 다른 장소로 의심되는 Google ID 해제. 현재 영업 여부를 확인한 것은 아님."
+  },
+  "topic_enrichment_baekjong-wok_fa72469d5025": {
+    "lat": 37.534494026270124,
+    "lng": 126.99071603334099,
+    "category": "태국음식",
+    "operationState": "closed",
+    "operationVerifiedAt": "2026-09-19",
+    "operationSourceUrl": "https://polle.com/place/2mIrJD/%EC%99%95%20%ED%83%80%EC%9D%B4",
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://polle.com/place/2mIrJD/%EC%99%95%20%ED%83%80%EC%9D%B4"],
+    "dataReviewNote": "이태원로 151 식당의 좌표로 정정하고 다른 업종인 피부·체형관리 분류 제거. 공개 장소 페이지의 폐점 표기를 확인해 추천에서 제외."
+  },
+  "topic_enrichment_baekjong-wok_ba28a1999fe0": {
+    "lat": 37.56278917563945,
+    "lng": 127.01495223630194,
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://polle.com/place/37TlZv/%EC%9A%B0%EC%A0%95", "https://www.diningcode.com/profile.php?rid=D59MyIG8ydFc"],
+    "dataReviewNote": "신당동 304-791 및 퇴계로76길 55 주소 일치 확인. 기존 카카오 조사 기록의 같은 주소 좌표와도 수 m 내 일치."
+  },
+  "topic_enrichment_delicious-guys_762a359e49ec": {
+    "lat": 37.575556385831355,
+    "lng": 126.98447325762291,
+    "category": "두부요리",
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://www.store114.net/store/detail.asp?seq=2037690334"],
+    "recommendationHold": "원본 식당명에 현재 폐업 표기가 있으나 최신 영업 상태를 독립적으로 확정하지 못함.",
+    "dataReviewNote": "관훈동 110의 과거 매장 위치로 정정. 용인 교동두부의 영업 정보와 혼동하지 않음. 현재 영업 상태 확인 전 추천 보류."
+  },
+  "topic_enrichment_delicious-guys_942afcd2b332": {
+    "lat": 37.52196148926485,
+    "lng": 127.03994274870152,
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://polle.com/place/4RpEUt/%EB%AC%B4%EB%93%B1%EC%82%B0", "https://www.store114.net/app/bank/detail.asp?seq=BsN3Cgy3BrdN"],
+    "dataReviewNote": "선릉로146길 3 및 청담동 1-15 주소 일치. 두 공개 지도 좌표가 수 m 내 일치해 수원 좌표를 정정."
+  },
+  "topic_enrichment_delicious-guys_06d249d787a7": {
+    "lat": 37.5096541,
+    "lng": 127.0847819,
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://place.udanax.org/p/1225980/%ED%83%95", "https://www.diningcode.com/profile.php?rid=8HNhz0VtOWcu"],
+    "dataReviewNote": "잠실동 207-19 및 백제고분로15길 48 주소의 공개 지도 좌표로 강원도 좌표를 정정."
+  },
+  "wednesday-gourmet_restaurant_355": {
+    "operationState": "closed",
+    "operationVerifiedAt": "2026-09-19",
+    "operationSourceUrl": "https://polle.com/place/2mIrJD/%EC%99%95%20%ED%83%80%EC%9D%B4",
+    "dataReviewNote": "같은 이태원로 151 주소의 왕타이 기록. 공개 장소 페이지의 폐점 표기를 두 방송 기록에 모두 적용."
+  },
+  "sikgaek-baekban-trip_restaurant_166": {
+    "operationState": "moved",
+    "operationVerifiedAt": "2026-09-19",
+    "operationSourceUrl": "https://polle.com/place/4JNr0z/%EB%8F%99%EC%9B%90%EC%A7%91",
+    "replacementRestaurantId": "wednesday-gourmet_restaurant_552",
+    "kakaoPlaceId": "",
+    "placeUrl": "",
+    "dataReviewNote": "을지로11길 22는 이전 주소. 퇴계로27길 48의 현재 매장으로 연결하며 과거 주소와 방송 기록은 보존. https://autoreserve.com/ko/restaurants/QEzp9nGp4dKbw7MQvNxw 에서도 이전 및 현재 주소 확인."
+  },
+  "wednesday-gourmet_restaurant_552": {
+    "locationVerifiedAt": "2026-09-19",
+    "locationSourceUrls": ["https://polle.com/place/4JNr0z/%EB%8F%99%EC%9B%90%EC%A7%91", "https://autoreserve.com/ko/restaurants/QEzp9nGp4dKbw7MQvNxw"],
+    "dataReviewNote": "퇴계로27길 48 현재 주소와 보유 좌표 일치 확인. 이전 주소의 백반기행 출처도 함께 표시."
+  }
+}

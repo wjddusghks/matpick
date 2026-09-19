@@ -1,0 +1,53 @@
+{
+  "basis": "Sum of built JavaScript chunks and their gzip sizes, following static imports only; excludes CSS/images/third-party requests and is not a page-load-time measurement.",
+  "entry": {
+    "bytes": 416203,
+    "gzipBytes": 123598,
+    "chunks": [
+      "index.html"
+    ]
+  },
+  "home": {
+    "bytes": 496860,
+    "gzipBytes": 153100,
+    "chunks": [
+      "index.html",
+      "src/pages/Home.tsx",
+      "_FavoriteTopicDialog--FxQE5lS.js",
+      "_SocialLoginButtons-k7XN_c2k.js",
+      "_mapTopicShortcuts-BrwljIFh.js",
+      "_admin-BVICZfPB.js",
+      "_location-CK6B26uK.js",
+      "_seo-CvB_SH7V.js",
+      "_matpick-logo-final 2-sdKkGILS.js",
+      "_search-BD5vO6UY.js",
+      "_message-circle-more-BOMFuT8a.js",
+      "_star-BAfKWW6-.js"
+    ]
+  },
+  "map": {
+    "bytes": 6046018,
+    "gzipBytes": 900040,
+    "chunks": [
+      "index.html",
+      "src/pages/SearchMap.tsx",
+      "_RecommendationCard-BzphXfmW.js",
+      "_index-DdjzRxVY.js",
+      "_search-BD5vO6UY.js",
+      "_share-2-BT8bVIgz.js",
+      "_location-CK6B26uK.js",
+      "_mapCollections-BAdNcYwV.js",
+      "_mapTopicShortcuts-BrwljIFh.js",
+      "_seo-CvB_SH7V.js",
+      "_arrow-left-5zf0VDW9.js"
+    ]
+  },
+  "catalog": {
+    "bytes": 5985070,
+    "gzipBytes": 877715,
+    "chunks": [
+      "_index-DdjzRxVY.js",
+      "index.html"
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import path from "node:path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
+  envDir: import.meta.dirname,
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -13,6 +14,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
+    manifest: true,
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },

@@ -1,3 +1,6 @@
+import RecommendationCard from "@/components/RecommendationCard";
+import { findNearbyRecommendations } from "@/lib/nearbyRecommendations";
+import { isRestaurantRecommendable, hasUsableCoordinates } from "@/lib/restaurantEligibility";
 import {
   useCallback,
   useDeferredValue,
@@ -22,17 +25,14 @@ import { useLocation, useSearch } from "wouter";
 import {
   creators,
   getCreatorDisplayName,
-  getCreatorsByRestaurant,
+  getRestaurantById,
   getDiscoveryTopicBySlug,
   getDiscoveryTopicEpisodeBySlug,
-  getRestaurantBroadcastMeta,
-  getRestaurantMenuSummary,
   getRestaurantsByCreator,
   getRestaurantsBySource,
   getSearchSuggestions,
   getSourceById,
   getSourceDisplayName,
-  getSourcesByRestaurant,
   restaurants,
   searchRestaurants,
   type Restaurant,
@@ -49,7 +49,6 @@ import {
   type MapTopicShortcut,
 } from "@/data/mapTopicShortcuts";
 import NaverMap from "@/components/NaverMap";
-import HeartButton from "@/components/HeartButton";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
   clearStoredLocation,
@@ -62,12 +61,6 @@ import {
   type StoredLocation,
 } from "@/lib/location";
 import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
-import {
-  formatRestaurantBroadcastBadge,
-  getRestaurantDisplayImage,
-  formatRestaurantFoundingBadge,
-  getRestaurantPrimaryPrice,
-} from "@/lib/restaurantPresentation";
 import { useSeo } from "@/lib/seo";
 
 const RELATED_TOPICS_LABEL: Record<AppLocale, string> = {
@@ -75,7 +68,6 @@ const RELATED_TOPICS_LABEL: Record<AppLocale, string> = {
   en: "Related topics",
 };
 
-const NEARBY_RESTAURANT_LIMIT = 100;
 
 const MAP_COPY = {
   ko: {
@@ -83,7 +75,7 @@ const MAP_COPY = {
     allRestaurants: "전체 맛집",
     nearbyRestaurants: "내 주변 유명 맛집",
     nearbyDescription:
-      "현재 위치에서 가까운 순서로 유명 맛집 100곳을 보여드려요.",
+      "가까운 식당부터 소개 근거를 확인하고 바로 길찾기로 이어가세요.",
     regionRestaurants: (value: string) => `${value} 맛집`,
     cuisineRestaurants: (value: string) => `${value} 맛집`,
     sourceRestaurants: (value: string) => `${value} 맛집`,
@@ -125,7 +117,7 @@ const MAP_COPY = {
     allRestaurants: "All restaurants",
     nearbyRestaurants: "Famous restaurants near me",
     nearbyDescription:
-      "Browse up to 100 famous restaurants ordered by distance from your current location.",
+      "Start with nearby places, check why they are featured, and get directions.",
     regionRestaurants: (value: string) => `${value} restaurants`,
     cuisineRestaurants: (value: string) => `${value} restaurants`,
     sourceRestaurants: (value: string) => `${value} restaurants`,
@@ -267,7 +259,7 @@ function filterRestaurants(
       };
     }
     case "restaurant": {
-      const restaurant = restaurants.find((item) => item.id === value);
+      const restaurant = getRestaurantById(value);
       return {
         restaurants: restaurant ? [restaurant] : [],
         title: restaurant?.name ?? copy.searchResults,
@@ -359,159 +351,6 @@ function SearchDropdownItem({
       </div>
     </button>
   );
-}
-
-function RestaurantCard({
-  restaurant,
-  selected,
-  distanceMeters,
-  onSelect,
-}: {
-  restaurant: Restaurant;
-  selected: boolean;
-  distanceMeters?: number | null;
-  onSelect: () => void;
-}) {
-  const [, navigate] = useLocation();
-  const { locale } = useLocale();
-  const copy = MAP_COPY[locale];
-  const creatorsForRestaurant = getCreatorsByRestaurant(restaurant.id);
-  const sourcesForRestaurant = getSourcesByRestaurant(restaurant.id);
-  const displayImage = getRestaurantDisplayImage(restaurant, {
-    width: 320,
-    height: 320,
-  });
-  const priceHint = getRestaurantPrimaryPrice(restaurant);
-  const broadcastMeta = getRestaurantBroadcastMeta(restaurant.id);
-  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
-  const broadcastBadge = formatRestaurantBroadcastBadge(broadcastMeta, locale);
-
-  return (
-    <div
-      className={`border-b border-[#f1f1f1] px-4 py-4 transition-colors ${
-        selected ? "bg-[#fff7f1]" : "bg-white hover:bg-[#fafafa]"
-      }`}
-    >
-      <div
-        role="button"
-        tabIndex={0}
-        onClick={onSelect}
-        onKeyDown={(event) => {
-          if (
-            event.target === event.currentTarget &&
-            (event.key === "Enter" || event.key === " ")
-          ) {
-            event.preventDefault();
-            onSelect();
-          }
-        }}
-        className="flex w-full items-start gap-3 text-left outline-none focus-visible:ring-2 focus-visible:ring-[#ffb8bf]"
-      >
-        <div className="h-20 w-20 overflow-hidden rounded-[18px] bg-[#f3f3f3]">
-          <img src={displayImage.src} alt={restaurant.name} className="h-full w-full object-cover" />
-        </div>
-
-        <div className="pt-1">
-          <HeartButton restaurantId={restaurant.id} size="sm" />
-        </div>
-
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2">
-            <p className="text-[15px] font-bold text-[#ff7b83]">{restaurant.name}</p>
-            <span className="text-xs text-[#8c8c8c]">
-              {translateCuisineLabel(restaurant.category, locale)}
-            </span>
-            {distanceMeters != null ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-[#fff1f3] px-2 py-0.5 text-[11px] font-bold text-[#ff6f7c]">
-                <MapPin className="h-3 w-3" strokeWidth={2.2} />
-                {formatDistance(distanceMeters, locale)}
-              </span>
-            ) : null}
-          </div>
-
-          <p className="mt-1 truncate text-xs text-[#666]">{restaurant.address || restaurant.region}</p>
-          {foundingBadge || broadcastBadge ? (
-            <div className="mt-2 flex flex-wrap gap-1.5">
-              {foundingBadge ? (
-                <span className="inline-flex items-center rounded-full bg-[#fff4f5] px-2 py-0.5 text-[11px] font-semibold text-[#ff6f7c]">
-                  {foundingBadge}
-                </span>
-              ) : null}
-              {broadcastBadge ? (
-                <span className="inline-flex items-center rounded-full bg-[#eef7ff] px-2 py-0.5 text-[11px] font-semibold text-[#3b82c4]">
-                  {broadcastBadge}
-                </span>
-              ) : null}
-            </div>
-          ) : null}
-          {priceHint ? (
-            <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#b1a5a8]">
-              {copy.priceLabel} {priceHint}
-            </p>
-          ) : null}
-          <p className="mt-2 text-xs text-[#888]">
-            {getRestaurantMenuSummary(restaurant) || copy.listPlaceholder}
-          </p>
-
-          {!displayImage.hasPhoto ? (
-            <p className="mt-1 text-[11px] font-medium text-[#9b9b9b]">{copy.photoPending}</p>
-          ) : null}
-
-          {creatorsForRestaurant.length > 0 || sourcesForRestaurant.length > 0 ? (
-            <div className="mt-2.5">
-              <p className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#a69a9d]">
-                {copy.featuredByLabel}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {creatorsForRestaurant.map((creator) => (
-                  <span
-                    key={creator.id}
-                    className="inline-flex items-center rounded-full border border-[#ffd3d8] bg-[#fff7f8] px-2 py-0.5 text-[11px] font-medium text-[#ff7b83]"
-                  >
-                    {getCreatorDisplayName(creator)}
-                  </span>
-                ))}
-
-                {sourcesForRestaurant.map((source) => (
-                  <span
-                    key={source.id}
-                    title={getSourceDisplayName(source)}
-                    className="inline-flex max-w-[180px] items-center rounded-full border border-[#eeddb0] bg-[#fff8e8] px-2 py-0.5 text-[11px] font-medium text-[#b7791f]"
-                  >
-                    <span className="truncate">{getSourceDisplayName(source)}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          ) : null}
-        </div>
-      </div>
-
-      {selected ? (
-        <div className="mt-3 flex justify-center">
-          <button
-            type="button"
-            onClick={() => navigate(`/restaurant/${restaurant.id}`)}
-            className="inline-flex min-w-[234px] max-w-full items-center justify-center rounded-xl bg-[#ff7b83] px-8 py-2.5 text-sm font-semibold text-white transition hover:brightness-95"
-          >
-            {copy.detailsButton}
-          </button>
-        </div>
-      ) : null}
-    </div>
-  );
-}
-
-function formatDistance(distanceMeters: number, locale: AppLocale) {
-  if (distanceMeters < 1000) {
-    return locale === "en"
-      ? `${Math.round(distanceMeters).toLocaleString()} m`
-      : `${Math.round(distanceMeters).toLocaleString()}m`;
-  }
-
-  const distanceKm = distanceMeters / 1000;
-  const formattedDistance = distanceKm < 10 ? distanceKm.toFixed(1) : Math.round(distanceKm).toString();
-  return locale === "en" ? `${formattedDistance} km` : `${formattedDistance}km`;
 }
 
 function TopicNavigation({
@@ -616,7 +455,8 @@ export default function SearchMap() {
     () => filterRestaurants(type, value, topic, locale),
     [locale, topic, type, value]
   );
-  const deferredRestaurants = useDeferredValue(filteredRestaurants);
+  const eligibleRestaurants = useMemo(() => filteredRestaurants.filter(isRestaurantRecommendable), [filteredRestaurants]);
+  const deferredRestaurants = useDeferredValue(eligibleRestaurants);
 
   useSeo({
     title: copy.pageTitle(title),
@@ -648,11 +488,10 @@ export default function SearchMap() {
       : false
   );
   const [mobileSheetExpanded, setMobileSheetExpanded] = useState(false);
-  const resultPageSize = isMobileLayout ? 24 : 60;
+  const resultPageSize = 3;
   const [visibleListCount, setVisibleListCount] = useState(resultPageSize);
   const searchRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
-  const listLoadMoreRef = useRef<HTMLDivElement>(null);
   const locationRequestRef = useRef<AbortController | null>(null);
   const hasShownLocationWarningRef = useRef(false);
 
@@ -732,36 +571,10 @@ export default function SearchMap() {
     [copy]
   );
 
-  const orderedRestaurants = useMemo(() => {
-    if (type !== "nearby") {
-      return deferredRestaurants;
-    }
-
-    if (!currentLocation) {
-      return [];
-    }
-
-    return deferredRestaurants
-      .filter(
-        (restaurant) =>
-          !restaurant.isOverseas &&
-          restaurant.lat != null &&
-          restaurant.lng != null &&
-          restaurant.lat !== 0 &&
-          restaurant.lng !== 0
-      )
-      .map((restaurant, index) => ({
-        restaurant,
-        index,
-        distance: getDistanceInMeters(currentLocation, {
-          lat: restaurant.lat,
-          lng: restaurant.lng,
-        }),
-      }))
-      .sort((left, right) => left.distance - right.distance || left.index - right.index)
-      .slice(0, NEARBY_RESTAURANT_LIMIT)
-      .map(({ restaurant }) => restaurant);
-  }, [currentLocation, deferredRestaurants, type]);
+  const nearbyResults = useMemo(() => currentLocation
+    ? findNearbyRecommendations(deferredRestaurants, currentLocation)
+    : { restaurants: [], radiusMeters: 0, expanded: false }, [currentLocation, deferredRestaurants]);
+  const orderedRestaurants = type === "nearby" ? nearbyResults.restaurants : deferredRestaurants;
 
   const domesticRestaurants = useMemo(
     () => orderedRestaurants.filter((restaurant) => !restaurant.isOverseas),
@@ -810,34 +623,6 @@ export default function SearchMap() {
     setVisibleListCount(resultPageSize);
     setMobileSheetExpanded(false);
   }, [resultPageSize, type, value]);
-
-  useEffect(() => {
-    const root = listRef.current;
-    const target = listLoadMoreRef.current;
-
-    if (!root || !target || visibleListCount >= listRestaurants.length) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-          setVisibleListCount((prev) => Math.min(prev + resultPageSize, listRestaurants.length));
-        });
-      },
-      {
-        root,
-        rootMargin: "160px 0px",
-      }
-    );
-
-    observer.observe(target);
-    return () => observer.disconnect();
-  }, [listRestaurants.length, resultPageSize, visibleListCount]);
 
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) {
@@ -1076,7 +861,7 @@ export default function SearchMap() {
   };
 
   const restaurantsWithCoords = restaurantsForMap.filter(
-    (restaurant) => restaurant.lat !== 0 && restaurant.lng !== 0
+    (restaurant) => hasUsableCoordinates(restaurant)
   );
 
   const searchControls = (
@@ -1133,8 +918,9 @@ export default function SearchMap() {
 
   const restaurantList = listRestaurants.length > 0 ? (
     <>
-      {visibleRestaurants.map((restaurant) => (
-        <RestaurantCard
+      {visibleRestaurants.map((restaurant, index) => (
+        <RecommendationCard
+          rank={index + 1}
           key={restaurant.id}
           restaurant={restaurant}
           selected={selectedId === restaurant.id}
@@ -1143,14 +929,18 @@ export default function SearchMap() {
         />
       ))}
       {visibleListCount < listRestaurants.length ? (
-        <div
-          ref={listLoadMoreRef}
-          className="px-4 py-4 text-center text-xs font-medium text-[#9a8f92]"
-        >
-          {copy.loadMore}
-        </div>
+        <button type="button" onClick={() => setVisibleListCount((count) => Math.min(count + resultPageSize, listRestaurants.length))}
+          className="min-h-12 w-full px-4 py-3 text-center text-sm font-semibold text-[#c24d63] hover:bg-[#fff5f6]">
+          {locale === "en" ? "Show more places" : "다른 후보 더 보기"}
+        </button>
       ) : null}
     </>
+  ) : type === "nearby" && !currentLocation && !isLocating ? (
+    <div className="px-6 py-10 text-center">
+      <p className="text-sm font-semibold">{locale === "en" ? "Choose an area to see nearby places" : "동네를 정하면 주변 식당을 추천해 드려요"}</p>
+      <p className="mt-2 text-xs leading-6 text-[#82787d]">{locale === "en" ? "Location access is optional. Search for a neighborhood or station above." : "위치 권한 없이도 위 검색창에 동네나 역 이름을 입력할 수 있어요."}</p>
+      <button type="button" onClick={() => searchRef.current?.querySelector("input")?.focus()} className="mt-4 rounded-xl border border-[#ffd4d9] px-4 py-3 text-sm font-semibold">{locale === "en" ? "Enter an area" : "동네·역 입력하기"}</button>
+    </div>
   ) : type === "nearby" && isLocating ? (
     <div className="flex flex-col items-center justify-center px-6 py-20 text-center">
       <LoaderCircle className="h-7 w-7 animate-spin text-[#ff7b83]" />
@@ -1172,6 +962,11 @@ export default function SearchMap() {
           {copy.resultCount(listRestaurants.length)}
         </span>
       </div>
+      {type === "nearby" && currentLocation && nearbyResults.expanded && (
+        <p className="mt-2 text-xs leading-5 text-[#956624]">{locale === "en"
+          ? `Expanded to ${Math.round(nearbyResults.radiusMeters / 1000)} km to find nearby candidates. Distances are straight-line.`
+          : `가까운 후보를 찾기 위해 ${Math.round(nearbyResults.radiusMeters / 1000)}km 범위로 넓혔어요. 거리는 직선 기준입니다.`}</p>
+      )}
       {description ? (
         <p className="mt-1.5 line-clamp-2 text-xs leading-5 text-[#8b7f82]">{description}</p>
       ) : null}
@@ -1224,7 +1019,7 @@ export default function SearchMap() {
   );
 
   const mobileSheetHeight =
-    listRestaurants.length === 0 ? "22dvh" : mobileSheetExpanded ? "74dvh" : "18dvh";
+    mobileSheetExpanded ? "74dvh" : "43dvh";
 
   return (
     <div className="h-[100dvh] overflow-hidden bg-white">
@@ -1277,6 +1072,7 @@ export default function SearchMap() {
                 ref={listRef}
                 className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white"
               >
+                {type === "nearby" && nearbyResults.expanded && <p className="px-4 pt-3 text-xs text-[#956624]">{locale === "en" ? `Expanded search: ${Math.round(nearbyResults.radiusMeters / 1000)} km` : `가까운 후보를 찾기 위해 ${Math.round(nearbyResults.radiusMeters / 1000)}km 범위로 넓혔어요`}</p>}
                 {restaurantList}
               </div>
             </div>

@@ -9,6 +9,8 @@ const cuisineTranslations: Record<string, string> = {
   인도: "Indian",
   태국: "Thai",
   베트남: "Vietnamese",
+  미분류: "Unclassified",
+  "카페·디저트": "Cafe & dessert",
 };
 
 export function getBrowserFallbackLocale(): AppLocale {

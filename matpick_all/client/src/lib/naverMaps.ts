@@ -1,8 +1,21 @@
-const NAVER_MAPS_CLIENT_ID = import.meta.env.VITE_NAVER_MAP_CLIENT_ID?.trim() ?? "";
+import { getNaverMapsScriptUrl } from "./naverMapsConfig";
+const NAVER_MAPS_SCRIPT_SRC = getNaverMapsScriptUrl(import.meta.env);
 const NAVER_MAPS_SCRIPT_ID = "matpick-naver-maps-sdk";
-const NAVER_MAPS_SCRIPT_SRC = `https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${encodeURIComponent(
-  NAVER_MAPS_CLIENT_ID
-)}`;
+export const NAVER_MAPS_AUTH_FAILURE_EVENT = "matpick:naver-maps-auth-failure";
+let authenticationFailed = false;
+let authenticationHandlerInstalled = false;
+
+function installAuthenticationHandler() {
+  if (authenticationHandlerInstalled) return;
+  const mapsWindow = window as Window & { navermap_authFailure?: () => void };
+  const previousHandler = mapsWindow.navermap_authFailure;
+  mapsWindow.navermap_authFailure = () => {
+    authenticationFailed = true;
+    window.dispatchEvent(new Event(NAVER_MAPS_AUTH_FAILURE_EVENT));
+    previousHandler?.();
+  };
+  authenticationHandlerInstalled = true;
+}
 
 function hasWindow() {
   return typeof window !== "undefined";
@@ -11,6 +24,7 @@ function hasWindow() {
 export function isNaverMapsReady(): boolean {
   return (
     hasWindow() &&
+    !authenticationFailed &&
     typeof (window as Window & { naver?: typeof naver }).naver !== "undefined" &&
     (window as Window & { naver?: typeof naver }).naver?.maps != null &&
     typeof (window as Window & { naver?: typeof naver }).naver?.maps.Map === "function"
@@ -29,6 +43,9 @@ function waitForNaverMaps(timeout = 10000): Promise<void> {
       if (isNaverMapsReady()) {
         window.clearInterval(interval);
         resolve();
+      } else if (authenticationFailed) {
+        window.clearInterval(interval);
+        reject(new Error("Naver Maps authentication failed."));
       } else if (Date.now() - start > timeout) {
         window.clearInterval(interval);
         reject(new Error("Naver Maps SDK load timed out."));
@@ -38,8 +55,13 @@ function waitForNaverMaps(timeout = 10000): Promise<void> {
 }
 
 export function ensureNaverMapsSdk(timeout = 15000): Promise<void> {
-  if (!NAVER_MAPS_CLIENT_ID) {
-    return Promise.reject(new Error("VITE_NAVER_MAP_CLIENT_ID is missing."));
+  if (!hasWindow()) return Promise.reject(new Error("A browser is required."));
+  installAuthenticationHandler();
+  if (authenticationFailed) {
+    return Promise.reject(new Error("Naver Maps authentication failed."));
+  }
+  if (!NAVER_MAPS_SCRIPT_SRC) {
+    return Promise.reject(new Error("VITE_NAVER_MAP_KEY_ID is missing (legacy environment name VITE_NAVER_MAP_CLIENT_ID is also supported)."));
   }
 
   if (isNaverMapsReady()) {
@@ -47,12 +69,16 @@ export function ensureNaverMapsSdk(timeout = 15000): Promise<void> {
   }
 
   return new Promise((resolve, reject) => {
+    // Also bound the script download itself; previously only SDK initialization timed out.
+    const deadline = window.setTimeout(() => reject(new Error("Naver Maps SDK load timed out.")), timeout);
+    const finishReady = () => { window.clearTimeout(deadline); resolve(); };
+    const finishError = (error: Error) => { window.clearTimeout(deadline); reject(error); };
     const handleReady = () => {
-      waitForNaverMaps(timeout).then(resolve).catch(reject);
+      waitForNaverMaps(timeout).then(finishReady).catch(finishError);
     };
 
     const handleError = () => {
-      reject(
+      finishError(
         new Error(
           "Failed to load the Naver Maps SDK. Check the client ID and allowed domains."
         )

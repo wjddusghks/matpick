@@ -1,7 +1,9 @@
+import { hasUsableCoordinates } from "@/lib/restaurantEligibility";
+import { useLocale } from "@/contexts/LocaleContext";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getRestaurantMenuSummary, type Restaurant } from "@/data";
 import type { StoredLocation } from "@/lib/location";
-import { ensureNaverMapsSdk, isNaverMapsReady } from "@/lib/naverMaps";
+import { ensureNaverMapsSdk, isNaverMapsReady, NAVER_MAPS_AUTH_FAILURE_EVENT } from "@/lib/naverMaps";
 
 interface NaverMapProps {
   restaurants: Restaurant[];
@@ -21,7 +23,7 @@ const VIEWPORT_GRID_ROWS = 12;
 const DETAIL_MARKER_ZOOM = 14;
 const FOCUSED_MARKER_ZOOM = 16;
 const CURRENT_LOCATION_ZOOM = 15;
-const CURRENT_LOCATION_FIT_RESTAURANT_COUNT = 5;
+const CURRENT_LOCATION_FIT_RESTAURANT_COUNT = 3;
 const CURRENT_LOCATION_FIT_MAX_ZOOM = 16;
 const CURRENT_LOCATION_FIT_PADDING = 56;
 const CURRENT_LOCATION_MIN_LATITUDE_SPAN = 0.0005;
@@ -109,13 +111,13 @@ function fitMapToCurrentLocation(
   );
 
   map.fitBounds(bounds, {
-    top: CURRENT_LOCATION_FIT_PADDING,
+    top: window.matchMedia("(max-width: 1023px)").matches ? 180 : CURRENT_LOCATION_FIT_PADDING,
     right: CURRENT_LOCATION_FIT_PADDING,
-    bottom: CURRENT_LOCATION_FIT_PADDING,
+    bottom: window.matchMedia("(max-width: 1023px)").matches ? Math.round(window.innerHeight * 0.43) : CURRENT_LOCATION_FIT_PADDING,
     left: CURRENT_LOCATION_FIT_PADDING,
     maxZoom: CURRENT_LOCATION_FIT_MAX_ZOOM,
   });
-  map.setCenter(currentPosition);
+  if (map.getZoom() > CURRENT_LOCATION_FIT_MAX_ZOOM) map.setZoom(CURRENT_LOCATION_FIT_MAX_ZOOM);
 }
 
 function readMapViewportBounds(map: naver.maps.Map): MapViewportBounds | null {
@@ -389,6 +391,7 @@ export default function NaverMap({
   locationFocusRequest,
   onMarkerClick,
 }: NaverMapProps) {
+  const { isEnglish } = useLocale();
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markersRef = useRef<Map<string, naver.maps.Marker>>(new Map());
   const markerEntryRef = useRef<Map<string, MapMarkerEntry>>(new Map());
@@ -410,13 +413,7 @@ export default function NaverMap({
 
   const validRestaurants = useMemo(
     () =>
-      restaurants.filter(
-        (restaurant) =>
-          restaurant.lat != null &&
-          restaurant.lng != null &&
-          restaurant.lat !== 0 &&
-          restaurant.lng !== 0
-      ),
+      restaurants.filter(hasUsableCoordinates),
     [restaurants]
   );
 
@@ -535,7 +532,16 @@ export default function NaverMap({
   }, [nearestRestaurantId]);
 
   useEffect(() => {
-    if (sdkReady) return;
+    const handleAuthenticationFailure = () => {
+      setSdkReady(false);
+      setSdkError("Naver Maps authentication failed.");
+    };
+    window.addEventListener(NAVER_MAPS_AUTH_FAILURE_EVENT, handleAuthenticationFailure);
+    return () => window.removeEventListener(NAVER_MAPS_AUTH_FAILURE_EVENT, handleAuthenticationFailure);
+  }, []);
+
+  useEffect(() => {
+    if (sdkReady || sdkError) return;
 
     let cancelled = false;
     ensureNaverMapsSdk(15000)
@@ -553,7 +559,7 @@ export default function NaverMap({
     return () => {
       cancelled = true;
     };
-  }, [sdkReady]);
+  }, [sdkReady, sdkError]);
 
   useEffect(() => {
     if (!sdkReady || !containerRef.current || mapRef.current) {
@@ -891,8 +897,15 @@ export default function NaverMap({
       return;
     }
 
-    map.setCenter(new naver.maps.LatLng(KOREA_CENTER.lat, KOREA_CENTER.lng));
-    map.setZoom(7);
+    const bounds = new naver.maps.LatLngBounds(
+      new naver.maps.LatLng(validRestaurants[0].lat, validRestaurants[0].lng),
+      new naver.maps.LatLng(validRestaurants[0].lat, validRestaurants[0].lng)
+    );
+    validRestaurants.forEach((restaurant) => bounds.extend(new naver.maps.LatLng(restaurant.lat, restaurant.lng)));
+    const mobile = window.matchMedia("(max-width: 1023px)").matches;
+    const height = containerRef.current?.clientHeight ?? 600;
+    map.fitBounds(bounds, { top: mobile ? 180 : 60, right: 48, bottom: mobile ? Math.round(height * 0.43) : 60, left: 48 });
+    if (map.getZoom() > FOCUSED_MARKER_ZOOM) map.setZoom(FOCUSED_MARKER_ZOOM);
   }, [currentLocation, focusCurrentLocation, sdkReady, selectedId, validRestaurants]);
 
   useEffect(() => {
@@ -969,7 +982,7 @@ export default function NaverMap({
 
   if (sdkError) {
     return (
-      <div className="flex h-full w-full items-center justify-center bg-gray-50">
+      <div key="map-error" className="flex h-full w-full items-center justify-center bg-gray-50 pt-[180px] pb-[43dvh] lg:py-0">
         <div className="p-8 text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FEEAC9] to-[#FFCDC9]">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="1.5">
@@ -977,8 +990,9 @@ export default function NaverMap({
               <circle cx="12" cy="9" r="2.5" />
             </svg>
           </div>
-          <p className="mb-1 text-sm font-semibold text-gray-700">Failed to load map</p>
-          <p className="text-xs text-gray-400">{sdkError}</p>
+          <p className="mb-1 text-sm font-semibold text-gray-700">{isEnglish ? "The map could not be loaded" : "지도를 불러오지 못했어요"}</p>
+          <p className="text-xs leading-5 text-gray-500">{isEnglish ? "You can still choose a place from the list and get directions." : "목록에서 식당을 고르고 길찾기를 이용할 수 있어요."}</p>
+          <button type="button" onClick={() => window.location.reload()} className="mt-3 rounded-lg border border-[#e7dfe2] px-4 py-2 text-sm">{isEnglish ? "Try again" : "다시 불러오기"}</button>
         </div>
       </div>
     );
@@ -986,7 +1000,7 @@ export default function NaverMap({
 
   if (!sdkReady) {
     return (
-      <div className="flex h-full w-full items-center justify-center bg-gray-50">
+      <div key="map-loading" className="flex h-full w-full items-center justify-center bg-gray-50 pt-[180px] pb-[43dvh] lg:py-0">
         <div className="p-8 text-center">
           <div className="mx-auto mb-3 flex h-12 w-12 animate-pulse items-center justify-center rounded-xl bg-gradient-to-br from-[#FEEAC9] to-[#FFCDC9]">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="1.5">
@@ -1002,6 +1016,7 @@ export default function NaverMap({
 
   return (
     <div
+      key="map-canvas"
       ref={containerRef}
       id="naver-map-container"
       className="h-full w-full"

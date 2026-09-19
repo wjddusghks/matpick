@@ -1,24 +1,9 @@
-import rawDataset from "./matpick-data.json";
+import publicDataset from "./generated/public-dataset.json";
+import legacyRestaurantAliases from "./legacy-restaurant-aliases.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
-import { creatorProfileImageOverrides } from "./creatorProfileImages";
-import { sourceProfileImageOverrides } from "./sourceProfileImages";
-import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
-import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
-import culinaryClassWarsDataset from "./generated/culinary-class-wars.generated.json";
-import jeonhyunmooPlanDataset from "./generated/jeonhyunmoo-plan.generated.json";
-import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
-import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
-import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
-import michelin1StarTopicEnrichment from "./generated/topic-enrichments/michelin-1-star.enriched.json";
-import michelin2StarsTopicEnrichment from "./generated/topic-enrichments/michelin-2-stars.enriched.json";
-import michelin3StarsTopicEnrichment from "./generated/topic-enrichments/michelin-3-stars.enriched.json";
-import michelinBibGourmandTopicEnrichment from "./generated/topic-enrichments/michelin-bib-gourmand.enriched.json";
-import michelinSelectedTopicEnrichment from "./generated/topic-enrichments/michelin-selected.enriched.json";
-import oldKorean100TopicEnrichment from "./generated/topic-enrichments/old-korean-100.enriched.json";
-import popularRestaurantsTopicEnrichment from "./generated/topic-enrichments/popular-restaurants.enriched.json";
-import ttoganjipTopicEnrichment from "./generated/topic-enrichments/ttoganjip.enriched.json";
-import wednesdayGourmetTopicEnrichment from "./generated/topic-enrichments/wednesday-gourmet.enriched.json";
-import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
+import { isRestaurantRecommendable } from "@/lib/restaurantEligibility";
+import { normalizeLookupValue } from "./restaurantIdentity";
+export { buildRestaurantLookupKeys } from "./restaurantIdentity";
 import type {
   Creator,
   MatpickDataSet,
@@ -30,18 +15,6 @@ import type {
   SourceLink,
   Visit,
 } from "./types";
-
-type SourceDataset = {
-  restaurants?: Restaurant[];
-  sources?: Source[];
-  sourceLinks?: SourceLink[];
-};
-
-const patchOnlySourceIds = new Set<string>([
-  "old-korean-100",
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
-]);
 
 export type DiscoveryTopicKind = "creator" | "source";
 
@@ -95,397 +68,10 @@ const episodicSourceIds = new Set([
   "wednesday-gourmet",
 ]);
 
-function normalizeLookupValue(value: string) {
-  return value.replace(/\s+/g, " ").trim().toLowerCase();
-}
-
-function normalizeAddressForLookup(address: string) {
-  return normalizeLookupValue(address.replace(/\([^)]*\)/g, " "));
-}
-
-function buildRestaurantNameLookupCandidates(
-  restaurant: Pick<Restaurant, "name" | "address" | "region">
-) {
-  const normalizedName = normalizeLookupValue(restaurant.name);
-  const candidates = new Set<string>([normalizedName]);
-  const addressTokens = normalizeLookupValue(
-    `${restaurant.region || ""} ${restaurant.address || ""}`
-  )
-    .split(" ")
-    .filter(Boolean);
-
-  const removablePrefixes = new Set<string>();
-  if (addressTokens[0]) {
-    removablePrefixes.add(addressTokens[0]);
-  }
-  if (addressTokens[1]) {
-    removablePrefixes.add(`${addressTokens[0]} ${addressTokens[1]}`);
-  }
-
-  removablePrefixes.forEach((prefix) => {
-    if (normalizedName.startsWith(`${prefix} `)) {
-      const stripped = normalizedName.slice(prefix.length).trim();
-      if (stripped) {
-        candidates.add(stripped);
-      }
-    }
-  });
-
-  return Array.from(candidates);
-}
-
-function buildRestaurantLookupKeys(
-  restaurant: Pick<Restaurant, "name" | "address" | "region">
-) {
-  const normalizedAddress = normalizeAddressForLookup(restaurant.address);
-  return buildRestaurantNameLookupCandidates(restaurant).map(
-    (nameCandidate) => `${nameCandidate}|${normalizedAddress}`
-  );
-}
-
-function hasValidCoords(restaurant: Pick<Restaurant, "lat" | "lng">) {
-  return (
-    Number.isFinite(restaurant.lat) &&
-    Number.isFinite(restaurant.lng) &&
-    restaurant.lat !== 0 &&
-    restaurant.lng !== 0
-  );
-}
-
-function preferLongerText(currentValue: string, nextValue: string) {
-  const current = currentValue?.trim() ?? "";
-  const next = nextValue?.trim() ?? "";
-
-  if (!current) return next;
-  if (!next) return current;
-  return next.length > current.length ? next : current;
-}
-
-function mergeRestaurantMenus(currentMenus: MenuItem[] = [], nextMenus: MenuItem[] = []) {
-  const mergedMenus = new Map<string, MenuItem>();
-
-  [...currentMenus, ...nextMenus].forEach((menu, index) => {
-    const normalizedName = menu.name?.trim();
-    if (!normalizedName) {
-      return;
-    }
-
-    const key = normalizedName.toLowerCase();
-    const existing = mergedMenus.get(key);
-
-    if (!existing) {
-      mergedMenus.set(key, {
-        id: menu.id || `merged_menu_${index}`,
-        name: normalizedName,
-        price: menu.price?.trim() || undefined,
-        isSignature: Boolean(menu.isSignature),
-      });
-      return;
-    }
-
-    mergedMenus.set(key, {
-      ...existing,
-      price: existing.price || menu.price?.trim() || undefined,
-      isSignature: existing.isSignature || Boolean(menu.isSignature),
-    });
-  });
-
-  return Array.from(mergedMenus.values());
-}
-
-function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant {
-  const preferredAddressRestaurant =
-    preferLongerText(current.address, next.address) === next.address ? next : current;
-
-  return {
-    ...current,
-    ...next,
-    id: current.id,
-    name: preferLongerText(current.name, next.name),
-    region: preferLongerText(current.region, next.region),
-    address: preferLongerText(current.address, next.address),
-    category: preferLongerText(current.category, next.category),
-    representativeMenu: preferLongerText(
-      current.representativeMenu,
-      next.representativeMenu
-    ),
-    lat: hasValidCoords(preferredAddressRestaurant)
-      ? preferredAddressRestaurant.lat
-      : hasValidCoords(next)
-        ? next.lat
-        : current.lat,
-    lng: hasValidCoords(preferredAddressRestaurant)
-      ? preferredAddressRestaurant.lng
-      : hasValidCoords(next)
-        ? next.lng
-        : current.lng,
-    imageUrl: current.imageUrl || next.imageUrl,
-    foundingYear: current.foundingYear ?? next.foundingYear ?? null,
-    menus: mergeRestaurantMenus(current.menus ?? [], next.menus ?? []),
-    thumbnailFileName: current.thumbnailFileName ?? next.thumbnailFileName ?? null,
-    googlePlaceId: current.googlePlaceId ?? next.googlePlaceId ?? null,
-    isOverseas: current.isOverseas ?? next.isOverseas,
-  };
-}
-
-function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
-  const dedupedRestaurants: Restaurant[] = [];
-  const indexByLookupKey = new Map<string, number>();
-  const canonicalRestaurantIdMap = new Map<string, string>();
-
-  restaurantsToMerge.forEach((restaurant) => {
-    const existingIndex = buildRestaurantLookupKeys(restaurant)
-      .map((lookupKey) => indexByLookupKey.get(lookupKey))
-      .find((value): value is number => value != null);
-
-    if (existingIndex == null) {
-      const nextIndex = dedupedRestaurants.length;
-      dedupedRestaurants.push(restaurant);
-      canonicalRestaurantIdMap.set(restaurant.id, restaurant.id);
-      buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
-        indexByLookupKey.set(lookupKey, nextIndex);
-      });
-      return;
-    }
-
-    dedupedRestaurants[existingIndex] = mergeRestaurantById(
-      dedupedRestaurants[existingIndex],
-      restaurant
-    );
-    canonicalRestaurantIdMap.set(
-      restaurant.id,
-      dedupedRestaurants[existingIndex].id
-    );
-    buildRestaurantLookupKeys(dedupedRestaurants[existingIndex]).forEach((lookupKey) => {
-      indexByLookupKey.set(lookupKey, existingIndex);
-    });
-  });
-
-  return {
-    restaurants: dedupedRestaurants,
-    canonicalRestaurantIdMap,
-  };
-}
-
-function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDataSet {
-  const mergedRestaurants = [...base.restaurants];
-  const mergedSources = [...(base.sources ?? [])];
-  const mergedSourceLinks = [...(base.sourceLinks ?? [])];
-  const restaurantIdMap = new Map<string, string>();
-  const existingRestaurantIndex = new Map<string, number>();
-
-  mergedRestaurants.forEach((restaurant, index) => {
-    buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
-      existingRestaurantIndex.set(lookupKey, index);
-    });
-  });
-
-  extras.forEach((extra) => {
-    const sourceIds = new Set((extra.sources ?? []).map((source) => source.id));
-    const patchOnlyDataset =
-      sourceIds.size > 0 &&
-      Array.from(sourceIds).every((sourceId) => patchOnlySourceIds.has(sourceId)) &&
-      (extra.restaurants ?? []).every((restaurant) =>
-        restaurant.id.startsWith("topic_enrichment_")
-      );
-    const patchableRestaurantIds = patchOnlyDataset
-      ? new Set(
-          mergedSourceLinks
-            .filter((link) => sourceIds.has(link.sourceId))
-            .map((link) => link.restaurantId)
-        )
-      : null;
-
-    (extra.sources ?? []).forEach((source) => {
-      if (!mergedSources.some((item) => item.id === source.id)) {
-        mergedSources.push(source);
-      }
-    });
-
-    (extra.restaurants ?? []).forEach((restaurant) => {
-      const existingIndex = buildRestaurantLookupKeys(restaurant)
-        .map((lookupKey) => existingRestaurantIndex.get(lookupKey))
-        .find(
-          (value): value is number =>
-            value != null &&
-            (!patchableRestaurantIds ||
-              patchableRestaurantIds.has(mergedRestaurants[value].id))
-        );
-
-      if (existingIndex != null) {
-        const existing = mergedRestaurants[existingIndex];
-        mergedRestaurants[existingIndex] = mergeRestaurantById(existing, restaurant);
-        restaurantIdMap.set(restaurant.id, existing.id);
-        buildRestaurantLookupKeys(mergedRestaurants[existingIndex]).forEach((lookupKey) => {
-          existingRestaurantIndex.set(lookupKey, existingIndex);
-        });
-        return;
-      }
-
-      if (patchOnlyDataset) {
-        return;
-      }
-
-      mergedRestaurants.push(restaurant);
-      const insertedIndex = mergedRestaurants.length - 1;
-      buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
-        existingRestaurantIndex.set(lookupKey, insertedIndex);
-      });
-      restaurantIdMap.set(restaurant.id, restaurant.id);
-    });
-
-    (extra.sourceLinks ?? []).forEach((link) => {
-      const remappedRestaurantId = restaurantIdMap.get(link.restaurantId) ?? link.restaurantId;
-      if (
-        patchOnlyDataset &&
-        !restaurantIdMap.has(link.restaurantId) &&
-        !mergedRestaurants.some((restaurant) => restaurant.id === remappedRestaurantId)
-      ) {
-        return;
-      }
-      const dedupeKey = `${link.sourceId}:${remappedRestaurantId}:${link.ordinal ?? ""}`;
-
-      if (
-        mergedSourceLinks.some(
-          (item) =>
-            `${item.sourceId}:${item.restaurantId}:${item.ordinal ?? ""}` === dedupeKey
-        )
-      ) {
-        return;
-      }
-
-      mergedSourceLinks.push({
-        ...link,
-        restaurantId: remappedRestaurantId,
-      });
-    });
-  });
-
-  const deduped = dedupeRestaurantsById(mergedRestaurants);
-  const dedupedRestaurantIds = new Set(deduped.restaurants.map((restaurant) => restaurant.id));
-  const normalizedSourceLinks = new Map<string, SourceLink>();
-
-  mergedSourceLinks.forEach((link) => {
-    const canonicalRestaurantId =
-      deduped.canonicalRestaurantIdMap.get(link.restaurantId) ?? link.restaurantId;
-
-    if (!dedupedRestaurantIds.has(canonicalRestaurantId)) {
-      return;
-    }
-
-    const dedupeKey = `${link.sourceId}:${canonicalRestaurantId}`;
-    const existing = normalizedSourceLinks.get(dedupeKey);
-
-    if (!existing) {
-      normalizedSourceLinks.set(dedupeKey, {
-        ...link,
-        restaurantId: canonicalRestaurantId,
-      });
-      return;
-    }
-
-    normalizedSourceLinks.set(dedupeKey, {
-      ...existing,
-      ordinal:
-        existing.ordinal == null
-          ? link.ordinal
-          : link.ordinal == null
-            ? existing.ordinal
-            : Math.min(existing.ordinal, link.ordinal),
-      label: existing.label ?? link.label,
-      note: existing.note ?? link.note,
-    });
-  });
-
-  return {
-    creators: base.creators,
-    visits: base.visits,
-    restaurants: deduped.restaurants,
-    sources: mergedSources,
-    sourceLinks: Array.from(normalizedSourceLinks.values()),
-  };
-}
-
-const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const sourceIdsPendingCardImages = new Set<string>([
-  "culinary-class-wars",
-  "jeonhyunmoo-plan",
-]);
-const publicDataSourceIds = new Set(
-  [
-    "ttoganjip",
-    "popular-restaurants",
-    "delicious-guys",
-    "michelin",
-    "old-korean-100",
-    "baekjong-wok",
-    "sikgaek-baekban-trip",
-    "wednesday-gourmet",
-    "culinary-class-wars",
-    "jeonhyunmoo-plan",
-  ].filter((sourceId) => !sourceIdsPendingCardImages.has(sourceId))
-);
-
-function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
-  const visibleCreators = dataset.creators.filter(
-    (creator) => !hiddenCreatorIds.has(creator.id)
-  );
-  const visibleVisits: Visit[] = [];
-  const visibleSourceLinks = (dataset.sourceLinks ?? []).filter((link) =>
-    publicDataSourceIds.has(link.sourceId)
-  );
-  const referencedRestaurantIds = new Set<string>();
-
-  visibleVisits.forEach((visit) => {
-    if (visit.restaurantId) {
-      referencedRestaurantIds.add(visit.restaurantId);
-    }
-  });
-
-  visibleSourceLinks.forEach((link) => {
-    if (link.restaurantId) {
-      referencedRestaurantIds.add(link.restaurantId);
-    }
-  });
-
-  return {
-    ...dataset,
-    creators: visibleCreators.filter((creator) =>
-      visibleVisits.some((visit) => visit.creatorId === creator.id)
-    ),
-    visits: visibleVisits,
-    restaurants: dataset.restaurants.filter(
-      (restaurant) => referencedRestaurantIds.has(restaurant.id)
-    ),
-    sources: (dataset.sources ?? []).filter((source) =>
-      publicDataSourceIds.has(source.id)
-    ),
-    sourceLinks: visibleSourceLinks,
-  };
-}
-
-const baseDataset = rawDataset as MatpickDataSet;
-const dataset = filterDatasetForVisibleContent(
-  mergeDatasets(baseDataset, [
-  culinaryClassWarsDataset as SourceDataset,
-  jeonhyunmooPlanDataset as SourceDataset,
-  oldKorean100Dataset as SourceDataset,
-  baekjongWokTopicEnrichment as SourceDataset,
-  sikgaekBaekbanTripDataset as SourceDataset,
-  wednesdayGourmetDataset as SourceDataset,
-  ttoganjipTopicEnrichment as SourceDataset,
-  popularRestaurantsTopicEnrichment as SourceDataset,
-  deliciousGuysTopicEnrichment as SourceDataset,
-  baekbanTripTopicEnrichment as SourceDataset,
-  wednesdayGourmetTopicEnrichment as SourceDataset,
-  oldKorean100TopicEnrichment as SourceDataset,
-  michelin3StarsTopicEnrichment as SourceDataset,
-  michelin2StarsTopicEnrichment as SourceDataset,
-  michelin1StarTopicEnrichment as SourceDataset,
-  michelinBibGourmandTopicEnrichment as SourceDataset,
-  michelinSelectedTopicEnrichment as SourceDataset,
-  ])
-);
+const dataset = publicDataset as MatpickDataSet;
+const normalizedDataset = dataset;
+const publicDataSourceIds = new Set(dataset.sources?.map(source => source.id) ?? []);
+const sourceBackedCreatorIds = new Set(dataset.sources?.map(source => source.creatorId).filter(Boolean) ?? []);
 const creatorDisplayNameOverrides: Record<string, string> = {
   UCrDMtdCSMTGVmUKvuhcahRw: "또간집",
 };
@@ -514,25 +100,6 @@ function getCreatorSearchName(creator: Creator) {
   return displayName === creator.name ? `${creator.name} (${creator.series})` : displayName;
 }
 
-const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
-  ...creator,
-  profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,
-}));
-const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map((source) => ({
-  ...source,
-  imageUrl: sourceProfileImageOverrides[source.id] ?? source.imageUrl,
-}));
-const sourceBackedCreatorIds = new Set(
-  sourcesWithProfileImages
-    .map((source) => source.creatorId)
-    .filter((creatorId): creatorId is string => Boolean(creatorId))
-);
-const normalizedDataset: MatpickDataSet = {
-  ...dataset,
-  creators: creatorsWithProfileImages,
-  sources: sourcesWithProfileImages,
-};
-
 export const creators: Creator[] = normalizedDataset.creators;
 export const restaurants: Restaurant[] = normalizedDataset.restaurants;
 export const visits: Visit[] = normalizedDataset.visits;
@@ -540,6 +107,14 @@ export const sources: Source[] = normalizedDataset.sources ?? [];
 export const sourceLinks: SourceLink[] = normalizedDataset.sourceLinks ?? [];
 export const dataSet: MatpickDataSet = normalizedDataset;
 const restaurantById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
+export const restaurantAliases: Record<string, string> = Object.fromEntries(
+  Object.entries({ ...legacyRestaurantAliases, ...dataset.restaurantAliases })
+    .filter(([alias, target]) => alias !== target && !restaurantById.has(alias) && restaurantById.has(target))
+);
+
+export function resolveRestaurantId(restaurantId: string): string {
+  return restaurantAliases[restaurantId] ?? restaurantId;
+}
 
 const visitsByRestaurantId = new Map<string, Visit[]>();
 const creatorIdsByRestaurantId = new Map<string, Set<string>>();
@@ -577,8 +152,12 @@ sourceLinks.forEach((link) => {
   restaurantIdsBySourceId.set(link.sourceId, restaurantIds);
 });
 
-creatorIdsByRestaurantId.forEach((creatorIds, restaurantId) => {
-  recommendationCountByRestaurantId.set(restaurantId, creatorIds.size);
+restaurants.forEach((restaurant) => {
+  const sourceIds = sourceIdsByRestaurantId.get(restaurant.id) ?? new Set<string>();
+  const representedCreators = new Set(sources.filter((source) => sourceIds.has(source.id)).map((source) => source.creatorId));
+  const additionalCreators = Array.from(creatorIdsByRestaurantId.get(restaurant.id) ?? [])
+    .filter((creatorId) => !representedCreators.has(creatorId));
+  recommendationCountByRestaurantId.set(restaurant.id, sourceIds.size + additionalCreators.length);
 });
 
 type CountEntry = {
@@ -720,13 +299,13 @@ function countBy(values: string[]): CountEntry[] {
 }
 
 export function getCreatorsByRestaurant(restaurantId: string): Creator[] {
-  const creatorIdSet = creatorIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
+  const creatorIdSet = creatorIdsByRestaurantId.get(resolveRestaurantId(restaurantId)) ?? new Set<string>();
 
   return creators.filter((creator) => creatorIdSet.has(creator.id));
 }
 
 export function getRestaurantById(restaurantId: string) {
-  return restaurantById.get(restaurantId) ?? null;
+  return restaurantById.get(resolveRestaurantId(restaurantId)) ?? null;
 }
 
 export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
@@ -736,7 +315,7 @@ export function getRestaurantsByCreator(creatorId: string): Restaurant[] {
 }
 
 export function getVisitsByRestaurant(restaurantId: string): Visit[] {
-  return visitsByRestaurantId.get(restaurantId) ?? [];
+  return visitsByRestaurantId.get(resolveRestaurantId(restaurantId)) ?? [];
 }
 
 export function getRestaurantBroadcastMeta(
@@ -855,7 +434,7 @@ export function getRestaurantMenuSummary(restaurant: Restaurant) {
 }
 
 export function getSourceLinksByRestaurant(restaurantId: string) {
-  return sourceLinksByRestaurantId.get(restaurantId) ?? [];
+  return sourceLinksByRestaurantId.get(resolveRestaurantId(restaurantId)) ?? [];
 }
 
 const publicVisibleSourceIds = publicDataSourceIds;
@@ -865,7 +444,7 @@ export function isPublicSourceId(sourceId: string) {
 }
 
 export function getSourcesByRestaurant(restaurantId: string) {
-  const linkedSourceIds = sourceIdsByRestaurantId.get(restaurantId) ?? new Set<string>();
+  const linkedSourceIds = sourceIdsByRestaurantId.get(resolveRestaurantId(restaurantId)) ?? new Set<string>();
 
   return sources.filter(
     (source) => linkedSourceIds.has(source.id) && isPublicSourceId(source.id)
@@ -1037,7 +616,7 @@ const publicDiscoveryTopicSlugs = new Set([
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter(
   (topic) =>
     publicDiscoveryTopicSlugs.has(topic.slug) &&
-    (topic.kind !== "source" || !sourceIdsPendingCardImages.has(topic.targetId))
+    (topic.kind !== "source" || publicDataSourceIds.has(topic.targetId))
 );
 
 export function getDiscoveryTopicBySlug(slug: string) {
@@ -1246,6 +825,8 @@ const cuisineCategoryOrder = [
   "인도",
   "태국",
   "베트남",
+  "카페·디저트",
+  "미분류",
 ] as const;
 
 const cuisineCategoryMatchers: Array<{
@@ -1285,6 +866,11 @@ const cuisineCategoryMatchers: Array<{
       "쌈밥",
       "아구",
       "해물탕",
+      "감자탕",
+      "닭볶음탕",
+      "떡볶이",
+      "김밥",
+      "매운탕",
     ],
   },
   {
@@ -1331,7 +917,9 @@ const cuisineCategoryMatchers: Array<{
       "피자",
       "스테이크",
       "이탈리안",
+      "이탈리아",
       "프렌치",
+      "프랑스",
       "브런치",
       "버거",
       "샌드위치",
@@ -1347,7 +935,7 @@ const cuisineCategoryMatchers: Array<{
   },
   {
     name: "인도",
-    keywords: ["인도", "커리", "카레", "난", "탄두리", "비리야니"],
+    keywords: ["인도", "커리", "난", "탄두리", "비리야니"],
   },
   {
     name: "태국",
@@ -1357,20 +945,25 @@ const cuisineCategoryMatchers: Array<{
     name: "베트남",
     keywords: ["베트남", "쌀국수", "포", "반미", "분짜", "짜조", "월남쌈"],
   },
+  { name: "카페·디저트", keywords: ["카페", "디저트", "커피", "베이커리", "제과", "케이크", "빙수"] },
 ];
 
 export function getCuisineCategory(category: string) {
   const normalized = category.trim().toLowerCase();
 
   if (!normalized) {
-    return "한식";
+    return "미분류";
   }
 
-  const matched = cuisineCategoryMatchers.find((entry) =>
-    entry.keywords.some((keyword) => normalized.includes(keyword.toLowerCase()))
-  );
+  const explicit = cuisineCategoryOrder.find((name) => normalized === name || normalized.startsWith(`${name},`));
+  if (explicit) return explicit;
+  // Specific cuisines must precede broad Korean terms such as '국수'.
+  const ordered = [...cuisineCategoryMatchers.filter((entry) => entry.name !== "한식"), ...cuisineCategoryMatchers.filter((entry) => entry.name === "한식")];
+  const matched = ordered.find((entry) => entry.keywords.some((keyword) =>
+    keyword.length === 1 ? normalized === keyword : normalized.includes(keyword.toLowerCase())
+  ));
 
-  return matched?.name ?? "한식";
+  return matched?.name ?? "미분류";
 }
 
 export function getCuisineCategories() {
@@ -1382,7 +975,13 @@ export function getTotalCreatorCount(): number {
 }
 
 export function getRecommendationCount(restaurantId: string): number {
-  return recommendationCountByRestaurantId.get(restaurantId) ?? 0;
+  return recommendationCountByRestaurantId.get(resolveRestaurantId(restaurantId)) ?? 0;
+}
+
+export function getRestaurantRecommendationLabels(restaurantId: string): string[] {
+  const sourceLabels = getSourcesByRestaurant(restaurantId).map(getSourceDisplayName);
+  const creatorLabels = getCreatorsByRestaurant(resolveRestaurantId(restaurantId)).map(getCreatorDisplayName);
+  return Array.from(new Set([...sourceLabels, ...creatorLabels]));
 }
 
 export type RelatedRestaurant = {
@@ -1501,7 +1100,7 @@ export function getRelatedRestaurants(restaurantId: string, limit = 6): RelatedR
   }
 
   return restaurants
-    .filter((candidate) => candidate.id !== restaurantId)
+    .filter((candidate) => candidate.id !== resolveRestaurantId(restaurantId) && isRestaurantRecommendable(candidate))
     .map((candidate) => buildRestaurantRelation(restaurant, candidate))
     .filter(
       (relation) =>
@@ -1533,7 +1132,7 @@ export function getNearbyRestaurants(restaurantId: string, limit = 6): RelatedRe
   }
 
   return restaurants
-    .filter((candidate) => candidate.id !== restaurantId)
+    .filter((candidate) => candidate.id !== resolveRestaurantId(restaurantId) && isRestaurantRecommendable(candidate))
     .map((candidate) => buildRestaurantRelation(restaurant, candidate))
     .filter((relation) => relation.distanceKm != null)
     .sort((left, right) => {
@@ -1699,6 +1298,7 @@ export function searchRestaurants(query: string): RestaurantSearchMatch[] {
   }
 
   return restaurantSearchIndex
+    .filter(({ restaurant }) => isRestaurantRecommendable(restaurant))
     .map(({ restaurant, fields }) => {
       const matchTypes = new Set<RestaurantSearchMatchType>();
       const matchedMenus = new Set<string>();

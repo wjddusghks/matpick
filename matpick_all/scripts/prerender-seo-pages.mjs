@@ -1,4 +1,5 @@
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { loadPublicData } from "./load-public-data.mjs";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,21 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const distDir = path.join(projectRoot, "dist");
-const baseDataPath = path.join(projectRoot, "client", "src", "data", "matpick-data.json");
-const generatedDir = path.join(projectRoot, "client", "src", "data", "generated");
-const topicEnrichmentDir = path.join(generatedDir, "topic-enrichments");
-const discoveryTopicsPath = path.join(projectRoot, "client", "src", "data", "discovery-topics.json");
-const hiddenCreatorIds = new Set(["UCfpaSruWW3S4dibonKXENjA"]);
-const publicDataSourceIds = new Set([
-  "ttoganjip",
-  "popular-restaurants",
-  "michelin",
-  "old-korean-100",
-  "baekjong-wok",
-  "sikgaek-baekban-trip",
-  "wednesday-gourmet",
-]);
-
 function normalizeUrl(value) {
   return (value || "https://matpick.co.kr").replace(/\/$/, "");
 }
@@ -43,159 +29,6 @@ function absoluteUrl(siteUrl, value = "/") {
   }
 
   return `${siteUrl}${value.startsWith("/") ? value : `/${value}`}`;
-}
-
-async function readJson(filePath) {
-  const raw = await readFile(filePath, "utf8");
-  return JSON.parse(raw.replace(/^\uFEFF/, ""));
-}
-
-function slugifyTopicSegment(value) {
-  const normalized = String(value ?? "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim()
-    .toLowerCase();
-
-  const slug = normalized
-    .replace(/[^a-z0-9가-힣]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-
-  return slug || "episode";
-}
-
-function sortVisitsByDate(a, b) {
-  return String(b.visitDate || "").localeCompare(String(a.visitDate || ""), "ko-KR");
-}
-
-function buildTopicEpisodes(discoveryTopics, creators, visits) {
-  return discoveryTopics.flatMap((topic) => {
-    if (topic.kind !== "creator") {
-      return [];
-    }
-
-    const creator = creators.find((entry) => entry.id === topic.targetId);
-    const creatorName = topic.name || creator?.name || topic.slug;
-    const groupedVisits = new Map();
-
-    visits
-      .filter((visit) => visit.creatorId === topic.targetId)
-      .sort(sortVisitsByDate)
-      .forEach((visit) => {
-        const groupKey = visit.videoId || visit.episode || visit.videoTitle || visit.id;
-        const current = groupedVisits.get(groupKey) ?? [];
-        current.push(visit);
-        groupedVisits.set(groupKey, current);
-      });
-
-    const usedSlugs = new Set();
-
-    return Array.from(groupedVisits.values())
-      .map((episodeVisits) => {
-        const firstVisit = [...episodeVisits].sort(sortVisitsByDate)[0];
-        const episodeLabel =
-          firstVisit?.episode?.trim() ||
-          firstVisit?.videoTitle?.trim() ||
-          firstVisit?.videoId?.trim() ||
-          "회차";
-        const baseSlug = slugifyTopicSegment(episodeLabel);
-        let episodeSlug = baseSlug;
-
-        if (usedSlugs.has(episodeSlug)) {
-          episodeSlug = `${baseSlug}-${slugifyTopicSegment(firstVisit.videoId || firstVisit.id)}`;
-        }
-        usedSlugs.add(episodeSlug);
-
-        const restaurantIds = Array.from(
-          new Set(episodeVisits.map((visit) => visit.restaurantId).filter(Boolean))
-        );
-        const videoTitle = firstVisit?.videoTitle?.trim() || `${creatorName} ${episodeLabel}`;
-
-        return {
-          topicSlug: topic.slug,
-          topicName: creatorName,
-          slug: episodeSlug,
-          episode: episodeLabel,
-          title: videoTitle,
-          restaurantIds,
-          description: `${creatorName} ${episodeLabel}에 소개된 맛집 ${restaurantIds.length}곳을 모아봤어요.`,
-        };
-      })
-      .filter((episode) => episode.restaurantIds.length > 0);
-  });
-}
-
-async function readGeneratedDatasets() {
-  const entries = await readdir(generatedDir, { withFileTypes: true });
-  const datasetFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".generated.json"))
-    .map((entry) => path.join(generatedDir, entry.name));
-
-  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
-}
-
-async function readTopicEnrichments() {
-  const entries = await readdir(topicEnrichmentDir, { withFileTypes: true });
-  const datasetFiles = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith(".enriched.json"))
-    .map((entry) => path.join(topicEnrichmentDir, entry.name));
-
-  return Promise.all(datasetFiles.map((filePath) => readJson(filePath)));
-}
-
-function filterVisibleSeoDataset({ creators = [], visits = [], restaurants = [], sourceLinks = [] }) {
-  const visibleCreators = creators.filter((creator) => !hiddenCreatorIds.has(creator.id));
-  const visibleVisits = visits.filter((visit) => !hiddenCreatorIds.has(visit.creatorId));
-  const visibleRestaurantIds = new Set([
-    ...visibleVisits.map((visit) => visit.restaurantId).filter(Boolean),
-    ...sourceLinks.map((link) => link.restaurantId).filter(Boolean),
-  ]);
-
-  return {
-    creators: visibleCreators,
-    visits: visibleVisits,
-    restaurants: restaurants.filter(
-      (restaurant) =>
-        visibleRestaurantIds.size === 0 || visibleRestaurantIds.has(restaurant.id)
-    ),
-  };
-}
-
-function buildLookupKey(restaurant) {
-  return `${normalizeText(restaurant.name).toLowerCase()}|${normalizeText(restaurant.address).toLowerCase()}`;
-}
-
-function mergeDatasets(base, extras) {
-  const mergedRestaurants = [...(base.restaurants ?? [])];
-  const mergedCreators = [...(base.creators ?? [])];
-  const existing = new Map(mergedRestaurants.map((restaurant, index) => [buildLookupKey(restaurant), index]));
-
-  for (const extra of extras) {
-    for (const restaurant of extra.restaurants ?? []) {
-      const key = buildLookupKey(restaurant);
-      const existingIndex = existing.get(key);
-      if (existingIndex == null) {
-        existing.set(key, mergedRestaurants.length);
-        mergedRestaurants.push(restaurant);
-        continue;
-      }
-
-      const current = mergedRestaurants[existingIndex];
-      mergedRestaurants[existingIndex] = {
-        ...current,
-        foundingYear: current.foundingYear ?? restaurant.foundingYear ?? null,
-        menus: current.menus?.length ? current.menus : restaurant.menus ?? [],
-        thumbnailFileName: current.thumbnailFileName ?? restaurant.thumbnailFileName ?? null,
-        lat: current.lat || restaurant.lat || 0,
-        lng: current.lng || restaurant.lng || 0,
-      };
-    }
-  }
-
-  return {
-    creators: mergedCreators,
-    restaurants: mergedRestaurants,
-  };
 }
 
 function replaceTag(html, pattern, replacement) {
@@ -367,24 +200,11 @@ async function writeRouteHtml(routePath, html) {
 async function main() {
   const siteUrl = normalizeUrl(process.env.VITE_PUBLIC_APP_URL);
   const template = await readFile(path.join(distDir, "index.html"), "utf8");
-  const baseData = await readJson(baseDataPath);
-  const generatedDatasets = await readGeneratedDatasets();
-  const topicEnrichments = await readTopicEnrichments();
-  const discoveryTopics = (await readJson(discoveryTopicsPath)).filter(
-    (topic) => topic.kind !== "source" || publicDataSourceIds.has(topic.targetId)
+  const data = await loadPublicData();
+  const { creators, restaurants, sourceLinks, discoveryTopics, visits: visibleVisits } = data;
+  const topicEpisodes = discoveryTopics.flatMap((topic) =>
+    data.getDiscoveryTopicEpisodes(topic.slug).map((episode) => ({ ...episode, topicName: topic.name }))
   );
-  const sourceLinks = [baseData, ...generatedDatasets, ...topicEnrichments]
-    .flatMap((dataset) => dataset.sourceLinks || [])
-    .filter((link) => publicDataSourceIds.has(link.sourceId));
-  const { creators, restaurants } = filterVisibleSeoDataset({
-    ...mergeDatasets(baseData, [...generatedDatasets, ...topicEnrichments]),
-    visits: baseData.visits || [],
-    sourceLinks,
-  });
-  const visibleVisits = (baseData.visits || []).filter(
-    (visit) => !hiddenCreatorIds.has(visit.creatorId)
-  );
-  const topicEpisodes = buildTopicEpisodes(discoveryTopics, creators, visibleVisits);
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
   const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
   const restaurantById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
@@ -399,7 +219,7 @@ async function main() {
       }));
 
   const homeHtml = renderHtml(template, {
-    title: "맛픽 Matpick | 크리에이터 추천 맛집 지도",
+    title: "맛픽 Matpick | 내 주변 맛집 추천 지도",
     description:
       "유튜브, 방송, 가이드에 소개된 맛집을 한곳에서 찾고 지도와 상세 정보로 비교해보는 맛집 탐색 서비스.",
     url: absoluteUrl(siteUrl, "/"),

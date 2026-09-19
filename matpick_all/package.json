@@ -20,12 +20,17 @@
     "matpick:research-topic": "node scripts/content-automation/research-topic.mjs",
     "matpick:prepare-card-topic": "node scripts/content-automation/prepare-card-topic.mjs",
     "images:restaurant-previews": "python scripts/generate-restaurant-image-previews.py && python scripts/generate-home-runtime-data.py",
-    "prebuild": "node scripts/generate-seo-files.mjs",
+    "prebuild": "node scripts/generate-public-data.mjs && node scripts/generate-restaurant-aliases.mjs && node scripts/check-restaurant-data.mjs && node scripts/generate-seo-files.mjs",
     "build": "vite build",
-    "postbuild": "node scripts/prerender-seo-pages.mjs",
+    "postbuild": "node scripts/check-bundle-size.mjs && node scripts/prerender-seo-pages.mjs",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "data:aliases": "node scripts/generate-public-data.mjs && node scripts/generate-restaurant-aliases.mjs",
+    "data:check": "node scripts/generate-public-data.mjs && node scripts/check-restaurant-data.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "predev": "node scripts/generate-public-data.mjs && node scripts/generate-restaurant-aliases.mjs",
+    "data:generate": "node scripts/generate-public-data.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

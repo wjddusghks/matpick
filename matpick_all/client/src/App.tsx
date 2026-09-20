@@ -32,7 +32,10 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 function PageLoader() {
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-[#f6f6f5] text-sm font-semibold text-[#7a7174]">
-      Matpick
+      <div role="status" className="text-center">
+        <div className="mx-auto mb-3 h-7 w-7 animate-spin rounded-full border-2 border-[#f0d8df] border-t-[#ef6479] motion-reduce:animate-none" />
+        화면을 불러오고 있어요
+      </div>
     </div>
   );
 }

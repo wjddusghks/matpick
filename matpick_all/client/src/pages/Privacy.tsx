@@ -39,7 +39,7 @@ const koreanSections: PolicySection[] = [
       "소셜 로그인 및 회원 관리: 로그인 제공자, 제공자가 발급한 이용자 식별값, 이름·닉네임, 제공되는 경우 이메일과 프로필 이미지, 동의 시각 및 선택 설정. 로그인 유지, 계정 식별, 저장·댓글·리뷰 기능, 부정 이용 방지에 사용합니다.",
       "이용자 콘텐츠: 댓글·리뷰 본문, 평점, 업로드 사진, 작성·수정 시각, 연결된 식당 정보. 콘텐츠 표시, 수정·삭제 처리와 서비스 품질 관리에 사용합니다.",
       "자동 생성 정보: IP 주소, 브라우저·기기 정보, 요청 시각, 페이지 경로, 검색어, 클릭·광고 상호작용, 무작위 방문자·세션 식별값. 보안, 오류 대응, 이용 통계와 성능 개선에 사용합니다.",
-      "위치 정보: 브라우저에서 이용자가 직접 권한을 허용한 경우의 현재 좌표. 주변 식당 정렬과 지도 표시를 위해 현재 세션에서 사용하며, 원칙적으로 회원 프로필에 좌표 자체를 저장하지 않습니다.",
+      "위치 정보: 브라우저에서 이용자가 직접 권한을 허용한 경우의 현재 좌표. 주변 식당 정렬, 지도 표시와 경로 조회에 사용하며 회원 프로필에 좌표 자체를 저장하지 않습니다. 이동 시간 기능이 연결된 경우 현재 위치와 식당 좌표를 NAVER Maps(자동차)·ODsay(대중교통)에 보내 경로를 조회합니다.",
       "브라우저 저장소: 로그인 상태, 즐겨찾기, 최근 이용 상태, 개인정보·쿠키 선택값. 선택한 기능 유지와 사용자 경험 제공에 사용합니다.",
     ],
   },
@@ -79,7 +79,8 @@ const koreanSections: PolicySection[] = [
     ],
     bullets: [
       "NAVER·Kakao: 소셜 로그인, 지도 또는 공유 기능",
-      "NAVER Maps: 지도 화면과 위치 기반 탐색",
+      "NAVER Maps: 지도 화면, 위치 기반 탐색과 자동차 경로 조회",
+      "ODsay: 대중교통 경로·거리·소요 시간 조회 (기능 연결 시)",
       "Google: AdSense, Analytics·Google 태그, 사이트 확인 및 동의 메시지",
       "Kakao AdFit: 광고 지면 제공, 부정 이용 방지와 성과 측정",
       "Coupang Partners: 제휴 광고 지면 제공과 제휴 성과 확인",
@@ -132,7 +133,7 @@ const englishSections: PolicySection[] = [
       "Accounts: provider, provider-issued user ID, name or nickname, optional email and profile image, consent time, and settings for login, account management, saved places, and abuse prevention.",
       "User content: review text, ratings, photos, timestamps, and restaurant references for publishing and moderation.",
       "Usage and security: IP address, browser or device data, request time, paths, searches, clicks, ad interactions, and random visitor or session IDs for security and aggregated analytics.",
-      "Location: current coordinates only after browser permission, used for nearby sorting and maps and not normally stored in the member profile.",
+      "Location: coordinates after browser permission, used for nearby sorting, maps and route lookup without storing them in your member profile. When travel-time services are enabled, the current and restaurant coordinates are sent to NAVER Maps for driving and ODsay for transit routing.",
       "Browser storage: login state, favorites, recent state, and privacy choices needed to preserve requested features.",
     ],
   },
@@ -161,7 +162,7 @@ const englishSections: PolicySection[] = [
   {
     title: "5. Service providers and international processing",
     paragraphs: [
-      "We use NAVER and Kakao for sign-in, maps, or sharing; Kakao AdFit and Coupang Partners for standard advertising placements; Google and Meta for consented analytics or personalized-ad measurement; and Vercel, Blob/KV infrastructure, and Upstash for hosting and storage.",
+      "We use NAVER and Kakao for sign-in, maps, or sharing, and NAVER Maps and ODsay for enabled route lookups; Kakao AdFit and Coupang Partners for standard advertising placements; Google and Meta for consented analytics or personalized-ad measurement; and Vercel, Blob/KV infrastructure, and Upstash for hosting and storage.",
       "Global providers may process information outside Korea according to their infrastructure and policies. Transfers use HTTPS, and optional Google or Meta analytics and personalized advertising start only after permission.",
     ],
   },
@@ -204,9 +205,14 @@ export default function Privacy() {
 
   return (
     <InfoPageLayout eyebrow="Privacy" title={title} description={description}>
-      <div id="cookies" className="rounded-[8px] border border-[#f0dfe2] bg-[#fff8f9] p-5">
+      <div
+        id="cookies"
+        className="rounded-[8px] border border-[#f0dfe2] bg-[#fff8f9] p-5"
+      >
         <p className="font-bold text-[#2b2224]">
-          {isEnglish ? "Review your current privacy choices" : "현재 개인정보 설정 확인"}
+          {isEnglish
+            ? "Review your current privacy choices"
+            : "현재 개인정보 설정 확인"}
         </p>
         <button
           type="button"
@@ -217,14 +223,14 @@ export default function Privacy() {
         </button>
       </div>
 
-      {sections.map((section) => (
+      {sections.map(section => (
         <Section key={section.title} title={section.title}>
-          {section.paragraphs.map((paragraph) => (
+          {section.paragraphs.map(paragraph => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           {section.bullets ? (
             <ul className="list-disc space-y-2 pl-5">
-              {section.bullets.map((bullet) => (
+              {section.bullets.map(bullet => (
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>

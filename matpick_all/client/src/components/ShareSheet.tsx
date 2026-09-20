@@ -1,9 +1,15 @@
-import { useMemo, useState } from "react";
-import { Copy, Facebook, Instagram, Link2, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Copy, Facebook, Instagram, Share2, X } from "lucide-react";
 import { toast } from "sonner";
-import matpickLogo from "@/assets/matpick-logo-final 2.png";
-
-type ShareChannel = "copy" | "x" | "facebook" | "line" | "kakao" | "instagram";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { copyShareLink, shareNatively } from "@/lib/share";
+import { buildAbsoluteUrl } from "@/lib/seo";
+import { useLocale } from "@/contexts/LocaleContext";
 
 interface ShareSheetProps {
   open: boolean;
@@ -13,140 +19,50 @@ interface ShareSheetProps {
   url: string;
   imageUrl?: string;
 }
-
-type KakaoWindow = Window & {
-  Kakao?: {
-    init: (key: string) => void;
-    isInitialized: () => boolean;
-    Share?: {
-      sendDefault: (payload: Record<string, unknown>) => void;
-    };
-  };
+type KakaoSdk = {
+  init: (key: string) => void;
+  isInitialized: () => boolean;
+  Share?: { sendDefault: (payload: Record<string, unknown>) => void };
 };
-
 const KAKAO_JS_KEY = import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY?.trim() ?? "";
-const KAKAO_SHARE_SCRIPT_ID = "matpick-kakao-share-sdk";
-const KAKAO_SHARE_SCRIPT_SRC =
-  "https://t1.kakaocdn.net/kakao_js_sdk/2.7.9/kakao.min.js";
-
-function ShareIcon({ channel }: { channel: ShareChannel }) {
-  switch (channel) {
-    case "copy":
-      return <Link2 className="h-5 w-5" />;
-    case "x":
-      return <X className="h-5 w-5" />;
-    case "facebook":
-      return <Facebook className="h-5 w-5" />;
-    case "line":
-      return <span className="text-[12px] font-black">LINE</span>;
-    case "kakao":
-      return <span className="text-[12px] font-black">Talk</span>;
-    case "instagram":
-      return <Instagram className="h-5 w-5" />;
-  }
-}
-
-function getButtonStyle(channel: ShareChannel, disabled: boolean) {
-  if (disabled) {
-    return "border-[#ededed] bg-[#f5f5f5] text-[#b2b2b2]";
-  }
-
-  switch (channel) {
-    case "copy":
-      return "border-[#d8d8d8] bg-white text-[#171717]";
-    case "x":
-      return "border-[#0f0f10] bg-black text-white";
-    case "facebook":
-      return "border-[#d7e4ff] bg-[#1877F2] text-white";
-    case "line":
-      return "border-[#bcefcf] bg-[#06C755] text-white";
-    case "kakao":
-      return "border-[#fff0a8] bg-[#FEE500] text-[#3c1e1e]";
-    case "instagram":
-      return "border-[#f3c7dc] bg-[linear-gradient(135deg,#fdf1f6_0%,#fff5db_100%)] text-[#c13584]";
-  }
-}
-
-function buildShareUrl(
-  channel: Exclude<ShareChannel, "copy" | "kakao" | "instagram">,
-  text: string,
-  url: string
-) {
-  const encodedText = encodeURIComponent(text);
-  const encodedUrl = encodeURIComponent(url);
-
-  switch (channel) {
-    case "x":
-      return `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
-    case "facebook":
-      return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-    case "line":
-      return `https://social-plugins.line.me/lineit/share?url=${encodedUrl}&text=${encodedText}`;
-  }
-}
-
-async function ensureKakaoShareSdk() {
-  if (typeof window === "undefined" || !KAKAO_JS_KEY) {
-    return null;
-  }
-
-  const kakaoWindow = window as KakaoWindow;
-  if (kakaoWindow.Kakao?.isInitialized()) {
-    return kakaoWindow.Kakao;
-  }
-
-  if (kakaoWindow.Kakao && !kakaoWindow.Kakao.isInitialized()) {
-    kakaoWindow.Kakao.init(KAKAO_JS_KEY);
-    return kakaoWindow.Kakao;
-  }
-
-  const existingScript = document.getElementById(
-    KAKAO_SHARE_SCRIPT_ID
-  ) as HTMLScriptElement | null;
-
-  if (!existingScript) {
+let kakaoLoading: Promise<KakaoSdk> | null = null;
+function ensureKakaoShareSdk(): Promise<KakaoSdk> {
+  const readSdk = () => (window as Window & { Kakao?: KakaoSdk }).Kakao;
+  const initialize = (sdk: KakaoSdk) => {
+    if (!sdk.isInitialized()) sdk.init(KAKAO_JS_KEY);
+    if (!sdk.Share) throw new Error("Share unavailable");
+    return sdk;
+  };
+  const existing = readSdk();
+  if (existing) return Promise.resolve().then(() => initialize(existing));
+  if (kakaoLoading) return kakaoLoading;
+  kakaoLoading = new Promise<KakaoSdk>((resolve, reject) => {
     const script = document.createElement("script");
-    script.id = KAKAO_SHARE_SCRIPT_ID;
-    script.src = KAKAO_SHARE_SCRIPT_SRC;
+    script.src = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.9/kakao.min.js";
     script.async = true;
-    document.head.appendChild(script);
-  }
-
-  return new Promise<KakaoWindow["Kakao"] | null>((resolve, reject) => {
-    const script =
-      existingScript ??
-      (document.getElementById(KAKAO_SHARE_SCRIPT_ID) as HTMLScriptElement | null);
-
-    if (!script) {
-      reject(new Error("카카오 공유 스크립트를 불러오지 못했어요."));
-      return;
-    }
-
-    const finish = () => {
-      const nextWindow = window as KakaoWindow;
-      if (!nextWindow.Kakao) {
-        reject(new Error("카카오 공유 SDK를 찾지 못했어요."));
-        return;
-      }
-
-      if (!nextWindow.Kakao.isInitialized()) {
-        nextWindow.Kakao.init(KAKAO_JS_KEY);
-      }
-
-      resolve(nextWindow.Kakao);
+    const fail = () => {
+      clearTimeout(timer);
+      script.remove();
+      reject(new Error("Share unavailable"));
     };
-
-    script.addEventListener("load", finish, { once: true });
-    script.addEventListener(
-      "error",
-      () => reject(new Error("카카오 공유 SDK 로딩에 실패했어요.")),
-      { once: true }
-    );
-
-    if ((window as KakaoWindow).Kakao) {
-      finish();
-    }
+    const timer = window.setTimeout(fail, 8000);
+    script.onerror = fail;
+    script.onload = () => {
+      clearTimeout(timer);
+      try {
+        const sdk = readSdk();
+        if (!sdk) throw new Error("No SDK");
+        resolve(initialize(sdk));
+      } catch {
+        fail();
+      }
+    };
+    document.head.appendChild(script);
+  }).catch(error => {
+    kakaoLoading = null;
+    throw error;
   });
+  return kakaoLoading;
 }
 
 export default function ShareSheet({
@@ -157,178 +73,186 @@ export default function ShareSheet({
   url,
   imageUrl,
 }: ShareSheetProps) {
-  const [isSharingKakao, setIsSharingKakao] = useState(false);
-  const trimmedUrl = useMemo(() => url.trim(), [url]);
-  const resolvedImageUrl = useMemo(() => {
-    const candidate = (imageUrl || matpickLogo).trim();
-    if (
-      candidate.startsWith("http://") ||
-      candidate.startsWith("https://") ||
-      candidate.startsWith("data:") ||
-      candidate.startsWith("blob:")
-    ) {
-      return candidate;
+  const { locale } = useLocale();
+  const english = locale === "en";
+  const [status, setStatus] = useState("");
+  const [busy, setBusy] = useState(false);
+  const input = useRef<HTMLInputElement>(null);
+  const shareUrl = buildAbsoluteUrl(url.trim());
+  useEffect(() => {
+    if (!open) return;
+    setStatus("");
+    if (KAKAO_JS_KEY) void ensureKakaoShareSdk().catch(() => {});
+  }, [open, url]);
+  const copy = async (instagram = false) => {
+    const success = await copyShareLink(shareUrl);
+    const message = success
+      ? english
+        ? "Link copied"
+        : instagram
+          ? "링크를 복사했어요. 인스타그램에 붙여 넣어 주세요."
+          : "링크를 복사했어요."
+      : english
+        ? "Select the link below and copy it manually."
+        : "아래 링크를 선택했어요. 길게 누르거나 Ctrl+C로 복사해 주세요.";
+    setStatus(message);
+    if (success) toast.success(message);
+    else {
+      input.current?.focus();
+      input.current?.select();
     }
-
-    if (typeof window === "undefined") {
-      return candidate;
+  };
+  const nativeShare = async () => {
+    const result = await shareNatively({ title, text, url: shareUrl });
+    if (result === "unavailable")
+      setStatus(
+        english
+          ? "Use Copy link or choose a service below."
+          : "이 브라우저에서는 아래 링크 복사나 공유 서비스를 이용해 주세요."
+      );
+  };
+  const kakaoShare = async () => {
+    setBusy(true);
+    try {
+      const sdk = await ensureKakaoShareSdk();
+      const candidate =
+        imageUrl && !/^(data:|blob:)/.test(imageUrl)
+          ? imageUrl
+          : "/og-default.png";
+      sdk.Share!.sendDefault({
+        objectType: "feed",
+        content: {
+          title,
+          description: text,
+          imageUrl: buildAbsoluteUrl(candidate),
+          link: { mobileWebUrl: shareUrl, webUrl: shareUrl },
+        },
+        buttons: [
+          {
+            title: "맛집 보기",
+            link: { mobileWebUrl: shareUrl, webUrl: shareUrl },
+          },
+        ],
+      });
+    } catch {
+      setStatus(
+        english
+          ? "KakaoTalk could not open. Use Copy link."
+          : "카카오톡을 열지 못했어요. 링크 복사로 공유해 주세요."
+      );
+    } finally {
+      setBusy(false);
     }
-
-    return `${window.location.origin}${candidate.startsWith("/") ? "" : "/"}${candidate}`;
-  }, [imageUrl]);
-
-  const channels: Array<{
-    key: ShareChannel;
-    label: string;
-    disabled?: boolean;
-    helper?: string;
-  }> = [
-    { key: "copy", label: "URL복사" },
-    { key: "line", label: "LINE" },
-    { key: "x", label: "X" },
-    { key: "facebook", label: "페이스북" },
+  };
+  const links = [
     {
-      key: "kakao",
-      label: "카카오톡",
-      disabled: !KAKAO_JS_KEY || isSharingKakao,
-      helper: !KAKAO_JS_KEY ? "카카오 JavaScript 키를 넣으면 바로 쓸 수 있어요." : undefined,
+      name: "LINE",
+      url: `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(text)}`,
+      icon: <span className="text-xs font-black">LINE</span>,
+      color: "bg-[#e9f9ee] text-[#168444]",
     },
     {
-      key: "instagram",
-      label: "인스타",
-      helper: "웹에서는 링크 복사 방식으로 안내할게요.",
+      name: "X",
+      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`,
+      icon: <X className="h-5 w-5" />,
+      color: "bg-[#f2f2f2] text-[#222]",
+    },
+    {
+      name: english ? "Facebook" : "페이스북",
+      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+      icon: <Facebook className="h-5 w-5" />,
+      color: "bg-[#edf3ff] text-[#2165d5]",
     },
   ];
-
-  if (!open) {
-    return null;
-  }
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(17,17,17,0.34)] px-4">
-      <div className="w-full max-w-[420px] rounded-[30px] bg-white p-6 shadow-[0_28px_90px_rgba(0,0,0,0.16)]">
-        <div className="flex items-center justify-between">
-          <h2 className="text-[28px] font-black text-[#181818]">공유하기</h2>
+    <Dialog
+      open={open}
+      onOpenChange={next => {
+        if (!next) onClose();
+      }}
+    >
+      <DialogContent className="max-h-[90dvh] w-[calc(100%-32px)] max-w-[420px] overflow-y-auto rounded-3xl border-[#f0dfe4] bg-white p-5 sm:max-w-[420px] sm:p-6">
+        <DialogTitle className="pr-6 text-xl font-bold text-[#292127]">
+          {english ? "Share this place" : "같이 갈 사람에게 공유"}
+        </DialogTitle>
+        <DialogDescription className="text-sm text-[#85717a]">
+          {title}
+        </DialogDescription>
+        <button
+          type="button"
+          onClick={() => void copy()}
+          className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#ef6479] text-sm font-bold text-white hover:bg-[#df5269]"
+        >
+          <Copy className="h-4 w-4" />
+          {english ? "Copy restaurant link" : "식당 링크 복사"}
+        </button>
+        {typeof navigator !== "undefined" &&
+          typeof navigator.share === "function" && (
+            <button
+              type="button"
+              onClick={() => void nativeShare()}
+              className="flex min-h-11 items-center justify-center gap-2 rounded-xl border border-[#eadde2] text-sm text-[#67535d]"
+            >
+              <Share2 className="h-4 w-4" />
+              {english ? "More sharing options" : "기기 공유 메뉴 열기"}
+            </button>
+          )}
+        <div className="grid grid-cols-3 gap-3">
+          {links.map(link => (
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-16 flex-col items-center justify-center gap-1.5 text-[11px] text-[#67535d]"
+            >
+              <span
+                className={`flex h-10 w-10 items-center justify-center rounded-xl ${link.color}`}
+              >
+                {link.icon}
+              </span>
+              {link.name}
+            </a>
+          ))}
+          {KAKAO_JS_KEY && (
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => void kakaoShare()}
+              className="flex min-h-16 flex-col items-center justify-center gap-1.5 text-[11px] text-[#67535d] disabled:opacity-50"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fee500] text-xs font-black text-[#392223]">
+                Talk
+              </span>
+              {english ? "KakaoTalk" : "카카오톡"}
+            </button>
+          )}
           <button
             type="button"
-            onClick={onClose}
-            className="flex h-9 w-9 items-center justify-center rounded-full text-[#8e8e8e] transition hover:bg-[#f6f6f6]"
-            aria-label="닫기"
+            onClick={() => void copy(true)}
+            className="flex min-h-16 flex-col items-center justify-center gap-1.5 text-[11px] text-[#67535d]"
           >
-            <X className="h-5 w-5" />
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff0f6] text-[#c33b76]">
+              <Instagram className="h-5 w-5" />
+            </span>
+            {english ? "Instagram · copy" : "인스타 · 링크 복사"}
           </button>
         </div>
-
-        <div className="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-6">
-          {channels.map((channel) => (
-            <button
-              key={channel.key}
-              type="button"
-              disabled={channel.disabled}
-              onClick={async () => {
-                if (channel.key === "copy" || channel.key === "instagram") {
-                  try {
-                    await navigator.clipboard.writeText(trimmedUrl);
-                    toast.success(
-                      channel.key === "instagram"
-                        ? "링크를 복사했어요. 인스타그램에서 붙여 넣어 공유해 주세요."
-                        : "링크를 복사했어요."
-                    );
-                  } catch {
-                    toast.error("링크 복사에 실패했어요.");
-                  }
-                  return;
-                }
-
-                if (channel.key === "kakao") {
-                  if (!KAKAO_JS_KEY) {
-                    toast("카카오톡 공유는 JavaScript 키가 필요해요.");
-                    return;
-                  }
-
-                  try {
-                    setIsSharingKakao(true);
-                    const kakao = await ensureKakaoShareSdk();
-                    kakao?.Share?.sendDefault({
-                      objectType: "feed",
-                      content: {
-                        title,
-                        description: text,
-                        imageUrl: resolvedImageUrl,
-                        link: {
-                          mobileWebUrl: trimmedUrl,
-                          webUrl: trimmedUrl,
-                        },
-                      },
-                      buttons: [
-                        {
-                          title: "맛집 보기",
-                          link: {
-                            mobileWebUrl: trimmedUrl,
-                            webUrl: trimmedUrl,
-                          },
-                        },
-                      ],
-                    });
-                  } catch (error) {
-                    toast.error(
-                      error instanceof Error ? error.message : "카카오톡 공유에 실패했어요."
-                    );
-                  } finally {
-                    setIsSharingKakao(false);
-                  }
-                  return;
-                }
-
-                window.open(
-                  buildShareUrl(channel.key, text, trimmedUrl),
-                  "_blank",
-                  "noopener,noreferrer,width=600,height=720"
-                );
-              }}
-              className="group flex min-w-0 flex-col items-center gap-2 text-center"
-              title={channel.helper}
-            >
-              <span
-                className={`flex h-14 w-14 items-center justify-center rounded-2xl border text-sm font-bold transition ${
-                  getButtonStyle(channel.key, Boolean(channel.disabled))
-                }`}
-              >
-                {channel.key === "copy" ? <Copy className="h-5 w-5" /> : <ShareIcon channel={channel.key} />}
-              </span>
-              <span
-                className={`whitespace-nowrap text-[11px] font-medium tracking-[-0.02em] ${
-                  channel.disabled ? "text-[#b2b2b2]" : "text-[#4a4a4a]"
-                }`}
-              >
-                {channel.label}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        <div className="mt-6 overflow-hidden rounded-2xl border border-[#d9d9d9]">
-          <div className="flex items-center">
-            <div className="min-w-0 flex-1 bg-[#fafafa] px-4 py-3 text-left text-sm text-[#2c6ff0]">
-              <p className="truncate">{trimmedUrl}</p>
-            </div>
-            <button
-              type="button"
-              onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(trimmedUrl);
-                  toast.success("링크를 복사했어요.");
-                } catch {
-                  toast.error("링크 복사에 실패했어요.");
-                }
-              }}
-              className="flex h-[52px] items-center justify-center border-l border-[#d9d9d9] bg-white px-5 text-sm font-semibold text-[#6b6b6b] transition hover:bg-[#f7f7f7]"
-            >
-              복사
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+        <input
+          ref={input}
+          readOnly
+          value={shareUrl}
+          onFocus={event => event.currentTarget.select()}
+          aria-label={english ? "Restaurant share link" : "공유할 식당 링크"}
+          className="min-h-11 min-w-0 w-full rounded-xl border border-[#e8dce1] bg-[#fdfafa] px-3 text-xs text-[#67535d]"
+        />
+        <p role="status" className="min-h-5 text-xs leading-5 text-[#956173]">
+          {status ||
+            (english
+              ? "Send the link in your usual messenger."
+              : "평소 쓰는 메신저에 링크를 붙여 넣어 주세요.")}
+        </p>
+      </DialogContent>
+    </Dialog>
   );
 }

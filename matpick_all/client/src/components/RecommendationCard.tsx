@@ -1,7 +1,17 @@
+import HeartButton from "@/components/HeartButton";
+import { useState } from "react";
+import ShareSheet from "@/components/ShareSheet";
+import RestaurantSourceBadges from "@/components/RestaurantSourceBadges";
+import RestaurantTravelSummary from "@/components/RestaurantTravelSummary";
+import type { RestaurantTravelTimes } from "@/lib/travelTimes";
+import { buildAbsoluteUrl } from "@/lib/seo";
 import { Link } from "wouter";
 import { MapPin, Navigation, Share2 } from "lucide-react";
-import { toast } from "sonner";
-import { getRestaurantRecommendationLabels, type Restaurant } from "@/data";
+import {
+  getRestaurantRecommendationLabels,
+  getRestaurantMenuItems,
+  type Restaurant,
+} from "@/data";
 import { useLocale } from "@/contexts/LocaleContext";
 import { getRestaurantDirectionsUrl } from "@/lib/restaurantDirections";
 import {
@@ -18,16 +28,28 @@ export default function RecommendationCard({
   distanceMeters,
   rank,
   onSelect,
+  origin = null,
+  travel,
+  travelLoading,
 }: {
   restaurant: Restaurant;
   selected?: boolean;
   distanceMeters?: number | null;
   rank?: number;
   onSelect?: () => void;
+  origin?: { lat: number; lng: number } | null;
+  travel?: RestaurantTravelTimes;
+  travelLoading?: boolean;
 }) {
   const { locale } = useLocale();
   const english = locale === "en";
+  const [shareOpen, setShareOpen] = useState(false);
   const labels = getRestaurantRecommendationLabels(restaurant.id);
+  const menuSummary = getRestaurantMenuItems(restaurant)
+    .map(menu => menu.name.trim())
+    .filter(name => !/^(메인|추가|점심|저녁|추천|대표)?\s*메뉴$/.test(name))
+    .slice(0, 3)
+    .join(" · ");
   const distance =
     distanceMeters == null
       ? null
@@ -53,60 +75,40 @@ export default function RecommendationCard({
       </span>
     </>
   );
-  const share = async () => {
-    const url = new URL(
-      `/restaurant/${encodeURIComponent(restaurant.id)}`,
-      window.location.origin
-    ).href;
-    try {
-      if (navigator.share)
-        await navigator.share({
-          title: restaurant.name,
-          text: labels.join(" · "),
-          url,
-        });
-      else {
-        await navigator.clipboard.writeText(url);
-        toast.success(english ? "Link copied" : "식당 링크를 복사했어요");
-      }
-      trackMarketingEvent("recommendation_share", {
-        restaurant_id: restaurant.id,
-      });
-    } catch (error) {
-      if (!(error instanceof DOMException && error.name === "AbortError"))
-        toast.error(
-          english
-            ? "Could not share. Open details to copy the link."
-            : "공유하지 못했어요. 상세 화면에서 링크를 복사해 주세요."
-        );
-    }
-  };
   return (
     <article
       data-restaurant-id={restaurant.id}
       className={`border-b border-[#eee7e9] p-4 ${selected ? "bg-[#fff5f6]" : "bg-white"}`}
     >
-      {onSelect ? (
-        <button
-          type="button"
-          aria-pressed={selected}
-          onClick={onSelect}
-          className="block w-full text-left rounded focus-visible:outline-2 focus-visible:outline-[#ff7b83]"
-        >
-          {headline}
-        </button>
-      ) : (
-        <Link href={`/restaurant/${restaurant.id}`} className="block">
-          {headline}
-        </Link>
+      <div className="flex items-start gap-2">
+        <div className="min-w-0 flex-1">
+          {onSelect ? (
+            <button
+              type="button"
+              aria-pressed={selected}
+              onClick={onSelect}
+              className="block w-full text-left rounded focus-visible:outline-2 focus-visible:outline-[#ff7b83]"
+            >
+              {headline}
+            </button>
+          ) : (
+            <Link href={`/restaurant/${restaurant.id}`} className="block">
+              {headline}
+            </Link>
+          )}
+        </div>
+        <HeartButton restaurantId={restaurant.id} size="lg" />
+      </div>
+      {menuSummary && (
+        <p className="mt-2 text-sm font-semibold leading-5 text-[#52434b]">
+          {menuSummary}
+        </p>
       )}
-      <p className="mt-2 text-xs font-medium leading-5 text-[#956624]">
-        {labels.length
-          ? `${labels.slice(0, 2).join(" · ")}${english ? " · Featured" : " 소개"}${labels.length > 2 ? ` +${labels.length - 2}` : ""}`
-          : english
-            ? "Source being checked"
-            : "소개 근거 확인 중"}
-      </p>
+      <RestaurantSourceBadges
+        id={restaurant.id}
+        name={restaurant.name}
+        english={english}
+      />
       <p className="mt-1 flex items-start gap-1 text-xs leading-5 text-[#82787d]">
         <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
         {restaurant.address}
@@ -116,11 +118,18 @@ export default function RecommendationCard({
           {notice}
         </p>
       )}
+      <RestaurantTravelSummary
+        restaurant={restaurant}
+        origin={origin}
+        travel={travel}
+        loading={travelLoading}
+        english={english}
+      />
       <div className="mt-3 flex items-center gap-2">
         {hasUsableCoordinates(restaurant) &&
           isRestaurantRecommendable(restaurant) && (
             <a
-              href={getRestaurantDirectionsUrl(restaurant)}
+              href={getRestaurantDirectionsUrl(restaurant, origin)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
@@ -130,7 +139,7 @@ export default function RecommendationCard({
                   placement: "recommendation_card",
                 })
               }
-              className="inline-flex min-h-10 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#ef6479] px-3 text-sm font-semibold text-white hover:bg-[#df5269]"
+              className="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#ef6479] px-3 text-sm font-semibold text-white hover:bg-[#df5269]"
             >
               <Navigation className="h-4 w-4" />
               {english ? "Directions" : "길찾기"}
@@ -138,22 +147,38 @@ export default function RecommendationCard({
           )}
         <button
           type="button"
-          onClick={() => void share()}
+          onClick={() => {
+            setShareOpen(true);
+            trackMarketingEvent("recommendation_share", {
+              restaurant_id: restaurant.id,
+            });
+          }}
           aria-label={
             english ? `Share ${restaurant.name}` : `${restaurant.name} 공유`
           }
-          className="flex min-h-10 items-center justify-center gap-1 rounded-xl border border-[#e7dfe2] px-3 text-xs text-[#655c61]"
+          className="flex min-h-11 items-center justify-center gap-1 rounded-xl border border-[#e7dfe2] px-3 text-xs text-[#655c61]"
         >
           <Share2 className="h-4 w-4" />
           {english ? "Share" : "공유"}
         </button>
         <Link
           href={`/restaurant/${restaurant.id}`}
-          className="px-1 text-xs text-[#756c70] underline underline-offset-4"
+          className="inline-flex min-h-11 items-center px-2 text-sm text-[#756c70] underline underline-offset-4"
         >
           {english ? "Details" : "상세"}
         </Link>
       </div>
+      {shareOpen && (
+        <ShareSheet
+          open
+          onClose={() => setShareOpen(false)}
+          title={restaurant.name}
+          text={labels.join(" · ")}
+          url={buildAbsoluteUrl(
+            `/restaurant/${encodeURIComponent(restaurant.id)}`
+          )}
+        />
+      )}
     </article>
   );
 }

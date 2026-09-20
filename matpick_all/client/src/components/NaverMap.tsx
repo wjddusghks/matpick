@@ -269,28 +269,32 @@ function buildRestaurantMarkerEntries(restaurants: Restaurant[]) {
 function createMarkerIcon({
   isSelected,
   isNearest,
+  rank,
+  name,
 }: {
   isSelected: boolean;
   isNearest: boolean;
+  rank?: number;
+  name: string;
 }) {
   const color = isSelected ? "#FD7979" : isNearest ? "#f59e0b" : "#FF8A8A";
-  const size = isSelected ? 36 : isNearest ? 32 : 28;
+  const size = isSelected ? 40 : 34;
   const strokeColor = "#fff";
   const strokeWidth = isSelected ? 2.5 : 1.8;
   const height = Math.round(size * 1.35);
-  const label = isNearest ? "Near" : "Pick";
+  const label = String(rank ?? "•");
 
   return {
     content: `
-      <div style="cursor:pointer;width:${size}px;height:${height}px;">
-        <svg width="${size}" height="${height}" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button type="button" aria-label="${escapeHtml(`${rank ?? ""} ${name}`.trim())}" style="cursor:pointer;width:44px;height:${Math.max(44, height)}px;display:flex;justify-content:center;padding:0;border:0;background:transparent;">
+        <svg aria-hidden="true" width="${size}" height="${height}" viewBox="0 0 28 38" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M14 0C6.268 0 0 6.268 0 14c0 10.5 14 24 14 24s14-13.5 14-24C28 6.268 21.732 0 14 0z" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}"/>
-          <circle cx="14" cy="13" r="5.5" fill="white" opacity="0.95"/>
-          <text x="14" y="16" text-anchor="middle" font-size="${isNearest ? 5.5 : 6.2}" font-weight="700" fill="${color}" font-family="sans-serif">${label}</text>
+          <circle cx="14" cy="13" r="9" fill="white" opacity="0.95"/>
+          <text x="14" y="16" text-anchor="middle" font-size="${label.length > 3 ? 7 : label.length > 2 ? 9 : 12}" font-weight="700" fill="${color}" font-family="sans-serif">${label}</text>
         </svg>
-      </div>
+      </button>
     `,
-    anchor: new naver.maps.Point(size / 2, height),
+    anchor: new naver.maps.Point(22, height),
   };
 }
 
@@ -350,7 +354,7 @@ function escapeHtml(value: unknown) {
     .replaceAll("'", "&#39;");
 }
 
-function createInfoContent(restaurant: Restaurant) {
+function createInfoContent(restaurant: Restaurant, isEnglish = false) {
   const name = escapeHtml(restaurant.name);
   const category = escapeHtml(restaurant.category);
   const address = escapeHtml(restaurant.address || restaurant.region || "");
@@ -377,7 +381,7 @@ function createInfoContent(restaurant: Restaurant) {
         text-decoration:none;
         border-bottom:1px solid #FDACAC;
         padding-bottom:1px;
-      ">View details</a>
+      ">${isEnglish ? "View details" : "식당 상세 보기"}</a>
     </div>
   `;
 }
@@ -395,6 +399,7 @@ export default function NaverMap({
   const mapRef = useRef<naver.maps.Map | null>(null);
   const markersRef = useRef<Map<string, naver.maps.Marker>>(new Map());
   const markerEntryRef = useRef<Map<string, MapMarkerEntry>>(new Map());
+  const restaurantRankRef = useRef<Map<string, number>>(new Map());
   const restaurantLookupRef = useRef<Map<string, Restaurant>>(new Map());
   const currentLocationMarkerRef = useRef<naver.maps.Marker | null>(null);
   const currentLocationAccuracyRef = useRef<naver.maps.Circle | null>(null);
@@ -503,10 +508,11 @@ export default function NaverMap({
   }, [selectedId, validRestaurants, viewBounds]);
 
   useEffect(() => {
+    restaurantRankRef.current = new Map(restaurants.map((item, index) => [item.id, index + 1]));
     restaurantLookupRef.current = new Map(
       validRestaurants.map((restaurant) => [restaurant.id, restaurant])
     );
-  }, [validRestaurants]);
+  }, [validRestaurants, restaurants]);
 
   const clearMarkerListeners = useCallback(() => {
     listenersRef.current.forEach((listener) => {
@@ -762,7 +768,7 @@ export default function NaverMap({
               : `${entry.count} restaurants`,
           icon:
             entry.type === "restaurant"
-              ? createMarkerIcon({ isSelected, isNearest })
+              ? createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: entry.restaurant.name })
               : createClusterIcon(entry.count),
           zIndex:
             entry.type === "restaurant"
@@ -793,7 +799,7 @@ export default function NaverMap({
         onMarkerClickRef.current(entry.restaurant.id);
 
         if (infoWindowRef.current) {
-          infoWindowRef.current.setContent(createInfoContent(entry.restaurant));
+          infoWindowRef.current.setContent(createInfoContent(entry.restaurant, isEnglish));
           infoWindowRef.current.open(map, marker);
         }
 
@@ -801,7 +807,7 @@ export default function NaverMap({
       });
       listenersRef.current.set(entry.id, listener);
     });
-  }, [clearMarkerListeners, markerEntries, sdkReady]);
+  }, [clearMarkerListeners, markerEntries, sdkReady, isEnglish]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -947,7 +953,7 @@ export default function NaverMap({
         entry.restaurant.id === nearestRestaurantId && selectedId == null;
 
       try {
-        marker.setIcon(createMarkerIcon({ isSelected, isNearest }));
+        marker.setIcon(createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: entry.restaurant.name }));
         (marker as any).setZIndex?.(isSelected ? 200 : isNearest ? 150 : 1);
       } catch {
         // noop
@@ -967,7 +973,7 @@ export default function NaverMap({
 
       if (marker && restaurant && mapRef.current) {
         if (infoWindowRef.current) {
-          infoWindowRef.current.setContent(createInfoContent(restaurant));
+          infoWindowRef.current.setContent(createInfoContent(restaurant, isEnglish));
           infoWindowRef.current.open(mapRef.current, marker);
         }
       }
@@ -978,7 +984,7 @@ export default function NaverMap({
         // noop
       }
     }
-  }, [nearestRestaurantId, restaurants, sdkReady, selectedId]);
+  }, [nearestRestaurantId, restaurants, sdkReady, selectedId, isEnglish]);
 
   if (sdkError) {
     return (

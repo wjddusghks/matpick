@@ -1,3 +1,4 @@
+import { isComposingSearch } from "@/lib/mapNavigation";
 ﻿import {
   useCallback,
   useEffect,
@@ -1274,6 +1275,8 @@ export default function Home() {
 
   const handleSearchKeyDown = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
+      if (isComposingSearch(event.nativeEvent)) return;
+      if (event.key === "Escape") { setIsFocused(false); setHoveredIndex(-1); return; }
       if (event.key === "ArrowDown") {
         event.preventDefault();
         setHoveredIndex((prev) => {
@@ -1634,8 +1637,10 @@ export default function Home() {
                   }}
                   onKeyDown={handleSearchKeyDown}
                   placeholder={ui.searchPlaceholder}
+                  enterKeyHint="search"
+                  autoComplete="off"
                   aria-label={ui.searchPlaceholder}
-                  className="min-w-0 flex-1 bg-transparent px-2 text-[15px] font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:px-4 sm:text-[20px]"
+                  className="min-w-0 flex-1 bg-transparent px-2 text-base font-medium text-[#1f1f1f] outline-none placeholder:text-[#b6b6b6] sm:px-4 sm:text-[20px]"
                 />
                 <button
                   type="button"

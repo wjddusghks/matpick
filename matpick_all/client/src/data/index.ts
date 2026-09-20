@@ -1236,7 +1236,8 @@ function getRestaurantSearchVariants(value: string) {
 }
 
 function getRestaurantSearchTerms(query: string) {
-  const rawTerms = query.trim().split(/\s+/).filter(Boolean);
+  const rawTerms = query.trim().split(/\s+/).filter(Boolean)
+    .filter(term => !["맛집", "추천", "주변", "근처", "맛집추천"].includes(term));
   return (rawTerms.length > 0 ? rawTerms : [query])
     .map(getRestaurantSearchVariants)
     .filter((variants) => variants.length > 0);
@@ -1291,7 +1292,7 @@ const restaurantSearchIndex = restaurants.map((restaurant) => {
   return { restaurant, fields };
 });
 
-export function searchRestaurants(query: string): RestaurantSearchMatch[] {
+function findRestaurantMatches(query: string): RestaurantSearchMatch[] {
   const terms = getRestaurantSearchTerms(query);
   if (terms.length === 0) {
     return [];
@@ -1364,6 +1365,29 @@ export function searchRestaurants(query: string): RestaurantSearchMatch[] {
           getRecommendationCount(left.restaurant.id) ||
         sortText(left.restaurant.name, right.restaurant.name)
     );
+}
+
+export function getRestaurantSearchResults(query: string) {
+  const matches = findRestaurantMatches(query);
+  if (matches.length) return { matches, expandedArea: null };
+  // We do not have station coordinates. Only broaden to an address-matched area,
+  // and tell the visitor that this is an area search rather than a station radius.
+  const stationAreas: string[] = [];
+  const broaderQuery = query.trim().split(/\s+/).map(term => {
+    const station = /^([가-힣]{2,})역$/.exec(term);
+    if (!station) return term;
+    stationAreas.push(station[1]);
+    return station[1];
+  }).join(" ");
+  if (!stationAreas.length) return { matches, expandedArea: null };
+  const areaMatches = findRestaurantMatches(broaderQuery).filter(({ restaurant }) =>
+    stationAreas.every(area => normalizeRestaurantSearchText(`${restaurant.region} ${restaurant.address}`).includes(area))
+  );
+  return { matches: areaMatches, expandedArea: areaMatches.length ? stationAreas.join(" · ") : null };
+}
+
+export function searchRestaurants(query: string): RestaurantSearchMatch[] {
+  return getRestaurantSearchResults(query).matches;
 }
 
 export function getSearchSuggestions(query: string, limit = 8): SearchResult[] {

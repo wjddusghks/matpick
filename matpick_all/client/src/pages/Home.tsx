@@ -647,6 +647,7 @@ function TopicShortcutButton({ topic }: { topic: MapTopicShortcut }) {
             loading="lazy"
             decoding="async"
             className="h-full w-full object-cover"
+            style={{ objectFit: topic.imageFit ?? "cover" }}
           />
         </span>
       </span>

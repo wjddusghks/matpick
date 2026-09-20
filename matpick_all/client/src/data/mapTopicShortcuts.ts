@@ -6,6 +6,7 @@ import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import type { AppLocale } from "@/lib/locale";
 import travelTopicShortcuts from "./generated/travel-topic-shortcuts.generated.json";
 import expansionTopicShortcuts from "./generated/expansion-topic-shortcuts.generated.json";
+import topicThumbnailImages from "./topicThumbnailImages.json";
 
 export type MapTopicShortcut = {
   slug: string;
@@ -13,6 +14,7 @@ export type MapTopicShortcut = {
   value: string;
   name: Record<AppLocale, string>;
   imageUrl: string;
+  imageFit?: "cover" | "contain";
 };
 
 export const mapTopicShortcuts: MapTopicShortcut[] = [
@@ -80,7 +82,15 @@ export const mapTopicShortcuts: MapTopicShortcut[] = [
     name: { ko: "백종원의 3대천왕", en: "Baek Jong-won" },
     imageUrl: baekjongWokImage,
   },
-  ...(expansionTopicShortcuts as MapTopicShortcut[]),
+  ...(expansionTopicShortcuts as MapTopicShortcut[]).map(topic => ({
+    ...topic,
+    ...(
+      topicThumbnailImages as Record<
+        string,
+        Pick<MapTopicShortcut, "imageUrl" | "imageFit">
+      >
+    )[topic.value],
+  })),
 ];
 
 export function getMapTopicPath(topic: MapTopicShortcut) {

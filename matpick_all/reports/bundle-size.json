@@ -8,55 +8,55 @@
     ]
   },
   "home": {
-    "bytes": 501057,
-    "gzipBytes": 155088,
+    "bytes": 501784,
+    "gzipBytes": 155269,
     "chunks": [
       "index.html",
       "src/pages/Home.tsx",
-      "_mapTopicShortcuts-CiKWahjB.js",
-      "_FavoriteTopicDialog-BEjmuByY.js",
-      "_dialog-BcLhKnqY.js",
-      "_SocialLoginButtons-Dvm86-42.js",
-      "_admin-BX9FN8iB.js",
+      "_mapTopicShortcuts-Cqixf9HS.js",
+      "_FavoriteTopicDialog-DrOPmS6k.js",
+      "_dialog-BiXjuoeJ.js",
+      "_SocialLoginButtons-CHbpILwc.js",
+      "_admin-DpC8VGCR.js",
       "_location-CK6B26uK.js",
-      "_seo-WSQRgPXO.js",
-      "_plus-Qsaq795m.js",
-      "_search-C7GIVnPo.js",
-      "_map-pin-BGVIjyBi.js",
-      "_heart-Dfg0Pzc6.js",
-      "_message-circle-more-BQ3IdGIA.js",
-      "_star-Cc9lfmxt.js"
+      "_seo-nzbwcqrY.js",
+      "_plus-BBAl2JcR.js",
+      "_search-DJ62W4D2.js",
+      "_map-pin-CEpgoUwp.js",
+      "_heart-DIEtTYIz.js",
+      "_message-circle-more-DM3p8oiT.js",
+      "_star-D-Rnyl_F.js"
     ]
   },
   "map": {
-    "bytes": 6196606,
-    "gzipBytes": 1053855,
+    "bytes": 6197295,
+    "gzipBytes": 1054004,
     "chunks": [
       "index.html",
       "src/pages/SearchMap.tsx",
-      "_mapTopicShortcuts-CiKWahjB.js",
-      "_RecommendationCard-BN1B7RNu.js",
-      "_HeartButton-CC_N4_yA.js",
-      "_proxy-ChrwaMNd.js",
-      "_restaurantDirections-B3SvMBA5.js",
-      "_dialog-BcLhKnqY.js",
-      "_seo-WSQRgPXO.js",
-      "_instagram-DWg66VzG.js",
-      "_index-WEgaE4iL.js",
-      "_map-pin-BGVIjyBi.js",
-      "_MonetizationSlot-CfzDY4HO.js",
+      "_mapTopicShortcuts-Cqixf9HS.js",
+      "_RecommendationCard-CnHG2LSB.js",
+      "_HeartButton-D9Vcnvhk.js",
+      "_proxy-C3bvUHTc.js",
+      "_restaurantDirections-BaSYdkBE.js",
+      "_dialog-BiXjuoeJ.js",
+      "_seo-nzbwcqrY.js",
+      "_instagram-DX40326n.js",
+      "_index-DL8g5uSt.js",
+      "_map-pin-CEpgoUwp.js",
+      "_MonetizationSlot-C5tS_0C7.js",
       "_location-CK6B26uK.js",
       "_mapCollections-BAdNcYwV.js",
       "_naverMaps-DTFkV07Y.js",
-      "_arrow-left-DV3_5PQA.js",
-      "_search-C7GIVnPo.js"
+      "_arrow-left-GpvbInA5.js",
+      "_search-DJ62W4D2.js"
     ]
   },
   "catalog": {
     "bytes": 5958077,
-    "gzipBytes": 968814,
+    "gzipBytes": 968821,
     "chunks": [
-      "_index-WEgaE4iL.js",
+      "_index-DL8g5uSt.js",
       "index.html"
     ]
   }

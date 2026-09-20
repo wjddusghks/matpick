@@ -1,0 +1,18 @@
+{
+  "life-master": { "imageUrl": "/source-covers/life-master.jpg" },
+  "saturday-food": { "imageUrl": "/source-covers/saturday-food.png" },
+  "neighborhood-walk": {
+    "imageUrl": "/source-covers/neighborhood-walk.jpg",
+    "imageFit": "contain"
+  },
+  "mogeultende": { "imageUrl": "/source-covers/mogeultende.jpg" },
+  "chureupkyeon": { "imageUrl": "/source-covers/chureupkyeon.jpg" },
+  "jeju-eddy": { "imageUrl": "/source-covers/jeju-eddy.jpg" },
+  "kim-three-meals": { "imageUrl": "/source-covers/kim-three-meals.jpg" },
+  "taste-of-seoul": { "imageUrl": "/source-covers/taste-of-seoul.png" },
+  "century-stores": {
+    "imageUrl": "/source-covers/century-stores.png",
+    "imageFit": "contain"
+  },
+  "good-price": { "imageUrl": "/source-covers/good-price.jpg" }
+}

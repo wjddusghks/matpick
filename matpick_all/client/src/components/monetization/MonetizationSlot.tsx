@@ -33,8 +33,9 @@ const COUPANG_DISCLOSURE =
   "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
 const COUPANG_SDK_ID = "matpick-coupang-partners-sdk";
 
-let coupangSdkPromise: Promise<NonNullable<Window["PartnersCoupang"]>["G"] | null> | null =
-  null;
+let coupangSdkPromise: Promise<
+  NonNullable<Window["PartnersCoupang"]>["G"] | null
+> | null = null;
 
 function loadCoupangSdk() {
   if (typeof document === "undefined") {
@@ -49,8 +50,10 @@ function loadCoupangSdk() {
     return coupangSdkPromise;
   }
 
-  coupangSdkPromise = new Promise((resolve) => {
-    const existing = document.getElementById(COUPANG_SDK_ID) as HTMLScriptElement | null;
+  coupangSdkPromise = new Promise(resolve => {
+    const existing = document.getElementById(
+      COUPANG_SDK_ID
+    ) as HTMLScriptElement | null;
     const script = existing ?? document.createElement("script");
 
     const resolveSdk = () => {
@@ -84,7 +87,10 @@ function useCompactViewport() {
   const [isCompactViewport, setIsCompactViewport] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || typeof window.matchMedia !== "function") {
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
       return;
     }
 
@@ -116,9 +122,15 @@ function useAdvertisingConsent() {
       setIsAllowed(preferences?.advertising === true);
     };
 
-    window.addEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+    window.addEventListener(
+      PRIVACY_PREFERENCES_EVENT,
+      handlePreferences as EventListener
+    );
     return () =>
-      window.removeEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+      window.removeEventListener(
+        PRIVACY_PREFERENCES_EVENT,
+        handlePreferences as EventListener
+      );
   }, []);
 
   return isAllowed;
@@ -135,15 +147,19 @@ function DeferredSlot({
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (isReady || !triggerRef.current || typeof IntersectionObserver === "undefined") {
+    if (
+      isReady ||
+      !triggerRef.current ||
+      typeof IntersectionObserver === "undefined"
+    ) {
       setIsReady(true);
       return;
     }
 
     const trigger = triggerRef.current;
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
+      entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
           setIsReady(true);
           observer.disconnect();
         }
@@ -156,7 +172,10 @@ function DeferredSlot({
   }, [isReady]);
 
   return (
-    <div ref={triggerRef} style={{ minHeight: isReady ? undefined : `${minHeight}px` }}>
+    <div
+      ref={triggerRef}
+      style={{ minHeight: isReady ? undefined : `${minHeight}px` }}
+    >
       {isReady ? children : null}
     </div>
   );
@@ -201,7 +220,10 @@ export function AdsenseSlot({
     const element = insRef.current;
 
     const renderAd = () => {
-      if (!element || element.getAttribute("data-adsbygoogle-status") === "done") {
+      if (
+        !element ||
+        element.getAttribute("data-adsbygoogle-status") === "done"
+      ) {
         return;
       }
 
@@ -242,7 +264,10 @@ export function AdsenseSlot({
 
     updateFillState();
     const observer = new MutationObserver(updateFillState);
-    observer.observe(element, { attributes: true, attributeFilter: ["data-ad-status"] });
+    observer.observe(element, {
+      attributes: true,
+      attributeFilter: ["data-ad-status"],
+    });
     return () => observer.disconnect();
   }, [advertisingAllowed, client, slot]);
 
@@ -278,14 +303,17 @@ export function AdsenseSlot({
 
 export function KakaoAdfitSlot({
   label,
+  compact = false,
   unit = import.meta.env.VITE_KAKAO_ADFIT_UNIT?.trim() ?? "",
   mobileUnit = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_UNIT?.trim() ?? "",
   width = import.meta.env.VITE_KAKAO_ADFIT_WIDTH?.trim() ?? "320",
   height = import.meta.env.VITE_KAKAO_ADFIT_HEIGHT?.trim() ?? "100",
   mobileWidth = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_WIDTH?.trim() ?? "320",
-  mobileHeight = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_HEIGHT?.trim() ?? "100",
+  mobileHeight = import.meta.env.VITE_KAKAO_ADFIT_MOBILE_HEIGHT?.trim() ??
+    "100",
 }: {
   label?: string;
+  compact?: boolean;
   unit?: string;
   mobileUnit?: string;
   width?: string;
@@ -359,22 +387,35 @@ export function KakaoAdfitSlot({
     });
   };
 
-  return (
-    <SlotFrame label={label}>
-      <div className="w-full overflow-hidden" aria-label={label} onClickCapture={handleAdfitClick}>
-        <div
-          ref={containerRef}
-          className="mx-auto overflow-hidden rounded-[16px] bg-[#faf7f8]"
-          style={{
-            width: `${adWidth}px`,
-            maxWidth: "100%",
-            height: `${adHeight}px`,
-            maxHeight: `${adHeight}px`,
-            contain: "layout paint",
-          }}
-        />
-      </div>
-    </SlotFrame>
+  const content = (
+    <div
+      className="w-full overflow-hidden"
+      aria-label={label}
+      onClickCapture={handleAdfitClick}
+    >
+      <div
+        ref={containerRef}
+        className="mx-auto overflow-hidden rounded-[16px] bg-[#faf7f8]"
+        style={{
+          width: `${adWidth}px`,
+          maxWidth: "100%",
+          height: `${adHeight}px`,
+          maxHeight: `${adHeight}px`,
+          contain: "layout paint",
+        }}
+      />
+    </div>
+  );
+  return compact ? (
+    <aside
+      aria-label={label}
+      className="border-b border-[#f2e9ed] bg-[#fffcfd] py-3"
+    >
+      <p className="mb-2 text-center text-[10px] text-[#9a8c93]">{label}</p>
+      {content}
+    </aside>
+  ) : (
+    <SlotFrame label={label}>{content}</SlotFrame>
   );
 }
 
@@ -382,16 +423,18 @@ export function CoupangSlot({
   label,
   link = import.meta.env.VITE_COUPANG_PARTNERS_URL?.trim() ?? "",
   image = import.meta.env.VITE_COUPANG_BANNER_IMAGE_URL?.trim() ?? "",
-  title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ?? "추천 상품 보러가기",
-  dynamicBannerId = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_ID?.trim() ?? "",
-  dynamicBannerTemplate =
-    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TEMPLATE?.trim() ?? "carousel",
-  dynamicBannerTrackingCode =
-    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TRACKING_CODE?.trim() ?? "",
-  dynamicBannerWidth =
-    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_WIDTH?.trim() ?? "680",
-  dynamicBannerHeight =
-    import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_HEIGHT?.trim() ?? "140",
+  title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ??
+    "추천 상품 보러가기",
+  dynamicBannerId = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_ID?.trim() ??
+    "",
+  dynamicBannerTemplate = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TEMPLATE?.trim() ??
+    "carousel",
+  dynamicBannerTrackingCode = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TRACKING_CODE?.trim() ??
+    "",
+  dynamicBannerWidth = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_WIDTH?.trim() ??
+    "680",
+  dynamicBannerHeight = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_HEIGHT?.trim() ??
+    "140",
 }: {
   label?: string;
   link?: string;
@@ -409,7 +452,9 @@ export function CoupangSlot({
     "loading" | "ready" | "failed"
   >("loading");
   const isCompactViewport = useCompactViewport();
-  const hasDynamicBanner = Boolean(dynamicBannerId && dynamicBannerTrackingCode);
+  const hasDynamicBanner = Boolean(
+    dynamicBannerId && dynamicBannerTrackingCode
+  );
   const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
   const configuredBannerHeight = parseBannerDimension(dynamicBannerHeight, 140);
   const effectiveBannerHeight = isCompactViewport
@@ -432,7 +477,7 @@ export function CoupangSlot({
     const container = dynamicBannerRef.current;
     const updateWidth = () => {
       const nextWidth = Math.max(300, Math.floor(container.clientWidth));
-      setMeasuredBannerWidth((prev) => (prev === nextWidth ? prev : nextWidth));
+      setMeasuredBannerWidth(prev => (prev === nextWidth ? prev : nextWidth));
     };
 
     updateWidth();
@@ -453,7 +498,11 @@ export function CoupangSlot({
   }, [hasDynamicBanner]);
 
   useEffect(() => {
-    if (!hasDynamicBanner || !dynamicBannerRef.current || measuredBannerWidth <= 0) {
+    if (
+      !hasDynamicBanner ||
+      !dynamicBannerRef.current ||
+      measuredBannerWidth <= 0
+    ) {
       return;
     }
 
@@ -474,7 +523,7 @@ export function CoupangSlot({
     };
     fallbackTimer = window.setTimeout(markFailed, 8000);
 
-    void loadCoupangSdk().then((Banner) => {
+    void loadCoupangSdk().then(Banner => {
       if (cancelled || !Banner) {
         if (!cancelled) {
           markFailed();
@@ -490,7 +539,7 @@ export function CoupangSlot({
           width: String(effectiveBannerWidth),
           height: String(effectiveBannerHeight),
           container,
-          onLoaded: (hasAd) => {
+          onLoaded: hasAd => {
             if (cancelled) {
               return;
             }
@@ -547,11 +596,7 @@ export function CoupangSlot({
         targetLabel: title || link || "fallback-banner",
       });
     }
-  }, [
-    link,
-    shouldRenderFallbackCard,
-    title,
-  ]);
+  }, [link, shouldRenderFallbackCard, title]);
 
   if (!shouldRenderDynamicBanner && !shouldRenderFallbackCard) {
     return null;
@@ -570,8 +615,7 @@ export function CoupangSlot({
             maxHeight: `${effectiveBannerHeight}px`,
             contain: "layout paint",
           }}
-        >
-        </div>
+        ></div>
         <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
           {COUPANG_DISCLOSURE}
         </p>
@@ -595,7 +639,11 @@ export function CoupangSlot({
         className="flex items-center gap-4 rounded-[18px] border border-[#f2ecec] bg-[#fffafb] p-4 no-underline transition hover:border-[#ffd1d7] hover:bg-[#fff5f7]"
       >
         {image ? (
-          <img src={image} alt={title} className="h-16 w-16 rounded-2xl object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="h-16 w-16 rounded-2xl object-cover"
+          />
         ) : (
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#fff0f2] text-xs font-bold text-[#ff7b83]">
             AD
@@ -646,7 +694,7 @@ export function RevenuePlacement({
   const advertisingAllowed = useAdvertisingConsent();
   const enabledProviders = providers.filter(isProviderConfigured);
   const visibleProviders = enabledProviders.filter(
-    (provider) => provider !== "adsense" || advertisingAllowed
+    provider => provider !== "adsense" || advertisingAllowed
   );
   if (visibleProviders.length === 0) {
     return null;
@@ -654,9 +702,15 @@ export function RevenuePlacement({
 
   return (
     <aside className={`space-y-4 ${className}`} aria-label={label}>
-      {visibleProviders.map((provider) => (
-        <DeferredSlot key={provider} minHeight={provider === "coupang" ? 140 : 100}>
-          <MonetizationSlot provider={provider} label={provider === "coupang" ? "제휴 광고" : label} />
+      {visibleProviders.map(provider => (
+        <DeferredSlot
+          key={provider}
+          minHeight={provider === "coupang" ? 140 : 100}
+        >
+          <MonetizationSlot
+            provider={provider}
+            label={provider === "coupang" ? "제휴 광고" : label}
+          />
         </DeferredSlot>
       ))}
     </aside>

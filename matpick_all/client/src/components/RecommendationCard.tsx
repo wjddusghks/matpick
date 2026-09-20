@@ -135,14 +135,14 @@ export default function RecommendationCard({
               onClick={() =>
                 trackMarketingEvent("directions_click", {
                   restaurant_id: restaurant.id,
-                  provider: "kakao",
+                  provider: "naver",
                   placement: "recommendation_card",
                 })
               }
               className="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#ef6479] px-3 text-sm font-semibold text-white hover:bg-[#df5269]"
             >
               <Navigation className="h-4 w-4" />
-              {english ? "Directions" : "길찾기"}
+              {english ? "Naver directions" : "네이버 길찾기"}
             </a>
           )}
         <button

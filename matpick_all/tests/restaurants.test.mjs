@@ -166,9 +166,10 @@ test("directions target coordinates and escape the restaurant name", () => {
   const url = new URL(
     directions.getRestaurantDirectionsUrl({ ...sample, name: "A & B/식당" })
   );
-  assert.equal(url.hostname, "map.kakao.com");
-  assert.ok(url.pathname.endsWith(`,${sample.lat},${sample.lng}`));
-  assert.ok(url.pathname.includes("%2F"));
+  assert.equal(url.hostname, "map.naver.com");
+  assert.equal(url.searchParams.get("elat"), String(sample.lat));
+  assert.equal(url.searchParams.get("elng"), String(sample.lng));
+  assert.equal(url.searchParams.get("etext"), "A & B/식당");
 });
 
 test("sitemap contains exactly the canonical restaurant IDs and the public Tasty Guys topic", async () => {

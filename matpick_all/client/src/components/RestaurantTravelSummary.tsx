@@ -1,4 +1,4 @@
-import { Car, BusFront, ArrowUpRight } from "lucide-react";
+import { Car, ArrowUpRight } from "lucide-react";
 import type { Restaurant } from "@/data/types";
 import { getRestaurantDirectionsUrl } from "@/lib/restaurantDirections";
 import {
@@ -21,76 +21,48 @@ export default function RestaurantTravelSummary({
   english?: boolean;
 }) {
   if (!origin || restaurant.isOverseas) return null;
-  const modes = [
-    {
-      key: "driving",
-      mode: "car",
-      name: english ? "Car" : "자동차",
-      Icon: Car,
-    },
-    {
-      key: "transit",
-      mode: "traffic",
-      name: english ? "Transit" : "대중교통",
-      Icon: BusFront,
-    },
-  ] as const;
+  const driving = travel?.driving;
+  const hint = loading
+    ? english
+      ? "Checking route…"
+      : "경로 조회 중…"
+    : driving?.status === "no_route"
+      ? english
+        ? "No driving route"
+        : "자동차 경로 없음"
+      : english
+        ? "Check in Naver Map"
+        : "네이버지도에서 확인";
   return (
-    <div className="mt-3 rounded-xl bg-[#f8f6f7] p-2.5">
-      <p className="mb-2 text-[10px] text-[#8b7c83]">
-        {english
-          ? "From my location · at time of lookup"
-          : "내 위치에서 · 조회 시점 기준"}
-      </p>
-      <div className="grid grid-cols-2 gap-2">
-        {modes.map(({ key, mode, name, Icon }) => {
-          const value = travel?.[key];
-          const hint = loading
-            ? english
-              ? "Checking route…"
-              : "경로 조회 중…"
-            : value?.status === "no_route"
-              ? english
-                ? "No route found"
-                : "경로 없음"
-              : value?.status === "unsupported"
-                ? english
-                  ? "Check in map"
-                  : "장거리·지역 확인"
-                : english
-                  ? "Check in map"
-                  : "지도에서 확인";
-          return (
-            <a
-              key={key}
-              href={getRestaurantDirectionsUrl(restaurant, origin, mode)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${name} ${english ? "directions to" : "길찾기"} ${restaurant.name}`}
-              className="flex min-h-12 min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 rounded-lg bg-white p-2 text-xs text-[#68565f] hover:bg-[#fff0f4]"
-            >
-              <Icon className="h-3.5 w-3.5 shrink-0" />
-              <span>{name}</span>
-              <ArrowUpRight className="ml-auto h-3 w-3 shrink-0" />
-              <span className="w-full font-semibold text-[#43333c]">
-                {value?.status === "ok"
-                  ? `${formatTravelTime(value.durationMinutes, english)} · ${formatRouteDistance(value.distanceMeters)}`
-                  : hint}
-              </span>
-              {value?.status === "ok" && (
-                <span className="text-[9px] text-[#9a8c93]">
-                  {value.provider}
-                  {key === "transit"
-                    ? english
-                      ? " · includes walking"
-                      : " · 도보 포함"
-                    : ""}
-                </span>
-              )}
-            </a>
-          );
-        })}
-      </div>
-    </div>
+    <a
+      href={getRestaurantDirectionsUrl(restaurant, origin)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={
+        (english ? "Naver driving directions to " : "네이버 자동차 길찾기 ") +
+        restaurant.name
+      }
+      className="mt-3 flex items-center gap-3 rounded-xl bg-[#f8f6f7] p-3 text-[#68565f] hover:bg-[#fff0f4]"
+    >
+      <Car className="h-4 w-4 shrink-0" />
+      <span className="min-w-0 flex-1">
+        <span className="block text-[11px]">
+          {english ? "Drive from my location" : "내 위치에서 자동차로"}
+        </span>
+        <strong className="mt-0.5 block text-sm text-[#43333c]">
+          {driving?.status === "ok"
+            ? formatTravelTime(driving.durationMinutes, english) +
+              " · " +
+              formatRouteDistance(driving.distanceMeters)
+            : hint}
+        </strong>
+        <span className="mt-1 block text-[10px] text-[#8b7c83]">
+          {english
+            ? "NAVER Maps · at time of lookup"
+            : "네이버지도 · 조회 시점 기준"}
+        </span>
+      </span>
+      <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
+    </a>
   );
 }

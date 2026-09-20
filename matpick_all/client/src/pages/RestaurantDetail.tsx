@@ -18,6 +18,8 @@ import { toast } from "sonner";
 import HeartButton from "@/components/HeartButton";
 import ShareSheet from "@/components/ShareSheet";
 import RestaurantReviews from "@/components/RestaurantReviews";
+import RestaurantLocationMap from "@/components/RestaurantLocationMap";
+import { loadStoredLocation } from "@/lib/location";
 import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
@@ -81,6 +83,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
   const [, navigate] = useLocation();
   const [shareOpen, setShareOpen] = useState(false);
   const [allMenus, setAllMenus] = useState(false);
+  const [origin] = useState(() => loadStoredLocation());
   const [reviewSummary, setReviewSummary] = useState(() =>
     summarizeReviews([])
   );
@@ -307,6 +310,12 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     : "위치와 길찾기"}
               </h2>
             </div>
+            {hasUsableCoordinates(restaurant) && !restaurant.isOverseas && (
+              <RestaurantLocationMap
+                restaurant={restaurant}
+                english={isEnglish}
+              />
+            )}
             <p className="detail-address">
               {restaurant.address ||
                 (isEnglish ? "Address not available" : "주소 정보가 없어요")}
@@ -325,13 +334,13 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
               <div className="detail-map-actions">
                 <a
                   className="detail-primary-button"
-                  href={getRestaurantDirectionsUrl(restaurant)}
+                  href={getRestaurantDirectionsUrl(restaurant, origin)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackDirections("kakao")}
+                  onClick={() => trackDirections("naver")}
                 >
                   <Navigation aria-hidden="true" />
-                  {isEnglish ? "Directions" : "길찾기"}
+                  {isEnglish ? "Naver directions" : "네이버 길찾기"}
                 </a>
                 <Link className="detail-secondary-button" href={mapPath}>
                   <MapPin aria-hidden="true" />
@@ -402,7 +411,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
         </aside>
 
         <div className="detail-content">
-          {menus.length > 0 && (
+          {
             <section
               className="detail-section"
               aria-labelledby="detail-menu-title"
@@ -410,14 +419,21 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
               <div className="detail-section-heading">
                 <h2 id="detail-menu-title">
                   <Utensils aria-hidden="true" />
-                  {isEnglish ? "What to eat" : "이곳에서 먹을 메뉴"}
+                  {isEnglish ? "Menu & prices" : "메뉴와 가격"}
                 </h2>
                 <span className="detail-section-count">
                   {isEnglish ? `${menus.length} items` : `${menus.length}가지`}
                 </span>
               </div>
+              {menus.length === 0 && (
+                <p className="detail-muted">
+                  {isEnglish
+                    ? "Menu and prices have not been verified yet. Check the restaurant's Naver listing before visiting."
+                    : "아직 확인된 메뉴·가격 정보가 없어요. 방문 전 네이버지도에서 매장 메뉴를 확인해 주세요."}
+                </p>
+              )}
               <ul className="detail-menu-list">
-                {featuredMenus.slice(0, allMenus ? undefined : 3).map(menu => (
+                {featuredMenus.slice(0, allMenus ? undefined : 5).map(menu => (
                   <li key={menu.id}>
                     <div>
                       <p>
@@ -434,13 +450,20 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                         </span>
                       )}
                     </div>
-                    {menu.price && (
-                      <strong className="detail-price">{menu.price}</strong>
-                    )}
+                    <strong
+                      className={
+                        menu.price
+                          ? "detail-price"
+                          : "detail-price detail-price-missing"
+                      }
+                    >
+                      {menu.price ||
+                        (isEnglish ? "Unverified price" : "가격 미확인")}
+                    </strong>
                   </li>
                 ))}
               </ul>
-              {menus.length > 3 && (
+              {menus.length > 5 && (
                 <button
                   type="button"
                   className="detail-expand-button"
@@ -465,7 +488,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                 </p>
               )}
             </section>
-          )}
+          }
 
           {sources.length > 0 && (
             <section

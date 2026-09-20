@@ -5,6 +5,7 @@ import {
   withMapView,
 } from "@/lib/mapNavigation";
 import RecommendationCard from "@/components/RecommendationCard";
+import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
 import {
   findNearbyRecommendations,
   sortRestaurantsByDistance,
@@ -550,9 +551,13 @@ export default function SearchMap() {
   const nearbyResults = useMemo(
     () =>
       currentLocation
-        ? findNearbyRecommendations(deferredRestaurants, currentLocation)
-        : { restaurants: [], radiusMeters: 0, expanded: false },
-    [currentLocation, deferredRestaurants]
+        ? findNearbyRecommendations(
+            deferredRestaurants,
+            currentLocation,
+            visibleListCount
+          )
+        : { restaurants: [], totalCount: 0, radiusMeters: 0, expanded: false },
+    [currentLocation, deferredRestaurants, visibleListCount]
   );
   const sortedMatches = useMemo(
     () => sortRestaurantsByDistance(deferredRestaurants, currentLocation),
@@ -567,6 +572,8 @@ export default function SearchMap() {
   );
   const listRestaurants =
     type === "nearby" ? domesticRestaurants : orderedRestaurants;
+  const totalAvailable =
+    type === "nearby" ? nearbyResults.totalCount : listRestaurants.length;
 
   useEffect(() => {
     if (
@@ -993,27 +1000,42 @@ export default function SearchMap() {
             distanceMeters={getRestaurantDistance(restaurant)}
             origin={currentLocation}
             travel={travelTimes.values[restaurant.id]}
-            travelLoading={index < 6 && travelTimes.loading}
+            travelLoading={
+              !travelTimes.values[restaurant.id] && travelTimes.loading
+            }
             onSelect={() => selectRestaurant(restaurant.id)}
           />
         ))}
-        {visibleListCount < listRestaurants.length ? (
-          <button
-            type="button"
-            onClick={() => {
-              const shown = Math.min(
-                visibleListCount + resultPageSize,
-                listRestaurants.length
-              );
-              setVisibleListCount(shown);
-              navigate(withMapView(searchString, selectedId, shown), {
-                replace: true,
-              });
-            }}
-            className="min-h-12 w-full px-4 py-3 text-center text-sm font-semibold text-[#c24d63] hover:bg-[#fff5f6]"
-          >
-            {locale === "en" ? "Show more places" : "다른 후보 더 보기"}
-          </button>
+        {visibleListCount < totalAvailable ? (
+          <div className="p-4">
+            <button
+              type="button"
+              onClick={() => {
+                const shown = Math.min(
+                  visibleListCount + resultPageSize,
+                  totalAvailable
+                );
+                setVisibleListCount(shown);
+                navigate(withMapView(searchString, selectedId, shown), {
+                  replace: true,
+                });
+              }}
+              className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-[#f1becb] bg-[#fff5f8] px-4 py-3 text-center text-sm font-bold text-[#c24d63] hover:bg-[#ffe9f0]"
+            >
+              <ChevronDown className="h-4 w-4" />
+              {locale === "en"
+                ? `Show ${Math.min(resultPageSize, totalAvailable - visibleListCount)} more places`
+                : `맛집 ${Math.min(resultPageSize, totalAvailable - visibleListCount)}곳 더 보기`}
+            </button>
+            {type === "nearby" &&
+              visibleListCount >= listRestaurants.length && (
+                <p className="mt-2 text-center text-xs text-[#88737d]">
+                  {locale === "en"
+                    ? "Expand the area to find more nearby places"
+                    : "주변 범위를 넓혀 가까운 식당부터 더 찾아드려요"}
+                </p>
+              )}
+          </div>
         ) : null}
       </>
     ) : type === "nearby" && !currentLocation && !isLocating ? (
@@ -1254,6 +1276,10 @@ export default function SearchMap() {
                 ref={listRef}
                 className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white"
               >
+                <KakaoAdfitSlot
+                  label={locale === "en" ? "Advertisement" : "광고"}
+                  compact
+                />
                 {type === "nearby" && nearbyResults.expanded && (
                   <p className="px-4 pt-3 text-xs text-[#956624]">
                     {locale === "en"
@@ -1281,6 +1307,10 @@ export default function SearchMap() {
                 </div>
                 {locationSummary}
                 <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto">
+                  <KakaoAdfitSlot
+                    label={locale === "en" ? "Advertisement" : "광고"}
+                    compact
+                  />
                   {restaurantList}
                 </div>
               </div>

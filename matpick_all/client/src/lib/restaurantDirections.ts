@@ -2,9 +2,15 @@ import type { Restaurant } from "@/data/types";
 
 export function getRestaurantDirectionsUrl(
   restaurant: Restaurant,
-  origin?: { lat: number; lng: number } | null,
-  mode: "car" | "traffic" = "car"
+  origin?: { lat: number; lng: number } | null
 ) {
+  const params = new URLSearchParams({
+    menu: "route",
+    pathType: "0",
+    elat: String(restaurant.lat),
+    elng: String(restaurant.lng),
+    etext: restaurant.name,
+  });
   if (
     origin &&
     Number.isFinite(origin.lat) &&
@@ -12,8 +18,10 @@ export function getRestaurantDirectionsUrl(
     Math.abs(origin.lat) <= 90 &&
     Math.abs(origin.lng) <= 180
   ) {
-    return `https://map.kakao.com/link/by/${mode}/${encodeURIComponent("현재 위치")},${origin.lat},${origin.lng}/${encodeURIComponent(restaurant.name)},${restaurant.lat},${restaurant.lng}`;
+    params.set("slat", String(origin.lat));
+    params.set("slng", String(origin.lng));
+    params.set("stext", "현재 위치");
   }
-  // Coordinate-based destination avoids ambiguous same-name branches.
-  return `https://map.kakao.com/link/to/${encodeURIComponent(restaurant.name)},${restaurant.lat},${restaurant.lng}`;
+  // NAVER redirects this coordinate link to its current car-directions page.
+  return `https://map.naver.com/index.nhn?${params}`;
 }

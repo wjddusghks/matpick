@@ -24,7 +24,7 @@ module.exports = async function handler(req, res) {
   if (req.method === "GET")
     return res.status(200).json({
       driving: Boolean(config.id && config.secret),
-      transit: Boolean(config.transitKey),
+      transit: false,
     });
   let body;
   try {
@@ -92,11 +92,7 @@ module.exports = async function handler(req, res) {
     const routes = await Promise.all(
       destinations.map(async (restaurant) => ({
         restaurantId: restaurant.id,
-        ...(await getTravelTimes(
-          body.origin,
-          restaurant,
-          body.skipTransit === true ? { ...config, transitKey: "" } : config,
-        )),
+        ...(await getTravelTimes(body.origin, restaurant, config)),
       })),
     );
     // Origins, credentials and raw provider responses are never returned or logged.

@@ -8,7 +8,6 @@ export type TravelModeResult =
   | { status: "not_configured" | "no_route" | "unsupported" | "unavailable" };
 export type RestaurantTravelTimes = {
   driving: TravelModeResult;
-  transit: TravelModeResult;
 };
 export function formatTravelTime(minutes: number, english = false) {
   const rounded = Math.max(1, Math.ceil(minutes));

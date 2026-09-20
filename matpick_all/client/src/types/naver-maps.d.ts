@@ -11,6 +11,8 @@ declare namespace naver {
       fitBounds(bounds: LatLngBounds, margin?: any): void;
       getBounds(): LatLngBounds;
       setOptions(key: string, value: any): void;
+      setSize(size: Size): void;
+      destroy(): void;
     }
 
     interface MapOptions {

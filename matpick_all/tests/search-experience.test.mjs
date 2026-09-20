@@ -5,7 +5,7 @@ import { loadAppModules } from "../scripts/load-public-data.mjs";
 const require = createRequire(import.meta.url);
 const provider = require("../../api/routes/_providers.js");
 const handler = require("../../api/routes/index.js");
-const [nearby, navigation, sources, share, directions, travel, odsay] =
+const [nearby, navigation, sources, share, directions, travel] =
   await loadAppModules([
     "/src/lib/nearbyRecommendations.ts",
     "/src/lib/mapNavigation.ts",
@@ -13,7 +13,6 @@ const [nearby, navigation, sources, share, directions, travel, odsay] =
     "/src/lib/share.ts",
     "/src/lib/restaurantDirections.ts",
     "/src/lib/travelTimes.ts",
-    "/src/lib/odsayTransit.ts",
   ]);
 function replaceGlobal(t, key, value) {
   const original = Object.getOwnPropertyDescriptor(globalThis, key);
@@ -153,23 +152,30 @@ test("copy works with async clipboard and selection fallback, and reports both f
   globalThis.document.execCommand = () => false;
   assert.equal(await share.copyShareLink("link"), false);
 });
-test("directions retain origin, destination and car/transit mode", () => {
+test("Naver car directions preserve coordinates, names and optional origin", () => {
   const restaurant = point("A & B/식당", 127.1);
-  for (const mode of ["car", "traffic"]) {
+  for (const origin of [
+    null,
+    { lat: 37.51, lng: 127 },
+    { lat: NaN, lng: 127 },
+  ]) {
     const url = new URL(
-      directions.getRestaurantDirectionsUrl(
-        restaurant,
-        { lat: 37.51, lng: 127 },
-        mode
-      )
+      directions.getRestaurantDirectionsUrl(restaurant, origin)
     );
-    assert.ok(url.pathname.startsWith(`/link/by/${mode}/`));
-    assert.ok(url.pathname.includes(",37.51,127/"));
-    assert.ok(url.pathname.endsWith(",37.5,127.1"));
-    assert.ok(url.pathname.includes("%2F"));
+    assert.equal(url.hostname, "map.naver.com");
+    assert.equal(url.searchParams.get("pathType"), "0");
+    assert.equal(url.searchParams.get("etext"), restaurant.name);
+    assert.equal(url.searchParams.get("elat"), "37.5");
+    assert.equal(url.searchParams.get("elng"), "127.1");
+    assert.equal(
+      url.searchParams.has("slat"),
+      Boolean(origin && Number.isFinite(origin.lat))
+    );
+    if (origin && Number.isFinite(origin.lat))
+      assert.equal(url.searchParams.get("slat"), "37.51");
   }
 });
-test("driving uses milliseconds and transit uses full local journey minutes", () => {
+test("driving durations use milliseconds and invalid metrics never become estimates", () => {
   assert.deepEqual(
     provider.parseDriving({
       code: 0,
@@ -181,34 +187,6 @@ test("driving uses milliseconds and transit uses full local journey minutes", ()
       distanceMeters: 2100,
       provider: "NAVER Maps",
     }
-  );
-  const local = provider.parseTransit({
-    result: {
-      searchType: 0,
-      path: [
-        { info: { totalTime: 25, totalDistance: 5500 } },
-        { info: { totalTime: 20, totalDistance: 5800 } },
-      ],
-    },
-  });
-  assert.equal(local.durationMinutes, 20);
-  assert.equal(local.distanceMeters, 5800);
-  assert.equal(
-    provider.parseTransit({
-      result: {
-        searchType: 2,
-        path: [{ info: { totalTime: 120, totalDistance: 150000 } }],
-      },
-    }).status,
-    "unsupported"
-  );
-  assert.equal(
-    provider.parseTransit({ error: [{ code: "500" }] }).status,
-    "unavailable"
-  );
-  assert.equal(
-    provider.parseTransit({ error: { code: "-98" } }).status,
-    "no_route"
   );
   assert.equal(
     provider.parseDriving({
@@ -228,7 +206,7 @@ test("driving uses milliseconds and transit uses full local journey minutes", ()
   );
   assert.equal(travel.formatTravelTime(125), "2시간 5분");
 });
-test("missing credentials make no upstream calls; one provider failure preserves the other", async () => {
+test("missing credentials make no calls; routing uses NAVER only", async () => {
   const origin = { lat: 37.5, lng: 127 },
     destination = point("test", 127.1);
   let calls = 0;
@@ -258,7 +236,7 @@ test("missing credentials make no upstream calls; one provider failure preserves
     }
   );
   assert.equal(partial.driving.durationMinutes, 10);
-  assert.equal(partial.transit.status, "unavailable");
+  assert.equal(partial.transit.status, "not_configured");
 });
 test("routes endpoint rejects cross-site, invalid or unbounded destinations before upstream work", async () => {
   for (const [body, origin, expected] of [
@@ -292,33 +270,20 @@ test("routes endpoint rejects cross-site, invalid or unbounded destinations befo
   }
 });
 
-test("ODsay Web key uses browser routing and preserves full-route semantics", async () => {
-  const fixture = {
-    result: {
-      searchType: 0,
-      path: [{ info: { totalTime: 24, totalDistance: 4300 } }],
-    },
-  };
-  assert.deepEqual(
-    odsay.parseOdsayTransit(fixture),
-    provider.parseTransit(fixture)
-  );
-  assert.equal(
-    odsay.parseOdsayTransit({ result: { searchType: 1 } }).status,
-    "unsupported"
-  );
-  const result = await odsay.getOdsayWebTransit(
-    { lat: 37.5, lng: 127 },
-    { lat: 37.55, lng: 127.1 },
-    "web key+",
-    new AbortController().signal,
-    async input => {
-      const url = new URL(input);
-      assert.equal(url.hostname, "api.odsay.com");
-      assert.equal(url.searchParams.get("apiKey"), "web key+");
-      assert.equal(url.searchParams.get("SX"), "127");
-      return { ok: true, json: async () => fixture };
-    }
-  );
-  assert.equal(result.durationMinutes, 24);
+test("nearby show-more expands beyond six and beyond the initial radius", () => {
+  const origin = { lat: 37.5, lng: 127 };
+  const input = [
+    ...Array.from({ length: 6 }, (_, i) => point(String(i), 127 + i * 0.001)),
+    point("next", 127.1),
+    point("distant", 128),
+    point("closed", 127, { operationState: "closed" }),
+  ];
+  const first = nearby.findNearbyRecommendations(input, origin, 6);
+  const more = nearby.findNearbyRecommendations(input, origin, 12);
+  assert.equal(first.restaurants.length, 6);
+  assert.equal(first.totalCount, 8);
+  assert.equal(more.restaurants.length, 8);
+  assert.deepEqual(more.restaurants.slice(0, 6), first.restaurants);
+  assert.equal(more.restaurants.at(-1).id, "distant");
+  assert.ok(more.radiusMeters > first.radiusMeters);
 });

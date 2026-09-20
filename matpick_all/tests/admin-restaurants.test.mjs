@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { readdirSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { loadAppModules } from "../scripts/load-public-data.mjs";
 const require = createRequire(import.meta.url);
 const {
@@ -8,11 +11,29 @@ const {
   saveEdit,
   readEdits,
 } = require("../../api/restaurants/_restaurantEdits.js");
-const handler = require("../../api/admin/restaurants.js");
+const handler = require("../../api/admin/_restaurantAdmin.js");
 const publicHandler = require("../../api/restaurants/index.js");
 const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
 const dataset = require("../client/src/data/generated/public-dataset.json");
 const [client] = await loadAppModules(["/src/lib/restaurantEdits.ts"]);
+
+test("deployment remains within the current twelve-function plan", () => {
+  const apiRoot = fileURLToPath(new URL("../../api/", import.meta.url));
+  function functionsIn(directory) {
+    return readdirSync(directory, { withFileTypes: true }).flatMap(entry =>
+      entry.name.startsWith("_") ? [] : entry.isDirectory() ? functionsIn(path.join(directory, entry.name)) : entry.name.endsWith(".js") ? [entry.name] : []
+    );
+  }
+  assert.ok(functionsIn(apiRoot).length <= 12);
+});
+
+test("shared catalog endpoint requires admin authorization for metadata and all writes", async () => {
+  for (const request of [{ method: "GET", query: { scope: "admin" } }, { method: "POST", body: {} }]) {
+    const res = response();
+    await publicHandler({ ...request, headers: {} }, res);
+    assert.equal(res.code, 403);
+  }
+});
 
 function response() {
   return {

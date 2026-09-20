@@ -1,4 +1,5 @@
 const { authorizeAdminRequest } = require("./_adminAuth");
+// Invoked by /api/restaurants; keep a single deployed function for the catalog.
 const {
   applyApiSecurityHeaders,
   enforceSameOrigin,

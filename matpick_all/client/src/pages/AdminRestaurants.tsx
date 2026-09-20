@@ -202,7 +202,7 @@ export default function AdminRestaurants() {
   useEffect(() => {
     if (!allowed || !user) return;
     const controller = new AbortController();
-    fetch("/api/admin/restaurants", {
+    fetch("/api/restaurants?scope=admin", {
       headers: {
         "x-matpick-admin-key": getAdminRegistrationKey(user),
         "x-matpick-admin-token": user.syncToken || "",
@@ -308,7 +308,7 @@ export default function AdminRestaurants() {
         changes.menuPriceSources = draft.menuPriceSources.filter(source =>
           source.url.trim()
         );
-      const response = await fetch("/api/admin/restaurants", {
+      const response = await fetch("/api/restaurants", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

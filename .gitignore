@@ -7,6 +7,7 @@ matpick_all.zip
 **/.env.development.local
 **/.env.test.local
 **/.env.production.local
+**/.env.data.local
 *.log
 .pnpm-store/
 pnpm-debug.log*

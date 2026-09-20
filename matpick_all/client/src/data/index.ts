@@ -604,6 +604,9 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
 const publicDiscoveryTopicSlugs = new Set([
+  "busan-bite",
+  "jeju-bite",
+  "travel-bite",
   "ttoganjip",
   "wednesday-gourmet",
   "popular-restaurants",

@@ -30,7 +30,11 @@
     "data:check": "node scripts/generate-public-data.mjs && node scripts/check-restaurant-data.mjs",
     "test": "node --test tests/*.test.mjs",
     "predev": "node scripts/generate-public-data.mjs && node scripts/generate-restaurant-aliases.mjs",
-    "data:generate": "node scripts/generate-public-data.mjs"
+    "data:generate": "node scripts/generate-public-data.mjs",
+    "data:menus:collect": "node ../scripts/collect-missing-menus.mjs",
+    "data:menus:build": "node ../scripts/build-menu-research.mjs && node scripts/generate-public-data.mjs",
+    "data:travel:import": "node ../scripts/import-tourism-data.mjs",
+    "data:travel:build": "node ../scripts/build-travel-discovery.mjs && node scripts/generate-public-data.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

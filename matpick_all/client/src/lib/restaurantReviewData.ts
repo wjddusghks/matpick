@@ -53,7 +53,7 @@ export function readRestaurantReviews(restaurantId: string): SharedReview[] {
   if (typeof window === "undefined") return [];
   try {
     const value: unknown = JSON.parse(
-      window.localStorage.getItem(`matpick_reviews_${restaurantId}`) ?? "[]"
+      window.localStorage.getItem(`matpick_shared_reviews_v2_${restaurantId}`) ?? "[]"
     );
     return Array.isArray(value) ? mergeRestaurantReviews(value) : [];
   } catch {
@@ -67,7 +67,7 @@ export function storeRestaurantReviews(
 ) {
   try {
     window.localStorage.setItem(
-      `matpick_reviews_${restaurantId}`,
+      `matpick_shared_reviews_v2_${restaurantId}`,
       JSON.stringify(reviews)
     );
   } catch {

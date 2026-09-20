@@ -22,7 +22,7 @@ export function describeRestaurantSource(
       : source.type === "creator"
         ? "video"
         : "guide";
-  const badge = english
+  let badge = english
     ? kind === "tv"
       ? "TV feature"
       : kind === "video"
@@ -52,6 +52,12 @@ export function describeRestaurantSource(
     description = english
       ? `${restaurantName} appears in Matpick's MICHELIN Guide records. A guide listing does not by itself mean a Michelin star; categories and years can differ.`
       : `세계 여러 나라의 식당을 선정하는 미쉐린 가이드의 수록 이력이 있는 식당이에요. 가이드 수록과 스타 획득은 다르며, 선정 연도와 등급은 달라질 수 있어요.`;
+  if (source.attribution) {
+    badge = english ? "Matpick collection" : "맛픽 여행 가이드";
+    description = english
+      ? `A Matpick collection based on public restaurant information from ${source.attribution.provider}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
+      : `${source.attribution.provider}의 공개 음식점 자료를 바탕으로 맛픽이 구성한 여행 가이드입니다. 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않아요.`;
+  }
   return { id: source.id, name, kind, badge, description };
 }
 

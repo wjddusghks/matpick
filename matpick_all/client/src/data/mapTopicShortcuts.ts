@@ -4,6 +4,7 @@ import popularRestaurantsImage from "@/assets/source-thumbnails/popular-restaura
 import tateguysImage from "@/assets/creator-thumbnails/tateguys.jpg";
 import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import type { AppLocale } from "@/lib/locale";
+import travelTopicShortcuts from "./generated/travel-topic-shortcuts.generated.json";
 
 export type MapTopicShortcut = {
   slug: string;
@@ -14,6 +15,7 @@ export type MapTopicShortcut = {
 };
 
 export const mapTopicShortcuts: MapTopicShortcut[] = [
+  ...(travelTopicShortcuts as MapTopicShortcut[]),
   {
     slug: "ttoganjip",
     type: "source",

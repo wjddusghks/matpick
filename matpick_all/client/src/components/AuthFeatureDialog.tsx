@@ -1,9 +1,4 @@
-import {
-  Heart,
-  MessageSquarePlus,
-  Plus,
-  Star,
-} from "lucide-react";
+import { Heart, MessageSquarePlus, Plus, Star } from "lucide-react";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import {
   Dialog,
@@ -30,10 +25,10 @@ const contentByMode: Record<
       "방문한 식당마다 별점을 저장해 두면 다시 비교하기 쉽고, 저장한 맛집과 함께 나만의 기준으로 관리할 수 있어요.",
   },
   review: {
-    badge: "로그인하면 리뷰까지 바로 남길 수 있어요",
-    title: "로그인하고 리뷰를 남겨보세요",
+    badge: "작성한 후기는 그대로 이어집니다",
+    title: "로그인하고 한 줄 후기를 공유해요",
     description:
-      "맛있었던 메뉴와 분위기, 사진까지 함께 기록하면 나중에 다시 찾을 때 훨씬 편하고 다른 사람에게도 도움이 돼요.",
+      "별점과 솔직한 방문 경험이 다음 사람의 선택에 도움이 돼요. 사진은 필요 없어요. 로그인 후 작성하던 후기로 돌아옵니다.",
   },
   comment: {
     badge: "로그인하면 식당별 댓글에 참여할 수 있어요",
@@ -71,7 +66,8 @@ const sharedBenefits: Array<{
   },
   {
     title: "주제별 저장",
-    description: "데이트, 혼밥, 여행처럼 원하는 테마로 식당을 나눠 담아둘 수 있어요.",
+    description:
+      "데이트, 혼밥, 여행처럼 원하는 테마로 식당을 나눠 담아둘 수 있어요.",
     icon: Plus,
   },
 ];
@@ -126,23 +122,26 @@ export default function AuthFeatureDialog({
               </DialogDescription>
             </DialogHeader>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {sharedBenefits.map((benefit) => (
-                <BenefitCard
-                  key={benefit.title}
-                  icon={benefit.icon}
-                  title={benefit.title}
-                  description={benefit.description}
-                />
-              ))}
-            </div>
+            {mode !== "review" && (
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {sharedBenefits.map(benefit => (
+                  <BenefitCard
+                    key={benefit.title}
+                    icon={benefit.icon}
+                    title={benefit.title}
+                    description={benefit.description}
+                  />
+                ))}
+              </div>
+            )}
 
             <div className="mt-6 rounded-[24px] border border-[#ffe1e5] bg-white px-4 py-4 sm:px-5">
               <p className="text-sm font-semibold text-[#1f1f1f]">
                 지금 로그인하고 이어서 사용해보세요
               </p>
               <p className="mt-1 text-xs leading-5 text-[#8a8a8a]">
-                로그인 후에는 지금 보던 식당 페이지로 바로 돌아와서 이어서 평점, 댓글, 리뷰, 주제 저장을 할 수 있어요.
+                로그인 후에는 지금 보던 식당 페이지로 바로 돌아와서 이어서 평점,
+                댓글, 리뷰, 주제 저장을 할 수 있어요.
               </p>
               <SocialLoginButtons redirectTo={redirectTo} className="mt-4" />
             </div>

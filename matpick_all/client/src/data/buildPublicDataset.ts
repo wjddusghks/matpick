@@ -1,4 +1,6 @@
 import rawDataset from "./matpick-data.json";
+import menuResearch from "./generated/menu-research.generated.json";
+import travelDiscovery from "./generated/travel-discovery.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import { sourceProfileImageOverrides } from "./sourceProfileImages";
@@ -331,6 +333,9 @@ const publicDataSourceIds = new Set(
     "wednesday-gourmet",
     "culinary-class-wars",
     "jeonhyunmoo-plan",
+    "busan-bite",
+    "jeju-bite",
+    "travel-bite",
   ].filter((sourceId) => !sourceIdsPendingCardImages.has(sourceId))
 );
 
@@ -392,6 +397,7 @@ const dataset = filterDatasetForVisibleContent(
   michelin1StarTopicEnrichment as SourceDataset,
   michelinBibGourmandTopicEnrichment as SourceDataset,
   michelinSelectedTopicEnrichment as SourceDataset,
+  travelDiscovery as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
@@ -406,6 +412,7 @@ const normalizedDataset: MatpickDataSet = {
   ...dataset,
   restaurants: dataset.restaurants.map((restaurant) => ({
     ...restaurant,
+    ...(!restaurant.menus?.length ? (menuResearch as Record<string, Partial<Restaurant>>)[restaurant.id] : {}),
     ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[restaurant.id],
     id: restaurant.id,
   })),

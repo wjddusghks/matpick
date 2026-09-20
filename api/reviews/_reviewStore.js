@@ -4,8 +4,10 @@ const MAX_REVIEW_COUNT = 200;
 const MAX_FEED_COUNT = 240;
 
 function getKvConfig() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  const url =
+    process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
+  const token =
+    process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
 
   if (!url || !token) {
     return null;
@@ -23,18 +25,23 @@ async function requestRedis(command) {
     return null;
   }
 
-  const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetch(config.url, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(command),
+    signal: AbortSignal.timeout(10000),
   });
 
   if (!response.ok) {
     throw new Error(`Review store request failed: ${response.status}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+  if (payload.error) throw new Error("Review store rejected the request");
+  return payload;
 }
 
 function getReviewKey(restaurantId) {
@@ -55,10 +62,19 @@ function normalizeReview(review) {
   const restaurantId =
     typeof review.restaurantId === "string" ? review.restaurantId.trim() : "";
   const photos = Array.isArray(review.photos)
-    ? review.photos.filter((photo) => typeof photo === "string" && photo.trim().length > 0)
+    ? review.photos.filter(
+        (photo) => typeof photo === "string" && photo.trim().length > 0,
+      )
     : [];
 
-  if (!id || !user || !date || !Number.isFinite(stars) || stars < 1 || stars > 5) {
+  if (
+    !id ||
+    !user ||
+    !date ||
+    !Number.isFinite(stars) ||
+    stars < 1 ||
+    stars > 5
+  ) {
     return null;
   }
 
@@ -112,12 +128,18 @@ async function writeRemoteReviews(restaurantId, reviews) {
   }
 
   const normalized = normalizeReviews(reviews);
-  await requestRedis(["SET", getReviewKey(restaurantId), JSON.stringify(normalized)]);
+  await requestRedis([
+    "SET",
+    getReviewKey(restaurantId),
+    JSON.stringify(normalized),
+  ]);
   return true;
 }
 
 function normalizeFeedReviews(payload) {
-  return normalizeReviews(payload).filter((review) => typeof review.restaurantId === "string");
+  return normalizeReviews(payload).filter(
+    (review) => typeof review.restaurantId === "string",
+  );
 }
 
 async function readStoredReviewFeed() {
@@ -162,7 +184,7 @@ async function rebuildReviewFeed() {
         ...review,
         restaurantId,
       }));
-    })
+    }),
   );
 
   const flattened = collected
@@ -188,27 +210,46 @@ async function readReviewFeed(limit = 80) {
 }
 
 async function appendRemoteReview(restaurantId, review) {
+  if (!getKvConfig())
+    throw Object.assign(
+      new Error(
+        "공유 후기 저장소에 연결할 수 없어요. 잠시 후 다시 시도해 주세요.",
+      ),
+      { status: 503 },
+    );
   const normalizedReview = normalizeReview(review);
   if (!normalizedReview) {
     throw new Error("Invalid review payload");
   }
 
-  const current = await readRemoteReviews(restaurantId);
-  const next = [normalizedReview, ...current.filter((entry) => entry.id !== normalizedReview.id)];
-  await writeRemoteReviews(restaurantId, next);
-
-  const feedItem = {
-    ...normalizedReview,
-    restaurantId,
-  };
-  const currentFeed = await readStoredReviewFeed();
-
-  if (currentFeed.length > 0) {
-    await writeReviewFeed([feedItem, ...currentFeed.filter((entry) => entry.id !== feedItem.id)]);
-  } else {
-    const rebuiltFeed = await rebuildReviewFeed();
-    await writeReviewFeed([feedItem, ...rebuiltFeed.filter((entry) => entry.id !== feedItem.id)]);
-  }
+  // Updating both lists in one transaction avoids losing simultaneous submissions.
+  const script = `
+    local item = cjson.decode(ARGV[1])
+    local feedItem = cjson.decode(ARGV[2])
+    local function upsert(key, nextItem, limit)
+      local current = cjson.decode(redis.call('GET', key) or '[]')
+      local result = { nextItem }
+      for _, entry in ipairs(current) do
+        if entry.id ~= nextItem.id and #result < limit then table.insert(result, entry) end
+      end
+      redis.call('SET', key, cjson.encode(result))
+    end
+    upsert(KEYS[1], item, tonumber(ARGV[3]))
+    upsert(KEYS[2], feedItem, tonumber(ARGV[4]))
+    return 1
+  `;
+  const saved = await requestRedis([
+    "EVAL",
+    script,
+    2,
+    getReviewKey(restaurantId),
+    REVIEW_FEED_KEY,
+    JSON.stringify(normalizedReview),
+    JSON.stringify({ ...normalizedReview, restaurantId }),
+    MAX_REVIEW_COUNT,
+    MAX_FEED_COUNT,
+  ]);
+  if (saved?.result !== 1) throw new Error("Review was not saved");
 
   return normalizedReview;
 }

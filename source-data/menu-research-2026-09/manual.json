@@ -1,0 +1,45 @@
+{
+  "topic_enrichment_ttoganjip_ef1fb3e282d6": {
+    "status": "verified_priced",
+    "checkedAt": "2026-09-20T11:24:05.135Z",
+    "sourceLabel": "서울미식 100선 2025 공개 메뉴",
+    "sourceUpdatedAt": "2025",
+    "place": {
+      "name": "김인복의광평 삼성본점",
+      "address": "서울 강남구 영동대로106길 45 김인복의광평 삼성본점",
+      "placeUrl": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=634&txt_search="
+    },
+    "menus": [
+      {
+        "id": "topic_enrichment_ttoganjip_ef1fb3e282d6_official_1",
+        "name": "평양냉면 (물/비빔)",
+        "price": "17,000원",
+        "isSignature": true
+      },
+      {
+        "id": "topic_enrichment_ttoganjip_ef1fb3e282d6_official_2",
+        "name": "골동면",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "topic_enrichment_ttoganjip_ef1fb3e282d6_official_3",
+        "name": "난축맛돈 구이",
+        "price": "33,000원",
+        "isSignature": false
+      },
+      {
+        "id": "topic_enrichment_ttoganjip_ef1fb3e282d6_official_4",
+        "name": "양념돼지갈비",
+        "price": "33,000원",
+        "isSignature": false
+      },
+      {
+        "id": "topic_enrichment_ttoganjip_ef1fb3e282d6_official_5",
+        "name": "육회한우니",
+        "price": "68,000원",
+        "isSignature": false
+      }
+    ]
+  }
+}

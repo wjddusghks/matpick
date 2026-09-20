@@ -577,6 +577,24 @@
   background: #fff7f9;
   border: 1px solid #f4dce3;
 }
+.detail-review-invite {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 18px;
+  margin: 16px 0;
+  border: 1px solid #f4dce3;
+  border-radius: 16px;
+  background: #fff7f9;
+}
+.detail-review-invite > div { flex: 1 1 210px; }
+.detail-review-invite strong { font-size: 15px; }
+.detail-review-invite p, .detail-review-help { color: #77646c; font-size: 12px; line-height: 1.8; margin-top: 5px; }
+.detail-review-invite button { font-size: 13px; min-height: 44px; padding: 10px 15px; }
+.detail-review-confirm { display: flex; align-items: center; gap: 9px; font-size: 13px; padding: 12px 0 4px; }
+.detail-review-confirm input { width: 18px; height: 18px; accent-color: #f4537e; }
+#detail-reviews-title { scroll-margin-top: 100px; }
 .detail-review-form fieldset {
   min-width: 0;
   border: 0;

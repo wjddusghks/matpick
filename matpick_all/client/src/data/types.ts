@@ -137,6 +137,7 @@ export interface Source {
   description?: string;
   imageUrl?: string;
   creatorId?: string;
+  attribution?: { provider: string; url: string; license?: string };
 }
 
 export interface SourceLink {
@@ -146,6 +147,7 @@ export interface SourceLink {
   ordinal?: number;
   label?: string;
   note?: string;
+  sourceUrl?: string;
 }
 
 export interface MatpickDataSet {

@@ -132,7 +132,9 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
     [];
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    if (new URLSearchParams(window.location.search).get("writeReview") !== "1") {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
     trackMarketingEvent("restaurant_view", {
       restaurant_id: restaurant.id,
       restaurant_name: restaurant.name,
@@ -487,6 +489,17 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     : "수집된 가격으로, 현재 매장 가격과 다를 수 있어요."}
                 </p>
               )}
+              {!!restaurant.menuPriceSources?.length && (
+                <details className="detail-small-note">
+                  <summary>{isEnglish ? "Menu sources and dates" : "메뉴·가격 출처와 기준일"}</summary>
+                  {restaurant.menuPriceSources.filter(source => /^https?:\/\//.test(source.url)).map(source => (
+                    <p key={source.url}>
+                      <a className="detail-text-button" href={source.url} target="_blank" rel="noopener noreferrer">{source.label || (isEnglish ? "Source" : "원문 보기")}</a>
+                      {source.publishedAt && ` · ${isEnglish ? "Source date" : "자료 기준"} ${source.publishedAt.slice(0, 10)}`}
+                    </p>
+                  ))}
+                </details>
+              )}
             </section>
           }
 
@@ -514,6 +527,12 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                   </Link>
                 ))}
               </div>
+              {sources.filter(source => source.attribution).map(source => (
+                <p className="detail-small-note" key={`${source.id}-attribution`}>
+                  {source.name} · {isEnglish ? "Data from " : "자료 제공: "}
+                  <a href={source.attribution!.url} target="_blank" rel="noopener noreferrer">{source.attribution!.provider}</a>
+                </p>
+              ))}
               <p className="detail-small-note">
                 {isEnglish
                   ? "Select a source to explore its restaurant list."
@@ -549,6 +568,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
           )}
 
           <RestaurantReviews
+            key={restaurant.id}
             restaurantId={restaurant.id}
             onSummary={setReviewSummary}
           />

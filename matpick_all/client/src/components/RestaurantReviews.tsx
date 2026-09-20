@@ -4,13 +4,14 @@ import { toast } from "sonner";
 import AuthFeatureDialog from "@/components/AuthFeatureDialog";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import { getDisplayName } from "@/lib/authProfile";
-import { trackMarketingEvent } from "@/lib/marketing";
 import {
-  summarizeReviews,
-  type ReviewSummary,
-  type SharedReview,
-} from "@/lib/reviews";
+  clearReviewDraft,
+  readReviewDraft,
+  reviewReturnPath,
+  saveReviewDraft,
+} from "@/lib/reviewDraft";
+import { trackMarketingEvent } from "@/lib/marketing";
+import { summarizeReviews, type ReviewSummary } from "@/lib/reviews";
 import {
   mergeRestaurantReviews,
   readRestaurantReviews,
@@ -34,14 +35,37 @@ export default function RestaurantReviews({
   );
   const [attempt, setAttempt] = useState(0);
   const [expanded, setExpanded] = useState(false);
-  const [composer, setComposer] = useState(false);
+  const [composer, setComposer] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      new URLSearchParams(window.location.search).get("writeReview") === "1"
+  );
   const [authOpen, setAuthOpen] = useState(false);
-  const [draft, setDraft] = useState("");
-  const [stars, setStars] = useState(5);
+  const [draft, setDraft] = useState(() => readReviewDraft(restaurantId).text);
+  const [stars, setStars] = useState(() => readReviewDraft(restaurantId).stars);
+  const [visited, setVisited] = useState(
+    () => readReviewDraft(restaurantId).visited
+  );
   const [submitting, setSubmitting] = useState(false);
   const summary = useMemo(() => summarizeReviews(reviews), [reviews]);
 
   useEffect(() => onSummary(summary), [onSummary, summary]);
+  useEffect(() => {
+    if (draft || stars || visited)
+      saveReviewDraft(restaurantId, {
+        text: draft,
+        stars,
+        visited,
+        updatedAt: Date.now(),
+      });
+    else clearReviewDraft(restaurantId);
+  }, [restaurantId, draft, stars, visited]);
+  useEffect(() => {
+    if (composer)
+      document
+        .getElementById("detail-reviews-title")
+        ?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }, [composer]);
   useEffect(() => {
     const controller = new AbortController();
     setStatus("loading");
@@ -55,8 +79,8 @@ export default function RestaurantReviews({
         if (!Array.isArray(payload.reviews))
           throw new Error("Invalid reviews response");
         if (controller.signal.aborted) return;
-        setReviews(current => {
-          const next = mergeRestaurantReviews(payload.reviews, current);
+        setReviews(() => {
+          const next = mergeRestaurantReviews(payload.reviews);
           storeRestaurantReviews(restaurantId, next);
           return next;
         });
@@ -69,10 +93,6 @@ export default function RestaurantReviews({
   }, [restaurantId, attempt]);
 
   function openComposer() {
-    if (!isLoggedIn) {
-      setAuthOpen(true);
-      return;
-    }
     setComposer(true);
     trackMarketingEvent("review_composer_open", {
       restaurant_id: restaurantId,
@@ -80,57 +100,58 @@ export default function RestaurantReviews({
   }
 
   async function submitReview() {
-    if (!user || !isLoggedIn) {
+    if (!user?.syncToken || !isLoggedIn) {
+      saveReviewDraft(restaurantId, {
+        text: draft,
+        stars,
+        visited,
+        updatedAt: Date.now(),
+      });
       setAuthOpen(true);
       return;
     }
-    if (!draft.trim() || submitting) return;
+    if (draft.trim().length < 5 || !stars || !visited || submitting) return;
     setSubmitting(true);
-    const review: SharedReview = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-      user: getDisplayName(user),
-      date: new Date()
-        .toLocaleDateString("sv-SE", { timeZone: "Asia/Seoul" })
-        .replace(/-/g, "."),
-      stars,
-      text: draft.trim(),
-      photos: [],
-      createdAt: Date.now(),
-    };
     try {
-      let savedReview = review;
-      if (user.syncToken) {
-        const response = await fetch("/api/reviews", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            restaurantId,
-            userId: user.id,
-            syncToken: user.syncToken,
-            review,
-          }),
-        });
-        if (!response.ok) throw new Error("Could not save review");
-        const payload = await response.json();
-        savedReview =
-          mergeRestaurantReviews([payload.review ?? review])[0] ?? review;
+      const response = await fetch("/api/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          restaurantId,
+          userId: user.id,
+          syncToken: user.syncToken,
+          review: { stars, text: draft.trim(), visited },
+        }),
+      });
+      if (response.status === 401) {
+        setAuthOpen(true);
+        throw new Error("Session expired");
       }
+      if (!response.ok) throw new Error("Could not save review");
+      const payload = await response.json();
+      const savedReview = mergeRestaurantReviews([payload.review])[0];
+      if (!payload.ok || !savedReview) throw new Error("Review was not saved");
       setReviews(current => {
         const next = mergeRestaurantReviews([savedReview], current);
         storeRestaurantReviews(restaurantId, next);
         return next;
       });
       setDraft("");
-      setStars(5);
+      setStars(0);
+      setVisited(false);
+      clearReviewDraft(restaurantId);
       setComposer(false);
+      const returnUrl = new URL(window.location.href);
+      returnUrl.searchParams.delete("writeReview");
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${returnUrl.pathname}${returnUrl.search}${returnUrl.hash}`
+      );
       toast.success(
-        user.syncToken
-          ? isEnglish
-            ? "Review posted."
-            : "후기를 등록했어요."
-          : isEnglish
-            ? "Review saved on this device."
-            : "후기를 이 기기에 저장했어요."
+        isEnglish
+          ? "Your review is shared with everyone."
+          : "다른 사람도 볼 수 있도록 후기를 등록했어요."
       );
       trackMarketingEvent("review_submit", {
         restaurant_id: restaurantId,
@@ -154,7 +175,7 @@ export default function RestaurantReviews({
         open={authOpen}
         onOpenChange={setAuthOpen}
         mode="review"
-        redirectTo={`/restaurant/${restaurantId}`}
+        redirectTo={reviewReturnPath(restaurantId)}
       />
       <div className="detail-section-heading">
         <h2 id="detail-reviews-title">
@@ -169,6 +190,27 @@ export default function RestaurantReviews({
           {isEnglish ? "Write a review" : "후기 남기기"}
         </button>
       </div>
+      {!composer && (
+        <div className="detail-review-invite">
+          <div>
+            <strong>
+              {isEnglish ? "Have you eaten here?" : "여기 다녀오셨나요?"}
+            </strong>
+            <p>
+              {isEnglish
+                ? "A dish and an honest line help the next visitor. No photo needed."
+                : "먹은 메뉴와 솔직한 한마디면 충분해요. 사진 없이 남겨주세요."}
+            </p>
+          </div>
+          <button
+            type="button"
+            className="detail-primary-button"
+            onClick={openComposer}
+          >
+            {isEnglish ? "Write a short review" : "한 줄 후기 쓰기"}
+          </button>
+        </div>
+      )}
       <div aria-live="polite">
         {summary.count > 0 && (
           <p className="detail-review-summary">
@@ -226,6 +268,11 @@ export default function RestaurantReviews({
             <legend>
               {isEnglish ? "Your rating" : "이번 식사는 어땠나요?"}
             </legend>
+            <p className="detail-review-help">
+              {isEnglish
+                ? "Choose a rating, then share what you ate and how it was."
+                : "별점을 고르고, 먹은 메뉴와 좋았거나 아쉬웠던 점을 적어주세요."}
+            </p>
             <div className="detail-review-stars">
               {[1, 2, 3, 4, 5].map(value => (
                 <button
@@ -248,7 +295,9 @@ export default function RestaurantReviews({
             <textarea
               id="detail-review-text"
               required
+              minLength={5}
               maxLength={2000}
+              aria-describedby="detail-review-count"
               value={draft}
               onChange={event => setDraft(event.target.value)}
               placeholder={
@@ -257,6 +306,27 @@ export default function RestaurantReviews({
                   : "먹은 메뉴와 맛, 대기나 분위기는 어땠나요?"
               }
             />
+            <p className="detail-review-help" id="detail-review-count">
+              {draft.length}/2,000 ·{" "}
+              {isEnglish
+                ? "At least 5 characters. Draft kept in this tab for 24 hours."
+                : "최소 5자 · 이 탭에 임시 저장하며 24시간 뒤 만료돼요."}
+            </p>
+            <label className="detail-review-confirm">
+              <input
+                type="checkbox"
+                checked={visited}
+                onChange={event => setVisited(event.target.checked)}
+              />
+              {isEnglish
+                ? "This is my own visit experience."
+                : "직접 방문한 경험을 솔직하게 작성했어요."}
+            </label>
+            <p className="detail-review-help">
+              {isEnglish
+                ? "One review per restaurant per account. Posting again updates your review."
+                : "계정당 식당별 후기 1개가 공개되며, 다시 등록하면 기존 후기가 바뀌어요."}
+            </p>
             <div className="detail-form-actions">
               <button
                 className="detail-secondary-button"
@@ -268,15 +338,21 @@ export default function RestaurantReviews({
               <button
                 className="detail-primary-button"
                 type="submit"
-                disabled={!draft.trim() || submitting}
+                disabled={
+                  draft.trim().length < 5 || !stars || !visited || submitting
+                }
               >
                 {submitting
                   ? isEnglish
                     ? "Posting…"
                     : "등록 중…"
-                  : isEnglish
-                    ? "Post review"
-                    : "후기 등록"}
+                  : !isLoggedIn || !user?.syncToken
+                    ? isEnglish
+                      ? "Sign in to post"
+                      : "로그인하고 등록"
+                    : isEnglish
+                      ? "Post review"
+                      : "후기 등록"}
               </button>
             </div>
           </fieldset>

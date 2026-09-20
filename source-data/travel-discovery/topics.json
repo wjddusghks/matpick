@@ -1,0 +1,5 @@
+[
+  { "id": "busan-bite", "name": "부산 한입", "feed": "busan", "type": "guide", "provider": "Matpick", "description": "부산 여행 중 들를 식당을 모은 맛픽의 지역 가이드입니다. 부산광역시 관광 음식점 자료를 바탕으로 구성하며 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않습니다.", "attribution": { "provider": "부산광역시", "url": "https://www.data.go.kr/data/15063472/openapi.do", "license": "이용허락범위 제한 없음 · 원본 제공 조건 확인" } },
+  { "id": "jeju-bite", "name": "제주 한입", "feed": "visit-jeju", "type": "guide", "provider": "Matpick", "description": "제주 여행 중 들를 식당을 모은 맛픽의 지역 가이드입니다. 제주관광공사 비짓제주 음식점 자료를 바탕으로 구성하며 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않습니다.", "attribution": { "provider": "제주관광공사 VISIT JEJU", "url": "https://www.data.go.kr/data/15041984/fileData.do", "license": "이용허락범위 제한 없음 · 원본 제공 조건 확인" } },
+  { "id": "travel-bite", "name": "여행길 한입", "feed": "tourapi", "type": "guide", "provider": "Matpick", "description": "전국 여행길에 들를 식당을 모은 맛픽의 여행 가이드입니다. 한국관광공사 TourAPI 음식점 자료를 바탕으로 구성하며 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않습니다.", "attribution": { "provider": "한국관광공사 TourAPI", "url": "https://www.data.go.kr/data/15101578/openapi.do", "license": "공개 관광정보 이용조건 준수 · 이미지 사용 안 함" } }
+]

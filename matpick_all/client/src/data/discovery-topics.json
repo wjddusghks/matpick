@@ -1,4 +1,7 @@
 [
+  { "slug": "busan-bite", "name": "부산 한입", "kind": "source", "targetId": "busan-bite" },
+  { "slug": "jeju-bite", "name": "제주 한입", "kind": "source", "targetId": "jeju-bite" },
+  { "slug": "travel-bite", "name": "여행길 한입", "kind": "source", "targetId": "travel-bite" },
   {
     "slug": "ttoganjip",
     "name": "또간집",

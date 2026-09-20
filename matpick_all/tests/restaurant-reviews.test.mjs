@@ -57,7 +57,7 @@ test("editorial seed reviews and invalid scores never become public visitor rati
   );
 });
 
-test("legacy device storage remains restaurant-specific and tolerates malformed data", () => {
+test("shared cache is restaurant-specific and ignores old device-only reviews", () => {
   const values = new Map();
   globalThis.window = {
     localStorage: {
@@ -69,9 +69,11 @@ test("legacy device storage remains restaurant-specific and tolerates malformed 
     store.storeRestaurantReviews("first", [sample]);
     assert.equal(store.readRestaurantReviews("first").length, 1);
     assert.deepEqual(store.readRestaurantReviews("second"), []);
-    values.set("matpick_reviews_first", '{"not":"an array"}');
+    values.set("matpick_reviews_second", JSON.stringify([sample]));
+    assert.deepEqual(store.readRestaurantReviews("second"), []);
+    values.set("matpick_shared_reviews_v2_first", '{"not":"an array"}');
     assert.deepEqual(store.readRestaurantReviews("first"), []);
-    values.set("matpick_reviews_first", "invalid JSON");
+    values.set("matpick_shared_reviews_v2_first", "invalid JSON");
     assert.deepEqual(store.readRestaurantReviews("first"), []);
     globalThis.window.localStorage.setItem = () => {
       throw new Error("storage unavailable");

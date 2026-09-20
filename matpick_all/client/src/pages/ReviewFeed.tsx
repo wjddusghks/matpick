@@ -116,12 +116,15 @@ export default function ReviewFeed() {
               <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <p className="text-sm font-semibold text-[#ff7b83]">
-                    다른 사람들이 남긴 리뷰와 사진을 한 번에 둘러보세요.
+                    어떤 메뉴를 먹었고, 다시 가고 싶은지 함께 나눠요.
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[#7a7a7a]">
-                    최신 리뷰, 사진이 많은 리뷰, 높은 평점 리뷰를 빠르게 살펴보고 바로 식당 상세로
-                    이동할 수 있어요.
+                    사진 없이 별점과 한 줄이면 충분해요. 식당을 찾아 상세 화면에서
+                    직접 다녀온 경험을 남겨주세요.
                   </p>
+                  <Link href="/map" className="mt-3 inline-flex min-h-11 items-center rounded-xl bg-[#f4537e] px-4 py-2 text-sm font-semibold text-white">
+                    후기 남길 식당 찾기
+                  </Link>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[

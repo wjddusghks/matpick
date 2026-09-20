@@ -13,20 +13,41 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 import { LocaleProvider } from "./contexts/LocaleContext";
+import { loadRestaurantEdits } from "./lib/restaurantEdits";
 
-const Home = lazy(() => import("./pages/Home"));
+function withRestaurantEdits<T>(loadPage: () => Promise<T>) {
+  return async () => {
+    await loadRestaurantEdits();
+    return loadPage();
+  };
+}
+
+const Home = lazy(withRestaurantEdits(() => import("./pages/Home")));
 const AuthCallback = lazy(() => import("./pages/AuthCallback"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Explore = lazy(() => import("./pages/Explore"));
+const Explore = lazy(withRestaurantEdits(() => import("./pages/Explore")));
 const Privacy = lazy(() => import("./pages/Privacy"));
-const ReviewFeed = lazy(() => import("./pages/ReviewFeed"));
-const SearchMap = lazy(() => import("./pages/SearchMap"));
-const RestaurantDetail = lazy(() => import("./pages/RestaurantDetail"));
+const ReviewFeed = lazy(
+  withRestaurantEdits(() => import("./pages/ReviewFeed"))
+);
+const SearchMap = lazy(withRestaurantEdits(() => import("./pages/SearchMap")));
+const RestaurantDetail = lazy(
+  withRestaurantEdits(() => import("./pages/RestaurantDetail"))
+);
 const Terms = lazy(() => import("./pages/Terms"));
-const CreatorDetail = lazy(() => import("./pages/CreatorDetail"));
-const MyFavorites = lazy(() => import("./pages/MyFavorites"));
-const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const CreatorDetail = lazy(
+  withRestaurantEdits(() => import("./pages/CreatorDetail"))
+);
+const MyFavorites = lazy(
+  withRestaurantEdits(() => import("./pages/MyFavorites"))
+);
+const AdminDashboard = lazy(
+  withRestaurantEdits(() => import("./pages/AdminDashboard"))
+);
+const AdminRestaurants = lazy(
+  withRestaurantEdits(() => import("./pages/AdminRestaurants"))
+);
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -46,26 +67,32 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/auth/callback/:provider">
-          {(params) => <AuthCallback provider={params.provider} />}
+          {params => <AuthCallback provider={params.provider} />}
         </Route>
         <Route path="/auth/callback/:provider/">
-          {(params) => <AuthCallback provider={params.provider} />}
+          {params => <AuthCallback provider={params.provider} />}
         </Route>
         <Route path="/explore">{() => <Explore />}</Route>
         <Route path="/explore/topic/:topicSlug">
-          {(params) => <Explore topicSlug={params.topicSlug} />}
+          {params => <Explore topicSlug={params.topicSlug} />}
         </Route>
         <Route path="/explore/topic/:topicSlug/">
-          {(params) => <Explore topicSlug={params.topicSlug} />}
+          {params => <Explore topicSlug={params.topicSlug} />}
         </Route>
         <Route path="/explore/topic/:topicSlug/episode/:episodeSlug">
-          {(params) => (
-            <Explore topicSlug={params.topicSlug} episodeSlug={params.episodeSlug} />
+          {params => (
+            <Explore
+              topicSlug={params.topicSlug}
+              episodeSlug={params.episodeSlug}
+            />
           )}
         </Route>
         <Route path="/explore/topic/:topicSlug/episode/:episodeSlug/">
-          {(params) => (
-            <Explore topicSlug={params.topicSlug} episodeSlug={params.episodeSlug} />
+          {params => (
+            <Explore
+              topicSlug={params.topicSlug}
+              episodeSlug={params.episodeSlug}
+            />
           )}
         </Route>
         <Route path="/map" component={SearchMap} />
@@ -78,6 +105,7 @@ function Router() {
         <Route path="/creator/:id" component={CreatorDetail} />
         <Route path="/my/favorites" component={MyFavorites} />
         <Route path="/admin" component={AdminDashboard} />
+        <Route path="/admin/restaurants" component={AdminRestaurants} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

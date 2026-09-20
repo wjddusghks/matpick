@@ -1,4 +1,5 @@
 import publicDataset from "./generated/public-dataset.json";
+import { applyRestaurantEdits } from "@/lib/restaurantEdits";
 import legacyRestaurantAliases from "./legacy-restaurant-aliases.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
 import { isRestaurantRecommendable } from "@/lib/restaurantEligibility";
@@ -69,7 +70,7 @@ const episodicSourceIds = new Set([
 ]);
 
 const dataset = publicDataset as MatpickDataSet;
-const normalizedDataset = dataset;
+const normalizedDataset = { ...dataset, restaurants: applyRestaurantEdits(dataset.restaurants) };
 const publicDataSourceIds = new Set(dataset.sources?.map(source => source.id) ?? []);
 const sourceBackedCreatorIds = new Set(dataset.sources?.map(source => source.creatorId).filter(Boolean) ?? []);
 const creatorDisplayNameOverrides: Record<string, string> = {

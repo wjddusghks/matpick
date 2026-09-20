@@ -500,6 +500,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                   ))}
                 </details>
               )}
+              {restaurant.menuPriceNote && <p className="detail-small-note">{restaurant.menuPriceNote}</p>}
             </section>
           }
 

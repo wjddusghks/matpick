@@ -595,6 +595,21 @@ export default function AdminDashboard() {
           </p>
         </header>
 
+        <nav aria-label="관리자 메뉴" className="mt-6 flex flex-wrap gap-2">
+          <span
+            aria-current="page"
+            className="rounded-xl bg-[#292327] px-5 py-3 text-sm font-bold text-white"
+          >
+            운영 대시보드
+          </span>
+          <Link
+            href="/admin/restaurants"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]"
+          >
+            <Store className="h-4 w-4" /> 식당 · 메뉴 · 가격 관리
+          </Link>
+        </nav>
+
         <section className="mt-8">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>

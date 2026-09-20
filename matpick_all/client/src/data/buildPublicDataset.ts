@@ -7,7 +7,8 @@ import { sourceProfileImageOverrides } from "./sourceProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
 import sikgaekBaekbanTripDataset from "./generated/sikgaek-baekban-trip.generated.json";
 import culinaryClassWarsDataset from "./generated/culinary-class-wars.generated.json";
-import jeonhyunmooPlanDataset from "./generated/jeonhyunmoo-plan.generated.json";
+import jeonhyunmooPlanDataset from "./generated/jeonhyunmoo-plan-public.generated.json";
+import jeonhyunmooPlanLegacy from "./generated/jeonhyunmoo-plan.generated.json";
 import baekbanTripTopicEnrichment from "./generated/topic-enrichments/baekban-trip.enriched.json";
 import baekjongWokTopicEnrichment from "./generated/topic-enrichments/baekjong-wok.enriched.json";
 import deliciousGuysTopicEnrichment from "./generated/topic-enrichments/delicious-guys.enriched.json";
@@ -100,6 +101,7 @@ function mergeRestaurantMenus(currentMenus: MenuItem[] = [], nextMenus: MenuItem
 function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant {
   const preferredAddressRestaurant =
     preferLongerText(current.address, next.address) === next.address ? next : current;
+  const newerMenuEdition = Boolean(next.menuPriceVerifiedAt && next.menuPriceVerifiedAt > (current.menuPriceVerifiedAt || ""));
 
   return {
     ...current,
@@ -125,7 +127,10 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
         : current.lng,
     imageUrl: current.imageUrl || next.imageUrl,
     foundingYear: current.foundingYear ?? next.foundingYear ?? null,
-    menus: mergeRestaurantMenus(current.menus ?? [], next.menus ?? []),
+    // A freshly checked menu is a replacement snapshot; do not label old prices as freshly checked.
+    menus: newerMenuEdition
+      ? mergeRestaurantMenus(next.menus ?? [])
+      : mergeRestaurantMenus(current.menus ?? [], next.menus ?? []),
     thumbnailFileName: current.thumbnailFileName ?? next.thumbnailFileName ?? null,
     googlePlaceId: current.googlePlaceId ?? next.googlePlaceId ?? null,
     isOverseas: current.isOverseas ?? next.isOverseas,
@@ -135,16 +140,18 @@ function mergeRestaurantById(current: Restaurant, next: Restaurant): Restaurant 
 function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
   const dedupedRestaurants: Restaurant[] = [];
   const indexByLookupKey = new Map<string, number>();
+  const indexById = new Map<string, number>();
   const canonicalRestaurantIdMap = new Map<string, string>();
 
   restaurantsToMerge.forEach((restaurant) => {
-    const existingIndex = buildRestaurantLookupKeys(restaurant)
+    const existingIndex = indexById.get(restaurant.id) ?? buildRestaurantLookupKeys(restaurant)
       .map((lookupKey) => indexByLookupKey.get(lookupKey))
       .find((value): value is number => value != null);
 
     if (existingIndex == null) {
       const nextIndex = dedupedRestaurants.length;
       dedupedRestaurants.push(restaurant);
+      indexById.set(restaurant.id, nextIndex);
       canonicalRestaurantIdMap.set(restaurant.id, restaurant.id);
       buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
         indexByLookupKey.set(lookupKey, nextIndex);
@@ -160,6 +167,7 @@ function dedupeRestaurantsById(restaurantsToMerge: Restaurant[]) {
       restaurant.id,
       dedupedRestaurants[existingIndex].id
     );
+    indexById.set(restaurant.id, existingIndex);
     buildRestaurantLookupKeys(dedupedRestaurants[existingIndex]).forEach((lookupKey) => {
       indexByLookupKey.set(lookupKey, existingIndex);
     });
@@ -177,8 +185,10 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
   const mergedSourceLinks = [...(base.sourceLinks ?? [])];
   const restaurantIdMap = new Map<string, string>();
   const existingRestaurantIndex = new Map<string, number>();
+  const existingRestaurantIndexById = new Map<string, number>();
 
   mergedRestaurants.forEach((restaurant, index) => {
+    existingRestaurantIndexById.set(restaurant.id, index);
     buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
       existingRestaurantIndex.set(lookupKey, index);
     });
@@ -207,7 +217,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
     });
 
     (extra.restaurants ?? []).forEach((restaurant) => {
-      const existingIndex = buildRestaurantLookupKeys(restaurant)
+      const existingIndex = existingRestaurantIndexById.get(restaurant.id) ?? buildRestaurantLookupKeys(restaurant)
         .map((lookupKey) => existingRestaurantIndex.get(lookupKey))
         .find(
           (value): value is number =>
@@ -220,6 +230,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
         const existing = mergedRestaurants[existingIndex];
         mergedRestaurants[existingIndex] = mergeRestaurantById(existing, restaurant);
         restaurantIdMap.set(restaurant.id, existing.id);
+        existingRestaurantIndexById.set(restaurant.id, existingIndex);
         buildRestaurantLookupKeys(mergedRestaurants[existingIndex]).forEach((lookupKey) => {
           existingRestaurantIndex.set(lookupKey, existingIndex);
         });
@@ -232,6 +243,7 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 
       mergedRestaurants.push(restaurant);
       const insertedIndex = mergedRestaurants.length - 1;
+      existingRestaurantIndexById.set(restaurant.id, insertedIndex);
       buildRestaurantLookupKeys(restaurant).forEach((lookupKey) => {
         existingRestaurantIndex.set(lookupKey, insertedIndex);
       });
@@ -247,12 +259,12 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
       ) {
         return;
       }
-      const dedupeKey = `${link.sourceId}:${remappedRestaurantId}:${link.ordinal ?? ""}`;
+      const dedupeKey = `${link.sourceId}:${remappedRestaurantId}:${link.ordinal ?? ""}:${link.label ?? ""}`;
 
       if (
         mergedSourceLinks.some(
           (item) =>
-            `${item.sourceId}:${item.restaurantId}:${item.ordinal ?? ""}` === dedupeKey
+            `${item.sourceId}:${item.restaurantId}:${item.ordinal ?? ""}:${item.label ?? ""}` === dedupeKey
         )
       ) {
         return;
@@ -317,9 +329,8 @@ function mergeDatasets(base: MatpickDataSet, extras: SourceDataset[]): MatpickDa
 }
 
 const hiddenCreatorIds = new Set<string>(["UCfpaSruWW3S4dibonKXENjA"]);
-const sourceIdsPendingCardImages = new Set<string>([
+const sourceIdsPendingEvidence = new Set<string>([
   "culinary-class-wars",
-  "jeonhyunmoo-plan",
 ]);
 const publicDataSourceIds = new Set(
   [
@@ -336,7 +347,7 @@ const publicDataSourceIds = new Set(
     "busan-bite",
     "jeju-bite",
     "travel-bite",
-  ].filter((sourceId) => !sourceIdsPendingCardImages.has(sourceId))
+  ].filter((sourceId) => !sourceIdsPendingEvidence.has(sourceId))
 );
 
 function filterDatasetForVisibleContent(dataset: MatpickDataSet): MatpickDataSet {
@@ -381,7 +392,8 @@ const baseDataset = rawDataset as MatpickDataSet;
 const dataset = filterDatasetForVisibleContent(
   mergeDatasets(baseDataset, [
   culinaryClassWarsDataset as SourceDataset,
-  jeonhyunmooPlanDataset as SourceDataset,
+  // Preserve canonical IDs already used by other public sources, without publishing unverified TV links.
+  { restaurants: jeonhyunmooPlanLegacy.restaurants } as SourceDataset,
   oldKorean100Dataset as SourceDataset,
   baekjongWokTopicEnrichment as SourceDataset,
   sikgaekBaekbanTripDataset as SourceDataset,
@@ -398,6 +410,7 @@ const dataset = filterDatasetForVisibleContent(
   michelinBibGourmandTopicEnrichment as SourceDataset,
   michelinSelectedTopicEnrichment as SourceDataset,
   travelDiscovery as SourceDataset,
+  jeonhyunmooPlanDataset as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map((creator) => ({
@@ -438,5 +451,13 @@ for (const link of originalLinks) {
 // Keep historical evidence on the old page and carry it to the relocated recommendation.
 export const publicDataset: MatpickDataSet = {
   ...normalizedDataset,
+  // Menu IDs are only local React keys. Keep research IDs in source files, not every browser download.
+  restaurants: normalizedDataset.restaurants.map(restaurant => ({
+    ...restaurant,
+    menus: restaurant.menus?.map((menu, index) => {
+      const { isSignature, ...fields } = menu;
+      return { ...fields, id: `m${index.toString(36)}`, ...(isSignature ? { isSignature: true } : {}) };
+    }),
+  })),
   sourceLinks: [...originalLinks, ...relocatedLinks],
 };

@@ -31,7 +31,7 @@ const restaurant = (id, lng, operationState = "unknown") => ({
   operationState,
 });
 
-test("legacy Baesin URL resolves to the real restaurant without changing canonical IDs", () => {
+test("legacy Baesin URL resolves to the real restaurant without changing canonical IDs", async () => {
   const current = data.getRestaurantById(
     "topic_enrichment_baekjong-wok_42ed76417b00"
   );
@@ -41,7 +41,8 @@ test("legacy Baesin URL resolves to the real restaurant without changing canonic
     current.id
   );
   assert.equal(data.getRestaurantById("missing-restaurant"), null);
-  assert.equal(data.restaurants.length, 2907);
+  const existing = JSON.parse(await readFile(path.join(projectRoot, "../source-data/discovery-release-2026-09/existing-restaurants.json"), "utf8"));
+  for (const restaurant of existing) assert.ok(data.getRestaurantById(restaurant.id), `Lost existing restaurant ${restaurant.id}`);
   for (const [alias, target] of Object.entries(data.restaurantAliases)) {
     assert.equal(data.resolveRestaurantId(alias), target);
     assert.equal(data.resolveRestaurantId(target), target);

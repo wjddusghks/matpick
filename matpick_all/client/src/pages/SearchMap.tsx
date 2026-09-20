@@ -1001,8 +1001,9 @@ export default function SearchMap() {
             origin={currentLocation}
             travel={travelTimes.values[restaurant.id]}
             travelLoading={
-              !travelTimes.values[restaurant.id] && travelTimes.loading
+              travelTimes.loadingIds.includes(restaurant.id)
             }
+            onRequestTravel={() => void travelTimes.request(restaurant.id)}
             onSelect={() => selectRestaurant(restaurant.id)}
           />
         ))}
@@ -1103,7 +1104,7 @@ export default function SearchMap() {
       type="button"
       onClick={() => navigate(getTopicFilterPath(searchString, null))}
       className="flex min-h-11 items-center gap-2 px-4 py-2 text-xs font-semibold text-[#a34155]"
-      aria-label={locale === "en" ? "Remove source filter" : "방송 필터 해제"}
+      aria-label={locale === "en" ? "Remove source filter" : "주제 필터 해제"}
     >
       {getMapTopicDisplayName(selectedTopicShortcut, locale)}{" "}
       <X className="h-3.5 w-3.5" />

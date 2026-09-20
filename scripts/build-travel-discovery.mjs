@@ -18,7 +18,9 @@ for (const candidate of approved) {
   if (ids.has(candidate.candidateId))
     throw new Error("Duplicate approved candidate");
   ids.add(candidate.candidateId);
-  const id = `travel_${topic.id}_${candidate.nativeId.replace(/[^\w-]/g, "_")}`;
+  const id =
+    candidate.existingRestaurantId ||
+    `travel_${topic.id}_${candidate.nativeId.replace(/[^\w-]/g, "_")}`;
   restaurants.push({
     id,
     name: candidate.name,
@@ -28,14 +30,25 @@ for (const candidate of approved) {
     region: candidate.address.split(/\s+/).slice(0, 2).join(" "),
     category: candidate.category || "음식점",
     representativeMenu: candidate.representativeMenu || "",
-    menus: [],
+    menus: (candidate.menus || []).map((m, i) => ({
+      ...m,
+      id: `${id}_travel_menu_${i + 1}`,
+    })),
     imageUrl: "",
     phone: candidate.phone || "",
-    operationState: "operating",
-    operationVerifiedAt: candidate.verification.checkedAt,
-    operationSourceUrl: candidate.verification.sourceUrl,
+    operationState: candidate.operationState,
+    ...(candidate.operationState === "operating"
+      ? {
+          operationVerifiedAt: candidate.verification.checkedAt,
+          operationSourceUrl: candidate.verification.sourceUrl,
+        }
+      : {}),
     locationVerifiedAt: candidate.verification.checkedAt,
     locationSourceUrls: [candidate.verification.sourceUrl],
+    kakaoPlaceId: candidate.kakaoPlaceId,
+    placeUrl: candidate.verification.sourceUrl,
+    menuPriceVerifiedAt: candidate.menuPriceVerifiedAt,
+    menuPriceSources: candidate.menuPriceSources,
   });
   sourceLinks.push({
     id: `${topic.id}:${id}`,

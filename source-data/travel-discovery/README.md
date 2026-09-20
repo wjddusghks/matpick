@@ -33,9 +33,11 @@ TourAPI는 공식 명세의 KorService2 `areaBasedList2`, `detailIntro2`, 음식
 
 1. `staging/*.json`에서 상호·도로명 주소·지점이 같은지 확인합니다. 제주 이름만으로 다른 지점에 붙이지 않습니다.
 2. 기존 맛픽 식당과 중복 여부를 대조합니다. 미확인 메뉴 가격을 추정하지 않습니다.
-3. 확인된 항목을 `approved.json`에 옮기고 `reviewStatus: "approved"`, `operationState: "operating"`, `verification: { "checkedAt": "YYYY-MM-DD", "sourceUrl": "https://..." }`를 기록합니다.
+3. 확인된 항목을 `approved.json`에 옮기고 `reviewStatus: "approved"`, 확인 날짜·출처 URL을 기록합니다. 현재 영업 중이라는 근거가 있으면 `operationState: "operating"`을, 지점 동일성만 지도에서 확인되면 `operationState: "unknown"`과 `verification.basis: "map_listing"`을 사용합니다. 지도 등록만으로 영업 확인을 주장하지 않습니다.
 4. `node scripts/build-travel-discovery.mjs` 후 앱 데이터 생성·검사·빌드를 실행합니다.
 
-현재 승인 목록은 비어 있습니다. 준비 중인 빈 주제는 홈페이지에 노출되지 않습니다. 승인 항목이 생기면 별도 사진 없이 SVG 주제 아이콘·검색·가이드·출처 안내가 활성화됩니다. 공급기관 등록은 맛을 보장하는 평가가 아니므로 사용자에게 '맛픽이 직접 검증한 맛집'으로 표시하지 않습니다.
+2026-09-20 부산 100건·제주 169건의 공급원 항목을 지점 대조 후 승인했습니다. 중복과 기존 식당을 통합한 공개 주제 수는 빌드 시 최종 식당 ID로 계산하여 홈페이지에 표시합니다. 대표 메뉴·현재 지도 메뉴를 담고 사진 없이 SVG 주제 아이콘·검색·가이드·출처 안내가 활성화됩니다. `여행길 한입`은 독립적인 승인 목록이 없어 아직 노출하지 않습니다. 공급기관 등록은 맛을 보장하는 평가가 아니므로 사용자에게 '맛픽이 직접 검증한 맛집'으로 표시하지 않습니다.
+
+이번 공개 준비는 `scripts/prepare-discovery-release.mjs` → `scripts/collect-missing-menus.mjs --directory source-data/discovery-release-2026-09` → `scripts/build-discovery-release.mjs` → `scripts/build-travel-discovery.mjs` → 앱 빌드 순서입니다. 이미 검토한 항목은 체크포인트로 재사용합니다. 자세한 목록과 보류 이유는 `source-data/discovery-release-2026-09/report.md`에 기록합니다.
 
 블루리본은 서면 이용허가를 확인하기 전까지 수집 대상에서 제외합니다. 이번 수집에는 포함하지 않았고, 기존 데이터·수집 코드에서 해당 출처 참조도 발견되지 않았습니다. 이 확인은 코드·데이터의 출처 표기 검사이며 개별 식당의 수상 여부를 판단한 것은 아닙니다.

@@ -9,7 +9,9 @@ import {
 } from "./menu-research/matching.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const directory = path.join(root, "source-data/menu-research-2026-09");
+const directoryArg = process.argv.indexOf("--directory");
+const directory = directoryArg < 0 ? path.join(root, "source-data/menu-research-2026-09") : path.resolve(root, process.argv[directoryArg + 1]);
+if (!directory.startsWith(path.join(root, "source-data") + path.sep)) throw new Error("Research directory must be under source-data");
 await fs.mkdir(directory, { recursive: true });
 const queuePath = path.join(directory, "queue.json");
 const resultPath = path.join(directory, "results.json");
@@ -128,7 +130,8 @@ async function research(restaurant, previous) {
   url.searchParams.set("q", query);
   url.searchParams.set("msFlag", "A");
   let candidates;
-  if (previous?.query === query && Array.isArray(previous.candidates))
+  if (restaurant.kakaoPlaceId) candidates = [{ ...restaurant, kakaoPlaceId: String(restaurant.kakaoPlaceId) }];
+  else if (previous?.query === query && Array.isArray(previous.candidates))
     candidates = previous.candidates;
   else {
     const payload = await request(url);
@@ -248,6 +251,7 @@ async function research(restaurant, previous) {
     query,
     place,
     match,
+    sourceOperationStatus: s.status || null,
     sourceUpdatedAt: panel.menu?.menus?.items_updated_at || null,
     menus,
   };

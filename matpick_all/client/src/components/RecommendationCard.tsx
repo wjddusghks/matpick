@@ -31,6 +31,7 @@ export default function RecommendationCard({
   origin = null,
   travel,
   travelLoading,
+  onRequestTravel,
 }: {
   restaurant: Restaurant;
   selected?: boolean;
@@ -40,6 +41,7 @@ export default function RecommendationCard({
   origin?: { lat: number; lng: number } | null;
   travel?: RestaurantTravelTimes;
   travelLoading?: boolean;
+  onRequestTravel?: () => void;
 }) {
   const { locale } = useLocale();
   const english = locale === "en";
@@ -123,6 +125,7 @@ export default function RecommendationCard({
         origin={origin}
         travel={travel}
         loading={travelLoading}
+        onRequest={onRequestTravel}
         english={english}
       />
       <div className="mt-3 flex items-center gap-2">

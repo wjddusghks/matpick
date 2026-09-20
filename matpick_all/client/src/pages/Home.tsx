@@ -62,6 +62,7 @@ import {
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
+import discoveryHighlights from "@/data/generated/discovery-highlights.generated.json";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const RECENT_KEY = "matpick_recent_searches";
@@ -1666,6 +1667,17 @@ export default function Home() {
               <MapPin className="h-5 w-5 text-[#ff6f7c]" strokeWidth={2.2} />
               {ui.nearbyMapButtonLabel}
             </button>
+
+            <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3" aria-label={isEnglish ? "New restaurant collections" : "새로 추가된 식당 주제"}>
+              {discoveryHighlights.map(highlight => {
+                const topic = homeShortcutTopics.find(item => item.slug === highlight.slug);
+                if (!topic) return null;
+                return <Link key={topic.slug} href={getMapTopicPath(topic)} className="flex min-w-0 items-center justify-center gap-2 rounded-2xl border border-[#f1dfe4] bg-white px-2 py-3 text-left transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:px-4">
+                  <img src={topic.imageUrl} alt="" className="hidden h-9 w-9 rounded-full sm:block" />
+                  <span className="min-w-0"><span className="block text-xs font-bold text-[#403238] sm:text-sm">{getMapTopicDisplayName(topic, locale)}</span><span className="mt-1 block text-[11px] text-[#9b6474]">{highlight.count}{isEnglish ? " places" : "곳 둘러보기"}</span></span>
+                </Link>;
+              })}
+            </div>
 
             <section className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7" aria-label={ui.sourceProofLabel}>
               <p className="text-[13px] font-semibold text-[#8f8185] sm:text-sm">

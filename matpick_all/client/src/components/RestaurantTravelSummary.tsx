@@ -13,15 +13,38 @@ export default function RestaurantTravelSummary({
   travel,
   loading,
   english = false,
+  onRequest,
 }: {
   restaurant: Restaurant;
   origin: { lat: number; lng: number } | null;
   travel?: RestaurantTravelTimes;
   loading?: boolean;
   english?: boolean;
+  onRequest?: () => void;
 }) {
   if (!origin || restaurant.isOverseas) return null;
   const driving = travel?.driving;
+  if (!travel && onRequest)
+    return (
+      <button
+        type="button"
+        onClick={onRequest}
+        disabled={loading}
+        className="mt-3 flex w-full items-center justify-between gap-2 rounded-xl bg-[#f8f6f7] p-3 text-left text-xs font-semibold text-[#68565f] disabled:opacity-60"
+      >
+        <span className="flex items-center gap-2">
+          <Car className="h-4 w-4" />
+          {loading
+            ? english
+              ? "Checking route…"
+              : "경로 조회 중…"
+            : english
+              ? "Check driving time and distance"
+              : "자동차 시간·거리 확인"}
+        </span>
+        <span aria-hidden>→</span>
+      </button>
+    );
   const hint = loading
     ? english
       ? "Checking route…"

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "slug": "busan-bite",
+    "type": "source",
+    "value": "busan-bite",
+    "name": {
+      "ko": "부산 한입",
+      "en": "Busan Bites"
+    },
+    "imageUrl": "/source-covers/busan-bite.svg"
+  },
+  {
+    "slug": "jeju-bite",
+    "type": "source",
+    "value": "jeju-bite",
+    "name": {
+      "ko": "제주 한입",
+      "en": "Jeju Bites"
+    },
+    "imageUrl": "/source-covers/jeju-bite.svg"
+  }
+]

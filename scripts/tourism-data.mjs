@@ -139,6 +139,8 @@ export function validateApprovedCandidate(candidate) {
     !/^https:\/\//.test(candidate.verification?.sourceUrl || "")
   )
     throw new Error("Branch verification date and source URL are required");
-  if (candidate.operationState !== "operating")
-    throw new Error("Operating status must be reviewed before publication");
+  if (!["operating", "unknown"].includes(candidate.operationState))
+    throw new Error("Closed or unreviewed operation state cannot be published");
+  if (candidate.operationState === "unknown" && candidate.verification?.basis !== "map_listing")
+    throw new Error("Unknown operation state requires an independently matched map listing");
 }

@@ -17,6 +17,13 @@ export type MapTopicShortcut = {
 export const mapTopicShortcuts: MapTopicShortcut[] = [
   ...(travelTopicShortcuts as MapTopicShortcut[]),
   {
+    slug: "jeonhyunmoo-plan",
+    type: "source",
+    value: "jeonhyunmoo-plan",
+    name: { ko: "전현무계획", en: "Jeon Hyun-moo Plan" },
+    imageUrl: "/source-covers/jeonhyunmoo-plan.svg",
+  },
+  {
     slug: "ttoganjip",
     type: "source",
     value: "ttoganjip",

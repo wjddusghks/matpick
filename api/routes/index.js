@@ -4,6 +4,11 @@ const {
 } = require("../_requestGuards");
 const { enforceRateLimit } = require("../_rateLimit");
 const {
+  reserveRouteCall,
+  readRouteCache,
+  writeRouteCache,
+} = require("./_budget");
+const {
   getRouteConfig,
   getTravelTimes,
   isKoreanPoint,
@@ -40,15 +45,16 @@ module.exports = async function handler(req, res) {
   if (
     !isKoreanPoint(body?.origin) ||
     !Array.isArray(body?.restaurantIds) ||
-    !body.restaurantIds.length ||
-    body.restaurantIds.length > 6 ||
+    body.restaurantIds.length !== 1 ||
     body.restaurantIds.some(
       (id) => typeof id !== "string" || !restaurants.has(id),
     )
   )
     return res
       .status(400)
-      .json({ error: "A valid origin and 1–6 restaurant IDs are required" });
+      .json({
+        error: "A valid origin and exactly one restaurant ID are required",
+      });
   const destinations = [...new Set(body.restaurantIds)].map((id) =>
     restaurants.get(id),
   );
@@ -71,30 +77,41 @@ module.exports = async function handler(req, res) {
     if (
       !(await enforceRateLimit(req, res, {
         bucket: "routes:ip",
-        limit: 12,
+        limit: 6,
         windowSec: 60,
       }))
     )
       return;
-    // Use a shared store in production; also retain the provider console's hard quota.
-    if (
-      !(await enforceRateLimit(req, res, {
-        bucket: "routes:daily",
-        subject: "all",
-        limit: Math.max(
-          1,
-          Number(process.env.ROUTE_DAILY_REQUEST_LIMIT) || 300,
-        ),
-        windowSec: 86400,
-      }))
-    )
-      return;
-    const routes = await Promise.all(
-      destinations.map(async (restaurant) => ({
-        restaurantId: restaurant.id,
-        ...(await getTravelTimes(body.origin, restaurant, config)),
-      })),
-    );
+    const restaurant = destinations[0];
+    if (!config.id || !config.secret)
+      return res
+        .status(200)
+        .json({
+          routes: [
+            {
+              restaurantId: restaurant.id,
+              driving: { status: "not_configured" },
+            },
+          ],
+        });
+    const cached = await readRouteCache(body.origin, restaurant);
+    if (cached)
+      return res
+        .status(200)
+        .json({
+          routes: [{ restaurantId: restaurant.id, ...cached }],
+          checkedAt: cached.checkedAt,
+        });
+    if (!(await reserveRouteCall()))
+      return res
+        .status(429)
+        .json({ error: "Route lookup limit reached. Use the Naver Map link." });
+    const route = {
+      ...(await getTravelTimes(body.origin, restaurant, config)),
+      checkedAt: Date.now(),
+    };
+    await writeRouteCache(body.origin, restaurant, route).catch(() => {});
+    const routes = [{ restaurantId: restaurant.id, ...route }];
     // Origins, credentials and raw provider responses are never returned or logged.
     return res.status(200).json({ routes, checkedAt: Date.now() });
   } catch {

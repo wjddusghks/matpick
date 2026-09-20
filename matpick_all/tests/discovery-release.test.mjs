@@ -11,7 +11,7 @@ const [data, shortcuts, eligibility] = await loadAppModules([
   "/src/data/mapTopicShortcuts.ts",
   "/src/lib/restaurantEligibility.ts",
 ]);
-test("homepage highlights each open a nonempty, photo-independent public collection", async () => {
+test("existing travel and broadcast shortcuts preserve their public collections", async () => {
   const highlights = await read(
     "client/src/data/generated/discovery-highlights.generated.json"
   );

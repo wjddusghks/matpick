@@ -1,0 +1,2033 @@
+{
+  "checkedAt": "2026-09-20T13:22:33.636Z",
+  "candidateCount": 247,
+  "uniquePublished": 228,
+  "newRestaurants": 186,
+  "appearanceCount": 238,
+  "topics": [
+    {
+      "priority": 1,
+      "id": "life-master",
+      "name": "생활의 달인",
+      "candidates": 9,
+      "published": 9,
+      "withPrice": 8
+    },
+    {
+      "priority": 2,
+      "id": "saturday-food",
+      "name": "토요일은 밥이 좋아",
+      "candidates": 3,
+      "published": 3,
+      "withPrice": 3
+    },
+    {
+      "priority": 3,
+      "id": "neighborhood-walk",
+      "name": "동네 한 바퀴",
+      "candidates": 3,
+      "published": 3,
+      "withPrice": 3
+    },
+    {
+      "priority": 4,
+      "id": "mogeultende",
+      "name": "성시경 먹을텐데",
+      "candidates": 195,
+      "published": 184,
+      "withPrice": 177
+    },
+    {
+      "priority": 5,
+      "id": "chureupkyeon",
+      "name": "츄릅켠",
+      "candidates": 1,
+      "published": 1,
+      "withPrice": 0
+    },
+    {
+      "priority": 6,
+      "id": "jeju-eddy",
+      "name": "제주에디",
+      "candidates": 3,
+      "published": 3,
+      "withPrice": 3
+    },
+    {
+      "priority": 7,
+      "id": "kim-three-meals",
+      "name": "김사원세끼",
+      "candidates": 3,
+      "published": 3,
+      "withPrice": 2
+    },
+    {
+      "priority": 8,
+      "id": "taste-of-seoul",
+      "name": "서울미식 100선",
+      "candidates": 12,
+      "published": 9,
+      "withPrice": 9
+    },
+    {
+      "priority": 9,
+      "id": "century-stores",
+      "name": "백년가게",
+      "candidates": 2,
+      "published": 2,
+      "withPrice": 2
+    },
+    {
+      "priority": 10,
+      "id": "good-price",
+      "name": "착한가격업소",
+      "candidates": 16,
+      "published": 12,
+      "withPrice": 12
+    }
+  ],
+  "approved": [
+    {
+      "candidateId": "topic_life-master_1",
+      "restaurantId": "wednesday-gourmet_restaurant_001",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_life-master_2",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_5b72d2d0c4ee",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_3",
+      "restaurantId": "travel_busan-bite_124",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 37
+    },
+    {
+      "candidateId": "topic_life-master_4",
+      "restaurantId": "topic_life-master_4",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "topic_life-master_5",
+      "restaurantId": "wednesday-gourmet_restaurant_316",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 50
+    },
+    {
+      "candidateId": "topic_life-master_6",
+      "restaurantId": "topic_life-master_6",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "topic_life-master_7",
+      "restaurantId": "topic_life-master_7",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "topic_life-master_8",
+      "restaurantId": "topic_life-master_8",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 33
+    },
+    {
+      "candidateId": "topic_life-master_9",
+      "restaurantId": "topic_life-master_9",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_saturday-food_1",
+      "restaurantId": "topic_saturday-food_1",
+      "topicId": "saturday-food",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_saturday-food_2",
+      "restaurantId": "topic_saturday-food_2",
+      "topicId": "saturday-food",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_saturday-food_3",
+      "restaurantId": "topic_saturday-food_3",
+      "topicId": "saturday-food",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_10",
+      "restaurantId": "topic_neighborhood-walk_10",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 30
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_11",
+      "restaurantId": "topic_neighborhood-walk_11",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_12",
+      "restaurantId": "topic_neighborhood-walk_12",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_03706306a5e5",
+      "restaurantId": "mogeultende_03706306a5e5",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 26
+    },
+    {
+      "candidateId": "mogeultende_04b3f33242fd",
+      "restaurantId": "mogeultende_04b3f33242fd",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_05a70268f228",
+      "restaurantId": "mogeultende_05a70268f228",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 28
+    },
+    {
+      "candidateId": "mogeultende_05c523adeb85",
+      "restaurantId": "mogeultende_05c523adeb85",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_07468098228a",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_d92731b79fac",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_084ae5fe20ab",
+      "restaurantId": "topic_saturday-food_3",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_0b570f10435c",
+      "restaurantId": "mogeultende_0b570f10435c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "mogeultende_0e4c9cb16731",
+      "restaurantId": "mogeultende_0e4c9cb16731",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_1096ded77876",
+      "restaurantId": "mogeultende_1096ded77876",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_15e5a9983558",
+      "restaurantId": "mogeultende_15e5a9983558",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_16ac2f17c46b",
+      "restaurantId": "mogeultende_16ac2f17c46b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_16fde98822c4",
+      "restaurantId": "mogeultende_16fde98822c4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_17646b81a6a7",
+      "restaurantId": "mogeultende_17646b81a6a7",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_1821a0d7a7d2",
+      "restaurantId": "r_9aab737c",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_1997c6f286a6",
+      "restaurantId": "mogeultende_1997c6f286a6",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_19dfe2ce2e4e",
+      "restaurantId": "mogeultende_19dfe2ce2e4e",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_19ea35237ea5",
+      "restaurantId": "mogeultende_19ea35237ea5",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_1b0bd8d9149c",
+      "restaurantId": "mogeultende_1b0bd8d9149c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_1b60b3765205",
+      "restaurantId": "mogeultende_1b60b3765205",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_1c1668c92838",
+      "restaurantId": "travel_jeju-bite_c0a254462b321cce-row-2374",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_1c687615786c",
+      "restaurantId": "mogeultende_1c687615786c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_1ce3ab516f27",
+      "restaurantId": "mogeultende_1ce3ab516f27",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_1d3edcda44cd",
+      "restaurantId": "mogeultende_1d3edcda44cd",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 22
+    },
+    {
+      "candidateId": "mogeultende_1d775528ed94",
+      "restaurantId": "mogeultende_1d775528ed94",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_1e6e35c19f83",
+      "restaurantId": "mogeultende_1e6e35c19f83",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "mogeultende_1ed03d4bc911",
+      "restaurantId": "mogeultende_1ed03d4bc911",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_1f06ad1d8990",
+      "restaurantId": "mogeultende_1f06ad1d8990",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_2002cabc3678",
+      "restaurantId": "mogeultende_2002cabc3678",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 21
+    },
+    {
+      "candidateId": "mogeultende_20a42486ad1e",
+      "restaurantId": "mogeultende_20a42486ad1e",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "mogeultende_220c1a1923ad",
+      "restaurantId": "mogeultende_220c1a1923ad",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_2417cc3bc5a3",
+      "restaurantId": "old-korean-100_restaurant_054",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_250d1363d01d",
+      "restaurantId": "mogeultende_250d1363d01d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_2682471775c7",
+      "restaurantId": "mogeultende_2682471775c7",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 30
+    },
+    {
+      "candidateId": "mogeultende_2763f45b47c2",
+      "restaurantId": "mogeultende_2763f45b47c2",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_2af4ac5d9fa7",
+      "restaurantId": "mogeultende_2af4ac5d9fa7",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_2b1a5d4268b1",
+      "restaurantId": "mogeultende_2b1a5d4268b1",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 43
+    },
+    {
+      "candidateId": "mogeultende_2d714c2ba160",
+      "restaurantId": "mogeultende_2d714c2ba160",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_3023a2ae26f0",
+      "restaurantId": "mogeultende_3023a2ae26f0",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_307a9d0bce27",
+      "restaurantId": "mogeultende_307a9d0bce27",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 31
+    },
+    {
+      "candidateId": "mogeultende_31011fb4f343",
+      "restaurantId": "mogeultende_31011fb4f343",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_32608bb10cf4",
+      "restaurantId": "mogeultende_32608bb10cf4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_33938a73acbf",
+      "restaurantId": "mogeultende_33938a73acbf",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_33c6e22638d2",
+      "restaurantId": "mogeultende_33c6e22638d2",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_34027c2cd152",
+      "restaurantId": "mogeultende_34027c2cd152",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 23
+    },
+    {
+      "candidateId": "mogeultende_346b7f22d41f",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_599",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_34a5a3ddfc75",
+      "restaurantId": "mogeultende_34a5a3ddfc75",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_398a828545bb",
+      "restaurantId": "mogeultende_398a828545bb",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_39fe692ee76c",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_39fe692ee76c",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_3abc7fb02dbb",
+      "restaurantId": "mogeultende_3abc7fb02dbb",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_3c74e11cbbf4",
+      "restaurantId": "mogeultende_3c74e11cbbf4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_3cb4b5ae9dad",
+      "restaurantId": "mogeultende_3cb4b5ae9dad",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 34
+    },
+    {
+      "candidateId": "mogeultende_3cbc3f126c0b",
+      "restaurantId": "mogeultende_3cbc3f126c0b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 26
+    },
+    {
+      "candidateId": "mogeultende_40c65738c669",
+      "restaurantId": "mogeultende_40c65738c669",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_4495a82e224f",
+      "restaurantId": "mogeultende_4495a82e224f",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_46961dc6b86d",
+      "restaurantId": "mogeultende_46961dc6b86d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_46bcbc4f55ce",
+      "restaurantId": "mogeultende_46bcbc4f55ce",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_46f08ababef4",
+      "restaurantId": "mogeultende_46f08ababef4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_47a4817196d9",
+      "restaurantId": "mogeultende_47a4817196d9",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_483a93b94672",
+      "restaurantId": "topic_enrichment_baekjong-wok_a31c17e591e1",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_495f88d55648",
+      "restaurantId": "topic_enrichment_delicious-guys_140dc81a5c48",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_4aac2d479de3",
+      "restaurantId": "mogeultende_4aac2d479de3",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_4b693f950150",
+      "restaurantId": "mogeultende_4b693f950150",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_4b94659ae9bd",
+      "restaurantId": "mogeultende_4b94659ae9bd",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_4d81a5acb7c0",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_407",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 22
+    },
+    {
+      "candidateId": "mogeultende_4edc6d840391",
+      "restaurantId": "topic_enrichment_delicious-guys_ba4c389605df",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_4ee2bfbcfc23",
+      "restaurantId": "mogeultende_4ee2bfbcfc23",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_519c123ca0d6",
+      "restaurantId": "mogeultende_519c123ca0d6",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_5233d9eca01a",
+      "restaurantId": "mogeultende_5233d9eca01a",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_52b557c20962",
+      "restaurantId": "mogeultende_52b557c20962",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_538dd8a92988",
+      "restaurantId": "mogeultende_538dd8a92988",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "mogeultende_5413a0f88886",
+      "restaurantId": "mogeultende_5413a0f88886",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_57f919d3ce12",
+      "restaurantId": "mogeultende_57f919d3ce12",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_58110d34c352",
+      "restaurantId": "mogeultende_58110d34c352",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_595e3f5f8622",
+      "restaurantId": "mogeultende_595e3f5f8622",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "mogeultende_5c66c8ef9dec",
+      "restaurantId": "mogeultende_5c66c8ef9dec",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_5da3fb6c864a",
+      "restaurantId": "mogeultende_5da3fb6c864a",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_5dec49b381b1",
+      "restaurantId": "mogeultende_5dec49b381b1",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_5f77b87ed4e6",
+      "restaurantId": "mogeultende_5f77b87ed4e6",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_5fe15868c525",
+      "restaurantId": "mogeultende_5fe15868c525",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_6022616f2ff5",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_05c9759cd576",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_60ce0d6c8aec",
+      "restaurantId": "mogeultende_60ce0d6c8aec",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_61bbf885e96f",
+      "restaurantId": "topic_enrichment_delicious-guys_558707d93165",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_62375108bf20",
+      "restaurantId": "mogeultende_62375108bf20",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_63d2bc5eb8e6",
+      "restaurantId": "mogeultende_63d2bc5eb8e6",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_640a2cf6cf1b",
+      "restaurantId": "mogeultende_640a2cf6cf1b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_64e90fe37c83",
+      "restaurantId": "mogeultende_64e90fe37c83",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_6562315e2d99",
+      "restaurantId": "mogeultende_6562315e2d99",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_65ad91139c05",
+      "restaurantId": "mogeultende_65ad91139c05",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_65ebec474196",
+      "restaurantId": "mogeultende_65ebec474196",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "mogeultende_67021829d881",
+      "restaurantId": "mogeultende_67021829d881",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_6765e206c271",
+      "restaurantId": "mogeultende_6765e206c271",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_676ce49ae6e6",
+      "restaurantId": "mogeultende_676ce49ae6e6",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_67b81cefd318",
+      "restaurantId": "mogeultende_67b81cefd318",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_6d4b0160f3c4",
+      "restaurantId": "mogeultende_6d4b0160f3c4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_6dea4b833a04",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_474",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_70b59d746ac9",
+      "restaurantId": "mogeultende_70b59d746ac9",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_70fb6dff1bbf",
+      "restaurantId": "mogeultende_70fb6dff1bbf",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_715b0b99bf33",
+      "restaurantId": "mogeultende_715b0b99bf33",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 56
+    },
+    {
+      "candidateId": "mogeultende_71a66beca5ef",
+      "restaurantId": "mogeultende_71a66beca5ef",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_75a387e42ca2",
+      "restaurantId": "mogeultende_75a387e42ca2",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_7864b956569e",
+      "restaurantId": "mogeultende_7864b956569e",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_7c1568fe71f7",
+      "restaurantId": "topic_enrichment_delicious-guys_d12b938f42b7",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_7f5b1324c28c",
+      "restaurantId": "r_f6168fc8",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_819f5dabc009",
+      "restaurantId": "mogeultende_819f5dabc009",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_87147594c727",
+      "restaurantId": "mogeultende_87147594c727",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_8915f63b9d35",
+      "restaurantId": "mogeultende_8915f63b9d35",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_8cf850d13d0f",
+      "restaurantId": "mogeultende_8cf850d13d0f",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_8efea5a53d6d",
+      "restaurantId": "r_dfe304f1",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_8f08edb7bda5",
+      "restaurantId": "mogeultende_8f08edb7bda5",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_92e2e1eaed6c",
+      "restaurantId": "mogeultende_92e2e1eaed6c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_93fbdf9a5063",
+      "restaurantId": "mogeultende_93fbdf9a5063",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_94c87de94ff0",
+      "restaurantId": "mogeultende_94c87de94ff0",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_950ce20b716e",
+      "restaurantId": "wednesday-gourmet_restaurant_554",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 33
+    },
+    {
+      "candidateId": "mogeultende_956416a15aad",
+      "restaurantId": "mogeultende_956416a15aad",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 38
+    },
+    {
+      "candidateId": "mogeultende_97b9ff31c333",
+      "restaurantId": "mogeultende_97b9ff31c333",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_9a24bd0b5ee4",
+      "restaurantId": "mogeultende_9a24bd0b5ee4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 40
+    },
+    {
+      "candidateId": "mogeultende_9a9128af09fb",
+      "restaurantId": "mogeultende_9a9128af09fb",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_9fd406d012ac",
+      "restaurantId": "mogeultende_9fd406d012ac",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_a182dda65541",
+      "restaurantId": "topic_enrichment_baekjong-wok_e089b5d65612",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 28
+    },
+    {
+      "candidateId": "mogeultende_a1aa7f69f871",
+      "restaurantId": "mogeultende_a1aa7f69f871",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_a1f5717daa75",
+      "restaurantId": "mogeultende_a1f5717daa75",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_a2603c44eb18",
+      "restaurantId": "r_3fbf0871",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_a5e8688e7479",
+      "restaurantId": "mogeultende_a5e8688e7479",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_a6263a556d67",
+      "restaurantId": "r_f2be38a5",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_a66dd331f994",
+      "restaurantId": "mogeultende_a66dd331f994",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_a740e21b6e93",
+      "restaurantId": "topic_enrichment_delicious-guys_c84f5e4a603b",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_a931ea2cdc7b",
+      "restaurantId": "mogeultende_a931ea2cdc7b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_ad60e1781210",
+      "restaurantId": "mogeultende_ad60e1781210",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_af4b7408f163",
+      "restaurantId": "mogeultende_af4b7408f163",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_b1f8b5b7f00d",
+      "restaurantId": "mogeultende_b1f8b5b7f00d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_b45daec03e2a",
+      "restaurantId": "mogeultende_b45daec03e2a",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_b57fdbc0cebc",
+      "restaurantId": "mogeultende_b57fdbc0cebc",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_b6920c13939c",
+      "restaurantId": "mogeultende_b6920c13939c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_b6b075601e13",
+      "restaurantId": "mogeultende_b6b075601e13",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_b6e514f8639b",
+      "restaurantId": "wednesday-gourmet_restaurant_366",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_b786ba0921a1",
+      "restaurantId": "mogeultende_b786ba0921a1",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "mogeultende_b7d1c7f37c25",
+      "restaurantId": "mogeultende_b7d1c7f37c25",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "mogeultende_b85cf201c61b",
+      "restaurantId": "mogeultende_b85cf201c61b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 26
+    },
+    {
+      "candidateId": "mogeultende_b9a407542483",
+      "restaurantId": "mogeultende_b9a407542483",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "mogeultende_bca0d79bc7ae",
+      "restaurantId": "wednesday-gourmet_restaurant_343",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_bf8b274f0f60",
+      "restaurantId": "mogeultende_bf8b274f0f60",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "mogeultende_bfb1e22c3876",
+      "restaurantId": "mogeultende_bfb1e22c3876",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_bff176cad094",
+      "restaurantId": "mogeultende_bff176cad094",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 22
+    },
+    {
+      "candidateId": "mogeultende_c1077a62c915",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_8b30cd561327",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_c2167864a676",
+      "restaurantId": "mogeultende_c2167864a676",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_c384c6e30120",
+      "restaurantId": "mogeultende_c384c6e30120",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_c5c64a9e8978",
+      "restaurantId": "mogeultende_c5c64a9e8978",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_c627d8f7f846",
+      "restaurantId": "mogeultende_c627d8f7f846",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 25
+    },
+    {
+      "candidateId": "mogeultende_c8d5d36b913f",
+      "restaurantId": "mogeultende_c8d5d36b913f",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "mogeultende_c96c1f2512bb",
+      "restaurantId": "mogeultende_c96c1f2512bb",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "mogeultende_ca6acab4f38f",
+      "restaurantId": "mogeultende_ca6acab4f38f",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 41
+    },
+    {
+      "candidateId": "mogeultende_ce510565fc7c",
+      "restaurantId": "mogeultende_ce510565fc7c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_d6d830b8053b",
+      "restaurantId": "mogeultende_d6d830b8053b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "mogeultende_d854adbc4c31",
+      "restaurantId": "mogeultende_d854adbc4c31",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_d8c5cf6b7ba0",
+      "restaurantId": "mogeultende_d8c5cf6b7ba0",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_da5be5ba8f31",
+      "restaurantId": "mogeultende_da5be5ba8f31",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_de72c9f76d4d",
+      "restaurantId": "mogeultende_de72c9f76d4d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_defd5f560887",
+      "restaurantId": "mogeultende_defd5f560887",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_dfdecd83b7c9",
+      "restaurantId": "mogeultende_dfdecd83b7c9",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "mogeultende_dff06b794041",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_439",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_e250aeea10a4",
+      "restaurantId": "mogeultende_e250aeea10a4",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "mogeultende_e3971a303e3e",
+      "restaurantId": "mogeultende_e3971a303e3e",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_e3e6aec2c369",
+      "restaurantId": "mogeultende_e3e6aec2c369",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_e457dc73cc60",
+      "restaurantId": "mogeultende_e457dc73cc60",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 31
+    },
+    {
+      "candidateId": "mogeultende_e46465ef3f9a",
+      "restaurantId": "mogeultende_e46465ef3f9a",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_e57ed111cd8d",
+      "restaurantId": "mogeultende_e57ed111cd8d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "mogeultende_e5f9662fd072",
+      "restaurantId": "mogeultende_e5f9662fd072",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "mogeultende_e61a8b58270b",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1d0eef4e4955",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_e6a74e5cf967",
+      "restaurantId": "mogeultende_e6a74e5cf967",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "mogeultende_e74a0980394a",
+      "restaurantId": "topic_enrichment_michelin-selected_a527be693b71",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "mogeultende_e98e8e4fb1d6",
+      "restaurantId": "wednesday-gourmet_restaurant_430",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "mogeultende_eb7582fc956b",
+      "restaurantId": "mogeultende_eb7582fc956b",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 26
+    },
+    {
+      "candidateId": "mogeultende_ed753f60736d",
+      "restaurantId": "mogeultende_ed753f60736d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 23
+    },
+    {
+      "candidateId": "mogeultende_ed95554ab428",
+      "restaurantId": "mogeultende_ed95554ab428",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_ed9bf10001ee",
+      "restaurantId": "mogeultende_ed9bf10001ee",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "mogeultende_eed182af0733",
+      "restaurantId": "mogeultende_eed182af0733",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "mogeultende_efe9b1ecd580",
+      "restaurantId": "mogeultende_efe9b1ecd580",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_f329b0f1a87e",
+      "restaurantId": "topic_enrichment_ttoganjip_af541292429e",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "mogeultende_f4765babc68c",
+      "restaurantId": "mogeultende_f4765babc68c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_f8a54bcf1d4f",
+      "restaurantId": "mogeultende_f8a54bcf1d4f",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "mogeultende_f9b507b89c3d",
+      "restaurantId": "mogeultende_f9b507b89c3d",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "mogeultende_fd705f2198ab",
+      "restaurantId": "topic_enrichment_baekjong-wok_bbbfbc8f3951",
+      "topicId": "mogeultende",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "mogeultende_fded3ae0cf0a",
+      "restaurantId": "mogeultende_fded3ae0cf0a",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "mogeultende_ff232cb92c0c",
+      "restaurantId": "mogeultende_ff232cb92c0c",
+      "topicId": "mogeultende",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "topic_chureupkyeon_13",
+      "restaurantId": "topic_chureupkyeon_13",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_jeju-eddy_17",
+      "restaurantId": "topic_jeju-eddy_17",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "topic_jeju-eddy_2",
+      "restaurantId": "topic_jeju-eddy_2",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "topic_jeju-eddy_3",
+      "restaurantId": "topic_jeju-eddy_3",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_kim-three-meals_14",
+      "restaurantId": "topic_kim-three-meals_14",
+      "topicId": "kim-three-meals",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_kim-three-meals_15",
+      "restaurantId": "topic_kim-three-meals_15",
+      "topicId": "kim-three-meals",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 15
+    },
+    {
+      "candidateId": "topic_kim-three-meals_16",
+      "restaurantId": "topic_kim-three-meals_16",
+      "topicId": "kim-three-meals",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_seoul_571",
+      "restaurantId": "topic_enrichment_michelin-2-stars_fbce08263974",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_seoul_573",
+      "restaurantId": "topic_seoul_573",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "topic_seoul_598",
+      "restaurantId": "topic_enrichment_michelin-1-star_a9eddb623b77",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_seoul_599",
+      "restaurantId": "topic_enrichment_michelin-1-star_c4b6327ff616",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_seoul_619",
+      "restaurantId": "topic_seoul_619",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_seoul_633",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_a394500bb68e",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_seoul_634",
+      "restaurantId": "topic_enrichment_ttoganjip_ef1fb3e282d6",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "topic_seoul_653",
+      "restaurantId": "topic_seoul_653",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_seoul_671",
+      "restaurantId": "topic_enrichment_michelin-1-star_5114d1a96d52",
+      "topicId": "taste-of-seoul",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_century-stores_18",
+      "restaurantId": "old-korean-100_restaurant_023",
+      "topicId": "century-stores",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_century-stores_19",
+      "restaurantId": "topic_century-stores_19",
+      "topicId": "century-stores",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_goodprice_10018",
+      "restaurantId": "topic_enrichment_delicious-guys_96840343c391",
+      "topicId": "good-price",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_goodprice_10627",
+      "restaurantId": "topic_goodprice_10627",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "topic_goodprice_10635",
+      "restaurantId": "topic_goodprice_10635",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_goodprice_14268",
+      "restaurantId": "topic_goodprice_14268",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_goodprice_15812",
+      "restaurantId": "topic_goodprice_15812",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_goodprice_1643",
+      "restaurantId": "topic_goodprice_1643",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "topic_goodprice_1645",
+      "restaurantId": "topic_goodprice_1645",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_goodprice_1647",
+      "restaurantId": "topic_goodprice_1647",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_goodprice_18748",
+      "restaurantId": "topic_goodprice_18748",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "topic_goodprice_20433",
+      "restaurantId": "topic_goodprice_20433",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_goodprice_7114",
+      "restaurantId": "topic_goodprice_7114",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_goodprice_7203",
+      "restaurantId": "topic_goodprice_7203",
+      "topicId": "good-price",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    }
+  ],
+  "review": [
+    {
+      "id": "mogeultende_0b1cd5c08304",
+      "topicId": "mogeultende",
+      "name": "로코스 비비큐 경리단길본점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_1681d8fe90b9",
+      "topicId": "mogeultende",
+      "name": "히말라야 어죽",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_2dd75bd993eb",
+      "topicId": "mogeultende",
+      "name": "신천지대반점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_3799afbaaee1",
+      "topicId": "mogeultende",
+      "name": "스테이지 바이 고디바",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_6fd0c95c4043",
+      "topicId": "mogeultende",
+      "name": "번동전주피순대추어탕",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_7300011aa39a",
+      "topicId": "mogeultende",
+      "name": "시경양꼬치",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_9ffcb2347abb",
+      "topicId": "mogeultende",
+      "name": "농부와닭동네 여의도MBC점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_cc48c5cc4271",
+      "topicId": "mogeultende",
+      "name": "스시스미레",
+      "reason": "request_error"
+    },
+    {
+      "id": "mogeultende_ce61f4d76d89",
+      "topicId": "mogeultende",
+      "name": "고다이 한남본점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_f20fe148a8bb",
+      "topicId": "mogeultende",
+      "name": "만우장",
+      "reason": "identity_review"
+    },
+    {
+      "id": "mogeultende_f5da4582da4e",
+      "topicId": "mogeultende",
+      "name": "하남 숯불닭갈비 미사본점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_seoul_570",
+      "topicId": "taste-of-seoul",
+      "name": "곰탕랩",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_seoul_572",
+      "topicId": "taste-of-seoul",
+      "name": "기와강",
+      "reason": "ambiguous_branch"
+    },
+    {
+      "id": "topic_seoul_663",
+      "topicId": "taste-of-seoul",
+      "name": "까사델비노 청담점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_goodprice_15032",
+      "topicId": "good-price",
+      "name": "꽃가람 남포직영점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_goodprice_1640",
+      "topicId": "good-price",
+      "name": "구포밀면",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_goodprice_1644",
+      "topicId": "good-price",
+      "name": "급행",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_goodprice_1646",
+      "topicId": "good-price",
+      "name": "남선식당",
+      "reason": "identity_review"
+    }
+  ]
+}

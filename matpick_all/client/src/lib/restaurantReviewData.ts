@@ -1,4 +1,5 @@
 import type { SharedReview } from "@/lib/reviews";
+import { ageGroupLabel } from "@/lib/reviewAge";
 
 const EDITORIAL_AUTHORS = new Set(["맛픽가이드", "맛픽 가이드"]);
 
@@ -42,6 +43,19 @@ export function mergeRestaurantReviews(
       ...(typeof review.restaurantId === "string"
         ? { restaurantId: review.restaurantId }
         : {}),
+      ...(review.ageConsentVersion === "review-age-v1" &&
+      ageGroupLabel(review.ageGroup) &&
+      ["birth_date", "kakao_range", "naver_range"].includes(
+        review.ageBasis || ""
+      )
+        ? {
+            ageGroup: review.ageGroup,
+            ageBasis: review.ageBasis,
+            ageCheckedAt: review.ageCheckedAt,
+            ageConsentAt: review.ageConsentAt,
+            ageConsentVersion: review.ageConsentVersion,
+          }
+        : {}),
     });
   }
   return Array.from(byId.values()).sort(
@@ -53,7 +67,9 @@ export function readRestaurantReviews(restaurantId: string): SharedReview[] {
   if (typeof window === "undefined") return [];
   try {
     const value: unknown = JSON.parse(
-      window.localStorage.getItem(`matpick_shared_reviews_v2_${restaurantId}`) ?? "[]"
+      window.localStorage.getItem(
+        `matpick_shared_reviews_v2_${restaurantId}`
+      ) ?? "[]"
     );
     return Array.isArray(value) ? mergeRestaurantReviews(value) : [];
   } catch {

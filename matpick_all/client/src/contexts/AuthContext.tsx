@@ -24,6 +24,7 @@ import {
 } from "@/lib/authProfile";
 import { persistRemoteAuthProfile } from "@/lib/authProfileSync";
 import { toast } from "sonner";
+import type { AgeProfile } from "@/lib/reviewAge";
 
 export interface User {
   id: string;
@@ -35,6 +36,7 @@ export interface User {
   consentAcceptedAt?: number;
   allowLocationPersonalization?: boolean;
   syncToken?: string;
+  ageProfile?: AgeProfile | null;
 }
 
 interface CompleteUserProfileInput {
@@ -136,7 +138,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const label = getOAuthProviderLabel(provider);
       const error = searchParams.get("error");
       const errorDescription =
-        searchParams.get("error_description") || searchParams.get("error_reason");
+        searchParams.get("error_description") ||
+        searchParams.get("error_reason");
 
       if (error) {
         clearSavedPostLoginRedirect();
@@ -181,13 +184,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         if (isExistingMember) {
           try {
-            await persistRemoteAuthProfile(mergedUser.id, mergedUser.syncToken, {
-              nickname: mergedUser.nickname?.trim() || mergedUser.name.trim(),
-              consentAcceptedAt: mergedUser.consentAcceptedAt ?? Date.now(),
-              allowLocationPersonalization: Boolean(
-                mergedUser.allowLocationPersonalization
-              ),
-            });
+            await persistRemoteAuthProfile(
+              mergedUser.id,
+              mergedUser.syncToken,
+              {
+                nickname: mergedUser.nickname?.trim() || mergedUser.name.trim(),
+                consentAcceptedAt: mergedUser.consentAcceptedAt ?? Date.now(),
+                allowLocationPersonalization: Boolean(
+                  mergedUser.allowLocationPersonalization
+                ),
+              }
+            );
           } catch {
             // Keep login flow successful even when the remote profile store is unavailable.
           }
@@ -197,7 +204,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         persistUser(mergedUser);
 
         if (isExistingMember) {
-          toast.message("이미 가입한 계정입니다. 기존 회원 정보로 로그인했습니다.");
+          toast.message(
+            "이미 가입한 계정입니다. 기존 회원 정보로 로그인했습니다."
+          );
         }
 
         return takeSavedPostLoginRedirect() || "/";
@@ -209,7 +218,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 
   const completeUserProfile = useCallback(
-    async ({ nickname, allowLocationPersonalization }: CompleteUserProfileInput) => {
+    async ({
+      nickname,
+      allowLocationPersonalization,
+    }: CompleteUserProfileInput) => {
       if (!user) {
         return;
       }

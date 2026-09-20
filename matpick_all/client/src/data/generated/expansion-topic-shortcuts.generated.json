@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "life-master",
+    "type": "source",
+    "value": "life-master",
+    "name": {
+      "ko": "생활의 달인",
+      "en": "Master of Living"
+    },
+    "imageUrl": "/source-covers/life-master.svg"
+  },
+  {
+    "slug": "saturday-food",
+    "type": "source",
+    "value": "saturday-food",
+    "name": {
+      "ko": "토요일은 밥이 좋아",
+      "en": "Saturday Food"
+    },
+    "imageUrl": "/source-covers/saturday-food.svg"
+  },
+  {
+    "slug": "neighborhood-walk",
+    "type": "source",
+    "value": "neighborhood-walk",
+    "name": {
+      "ko": "동네 한 바퀴",
+      "en": "A Walk Around the Neighborhood"
+    },
+    "imageUrl": "/source-covers/neighborhood-walk.svg"
+  },
+  {
+    "slug": "mogeultende",
+    "type": "source",
+    "value": "mogeultende",
+    "name": {
+      "ko": "성시경 먹을텐데",
+      "en": "Sung Si-kyung Food"
+    },
+    "imageUrl": "/source-covers/mogeultende.svg"
+  },
+  {
+    "slug": "chureupkyeon",
+    "type": "source",
+    "value": "chureupkyeon",
+    "name": {
+      "ko": "츄릅켠",
+      "en": "Chureupkyeon"
+    },
+    "imageUrl": "/source-covers/chureupkyeon.svg"
+  },
+  {
+    "slug": "jeju-eddy",
+    "type": "source",
+    "value": "jeju-eddy",
+    "name": {
+      "ko": "제주에디",
+      "en": "Jeju Eddy"
+    },
+    "imageUrl": "/source-covers/jeju-eddy.svg"
+  },
+  {
+    "slug": "kim-three-meals",
+    "type": "source",
+    "value": "kim-three-meals",
+    "name": {
+      "ko": "김사원세끼",
+      "en": "Kim Three Meals"
+    },
+    "imageUrl": "/source-covers/kim-three-meals.svg"
+  },
+  {
+    "slug": "taste-of-seoul",
+    "type": "source",
+    "value": "taste-of-seoul",
+    "name": {
+      "ko": "서울미식 100선",
+      "en": "Taste of Seoul"
+    },
+    "imageUrl": "/source-covers/taste-of-seoul.svg"
+  },
+  {
+    "slug": "century-stores",
+    "type": "source",
+    "value": "century-stores",
+    "name": {
+      "ko": "백년가게",
+      "en": "Century Stores"
+    },
+    "imageUrl": "/source-covers/century-stores.svg"
+  },
+  {
+    "slug": "good-price",
+    "type": "source",
+    "value": "good-price",
+    "name": {
+      "ko": "착한가격업소",
+      "en": "Good Price Restaurants"
+    },
+    "imageUrl": "/source-covers/good-price.svg"
+  }
+]

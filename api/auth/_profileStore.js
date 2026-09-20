@@ -1,12 +1,16 @@
 const crypto = require("node:crypto");
+const { normalizeAgeProfile } = require("./_ageProfile");
 
 const PROFILE_KEY_PREFIX = "matpick:auth-profile:";
 const SYNC_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
-const ALLOW_LEGACY_SYNC_TOKEN = process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN === "1";
+const ALLOW_LEGACY_SYNC_TOKEN =
+  process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN === "1";
 
 function getKvConfig() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  const url =
+    process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
+  const token =
+    process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
 
   if (!url || !token) {
     return null;
@@ -37,7 +41,10 @@ function createLegacyProfileSyncToken(userId) {
     return "";
   }
 
-  return crypto.createHmac("sha256", secret).update(String(userId)).digest("hex");
+  return crypto
+    .createHmac("sha256", secret)
+    .update(String(userId))
+    .digest("hex");
 }
 
 function signSyncPayload(encodedPayload) {
@@ -83,7 +90,11 @@ async function requestRedis(command) {
 }
 
 function normalizeStoredProfile(values) {
-  if (!Array.isArray(values) || values.length < 3 || values.every((value) => value == null)) {
+  if (
+    !Array.isArray(values) ||
+    values.length < 3 ||
+    values.every((value) => value == null)
+  ) {
     return null;
   }
 
@@ -146,7 +157,9 @@ function createProfileSyncToken(userId, options = {}) {
 
   const ttlSeconds = Math.max(
     60,
-    Number.isFinite(options.ttlSeconds) ? Number(options.ttlSeconds) : SYNC_TOKEN_TTL_SECONDS
+    Number.isFinite(options.ttlSeconds)
+      ? Number(options.ttlSeconds)
+      : SYNC_TOKEN_TTL_SECONDS,
   );
   const now = Math.floor(Date.now() / 1000);
   const payload = {
@@ -154,8 +167,13 @@ function createProfileSyncToken(userId, options = {}) {
     uid: String(userId),
     iat: now,
     exp: now + ttlSeconds,
+    ...(normalizeAgeProfile(options.ageProfile)
+      ? { age: normalizeAgeProfile(options.ageProfile) }
+      : {}),
   };
-  const encodedPayload = Buffer.from(JSON.stringify(payload)).toString("base64url");
+  const encodedPayload = Buffer.from(JSON.stringify(payload)).toString(
+    "base64url",
+  );
   const signature = signSyncPayload(encodedPayload);
 
   return `${encodedPayload}.${signature}`;
@@ -178,7 +196,7 @@ function validateProfileSyncToken(userId, token) {
 
     try {
       const payload = JSON.parse(
-        Buffer.from(encodedPayload, "base64url").toString("utf8")
+        Buffer.from(encodedPayload, "base64url").toString("utf8"),
       );
       const now = Math.floor(Date.now() / 1000);
 
@@ -200,6 +218,7 @@ function validateProfileSyncToken(userId, token) {
         reason: "ok",
         issuedAt: Number(payload?.iat || 0) || null,
         expiresAt: Number(payload.exp),
+        ageProfile: normalizeAgeProfile(payload.age),
       };
     } catch {
       return { valid: false, version: "v2", reason: "invalid-payload" };

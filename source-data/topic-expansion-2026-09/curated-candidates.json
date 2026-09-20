@@ -1,0 +1,424 @@
+[
+  {
+    "id": "topic_life-master_1",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "강화국수",
+    "address": "인천 강화군 강화읍 동문안길 12-1",
+    "representativeMenu": "비빔국수",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7565",
+        "label": "1046회 방송 소개",
+        "publishedAt": "2026-08-31",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_2",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "송헌집",
+    "address": "부산 수영구 민락동 171-19",
+    "representativeMenu": "",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7565",
+        "label": "1046회 방송 소개",
+        "publishedAt": "2026-08-31",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_3",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "이재모피자 본점",
+    "address": "부산 중구 신창동1가 2-1",
+    "representativeMenu": "피자",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7565",
+        "label": "1046회 방송 소개",
+        "publishedAt": "2026-08-31",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_4",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "지우분식",
+    "address": "부산 동래구 온천동 1850",
+    "representativeMenu": "",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7565",
+        "label": "1046회 방송 소개",
+        "publishedAt": "2026-08-31",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_5",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "대관원",
+    "address": "서울 영등포구 당산로37길 1",
+    "representativeMenu": "간짜장",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7567",
+        "label": "1048회 방송 소개",
+        "publishedAt": "2026-09-14",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_6",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "써이포차나",
+    "address": "서울 도봉구 도봉로169나길 42",
+    "representativeMenu": "쌀국수 / 미고렝",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7567",
+        "label": "1048회 방송 소개",
+        "publishedAt": "2026-09-14",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_7",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "내가만든고로케&찹쌀떡",
+    "address": "경북 경주시 안강읍 구부랑4길 14-8",
+    "representativeMenu": "찹쌀떡 / 고로케",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7566",
+        "label": "1047회 방송 소개",
+        "publishedAt": "2026-09-07",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_8",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "수원만두",
+    "address": "경기 수원시 팔달구 창룡대로8번길 6",
+    "representativeMenu": "군만두",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7566",
+        "label": "1047회 방송 소개",
+        "publishedAt": "2026-09-07",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_life-master_9",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "낙원떡방",
+    "address": "인천 부평구 부평문화로 47",
+    "representativeMenu": "호박설기 / 콩설기",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&page=1&board_no=7566",
+        "label": "1047회 방송 소개",
+        "publishedAt": "2026-09-07",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_neighborhood-walk_10",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "얼쓰빙",
+    "address": "서울 노원구 공릉동 439-2",
+    "representativeMenu": "빙수",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1495451",
+        "label": "373회 방송 소개",
+        "publishedAt": "2026-06-06",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_neighborhood-walk_11",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "고향손칼국수",
+    "address": "서울 노원구 상계동 156-94",
+    "representativeMenu": "손칼국수",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1495451",
+        "label": "373회 방송 소개",
+        "publishedAt": "2026-06-06",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_neighborhood-walk_12",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "최순옥명품국밥 노원점",
+    "address": "서울 노원구 상계동 178-20",
+    "representativeMenu": "국밥",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1495451",
+        "label": "373회 방송 소개",
+        "publishedAt": "2026-06-06",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_chureupkyeon_13",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "신흥갈비",
+    "address": "부산 사상구 새벽로167번길 35",
+    "representativeMenu": "소고기 / 삼겹살",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=28dHFHfyUqc",
+        "label": "2026.09.09 영상 소개",
+        "publishedAt": "2026-09-09",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_kim-three-meals_14",
+    "topicId": "kim-three-meals",
+    "priority": 7,
+    "name": "소양강회마차",
+    "address": "서울 용산구 한남동 79-3",
+    "representativeMenu": "회",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=4o9zjHXAzQ0",
+        "label": "2026.09.07 영상 소개",
+        "publishedAt": "2026-09-07",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_kim-three-meals_15",
+    "topicId": "kim-three-meals",
+    "priority": 7,
+    "name": "서울곰탕",
+    "address": "서울 영등포구 영등포동3가 4-7",
+    "representativeMenu": "곰탕 / 소꼬리찜",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2JBefF1_0aY",
+        "label": "2026.09.15 영상 소개",
+        "publishedAt": "2026-09-15",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_kim-three-meals_16",
+    "topicId": "kim-three-meals",
+    "priority": 7,
+    "name": "3일한우국밥",
+    "address": "서울 영등포구 영등포동4가 68-5",
+    "representativeMenu": "한우국밥",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2JBefF1_0aY",
+        "label": "2026.09.15 영상 소개",
+        "publishedAt": "2026-09-15",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_jeju-eddy_17",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "공주네국수",
+    "address": "제주 제주시 삼봉로 353",
+    "representativeMenu": "고기국수",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=BAN8ni-1FaY",
+        "label": "2026.07.21 영상 소개",
+        "publishedAt": "2026-07-21",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20",
+    "branchSourceUrl": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_300000000013160",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시"
+  },
+  {
+    "id": "topic_century-stores_18",
+    "topicId": "century-stores",
+    "priority": 9,
+    "name": "동래할매파전",
+    "address": "부산 동래구 명륜로94번길 43-10",
+    "representativeMenu": "파전",
+    "evidence": [
+      {
+        "url": "https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=9776051d-9dcf-4a18-b9c3-7db060e5c289",
+        "label": "관광공사 백년가게 소개",
+        "publishedAt": "2026-07",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_century-stores_19",
+    "topicId": "century-stores",
+    "priority": 9,
+    "name": "구백식당",
+    "address": "전남 여수시 여객선터미널길 18",
+    "representativeMenu": "서대회",
+    "evidence": [
+      {
+        "url": "https://access.visitkorea.or.kr/food/detail.do?cotId=5ef2be47-e987-4c4e-a0bc-e472e559fa2b",
+        "label": "2019 백년가게 선정",
+        "publishedAt": "2019",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_saturday-food_1",
+    "topicId": "saturday-food",
+    "priority": 2,
+    "name": "월고집 구좌 월정리 본점",
+    "address": "제주 제주시 구좌읍 월정1길 16-1",
+    "representativeMenu": "흑돼지근고기",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=oB4V2g-d2vY",
+        "label": "116회 방송 소개",
+        "publishedAt": "2024-04-06",
+        "basis": "official_video_and_place_tv_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20",
+    "branchSourceUrl": "https://map.naver.com/p/entry/place/1663960338",
+    "branchEvidence": "TV방송정보: 토요일은밥이좋아 116회, 2024-04-06"
+  },
+  {
+    "id": "topic_saturday-food_2",
+    "topicId": "saturday-food",
+    "priority": 2,
+    "name": "소라네집",
+    "address": "제주 서귀포시 성산읍 환해장성로 631",
+    "representativeMenu": "성게보말죽",
+    "evidence": [
+      {
+        "url": "https://map.naver.com/p/entry/place/16954068",
+        "label": "116회 방송 소개",
+        "publishedAt": "2024-04-06",
+        "basis": "place_tv_listing",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_jeju-eddy_2",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "저지면옥 구제주점",
+    "address": "제주 제주시 구산로 5",
+    "representativeMenu": "냉면",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=BAN8ni-1FaY",
+        "label": "2026-07-21 영상 소개",
+        "publishedAt": "2026-07-21",
+        "basis": "official_description_link",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20",
+    "branchSourceUrl": "https://naver.me/GuCDNVvw",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시"
+  },
+  {
+    "id": "topic_jeju-eddy_3",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "한라전복 성산본점",
+    "address": "제주 서귀포시 성산읍 해맞이해안로 2732",
+    "representativeMenu": "전복요리",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=BAN8ni-1FaY",
+        "label": "2026-07-21 영상 소개",
+        "publishedAt": "2026-07-21",
+        "basis": "official_description_link",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20",
+    "branchSourceUrl": "https://naver.me/x7ndch08",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시"
+  }
+]

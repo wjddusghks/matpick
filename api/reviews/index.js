@@ -139,6 +139,7 @@ module.exports = async function handler(req, res) {
         userId,
         profile,
         review,
+        ageProfile: tokenValidation.ageProfile,
       });
       const savedReview = await appendRemoteReview(
         String(restaurantId),

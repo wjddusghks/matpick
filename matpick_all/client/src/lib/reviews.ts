@@ -1,3 +1,4 @@
+import type { AgeGroup, AgeProfile } from "./reviewAge";
 export type SharedReview = {
   id: string;
   user: string;
@@ -7,6 +8,11 @@ export type SharedReview = {
   photos: string[];
   createdAt?: number;
   restaurantId?: string;
+  ageGroup?: AgeGroup;
+  ageBasis?: AgeProfile["basis"];
+  ageCheckedAt?: number;
+  ageConsentAt?: number;
+  ageConsentVersion?: "review-age-v1";
 };
 
 export type ReviewSortMode = "latest" | "photos" | "top";
@@ -34,7 +40,9 @@ export type ReviewPhoto = {
 export function normalizeSharedReview(review: SharedReview): SharedReview {
   return {
     ...review,
-    createdAt: Number.isFinite(review.createdAt) ? review.createdAt : Date.now(),
+    createdAt: Number.isFinite(review.createdAt)
+      ? review.createdAt
+      : Date.now(),
     photos: Array.isArray(review.photos) ? review.photos.filter(Boolean) : [],
   };
 }
@@ -46,7 +54,7 @@ export function summarizeReviews(reviews: SharedReview[]): ReviewSummary {
       average: 0,
       photoCount: 0,
       withPhotosCount: 0,
-      distribution: [5, 4, 3, 2, 1].map((stars) => ({ stars, count: 0 })),
+      distribution: [5, 4, 3, 2, 1].map(stars => ({ stars, count: 0 })),
     };
   }
 
@@ -55,7 +63,7 @@ export function summarizeReviews(reviews: SharedReview[]): ReviewSummary {
   let photoCount = 0;
   let withPhotosCount = 0;
 
-  reviews.forEach((review) => {
+  reviews.forEach(review => {
     totalStars += review.stars;
     distribution.set(review.stars, (distribution.get(review.stars) ?? 0) + 1);
     photoCount += review.photos.length;
@@ -70,14 +78,17 @@ export function summarizeReviews(reviews: SharedReview[]): ReviewSummary {
     average: totalStars / reviews.length,
     photoCount,
     withPhotosCount,
-    distribution: [5, 4, 3, 2, 1].map((stars) => ({
+    distribution: [5, 4, 3, 2, 1].map(stars => ({
       stars,
       count: distribution.get(stars) ?? 0,
     })),
   };
 }
 
-export function sortReviews<T extends SharedReview>(reviews: T[], mode: ReviewSortMode): T[] {
+export function sortReviews<T extends SharedReview>(
+  reviews: T[],
+  mode: ReviewSortMode
+): T[] {
   const next = [...reviews];
 
   switch (mode) {
@@ -95,14 +106,16 @@ export function sortReviews<T extends SharedReview>(reviews: T[], mode: ReviewSo
       });
     case "latest":
     default:
-      return next.sort((left, right) => (right.createdAt ?? 0) - (left.createdAt ?? 0));
+      return next.sort(
+        (left, right) => (right.createdAt ?? 0) - (left.createdAt ?? 0)
+      );
   }
 }
 
 export function collectReviewPhotos(reviews: SharedReview[]): ReviewPhoto[] {
   const photos: ReviewPhoto[] = [];
 
-  reviews.forEach((review) => {
+  reviews.forEach(review => {
     review.photos.forEach((url, index) => {
       photos.push({
         id: `${review.id}_${index}`,

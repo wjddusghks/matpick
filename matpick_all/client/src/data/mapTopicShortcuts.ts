@@ -5,6 +5,7 @@ import tateguysImage from "@/assets/creator-thumbnails/tateguys.jpg";
 import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import type { AppLocale } from "@/lib/locale";
 import travelTopicShortcuts from "./generated/travel-topic-shortcuts.generated.json";
+import expansionTopicShortcuts from "./generated/expansion-topic-shortcuts.generated.json";
 
 export type MapTopicShortcut = {
   slug: string;
@@ -79,6 +80,7 @@ export const mapTopicShortcuts: MapTopicShortcut[] = [
     name: { ko: "백종원의 3대천왕", en: "Baek Jong-won" },
     imageUrl: baekjongWokImage,
   },
+  ...(expansionTopicShortcuts as MapTopicShortcut[]),
 ];
 
 export function getMapTopicPath(topic: MapTopicShortcut) {
@@ -87,7 +89,7 @@ export function getMapTopicPath(topic: MapTopicShortcut) {
 
 export function getMapTopicDisplayName(
   topic: MapTopicShortcut,
-  locale: AppLocale,
+  locale: AppLocale
 ) {
   return topic.name[locale];
 }

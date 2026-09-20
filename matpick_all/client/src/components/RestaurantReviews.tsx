@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { MessageCircle, Star } from "lucide-react";
 import { toast } from "sonner";
 import AuthFeatureDialog from "@/components/AuthFeatureDialog";
+import ReviewAgeBadge from "@/components/ReviewAgeBadge";
+import { currentAgeProfile, ageGroupLabel } from "@/lib/reviewAge";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
@@ -47,6 +49,8 @@ export default function RestaurantReviews({
     () => readReviewDraft(restaurantId).visited
   );
   const [submitting, setSubmitting] = useState(false);
+  const [showAgeGroup, setShowAgeGroup] = useState(false);
+  const ageProfile = currentAgeProfile(user?.ageProfile);
   const summary = useMemo(() => summarizeReviews(reviews), [reviews]);
 
   useEffect(() => onSummary(summary), [onSummary, summary]);
@@ -120,7 +124,12 @@ export default function RestaurantReviews({
           restaurantId,
           userId: user.id,
           syncToken: user.syncToken,
-          review: { stars, text: draft.trim(), visited },
+          review: {
+            stars,
+            text: draft.trim(),
+            visited,
+            showAgeGroup: Boolean(ageProfile && showAgeGroup),
+          },
         }),
       });
       if (response.status === 401) {
@@ -139,6 +148,7 @@ export default function RestaurantReviews({
       setDraft("");
       setStars(0);
       setVisited(false);
+      setShowAgeGroup(false);
       clearReviewDraft(restaurantId);
       setComposer(false);
       const returnUrl = new URL(window.location.href);
@@ -327,6 +337,31 @@ export default function RestaurantReviews({
                 ? "One review per restaurant per account. Posting again updates your review."
                 : "계정당 식당별 후기 1개가 공개되며, 다시 등록하면 기존 후기가 바뀌어요."}
             </p>
+            {ageProfile ? (
+              <label className="detail-review-confirm">
+                <input
+                  type="checkbox"
+                  checked={showAgeGroup}
+                  onChange={event => setShowAgeGroup(event.target.checked)}
+                />
+                {isEnglish
+                  ? `Show my age group (${ageGroupLabel(ageProfile.group, true)}) with this review (optional).`
+                  : `후기에 내 연령대(${ageGroupLabel(ageProfile.group)})를 함께 공개할게요. (선택)`}
+              </label>
+            ) : (
+              <p className="detail-review-help">
+                {isEnglish
+                  ? "An age group can be shown when your sign-in account provides it. Reviews work without it."
+                  : "로그인 계정에서 연령대가 제공되면 함께 표시할 수 있어요. 정보가 없어도 후기는 작성할 수 있어요."}
+              </p>
+            )}
+            {ageProfile && (
+              <p className="detail-review-help">
+                {isEnglish
+                  ? "Only the age group is shared. Birth dates are not stored. Uncheck and repost to remove it."
+                  : "생년월일은 저장하지 않고 연령대만 표시해요. 공개 선택을 해제하고 다시 등록하면 표시가 사라져요."}
+              </p>
+            )}
             <div className="detail-form-actions">
               <button
                 className="detail-secondary-button"
@@ -363,6 +398,7 @@ export default function RestaurantReviews({
           <article key={review.id} className="detail-review-item">
             <div className="detail-review-byline">
               <strong>{review.user}</strong>
+              <ReviewAgeBadge review={review} english={isEnglish} />
               <span>{review.date}</span>
               <span
                 className="detail-review-score"

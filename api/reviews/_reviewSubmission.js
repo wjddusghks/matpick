@@ -1,10 +1,12 @@
 const crypto = require("node:crypto");
+const { normalizeAgeProfile } = require("../auth/_ageProfile");
 
 function createMemberReview({
   restaurantId,
   userId,
   profile,
   review,
+  ageProfile,
   now = Date.now(),
 }) {
   const text = typeof review?.text === "string" ? review.text.trim() : "";
@@ -38,6 +40,8 @@ function createMemberReview({
     .update(JSON.stringify([String(userId), restaurantId]))
     .digest("hex")
     .slice(0, 32)}`;
+  const age =
+    review.showAgeGroup === true ? normalizeAgeProfile(ageProfile, now) : null;
   return {
     id,
     user: profile.nickname,
@@ -48,6 +52,15 @@ function createMemberReview({
     text,
     photos: [],
     createdAt: now,
+    ...(age
+      ? {
+          ageGroup: age.group,
+          ageBasis: age.basis,
+          ageCheckedAt: age.checkedAt,
+          ageConsentAt: now,
+          ageConsentVersion: "review-age-v1",
+        }
+      : {}),
   };
 }
 

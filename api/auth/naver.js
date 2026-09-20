@@ -3,8 +3,12 @@ const {
   readRemoteProfile,
 } = require("./_profileStore");
 const { recordAuthMember } = require("./_memberStore");
+const { deriveAgeProfile } = require("./_ageProfile");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
 function readBody(req) {
@@ -37,7 +41,8 @@ module.exports = async function handler(req, res) {
       subject: getClientIp(req),
       limit: 20,
       windowSec: 600,
-      message: "Too many Naver login attempts. Please try again in a few minutes.",
+      message:
+        "Too many Naver login attempts. Please try again in a few minutes.",
     }))
   ) {
     return;
@@ -74,7 +79,7 @@ module.exports = async function handler(req, res) {
       `https://nid.naver.com/oauth2.0/token?${tokenParams.toString()}`,
       {
         method: "GET",
-      }
+      },
     );
 
     const tokenPayload = await tokenResponse.json();
@@ -100,6 +105,7 @@ module.exports = async function handler(req, res) {
     }
 
     const profile = userPayload.response || {};
+    const ageProfile = deriveAgeProfile("naver", profile);
     const userId = `naver_${String(profile.id || "")}`;
     const storedProfile = await readRemoteProfile(userId);
     const user = {
@@ -111,7 +117,8 @@ module.exports = async function handler(req, res) {
       nickname: storedProfile?.nickname || "",
       consentAcceptedAt: storedProfile?.consentAcceptedAt,
       allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
-      syncToken: createProfileSyncToken(userId),
+      ageProfile,
+      syncToken: createProfileSyncToken(userId, { ageProfile }),
     };
 
     try {

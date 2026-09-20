@@ -104,7 +104,7 @@ test("reviewed Seoul addresses have Seoul coordinates; closure and unresolved st
   assert.equal(eligibility.getOperationState(unresolved), "unknown");
   assert.equal(eligibility.isRestaurantRecommendable(unresolved), false);
   assert.ok(!data.searchRestaurants("교동두부").some(match => match.restaurant.id === unresolved.id));
-  assert.equal(data.getRestaurantById(ids[0]).googlePlaceId, null);
+  assert.equal("googlePlaceId" in data.getRestaurantById(ids[0]), false);
 });
 
 test("unrecognized cuisines remain unclassified", () => {

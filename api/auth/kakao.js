@@ -3,8 +3,12 @@ const {
   readRemoteProfile,
 } = require("./_profileStore");
 const { recordAuthMember } = require("./_memberStore");
+const { deriveAgeProfile } = require("./_ageProfile");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
 function readBody(req) {
@@ -37,7 +41,8 @@ module.exports = async function handler(req, res) {
       subject: getClientIp(req),
       limit: 20,
       windowSec: 600,
-      message: "Too many Kakao login attempts. Please try again in a few minutes.",
+      message:
+        "Too many Kakao login attempts. Please try again in a few minutes.",
     }))
   ) {
     return;
@@ -105,6 +110,7 @@ module.exports = async function handler(req, res) {
     }
 
     const account = userPayload.kakao_account || {};
+    const ageProfile = deriveAgeProfile("kakao", account);
     const profile = account.profile || {};
     const userId = `kakao_${String(userPayload.id)}`;
     const storedProfile = await readRemoteProfile(userId);
@@ -118,7 +124,8 @@ module.exports = async function handler(req, res) {
       nickname: storedProfile?.nickname || "",
       consentAcceptedAt: storedProfile?.consentAcceptedAt,
       allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
-      syncToken: createProfileSyncToken(userId),
+      ageProfile,
+      syncToken: createProfileSyncToken(userId, { ageProfile }),
     };
 
     try {

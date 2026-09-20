@@ -1,5 +1,5 @@
 import { isComposingSearch } from "@/lib/mapNavigation";
-﻿import {
+import {
   useCallback,
   useEffect,
   useMemo,
@@ -30,7 +30,9 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Link, useLocation } from "wouter";
-import FavoriteTopicDialog, { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
+import FavoriteTopicDialog, {
+  FavoriteTopicBadge,
+} from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import SiteFooter from "@/components/SiteFooter";
 import { useAuth } from "@/contexts/AuthContext";
@@ -62,7 +64,6 @@ import {
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
-import discoveryHighlights from "@/data/generated/discovery-highlights.generated.json";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const RECENT_KEY = "matpick_recent_searches";
@@ -103,7 +104,8 @@ const HOME_UI_KO = {
       "\uB370\uC774\uD2B8, \uD63C\uBC25, \uC5EC\uD589 \uCC98\uB7FC \uC6D0\uD558\uB294 \uD14C\uB9C8\uB85C \uB9DB\uC9D1\uC744 \uB098\uB220 \uB2F4\uC544\uB458 \uC218 \uC788\uC5B4\uC694.",
   },
   location: {
-    deniedTitle: "\uC704\uCE58 \uAD8C\uD55C\uC774 \uCC28\uB2E8\uB418\uC5B4 \uC788\uC5B4\uC694",
+    deniedTitle:
+      "\uC704\uCE58 \uAD8C\uD55C\uC774 \uCC28\uB2E8\uB418\uC5B4 \uC788\uC5B4\uC694",
     promptTitle:
       "\uB0B4 \uC8FC\uBCC0 \uB9DB\uC9D1\uC744 \uB354 \uC815\uD655\uD558\uAC8C \uCC3E\uC73C\uB824\uBA74 \uC704\uCE58 \uAD8C\uD55C\uC774 \uD544\uC694\uD574\uC694",
     deniedDescription:
@@ -135,8 +137,7 @@ const HOME_UI_KO = {
   },
   heroSubtitle:
     "방송·유튜브·가이드에 소개된 유명 식당을 내 위치 주변에서 찾아보세요.",
-  searchPlaceholder:
-    "평택시, 성수동, 식당명을 검색하세요",
+  searchPlaceholder: "평택시, 성수동, 식당명을 검색하세요",
   searchHelperText:
     "지역이나 동네를 검색하면 그곳의 유명 식당을 지도에서 바로 보여드려요.",
   topicSectionEyebrow: "MATPICK COLLECTION",
@@ -209,7 +210,8 @@ const HOME_UI_EN = {
   },
   location: {
     deniedTitle: "Location access is blocked",
-    promptTitle: "Allow location to discover nearby restaurants more accurately",
+    promptTitle:
+      "Allow location to discover nearby restaurants more accurately",
     deniedDescription:
       "If you allow location access again in your browser settings, Matpick can show better nearby restaurant results.",
     promptDescription:
@@ -217,7 +219,8 @@ const HOME_UI_EN = {
     laterButton: "Maybe later",
     allowButton: "Allow location",
     loadingButton: "Checking location...",
-    unsupportedMessage: "This browser does not support requesting location permission.",
+    unsupportedMessage:
+      "This browser does not support requesting location permission.",
     unsupportedFootnote:
       "Location permission requests are not supported in this browser. You can still use search normally.",
     deniedFeedback:
@@ -247,7 +250,8 @@ const HOME_UI_EN = {
   topicCardCta: "View restaurants",
   searchButtonLabel: "Search",
   nearbyMapButtonLabel: "Find near my location",
-  sourceProofLabel: "Only restaurants featured by creators, TV shows, or trusted guides.",
+  sourceProofLabel:
+    "Only restaurants featured by creators, TV shows, or trusted guides.",
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
@@ -328,9 +332,12 @@ function getSearchResultKey(item: Pick<SearchResult, "type" | "id">) {
   return `${item.type}:${item.id}`;
 }
 
-function normalizeSearchResult(item: SearchResult, dataModule?: HomeDataModule | null) {
+function normalizeSearchResult(
+  item: SearchResult,
+  dataModule?: HomeDataModule | null
+) {
   const latest = dataModule?.mockSearchData.find(
-    (entry) => getSearchResultKey(entry) === getSearchResultKey(item)
+    entry => getSearchResultKey(entry) === getSearchResultKey(item)
   );
 
   return latest ? { ...item, ...latest } : item;
@@ -344,7 +351,9 @@ function getRecentSearches(): SearchResult[] {
   try {
     const raw = window.localStorage.getItem(RECENT_KEY);
     return raw
-      ? (JSON.parse(raw) as SearchResult[]).map((item) => normalizeSearchResult(item))
+      ? (JSON.parse(raw) as SearchResult[]).map(item =>
+          normalizeSearchResult(item)
+        )
       : [];
   } catch {
     return [];
@@ -356,10 +365,7 @@ function saveRecentSearches(items: SearchResult[]) {
     return;
   }
 
-  window.localStorage.setItem(
-    RECENT_KEY,
-    JSON.stringify(items.slice(0, 8))
-  );
+  window.localStorage.setItem(RECENT_KEY, JSON.stringify(items.slice(0, 8)));
 }
 
 function getCollectionSocialState(): CollectionSocialState {
@@ -415,17 +421,22 @@ function getHomeOptimizedCardImageUrl(imageUrl?: string | null) {
   return `/restaurant-image-previews/${relativePath}`;
 }
 
-function getCollectionStorySlides(collection: MapCollectionTopic): CollectionStorySlide[] {
+function getCollectionStorySlides(
+  collection: MapCollectionTopic
+): CollectionStorySlide[] {
   const tagText = collection.purposeTags.join(" · ");
-  const photoSlides = (collection.cardImageUrls ?? []).map((imageUrl, index) => ({
-    id: index === 0 ? "cover" : `photo-${index}`,
-    eyebrow: index === 0 ? collection.eyebrow : `${collection.shortTitle} ${index}`,
-    title: index === 0 ? collection.title : "",
-    body: index === 0 ? collection.description : "",
-    tags: index === 0 ? collection.purposeTags : undefined,
-    variant: index === 0 ? "cover" : "photo",
-    imageUrl,
-  })) satisfies CollectionStorySlide[];
+  const photoSlides = (collection.cardImageUrls ?? []).map(
+    (imageUrl, index) => ({
+      id: index === 0 ? "cover" : `photo-${index}`,
+      eyebrow:
+        index === 0 ? collection.eyebrow : `${collection.shortTitle} ${index}`,
+      title: index === 0 ? collection.title : "",
+      body: index === 0 ? collection.description : "",
+      tags: index === 0 ? collection.purposeTags : undefined,
+      variant: index === 0 ? "cover" : "photo",
+      imageUrl,
+    })
+  ) satisfies CollectionStorySlide[];
 
   if (photoSlides.length > 0) {
     return photoSlides;
@@ -459,7 +470,9 @@ function getCollectionStorySlides(collection: MapCollectionTopic): CollectionSto
   ];
 }
 
-function persistLocationStatus(status: Exclude<LocationPermissionState, "unknown">) {
+function persistLocationStatus(
+  status: Exclude<LocationPermissionState, "unknown">
+) {
   if (typeof window === "undefined") {
     return;
   }
@@ -507,8 +520,12 @@ function SearchResultItem({
   let detailText = "";
 
   if (item.type === "query") {
-    accentLabel = item.matchLabel ?? (ui.foodLabel === "Cuisine" ? "All matches" : "통합 검색");
-    detailText = item.matchedText ?? `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+    accentLabel =
+      item.matchLabel ??
+      (ui.foodLabel === "Cuisine" ? "All matches" : "통합 검색");
+    detailText =
+      item.matchedText ??
+      `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}개`;
   } else if (item.type === "creator") {
     accentLabel = item.platform ?? "Creator";
     detailText = `${ui.subscriberPrefix}${item.subscribers ?? "-"}`;
@@ -519,7 +536,8 @@ function SearchResultItem({
     accentLabel = ui.foodLabel;
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "source") {
-    accentLabel = item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
+    accentLabel =
+      item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
     accentLabel = item.matchLabel ?? item.category ?? ui.restaurantLabel;
@@ -534,7 +552,7 @@ function SearchResultItem({
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
       onClick={onSelect}
-      onKeyDown={(event) => {
+      onKeyDown={event => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
           onSelect();
@@ -574,9 +592,13 @@ function SearchResultItem({
       </div>
 
       <div className="min-w-0 flex-1 text-left">
-        <p className="truncate text-[18px] font-semibold text-[#161616]">{item.name}</p>
+        <p className="truncate text-[18px] font-semibold text-[#161616]">
+          {item.name}
+        </p>
         <div className="mt-1 flex min-w-0 items-center gap-3 text-[14px]">
-          <span className="shrink-0 font-medium text-[#ff7b83]">{accentLabel}</span>
+          <span className="shrink-0 font-medium text-[#ff7b83]">
+            {accentLabel}
+          </span>
           <span className="truncate text-[#222222]">{detailText}</span>
         </div>
       </div>
@@ -584,7 +606,7 @@ function SearchResultItem({
       {showDelete && onDelete ? (
         <button
           type="button"
-          onClick={(event) => {
+          onClick={event => {
             event.stopPropagation();
             onDelete();
           }}
@@ -727,8 +749,12 @@ function LocationPermissionModal({
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#fff0f2] text-[#ff7b83]">
           <MapPin className="h-7 w-7" />
         </div>
-        <h2 className="mt-5 text-[24px] font-black leading-tight text-[#161616]">{title}</h2>
-        <p className="mt-3 text-[15px] leading-7 text-[#707070]">{description}</p>
+        <h2 className="mt-5 text-[24px] font-black leading-tight text-[#161616]">
+          {title}
+        </h2>
+        <p className="mt-3 text-[15px] leading-7 text-[#707070]">
+          {description}
+        </p>
 
         {feedback ? (
           <div className="mt-4 rounded-2xl bg-[#fff5f6] px-4 py-3 text-sm leading-6 text-[#7b5b61]">
@@ -770,8 +796,10 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(-1);
-  const [recentSearches, setRecentSearches] = useState<SearchResult[]>(getRecentSearches);
-  const [searchDataModule, setSearchDataModule] = useState<HomeDataModule | null>(null);
+  const [recentSearches, setRecentSearches] =
+    useState<SearchResult[]>(getRecentSearches);
+  const [searchDataModule, setSearchDataModule] =
+    useState<HomeDataModule | null>(null);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
@@ -779,7 +807,9 @@ export default function Home() {
   const [isAccountPanelPinned, setIsAccountPanelPinned] = useState(false);
   const [showTopicDialog, setShowTopicDialog] = useState(false);
   const [isTopicDeleteMode, setIsTopicDeleteMode] = useState(false);
-  const [selectedTopicIdsForDelete, setSelectedTopicIdsForDelete] = useState<string[]>([]);
+  const [selectedTopicIdsForDelete, setSelectedTopicIdsForDelete] = useState<
+    string[]
+  >([]);
   const [showLocationPrompt, setShowLocationPrompt] = useState(false);
   const [hasPrivacyChoice, setHasPrivacyChoice] = useState(
     () => readPrivacyPreferences() !== null
@@ -797,7 +827,8 @@ export default function Home() {
   const locationRequestRef = useRef<AbortController | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
-  const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } = useFavorites();
+  const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } =
+    useFavorites();
   const userDisplayName = getDisplayName(user);
   const isAdmin = isAdminUser(user);
   const providerLabel =
@@ -864,7 +895,7 @@ export default function Home() {
     let ignore = false;
 
     loadHomeDataModule()
-      .then((dataModule) => {
+      .then(dataModule => {
         if (ignore) {
           return;
         }
@@ -888,8 +919,8 @@ export default function Home() {
       return;
     }
 
-    setRecentSearches((prev) => {
-      const normalized = prev.map((item) =>
+    setRecentSearches(prev => {
+      const normalized = prev.map(item =>
         normalizeSearchResult(item, searchDataModule)
       );
       const changed = normalized.some(
@@ -986,7 +1017,8 @@ export default function Home() {
     let ignore = false;
     let locationController: AbortController | null = null;
     const timerId = window.setTimeout(async () => {
-      const dismissed = window.localStorage.getItem(LOCATION_DISMISSED_KEY) === "true";
+      const dismissed =
+        window.localStorage.getItem(LOCATION_DISMISSED_KEY) === "true";
 
       if (dismissed) {
         return;
@@ -1007,7 +1039,10 @@ export default function Home() {
         nextState = "prompt";
       }
 
-      if ("permissions" in navigator && typeof navigator.permissions.query === "function") {
+      if (
+        "permissions" in navigator &&
+        typeof navigator.permissions.query === "function"
+      ) {
         try {
           const status = await navigator.permissions.query({
             name: "geolocation" as PermissionName,
@@ -1033,7 +1068,7 @@ export default function Home() {
       if (nextState === "granted") {
         locationController = new AbortController();
         requestBestCurrentLocation({ signal: locationController.signal })
-          .then((location) => {
+          .then(location => {
             if (!ignore) {
               saveStoredLocation(location);
             }
@@ -1125,9 +1160,9 @@ export default function Home() {
   }, [showAccountPanel]);
 
   const toggleTopicDeleteSelection = useCallback((topicId: string) => {
-    setSelectedTopicIdsForDelete((prev) =>
+    setSelectedTopicIdsForDelete(prev =>
       prev.includes(topicId)
-        ? prev.filter((candidateId) => candidateId !== topicId)
+        ? prev.filter(candidateId => candidateId !== topicId)
         : [...prev, topicId]
     );
   }, []);
@@ -1157,7 +1192,7 @@ export default function Home() {
 
   const primeSearchData = useCallback(() => {
     loadHomeDataModule()
-      .then((dataModule) => {
+      .then(dataModule => {
         setSearchDataModule(dataModule);
       })
       .catch(() => {
@@ -1175,9 +1210,10 @@ export default function Home() {
         result_name: normalizedItem.name,
       });
 
-      setRecentSearches((prev) => {
+      setRecentSearches(prev => {
         const withoutCurrent = prev.filter(
-          (entry) => getSearchResultKey(entry) !== getSearchResultKey(normalizedItem)
+          entry =>
+            getSearchResultKey(entry) !== getSearchResultKey(normalizedItem)
         );
         const updated = [normalizedItem, ...withoutCurrent];
         saveRecentSearches(updated);
@@ -1188,32 +1224,44 @@ export default function Home() {
       setIsFocused(false);
 
       if (normalizedItem.type === "restaurant") {
-        navigate(`/map?type=restaurant&value=${encodeURIComponent(normalizedItem.id)}`);
+        navigate(
+          `/map?type=restaurant&value=${encodeURIComponent(normalizedItem.id)}`
+        );
         return;
       }
 
       if (normalizedItem.type === "query") {
-        navigate(`/map?type=query&value=${encodeURIComponent(normalizedItem.name)}`);
+        navigate(
+          `/map?type=query&value=${encodeURIComponent(normalizedItem.name)}`
+        );
         return;
       }
 
       if (normalizedItem.type === "creator") {
-        navigate(`/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`);
+        navigate(
+          `/map?type=creator&value=${encodeURIComponent(normalizedItem.id)}`
+        );
         return;
       }
 
       if (normalizedItem.type === "region") {
-        navigate(`/map?type=region&value=${encodeURIComponent(normalizedItem.name)}`);
+        navigate(
+          `/map?type=region&value=${encodeURIComponent(normalizedItem.name)}`
+        );
         return;
       }
 
       if (normalizedItem.type === "food") {
-        navigate(`/map?type=food&value=${encodeURIComponent(normalizedItem.name)}`);
+        navigate(
+          `/map?type=food&value=${encodeURIComponent(normalizedItem.name)}`
+        );
         return;
       }
 
       if (normalizedItem.type === "source") {
-        navigate(`/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`);
+        navigate(
+          `/map?type=source&value=${encodeURIComponent(normalizedItem.id)}`
+        );
         return;
       }
 
@@ -1223,8 +1271,8 @@ export default function Home() {
   );
 
   const handleDeleteRecent = useCallback((id: string) => {
-    setRecentSearches((prev) => {
-      const updated = prev.filter((item) => item.id !== id);
+    setRecentSearches(prev => {
+      const updated = prev.filter(item => item.id !== id);
       saveRecentSearches(updated);
       return updated;
     });
@@ -1264,7 +1312,7 @@ export default function Home() {
 
     const selectedItem =
       (hoveredIndex >= 0 ? filteredResults[hoveredIndex] : undefined) ??
-      filteredResults.find((item) => item.type === "query");
+      filteredResults.find(item => item.type === "query");
 
     if (selectedItem) {
       handleSelect(selectedItem);
@@ -1272,15 +1320,27 @@ export default function Home() {
     }
 
     navigate(`/map?type=query&value=${encodeURIComponent(query.trim())}`);
-  }, [filteredResults, handleNearbySearch, handleSelect, hoveredIndex, navigate, normalizedQuery, query]);
+  }, [
+    filteredResults,
+    handleNearbySearch,
+    handleSelect,
+    hoveredIndex,
+    navigate,
+    normalizedQuery,
+    query,
+  ]);
 
   const handleSearchKeyDown = useCallback(
     (event: KeyboardEvent<HTMLInputElement>) => {
       if (isComposingSearch(event.nativeEvent)) return;
-      if (event.key === "Escape") { setIsFocused(false); setHoveredIndex(-1); return; }
+      if (event.key === "Escape") {
+        setIsFocused(false);
+        setHoveredIndex(-1);
+        return;
+      }
       if (event.key === "ArrowDown") {
         event.preventDefault();
-        setHoveredIndex((prev) => {
+        setHoveredIndex(prev => {
           if (activeItems.length === 0) {
             return -1;
           }
@@ -1292,7 +1352,7 @@ export default function Home() {
 
       if (event.key === "ArrowUp") {
         event.preventDefault();
-        setHoveredIndex((prev) => {
+        setHoveredIndex(prev => {
           if (activeItems.length === 0) {
             return -1;
           }
@@ -1305,7 +1365,8 @@ export default function Home() {
       if (event.key === "Enter") {
         event.preventDefault();
 
-        const selectedItem = hoveredIndex >= 0 ? activeItems[hoveredIndex] : undefined;
+        const selectedItem =
+          hoveredIndex >= 0 ? activeItems[hoveredIndex] : undefined;
 
         if (selectedItem) {
           handleSelect(selectedItem);
@@ -1333,7 +1394,9 @@ export default function Home() {
     locationRequestRef.current = controller;
 
     try {
-      const location = await requestBestCurrentLocation({ signal: controller.signal });
+      const location = await requestBestCurrentLocation({
+        signal: controller.signal,
+      });
       saveStoredLocation(location);
       setLocationState("granted");
       persistLocationStatus("granted");
@@ -1345,7 +1408,10 @@ export default function Home() {
         return;
       }
 
-      if (error instanceof LocationRequestError && error.code === "permission-denied") {
+      if (
+        error instanceof LocationRequestError &&
+        error.code === "permission-denied"
+      ) {
         setLocationState("denied");
         persistLocationStatus("denied");
         clearStoredLocation();
@@ -1398,7 +1464,10 @@ export default function Home() {
         onAllow={requestLocationPermission}
         onLater={handleDismissLocation}
       />
-      <FavoriteTopicDialog open={showTopicDialog} onOpenChange={setShowTopicDialog} />
+      <FavoriteTopicDialog
+        open={showTopicDialog}
+        onOpenChange={setShowTopicDialog}
+      />
 
       <header className="relative z-20 flex items-start justify-between gap-3 px-4 py-4 sm:px-8 sm:py-6">
         <button type="button" onClick={() => navigate("/")} className="p-0">
@@ -1451,7 +1520,9 @@ export default function Home() {
                   }`}
                 >
                   <div className="text-center">
-                    <p className="text-sm font-semibold text-[#1d1d1d]">{userDisplayName}</p>
+                    <p className="text-sm font-semibold text-[#1d1d1d]">
+                      {userDisplayName}
+                    </p>
                     <div className="mt-3 flex justify-center">
                       <div className="inline-flex items-center gap-2 rounded-full border border-[#ffe0e5] bg-[#fff8f9] px-3 py-2">
                         <span
@@ -1467,7 +1538,9 @@ export default function Home() {
                             <NaverProviderIcon />
                           )}
                         </span>
-                        <span className="text-xs font-semibold text-[#555555]">{providerLabel}</span>
+                        <span className="text-xs font-semibold text-[#555555]">
+                          {providerLabel}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -1478,14 +1551,13 @@ export default function Home() {
                         onClick={() => setShowTopicDialog(true)}
                         className="inline-flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4] sm:min-w-[160px] sm:flex-1"
                       >
-                        <Plus className="h-4 w-4" />
-                        내 주제 추가하기
+                        <Plus className="h-4 w-4" />내 주제 추가하기
                       </button>
                       {topics.length > 0 ? (
                         <button
                           type="button"
                           onClick={() => {
-                            setIsTopicDeleteMode((prev) => !prev);
+                            setIsTopicDeleteMode(prev => !prev);
                             setSelectedTopicIdsForDelete([]);
                           }}
                           className={`inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border px-4 text-sm font-semibold transition sm:w-auto ${
@@ -1502,11 +1574,12 @@ export default function Home() {
 
                     {topics.length === 0 ? (
                       <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
-                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 혼밥 같은 테마별로 나눠보세요.
+                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행,
+                        혼밥 같은 테마별로 나눠보세요.
                       </p>
                     ) : (
                       <div className="mt-3 space-y-2">
-                        {topics.map((topic) => (
+                        {topics.map(topic => (
                           <div
                             key={topic.id}
                             onClick={() => {
@@ -1514,7 +1587,7 @@ export default function Home() {
                                 handleOpenTopicPage(topic.id);
                               }
                             }}
-                            onKeyDown={(event) => {
+                            onKeyDown={event => {
                               if (
                                 !isTopicDeleteMode &&
                                 (event.key === "Enter" || event.key === " ")
@@ -1526,7 +1599,8 @@ export default function Home() {
                             role={isTopicDeleteMode ? undefined : "button"}
                             tabIndex={isTopicDeleteMode ? -1 : 0}
                             className={`flex items-center justify-between gap-3 rounded-[18px] border bg-white px-3 py-2.5 transition ${
-                              isTopicDeleteMode && selectedTopicIdsForDelete.includes(topic.id)
+                              isTopicDeleteMode &&
+                              selectedTopicIdsForDelete.includes(topic.id)
                                 ? "border-[#ffb7c0] bg-[#fff4f6]"
                                 : "border-[#ffe5e9]"
                             } ${!isTopicDeleteMode ? "cursor-pointer hover:border-[#ffcad1] hover:bg-[#fff4f6]" : ""}`}
@@ -1535,11 +1609,15 @@ export default function Home() {
                               {isTopicDeleteMode ? (
                                 <button
                                   type="button"
-                                  onClick={() => toggleTopicDeleteSelection(topic.id)}
+                                  onClick={() =>
+                                    toggleTopicDeleteSelection(topic.id)
+                                  }
                                   className="flex h-6 w-6 items-center justify-center rounded-full text-[#ff6b7b]"
                                   aria-label={`${topic.name} 삭제 선택`}
                                 >
-                                  {selectedTopicIdsForDelete.includes(topic.id) ? (
+                                  {selectedTopicIdsForDelete.includes(
+                                    topic.id
+                                  ) ? (
                                     <CheckCircle2 className="h-5 w-5 fill-current" />
                                   ) : (
                                     <Circle className="h-5 w-5" />
@@ -1549,7 +1627,8 @@ export default function Home() {
                               <FavoriteTopicBadge topic={topic} />
                             </div>
                             <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
-                              저장된 식당 : {getTopicRestaurantCount(topic.id)}곳
+                              저장된 식당 : {getTopicRestaurantCount(topic.id)}
+                              곳
                             </span>
                           </div>
                         ))}
@@ -1564,7 +1643,10 @@ export default function Home() {
                           disabled={selectedTopicIdsForDelete.length === 0}
                           className="inline-flex h-10 w-full items-center justify-center rounded-full bg-[#ff6b7b] text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-45"
                         >
-                          선택한 주제 삭제하기 {selectedTopicIdsForDelete.length > 0 ? `(${selectedTopicIdsForDelete.length})` : ""}
+                          선택한 주제 삭제하기{" "}
+                          {selectedTopicIdsForDelete.length > 0
+                            ? `(${selectedTopicIdsForDelete.length})`
+                            : ""}
                         </button>
                       </div>
                     ) : null}
@@ -1612,7 +1694,10 @@ export default function Home() {
         <section className="mx-auto flex w-full max-w-[980px] flex-col items-center">
           <h1
             className="inline-flex items-end justify-center gap-1 text-[68px] leading-none tracking-[-0.03em] sm:text-[114px] lg:text-[132px]"
-            style={{ fontFamily: "'Black Han Sans', sans-serif", fontWeight: 400 }}
+            style={{
+              fontFamily: "'Black Han Sans', sans-serif",
+              fontWeight: 400,
+            }}
           >
             <span className="text-[#111111]">{ui.brandFirst}</span>
             <span className="text-[#ff7b83]">{ui.brandSecond}</span>
@@ -1622,13 +1707,16 @@ export default function Home() {
             {ui.heroSubtitle}
           </p>
 
-          <div ref={searchRef} className="relative mt-8 w-full max-w-[810px] sm:mt-10">
+          <div
+            ref={searchRef}
+            className="relative mt-8 w-full max-w-[810px] sm:mt-10"
+          >
             <div className="overflow-hidden rounded-[28px] border border-[#ff9ea9] bg-white/96 shadow-[0_18px_60px_rgba(255,102,132,0.14)] backdrop-blur-sm">
               <div className="flex items-center gap-2 px-3 py-3 sm:gap-4 sm:px-5 sm:py-4">
                 <input
                   type="text"
                   value={query}
-                  onChange={(event) => {
+                  onChange={event => {
                     setQuery(event.target.value);
                     setHoveredIndex(-1);
                   }}
@@ -1668,24 +1756,16 @@ export default function Home() {
               {ui.nearbyMapButtonLabel}
             </button>
 
-            <div className="mt-6 grid grid-cols-3 gap-2 sm:gap-3" aria-label={isEnglish ? "New restaurant collections" : "새로 추가된 식당 주제"}>
-              {discoveryHighlights.map(highlight => {
-                const topic = homeShortcutTopics.find(item => item.slug === highlight.slug);
-                if (!topic) return null;
-                return <Link key={topic.slug} href={getMapTopicPath(topic)} className="flex min-w-0 items-center justify-center gap-2 rounded-2xl border border-[#f1dfe4] bg-white px-2 py-3 text-left transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:px-4">
-                  <img src={topic.imageUrl} alt="" className="hidden h-9 w-9 rounded-full sm:block" />
-                  <span className="min-w-0"><span className="block text-xs font-bold text-[#403238] sm:text-sm">{getMapTopicDisplayName(topic, locale)}</span><span className="mt-1 block text-[11px] text-[#9b6474]">{highlight.count}{isEnglish ? " places" : "곳 둘러보기"}</span></span>
-                </Link>;
-              })}
-            </div>
-
-            <section className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7" aria-label={ui.sourceProofLabel}>
+            <section
+              className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7"
+              aria-label={ui.sourceProofLabel}
+            >
               <p className="text-[13px] font-semibold text-[#8f8185] sm:text-sm">
                 {ui.sourceProofLabel}
               </p>
               <div className="-mx-4 mt-5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:overflow-visible sm:px-0">
                 <div className="mx-auto flex w-max min-w-full items-start justify-start gap-3 sm:w-full sm:flex-wrap sm:justify-center sm:gap-x-4 sm:gap-y-5">
-                  {homeShortcutTopics.map((topic) => (
+                  {homeShortcutTopics.map(topic => (
                     <TopicShortcutButton key={topic.slug} topic={topic} />
                   ))}
                 </div>
@@ -1836,7 +1916,7 @@ function MapCollectionCard({
         </div>
         <div>
           <div className="mb-3 flex flex-wrap gap-1.5">
-            {collection.purposeTags.slice(0, 3).map((tag) => (
+            {collection.purposeTags.slice(0, 3).map(tag => (
               <span
                 key={tag}
                 className="rounded-full bg-white/20 px-2 py-1 text-[10px] font-semibold text-white/90 backdrop-blur"
@@ -1935,7 +2015,7 @@ function FeaturedCollectionModal({
 
   const handleLike = useCallback(() => {
     const nextLikedSlugs = isLiked
-      ? socialState.likedSlugs.filter((slug) => slug !== collection.slug)
+      ? socialState.likedSlugs.filter(slug => slug !== collection.slug)
       : [...socialState.likedSlugs, collection.slug];
 
     updateSocialState({
@@ -1943,15 +2023,24 @@ function FeaturedCollectionModal({
       likedSlugs: nextLikedSlugs,
     });
 
-    toast(isLiked ? ui.collectionModal.likeRemoved : ui.collectionModal.likeAdded, {
-      duration: 1400,
-    });
+    toast(
+      isLiked ? ui.collectionModal.likeRemoved : ui.collectionModal.likeAdded,
+      {
+        duration: 1400,
+      }
+    );
 
     trackMarketingEvent("home_collection_like_toggle", {
       collection_slug: collection.slug,
       liked: !isLiked,
     });
-  }, [collection.slug, isLiked, socialState, ui.collectionModal, updateSocialState]);
+  }, [
+    collection.slug,
+    isLiked,
+    socialState,
+    ui.collectionModal,
+    updateSocialState,
+  ]);
 
   const handleCommentSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
@@ -2035,7 +2124,13 @@ function FeaturedCollectionModal({
 
       toast(ui.collectionModal.shareFailed, { duration: 1600 });
     }
-  }, [collection, shareCount, socialState, ui.collectionModal, updateSocialState]);
+  }, [
+    collection,
+    shareCount,
+    socialState,
+    ui.collectionModal,
+    updateSocialState,
+  ]);
 
   const handleTouchEnd = (clientX: number) => {
     if (touchStartX === null) {
@@ -2062,7 +2157,7 @@ function FeaturedCollectionModal({
     >
       <div
         className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#101418] shadow-[0_28px_90px_rgba(44,24,30,0.24)]"
-        onClick={(event) => event.stopPropagation()}
+        onClick={event => event.stopPropagation()}
       >
         <button
           type="button"
@@ -2078,14 +2173,20 @@ function FeaturedCollectionModal({
             <div className="relative flex min-h-0 w-full flex-1 items-center justify-center">
               <div
                 className="relative aspect-[1122/1402] h-full max-h-[600px] max-w-full overflow-hidden rounded-[6px] bg-[#070b10] shadow-[0_26px_80px_rgba(0,0,0,0.45)]"
-                onTouchStart={(event) => setTouchStartX(event.touches[0]?.clientX ?? null)}
-                onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)}
+                onTouchStart={event =>
+                  setTouchStartX(event.touches[0]?.clientX ?? null)
+                }
+                onTouchEnd={event =>
+                  handleTouchEnd(event.changedTouches[0]?.clientX ?? 0)
+                }
               >
                 <div
                   className="flex h-full transition-transform duration-300 ease-out"
-                  style={{ transform: `translateX(-${activeSlideIndex * 100}%)` }}
+                  style={{
+                    transform: `translateX(-${activeSlideIndex * 100}%)`,
+                  }}
                 >
-                  {slides.map((slide) => (
+                  {slides.map(slide => (
                     <CollectionInstagramSlide
                       key={slide.id}
                       slide={slide}
@@ -2118,7 +2219,9 @@ function FeaturedCollectionModal({
                       type="button"
                       onClick={() => goToSlide(index)}
                       className={`h-2 rounded-full transition-all ${
-                        index === activeSlideIndex ? "w-5 bg-white" : "w-2 bg-white/55"
+                        index === activeSlideIndex
+                          ? "w-5 bg-white"
+                          : "w-2 bg-white/55"
                       }`}
                       aria-label={`${index + 1}`}
                     />
@@ -2139,7 +2242,11 @@ function FeaturedCollectionModal({
           <aside className="flex min-h-0 flex-col pt-2">
             <div className="flex flex-col items-center gap-4">
               <InstagramActionButton
-                icon={<Heart className={`h-7 w-7 ${isLiked ? "fill-current" : ""}`} />}
+                icon={
+                  <Heart
+                    className={`h-7 w-7 ${isLiked ? "fill-current" : ""}`}
+                  />
+                }
                 label={likeCount.toLocaleString()}
                 active={isLiked}
                 ariaLabel={ui.collectionModal.like}
@@ -2173,7 +2280,6 @@ function FeaturedCollectionModal({
                 </span>
               </Link>
             </div>
-
           </aside>
         </div>
 
@@ -2190,7 +2296,7 @@ function FeaturedCollectionModal({
           >
             <section
               className="flex max-h-[78%] w-full flex-col overflow-hidden rounded-t-[28px] border-t border-white/10 bg-[#181c1f] shadow-[0_-28px_80px_rgba(0,0,0,0.36)]"
-              onClick={(event) => event.stopPropagation()}
+              onClick={event => event.stopPropagation()}
             >
               <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-white/35" />
               <div className="flex items-center justify-between px-5 py-4">
@@ -2213,13 +2319,15 @@ function FeaturedCollectionModal({
 
               <div className="min-h-[240px] flex-1 space-y-3 overflow-y-auto px-5 pb-4">
                 {comments.length > 0 ? (
-                  comments.map((comment) => (
+                  comments.map(comment => (
                     <div key={comment.id} className="flex items-start gap-3">
                       <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-black text-white">
                         M
                       </div>
                       <div className="min-w-0 flex-1">
-                        <p className="text-sm font-black text-white">matpick_user</p>
+                        <p className="text-sm font-black text-white">
+                          matpick_user
+                        </p>
                         <p className="mt-1 break-keep text-sm font-semibold leading-6 text-white/85">
                           {comment.text}
                         </p>
@@ -2247,7 +2355,7 @@ function FeaturedCollectionModal({
                   ref={commentInputRef}
                   type="text"
                   value={commentDraft}
-                  onChange={(event) => setCommentDraft(event.target.value)}
+                  onChange={event => setCommentDraft(event.target.value)}
                   placeholder={ui.collectionModal.commentPlaceholder}
                   className="min-w-0 flex-1 rounded-full border border-white/10 bg-transparent px-4 py-3 text-sm font-semibold text-white outline-none placeholder:text-white/55 focus:border-white/35"
                   autoFocus
@@ -2312,7 +2420,10 @@ function CollectionInstagramSlide({
       className={`relative h-full w-full flex-shrink-0 overflow-hidden ${
         isCover || isPhoto ? "text-white" : "text-[#202020]"
       }`}
-      style={{ background: isCover || isPhoto ? collection.palette.background : "#ffffff" }}
+      style={{
+        background:
+          isCover || isPhoto ? collection.palette.background : "#ffffff",
+      }}
     >
       {slide.imageUrl ? (
         <img
@@ -2356,7 +2467,7 @@ function CollectionInstagramSlide({
         <div>
           {slide.tags ? (
             <div className="mb-5 flex flex-wrap gap-2">
-              {slide.tags.map((tag) => (
+              {slide.tags.map(tag => (
                 <span
                   key={tag}
                   className={`rounded-full px-3 py-1.5 text-xs font-black ${
@@ -2385,7 +2496,13 @@ function CollectionInstagramSlide({
 
 function KakaoProviderIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       <path d="M12 3C6.48 3 2 6.38 2 10.5c0 2.65 1.8 4.99 4.49 6.32l-1 3.59a.43.43 0 0 0 .65.47l4.19-2.79c.55.08 1.11.12 1.67.12 5.52 0 10-3.38 10-7.71S17.52 3 12 3Z" />
     </svg>
   );
@@ -2394,4 +2511,3 @@ function KakaoProviderIcon() {
 function NaverProviderIcon() {
   return <span className="text-sm font-black leading-none">N</span>;
 }
-

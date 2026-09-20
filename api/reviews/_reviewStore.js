@@ -1,4 +1,5 @@
 const REVIEW_KEY_PREFIX = "matpick:reviews:restaurant:";
+const { publicReviewAge } = require("../auth/_ageProfile");
 const REVIEW_FEED_KEY = "matpick:reviews:feed";
 const MAX_REVIEW_COUNT = 200;
 const MAX_FEED_COUNT = 240;
@@ -87,6 +88,7 @@ function normalizeReview(review) {
     photos,
     createdAt: Number.isFinite(createdAt) ? createdAt : Date.now(),
     ...(restaurantId ? { restaurantId } : {}),
+    ...publicReviewAge(review),
   };
 }
 

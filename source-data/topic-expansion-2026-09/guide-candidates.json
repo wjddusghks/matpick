@@ -1,0 +1,590 @@
+[
+  {
+    "id": "topic_seoul_598",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "강민철 레스토랑",
+    "address": "서울 강남구 도산대로63길 18 5층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=598&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_619",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "계향각",
+    "address": "서울 종로구 동숭길 86 1층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=619&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_671",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "고료리 켄",
+    "address": "서울 강남구 언주로152길 15-3 2층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=671&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_570",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "곰탕랩",
+    "address": "서울 강남구 도산대로 153 1층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=570&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_571",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "권숙수",
+    "address": "서울 강남구 압구정로80길 37 이에스 빌딩 4층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=571&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_633",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "금돼지식당",
+    "address": "서울 중구 다산로 149",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=633&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_599",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "기가스",
+    "address": "서울 중구 퇴계로6가길 30 피크닉 3층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=599&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_572",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "기와강",
+    "address": "서울 강남구 논현로152길 9 4층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=572&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_653",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "김씨부인",
+    "address": "서울 서초구 서래로1길 8 트윈빌 B동 2층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=653&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_634",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "김인복의광평 삼성본점",
+    "address": "서울 강남구 영동대로106길 45 김인복의광평 삼성본점",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=634&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_663",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "까사델비노 청담점",
+    "address": "서울 강남구 선릉로162길 43 유경빌딩 1층",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=663&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_seoul_573",
+    "topicId": "taste-of-seoul",
+    "priority": 8,
+    "name": "꽃밥에피다",
+    "address": "서울 종로구 인사동16길 3-6",
+    "evidence": [
+      {
+        "url": "https://tasteofseoul.visitseoul.net/restaurants/view?wm_id=573&txt_search=",
+        "publishedAt": "2025",
+        "label": "2025 서울미식 100선",
+        "basis": "official_guide",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1643",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "고등어구이정식",
+    "address": "부산광역시 중구 자갈치로 64-2 1층 (남포동)",
+    "representativeMenu": "고등어구이",
+    "officialMenus": [
+      {
+        "name": "고등어구이",
+        "price": "10,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1643",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1640",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "구포밀면",
+    "address": "부산광역시 중구 대청로141 (중앙동)",
+    "representativeMenu": "손칼국수",
+    "officialMenus": [
+      {
+        "name": "손칼국수",
+        "price": "7,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1640",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1644",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "급행",
+    "address": "부산광역시 중구 중앙대로41번길 11-2 (중앙동1가)",
+    "representativeMenu": "밀면",
+    "officialMenus": [
+      {
+        "name": "밀면",
+        "price": "7,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1644",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1645",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "기와집",
+    "address": "부산광역시 중구 대청로 137번길 7-2 (중앙동3가)",
+    "representativeMenu": "자연산송이밥",
+    "officialMenus": [
+      {
+        "name": "자연산송이밥",
+        "price": "10,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1645",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_10018",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "깡통골목할매 유부전골 본점",
+    "address": "부산광역시 중구 부평3길 29 (부평동1가)",
+    "representativeMenu": "유부전골",
+    "officialMenus": [
+      {
+        "name": "유부전골",
+        "price": "6,800원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=10018",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_15032",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "꽃가람 남포직영점",
+    "address": "부산광역시 중구 비프광장로 3 (부평동2가) 꽃가람 남포직영점",
+    "representativeMenu": "고추장돼지불고기정식",
+    "officialMenus": [
+      {
+        "name": "고추장돼지불고기정식",
+        "price": "9,500원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=15032",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1646",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "남선식당",
+    "address": "부산광역시 중구 충장대로4번길6 (중앙동4가)",
+    "representativeMenu": "순두부찌개",
+    "officialMenus": [
+      {
+        "name": "순두부찌개",
+        "price": "7,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1646",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_1647",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "남원원조추어탕",
+    "address": "부산광역시 중구 해관로 37-1 (중앙동)",
+    "representativeMenu": "추어탕",
+    "officialMenus": [
+      {
+        "name": "추어탕",
+        "price": "9,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=1647",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=26&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_10627",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "24시국수회관",
+    "address": "제주특별자치도 제주시 남성로 122-1",
+    "representativeMenu": "순대국밥",
+    "officialMenus": [
+      {
+        "name": "순대국밥",
+        "price": "8,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=10627",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_18748",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "2교시술기로운생활",
+    "address": "제주특별자치도 제주시 연신로 78 (이도이동) 2교시술기로운생활",
+    "representativeMenu": "슬기로운 3대장세트",
+    "officialMenus": [
+      {
+        "name": "슬기로운 3대장세트",
+        "price": "49,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=18748",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_7203",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "가람",
+    "address": "제주특별자치도 제주시 복지로북길 4 1층",
+    "representativeMenu": "추어탕",
+    "officialMenus": [
+      {
+        "name": "추어탕",
+        "price": "10,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=7203",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_14268",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "갈비에제왕",
+    "address": "제주특별자치도 서귀포시 대정읍 영서중로 5-1 1층",
+    "representativeMenu": "흑돼지오겹살(200g)",
+    "officialMenus": [
+      {
+        "name": "흑돼지오겹살(200g)",
+        "price": "15,900원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=14268",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=1",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_10635",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "감나무집",
+    "address": "제주특별자치도 제주시 오남로 12 1층",
+    "representativeMenu": "흑돼지두루치기정식",
+    "officialMenus": [
+      {
+        "name": "흑돼지두루치기정식",
+        "price": "10,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=10635",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_7114",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "강김밥집",
+    "address": "제주특별자치도 제주시 애월읍 하귀9길 2 1층 114호",
+    "representativeMenu": "강김밥",
+    "officialMenus": [
+      {
+        "name": "강김밥",
+        "price": "2,900원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=7114",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_20433",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "개염지영말축",
+    "address": "제주특별자치도 제주시 연오로 68 (연동) 1층",
+    "representativeMenu": "고사리육개장 (무한리필)",
+    "officialMenus": [
+      {
+        "name": "고사리육개장 (무한리필)",
+        "price": "10,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=20433",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  },
+  {
+    "id": "topic_goodprice_15812",
+    "topicId": "good-price",
+    "priority": 10,
+    "name": "고산동산",
+    "address": "제주특별자치도 제주시 고산동산5길 18 (이도이동) 1층",
+    "representativeMenu": "정식",
+    "officialMenus": [
+      {
+        "name": "정식",
+        "price": "8,000원"
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.goodprice.go.kr/bssh/bsshInfo.do?bsshSn=15812",
+        "listUrl": "https://www.goodprice.go.kr/bssh/bsshList.do?srchCtpvCd=50&srchIndutyCdArr=10%2C18%2C19%2C20%2C29%2C21&pageIndex=2",
+        "label": "착한가격업소 · 요식업",
+        "basis": "official_designation",
+        "sourceObservedAt": "2026-09-20"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-20"
+  }
+]

@@ -801,7 +801,7 @@ export default function AdminRestaurants() {
                       type="date"
                     />
                     <Field
-                      label="가격 안내 (예: 2인 이상 주문)"
+                      label="메뉴 확인 메모"
                       value={draft.menuPriceNote}
                       onChange={value => update("menuPriceNote", value)}
                       maxLength={1000}

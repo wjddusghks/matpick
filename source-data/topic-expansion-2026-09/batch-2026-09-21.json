@@ -1,0 +1,3024 @@
+[
+  {
+    "id": "topic_chureupkyeon_20260921_1",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "오사카",
+    "address": "부산 사하구 낙동대로324번길 2 (괴정동 1117-5)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=DpWGLiZm_2s",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-09-16",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "일식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_2",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "동양",
+    "address": "부산 부산진구 동평로405번길 94 (양정동 261-1)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=zpzpYujlhBM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-09-02",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "아시아음식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_3",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "몽미",
+    "address": "부산광역시 부산진구 양지로 14 (양정동 365-21)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=zpzpYujlhBM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-09-02",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "떡,한과"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_4",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "동원꼬리곰탕",
+    "address": "부산 사상구 새벽로168번길 28 (감전동 131-7)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=NHmCLZ0Rk1Q",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-08-26",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "곰탕,설렁탕"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_5",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "행복한 칼짜장",
+    "address": "부산 사하구 다대로277번길 21 (장림동 270-2)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=359H9Dd5jwc",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-08-19",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "중식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_6",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "와일드앤로우",
+    "address": "부산 해운대구 좌동순환로468번가길 20 (부산 해운대구 중동 847-3)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=XuOQ3kYu7gI",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-08-12",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "햄버거"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_7",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "장성향",
+    "address": "부산광역시 동구 대영로243번길 29 (초량동 609-1)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=NvIewUUmJbA",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-08-05",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "중식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_8",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "부부만두",
+    "address": "부산 북구 백양대로1124번길 96 (구포동 768-15)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=0AVArCSo3Kw",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-07-29",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "부부만두 바지락칼국수",
+      "mapName": "부부만두",
+      "sourceUrl": "https://place.map.kakao.com/16553127",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "16553127",
+    "category": "칼국수,만두"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_9",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "뽈락",
+    "address": "부산 수영구 남천동로 107 (남천동 8-6)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=bWz5LFGBot8",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-07-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "뽈락 식당",
+      "mapName": "뽈락",
+      "sourceUrl": "https://place.map.kakao.com/17810177",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "17810177",
+    "category": "생선회"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_10",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "치즈치즈치즈",
+    "address": "부산 해운대구 마린시티1로 167 (우동 1433) 현대카멜리아 상가 115호",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=j9pM58FQPUU",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-07-15",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "양식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_11",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "카페알마",
+    "address": "부산 해운대구 마린시티2로 38 티3동 102호,103호  (부산 해운대구 우동 1408)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=j9pM58FQPUU",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-07-15",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "알마",
+      "mapName": "카페알마",
+      "sourceUrl": "https://place.map.kakao.com/884976121",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "884976121",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_12",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "남부식당",
+    "address": "부산 남구 수영로 346 (대연동 39-1)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=-mLPOaXck5w",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-07-08",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "음식점"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_13",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "더채움김밥",
+    "address": "부산 연제구 거제대로214번길 54 (거제동 40-28)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=quCTa8Vy-7w",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-06-24",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "김밥"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_14",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "현혜반점",
+    "address": "부산 사상구 삼덕로73번길 9 (덕포동 404-7)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=j1RJ9aQL6zg",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-06-17",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "중식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_15",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "요요충무김밥",
+    "address": "부산 동래구 금강로 103 (온천동 194-4)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=6Ud_TfuVZ28",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-06-10",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "김밥"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_16",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "복성만두",
+    "address": "부산 영도구 대평로34번길 5-8 (대평동2가 177-3)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=yunEkfZa-yY",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-06-03",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "만두"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_17",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "밀양갈비",
+    "address": "부산 동구 초량로 17-5 (초량동 197-35)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=0yAUMo5G-l0",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-05-27",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "돼지고기구이"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_18",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "화목정따로국밥",
+    "address": "부산 영도구 태종로73번길 22 (봉래동1가 48-3)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=0DKAkBPGfdw",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-05-20",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "국밥"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_19",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "소공간",
+    "address": "부산 해운대구 해운대해변로298번길 47 (중동 1138-2) 4층",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=Qu03hTJd1XM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-05-13",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "코리안 컨템퍼러리"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_20",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "골드파파",
+    "address": "부산 남구 용호로 268-3 (용호동 558-47)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=Ep5nrUdFLDU",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-05-06",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "햄버거"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_21",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "어징오횟집",
+    "address": "부산 부산진구 부전로 130-8 (부전동 403-9)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=Et6C_cfpmSU",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-04-29",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "생선회"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_22",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "이재모피자 본점",
+    "address": "부산 중구 광복중앙로 31 (신창동1가 2-1)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=bXwtOQUk4TM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-04-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "피자"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_23",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "철마손짜장",
+    "address": "부산 기장군 철마면 반송로 1305-11 (안평리 59-2)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=RBFfLh1vMaA",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-04-15",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "중식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_24",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "멕시칸치킨 범5점",
+    "address": "부산 동구 좌천동 1074",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=ua5gUsHbrYk",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-04-08",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_25",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "장가네손만두",
+    "address": "부산 기장군 기장읍 차성동로 167 (기장읍 교리 343-3)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=5NHp6Fjo4vI",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-04-01",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "만두"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_26",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "석이네식당",
+    "address": "부산 사하구 다대동로 48-3 (다대동 355-34)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=VhDnzige4Ys",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-25",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "해물,생선요리"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_27",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "둥지도가니탕",
+    "address": "부산 동구 부산진성공원로3번길 23 (범일동 575-2)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=aIW9bYr13Fo",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-18",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "곰탕,설렁탕"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_28",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "옛날만두",
+    "address": "부산 남구 지게골로 31 (문현동 365-19)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=1yErQy3GCSA",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-15",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "만두"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_29",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "시장횟집",
+    "address": "부산 사하구 낙동대로451번안길 3 (하단동 660-7)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=CaS2vnONH3U",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "생선회"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_30",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "대판",
+    "address": "부산 해운대구 해운대로 428 (우동 1008-5) 동부올림픽타운 지하 116호",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=LkW0HEQhyXM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-04",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "일식"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_31",
+    "topicId": "chureupkyeon",
+    "priority": 5,
+    "name": "해우리",
+    "address": "부산 해운대구 해운대로383번길 13 (우동 1092-33)",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=LkW0HEQhyXM",
+        "label": "영상 설명에 소개된 식당",
+        "publishedAt": "2026-03-04",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_1",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "왕고모네국수",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/FlZExh6j",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 신산로 77",
+    "kakaoPlaceId": "21464047",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "왕고모네국수 제주",
+      "sourceUrl": "https://place.map.kakao.com/21464047",
+      "checkedAt": "2026-09-21T00:18:45.100Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "21464047",
+          "name": "왕고모네국수",
+          "address": "제주특별자치도 제주시 신산로 77",
+          "parcelAddress": "제주특별자치도 제주시 일도이동 168-32 1층",
+          "lat": 33.50694812,
+          "lng": 126.53478171
+        }
+      ]
+    },
+    "category": "국수"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_2",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "솔동산고기국수",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/G4WosjwX",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 서귀포시 부두로 23",
+    "kakaoPlaceId": "23825088",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "솔동산고기국수 제주",
+      "sourceUrl": "https://place.map.kakao.com/23825088",
+      "checkedAt": "2026-09-21T00:18:46.310Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "23825088",
+          "name": "솔동산고기국수",
+          "address": "제주특별자치도 서귀포시 부두로 23",
+          "parcelAddress": "제주특별자치도 서귀포시 서귀동 724-5 1층",
+          "lat": 33.242944,
+          "lng": 126.56522455
+        }
+      ]
+    },
+    "category": "국수"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_3",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "모자심",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/x67YQyv6",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 서귀포시 성산읍 성산중앙로 40",
+    "kakaoPlaceId": "1230820296",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "모자심 제주",
+      "sourceUrl": "https://place.map.kakao.com/1230820296",
+      "checkedAt": "2026-09-21T00:18:47.500Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1230820296",
+          "name": "모자심",
+          "address": "제주특별자치도 서귀포시 성산읍 성산중앙로 40",
+          "parcelAddress": "제주특별자치도 서귀포시 성산읍 성산리 177-1 1층",
+          "lat": 33.46322835,
+          "lng": 126.93357488
+        }
+      ]
+    },
+    "category": "한식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_4",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "정성듬뿍 제주국",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/xX75SVFp",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 무근성7길 16",
+    "kakaoPlaceId": "13325715",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "정성듬뿍 제주국 제주",
+      "sourceUrl": "https://place.map.kakao.com/13325715",
+      "checkedAt": "2026-09-21T00:18:48.706Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "13325715",
+          "name": "정성듬뿍제주국",
+          "address": "제주특별자치도 제주시 무근성7길 16",
+          "parcelAddress": "제주특별자치도 제주시 삼도이동 1069-2 1층",
+          "lat": 33.5140268,
+          "lng": 126.52020269
+        }
+      ]
+    },
+    "category": "한식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_5",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "고기장 중문점",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/5eUPcnin",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "branchResolution": {
+      "method": "needs_review",
+      "query": "고기장 중문점 제주",
+      "candidates": []
+    },
+    "address": "제주"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_6",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "남경어곰탕",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GgWkskyV",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 연삼로 96",
+    "kakaoPlaceId": "1500185815",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "남경어곰탕 제주",
+      "sourceUrl": "https://place.map.kakao.com/1500185815",
+      "checkedAt": "2026-09-21T00:18:51.108Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1500185815",
+          "name": "남경어곰탕",
+          "address": "제주특별자치도 제주시 연삼로 96",
+          "parcelAddress": "제주특별자치도 제주시 오라삼동 2749-2 1층",
+          "lat": 33.49285761,
+          "lng": 126.50263979
+        }
+      ]
+    },
+    "category": "한식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_7",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "제주따이",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/Gdymfu8k",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 수덕9길 85-5",
+    "kakaoPlaceId": "1223665508",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "제주따이 제주",
+      "sourceUrl": "https://place.map.kakao.com/1223665508",
+      "checkedAt": "2026-09-21T00:18:52.302Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1223665508",
+          "name": "제주따이",
+          "address": "제주특별자치도 제주시 수덕9길 85-5",
+          "parcelAddress": "제주특별자치도 제주시 노형동 2591-5 1층",
+          "lat": 33.48248135,
+          "lng": 126.47068368
+        }
+      ]
+    },
+    "category": "전복요리"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_8",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "아방얼큰칼국수국밥",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/xjgcyhIz",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 전농로 82",
+    "kakaoPlaceId": "325067719",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "아방얼큰칼국수국밥 제주",
+      "sourceUrl": "https://place.map.kakao.com/325067719",
+      "checkedAt": "2026-09-21T00:18:53.518Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "325067719",
+          "name": "아방얼큰칼국수국밥",
+          "address": "제주특별자치도 제주시 전농로 82",
+          "parcelAddress": "제주특별자치도 제주시 삼도일동 540-9 1층",
+          "lat": 33.50427395,
+          "lng": 126.5217449
+        }
+      ]
+    },
+    "category": "칼국수"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_9",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "소농로드",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/5uIYnlIL",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 구좌읍 비자림로 2615",
+    "kakaoPlaceId": "1563141564",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "소농로드 제주",
+      "sourceUrl": "https://place.map.kakao.com/1563141564",
+      "checkedAt": "2026-09-21T00:18:54.710Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1563141564",
+          "name": "소농로드",
+          "address": "제주특별자치도 제주시 구좌읍 비자림로 2615",
+          "parcelAddress": "제주특별자치도 제주시 구좌읍 평대리 1467-6 소농로드",
+          "lat": 33.51941014,
+          "lng": 126.83444894
+        }
+      ]
+    },
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_10",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "이에프쿠치나",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GRo4OrYn",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 한림읍 한림로 450",
+    "kakaoPlaceId": "481872213",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "이에프쿠치나 제주",
+      "sourceUrl": "https://place.map.kakao.com/481872213",
+      "checkedAt": "2026-09-21T00:18:55.910Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "481872213",
+          "name": "이에프쿠치나",
+          "address": "제주특별자치도 제주시 한림읍 한림로 450",
+          "parcelAddress": "제주특별자치도 제주시 한림읍 협재리 1398-2 2층 202호",
+          "lat": 33.40024226,
+          "lng": 126.24954674
+        }
+      ]
+    },
+    "category": "양식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_11",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "공천포식당",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/5l7v1cEi",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 서귀포시 남원읍 공천포로 89",
+    "kakaoPlaceId": "8204729",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "공천포식당 제주",
+      "sourceUrl": "https://place.map.kakao.com/8204729",
+      "checkedAt": "2026-09-21T00:18:57.119Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "8204729",
+          "name": "공천포식당",
+          "address": "제주특별자치도 서귀포시 남원읍 공천포로 89",
+          "parcelAddress": "제주특별자치도 서귀포시 남원읍 신례리 27-5",
+          "lat": 33.26638938,
+          "lng": 126.64258534
+        },
+        {
+          "kakaoPlaceId": "21524936",
+          "name": "숑",
+          "address": "제주특별자치도 서귀포시 남원읍 공천포로 91",
+          "parcelAddress": "제주특별자치도 서귀포시 남원읍 신례리 27-6 1층",
+          "lat": 33.26633219,
+          "lng": 126.64276696
+        }
+      ]
+    },
+    "category": "물회"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_12",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "장모식탁",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/FtThXWJa",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 연신로 51",
+    "kakaoPlaceId": "120312235",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "장모식탁 제주",
+      "sourceUrl": "https://place.map.kakao.com/120312235",
+      "checkedAt": "2026-09-21T00:18:58.318Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "120312235",
+          "name": "장모식탁",
+          "address": "제주특별자치도 제주시 연신로 51",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 257-6 1층",
+          "lat": 33.49697783,
+          "lng": 126.54681758
+        }
+      ]
+    },
+    "category": "한식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_13",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "도시정원",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/FZ27q0A5",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "branchResolution": {
+      "method": "multiple_possible_branches",
+      "query": "도시정원 제주",
+      "candidates": [
+        {
+          "kakaoPlaceId": "747883704",
+          "name": "도시정원 중문 한식뷔페",
+          "address": "제주특별자치도 서귀포시 천제연로 65",
+          "parcelAddress": "제주특별자치도 서귀포시 색달동 2532-1 1층",
+          "lat": 33.25627154,
+          "lng": 126.4128528
+        }
+      ]
+    },
+    "address": "제주"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_14",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "이만갑",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/IxsfAf4J",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 남광로2길 43-4",
+    "kakaoPlaceId": "659007278",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "이만갑 제주",
+      "sourceUrl": "https://place.map.kakao.com/659007278",
+      "checkedAt": "2026-09-21T00:19:00.684Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "659007278",
+          "name": "이만갑",
+          "address": "제주특별자치도 제주시 남광로2길 43-4",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 1982-18 1층",
+          "lat": 33.48924411,
+          "lng": 126.54049321
+        }
+      ]
+    },
+    "category": "한식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_15",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "도브다이브",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GZZuhjoN",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 구남로7길 15",
+    "kakaoPlaceId": "992806284",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "도브다이브 제주",
+      "sourceUrl": "https://place.map.kakao.com/992806284",
+      "checkedAt": "2026-09-21T00:19:01.883Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "992806284",
+          "name": "도브다이브",
+          "address": "제주특별자치도 제주시 구남로7길 15",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 1025-4 1층",
+          "lat": 33.49382025,
+          "lng": 126.53364242
+        }
+      ]
+    },
+    "category": "양식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_16",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "파뷔노 파스타바",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/x1Vvjosx",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 신성로12길 2",
+    "kakaoPlaceId": "2077860665",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "파뷔노 파스타바 제주",
+      "sourceUrl": "https://place.map.kakao.com/2077860665",
+      "checkedAt": "2026-09-21T00:19:03.068Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "2077860665",
+          "name": "파뷔노파스타바",
+          "address": "제주특별자치도 제주시 신성로12길 2",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 1008 1층",
+          "lat": 33.49664337,
+          "lng": 126.53012347
+        }
+      ]
+    },
+    "category": "파스타"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_17",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "야키토리 사카메",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/Fw731Vcl",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 중앙로14길 6-1",
+    "kakaoPlaceId": "1629782439",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "야키토리 사카메 제주",
+      "sourceUrl": "https://place.map.kakao.com/1629782439",
+      "checkedAt": "2026-09-21T00:19:04.273Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1629782439",
+          "name": "야키토리 사카메",
+          "address": "제주특별자치도 제주시 중앙로14길 6-1",
+          "parcelAddress": "제주특별자치도 제주시 이도일동 1398-1 1층",
+          "lat": 33.51143227,
+          "lng": 126.523772
+        }
+      ]
+    },
+    "category": "야키토리"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_18",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "동경밥상",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GipBWu6P",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 애월읍 하귀14길 11-1",
+    "kakaoPlaceId": "80872994",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "동경밥상 제주",
+      "sourceUrl": "https://place.map.kakao.com/80872994",
+      "checkedAt": "2026-09-21T00:19:05.458Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "80872994",
+          "name": "동경밥상",
+          "address": "제주특별자치도 제주시 애월읍 하귀14길 11-1",
+          "parcelAddress": "제주특별자치도 제주시 애월읍 하귀1리 1620-5 1층",
+          "lat": 33.48544498,
+          "lng": 126.40793261
+        }
+      ]
+    },
+    "category": "장어요리"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_19",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "잉가이",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/x4FLvXQT",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 무근성7길 1",
+    "kakaoPlaceId": "300967626",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "잉가이 제주",
+      "sourceUrl": "https://place.map.kakao.com/300967626",
+      "checkedAt": "2026-09-21T00:19:06.638Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "300967626",
+          "name": "잉가이",
+          "address": "제주특별자치도 제주시 무근성7길 1",
+          "parcelAddress": "제주특별자치도 제주시 삼도이동 897 1층",
+          "lat": 33.51306699,
+          "lng": 126.51983666
+        }
+      ]
+    },
+    "category": "중식"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_20",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "네꼬야 티하우스",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GALRpaW2",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=A6fLtxFNRaI",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2026-01-11",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 애월읍 하귀9길 15",
+    "kakaoPlaceId": "1566433967",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "네꼬야 티하우스 제주",
+      "sourceUrl": "https://place.map.kakao.com/1566433967",
+      "checkedAt": "2026-09-21T00:19:07.820Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1566433967",
+          "name": "네꼬야티하우스",
+          "address": "제주특별자치도 제주시 애월읍 하귀9길 15",
+          "parcelAddress": "제주특별자치도 제주시 애월읍 하귀1리 138-13 1층",
+          "lat": 33.48564907,
+          "lng": 126.4156007
+        }
+      ]
+    },
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_21",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "일품순두부 연북로점",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/FTMdFqSH",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "branchResolution": {
+      "method": "multiple_possible_branches",
+      "query": "일품순두부 연북로점 제주",
+      "sourceUrl": "https://place.map.kakao.com/1441678037",
+      "checkedAt": "2026-09-21T00:19:09.014Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1441678037",
+          "name": "일품순두부 연북로점",
+          "address": "제주특별자치도 제주시 연북로 212",
+          "parcelAddress": "제주특별자치도 제주시 오라이동 3109 1층",
+          "lat": 33.48123674,
+          "lng": 126.50415439
+        },
+        {
+          "kakaoPlaceId": "1871218740",
+          "name": "일품순두부 연북로점 별관",
+          "address": "제주특별자치도 제주시 연북로 221",
+          "parcelAddress": "제주특별자치도 제주시 오라이동 3100-3 2층",
+          "lat": 33.48170668,
+          "lng": 126.50511036
+        }
+      ]
+    },
+    "address": "제주"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_22",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "한양동식당뷔페",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/502Mrto9",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 한경면 용금로 501",
+    "kakaoPlaceId": "958559943",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "한양동식당뷔페 제주",
+      "sourceUrl": "https://place.map.kakao.com/958559943",
+      "checkedAt": "2026-09-21T00:19:10.204Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "958559943",
+          "name": "한양동식당뷔페",
+          "address": "제주특별자치도 제주시 한경면 용금로 501",
+          "parcelAddress": "제주특별자치도 제주시 한경면 조수리 115-4 1층",
+          "lat": 33.33658428,
+          "lng": 126.23358078
+        }
+      ]
+    },
+    "category": "한식뷔페"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_23",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "삼봉로한중식뷔페",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/Gia061wY",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "branchResolution": {
+      "method": "needs_review",
+      "query": "삼봉로한중식뷔페 제주",
+      "candidates": []
+    },
+    "address": "제주"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_24",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "상희식당",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/x4FLMgfq",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 한림읍 일주서로 5167",
+    "kakaoPlaceId": "356332551",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "상희식당 제주",
+      "sourceUrl": "https://place.map.kakao.com/356332551",
+      "checkedAt": "2026-09-21T00:19:12.628Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "356332551",
+          "name": "상희식당",
+          "address": "제주특별자치도 제주시 한림읍 일주서로 5167",
+          "parcelAddress": "제주특별자치도 제주시 한림읍 옹포리 881 1층",
+          "lat": 33.39433985,
+          "lng": 126.25708578
+        },
+        {
+          "kakaoPlaceId": "436853962",
+          "name": "상희네숯불구이",
+          "address": "제주특별자치도 서귀포시 남원읍 위미항구로 16",
+          "parcelAddress": "제주특별자치도 서귀포시 남원읍 위미리 3170-1",
+          "lat": 33.27569132,
+          "lng": 126.6569213
+        },
+        {
+          "kakaoPlaceId": "1622328139",
+          "name": "구억리300상희네",
+          "address": "제주특별자치도 서귀포시 대정읍 중산간서로 2188",
+          "parcelAddress": "제주특별자치도 서귀포시 대정읍 구억리 300 그린빌1차 상가동 1층 101호",
+          "lat": 33.27984985,
+          "lng": 126.29427438
+        }
+      ]
+    },
+    "category": "한식뷔페"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_25",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "마농밭",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/Fpxl9jy6",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 서귀포시 대정읍 암반수마농로 8",
+    "kakaoPlaceId": "771379102",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "마농밭 제주",
+      "sourceUrl": "https://place.map.kakao.com/771379102",
+      "checkedAt": "2026-09-21T00:19:13.819Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "771379102",
+          "name": "마농밭",
+          "address": "제주특별자치도 서귀포시 대정읍 암반수마농로 8",
+          "parcelAddress": "제주특별자치도 서귀포시 대정읍 동일리 2713",
+          "lat": 33.23013359,
+          "lng": 126.24164591
+        }
+      ]
+    },
+    "category": "한식뷔페"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_26",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "원보뷔페",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GTnRI4dO",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "branchResolution": {
+      "method": "multiple_possible_branches",
+      "query": "원보뷔페 제주",
+      "sourceUrl": "https://place.map.kakao.com/958943747",
+      "checkedAt": "2026-09-21T00:19:15.008Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "958943747",
+          "name": "원보뷔페",
+          "address": "제주특별자치도 서귀포시 중정로73번길 9",
+          "parcelAddress": "제주특별자치도 서귀포시 서귀동 275-6",
+          "lat": 33.24892608,
+          "lng": 126.56386863
+        },
+        {
+          "kakaoPlaceId": "26363206",
+          "name": "원보뷔페 본점",
+          "address": "제주특별자치도 서귀포시 516로 204",
+          "parcelAddress": "제주특별자치도 서귀포시 토평동 2219",
+          "lat": 33.27136508,
+          "lng": 126.58579922
+        }
+      ]
+    },
+    "address": "제주"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_27",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "오박이식당",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/5Bcekm5q",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=2bo1-330_i8",
+        "label": "한식뷔페 영상 소개",
+        "publishedAt": "2026-02-22",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 동화로 62",
+    "kakaoPlaceId": "556787946",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "오박이식당 제주",
+      "sourceUrl": "https://place.map.kakao.com/556787946",
+      "checkedAt": "2026-09-21T00:19:16.188Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "556787946",
+          "name": "오박이식당",
+          "address": "제주특별자치도 제주시 동화로 62",
+          "parcelAddress": "제주특별자치도 제주시 화북이동 953-8 1층",
+          "lat": 33.51476305,
+          "lng": 126.57281201
+        }
+      ]
+    },
+    "category": "한식뷔페"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_28",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "제주미식회",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/GPdWuADy",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=mrS7c_Dk43M",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2025-01-06",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 동문로14길 45",
+    "kakaoPlaceId": "1558288462",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "제주미식회 제주",
+      "sourceUrl": "https://place.map.kakao.com/1558288462",
+      "checkedAt": "2026-09-21T00:19:17.373Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "1558288462",
+          "name": "제주미식회",
+          "address": "제주특별자치도 제주시 동문로14길 45",
+          "parcelAddress": "제주특별자치도 제주시 일도이동 1012-9 1층",
+          "lat": 33.50995803,
+          "lng": 126.53536724
+        }
+      ]
+    },
+    "category": "돼지고기구이"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_29",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "야키토리6126",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/xiqBErM3",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=mrS7c_Dk43M",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2025-01-06",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 동광로 97",
+    "kakaoPlaceId": "938295561",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "야키토리6126 제주",
+      "sourceUrl": "https://place.map.kakao.com/938295561",
+      "checkedAt": "2026-09-21T00:19:18.563Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "938295561",
+          "name": "야키토리6126",
+          "address": "제주특별자치도 제주시 동광로 97",
+          "parcelAddress": "제주특별자치도 제주시 일도이동 361-25 이룸해피안 1층 102호",
+          "lat": 33.50558001,
+          "lng": 126.53780783
+        }
+      ]
+    },
+    "category": "야키토리"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_30",
+    "topicId": "jeju-eddy",
+    "priority": 6,
+    "name": "정준오리",
+    "regionHint": "제주",
+    "branchSourceUrl": "https://naver.me/xGIP8vqq",
+    "evidence": [
+      {
+        "url": "https://www.youtube.com/watch?v=mrS7c_Dk43M",
+        "label": "제주 맛집 모음 영상 소개",
+        "publishedAt": "2025-01-06",
+        "basis": "official_video_description",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceDisclosure": "영상 설명에 렌터카 제휴 링크 표시",
+    "address": "제주특별자치도 제주시 오복3길 1",
+    "kakaoPlaceId": "18507654",
+    "branchResolution": {
+      "method": "unique_exact_name_in_video_region",
+      "query": "정준오리 제주",
+      "sourceUrl": "https://place.map.kakao.com/18507654",
+      "checkedAt": "2026-09-21T00:19:19.779Z",
+      "candidates": [
+        {
+          "kakaoPlaceId": "18507654",
+          "name": "정준오리",
+          "address": "제주특별자치도 제주시 오복3길 1",
+          "parcelAddress": "제주특별자치도 제주시 이도이동 1059-19 1층",
+          "lat": 33.49643782,
+          "lng": 126.53538675
+        }
+      ]
+    },
+    "category": "오리요리"
+  },
+  {
+    "id": "topic_life-master_20260921_1",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "비앙퀴트",
+    "address": "부산 중구 충장대로5번길 37 세창빌딩 1층 102호",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_2",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "바게트제작소",
+    "address": "부산 부산진구 전포대로199번길 19",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_3",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "꽁띠꽁띠뉴",
+    "address": "부산 해운대구 센텀중앙로 145 상가3동 112, 114호",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_4",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "밀창고",
+    "address": "부산 해운대구 우동1로 46 지하1층",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_5",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "밀로프",
+    "address": "부산 부산진구 동천로 5",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24"
+  },
+  {
+    "id": "topic_life-master_20260921_6",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "베이크호네",
+    "address": "부산 수영구 망미동 592-2",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7564",
+        "label": "1045회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-24",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_7",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "마파로우",
+    "address": "부산 부산진구 전포동 685-1",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7563",
+        "label": "1044회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-17",
+    "category": "중식"
+  },
+  {
+    "id": "topic_life-master_20260921_8",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "동화가든",
+    "address": "강원 강릉시 초당동 309-1",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "두부요리"
+  },
+  {
+    "id": "topic_life-master_20260921_9",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "제일함흥냉면",
+    "address": "강원 강릉시 성남동 248-1",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "냉면"
+  },
+  {
+    "id": "topic_life-master_20260921_10",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "김밥의 신",
+    "address": "강원 강릉시 교동 978-7",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "김밥"
+  },
+  {
+    "id": "topic_life-master_20260921_11",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "강보리밥",
+    "address": "강원 강릉시 구정면 여찬리 351",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "한식"
+  },
+  {
+    "id": "topic_life-master_20260921_12",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "황정숙 막국수",
+    "address": "강원 강릉시 교동 417-4",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "냉면"
+  },
+  {
+    "id": "topic_life-master_20260921_13",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "이모네 생선찜",
+    "address": "강원 강릉시 교동 1817-2",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "가오리찜"
+  },
+  {
+    "id": "topic_life-master_20260921_14",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "구들목한약화로구이",
+    "address": "강원 강릉시 내곡동 87-9",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "aliasVerification": {
+      "sourceName": "구들목",
+      "mapName": "구들목한약화로구이",
+      "sourceUrl": "https://place.map.kakao.com/12464958",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "12464958",
+    "category": "육류,고기요리"
+  },
+  {
+    "id": "topic_life-master_20260921_15",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "육구방앗간",
+    "address": "강원 속초시 청학로13 1층",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7560",
+        "label": "1041회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-07-27"
+  },
+  {
+    "id": "topic_life-master_20260921_16",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "뉴러우멘관즈",
+    "address": "부산 수영구 수영로388번길 25-4 1층 107호",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7560",
+        "label": "1041회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-07-27",
+    "category": "중식"
+  },
+  {
+    "id": "topic_life-master_20260921_17",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "사치문",
+    "address": "부산 해운대구 좌동 1295-15",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7555",
+        "label": "1038회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-07-06",
+    "category": "일식"
+  },
+  {
+    "id": "topic_life-master_20260921_18",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "달임재",
+    "address": "부산 동구 초량동 377-3",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7555",
+        "label": "1038회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-07-06",
+    "category": "족발,보쌈"
+  },
+  {
+    "id": "topic_life-master_20260921_19",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "노렌",
+    "address": "강원 속초시 중앙동 472-25",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7549",
+        "label": "1034회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-06-14",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_life-master_20260921_20",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "나드리김밥 황지점",
+    "address": "강원 태백시 황지동 81-18",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7549",
+        "label": "1034회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-06-14",
+    "aliasVerification": {
+      "sourceName": "나드리김밥태백황지점",
+      "mapName": "나드리김밥 황지점",
+      "sourceUrl": "https://place.map.kakao.com/10200832",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "10200832",
+    "category": "김밥"
+  },
+  {
+    "id": "topic_life-master_20260921_21",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "빵다무르",
+    "address": "부산 해운대구 좌동 1459-4",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7548",
+        "label": "1033회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-06-12",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_22",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "콩방",
+    "address": "부산 금정구 선동 341-3",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7548",
+        "label": "1033회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-06-12",
+    "aliasVerification": {
+      "sourceName": "단팥빵 가게 콩방",
+      "mapName": "콩방",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21",
+      "sourceUrl": "https://place.map.kakao.com/258907213"
+    },
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_23",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "원조가야밀면",
+    "address": "부산 사하구 낙동대로451번길 33",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7546",
+        "label": "1032회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-05-25",
+    "category": "냉면"
+  },
+  {
+    "id": "topic_life-master_20260921_24",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "토다공원",
+    "address": "부산 부산진구 전포동 334-44",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7539",
+        "label": "1029회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-05-04",
+    "category": "일식"
+  },
+  {
+    "id": "topic_life-master_20260921_25",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "대월떡집",
+    "address": "강원 원주시 중앙동 60-56",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7536",
+        "label": "1028회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-04-27",
+    "category": "떡,한과"
+  },
+  {
+    "id": "topic_life-master_20260921_26",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "스시바시쿠",
+    "address": "부산 수영구 민락동 168-13",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7531",
+        "label": "1027회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-04-20",
+    "category": "일식"
+  },
+  {
+    "id": "topic_life-master_20260921_27",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "슌사이쿠보 화명",
+    "address": "부산 북구 양달로4번길 17 금샘빌딩 1층",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7531",
+        "label": "1027회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-04-20",
+    "category": "장어요리"
+  },
+  {
+    "id": "topic_life-master_20260921_28",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "피넛빵앗간",
+    "address": "부산 사상구 괘법동 552-20",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7525",
+        "label": "1026회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-04-13",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_29",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "일광당",
+    "address": "부산 기장군 일광읍 이천리 836-5",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7516",
+        "label": "1025회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-04-06",
+    "category": "만두"
+  },
+  {
+    "id": "topic_life-master_20260921_30",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "제일분식",
+    "address": "부산 기장군 장안읍 좌천리 213-9",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7503",
+        "label": "1024회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-03-30",
+    "category": "만두"
+  },
+  {
+    "id": "topic_life-master_20260921_31",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "교동빵집",
+    "address": "강원 강릉시 교동 162-79 1층 이만구짬뽕 맞은편(사거리)",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7503",
+        "label": "1024회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-03-30",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_32",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "개두릅통밀빵",
+    "address": "강원 강릉시 임당동 23-2",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7500",
+        "label": "1022회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-03-16",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_life-master_20260921_33",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "진돼지곰탕",
+    "address": "부산 수영구 민락동 181-70",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7501",
+        "label": "1023회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-03-23",
+    "category": "곰탕,설렁탕"
+  },
+  {
+    "id": "topic_life-master_20260921_34",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "불백고수락",
+    "address": "부산 해운대구 재송동 1212",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7498",
+        "label": "1020회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-02-23"
+  },
+  {
+    "id": "topic_life-master_20260921_35",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "임진각식당",
+    "address": "경남 창원시 의창구 팔용동 198-19",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7563",
+        "label": "1044회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-17",
+    "category": "육류,고기요리"
+  },
+  {
+    "id": "topic_life-master_20260921_36",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "군산버거랩",
+    "address": "전북 군산시 조촌동 860-2",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7559",
+        "label": "1040회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-07-20"
+  },
+  {
+    "id": "topic_life-master_20260921_37",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "봉성피자",
+    "address": "전남 구례군 산동면 관산리 712-3",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7551",
+        "label": "1036회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-06-22",
+    "category": "피자"
+  },
+  {
+    "id": "topic_life-master_20260921_38",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "황남우엉김밥",
+    "address": "경북 경주시 황남동 294",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7500",
+        "label": "1022회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-03-16",
+    "category": "김밥"
+  },
+  {
+    "id": "topic_life-master_20260921_39",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "서천칼국수",
+    "address": "서울 중랑구 면목동 50-34",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "칼국수"
+  },
+  {
+    "id": "topic_life-master_20260921_40",
+    "topicId": "life-master",
+    "priority": 1,
+    "name": "엄지손칼국수",
+    "address": "서울 송파구 송파동 148-3",
+    "evidence": [
+      {
+        "url": "https://programs.sbs.co.kr/culture/lifemaster/board/55736?cmd=view&board_no=7561",
+        "label": "1042회 방송 정보",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "sourceArticlePublishedAt": "2026-08-03",
+    "category": "칼국수"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_1",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "연정식당",
+    "address": "부산 금정구 산성로 455",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1487334",
+        "label": "364회 방송 소개",
+        "publishedAt": "2026-04-04",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_2",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "남마담",
+    "address": "부산 중구 광복로67번길 20",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1487334",
+        "label": "364회 방송 소개",
+        "publishedAt": "2026-04-04",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "해물,생선요리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_3",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "현태네튀김",
+    "address": "강원 속초시 중앙로147번길 16",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "현태네튀김 속초중앙시장본점",
+      "mapName": "현태네튀김",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21",
+      "sourceUrl": "https://place.map.kakao.com/13608446"
+    },
+    "category": "분식"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_4",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "강원도막걸리술빵",
+    "address": "강원 속초시 중앙시장로6길 14 54번",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_5",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "대일회할인마트",
+    "address": "강원 속초시 중앙로147번길 16",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_6",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "속초문어국밥",
+    "address": "강원 속초시 중앙로147번길 43",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_7",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "ODOC",
+    "address": "강원 속초시 장재터로 76",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "오디오씨",
+      "mapName": "ODOC",
+      "sourceUrl": "https://place.map.kakao.com/1970454389",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21"
+    },
+    "kakaoPlaceId": "1970454389",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_8",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "화진호 이선장네",
+    "address": "강원 속초시 먹거리4길 18-1",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1478698",
+        "label": "359회 방송 소개",
+        "publishedAt": "2026-02-28",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "생물망치탕"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_9",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "옥란푸딩",
+    "address": "강원 속초시 조양동 1480-80",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1477744",
+        "label": "358회 방송 소개",
+        "publishedAt": "2026-02-21",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_10",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "혜진식당",
+    "address": "강원 속초시 대포항희망길 71 어촌계관광수산시장 B동 15호 혜진식당",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1477744",
+        "label": "358회 방송 소개",
+        "publishedAt": "2026-02-21",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "해물,생선요리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_11",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "체리다방",
+    "address": "강원 속초시 영랑동 147-129",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1477744",
+        "label": "358회 방송 소개",
+        "publishedAt": "2026-02-21",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_12",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "낭쿰낭쿰 제주신화월드본점",
+    "address": "제주 서귀포시 대정읍 구억리 1018-2",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1460535",
+        "label": "344회 방송 소개",
+        "publishedAt": "2025-11-08",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "찌개,전골"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_13",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "델문도",
+    "address": "제주 제주시 조천읍 조함해안로 519-10",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1459704",
+        "label": "343회 방송 소개",
+        "publishedAt": "2025-11-01",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_14",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "성산포수협 활어회센터",
+    "address": "제주 서귀포시 성산읍 성산등용로 91",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1459704",
+        "label": "343회 방송 소개",
+        "publishedAt": "2025-11-01",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "해물,생선요리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_15",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "목화휴게소",
+    "address": "제주 서귀포시 성산읍 해맞이해안로 2526",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1459704",
+        "label": "343회 방송 소개",
+        "publishedAt": "2025-11-01",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_16",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "난산리 식당",
+    "address": "제주 서귀포시 성산읍 난산로41번길 38",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1459704",
+        "label": "343회 방송 소개",
+        "publishedAt": "2025-11-01",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "양식"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_17",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "한라산아래첫마을",
+    "address": "제주 서귀포시 표선면 민속해안로 631-46",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1459704",
+        "label": "343회 방송 소개",
+        "publishedAt": "2025-11-01",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_18",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "평양갈비",
+    "address": "경북 경주시 원효로105번길 10",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1457909",
+        "label": "341회 방송 소개",
+        "publishedAt": "2025-10-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "갈비"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_19",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "운수대통 닭갈비",
+    "address": "경북 경주시 원효로 104-15 1층",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1457909",
+        "label": "341회 방송 소개",
+        "publishedAt": "2025-10-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "닭갈비"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_20",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "스윗문",
+    "address": "경북 경주시 동성로 133-1 1층",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1457909",
+        "label": "341회 방송 소개",
+        "publishedAt": "2025-10-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_21",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "국보 31호",
+    "address": "경북 경주시 금성로 218 A동 109호",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1457909",
+        "label": "341회 방송 소개",
+        "publishedAt": "2025-10-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_22",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "운전수 문어집",
+    "address": "경북 경주시 원화로 273",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1457909",
+        "label": "341회 방송 소개",
+        "publishedAt": "2025-10-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "해물,생선요리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_23",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "케빈스보일링크랩",
+    "address": "부산 해운대구 우동1로 64-1 1층 케빈스 보일링크랩 해운대",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1427591",
+        "label": "327회 방송 소개",
+        "publishedAt": "2025-07-05",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "aliasVerification": {
+      "sourceName": "케빈스 보일링크랩 해리단길 본점",
+      "mapName": "케빈스보일링크랩 해운대점",
+      "basis": "official_address_matches_public_place_address",
+      "checkedAt": "2026-09-21",
+      "sourceUrl": "https://place.map.kakao.com/1591540209"
+    },
+    "category": "해산물"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_24",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "스위디",
+    "address": "부산 부산진구 전포대로199번길 40-5 2층",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1427591",
+        "label": "327회 방송 소개",
+        "publishedAt": "2025-07-05",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "카페,디저트"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_25",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "나리촌식당",
+    "address": "경북 울릉군 북면 나리 6-2",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1499618",
+        "label": "379회 방송 소개",
+        "publishedAt": "2026-07-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "한식"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_26",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "영신횟집",
+    "address": "경북 울릉군 울릉읍 봉래길 14-7 3층 2호",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1499618",
+        "label": "379회 방송 소개",
+        "publishedAt": "2026-07-18",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "생선회"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_27",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "아리랑식당",
+    "address": "경북 울릉군 울릉읍 울릉순환로 212-19 1층 아리랑식당",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1499173",
+        "label": "378회 방송 소개",
+        "publishedAt": "2026-07-11",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "한식"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_28",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "브레드하우스",
+    "address": "경북 울릉군 울릉읍 봉래2길 18",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1499173",
+        "label": "378회 방송 소개",
+        "publishedAt": "2026-07-11",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "베이커리"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_29",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "태안 하얀게국지 통나무집사람들",
+    "address": "충남 태안군 원북면 원이로 447-15",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1497623",
+        "label": "375회 방송 소개",
+        "publishedAt": "2026-06-20",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "게국지"
+  },
+  {
+    "id": "topic_neighborhood-walk_20260921_30",
+    "topicId": "neighborhood-walk",
+    "priority": 3,
+    "name": "선창회마차",
+    "address": "충남 태안군 근흥면 마도길 154-1",
+    "evidence": [
+      {
+        "url": "https://pbbs.kbs.co.kr/general/read.html?bbs_id=X2022-0008-04-580861&id=1497623",
+        "label": "375회 방송 소개",
+        "publishedAt": "2026-06-20",
+        "basis": "official_listing",
+        "sourceObservedAt": "2026-09-21"
+      }
+    ],
+    "sourceCheckedAt": "2026-09-21",
+    "category": "우럭구이"
+  }
+]

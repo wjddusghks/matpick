@@ -1,0 +1,271 @@
+{
+  "checkedAt": "2026-09-21",
+  "beforeCount": 3426,
+  "afterCount": 3528,
+  "newRestaurants": 102,
+  "updatedExistingRestaurants": 13,
+  "publishedCandidates": 115,
+  "pricedRestaurants": 105,
+  "menusAvailable": 108,
+  "heldBranches": 16,
+  "heldSourceLeads": 22,
+  "topics": [
+    {
+      "id": "life-master",
+      "name": "생활의 달인",
+      "before": 9,
+      "after": 45,
+      "added": 36,
+      "pricedAdded": 31
+    },
+    {
+      "id": "saturday-food",
+      "name": "토요일은 밥이 좋아",
+      "before": 3,
+      "after": 3,
+      "added": 0,
+      "pricedAdded": 0
+    },
+    {
+      "id": "neighborhood-walk",
+      "name": "동네 한 바퀴",
+      "before": 3,
+      "after": 27,
+      "added": 24,
+      "pricedAdded": 22
+    },
+    {
+      "id": "chureupkyeon",
+      "name": "츄릅켠",
+      "before": 1,
+      "after": 31,
+      "added": 30,
+      "pricedAdded": 28
+    },
+    {
+      "id": "jeju-eddy",
+      "name": "제주에디",
+      "before": 3,
+      "after": 28,
+      "added": 25,
+      "pricedAdded": 24
+    }
+  ],
+  "newRestaurantIds": [
+    "topic_chureupkyeon_20260921_1",
+    "topic_chureupkyeon_20260921_2",
+    "topic_chureupkyeon_20260921_3",
+    "topic_chureupkyeon_20260921_4",
+    "topic_chureupkyeon_20260921_5",
+    "topic_chureupkyeon_20260921_6",
+    "topic_chureupkyeon_20260921_8",
+    "topic_chureupkyeon_20260921_9",
+    "topic_chureupkyeon_20260921_10",
+    "topic_chureupkyeon_20260921_11",
+    "topic_chureupkyeon_20260921_12",
+    "topic_chureupkyeon_20260921_13",
+    "topic_chureupkyeon_20260921_14",
+    "topic_chureupkyeon_20260921_15",
+    "topic_chureupkyeon_20260921_16",
+    "topic_chureupkyeon_20260921_17",
+    "topic_chureupkyeon_20260921_18",
+    "topic_chureupkyeon_20260921_20",
+    "topic_chureupkyeon_20260921_21",
+    "topic_chureupkyeon_20260921_23",
+    "topic_chureupkyeon_20260921_25",
+    "topic_chureupkyeon_20260921_26",
+    "topic_chureupkyeon_20260921_27",
+    "topic_chureupkyeon_20260921_28",
+    "topic_chureupkyeon_20260921_29",
+    "topic_chureupkyeon_20260921_30",
+    "topic_chureupkyeon_20260921_31",
+    "topic_jeju-eddy_20260921_1",
+    "topic_jeju-eddy_20260921_3",
+    "topic_jeju-eddy_20260921_4",
+    "topic_jeju-eddy_20260921_6",
+    "topic_jeju-eddy_20260921_7",
+    "topic_jeju-eddy_20260921_8",
+    "topic_jeju-eddy_20260921_9",
+    "topic_jeju-eddy_20260921_10",
+    "topic_jeju-eddy_20260921_14",
+    "topic_jeju-eddy_20260921_15",
+    "topic_jeju-eddy_20260921_16",
+    "topic_jeju-eddy_20260921_17",
+    "topic_jeju-eddy_20260921_18",
+    "topic_jeju-eddy_20260921_19",
+    "topic_jeju-eddy_20260921_20",
+    "topic_jeju-eddy_20260921_22",
+    "topic_jeju-eddy_20260921_24",
+    "topic_jeju-eddy_20260921_25",
+    "topic_jeju-eddy_20260921_27",
+    "topic_jeju-eddy_20260921_28",
+    "topic_jeju-eddy_20260921_29",
+    "topic_jeju-eddy_20260921_30",
+    "topic_life-master_20260921_1",
+    "topic_life-master_20260921_2",
+    "topic_life-master_20260921_3",
+    "topic_life-master_20260921_4",
+    "topic_life-master_20260921_6",
+    "topic_life-master_20260921_7",
+    "topic_life-master_20260921_9",
+    "topic_life-master_20260921_10",
+    "topic_life-master_20260921_11",
+    "topic_life-master_20260921_12",
+    "topic_life-master_20260921_14",
+    "topic_life-master_20260921_17",
+    "topic_life-master_20260921_18",
+    "topic_life-master_20260921_19",
+    "topic_life-master_20260921_20",
+    "topic_life-master_20260921_21",
+    "topic_life-master_20260921_22",
+    "topic_life-master_20260921_23",
+    "topic_life-master_20260921_24",
+    "topic_life-master_20260921_25",
+    "topic_life-master_20260921_26",
+    "topic_life-master_20260921_28",
+    "topic_life-master_20260921_29",
+    "topic_life-master_20260921_30",
+    "topic_life-master_20260921_31",
+    "topic_life-master_20260921_32",
+    "topic_life-master_20260921_35",
+    "topic_life-master_20260921_37",
+    "topic_life-master_20260921_38",
+    "topic_life-master_20260921_39",
+    "topic_life-master_20260921_40",
+    "topic_neighborhood-walk_20260921_2",
+    "topic_neighborhood-walk_20260921_3",
+    "topic_neighborhood-walk_20260921_7",
+    "topic_neighborhood-walk_20260921_9",
+    "topic_neighborhood-walk_20260921_10",
+    "topic_neighborhood-walk_20260921_11",
+    "topic_neighborhood-walk_20260921_12",
+    "topic_neighborhood-walk_20260921_13",
+    "topic_neighborhood-walk_20260921_14",
+    "topic_neighborhood-walk_20260921_16",
+    "topic_neighborhood-walk_20260921_18",
+    "topic_neighborhood-walk_20260921_19",
+    "topic_neighborhood-walk_20260921_20",
+    "topic_neighborhood-walk_20260921_21",
+    "topic_neighborhood-walk_20260921_22",
+    "topic_neighborhood-walk_20260921_23",
+    "topic_neighborhood-walk_20260921_24",
+    "topic_neighborhood-walk_20260921_25",
+    "topic_neighborhood-walk_20260921_26",
+    "topic_neighborhood-walk_20260921_27",
+    "topic_neighborhood-walk_20260921_28",
+    "topic_neighborhood-walk_20260921_29"
+  ],
+  "existingRestaurantIds": [
+    "topic_enrichment_delicious-guys_f24d54f590b5",
+    "topic_enrichment_michelin-selected_a5272cc7ced1",
+    "travel_busan-bite_124",
+    "travel_jeju-bite_8214e02e76e37b85-row-2059",
+    "topic_enrichment_baekjong-wok_b8c94b6558fa",
+    "travel_jeju-bite_dd67f3e78922e1f9-row-2729",
+    "topic_enrichment_delicious-guys_0f7d4edd6929",
+    "wednesday-gourmet_restaurant_054",
+    "topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+    "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+    "topic_enrichment_michelin-selected_f90b93a95c96",
+    "sikgaek-baekban-trip_restaurant_407",
+    "sikgaek-baekban-trip_restaurant_303"
+  ],
+  "held": [
+    {
+      "id": "topic_chureupkyeon_20260921_24",
+      "topicId": "chureupkyeon",
+      "name": "멕시칸치킨 범5점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_5",
+      "topicId": "jeju-eddy",
+      "name": "고기장 중문점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_13",
+      "topicId": "jeju-eddy",
+      "name": "도시정원",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_21",
+      "topicId": "jeju-eddy",
+      "name": "일품순두부 연북로점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_23",
+      "topicId": "jeju-eddy",
+      "name": "삼봉로한중식뷔페",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_26",
+      "topicId": "jeju-eddy",
+      "name": "원보뷔페",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_5",
+      "topicId": "life-master",
+      "name": "밀로프",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_15",
+      "topicId": "life-master",
+      "name": "육구방앗간",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_34",
+      "topicId": "life-master",
+      "name": "불백고수락",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_36",
+      "topicId": "life-master",
+      "name": "군산버거랩",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_1",
+      "topicId": "neighborhood-walk",
+      "name": "연정식당",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_4",
+      "topicId": "neighborhood-walk",
+      "name": "강원도막걸리술빵",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_5",
+      "topicId": "neighborhood-walk",
+      "name": "대일회할인마트",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_6",
+      "topicId": "neighborhood-walk",
+      "name": "속초문어국밥",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_15",
+      "topicId": "neighborhood-walk",
+      "name": "목화휴게소",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_17",
+      "topicId": "neighborhood-walk",
+      "name": "한라산아래첫마을",
+      "reason": "identity_review"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "restaurants": 3426,
-  "sourceLinks": 4902,
+  "restaurants": 3528,
+  "sourceLinks": 5017,
   "aliases": 940,
   "recommendationHolds": [
     {
@@ -9,7 +9,7 @@
       "reason": "원본 식당명에 현재 폐업 표기가 있으나 최신 영업 상태를 독립적으로 확정하지 못함."
     }
   ],
-  "verifiedLocationCorrections": 594,
+  "verifiedLocationCorrections": 704,
   "unclassified": [
     {
       "id": "r_92011579",
@@ -4584,7 +4584,7 @@
     {
       "id": "topic_enrichment_delicious-guys_0f7d4edd6929",
       "name": "강릉 동화가든",
-      "category": ""
+      "category": "두부요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_9de3277b4788",
@@ -8315,6 +8315,136 @@
       "id": "topic_goodprice_7203",
       "name": "가람",
       "category": "음식점"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_2",
+      "name": "동양",
+      "category": "아시아음식"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_3",
+      "name": "몽미",
+      "category": "떡,한과"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_9",
+      "name": "뽈락",
+      "category": "생선회"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_12",
+      "name": "남부식당",
+      "category": "음식점"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_16",
+      "name": "복성만두",
+      "category": "만두"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_17",
+      "name": "밀양갈비",
+      "category": "돼지고기구이"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_21",
+      "name": "어징오&횟집",
+      "category": "생선회"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_25",
+      "name": "장가네손만두",
+      "category": "만두"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_26",
+      "name": "석이네식당",
+      "category": "해물,생선요리"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_28",
+      "name": "옛날만두",
+      "category": "만두"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_29",
+      "name": "시장횟집",
+      "category": "생선회"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_7",
+      "name": "제주따이",
+      "category": "전복요리"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_28",
+      "name": "제주미식회",
+      "category": "돼지고기구이"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_30",
+      "name": "정준오리",
+      "category": "오리요리"
+    },
+    {
+      "id": "topic_life-master_20260921_14",
+      "name": "구들목한약화로구이",
+      "category": "육류,고기요리"
+    },
+    {
+      "id": "topic_life-master_20260921_25",
+      "name": "대월떡집",
+      "category": "떡,한과"
+    },
+    {
+      "id": "topic_life-master_20260921_29",
+      "name": "일광당",
+      "category": "만두"
+    },
+    {
+      "id": "topic_life-master_20260921_30",
+      "name": "제일분식",
+      "category": "만두"
+    },
+    {
+      "id": "topic_life-master_20260921_35",
+      "name": "임진각식당",
+      "category": "육류,고기요리"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_2",
+      "name": "남마담",
+      "category": "해물,생선요리"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_10",
+      "name": "혜진식당",
+      "category": "해물,생선요리"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_14",
+      "name": "성산포수협활어회센터",
+      "category": "해물,생선요리"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_22",
+      "name": "운전수문어",
+      "category": "해물,생선요리"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_23",
+      "name": "케빈스보일링크랩 해운대점",
+      "category": "해산물"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_26",
+      "name": "영신횟집",
+      "category": "생선회"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_29",
+      "name": "태안 하얀게국지 통나무집사람들",
+      "category": "게국지"
     }
   ],
   "errors": [],

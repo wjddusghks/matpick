@@ -1,17 +1,17 @@
 {
-  "checkedAt": "2026-09-20T13:22:33.636Z",
-  "candidateCount": 247,
-  "uniquePublished": 228,
-  "newRestaurants": 186,
-  "appearanceCount": 238,
+  "checkedAt": "2026-09-21T00:30:17.736Z",
+  "candidateCount": 378,
+  "uniquePublished": 341,
+  "newRestaurants": 288,
+  "appearanceCount": 353,
   "topics": [
     {
       "priority": 1,
       "id": "life-master",
       "name": "생활의 달인",
-      "candidates": 9,
-      "published": 9,
-      "withPrice": 8
+      "candidates": 49,
+      "published": 45,
+      "withPrice": 39
     },
     {
       "priority": 2,
@@ -25,9 +25,9 @@
       "priority": 3,
       "id": "neighborhood-walk",
       "name": "동네 한 바퀴",
-      "candidates": 3,
-      "published": 3,
-      "withPrice": 3
+      "candidates": 33,
+      "published": 27,
+      "withPrice": 25
     },
     {
       "priority": 4,
@@ -41,17 +41,17 @@
       "priority": 5,
       "id": "chureupkyeon",
       "name": "츄릅켠",
-      "candidates": 1,
-      "published": 1,
-      "withPrice": 0
+      "candidates": 32,
+      "published": 31,
+      "withPrice": 28
     },
     {
       "priority": 6,
       "id": "jeju-eddy",
       "name": "제주에디",
-      "candidates": 3,
-      "published": 3,
-      "withPrice": 3
+      "candidates": 33,
+      "published": 28,
+      "withPrice": 27
     },
     {
       "priority": 7,
@@ -1918,6 +1918,926 @@
       "newRestaurant": true,
       "withPrice": true,
       "menuItems": 6
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_1",
+      "restaurantId": "topic_chureupkyeon_20260921_1",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 29
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_2",
+      "restaurantId": "topic_chureupkyeon_20260921_2",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_3",
+      "restaurantId": "topic_chureupkyeon_20260921_3",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_4",
+      "restaurantId": "topic_chureupkyeon_20260921_4",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_5",
+      "restaurantId": "topic_chureupkyeon_20260921_5",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_6",
+      "restaurantId": "topic_chureupkyeon_20260921_6",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_7",
+      "restaurantId": "topic_enrichment_delicious-guys_f24d54f590b5",
+      "topicId": "chureupkyeon",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 30
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_8",
+      "restaurantId": "topic_chureupkyeon_20260921_8",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_9",
+      "restaurantId": "topic_chureupkyeon_20260921_9",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_10",
+      "restaurantId": "topic_chureupkyeon_20260921_10",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_11",
+      "restaurantId": "topic_chureupkyeon_20260921_11",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_12",
+      "restaurantId": "topic_chureupkyeon_20260921_12",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_13",
+      "restaurantId": "topic_chureupkyeon_20260921_13",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_14",
+      "restaurantId": "topic_chureupkyeon_20260921_14",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_15",
+      "restaurantId": "topic_chureupkyeon_20260921_15",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_16",
+      "restaurantId": "topic_chureupkyeon_20260921_16",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_17",
+      "restaurantId": "topic_chureupkyeon_20260921_17",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_18",
+      "restaurantId": "topic_chureupkyeon_20260921_18",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_19",
+      "restaurantId": "topic_enrichment_michelin-selected_a5272cc7ced1",
+      "topicId": "chureupkyeon",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_20",
+      "restaurantId": "topic_chureupkyeon_20260921_20",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_21",
+      "restaurantId": "topic_chureupkyeon_20260921_21",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_22",
+      "restaurantId": "travel_busan-bite_124",
+      "topicId": "chureupkyeon",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 37
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_23",
+      "restaurantId": "topic_chureupkyeon_20260921_23",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_25",
+      "restaurantId": "topic_chureupkyeon_20260921_25",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_26",
+      "restaurantId": "topic_chureupkyeon_20260921_26",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_27",
+      "restaurantId": "topic_chureupkyeon_20260921_27",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_28",
+      "restaurantId": "topic_chureupkyeon_20260921_28",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_29",
+      "restaurantId": "topic_chureupkyeon_20260921_29",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_30",
+      "restaurantId": "topic_chureupkyeon_20260921_30",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 27
+    },
+    {
+      "candidateId": "topic_chureupkyeon_20260921_31",
+      "restaurantId": "topic_chureupkyeon_20260921_31",
+      "topicId": "chureupkyeon",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_1",
+      "restaurantId": "topic_jeju-eddy_20260921_1",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_2",
+      "restaurantId": "travel_jeju-bite_8214e02e76e37b85-row-2059",
+      "topicId": "jeju-eddy",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_3",
+      "restaurantId": "topic_jeju-eddy_20260921_3",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_4",
+      "restaurantId": "topic_jeju-eddy_20260921_4",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_6",
+      "restaurantId": "topic_jeju-eddy_20260921_6",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_7",
+      "restaurantId": "topic_jeju-eddy_20260921_7",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_8",
+      "restaurantId": "topic_jeju-eddy_20260921_8",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_9",
+      "restaurantId": "topic_jeju-eddy_20260921_9",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_10",
+      "restaurantId": "topic_jeju-eddy_20260921_10",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_11",
+      "restaurantId": "topic_enrichment_baekjong-wok_b8c94b6558fa",
+      "topicId": "jeju-eddy",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_12",
+      "restaurantId": "travel_jeju-bite_dd67f3e78922e1f9-row-2729",
+      "topicId": "jeju-eddy",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_14",
+      "restaurantId": "topic_jeju-eddy_20260921_14",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_15",
+      "restaurantId": "topic_jeju-eddy_20260921_15",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_16",
+      "restaurantId": "topic_jeju-eddy_20260921_16",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_17",
+      "restaurantId": "topic_jeju-eddy_20260921_17",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_18",
+      "restaurantId": "topic_jeju-eddy_20260921_18",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_19",
+      "restaurantId": "topic_jeju-eddy_20260921_19",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_20",
+      "restaurantId": "topic_jeju-eddy_20260921_20",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_22",
+      "restaurantId": "topic_jeju-eddy_20260921_22",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_24",
+      "restaurantId": "topic_jeju-eddy_20260921_24",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_25",
+      "restaurantId": "topic_jeju-eddy_20260921_25",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_27",
+      "restaurantId": "topic_jeju-eddy_20260921_27",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_28",
+      "restaurantId": "topic_jeju-eddy_20260921_28",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_29",
+      "restaurantId": "topic_jeju-eddy_20260921_29",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_jeju-eddy_20260921_30",
+      "restaurantId": "topic_jeju-eddy_20260921_30",
+      "topicId": "jeju-eddy",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_life-master_20260921_1",
+      "restaurantId": "topic_life-master_20260921_1",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_2",
+      "restaurantId": "topic_life-master_20260921_2",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_life-master_20260921_3",
+      "restaurantId": "topic_life-master_20260921_3",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_life-master_20260921_4",
+      "restaurantId": "topic_life-master_20260921_4",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 19
+    },
+    {
+      "candidateId": "topic_life-master_20260921_6",
+      "restaurantId": "topic_life-master_20260921_6",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_life-master_20260921_7",
+      "restaurantId": "topic_life-master_20260921_7",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_life-master_20260921_8",
+      "restaurantId": "topic_enrichment_delicious-guys_0f7d4edd6929",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_life-master_20260921_9",
+      "restaurantId": "topic_life-master_20260921_9",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_10",
+      "restaurantId": "topic_life-master_20260921_10",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_life-master_20260921_11",
+      "restaurantId": "topic_life-master_20260921_11",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_12",
+      "restaurantId": "topic_life-master_20260921_12",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_life-master_20260921_13",
+      "restaurantId": "wednesday-gourmet_restaurant_054",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_life-master_20260921_14",
+      "restaurantId": "topic_life-master_20260921_14",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_life-master_20260921_16",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_13df1fa04da5",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_life-master_20260921_17",
+      "restaurantId": "topic_life-master_20260921_17",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 17
+    },
+    {
+      "candidateId": "topic_life-master_20260921_18",
+      "restaurantId": "topic_life-master_20260921_18",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 9
+    },
+    {
+      "candidateId": "topic_life-master_20260921_19",
+      "restaurantId": "topic_life-master_20260921_19",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 8
+    },
+    {
+      "candidateId": "topic_life-master_20260921_20",
+      "restaurantId": "topic_life-master_20260921_20",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 73
+    },
+    {
+      "candidateId": "topic_life-master_20260921_21",
+      "restaurantId": "topic_life-master_20260921_21",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_life-master_20260921_22",
+      "restaurantId": "topic_life-master_20260921_22",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_23",
+      "restaurantId": "topic_life-master_20260921_23",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_life-master_20260921_24",
+      "restaurantId": "topic_life-master_20260921_24",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 16
+    },
+    {
+      "candidateId": "topic_life-master_20260921_25",
+      "restaurantId": "topic_life-master_20260921_25",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_life-master_20260921_26",
+      "restaurantId": "topic_life-master_20260921_26",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 38
+    },
+    {
+      "candidateId": "topic_life-master_20260921_27",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_life-master_20260921_28",
+      "restaurantId": "topic_life-master_20260921_28",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_life-master_20260921_29",
+      "restaurantId": "topic_life-master_20260921_29",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 10
+    },
+    {
+      "candidateId": "topic_life-master_20260921_30",
+      "restaurantId": "topic_life-master_20260921_30",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_life-master_20260921_31",
+      "restaurantId": "topic_life-master_20260921_31",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_life-master_20260921_32",
+      "restaurantId": "topic_life-master_20260921_32",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_life-master_20260921_33",
+      "restaurantId": "topic_enrichment_michelin-selected_f90b93a95c96",
+      "topicId": "life-master",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_life-master_20260921_35",
+      "restaurantId": "topic_life-master_20260921_35",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_37",
+      "restaurantId": "topic_life-master_20260921_37",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 24
+    },
+    {
+      "candidateId": "topic_life-master_20260921_38",
+      "restaurantId": "topic_life-master_20260921_38",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_life-master_20260921_39",
+      "restaurantId": "topic_life-master_20260921_39",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_life-master_20260921_40",
+      "restaurantId": "topic_life-master_20260921_40",
+      "topicId": "life-master",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_2",
+      "restaurantId": "topic_neighborhood-walk_20260921_2",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 3
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_3",
+      "restaurantId": "topic_neighborhood-walk_20260921_3",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 46
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_7",
+      "restaurantId": "topic_neighborhood-walk_20260921_7",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_8",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_407",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 22
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_9",
+      "restaurantId": "topic_neighborhood-walk_20260921_9",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 13
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_10",
+      "restaurantId": "topic_neighborhood-walk_20260921_10",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_11",
+      "restaurantId": "topic_neighborhood-walk_20260921_11",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 5
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_12",
+      "restaurantId": "topic_neighborhood-walk_20260921_12",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_13",
+      "restaurantId": "topic_neighborhood-walk_20260921_13",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 14
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_14",
+      "restaurantId": "topic_neighborhood-walk_20260921_14",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_16",
+      "restaurantId": "topic_neighborhood-walk_20260921_16",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 2
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_18",
+      "restaurantId": "topic_neighborhood-walk_20260921_18",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 7
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_19",
+      "restaurantId": "topic_neighborhood-walk_20260921_19",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_20",
+      "restaurantId": "topic_neighborhood-walk_20260921_20",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 18
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_21",
+      "restaurantId": "topic_neighborhood-walk_20260921_21",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 1
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_22",
+      "restaurantId": "topic_neighborhood-walk_20260921_22",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_23",
+      "restaurantId": "topic_neighborhood-walk_20260921_23",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 4
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_24",
+      "restaurantId": "topic_neighborhood-walk_20260921_24",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 20
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_25",
+      "restaurantId": "topic_neighborhood-walk_20260921_25",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_26",
+      "restaurantId": "topic_neighborhood-walk_20260921_26",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 11
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_27",
+      "restaurantId": "topic_neighborhood-walk_20260921_27",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 12
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_28",
+      "restaurantId": "topic_neighborhood-walk_20260921_28",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": false,
+      "menuItems": 0
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_29",
+      "restaurantId": "topic_neighborhood-walk_20260921_29",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": true,
+      "withPrice": true,
+      "menuItems": 6
+    },
+    {
+      "candidateId": "topic_neighborhood-walk_20260921_30",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_303",
+      "topicId": "neighborhood-walk",
+      "newRestaurant": false,
+      "withPrice": true,
+      "menuItems": 16
     }
   ],
   "review": [
@@ -2027,6 +2947,102 @@
       "id": "topic_goodprice_1646",
       "topicId": "good-price",
       "name": "남선식당",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_24",
+      "topicId": "chureupkyeon",
+      "name": "멕시칸치킨 범5점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_5",
+      "topicId": "jeju-eddy",
+      "name": "고기장 중문점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_13",
+      "topicId": "jeju-eddy",
+      "name": "도시정원",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_21",
+      "topicId": "jeju-eddy",
+      "name": "일품순두부 연북로점",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_23",
+      "topicId": "jeju-eddy",
+      "name": "삼봉로한중식뷔페",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_26",
+      "topicId": "jeju-eddy",
+      "name": "원보뷔페",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_5",
+      "topicId": "life-master",
+      "name": "밀로프",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_15",
+      "topicId": "life-master",
+      "name": "육구방앗간",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_34",
+      "topicId": "life-master",
+      "name": "불백고수락",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_life-master_20260921_36",
+      "topicId": "life-master",
+      "name": "군산버거랩",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_1",
+      "topicId": "neighborhood-walk",
+      "name": "연정식당",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_4",
+      "topicId": "neighborhood-walk",
+      "name": "강원도막걸리술빵",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_5",
+      "topicId": "neighborhood-walk",
+      "name": "대일회할인마트",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_6",
+      "topicId": "neighborhood-walk",
+      "name": "속초문어국밥",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_15",
+      "topicId": "neighborhood-walk",
+      "name": "목화휴게소",
+      "reason": "identity_review"
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_17",
+      "topicId": "neighborhood-walk",
+      "name": "한라산아래첫마을",
       "reason": "identity_review"
     }
   ]

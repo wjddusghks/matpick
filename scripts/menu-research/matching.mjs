@@ -51,7 +51,7 @@ export function addressParts(value) {
     .replace(/\([^)]*\)/g, "")
     .match(/([가-힣a-zA-Z0-9·.]+(?:대로|로|길))\s+(\d+(?:-\d+)?)/);
   const parcel = text.match(
-    /([가-힣0-9]+(?:동\d*가|동|리|읍))\s+(\d+(?:-\d+)?)/,
+    /([가-힣0-9]+(?:동\d*가|로\d+가|동|리|읍))\s+(\d+(?:-\d+)?)/,
   );
   return {
     province,

@@ -1,6 +1,7 @@
 import rawDataset from "./matpick-data.json";
 import menuResearch from "./generated/menu-research.generated.json";
 import existingDataEnrichment from "./generated/existing-data-enrichment.generated.json";
+import menuPriceFollowup from "./generated/menu-price-followup.generated.json";
 import travelDiscovery from "./generated/travel-discovery.generated.json";
 import topicExpansion from "./generated/topic-expansion.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
@@ -488,6 +489,7 @@ const normalizedDataset: MatpickDataSet = {
       ? (menuResearch as Record<string, Partial<Restaurant>>)[restaurant.id]
       : {}),
     ...(existingDataEnrichment as Record<string, Partial<Restaurant>>)[restaurant.id],
+    ...(menuPriceFollowup as Record<string, Partial<Restaurant>>)[restaurant.id],
     ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
       restaurant.id
     ],

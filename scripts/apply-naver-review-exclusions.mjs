@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const dir=path.join(root,'source-data/menu-price-followup-2026-09-21');
+const research=JSON.parse(await fs.readFile(path.join(dir,'naver-results-140.json'),'utf8'));
+const excluded=research.restaurants.filter(r=>!['naver_priced','delivery_price_found'].includes(r.status));
+assert.equal(excluded.length,119);
+assert.equal(new Set(excluded.map(r=>r.id)).size,119);
+const publicData=JSON.parse(await fs.readFile(path.join(root,'matpick_all/client/src/data/generated/public-dataset.json'),'utf8'));
+for(const r of excluded)assert.ok(publicData.restaurants.some(p=>p.id===r.id),r.id);
+const evidence={requestedAt:'2026-09-21',basis:'사용자 요청: 140개 네이버 재조사 중 일반 메뉴·배달 가격 확보 21개를 제외한 119개를 추천·검색에서 제외',operationStatesChanged:false,restaurants:excluded};
+await fs.writeFile(path.join(dir,'excluded-119.json'),JSON.stringify(evidence,null,2)+'\n');
+await fs.writeFile(path.join(root,'matpick_all/client/src/data/restaurant-exclusions.json'),JSON.stringify({reason:'메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다.',restaurantIds:excluded.map(r=>r.id)},null,2)+'\n');
+console.log('Prepared 119 editorial exclusions; no closure claims or source deletion.');

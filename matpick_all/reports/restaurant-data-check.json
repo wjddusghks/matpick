@@ -4,9 +4,599 @@
   "aliases": 940,
   "recommendationHolds": [
     {
+      "id": "old-korean-100_restaurant_008",
+      "name": "서울 형제추어탕(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "old-korean-100_restaurant_016",
+      "name": "서울 곰보추탕(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "old-korean-100_restaurant_028",
+      "name": "경주 전통경주할매집(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "old-korean-100_restaurant_050",
+      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "old-korean-100_restaurant_066",
+      "name": "속초 고성회관(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "old-korean-100_restaurant_085",
+      "name": "강진 완도횟집(현재 폐업, 영업종료)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+      "name": "거인통닭",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b7b4d097d081",
+      "name": "공주분식",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_58613205c46d",
+      "name": "꼬메이베베",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_88ee18fc3f75",
+      "name": "노량진수제비",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_038286bba16a",
+      "name": "바로방",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73",
+      "name": "보배집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_89266777bbf7",
+      "name": "북경통닭",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
+      "name": "소문난동래파전",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_5a1237af7f4b",
+      "name": "송탄시장 붕어빵",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_de1345dcdc05",
+      "name": "수와래",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a1c6c2c6bac4",
+      "name": "수유시장 만두명가",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_bcc3d4b990f7",
+      "name": "어우동",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_4556e0c0aebd",
+      "name": "영천시장 원조떡볶이",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_45be58e3ebae",
+      "name": "윤씨밀방",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_8223004f0ea2",
+      "name": "토스트킹",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_f47ee86282d2",
+      "name": "통영식도락",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a966fb1dc9aa",
+      "name": "화순반점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_006",
+      "name": "서산 가야슈퍼",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_010",
+      "name": "서산 광진상회",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_018",
+      "name": "서울 에빈의커피이야기",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_045",
+      "name": "목포 보리마당 가맥집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_073",
+      "name": "대전 탑집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_115",
+      "name": "수원 남보원불고기",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_155",
+      "name": "서울 욕쟁이할머니집 신신식당",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_219",
+      "name": "함양 안의뻥튀기",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_220",
+      "name": "서울 해장국사람들",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_246",
+      "name": "서울 시장회집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_259",
+      "name": "양평 표미숙국수",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_291",
+      "name": "홍천 오복식당",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_297",
+      "name": "양주 노고산로뎀나무",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_299",
+      "name": "태안 산장가든",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_326",
+      "name": "완도 장도식당슈퍼",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_333",
+      "name": "고성 해녀세자매",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_379",
+      "name": "보령 일등수산",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_416",
+      "name": "정읍 옛날팥죽",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_419",
+      "name": "경주 할매문어집 (성동시장)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_679",
+      "name": "영광 장보고굴비",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_698",
+      "name": "고성 송암현대떡방앗간",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_112",
+      "name": "통영 수정식당",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_129",
+      "name": "군산 집밥진수성찬 (아복식당)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_224",
+      "name": "서울 피자아이코닉",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_295",
+      "name": "서울 미드레벨",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_385",
+      "name": "서울 춘리마라탕 연남점 (서대문양꼬치)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_424",
+      "name": "서울 로칸다몽로",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_464",
+      "name": "서울 원조낙원떡집공장",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_480",
+      "name": "서울 나 전복",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_541",
+      "name": "서울 이나니와요스케 시청점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_e651c9e527db",
+      "name": "길거리 토스트",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_f3e84eac8444",
+      "name": "마창수산직영횟집 내동점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_85adbc66bac1",
+      "name": "고양 제주쉬멍해장국 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_36a37afa5ed5",
+      "name": "광명 듀드팡 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3ba17fcf16a0",
+      "name": "대전 샘골식당",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_7889b45ee903",
+      "name": "대전 THE김밥 갈마동점 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_15586944d4f2",
+      "name": "부산 칠백장장인국밥",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e3bd553d16ab",
+      "name": "부천 살몬마켓 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a222ae6fd377",
+      "name": "서울 고요남 논현점 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
       "id": "topic_enrichment_delicious-guys_762a359e49ec",
       "name": "서울 교동두부 (현재 폐업)",
-      "reason": "원본 식당명에 현재 폐업 표기가 있으나 최신 영업 상태를 독립적으로 확정하지 못함."
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e3f14d473c42",
+      "name": "서울 놀부부대찌개 구파발 (문세윤, 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_76032c826d42",
+      "name": "서울 뉴문한우육회 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c5ed792a9b8d",
+      "name": "서울 대박오리방벌교꼬막 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_368ba3b84bf5",
+      "name": "서울 대전블르스 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_8d67fbe6061d",
+      "name": "서울 더리버 벨라쿠치나 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_10888724267d",
+      "name": "서울 돈탐라제주냉삼1977 방이점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1e9004fed4ac",
+      "name": "서울 드럼통팩토리 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_18824bcc21d7",
+      "name": "서울 매드포갈릭 잠원점 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4b732ea7495c",
+      "name": "서울 미드가르드 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3fb06260493c",
+      "name": "서울 바른면집 건대점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6783f7a3adfc",
+      "name": "서울 북촌공장 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e679b48ac8bd",
+      "name": "서울 분짜라붐 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_2032a2edf796",
+      "name": "서울 새마을식당 논현점 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b6ff487d84f7",
+      "name": "서울 쉬림프팩토리 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a6516150a374",
+      "name": "서울 스시마리 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_76b490c5a59c",
+      "name": "서울 쌀롱 드 누이 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f1d0a9ca5cca",
+      "name": "서울 양재동첫번째찜 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1cbe368e6d45",
+      "name": "서울 영광굴비전문점 서초점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_aebce0169408",
+      "name": "서울 오성닭한마리",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ae4b266f48ac",
+      "name": "서울 오텀인뉴욕 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b88b19ba33b2",
+      "name": "서울 온 (카페 溫)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a0e99ee0cb4b",
+      "name": "서울 징기스 홍대점 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e0d1d1dd782b",
+      "name": "서울 청담정스시 (재방문, 현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0057e70f81a7",
+      "name": "서울 청담정스시 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_bcf6718d836e",
+      "name": "서울 춘리마라탕 연남점 (삼국지)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4b07323907f9",
+      "name": "서울 티마하우스 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_dd05739afc75",
+      "name": "서울 페리카나 청룡동점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ff2dc9c71918",
+      "name": "서울 펭귄 마카롱 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ba1f927c07e4",
+      "name": "서울 홈수끼 학동점",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b454c0300d31",
+      "name": "서울 훈남닭발 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_404a83c18814",
+      "name": "서울 The450 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bbcd2238d71",
+      "name": "성남 경포 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_080df2c03d86",
+      "name": "속초 삼해횟집 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_5fe84d15b1c5",
+      "name": "수원 무쇳집 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_5bd76c1003f2",
+      "name": "영광 갯마을횟집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_cb1f5244ca80",
+      "name": "완도 전망좋은수협회센타",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4bd85c0c2935",
+      "name": "의왕 외식하기가장좋은집 (외가집, 현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_11d61bf1517a",
+      "name": "의왕 임학순전통웰빙파김치강화갯벌장어민물장어",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_34de3be4fb31",
+      "name": "이천 류재열의명품코다리 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b9696d8b6ff2",
+      "name": "인천 새우상회 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_34630912fd18",
+      "name": "인천 서해안횟집",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f00def392c52",
+      "name": "인천 외내골가든 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4912573a6b12",
+      "name": "인천 정자담 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_bcf12ad322c8",
+      "name": "인천 피에프창 송도트리플스트리트",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_55f0345e0832",
+      "name": "일산 바람아래꽃돌게장 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6463a7c74255",
+      "name": "전주 오선모옛날김밥",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d4299fa3d3ac",
+      "name": "전주 치즈명가 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bf624ddbd8e",
+      "name": "제주 돈해돈찜 (현재 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_04fc2c38ef90",
+      "name": "파주 정미식당 통일동산",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_cf4feeb5e5bb",
+      "name": "파주 칼라디소토",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_19c1ec6a8738",
+      "name": "파주 The담다 (이대 대흥식당, 서울에서 이전)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
+      "name": "평택 나귀당귀",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_79437a7edfb4",
+      "name": "하남 신돈까스본점 (유민상, 폐업)",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_michelin-1-star_df44dbdfc983",
+      "name": "소설한남",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_22",
+      "name": "운전수문어",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_28",
+      "name": "브레드하우스",
+      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     }
   ],
   "verifiedLocationCorrections": 710,

@@ -459,11 +459,11 @@ export function getSourceById(sourceId: string) {
 export function getRestaurantsBySource(sourceId: string) {
   const linkedRestaurantIds = restaurantIdsBySourceId.get(sourceId) ?? new Set<string>();
 
-  return restaurants.filter((restaurant) => linkedRestaurantIds.has(restaurant.id));
+  return restaurants.filter((restaurant) => linkedRestaurantIds.has(restaurant.id) && isRestaurantRecommendable(restaurant));
 }
 
 export function getSourceRestaurantCount(sourceId: string) {
-  return restaurantIdsBySourceId.get(sourceId)?.size ?? 0;
+  return getRestaurantsBySource(sourceId).length;
 }
 
 export function getSourceSubdivisions(sourceId: string): SourceSubdivision[] {
@@ -473,6 +473,9 @@ export function getSourceSubdivisions(sourceId: string): SourceSubdivision[] {
     if (link.sourceId !== sourceId) {
       return;
     }
+
+    const restaurant = getRestaurantById(link.restaurantId);
+    if (!restaurant || !isRestaurantRecommendable(restaurant)) return;
 
     const label = link.label?.trim();
     if (!label) {

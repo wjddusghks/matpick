@@ -20,6 +20,9 @@ const results = (
 const enrichment = await read(
   "client/src/data/generated/existing-data-enrichment.generated.json"
 );
+const menuFollowup = await read(
+  "client/src/data/generated/menu-price-followup.generated.json"
+);
 test("all ten researched topics open real collections, preserving old restaurant URLs", () => {
   assert.equal(report.topics.length, 10);
   for (const t of report.topics) {
@@ -69,7 +72,9 @@ test("published candidates have source evidence, matching branches and current m
         .sort((left, right) =>
           right.checkedAt.localeCompare(left.checkedAt)
         )[0];
-      const refreshed = enrichment[restaurant.id];
+      const refreshed = menuFollowup[restaurant.id]?.menus
+        ? menuFollowup[restaurant.id]
+        : enrichment[restaurant.id];
       const latestMenu = refreshed?.menus ? refreshed : null;
       assert.equal(
         restaurant.menuPriceVerifiedAt,
@@ -79,9 +84,9 @@ test("published candidates have source evidence, matching branches and current m
         restaurant.menuPriceVerifiedAt.slice(0, 10) >=
           newest.checkedAt.slice(0, 10)
       );
-      assert.ok(
-        restaurant.menuPriceSources.some(s => s.url === result.place.placeUrl)
-      );
+      const expectedSources = latestMenu?.menuPriceSources || [{ url: result.place.placeUrl }];
+      for (const source of expectedSources)
+        assert.ok(restaurant.menuPriceSources.some(s => s.url === source.url));
       assert.deepEqual(
         restaurant.menus.map(m => [m.name, m.price]),
         (latestMenu?.menus || newest.menus).map(m => [m.name, m.price])

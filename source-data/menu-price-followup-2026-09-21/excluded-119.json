@@ -1,0 +1,3314 @@
+{
+  "requestedAt": "2026-09-21",
+  "basis": "사용자 요청: 140개 네이버 재조사 중 일반 메뉴·배달 가격 확보 21개를 제외한 119개를 추천·검색에서 제외",
+  "operationStatesChanged": false,
+  "restaurants": [
+    {
+      "id": "topic_enrichment_delicious-guys_762a359e49ec",
+      "name": "서울 교동두부 (현재 폐업)",
+      "address": "서울 종로구 율곡로 44-8 (관훈동 110)",
+      "region": "서울 종로구",
+      "previousStatus": "closure_unconfirmed",
+      "checkedAt": "2026-09-21T03:33:30.423Z",
+      "status": "identity_unresolved",
+      "queries": [
+        "교동두부 서울 종로구 율곡로 44-8",
+        "교동두부"
+      ],
+      "menus": [],
+      "reason": "상호와 등록 주소를 함께 검색한 결과 없음. 상호 검색에는 용인·수원 등 다른 지역 업소가 나와 종로 관훈동 지점과 연결하지 않음.",
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B5%90%EB%8F%99%EB%91%90%EB%B6%80",
+      "index": 0
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_15586944d4f2",
+      "name": "부산 칠백장장인국밥",
+      "address": "부산 동래구 미남로 67 (사직동 136-6)",
+      "region": "부산 동래구",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T03:35:18.819Z",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "칠백장장인국밥",
+        "부산 동래구 미남로 67"
+      ],
+      "menus": [],
+      "reason": "상호 검색 결과 없음. 등록 주소의 현재 장소 목록에는 누리마을감자탕 사직점과 영화 촬영지가 표시됨. 기존 업소 폐업·이전 확정은 별도 확인 필요.",
+      "sourceUrl": "https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%20%EB%8F%99%EB%9E%98%EA%B5%AC%20%EB%AF%B8%EB%82%A8%EB%A1%9C%2067",
+      "index": 1
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bf624ddbd8e",
+      "name": "제주 돈해돈찜 (현재 폐업)",
+      "address": "제주 제주시 연북로 199 (오라이동 3162-3)",
+      "region": "제주 제주시",
+      "previousStatus": "closure_unconfirmed",
+      "checkedAt": "2026-09-21T03:40:31.866Z",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "돈해돈찜",
+        "제주 제주시 연북로 199"
+      ],
+      "menus": [],
+      "reason": "상호 검색 결과 없음. 같은 도로명·지번의 현재 장소 목록은 코지하우스 제주시점. 기존 업소의 폐업·이전은 별도 확인 필요.",
+      "sourceUrl": "https://map.naver.com/p/search/%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%20%EC%97%B0%EB%B6%81%EB%A1%9C%20199",
+      "index": 2
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_419",
+      "name": "경주 할매문어집 (성동시장)",
+      "address": "경북 경주시 원화로281번길 11 (성동동 57-3)",
+      "region": "경북 경주시",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T03:43:12.451Z",
+      "status": "menu_not_published",
+      "queries": [
+        "경주 할매문어집"
+      ],
+      "placeId": "38495751",
+      "matchedName": "할매문어집",
+      "matchedAddress": "경북 경주시 성동동 57-3",
+      "phone": "054-772-0898",
+      "menus": [],
+      "priceCandidates": [
+        {
+          "name": "문어 구매",
+          "price": "15,000원",
+          "kind": "visitor-reported",
+          "date": "2026-01-15",
+          "note": "중량·수량 미확인 구매가로 고정 메뉴가 아님"
+        }
+      ],
+      "reason": "동일 지번의 수산물 업소. 메뉴 탭과 영업시간은 미등록. 2026년 방문 기록과 문어 구매 가격은 있으나 매장 고정 메뉴 가격으로 사용하지 않음.",
+      "sourceUrl": "https://map.naver.com/p/entry/place/38495751",
+      "index": 3
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_698",
+      "name": "고성 송암현대떡방앗간",
+      "address": "강원 고성군 죽왕면 동해대로 5623 (송암리 237)",
+      "region": "강원 고성군",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T03:43:53.562Z",
+      "status": "price_candidate",
+      "queries": [
+        "송암현대떡방앗간"
+      ],
+      "matchedName": "송암현대떡방앗간",
+      "matchedAddress": "강원 고성군 죽왕면 동해대로 5623",
+      "phone": "033-632-2300",
+      "menus": [],
+      "priceCandidates": [
+        {
+          "name": "감자시루떡 1시루",
+          "price": "5,000원",
+          "date": "2026-09-09",
+          "kind": "visitor-reported"
+        },
+        {
+          "name": "쑥개떡 1팩",
+          "price": "5,000원",
+          "date": "2026-09-09",
+          "kind": "visitor-reported"
+        }
+      ],
+      "reason": "동일 주소 업소이며 2026년 8~9월 방문 자료에서 두 떡 가격이 일치함. 업체 메뉴 탭·영업시간 미등록으로 방문 가격 후보로 보존.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1320867747",
+      "index": 4
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_333",
+      "name": "고성 해녀세자매",
+      "address": "강원 고성군 현내면 대진항길 147 (대진리 5-10)",
+      "region": "강원 고성군",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T03:45:39.701Z",
+      "status": "identity_review",
+      "queries": [
+        "고성 해녀세자매",
+        "강원 고성군 현내면 대진항길 147"
+      ],
+      "menus": [],
+      "alternativePlace": {
+        "name": "해녀수산물",
+        "address": "강원 고성군 현내면 대진항길 147 대진항수산시장",
+        "placeId": "1277309099"
+      },
+      "reason": "상호 검색에는 없고 주소 검색의 시장 입점 6개 중 해녀수산물이 있음. 방송 상호와 동일 업소인지 불명확하고 해당 후보에도 메뉴·가격·영업시간이 미등록.",
+      "sourceUrl": "https://map.naver.com/p/entry/place/1277309099",
+      "index": 5
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_85adbc66bac1",
+      "name": "고양 제주쉬멍해장국 (현재 폐업)",
+      "address": "경기 고양시 일산서구 대산로 356 (대화동 137-2)",
+      "region": "경기 고양시",
+      "previousStatus": "closure_unconfirmed",
+      "checkedAt": "2026-09-21T03:46:17.244Z",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "고양 제주쉬멍해장국",
+        "경기 고양시 일산서구 대산로 356"
+      ],
+      "menus": [],
+      "reason": "상호 검색 결과 없음. 같은 도로명·지번의 현재 장소는 미래로 골프존이며 식당 메뉴는 없음. 폐업·이전은 별도 확인.",
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EC%84%9C%EA%B5%AC%20%EB%8C%80%EC%82%B0%EB%A1%9C%20356",
+      "index": 6
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_36a37afa5ed5",
+      "name": "광명 듀드팡 (현재 폐업)",
+      "address": "경기 광명시 안양천로 461 (철산동 37)",
+      "region": "경기 광명시",
+      "previousStatus": "closure_unconfirmed",
+      "checkedAt": "2026-09-21T03:51:11.100Z",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "광명 듀드팡",
+        "경기 광명시 안양천로 461"
+      ],
+      "menus": [],
+      "reason": "상호 검색 결과 없음. 동일 도로명·지번의 등록 업소 4개는 고기봉·스터디카페·골프용품·수학학원이며 듀드팡은 표시되지 않음.",
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EA%B4%91%EB%AA%85%EC%8B%9C%20%EC%95%88%EC%96%91%EC%B2%9C%EB%A1%9C%20461",
+      "index": 8
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_129",
+      "name": "군산 집밥진수성찬 (아복식당)",
+      "address": "전북 군산시 군산시 백릉로 116-1 (조촌동 734-12)",
+      "region": "전북 군산시",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "군산 집밥진수성찬",
+        "전북 군산시 백릉로116-1"
+      ],
+      "reason": "원주소 조촌동 734-12의 건물 표기는 집밥 진수성찬이나 현재 등록 업소는 김여사김밥. 상호 검색의 서천 진수성찬한식뷔페는 다른 지역이므로 제외. 폐업 또는 상호 변경 여부 미확정.",
+      "checkedAt": "2026-09-21T03:59:58.376Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%A0%84%EB%B6%81%20%EA%B5%B0%EC%82%B0%EC%8B%9C%20%EB%B0%B1%EB%A6%89%EB%A1%9C116-1",
+      "index": 10
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3ba17fcf16a0",
+      "name": "대전 샘골식당",
+      "address": "대전 중구 계룡로881번길 30 (용두동 14-13)",
+      "region": "대전 중구",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "queries": [
+        "대전 샘골식당",
+        "대전 중구 계룡로881번길30"
+      ],
+      "reason": "원주소에 업소 목록이 없고 상호 검색은 목동로9-11의 샘골흑염소를 반환. 주소가 달라 이전·동일 업소 확인 전 가격을 적용하지 않음.",
+      "checkedAt": "2026-09-21T03:59:58.376Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%A4%91%EA%B5%AC%20%EA%B3%84%EB%A3%A1%EB%A1%9C881%EB%B2%88%EA%B8%B830",
+      "index": 12
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_073",
+      "name": "대전 탑집",
+      "address": "대전 중구 선화서로19번길 44 (선화동 430-6)",
+      "region": "대전 중구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "queries": [
+        "대전 탑집",
+        "대전 중구 선화서로19번길44"
+      ],
+      "reason": "상호 검색 결과 없음. 원주소 선화동430-6은 조회되지만 등록 업소가 없어 메뉴·폐업 여부 확인 불가.",
+      "checkedAt": "2026-09-21T03:59:58.376Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%A4%91%EA%B5%AC%20%EC%84%A0%ED%99%94%EC%84%9C%EB%A1%9C19%EB%B2%88%EA%B8%B844",
+      "index": 13
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_7889b45ee903",
+      "name": "대전 THE김밥 갈마동점 (현재 폐업)",
+      "address": "대전 서구 대덕대로 107 (갈마동 1217)",
+      "region": "대전 서구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "대전 THE김밥 갈마동점",
+        "대전 서구 대덕대로107"
+      ],
+      "reason": "원주소 갈마동1217에 백돈 대전서구점과 로케트밧데리 신전상사 등록. THE김밥은 상호 검색에서도 확인되지 않음. 다른 업소 입점만으로 폐업 확정하지 않음.",
+      "checkedAt": "2026-09-21T03:59:58.376Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%84%9C%EA%B5%AC%20%EB%8C%80%EB%8D%95%EB%8C%80%EB%A1%9C107",
+      "index": 14
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_045",
+      "name": "목포 보리마당 가맥집",
+      "address": "전남 목포시 보리마당로 29 (서산동 14-45)",
+      "region": "전남 목포시",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T03:54:42.086Z",
+      "status": "menu_not_published",
+      "queries": [
+        "목포 보리마당 가맥집"
+      ],
+      "matchedName": "보리마당 가맥집",
+      "matchedAddress": "전남광주 목포시 보리마당로 29",
+      "menus": [],
+      "reason": "동일 상호·주소의 네이버 업소 등록은 있으나 메뉴·가격·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1482470364",
+      "index": 15
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_379",
+      "name": "보령 일등수산",
+      "address": "충남 보령시 대천항1길 182 (신흑동 950-22)",
+      "region": "충남 보령시",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:00:22.193Z",
+      "status": "menu_not_published",
+      "queries": [
+        "보령 일등수산",
+        "충남 보령시 대천항1길182"
+      ],
+      "matchedName": "일등수산",
+      "matchedAddress": "충남 보령시 대천항1길182",
+      "phone": "041-934-0355",
+      "menus": [],
+      "reason": "주소가 일치하는 수산물 판매점 확인. 홈·리뷰·사진·정보 탭만 있고 메뉴 및 영업시간 미등록. 폐업으로 판단하지 않음.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1668462994",
+      "index": 18
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e3bd553d16ab",
+      "name": "부천 살몬마켓 (현재 폐업)",
+      "address": "경기 부천시 부일로 459 (심곡동 382-3)",
+      "region": "경기 부천시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "부천 살몬마켓",
+        "경기 부천시 부일로459"
+      ],
+      "reason": "상호 검색 결과 없음. 심곡동382-3의 전체 입점 업소12개 확인했으나 살몬마켓 없음. 동일 주소의 다른 식당 가격은 수집 대상에서 제외. 폐업·이전은 미확정.",
+      "checkedAt": "2026-09-21T03:59:58.376Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EB%B6%80%EC%B2%9C%EC%8B%9C%20%EB%B6%80%EC%9D%BC%EB%A1%9C459",
+      "index": 19
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_28",
+      "name": "브레드하우스",
+      "address": "경북 울릉군 울릉읍 봉래2길 18",
+      "region": "경북 울릉군",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:00:25.311Z",
+      "status": "menu_not_published",
+      "queries": [
+        "울릉 브레드하우스"
+      ],
+      "matchedName": "브레드하우스",
+      "matchedAddress": "경북 울릉군 울릉읍 봉래2길 18",
+      "phone": "054-791-4450",
+      "menus": [],
+      "reason": "기존 상호·주소가 일치하는 네이버 장소 확인. 메뉴 탭 및 공개 가격표가 없고 영업시간도 미등록. 폐업 여부는 확정할 수 없음.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1282179049",
+      "index": 21
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_006",
+      "name": "서산 가야슈퍼",
+      "address": "충남 서산시 운산면 개심사로 322 (신창리 18-2)",
+      "region": "충남 서산시",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T04:02:06.821Z",
+      "status": "price_candidate",
+      "queries": [
+        "서산 가야슈퍼"
+      ],
+      "matchedName": "가야슈퍼",
+      "matchedAddress": "충남 서산시 운산면 개심사로322",
+      "phone": "041-688-4404",
+      "menus": [],
+      "priceCandidates": [
+        {
+          "name": "엄나무순 전 한 상",
+          "price": "25,000원",
+          "evidenceDate": "2025-05-11"
+        },
+        {
+          "name": "잔치국수",
+          "price": "8,000원",
+          "evidenceDate": "2025-05-11"
+        }
+      ],
+      "reason": "주소 일치. 가격표 이미지 버튼은 열리지 않았음. 네이버 장소에 표시된 2025-05-11 방문 블로그에서 두 가격을 확인했으나 현재 공식 가격으로 확정하지 않음.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/17590634/home",
+      "index": 22
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_010",
+      "name": "서산 광진상회",
+      "address": "충남 서산시 운산면 해운로 761 (원벌리 49-1)",
+      "region": "충남 서산시",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T04:00:29.439Z",
+      "status": "menu_not_published",
+      "queries": [
+        "서산 광진상회"
+      ],
+      "matchedName": "광진상회",
+      "matchedAddress": "충남 서산시 운산면 해운로 761",
+      "phone": "041-663-4506",
+      "menus": [],
+      "reason": "기존 상호·주소가 일치하는 네이버 장소 확인. 메뉴 탭 및 공개 가격표가 없고 영업시간도 미등록. 폐업 여부는 확정할 수 없음.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1163487481",
+      "index": 23
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a222ae6fd377",
+      "name": "서울 고요남 논현점 (현재 폐업)",
+      "address": "서울 강남구 강남대로122길 10 (논현동 166)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "queries": [
+        "서울 고요남 논현점",
+        "서울 강남구 강남대로122길10"
+      ],
+      "reason": "상호 검색 결과 없음. 주소에 표시된 전체 12개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "status": "identity_unresolved",
+      "checkedAt": "2026-09-21T04:25:42.726Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C122%EA%B8%B810",
+      "addressListingCheck": {
+        "index": 24,
+        "query": "서울 강남구 강남대로122길10",
+        "checkedAt": "2026-09-21T04:25:42.726Z",
+        "pages": 1,
+        "count": 12,
+        "names": [
+          "별하곱창 논현본점",
+          "치즈홀덤 강남논현점",
+          "도시맥주 논현점",
+          "일확천금 복권방",
+          "유메오뎅 논현",
+          "커스텀360 강남지점",
+          "전담플레이 신논현점",
+          "논현 에이엠포차",
+          "모노맨션 신논현점",
+          "studio psy",
+          "스타파크",
+          "에스와이제이컴퍼니"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 24
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_480",
+      "name": "서울 나 전복",
+      "address": "서울 종로구 종로35길 21-4 (효제동 225)",
+      "region": "서울 종로구",
+      "previousStatus": "listing_only",
+      "queries": [
+        "서울 나전복",
+        "서울 종로구 종로35길21-4"
+      ],
+      "reason": "상호 검색 결과 없음. 원주소 효제동225의 등록 업소는 춘 참치. 이전·상호변경·폐업 여부 미확정.",
+      "status": "address_occupied_by_other_listing",
+      "checkedAt": "2026-09-21T04:02:06.821Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%A2%85%EB%A1%9C35%EA%B8%B821-4",
+      "index": 25
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e3f14d473c42",
+      "name": "서울 놀부부대찌개 구파발 (문세윤, 폐업)",
+      "address": "서울 은평구 진관2로 29-21 (진관동 72)",
+      "region": "서울 은평구",
+      "previousStatus": "closure_unconfirmed",
+      "queries": [
+        "놀부부대찌개 구파발",
+        "서울 은평구 진관2로29-21"
+      ],
+      "reason": "상호 검색 결과 없음. 주소에 표시된 전체 94개 장소(5페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "status": "identity_unresolved",
+      "checkedAt": "2026-09-21T04:29:36.250Z",
+      "menus": [],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9D%80%ED%8F%89%EA%B5%AC%20%EC%A7%84%EA%B4%802%EB%A1%9C29-21",
+      "addressListingCheck": {
+        "index": 26,
+        "query": "서울 은평구 진관2로 29-21",
+        "checkedAt": "2026-09-21T04:29:36.250Z",
+        "pages": 5,
+        "count": 94,
+        "names": [
+          "니드짐 헬스&PT 구파발점",
+          "르하임스터디카페 구파발역점",
+          "메가MGC커피 구파발역점",
+          "성모이음 정신건강의학과의원",
+          "서울이비인후과의원",
+          "포옹싸",
+          "은평 삼성화외과의원",
+          "써브웨이 구파발점",
+          "드림스퀘어",
+          "연세키즈인소아치과의원",
+          "두오안과의원",
+          "연세인스타일치과의원",
+          "NH농협은행 구파발지점",
+          "와이키즈 은평센터",
+          "폴리어학원 은평캠퍼스",
+          "프랭크버거 구파발역점",
+          "미소야 구파발역점",
+          "프린트잇 구파발역점",
+          "펠톤영어학원",
+          "설빙 구파발역점",
+          "비엔발레학원",
+          "봄날의서재 스터디카페 구파발역점",
+          "정성한줄 구파발역점",
+          "프라임PC방 구파발역점",
+          "이디야커피 구파발역점",
+          "테라에듀학원",
+          "CU 은평드림스퀘어점",
+          "유니스의원",
+          "늘이맛콩나물국밥&국수 진관점",
+          "은평음악학원",
+          "청년맥주",
+          "토즈스터디센터 구파발센터",
+          "한솥도시락 구파발역점",
+          "구파발연세내과의원",
+          "파리바게뜨 구파발역점",
+          "에코보청기 청각난청센터 은평본점",
+          "구파발코인노래연습장",
+          "하나제통의원",
+          "슈테른음악학원",
+          "글라스988",
+          "하이탑수학학원",
+          "파란별스피치 학원 구파발 본점",
+          "해봄아동청소년발달센터",
+          "와와학습코칭학원",
+          "만리향샤브샤브",
+          "LG유플러스 진관동 구파발역점",
+          "카페요아정 구파발역점",
+          "은평오렌지약국",
+          "G1230학원 은평뉴타운캠퍼스",
+          "구파발이한의원",
+          "아름다운눈썹",
+          "이투스 수학 진관점",
+          "글로리드학습코칭학원 은평점",
+          "오마뎅 구파발역점",
+          "농협은행 구파발지점 ATM",
+          "청담어학원 은평제2브랜치",
+          "드림노래연습장",
+          "라이브러리플러스독서실",
+          "미래엔수학 드림한솔학원",
+          "플레이 더 바이올린",
+          "하나한솔학원",
+          "마음이음연구소",
+          "씨앤지영어학원",
+          "굿모닝공인중개사사무소",
+          "드림힐링앤사우나",
+          "펠톤수학학원",
+          "맵핑단과전문학원",
+          "더메이크사회적협동조합 은평지부",
+          "원테이크학원",
+          "소마사고력수학 은평뉴타운점",
+          "드림스퀘어 민영 주차장",
+          "더함에듀학원",
+          "닥터정이클래스 은평뉴타운교육센터",
+          "파워태닝",
+          "프루프수학교습소",
+          "씨앤에이논술 진관점",
+          "은평악기",
+          "발자국소리가큰아이들 은평원",
+          "영그린헬시&뷰티",
+          "쿨공조에어컨",
+          "퀵서비스",
+          "세무법인 한맘 서부지점",
+          "농협은행 구파발지점 ATM",
+          "드림스퀘어관리단",
+          "유진메이트 여행사",
+          "동화세상에듀코 은평점",
+          "한국국제상무중심",
+          "이지러닝",
+          "콤파스아카데미",
+          "양연진 어학원",
+          "티엔티 수학 교습소",
+          "삼원유통 구파발점",
+          "은평 드림스퀘어 전기차충전소",
+          "미소야"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 26
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_76032c826d42",
+      "name": "서울 뉴문한우육회 (현재 폐업)",
+      "address": "서울 강남구 강남대로128길 6 (논현동 143-2)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "원주소 논현동143-2에 논현전·더바른정육식당 등 다른 업소 표시. 주소에 표시된 전체 6개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:25:47.331Z",
+      "menus": [],
+      "queries": [
+        "서울 뉴문한우육회",
+        "서울 강남구 강남대로128길6"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C128%EA%B8%B86",
+      "addressListingCheck": {
+        "index": 27,
+        "query": "서울 강남구 강남대로128길6",
+        "checkedAt": "2026-09-21T04:25:47.331Z",
+        "pages": 1,
+        "count": 6,
+        "names": [
+          "논현전",
+          "더바른정육식당 논현역점",
+          "현대순대국2호점",
+          "마켓정 논현점",
+          "계작살",
+          "오반"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 27
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c5ed792a9b8d",
+      "name": "서울 대박오리방벌교꼬막 (현재 폐업)",
+      "address": "서울 강서구 화곡로53길 7-11 (화곡동 987-13)",
+      "region": "서울 강서구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 도로명 원주소는 검색되지 않고 주변 주소 반환. 지번 화곡동987-13은 화곡로293으로 연결되며 업소 미등록. 원주소 정합성 추가 확인 필요.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 대박오리방벌교꼬막",
+        "서울 강서구 화곡동987-13"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EC%84%9C%EA%B5%AC%20%ED%99%94%EA%B3%A1%EB%8F%99987-13",
+      "index": 28
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_368ba3b84bf5",
+      "name": "서울 대전블르스 (현재 폐업)",
+      "address": "서울 종로구 삼일대로26길 17-1 (낙원동 80-1)",
+      "region": "서울 종로구",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 낙원동80-1의 유일한 등록 업소는 노란대문. 기존 업소 폐업·이전은 미확정.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 대전블르스",
+        "서울 종로구 삼일대로26길17-1"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%82%BC%EC%9D%BC%EB%8C%80%EB%A1%9C26%EA%B8%B817-1",
+      "index": 29
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_8d67fbe6061d",
+      "name": "서울 더리버 벨라쿠치나 (현재 폐업)",
+      "address": "서울 서초구 반포동 1338 (한강 반포지구)",
+      "region": "서울 서초구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 반포동1338은 조회되나 등록 업소 없음. 영업 상태 및 메뉴 확인 불가.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 더리버 벨라쿠치나",
+        "서울 서초구 반포동1338"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%98%ED%8F%AC%EB%8F%991338",
+      "index": 30
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_10888724267d",
+      "name": "서울 돈탐라제주냉삼1977 방이점",
+      "address": "서울 송파구 올림픽로32길 19-9 (방이동 59-11)",
+      "region": "서울 송파구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 방이동59-11에는 신비주막만 등록. 동일 브랜드 다른 지점 가격 제외.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 돈탐라제주냉삼1977 방이점",
+        "서울 송파구 올림픽로32길19-9"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%86%A1%ED%8C%8C%EA%B5%AC%20%EC%98%AC%EB%A6%BC%ED%94%BD%EB%A1%9C32%EA%B8%B819-9",
+      "index": 31
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1e9004fed4ac",
+      "name": "서울 드럼통팩토리 (현재 폐업)",
+      "address": "서울 강동구 양재대로 1465 (길동 412-8)",
+      "region": "서울 강동구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 주소에 표시된 전체 36개 장소(2페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:29:40.787Z",
+      "menus": [],
+      "queries": [
+        "서울 드럼통팩토리",
+        "서울 강동구 양재대로1465"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%8F%99%EA%B5%AC%20%EC%96%91%EC%9E%AC%EB%8C%80%EB%A1%9C1465",
+      "addressListingCheck": {
+        "index": 32,
+        "query": "서울 강동구 양재대로 1465",
+        "checkedAt": "2026-09-21T04:29:40.787Z",
+        "pages": 2,
+        "count": 36,
+        "names": [
+          "긴자료코 강동길동점",
+          "아산본내과의원",
+          "독학재수학원 수능선배 강동점",
+          "테힐라한복 강동점",
+          "한우촌돼지마을앤간장게장",
+          "연세타이밍치과의원 강동구길동",
+          "메가MGC커피 길동역점",
+          "공차 길동역점",
+          "제로백PC 길동역점",
+          "리안헤어 길동역점",
+          "화이트짐 길동역점",
+          "컴포즈커피 길동중앙점",
+          "테니스하우스 무인 볼머신연습장",
+          "CU 길동마루점",
+          "그랜드너싱홈",
+          "아나덴 슈가링왁싱 길동역점",
+          "마루빌딩",
+          "LG유플러스 길동 길동역점",
+          "아산본한의원",
+          "쿨베이핑전자담배 길동점",
+          "악쓰는하마길동점노래방",
+          "스텔라뷰티",
+          "더한강공인중개사사무소",
+          "강동더본약국",
+          "우정렌트카",
+          "프로미스 잉글리쉬",
+          "한우리종합컨설팅",
+          "법무사황계수사무소",
+          "한강공인중개사사무소",
+          "클린매직",
+          "커피의눈물153",
+          "달리그라",
+          "CU길동마루점 ATM",
+          "국제미용기술협회",
+          "중앙비즈로",
+          "씨앤에스월드"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 32
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_424",
+      "name": "서울 로칸다몽로",
+      "address": "서울 마포구 잔다리로7길 18 (서교동 377-20)",
+      "region": "서울 마포구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 문지빌딩 원주소의 전체6개 업소는 문지살롱과 출판 관련 업소로 로칸다몽로 없음. 폐업·이전 미확정.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 로칸다몽로",
+        "서울 마포구 잔다리로7길18"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%9E%94%EB%8B%A4%EB%A6%AC%EB%A1%9C7%EA%B8%B818",
+      "index": 33
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_18824bcc21d7",
+      "name": "서울 매드포갈릭 잠원점 (현재 폐업)",
+      "address": "서울 서초구 신반포로33길 27 (잠원동 66-2)",
+      "region": "서울 서초구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "매드포갈릭 잠원점 상호 검색 결과 없음. 주소에 표시된 전체 16개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:25:51.293Z",
+      "menus": [],
+      "queries": [
+        "서울 매드포갈릭 잠원점",
+        "서울 서초구 신반포로33길27"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%8B%A0%EB%B0%98%ED%8F%AC%EB%A1%9C33%EA%B8%B827",
+      "addressListingCheck": {
+        "index": 34,
+        "query": "서울 서초구 신반포로33길27",
+        "checkedAt": "2026-09-21T04:25:51.293Z",
+        "pages": 1,
+        "count": 16,
+        "names": [
+          "크리스탈제이드 상하이 팰리스 잠원점",
+          "바르미 스시샤브 반포점",
+          "오리지널팬케이크하우스 다이너 잠원파스텔점",
+          "경복궁 블랙 잠원점",
+          "아티제 잠원파스텔점",
+          "오아시스피부과의원",
+          "파스텔상가",
+          "서울파스텔치과의원",
+          "필라테스 호두 강남반포본점",
+          "파스텔연세소아청소년과의원",
+          "열린성모이비인후과의원",
+          "서울영재활의학과의원",
+          "파스텔약국",
+          "파스텔그룹",
+          "대한 메디컬 필라테스 교육원",
+          "1톤 원룸 원투룸 소형 사무실 오피스텔"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 34
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4b732ea7495c",
+      "name": "서울 미드가르드 (현재 폐업)",
+      "address": "서울 강남구 도산대로17길 6 (신사동 561-11)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색은 다른 지역 에이비타를 반환하여 제외. 주소에 표시된 전체 10개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:25:55.291Z",
+      "menus": [],
+      "queries": [
+        "서울 미드가르드",
+        "서울 강남구 도산대로17길6"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C17%EA%B8%B86",
+      "addressListingCheck": {
+        "index": 35,
+        "query": "서울 강남구 도산대로17길6",
+        "checkedAt": "2026-09-21T04:25:55.291Z",
+        "pages": 1,
+        "count": 10,
+        "names": [
+          "키엑스",
+          "od빌딩",
+          "오디빌딩",
+          "에이에스에이피엔터테인먼트",
+          "한국보존테크",
+          "지투지코퍼레이션",
+          "이매지너리",
+          "인비젼에너지홀딩스",
+          "정앤코퍼레이션",
+          "어반에이엠씨"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 35
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_295",
+      "name": "서울 미드레벨",
+      "address": "서울 관악구 관악로14길 63 (봉천동 1612-27)",
+      "region": "서울 관악구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 전체4개 등록 업소에 테라다식당·포스트치킨버거클럽 등만 있고 미드레벨 없음.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 미드레벨",
+        "서울 관악구 관악로14길63"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EA%B4%80%EC%95%85%EB%A1%9C14%EA%B8%B863",
+      "index": 36
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3fb06260493c",
+      "name": "서울 바른면집 건대점",
+      "address": "서울 광진구 능동로13길 28 (화양동 12-33)",
+      "region": "서울 광진구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 화양동12-33의 등록 업소는 베트남쌍둥이커피 건대본점. 폐업·이전 미확정.",
+      "checkedAt": "2026-09-21T04:04:12.064Z",
+      "menus": [],
+      "queries": [
+        "서울 바른면집 건대점",
+        "서울 광진구 능동로13길28"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B4%91%EC%A7%84%EA%B5%AC%20%EB%8A%A5%EB%8F%99%EB%A1%9C13%EA%B8%B828",
+      "index": 37
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6783f7a3adfc",
+      "name": "서울 북촌공장 (현재 폐업)",
+      "address": "서울 종로구 인사동길 28-1 (관훈동 6)",
+      "region": "서울 종로구",
+      "previousStatus": "closure_unconfirmed",
+      "checkedAt": "2026-09-21T04:04:22.020Z",
+      "status": "address_occupied_by_other_listing",
+      "queries": [
+        "서울 북촌공장",
+        "서울 종로구 인사동길28-1"
+      ],
+      "menus": [],
+      "reason": "북촌공장 상호 검색 결과 없음. 원주소 관훈동6의 전체4개 업소는 반짝반짝빛나는·동경사·김인수·고미술갤러리호이며 북촌공장 없음. 폐업·이전은 미확정.",
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%9D%B8%EC%82%AC%EB%8F%99%EA%B8%B828-1",
+      "index": 38
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e679b48ac8bd",
+      "name": "서울 분짜라붐 (현재 폐업)",
+      "address": "서울 서초구 서초대로73길 30 (서초동 1307)",
+      "region": "서울 서초구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 도로명 주소는 주변 주소로 대체되고, 지번 서초동1307은 등록 업소 없음. 주소 정합성 및 영업 상태 미확정.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 분짜라붐 서초동",
+        "서울 서초구 서초대로73길30",
+        "서울 서초구 서초동1307"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EC%84%9C%EC%B4%88%EB%8F%991307",
+      "index": 39
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_2032a2edf796",
+      "name": "서울 새마을식당 논현점 (현재 폐업)",
+      "address": "서울 강남구 강남대로122길 5 (논현동 164-12)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "새마을식당 논현점 검색 결과 없음. 주소에 표시된 전체 10개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:25:59.255Z",
+      "menus": [],
+      "queries": [
+        "서울 새마을식당 논현점",
+        "서울 강남구 강남대로122길5"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C122%EA%B8%B85",
+      "addressListingCheck": {
+        "index": 40,
+        "query": "서울 강남구 강남대로122길5",
+        "checkedAt": "2026-09-21T04:25:59.255Z",
+        "pages": 1,
+        "count": 10,
+        "names": [
+          "참한집 논현직영점",
+          "낯선천장 논현본점",
+          "역전할머니맥주 논현역점",
+          "사이드바 인 팝",
+          "축제노래연습장",
+          "도원한의원",
+          "유창빌딩",
+          "미라클코리아",
+          "성전씨앤피",
+          "계영디앤씨"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 40
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b6ff487d84f7",
+      "name": "서울 쉬림프팩토리 (현재 폐업)",
+      "address": "서울 강남구 선릉로153길 12 (신사동 655-8)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 주소에 표시된 전체 12개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:26:03.240Z",
+      "menus": [],
+      "queries": [
+        "서울 쉬림프팩토리",
+        "서울 강남구 선릉로153길12"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%84%A0%EB%A6%89%EB%A1%9C153%EA%B8%B812",
+      "addressListingCheck": {
+        "index": 42,
+        "query": "서울 강남구 선릉로153길12",
+        "checkedAt": "2026-09-21T04:26:03.240Z",
+        "pages": 1,
+        "count": 12,
+        "names": [
+          "모어온헤어 도산공원점",
+          "바이엘린",
+          "공차 압구정로데오점",
+          "포레피부과의원",
+          "랩 강남점",
+          "포스탐빌딩",
+          "노드컴퍼니",
+          "이쁘다눈",
+          "더풀컴퍼니",
+          "하우스버스",
+          "드림피알컴퍼니",
+          "포스탑빌딩"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 42
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a6516150a374",
+      "name": "서울 스시마리 (현재 폐업)",
+      "address": "서울 강남구 도산대로49길 6-10 (신사동 652-11)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "스시마리 검색은 마포구 긴자료코를 반환하여 제외. 주소에 표시된 전체 6개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:29:44.743Z",
+      "menus": [],
+      "queries": [
+        "서울 강남구 도산대로49길6-10"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C49%EA%B8%B86-10",
+      "addressListingCheck": {
+        "index": 43,
+        "query": "서울 강남구 도산대로49길 6-10",
+        "checkedAt": "2026-09-21T04:29:44.743Z",
+        "pages": 1,
+        "count": 6,
+        "names": [
+          "하카",
+          "한우스팟",
+          "플라스틱 뮤직바",
+          "아름건축사사무소",
+          "플랜앤플랜",
+          "공간작업소"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 43
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_246",
+      "name": "서울 시장회집",
+      "address": "서울 용산구 소월로20길 38 (용산동2가 1-76)",
+      "region": "서울 용산구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "시장회집 상호 검색은 용산구 다른 동의 횟집만 반환. 기존 주소에는 훈육과 부동산만 등록. 폐업·이전 미확정.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 시장회집 용산",
+        "서울 용산구 소월로20길38"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%86%8C%EC%9B%94%EB%A1%9C20%EA%B8%B838",
+      "index": 44
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_76b490c5a59c",
+      "name": "서울 쌀롱 드 누이 (현재 폐업)",
+      "address": "서울 용산구 이태원로 143-15 (이태원동 57-24)",
+      "region": "서울 용산구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 등록2개는 장꼬마·보스크샐러드로 쌀롱드누이 없음.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 쌀롱 드 누이",
+        "서울 용산구 이태원로143-15"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%9D%B4%ED%83%9C%EC%9B%90%EB%A1%9C143-15",
+      "index": 45
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f1d0a9ca5cca",
+      "name": "서울 양재동첫번째찜 (현재 폐업)",
+      "address": "서울 서초구 강남대로4길 7 (양재동 351-8)",
+      "region": "서울 서초구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소4개 업소는 늘봄황제소갈비살·선대백암순대 등으로 대상 없음.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 양재동첫번째찜",
+        "서울 서초구 강남대로4길7"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EA%B0%95%EB%82%A8%EB%8C%80%EB%A1%9C4%EA%B8%B87",
+      "index": 46
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_018",
+      "name": "서울 에빈의커피이야기",
+      "address": "서울 중구 퇴계로42길 35 (필동2가 70-5)",
+      "region": "서울 중구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 필동2가70-5는 기브온 카페인바만 등록. 상호 변경·이전·폐업 미확정.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 에빈의커피이야기",
+        "서울 중구 퇴계로42길35"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A4%91%EA%B5%AC%20%ED%87%B4%EA%B3%84%EB%A1%9C42%EA%B8%B835",
+      "index": 47
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1cbe368e6d45",
+      "name": "서울 영광굴비전문점 서초점",
+      "address": "서울 서초구 반포대로30길 60 (서초동 1571-11)",
+      "region": "서울 서초구",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "유사명 영광굴비집·영광밥상 검색되지만 기존 주소 서초동1571-11에는 향촌흑염소오리 교대역직영점만 등록. 이전 여부 확인 전 다른 업소 가격 적용하지 않음.",
+      "checkedAt": "2026-09-21T04:05:41.422Z",
+      "menus": [],
+      "queries": [
+        "서울 영광굴비전문점 서초점",
+        "서울 서초구 반포대로30길60"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EC%B4%88%EA%B5%AC%20%EB%B0%98%ED%8F%AC%EB%8C%80%EB%A1%9C30%EA%B8%B860",
+      "index": 48
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_aebce0169408",
+      "name": "서울 오성닭한마리",
+      "address": "서울 마포구 월드컵북로54길 17 (상암동 1597)",
+      "region": "서울 마포구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "reason": "오성닭한마리 상호 검색 결과 없음. 주소에 표시된 전체 119개 장소(6페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:29:50.630Z",
+      "menus": [],
+      "queries": [
+        "서울 오성닭한마리",
+        "서울 마포구 월드컵북로54길17"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%9B%94%EB%93%9C%EC%BB%B5%EB%B6%81%EB%A1%9C54%EA%B8%B817",
+      "addressListingCheck": {
+        "index": 49,
+        "query": "서울 마포구 월드컵북로54길 17",
+        "checkedAt": "2026-09-21T04:29:50.630Z",
+        "pages": 6,
+        "count": 119,
+        "names": [
+          "온타이키친",
+          "크레이지버거 마포 상암점",
+          "도원반점 상암직영점",
+          "질할브로스 상암점",
+          "상암동 경양식당",
+          "박승철헤어스투디오 상암DMC점",
+          "콩면당 상암본점",
+          "스타벅스 상암사보이시티점",
+          "버거리 상암DMC점",
+          "규카츠정 상암점",
+          "백미당 상암DMC점",
+          "달리181 상암점",
+          "멘지 상암DMC점",
+          "사보이시티DMC",
+          "나비잠안마의자 상암DMC점",
+          "담솥 상암점",
+          "웰니스휘트니스&골프 상암점",
+          "상암동 헬스&PT 헬시온짐",
+          "덴푸라 온 상암점",
+          "화포식당 상암점",
+          "주람",
+          "배꼽집 본점",
+          "상냥한 그놈의 밥상",
+          "꾸밈살롱by연아 상암점",
+          "청담동마녀김밥 상암점",
+          "도락",
+          "류정닭개장",
+          "북촌손만두 상암DMC점",
+          "핵밥 상암MBC점",
+          "이상수불뼈찜",
+          "커스텀커피 상암점",
+          "GS25 상암사보이시티점",
+          "시원하오 상암점",
+          "SLB샐러드 상암점",
+          "매머드익스프레스 상암사보이시티점",
+          "글라스스토리 상암MBC점",
+          "프레드커피하우스 본점",
+          "삐삐포차",
+          "메가MGC커피 사보이시티점",
+          "고망고 상암점",
+          "너도나도식당 상암DMC점",
+          "글라스타 상암DMC점",
+          "보말진칼국수김밥 상암사보이씨티점",
+          "홍콩반점0410 상암DMC점",
+          "동남집",
+          "웰니스 골프스튜디오 상암점",
+          "상암전자담배 베이프큐 상암점",
+          "메디앤컬필라테스 상암DMC점",
+          "한국공식금거래소 소아벨라 상암DMC점",
+          "바나프레소 상암사보이시티점",
+          "바디브라운 상암DMC점",
+          "킹콩부대찌개 마포상암점",
+          "상암와인",
+          "소프레사 상암DMC점",
+          "포메인RED 상암DMC점",
+          "후토루 상암점",
+          "도프커피 상암본점",
+          "블랙서커스",
+          "미미롤집",
+          "인더라인25",
+          "바다양푼이동태탕 마포상암점",
+          "원하프 테일러",
+          "사보이시티디엠씨관리단 주차장",
+          "짠돌이 소금빵",
+          "오모치카에리",
+          "상암월드",
+          "아보하24",
+          "머리칼두피탈모 상암점",
+          "카페우드진 상암1호점",
+          "W필라테스스튜디오 상암점",
+          "쏘울푸드 육회한 한끼",
+          "누리꿈경희한의원",
+          "더치앤빈 상암DMC점",
+          "DMC스타공인중개사사무소",
+          "사보이비즈센터",
+          "머리칼 두피탈모 마포지사",
+          "뜸들이다 상암점",
+          "일리편집삽",
+          "웰니스퍼스널트레이닝",
+          "사보이시티디엠씨관리단",
+          "뉴잉",
+          "헬리오스",
+          "FUN한엔터테인먼트",
+          "마포상암동퀵서비스",
+          "진가방문세차",
+          "베럴어스기업교육연구소",
+          "매콤",
+          "에이치텍솔루션",
+          "배꼽에프엔비",
+          "더세움",
+          "도서출판 여가",
+          "아론정보기술",
+          "공심이",
+          "엔에이케이엔터테인먼트",
+          "바른행정사사무소",
+          "노리판",
+          "우리투어",
+          "다올컨텐츠",
+          "유프렌즈",
+          "치얼스",
+          "7kW 완속충전기(4)",
+          "7kW 완속충전기(3)",
+          "7kW 완속충전기(1)",
+          "환경타임즈",
+          "7kW 완속충전기(7)",
+          "7kW 완속충전기(6)",
+          "7kW 완속충전기(5)",
+          "7kW 완속충전기(2)",
+          "디엔앤인터내셔널",
+          "상암사보이시티디엠씨 전기차충전소",
+          "뉴스아데믹",
+          "더블루스트",
+          "신성에스앤에스",
+          "크루팅트",
+          "자유통일국민연합",
+          "아이티미디어",
+          "피에프대부",
+          "자노스프로텍션",
+          "올가프"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 49
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ae4b266f48ac",
+      "name": "서울 오텀인뉴욕 (현재 폐업)",
+      "address": "서울 용산구 이태원로27가길 8 (이태원동 112-2)",
+      "region": "서울 용산구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소4개 업소는 준토스라티노스·디퍼·베드럼·이태원난장판2호점. 대상 메뉴 없음.",
+      "checkedAt": "2026-09-21T04:07:47.859Z",
+      "menus": [],
+      "queries": [
+        "서울 오텀인뉴욕",
+        "서울 용산구 이태원로27가길8"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%EC%9D%B4%ED%83%9C%EC%9B%90%EB%A1%9C27%EA%B0%80%EA%B8%B88",
+      "index": 50
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b88b19ba33b2",
+      "name": "서울 온 (카페 溫)",
+      "address": "서울 종로구 돈화문로11다길 17 (돈의동 21)",
+      "region": "서울 종로구",
+      "previousStatus": "unresolved",
+      "status": "identity_review",
+      "reason": "원주소에는 온지심이 등록되어 현재 메뉴 탭과 영업시간이 있음. 업주 소개는 베이글 베이커리로 설명하며 기존 카페온과의 승계·상호변경 근거는 없어 가격 병합 보류.",
+      "checkedAt": "2026-09-21T04:07:47.859Z",
+      "menus": [],
+      "queries": [
+        "서울 종로 카페 온",
+        "서울 종로구 돈화문로11다길17",
+        "온지심"
+      ],
+      "sourceUrl": "https://pcmap.place.naver.com/place/1384003744",
+      "index": 51
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_155",
+      "name": "서울 욕쟁이할머니집 신신식당",
+      "address": "서울 성북구 보문로30라길 3 (동선동2가 77)",
+      "region": "서울 성북구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 동선동2가77의 유일한 업소는 돈가스집 톤제. 폐업·이전 미확정.",
+      "checkedAt": "2026-09-21T04:07:47.859Z",
+      "menus": [],
+      "queries": [
+        "서울 욕쟁이할머니집 신신식당",
+        "서울 성북구 보문로30라길3"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%B1%EB%B6%81%EA%B5%AC%20%EB%B3%B4%EB%AC%B8%EB%A1%9C30%EB%9D%BC%EA%B8%B83",
+      "index": 52
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_464",
+      "name": "서울 원조낙원떡집공장",
+      "address": "서울 종로구 삼일대로 444-1 (낙원동 1)",
+      "region": "서울 종로구",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:05:48.023Z",
+      "status": "menu_not_published",
+      "queries": [
+        "서울 원조낙원떡집공장"
+      ],
+      "matchedName": "원조낙원떡집공장",
+      "matchedAddress": "서울 종로구 삼일대로 444-1",
+      "phone": "02-741-6691",
+      "menus": [],
+      "reason": "상호와 주소 일치. 공장 장소에 홈·리뷰만 있고 메뉴 및 영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/18669787",
+      "index": 53
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_541",
+      "name": "서울 이나니와요스케 시청점",
+      "address": "서울 중구 을지로 6 (을지로1가 192-11)",
+      "region": "서울 중구",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "이나니와요스케 시청점 상호 검색 결과 없음. 재능빌딩 을지로6의 전체47개 업소를3페이지 모두 확인했으나 대상 없음.",
+      "checkedAt": "2026-09-21T04:07:47.859Z",
+      "menus": [],
+      "queries": [
+        "서울 이나니와요스케 시청점",
+        "서울 중구 을지로6",
+        "서울 중구 을지로 6"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A4%91%EA%B5%AC%20%EC%9D%84%EC%A7%80%EB%A1%9C%206",
+      "index": 54
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a0e99ee0cb4b",
+      "name": "서울 징기스 홍대점 (현재 폐업)",
+      "address": "서울 마포구 와우산로17길 6 (서교동 407-4)",
+      "region": "서울 마포구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "징기스 홍대점 상호 검색 결과 없음. 주소에 표시된 전체 6개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:07.805Z",
+      "menus": [],
+      "queries": [
+        "서울 징기스 홍대점",
+        "서울 마포구 와우산로17길6"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%99%80%EC%9A%B0%EC%82%B0%EB%A1%9C17%EA%B8%B86",
+      "addressListingCheck": {
+        "index": 55,
+        "query": "서울 마포구 와우산로17길 6",
+        "checkedAt": "2026-09-21T04:30:07.805Z",
+        "pages": 1,
+        "count": 6,
+        "names": [
+          "시선 홍대점",
+          "비원",
+          "엘리시온메이드카페",
+          "씨피스튜디오 음악연습실",
+          "현암빌딩",
+          "블스"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 55
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e0d1d1dd782b",
+      "name": "서울 청담정스시 (재방문, 현재 폐업)",
+      "address": "서울 강남구 도산대로87길 11 (청담동 122-30)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "청담정스시 상호 검색 결과 없음. 주소에 표시된 전체 7개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:11.919Z",
+      "menus": [],
+      "queries": [
+        "서울 청담정스시",
+        "서울 강남구 도산대로87길11"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C87%EA%B8%B811",
+      "addressListingCheck": {
+        "index": 56,
+        "query": "서울 강남구 도산대로87길 11",
+        "checkedAt": "2026-09-21T04:30:11.919Z",
+        "pages": 1,
+        "count": 7,
+        "names": [
+          "포메인 청담직영점",
+          "싸우나뮤직바",
+          "청담경일태권도",
+          "KDH엔터테인먼트",
+          "유니콘빌딩",
+          "아이오케이미디어",
+          "공간큐비클"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 56
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0057e70f81a7",
+      "name": "서울 청담정스시 (현재 폐업)",
+      "address": "서울 강남구 도산대로87길 11 (청담동 122-30)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "청담정스시 상호 검색 결과 없음. 주소에 표시된 전체 7개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:11.919Z",
+      "menus": [],
+      "queries": [
+        "서울 청담정스시",
+        "서울 강남구 도산대로87길11"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C87%EA%B8%B811",
+      "sharedEvidenceWithIndex": 56,
+      "addressListingCheck": {
+        "index": 57,
+        "query": "서울 강남구 도산대로87길 11",
+        "checkedAt": "2026-09-21T04:30:11.919Z",
+        "pages": 1,
+        "count": 7,
+        "names": [
+          "포메인 청담직영점",
+          "싸우나뮤직바",
+          "청담경일태권도",
+          "KDH엔터테인먼트",
+          "유니콘빌딩",
+          "아이오케이미디어",
+          "공간큐비클"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 57
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_bcf6718d836e",
+      "name": "서울 춘리마라탕 연남점 (삼국지)",
+      "address": "서울 마포구 동교로 249 (연남동 258-1)",
+      "region": "서울 마포구",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "춘리마라탕 연남점 검색은 다른 홍대점·마포점을 반환해 제외. 원주소 전체3개 업소는 써니스피자마켓·누구나홀딱반한닭·얼짱스티커사진.",
+      "checkedAt": "2026-09-21T04:09:01.520Z",
+      "menus": [],
+      "queries": [
+        "춘리마라탕 연남점",
+        "서울 마포구 동교로249"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EB%8F%99%EA%B5%90%EB%A1%9C249",
+      "index": 58
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_385",
+      "name": "서울 춘리마라탕 연남점 (서대문양꼬치)",
+      "address": "서울 마포구 동교로 249 (연남동 258-1)",
+      "region": "서울 마포구",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "춘리마라탕 연남점 검색은 다른 홍대점·마포점을 반환해 제외. 원주소 전체3개 업소는 써니스피자마켓·누구나홀딱반한닭·얼짱스티커사진.",
+      "checkedAt": "2026-09-21T04:09:01.520Z",
+      "menus": [],
+      "queries": [
+        "춘리마라탕 연남점",
+        "서울 마포구 동교로249"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EB%8F%99%EA%B5%90%EB%A1%9C249",
+      "sharedEvidenceWithIndex": 58,
+      "index": 59
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4b07323907f9",
+      "name": "서울 티마하우스 (현재 폐업)",
+      "address": "서울 강남구 논현로97길 71 (역삼동 634-4)",
+      "region": "서울 강남구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색이 티하우스로 자동 보정되어 다른 업소를 반환. 원주소의2개 업소는 엔터테인먼트 회사로 티마하우스 없음.",
+      "checkedAt": "2026-09-21T04:09:01.520Z",
+      "menus": [],
+      "queries": [
+        "서울 티마하우스",
+        "서울 강남구 논현로97길71"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%85%BC%ED%98%84%EB%A1%9C97%EA%B8%B871",
+      "index": 61
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_dd05739afc75",
+      "name": "서울 페리카나 청룡동점",
+      "address": "서울 관악구 청룡길 20 (봉천동 914-3)",
+      "region": "서울 관악구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "reason": "페리카나 청룡동점 상호 검색 결과 없음. 주소에 표시된 전체 7개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:16.052Z",
+      "menus": [],
+      "queries": [
+        "서울 페리카나 청룡동점",
+        "서울 관악구 청룡길20"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EC%B2%AD%EB%A3%A1%EA%B8%B820",
+      "addressListingCheck": {
+        "index": 62,
+        "query": "서울 관악구 청룡길 20",
+        "checkedAt": "2026-09-21T04:30:16.052Z",
+        "pages": 1,
+        "count": 7,
+        "names": [
+          "빼누카츠",
+          "족발부심 본점",
+          "소피스튜디오",
+          "다나한약국",
+          "대게싸네킹크랩",
+          "컴퓨터수리",
+          "카포스원"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 62
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ff2dc9c71918",
+      "name": "서울 펭귄 마카롱 (현재 폐업)",
+      "address": "서울 강북구 오현로34길 12 (번동 308-3)",
+      "region": "서울 강북구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "펭귄마카롱 상호 검색 결과 없음. 주소에 표시된 전체 9개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:20.131Z",
+      "menus": [],
+      "queries": [
+        "서울 펭귄 마카롱",
+        "서울 강북구 오현로34길12"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EC%98%A4%ED%98%84%EB%A1%9C34%EA%B8%B812",
+      "addressListingCheck": {
+        "index": 63,
+        "query": "서울 강북구 오현로34길 12",
+        "checkedAt": "2026-09-21T04:30:20.131Z",
+        "pages": 1,
+        "count": 9,
+        "names": [
+          "컴포즈커피 강북번동점",
+          "번동탑짐 주짓수 킥복싱",
+          "임온누리약국",
+          "꿈의숲음악학원",
+          "영빈각",
+          "민제한의원",
+          "해법수학 꿈의숲영수학원",
+          "뮤엠영어 탑클래스학원",
+          "창암빌딩"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 63
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_224",
+      "name": "서울 피자아이코닉",
+      "address": "서울 강남구 언주로 615 (논현동 225-6)",
+      "region": "서울 강남구",
+      "previousStatus": "conflicting",
+      "status": "identity_unresolved",
+      "reason": "피자아이코닉 상호 검색 결과 없음. 주소에 표시된 전체 76개 장소(4페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:25.273Z",
+      "menus": [],
+      "queries": [
+        "서울 피자아이코닉",
+        "서울 강남구 언주로615"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C615",
+      "addressListingCheck": {
+        "index": 64,
+        "query": "서울 강남구 언주로 615",
+        "checkedAt": "2026-09-21T04:30:25.273Z",
+        "pages": 4,
+        "count": 76,
+        "names": [
+          "스시이로",
+          "코부네",
+          "복호두 강남 논현점",
+          "논현아이파크아파트",
+          "르벨에스테틱 강남본점",
+          "슬로우캘리 논현아이파크점",
+          "와사이진",
+          "논현아이파크오피스텔",
+          "혜준당 논현점",
+          "몽셰리 강아지미용 유치원",
+          "더펍사운드온 언주역점",
+          "리안헤어 강남논현아이파크점",
+          "디자인혜윰",
+          "달인대보칼국수 강남논현점",
+          "고향옥얼큰순대국 논현점",
+          "어니스트 헤어",
+          "크러쉬온플라워",
+          "육식사관학교 본점",
+          "디디치킨 강남본점",
+          "미친피자강남점",
+          "퍼스트공인중개사사무소",
+          "리커버리라운지",
+          "아쿠아워시 논현아이파크점",
+          "라끄필라테스",
+          "준바디솔루션",
+          "비블리 에스테틱&네일",
+          "카레섬 소바다 본점",
+          "라젠커피",
+          "ALL바른공인중개사사무소",
+          "해태곱창 강남직영점",
+          "생생돈까스 논현점",
+          "매머드익스프레스 논현아이파크점",
+          "민재원약국",
+          "외계인피자 강남점",
+          "하남해장국",
+          "이끌",
+          "땡스어라떼 논현점",
+          "열정국밥 강남구논현점",
+          "정우찌개 보쌈",
+          "혜윰디자인",
+          "생과일디저트카페 프루츄 논현점",
+          "티씨엠코퍼레이션",
+          "과일집며느리",
+          "부동산이즈논현부동산중개",
+          "영스퍼니처",
+          "뽁당볶음밥 강남점",
+          "오일하우스 강남",
+          "맥시멈부티크",
+          "THE골드아너스공인중개사사무소",
+          "쭉365",
+          "중앙공인중개사사무소",
+          "곱창에빠지다 강남점",
+          "루미넌트뮤직",
+          "거잔",
+          "엘엔엠",
+          "제이원부동산중개",
+          "퍼스트경영연구소",
+          "Jcmusic",
+          "라움공인중개사사무소",
+          "바페르갈",
+          "메흐",
+          "엠브이피자 강남점",
+          "행복파트너공인중개사사무소",
+          "프로공인중개사사무소",
+          "스마트탑부동산중개",
+          "제이엠글로벌",
+          "111필라테스 스튜디오",
+          "마음제곱미터",
+          "아씨오",
+          "요거트&과일",
+          "키컴퍼니",
+          "제이셀린",
+          "이화조이센터",
+          "모범전설",
+          "이노라",
+          "올바른하우징"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 64
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_220",
+      "name": "서울 해장국사람들",
+      "address": "서울 종로구 자하문로 50-1 (창성동 98-6)",
+      "region": "서울 종로구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소2개 업소는 푸페또클럽·므스크안테나샵. 대상 가격 없음.",
+      "checkedAt": "2026-09-21T04:09:01.520Z",
+      "menus": [],
+      "queries": [
+        "서울 해장국사람들",
+        "서울 종로구 자하문로50-1"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%9E%90%ED%95%98%EB%AC%B8%EB%A1%9C50-1",
+      "index": 65
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ba1f927c07e4",
+      "name": "서울 홈수끼 학동점",
+      "address": "서울 강남구 언주로 708 (논현동 115)",
+      "region": "서울 강남구",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "홈수끼 학동점 상호 검색 결과 없음. 기존 주소 전체 28개 장소에서 홈수끼푸드라는 관련 상호를 확인했으나 메뉴·영업시간은 미등록. 학동점 매장인지 법인 등록인지, 기존 식당의 운영이 계속되는지 확인 필요.",
+      "checkedAt": "2026-09-21T04:32:01.207Z",
+      "menus": [],
+      "queries": [
+        "서울 홈수끼 학동점",
+        "서울 강남구 언주로708"
+      ],
+      "sourceUrl": "https://pcmap.place.naver.com/place/1348327914",
+      "addressListingCheck": {
+        "index": 66,
+        "query": "서울 강남구 언주로 708",
+        "checkedAt": "2026-09-21T04:30:45.094Z",
+        "pages": 2,
+        "count": 28,
+        "names": [
+          "청와옥 본사직영학동점",
+          "경원빌딩",
+          "세븐일레븐 세관사거리점",
+          "장앤홈발렛",
+          "늘서울치과의원",
+          "경원빌딩주차장",
+          "엑세스커뮤니케이션앤컨설팅",
+          "반려견주택연구소",
+          "제트원",
+          "넥서스엠앤에이솔루션",
+          "홈수끼푸드",
+          "우쏘",
+          "GH엔터테인먼트",
+          "엑세스인터랙티브",
+          "한국동물병원협회",
+          "클럽나우여행사",
+          "아오아",
+          "세븐일레븐세관사거리점 ATM",
+          "대길공영",
+          "에이아이그룹",
+          "비엠씨셀앤바이",
+          "한국M&A컨설팅협회",
+          "더블 플러스",
+          "투비휴펫",
+          "티앤잭파트너스",
+          "케이피솔루션",
+          "라카타",
+          "선진티에스"
+        ],
+        "matchedOriginalName": false
+      },
+      "alternativePlace": {
+        "name": "홈수끼푸드",
+        "address": "서울 강남구 언주로 708",
+        "phone": "02-3446-4124",
+        "sourceUrl": "https://pcmap.place.naver.com/place/1348327914"
+      },
+      "index": 66
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b454c0300d31",
+      "name": "서울 훈남닭발 (현재 폐업)",
+      "address": "서울 마포구 와우산로19길 9 (서교동 363-24)",
+      "region": "서울 마포구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "훈남닭발 상호 검색 결과 없음. 주소에 표시된 전체 5개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:49.271Z",
+      "menus": [],
+      "queries": [
+        "서울 훈남닭발",
+        "서울 마포구 와우산로19길9"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%99%80%EC%9A%B0%EC%82%B0%EB%A1%9C19%EA%B8%B89",
+      "addressListingCheck": {
+        "index": 67,
+        "query": "서울 마포구 와우산로19길 9",
+        "checkedAt": "2026-09-21T04:30:49.271Z",
+        "pages": 1,
+        "count": 5,
+        "names": [
+          "여우골 홍대점",
+          "나스",
+          "테라스페이스 홍대점",
+          "미라클체인지 연기학원",
+          "아이엠아트 실용취미 미술학원"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 67
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_404a83c18814",
+      "name": "서울 The450 (현재 폐업)",
+      "address": "서울 마포구 와우산로13길 7 (상수동 90-2)",
+      "region": "서울 마포구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "The450 상호 검색 결과 없음. 원도로명은 주변 주소 반환. 지번 상수동90-2는 와우산로59로 연결되며 업소 미등록. 주소 정합성 확인 필요.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "서울 The450 상수",
+        "서울 마포구 와우산로13길7",
+        "서울 마포구 상수동90-2"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%83%81%EC%88%98%EB%8F%9990-2",
+      "index": 68
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bbcd2238d71",
+      "name": "성남 경포 (현재 폐업)",
+      "address": "경기 성남시 수정구 헌릉로1026번길 6 (복정동 38-24)",
+      "region": "경기 성남시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "성남 경포 검색 결과 없음. 원도로명은 다른 번지의 주민공동시설을 반환하여 제외. 지번 복정동38-24는 조회되나 업소 미등록.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "성남 경포 복정동",
+        "경기 성남시 수정구 헌릉로1026번길6",
+        "경기 성남시 수정구 복정동38-24"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%84%B1%EB%82%A8%EC%8B%9C%20%EC%88%98%EC%A0%95%EA%B5%AC%20%EB%B3%B5%EC%A0%95%EB%8F%9938-24",
+      "index": 69
+    },
+    {
+      "id": "topic_enrichment_michelin-1-star_df44dbdfc983",
+      "name": "소설한남",
+      "address": "용산구 한남대로 20길 21-18, 지하 1층, Seoul, 04419, 한국",
+      "region": "용산구 한남대로",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "소설한남 검색은 갤러리·소설옥 등 다른 업소를 반환. 원주소 한남동68-4의 전체13개 입점 업소에서 소설한남 미확인. 이전·폐업은 단정하지 않음.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "소설한남"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EB%82%A8%EB%8C%80%EB%A1%9C20%EA%B8%B821-18",
+      "index": 70
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_080df2c03d86",
+      "name": "속초 삼해횟집 (현재 폐업)",
+      "address": "강원 속초시 영랑해안길 255 (영랑동 148-171)",
+      "region": "강원 속초시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "삼해횟집 검색 결과 없음. 기존 주소 영랑동148-171의 등록 업소는 영랑칼국수 속초본점.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "속초 삼해횟집",
+        "강원 속초시 영랑해안길255"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%20%EC%86%8D%EC%B4%88%EC%8B%9C%20%EC%98%81%EB%9E%91%ED%95%B4%EC%95%88%EA%B8%B8255",
+      "index": 71
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_115",
+      "name": "수원 남보원불고기",
+      "address": "경기 수원시 장안구 정조로922번길 20 (영화동 279-5)",
+      "region": "경기 수원시",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "남보원불고기 검색 결과 없음. 영화동279-5의 전체4개 업소는 기장산꼼장어·멸치세상·순간포차·이름없는술집.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "수원 남보원불고기",
+        "경기 수원시 장안구 정조로922번길20"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%88%98%EC%9B%90%EC%8B%9C%20%EC%9E%A5%EC%95%88%EA%B5%AC%20%EC%A0%95%EC%A1%B0%EB%A1%9C922%EB%B2%88%EA%B8%B820",
+      "index": 72
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_5fe84d15b1c5",
+      "name": "수원 무쇳집 (현재 폐업)",
+      "address": "경기 수원시 팔달구 효원로265번길 36 (인계동 1113-10)",
+      "region": "경기 수원시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "무쇳집 검색 결과 없음. 주소에 표시된 전체 13개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:53.415Z",
+      "menus": [],
+      "queries": [
+        "수원 무쇳집",
+        "경기 수원시 팔달구 효원로265번길36"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%88%98%EC%9B%90%EC%8B%9C%20%ED%8C%94%EB%8B%AC%EA%B5%AC%20%ED%9A%A8%EC%9B%90%EB%A1%9C265%EB%B2%88%EA%B8%B836",
+      "addressListingCheck": {
+        "index": 73,
+        "query": "경기 수원시 팔달구 효원로265번길 36",
+        "checkedAt": "2026-09-21T04:30:53.415Z",
+        "pages": 1,
+        "count": 13,
+        "names": [
+          "위닛 수원인계점",
+          "노바래쉬 속눈썹연장&펌",
+          "우동키노야 인계점",
+          "비즈안경 위드렌즈 수원인계점",
+          "곱창고플러스 인계직영점",
+          "원스의원",
+          "깜언 베트남 마사지 수원인계점",
+          "인계동 이유네일",
+          "인생설렁탕 수원인계점",
+          "상업공인중개사사무소",
+          "혁재빌딩",
+          "혁재빌딩",
+          "VIP"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 73
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_297",
+      "name": "양주 노고산로뎀나무",
+      "address": "경기 양주시 장흥면 유원지로 83 (삼상리 146-7)",
+      "region": "경기 양주시",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "노고산로뎀나무 상호 검색 결과 없음. 원주소에는 로뎀나무펜션 등록. 식당 승계 여부 및 식사 가격 미확정.",
+      "checkedAt": "2026-09-21T04:10:47.556Z",
+      "menus": [],
+      "queries": [
+        "양주 노고산로뎀나무",
+        "경기 양주시 장흥면 유원지로83"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%96%91%EC%A3%BC%EC%8B%9C%20%EC%9E%A5%ED%9D%A5%EB%A9%B4%20%EC%9C%A0%EC%9B%90%EC%A7%80%EB%A1%9C83",
+      "index": 74
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_259",
+      "name": "양평 표미숙국수",
+      "address": "경기 양평군 옥천면 백현길 4 (옥천리 141-1)",
+      "region": "경기 양평군",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "표미숙국수 상호 검색 결과 없음. 원주소 옥천리141-1에는 촉촉한명태찜만 등록.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "양평 표미숙국수",
+        "경기 양평군 옥천면 백현길4"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%96%91%ED%8F%89%EA%B5%B0%20%EC%98%A5%EC%B2%9C%EB%A9%B4%20%EB%B0%B1%ED%98%84%EA%B8%B84",
+      "index": 75
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_5bd76c1003f2",
+      "name": "영광 갯마을횟집",
+      "address": "전남 영광군 홍농읍 계마길 39-9 (계마리 894-24)",
+      "region": "전남 영광군",
+      "previousStatus": "unresolved",
+      "status": "identity_review",
+      "reason": "갯마을횟집 검색 결과 없음. 같은 주소에는 갯마을원 및 다른 횟집이 함께 등록. 갯마을원 상세에 메뉴·전화·영업시간 없고 상호 승계 근거 미확정.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "영광 갯마을횟집",
+        "전남 영광군 홍농읍 계마길39-9",
+        "영광 갯마을원"
+      ],
+      "sourceUrl": "https://pcmap.place.naver.com/place/16952680",
+      "index": 76
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_679",
+      "name": "영광 장보고굴비",
+      "address": "전남 영광군 법성면 굴비로1길 46 (진내리 482-64)",
+      "region": "전남 영광군",
+      "previousStatus": "listing_only",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:10:11.196Z",
+      "queries": [
+        "영광 장보고굴비"
+      ],
+      "matchedName": "장보고굴비",
+      "matchedAddress": "전남광주 영광군 법성면 굴비로1길 46",
+      "phone": "061-356-7608",
+      "menus": [],
+      "reason": "상호·원주소 일치. 메뉴 탭 및 공개 가격·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/16959445",
+      "index": 77
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_326",
+      "name": "완도 장도식당슈퍼",
+      "address": "전남 완도군 완도읍 청해진로1369번길 38-3 (장좌리 152-1)",
+      "region": "전남 완도군",
+      "previousStatus": "unresolved",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:10:13.901Z",
+      "queries": [
+        "완도 장도식당슈퍼"
+      ],
+      "matchedName": "장도식당슈퍼",
+      "matchedAddress": "전남광주 완도군 완도읍 청해진로 1365 1369번길 38-3",
+      "phone": "061-552-6716",
+      "menus": [],
+      "reason": "상호·방송 정보(백반기행59회 낙지한상) 일치. 주소 표시가 청해진로1365와1369번길38-3을 혼재 표기. 메뉴 탭·가격·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1529140824",
+      "index": 78
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_cb1f5244ca80",
+      "name": "완도 전망좋은수협회센타",
+      "address": "전남 완도군 완도읍 해변공원로124번길 26 (가용리 1100-1)",
+      "region": "전남 완도군",
+      "previousStatus": "unresolved",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:10:16.143Z",
+      "queries": [
+        "완도 전망좋은수협회센타"
+      ],
+      "matchedName": "전망좋은수협회센타",
+      "matchedAddress": "전남광주 완도군 완도읍 해변공원로124번길 26",
+      "phone": "061-554-5510",
+      "menus": [],
+      "reason": "상호·원주소 일치. 메뉴 탭 및 공개 가격·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/16988217",
+      "index": 79
+    },
+    {
+      "id": "topic_neighborhood-walk_20260921_22",
+      "name": "운전수문어",
+      "address": "경북 경주시 원화로 273 1층",
+      "region": "경북 경주시",
+      "previousStatus": "listing_only",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:10:52.265Z",
+      "queries": [
+        "경주 운전수문어"
+      ],
+      "matchedName": "운전수문어집",
+      "matchedAddress": "경북 경주시 원화로 273",
+      "phone": "054-749-7087",
+      "menus": [],
+      "reason": "원주소·상호 일치. 수산물 판매점으로 메뉴 탭 및 영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/21715016",
+      "index": 80
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4bd85c0c2935",
+      "name": "의왕 외식하기가장좋은집 (외가집, 현재 폐업)",
+      "address": "경기 의왕시 안양판교로 127 (포일동 505-117)",
+      "region": "경기 의왕시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 도로명 안양판교로127은 카페 브리티로 조회되며 연결 지번이505-20으로 원데이터505-117과 달라 추가 확인 필요.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "의왕 외식하기가장좋은집",
+        "경기 의왕시 안양판교로127"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%9D%98%EC%99%95%EC%8B%9C%20%EC%95%88%EC%96%91%ED%8C%90%EA%B5%90%EB%A1%9C127",
+      "index": 81
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_11d61bf1517a",
+      "name": "의왕 임학순전통웰빙파김치강화갯벌장어민물장어",
+      "address": "경기 의왕시 벌모루앞길 3 (포일동 168-1)",
+      "region": "경기 의왕시",
+      "previousStatus": "unresolved",
+      "status": "identity_review",
+      "reason": "도로명 벌모루앞길3 검색 결과 없음. 지번 포일동168-1은 업소 미등록. 상호 검색의 심원장어·임학순원주추어탕은 동일 업소·이전 여부 미확정.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "의왕 임학순 장어",
+        "경기 의왕시 벌모루앞길3",
+        "경기 의왕시 포일동168-1"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%9D%98%EC%99%95%EC%8B%9C%20%ED%8F%AC%EC%9D%BC%EB%8F%99168-1",
+      "index": 82
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_34de3be4fb31",
+      "name": "이천 류재열의명품코다리 (현재 폐업)",
+      "address": "경기 이천시 증신로 215 (송정동 72-4)",
+      "region": "경기 이천시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "류재열의명품코다리 검색 결과 없음. 송정동72-4에는 백온정염소만 등록.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "이천 류재열의명품코다리",
+        "경기 이천시 증신로215"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EC%9D%B4%EC%B2%9C%EC%8B%9C%20%EC%A6%9D%EC%8B%A0%EB%A1%9C215",
+      "index": 84
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b9696d8b6ff2",
+      "name": "인천 새우상회 (현재 폐업)",
+      "address": "인천 부평구 충선로203번길 40 (삼산동 463-5)",
+      "region": "인천 부평구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "새우상회 검색은 다른 상호의 식당들만 반환. 주소에 표시된 전체 52개 장소(3페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:30:58.121Z",
+      "menus": [],
+      "queries": [
+        "인천 새우상회"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EC%83%88%EC%9A%B0%EC%83%81%ED%9A%8C",
+      "addressListingCheck": {
+        "index": 85,
+        "query": "인천 부평구 충선로203번길 40",
+        "checkedAt": "2026-09-21T04:30:58.121Z",
+        "pages": 3,
+        "count": 52,
+        "names": [
+          "굴포천조개창고",
+          "오디오스타",
+          "하남돼지집 인천삼산점",
+          "한신우동 삼산점",
+          "우지커피 굴포천역점",
+          "삼바리 인천삼산점",
+          "호우양꼬치",
+          "플레이박스PC 2호점",
+          "다이어트하는사람들 고다짐 삼산점pt",
+          "다채헤어룸",
+          "비알스피닝",
+          "지중해초밥참치",
+          "블레브왁싱",
+          "우리동네국수집 삼산점",
+          "GS25 뉴삼산금성점",
+          "대빵오락실 삼산점",
+          "기쁨노인전문요양원",
+          "쉼 테라피",
+          "C&C로데오1",
+          "골드마사지",
+          "가야노래연습장",
+          "청담",
+          "눈썹작가",
+          "베트남힐링케어",
+          "아마노 씨앤씨로데오1 주차장",
+          "배불삼",
+          "기쁨노인주간보호센터",
+          "샵노래방",
+          "파티노래연습장",
+          "보라 PC",
+          "ML 택배포장",
+          "GS25 뉴삼산금성점 ATM",
+          "쿠쿠홈시스 부평지점",
+          "보테가다이아BAR",
+          "도담철학원",
+          "북성인력",
+          "쿠쿠홈시스 산곡지점",
+          "다이아",
+          "보테니칼건설",
+          "샾노래연습장",
+          "멘토공인중개사사무소",
+          "서광기업",
+          "사쿠라",
+          "클린이즈",
+          "티엠지",
+          "네오인터랙티브로지스틱스",
+          "탑아이앤디",
+          "강남BAR",
+          "범창종합관리",
+          "포아이",
+          "뉴보래건설",
+          "수석"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 85
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_34630912fd18",
+      "name": "인천 서해안횟집",
+      "address": "인천 강화군 길상면 초지리 616-5",
+      "region": "인천 강화군",
+      "previousStatus": "unresolved",
+      "status": "identity_review",
+      "reason": "상호 검색은 삼산면 서해안회타운을 반환하여 다른 면·주소로 제외. 기존 길상면 초지리616-5는 업소 미등록.",
+      "checkedAt": "2026-09-21T04:13:24.992Z",
+      "menus": [],
+      "queries": [
+        "강화 서해안횟집"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B0%95%ED%99%94%20%EC%84%9C%ED%95%B4%EC%95%88%ED%9A%9F%EC%A7%91",
+      "index": 86
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f00def392c52",
+      "name": "인천 외내골가든 (현재 폐업)",
+      "address": "인천 강화군 내가면 강화서로 289 (고천리 632)",
+      "region": "인천 강화군",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 원주소 고천리632는 조회되나 등록 업소 없음.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "강화 외내골가든",
+        "인천 강화군 내가면 강화서로289"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0%20%EB%82%B4%EA%B0%80%EB%A9%B4%20%EA%B0%95%ED%99%94%EC%84%9C%EB%A1%9C289",
+      "index": 87
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_4912573a6b12",
+      "name": "인천 정자담 (현재 폐업)",
+      "address": "인천 남동구 소래역남로 10 (논현동 754-2)",
+      "region": "인천 남동구",
+      "previousStatus": "conflicting",
+      "status": "identity_unresolved",
+      "reason": "상호 검색 결과 없음. 주소에 표시된 전체 14개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:31:02.238Z",
+      "menus": [],
+      "queries": [
+        "인천 정자담",
+        "인천 남동구 소래역남로10"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EB%82%A8%EB%8F%99%EA%B5%AC%20%EC%86%8C%EB%9E%98%EC%97%AD%EB%82%A8%EB%A1%9C10",
+      "addressListingCheck": {
+        "index": 88,
+        "query": "인천 남동구 소래역남로 10",
+        "checkedAt": "2026-09-21T04:31:02.238Z",
+        "pages": 1,
+        "count": 14,
+        "names": [
+          "통큰칼국수",
+          "뚜레쥬르 소래포구역점",
+          "봉자막창 인천소래포구점",
+          "민속밀면 소래포구점",
+          "위너스테니스아카데미",
+          "레츠핑퐁24 소래포구점",
+          "디앤비세탁명가 소래포구논현점",
+          "행복한교회",
+          "별노래연습장",
+          "웰빙마사지",
+          "광장코아",
+          "배럴바디필라테스",
+          "아트플랜",
+          "신조실업"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 88
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_bcf12ad322c8",
+      "name": "인천 피에프창 송도트리플스트리트",
+      "address": "인천 연수구 송도과학로16번길 33-2 (송도동 174-3)",
+      "region": "인천 연수구",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:31:16.779Z",
+      "status": "identity_unresolved",
+      "queries": [
+        "피에프창 송도트리플스트리트",
+        "인천 연수구 송도과학로16번길33-2",
+        "피에프창 송도점"
+      ],
+      "menus": [],
+      "reason": "피에프창 송도점 검색 결과 없음. 주소에 표시된 전체 49개 장소(3페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EC%97%B0%EC%88%98%EA%B5%AC%20%EC%86%A1%EB%8F%84%EA%B3%BC%ED%95%99%EB%A1%9C16%EB%B2%88%EA%B8%B833-2",
+      "addressListingCheck": {
+        "index": 89,
+        "query": "인천 연수구 송도과학로16번길 33-2",
+        "checkedAt": "2026-09-21T04:31:16.779Z",
+        "pages": 3,
+        "count": 49,
+        "names": [
+          "에이직 피자",
+          "마카오훠궈 송도 트리플스트리트 본점",
+          "쉐이크쉑 송도점",
+          "스시로 송도점",
+          "바네스타코 송도트리플스트리트점",
+          "무신사 스토어 트리플스트리트 송도점",
+          "담솥 본점",
+          "투썸플레이스 송도트리플스트리트점",
+          "올드타운 트리플스트리트점",
+          "반궁 송도트리플스트리트점",
+          "올리브영 송도트리플스트리트점",
+          "미도인 송도트리플스트리트",
+          "더플레이스 송도점",
+          "에잇세컨즈 트리플스트릿 송도점",
+          "공차 트리플스트리트점",
+          "예향정 인천송도점",
+          "앙쥬레브 애견호텔&애견유치원 송도점",
+          "위베이프전자담배 송도트리플스트리트점",
+          "정씨함박 본점",
+          "트리플스트리트B동",
+          "ABC마트 GS 송도트리플스트리트점",
+          "유가네닭갈비 송도트리플스트리트점",
+          "빙동댕 송도점",
+          "참피온삼겹살 트리플 스트리트점",
+          "브레댄코 트리플스트리트점",
+          "코코로벤또 송도트리플스트리트점",
+          "Chai797 Plus 송도 트리플스트리트점",
+          "북촌손만두 송도트리플스트리트점",
+          "그라츠커피랩 송도트리플스트리트점",
+          "장혁민의부대찌개 송도트리플스트리트점",
+          "파란만잔 송도트리플스트리트점",
+          "바인드 트리플스트리트점",
+          "아이라야",
+          "아미테라 송도트리플스트리트점",
+          "닥터킴성형외과의원",
+          "조선팔도 본점",
+          "실크로드 송도본점",
+          "포토랩플러스 라이브러리 송도트리플점",
+          "MON2SUN",
+          "빅바이트컴퍼니",
+          "클라이드앤 트리플스트리트점",
+          "백년용포",
+          "파운드오브제",
+          "터보브라더스",
+          "백년나무",
+          "라오베이징 송도점",
+          "인디에프 송도트리플점",
+          "바살 바베큐",
+          "젠케이인천송도"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 89
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_55f0345e0832",
+      "name": "일산 바람아래꽃돌게장 (현재 폐업)",
+      "address": "경기 고양시 일산동구 경의로 373 (마두동 862)",
+      "region": "경기 고양시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 원주소 전체4개 업소는 청담채순대국·교회·수리업소로 대상 없음.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "일산 바람아래꽃돌게장",
+        "경기 고양시 일산동구 경의로373"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EA%B3%A0%EC%96%91%EC%8B%9C%20%EC%9D%BC%EC%82%B0%EB%8F%99%EA%B5%AC%20%EA%B2%BD%EC%9D%98%EB%A1%9C373",
+      "index": 90
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6463a7c74255",
+      "name": "전주 오선모옛날김밥",
+      "address": "전북 전주시 완산구 송정1길 1 (삼천동1가 601-11)",
+      "region": "전북 전주시",
+      "previousStatus": "conflicting",
+      "checkedAt": "2026-09-21T04:14:14.881Z",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1375980158/menu",
+      "matchedName": "오선모 옛날김밥",
+      "menus": [],
+      "status": "identity_review",
+      "matchedAddress": "전북 전주시 완산구 송정2길5",
+      "phone": "063-221-3057",
+      "queries": [
+        "전주 오선모옛날김밥"
+      ],
+      "priceCandidates": [
+        {
+          "name": "김밥",
+          "price": "4,000원"
+        }
+      ],
+      "reason": "동일 고유 상호와 방송 이력의 오선모 옛날김밥이 송정2길5에 등록되어 김밥4천원 확인. 원주소 송정1길1은 다른 업소들로 현재 주소 변경 확인 후 적용 필요.",
+      "index": 91
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d4299fa3d3ac",
+      "name": "전주 치즈명가 (현재 폐업)",
+      "address": "전북 전주시 완산구 은행로 46 (풍남동3가 74-25)",
+      "region": "전북 전주시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 기존 주소에는 모주체험 여만 등록.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "전주 치즈명가",
+        "전북 전주시 완산구 은행로46"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%A0%84%EB%B6%81%20%EC%A0%84%EC%A3%BC%EC%8B%9C%20%EC%99%84%EC%82%B0%EA%B5%AC%20%EC%9D%80%ED%96%89%EB%A1%9C46",
+      "index": 92
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_416",
+      "name": "정읍 옛날팥죽",
+      "address": "전북 정읍시 중앙로 162 (시기동 356-1)",
+      "region": "전북 정읍시",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:18:05.051Z",
+      "status": "identity_review",
+      "queries": [
+        "정읍 옛날팥죽",
+        "전북 정읍시 중앙로162"
+      ],
+      "matchedName": "옛날팥죽",
+      "matchedAddress": "전북 정읍시 태평7길 24",
+      "menus": [],
+      "reason": "상호가 같은 옛날팥죽은 태평7길24에 등록돼 원주소 중앙로162와 다름. 현 장소도 메뉴·가격 미등록. 원주소에는 솜씨만두·마차분식만 등록돼 이전·동일 업소 확인 필요.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/17557928",
+      "index": 93
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_299",
+      "name": "태안 산장가든",
+      "address": "충남 태안군 태안읍 상도로 49-57 (상옥리 1156)",
+      "region": "충남 태안군",
+      "previousStatus": "unresolved",
+      "checkedAt": "2026-09-21T04:14:36.096Z",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1578976959/menu",
+      "matchedName": "연옥당",
+      "menus": [],
+      "sourceUpdatedText": "최근 업데이트 26.02.28",
+      "status": "identity_review",
+      "matchedAddress": "충남 태안군 남면 안면대로605-8 1층",
+      "phone": "0507-1398-9945",
+      "queries": [
+        "태안 산장가든"
+      ],
+      "priceCandidates": [
+        {
+          "name": "연잎밥추가",
+          "price": "6,000원"
+        },
+        {
+          "name": "초등학생 1인분",
+          "price": "5,000원"
+        },
+        {
+          "name": "흰쌀밥정식",
+          "price": "15,000원"
+        },
+        {
+          "name": "연잎밥정식",
+          "price": "18,000원"
+        }
+      ],
+      "reason": "산장가든 검색은 연옥당을 반환하고 백반기행54회 연잎정식 이력을 표시하나 상호·주소가 모두 달라 승계 확인 필요. 메뉴 연잎밥정식18,000원과 인증정보 착한가격15,000원이 상충.",
+      "index": 94
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_112",
+      "name": "통영 수정식당",
+      "address": "경남 통영시 항남5길 12-21 (항남동 239-49)",
+      "region": "경남 통영시",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색은 다른 지역·다른 상호만 반환. 기존 건물명은 수정식당이나 현재 업소는 일품양평해장국 통영항남점.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "통영 수정식당",
+        "경남 통영시 항남5길12-21"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EB%82%A8%20%ED%86%B5%EC%98%81%EC%8B%9C%20%ED%95%AD%EB%82%A85%EA%B8%B812-21",
+      "index": 95
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_04fc2c38ef90",
+      "name": "파주 정미식당 통일동산",
+      "address": "경기 파주시 탄현면 평화로 576 (갈현리 284-19)",
+      "region": "경기 파주시",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 기존 주소에는 금화왕돈까스 파주헤이리점 등록.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "파주 정미식당 통일동산",
+        "경기 파주시 탄현면 평화로576"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%ED%83%84%ED%98%84%EB%A9%B4%20%ED%8F%89%ED%99%94%EB%A1%9C576",
+      "index": 96
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_cf4feeb5e5bb",
+      "name": "파주 칼라디소토",
+      "address": "경기 파주시 탄현면 헤이리마을길 59-138 (법흥리 1652-7)",
+      "region": "경기 파주시",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 기존 주소2개 업소는 올댓스토어·이아당.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "파주 칼라디소토",
+        "경기 파주시 탄현면 헤이리마을길59-138"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%ED%83%84%ED%98%84%EB%A9%B4%20%ED%97%A4%EC%9D%B4%EB%A6%AC%EB%A7%88%EC%9D%84%EA%B8%B859-138",
+      "index": 97
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_19c1ec6a8738",
+      "name": "파주 The담다 (이대 대흥식당, 서울에서 이전)",
+      "address": "경기 파주시 조리읍 장곡로 149 (장곡리 113-2)",
+      "region": "경기 파주시",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 기존 주소에는 흑돈짚 등록.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "파주 The담다",
+        "경기 파주시 조리읍 장곡로149"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EC%A1%B0%EB%A6%AC%EC%9D%8D%20%EC%9E%A5%EA%B3%A1%EB%A1%9C149",
+      "index": 98
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
+      "name": "평택 나귀당귀",
+      "address": "경기 평택시 조개터로26번길 21-3 (합정동 906-5)",
+      "region": "경기 평택시",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T04:14:58.622Z",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/36614739/menu",
+      "matchedName": "황금목장 염소요리전문점",
+      "menus": [],
+      "sourceUpdatedText": "최근 업데이트 25.11.18",
+      "status": "identity_review",
+      "matchedAddress": "경기 평택시 조개터로26번길21-3 황금목장 염소요리전문점",
+      "phone": "0507-1327-5939",
+      "queries": [
+        "평택 나귀당귀"
+      ],
+      "priceCandidates": [
+        {
+          "name": "염소탕",
+          "price": "15,000원"
+        },
+        {
+          "name": "한우 소 불고기 1+ (200g)",
+          "price": "17,000원"
+        },
+        {
+          "name": "염소탕 (특)",
+          "price": "18,000원"
+        },
+        {
+          "name": "염소전골(1인/2인이상)",
+          "price": "26,000원"
+        },
+        {
+          "name": "염소수육(1인/2인이상)",
+          "price": "28,000원"
+        },
+        {
+          "name": "염소무침(1인/2인이상)",
+          "price": "28,000원"
+        },
+        {
+          "name": "염소갈비전골(1인/2인이상)",
+          "price": "30,000원"
+        },
+        {
+          "name": "염소갈비수육 (1인/2인이상)",
+          "price": "30,000원"
+        }
+      ],
+      "reason": "나귀당귀 검색은 원주소 황금목장 염소요리전문점 반환. 맛있는녀석들336회 당나귀 방송 이력이 남아 있지만 현 메뉴는 염소요리로 바뀜. 업종·상호 변경 확인 후 적용 필요.",
+      "index": 99
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_79437a7edfb4",
+      "name": "하남 신돈까스본점 (유민상, 폐업)",
+      "address": "경기도 하남시 역말로 39 (덕풍동 432-7)",
+      "region": "경기도 하남시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "상호 검색 결과 없음. 기존 주소의3개 업소는 청소·인테리어·건설업.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "하남 신돈까스본점",
+        "경기 하남시 역말로39"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%95%98%EB%82%A8%EC%8B%9C%20%EC%97%AD%EB%A7%90%EB%A1%9C39",
+      "index": 100
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_219",
+      "name": "함양 안의뻥튀기",
+      "address": "경남 함양군 안의면 석천길 3-29 (이전리 14)",
+      "region": "경남 함양군",
+      "previousStatus": "listing_only",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "queries": [
+        "함양 안의뻥튀기"
+      ],
+      "matchedName": "안의뻥튀기",
+      "matchedAddress": "경남 함양군 안의면 석천길3-29",
+      "menus": [],
+      "reason": "상호·주소 일치. 홈·정보 탭만 제공하며 메뉴·가격·전화·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1555653902",
+      "index": 101
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_291",
+      "name": "홍천 오복식당",
+      "address": "강원도 홍천군 남면 한서로 3395 (양덕원리 156-14)",
+      "region": "강원도 홍천군",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "검색은 다른 면·시군 업소들만 반환. 기존 남면 주소에는 부뚜막 등록.",
+      "checkedAt": "2026-09-21T04:17:05.741Z",
+      "menus": [],
+      "queries": [
+        "홍천 오복식당",
+        "강원 홍천군 남면 한서로3395"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EB%82%A8%EB%A9%B4%20%ED%95%9C%EC%84%9C%EB%A1%9C3395",
+      "index": 103
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+      "name": "거인통닭",
+      "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+      "region": "부산 중구",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "거인통닭 검색은 부전동·대연동·부용동·아미동 지점을 반환. 원주소 부평동2가11-2에는 깡통시장바리스타와 커피연구소만 있어 이전·지점 확인 필요.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "부산 거인통닭",
+        "부산 중구 중구로47번길34"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%20%EC%A4%91%EA%B5%AC%20%EC%A4%91%EA%B5%AC%EB%A1%9C47%EB%B2%88%EA%B8%B834",
+      "index": 105
+    },
+    {
+      "id": "old-korean-100_restaurant_050",
+      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+      "address": "부산 중구 광복동1가 5-14",
+      "region": "부산 중구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "천안곰탕 검색은 다른 거대곰탕 등을 반환. 기존 광복동1가5-14에는 부막숯불닭갈비와 상품권거래소 등록.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "부산 천안곰탕",
+        "부산 중구 광복동1가5-14"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%20%EC%A4%91%EA%B5%AC%20%EA%B4%91%EB%B3%B5%EB%8F%991%EA%B0%805-14",
+      "index": 106
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
+      "name": "소문난동래파전",
+      "address": "부산 동래구 금강공원로 55 (온천1동 208-8)",
+      "region": "부산 동래구",
+      "previousStatus": "listing_only",
+      "checkedAt": "2026-09-21T04:17:40.276Z",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/2032538157/menu",
+      "matchedName": "소문난동래파전",
+      "menus": [],
+      "sourceUpdatedText": "최근 업데이트 26.06.26",
+      "status": "identity_review",
+      "queries": [
+        "부산 소문난동래파전",
+        "부산 동래구 금강공원로55"
+      ],
+      "matchedAddress": "부산 동래구 차밭골로50번길25",
+      "phone": "051-557-1716",
+      "priceCandidates": [
+        {
+          "name": "콩국수",
+          "price": "7,000원"
+        },
+        {
+          "name": "동래파전",
+          "price": "15,000원"
+        },
+        {
+          "name": "해물부추전",
+          "price": "12,000원"
+        },
+        {
+          "name": "해물김치전",
+          "price": "12,000원"
+        },
+        {
+          "name": "빈대떡",
+          "price": "12,000원"
+        },
+        {
+          "name": "명태전",
+          "price": "15,000원"
+        },
+        {
+          "name": "명태 머리전",
+          "price": "12,000원"
+        },
+        {
+          "name": "비빔밥",
+          "price": "9,000원"
+        },
+        {
+          "name": "물국수",
+          "price": "6,000원"
+        },
+        {
+          "name": "비빔국수",
+          "price": "7,000원"
+        },
+        {
+          "name": "칼국수",
+          "price": "6,000원"
+        },
+        {
+          "name": "묵무침(도토리)",
+          "price": "12,000원"
+        }
+      ],
+      "reason": "동일 상호의 현재 주소는 차밭골로50번길25. 메뉴12개 확인. 원주소 금강공원로55에는 유씨네본가누룽지삼계탕이 있어 이전 확인 후 적용 필요.",
+      "index": 107
+    },
+    {
+      "id": "old-korean-100_restaurant_085",
+      "name": "강진 완도횟집(현재 폐업, 영업종료)",
+      "address": "전남 강진군 마량면 마량리 980-37",
+      "region": "전남 강진군",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "완도횟집 검색 결과 없음. 원지번 마량리980-37은 미항로169로 조회되나 업소 미등록.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "강진 마량 완도횟집",
+        "전남 강진군 마량면 마량리980-37"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%A0%84%EB%82%A8%20%EA%B0%95%EC%A7%84%EA%B5%B0%20%EB%A7%88%EB%9F%89%EB%A9%B4%20%EB%A7%88%EB%9F%89%EB%A6%AC980-37",
+      "index": 109
+    },
+    {
+      "id": "old-korean-100_restaurant_028",
+      "name": "경주 전통경주할매집(현재 폐업, 영업종료)",
+      "address": "경북 경주시 황남동 200-2",
+      "region": "경북 경주시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "address_occupied_by_other_listing",
+      "reason": "전통경주할매집 검색 결과 없음. 원지번 황남동200-2에는 한복·자전거·사진 업소3개 등록.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "경주 전통경주할매집",
+        "경북 경주시 황남동200-2"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%99%A9%EB%82%A8%EB%8F%99200-2",
+      "index": 110
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b7b4d097d081",
+      "name": "공주분식",
+      "address": "대전 중구 문창로 97 (문창동 37-2)",
+      "region": "대전 중구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "reason": "공주분식 검색은 서구의 다른 상호·주소 업소를 반환. 원주소 문창동37-2는 조회되나 업소 미등록.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "대전 공주분식",
+        "대전 중구 문창로97"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%20%EC%A4%91%EA%B5%AC%20%EB%AC%B8%EC%B0%BD%EB%A1%9C97",
+      "index": 111
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_e651c9e527db",
+      "name": "길거리 토스트",
+      "address": "광주 양동시장 중앙통로 3층 사무실 가는 길",
+      "region": "광주 양동시장",
+      "previousStatus": "unresolved",
+      "status": "identity_unresolved",
+      "reason": "양동시장 길거리토스트 검색은 시장 외 다른 동의 토스트·카페들만 반환. 원기록은 시장 통로 설명뿐으로 지번·상호를 특정할 수 없어 가격 확보 불가.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "광주 양동시장 길거리 토스트"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B4%91%EC%A3%BC%20%EC%96%91%EB%8F%99%EC%8B%9C%EC%9E%A5%20%EA%B8%B8%EA%B1%B0%EB%A6%AC%20%ED%86%A0%EC%8A%A4%ED%8A%B8",
+      "index": 112
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_58613205c46d",
+      "name": "꼬메이베베",
+      "address": "서울 마포구 연희로1길 55 (연남동 383-72)",
+      "region": "서울 마포구",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "꼬메이베베는 광진구 천호대로525에 검색되나 원주소와 다름. 원주소 연남동383-72의4개 업소는 해브파스타·무심·광계·회사. 동일 업소 이전 확인 필요.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "서울 꼬메이베베",
+        "서울 마포구 연희로1길55"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%97%B0%ED%9D%AC%EB%A1%9C1%EA%B8%B855",
+      "index": 113
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_88ee18fc3f75",
+      "name": "노량진수제비",
+      "address": "서울 동작구 여의대방로22길 121 (신대방동 724)",
+      "region": "서울 동작구",
+      "previousStatus": "conflicting",
+      "status": "identity_review",
+      "reason": "기존 주소 전체 127개 장소 중 일등수제비(상가 1420호)를 확인. 메뉴 가격 5개는 공개되어 있으나 노량진수제비라는 기존 상호와의 관계를 업체 소개에서도 확인하지 못해 후보로만 저장.",
+      "checkedAt": "2026-09-21T04:32:16.875Z",
+      "menus": [],
+      "queries": [
+        "서울 노량진수제비",
+        "서울 동작구 여의대방로22길121"
+      ],
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1401960989/menu",
+      "addressListingCheck": {
+        "index": 116,
+        "query": "서울 동작구 여의대방로22길 121",
+        "checkedAt": "2026-09-21T04:31:22.828Z",
+        "pages": 7,
+        "count": 127,
+        "names": [
+          "고향 엄마손 생바지락 칼국수 신대방삼거리점",
+          "박만배아리랑보쌈 신대방삼거리점",
+          "혼미 신대방삼거리직영점",
+          "모던해물 중도",
+          "윤윤 차이나",
+          "마코 신대방삼거리역점",
+          "모찌얌",
+          "심야식당중도",
+          "미태리 신대방삼거리역점",
+          "포레스트카페",
+          "문래한잔 혼술바 서울 신대방삼거리",
+          "멘야윤",
+          "리블랑왁싱",
+          "마라홀릭 마라탕 신대방점",
+          "도미노짐",
+          "고선경반찬앤국",
+          "데이유어",
+          "더라온부동산중개법인",
+          "구립숲속자이어린이집",
+          "냉삼 1981",
+          "아띠필라테스 신대방삼거리점",
+          "네일, 바다보다",
+          "보라매자이 복합문화센터",
+          "홍루이젠 보라매자이점",
+          "커피집도씨",
+          "60계치킨 서울신대방삼거리점",
+          "월매흑염소",
+          "안스네일",
+          "오복닭한마리 5호점",
+          "매머드익스프레스 보라매자이점",
+          "견생냥품 24시 무인펫샵 신대방삼거리점",
+          "어나더블룸",
+          "오와스시 신대방삼거리점",
+          "솔리드바이구현",
+          "티키타카이소영무인탁구",
+          "말랑놀이터 신대방점",
+          "대방독",
+          "언제나봄날헤어",
+          "누수탐지",
+          "더단미뷰티스페이스",
+          "모네드라인",
+          "미헤어 신대방삼거리역점",
+          "바빈스커피 보라매자이점",
+          "GS25 보라매자이점",
+          "요거트퍼플 신대방삼거리역점",
+          "피넛네일",
+          "런드리24 신대방삼거리역점",
+          "나무부동산공인중개사사무소",
+          "도작네일",
+          "학예안마원",
+          "써니헤어",
+          "소브 에스테틱",
+          "점프윙스줄넘기 대방점",
+          "조은언어심리발달센터",
+          "뱃살도둑 신대방삼거리점",
+          "몽소",
+          "니즈뷰티 스튜디오",
+          "모엣네일",
+          "미래미디어",
+          "카페 드 발렌느",
+          "통까페",
+          "몽글미",
+          "하이바이올린음악교습소",
+          "오늘The예쁨",
+          "릴브로우바",
+          "숲",
+          "집밥도담",
+          "하밍 네일",
+          "일등수제비",
+          "봄미당 떡케이크",
+          "바비헤어",
+          "와인띵스",
+          "팬트리정담",
+          "원어민영어 피터잉글리쉬",
+          "자이수선실",
+          "아하박스 보라매자이",
+          "마스터즈영어교습소",
+          "예지미술교습소",
+          "풍미",
+          "하나투어 투어풀동작",
+          "플레이팩토 동그라미수학",
+          "아라한태권도장",
+          "자이수지단지내공인중개사사무소",
+          "자이가온단지내공인중개사사무소",
+          "아지트야",
+          "인바이디자인 동작",
+          "헤어스토리 이화",
+          "감헤어",
+          "아름헤어",
+          "리드인 신대방자이점",
+          "리야헤어샵",
+          "플라톤아카데미 신대방자이교습소",
+          "휴대폰가게 3호점",
+          "동작신대방전당포사나이대부",
+          "봄피아노교습소",
+          "코알라 베이비 스윔",
+          "카페,오늘",
+          "행복드림공인중개사사무소",
+          "보라매 이 클래스 피아노",
+          "친정맘 관악동작금천",
+          "보라매자이정다운부동산공인중개사사무소",
+          "센트럴골드공인중개사사무소",
+          "무더위쉼터 보라매자이더포레스트",
+          "한양포차",
+          "성유부동산중개법인",
+          "미쓰리선불폰",
+          "자이탑공인중개사사무소",
+          "닥터배관",
+          "자이(단지내)공인중개사사무소",
+          "퍼스트에셋부동산중개법인",
+          "라포즈스튜디오",
+          "아담트리",
+          "인셀덤 은하수",
+          "더부자공인중개사사무소",
+          "스타공인중개사사무소",
+          "보라매자이더포레스트아파트 전기차충전소",
+          "경성산업관리",
+          "자이탑단지내공인중개사사무소",
+          "제이공인중개사사무소",
+          "보라매자이 더포레스트 전기차충전소",
+          "인셀덤 동작점",
+          "인셀덤 이뻐이뻐",
+          "인터베이스",
+          "시아죤",
+          "동작구 여성단체연합회",
+          "생귀신림대리점",
+          "포스피닷컴"
+        ],
+        "matchedOriginalName": false
+      },
+      "matchedName": "일등수제비",
+      "matchedAddress": "서울 동작구 여의대방로22길 121 1층 상가 1420호",
+      "phone": "02-3280-7666",
+      "priceCandidates": [
+        {
+          "name": "물냉",
+          "price": "9,000원"
+        },
+        {
+          "name": "비냉",
+          "price": "9,000원"
+        },
+        {
+          "name": "비빔국수",
+          "price": "10,000원"
+        },
+        {
+          "name": "콩국수",
+          "price": "10,000원"
+        },
+        {
+          "name": "콩국물",
+          "price": "13,000원"
+        }
+      ],
+      "identitySourceUrl": "https://pcmap.place.naver.com/restaurant/1401960989/information",
+      "index": 116
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_f3e84eac8444",
+      "name": "마창수산직영횟집 내동점",
+      "address": "경남 김해시 내외로11번길 7-3",
+      "region": "경남 김해시",
+      "previousStatus": "listing_only",
+      "status": "menu_not_published",
+      "checkedAt": "2026-09-21T04:19:26.083Z",
+      "queries": [
+        "김해 마창수산직영횟집 내동점"
+      ],
+      "matchedName": "마창수산직영횟집 내동점",
+      "matchedAddress": "경남 김해시 내외로11번길 7-3",
+      "phone": "055-327-8834",
+      "menus": [],
+      "reason": "내동점 상호·원주소 일치. 메뉴 탭·가격·영업시간 미등록.",
+      "sourceUrl": "https://pcmap.place.naver.com/place/1845669492",
+      "index": 117
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_038286bba16a",
+      "name": "바로방",
+      "address": "강원 강릉시 경강로 2092 (금학동 16-2)",
+      "region": "강원 강릉시",
+      "previousStatus": "listing_only",
+      "status": "identity_review",
+      "reason": "바로방은 옥천동·성남동·강문동·교동의 현 지점들이 검색됨. 원주소 금학동16-2에는 백억커피·치과·렌즈·화장품점만 등록. 원본점 이전·승계 확인 전 다른 지점 가격 병합 보류.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "강릉 바로방",
+        "강원 강릉시 경강로2092",
+        "강릉 옥천동 바로방"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B0%95%EB%A6%89%20%EC%98%A5%EC%B2%9C%EB%8F%99%20%EB%B0%94%EB%A1%9C%EB%B0%A9",
+      "index": 118
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_2c7e4e9fcf73",
+      "name": "보배집",
+      "address": "경기 파주시 시청로 13 (금촌동 947-30)",
+      "region": "경기 파주시",
+      "previousStatus": "unresolved",
+      "status": "identity_unresolved",
+      "reason": "보배집 검색은 보배반점 지점들만 반환. 주소에 표시된 전체 8개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:31:26.881Z",
+      "menus": [],
+      "queries": [
+        "파주 보배집",
+        "경기 파주시 시청로13"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EC%8B%9C%EC%B2%AD%EB%A1%9C13",
+      "addressListingCheck": {
+        "index": 119,
+        "query": "경기 파주시 시청로 13",
+        "checkedAt": "2026-09-21T04:31:26.881Z",
+        "pages": 1,
+        "count": 8,
+        "names": [
+          "대박해물탕",
+          "동물보육원 파주지부",
+          "클라운지 경기파주1호점",
+          "백운빌딩",
+          "가온인력",
+          "가온건설",
+          "고래고래노래연습장",
+          "세상생명그린"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 119
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_89266777bbf7",
+      "name": "북경통닭",
+      "address": "울산 동구 바드래1길 3 (전하동 300-264)",
+      "region": "울산 동구",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "북경통닭 상호 검색 결과 없음. 원주소2개 업소는 동울산대학약국·모앤모가발.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "울산 북경통닭",
+        "울산 동구 바드래1길3"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9A%B8%EC%82%B0%20%EB%8F%99%EA%B5%AC%20%EB%B0%94%EB%93%9C%EB%9E%981%EA%B8%B83",
+      "index": 120
+    },
+    {
+      "id": "old-korean-100_restaurant_016",
+      "name": "서울 곰보추탕(현재 폐업, 영업종료)",
+      "address": "서울 동대문구 용신동 767-6",
+      "region": "서울 동대문구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "곰보추탕 상호 및 원주소 용신동767-6 모두 검색 결과 없음. 행정동 표기와 지번 정합성 확인 필요.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "서울 곰보추탕",
+        "서울 동대문구 용신동767-6"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC%20%EC%9A%A9%EC%8B%A0%EB%8F%99767-6",
+      "index": 121
+    },
+    {
+      "id": "old-korean-100_restaurant_008",
+      "name": "서울 형제추어탕(현재 폐업, 영업종료)",
+      "address": "서울 종로구 평창동 281-1",
+      "region": "서울 종로구",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "형제추어탕 상호 검색 결과 없음. 평창동281-1은 녹원가든 건물명과 평창문화로28-7 도로명만 있고 업소 미등록.",
+      "checkedAt": "2026-09-21T04:20:40.427Z",
+      "menus": [],
+      "queries": [
+        "서울 평창동 형제추어탕",
+        "서울 종로구 평창동281-1"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%ED%8F%89%EC%B0%BD%EB%8F%99281-1",
+      "index": 122
+    },
+    {
+      "id": "old-korean-100_restaurant_066",
+      "name": "속초 고성회관(현재 폐업, 영업종료)",
+      "address": "강원도 속초시 중앙동 481-1",
+      "region": "강원도 속초시",
+      "previousStatus": "closure_unconfirmed",
+      "status": "identity_unresolved",
+      "reason": "고성회관 검색은 고성군 마을회관 등 다른 장소를 반환. 원지번 중앙동481-1은 중앙로108번길90으로 조회되나 업소 미등록.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "속초 고성회관",
+        "강원 속초시 중앙동481-1"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%20%EC%86%8D%EC%B4%88%EC%8B%9C%20%EC%A4%91%EC%95%99%EB%8F%99481-1",
+      "index": 124
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_5a1237af7f4b",
+      "name": "송탄시장 붕어빵",
+      "address": "경기 평택시 탄현로 336 (지산동 753-1)",
+      "region": "경기 평택시",
+      "previousStatus": "unresolved",
+      "status": "identity_unresolved",
+      "reason": "송탄시장 붕어빵 검색은 다른 카페·토스트업소 반환. 주소에 표시된 전체 6개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음. 원주소는 송탄우체국이며 노점의 정확한 상호·점포번호가 없어 위치를 더 특정해야 함.",
+      "checkedAt": "2026-09-21T04:31:30.982Z",
+      "menus": [],
+      "queries": [
+        "송탄시장 붕어빵",
+        "경기 평택시 탄현로336"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%ED%83%84%ED%98%84%EB%A1%9C336",
+      "addressListingCheck": {
+        "index": 125,
+        "query": "경기 평택시 탄현로 336",
+        "checkedAt": "2026-09-21T04:31:30.982Z",
+        "pages": 1,
+        "count": 6,
+        "names": [
+          "송탄우체국",
+          "송탄우체국365",
+          "송탄우체국ATM점내외 365",
+          "금성이발관",
+          "우체통",
+          "정든햄버거"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 125
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_de1345dcdc05",
+      "name": "수와래",
+      "address": "서울 종로구 삼청로 82 (삼청동 35-116)",
+      "region": "서울 종로구",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "수와래 상호 검색 결과 없음. 기존 삼청로82의 전체4개 업소는 바빌론·조선미녀·갤러리·의류점.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "서울 수와래",
+        "서울 종로구 삼청로82"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%A2%85%EB%A1%9C%EA%B5%AC%20%EC%82%BC%EC%B2%AD%EB%A1%9C82",
+      "index": 126
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a1c6c2c6bac4",
+      "name": "수유시장 만두명가",
+      "address": "서울 강북구 도봉로71길 17 (수유1동 54-1)",
+      "region": "서울 강북구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "reason": "수유시장 만두명가 검색 결과 없음. 주소에 표시된 전체 30개 장소(2페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음. 같은 주소에 오빠가만든한끼만두 등 다른 만두점이 있으나 기존 만두명가와의 관계는 확인되지 않음.",
+      "checkedAt": "2026-09-21T04:31:43.813Z",
+      "menus": [],
+      "queries": [
+        "수유시장 만두명가",
+        "서울 강북구 도봉로71길17"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%B6%81%EA%B5%AC%20%EB%8F%84%EB%B4%89%EB%A1%9C71%EA%B8%B817",
+      "addressListingCheck": {
+        "index": 127,
+        "query": "서울 강북구 도봉로71길 17",
+        "checkedAt": "2026-09-21T04:31:43.813Z",
+        "pages": 2,
+        "count": 30,
+        "names": [
+          "상현달 수유재래시장점",
+          "오빠가만든한끼만두 수유재래시장점",
+          "전주전집 수유재래시장점",
+          "두발로신발백화점 수유재래시장점",
+          "3.14코리아파이반점",
+          "홈스마일 수유점",
+          "복자의주방",
+          "엉클스치킨 수유재래시장점",
+          "숙이네 수유재래시장점",
+          "일호전집",
+          "영신이네 수유재래시장점",
+          "농부네정미소",
+          "금여사네닭발 수유재래시장점",
+          "명가홍어김치전문",
+          "조개듬뿍닭한마리",
+          "현대식품 수유재래시장점",
+          "제주고기국밥",
+          "고향집 수유재래시장점",
+          "윤,카페",
+          "별주부전",
+          "명희네 수유재래시장점",
+          "장터국수",
+          "수유산업사",
+          "동오식당",
+          "보성집",
+          "김가네게사랑",
+          "두꺼비상회",
+          "영진식당",
+          "신발나라",
+          "치킨닭컴"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 127
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_bcc3d4b990f7",
+      "name": "어우동",
+      "address": "경기 구리시 안골로103번길 7 (수택동 425-18)",
+      "region": "경기 구리시",
+      "previousStatus": "unresolved",
+      "status": "identity_unresolved",
+      "reason": "어우동 검색은 스시도로 등 다른 업소를 반환. 주소에 표시된 전체 6개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:31:47.991Z",
+      "menus": [],
+      "queries": [
+        "구리 어우동",
+        "경기 구리시 안골로103번길7"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EC%95%88%EA%B3%A8%EB%A1%9C103%EB%B2%88%EA%B8%B87",
+      "addressListingCheck": {
+        "index": 130,
+        "query": "경기 구리시 안골로103번길 7",
+        "checkedAt": "2026-09-21T04:31:47.991Z",
+        "pages": 1,
+        "count": 6,
+        "names": [
+          "숙이네곱창&막창",
+          "구리냉삼집",
+          "큰손닭강정 구리수택점",
+          "또뽀끼야 구리점",
+          "동생네",
+          "선수빌딩"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 130
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_4556e0c0aebd",
+      "name": "영천시장 원조떡볶이",
+      "address": "서울 서대문구 통일로 205-5 (영천동 290)",
+      "region": "서울 서대문구",
+      "previousStatus": "listing_only",
+      "status": "identity_unresolved",
+      "reason": "영천시장 원조떡볶이 검색 결과 없음. 주소에 표시된 전체 5개 장소(1페이지)를 확인했으나 기존 상호와 일치하는 목록은 찾지 못함. 폐업·이전 또는 지도 미등록 여부는 확정되지 않음.",
+      "checkedAt": "2026-09-21T04:31:52.073Z",
+      "menus": [],
+      "queries": [
+        "영천시장 원조떡볶이",
+        "서울 서대문구 통일로205-5"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EC%84%9C%EB%8C%80%EB%AC%B8%EA%B5%AC%20%ED%86%B5%EC%9D%BC%EB%A1%9C205-5",
+      "addressListingCheck": {
+        "index": 131,
+        "query": "서울 서대문구 통일로 205-5",
+        "checkedAt": "2026-09-21T04:31:52.073Z",
+        "pages": 1,
+        "count": 5,
+        "names": [
+          "독립문영천시장 유진이네 전집",
+          "K마트",
+          "민내과의원",
+          "진이떡방",
+          "시장청과"
+        ],
+        "matchedOriginalName": false
+      },
+      "index": 131
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_45be58e3ebae",
+      "name": "윤씨밀방",
+      "address": "서울 마포구 와우산로15길 15 (서교동 411-6)",
+      "region": "서울 마포구",
+      "previousStatus": "conflicting",
+      "status": "address_occupied_by_other_listing",
+      "reason": "윤씨밀방 검색 결과 없음. 원주소2개 업소는 더베니·레이어룸빈티지.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "서울 윤씨밀방",
+        "서울 마포구 와우산로15길15"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%99%80%EC%9A%B0%EC%82%B0%EB%A1%9C15%EA%B8%B815",
+      "index": 134
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_8223004f0ea2",
+      "name": "토스트킹",
+      "address": "경기 평택시 송탄로 63 (이충동 517-3)",
+      "region": "경기 평택시",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "토스트킹 검색 결과 없음. 이충동517-3에는 세종문고와 중고폰마트 등록.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "평택 토스트킹",
+        "경기 평택시 송탄로63"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%20%ED%8F%89%ED%83%9D%EC%8B%9C%20%EC%86%A1%ED%83%84%EB%A1%9C63",
+      "index": 136
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_f47ee86282d2",
+      "name": "통영식도락",
+      "address": "경남 통영시 발개로 131 (도남동 560-1)",
+      "region": "경남 통영시",
+      "previousStatus": "listing_only",
+      "status": "address_occupied_by_other_listing",
+      "reason": "통영식도락 검색 결과 없음. 원주소2개 업소는 오늘도바다해·센텀시티빌딩.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "통영식도락",
+        "경남 통영시 발개로131"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EA%B2%BD%EB%82%A8%20%ED%86%B5%EC%98%81%EC%8B%9C%20%EB%B0%9C%EA%B0%9C%EB%A1%9C131",
+      "index": 137
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a966fb1dc9aa",
+      "name": "화순반점",
+      "address": "인천 동구 만석부두로 3 (만석동 2-70)",
+      "region": "인천 동구",
+      "previousStatus": "unresolved",
+      "status": "address_occupied_by_other_listing",
+      "reason": "화순반점 검색 결과 없음. 원주소 만석동2-70에는 중식당 장강 등록. 동일 업소 상호변경 여부 미확정.",
+      "checkedAt": "2026-09-21T04:24:44.251Z",
+      "menus": [],
+      "queries": [
+        "인천 화순반점",
+        "인천 동구 만석부두로3"
+      ],
+      "sourceUrl": "https://map.naver.com/p/search/%EC%9D%B8%EC%B2%9C%20%EB%8F%99%EA%B5%AC%20%EB%A7%8C%EC%84%9D%EB%B6%80%EB%91%90%EB%A1%9C3",
+      "index": 139
+    }
+  ]
+}

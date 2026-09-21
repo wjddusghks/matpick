@@ -5,6 +5,7 @@ import menuPriceFollowup from "./generated/menu-price-followup.generated.json";
 import travelDiscovery from "./generated/travel-discovery.generated.json";
 import topicExpansion from "./generated/topic-expansion.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
+import restaurantExclusions from "./restaurant-exclusions.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import { sourceProfileImageOverrides } from "./sourceProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
@@ -481,6 +482,7 @@ const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map(
     imageUrl: sourceProfileImageOverrides[source.id] ?? source.imageUrl,
   })
 );
+const excludedRestaurantIds = new Set(restaurantExclusions.restaurantIds);
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
   restaurants: dataset.restaurants.map(restaurant => ({
@@ -493,6 +495,9 @@ const normalizedDataset: MatpickDataSet = {
     ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
       restaurant.id
     ],
+    ...(excludedRestaurantIds.has(restaurant.id)
+      ? { recommendationHold: restaurantExclusions.reason }
+      : {}),
     id: restaurant.id,
   })),
   creators: creatorsWithProfileImages,

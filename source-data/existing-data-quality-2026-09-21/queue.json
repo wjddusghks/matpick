@@ -1,0 +1,838 @@
+[
+  {
+    "id": "old-korean-100_restaurant_050",
+    "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+    "address": "부산 중구 광복동1가 5-14",
+    "lat": 35.09932,
+    "lng": 129.0345785
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+    "name": "거인통닭",
+    "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+    "lat": 35.1023409,
+    "lng": 129.02611539999998
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_68b835b9d90e",
+    "name": "동우통닭",
+    "address": "제주 제주시 복지로 72 (도남동 642-1)",
+    "lat": 33.4933858,
+    "lng": 126.49366479999999
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_54f0433ffeb5",
+    "name": "백화양곱창",
+    "address": "부산 중구 자갈치로23번길 6 (남포동6가 32)",
+    "lat": 35.097008599999995,
+    "lng": 129.0269908
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
+    "name": "소문난동래파전",
+    "address": "부산 동래구 금강공원로 55 (온천1동 208-8)",
+    "lat": 35.2185573,
+    "lng": 129.07841539999998
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_43e5c84f86d6",
+    "name": "원조범일동매떡",
+    "address": "부산 부산진구 골드테마길 52-2 (범천동 844-35)",
+    "lat": 35.1440681,
+    "lng": 129.0602685
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+    "name": "팥빙수, 단팥죽 골목",
+    "address": "부산 중구 신창동 국제시장 단팥죽거리",
+    "lat": 35.1002035,
+    "lng": 129.0303831
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_020",
+    "name": "부산 중리해녀촌",
+    "address": "부산 영도구 절영로 355 (동삼동 628-1)",
+    "lat": 35.0716472,
+    "lng": 129.0573867,
+    "kakaoPlaceId": "273038784"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_025",
+    "name": "부산 금성호",
+    "address": "부산 남구 용호3동 6-5",
+    "lat": 35.128298,
+    "lng": 129.11719399999998,
+    "kakaoPlaceId": "1567918454"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_139",
+    "name": "제주 몰고랑식당",
+    "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
+    "lat": 33.2562425,
+    "lng": 126.5602398,
+    "kakaoPlaceId": ""
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_334",
+    "name": "부산 금정산성막걸리 본점",
+    "address": "부산 금정구 산성로 453 (금성동 554-1)",
+    "lat": 35.2503508,
+    "lng": 129.0564344,
+    "kakaoPlaceId": "10206535"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_688",
+    "name": "부산 양가네양곱창",
+    "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
+    "lat": 35.1628248,
+    "lng": 129.1589788,
+    "kakaoPlaceId": ""
+  },
+  {
+    "id": "wednesday-gourmet_restaurant_139",
+    "name": "제주 까사디노아",
+    "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
+    "lat": 33.2373961,
+    "lng": 126.3630807,
+    "kakaoPlaceId": ""
+  },
+  {
+    "id": "wednesday-gourmet_restaurant_152",
+    "name": "제주 진아떡집",
+    "address": "제주 제주시 동문로4길 7-1 (일도1동 1141-3)",
+    "lat": 33.5123782,
+    "lng": 126.5283703,
+    "kakaoPlaceId": "10777503"
+  },
+  {
+    "id": "wednesday-gourmet_restaurant_156",
+    "name": "제주 물항식당 탑동점",
+    "address": "제주 제주시 임항로 37-4 (건입동 1319-14)",
+    "lat": 33.5169175,
+    "lng": 126.5290831,
+    "kakaoPlaceId": ""
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_c40046b700a2",
+    "name": "부산 갈맷길장어",
+    "address": "부산 연제구 거제시장로22번길 5 (거제3동 588-4)",
+    "lat": 35.1819139,
+    "lng": 129.071304
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_15586944d4f2",
+    "name": "부산 칠백장장인국밥",
+    "address": "부산 동래구 미남로 67 (사직동 136-6)",
+    "lat": 35.194470700000004,
+    "lng": 129.0893632
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_31ad186ed499",
+    "name": "부산 한량 (현재 폐업)",
+    "address": "부산 해운대구 마린시티3로 23 (우동 1435)",
+    "lat": 35.156815,
+    "lng": 129.1432012
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_e70b8459abb2",
+    "name": "부산 BNC 비엔씨제과 (광복본점 폐업)",
+    "address": "부산 중구 광복로39번길 6 (창선동1가 12-1)",
+    "lat": 35.0994895,
+    "lng": 129.0296016
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_6bf624ddbd8e",
+    "name": "제주 돈해돈찜 (현재 폐업)",
+    "address": "제주 제주시 연북로 199 (오라이동 3162-3)",
+    "lat": 33.4189867,
+    "lng": 126.51960849999999
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_f22a876ee266",
+    "name": "제주 숙성도 노형본관",
+    "address": "제주 제주시 원노형로 41 (노형동 941-2)",
+    "lat": 33.4850463,
+    "lng": 126.4850445
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_c173b427d693",
+    "name": "제주 애월빵공장 앤 카페",
+    "address": "제주 제주시 애월읍 금성5길 42-15 (금성리 472-13)",
+    "lat": 33.448265899999996,
+    "lng": 126.30165339999999
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_e7295d8c4144",
+    "name": "제주 제주도감",
+    "address": "제주 제주시 연북로 257 (오라이동 1770)",
+    "lat": 33.4816199,
+    "lng": 126.5088394
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_8086682d2737",
+    "name": "제주 한라국수",
+    "address": "제주 서귀포시 천제연로188번길 17 (중문동 2048-1)",
+    "lat": 33.2502561,
+    "lng": 126.42450059999999
+  },
+  {
+    "id": "topic_enrichment_michelin-selected_7c46052878a7",
+    "name": "이와",
+    "address": "부산 해운대구 해운대해변로 209번길 13, 2층, Busan, 48093, 한국",
+    "lat": 35.159701600000005,
+    "lng": 129.1538894
+  },
+  {
+    "id": "topic_enrichment_michelin-selected_31d72c17b326",
+    "name": "토오루",
+    "address": "부산진구 동성로 49번길 38-1, Busan, 47304, 한국",
+    "lat": 35.1551348,
+    "lng": 129.06638809999998
+  },
+  {
+    "id": "travel_busan-bite_1591",
+    "name": "무궁화",
+    "address": "부산 부산진구 가야대로 772 43층",
+    "lat": 35.15655849198653,
+    "lng": 129.05569331339174,
+    "kakaoPlaceId": "21309418",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_a2cee4fc34d5d784-row-2130",
+    "name": "고서방짬뽕",
+    "address": "제주특별자치도 제주시 인다5길 11-5 1층",
+    "lat": 33.475935860886096,
+    "lng": 126.54815039913359,
+    "kakaoPlaceId": "1528548685",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_6c3430f2cbfdaa3d-row-2449",
+    "name": "구씨커피로스터스",
+    "address": "제주특별자치도 제주시 구좌읍 구좌로 21 1층",
+    "lat": 33.523614494811355,
+    "lng": 126.85395922725206,
+    "kakaoPlaceId": "877966090",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_f298085332c6ac29-row-2023",
+    "name": "블루메베이글",
+    "address": "제주특별자치도 제주시 가령로4길 3 1층",
+    "lat": 33.49671411994831,
+    "lng": 126.53309746046264,
+    "kakaoPlaceId": "427370828",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_cefa6f0e4905ca65-row-1657",
+    "name": "외도339",
+    "address": "제주특별자치도 제주시 일주서로 7345 2층",
+    "lat": 33.49374090953917,
+    "lng": 126.43170885723059,
+    "kakaoPlaceId": "1003524606",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_64e42a3f81562fba-row-1788",
+    "name": "커피템플",
+    "address": "제주특별자치도 제주시 영평길 269 1층",
+    "lat": 33.478142181622474,
+    "lng": 126.5702375667947,
+    "kakaoPlaceId": "99092488",
+    "operationState": "unknown"
+  },
+  {
+    "id": "topic_chureupkyeon_13",
+    "name": "신흥갈비식육점",
+    "address": "부산 사상구 새벽로167번길 35 1층",
+    "lat": 35.15632861143853,
+    "lng": 128.98124282966876,
+    "kakaoPlaceId": "16239332",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_12",
+    "name": "남부식당",
+    "address": "부산 남구 수영로 346 1층",
+    "lat": 35.13864861315113,
+    "lng": 129.10346868288966,
+    "kakaoPlaceId": "16840279",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_chureupkyeon_20260921_13",
+    "name": "더채움김밥",
+    "address": "부산 연제구 거제대로214번길 54 1층",
+    "lat": 35.185894273613215,
+    "lng": 129.07527269378247,
+    "kakaoPlaceId": "558899353",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_jeju-eddy_20260921_16",
+    "name": "파뷔노파스타바",
+    "address": "제주특별자치도 제주시 신성로12길 2 1층",
+    "lat": 33.49664517608317,
+    "lng": 126.53012346407111,
+    "kakaoPlaceId": "2077860665",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_life-master_20260921_3",
+    "name": "꽁띠꽁띠뉴",
+    "address": "부산 해운대구 센텀중앙로 145 더샵센텀파크1차아파트 상가3동 112,114호",
+    "lat": 35.17675857681747,
+    "lng": 129.12359153829192,
+    "kakaoPlaceId": "1707743242",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_life-master_20260921_28",
+    "name": "피넛빵앗간",
+    "address": "부산 사상구 사상로148번길 11 1층",
+    "lat": 35.15954024410837,
+    "lng": 128.9880715861995,
+    "kakaoPlaceId": "1585286643",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_b8c94b6558fa",
+    "name": "공천포식당",
+    "address": "제주 서귀포시 남원읍 공천포로 89 (신례리 27-5)",
+    "lat": 33.26638757652236,
+    "lng": 126.64258641903712,
+    "kakaoPlaceId": "8204729",
+    "operationState": "operating"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_107",
+    "name": "제주 삼보식당",
+    "address": "제주 서귀포시 중정로 25 (서귀동 319-8)",
+    "lat": 33.2477534,
+    "lng": 126.5590751,
+    "kakaoPlaceId": "11486940",
+    "operationState": "unknown"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_110",
+    "name": "제주 만덕이네",
+    "address": "제주 서귀포시 표선면 서성일로 16 (성읍리 1623-3)",
+    "lat": 33.3933443,
+    "lng": 126.8010888,
+    "kakaoPlaceId": "9982608",
+    "operationState": "unknown"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_142",
+    "name": "제주 천짓골식당",
+    "address": "제주 서귀포시 중앙로41번길 4 (서귀동 294-10)",
+    "lat": 33.2482403,
+    "lng": 126.5613052,
+    "kakaoPlaceId": "12501703",
+    "operationState": "unknown"
+  },
+  {
+    "id": "wednesday-gourmet_restaurant_097",
+    "name": "부산 다리집",
+    "address": "부산 수영구 남천바다로10번길 70 (남천동 29-4)",
+    "lat": 35.1468161,
+    "lng": 129.1107574,
+    "kakaoPlaceId": "8849564"
+  },
+  {
+    "id": "wednesday-gourmet_restaurant_146",
+    "name": "제주 아일랜드조르바",
+    "address": "제주 제주시 구좌읍 대수길 9 (평대리 1958-7)",
+    "lat": 33.5355626,
+    "lng": 126.8390448,
+    "kakaoPlaceId": "14608730"
+  },
+  {
+    "id": "topic_enrichment_ttoganjip_798ce32a7984",
+    "name": "표선우동가게",
+    "address": "제주특별자치도 서귀포시 표선면 표선관정로 105-1 1층",
+    "lat": 33.324087378617655,
+    "lng": 126.83129222130158,
+    "kakaoPlaceId": "2090669998",
+    "operationState": "unknown"
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_96840343c391",
+    "name": "부산 깡통골목할매 유부전골 본점",
+    "address": "부산 중구 부평3길 29 (부평동1가 15-20)",
+    "lat": 35.10201927939982,
+    "lng": 129.02705340773326,
+    "kakaoPlaceId": "26926399",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_f24d54f590b5",
+    "name": "부산 장성향",
+    "address": "부산 동구 대영로243번길 29 (초량1동 609-1)",
+    "lat": 35.11355199497969,
+    "lng": 129.03772279087008,
+    "kakaoPlaceId": "9415639",
+    "operationState": "operating"
+  },
+  {
+    "id": "topic_enrichment_delicious-guys_558707d93165",
+    "name": "제주 앞뱅디식당",
+    "address": "제주 제주시 선덕로 32 (연동 324-1)",
+    "lat": 33.48532913308384,
+    "lng": 126.49990682626684,
+    "kakaoPlaceId": "10591316",
+    "operationState": "operating"
+  },
+  {
+    "id": "travel_jeju-bite_0d5d79e591fb2bcc-row-2478",
+    "name": "가는곶 세화",
+    "address": "제주특별자치도 제주시 구좌읍 세화14길 3 1층",
+    "lat": 33.520502696663485,
+    "lng": 126.86067699724984,
+    "kakaoPlaceId": "2018722964",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_27d3bd246b6e0b54-row-2615",
+    "name": "갈치공장",
+    "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1296 1층",
+    "lat": 33.53190563592015,
+    "lng": 126.85096106826362,
+    "kakaoPlaceId": "1942763932",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_2ffbd861fa7e77a6-row-2553",
+    "name": "감따남",
+    "address": "제주특별자치도 서귀포시 월산로 16 1층 카페",
+    "lat": 33.262051179284605,
+    "lng": 126.49458908569747,
+    "kakaoPlaceId": "1914104398",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_052fb6ecede4fee0-row-2548",
+    "name": "고사리커피",
+    "address": "제주특별자치도 제주시 구좌읍 중산간동로 2064 1층",
+    "lat": 33.473379325114834,
+    "lng": 126.7640823539044,
+    "kakaoPlaceId": "892483223",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_2e30ca1983d9fd51-row-1258",
+    "name": "골목카페옥수",
+    "address": "제주특별자치도 제주시 애월읍 소길1길 19 1층",
+    "lat": 33.439750979526245,
+    "lng": 126.37997743450666,
+    "kakaoPlaceId": "481425144",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_b9bdd9f73c7e57e9-row-2268",
+    "name": "광양해장국집",
+    "address": "제주특별자치도 제주시 광양13길 25",
+    "lat": 33.499885893655154,
+    "lng": 126.53261123185634,
+    "kakaoPlaceId": "16437841",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_9c5e592ee3b2346d-row-2513",
+    "name": "구이사이",
+    "address": "제주특별자치도 제주시 애월읍 신엄9길 2",
+    "lat": 33.47220818530266,
+    "lng": 126.36854088517497,
+    "kakaoPlaceId": "26417963",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_46361d469559a347-row-2716",
+    "name": "그계절",
+    "address": "제주특별자치도 제주시 구좌읍 한동로 119 1동",
+    "lat": 33.53185875727431,
+    "lng": 126.81853091910551,
+    "kakaoPlaceId": "59334207",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_5dc5de41f39cb027-row-2498",
+    "name": "그라나다",
+    "address": "제주특별자치도 제주시 도공로 86-1 1-2층",
+    "lat": 33.49946770910502,
+    "lng": 126.46406321781825,
+    "kakaoPlaceId": "184384827",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_e219eab661f5381c-row-707",
+    "name": "그리운바다성산포",
+    "address": "제주특별자치도 서귀포시 성산읍 성산등용로 94",
+    "lat": 33.469855037857215,
+    "lng": 126.93004337988744,
+    "kakaoPlaceId": "18277817",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_4d331d05a74905da-row-2609",
+    "name": "그초록",
+    "address": "제주특별자치도 제주시 구좌읍 행원로7길 23-16 1층",
+    "lat": 33.55638543255278,
+    "lng": 126.8063972627613,
+    "kakaoPlaceId": "1782977249",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_73664b175a0305d1-row-1356",
+    "name": "글라글라하와이",
+    "address": "제주특별자치도 서귀포시 대정읍 하모항구로 70 1층",
+    "lat": 33.21955226693468,
+    "lng": 126.25132376548656,
+    "kakaoPlaceId": "622958459",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_69bc53dbb342fa48-row-2428",
+    "name": "꽃밥",
+    "address": "제주특별자치도 제주시 애월읍 일주서로 6059",
+    "lat": 33.45151199574807,
+    "lng": 126.30850384571045,
+    "kakaoPlaceId": "18311320",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_813c63de6d892c5f-row-1759",
+    "name": "나라돈까스",
+    "address": "제주특별자치도 제주시 내도1길 23",
+    "lat": 33.495178861411546,
+    "lng": 126.43702393036018,
+    "kakaoPlaceId": "10194791",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_ed3632a62f977d11-row-2748",
+    "name": "나이체",
+    "address": "제주특별자치도 제주시 인다6길 35 1층 나이체",
+    "lat": 33.47517723844942,
+    "lng": 126.54681168248786,
+    "kakaoPlaceId": "1144524512",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_c74d93243dfbfd4c-row-2304",
+    "name": "난드르바당",
+    "address": "제주특별자치도 서귀포시 하예하동로16번길 11-1 1층",
+    "lat": 33.234615579273715,
+    "lng": 126.37100511857342,
+    "kakaoPlaceId": "26883584",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_5edaa597c80f22ae-row-2262",
+    "name": "남춘식당",
+    "address": "제주특별자치도 제주시 청귤로 12 1층",
+    "lat": 33.4996554402381,
+    "lng": 126.53751109101127,
+    "kakaoPlaceId": "8244466",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_6e9db15084e6a683-row-209",
+    "name": "낭뜰에쉼팡",
+    "address": "제주특별자치도 제주시 조천읍 남조로 2343 1층",
+    "lat": 33.473537153964244,
+    "lng": 126.65713127566576,
+    "kakaoPlaceId": "8874256",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_86006dfd986e06cc-row-1941",
+    "name": "노을리",
+    "address": "제주특별자치도 제주시 애월읍 애월해안로 654 1층",
+    "lat": 33.4798964742507,
+    "lng": 126.37271551221502,
+    "kakaoPlaceId": "1525547515",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_aa813c255fc2dad6-row-2544",
+    "name": "논짓물식당",
+    "address": "제주특별자치도 제주시 성화로9길 10 1층",
+    "lat": 33.51262926364375,
+    "lng": 126.50438224192325,
+    "kakaoPlaceId": "17869257",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_1f8a1328b19b5b4e-row-2376",
+    "name": "누이밥집",
+    "address": "제주특별자치도 서귀포시 중산간서로 695",
+    "lat": 33.263027878617585,
+    "lng": 126.44133401270398,
+    "kakaoPlaceId": "1604993972",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_b5b4d796a98e942b-row-1838",
+    "name": "달페이지",
+    "address": "제주특별자치도 서귀포시 색달로64번길 51",
+    "lat": 33.2597568731775,
+    "lng": 126.41392843032936,
+    "kakaoPlaceId": "1654598093",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_52648c8c894f2152-row-2827",
+    "name": "담소요",
+    "address": "제주특별자치도 서귀포시 남원읍 신례천로 193 1층",
+    "lat": 33.29948676252607,
+    "lng": 126.62497185505075,
+    "kakaoPlaceId": "1778659460",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_659cca7ed7c1c36c-row-1942",
+    "name": "더클리프",
+    "address": "제주특별자치도 서귀포시 중문관광로 154-17",
+    "lat": 33.244329386857586,
+    "lng": 126.41491985270359,
+    "kakaoPlaceId": "1378746048",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_3330ca089121787a-row-2728",
+    "name": "덴드리",
+    "address": "제주특별자치도 서귀포시 성산읍 삼달로 28-1",
+    "lat": 33.3696041179164,
+    "lng": 126.86605439411679,
+    "kakaoPlaceId": "160318816",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_11fe917470f733f2-row-2432",
+    "name": "도라지식당",
+    "address": "제주특별자치도 제주시 연삼로 128",
+    "lat": 33.49271035395259,
+    "lng": 126.50594628309452,
+    "kakaoPlaceId": "15942374",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_fe16bc98b52848b1-row-2340",
+    "name": "돈카츠서황",
+    "address": "제주특별자치도 제주시 애월읍 장소로 205-2 1층",
+    "lat": 33.43432508294164,
+    "lng": 126.37959449536152,
+    "kakaoPlaceId": "27609941",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_9b9d8c6f33d2ec03-row-1992",
+    "name": "돔베돈",
+    "address": "제주특별자치도 제주시 관덕로15길 25",
+    "lat": 33.51555449110102,
+    "lng": 126.52663293622535,
+    "kakaoPlaceId": "8268353",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_692f1d22bb84010a-row-2746",
+    "name": "동복뚝배기",
+    "address": "제주특별자치도 제주시 구좌읍 동복로 30-2 1층",
+    "lat": 33.55318423349503,
+    "lng": 126.70931398173633,
+    "kakaoPlaceId": "1936912017",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_b7371968d0b13864-row-2019",
+    "name": "동해미락",
+    "address": "제주특별자치도 서귀포시 칠십리로 133",
+    "lat": 33.24367216585947,
+    "lng": 126.56822964450157,
+    "kakaoPlaceId": "12663386",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_24ab05a7c6da5926-row-2213",
+    "name": "두리둠비",
+    "address": "제주특별자치도 서귀포시 중문관광로 16 1층",
+    "lat": 33.25671298883555,
+    "lng": 126.41469137461807,
+    "kakaoPlaceId": "221479836",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_4e220aaf6e288933-row-2359",
+    "name": "라 플라주",
+    "address": "제주특별자치도 제주시 조천읍 조함해안로 525",
+    "lat": 33.54283472073507,
+    "lng": 126.67072562856717,
+    "kakaoPlaceId": "1396572648",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_8da66063b930e6e2-row-2427",
+    "name": "랜딩커피",
+    "address": "제주특별자치도 서귀포시 성산읍 신양로122번길 45-1 1층",
+    "lat": 33.43548966099044,
+    "lng": 126.91890434845652,
+    "kakaoPlaceId": "1335585931",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_e3a53de6dc59bc77-row-2623",
+    "name": "레몬뮤지엄",
+    "address": "제주특별자치도 서귀포시 남원읍 하례로620번길 41 1층",
+    "lat": 33.29885918619176,
+    "lng": 126.61785390034619,
+    "kakaoPlaceId": "1406187011",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_d03919e7f58f1604-row-2389",
+    "name": "로빙화",
+    "address": "제주특별자치도 서귀포시 남원읍 남태해안로 13 1-2층",
+    "lat": 33.275101605874816,
+    "lng": 126.70925141885701,
+    "kakaoPlaceId": "1658038483",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_b3f3374b43925ab6-row-2538",
+    "name": "릴로",
+    "address": "제주특별자치도 제주시 구좌읍 하도13길 63 1층",
+    "lat": 33.510840721323085,
+    "lng": 126.89289102399144,
+    "kakaoPlaceId": "1460787139",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_a7ba62d26d7ddc75-row-2429",
+    "name": "마루나키친",
+    "address": "제주특별자치도 제주시 한경면 금등4길 11 1층",
+    "lat": 33.36193968194214,
+    "lng": 126.19578816544642,
+    "kakaoPlaceId": "1630447463",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_bd8022515bab4333-row-2360",
+    "name": "마음에온",
+    "address": "제주특별자치도 제주시 칠성로길 29-1 1층",
+    "lat": 33.51457820936602,
+    "lng": 126.52596231720723,
+    "kakaoPlaceId": "522395014",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_1aed94476aae0c3c-row-1625",
+    "name": "마틸다",
+    "address": "제주특별자치도 제주시 애월읍 고내1길 33 1층",
+    "lat": 33.46569614224088,
+    "lng": 126.3342728419857,
+    "kakaoPlaceId": "26463066",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_a5ca0fcf48b9f411-row-2236",
+    "name": "만지식당",
+    "address": "제주특별자치도 제주시 애월읍 고내로 13-1 1층",
+    "lat": 33.46328746947432,
+    "lng": 126.33905868126132,
+    "kakaoPlaceId": "1060504714",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_33cfb194253289f0-row-344",
+    "name": "명랑스낵",
+    "address": "제주특별자치도 제주시 한림읍 한림로 585 1층",
+    "lat": 33.40917141817178,
+    "lng": 126.25881715454115,
+    "kakaoPlaceId": "27357866",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_6f60f316791f0683-row-2103",
+    "name": "모뉴에트",
+    "address": "제주특별자치도 제주시 구좌읍 종달동길 23 1층",
+    "lat": 33.491481991441134,
+    "lng": 126.90222492682776,
+    "kakaoPlaceId": "1307726606",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_8db10578a23bbadc-row-2216",
+    "name": "모카다방",
+    "address": "제주특별자치도 서귀포시 남원읍 태신해안로 125",
+    "lat": 33.29215966328296,
+    "lng": 126.76137190651228,
+    "kakaoPlaceId": "27491731",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_4d0581e9f16c08f2-row-1848",
+    "name": "무거버거",
+    "address": "제주특별자치도 제주시 조천읍 조함해안로 356 1층",
+    "lat": 33.5489806170197,
+    "lng": 126.65506769580757,
+    "kakaoPlaceId": "1118892834",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_8105d02282c504cc-row-2601",
+    "name": "미쁜제과",
+    "address": "제주특별자치도 서귀포시 대정읍 도원남로 16",
+    "lat": 33.26916011606014,
+    "lng": 126.18005964084209,
+    "kakaoPlaceId": "28741599",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_dae6f2579eb273e2-row-2197",
+    "name": "미스칠",
+    "address": "제주특별자치도 제주시 일주서로 7831 1층",
+    "lat": 33.49391653204378,
+    "lng": 126.48335910949173,
+    "kakaoPlaceId": "182376522",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_c7c50e33c2445583-row-1911",
+    "name": "미스틱3도",
+    "address": "제주특별자치도 제주시 1100로 2894-49 1,2층",
+    "lat": 33.4499469799328,
+    "lng": 126.48755640801852,
+    "kakaoPlaceId": "263044374",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_cb0fe539506ac089-row-975",
+    "name": "미엘드세화",
+    "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1464",
+    "lat": 33.52452153130496,
+    "lng": 126.8618417501754,
+    "kakaoPlaceId": "25161778",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_25b6be698fb5aee6-row-2685",
+    "name": "바다보는날",
+    "address": "제주특별자치도 제주시 애월읍 애월해안로 722",
+    "lat": 33.48390819174112,
+    "lng": 126.37801465430711,
+    "kakaoPlaceId": "1099481075",
+    "operationState": "unknown"
+  },
+  {
+    "id": "travel_jeju-bite_b49b51c096344eba-row-2335",
+    "name": "바당국수",
+    "address": "제주특별자치도 서귀포시 중앙로48번길 43 1층",
+    "lat": 33.25034613668899,
+    "lng": 126.56566864437346,
+    "kakaoPlaceId": "1701981130",
+    "operationState": "unknown"
+  }
+]

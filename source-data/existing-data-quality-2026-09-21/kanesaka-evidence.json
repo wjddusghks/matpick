@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-09-21T01:17:12.239Z",
+  "url": "https://place.map.kakao.com/548205674",
+  "name": "스시 카네사카",
+  "address": {
+    "disp": "서울 강남구 테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스 1층 (삼성동)",
+    "jibun": "삼성동 159-8",
+    "road": "서울 강남구 테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스 1층",
+    "base_zone_no": "06164",
+    "road_part": "테헤란로 521 그랜드 인터컨티넨탈 서울 파르나스 1층",
+    "jibun_part": "삼성동 159-8",
+    "address_detail_part": "그랜드 인터컨티넨탈 서울 파르나스 1층"
+  },
+  "point": {
+    "lon": 127.0608044314492,
+    "lat": 37.50919151307429
+  },
+  "phone": [
+    {
+      "tel": "02-559-7627"
+    }
+  ],
+  "menuItems": [
+    {
+      "product_id": 2,
+      "name": "오마카세 런치 (화~토)",
+      "price": 280000,
+      "is_recommend": false,
+      "is_ai_mate": false,
+      "mod_at": "2026-03-12 15:37:41"
+    },
+    {
+      "product_id": 3,
+      "name": "오마카세 디너 (화~토)",
+      "price": 380000,
+      "is_recommend": false,
+      "is_ai_mate": false,
+      "mod_at": "2026-03-12 15:37:42"
+    },
+    {
+      "product_id": 4,
+      "name": "오마카세 런치 (일,월)",
+      "price": 230000,
+      "is_recommend": false,
+      "is_ai_mate": false,
+      "mod_at": "2026-03-12 15:37:42"
+    },
+    {
+      "product_id": 5,
+      "name": "오마카세 디너 (일,월)",
+      "price": 330000,
+      "is_recommend": false,
+      "is_ai_mate": false,
+      "mod_at": "2026-03-12 15:37:42"
+    }
+  ]
+}

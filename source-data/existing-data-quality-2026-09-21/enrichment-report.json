@@ -1,0 +1,1609 @@
+{
+  "summary": {
+    "checked": 98,
+    "matched": 75,
+    "enriched": 75,
+    "menuSnapshots": 66,
+    "menuItems": 713,
+    "addedMenuItems": 1,
+    "changedPrices": 0,
+    "phonesAdded": 65,
+    "coordinatesRefined": 1,
+    "locationsVerified": 68,
+    "holds": 23
+  },
+  "changes": [
+    {
+      "id": "topic_enrichment_baekjong-wok_b8c94b6558fa",
+      "name": "공천포식당",
+      "address": "제주 서귀포시 남원읍 공천포로 89 (신례리 27-5)",
+      "fields": [
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 13,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/8204729",
+      "checkedAt": "2026-09-21T01:12:06.017Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_107",
+      "name": "제주 삼보식당",
+      "address": "제주 서귀포시 중정로 25 (서귀동 319-8)",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 20,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/11486940",
+      "checkedAt": "2026-09-21T01:12:07.112Z",
+      "distanceMetres": 8
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_110",
+      "name": "제주 만덕이네",
+      "address": "제주 서귀포시 표선면 서성일로 16 (성읍리 1623-3)",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 11,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/9982608",
+      "checkedAt": "2026-09-21T01:12:08.069Z",
+      "distanceMetres": 1
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_142",
+      "name": "제주 천짓골식당",
+      "address": "제주 서귀포시 중앙로41번길 4 (서귀동 294-10)",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/12501703",
+      "checkedAt": "2026-09-21T01:12:09.105Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_334",
+      "name": "부산 금정산성막걸리 본점",
+      "address": "부산 금정구 산성로 453 (금성동 554-1)",
+      "fields": [
+        "locationVerifiedAt",
+        "locationSourceUrls"
+      ],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/10206535",
+      "checkedAt": "2026-09-21T01:11:50.558Z",
+      "distanceMetres": 8
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_097",
+      "name": "부산 다리집",
+      "address": "부산 수영구 남천바다로10번길 70 (남천동 29-4)",
+      "fields": [
+        "locationVerifiedAt",
+        "locationSourceUrls",
+        "lat",
+        "lng",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 13,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/8849564",
+      "checkedAt": "2026-09-21T01:12:10.206Z",
+      "distanceMetres": 36
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_146",
+      "name": "제주 아일랜드조르바",
+      "address": "제주 제주시 구좌읍 대수길 9 (평대리 1958-7)",
+      "fields": [
+        "locationVerifiedAt",
+        "locationSourceUrls",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 5,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/14608730",
+      "checkedAt": "2026-09-21T01:12:11.186Z",
+      "distanceMetres": 3
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_152",
+      "name": "제주 진아떡집",
+      "address": "제주 제주시 동문로4길 7-1 (일도1동 1141-3)",
+      "fields": [
+        "locationVerifiedAt",
+        "locationSourceUrls"
+      ],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/10777503",
+      "checkedAt": "2026-09-21T01:11:50.833Z",
+      "distanceMetres": 4
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_798ce32a7984",
+      "name": "표선우동가게",
+      "address": "제주특별자치도 서귀포시 표선면 표선관정로 105-1 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 16,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/2090669998",
+      "checkedAt": "2026-09-21T01:12:12.198Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_96840343c391",
+      "name": "부산 깡통골목할매 유부전골 본점",
+      "address": "부산 중구 부평3길 29 (부평동1가 15-20)",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 9,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/26926399",
+      "checkedAt": "2026-09-21T01:12:13.139Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f24d54f590b5",
+      "name": "부산 장성향",
+      "address": "부산 동구 대영로243번길 29 (초량1동 609-1)",
+      "fields": [
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 30,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/9415639",
+      "checkedAt": "2026-09-21T01:12:14.158Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_558707d93165",
+      "name": "제주 앞뱅디식당",
+      "address": "제주 제주시 선덕로 32 (연동 324-1)",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 8,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/10591316",
+      "checkedAt": "2026-09-21T01:12:15.010Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_enrichment_michelin-selected_7c46052878a7",
+      "name": "이와",
+      "address": "부산 해운대구 해운대해변로 209번길 13, 2층, Busan, 48093, 한국",
+      "fields": [
+        "locationVerifiedAt",
+        "locationSourceUrls",
+        "phone",
+        "kakaoPlaceId",
+        "placeUrl",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceNote"
+      ],
+      "menuCount": 2,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/468530675",
+      "checkedAt": "2026-09-21T01:11:51.906Z",
+      "distanceMetres": 9
+    },
+    {
+      "id": "travel_busan-bite_1591",
+      "name": "무궁화",
+      "address": "부산 부산진구 가야대로 772 43층",
+      "fields": [
+        "locationVerifiedAt",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 2,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/21309418",
+      "checkedAt": "2026-09-21T01:11:53.783Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_0d5d79e591fb2bcc-row-2478",
+      "name": "가는곶 세화",
+      "address": "제주특별자치도 제주시 구좌읍 세화14길 3 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 28,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/2018722964",
+      "checkedAt": "2026-09-21T01:12:16.034Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_27d3bd246b6e0b54-row-2615",
+      "name": "갈치공장",
+      "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1296 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 8,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1942763932",
+      "checkedAt": "2026-09-21T01:12:17.304Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_2ffbd861fa7e77a6-row-2553",
+      "name": "감따남",
+      "address": "제주특별자치도 서귀포시 월산로 16 1층 카페",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 10,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1914104398",
+      "checkedAt": "2026-09-21T01:12:18.305Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_052fb6ecede4fee0-row-2548",
+      "name": "고사리커피",
+      "address": "제주특별자치도 제주시 구좌읍 중산간동로 2064 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 1,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/892483223",
+      "checkedAt": "2026-09-21T01:12:19.273Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_a2cee4fc34d5d784-row-2130",
+      "name": "고서방짬뽕",
+      "address": "제주특별자치도 제주시 인다5길 11-5 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 11,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1528548685",
+      "checkedAt": "2026-09-21T01:11:54.864Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_2e30ca1983d9fd51-row-1258",
+      "name": "골목카페옥수",
+      "address": "제주특별자치도 제주시 애월읍 소길1길 19 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 11,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/481425144",
+      "checkedAt": "2026-09-21T01:12:20.210Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_b9bdd9f73c7e57e9-row-2268",
+      "name": "광양해장국집",
+      "address": "제주특별자치도 제주시 광양13길 25",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 3,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/16437841",
+      "checkedAt": "2026-09-21T01:12:21.075Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_6c3430f2cbfdaa3d-row-2449",
+      "name": "구씨커피로스터스",
+      "address": "제주특별자치도 제주시 구좌읍 구좌로 21 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/877966090",
+      "checkedAt": "2026-09-21T01:11:55.985Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_9c5e592ee3b2346d-row-2513",
+      "name": "구이사이",
+      "address": "제주특별자치도 제주시 애월읍 신엄9길 2",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 10,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/26417963",
+      "checkedAt": "2026-09-21T01:12:22.225Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_46361d469559a347-row-2716",
+      "name": "그계절",
+      "address": "제주특별자치도 제주시 구좌읍 한동로 119 1동",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 16,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/59334207",
+      "checkedAt": "2026-09-21T01:12:23.340Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_5dc5de41f39cb027-row-2498",
+      "name": "그라나다",
+      "address": "제주특별자치도 제주시 도공로 86-1 1-2층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 2,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/184384827",
+      "checkedAt": "2026-09-21T01:12:24.283Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_e219eab661f5381c-row-707",
+      "name": "그리운바다성산포",
+      "address": "제주특별자치도 서귀포시 성산읍 성산등용로 94",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 8,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/18277817",
+      "checkedAt": "2026-09-21T01:12:25.289Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_4d331d05a74905da-row-2609",
+      "name": "그초록",
+      "address": "제주특별자치도 제주시 구좌읍 행원로7길 23-16 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 10,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1782977249",
+      "checkedAt": "2026-09-21T01:12:26.335Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_73664b175a0305d1-row-1356",
+      "name": "글라글라하와이",
+      "address": "제주특별자치도 서귀포시 대정읍 하모항구로 70 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 20,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/622958459",
+      "checkedAt": "2026-09-21T01:12:27.300Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_69bc53dbb342fa48-row-2428",
+      "name": "꽃밥",
+      "address": "제주특별자치도 제주시 애월읍 일주서로 6059",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 3,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/18311320",
+      "checkedAt": "2026-09-21T01:12:28.385Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_813c63de6d892c5f-row-1759",
+      "name": "나라돈까스",
+      "address": "제주특별자치도 제주시 내도1길 23",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 15,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/10194791",
+      "checkedAt": "2026-09-21T01:12:29.265Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_ed3632a62f977d11-row-2748",
+      "name": "나이체",
+      "address": "제주특별자치도 제주시 인다6길 35 1층 나이체",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 9,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1144524512",
+      "checkedAt": "2026-09-21T01:12:30.298Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_c74d93243dfbfd4c-row-2304",
+      "name": "난드르바당",
+      "address": "제주특별자치도 서귀포시 하예하동로16번길 11-1 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/26883584",
+      "checkedAt": "2026-09-21T01:12:31.341Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_5edaa597c80f22ae-row-2262",
+      "name": "남춘식당",
+      "address": "제주특별자치도 제주시 청귤로 12 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 7,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/8244466",
+      "checkedAt": "2026-09-21T01:12:32.377Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_6e9db15084e6a683-row-209",
+      "name": "낭뜰에쉼팡",
+      "address": "제주특별자치도 제주시 조천읍 남조로 2343 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 10,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/8874256",
+      "checkedAt": "2026-09-21T01:12:33.269Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_86006dfd986e06cc-row-1941",
+      "name": "노을리",
+      "address": "제주특별자치도 제주시 애월읍 애월해안로 654 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 22,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1525547515",
+      "checkedAt": "2026-09-21T01:12:34.329Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_aa813c255fc2dad6-row-2544",
+      "name": "논짓물식당",
+      "address": "제주특별자치도 제주시 성화로9길 10 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 6,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/17869257",
+      "checkedAt": "2026-09-21T01:12:35.422Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_1f8a1328b19b5b4e-row-2376",
+      "name": "누이밥집",
+      "address": "제주특별자치도 서귀포시 중산간서로 695",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 7,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1604993972",
+      "checkedAt": "2026-09-21T01:12:36.364Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_b5b4d796a98e942b-row-1838",
+      "name": "달페이지",
+      "address": "제주특별자치도 서귀포시 색달로64번길 51",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 1,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1654598093",
+      "checkedAt": "2026-09-21T01:12:37.360Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_52648c8c894f2152-row-2827",
+      "name": "담소요",
+      "address": "제주특별자치도 서귀포시 남원읍 신례천로 193 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 15,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1778659460",
+      "checkedAt": "2026-09-21T01:12:38.333Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_659cca7ed7c1c36c-row-1942",
+      "name": "더클리프",
+      "address": "제주특별자치도 서귀포시 중문관광로 154-17",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 12,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1378746048",
+      "checkedAt": "2026-09-21T01:12:39.356Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_3330ca089121787a-row-2728",
+      "name": "덴드리",
+      "address": "제주특별자치도 서귀포시 성산읍 삼달로 28-1",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 1,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/160318816",
+      "checkedAt": "2026-09-21T01:12:40.496Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_11fe917470f733f2-row-2432",
+      "name": "도라지식당",
+      "address": "제주특별자치도 제주시 연삼로 128",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 8,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/15942374",
+      "checkedAt": "2026-09-21T01:12:41.326Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_fe16bc98b52848b1-row-2340",
+      "name": "돈카츠서황",
+      "address": "제주특별자치도 제주시 애월읍 장소로 205-2 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 5,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/27609941",
+      "checkedAt": "2026-09-21T01:12:42.296Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_9b9d8c6f33d2ec03-row-1992",
+      "name": "돔베돈",
+      "address": "제주특별자치도 제주시 관덕로15길 25",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 15,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/8268353",
+      "checkedAt": "2026-09-21T01:12:43.438Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_692f1d22bb84010a-row-2746",
+      "name": "동복뚝배기",
+      "address": "제주특별자치도 제주시 구좌읍 동복로 30-2 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 13,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1936912017",
+      "checkedAt": "2026-09-21T01:12:44.479Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_b7371968d0b13864-row-2019",
+      "name": "동해미락",
+      "address": "제주특별자치도 서귀포시 칠십리로 133",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 12,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/12663386",
+      "checkedAt": "2026-09-21T01:12:45.402Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_24ab05a7c6da5926-row-2213",
+      "name": "두리둠비",
+      "address": "제주특별자치도 서귀포시 중문관광로 16 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 15,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/221479836",
+      "checkedAt": "2026-09-21T01:12:46.237Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_4e220aaf6e288933-row-2359",
+      "name": "라 플라주",
+      "address": "제주특별자치도 제주시 조천읍 조함해안로 525",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 20,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1396572648",
+      "checkedAt": "2026-09-21T01:12:47.317Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_8da66063b930e6e2-row-2427",
+      "name": "랜딩커피",
+      "address": "제주특별자치도 서귀포시 성산읍 신양로122번길 45-1 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 9,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1335585931",
+      "checkedAt": "2026-09-21T01:12:48.442Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_e3a53de6dc59bc77-row-2623",
+      "name": "레몬뮤지엄",
+      "address": "제주특별자치도 서귀포시 남원읍 하례로620번길 41 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 21,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1406187011",
+      "checkedAt": "2026-09-21T01:12:49.270Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_d03919e7f58f1604-row-2389",
+      "name": "로빙화",
+      "address": "제주특별자치도 서귀포시 남원읍 남태해안로 13 1-2층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 8,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1658038483",
+      "checkedAt": "2026-09-21T01:12:50.552Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_b3f3374b43925ab6-row-2538",
+      "name": "릴로",
+      "address": "제주특별자치도 제주시 구좌읍 하도13길 63 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 9,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1460787139",
+      "checkedAt": "2026-09-21T01:12:51.350Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_a7ba62d26d7ddc75-row-2429",
+      "name": "마루나키친",
+      "address": "제주특별자치도 제주시 한경면 금등4길 11 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1630447463",
+      "checkedAt": "2026-09-21T01:12:52.475Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_bd8022515bab4333-row-2360",
+      "name": "마음에온",
+      "address": "제주특별자치도 제주시 칠성로길 29-1 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/522395014",
+      "checkedAt": "2026-09-21T01:12:53.316Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_1aed94476aae0c3c-row-1625",
+      "name": "마틸다",
+      "address": "제주특별자치도 제주시 애월읍 고내1길 33 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 6,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/26463066",
+      "checkedAt": "2026-09-21T01:12:54.477Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_a5ca0fcf48b9f411-row-2236",
+      "name": "만지식당",
+      "address": "제주특별자치도 제주시 애월읍 고내로 13-1 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1060504714",
+      "checkedAt": "2026-09-21T01:12:55.597Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_33cfb194253289f0-row-344",
+      "name": "명랑스낵",
+      "address": "제주특별자치도 제주시 한림읍 한림로 585 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 7,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/27357866",
+      "checkedAt": "2026-09-21T01:12:56.513Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_6f60f316791f0683-row-2103",
+      "name": "모뉴에트",
+      "address": "제주특별자치도 제주시 구좌읍 종달동길 23 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1307726606",
+      "checkedAt": "2026-09-21T01:12:57.381Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_8db10578a23bbadc-row-2216",
+      "name": "모카다방",
+      "address": "제주특별자치도 서귀포시 남원읍 태신해안로 125",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 32,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/27491731",
+      "checkedAt": "2026-09-21T01:12:58.542Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_4d0581e9f16c08f2-row-1848",
+      "name": "무거버거",
+      "address": "제주특별자치도 제주시 조천읍 조함해안로 356 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 3,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1118892834",
+      "checkedAt": "2026-09-21T01:12:59.599Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_8105d02282c504cc-row-2601",
+      "name": "미쁜제과",
+      "address": "제주특별자치도 서귀포시 대정읍 도원남로 16",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 22,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/28741599",
+      "checkedAt": "2026-09-21T01:13:00.614Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_dae6f2579eb273e2-row-2197",
+      "name": "미스칠",
+      "address": "제주특별자치도 제주시 일주서로 7831 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 16,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/182376522",
+      "checkedAt": "2026-09-21T01:13:01.527Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_c7c50e33c2445583-row-1911",
+      "name": "미스틱3도",
+      "address": "제주특별자치도 제주시 1100로 2894-49 1,2층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 2,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/263044374",
+      "checkedAt": "2026-09-21T01:13:02.580Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_cb0fe539506ac089-row-975",
+      "name": "미엘드세화",
+      "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1464",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 16,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/25161778",
+      "checkedAt": "2026-09-21T01:13:03.610Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_25b6be698fb5aee6-row-2685",
+      "name": "바다보는날",
+      "address": "제주특별자치도 제주시 애월읍 애월해안로 722",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 9,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1099481075",
+      "checkedAt": "2026-09-21T01:13:04.514Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_b49b51c096344eba-row-2335",
+      "name": "바당국수",
+      "address": "제주특별자치도 서귀포시 중앙로48번길 43 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 20,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1701981130",
+      "checkedAt": "2026-09-21T01:13:05.688Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_f298085332c6ac29-row-2023",
+      "name": "블루메베이글",
+      "address": "제주특별자치도 제주시 가령로4길 3 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 5,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/427370828",
+      "checkedAt": "2026-09-21T01:11:56.804Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_cefa6f0e4905ca65-row-1657",
+      "name": "외도339",
+      "address": "제주특별자치도 제주시 일주서로 7345 2층",
+      "fields": [
+        "locationVerifiedAt",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 28,
+      "addedMenuItems": 1,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1003524606",
+      "checkedAt": "2026-09-21T01:11:58.005Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "travel_jeju-bite_64e42a3f81562fba-row-1788",
+      "name": "커피템플",
+      "address": "제주특별자치도 제주시 영평길 269 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 4,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/99092488",
+      "checkedAt": "2026-09-21T01:11:58.895Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_chureupkyeon_13",
+      "name": "신흥갈비식육점",
+      "address": "부산 사상구 새벽로167번길 35 1층",
+      "fields": [
+        "locationVerifiedAt",
+        "phone"
+      ],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/16239332",
+      "checkedAt": "2026-09-21T01:12:00.053Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_12",
+      "name": "남부식당",
+      "address": "부산 남구 수영로 346 1층",
+      "fields": [],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/16840279",
+      "checkedAt": "2026-09-21T01:12:00.920Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_13",
+      "name": "더채움김밥",
+      "address": "부산 연제구 거제대로214번길 54 1층",
+      "fields": [],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/558899353",
+      "checkedAt": "2026-09-21T01:12:01.874Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_16",
+      "name": "파뷔노파스타바",
+      "address": "제주특별자치도 제주시 신성로12길 2 1층",
+      "fields": [
+        "phone"
+      ],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/2077860665",
+      "checkedAt": "2026-09-21T01:12:02.930Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_life-master_20260921_3",
+      "name": "꽁띠꽁띠뉴",
+      "address": "부산 해운대구 센텀중앙로 145 더샵센텀파크1차아파트 상가3동 112,114호",
+      "fields": [
+        "phone"
+      ],
+      "menuCount": 0,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1707743242",
+      "checkedAt": "2026-09-21T01:12:04.024Z",
+      "distanceMetres": 0
+    },
+    {
+      "id": "topic_life-master_20260921_28",
+      "name": "피넛빵앗간",
+      "address": "부산 사상구 사상로148번길 11 1층",
+      "fields": [
+        "phone",
+        "menus",
+        "menuPriceVerifiedAt",
+        "menuPriceSources",
+        "menuPriceStatus",
+        "menuPriceNote"
+      ],
+      "menuCount": 5,
+      "addedMenuItems": 0,
+      "changedPrices": [],
+      "source": "https://place.map.kakao.com/1585286643",
+      "checkedAt": "2026-09-21T01:12:04.986Z",
+      "distanceMetres": 0
+    }
+  ],
+  "holds": [
+    {
+      "id": "old-korean-100_restaurant_050",
+      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+      "address": "부산 중구 광복동1가 5-14",
+      "status": "operation_review"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+      "name": "거인통닭",
+      "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_68b835b9d90e",
+      "name": "동우통닭",
+      "address": "제주 제주시 복지로 72 (도남동 642-1)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_54f0433ffeb5",
+      "name": "백화양곱창",
+      "address": "부산 중구 자갈치로23번길 6 (남포동6가 32)",
+      "status": "ambiguous_branch"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
+      "name": "소문난동래파전",
+      "address": "부산 동래구 금강공원로 55 (온천1동 208-8)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_43e5c84f86d6",
+      "name": "원조범일동매떡",
+      "address": "부산 부산진구 골드테마길 52-2 (범천동 844-35)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+      "name": "팥빙수, 단팥죽 골목",
+      "address": "부산 중구 신창동 국제시장 단팥죽거리",
+      "status": "identity_review"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_020",
+      "name": "부산 중리해녀촌",
+      "address": "부산 영도구 절영로 355 (동삼동 628-1)",
+      "status": "identity_review"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_025",
+      "name": "부산 금성호",
+      "address": "부산 남구 용호3동 6-5",
+      "status": "identity_review"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_139",
+      "name": "제주 몰고랑식당",
+      "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
+      "status": "identity_review"
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_688",
+      "name": "부산 양가네양곱창",
+      "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
+      "status": "identity_review"
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_139",
+      "name": "제주 까사디노아",
+      "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
+      "status": "identity_review"
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_156",
+      "name": "제주 물항식당 탑동점",
+      "address": "제주 제주시 임항로 37-4 (건입동 1319-14)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c40046b700a2",
+      "name": "부산 갈맷길장어",
+      "address": "부산 연제구 거제시장로22번길 5 (거제3동 588-4)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_15586944d4f2",
+      "name": "부산 칠백장장인국밥",
+      "address": "부산 동래구 미남로 67 (사직동 136-6)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_31ad186ed499",
+      "name": "부산 한량 (현재 폐업)",
+      "address": "부산 해운대구 마린시티3로 23 (우동 1435)",
+      "status": "operation_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e70b8459abb2",
+      "name": "부산 BNC 비엔씨제과 (광복본점 폐업)",
+      "address": "부산 중구 광복로39번길 6 (창선동1가 12-1)",
+      "status": "operation_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bf624ddbd8e",
+      "name": "제주 돈해돈찜 (현재 폐업)",
+      "address": "제주 제주시 연북로 199 (오라이동 3162-3)",
+      "status": "operation_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f22a876ee266",
+      "name": "제주 숙성도 노형본관",
+      "address": "제주 제주시 원노형로 41 (노형동 941-2)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c173b427d693",
+      "name": "제주 애월빵공장 앤 카페",
+      "address": "제주 제주시 애월읍 금성5길 42-15 (금성리 472-13)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e7295d8c4144",
+      "name": "제주 제주도감",
+      "address": "제주 제주시 연북로 257 (오라이동 1770)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_8086682d2737",
+      "name": "제주 한라국수",
+      "address": "제주 서귀포시 천제연로188번길 17 (중문동 2048-1)",
+      "status": "identity_review"
+    },
+    {
+      "id": "topic_enrichment_michelin-selected_31d72c17b326",
+      "name": "토오루",
+      "address": "부산진구 동성로 49번길 38-1, Busan, 47304, 한국",
+      "status": "identity_review"
+    }
+  ]
+}

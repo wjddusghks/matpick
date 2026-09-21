@@ -69,6 +69,7 @@ try {
   };
 }
 const limitArg = process.argv.indexOf("--limit");
+result.targetCount = queue.length;
 const limit = limitArg < 0 ? Infinity : Number(process.argv[limitArg + 1]);
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const existing = JSON.parse(
@@ -219,6 +220,8 @@ async function research(restaurant, previous) {
     lat: Number(s.point?.lat),
     lng: Number(s.point?.lon),
     placeUrl: `https://place.map.kakao.com/${selected.kakaoPlaceId}`,
+    phone: s.phone_numbers?.find((item) => item.tel)?.tel || "",
+    category: s.category?.name2 || "",
   };
   const match = identityMatch(restaurant, place);
   if (!match.accepted)
@@ -253,6 +256,7 @@ async function research(restaurant, previous) {
     match,
     sourceOperationStatus: s.status || null,
     sourceUpdatedAt: panel.menu?.menus?.items_updated_at || null,
+    locationUpdatedAt: s.meta?.updated_at || null,
     menus,
   };
 }
@@ -262,6 +266,7 @@ for (const restaurant of queue) {
   if (
     previous &&
     previous.status !== "request_error" &&
+    !(process.argv.includes("--refresh-verified") && ["verified_priced", "verified_menu_only", "public_menu_unavailable"].includes(previous.status)) &&
     !(
       process.argv.includes("--retry-identity") &&
       ["identity_review", "ambiguous_branch"].includes(previous.status)

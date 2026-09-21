@@ -17,6 +17,9 @@ const before = await read(
 const results = (
   await read("../source-data/topic-expansion-2026-09/results.json")
 ).restaurants;
+const enrichment = await read(
+  "client/src/data/generated/existing-data-enrichment.generated.json"
+);
 test("all ten researched topics open real collections, preserving old restaurant URLs", () => {
   assert.equal(report.topics.length, 10);
   for (const t of report.topics) {
@@ -66,13 +69,22 @@ test("published candidates have source evidence, matching branches and current m
         .sort((left, right) =>
           right.checkedAt.localeCompare(left.checkedAt)
         )[0];
-      assert.equal(restaurant.menuPriceVerifiedAt, newest.checkedAt);
+      const refreshed = enrichment[restaurant.id];
+      const latestMenu = refreshed?.menus ? refreshed : null;
+      assert.equal(
+        restaurant.menuPriceVerifiedAt,
+        latestMenu?.menuPriceVerifiedAt || newest.checkedAt
+      );
+      assert.ok(
+        restaurant.menuPriceVerifiedAt.slice(0, 10) >=
+          newest.checkedAt.slice(0, 10)
+      );
       assert.ok(
         restaurant.menuPriceSources.some(s => s.url === result.place.placeUrl)
       );
       assert.deepEqual(
         restaurant.menus.map(m => [m.name, m.price]),
-        newest.menus.map(m => [m.name, m.price])
+        (latestMenu?.menus || newest.menus).map(m => [m.name, m.price])
       );
     }
   }

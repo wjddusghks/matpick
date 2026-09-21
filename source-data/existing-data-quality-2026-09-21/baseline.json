@@ -1,0 +1,6099 @@
+{
+  "restaurants": [
+    {
+      "id": "old-korean-100_restaurant_050",
+      "name": "부산 천안곰탕(현재 폐업, 영업종료)",
+      "region": "부산 중구",
+      "address": "부산 중구 광복동1가 5-14",
+      "category": "곰탕,설렁탕",
+      "representativeMenu": "폐업",
+      "lat": 35.09932,
+      "lng": 129.0345785,
+      "imageUrl": "",
+      "foundingYear": 1951,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "폐업",
+          "isSignature": true
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_a77a994d11bc",
+      "name": "거인통닭",
+      "region": "부산 중구",
+      "address": "부산 중구 중구로47번길 34 (부평동2가 11-2)",
+      "category": "치킨,닭강정",
+      "representativeMenu": "치킨",
+      "lat": 35.1023409,
+      "lng": 129.02611539999998,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_a77a994d11bc.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_b8c94b6558fa",
+      "name": "공천포식당",
+      "region": "제주특별자치도 서귀포시",
+      "address": "제주 서귀포시 남원읍 공천포로 89 (신례리 27-5)",
+      "category": "해물,생선요리",
+      "representativeMenu": "전복물회 / 한치물회 / 고등어구이",
+      "lat": 33.26638757652236,
+      "lng": 126.64258641903712,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_b8c94b6558fa.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복물회",
+          "price": "16,000원"
+        },
+        {
+          "id": "m1",
+          "name": "한치물회",
+          "price": "13,000원"
+        },
+        {
+          "id": "m2",
+          "name": "고등어구이",
+          "price": "13,000원"
+        },
+        {
+          "id": "m3",
+          "name": "홍해삼물회",
+          "price": "13,000원"
+        },
+        {
+          "id": "m4",
+          "name": "뿔소라물회",
+          "price": "12,000원"
+        },
+        {
+          "id": "m5",
+          "name": "자리물회",
+          "price": "12,000원"
+        },
+        {
+          "id": "m6",
+          "name": "활한치",
+          "price": "16,000원"
+        },
+        {
+          "id": "m7",
+          "name": "전복+한치",
+          "price": "16,000원"
+        },
+        {
+          "id": "m8",
+          "name": "전복+뿔소라",
+          "price": "13,500원"
+        },
+        {
+          "id": "m9",
+          "name": "전복+홍해삼+뿔소라",
+          "price": "15,000원"
+        },
+        {
+          "id": "ma",
+          "name": "전복덮밥",
+          "price": "16,000원"
+        },
+        {
+          "id": "mb",
+          "name": "한치덮밥",
+          "price": "16,000원"
+        },
+        {
+          "id": "mc",
+          "name": "전복죽",
+          "price": "13,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "kakaoPlaceId": "8204729",
+      "placeUrl": "https://place.map.kakao.com/8204729",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/8204729"
+      ],
+      "menuPriceVerifiedAt": "2026-09-21T00:21:25.538Z",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/8204729",
+          "publishedAt": "2026-01-08 16:40:39"
+        }
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/8204729"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_68b835b9d90e",
+      "name": "동우통닭",
+      "region": "제주 제주시",
+      "address": "제주 제주시 복지로 72 (도남동 642-1)",
+      "category": "치킨,닭강정",
+      "representativeMenu": "치킨",
+      "lat": 33.4933858,
+      "lng": 126.49366479999999,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_68b835b9d90e.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_54f0433ffeb5",
+      "name": "백화양곱창",
+      "region": "부산 중구",
+      "address": "부산 중구 자갈치로23번길 6 (남포동6가 32)",
+      "category": "곱창,막창,양",
+      "representativeMenu": "양대창",
+      "lat": 35.097008599999995,
+      "lng": 129.0269908,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_54f0433ffeb5.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_35154d31ed3f",
+      "name": "소문난동래파전",
+      "region": "부산 동래구",
+      "address": "부산 동래구 금강공원로 55 (온천1동 208-8)",
+      "category": "전,빈대떡",
+      "representativeMenu": "동래파전",
+      "lat": 35.2185573,
+      "lng": 129.07841539999998,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_35154d31ed3f.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_43e5c84f86d6",
+      "name": "원조범일동매떡",
+      "region": "부산 부산진구",
+      "address": "부산 부산진구 골드테마길 52-2 (범천동 844-35)",
+      "category": "",
+      "representativeMenu": "떡볶이",
+      "lat": 35.1440681,
+      "lng": 129.0602685,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_43e5c84f86d6.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+      "name": "팥빙수, 단팥죽 골목",
+      "region": "부산 중구",
+      "address": "부산 중구 신창동 국제시장 단팥죽거리",
+      "category": "죽",
+      "representativeMenu": "단팥죽",
+      "lat": 35.1002035,
+      "lng": 129.0303831,
+      "imageUrl": "/card-data/baekjong-wok/topic_enrichment_baekjong-wok_14555fade8e1.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_020",
+      "name": "부산 중리해녀촌",
+      "region": "부산 영도구",
+      "address": "부산 영도구 절영로 355 (동삼동 628-1)",
+      "category": "모듬 해물",
+      "representativeMenu": "",
+      "lat": 35.0716472,
+      "lng": 129.0573867,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_020.jpg",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "273038784",
+      "placeUrl": "https://place.map.kakao.com/273038784",
+      "menuPriceStatus": "matched_no_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-15T22:58:27.331Z",
+      "menuPriceNote": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/273038784",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": ""
+        }
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_025",
+      "name": "부산 금성호",
+      "region": "부산 남구",
+      "address": "부산 남구 용호3동 6-5",
+      "category": "수산시장 곰장어, 붕장어",
+      "representativeMenu": "",
+      "lat": 35.128298,
+      "lng": 129.11719399999998,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_025.jpg",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "1567918454",
+      "placeUrl": "https://place.map.kakao.com/1567918454",
+      "menuPriceStatus": "matched_no_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-15T22:58:27.852Z",
+      "menuPriceNote": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/1567918454",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": "2026-06-10"
+        }
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_107",
+      "name": "제주 삼보식당",
+      "region": "제주특별자치도 서귀포시",
+      "address": "제주 서귀포시 중정로 25 (서귀동 319-8)",
+      "category": "옥돔뭇국",
+      "representativeMenu": "전복뚝배기 (백반) / 갈치조림 / 옥돔미역국 (백반)",
+      "lat": 33.2477534,
+      "lng": 126.5590751,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_107.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복뚝배기 (백반)",
+          "price": "18,000원"
+        },
+        {
+          "id": "m1",
+          "name": "갈치구이",
+          "price": "60,000원"
+        },
+        {
+          "id": "m2",
+          "name": "갈치조림",
+          "price": "60,000원"
+        },
+        {
+          "id": "m3",
+          "name": "특 전복뚝배기(백반)",
+          "price": "25,000원"
+        },
+        {
+          "id": "m4",
+          "name": "옥돔구이(중)",
+          "price": "60,000원"
+        },
+        {
+          "id": "m5",
+          "name": "자리물회(백반)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m6",
+          "name": "한치물회(백반)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m7",
+          "name": "전복구이",
+          "price": "55,000원"
+        },
+        {
+          "id": "m8",
+          "name": "고등어구이",
+          "price": "19,000원"
+        },
+        {
+          "id": "m9",
+          "name": "고등어조림",
+          "price": "30,000원"
+        },
+        {
+          "id": "ma",
+          "name": "돼지고기볶음",
+          "price": "30,000원"
+        },
+        {
+          "id": "mb",
+          "name": "한치볶음",
+          "price": "30,000원"
+        },
+        {
+          "id": "mc",
+          "name": "자리회무침",
+          "price": "25,000원"
+        },
+        {
+          "id": "md",
+          "name": "성게미역국 (백반)",
+          "price": "20,000원"
+        },
+        {
+          "id": "me",
+          "name": "옥돔미역국 (백반)",
+          "price": "20,000원"
+        },
+        {
+          "id": "mf",
+          "name": "갈치국 (백반)",
+          "price": "18,000원"
+        },
+        {
+          "id": "mg",
+          "name": "김치찌개 (백반)",
+          "price": "10,000원"
+        },
+        {
+          "id": "mh",
+          "name": "순두부 (백반)",
+          "price": "9,000원"
+        },
+        {
+          "id": "mi",
+          "name": "옥돔구이(대)",
+          "price": "70,000원"
+        },
+        {
+          "id": "mj",
+          "name": "전복죽",
+          "price": "16,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "11486940",
+      "placeUrl": "https://place.map.kakao.com/11486940",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/11486940",
+          "publishedAt": "2026-07-21 23:10:17"
+        }
+      ],
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/11486940"
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_110",
+      "name": "제주 만덕이네",
+      "region": "제주특별자치도 서귀포시",
+      "address": "제주 서귀포시 표선면 서성일로 16 (성읍리 1623-3)",
+      "category": "흑돼지 구이",
+      "representativeMenu": "전복문어흑돼지두르치기정식(1인) / 제주은갈치조림정식(1인) / 순살갈치조림정식(1인)",
+      "lat": 33.3933443,
+      "lng": 126.8010888,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_110.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복문어흑돼지두르치기정식(1인)",
+          "price": "25,000원"
+        },
+        {
+          "id": "m1",
+          "name": "제주은갈치조림정식(1인)",
+          "price": "25,000원"
+        },
+        {
+          "id": "m2",
+          "name": "순살갈치조림정식(1인)",
+          "price": "18,000원"
+        },
+        {
+          "id": "m3",
+          "name": "제주흑돼지오겹살구이(1인)",
+          "price": "22,000원"
+        },
+        {
+          "id": "m4",
+          "name": "묵은지고등어조림정식(1인)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m5",
+          "name": "주물럭정식",
+          "price": "12,000원"
+        },
+        {
+          "id": "m6",
+          "name": "전복뚝배기",
+          "price": "17,000원"
+        },
+        {
+          "id": "m7",
+          "name": "성게미역국",
+          "price": "16,000원"
+        },
+        {
+          "id": "m8",
+          "name": "통갈치구이",
+          "price": "69,000원"
+        },
+        {
+          "id": "m9",
+          "name": "옥돔구이",
+          "price": "20,000원"
+        },
+        {
+          "id": "ma",
+          "name": "토막갈치구이",
+          "price": "36,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "9982608",
+      "placeUrl": "https://place.map.kakao.com/9982608",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/9982608",
+          "publishedAt": "2026-09-11 11:59:56"
+        }
+      ],
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/9982608"
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_139",
+      "name": "제주 몰고랑식당",
+      "region": "제주 서귀포시",
+      "address": "제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132)",
+      "category": "몸국",
+      "representativeMenu": "",
+      "lat": 33.2562425,
+      "lng": 126.5602398,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_139.jpg",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "",
+      "kakaoPlaceId": "",
+      "placeUrl": "",
+      "menuPriceStatus": "unmatched",
+      "menuPriceVerifiedAt": "2026-07-18T12:32:14.175Z",
+      "menuPriceNote": "",
+      "menuPriceSources": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_142",
+      "name": "제주 천짓골식당",
+      "region": "제주특별자치도 서귀포시",
+      "address": "제주 서귀포시 중앙로41번길 4 (서귀동 294-10)",
+      "category": "돔베고기",
+      "representativeMenu": "흑돼지(600g) / 백돼지(600g) / 흑돼지 절반(300g)",
+      "lat": 33.2482403,
+      "lng": 126.5613052,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_142.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "흑돼지(600g)",
+          "price": "60,000원"
+        },
+        {
+          "id": "m1",
+          "name": "백돼지(600g)",
+          "price": "48,000원"
+        },
+        {
+          "id": "m2",
+          "name": "흑돼지 절반(300g)",
+          "price": "30,000원"
+        },
+        {
+          "id": "m3",
+          "name": "백돼지 절반(300g)",
+          "price": "24,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "12501703",
+      "placeUrl": "https://place.map.kakao.com/12501703",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/12501703",
+          "publishedAt": "2026-01-08 09:52:29"
+        }
+      ],
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/12501703"
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_334",
+      "name": "부산 금정산성막걸리 본점",
+      "region": "부산 금정구",
+      "address": "부산 금정구 산성로 453 (금성동 554-1)",
+      "category": "막걸리양조장",
+      "representativeMenu": "",
+      "lat": 35.2503508,
+      "lng": 129.0564344,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_334.jpg",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "051-517-0202",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "10206535",
+      "placeUrl": "https://place.map.kakao.com/10206535",
+      "menuPriceStatus": "matched_no_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-15T22:58:53.778Z",
+      "menuPriceNote": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/10206535",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": ""
+        }
+      ]
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_688",
+      "name": "부산 양가네양곱창",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 구남로8번길 7-3 (우동 548-19)",
+      "category": "양곱창구이",
+      "representativeMenu": "",
+      "lat": 35.1628248,
+      "lng": 129.1589788,
+      "imageUrl": "/card-data/sikgaek-baekban-trip/sikgaek-baekban-trip_restaurant_688.jpg",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "",
+      "kakaoPlaceId": "",
+      "placeUrl": "",
+      "menuPriceStatus": "unmatched",
+      "menuPriceVerifiedAt": "2026-07-18T12:32:18.309Z",
+      "menuPriceNote": "",
+      "menuPriceSources": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_097",
+      "name": "부산 다리집",
+      "region": "부산 수영구",
+      "address": "부산 수영구 남천바다로10번길 70 (남천동 29-4)",
+      "category": "떡볶이",
+      "representativeMenu": "오징어튀김(1인분) / 떡볶이 (1인분) / 튀김어묵 (1인분)",
+      "lat": 35.1468161,
+      "lng": 129.1107574,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "오징어튀김(1인분)",
+          "price": "4,100원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "떡볶이 (1인분)",
+          "price": "4,100원"
+        },
+        {
+          "id": "m2",
+          "name": "튀김어묵 (1인분)",
+          "price": "3,900원"
+        },
+        {
+          "id": "m3",
+          "name": "튀김어묵 A세트",
+          "price": "15,000원"
+        },
+        {
+          "id": "m4",
+          "name": "국물어묵 (1인분)",
+          "price": "3,900원"
+        },
+        {
+          "id": "m5",
+          "name": "다리집 세트",
+          "price": "18,800원"
+        },
+        {
+          "id": "m6",
+          "name": "국물어묵 B세트",
+          "price": "15,000원"
+        },
+        {
+          "id": "m7",
+          "name": "만두 (1인분)",
+          "price": "2,000원"
+        },
+        {
+          "id": "m8",
+          "name": "순대 (1인분)",
+          "price": "4,100원"
+        },
+        {
+          "id": "m9",
+          "name": "튀김순대(1인분)",
+          "price": "4,100원"
+        },
+        {
+          "id": "ma",
+          "name": "오징어튀김우동",
+          "price": "7,000원"
+        },
+        {
+          "id": "mb",
+          "name": "오징어튀김다리면",
+          "price": "7,000원"
+        },
+        {
+          "id": "mc",
+          "name": "비빔면",
+          "price": "7,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "8849564",
+      "placeUrl": "https://place.map.kakao.com/8849564",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T12:32:35.672Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/8849564",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": "2025-08-20"
+        }
+      ]
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_139",
+      "name": "제주 까사디노아",
+      "region": "제주 서귀포시",
+      "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
+      "category": "이탈리아음식",
+      "representativeMenu": "",
+      "lat": 33.2373961,
+      "lng": 126.3630807,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "",
+      "kakaoPlaceId": "",
+      "placeUrl": "",
+      "menuPriceStatus": "unmatched",
+      "menuPriceVerifiedAt": "2026-07-18T12:35:11.169Z",
+      "menuPriceNote": "",
+      "menuPriceSources": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_146",
+      "name": "제주 아일랜드조르바",
+      "region": "제주 제주시",
+      "address": "제주 제주시 구좌읍 대수길 9 (평대리 1958-7)",
+      "category": "카페",
+      "representativeMenu": "핸드드립 / 카페모카 / 카페라떼",
+      "lat": 33.5355626,
+      "lng": 126.8390448,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "핸드드립",
+          "price": "6,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "카페모카",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "카페라떼",
+          "price": "6,000원"
+        },
+        {
+          "id": "m3",
+          "name": "카푸치노",
+          "price": "6,000원"
+        },
+        {
+          "id": "m4",
+          "name": "마끼아또",
+          "price": "6,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "14608730",
+      "placeUrl": "https://place.map.kakao.com/14608730",
+      "menuPriceStatus": "matched_with_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T12:32:38.976Z",
+      "menuPriceNote": "카카오맵 공개 장소 패널의 메뉴·가격을 식당명과 주소로 검증함.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/14608730",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": "2022-01-03"
+        }
+      ]
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_152",
+      "name": "제주 진아떡집",
+      "region": "제주 제주시",
+      "address": "제주 제주시 동문로4길 7-1 (일도1동 1141-3)",
+      "category": "오메기떡",
+      "representativeMenu": "",
+      "lat": 33.5123782,
+      "lng": 126.5283703,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "064-757-0229",
+      "operationStatus": "영업",
+      "kakaoPlaceId": "10777503",
+      "placeUrl": "https://place.map.kakao.com/10777503",
+      "menuPriceStatus": "matched_no_priced_menu",
+      "menuPriceVerifiedAt": "2026-07-18T12:32:39.607Z",
+      "menuPriceNote": "장소는 확인됐으나 가격이 있는 공개 메뉴가 없음.",
+      "menuPriceSources": [
+        {
+          "url": "https://place-api.map.kakao.com/places/panel3/10777503",
+          "label": "카카오맵 공개 장소 패널",
+          "publishedAt": ""
+        }
+      ]
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_156",
+      "name": "제주 물항식당 탑동점",
+      "region": "제주 제주시",
+      "address": "제주 제주시 임항로 37-4 (건입동 1319-14)",
+      "category": "갈치",
+      "representativeMenu": "",
+      "lat": 33.5169175,
+      "lng": 126.5290831,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationStatus": "",
+      "kakaoPlaceId": "",
+      "placeUrl": "",
+      "menuPriceStatus": "unmatched",
+      "menuPriceVerifiedAt": "2026-07-18T12:35:11.188Z",
+      "menuPriceNote": "",
+      "menuPriceSources": []
+    },
+    {
+      "id": "topic_enrichment_ttoganjip_798ce32a7984",
+      "name": "표선우동가게",
+      "region": "제주특별자치도 서귀포시",
+      "address": "제주특별자치도 서귀포시 표선면 표선관정로 105-1 1층",
+      "category": "우동,소바",
+      "representativeMenu": "생등심 돈까스",
+      "lat": 33.324087378617655,
+      "lng": 126.83129222130158,
+      "imageUrl": "/card-data/ttoganjip/ep-028/card-02.jpg",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "치즈돈까스",
+          "price": "14,000원"
+        },
+        {
+          "id": "m1",
+          "name": "붓가케우동",
+          "price": "9,000원"
+        },
+        {
+          "id": "m2",
+          "name": "치즈돈까스 정식",
+          "price": "17,000원"
+        },
+        {
+          "id": "m3",
+          "name": "텐푸라 가케우동",
+          "price": "12,000원"
+        },
+        {
+          "id": "m4",
+          "name": "텐푸라 붓가케 우동",
+          "price": "13,000원"
+        },
+        {
+          "id": "m5",
+          "name": "생등심 돈까스 정식",
+          "price": "14,000원"
+        },
+        {
+          "id": "m6",
+          "name": "카레 돈까스 정식",
+          "price": "15,000원"
+        },
+        {
+          "id": "m7",
+          "name": "생등심 돈까스",
+          "price": "11,000원"
+        },
+        {
+          "id": "m8",
+          "name": "카레우동",
+          "price": "11,000원"
+        },
+        {
+          "id": "m9",
+          "name": "카레 돈까스",
+          "price": "12,000원"
+        },
+        {
+          "id": "ma",
+          "name": "가케우동",
+          "price": "8,000원"
+        },
+        {
+          "id": "mb",
+          "name": "민찌 제육덮밥",
+          "price": "10,000원"
+        },
+        {
+          "id": "mc",
+          "name": "규니꾸 가케우동",
+          "price": "11,000원"
+        },
+        {
+          "id": "md",
+          "name": "텐동",
+          "price": "11,000원"
+        },
+        {
+          "id": "me",
+          "name": "우삼겹 덮밥",
+          "price": "11,000원"
+        },
+        {
+          "id": "mf",
+          "name": "불고기 카레 덮밥",
+          "price": "10,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/2090669998"
+      ],
+      "kakaoPlaceId": "2090669998",
+      "placeUrl": "https://place.map.kakao.com/2090669998",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/2090669998",
+          "publishedAt": "2026-05-05 00:08:31"
+        }
+      ]
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c40046b700a2",
+      "name": "부산 갈맷길장어",
+      "region": "부산 연제구",
+      "address": "부산 연제구 거제시장로22번길 5 (거제3동 588-4)",
+      "category": "",
+      "representativeMenu": "",
+      "lat": 35.1819139,
+      "lng": 129.071304,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_96840343c391",
+      "name": "부산 깡통골목할매 유부전골 본점",
+      "region": "부산 중구",
+      "address": "부산 중구 부평3길 29 (부평동1가 15-20)",
+      "category": "종합분식",
+      "representativeMenu": "30년 넘게 판매되고 있는 부산을 대표하는 원조 유부주머니 어묵탕",
+      "lat": 35.10201927939982,
+      "lng": 129.02705340773326,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "유부전골",
+          "price": "6,800원"
+        },
+        {
+          "id": "m1",
+          "name": "비빔당면",
+          "price": "6,800원"
+        },
+        {
+          "id": "m2",
+          "name": "유부떡볶이",
+          "price": "5,000원"
+        },
+        {
+          "id": "m3",
+          "name": "유부보따리우동",
+          "price": "6,800원"
+        },
+        {
+          "id": "m4",
+          "name": "꼬지어묵탕",
+          "price": "5,000원"
+        },
+        {
+          "id": "m5",
+          "name": "물떡 / 꼬지어묵",
+          "price": "1,000원"
+        },
+        {
+          "id": "m6",
+          "name": "냉모밀",
+          "price": "8,000원"
+        },
+        {
+          "id": "m7",
+          "name": "눈꽃팥빙수",
+          "price": "6,000원"
+        },
+        {
+          "id": "m8",
+          "name": "냉유부",
+          "price": "8,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "kakaoPlaceId": "26926399",
+      "placeUrl": "https://place.map.kakao.com/26926399",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/26926399"
+      ],
+      "menuPriceVerifiedAt": "2026-09-20T13:12:54.712Z",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/26926399",
+          "publishedAt": "2026-07-05 09:16:03"
+        }
+      ],
+      "operationVerifiedAt": "2026-09-20",
+      "operationSourceUrl": "https://place.map.kakao.com/26926399"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f24d54f590b5",
+      "name": "부산 장성향",
+      "region": "부산 동구",
+      "address": "부산 동구 대영로243번길 29 (초량1동 609-1)",
+      "category": "중식당",
+      "representativeMenu": "간짜장 / 삼선짬뽕 / 삼선볶음밥",
+      "lat": 35.11355199497969,
+      "lng": 129.03772279087008,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "간짜장",
+          "price": "7,000원"
+        },
+        {
+          "id": "m1",
+          "name": "삼선짬뽕",
+          "price": "13,000원"
+        },
+        {
+          "id": "m2",
+          "name": "삼선볶음밥",
+          "price": "8,000원"
+        },
+        {
+          "id": "m3",
+          "name": "찐만두 (소)",
+          "price": "7,000원"
+        },
+        {
+          "id": "m4",
+          "name": "오향장육 (소)",
+          "price": "28,000원"
+        },
+        {
+          "id": "m5",
+          "name": "짬뽕국물",
+          "price": "12,000원"
+        },
+        {
+          "id": "m6",
+          "name": "해삼주자",
+          "price": "100,000원"
+        },
+        {
+          "id": "m7",
+          "name": "팔보채",
+          "price": "45,000원"
+        },
+        {
+          "id": "m8",
+          "name": "전가복",
+          "price": "100,000원"
+        },
+        {
+          "id": "m9",
+          "name": "깐풍기",
+          "price": "30,000원"
+        },
+        {
+          "id": "ma",
+          "name": "마파두부",
+          "price": "20,000원"
+        },
+        {
+          "id": "mb",
+          "name": "양장피",
+          "price": "40,000원"
+        },
+        {
+          "id": "mc",
+          "name": "동파육",
+          "price": "35,000원"
+        },
+        {
+          "id": "md",
+          "name": "고기튀김",
+          "price": "28,000원"
+        },
+        {
+          "id": "me",
+          "name": "새우튀김",
+          "price": "40,000원"
+        },
+        {
+          "id": "mf",
+          "name": "간풍게살",
+          "price": "150,000원"
+        },
+        {
+          "id": "mg",
+          "name": "사천탕수육",
+          "price": "28,000원"
+        },
+        {
+          "id": "mh",
+          "name": "잡탕밥",
+          "price": "14,000원"
+        },
+        {
+          "id": "mi",
+          "name": "산술발",
+          "price": "16,000원"
+        },
+        {
+          "id": "mj",
+          "name": "마파두부밥",
+          "price": "11,000원"
+        },
+        {
+          "id": "mk",
+          "name": "게살볶음발",
+          "price": "15,000원"
+        },
+        {
+          "id": "ml",
+          "name": "해삼송이",
+          "price": "180,000원"
+        },
+        {
+          "id": "mm",
+          "name": "간풍새우",
+          "price": "40,000원"
+        },
+        {
+          "id": "mn",
+          "name": "유산슬",
+          "price": "40,000원"
+        },
+        {
+          "id": "mo",
+          "name": "탕수육",
+          "price": "28,000원"
+        },
+        {
+          "id": "mp",
+          "name": "난자완스",
+          "price": "40,000원"
+        },
+        {
+          "id": "mq",
+          "name": "간짜장면",
+          "price": "9,000원"
+        },
+        {
+          "id": "mr",
+          "name": "짜장밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "ms",
+          "name": "사천짜장",
+          "price": "12,000원"
+        },
+        {
+          "id": "mt",
+          "name": "짬뽕",
+          "price": "9,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "kakaoPlaceId": "9415639",
+      "placeUrl": "https://place.map.kakao.com/9415639",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/9415639"
+      ],
+      "menuPriceVerifiedAt": "2026-09-21T00:20:25.042Z",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/9415639",
+          "publishedAt": "2026-06-15 14:49:11"
+        }
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/9415639"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_15586944d4f2",
+      "name": "부산 칠백장장인국밥",
+      "region": "부산 동래구",
+      "address": "부산 동래구 미남로 67 (사직동 136-6)",
+      "category": "",
+      "representativeMenu": "",
+      "lat": 35.194470700000004,
+      "lng": 129.0893632,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_31ad186ed499",
+      "name": "부산 한량 (현재 폐업)",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 마린시티3로 23 (우동 1435)",
+      "category": "요리주점",
+      "representativeMenu": "",
+      "lat": 35.156815,
+      "lng": 129.1432012,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e70b8459abb2",
+      "name": "부산 BNC 비엔씨제과 (광복본점 폐업)",
+      "region": "부산 중구",
+      "address": "부산 중구 광복로39번길 6 (창선동1가 12-1)",
+      "category": "베이커리",
+      "representativeMenu": "",
+      "lat": 35.0994895,
+      "lng": 129.0296016,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_6bf624ddbd8e",
+      "name": "제주 돈해돈찜 (현재 폐업)",
+      "region": "제주 제주시",
+      "address": "제주 제주시 연북로 199 (오라이동 3162-3)",
+      "category": "",
+      "representativeMenu": "",
+      "lat": 33.4189867,
+      "lng": 126.51960849999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f22a876ee266",
+      "name": "제주 숙성도 노형본관",
+      "region": "제주 제주시",
+      "address": "제주 제주시 원노형로 41 (노형동 941-2)",
+      "category": "돼지고기구이",
+      "representativeMenu": "",
+      "lat": 33.4850463,
+      "lng": 126.4850445,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_558707d93165",
+      "name": "제주 앞뱅디식당",
+      "region": "제주특별자치도 제주시",
+      "address": "제주 제주시 선덕로 32 (연동 324-1)",
+      "category": "한식",
+      "representativeMenu": "각재기국",
+      "lat": 33.48532913308384,
+      "lng": 126.49990682626684,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "각재기국",
+          "price": "11,000원"
+        },
+        {
+          "id": "m1",
+          "name": "멜튀김",
+          "price": "18,000원"
+        },
+        {
+          "id": "m2",
+          "name": "멜국",
+          "price": "11,000원"
+        },
+        {
+          "id": "m3",
+          "name": "멜조림",
+          "price": "22,000원"
+        },
+        {
+          "id": "m4",
+          "name": "각재기조림",
+          "price": "25,000원"
+        },
+        {
+          "id": "m5",
+          "name": "돔베고기",
+          "price": "35,000원"
+        },
+        {
+          "id": "m6",
+          "name": "고등어구이",
+          "price": "18,000원"
+        },
+        {
+          "id": "m7",
+          "name": "앞뱅디 육개장",
+          "price": "11,000원"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "kakaoPlaceId": "10591316",
+      "placeUrl": "https://place.map.kakao.com/10591316",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/10591316"
+      ],
+      "menuPriceVerifiedAt": "2026-09-20T13:02:34.262Z",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/10591316",
+          "publishedAt": "2026-06-26 12:39:02"
+        }
+      ],
+      "operationVerifiedAt": "2026-09-20",
+      "operationSourceUrl": "https://place.map.kakao.com/10591316"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c173b427d693",
+      "name": "제주 애월빵공장 앤 카페",
+      "region": "제주 제주시",
+      "address": "제주 제주시 애월읍 금성5길 42-15 (금성리 472-13)",
+      "category": "카페,디저트",
+      "representativeMenu": "",
+      "lat": 33.448265899999996,
+      "lng": 126.30165339999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e7295d8c4144",
+      "name": "제주 제주도감",
+      "region": "제주 제주시",
+      "address": "제주 제주시 연북로 257 (오라이동 1770)",
+      "category": "정육식당",
+      "representativeMenu": "",
+      "lat": 33.4816199,
+      "lng": 126.5088394,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_8086682d2737",
+      "name": "제주 한라국수",
+      "region": "제주 서귀포시",
+      "address": "제주 서귀포시 천제연로188번길 17 (중문동 2048-1)",
+      "category": "한식",
+      "representativeMenu": "",
+      "lat": 33.2502561,
+      "lng": 126.42450059999999,
+      "imageUrl": "",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "topic_enrichment_michelin-selected_7c46052878a7",
+      "name": "이와",
+      "region": "부산 해운대구",
+      "address": "부산 해운대구 해운대해변로 209번길 13, 2층, Busan, 48093, 한국",
+      "category": "일식",
+      "representativeMenu": "",
+      "lat": 35.159701600000005,
+      "lng": 129.1538894,
+      "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_7c46052878a7.webp",
+      "foundingYear": null,
+      "menus": [
+        {
+          "id": "m0",
+          "name": "런치 오마카세"
+        },
+        {
+          "id": "m1",
+          "name": "디너 오마카세"
+        }
+      ],
+      "thumbnailFileName": null,
+      "isOverseas": false,
+      "menuPriceStatus": "verified_menu_only",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/468530675",
+          "publishedAt": "2026-09-04"
+        }
+      ],
+      "menuPriceNote": "같은 상호와 주소의 공개 메뉴를 확인했습니다. 매장 가격은 바뀔 수 있습니다."
+    },
+    {
+      "id": "topic_enrichment_michelin-selected_31d72c17b326",
+      "name": "토오루",
+      "region": "부산진구 동성로",
+      "address": "부산진구 동성로 49번길 38-1, Busan, 47304, 한국",
+      "category": "일식",
+      "representativeMenu": "",
+      "lat": 35.1551348,
+      "lng": 129.06638809999998,
+      "imageUrl": "/card-data/michelin/topic_enrichment_michelin-selected_31d72c17b326.webp",
+      "foundingYear": null,
+      "menus": [],
+      "thumbnailFileName": null,
+      "isOverseas": false
+    },
+    {
+      "id": "travel_busan-bite_1591",
+      "name": "무궁화",
+      "address": "부산 부산진구 가야대로 772 43층",
+      "lat": 35.15655849198653,
+      "lng": 129.05569331339174,
+      "region": "부산 부산진구",
+      "category": "음식점",
+      "representativeMenu": "수련, 동백, 무궁화, 모란, 한우불고기반상",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "유채(점심한정식)"
+        },
+        {
+          "id": "m1",
+          "name": "동백(저녁한정식)"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "051-810-6330",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/21309418"
+      ],
+      "kakaoPlaceId": "21309418",
+      "placeUrl": "https://place.map.kakao.com/21309418",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/21309418",
+          "publishedAt": "2016-05-30 10:56:03"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_0d5d79e591fb2bcc-row-2478",
+      "name": "가는곶 세화",
+      "address": "제주특별자치도 제주시 구좌읍 세화14길 3 1층",
+      "lat": 33.520502696663485,
+      "lng": 126.86067699724984,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "쑥보늬밤빵",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "구운제주감자빵",
+          "price": "4,000원"
+        },
+        {
+          "id": "m1",
+          "name": "썬드라이드토마토치아바타",
+          "price": "4,500원"
+        },
+        {
+          "id": "m2",
+          "name": "제주토종흑보리사워도우",
+          "price": "8,000원"
+        },
+        {
+          "id": "m3",
+          "name": "에스프레소 (HOT)",
+          "price": "3,800원"
+        },
+        {
+          "id": "m4",
+          "name": "아메리카노 (HOT)",
+          "price": "4,000원"
+        },
+        {
+          "id": "m5",
+          "name": "아메리카노 (ICE)",
+          "price": "4,300원"
+        },
+        {
+          "id": "m6",
+          "name": "카페라떼 (HOT)",
+          "price": "4,500원"
+        },
+        {
+          "id": "m7",
+          "name": "카페라떼 (ICE)",
+          "price": "5,000원"
+        },
+        {
+          "id": "m8",
+          "name": "바닐라라떼 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "m9",
+          "name": "바닐라라떼 (ICE)",
+          "price": "5,500원"
+        },
+        {
+          "id": "ma",
+          "name": "카페모카 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "mb",
+          "name": "카페모카 (ICE)",
+          "price": "5,500원"
+        },
+        {
+          "id": "mc",
+          "name": "우유 (HOT)",
+          "price": "3,000원"
+        },
+        {
+          "id": "md",
+          "name": "우유 (ICE)",
+          "price": "3,000원"
+        },
+        {
+          "id": "me",
+          "name": "제주생딸기우유 (ICE) (계절메뉴)",
+          "price": "5,500원"
+        },
+        {
+          "id": "mf",
+          "name": "초코라떼 (HOT)",
+          "price": "4,500원"
+        },
+        {
+          "id": "mg",
+          "name": "초코라떼 (ICE)",
+          "price": "5,000원"
+        },
+        {
+          "id": "mh",
+          "name": "푸른콩라떼 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "mi",
+          "name": "푸른콩라떼 (ICE)",
+          "price": "5,500원"
+        },
+        {
+          "id": "mj",
+          "name": "제주당근주스 (ICE)",
+          "price": "6,000원"
+        },
+        {
+          "id": "mk",
+          "name": "백향과 차 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "ml",
+          "name": "백향과 에이드 (ICE)",
+          "price": "6,000원"
+        },
+        {
+          "id": "mm",
+          "name": "풋귤차 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "mn",
+          "name": "풋귤에이드 (ICE)",
+          "price": "6,000원"
+        },
+        {
+          "id": "mo",
+          "name": "제주유기농 호지차 (HOT)",
+          "price": "5,000원"
+        },
+        {
+          "id": "mp",
+          "name": "골든메달사과주스 (ICE)",
+          "price": "4,000원"
+        },
+        {
+          "id": "mq",
+          "name": "와인 한잔 (레드,화이트)",
+          "price": "7,000원"
+        },
+        {
+          "id": "mr",
+          "name": "위스키 한잔",
+          "price": "10,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/2018722964"
+      ],
+      "kakaoPlaceId": "2018722964",
+      "placeUrl": "https://place.map.kakao.com/2018722964",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/2018722964",
+          "publishedAt": "2026-09-07 14:30:54"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_27d3bd246b6e0b54-row-2615",
+      "name": "갈치공장",
+      "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1296 1층",
+      "lat": 33.53190563592015,
+      "lng": 126.85096106826362,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "갈치조림, 통갈치구이, 전복구이, 전복뚝배기",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "갈치조림(1인)",
+          "price": "22,000원"
+        },
+        {
+          "id": "m1",
+          "name": "통갈치구이",
+          "price": "30,000원"
+        },
+        {
+          "id": "m2",
+          "name": "통갈치구이(대)",
+          "price": "70,000원"
+        },
+        {
+          "id": "m3",
+          "name": "통갈치구이(특)",
+          "price": "90,000원"
+        },
+        {
+          "id": "m4",
+          "name": "전복뚝배기",
+          "price": "16,000원"
+        },
+        {
+          "id": "m5",
+          "name": "전복돌솥밥",
+          "price": "16,000원"
+        },
+        {
+          "id": "m6",
+          "name": "전복죽",
+          "price": "13,000원"
+        },
+        {
+          "id": "m7",
+          "name": "전복구이",
+          "price": "30,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1942763932"
+      ],
+      "kakaoPlaceId": "1942763932",
+      "placeUrl": "https://place.map.kakao.com/1942763932",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1942763932",
+          "publishedAt": "2026-06-04 15:30:26"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_2ffbd861fa7e77a6-row-2553",
+      "name": "감따남",
+      "address": "제주특별자치도 서귀포시 월산로 16 1층 카페",
+      "lat": 33.262051179284605,
+      "lng": 126.49458908569747,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "감따라떼, 뀨울라떼",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "계절주스",
+          "price": "9,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "뀨울라떼 (Ice Only)",
+          "price": "8,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "만감이교차 (하귤 + 얼그레이)",
+          "price": "9,000원"
+        },
+        {
+          "id": "m3",
+          "name": "감따라떼 (직접 만든 감귤 바닐라빈 시럽)",
+          "price": "8,000원"
+        },
+        {
+          "id": "m4",
+          "name": "또똣(백차+시트러스가향)",
+          "price": "9,000원"
+        },
+        {
+          "id": "m5",
+          "name": "한라봉소르베",
+          "price": "8,000원"
+        },
+        {
+          "id": "m6",
+          "name": "만감에이드",
+          "price": "9,000원"
+        },
+        {
+          "id": "m7",
+          "name": "카페라떼",
+          "price": "7,000원"
+        },
+        {
+          "id": "m8",
+          "name": "귤-아(시트러스 아메리카노)",
+          "price": "7,500원"
+        },
+        {
+          "id": "m9",
+          "name": "당유자모히또 (무알콜)",
+          "price": "8,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1914104398"
+      ],
+      "kakaoPlaceId": "1914104398",
+      "placeUrl": "https://place.map.kakao.com/1914104398",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1914104398",
+          "publishedAt": "2026-03-31 10:00:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_052fb6ecede4fee0-row-2548",
+      "name": "고사리커피",
+      "address": "제주특별자치도 제주시 구좌읍 중산간동로 2064 1층",
+      "lat": 33.473379325114834,
+      "lng": 126.7640823539044,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "고사리커피, 다쿠아즈",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "고사리커피",
+          "price": "6,500원",
+          "isSignature": true
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/892483223"
+      ],
+      "kakaoPlaceId": "892483223",
+      "placeUrl": "https://place.map.kakao.com/892483223",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/892483223",
+          "publishedAt": "2022-07-14 14:35:52"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_a2cee4fc34d5d784-row-2130",
+      "name": "고서방짬뽕",
+      "address": "제주특별자치도 제주시 인다5길 11-5 1층",
+      "lat": 33.475935860886096,
+      "lng": 126.54815039913359,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "고추짬뽕, 굴짬뽕, 탕수육",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "고추짬뽕"
+        },
+        {
+          "id": "m1",
+          "name": "탕수육(미니)"
+        },
+        {
+          "id": "m2",
+          "name": "삼선짬뽕"
+        },
+        {
+          "id": "m3",
+          "name": "우삼겹짬뽕"
+        },
+        {
+          "id": "m4",
+          "name": "짜장면"
+        },
+        {
+          "id": "m5",
+          "name": "칠리새우"
+        },
+        {
+          "id": "m6",
+          "name": "탕수육(소)"
+        },
+        {
+          "id": "m7",
+          "name": "탕수육(대)"
+        },
+        {
+          "id": "m8",
+          "name": "칠리탕수육(대.소.미니)"
+        },
+        {
+          "id": "m9",
+          "name": "냉우동(땅콩소스, 매콤소스 선택): 계절메뉴"
+        },
+        {
+          "id": "ma",
+          "name": "굴짬뽕(백, 빨 선택): 계절메뉴"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1528548685"
+      ],
+      "kakaoPlaceId": "1528548685",
+      "placeUrl": "https://place.map.kakao.com/1528548685",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1528548685",
+          "publishedAt": "2026-07-31 12:31:28"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_2e30ca1983d9fd51-row-1258",
+      "name": "골목카페옥수",
+      "address": "제주특별자치도 제주시 애월읍 소길1길 19 1층",
+      "lat": 33.439750979526245,
+      "lng": 126.37997743450666,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "할매라떼, 옥수페너",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "할매라떼",
+          "price": "7,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "옥수페너",
+          "price": "7,000원"
+        },
+        {
+          "id": "m2",
+          "name": "소길에이드",
+          "price": "7,500원"
+        },
+        {
+          "id": "m3",
+          "name": "아메리카노",
+          "price": "6,500원"
+        },
+        {
+          "id": "m4",
+          "name": "말차라떼",
+          "price": "7,500원"
+        },
+        {
+          "id": "m5",
+          "name": "밀크티",
+          "price": "7,500원"
+        },
+        {
+          "id": "m6",
+          "name": "청귤에이드",
+          "price": "7,500원"
+        },
+        {
+          "id": "m7",
+          "name": "청귤차",
+          "price": "6,000원"
+        },
+        {
+          "id": "m8",
+          "name": "에그타르트",
+          "price": "4,200원"
+        },
+        {
+          "id": "m9",
+          "name": "구운과자류",
+          "price": "3,600원"
+        },
+        {
+          "id": "ma",
+          "name": "츄러스휘낭시에",
+          "price": "3,600원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/481425144"
+      ],
+      "kakaoPlaceId": "481425144",
+      "placeUrl": "https://place.map.kakao.com/481425144",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/481425144",
+          "publishedAt": "2026-08-26 11:54:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_b9bdd9f73c7e57e9-row-2268",
+      "name": "광양해장국집",
+      "address": "제주특별자치도 제주시 광양13길 25",
+      "lat": 33.499885893655154,
+      "lng": 126.53261123185634,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "해장국",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "소뼈해장국",
+          "price": "9,000원"
+        },
+        {
+          "id": "m1",
+          "name": "해장국",
+          "price": "10,000원"
+        },
+        {
+          "id": "m2",
+          "name": "내장탕",
+          "price": "11,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/16437841"
+      ],
+      "kakaoPlaceId": "16437841",
+      "placeUrl": "https://place.map.kakao.com/16437841",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/16437841",
+          "publishedAt": "2025-07-12 00:01:26"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_6c3430f2cbfdaa3d-row-2449",
+      "name": "구씨커피로스터스",
+      "address": "제주특별자치도 제주시 구좌읍 구좌로 21 1층",
+      "lat": 33.523614494811355,
+      "lng": 126.85395922725206,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "핸드드립커피, 구라떼",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "파나마 게이샤",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "핸드드립(스페셜티원두)",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "원두(싱글오리진)"
+        },
+        {
+          "id": "m3",
+          "name": "드립백 세트"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/877966090"
+      ],
+      "kakaoPlaceId": "877966090",
+      "placeUrl": "https://place.map.kakao.com/877966090",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/877966090",
+          "publishedAt": "2025-06-26 01:00:03"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_9c5e592ee3b2346d-row-2513",
+      "name": "구이사이",
+      "address": "제주특별자치도 제주시 애월읍 신엄9길 2",
+      "lat": 33.47220818530266,
+      "lng": 126.36854088517497,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "고등어정식",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "특정식(1인분)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m1",
+          "name": "정식(1인분)",
+          "price": "10,000원"
+        },
+        {
+          "id": "m2",
+          "name": "해장국",
+          "price": "9,000원"
+        },
+        {
+          "id": "m3",
+          "name": "순두부",
+          "price": "9,000원"
+        },
+        {
+          "id": "m4",
+          "name": "된장찌개",
+          "price": "9,000원"
+        },
+        {
+          "id": "m5",
+          "name": "김치찌개",
+          "price": "9,000원"
+        },
+        {
+          "id": "m6",
+          "name": "흑도새기 뼈갈비(500g)",
+          "price": "25,000원"
+        },
+        {
+          "id": "m7",
+          "name": "백도새기 오겹살(200g)",
+          "price": "18,000원"
+        },
+        {
+          "id": "m8",
+          "name": "구이사이 양념갈비",
+          "price": "18,000원"
+        },
+        {
+          "id": "m9",
+          "name": "냉면(물,비빔)",
+          "price": "7,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/26417963"
+      ],
+      "kakaoPlaceId": "26417963",
+      "placeUrl": "https://place.map.kakao.com/26417963",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/26417963",
+          "publishedAt": "2023-08-30 07:30:29"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_46361d469559a347-row-2716",
+      "name": "그계절",
+      "address": "제주특별자치도 제주시 구좌읍 한동로 119 1동",
+      "lat": 33.53185875727431,
+      "lng": 126.81853091910551,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "바질토스트, 여름방학, 밀크티",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "여름방학(ICE)",
+          "price": "7,500원"
+        },
+        {
+          "id": "m1",
+          "name": "바질토스트",
+          "price": "6,500원"
+        },
+        {
+          "id": "m2",
+          "name": "언젠가여름(ICE)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m3",
+          "name": "아메리카노",
+          "price": "5,500원"
+        },
+        {
+          "id": "m4",
+          "name": "카페라떼",
+          "price": "6,000원"
+        },
+        {
+          "id": "m5",
+          "name": "카푸치노 (hot)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m6",
+          "name": "바닐라라떼",
+          "price": "6,500원"
+        },
+        {
+          "id": "m7",
+          "name": "마지막유채(HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m8",
+          "name": "밀크티(ICE)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m9",
+          "name": "유자차",
+          "price": "6,000원"
+        },
+        {
+          "id": "ma",
+          "name": "레몬차",
+          "price": "6,000원"
+        },
+        {
+          "id": "mb",
+          "name": "자몽차",
+          "price": "6,000원"
+        },
+        {
+          "id": "mc",
+          "name": "루이보스차",
+          "price": "5,500원"
+        },
+        {
+          "id": "md",
+          "name": "캐모마일차",
+          "price": "5,500원"
+        },
+        {
+          "id": "me",
+          "name": "히비스커스차",
+          "price": "5,500원"
+        },
+        {
+          "id": "mf",
+          "name": "어느덧겨울",
+          "price": "6,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/59334207"
+      ],
+      "kakaoPlaceId": "59334207",
+      "placeUrl": "https://place.map.kakao.com/59334207",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/59334207",
+          "publishedAt": "2024-01-24 00:29:28"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_5dc5de41f39cb027-row-2498",
+      "name": "그라나다",
+      "address": "제주특별자치도 제주시 도공로 86-1 1-2층",
+      "lat": 33.49946770910502,
+      "lng": 126.46406321781825,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "팥빙수, 아이스티, 아메리카노",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노",
+          "price": "5,500원"
+        },
+        {
+          "id": "m1",
+          "name": "카페라떼",
+          "price": "6,300원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/184384827"
+      ],
+      "kakaoPlaceId": "184384827",
+      "placeUrl": "https://place.map.kakao.com/184384827",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/184384827",
+          "publishedAt": "2024-08-23 12:34:08"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_e219eab661f5381c-row-707",
+      "name": "그리운바다성산포",
+      "address": "제주특별자치도 서귀포시 성산읍 성산등용로 94",
+      "lat": 33.469855037857215,
+      "lng": 126.93004337988744,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "그리운 한상차림, 고등어회",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "활고등어회 삼합",
+          "price": "38,000원"
+        },
+        {
+          "id": "m1",
+          "name": "오늘새벽 은갈치회",
+          "price": "15,000원"
+        },
+        {
+          "id": "m2",
+          "name": "그리운 한상차림(2인)",
+          "price": "80,000원"
+        },
+        {
+          "id": "m3",
+          "name": "바다 한상차림(2~3인)",
+          "price": "110,000원"
+        },
+        {
+          "id": "m4",
+          "name": "성산포 한상차림(3~4인)",
+          "price": "140,000원"
+        },
+        {
+          "id": "m5",
+          "name": "(아침/점심특선) 한치해장국",
+          "price": "12,000원"
+        },
+        {
+          "id": "m6",
+          "name": "(아침/점심특선) 고등어 톳 돌솥밥",
+          "price": "12,000원"
+        },
+        {
+          "id": "m7",
+          "name": "(아침/점심특선) 제철물회",
+          "price": "12,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/18277817"
+      ],
+      "kakaoPlaceId": "18277817",
+      "placeUrl": "https://place.map.kakao.com/18277817",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/18277817",
+          "publishedAt": "2026-05-21 15:27:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_4d331d05a74905da-row-2609",
+      "name": "그초록",
+      "address": "제주특별자치도 제주시 구좌읍 행원로7길 23-16 1층",
+      "lat": 33.55638543255278,
+      "lng": 126.8063972627613,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "아보카도커피, 아보카도샌드위치, 한라봉요플레, 제주방풍 티라미수",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아보카도커피",
+          "price": "7,500원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "아보카도샌드위치",
+          "price": "12,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "아보카도티라미수",
+          "price": "7,000원"
+        },
+        {
+          "id": "m3",
+          "name": "아보카도스무디",
+          "price": "7,500원"
+        },
+        {
+          "id": "m4",
+          "name": "아보카도양말",
+          "price": "2,000원"
+        },
+        {
+          "id": "m5",
+          "name": "치킨스테이크샌드위치",
+          "price": "14,000원"
+        },
+        {
+          "id": "m6",
+          "name": "아보카도초코",
+          "price": "7,500원"
+        },
+        {
+          "id": "m7",
+          "name": "두쫀쿠",
+          "price": "6,500원"
+        },
+        {
+          "id": "m8",
+          "name": "두바이와플",
+          "price": "11,500원"
+        },
+        {
+          "id": "m9",
+          "name": "아보카도쿠키",
+          "price": "3,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1782977249"
+      ],
+      "kakaoPlaceId": "1782977249",
+      "placeUrl": "https://place.map.kakao.com/1782977249",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1782977249",
+          "publishedAt": "2026-02-27 17:34:30"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_73664b175a0305d1-row-1356",
+      "name": "글라글라하와이",
+      "address": "제주특별자치도 서귀포시 대정읍 하모항구로 70 1층",
+      "lat": 33.21955226693468,
+      "lng": 126.25132376548656,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "하와이안 해물찜, 피쉬버거",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "하와이안 해물찜 (2인기준)",
+          "price": "48,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "은갈치앤칩스",
+          "price": "21,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "달고기&칩스",
+          "price": "19,000원"
+        },
+        {
+          "id": "m3",
+          "name": "하와이안 갈릭 쉬림프와 볶음밥",
+          "price": "13,900원"
+        },
+        {
+          "id": "m4",
+          "name": "하와이안 포케보올(연어)",
+          "price": "14,900원"
+        },
+        {
+          "id": "m5",
+          "name": "하와이안 포케보올(참치)",
+          "price": "15,900원"
+        },
+        {
+          "id": "m6",
+          "name": "한치&칩스",
+          "price": "21,000원"
+        },
+        {
+          "id": "m7",
+          "name": "은갈치&칩스",
+          "price": "21,000원"
+        },
+        {
+          "id": "m8",
+          "name": "코코넛쉬림프&칩스",
+          "price": "19,000원"
+        },
+        {
+          "id": "m9",
+          "name": "연어&칩스",
+          "price": "19,000원"
+        },
+        {
+          "id": "ma",
+          "name": "피쉬버거&칩스",
+          "price": "13,900원"
+        },
+        {
+          "id": "mb",
+          "name": "한치버거&칩스",
+          "price": "14,900원"
+        },
+        {
+          "id": "mc",
+          "name": "나쵸",
+          "price": "18,000원"
+        },
+        {
+          "id": "md",
+          "name": "핫윙버팔로윙&칩스",
+          "price": "19,000원"
+        },
+        {
+          "id": "me",
+          "name": "허니갈릭버터버팔로윙&칩스",
+          "price": "19,000원"
+        },
+        {
+          "id": "mf",
+          "name": "생연어타코(2개)",
+          "price": "14,900원"
+        },
+        {
+          "id": "mg",
+          "name": "생참치타코(2개)",
+          "price": "15,900원"
+        },
+        {
+          "id": "mh",
+          "name": "크리미 쉬림프 스프와 바게트",
+          "price": "19,000원"
+        },
+        {
+          "id": "mi",
+          "name": "stir-fried vegetables with rice",
+          "price": "12,900원"
+        },
+        {
+          "id": "mj",
+          "name": "vegetarian pike bowl",
+          "price": "12,900원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/622958459"
+      ],
+      "kakaoPlaceId": "622958459",
+      "placeUrl": "https://place.map.kakao.com/622958459",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/622958459",
+          "publishedAt": "2026-01-02 16:24:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_69bc53dbb342fa48-row-2428",
+      "name": "꽃밥",
+      "address": "제주특별자치도 제주시 애월읍 일주서로 6059",
+      "lat": 33.45151199574807,
+      "lng": 126.30850384571045,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "꽃밥정식, 삼색들깨수제비, 야채비빔밥",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "꽃밥정식",
+          "price": "15,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "삼색들깨수제비",
+          "price": "10,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "야채비빔밥",
+          "price": "10,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/18311320"
+      ],
+      "kakaoPlaceId": "18311320",
+      "placeUrl": "https://place.map.kakao.com/18311320",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/18311320",
+          "publishedAt": "2026-02-02 23:04:52"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_813c63de6d892c5f-row-1759",
+      "name": "나라돈까스",
+      "address": "제주특별자치도 제주시 내도1길 23",
+      "lat": 33.495178861411546,
+      "lng": 126.43702393036018,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "나라왕돈까스, 흑돼지왕돈까스, 불타는왕돈까스, 치즈돈까스",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "나라왕돈까스",
+          "price": "10,900원"
+        },
+        {
+          "id": "m1",
+          "name": "반반왕돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m2",
+          "name": "불타는왕돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m3",
+          "name": "크림반반왕돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m4",
+          "name": "프리미엄왕돈까스",
+          "price": "12,900원"
+        },
+        {
+          "id": "m5",
+          "name": "마라왕돈까스",
+          "price": "12,900원"
+        },
+        {
+          "id": "m6",
+          "name": "흑돼지왕돈까스",
+          "price": "13,900원"
+        },
+        {
+          "id": "m7",
+          "name": "치즈돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m8",
+          "name": "고구마치즈돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m9",
+          "name": "생선까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "ma",
+          "name": "함박스테이크",
+          "price": "12,900원"
+        },
+        {
+          "id": "mb",
+          "name": "카레라이스",
+          "price": "9,900원"
+        },
+        {
+          "id": "mc",
+          "name": "새콤쫄면",
+          "price": "7,900원"
+        },
+        {
+          "id": "md",
+          "name": "크림스파게티",
+          "price": "10,900원"
+        },
+        {
+          "id": "me",
+          "name": "마미트스파게티",
+          "price": "10,900원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/10194791"
+      ],
+      "kakaoPlaceId": "10194791",
+      "placeUrl": "https://place.map.kakao.com/10194791",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/10194791",
+          "publishedAt": "2025-03-21 11:34:42"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_ed3632a62f977d11-row-2748",
+      "name": "나이체",
+      "address": "제주특별자치도 제주시 인다6길 35 1층 나이체",
+      "lat": 33.47517723844942,
+      "lng": 126.54681168248786,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "나이체라떼",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "나이체라떼 (signature)",
+          "price": "6,500원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "아메리카노",
+          "price": "5,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "수제 바닐라 빈 라떼",
+          "price": "5,800원"
+        },
+        {
+          "id": "m3",
+          "name": "클라우드 카푸치노 (only hot)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m4",
+          "name": "필터커피"
+        },
+        {
+          "id": "m5",
+          "name": "에스프레소",
+          "price": "4,000원"
+        },
+        {
+          "id": "m6",
+          "name": "에스프레소 콘파냐",
+          "price": "4,500원"
+        },
+        {
+          "id": "m7",
+          "name": "카페라떼",
+          "price": "5,500원"
+        },
+        {
+          "id": "m8",
+          "name": "플랫화이트",
+          "price": "5,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1144524512"
+      ],
+      "kakaoPlaceId": "1144524512",
+      "placeUrl": "https://place.map.kakao.com/1144524512",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1144524512",
+          "publishedAt": "2026-05-05 05:31:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_c74d93243dfbfd4c-row-2304",
+      "name": "난드르바당",
+      "address": "제주특별자치도 서귀포시 하예하동로16번길 11-1 1층",
+      "lat": 33.234615579273715,
+      "lng": 126.37100511857342,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "제주산흑돼지구이, 흑돼지김치찌개, 냉면",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "비빔냉면",
+          "price": "7,000원"
+        },
+        {
+          "id": "m1",
+          "name": "제주산 성게 미역국",
+          "price": "11,000원"
+        },
+        {
+          "id": "m2",
+          "name": "흑돼지 김치찌개",
+          "price": "7,000원"
+        },
+        {
+          "id": "m3",
+          "name": "물냉면",
+          "price": "7,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/26883584"
+      ],
+      "kakaoPlaceId": "26883584",
+      "placeUrl": "https://place.map.kakao.com/26883584",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/26883584",
+          "publishedAt": "2026-06-30 10:57:46"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_5edaa597c80f22ae-row-2262",
+      "name": "남춘식당",
+      "address": "제주특별자치도 제주시 청귤로 12 1층",
+      "lat": 33.4996554402381,
+      "lng": 126.53751109101127,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "고기국수",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "콩국수(계절음식)",
+          "price": "11,000원"
+        },
+        {
+          "id": "m1",
+          "name": "고기국수",
+          "price": "10,000원"
+        },
+        {
+          "id": "m2",
+          "name": "멸치국수",
+          "price": "8,000원"
+        },
+        {
+          "id": "m3",
+          "name": "멸고국수",
+          "price": "10,000원"
+        },
+        {
+          "id": "m4",
+          "name": "비빔국수",
+          "price": "8,000원"
+        },
+        {
+          "id": "m5",
+          "name": "수제비(2인이상)(계절음식)",
+          "price": "9,000원"
+        },
+        {
+          "id": "m6",
+          "name": "김밥",
+          "price": "4,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/8244466"
+      ],
+      "kakaoPlaceId": "8244466",
+      "placeUrl": "https://place.map.kakao.com/8244466",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/8244466",
+          "publishedAt": "2026-06-09 11:01:41"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_6e9db15084e6a683-row-209",
+      "name": "낭뜰에쉼팡",
+      "address": "제주특별자치도 제주시 조천읍 남조로 2343 1층",
+      "lat": 33.473537153964244,
+      "lng": 126.65713127566576,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "낭뜰정식, 쌈채, 야채비빔밥, 녹차들깨수제비",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "낭뜰정식 (1인)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m1",
+          "name": "쌈채",
+          "price": "8,000원"
+        },
+        {
+          "id": "m2",
+          "name": "고등어구이",
+          "price": "11,000원"
+        },
+        {
+          "id": "m3",
+          "name": "해물버섯전",
+          "price": "12,000원"
+        },
+        {
+          "id": "m4",
+          "name": "고기비빔밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "m5",
+          "name": "돌솥비빔밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "m6",
+          "name": "녹차들깨수제비",
+          "price": "10,000원"
+        },
+        {
+          "id": "m7",
+          "name": "냄비우동",
+          "price": "6,000원"
+        },
+        {
+          "id": "m8",
+          "name": "두부겉절이",
+          "price": "7,000원"
+        },
+        {
+          "id": "m9",
+          "name": "콩국수",
+          "price": "9,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/8874256"
+      ],
+      "kakaoPlaceId": "8874256",
+      "placeUrl": "https://place.map.kakao.com/8874256",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/8874256",
+          "publishedAt": "2026-03-27 17:32:09"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_86006dfd986e06cc-row-1941",
+      "name": "노을리",
+      "address": "제주특별자치도 제주시 애월읍 애월해안로 654 1층",
+      "lat": 33.4798964742507,
+      "lng": 126.37271551221502,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "아몬드크림라떼, 노을리에이드, 흑연탄빵, 현무암앙버터",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "노을리 에이드 (ice)",
+          "price": "11,000원"
+        },
+        {
+          "id": "m1",
+          "name": "햄치즈문어빵"
+        },
+        {
+          "id": "m2",
+          "name": "연탄빵"
+        },
+        {
+          "id": "m3",
+          "name": "치즈 크림라떼",
+          "price": "9,500원"
+        },
+        {
+          "id": "m4",
+          "name": "에스프레소",
+          "price": "6,500원"
+        },
+        {
+          "id": "m5",
+          "name": "아메리카노 (HOT)",
+          "price": "7,000원"
+        },
+        {
+          "id": "m6",
+          "name": "카페라떼 (HOT)",
+          "price": "8,000원"
+        },
+        {
+          "id": "m7",
+          "name": "카푸치노",
+          "price": "8,500원"
+        },
+        {
+          "id": "m8",
+          "name": "바닐라빈라떼 (HOT)",
+          "price": "8,500원"
+        },
+        {
+          "id": "m9",
+          "name": "아인슈페너",
+          "price": "9,500원"
+        },
+        {
+          "id": "ma",
+          "name": "미숫가루라떼",
+          "price": "9,000원"
+        },
+        {
+          "id": "mb",
+          "name": "초코라떼 (HOT)",
+          "price": "8,500원"
+        },
+        {
+          "id": "mc",
+          "name": "한라봉에이드",
+          "price": "9,500원"
+        },
+        {
+          "id": "md",
+          "name": "자몽에이드",
+          "price": "9,000원"
+        },
+        {
+          "id": "me",
+          "name": "레몬에이드",
+          "price": "9,000원"
+        },
+        {
+          "id": "mf",
+          "name": "우도땅콩소라빵"
+        },
+        {
+          "id": "mg",
+          "name": "현무암크림치즈"
+        },
+        {
+          "id": "mh",
+          "name": "노을리 아이스티",
+          "price": "9,500원"
+        },
+        {
+          "id": "mi",
+          "name": "노을리 수제 밀크티 (HOT)",
+          "price": "9,000원"
+        },
+        {
+          "id": "mj",
+          "name": "한라봉차 (HOT)",
+          "price": "8,500원"
+        },
+        {
+          "id": "mk",
+          "name": "청귤차 (HOT)",
+          "price": "8,500원"
+        },
+        {
+          "id": "ml",
+          "name": "청귤에이드",
+          "price": "9,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1525547515"
+      ],
+      "kakaoPlaceId": "1525547515",
+      "placeUrl": "https://place.map.kakao.com/1525547515",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1525547515",
+          "publishedAt": "2026-07-08 15:01:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_aa813c255fc2dad6-row-2544",
+      "name": "논짓물식당",
+      "address": "제주특별자치도 제주시 성화로9길 10 1층",
+      "lat": 33.51262926364375,
+      "lng": 126.50438224192325,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "생물갈치조림",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복뚝배기",
+          "price": "18,000원"
+        },
+        {
+          "id": "m1",
+          "name": "보말성게국",
+          "price": "18,000원"
+        },
+        {
+          "id": "m2",
+          "name": "활전복물회",
+          "price": "18,000원"
+        },
+        {
+          "id": "m3",
+          "name": "활한치물회",
+          "price": "20,000원"
+        },
+        {
+          "id": "m4",
+          "name": "한치물회(냉동)",
+          "price": "18,000원"
+        },
+        {
+          "id": "m5",
+          "name": "자리물회",
+          "price": "18,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/17869257"
+      ],
+      "kakaoPlaceId": "17869257",
+      "placeUrl": "https://place.map.kakao.com/17869257",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/17869257",
+          "publishedAt": "2026-08-28 11:19:45"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_1f8a1328b19b5b4e-row-2376",
+      "name": "누이밥집",
+      "address": "제주특별자치도 서귀포시 중산간서로 695",
+      "lat": 33.263027878617585,
+      "lng": 126.44133401270398,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "접착뼈국, 고사리육개장",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복돌솥밥",
+          "price": "15,000원"
+        },
+        {
+          "id": "m1",
+          "name": "순살갈치뚝배기",
+          "price": "15,000원"
+        },
+        {
+          "id": "m2",
+          "name": "옥돔구이",
+          "price": "18,000원"
+        },
+        {
+          "id": "m3",
+          "name": "접착뼈국",
+          "price": "10,000원"
+        },
+        {
+          "id": "m4",
+          "name": "고사리육개장",
+          "price": "10,000원"
+        },
+        {
+          "id": "m5",
+          "name": "전복뚝배기",
+          "price": "15,000원"
+        },
+        {
+          "id": "m6",
+          "name": "고등어구이",
+          "price": "15,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1604993972"
+      ],
+      "kakaoPlaceId": "1604993972",
+      "placeUrl": "https://place.map.kakao.com/1604993972",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1604993972",
+          "publishedAt": "2022-11-12 23:48:45"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_b5b4d796a98e942b-row-1838",
+      "name": "달페이지",
+      "address": "제주특별자치도 서귀포시 색달로64번길 51",
+      "lat": 33.2597568731775,
+      "lng": 126.41392843032936,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "https://blog.naver.com/whitebox6/221982161553",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노",
+          "price": "5,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1654598093"
+      ],
+      "kakaoPlaceId": "1654598093",
+      "placeUrl": "https://place.map.kakao.com/1654598093",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1654598093",
+          "publishedAt": "2026-09-11 08:30:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_52648c8c894f2152-row-2827",
+      "name": "담소요",
+      "address": "제주특별자치도 서귀포시 남원읍 신례천로 193 1층",
+      "lat": 33.29948676252607,
+      "lng": 126.62497185505075,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "시그니처 밀크티, 감귤주스, 바닐라라떼, 바스크 치즈케�, 단호박파이",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "바스크치즈케이크",
+          "price": "7,000원"
+        },
+        {
+          "id": "m1",
+          "name": "밀크티",
+          "price": "9,000원"
+        },
+        {
+          "id": "m2",
+          "name": "아메리카노",
+          "price": "7,000원"
+        },
+        {
+          "id": "m3",
+          "name": "카페라떼",
+          "price": "7,300원"
+        },
+        {
+          "id": "m4",
+          "name": "바닐라라떼",
+          "price": "7,500원"
+        },
+        {
+          "id": "m5",
+          "name": "밤바스크치즈케이크",
+          "price": "7,500원"
+        },
+        {
+          "id": "m6",
+          "name": "단호박파이",
+          "price": "8,000원"
+        },
+        {
+          "id": "m7",
+          "name": "페퍼민트티",
+          "price": "7,500원"
+        },
+        {
+          "id": "m8",
+          "name": "루이보스티",
+          "price": "7,500원"
+        },
+        {
+          "id": "m9",
+          "name": "체리향향홍차",
+          "price": "7,500원"
+        },
+        {
+          "id": "ma",
+          "name": "청포도향홍차",
+          "price": "7,500원"
+        },
+        {
+          "id": "mb",
+          "name": "제주감귤주스",
+          "price": "7,500원"
+        },
+        {
+          "id": "mc",
+          "name": "초코",
+          "price": "7,500원"
+        },
+        {
+          "id": "md",
+          "name": "애플아이스티",
+          "price": "7,500원"
+        },
+        {
+          "id": "me",
+          "name": "뱅쇼",
+          "price": "8,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1778659460"
+      ],
+      "kakaoPlaceId": "1778659460",
+      "placeUrl": "https://place.map.kakao.com/1778659460",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1778659460",
+          "publishedAt": "2026-06-25 18:40:18"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_659cca7ed7c1c36c-row-1942",
+      "name": "더클리프",
+      "address": "제주특별자치도 서귀포시 중문관광로 154-17",
+      "lat": 33.244329386857586,
+      "lng": 126.41491985270359,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "흑돼지멜젓파스타, 더클리프피자, 클럽버거, 색달비치",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "쉬림프 칵테일 / Shrimp Cocktail",
+          "price": "26,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "현무암 치킨 / Hyunmuam Chicken",
+          "price": "28,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "색달비치",
+          "price": "17,000원"
+        },
+        {
+          "id": "m3",
+          "name": "더클리프 피자 / The Cliff Pizza",
+          "price": "32,000원"
+        },
+        {
+          "id": "m4",
+          "name": "태국식 돼지고기 바질 덮밥 (팟 카파오 무쌉) / Pad Kapao Moosab",
+          "price": "22,000원"
+        },
+        {
+          "id": "m5",
+          "name": "하와이안 쉬림프 라이스 / Hawaiian Shrimp Rice",
+          "price": "23,000원"
+        },
+        {
+          "id": "m6",
+          "name": "클리프 클럽버거 / Cliff Club Burger",
+          "price": "22,000원"
+        },
+        {
+          "id": "m7",
+          "name": "제주바당",
+          "price": "17,000원"
+        },
+        {
+          "id": "m8",
+          "name": "피치블라썸",
+          "price": "16,000원"
+        },
+        {
+          "id": "m9",
+          "name": "피나콜라다",
+          "price": "16,000원"
+        },
+        {
+          "id": "ma",
+          "name": "바이올렛",
+          "price": "16,000원"
+        },
+        {
+          "id": "mb",
+          "name": "클리프 모히또",
+          "price": "17,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1378746048"
+      ],
+      "kakaoPlaceId": "1378746048",
+      "placeUrl": "https://place.map.kakao.com/1378746048",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1378746048",
+          "publishedAt": "2024-04-26 13:03:12"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_3330ca089121787a-row-2728",
+      "name": "덴드리",
+      "address": "제주특별자치도 서귀포시 성산읍 삼달로 28-1",
+      "lat": 33.3696041179164,
+      "lng": 126.86605439411679,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "덴드리 청귤라�, 바클라바",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노",
+          "price": "5,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/160318816"
+      ],
+      "kakaoPlaceId": "160318816",
+      "placeUrl": "https://place.map.kakao.com/160318816",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/160318816",
+          "publishedAt": "2022-11-10 18:16:30"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_11fe917470f733f2-row-2432",
+      "name": "도라지식당",
+      "address": "제주특별자치도 제주시 연삼로 128",
+      "lat": 33.49271035395259,
+      "lng": 126.50594628309452,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "갈치조림, 한치구이",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "제주향토음식상차림",
+          "price": "45,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "갈치조림 (소)",
+          "price": "29,000원"
+        },
+        {
+          "id": "m2",
+          "name": "돔베고기",
+          "price": "30,000원"
+        },
+        {
+          "id": "m3",
+          "name": "한치구이",
+          "price": "25,000원"
+        },
+        {
+          "id": "m4",
+          "name": "성게미역국",
+          "price": "18,000원"
+        },
+        {
+          "id": "m5",
+          "name": "전복해물뚝배기",
+          "price": "18,000원"
+        },
+        {
+          "id": "m6",
+          "name": "전복물회",
+          "price": "19,000원"
+        },
+        {
+          "id": "m7",
+          "name": "간장게장",
+          "price": "15,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/15942374"
+      ],
+      "kakaoPlaceId": "15942374",
+      "placeUrl": "https://place.map.kakao.com/15942374",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/15942374",
+          "publishedAt": "2026-05-01 22:46:00"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_fe16bc98b52848b1-row-2340",
+      "name": "돈카츠서황",
+      "address": "제주특별자치도 제주시 애월읍 장소로 205-2 1층",
+      "lat": 33.43432508294164,
+      "lng": 126.37959449536152,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "서황카츠, 안심카츠, 생선카츠",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "생선카츠",
+          "price": "18,000원"
+        },
+        {
+          "id": "m1",
+          "name": "서황카츠",
+          "price": "12,000원"
+        },
+        {
+          "id": "m2",
+          "name": "안심카츠",
+          "price": "14,000원"
+        },
+        {
+          "id": "m3",
+          "name": "샐러드우동",
+          "price": "12,000원"
+        },
+        {
+          "id": "m4",
+          "name": "모듬카츠",
+          "price": "17,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/27609941"
+      ],
+      "kakaoPlaceId": "27609941",
+      "placeUrl": "https://place.map.kakao.com/27609941",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/27609941",
+          "publishedAt": "2026-02-20 23:31:58"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_9b9d8c6f33d2ec03-row-1992",
+      "name": "돔베돈",
+      "address": "제주특별자치도 제주시 관덕로15길 25",
+      "lat": 33.51555449110102,
+      "lng": 126.52663293622535,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "흑돼지 구이, 돔베고기, 냉면, 된장찌개",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "흑오겹세트(2인)",
+          "price": "57,000원"
+        },
+        {
+          "id": "m1",
+          "name": "돔베세트 2인세트",
+          "price": "56,000원"
+        },
+        {
+          "id": "m2",
+          "name": "스페셜돔베 2인세트",
+          "price": "62,000원"
+        },
+        {
+          "id": "m3",
+          "name": "흑오겹세트(3인)",
+          "price": "85,000원"
+        },
+        {
+          "id": "m4",
+          "name": "흑항정세트(2인)",
+          "price": "59,000원"
+        },
+        {
+          "id": "m5",
+          "name": "흑항정세트(3인)",
+          "price": "89,000원"
+        },
+        {
+          "id": "m6",
+          "name": "흑오겹살",
+          "price": "22,000원"
+        },
+        {
+          "id": "m7",
+          "name": "특목살",
+          "price": "22,000원"
+        },
+        {
+          "id": "m8",
+          "name": "특항정살",
+          "price": "23,000원"
+        },
+        {
+          "id": "m9",
+          "name": "흑가브리살",
+          "price": "23,000원"
+        },
+        {
+          "id": "ma",
+          "name": "물냉면",
+          "price": "5,000원"
+        },
+        {
+          "id": "mb",
+          "name": "비빔냉면",
+          "price": "5,000원"
+        },
+        {
+          "id": "mc",
+          "name": "된장찌개",
+          "price": "6,000원"
+        },
+        {
+          "id": "md",
+          "name": "볶음밥",
+          "price": "5,000원"
+        },
+        {
+          "id": "me",
+          "name": "계란찜",
+          "price": "4,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/8268353"
+      ],
+      "kakaoPlaceId": "8268353",
+      "placeUrl": "https://place.map.kakao.com/8268353",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/8268353",
+          "publishedAt": "2025-12-05 16:45:26"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_692f1d22bb84010a-row-2746",
+      "name": "동복뚝배기",
+      "address": "제주특별자치도 제주시 구좌읍 동복로 30-2 1층",
+      "lat": 33.55318423349503,
+      "lng": 126.70931398173633,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "통갈치구이, 갈치조",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "제주바당 순살은갈치조림(1인)",
+          "price": "19,000원"
+        },
+        {
+          "id": "m1",
+          "name": "고등어구이",
+          "price": "15,000원"
+        },
+        {
+          "id": "m2",
+          "name": "볏짚훈연 제주바당 대물통갈치구이",
+          "price": "150,000원"
+        },
+        {
+          "id": "m3",
+          "name": "성게미역국",
+          "price": "18,000원"
+        },
+        {
+          "id": "m4",
+          "name": "갈치물회",
+          "price": "17,000원"
+        },
+        {
+          "id": "m5",
+          "name": "전복물회",
+          "price": "18,000원"
+        },
+        {
+          "id": "m6",
+          "name": "한치물회",
+          "price": "18,000원"
+        },
+        {
+          "id": "m7",
+          "name": "해물뚝배기",
+          "price": "15,000원"
+        },
+        {
+          "id": "m8",
+          "name": "고등어조림(1인)",
+          "price": "15,000원"
+        },
+        {
+          "id": "m9",
+          "name": "볏짚훈연 제주바당 통갈치구이(소)",
+          "price": "38,000원"
+        },
+        {
+          "id": "ma",
+          "name": "볏짚훈연 제주바당 통갈치구이(대)",
+          "price": "95,000원"
+        },
+        {
+          "id": "mb",
+          "name": "활전복뚝배기",
+          "price": "20,000원"
+        },
+        {
+          "id": "mc",
+          "name": "모둠물회",
+          "price": "35,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1936912017"
+      ],
+      "kakaoPlaceId": "1936912017",
+      "placeUrl": "https://place.map.kakao.com/1936912017",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1936912017",
+          "publishedAt": "2026-07-22 16:32:39"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_b7371968d0b13864-row-2019",
+      "name": "동해미락",
+      "address": "제주특별자치도 서귀포시 칠십리로 133",
+      "lat": 33.24367216585947,
+      "lng": 126.56822964450157,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "회",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "갈치회(접시)",
+          "price": "50,000원"
+        },
+        {
+          "id": "m1",
+          "name": "고등어회(접시)",
+          "price": "70,000원"
+        },
+        {
+          "id": "m2",
+          "name": "다금바리(한상)"
+        },
+        {
+          "id": "m3",
+          "name": "알뜰코스(2인)",
+          "price": "110,000원"
+        },
+        {
+          "id": "m4",
+          "name": "C 코스요리(한상)",
+          "price": "130,000원"
+        },
+        {
+          "id": "m5",
+          "name": "B 코스요리(한상)",
+          "price": "160,000원"
+        },
+        {
+          "id": "m6",
+          "name": "A 코스요리(한상)",
+          "price": "180,000원"
+        },
+        {
+          "id": "m7",
+          "name": "특 코스요리(한상)",
+          "price": "200,000원"
+        },
+        {
+          "id": "m8",
+          "name": "고등어회+갈치회(접시)",
+          "price": "70,000원"
+        },
+        {
+          "id": "m9",
+          "name": "갯돔(한상)"
+        },
+        {
+          "id": "ma",
+          "name": "딱새우회(접시)",
+          "price": "50,000원"
+        },
+        {
+          "id": "mb",
+          "name": "스페샬 코스요리(한상)",
+          "price": "250,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/12663386"
+      ],
+      "kakaoPlaceId": "12663386",
+      "placeUrl": "https://place.map.kakao.com/12663386",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/12663386",
+          "publishedAt": "2026-03-10 13:00:06"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_24ab05a7c6da5926-row-2213",
+      "name": "두리둠비",
+      "address": "제주특별자치도 서귀포시 중문관광로 16 1층",
+      "lat": 33.25671298883555,
+      "lng": 126.41469137461807,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "순두부찌개, 만두전골",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "두리둠비 순두부",
+          "price": "10,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "콩국수(여름메뉴)",
+          "price": "10,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "흑돼지순두부찌개",
+          "price": "12,000원"
+        },
+        {
+          "id": "m3",
+          "name": "불고기순두부찌개",
+          "price": "12,000원"
+        },
+        {
+          "id": "m4",
+          "name": "버섯순두부찌개",
+          "price": "11,000원"
+        },
+        {
+          "id": "m5",
+          "name": "바지락 순두부찌개",
+          "price": "13,000원"
+        },
+        {
+          "id": "m6",
+          "name": "전복순두부찌개",
+          "price": "15,000원"
+        },
+        {
+          "id": "m7",
+          "name": "두부왕만두전골 (중)",
+          "price": "30,000원"
+        },
+        {
+          "id": "m8",
+          "name": "두부왕만두김치전골 (중)",
+          "price": "30,000원"
+        },
+        {
+          "id": "m9",
+          "name": "제주흑돼지두부삼합",
+          "price": "45,000원"
+        },
+        {
+          "id": "ma",
+          "name": "순두부세트",
+          "price": "19,000원"
+        },
+        {
+          "id": "mb",
+          "name": "김치순두부찌개",
+          "price": "11,000원"
+        },
+        {
+          "id": "mc",
+          "name": "두부왕만두전골 (대)",
+          "price": "40,000원"
+        },
+        {
+          "id": "md",
+          "name": "두부왕만두김치전골 (대)",
+          "price": "40,000원"
+        },
+        {
+          "id": "me",
+          "name": "굴 순두부찌개(겨울메뉴)",
+          "price": "14,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/221479836"
+      ],
+      "kakaoPlaceId": "221479836",
+      "placeUrl": "https://place.map.kakao.com/221479836",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/221479836",
+          "publishedAt": "2026-06-30 11:21:06"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_4e220aaf6e288933-row-2359",
+      "name": "라 플라주",
+      "address": "제주특별자치도 제주시 조천읍 조함해안로 525",
+      "lat": 33.54283472073507,
+      "lng": 126.67072562856717,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "딸기브리오슈",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노(HOT)",
+          "price": "5,800원"
+        },
+        {
+          "id": "m1",
+          "name": "카페라떼(HOT)",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "바닐라딥라떼(HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m3",
+          "name": "카모마일(HOT)",
+          "price": "6,300원"
+        },
+        {
+          "id": "m4",
+          "name": "헤이즐넛라떼(HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m5",
+          "name": "카라멜라떼(HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m6",
+          "name": "돌체라떼(HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m7",
+          "name": "제주말차라떼(HOT)",
+          "price": "6,800원"
+        },
+        {
+          "id": "m8",
+          "name": "다크초코라떼(HOT)",
+          "price": "6,800원"
+        },
+        {
+          "id": "m9",
+          "name": "홍차라떼(HOT)",
+          "price": "6,800원"
+        },
+        {
+          "id": "ma",
+          "name": "매실에이드",
+          "price": "7,300원"
+        },
+        {
+          "id": "mb",
+          "name": "제주한라봉에이드",
+          "price": "7,300원"
+        },
+        {
+          "id": "mc",
+          "name": "자몽에이드",
+          "price": "7,300원"
+        },
+        {
+          "id": "md",
+          "name": "생과일토마토주스",
+          "price": "7,500원"
+        },
+        {
+          "id": "me",
+          "name": "제주한라봉샤베트",
+          "price": "7,500원"
+        },
+        {
+          "id": "mf",
+          "name": "수제딸기라떼",
+          "price": "7,300원"
+        },
+        {
+          "id": "mg",
+          "name": "협재 백년초티(HOT)",
+          "price": "7,000원"
+        },
+        {
+          "id": "mh",
+          "name": "오렌지 루이보스티(HOT)",
+          "price": "6,300원"
+        },
+        {
+          "id": "mi",
+          "name": "패션후르츠에이드",
+          "price": "7,300원"
+        },
+        {
+          "id": "mj",
+          "name": "수제레몬에이드",
+          "price": "7,300원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1396572648"
+      ],
+      "kakaoPlaceId": "1396572648",
+      "placeUrl": "https://place.map.kakao.com/1396572648",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1396572648",
+          "publishedAt": "2026-06-30 16:13:55"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_8da66063b930e6e2-row-2427",
+      "name": "랜딩커피",
+      "address": "제주특별자치도 서귀포시 성산읍 신양로122번길 45-1 1층",
+      "lat": 33.43548966099044,
+      "lng": 126.91890434845652,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "제주 아일랜드티, 무스케이크",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노",
+          "price": "5,500원"
+        },
+        {
+          "id": "m1",
+          "name": "라떼",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "바닐라빈라떼",
+          "price": "6,800원"
+        },
+        {
+          "id": "m3",
+          "name": "랜딩코코",
+          "price": "6,800원"
+        },
+        {
+          "id": "m4",
+          "name": "제주아일랜드티",
+          "price": "7,500원"
+        },
+        {
+          "id": "m5",
+          "name": "트로피컬아이스티",
+          "price": "7,500원"
+        },
+        {
+          "id": "m6",
+          "name": "수제청에이드",
+          "price": "7,500원"
+        },
+        {
+          "id": "m7",
+          "name": "콜드브루",
+          "price": "6,500원"
+        },
+        {
+          "id": "m8",
+          "name": "제주말차라떼",
+          "price": "6,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1335585931"
+      ],
+      "kakaoPlaceId": "1335585931",
+      "placeUrl": "https://place.map.kakao.com/1335585931",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1335585931",
+          "publishedAt": "2023-10-26 10:36:32"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_e3a53de6dc59bc77-row-2623",
+      "name": "레몬뮤지엄",
+      "address": "제주특별자치도 서귀포시 남원읍 하례로620번길 41 1층",
+      "lat": 33.29885918619176,
+      "lng": 126.61785390034619,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "제주찐레몬에이드, 제주레몬아이스크림",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "제주무농약 레몬아이스크림",
+          "price": "9,800원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "제주찐레몬에이드",
+          "price": "6,800원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "레몬젤리만들기",
+          "price": "15,000원"
+        },
+        {
+          "id": "m3",
+          "name": "제주댕유자에이드",
+          "price": "6,800원"
+        },
+        {
+          "id": "m4",
+          "name": "제주한라봉에이드",
+          "price": "6,800원"
+        },
+        {
+          "id": "m5",
+          "name": "제주레몬무스",
+          "price": "8,500원"
+        },
+        {
+          "id": "m6",
+          "name": "레몬요거트스무디",
+          "price": "7,800원"
+        },
+        {
+          "id": "m7",
+          "name": "수제레몬차",
+          "price": "6,500원"
+        },
+        {
+          "id": "m8",
+          "name": "아메리카노",
+          "price": "5,000원"
+        },
+        {
+          "id": "m9",
+          "name": "카페라떼",
+          "price": "6,000원"
+        },
+        {
+          "id": "ma",
+          "name": "바닐라라떼",
+          "price": "6,500원"
+        },
+        {
+          "id": "mb",
+          "name": "제주청귤귤차",
+          "price": "6,500원"
+        },
+        {
+          "id": "mc",
+          "name": "제주한라봉차",
+          "price": "6,500원"
+        },
+        {
+          "id": "md",
+          "name": "제주댕유자차",
+          "price": "6,500원"
+        },
+        {
+          "id": "me",
+          "name": "제주영귤차",
+          "price": "7,500원"
+        },
+        {
+          "id": "mf",
+          "name": "제주청귤에이드",
+          "price": "6,800원"
+        },
+        {
+          "id": "mg",
+          "name": "제주영귤에이드",
+          "price": "7,800원"
+        },
+        {
+          "id": "mh",
+          "name": "제주100% 당근착즙",
+          "price": "8,000원"
+        },
+        {
+          "id": "mi",
+          "name": "레몬블랙티",
+          "price": "5,000원"
+        },
+        {
+          "id": "mj",
+          "name": "초코라떼",
+          "price": "5,000원"
+        },
+        {
+          "id": "mk",
+          "name": "레몬수확&청만들기",
+          "price": "30,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1406187011"
+      ],
+      "kakaoPlaceId": "1406187011",
+      "placeUrl": "https://place.map.kakao.com/1406187011",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1406187011",
+          "publishedAt": "2026-02-02 23:41:38"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_d03919e7f58f1604-row-2389",
+      "name": "로빙화",
+      "address": "제주특별자치도 서귀포시 남원읍 남태해안로 13 1-2층",
+      "lat": 33.275101605874816,
+      "lng": 126.70925141885701,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "스칼렛, 수제버거, 헝가리스튜 굴라쉬",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "비프 버거 세트",
+          "price": "20,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "반반피자",
+          "price": "34,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "흑돼지버거 세트",
+          "price": "18,000원"
+        },
+        {
+          "id": "m3",
+          "name": "소시지&감자튀김",
+          "price": "15,000원"
+        },
+        {
+          "id": "m4",
+          "name": "쉬림프 버거 세트",
+          "price": "22,000원"
+        },
+        {
+          "id": "m5",
+          "name": "피자",
+          "price": "32,000원"
+        },
+        {
+          "id": "m6",
+          "name": "굴라쉬",
+          "price": "15,000원"
+        },
+        {
+          "id": "m7",
+          "name": "시저 샐러드",
+          "price": "14,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1658038483"
+      ],
+      "kakaoPlaceId": "1658038483",
+      "placeUrl": "https://place.map.kakao.com/1658038483",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1658038483",
+          "publishedAt": "2026-06-29 16:06:03"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_b3f3374b43925ab6-row-2538",
+      "name": "릴로",
+      "address": "제주특별자치도 제주시 구좌읍 하도13길 63 1층",
+      "lat": 33.510840721323085,
+      "lng": 126.89289102399144,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "바게트 연어파테, 제주감자수프",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "수비드 비프 타르틴",
+          "price": "13,500원"
+        },
+        {
+          "id": "m1",
+          "name": "당근라페 타르틴(한정메뉴)"
+        },
+        {
+          "id": "m2",
+          "name": "연어파테 타르틴",
+          "price": "12,000원"
+        },
+        {
+          "id": "m3",
+          "name": "아보카도 타르틴",
+          "price": "15,000원"
+        },
+        {
+          "id": "m4",
+          "name": "바게트 비프 샌드위치",
+          "price": "9,500원"
+        },
+        {
+          "id": "m5",
+          "name": "감자수프",
+          "price": "8,500원"
+        },
+        {
+          "id": "m6",
+          "name": "바게트 연어파테 샌드위치",
+          "price": "9,500원"
+        },
+        {
+          "id": "m7",
+          "name": "릴로 플레이트(2인분)",
+          "price": "29,900원"
+        },
+        {
+          "id": "m8",
+          "name": "토마토 치킨 스프",
+          "price": "12,900원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1460787139"
+      ],
+      "kakaoPlaceId": "1460787139",
+      "placeUrl": "https://place.map.kakao.com/1460787139",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1460787139",
+          "publishedAt": "2026-04-21 11:41:17"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_a7ba62d26d7ddc75-row-2429",
+      "name": "마루나키친",
+      "address": "제주특별자치도 제주시 한경면 금등4길 11 1층",
+      "lat": 33.36193968194214,
+      "lng": 126.19578816544642,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "해물모듬장, 마루나돈카츠",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "해물모듬장",
+          "price": "18,900원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "제주 황게 크림파스타",
+          "price": "19,800원"
+        },
+        {
+          "id": "m2",
+          "name": "마루나 돈카츠",
+          "price": "14,000원"
+        },
+        {
+          "id": "m3",
+          "name": "고구마치즈고로케",
+          "price": "7,800원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1630447463"
+      ],
+      "kakaoPlaceId": "1630447463",
+      "placeUrl": "https://place.map.kakao.com/1630447463",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1630447463",
+          "publishedAt": "2026-06-25 17:06:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_bd8022515bab4333-row-2360",
+      "name": "마음에온",
+      "address": "제주특별자치도 제주시 칠성로길 29-1 1층",
+      "lat": 33.51457820936602,
+      "lng": 126.52596231720723,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "치즈곶감말이",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "꼬수미라떼",
+          "price": "6,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "칠성라떼",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "치즈곶감말이",
+          "price": "4,000원"
+        },
+        {
+          "id": "m3",
+          "name": "오미자에이드",
+          "price": "6,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/522395014"
+      ],
+      "kakaoPlaceId": "522395014",
+      "placeUrl": "https://place.map.kakao.com/522395014",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/522395014",
+          "publishedAt": "2023-04-04 16:31:32"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_1aed94476aae0c3c-row-1625",
+      "name": "마틸다",
+      "address": "제주특별자치도 제주시 애월읍 고내1길 33 1층",
+      "lat": 33.46569614224088,
+      "lng": 126.3342728419857,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "와인, 맥주, 칵테일",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "진토닉",
+          "price": "10,000원"
+        },
+        {
+          "id": "m1",
+          "name": "보드카 토닉",
+          "price": "10,000원"
+        },
+        {
+          "id": "m2",
+          "name": "잭콕",
+          "price": "12,000원"
+        },
+        {
+          "id": "m3",
+          "name": "마티니",
+          "price": "13,000원"
+        },
+        {
+          "id": "m4",
+          "name": "블랙러시안",
+          "price": "13,000원"
+        },
+        {
+          "id": "m5",
+          "name": "피나콜라디",
+          "price": "12,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/26463066"
+      ],
+      "kakaoPlaceId": "26463066",
+      "placeUrl": "https://place.map.kakao.com/26463066",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/26463066",
+          "publishedAt": "2026-06-29 17:47:32"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_a5ca0fcf48b9f411-row-2236",
+      "name": "만지식당",
+      "address": "제주특별자치도 제주시 애월읍 고내로 13-1 1층",
+      "lat": 33.46328746947432,
+      "lng": 126.33905868126132,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "야키소바, 돈카츠정식",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "BBQ야키소바",
+          "price": "16,000원"
+        },
+        {
+          "id": "m1",
+          "name": "돈카츠정식",
+          "price": "15,000원"
+        },
+        {
+          "id": "m2",
+          "name": "왕새우튀김우동(9월부터개시)",
+          "price": "14,000원"
+        },
+        {
+          "id": "m3",
+          "name": "텐자루소바",
+          "price": "12,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1060504714"
+      ],
+      "kakaoPlaceId": "1060504714",
+      "placeUrl": "https://place.map.kakao.com/1060504714",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1060504714",
+          "publishedAt": "2023-07-27 10:46:37"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_33cfb194253289f0-row-344",
+      "name": "명랑스낵",
+      "address": "제주특별자치도 제주시 한림읍 한림로 585 1층",
+      "lat": 33.40917141817178,
+      "lng": 126.25881715454115,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "떡볶이, 짜장떡볶이",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "떡볶이",
+          "price": "5,000원"
+        },
+        {
+          "id": "m1",
+          "name": "짜장떡볶이(2인분)",
+          "price": "11,000원"
+        },
+        {
+          "id": "m2",
+          "name": "어묵튀김5ea추가",
+          "price": "1,800원"
+        },
+        {
+          "id": "m3",
+          "name": "2인세트",
+          "price": "33,000원"
+        },
+        {
+          "id": "m4",
+          "name": "3인세트",
+          "price": "43,000원"
+        },
+        {
+          "id": "m5",
+          "name": "4인세트",
+          "price": "49,000원"
+        },
+        {
+          "id": "m6",
+          "name": "1인세트",
+          "price": "17,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/27357866"
+      ],
+      "kakaoPlaceId": "27357866",
+      "placeUrl": "https://place.map.kakao.com/27357866",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/27357866",
+          "publishedAt": "2026-03-26 23:09:47"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_6f60f316791f0683-row-2103",
+      "name": "모뉴에트",
+      "address": "제주특별자치도 제주시 구좌읍 종달동길 23 1층",
+      "lat": 33.491481991441134,
+      "lng": 126.90222492682776,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "한라산 까눌레, 모뉴에트 라떼, 천혜향 풋귤 에이드",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "한라산 까눌레",
+          "price": "4,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "제주 말차 까눌레",
+          "price": "4,500원"
+        },
+        {
+          "id": "m2",
+          "name": "모뉴에트 라떼 (ICE)",
+          "price": "8,000원"
+        },
+        {
+          "id": "m3",
+          "name": "천혜향 풋귤 에이드",
+          "price": "7,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1307726606"
+      ],
+      "kakaoPlaceId": "1307726606",
+      "placeUrl": "https://place.map.kakao.com/1307726606",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1307726606",
+          "publishedAt": "2025-09-20 22:36:49"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_8db10578a23bbadc-row-2216",
+      "name": "모카다방",
+      "address": "제주특별자치도 서귀포시 남원읍 태신해안로 125",
+      "lat": 33.29215966328296,
+      "lng": 126.76137190651228,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "로얄크림커피",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노 (ICE)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m1",
+          "name": "아메리카노 (HOT)",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "플랫화이트 (HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "m3",
+          "name": "플랫화이트 (ICE)",
+          "price": "7,000원"
+        },
+        {
+          "id": "m4",
+          "name": "카푸라떼 (HOT)",
+          "price": "7,000원"
+        },
+        {
+          "id": "m5",
+          "name": "카푸라떼 (ICE)",
+          "price": "7,500원"
+        },
+        {
+          "id": "m6",
+          "name": "바닐라라떼 (HOT)",
+          "price": "7,500원"
+        },
+        {
+          "id": "m7",
+          "name": "바닐라라떼 (ICE)",
+          "price": "8,000원"
+        },
+        {
+          "id": "m8",
+          "name": "코코넛커피 (HOT)",
+          "price": "7,500원"
+        },
+        {
+          "id": "m9",
+          "name": "코코넛커피 (ICE)",
+          "price": "8,000원"
+        },
+        {
+          "id": "ma",
+          "name": "감귤커피",
+          "price": "7,500원"
+        },
+        {
+          "id": "mb",
+          "name": "옛날모카 (HOT)",
+          "price": "7,500원"
+        },
+        {
+          "id": "mc",
+          "name": "옛날모카 (ICE)",
+          "price": "8,000원"
+        },
+        {
+          "id": "md",
+          "name": "핸드드립 (HOT)",
+          "price": "8,500원"
+        },
+        {
+          "id": "me",
+          "name": "핸드드립 (ICE)",
+          "price": "9,000원"
+        },
+        {
+          "id": "mf",
+          "name": "초코 (HOT)",
+          "price": "7,500원"
+        },
+        {
+          "id": "mg",
+          "name": "초코 (ICE)",
+          "price": "8,000원"
+        },
+        {
+          "id": "mh",
+          "name": "유기농청귤에이드",
+          "price": "7,000원"
+        },
+        {
+          "id": "mi",
+          "name": "제주레몬에이드",
+          "price": "8,000원"
+        },
+        {
+          "id": "mj",
+          "name": "자몽에이드",
+          "price": "8,000원"
+        },
+        {
+          "id": "mk",
+          "name": "제주한라봉에이드",
+          "price": "8,000원"
+        },
+        {
+          "id": "ml",
+          "name": "가파도청보리미숫가루",
+          "price": "8,000원"
+        },
+        {
+          "id": "mm",
+          "name": "블루+라즈+크랜베리+수제요구르트",
+          "price": "8,000원"
+        },
+        {
+          "id": "mn",
+          "name": "애플망고스무디",
+          "price": "9,000원"
+        },
+        {
+          "id": "mo",
+          "name": "유기농청귤차",
+          "price": "6,000원"
+        },
+        {
+          "id": "mp",
+          "name": "유기농허브차",
+          "price": "7,000원"
+        },
+        {
+          "id": "mq",
+          "name": "제주레몬차",
+          "price": "7,000원"
+        },
+        {
+          "id": "mr",
+          "name": "유자차",
+          "price": "7,000원"
+        },
+        {
+          "id": "ms",
+          "name": "자몽차",
+          "price": "7,000원"
+        },
+        {
+          "id": "mt",
+          "name": "제주한라봉차",
+          "price": "7,000원"
+        },
+        {
+          "id": "mu",
+          "name": "짜이 (HOT)",
+          "price": "6,500원"
+        },
+        {
+          "id": "mv",
+          "name": "짜이 (ICE)",
+          "price": "7,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/27491731"
+      ],
+      "kakaoPlaceId": "27491731",
+      "placeUrl": "https://place.map.kakao.com/27491731",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/27491731",
+          "publishedAt": "2026-07-01 13:42:02"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_4d0581e9f16c08f2-row-1848",
+      "name": "무거버거",
+      "address": "제주특별자치도 제주시 조천읍 조함해안로 356 1층",
+      "lat": 33.5489806170197,
+      "lng": 126.65506769580757,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "당근버거, 시금치버거, 마늘버거",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "당근버거",
+          "price": "11,500원"
+        },
+        {
+          "id": "m1",
+          "name": "마늘버거",
+          "price": "11,500원"
+        },
+        {
+          "id": "m2",
+          "name": "시금치버거",
+          "price": "11,500원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1118892834"
+      ],
+      "kakaoPlaceId": "1118892834",
+      "placeUrl": "https://place.map.kakao.com/1118892834",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1118892834",
+          "publishedAt": "2025-12-12 23:49:38"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_8105d02282c504cc-row-2601",
+      "name": "미쁜제과",
+      "address": "제주특별자치도 서귀포시 대정읍 도원남로 16",
+      "lat": 33.26916011606014,
+      "lng": 126.18005964084209,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "크림커피, 소금빵",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "미쁜크림커피",
+          "price": "7,500원"
+        },
+        {
+          "id": "m1",
+          "name": "아메리카노",
+          "price": "6,000원"
+        },
+        {
+          "id": "m2",
+          "name": "카페라떼",
+          "price": "6,500원"
+        },
+        {
+          "id": "m3",
+          "name": "오리지널밀크티",
+          "price": "8,000원"
+        },
+        {
+          "id": "m4",
+          "name": "얼그레이밀크티",
+          "price": "8,000원"
+        },
+        {
+          "id": "m5",
+          "name": "카라멜라떼",
+          "price": "7,000원"
+        },
+        {
+          "id": "m6",
+          "name": "에스프레소",
+          "price": "6,000원"
+        },
+        {
+          "id": "m7",
+          "name": "카푸치노",
+          "price": "6,500원"
+        },
+        {
+          "id": "m8",
+          "name": "플랫화이트",
+          "price": "6,500원"
+        },
+        {
+          "id": "m9",
+          "name": "바닐라빈라떼",
+          "price": "7,000원"
+        },
+        {
+          "id": "ma",
+          "name": "카페모카",
+          "price": "7,000원"
+        },
+        {
+          "id": "mb",
+          "name": "아포가토",
+          "price": "8,000원"
+        },
+        {
+          "id": "mc",
+          "name": "정직한 우유 아이스크림",
+          "price": "6,000원"
+        },
+        {
+          "id": "md",
+          "name": "초코라떼",
+          "price": "8,000원"
+        },
+        {
+          "id": "me",
+          "name": "제주 말차라떼",
+          "price": "8,000원"
+        },
+        {
+          "id": "mf",
+          "name": "흑임자우유",
+          "price": "8,000원"
+        },
+        {
+          "id": "mg",
+          "name": "제주 당근사과주스",
+          "price": "8,000원"
+        },
+        {
+          "id": "mh",
+          "name": "제주 감귤주스",
+          "price": "8,000원"
+        },
+        {
+          "id": "mi",
+          "name": "아인쑥페너",
+          "price": "7,500원"
+        },
+        {
+          "id": "mj",
+          "name": "자몽/레몬차",
+          "price": "7,000원"
+        },
+        {
+          "id": "mk",
+          "name": "노들 얼그레이/레모니 우롱/블랙 유주/베러 댄 초코",
+          "price": "7,000원"
+        },
+        {
+          "id": "ml",
+          "name": "자동/레몬/패션후르츠에이드",
+          "price": "8,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/28741599"
+      ],
+      "kakaoPlaceId": "28741599",
+      "placeUrl": "https://place.map.kakao.com/28741599",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/28741599",
+          "publishedAt": "2026-09-03 15:33:55"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_dae6f2579eb273e2-row-2197",
+      "name": "미스칠",
+      "address": "제주특별자치도 제주시 일주서로 7831 1층",
+      "lat": 33.49391653204378,
+      "lng": 126.48335910949173,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "전복돌솥밥, 돔베고기",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "순살갈치조림(2인)",
+          "price": "40,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "미스칠 특선 (2인)",
+          "price": "60,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m2",
+          "name": "돔베고기",
+          "price": "20,000원"
+        },
+        {
+          "id": "m3",
+          "name": "전복돌솥밥",
+          "price": "15,000원"
+        },
+        {
+          "id": "m4",
+          "name": "미스칠 정식(2인)",
+          "price": "40,000원"
+        },
+        {
+          "id": "m5",
+          "name": "갈치한상차림 (2인)",
+          "price": "100,000원"
+        },
+        {
+          "id": "m6",
+          "name": "전복뚝배기정식 (2인)",
+          "price": "50,000원"
+        },
+        {
+          "id": "m7",
+          "name": "갈치구이정식 (2인)",
+          "price": "70,000원"
+        },
+        {
+          "id": "m8",
+          "name": "전복구이(4미)",
+          "price": "20,000원"
+        },
+        {
+          "id": "m9",
+          "name": "전복뚝배기",
+          "price": "15,000원"
+        },
+        {
+          "id": "ma",
+          "name": "전복죽",
+          "price": "15,000원"
+        },
+        {
+          "id": "mb",
+          "name": "성게미역국",
+          "price": "14,000원"
+        },
+        {
+          "id": "mc",
+          "name": "고등어구이",
+          "price": "15,000원"
+        },
+        {
+          "id": "md",
+          "name": "수제(手製) 제철 반찬 6종"
+        },
+        {
+          "id": "me",
+          "name": "🅿️무료주차"
+        },
+        {
+          "id": "mf",
+          "name": "옥돔구이",
+          "price": "25,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/182376522"
+      ],
+      "kakaoPlaceId": "182376522",
+      "placeUrl": "https://place.map.kakao.com/182376522",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/182376522",
+          "publishedAt": "2026-09-11 22:31:29"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_c7c50e33c2445583-row-1911",
+      "name": "미스틱3도",
+      "address": "제주특별자치도 제주시 1100로 2894-49 1,2층",
+      "lat": 33.4499469799328,
+      "lng": 126.48755640801852,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "수제그래놀라요거트, 제주구좌당근케이크, 에그타르트",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "녹차새순한라봉아이스티",
+          "price": "7,000원",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "흑돼지잠봉마농",
+          "price": "8,500원",
+          "isSignature": true
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/263044374"
+      ],
+      "kakaoPlaceId": "263044374",
+      "placeUrl": "https://place.map.kakao.com/263044374",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/263044374",
+          "publishedAt": "2023-07-17 11:32:01"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_cb0fe539506ac089-row-975",
+      "name": "미엘드세화",
+      "address": "제주특별자치도 제주시 구좌읍 해맞이해안로 1464",
+      "lat": 33.52452153130496,
+      "lng": 126.8618417501754,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "미엘커피, 당근케이크, 생크림케이크",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "미엘커피",
+          "price": "6,500원"
+        },
+        {
+          "id": "m1",
+          "name": "미엘라떼",
+          "price": "6,500원"
+        },
+        {
+          "id": "m2",
+          "name": "에스프레소",
+          "price": "5,000원"
+        },
+        {
+          "id": "m3",
+          "name": "아메리카노",
+          "price": "5,000원"
+        },
+        {
+          "id": "m4",
+          "name": "카푸치노",
+          "price": "5,500원"
+        },
+        {
+          "id": "m5",
+          "name": "카페라떼",
+          "price": "5,500원"
+        },
+        {
+          "id": "m6",
+          "name": "카라멜마끼아토",
+          "price": "6,000원"
+        },
+        {
+          "id": "m7",
+          "name": "카페모카",
+          "price": "6,000원"
+        },
+        {
+          "id": "m8",
+          "name": "얼그레이",
+          "price": "6,000원"
+        },
+        {
+          "id": "m9",
+          "name": "카모마일",
+          "price": "5,500원"
+        },
+        {
+          "id": "ma",
+          "name": "미엘밀크티",
+          "price": "6,000원"
+        },
+        {
+          "id": "mb",
+          "name": "진저티",
+          "price": "6,500원"
+        },
+        {
+          "id": "mc",
+          "name": "오미자한라봉차",
+          "price": "6,500원"
+        },
+        {
+          "id": "md",
+          "name": "오미자한라봉에이드",
+          "price": "7,000원"
+        },
+        {
+          "id": "me",
+          "name": "딸기라테",
+          "price": "7,000원"
+        },
+        {
+          "id": "mf",
+          "name": "당근쥬스",
+          "price": "8,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/25161778"
+      ],
+      "kakaoPlaceId": "25161778",
+      "placeUrl": "https://place.map.kakao.com/25161778",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/25161778",
+          "publishedAt": "2025-07-07 20:31:56"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_25b6be698fb5aee6-row-2685",
+      "name": "바다보는날",
+      "address": "제주특별자치도 제주시 애월읍 애월해안로 722",
+      "lat": 33.48390819174112,
+      "lng": 126.37801465430711,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "해물듬뿍라면, 문어전복라면",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "전복해물라면",
+          "price": "13,900원"
+        },
+        {
+          "id": "m1",
+          "name": "해물듬뿍라면",
+          "price": "9,900원"
+        },
+        {
+          "id": "m2",
+          "name": "문어전복라면(2인)",
+          "price": "31,800원"
+        },
+        {
+          "id": "m3",
+          "name": "눈꽃치즈돈까스",
+          "price": "15,900원"
+        },
+        {
+          "id": "m4",
+          "name": "한치튀김(당일한정)",
+          "price": "18,900원"
+        },
+        {
+          "id": "m5",
+          "name": "통한치라면",
+          "price": "15,900원"
+        },
+        {
+          "id": "m6",
+          "name": "수제등심돈까스",
+          "price": "11,900원"
+        },
+        {
+          "id": "m7",
+          "name": "눈꽃등심 반반돈까스",
+          "price": "15,900원"
+        },
+        {
+          "id": "m8",
+          "name": "추억의도시락",
+          "price": "6,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1099481075"
+      ],
+      "kakaoPlaceId": "1099481075",
+      "placeUrl": "https://place.map.kakao.com/1099481075",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1099481075",
+          "publishedAt": "2026-06-25 18:38:15"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_b49b51c096344eba-row-2335",
+      "name": "바당국수",
+      "address": "제주특별자치도 서귀포시 중앙로48번길 43 1층",
+      "lat": 33.25034613668899,
+      "lng": 126.56566864437346,
+      "region": "제주특별자치도 서귀포시",
+      "category": "음식점",
+      "representativeMenu": "고기국수",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "고기국수",
+          "price": "9,000원"
+        },
+        {
+          "id": "m1",
+          "name": "멸치국수",
+          "price": "7,000원"
+        },
+        {
+          "id": "m2",
+          "name": "비빔국수",
+          "price": "8,000원"
+        },
+        {
+          "id": "m3",
+          "name": "순대따로국밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "m4",
+          "name": "돼지따로국밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "m5",
+          "name": "내장따로국밥",
+          "price": "9,000원"
+        },
+        {
+          "id": "m6",
+          "name": "열무국수",
+          "price": "8,000원"
+        },
+        {
+          "id": "m7",
+          "name": "콩국수",
+          "price": "9,000원"
+        },
+        {
+          "id": "m8",
+          "name": "물냉면",
+          "price": "8,000원"
+        },
+        {
+          "id": "m9",
+          "name": "비빔냉면",
+          "price": "8,000원"
+        },
+        {
+          "id": "ma",
+          "name": "순대,내장전골(소)",
+          "price": "20,000원"
+        },
+        {
+          "id": "mb",
+          "name": "순대,내장전골(대)",
+          "price": "28,000원"
+        },
+        {
+          "id": "mc",
+          "name": "모듬순대",
+          "price": "20,000원"
+        },
+        {
+          "id": "md",
+          "name": "돔베고기(소)",
+          "price": "20,000원"
+        },
+        {
+          "id": "me",
+          "name": "돔베고기(대)",
+          "price": "30,000원"
+        },
+        {
+          "id": "mf",
+          "name": "머릿고기",
+          "price": "20,000원"
+        },
+        {
+          "id": "mg",
+          "name": "아강발",
+          "price": "20,000원"
+        },
+        {
+          "id": "mh",
+          "name": "물만두(소)",
+          "price": "8,000원"
+        },
+        {
+          "id": "mi",
+          "name": "물만두(대)",
+          "price": "13,000원"
+        },
+        {
+          "id": "mj",
+          "name": "옥돔구이",
+          "price": "18,000원"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1701981130"
+      ],
+      "kakaoPlaceId": "1701981130",
+      "placeUrl": "https://place.map.kakao.com/1701981130",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1701981130",
+          "publishedAt": "2026-06-23 13:42:28"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_f298085332c6ac29-row-2023",
+      "name": "블루메베이글",
+      "address": "제주특별자치도 제주시 가령로4길 3 1층",
+      "lat": 33.49671411994831,
+      "lng": 126.53309746046264,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "베이글",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "음료류"
+        },
+        {
+          "id": "m1",
+          "name": "베이글류"
+        },
+        {
+          "id": "m2",
+          "name": "크림치즈류"
+        },
+        {
+          "id": "m3",
+          "name": "샌드위치류"
+        },
+        {
+          "id": "m4",
+          "name": "수프류"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/427370828"
+      ],
+      "kakaoPlaceId": "427370828",
+      "placeUrl": "https://place.map.kakao.com/427370828",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/427370828",
+          "publishedAt": "2024-11-28 20:35:30"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_cefa6f0e4905ca65-row-1657",
+      "name": "외도339",
+      "address": "제주특별자치도 제주시 일주서로 7345 2층",
+      "lat": 33.49374090953917,
+      "lng": 126.43170885723059,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "바닐라빈라떼, 청귤청에이드, 바밤바밀크티",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "아메리카노"
+        },
+        {
+          "id": "m1",
+          "name": "카페라떼"
+        },
+        {
+          "id": "m2",
+          "name": "돌체라떼"
+        },
+        {
+          "id": "m3",
+          "name": "카푸치노"
+        },
+        {
+          "id": "m4",
+          "name": "콜드브루"
+        },
+        {
+          "id": "m5",
+          "name": "바닐라빈라떼"
+        },
+        {
+          "id": "m6",
+          "name": "캐모마일"
+        },
+        {
+          "id": "m7",
+          "name": "페퍼민트"
+        },
+        {
+          "id": "m8",
+          "name": "자몽차"
+        },
+        {
+          "id": "m9",
+          "name": "청귤차"
+        },
+        {
+          "id": "ma",
+          "name": "생강차"
+        },
+        {
+          "id": "mb",
+          "name": "유기농캐모마일"
+        },
+        {
+          "id": "mc",
+          "name": "유기농페퍼민트"
+        },
+        {
+          "id": "md",
+          "name": "수제자몽차"
+        },
+        {
+          "id": "me",
+          "name": "제주말차라떼"
+        },
+        {
+          "id": "mf",
+          "name": "로열밀크티"
+        },
+        {
+          "id": "mg",
+          "name": "리얼초코우유"
+        },
+        {
+          "id": "mh",
+          "name": "딸기우유"
+        },
+        {
+          "id": "mi",
+          "name": "청귤에이드"
+        },
+        {
+          "id": "mj",
+          "name": "자몽에이드"
+        },
+        {
+          "id": "mk",
+          "name": "석류체리에이드"
+        },
+        {
+          "id": "ml",
+          "name": "패션유자에이드"
+        },
+        {
+          "id": "mm",
+          "name": "요거트스무디"
+        },
+        {
+          "id": "mn",
+          "name": "백향과에이드"
+        },
+        {
+          "id": "mo",
+          "name": "복숭아아이스티"
+        },
+        {
+          "id": "mp",
+          "name": "한라봉주스"
+        },
+        {
+          "id": "mq",
+          "name": "라테"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1003524606"
+      ],
+      "kakaoPlaceId": "1003524606",
+      "placeUrl": "https://place.map.kakao.com/1003524606",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1003524606",
+          "publishedAt": "2026-08-31 02:14:22"
+        }
+      ]
+    },
+    {
+      "id": "travel_jeju-bite_64e42a3f81562fba-row-1788",
+      "name": "커피템플",
+      "address": "제주특별자치도 제주시 영평길 269 1층",
+      "lat": 33.478142181622474,
+      "lng": 126.5702375667947,
+      "region": "제주특별자치도 제주시",
+      "category": "음식점",
+      "representativeMenu": "텐저린카푸치노, 텐저린라떼, 슈퍼클린에스프레소",
+      "menus": [
+        {
+          "id": "m0",
+          "name": "슈퍼클린에스프레소",
+          "isSignature": true
+        },
+        {
+          "id": "m1",
+          "name": "핸드드립"
+        },
+        {
+          "id": "m2",
+          "name": "아메리카노"
+        },
+        {
+          "id": "m3",
+          "name": "카페라떼"
+        }
+      ],
+      "imageUrl": "",
+      "phone": "",
+      "operationState": "unknown",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/99092488"
+      ],
+      "kakaoPlaceId": "99092488",
+      "placeUrl": "https://place.map.kakao.com/99092488",
+      "menuPriceVerifiedAt": "2026-09-20",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/99092488",
+          "publishedAt": "2024-06-08 23:00:36"
+        }
+      ]
+    },
+    {
+      "id": "topic_chureupkyeon_13",
+      "name": "신흥갈비식육점",
+      "address": "부산 사상구 새벽로167번길 35 1층",
+      "lat": 35.15632861143853,
+      "lng": 128.98124282966876,
+      "category": "음식점",
+      "region": "부산 사상구",
+      "representativeMenu": "소고기 / 삼겹살",
+      "imageUrl": "",
+      "kakaoPlaceId": "16239332",
+      "placeUrl": "https://place.map.kakao.com/16239332",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-20",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/16239332"
+      ],
+      "operationVerifiedAt": "2026-09-20",
+      "operationSourceUrl": "https://place.map.kakao.com/16239332"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_12",
+      "name": "남부식당",
+      "address": "부산 남구 수영로 346 1층",
+      "lat": 35.13864861315113,
+      "lng": 129.10346868288966,
+      "category": "음식점",
+      "region": "부산 남구",
+      "representativeMenu": "",
+      "imageUrl": "",
+      "kakaoPlaceId": "16840279",
+      "placeUrl": "https://place.map.kakao.com/16840279",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/16840279"
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/16840279"
+    },
+    {
+      "id": "topic_chureupkyeon_20260921_13",
+      "name": "더채움김밥",
+      "address": "부산 연제구 거제대로214번길 54 1층",
+      "lat": 35.185894273613215,
+      "lng": 129.07527269378247,
+      "category": "김밥",
+      "region": "부산 연제구",
+      "representativeMenu": "",
+      "imageUrl": "",
+      "kakaoPlaceId": "558899353",
+      "placeUrl": "https://place.map.kakao.com/558899353",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/558899353"
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/558899353"
+    },
+    {
+      "id": "topic_jeju-eddy_20260921_16",
+      "name": "파뷔노파스타바",
+      "address": "제주특별자치도 제주시 신성로12길 2 1층",
+      "lat": 33.49664517608317,
+      "lng": 126.53012346407111,
+      "category": "파스타",
+      "region": "제주특별자치도 제주시",
+      "representativeMenu": "",
+      "imageUrl": "",
+      "kakaoPlaceId": "2077860665",
+      "placeUrl": "https://place.map.kakao.com/2077860665",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/2077860665"
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/2077860665"
+    },
+    {
+      "id": "topic_life-master_20260921_3",
+      "name": "꽁띠꽁띠뉴",
+      "address": "부산 해운대구 센텀중앙로 145 더샵센텀파크1차아파트 상가3동 112,114호",
+      "lat": 35.17675857681747,
+      "lng": 129.12359153829192,
+      "category": "베이커리",
+      "region": "부산 해운대구",
+      "representativeMenu": "",
+      "imageUrl": "",
+      "kakaoPlaceId": "1707743242",
+      "placeUrl": "https://place.map.kakao.com/1707743242",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1707743242"
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/1707743242"
+    },
+    {
+      "id": "topic_life-master_20260921_28",
+      "name": "피넛빵앗간",
+      "address": "부산 사상구 사상로148번길 11 1층",
+      "lat": 35.15954024410837,
+      "lng": 128.9880715861995,
+      "category": "베이커리",
+      "region": "부산 사상구",
+      "representativeMenu": "명란소금빵 / 기본소금빵 / 앙버터소금빵",
+      "imageUrl": "",
+      "kakaoPlaceId": "1585286643",
+      "placeUrl": "https://place.map.kakao.com/1585286643",
+      "operationState": "operating",
+      "locationVerifiedAt": "2026-09-21",
+      "locationSourceUrls": [
+        "https://place.map.kakao.com/1585286643"
+      ],
+      "menus": [
+        {
+          "id": "m0",
+          "name": "명란소금빵"
+        },
+        {
+          "id": "m1",
+          "name": "기본소금빵"
+        },
+        {
+          "id": "m2",
+          "name": "앙버터소금빵"
+        },
+        {
+          "id": "m3",
+          "name": "앙버터"
+        },
+        {
+          "id": "m4",
+          "name": "찹쌀떡"
+        }
+      ],
+      "menuPriceVerifiedAt": "2026-09-21T00:22:39.795Z",
+      "menuPriceSources": [
+        {
+          "label": "카카오지도 공개 메뉴",
+          "url": "https://place.map.kakao.com/1585286643",
+          "publishedAt": "2025-08-23 22:50:12"
+        }
+      ],
+      "operationVerifiedAt": "2026-09-21",
+      "operationSourceUrl": "https://place.map.kakao.com/1585286643"
+    }
+  ]
+}

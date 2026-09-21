@@ -1,0 +1,5544 @@
+{
+  "topic_enrichment_baekjong-wok_b8c94b6558fa": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/8204729"
+    ],
+    "phone": "064-767-2425",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복물회",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "한치물회",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "고등어구이",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "홍해삼물회",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "뿔소라물회",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "자리물회",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "활한치",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "전복+한치",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "전복+뿔소라",
+        "price": "13,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "전복+홍해삼+뿔소라",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "전복덮밥",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "한치덮밥",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "전복죽",
+        "price": "13,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/8204729",
+        "publishedAt": "2026-01-08"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "sikgaek-baekban-trip_restaurant_107": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/11486940"
+    ],
+    "phone": "064-762-3620",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복뚝배기 (백반)",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "갈치구이",
+        "price": "60,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "갈치조림",
+        "price": "60,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "특 전복뚝배기(백반)",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "옥돔구이(중)",
+        "price": "60,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "자리물회(백반)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "한치물회(백반)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "전복구이",
+        "price": "55,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "고등어구이",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "고등어조림",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "돼지고기볶음",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "한치볶음",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "자리회무침",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "성게미역국 (백반)",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "옥돔미역국 (백반)",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "갈치국 (백반)",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "김치찌개 (백반)",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "순두부 (백반)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "옥돔구이(대)",
+        "price": "70,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "전복죽",
+        "price": "16,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/11486940",
+        "publishedAt": "2026-07-21"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "sikgaek-baekban-trip_restaurant_110": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/9982608"
+    ],
+    "phone": "064-787-3827",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복문어흑돼지두르치기정식(1인)",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "제주은갈치조림정식(1인)",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "순살갈치조림정식(1인)",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "제주흑돼지오겹살구이(1인)",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "묵은지고등어조림정식(1인)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "주물럭정식",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "전복뚝배기",
+        "price": "17,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "성게미역국",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "통갈치구이",
+        "price": "69,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "옥돔구이",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "토막갈치구이",
+        "price": "36,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/9982608",
+        "publishedAt": "2026-09-11"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "sikgaek-baekban-trip_restaurant_142": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/12501703"
+    ],
+    "phone": "064-763-0399",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "흑돼지(600g)",
+        "price": "60,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "백돼지(600g)",
+        "price": "48,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "흑돼지 절반(300g)",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "백돼지 절반(300g)",
+        "price": "24,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/12501703",
+        "publishedAt": "2026-01-08"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "sikgaek-baekban-trip_restaurant_334": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/10206535"
+    ]
+  },
+  "wednesday-gourmet_restaurant_097": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/8849564"
+    ],
+    "lat": 35.14650004946178,
+    "lng": 129.1106880798862,
+    "menus": [
+      {
+        "id": "m0",
+        "name": "오징어튀김(1인분)",
+        "price": "4,100원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "떡볶이 (1인분)",
+        "price": "4,100원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "튀김어묵 A세트",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "튀김어묵 (1인분)",
+        "price": "3,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "국물어묵 (1인분)",
+        "price": "3,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "다리집 세트",
+        "price": "18,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "국물어묵 B세트",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "만두 (1인분)",
+        "price": "2,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "순대 (1인분)",
+        "price": "4,100원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "튀김순대(1인분)",
+        "price": "4,100원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "오징어튀김우동",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "오징어튀김다리면",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "비빔면",
+        "price": "7,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/8849564",
+        "publishedAt": "2025-08-20"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "wednesday-gourmet_restaurant_146": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/14608730"
+    ],
+    "menus": [
+      {
+        "id": "m0",
+        "name": "핸드드립",
+        "price": "6,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "카페라떼",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "카푸치노",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "마끼아또",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "카페모카",
+        "price": "6,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/14608730",
+        "publishedAt": "2022-01-03"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "wednesday-gourmet_restaurant_152": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/10777503"
+    ]
+  },
+  "topic_enrichment_ttoganjip_798ce32a7984": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/2090669998"
+    ],
+    "phone": "064-900-4582",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "치즈돈까스",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "붓가케우동",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "치즈돈까스 정식",
+        "price": "17,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "텐푸라 가케우동",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "텐푸라 붓가케 우동",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "생등심 돈까스 정식",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "카레 돈까스 정식",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "생등심 돈까스",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "카레우동",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "카레 돈까스",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "가케우동",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "민찌 제육덮밥",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "규니꾸 가케우동",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "텐동",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "우삼겹 덮밥",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "불고기 카레 덮밥",
+        "price": "10,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/2090669998",
+        "publishedAt": "2026-05-05"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "topic_enrichment_delicious-guys_96840343c391": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/26926399"
+    ],
+    "phone": "051-245-1878",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "유부전골",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "비빔당면",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "유부떡볶이",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "유부보따리우동",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "꼬지어묵탕",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "물떡 / 꼬지어묵",
+        "price": "1,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "냉모밀",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "눈꽃팥빙수",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "냉유부",
+        "price": "8,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/26926399",
+        "publishedAt": "2026-07-05"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "topic_enrichment_delicious-guys_f24d54f590b5": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/9415639"
+    ],
+    "phone": "051-467-4496",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "간짜장",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "삼선짬뽕",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "삼선볶음밥",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "찐만두 (소)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "오향장육 (소)",
+        "price": "28,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "짬뽕국물",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "해삼주자",
+        "price": "100,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "팔보채",
+        "price": "45,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "전가복",
+        "price": "100,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "깐풍기",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "마파두부",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "양장피",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "동파육",
+        "price": "35,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "고기튀김",
+        "price": "28,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "새우튀김",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "간풍게살",
+        "price": "150,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "사천탕수육",
+        "price": "28,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "잡탕밥",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "산술발",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "마파두부밥",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "게살볶음발",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "해삼송이",
+        "price": "180,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mm",
+        "name": "간풍새우",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mn",
+        "name": "유산슬",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mo",
+        "name": "탕수육",
+        "price": "28,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mp",
+        "name": "난자완스",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mq",
+        "name": "간짜장면",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mr",
+        "name": "짜장밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ms",
+        "name": "사천짜장",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mt",
+        "name": "짬뽕",
+        "price": "9,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/9415639",
+        "publishedAt": "2026-06-15"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "topic_enrichment_delicious-guys_558707d93165": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/10591316"
+    ],
+    "phone": "064-744-7942",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "각재기국",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "멜튀김",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "멜국",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "멜조림",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "각재기조림",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "돔베고기",
+        "price": "35,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "고등어구이",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "앞뱅디 육개장",
+        "price": "11,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/10591316",
+        "publishedAt": "2026-06-26"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "topic_enrichment_michelin-selected_7c46052878a7": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/468530675"
+    ],
+    "phone": "010-8543-3356",
+    "kakaoPlaceId": "468530675",
+    "placeUrl": "https://place.map.kakao.com/468530675",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "런치 오마카세",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "디너 오마카세",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/468530675",
+        "publishedAt": "2026-09-04"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_busan-bite_1591": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/21309418"
+    ],
+    "menus": [
+      {
+        "id": "m0",
+        "name": "유채(점심한정식)",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "동백(저녁한정식)",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/21309418",
+        "publishedAt": "2016-05-30"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_0d5d79e591fb2bcc-row-2478": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/2018722964"
+    ],
+    "phone": "064-782-9006",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "구운제주감자빵",
+        "price": "4,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "썬드라이드토마토치아바타",
+        "price": "4,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "제주토종흑보리사워도우",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "에스프레소 (HOT)",
+        "price": "3,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "아메리카노 (HOT)",
+        "price": "4,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "아메리카노 (ICE)",
+        "price": "4,300원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "카페라떼 (HOT)",
+        "price": "4,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카페라떼 (ICE)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "바닐라라떼 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "바닐라라떼 (ICE)",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "카페모카 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "카페모카 (ICE)",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "우유 (HOT)",
+        "price": "3,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "우유 (ICE)",
+        "price": "3,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "제주생딸기우유 (ICE) (계절메뉴)",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "초코라떼 (HOT)",
+        "price": "4,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "초코라떼 (ICE)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "푸른콩라떼 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "푸른콩라떼 (ICE)",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "제주당근주스 (ICE)",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "백향과 차 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "백향과 에이드 (ICE)",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mm",
+        "name": "풋귤차 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mn",
+        "name": "풋귤에이드 (ICE)",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mo",
+        "name": "제주유기농 호지차 (HOT)",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mp",
+        "name": "골든메달사과주스 (ICE)",
+        "price": "4,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mq",
+        "name": "와인 한잔 (레드,화이트)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mr",
+        "name": "위스키 한잔",
+        "price": "10,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/2018722964",
+        "publishedAt": "2026-09-07"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_27d3bd246b6e0b54-row-2615": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1942763932"
+    ],
+    "phone": "064-772-5577",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "갈치조림(1인)",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "통갈치구이",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "통갈치구이(대)",
+        "price": "70,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "통갈치구이(특)",
+        "price": "90,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "전복뚝배기",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "전복돌솥밥",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "전복죽",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "전복구이",
+        "price": "30,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1942763932",
+        "publishedAt": "2026-06-04"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_2ffbd861fa7e77a6-row-2553": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1914104398"
+    ],
+    "phone": "010-7373-2306",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "계절주스",
+        "price": "9,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "뀨울라떼 (Ice Only)",
+        "price": "8,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "만감이교차 (하귤 + 얼그레이)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "감따라떼 (직접 만든 감귤 바닐라빈 시럽)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "또똣(백차+시트러스가향)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "한라봉소르베",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "만감에이드",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카페라떼",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "귤-아(시트러스 아메리카노)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "당유자모히또 (무알콜)",
+        "price": "8,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1914104398",
+        "publishedAt": "2026-03-31"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_052fb6ecede4fee0-row-2548": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/892483223"
+    ],
+    "phone": "010-7916-9316",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "고사리커피",
+        "price": "6,500원",
+        "isSignature": true
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/892483223",
+        "publishedAt": "2022-07-14"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_a2cee4fc34d5d784-row-2130": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1528548685"
+    ],
+    "phone": "064-722-0402",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "고추짬뽕",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "탕수육(미니)",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "삼선짬뽕",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "우삼겹짬뽕",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "짜장면",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "칠리새우",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "탕수육(소)",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "탕수육(대)",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "칠리탕수육(대.소.미니)",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "냉우동(땅콩소스, 매콤소스 선택): 계절메뉴",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "굴짬뽕(백, 빨 선택): 계절메뉴",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1528548685",
+        "publishedAt": "2026-07-31"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_2e30ca1983d9fd51-row-1258": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/481425144"
+    ],
+    "phone": "0502-5550-0061",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "할매라떼",
+        "price": "7,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "옥수페너",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "소길에이드",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "아메리카노",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "말차라떼",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "밀크티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "청귤에이드",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "청귤차",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "에그타르트",
+        "price": "4,200원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "구운과자류",
+        "price": "3,600원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "츄러스휘낭시에",
+        "price": "3,600원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/481425144",
+        "publishedAt": "2026-08-26"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_b9bdd9f73c7e57e9-row-2268": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/16437841"
+    ],
+    "phone": "064-751-1777",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "소뼈해장국",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "해장국",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "내장탕",
+        "price": "11,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/16437841",
+        "publishedAt": "2025-07-12"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_6c3430f2cbfdaa3d-row-2449": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/877966090"
+    ],
+    "phone": "0503-7151-2104",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "파나마 게이샤",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "핸드드립(스페셜티원두)",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "원두(싱글오리진)",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "드립백 세트",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/877966090",
+        "publishedAt": "2025-06-26"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_9c5e592ee3b2346d-row-2513": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/26417963"
+    ],
+    "phone": "064-799-9242",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "특정식(1인분)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "정식(1인분)",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "해장국",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "순두부",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "된장찌개",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "김치찌개",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "흑도새기 뼈갈비(500g)",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "백도새기 오겹살(200g)",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "구이사이 양념갈비",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "냉면(물,비빔)",
+        "price": "7,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/26417963",
+        "publishedAt": "2023-08-30"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_46361d469559a347-row-2716": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/59334207"
+    ],
+    "phone": "010-3140-3121",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "여름방학(ICE)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "바질토스트",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "언젠가여름(ICE)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "아메리카노",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "카페라떼",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "카푸치노 (hot)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "바닐라라떼",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "마지막유채(HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "밀크티(ICE)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "유자차",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "레몬차",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "자몽차",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "루이보스차",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "캐모마일차",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "히비스커스차",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "어느덧겨울",
+        "price": "6,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/59334207",
+        "publishedAt": "2024-01-24"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_5dc5de41f39cb027-row-2498": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/184384827"
+    ],
+    "phone": "010-8900-2877",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "카페라떼",
+        "price": "6,300원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/184384827",
+        "publishedAt": "2024-08-23"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_e219eab661f5381c-row-707": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/18277817"
+    ],
+    "phone": "064-784-2128",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "활고등어회 삼합",
+        "price": "38,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "오늘새벽 은갈치회",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "그리운 한상차림(2인)",
+        "price": "80,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "바다 한상차림(2~3인)",
+        "price": "110,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "성산포 한상차림(3~4인)",
+        "price": "140,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "(아침/점심특선) 한치해장국",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "(아침/점심특선) 고등어 톳 돌솥밥",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "(아침/점심특선) 제철물회",
+        "price": "12,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/18277817",
+        "publishedAt": "2026-05-21"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_4d331d05a74905da-row-2609": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1782977249"
+    ],
+    "phone": "0503-7151-5074",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아보카도커피",
+        "price": "7,500원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "아보카도샌드위치",
+        "price": "12,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "아보카도티라미수",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "아보카도스무디",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "아보카도양말",
+        "price": "2,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "치킨스테이크샌드위치",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "아보카도초코",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "두쫀쿠",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "두바이와플",
+        "price": "11,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "아보카도쿠키",
+        "price": "3,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1782977249",
+        "publishedAt": "2026-02-27"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_73664b175a0305d1-row-1356": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/622958459"
+    ],
+    "phone": "064-792-2737",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "하와이안 해물찜 (2인기준)",
+        "price": "48,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "은갈치앤칩스",
+        "price": "21,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "달고기&칩스",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "하와이안 갈릭 쉬림프와 볶음밥",
+        "price": "13,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "하와이안 포케보올(연어)",
+        "price": "14,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "하와이안 포케보올(참치)",
+        "price": "15,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "한치&칩스",
+        "price": "21,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "은갈치&칩스",
+        "price": "21,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "코코넛쉬림프&칩스",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "연어&칩스",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "피쉬버거&칩스",
+        "price": "13,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "한치버거&칩스",
+        "price": "14,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "나쵸",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "핫윙버팔로윙&칩스",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "허니갈릭버터버팔로윙&칩스",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "생연어타코(2개)",
+        "price": "14,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "생참치타코(2개)",
+        "price": "15,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "크리미 쉬림프 스프와 바게트",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "stir-fried vegetables with rice",
+        "price": "12,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "vegetarian pike bowl",
+        "price": "12,900원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/622958459",
+        "publishedAt": "2026-01-02"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_69bc53dbb342fa48-row-2428": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/18311320"
+    ],
+    "phone": "064-799-4939",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "꽃밥정식",
+        "price": "15,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "삼색들깨수제비",
+        "price": "10,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "야채비빔밥",
+        "price": "10,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/18311320",
+        "publishedAt": "2026-02-02"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_813c63de6d892c5f-row-1759": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/10194791"
+    ],
+    "phone": "064-711-0221",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "나라왕돈까스",
+        "price": "10,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "반반왕돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "불타는왕돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "크림반반왕돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "프리미엄왕돈까스",
+        "price": "12,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "마라왕돈까스",
+        "price": "12,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "흑돼지왕돈까스",
+        "price": "13,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "치즈돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "고구마치즈돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "생선까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "함박스테이크",
+        "price": "12,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "카레라이스",
+        "price": "9,900원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "새콤쫄면",
+        "price": "7,900원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "크림스파게티",
+        "price": "10,900원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "마미트스파게티",
+        "price": "10,900원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/10194791",
+        "publishedAt": "2025-03-21"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_ed3632a62f977d11-row-2748": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1144524512"
+    ],
+    "phone": "064-722-0635",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "나이체라떼 (signature)",
+        "price": "6,500원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "아메리카노",
+        "price": "5,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "수제 바닐라 빈 라떼",
+        "price": "5,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "클라우드 카푸치노 (only hot)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "필터커피",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "에스프레소",
+        "price": "4,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "에스프레소 콘파냐",
+        "price": "4,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카페라떼",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "플랫화이트",
+        "price": "5,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1144524512",
+        "publishedAt": "2026-05-05"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_c74d93243dfbfd4c-row-2304": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/26883584"
+    ],
+    "phone": "064-739-0053",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "비빔냉면",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "제주산 성게 미역국",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "흑돼지 김치찌개",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "물냉면",
+        "price": "7,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/26883584",
+        "publishedAt": "2026-06-30"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_5edaa597c80f22ae-row-2262": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/8244466"
+    ],
+    "phone": "064-702-2588",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "콩국수(계절음식)",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "고기국수",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "멸치국수",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "멸고국수",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "비빔국수",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "수제비(2인이상)(계절음식)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "김밥",
+        "price": "4,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/8244466",
+        "publishedAt": "2026-06-09"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_6e9db15084e6a683-row-209": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/8874256"
+    ],
+    "phone": "064-784-9292",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "낭뜰정식 (1인)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "쌈채",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "고등어구이",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "해물버섯전",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "고기비빔밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "돌솥비빔밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "녹차들깨수제비",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "냄비우동",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "두부겉절이",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "콩국수",
+        "price": "9,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/8874256",
+        "publishedAt": "2026-03-27"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_86006dfd986e06cc-row-1941": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1525547515"
+    ],
+    "phone": "064-741-5050",
+    "menus": [
+      {
+        "id": "m2",
+        "name": "연탄빵",
+        "isSignature": false
+      },
+      {
+        "id": "m0",
+        "name": "노을리 에이드 (ice)",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "치즈 크림라떼",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "에스프레소",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "아메리카노 (HOT)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "카페라떼 (HOT)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카푸치노",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "바닐라빈라떼 (HOT)",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "아인슈페너",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "미숫가루라떼",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "초코라떼 (HOT)",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "한라봉에이드",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "자몽에이드",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "레몬에이드",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "우도땅콩소라빵",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "현무암크림치즈",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "햄치즈문어빵",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "노을리 아이스티",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "노을리 수제 밀크티 (HOT)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "한라봉차 (HOT)",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "청귤차 (HOT)",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "청귤에이드",
+        "price": "9,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1525547515",
+        "publishedAt": "2026-07-08"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_aa813c255fc2dad6-row-2544": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/17869257"
+    ],
+    "phone": "064-711-8090",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복뚝배기",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "보말성게국",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "활전복물회",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "활한치물회",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "한치물회(냉동)",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "자리물회",
+        "price": "18,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/17869257",
+        "publishedAt": "2026-08-28"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_1f8a1328b19b5b4e-row-2376": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1604993972"
+    ],
+    "phone": "064-738-9007",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복돌솥밥",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "순살갈치뚝배기",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "옥돔구이",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "접착뼈국",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "고사리육개장",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "전복뚝배기",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "고등어구이",
+        "price": "15,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1604993972",
+        "publishedAt": "2022-11-12"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_b5b4d796a98e942b-row-1838": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1654598093"
+    ],
+    "phone": "0507-1372-8918",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노",
+        "price": "5,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1654598093",
+        "publishedAt": "2026-09-11"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_52648c8c894f2152-row-2827": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1778659460"
+    ],
+    "menus": [
+      {
+        "id": "m0",
+        "name": "바스크치즈케이크",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "밀크티",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "아메리카노",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "카페라떼",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "바닐라라떼",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "밤바스크치즈케이크",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "단호박파이",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "페퍼민트티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "루이보스티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "체리향향홍차",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "청포도향홍차",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "제주감귤주스",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "초코",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "애플아이스티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "뱅쇼",
+        "price": "8,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1778659460",
+        "publishedAt": "2026-06-25"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_659cca7ed7c1c36c-row-1942": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1378746048"
+    ],
+    "phone": "064-738-8866",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "쉬림프 칵테일 / Shrimp Cocktail",
+        "price": "26,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "현무암 치킨 / Hyunmuam Chicken",
+        "price": "28,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "색달비치",
+        "price": "17,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "더클리프 피자 / The Cliff Pizza",
+        "price": "32,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "태국식 돼지고기 바질 덮밥 (팟 카파오 무쌉) / Pad Kapao Moosab",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "하와이안 쉬림프 라이스 / Hawaiian Shrimp Rice",
+        "price": "23,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "클리프 클럽버거 / Cliff Club Burger",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "제주바당",
+        "price": "17,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "피치블라썸",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "피나콜라다",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "바이올렛",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "클리프 모히또",
+        "price": "17,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1378746048",
+        "publishedAt": "2024-04-26"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_3330ca089121787a-row-2728": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/160318816"
+    ],
+    "phone": "0507-1486-1178",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노",
+        "price": "5,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/160318816",
+        "publishedAt": "2022-11-10"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_11fe917470f733f2-row-2432": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/15942374"
+    ],
+    "phone": "064-722-3142",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "제주향토음식상차림",
+        "price": "45,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "갈치조림 (소)",
+        "price": "29,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "돔베고기",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "한치구이",
+        "price": "25,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "성게미역국",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "전복해물뚝배기",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "전복물회",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "간장게장",
+        "price": "15,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/15942374",
+        "publishedAt": "2026-05-01"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_fe16bc98b52848b1-row-2340": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/27609941"
+    ],
+    "phone": "064-799-5458",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "생선카츠",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "서황카츠",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "안심카츠",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "샐러드우동",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "모듬카츠",
+        "price": "17,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/27609941",
+        "publishedAt": "2026-02-20"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_9b9d8c6f33d2ec03-row-1992": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/8268353"
+    ],
+    "phone": "064-753-0008",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "흑오겹세트(2인)",
+        "price": "57,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "돔베세트 2인세트",
+        "price": "56,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "스페셜돔베 2인세트",
+        "price": "62,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "흑오겹세트(3인)",
+        "price": "85,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "흑항정세트(2인)",
+        "price": "59,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "흑항정세트(3인)",
+        "price": "89,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "흑오겹살",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "특목살",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "특항정살",
+        "price": "23,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "흑가브리살",
+        "price": "23,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "물냉면",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "비빔냉면",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "된장찌개",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "볶음밥",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "계란찜",
+        "price": "4,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/8268353",
+        "publishedAt": "2025-12-05"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_692f1d22bb84010a-row-2746": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1936912017"
+    ],
+    "phone": "064-782-7200",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "제주바당 순살은갈치조림(1인)",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "고등어구이",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "볏짚훈연 제주바당 대물통갈치구이",
+        "price": "150,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "성게미역국",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "갈치물회",
+        "price": "17,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "전복물회",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "한치물회",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "해물뚝배기",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "고등어조림(1인)",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "볏짚훈연 제주바당 통갈치구이(소)",
+        "price": "38,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "볏짚훈연 제주바당 통갈치구이(대)",
+        "price": "95,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "활전복뚝배기",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "모둠물회",
+        "price": "35,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1936912017",
+        "publishedAt": "2026-07-22"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_b7371968d0b13864-row-2019": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/12663386"
+    ],
+    "phone": "064-733-5921",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "갈치회(접시)",
+        "price": "50,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "고등어회(접시)",
+        "price": "70,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "다금바리(한상)",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "알뜰코스(2인)",
+        "price": "110,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "C 코스요리(한상)",
+        "price": "130,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "B 코스요리(한상)",
+        "price": "160,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "A 코스요리(한상)",
+        "price": "180,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "특 코스요리(한상)",
+        "price": "200,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "고등어회+갈치회(접시)",
+        "price": "70,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "갯돔(한상)",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "딱새우회(접시)",
+        "price": "50,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "스페샬 코스요리(한상)",
+        "price": "250,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/12663386",
+        "publishedAt": "2026-03-10"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_24ab05a7c6da5926-row-2213": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/221479836"
+    ],
+    "phone": "070-8691-2016",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "두리둠비 순두부",
+        "price": "10,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "콩국수(여름메뉴)",
+        "price": "10,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "흑돼지순두부찌개",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "불고기순두부찌개",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "버섯순두부찌개",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "바지락 순두부찌개",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "전복순두부찌개",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "두부왕만두전골 (중)",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "두부왕만두김치전골 (중)",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "제주흑돼지두부삼합",
+        "price": "45,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "순두부세트",
+        "price": "19,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "김치순두부찌개",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "두부왕만두전골 (대)",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "두부왕만두김치전골 (대)",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "굴 순두부찌개(겨울메뉴)",
+        "price": "14,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/221479836",
+        "publishedAt": "2026-06-30"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_4e220aaf6e288933-row-2359": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1396572648"
+    ],
+    "phone": "064-782-9959",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노(HOT)",
+        "price": "5,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "카페라떼(HOT)",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "바닐라딥라떼(HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "카모마일(HOT)",
+        "price": "6,300원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "헤이즐넛라떼(HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "카라멜라떼(HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "돌체라떼(HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "제주말차라떼(HOT)",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "다크초코라떼(HOT)",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "홍차라떼(HOT)",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "매실에이드",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "제주한라봉에이드",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "자몽에이드",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "생과일토마토주스",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "제주한라봉샤베트",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "수제딸기라떼",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "협재 백년초티(HOT)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "오렌지 루이보스티(HOT)",
+        "price": "6,300원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "패션후르츠에이드",
+        "price": "7,300원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "수제레몬에이드",
+        "price": "7,300원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1396572648",
+        "publishedAt": "2026-06-30"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_8da66063b930e6e2-row-2427": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1335585931"
+    ],
+    "phone": "070-8900-0998",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "라떼",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "바닐라빈라떼",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "랜딩코코",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "제주아일랜드티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "트로피컬아이스티",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "수제청에이드",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "콜드브루",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "제주말차라떼",
+        "price": "6,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1335585931",
+        "publishedAt": "2023-10-26"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_e3a53de6dc59bc77-row-2623": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1406187011"
+    ],
+    "phone": "064-733-3001",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "제주무농약 레몬아이스크림",
+        "price": "9,800원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "제주찐레몬에이드",
+        "price": "6,800원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "레몬젤리만들기",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "제주댕유자에이드",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "제주한라봉에이드",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "제주레몬무스",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "레몬요거트스무디",
+        "price": "7,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "수제레몬차",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "아메리카노",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "카페라떼",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "바닐라라떼",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "제주청귤귤차",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "제주한라봉차",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "제주댕유자차",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "제주영귤차",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "제주청귤에이드",
+        "price": "6,800원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "제주영귤에이드",
+        "price": "7,800원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "제주100% 당근착즙",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "레몬블랙티",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "초코라떼",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "레몬수확&청만들기",
+        "price": "30,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1406187011",
+        "publishedAt": "2026-02-02"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_d03919e7f58f1604-row-2389": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1658038483"
+    ],
+    "phone": "064-764-8883",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "비프 버거 세트",
+        "price": "20,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "반반피자",
+        "price": "34,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "흑돼지버거 세트",
+        "price": "18,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "소시지&감자튀김",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "쉬림프 버거 세트",
+        "price": "22,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "피자",
+        "price": "32,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "굴라쉬",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "시저 샐러드",
+        "price": "14,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1658038483",
+        "publishedAt": "2026-06-29"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_b3f3374b43925ab6-row-2538": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1460787139"
+    ],
+    "phone": "010-6690-4379",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "수비드 비프 타르틴",
+        "price": "13,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "당근라페 타르틴(한정메뉴)",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "연어파테 타르틴",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "아보카도 타르틴",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "바게트 비프 샌드위치",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "감자수프",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "바게트 연어파테 샌드위치",
+        "price": "9,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "릴로 플레이트(2인분)",
+        "price": "29,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "토마토 치킨 스프",
+        "price": "12,900원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1460787139",
+        "publishedAt": "2026-04-21"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_a7ba62d26d7ddc75-row-2429": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1630447463"
+    ],
+    "phone": "0507-1372-0488",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "해물모듬장",
+        "price": "18,900원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "제주 황게 크림파스타",
+        "price": "19,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "마루나 돈카츠",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "고구마치즈고로케",
+        "price": "7,800원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1630447463",
+        "publishedAt": "2026-06-25"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_bd8022515bab4333-row-2360": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/522395014"
+    ],
+    "phone": "010-6605-0953",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "꼬수미라떼",
+        "price": "6,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "칠성라떼",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "치즈곶감말이",
+        "price": "4,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "오미자에이드",
+        "price": "6,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/522395014",
+        "publishedAt": "2023-04-04"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_1aed94476aae0c3c-row-1625": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/26463066"
+    ],
+    "phone": "064-799-3629",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "진토닉",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "보드카 토닉",
+        "price": "10,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "잭콕",
+        "price": "12,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "마티니",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "블랙러시안",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "피나콜라디",
+        "price": "12,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/26463066",
+        "publishedAt": "2026-06-29"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_a5ca0fcf48b9f411-row-2236": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1060504714"
+    ],
+    "phone": "010-9666-1812",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "BBQ야키소바",
+        "price": "16,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "돈카츠정식",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "왕새우튀김우동(9월부터개시)",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "텐자루소바",
+        "price": "12,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1060504714",
+        "publishedAt": "2023-07-27"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_33cfb194253289f0-row-344": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/27357866"
+    ],
+    "phone": "064-796-4544",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "떡볶이",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "짜장떡볶이(2인분)",
+        "price": "11,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "어묵튀김5ea추가",
+        "price": "1,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "2인세트",
+        "price": "33,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "3인세트",
+        "price": "43,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "4인세트",
+        "price": "49,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "1인세트",
+        "price": "17,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/27357866",
+        "publishedAt": "2026-03-26"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_6f60f316791f0683-row-2103": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1307726606"
+    ],
+    "phone": "010-5746-5316",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "한라산 까눌레",
+        "price": "4,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "제주 말차 까눌레",
+        "price": "4,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "모뉴에트 라떼 (ICE)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "천혜향 풋귤 에이드",
+        "price": "7,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1307726606",
+        "publishedAt": "2025-09-20"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_8db10578a23bbadc-row-2216": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/27491731"
+    ],
+    "phone": "064-764-8885",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노 (ICE)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "아메리카노 (HOT)",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "플랫화이트 (HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "플랫화이트 (ICE)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "카푸라떼 (HOT)",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "카푸라떼 (ICE)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "바닐라라떼 (HOT)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "바닐라라떼 (ICE)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "코코넛커피 (HOT)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "코코넛커피 (ICE)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "감귤커피",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "옛날모카 (HOT)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "옛날모카 (ICE)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "핸드드립 (HOT)",
+        "price": "8,500원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "핸드드립 (ICE)",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "초코 (HOT)",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "초코 (ICE)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "유기농청귤에이드",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "제주레몬에이드",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "자몽에이드",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "제주한라봉에이드",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "가파도청보리미숫가루",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mm",
+        "name": "블루+라즈+크랜베리+수제요구르트",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mn",
+        "name": "애플망고스무디",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mo",
+        "name": "유기농청귤차",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mp",
+        "name": "유기농허브차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mq",
+        "name": "제주레몬차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mr",
+        "name": "유자차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ms",
+        "name": "자몽차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mt",
+        "name": "제주한라봉차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mu",
+        "name": "짜이 (HOT)",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mv",
+        "name": "짜이 (ICE)",
+        "price": "7,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/27491731",
+        "publishedAt": "2026-07-01"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_4d0581e9f16c08f2-row-1848": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1118892834"
+    ],
+    "phone": "0502-5553-9487",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "당근버거",
+        "price": "11,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "마늘버거",
+        "price": "11,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "시금치버거",
+        "price": "11,500원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1118892834",
+        "publishedAt": "2025-12-12"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_8105d02282c504cc-row-2601": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/28741599"
+    ],
+    "phone": "070-8822-9212",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "미쁜크림커피",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "아메리카노",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "카페라떼",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "오리지널밀크티",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "얼그레이밀크티",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "카라멜라떼",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "에스프레소",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카푸치노",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "플랫화이트",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "바닐라빈라떼",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "카페모카",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "아포가토",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "정직한 우유 아이스크림",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "초코라떼",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "제주 말차라떼",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "흑임자우유",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "제주 당근사과주스",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "제주 감귤주스",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "아인쑥페너",
+        "price": "7,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "자몽/레몬차",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "노들 얼그레이/레모니 우롱/블랙 유주/베러 댄 초코",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "자동/레몬/패션후르츠에이드",
+        "price": "8,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/28741599",
+        "publishedAt": "2026-09-03"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_dae6f2579eb273e2-row-2197": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/182376522"
+    ],
+    "phone": "064-748-8007",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "순살갈치조림(2인)",
+        "price": "40,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "미스칠 특선 (2인)",
+        "price": "60,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m2",
+        "name": "돔베고기",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "전복돌솥밥",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "미스칠 정식(2인)",
+        "price": "40,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "갈치한상차림 (2인)",
+        "price": "100,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "전복뚝배기정식 (2인)",
+        "price": "50,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "갈치구이정식 (2인)",
+        "price": "70,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "전복구이(4미)",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "전복뚝배기",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "전복죽",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "성게미역국",
+        "price": "14,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "고등어구이",
+        "price": "15,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "수제(手製) 제철 반찬 6종",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "🅿️무료주차",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "옥돔구이",
+        "price": "25,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/182376522",
+        "publishedAt": "2026-09-11"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_c7c50e33c2445583-row-1911": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/263044374"
+    ],
+    "phone": "010-4827-0367",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "녹차새순한라봉아이스티",
+        "price": "7,000원",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "흑돼지잠봉마농",
+        "price": "8,500원",
+        "isSignature": true
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/263044374",
+        "publishedAt": "2023-07-17"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_cb0fe539506ac089-row-975": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/25161778"
+    ],
+    "phone": "064-782-6070",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "미엘커피",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "미엘라떼",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "에스프레소",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "아메리카노",
+        "price": "5,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "카푸치노",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "카페라떼",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "카라멜마끼아토",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "카페모카",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "얼그레이",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "카모마일",
+        "price": "5,500원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "미엘밀크티",
+        "price": "6,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "진저티",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "오미자한라봉차",
+        "price": "6,500원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "오미자한라봉에이드",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "딸기라테",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "당근쥬스",
+        "price": "8,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/25161778",
+        "publishedAt": "2025-07-07"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_25b6be698fb5aee6-row-2685": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1099481075"
+    ],
+    "phone": "0507-1352-7411",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "전복해물라면",
+        "price": "13,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "해물듬뿍라면",
+        "price": "9,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "문어전복라면(2인)",
+        "price": "31,800원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "눈꽃치즈돈까스",
+        "price": "15,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "한치튀김(당일한정)",
+        "price": "18,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "통한치라면",
+        "price": "15,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "수제등심돈까스",
+        "price": "11,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "눈꽃등심 반반돈까스",
+        "price": "15,900원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "추억의도시락",
+        "price": "6,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1099481075",
+        "publishedAt": "2026-06-25"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_b49b51c096344eba-row-2335": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1701981130"
+    ],
+    "menus": [
+      {
+        "id": "m0",
+        "name": "고기국수",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "멸치국수",
+        "price": "7,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "비빔국수",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "순대따로국밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "돼지따로국밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "내장따로국밥",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "열무국수",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "콩국수",
+        "price": "9,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "물냉면",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "비빔냉면",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "순대,내장전골(소)",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "순대,내장전골(대)",
+        "price": "28,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "모듬순대",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "돔베고기(소)",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "돔베고기(대)",
+        "price": "30,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "머릿고기",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "아강발",
+        "price": "20,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "물만두(소)",
+        "price": "8,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "물만두(대)",
+        "price": "13,000원",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "옥돔구이",
+        "price": "18,000원",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1701981130",
+        "publishedAt": "2026-06-23"
+      }
+    ],
+    "menuPriceStatus": "verified_priced",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_f298085332c6ac29-row-2023": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/427370828"
+    ],
+    "phone": "0507-1445-3444",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "음료류",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "베이글류",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "크림치즈류",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "샌드위치류",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "수프류",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/427370828",
+        "publishedAt": "2024-11-28"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_cefa6f0e4905ca65-row-1657": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1003524606"
+    ],
+    "menus": [
+      {
+        "id": "m0",
+        "name": "아메리카노",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "카페라떼",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "돌체라떼",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "카푸치노",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "콜드브루",
+        "isSignature": false
+      },
+      {
+        "id": "m5",
+        "name": "바닐라빈라떼",
+        "isSignature": false
+      },
+      {
+        "id": "m9",
+        "name": "청귤차",
+        "isSignature": false
+      },
+      {
+        "id": "ma",
+        "name": "생강차",
+        "isSignature": false
+      },
+      {
+        "id": "mb",
+        "name": "유기농캐모마일",
+        "isSignature": false
+      },
+      {
+        "id": "mc",
+        "name": "유기농페퍼민트",
+        "isSignature": false
+      },
+      {
+        "id": "m6",
+        "name": "캐모마일",
+        "isSignature": false
+      },
+      {
+        "id": "m7",
+        "name": "페퍼민트",
+        "isSignature": false
+      },
+      {
+        "id": "m8",
+        "name": "자몽차",
+        "isSignature": false
+      },
+      {
+        "id": "md",
+        "name": "수제자몽차",
+        "isSignature": false
+      },
+      {
+        "id": "me",
+        "name": "제주말차라떼",
+        "isSignature": false
+      },
+      {
+        "id": "mf",
+        "name": "로열밀크티",
+        "isSignature": false
+      },
+      {
+        "id": "mg",
+        "name": "리얼초코우유",
+        "isSignature": false
+      },
+      {
+        "id": "mh",
+        "name": "딸기우유",
+        "isSignature": false
+      },
+      {
+        "id": "travel_jeju-bite_cefa6f0e4905ca65-row-1657_researched_19",
+        "name": "초코우유",
+        "isSignature": false
+      },
+      {
+        "id": "mk",
+        "name": "석류체리에이드",
+        "isSignature": false
+      },
+      {
+        "id": "mj",
+        "name": "자몽에이드",
+        "isSignature": false
+      },
+      {
+        "id": "mi",
+        "name": "청귤에이드",
+        "isSignature": false
+      },
+      {
+        "id": "ml",
+        "name": "패션유자에이드",
+        "isSignature": false
+      },
+      {
+        "id": "mm",
+        "name": "요거트스무디",
+        "isSignature": false
+      },
+      {
+        "id": "mn",
+        "name": "백향과에이드",
+        "isSignature": false
+      },
+      {
+        "id": "mo",
+        "name": "복숭아아이스티",
+        "isSignature": false
+      },
+      {
+        "id": "mp",
+        "name": "한라봉주스",
+        "isSignature": false
+      },
+      {
+        "id": "mq",
+        "name": "라테",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1003524606",
+        "publishedAt": "2026-09-20"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "travel_jeju-bite_64e42a3f81562fba-row-1788": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/99092488"
+    ],
+    "phone": "070-8806-8051",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "슈퍼클린에스프레소",
+        "isSignature": true
+      },
+      {
+        "id": "m1",
+        "name": "핸드드립",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "아메리카노",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "카페라떼",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/99092488",
+        "publishedAt": "2024-06-08"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  },
+  "topic_chureupkyeon_13": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/16239332"
+    ],
+    "phone": "051-323-1854"
+  },
+  "topic_chureupkyeon_20260921_12": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/16840279"
+    ]
+  },
+  "topic_chureupkyeon_20260921_13": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/558899353"
+    ]
+  },
+  "topic_jeju-eddy_20260921_16": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/2077860665"
+    ],
+    "phone": "010-4126-5437"
+  },
+  "topic_life-master_20260921_3": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1707743242"
+    ],
+    "phone": "051-747-0244"
+  },
+  "topic_life-master_20260921_28": {
+    "locationVerifiedAt": "2026-09-21",
+    "locationSourceUrls": [
+      "https://place.map.kakao.com/1585286643"
+    ],
+    "phone": "010-5820-4057",
+    "menus": [
+      {
+        "id": "m0",
+        "name": "명란소금빵",
+        "isSignature": false
+      },
+      {
+        "id": "m1",
+        "name": "기본소금빵",
+        "isSignature": false
+      },
+      {
+        "id": "m2",
+        "name": "앙버터소금빵",
+        "isSignature": false
+      },
+      {
+        "id": "m3",
+        "name": "앙버터",
+        "isSignature": false
+      },
+      {
+        "id": "m4",
+        "name": "찹쌀떡",
+        "isSignature": false
+      }
+    ],
+    "menuPriceVerifiedAt": "2026-09-21",
+    "menuPriceSources": [
+      {
+        "label": "카카오지도 공개 메뉴 · 동일 지점 대조",
+        "url": "https://place.map.kakao.com/1585286643",
+        "publishedAt": "2025-08-23"
+      }
+    ],
+    "menuPriceStatus": "verified_menu_only",
+    "menuPriceNote": "동일 상호·주소의 공개 메뉴를 확인한 날짜입니다. 현장 가격·영업 여부를 보증하지 않으며, 공개되지 않은 금액은 추정하지 않았습니다."
+  }
+}

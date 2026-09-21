@@ -2,63 +2,63 @@
   "basis": "Sum of built JavaScript chunks and their gzip sizes, following static imports only; excludes CSS/images/third-party requests and is not a page-load-time measurement.",
   "entry": {
     "bytes": 418148,
-    "gzipBytes": 124504,
+    "gzipBytes": 124501,
     "chunks": [
       "index.html"
     ]
   },
   "home": {
     "bytes": 502769,
-    "gzipBytes": 155943,
+    "gzipBytes": 155948,
     "chunks": [
       "index.html",
       "src/pages/Home.tsx",
-      "_mapTopicShortcuts-t73bq10D.js",
-      "_FavoriteTopicDialog-CnGIgacZ.js",
-      "_dialog-CxzLw078.js",
-      "_SocialLoginButtons-wtTzyVfU.js",
+      "_mapTopicShortcuts-DO2pVFFy.js",
+      "_FavoriteTopicDialog-CuZczIke.js",
+      "_dialog-ROe7BQJ7.js",
+      "_SocialLoginButtons-CCPaDtOR.js",
       "_admin-mnj1OCXl.js",
       "_location-CK6B26uK.js",
-      "_seo-Cb7DmAvZ.js",
-      "_layout-dashboard-TgI-NkDE.js",
-      "_plus-C7XC117F.js",
-      "_trash-2-DrDOMiHo.js",
-      "_search-Cyawsbci.js",
-      "_map-pin-BmKGs4VE.js",
-      "_heart-BELxiQ6J.js",
-      "_message-circle-more-COCjXBt0.js",
-      "_star-BFBAEhu8.js"
+      "_seo-CfjhD-l5.js",
+      "_layout-dashboard-Ds9aHjZg.js",
+      "_plus-CFCd8dDv.js",
+      "_trash-2-D9Qm820Q.js",
+      "_search-wUMCJHUN.js",
+      "_map-pin-CDVN4rA4.js",
+      "_heart-C21lI7U0.js",
+      "_message-circle-more-C9ZkKEf4.js",
+      "_star-Ct8PMysf.js"
     ]
   },
   "map": {
     "bytes": 6377162,
-    "gzipBytes": 1080761,
+    "gzipBytes": 1080758,
     "chunks": [
       "index.html",
       "src/pages/SearchMap.tsx",
-      "_mapTopicShortcuts-t73bq10D.js",
-      "_RecommendationCard-B8A1I5j9.js",
-      "_HeartButton-a77J2SUK.js",
-      "_proxy-D8qbcOTF.js",
-      "_restaurantDirections-YUNBVAAx.js",
-      "_dialog-CxzLw078.js",
-      "_seo-Cb7DmAvZ.js",
-      "_instagram-DrnPug1M.js",
-      "_index-st1NNkbv.js",
-      "_map-pin-BmKGs4VE.js",
-      "_MonetizationSlot-Deiu2FZk.js",
+      "_mapTopicShortcuts-DO2pVFFy.js",
+      "_RecommendationCard-Bwf0RtWI.js",
+      "_HeartButton-26aAo7w6.js",
+      "_proxy-CrAMcYaS.js",
+      "_restaurantDirections-Bjat6Lut.js",
+      "_dialog-ROe7BQJ7.js",
+      "_seo-CfjhD-l5.js",
+      "_instagram-Bst0igNw.js",
+      "_index-D1x9i0rs.js",
+      "_map-pin-CDVN4rA4.js",
+      "_MonetizationSlot-DM5ZNT00.js",
       "_location-CK6B26uK.js",
       "_mapCollections-BAdNcYwV.js",
       "_naverMaps-DTFkV07Y.js",
-      "_arrow-left-CQkcevTD.js",
-      "_search-Cyawsbci.js"
+      "_arrow-left-Fpoap0Hk.js",
+      "_search-wUMCJHUN.js"
     ]
   },
   "catalog": {
     "bytes": 6137944,
-    "gzipBytes": 995581,
+    "gzipBytes": 995579,
     "chunks": [
-      "_index-st1NNkbv.js",
+      "_index-D1x9i0rs.js",
       "index.html"
     ]
   }

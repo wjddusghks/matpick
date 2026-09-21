@@ -1,10 +1,16 @@
 {
-  "aliasCount": 940,
+  "aliasCount": 941,
   "unresolved": [
     {
       "id": "baekjong_wok_restaurant_028",
       "name": "소문난원조조방낙지",
       "address": "부산 동래구 명륜로94번길 37",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_232",
+      "name": "범일빈대떡",
+      "address": "부산 동구 중앙대로 519",
       "candidates": []
     },
     {
@@ -2669,12 +2675,6 @@
       "id": "seoul-taste-100-2025-593",
       "name": "평양면옥",
       "address": "서울 중구 장충단로 207",
-      "candidates": []
-    },
-    {
-      "id": "seoul-taste-100-2025-660",
-      "name": "프릳츠 도화점",
-      "address": "서울 마포구 새창로2길 17",
       "candidates": []
     },
     {

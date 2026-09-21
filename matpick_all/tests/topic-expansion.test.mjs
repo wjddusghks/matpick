@@ -23,6 +23,12 @@ const enrichment = await read(
 const menuFollowup = await read(
   "client/src/data/generated/menu-price-followup.generated.json"
 );
+const searchExpansion = await read(
+  "client/src/data/generated/search-topic-expansion.generated.json"
+);
+const searchReport = await read(
+  "../source-data/topic-expansion-2026-09-21/report.json"
+);
 test("all ten researched topics open real collections, preserving old restaurant URLs", () => {
   assert.equal(report.topics.length, 10);
   for (const t of report.topics) {
@@ -30,7 +36,12 @@ test("all ten researched topics open real collections, preserving old restaurant
       data.sourceLinks.filter(l => l.sourceId === t.id).map(l => l.restaurantId)
     );
     assert.ok(t.published > 0, t.name);
-    assert.equal(linked.size, t.published, t.name);
+    assert.equal(
+      linked.size,
+      t.published +
+        (searchReport.topics.find(next => next.id === t.id)?.added || 0),
+      t.name
+    );
     assert.ok(
       shortcuts.mapTopicShortcuts.some(
         s => s.type === "source" && s.value === t.id
@@ -42,7 +53,10 @@ test("all ten researched topics open real collections, preserving old restaurant
       data.restaurants.some(v => v.id === r.id),
       `Changed existing ID: ${r.id}`
     );
-  assert.equal(data.restaurants.length, before.length + report.newRestaurants);
+  assert.equal(
+    data.restaurants.length,
+    before.length + report.newRestaurants + searchReport.newRestaurants
+  );
 });
 test("published candidates have source evidence, matching branches and current menu provenance", () => {
   for (const a of report.approved) {
@@ -72,9 +86,11 @@ test("published candidates have source evidence, matching branches and current m
         .sort((left, right) =>
           right.checkedAt.localeCompare(left.checkedAt)
         )[0];
-      const refreshed = menuFollowup[restaurant.id]?.menus
-        ? menuFollowup[restaurant.id]
-        : enrichment[restaurant.id];
+      const refreshed = searchExpansion.patches[restaurant.id]?.menus
+        ? searchExpansion.patches[restaurant.id]
+        : menuFollowup[restaurant.id]?.menus
+          ? menuFollowup[restaurant.id]
+          : enrichment[restaurant.id];
       const latestMenu = refreshed?.menus ? refreshed : null;
       assert.equal(
         restaurant.menuPriceVerifiedAt,
@@ -84,7 +100,9 @@ test("published candidates have source evidence, matching branches and current m
         restaurant.menuPriceVerifiedAt.slice(0, 10) >=
           newest.checkedAt.slice(0, 10)
       );
-      const expectedSources = latestMenu?.menuPriceSources || [{ url: result.place.placeUrl }];
+      const expectedSources = latestMenu?.menuPriceSources || [
+        { url: result.place.placeUrl },
+      ];
       for (const source of expectedSources)
         assert.ok(restaurant.menuPriceSources.some(s => s.url === source.url));
       assert.deepEqual(

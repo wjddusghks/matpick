@@ -2294,6 +2294,11 @@
       "permanent": true
     },
     {
+      "source": "/restaurant/seoul-taste-100-2025-660",
+      "destination": "/restaurant/topic_search_7269e600925b",
+      "permanent": true
+    },
+    {
       "source": "/restaurant/sikgaek-baekban-trip_restaurant_022",
       "destination": "/restaurant/topic_enrichment_baekjong-wok_6e898b7880a4",
       "permanent": true

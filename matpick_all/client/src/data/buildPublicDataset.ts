@@ -4,6 +4,7 @@ import existingDataEnrichment from "./generated/existing-data-enrichment.generat
 import menuPriceFollowup from "./generated/menu-price-followup.generated.json";
 import travelDiscovery from "./generated/travel-discovery.generated.json";
 import topicExpansion from "./generated/topic-expansion.generated.json";
+import searchTopicExpansion from "./generated/search-topic-expansion.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import restaurantExclusions from "./restaurant-exclusions.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
@@ -469,6 +470,7 @@ const dataset = filterDatasetForVisibleContent(
     travelDiscovery as SourceDataset,
     jeonhyunmooPlanDataset as SourceDataset,
     topicExpansion as SourceDataset,
+    searchTopicExpansion as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({
@@ -490,8 +492,15 @@ const normalizedDataset: MatpickDataSet = {
     ...(!restaurant.menus?.length
       ? (menuResearch as Record<string, Partial<Restaurant>>)[restaurant.id]
       : {}),
-    ...(existingDataEnrichment as Record<string, Partial<Restaurant>>)[restaurant.id],
-    ...(menuPriceFollowup as Record<string, Partial<Restaurant>>)[restaurant.id],
+    ...(existingDataEnrichment as Record<string, Partial<Restaurant>>)[
+      restaurant.id
+    ],
+    ...(menuPriceFollowup as Record<string, Partial<Restaurant>>)[
+      restaurant.id
+    ],
+    ...(searchTopicExpansion.patches as Record<string, Partial<Restaurant>>)[
+      restaurant.id
+    ],
     ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
       restaurant.id
     ],
@@ -543,6 +552,9 @@ export const publicDataset: MatpickDataSet = {
       restaurant;
     return {
       ...publicRestaurant,
+      // Six decimal places retain sub-metre map accuracy; keep source precision in research files.
+      lat: Number(restaurant.lat.toFixed(6)),
+      lng: Number(restaurant.lng.toFixed(6)),
       menus: restaurant.menus?.map((menu, index) => {
         const { isSignature, ...fields } = menu;
         return {

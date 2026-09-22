@@ -554,8 +554,12 @@ function buildSourceTopicDescription(source: Source, count: number) {
   return `${source.name}에 포함된 맛집 ${count}곳을 지역과 음식별로 한눈에 둘러보세요.`;
 }
 
-const typedDiscoveryTopicDefinitions =
-  discoveryTopicDefinitions as DiscoveryTopicDefinition[];
+const typedDiscoveryTopicDefinitions: DiscoveryTopicDefinition[] = [
+  ...(discoveryTopicDefinitions as DiscoveryTopicDefinition[]),
+  ...sources.filter(source => !discoveryTopicDefinitions.some(
+    definition => definition.kind === "source" && definition.targetId === source.id
+  )).map(source => ({ slug: source.id, kind: "source" as const, targetId: source.id })),
+];
 
 export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   .map<DiscoveryTopic | null>((definition) => {
@@ -607,22 +611,8 @@ export const discoveryTopics: DiscoveryTopic[] = typedDiscoveryTopicDefinitions
   })
   .filter((topic): topic is DiscoveryTopic => topic != null);
 
-const publicDiscoveryTopicSlugs = new Set([
-  "busan-bite",
-  "jeju-bite",
-  "travel-bite",
-  "ttoganjip",
-  "wednesday-gourmet",
-  "popular-restaurants",
-  "michelin",
-  "old-korean-100",
-  "baekjong-wok",
-  "sikgaek-baekban-trip",
-]);
-
 export const publicDiscoveryTopics: DiscoveryTopic[] = discoveryTopics.filter(
   (topic) =>
-    publicDiscoveryTopicSlugs.has(topic.slug) &&
     (topic.kind !== "source" || publicDataSourceIds.has(topic.targetId))
 );
 

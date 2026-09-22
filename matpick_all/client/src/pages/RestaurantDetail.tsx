@@ -27,6 +27,7 @@ import {
   getRestaurantMenuItems,
   getRestaurantMenuSummary,
   getSourceDisplayName,
+  getSourceLinksByRestaurant,
   getSourcesByRestaurant,
   getVisitsByRestaurant,
   type Restaurant,
@@ -42,6 +43,7 @@ import { summarizeReviews } from "@/lib/reviews";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import "./RestaurantDetail.css";
+import { describeRestaurantSource } from "@/lib/restaurantSources";
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
@@ -563,6 +565,15 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     </a>
                   </p>
                 ))}
+              {getSourceLinksByRestaurant(restaurant.id).filter(link => link.id.startsWith("census_") && /^https?:\/\//.test(link.sourceUrl || "")).map(link => {
+                const source = sources.find(source => source.id === link.sourceId);
+                if (!source) return null;
+                return <div key={link.id} className="mt-3 rounded-xl bg-[#faf5f7] p-3 text-xs leading-6 text-[#75656d]">
+                  <a href={link.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#a83c57] underline underline-offset-4">{getSourceDisplayName(source)} · {isEnglish ? "Original reference" : "소개 원문 보기"}</a>
+                  <span className="ml-2">{link.label}</span>
+                  <p>{source.id === "culinary-class-wars-chefs" ? describeRestaurantSource(source, restaurant.name, isEnglish).description : isEnglish ? "Historical feature; confirm current operation, menu and prices before visiting." : "소개 당시 기록입니다. 현재 영업·메뉴·가격은 방문 전 확인해 주세요."}</p>
+                </div>;
+              })}
               <p className="detail-small-note">
                 {isEnglish
                   ? "Select a source to explore its restaurant list."

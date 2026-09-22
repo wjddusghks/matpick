@@ -1,0 +1,24 @@
+[
+  {
+    "candidateId": "b2a89960cb45738d",
+    "restaurantId": "topic_enrichment_michelin-selected_85c37dcf69b1",
+    "topicRank": 9,
+    "sourceUrl": "https://www.youtube.com/watch?v=jx-UHsbPUQw",
+    "address": "서울 마포구 마포대로 186-6",
+    "identitySourceUrl": "https://guide.michelin.com/en/seoul-capital-area/kr-seoul/restaurant/jinmi-sikdang",
+    "checkedAt": "2026-09-22",
+    "note": "게시자 제목의 서울 마포 진미식당과 미쉐린 공식 상호·주소를 대조. 익산·용산의 동명 식당과 구분. 기존 마포 지점의 미쉐린 ID에만 연결하며 영업·현재 가격 검증으로 간주하지 않음."
+  },
+  {
+    "candidateId": "7c5401934f5bdcbf",
+    "restaurantId": "topic_enrichment_michelin-1-star_d1afa7a20b1a",
+    "topicRank": 10,
+    "sourceUrl": "https://chinese.visitkorea.or.kr/svc/contents/infoHtmlView.do?vcontsId=214937",
+    "publishedAt": "2024-10-16",
+    "address": "서울 강남구 선릉로 805",
+    "identitySourceUrl": "https://guide.michelin.com/kr/ko/seoul-capital-area/kr-seoul/restaurant/yun",
+    "chefName": "김도윤",
+    "checkedAt": "2026-09-22",
+    "note": "한국관광공사·CATCHTABLE의 2024-10-16 소개에서 출연 셰프 김도윤과 윤서울 관계를 확인. 미쉐린 현재 페이지의 셰프 이름·선릉로 805 주소 대조. 방송에 식당이 직접 소개되었다는 의미가 아닌 셰프 관련 식당 이력으로 표시. 당일 영업과 현재 가격은 별도 확인."
+  }
+]

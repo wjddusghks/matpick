@@ -5,6 +5,7 @@ import menuPriceFollowup from "./generated/menu-price-followup.generated.json";
 import travelDiscovery from "./generated/travel-discovery.generated.json";
 import topicExpansion from "./generated/topic-expansion.generated.json";
 import searchTopicExpansion from "./generated/search-topic-expansion.generated.json";
+import researchedTopics from "./generated/researched-topics.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import restaurantExclusions from "./restaurant-exclusions.json";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
@@ -403,6 +404,7 @@ const publicDataSourceIds = new Set(
     "jeju-bite",
     "travel-bite",
     ...topicExpansion.sources.map(source => source.id),
+    ...researchedTopics.sources.map(source => source.id),
   ].filter(sourceId => !sourceIdsPendingEvidence.has(sourceId))
 );
 
@@ -471,6 +473,7 @@ const dataset = filterDatasetForVisibleContent(
     jeonhyunmooPlanDataset as SourceDataset,
     topicExpansion as SourceDataset,
     searchTopicExpansion as SourceDataset,
+    researchedTopics as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({
@@ -545,6 +548,10 @@ for (const link of originalLinks) {
 // Keep historical evidence on the old page and carry it to the relocated recommendation.
 export const publicDataset: MatpickDataSet = {
   ...normalizedDataset,
+  // Canonical IDs resolve directly. Do not ship thousands of identity mappings.
+  restaurantAliases: Object.fromEntries(
+    Object.entries(normalizedDataset.restaurantAliases ?? {}).filter(([alias, target]) => alias !== target)
+  ),
   // Menu IDs are only local React keys. Keep research IDs in source files, not every browser download.
   restaurants: normalizedDataset.restaurants.map(restaurant => {
     // Google identifiers are research-only: the UI uses Naver links and verified map coordinates.

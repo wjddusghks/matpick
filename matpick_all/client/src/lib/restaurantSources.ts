@@ -58,6 +58,12 @@ export function describeRestaurantSource(
       ? `A Matpick collection based on public restaurant information from ${source.attribution.provider}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
       : `${source.attribution.provider}의 공개 음식점 자료를 바탕으로 맛픽이 구성한 여행 가이드입니다. 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않아요.`;
   }
+  if (source.id === "culinary-class-wars-chefs") {
+    badge = english ? "Cast chef" : "출연 셰프";
+    description = english
+      ? "A historical restaurant association with a Culinary Class Wars cast chef. This does not mean the restaurant appeared on the show or that the chef currently works here."
+      : source.description || "흑백요리사 출연 셰프와 관련된 식당의 소개 이력입니다.";
+  }
   return { id: source.id, name, kind, badge, description };
 }
 

@@ -6,6 +6,7 @@ import ttoganjipImage from "@/assets/creator-thumbnails/ttoganjip.webp";
 import type { AppLocale } from "@/lib/locale";
 import travelTopicShortcuts from "./generated/travel-topic-shortcuts.generated.json";
 import expansionTopicShortcuts from "./generated/expansion-topic-shortcuts.generated.json";
+import researchedTopicShortcuts from "./generated/researched-topic-shortcuts.generated.json";
 import topicThumbnailImages from "./topicThumbnailImages.json";
 
 export type MapTopicShortcut = {
@@ -18,6 +19,7 @@ export type MapTopicShortcut = {
 };
 
 export const mapTopicShortcuts: MapTopicShortcut[] = [
+  ...(researchedTopicShortcuts as MapTopicShortcut[]),
   ...(travelTopicShortcuts as MapTopicShortcut[]),
   {
     slug: "jeonhyunmoo-plan",

@@ -583,6 +583,9 @@ export default function RestaurantManager({
           <span>식당·메뉴 관리</span>
           <i />
         </a>
+        <a href="/admin/topic-research" className="am-nav-item" onClick={e => leave(e, "/admin/topic-research")} title="신규 주제 · 조사 후보 검토">
+          <Search size={19} /><span>신규 주제 검토</span>
+        </a>
         <div className="am-rail-bottom">
           <a
             href="/"

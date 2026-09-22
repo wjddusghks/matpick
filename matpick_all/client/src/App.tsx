@@ -48,6 +48,7 @@ const AdminDashboard = lazy(
 const AdminRestaurants = lazy(
   withRestaurantEdits(() => import("./pages/AdminRestaurants"))
 );
+const AdminTopicResearch = lazy(() => import("./pages/AdminTopicResearch"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -106,6 +107,7 @@ function Router() {
         <Route path="/my/favorites" component={MyFavorites} />
         <Route path="/admin" component={AdminDashboard} />
         <Route path="/admin/restaurants" component={AdminRestaurants} />
+        <Route path="/admin/topic-research" component={AdminTopicResearch} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

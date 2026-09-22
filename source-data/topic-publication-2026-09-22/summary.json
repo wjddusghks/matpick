@@ -1,0 +1,101 @@
+{
+  "asOf": "2026-09-22T04:23:24.515Z",
+  "updatedAt": "2026-09-22",
+  "complete": false,
+  "candidateRows": 22117,
+  "publishedCandidateRows": 678,
+  "fullyPublishedRows": 654,
+  "pendingCandidateRows": 21463,
+  "uniquePublishedRestaurants": 586,
+  "sourceAssociations": 782,
+  "newRestaurants": 0,
+  "topics": [
+    {
+      "rank": 1,
+      "id": "seommaeul-hoontae",
+      "name": "섬마을훈태",
+      "candidateRows": 596,
+      "publishedRestaurants": 19,
+      "pendingRows": 577
+    },
+    {
+      "rank": 2,
+      "id": "meatking",
+      "name": "정육왕",
+      "candidateRows": 348,
+      "publishedRestaurants": 2,
+      "pendingRows": 346
+    },
+    {
+      "rank": 3,
+      "id": "hoesarang",
+      "name": "회사랑",
+      "candidateRows": 573,
+      "publishedRestaurants": 11,
+      "pendingRows": 561
+    },
+    {
+      "rank": 4,
+      "id": "tteokbokkiqueen",
+      "name": "떡볶퀸",
+      "candidateRows": 244,
+      "publishedRestaurants": 14,
+      "pendingRows": 230
+    },
+    {
+      "rank": 5,
+      "id": "choiza-road",
+      "name": "최자로드",
+      "candidateRows": 89,
+      "publishedRestaurants": 1,
+      "pendingRows": 88
+    },
+    {
+      "rank": 6,
+      "id": "live-info",
+      "name": "2TV 생생정보",
+      "candidateRows": 9172,
+      "publishedRestaurants": 218,
+      "pendingRows": 8942
+    },
+    {
+      "rank": 7,
+      "id": "live-today",
+      "name": "생방송 투데이",
+      "candidateRows": 7516,
+      "publishedRestaurants": 309,
+      "pendingRows": 7194
+    },
+    {
+      "rank": 8,
+      "id": "today-n",
+      "name": "오늘N",
+      "candidateRows": 4710,
+      "publishedRestaurants": 206,
+      "pendingRows": 4492
+    },
+    {
+      "rank": 9,
+      "id": "the-dudley",
+      "name": "더들리",
+      "candidateRows": 338,
+      "publishedRestaurants": 1,
+      "pendingRows": 337
+    },
+    {
+      "rank": 10,
+      "id": "culinary-class-wars-chefs",
+      "name": "흑백요리사 출연 셰프 식당",
+      "candidateRows": 183,
+      "publishedRestaurants": 1,
+      "pendingRows": 182
+    }
+  ],
+  "reasons": {
+    "identity_review": 20720,
+    "published": 654,
+    "source_review": 67,
+    "operation_review": 652,
+    "partly_published": 24
+  }
+}

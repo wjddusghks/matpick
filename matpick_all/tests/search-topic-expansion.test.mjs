@@ -24,7 +24,8 @@ test("verified search batch adds 20 unique places and 25 topic connections while
   assert.equal(report.refreshedRestaurants, 5);
   assert.equal(report.topics.length, 11);
   assert.equal(data.restaurants.length, baseline.restaurantCount + 20);
-  assert.equal(data.sourceLinks.length, baseline.sourceLinkCount + 25);
+  // Later research batches add new topic IDs; this batch's original links stay intact.
+  assert.equal(data.sourceLinks.filter(l => !l.id.startsWith("census_")).length, baseline.sourceLinkCount + 25);
   for (const t of report.topics) {
     const linked = new Set(
       data.sourceLinks.filter(l => l.sourceId === t.id).map(l => l.restaurantId)

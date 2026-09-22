@@ -608,6 +608,9 @@ export default function AdminDashboard() {
           >
             <Store className="h-4 w-4" /> 식당 · 메뉴 · 가격 관리
           </Link>
+          <Link href="/admin/topic-research" className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]">
+            <Search className="h-4 w-4" /> 신규 주제 · 조사 후보 검토
+          </Link>
         </nav>
 
         <section className="mt-8">

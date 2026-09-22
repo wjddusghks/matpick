@@ -135,18 +135,25 @@ const HOME_UI_KO = {
     logout: "\uB85C\uADF8\uC544\uC6C3",
     login: "\uB85C\uADF8\uC778",
   },
+  heroHeadline: "어디서 먹지? 고민될 땐, 맛픽.",
   heroSubtitle:
-    "방송·유튜브·가이드에 소개된 유명 식당을 내 위치 주변에서 찾아보세요.",
-  searchPlaceholder: "평택시, 성수동, 식당명을 검색하세요",
-  searchHelperText:
-    "지역이나 동네를 검색하면 그곳의 유명 식당을 지도에서 바로 보여드려요.",
+    "방송·유튜브·가이드 속 맛집을 내 주변 지도에서 찾고, 오늘 갈 곳을 골라보세요.",
+  searchPlaceholder: "지역·식당 검색",
+  searchHelperText: "약속 장소나 동네 이름으로, 지도에서 바로 찾아보세요.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "어떤 이야기로 맛집을 찾아볼까요?",
   topicSectionAction: "전체 주제",
   topicCardCta: "맛집 보기",
   searchButtonLabel: "\uAC80\uC0C9",
-  nearbyMapButtonLabel: "현재 위치에서 찾기",
-  sourceProofLabel: "방송·유튜브·가이드에 소개된 식당만 모았습니다.",
+  nearbyMapButtonLabel: "내 주변 맛집 지도 보기",
+  sourceProofLabel: "궁금했던 그 맛집, 소개된 방송·채널·가이드부터 찾아보세요.",
+  diningMomentsTitle: "식당 고르는 순간마다, 맛픽.",
+  diningMoments: [
+    { label: "데이트", question: "같이 갈 유명 맛집, 어디 없을까?" },
+    { label: "직장 점심·회식", question: "오늘 식당은 내가 골라야 한다면?" },
+    { label: "손님 대접", question: "모시고 갈 식당, 어디서부터 찾지?" },
+    { label: "여행", question: "낯선 동네에서 뭘 먹어야 할까?" },
+  ],
   collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
     openAria: "주제 카드 자세히 보기",
@@ -172,16 +179,15 @@ const HOME_UI_KO = {
   dropdown: {
     resultsTitle: "\uAC80\uC0C9 \uACB0\uACFC",
     resultsSuffix: "\uAC1C \uD56D\uBAA9",
-    emptyResultsTitle:
-      "\uC544\uC9C1 \uBE44\uAD50\uD560 \uAC80\uC0C9 \uACB0\uACFC\uAC00 \uC5C6\uC5B4\uC694.",
+    emptyResultsTitle: "일치하는 검색 결과가 없어요.",
     emptyResultsDescription:
-      "\uB514\uC790\uC778\uC5D0 \uB4E4\uC5B4\uAC08 \uC774\uBBF8\uC9C0\uC640 \uACB0\uACFC \uCE74\uB4DC \uC790\uB9AC\uB294 \uBE44\uC6CC\uB458\uAC8C\uC694. \uAC80\uC0C9\uC5B4\uB97C \uC870\uAE08 \uB2E4\uB974\uAC8C \uC785\uB825\uD558\uAC70\uB098, \uB098\uC911\uC5D0 \uBC1B\uC744 \uB514\uC790\uC778 \uC790\uC0B0\uC5D0 \uB9DE\uCDB0 \uC774\uC5B4\uC11C \uBD99\uC77C \uC218 \uC788\uB3C4\uB85D \uAD6C\uC870\uB9CC \uBA3C\uC800 \uC7A1\uC544\uB450\uC5C8\uC2B5\uB2C8\uB2E4.",
+      "다른 지역이나 식당 이름으로 검색하거나, 아래 방송·가이드별 맛집을 살펴보세요.",
     recentTitle: "\uCD5C\uADFC \uAC80\uC0C9 \uD56D\uBAA9",
     clearAll: "\uBAA8\uB450 \uC9C0\uC6B0\uAE30",
     noRecentTitle:
       "\uCD5C\uADFC \uAC80\uC0C9 \uD56D\uBAA9\uC774 \uC544\uC9C1 \uC5C6\uC5B4\uC694.",
     noRecentDescription:
-      "\uAC80\uC0C9\uD558\uBA74 \uCD5C\uADFC \uD56D\uBAA9\uC774 \uC5EC\uAE30\uC5D0 \uC313\uC774\uACE0, \uC774\uD6C4\uC5D4 Group7 \uD615\uD0DC\uB85C \uBC14\uB85C \uB2E4\uC2DC \uC120\uD0DD\uD560 \uC218 \uC788\uAC8C \uB429\uB2C8\uB2E4.",
+      "검색 결과에서 고른 지역과 식당을 여기서 다시 찾아볼 수 있어요.",
   },
 } as const;
 
@@ -239,19 +245,36 @@ const HOME_UI_EN = {
     logout: "Log out",
     login: "Sign in",
   },
+  heroHeadline: "Where to eat? Start with Matpick.",
   heroSubtitle:
-    "Find restaurants near you that were featured by creators, TV shows, and trusted guides.",
-  searchPlaceholder: "Search Pyeongtaek, Seongsu, or a restaurant",
+    "Find restaurants featured on TV, YouTube, and dining guides on a map near you. Pick your next stop.",
+  searchPlaceholder: "Area or restaurant",
   searchHelperText:
-    "Search an area or neighborhood to see its famous restaurants directly on the map.",
+    "Search your meeting spot or neighborhood to see restaurants on the map.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "Choose a story, then find a table",
   topicSectionAction: "All topics",
   topicCardCta: "View restaurants",
   searchButtonLabel: "Search",
-  nearbyMapButtonLabel: "Find near my location",
+  nearbyMapButtonLabel: "See nearby restaurants on the map",
   sourceProofLabel:
-    "Only restaurants featured by creators, TV shows, or trusted guides.",
+    "Start with the show, channel, or guide where you saw that restaurant.",
+  diningMomentsTitle: "For every “where should we eat?” moment.",
+  diningMoments: [
+    {
+      label: "Date night",
+      question: "Which famous spot should we try together?",
+    },
+    {
+      label: "Work lunch or team dinner",
+      question: "Your turn to choose the restaurant?",
+    },
+    {
+      label: "Hosting guests",
+      question: "Where do you start looking for a place?",
+    },
+    { label: "Travel", question: "What should we eat in a new neighborhood?" },
+  ],
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
     openAria: "Open topic card details",
@@ -853,8 +876,8 @@ export default function Home() {
       ? "Matpick | Find famous restaurants near you"
       : "맛픽 Matpick | 내 주변 유명 맛집 찾기",
     description: isEnglish
-      ? "Find restaurants near your current location or a searched place that were featured by creators, TV shows, and trusted guides."
-      : "방송·유튜브·미쉐린 가이드에 소개된 유명 식당을 현재 위치와 검색한 지역 주변에서 찾는 맛집 지도 서비스.",
+      ? "Choosing a restaurant for a date, a work meal, guests, or a trip? Find places featured on TV, YouTube, and dining guides on a map near you with Matpick."
+      : "데이트, 직장 점심·회식, 손님 대접, 여행 중 어디서 먹을지 고민될 때. 방송·유튜브·가이드에 소개된 식당을 내 주변 지도에서 찾고 오늘 갈 곳을 골라보세요.",
     path: "/",
     locale,
     jsonLd: [
@@ -1704,7 +1727,10 @@ export default function Home() {
             <span className="text-[#ff7b83]">{ui.brandSecond}</span>
           </h1>
 
-          <p className="mt-5 max-w-[720px] break-keep px-2 text-[18px] font-semibold leading-snug text-[#9a9a9a] sm:mt-7 sm:text-[28px] lg:max-w-none lg:whitespace-nowrap lg:text-[31px]">
+          <p className="mt-5 max-w-[720px] break-keep px-2 text-[22px] font-bold leading-snug text-[#353033] sm:mt-7 sm:text-[28px] lg:text-[31px]">
+            {ui.heroHeadline}
+          </p>
+          <p className="mt-3 max-w-[660px] break-keep px-2 text-[14px] font-medium leading-6 text-[#8f8185] sm:text-[17px] sm:leading-7">
             {ui.heroSubtitle}
           </p>
 
@@ -1744,16 +1770,19 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <p className="mt-3 px-3 text-center text-[13px] font-medium leading-5 text-[#9b8f92] sm:text-[15px]">
+            <p className="mt-3 break-keep px-3 text-center text-[13px] font-medium leading-5 text-[#9b8f92] sm:text-[15px]">
               {ui.searchHelperText}
             </p>
 
             <button
               type="button"
               onClick={handleNearbySearch}
-              className="mx-auto mt-5 inline-flex h-12 w-full max-w-[360px] items-center justify-center gap-2 rounded-[20px] border border-[#ffd1d7] bg-white/92 px-5 text-[15px] font-bold text-[#353033] shadow-[0_10px_30px_rgba(80,46,56,0.07)] transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:mt-6 sm:h-14 sm:text-base"
+              className="mx-auto mt-5 inline-flex min-h-12 w-full max-w-[360px] items-center justify-center gap-2 rounded-[20px] border border-[#ffd1d7] bg-white/92 px-5 py-3 text-[15px] font-bold text-[#353033] shadow-[0_10px_30px_rgba(80,46,56,0.07)] transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:mt-6 sm:min-h-14 sm:text-base"
             >
-              <MapPin className="h-5 w-5 text-[#ff6f7c]" strokeWidth={2.2} />
+              <MapPin
+                className="h-5 w-5 shrink-0 text-[#ff6f7c]"
+                strokeWidth={2.2}
+              />
               {ui.nearbyMapButtonLabel}
             </button>
 
@@ -1761,7 +1790,7 @@ export default function Home() {
               className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7"
               aria-label={ui.sourceProofLabel}
             >
-              <p className="text-[13px] font-semibold text-[#8f8185] sm:text-sm">
+              <p className="break-keep text-[13px] font-semibold leading-5 text-[#8f8185] sm:text-sm">
                 {ui.sourceProofLabel}
               </p>
               <div className="-mx-4 mt-5 overflow-x-auto px-4 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:overflow-visible sm:px-0">
@@ -1771,6 +1800,30 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+            </section>
+
+            <section
+              className="mt-7 border-t border-[#f3e8ea] pt-6 text-left sm:mt-9"
+              aria-labelledby="home-dining-moments"
+            >
+              <h2
+                id="home-dining-moments"
+                className="break-keep text-center text-[16px] font-bold leading-6 text-[#353033] sm:text-[18px]"
+              >
+                {ui.diningMomentsTitle}
+              </h2>
+              <ul className="mt-5 grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-8 lg:grid-cols-4">
+                {ui.diningMoments.map(moment => (
+                  <li key={moment.label} className="min-w-0 break-keep">
+                    <p className="text-xs font-bold leading-5 text-[#bc5060]">
+                      {moment.label}
+                    </p>
+                    <p className="mt-1 text-[13px] font-medium leading-6 text-[#786b70] sm:text-sm">
+                      {moment.question}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </section>
 
             {isFocused ? (

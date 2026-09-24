@@ -1,0 +1,620 @@
+{
+  "deletedAt": "2026-09-24",
+  "note": "운영자 요청으로 영구 삭제. 미검색 자체를 독립적인 폐업 확인 근거로 사용하지 않음. 재수집 시에도 공개하지 않음.",
+  "restaurants": [
+    {
+      "id": "sikgaek-baekban-trip_restaurant_249",
+      "name": "강릉 항구마차",
+      "address": "강원 강릉시 옥계면 금진리 149-3",
+      "reportNo": 9,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_479",
+      "name": "영월 노루목상회식당",
+      "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
+      "reportNo": 14,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f2ce95784833",
+      "name": "가평 율림동산",
+      "address": "경기 가평군 청평면 안대성길 21-42 (대성리 360-5)",
+      "reportNo": 18,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_703",
+      "name": "가평 황보네주막",
+      "address": "경기 가평군 설악면 다락재로 8 (회곡리 산22-1)",
+      "reportNo": 19,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_21e9391aae5d",
+      "name": "고양 모녀반찬",
+      "address": "경기 고양시 일산서구 대화로 120 (대화동 1450-1)",
+      "reportNo": 21,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e4e1d2fdcca6",
+      "name": "고양 오향선",
+      "address": "경기 고양시 일산서구 중앙로 1493 (주엽동 138)",
+      "reportNo": 24,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3b29f619e02f",
+      "name": "고양 허육도",
+      "address": "경기 고양시 덕양구 도래울로 104 (도내동 964)",
+      "reportNo": 25,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_ee3194aae292",
+      "name": "원조광명할머니빈대떡",
+      "address": "경기 광명시 광이로13번길 21-5 (광명동 158-55)",
+      "reportNo": 27,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_517",
+      "name": "광주 포비엣",
+      "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
+      "reportNo": 28,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_632",
+      "name": "구리 우미관",
+      "address": "경기 구리시 아차산로 57 (아천동 300-10)",
+      "reportNo": 29,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c6632de9a9de",
+      "name": "부천 장군집 주먹고기 (김준현)",
+      "address": "경기 부천시 부일로725번길 9 (역곡동 78-4)",
+      "reportNo": 37,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_694",
+      "name": "성남 고미꽃시래",
+      "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
+      "reportNo": 38,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a078ce797eee",
+      "name": "수원 박군자진주냉면",
+      "address": "경기 수원시 팔달구 효원로307번길 26 (인계동 1117)",
+      "reportNo": 43,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b90394398463",
+      "name": "시흥 왕대통수라찜",
+      "address": "경기 시흥시 호현로 277 (대야동 38-8)",
+      "reportNo": 45,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_16e8bdb9a845",
+      "name": "안산 삼수갑산",
+      "address": "경기 안산시 상록구 댕이길 82 (사동 1348)",
+      "reportNo": 46,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_291c9dfd8ca9",
+      "name": "위드유",
+      "address": "경기 안산시 단원구 광덕3로 167-12 (고잔동 726-9)",
+      "reportNo": 47,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9223f6137d67",
+      "name": "안양 굴따세",
+      "address": "경기 안양시 만안구 안양로 349 (안양동 695-21)",
+      "reportNo": 50,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_605",
+      "name": "안양 호계분식",
+      "address": "경기 안양시 동안구 엘에스로45번길 6 (호계동 707-3)",
+      "reportNo": 51,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d259315b8a09",
+      "name": "의왕 전라도일키로바지락칼국수",
+      "address": "경기 의왕시 안양판교로 379 (청계동 534)",
+      "reportNo": 57,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_29f7bffd4126",
+      "name": "영돈분식버거",
+      "address": "경기 이천시 이섭대천로 1200 (중리동 219)",
+      "reportNo": 59,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_536",
+      "name": "하동 마루솔한정식식당",
+      "address": "경남 하동군 하동읍 시장1길 26-8 (읍내리 225-5)",
+      "reportNo": 72,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_422",
+      "name": "경주 평양냉면집",
+      "address": "경북 경주시 원효로 109-2 (노동동 81-1)",
+      "reportNo": 75,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_c2fb2621bd82",
+      "name": "용수천농원",
+      "address": "대구 동구 용수동 468",
+      "reportNo": 89,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_98a1531d8edb",
+      "name": "서울 버거샵",
+      "address": "서울 강남구 선릉로158길 14-1 (청담동 88-25)",
+      "reportNo": 111,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_233",
+      "name": "서울 봉화전2",
+      "address": "서울 강남구 영동대로106길 41 (삼성동 162-25)",
+      "reportNo": 112,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ac2c94775517",
+      "name": "서울 뿔난황소곱창 건대본점",
+      "address": "서울 광진구 아차산로29길 16 (화양동 9-24)",
+      "reportNo": 136,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_500",
+      "name": "서울 영동막국수",
+      "address": "서울 광진구 천호대로 581 (중곡동 140-19)",
+      "reportNo": 137,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_7d54f4dd5491",
+      "name": "마녀커리크림치킨",
+      "address": "서울 마포구 마포구 동교로 227-5 (연남동 373-14)",
+      "reportNo": 139,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_403",
+      "name": "서울 레게치킨",
+      "address": "서울 마포구 양화로23길 16 (동교동 147-19)",
+      "reportNo": 144,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_410",
+      "name": "서울 초마",
+      "address": "서울 마포구 와우산로 72 (서교동 361-10)",
+      "reportNo": 156,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
+      "name": "하하",
+      "address": "서울 마포구 동교로 263 (연남동 229-12)",
+      "reportNo": 160,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_442a0c1066d4",
+      "name": "서울 대가향",
+      "address": "서울 서초구 서초대로 339 (서초동 1689-5)",
+      "reportNo": 165,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c347ac8193f9",
+      "name": "서울 박달재자연식당",
+      "address": "서울 서초구 강남대로2길 7 (양재동 353-4)",
+      "reportNo": 168,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_290",
+      "name": "서울 스시효",
+      "address": "서울 서초구 신반포로33길 27 (잠원동 66-2)",
+      "reportNo": 170,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_373",
+      "name": "서울 장수식당",
+      "address": "서울 서초구 서래로 50 (반포동 93-7)",
+      "reportNo": 171,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_276",
+      "name": "서울 참숯닭",
+      "address": "서울 서초구 동산로6길 37 (양재동 368)",
+      "reportNo": 172,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_251",
+      "name": "서울 미타우동",
+      "address": "서울 송파구 삼전로12길 4 (삼전동 3-1)",
+      "reportNo": 185,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_330",
+      "name": "서울 돈차를리",
+      "address": "서울 용산구 녹사평대로 238-1 (이태원동 650)",
+      "reportNo": 200,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_86da46e68fa7",
+      "name": "서울 땅끝마을매생이굴국밥",
+      "address": "서울 용산구 원효로41길 18 (원효로3가 40-1)",
+      "reportNo": 202,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_378",
+      "name": "서울 모이",
+      "address": "서울 용산구 한남대로18길 34 (한남동 30-1)",
+      "reportNo": 204,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ac80cfe2b9e4",
+      "name": "서울 목포세발낙지산낙지전문 별관",
+      "address": "서울 은평구 통일로66길 4-17 (불광동 281-162)",
+      "reportNo": 219,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9fcd9d693015",
+      "name": "서울 능금산장",
+      "address": "서울 종로구 비봉2길 88 (구기동 7)",
+      "reportNo": 224,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_222",
+      "name": "서울 서촌통영",
+      "address": "서울 종로구 필운대로 47 (누하동 8-1)",
+      "reportNo": 230,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_477",
+      "name": "서울 취천루",
+      "address": "서울 종로구 자하문로7길 9 (체부동 26)",
+      "reportNo": 238,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d5ae0f219879",
+      "name": "서울 샤이바나 광화문점",
+      "address": "서울 중구 세종대로 136 (태평로1가 84)",
+      "reportNo": 244,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_167",
+      "name": "서울 우화식당",
+      "address": "서울 중구 충무로11길 18-4 (입정동 250)",
+      "reportNo": 246,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_588",
+      "name": "울산 밀양시골밥상",
+      "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
+      "reportNo": 263,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_323",
+      "name": "광양 시장국밥",
+      "address": "전남 광양시 광양읍 백운로 3 (목성리 696-3)",
+      "reportNo": 272,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_527",
+      "name": "무안 곰솔낙지 (곰솔가든)",
+      "address": "전남 무안군 망운면 운해로 1447 (목동리 388-4)",
+      "reportNo": 278,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_389",
+      "name": "영암 구림떡방아",
+      "address": "전남 영암군 군서면 도갑사로 6-7 (동구림리 48-13)",
+      "reportNo": 288,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1f6081bd6c47",
+      "name": "전주 조점례남문피순대",
+      "address": "전북 전주시 완산구 전동3가 2-198",
+      "reportNo": 300,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_139",
+      "name": "제주 까사디노아",
+      "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
+      "reportNo": 301,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_005",
+      "name": "서산 삼길포수산물직매장 (지은이네)",
+      "address": "충남 서산시 대산읍 삼길포1로 72-2 (화곡리 1883)",
+      "reportNo": 312,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_008",
+      "name": "서산 정성맛집",
+      "address": "충남 서산시 시장3길 3 (동문동 900)",
+      "reportNo": 313,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9de3277b4788",
+      "name": "거제 고현시장",
+      "address": "-",
+      "reportNo": 324,
+      "reason": "owner_requested_market_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_781505d4388b",
+      "name": "서울 망원시장",
+      "address": "-",
+      "reportNo": 325,
+      "reason": "owner_requested_market_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_89d6fb6597ee",
+      "name": "파주 문산자유시장",
+      "address": "-",
+      "reportNo": 326,
+      "reason": "owner_requested_market_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_31ad186ed499",
+      "name": "부산 한량 (현재 폐업)",
+      "address": "부산 해운대구 마린시티3로 23 (우동 1435)",
+      "reportNo": 333,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0dcbf6710375",
+      "name": "서울 미인삼계탕 (현재 폐업)",
+      "address": "서울 강남구 영동대로 513 (삼성동 159)",
+      "reportNo": 335,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b14eff4308d3",
+      "name": "서울 봉족발 (현재 폐업)",
+      "address": "서울 강남구 강남대로42길 11 (도곡동 954-12)",
+      "reportNo": 336,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e1d01622c0f1",
+      "name": "서울 청청 (현재 폐업)",
+      "address": "서울 강남구 논현로152길 36 (신사동 588-12)",
+      "reportNo": 340,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1ac9ba6b8cce",
+      "name": "서울 하오 (현재 폐업)",
+      "address": "서울 강남구 삼성로85길 43 (대치동 895)",
+      "reportNo": 343,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a9f6bc0c20d5",
+      "name": "서울 쌈마을 (문세윤, 현재 폐업)",
+      "address": "서울 관악구 남부순환로226길 31 (봉천동 1603-4)",
+      "reportNo": 347,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_27e239f7eab5",
+      "name": "서울 꼴더덕꼴더덕 (현재 폐업)",
+      "address": "서울 동대문구 답십리로59가길 4 (답십리2동 2-179)",
+      "reportNo": 348,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3b7f8c3e65ff",
+      "name": "서울 면면 (현재 폐업)",
+      "address": "서울 서대문구 증가로 259 (북가좌동 343-1)",
+      "reportNo": 350,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3bba6fd5f0df",
+      "name": "서울 마더스 오피스 (현재 폐업)",
+      "address": "서울 용산구 녹사평대로46길 5 (이태원동 580)",
+      "reportNo": 353,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_16ff450456e3",
+      "name": "서울 알리바바 (현재 폐업)",
+      "address": "서울 용산구 이태원로 203 (이태원동 124-9)",
+      "reportNo": 356,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_78a1dfd62a21",
+      "name": "서울 속초생선찜 (현재 폐업)",
+      "address": "서울 은평구 연서로29길 30-18 (갈현동 431-1)",
+      "reportNo": 357,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ffe3d3cdca58",
+      "name": "서울 경원집 (현재 폐업)",
+      "address": "서울 종로구 사직로 133-6 (적선동 27)",
+      "reportNo": 358,
+      "reason": "owner_requested_removal"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1a412dbca54a",
+      "name": "서울 오후청 (현재 폐업)",
+      "address": "서울 중구 남대문로1길 26-10 (북창동 104)",
+      "reportNo": 359,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_fa480cd42f8d",
+      "name": "서울 전주중앙회관 (현재 폐업)",
+      "address": "서울 중구 명동8나길 19 (충무로1가 24-11)",
+      "reportNo": 361,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_392",
+      "name": "남원 인동할머니민박",
+      "address": "전북 남원시 운봉읍 삼산길 8-4 (산덕리 790-5)",
+      "reportNo": 364,
+      "reason": "owner_requested_unresolved_menu_removal",
+      "deletedAt": "2026-09-24",
+      "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    }
+  ]
+}

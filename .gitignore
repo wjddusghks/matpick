@@ -13,3 +13,5 @@ matpick_all.zip
 pnpm-debug.log*
 npm-debug.log*
 yarn-debug.log*
+**/.local-data/
+source-data/expansion-coordinate-2026-09-24/.cache/

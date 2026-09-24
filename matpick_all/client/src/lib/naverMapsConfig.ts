@@ -7,6 +7,10 @@ export function getNaverMapsScriptUrl(config: {
   if (!keyId && !legacyClientId) return null;
   const url = new URL("https://oapi.map.naver.com/openapi/v3/maps.js");
   // Legacy service credentials cannot be assumed to be keys from the new Maps service.
-  url.searchParams.set(keyId ? "ncpKeyId" : "ncpClientId", keyId || legacyClientId!);
+  url.searchParams.set(
+    keyId ? "ncpKeyId" : "ncpClientId",
+    keyId || legacyClientId!
+  );
+  url.searchParams.set("submodules", "geocoder");
   return url.href;
 }

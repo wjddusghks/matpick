@@ -6,6 +6,7 @@ const data = await loadPublicData();
 const dataDir = path.join(projectRoot, "client/src/data");
 const aliasesPath = path.join(dataDir, "legacy-restaurant-aliases.json");
 const aliases = JSON.parse(await readFile(aliasesPath, "utf8"));
+const previousAliasPaths = new Set(Object.keys(aliases).map(id => `/restaurant/${id}`));
 const canonicalIds = new Set(data.restaurants.map(restaurant => restaurant.id));
 const byIdentity = new Map();
 for (const restaurant of data.restaurants) {
@@ -49,7 +50,8 @@ for (const filename of files.sort()) {
 for (const [alias, target] of Object.entries(data.restaurantAliases))
   aliases[alias] = target;
 const sortedAliases = Object.fromEntries(
-  Object.entries(aliases).sort(([a], [b]) => a.localeCompare(b))
+  Object.entries(aliases).filter(([alias, target]) => !canonicalIds.has(alias) && canonicalIds.has(target))
+    .sort(([a], [b]) => a.localeCompare(b))
 );
 await writeFile(aliasesPath, JSON.stringify(sortedAliases, null, 2) + "\n");
 await mkdir(path.join(projectRoot, "reports"), { recursive: true });
@@ -73,7 +75,7 @@ const generated = Object.entries(sortedAliases).map(([alias, target]) => ({
 const ownedSources = new Set(generated.map(redirect => redirect.source));
 config.redirects = [
   ...(config.redirects ?? []).filter(
-    redirect => !ownedSources.has(redirect.source)
+    redirect => !ownedSources.has(redirect.source) && !previousAliasPaths.has(redirect.source)
   ),
   ...generated,
 ];

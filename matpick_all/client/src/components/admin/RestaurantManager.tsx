@@ -31,6 +31,7 @@ import {
   Star,
   Store,
   Trash2,
+  Tv,
   Utensils,
   Wallet,
   X,
@@ -53,7 +54,11 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import type { MenuItem, Restaurant, Source } from "@/data/types";
+import type { MenuItem, Restaurant, Source, SourceLink } from "@/data/types";
+import {
+  getAdminAppearances,
+  normalizeAdminRestaurantSearch,
+} from "@/lib/adminRestaurantAppearances";
 import {
   applyRestaurantEdits,
   type RestaurantEdit,
@@ -82,11 +87,13 @@ const states = {
   closed: "폐업",
 };
 const PAGE_SIZE = 30;
+const noSourceLinks = (): SourceLink[] => [];
 type Filter = "all" | "menus" | "prices" | "edited";
 export type ManagerView = {
   selectedId?: string;
   query?: string;
   sourceId?: string;
+  episodeKey?: string;
   filter?: Filter;
   page?: number;
   tab?: EditorTab;
@@ -107,6 +114,7 @@ type Props = {
   initialEdits: RestaurantEdit[];
   getMenus: (restaurant: Restaurant) => MenuItem[];
   getSources: (id: string) => Source[];
+  getSourceLinks?: (id: string) => SourceLink[];
   configured: boolean;
   ready: boolean;
   loadError?: string;
@@ -186,6 +194,7 @@ export default function RestaurantManager({
   initialEdits,
   getMenus,
   getSources,
+  getSourceLinks = noSourceLinks,
   configured,
   ready,
   loadError,
@@ -199,6 +208,7 @@ export default function RestaurantManager({
   const [query, setQuery] = useState(initialView.query || "");
   const deferredQuery = useDeferredValue(query);
   const [sourceId, setSourceId] = useState(initialView.sourceId || "");
+  const [episodeKey, setEpisodeKey] = useState(initialView.episodeKey || "");
   const [filter, setFilter] = useState<Filter>(initialView.filter || "all");
   const [sort, setSort] = useState(initialView.sort || "default");
   const [page, setPage] = useState(initialView.page || 1);
@@ -256,34 +266,59 @@ export default function RestaurantManager({
     () =>
       records.map(restaurant => {
         const menus = getMenus(restaurant);
+        const appearances = getAdminAppearances(
+          getSourceLinks(restaurant.id),
+          sources
+        );
         return {
           restaurant,
+          appearances,
           count: menus.length,
           priced: menus.filter(m => hasKnownMenuPrice(m.price)).length,
           sourceIds: getSources(restaurant.id).map(s => s.id),
-          text: [
-            restaurant.name,
-            restaurant.address,
-            restaurant.category,
-            ...menus.map(m => m.name),
-          ]
-            .join(" ")
-            .replace(/\s/g, "")
-            .toLowerCase(),
+          text: normalizeAdminRestaurantSearch(
+            [
+              restaurant.name,
+              restaurant.address,
+              restaurant.category,
+              ...getSources(restaurant.id).map(s => s.name),
+              ...appearances.map(
+                a => `${a.sourceName} ${a.episode} ${a.date || ""}`
+              ),
+              ...menus.map(m => m.name),
+            ].join(" ")
+          ),
         };
       }),
-    [records, getMenus, getSources]
+    [records, getMenus, getSources, getSourceLinks, sources]
+  );
+  const episodeOptions = useMemo(
+    () =>
+      Array.from(
+        new Map(
+          entries
+            .flatMap(e => e.appearances)
+            .filter(a => !sourceId || a.sourceId === sourceId)
+            .map(a => [a.key, a])
+        ).values()
+      ).sort(
+        (a, b) =>
+          a.sourceName.localeCompare(b.sourceName, "ko") ||
+          a.episode.localeCompare(b.episode, "ko", { numeric: true })
+      ),
+    [entries, sourceId]
   );
   const missingMenus = entries.filter(e => !e.count).length;
   const missingPrices = entries.filter(
     e => e.count && e.priced < e.count
   ).length;
   const filtered = useMemo(() => {
-    const term = deferredQuery.trim().replace(/\s/g, "").toLowerCase();
+    const term = normalizeAdminRestaurantSearch(deferredQuery.trim());
     const items = entries.filter(
       e =>
         (!term || e.text.includes(term)) &&
         (!sourceId || e.sourceIds.includes(sourceId)) &&
+        (!episodeKey || e.appearances.some(a => a.key === episodeKey)) &&
         (filter === "all" ||
           (filter === "menus" && !e.count) ||
           (filter === "prices" && e.count > e.priced) ||
@@ -295,7 +330,7 @@ export default function RestaurantManager({
       );
     if (sort === "menus") items.sort((a, b) => a.count - b.count);
     return items;
-  }, [entries, deferredQuery, sourceId, filter, editIds, sort]);
+  }, [entries, deferredQuery, sourceId, episodeKey, filter, editIds, sort]);
   const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
   const menuRows = (draft?.menus || []).filter(
@@ -312,6 +347,8 @@ export default function RestaurantManager({
   const pasted = useMemo(() => parseMenuPaste(pasteText), [pasteText]);
   const capacity = 100 - (draft?.menus.length || 0);
   const selectedSources = selected ? getSources(selected.id) : [];
+  const selectedAppearances =
+    entries.find(e => e.restaurant.id === selectedId)?.appearances || [];
 
   useEffect(() => {
     setEdits(initialEdits);
@@ -495,6 +532,7 @@ export default function RestaurantManager({
         selectedId,
         query,
         sourceId,
+        episodeKey,
         filter,
         page: currentPage,
         sort,
@@ -583,8 +621,14 @@ export default function RestaurantManager({
           <span>식당·메뉴 관리</span>
           <i />
         </a>
-        <a href="/admin/topic-research" className="am-nav-item" onClick={e => leave(e, "/admin/topic-research")} title="신규 주제 · 조사 후보 검토">
-          <Search size={19} /><span>신규 주제 검토</span>
+        <a
+          href="/admin/topic-research"
+          className="am-nav-item"
+          onClick={e => leave(e, "/admin/topic-research")}
+          title="신규 주제 · 조사 후보 검토"
+        >
+          <Search size={19} />
+          <span>신규 주제 검토</span>
         </a>
         <div className="am-rail-bottom">
           <a
@@ -720,7 +764,7 @@ export default function RestaurantManager({
                 <input
                   ref={searchRef}
                   aria-label="식당 검색"
-                  placeholder="식당명, 지역, 메뉴 검색"
+                  placeholder="식당명, 방송·회차, 지역, 메뉴 검색"
                   value={query}
                   onChange={e => {
                     setQuery(e.target.value);
@@ -746,6 +790,7 @@ export default function RestaurantManager({
                   value={sourceId}
                   onChange={e => {
                     setSourceId(e.target.value);
+                    setEpisodeKey("");
                     setPage(1);
                   }}
                 >
@@ -769,6 +814,29 @@ export default function RestaurantManager({
                   <option value="menus">메뉴 적은 순</option>
                 </select>
               </div>
+              {episodeOptions.length > 0 && (
+                <label className="am-episode-filter">
+                  <Tv size={15} />
+                  <select
+                    aria-label="방송 회차 필터"
+                    value={episodeKey}
+                    onChange={e => {
+                      setEpisodeKey(e.target.value);
+                      setPage(1);
+                    }}
+                  >
+                    <option value="">
+                      모든 회차 · {episodeOptions.length}개
+                    </option>
+                    {episodeOptions.map(a => (
+                      <option value={a.key} key={a.key}>
+                        {sourceId ? "" : `${a.sourceName} · `}
+                        {a.episode}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              )}
               <div className="am-pills" aria-label="확인 상태 필터">
                 {(
                   [
@@ -801,7 +869,7 @@ export default function RestaurantManager({
               ) : (
                 filtered
                   .slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
-                  .map(({ restaurant: r, count, priced }) => (
+                  .map(({ restaurant: r, count, priced, appearances }) => (
                     <button
                       key={r.id}
                       className={`am-restaurant ${selectedId === r.id ? "is-selected" : ""}`}
@@ -818,6 +886,33 @@ export default function RestaurantManager({
                         ) : null}
                       </div>
                       <p>{r.address}</p>
+                      {appearances.length > 0 && (
+                        <div className="am-episode-badges">
+                          {appearances
+                            .filter(a => !sourceId || a.sourceId === sourceId)
+                            .slice(0, 2)
+                            .map(a => (
+                              <span
+                                key={a.key}
+                                title={`${a.sourceName} · ${a.episode}${a.date ? ` · ${a.date}` : ""}`}
+                              >
+                                <Tv size={11} />
+                                {a.sourceName} <b>{a.episode}</b>
+                              </span>
+                            ))}
+                          {appearances.filter(
+                            a => !sourceId || a.sourceId === sourceId
+                          ).length > 2 && (
+                            <small>
+                              +
+                              {appearances.filter(
+                                a => !sourceId || a.sourceId === sourceId
+                              ).length - 2}
+                              개 회차
+                            </small>
+                          )}
+                        </div>
+                      )}
                       <div className="am-restaurant-meta">
                         <span>
                           <Utensils size={11} />
@@ -865,6 +960,7 @@ export default function RestaurantManager({
                       setQuery("");
                       setFilter("all");
                       setSourceId("");
+                      setEpisodeKey("");
                       setPage(1);
                     }}
                   >
@@ -954,6 +1050,23 @@ export default function RestaurantManager({
                         <span>+{selectedSources.length - 3}</span>
                       )}
                     </div>
+                    {selectedAppearances.length > 0 && (
+                      <div className="am-episode-badges am-episode-detail">
+                        {selectedAppearances.map(a => (
+                          <a
+                            key={a.key}
+                            href={a.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Tv size={12} />
+                            {a.sourceName} <b>{a.episode}</b>
+                            {a.date && <small>{a.date}</small>}
+                            <ArrowUpRight size={12} />
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                   <a
                     className="am-icon-btn am-detail-link"

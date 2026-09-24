@@ -69,7 +69,18 @@ const episodicSourceIds = new Set([
   "wednesday-gourmet",
 ]);
 
-const dataset = publicDataset as MatpickDataSet;
+const dataset = {
+  ...publicDataset,
+  restaurants: publicDataset.restaurants.map(restaurant => ({
+    ...restaurant,
+    ...(restaurant.menus ? {
+      menus: restaurant.menus.map((menu: Omit<MenuItem, "id">, index: number) => ({
+        ...menu,
+        id: `m${index.toString(36)}`,
+      })),
+    } : {}),
+  })),
+} as MatpickDataSet;
 const normalizedDataset = { ...dataset, restaurants: applyRestaurantEdits(dataset.restaurants) };
 const publicDataSourceIds = new Set(dataset.sources?.map(source => source.id) ?? []);
 const sourceBackedCreatorIds = new Set(dataset.sources?.map(source => source.creatorId).filter(Boolean) ?? []);

@@ -1,0 +1,2549 @@
+{
+  "seeds": [
+    {
+      "name": "비아 톨레도 파스타바",
+      "aliases": [],
+      "address": "서울 용산구 원효로83길 7-2 1층",
+      "lat": 37.540045872469165,
+      "lng": 126.96775222870671,
+      "chef": "권성준",
+      "contestant": "나폴리 맛피아",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-1-1",
+      "oldPlaceId": "1959097508",
+      "holdReason": "이전 식당 또는 셰프 퇴사 확인. 현재 점포와 분리"
+    },
+    {
+      "name": "트리드",
+      "aliases": [],
+      "address": "서울 강남구 선릉로162길 16",
+      "lat": 37.526708102067154,
+      "lng": 127.04169063999485,
+      "chef": "강승원",
+      "contestant": "트리플 스타",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-3-1",
+      "oldPlaceId": "744607127"
+    },
+    {
+      "name": "디핀",
+      "aliases": [],
+      "address": "서울 중구 퇴계로 411",
+      "lat": 37.56578873045366,
+      "lng": 127.01722736606344,
+      "chef": "윤남노",
+      "contestant": "요리하는 돌아이",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-4-1",
+      "oldPlaceId": "1951275673",
+      "holdReason": "이전 식당 또는 셰프 퇴사 확인. 현재 점포와 분리"
+    },
+    {
+      "name": "디핀옥수",
+      "aliases": [],
+      "address": "서울 성동구 독서당로 194",
+      "lat": 37.542691327897224,
+      "lng": 127.01266420395578,
+      "chef": "윤남노",
+      "contestant": "요리하는 돌아이",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-4-2",
+      "oldPlaceId": "188922946",
+      "holdReason": "이전 식당 또는 셰프 퇴사 확인. 현재 점포와 분리"
+    },
+    {
+      "name": "코레츠 라이브",
+      "aliases": [
+        "네기라이브",
+        "네기라이브",
+        "코레츠 라이브"
+      ],
+      "address": "서울 성동구 성수이로 97",
+      "lat": 37.54365153252411,
+      "lng": 127.05657776031512,
+      "chef": "장호준",
+      "contestant": "장호준",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-5-2",
+      "oldPlaceId": "1427899355",
+      "currentNameSource": "https://baamkong.tistory.com/entry/성수-맛집-네기라이브-런치-후기-코레츠-라이브"
+    },
+    {
+      "name": "즐거운술상",
+      "aliases": [],
+      "address": "서울 도봉구 노해로 341",
+      "lat": 37.65151561193785,
+      "lng": 127.04590778762785,
+      "chef": "김미령",
+      "contestant": "이모카세 1호",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-6-2",
+      "oldPlaceId": "1602362477"
+    },
+    {
+      "name": "티엔미미 강남점",
+      "aliases": [],
+      "address": "서울 서초구 사임당로 143",
+      "lat": 37.49185109047044,
+      "lng": 127.02523886077209,
+      "chef": "정지선",
+      "contestant": "정지선",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-7-1",
+      "oldPlaceId": "1124063279"
+    },
+    {
+      "name": "쵸이닷",
+      "aliases": [],
+      "address": "서울 강남구 도산대로 457",
+      "lat": 37.524417739809856,
+      "lng": 127.04655380323715,
+      "chef": "최현석",
+      "contestant": "최현석",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-8-1",
+      "oldPlaceId": "1565367501"
+    },
+    {
+      "name": "중앙감속기",
+      "aliases": [],
+      "address": "서울 성동구 성수일로6길 7-1",
+      "lat": 37.545574967144404,
+      "lng": 127.05108424107581,
+      "chef": "최현석",
+      "contestant": "최현석",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-8-2",
+      "oldPlaceId": "138978252"
+    },
+    {
+      "name": "달리아 다이닝",
+      "aliases": [],
+      "address": "서울 강남구 도산대로45길 14",
+      "lat": 37.52322136973698,
+      "lng": 127.03574739280594,
+      "chef": "최현석",
+      "contestant": "최현석",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-8-4",
+      "oldPlaceId": "345398543"
+    },
+    {
+      "name": "그린볼",
+      "aliases": [],
+      "address": "강원도 강릉시 산양큰길22번길 30",
+      "lat": 37.77875224017188,
+      "lng": 128.91747937158596,
+      "chef": "남정석",
+      "contestant": "남정석",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-10-2",
+      "oldPlaceId": "279012480"
+    },
+    {
+      "name": "조광 201",
+      "aliases": [],
+      "address": "서울 송파구 새말로10길 8",
+      "lat": 37.4815503071785,
+      "lng": 127.12678748589674,
+      "chef": "조광효",
+      "contestant": "만찢남",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-11-1",
+      "oldPlaceId": "1579261014"
+    },
+    {
+      "name": "마마리마켓",
+      "aliases": [],
+      "address": "서울 성동구 연무장18길 16",
+      "lat": 37.53932040722309,
+      "lng": 127.06200111193691,
+      "chef": "송하리슬람",
+      "contestant": "반찬 셰프",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-12-1",
+      "oldPlaceId": "650958198"
+    },
+    {
+      "name": "마마리다이닝",
+      "aliases": [],
+      "address": "서울 영등포구 국제금융로 10",
+      "lat": 37.52517788629538,
+      "lng": 126.92487874285696,
+      "chef": "송하리슬람",
+      "contestant": "반찬 셰프",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-12-3",
+      "oldPlaceId": "1718798106"
+    },
+    {
+      "name": "가매일식",
+      "aliases": [],
+      "address": "광주광역시 서구 상무대로 1104-26",
+      "lat": 35.152538636802035,
+      "lng": 126.88381278219632,
+      "chef": "안유성",
+      "contestant": "안유성",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-13-1",
+      "oldPlaceId": "10115439"
+    },
+    {
+      "name": "광주옥1947",
+      "aliases": [],
+      "address": "광주광역시 서구 상무대로 1104-20",
+      "lat": 35.152592199361145,
+      "lng": 126.8832727494865,
+      "chef": "안유성",
+      "contestant": "안유성",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-13-2",
+      "oldPlaceId": "60825746"
+    },
+    {
+      "name": "장수나주곰탕",
+      "aliases": [],
+      "address": "광주광역시 서구 대남대로487번길 14",
+      "lat": 35.15165563286778,
+      "lng": 126.88415644498333,
+      "chef": "안유성",
+      "contestant": "안유성",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-13-3",
+      "oldPlaceId": "274686430"
+    },
+    {
+      "name": "나경버섯농가",
+      "aliases": [],
+      "address": "충남 부여군 석성면 비당로109번길 100",
+      "lat": 36.218099385953586,
+      "lng": 127.00615694173624,
+      "chef": "이영숙",
+      "contestant": "이영숙",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-14-1",
+      "oldPlaceId": "19277972"
+    },
+    {
+      "name": "도량",
+      "aliases": [],
+      "address": "서울 종로구 자하문로6길 6 2, 3층",
+      "lat": 37.57796823935593,
+      "lng": 126.97250417816988,
+      "chef": "임태훈",
+      "contestant": "철가방 요리사",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-15-1",
+      "oldPlaceId": "811744471"
+    },
+    {
+      "name": "터치더스카이",
+      "aliases": [],
+      "address": "서울 영등포구 여의도동 63로 50",
+      "lat": 37.519892358335404,
+      "lng": 126.94022306201077,
+      "chef": "조은주",
+      "contestant": "조은주",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-18-1",
+      "oldPlaceId": "11232276"
+    },
+    {
+      "name": "진진",
+      "aliases": [],
+      "address": "서울 마포구 월드컵북로1길 60",
+      "lat": 37.55376415213424,
+      "lng": 126.91845364572863,
+      "chef": "황진선",
+      "contestant": "황진선",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-21-1",
+      "oldPlaceId": "1767349854"
+    },
+    {
+      "name": "표노부오노",
+      "aliases": [],
+      "address": "서울 강남구 도산대로45길 8-7",
+      "lat": 37.52306620109668,
+      "lng": 127.03638986549201,
+      "chef": "김태성",
+      "contestant": "히든 천재",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-22-1",
+      "oldPlaceId": "1414077027"
+    },
+    {
+      "name": "군몽",
+      "aliases": [],
+      "address": "서울 용산구 한강대로27가길 15",
+      "lat": 37.537386883114664,
+      "lng": 127.00291011662243,
+      "chef": "데이비드 리 David Lee",
+      "contestant": "고기 깡패",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-24-1",
+      "oldPlaceId": "539316041"
+    },
+    {
+      "name": "윤서울",
+      "aliases": [],
+      "address": "서울 강남구 선릉로 805",
+      "lat": 37.52412134847773,
+      "lng": 127.03898322625301,
+      "chef": "김도윤",
+      "contestant": "김도윤",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-25-1",
+      "oldPlaceId": "312810588"
+    },
+    {
+      "name": "모리노 아루요",
+      "aliases": [],
+      "address": "제주도 제주시 애월읍 하소로 769-58",
+      "lat": 33.419428915484666,
+      "lng": 126.40198608440059,
+      "chef": "김승민",
+      "contestant": "김승민",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-26-1",
+      "oldPlaceId": "27321409"
+    },
+    {
+      "name": "오쁘띠베르",
+      "aliases": [],
+      "address": "서울 종로구 자하문로 47-1",
+      "lat": 37.580260003663646,
+      "lng": 126.97098178087212,
+      "chef": "박준우",
+      "contestant": "박준우",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-27-1",
+      "oldPlaceId": "1832182578"
+    },
+    {
+      "name": "깃든",
+      "aliases": [],
+      "address": "서울 강북구 월계로7나길 46-5 1층",
+      "lat": 37.61326803700023,
+      "lng": 127.03167681547066,
+      "chef": "방기수",
+      "contestant": "방기수",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-28-1",
+      "oldPlaceId": "1800902441"
+    },
+    {
+      "name": "야키토리묵",
+      "aliases": [],
+      "address": "서울 마포구 성미산로 165-1",
+      "lat": 37.56465947796527,
+      "lng": 126.92458557567846,
+      "chef": "김병묵",
+      "contestant": "야키토리왕",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-31-1",
+      "oldPlaceId": "677911355"
+    },
+    {
+      "name": "홍보각",
+      "aliases": [],
+      "address": "서울 강남구 봉은사로 130",
+      "lat": 37.505275240492054,
+      "lng": 127.02892131238886,
+      "chef": "여경래",
+      "contestant": "여경래",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-32-1",
+      "oldPlaceId": "735898829"
+    },
+    {
+      "name": "남영탉",
+      "aliases": [],
+      "address": "서울 용산구 한강대로80길",
+      "lat": null,
+      "lng": null,
+      "chef": "오준탁",
+      "contestant": "영탉",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-33-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "친밀 제주",
+      "aliases": [],
+      "address": "제주도 제주시 조천읍 남조로 1781",
+      "lat": null,
+      "lng": null,
+      "chef": "오세득",
+      "contestant": "오세득",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-34-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "오팬파이어",
+      "aliases": [],
+      "address": "제주도 제주시 조천읍 남조로 1781",
+      "lat": null,
+      "lng": null,
+      "chef": "오세득",
+      "contestant": "오세득",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-34-2",
+      "oldPlaceId": null
+    },
+    {
+      "name": "본연",
+      "aliases": [],
+      "address": "서울 강남구 논현로 742",
+      "lat": 37.51828566776124,
+      "lng": 127.02922496237763,
+      "chef": "배경준",
+      "contestant": "원투쓰리",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-35-1",
+      "oldPlaceId": "143050534"
+    },
+    {
+      "name": "을지로보석",
+      "aliases": [],
+      "address": "서울 중구 마른내로11-10",
+      "lat": 37.5651407804757,
+      "lng": 126.98924713794588,
+      "chef": "조서형",
+      "contestant": "장사천재 조사장",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-36-1",
+      "oldPlaceId": "539686431"
+    },
+    {
+      "name": "리북방",
+      "aliases": [],
+      "address": "서울 마포구 마포대로1길 16",
+      "lat": 37.539730248760385,
+      "lng": 126.94314459176131,
+      "chef": "최지형",
+      "contestant": "최지형",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-38-1",
+      "oldPlaceId": "420523795"
+    },
+    {
+      "name": "나우 남영",
+      "aliases": [],
+      "address": "서울 용산구 원효로89길 23",
+      "lat": 37.540737832900646,
+      "lng": 126.96772477442343,
+      "chef": "박지영",
+      "contestant": "키친 갱스터",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-39-1",
+      "oldPlaceId": "2082917786"
+    },
+    {
+      "name": "파브리키친",
+      "aliases": [],
+      "address": "서울 용산구 한강대로15길 23-6",
+      "lat": 37.52608611803227,
+      "lng": 126.9628303402428,
+      "chef": "파브리치오 페라리 Fabrizio Ferrari",
+      "contestant": "파브리",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-40-1",
+      "oldPlaceId": "1781966174"
+    },
+    {
+      "name": "대엽 성수",
+      "aliases": [],
+      "address": "서울 성동구 왕십리로2길 36",
+      "lat": 37.54259913747265,
+      "lng": 127.04854303654155,
+      "chef": "고석현",
+      "contestant": "4.8.100",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-41-1",
+      "oldPlaceId": "1164346957"
+    },
+    {
+      "name": "오늘의 초밥",
+      "aliases": [],
+      "address": "경기도 수원시 영통구 센트럴파크로127번길 18",
+      "lat": 37.30111317698201,
+      "lng": 127.04532850438984,
+      "chef": "이경재",
+      "contestant": "50억 초밥왕",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-42-1",
+      "oldPlaceId": "1234435101"
+    },
+    {
+      "name": "가야가야",
+      "aliases": [],
+      "address": "서울 마포구 양화로10길 15 1층",
+      "lat": null,
+      "lng": null,
+      "chef": "이창재",
+      "contestant": "골목식당 1호",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-47-1",
+      "oldPlaceId": "1317607383"
+    },
+    {
+      "name": "논데",
+      "aliases": [],
+      "address": "서울 종로구 종로18길 37",
+      "lat": 37.56867286848403,
+      "lng": 126.9915059697942,
+      "chef": "우현일",
+      "contestant": "광속 요리사",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-49-1",
+      "oldPlaceId": "885392946"
+    },
+    {
+      "name": "스낵바 논데",
+      "aliases": [],
+      "address": "서울 성동구 왕십리로 58",
+      "lat": null,
+      "lng": null,
+      "chef": "우현일",
+      "contestant": "광속 요리사",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-49-2",
+      "oldPlaceId": null
+    },
+    {
+      "name": "에이넷",
+      "aliases": [],
+      "address": "서울 강남구 논현로159길 46-6",
+      "lat": 37.52243856830582,
+      "lng": 127.02447992104631,
+      "chef": "채낙영",
+      "contestant": "돌아온 소년",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-55-3",
+      "oldPlaceId": "1630132489"
+    },
+    {
+      "name": "윰드",
+      "aliases": [],
+      "address": "서울 강남구 도산대로58길 18",
+      "lat": 37.52205910556801,
+      "lng": 127.04119031228602,
+      "chef": "한민호",
+      "contestant": "멜버른 베스트",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-57-1",
+      "oldPlaceId": "1196828114"
+    },
+    {
+      "name": "피델리오",
+      "aliases": [],
+      "address": "서울 마포구 월드컵로19길 31-1",
+      "lat": null,
+      "lng": null,
+      "chef": "박원상",
+      "contestant": "방구석 다이닝",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-58-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "묵정서울",
+      "aliases": [],
+      "address": "서울 중구 묵정동",
+      "lat": 37.56180758225877,
+      "lng": 127.00052064170345,
+      "chef": "오스틴 강 Austin Kang",
+      "contestant": "본업도 잘하는 남자",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-59-1",
+      "oldPlaceId": "548731018"
+    },
+    {
+      "name": "라운지 바이 블그레",
+      "aliases": [],
+      "address": "서울 강남구 논현로175길 101-4",
+      "lat": 37.52248608476895,
+      "lng": 127.02103193076138,
+      "chef": "김봉수",
+      "contestant": "봉주부",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-60-1",
+      "oldPlaceId": "726268592"
+    },
+    {
+      "name": "마늘집",
+      "aliases": [],
+      "address": "서울 마포구 양화로3길 15",
+      "lat": 37.549643373363054,
+      "lng": 126.91148267241407,
+      "chef": "최서우",
+      "contestant": "뷔페집 둘째딸",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-61-1",
+      "oldPlaceId": "1301732319"
+    },
+    {
+      "name": "전주비빔소리",
+      "aliases": [],
+      "address": "전북 전주시 완산구 경기전길 126",
+      "lat": 35.813813233404694,
+      "lng": 127.1510193382765,
+      "chef": "유비빔",
+      "contestant": "비빔대왕",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-62-1",
+      "oldPlaceId": "797949026"
+    },
+    {
+      "name": "로기",
+      "aliases": [],
+      "address": "서울 용산구 한남대로27가길 32",
+      "lat": 37.538093275563206,
+      "lng": 127.00255712504203,
+      "chef": "박준승",
+      "contestant": "시크릿 코스",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-65-1",
+      "oldPlaceId": "1636890934"
+    },
+    {
+      "name": "오복당",
+      "aliases": [],
+      "address": "경기도 안산시 단원구 광덕2로 163-5",
+      "lat": null,
+      "lng": null,
+      "chef": "강기복",
+      "contestant": "안산 백종원",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-66-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "보꾸",
+      "aliases": [],
+      "address": "경기도 안산시 단원구 광덕서로 48",
+      "lat": null,
+      "lng": null,
+      "chef": "강기복",
+      "contestant": "안산 백종원",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-66-3",
+      "oldPlaceId": null
+    },
+    {
+      "name": "심야식당세이지",
+      "aliases": [],
+      "address": "서울 은평구 연서로27길 13-6",
+      "lat": 37.61789980867199,
+      "lng": 126.91757265336803,
+      "chef": "박세진",
+      "contestant": "일식 타짜",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-71-1",
+      "oldPlaceId": "409699931"
+    },
+    {
+      "name": "후후세이지",
+      "aliases": [],
+      "address": "서울 성북구 정릉로26길 32",
+      "lat": 37.60357704651978,
+      "lng": 127.01184555586376,
+      "chef": "박세진",
+      "contestant": "일식 타짜",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-71-3",
+      "oldPlaceId": "1408988111"
+    },
+    {
+      "name": "스낵바세이지 어부bar",
+      "aliases": [],
+      "address": "서울 은평구 연서로25길 20-4",
+      "lat": 37.61738774651769,
+      "lng": 126.91714280349767,
+      "chef": "박세진",
+      "contestant": "일식 타짜",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-71-4",
+      "oldPlaceId": "1462388814"
+    },
+    {
+      "name": "소금집",
+      "aliases": [],
+      "address": "서울 마포구 월드컵로19길 14",
+      "lat": 37.556823649468,
+      "lng": 126.90823736311545,
+      "chef": "조지 더럼 George Durham",
+      "contestant": "잠봉뵈르맨",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-72-1",
+      "oldPlaceId": "256064588"
+    },
+    {
+      "name": "아오이토리",
+      "aliases": [],
+      "address": "서울 마포구 와우산로29길 8",
+      "lat": 37.55470470234457,
+      "lng": 126.92950728234156,
+      "chef": "코바야시 스스무 小林すすむ",
+      "contestant": "제빵 요리사",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-74-1",
+      "oldPlaceId": "24504952"
+    },
+    {
+      "name": "언니네 시골집",
+      "aliases": [],
+      "address": "제주도 제주시 한경면 용수3길 38",
+      "lat": null,
+      "lng": null,
+      "chef": "황태원",
+      "contestant": "제주 게하 셰프",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-75-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "잭잭",
+      "aliases": [],
+      "address": "서울 용산구 회나무로6길 21",
+      "lat": 37.53390131589046,
+      "lng": 126.9887854846763,
+      "chef": "김지훈태",
+      "contestant": "짹짹이",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-76-1",
+      "oldPlaceId": "1341356206"
+    },
+    {
+      "name": "엄마 밥상",
+      "aliases": [],
+      "address": "경북 칠곡군 동명면 팔공산로 157",
+      "lat": 35.99942948157078,
+      "lng": 128.60625019247937,
+      "chef": "안경숙",
+      "contestant": "천만 백반",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-77-1",
+      "oldPlaceId": "1172451430"
+    },
+    {
+      "name": "미트컬쳐",
+      "aliases": [],
+      "address": "강원도 강릉시 경강로 2629",
+      "lat": 37.7721204592069,
+      "lng": 128.9467963745221,
+      "chef": "장지수",
+      "contestant": "청와대 셰프",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-78-1",
+      "oldPlaceId": "1377594871"
+    },
+    {
+      "name": "101 Chicken",
+      "aliases": [],
+      "address": "2151 Lemoine Ave, Fort Lee, NJ 07024, USA",
+      "lat": null,
+      "lng": null,
+      "chef": "안병태",
+      "contestant": "치킨 대통령",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-79-1",
+      "oldPlaceId": null
+    },
+    {
+      "name": "에스콘디도",
+      "aliases": [],
+      "address": "서울 용산구 한남대로20길 61-7",
+      "lat": 37.535130341517075,
+      "lng": 127.01055847200007,
+      "chef": "진우범",
+      "contestant": "코리안 타코킹",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-82-1",
+      "oldPlaceId": "1088263038"
+    },
+    {
+      "name": "엘몰리노",
+      "aliases": [],
+      "address": "서울 성동구 서울숲2길 19-18",
+      "lat": 37.54743489848679,
+      "lng": 127.04116805970712,
+      "chef": "진우범",
+      "contestant": "코리안 타코킹",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-82-2",
+      "oldPlaceId": "647800262"
+    },
+    {
+      "name": "와일드플라워",
+      "aliases": [],
+      "address": "서울 서초구 방배로26길19",
+      "lat": 37.48941009680302,
+      "lng": 126.993907591498,
+      "chef": "조은빛",
+      "contestant": "쿠킹텔러",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-83-1",
+      "oldPlaceId": "161738142"
+    },
+    {
+      "name": "코치",
+      "aliases": [],
+      "address": "서울 성동구 성덕정17길 11 1층",
+      "lat": null,
+      "lng": null,
+      "chef": "박건순",
+      "contestant": "통닭맨",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-86-1",
+      "oldPlaceId": "1990658906"
+    },
+    {
+      "name": "코치",
+      "aliases": [],
+      "address": "서울 성동구 성덕정17길 11",
+      "lat": 37.538184936035016,
+      "lng": 127.05516155205558,
+      "chef": "박건순",
+      "contestant": "통닭맨",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-86-2",
+      "oldPlaceId": "1990658906"
+    },
+    {
+      "name": "아타리",
+      "aliases": [],
+      "address": "서울 성동구 성덕정19길 13",
+      "lat": 37.53755712867371,
+      "lng": 127.05666367247854,
+      "chef": "박건순",
+      "contestant": "통닭맨",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-86-3",
+      "oldPlaceId": "408054206"
+    },
+    {
+      "name": "야키토리 혼바",
+      "aliases": [],
+      "address": "서울 용산구 후암로 79",
+      "lat": 37.55285652497097,
+      "lng": 126.97642906897876,
+      "chef": "박건순",
+      "contestant": "통닭맨",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-86-4",
+      "oldPlaceId": "79325645"
+    },
+    {
+      "name": "포그",
+      "aliases": [],
+      "address": "서울 마포구 독막로2길 34 1층",
+      "lat": null,
+      "lng": null,
+      "chef": "박정현",
+      "contestant": "평가절하",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-87-1",
+      "oldPlaceId": "1317622013"
+    },
+    {
+      "name": "사브서울",
+      "aliases": [],
+      "address": "서울 강남구 논현로175길 6",
+      "lat": 37.526366174360646,
+      "lng": 127.02792486360674,
+      "chef": "장한이",
+      "contestant": "프렌치돌",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-90-1",
+      "oldPlaceId": "302504172"
+    },
+    {
+      "name": "더 시옷",
+      "aliases": [],
+      "address": "서울 중구 수표로 30",
+      "lat": 37.56383623630784,
+      "lng": 126.9903882408109,
+      "chef": "김원기",
+      "contestant": "해피버스데이",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-92-1",
+      "oldPlaceId": "893762761"
+    },
+    {
+      "name": "장화",
+      "aliases": [],
+      "address": "경남 양산시 물금읍 증산역로 155",
+      "lat": 35.30969390021848,
+      "lng": 129.00717952814875,
+      "chef": "구승민",
+      "contestant": "황금삽",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-96-1",
+      "oldPlaceId": "648303765"
+    },
+    {
+      "name": "SOIGNE",
+      "aliases": [
+        "스와니예",
+        "스와니예"
+      ],
+      "address": "서울 강남구 강남대로 652 신사스퀘어 2층 201호",
+      "chef": "이준",
+      "contestant": "이준",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-1",
+      "oldPlaceId": "1469290862"
+    },
+    {
+      "name": "이타닉 가든",
+      "aliases": [
+        "이타닉 가든"
+      ],
+      "address": "서울 강남구 테헤란로 231 조선팰리스 36층",
+      "chef": "손종원",
+      "contestant": "손종원",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-9",
+      "oldPlaceId": "2044587542"
+    },
+    {
+      "name": "라망시크레",
+      "aliases": [
+        "라망시크레"
+      ],
+      "address": "서울 중구 퇴계로 67 레스케이프호텔 26층",
+      "chef": "손종원",
+      "contestant": "손종원",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-8",
+      "oldPlaceId": "1168689188"
+    },
+    {
+      "name": "앰배서더 서울 풀만 호빈",
+      "aliases": [
+        "호빈",
+        "호빈"
+      ],
+      "address": "서울 중구 동호로 287 2층",
+      "chef": "후덕죽",
+      "contestant": "후덕죽",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-23",
+      "oldPlaceId": "174778252"
+    },
+    {
+      "name": "카덴",
+      "aliases": [
+        "카덴"
+      ],
+      "address": "서울 서대문구 연희로 173 거화빌딩 2층",
+      "chef": "정호영",
+      "contestant": "정호영",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-26",
+      "oldPlaceId": "1256702713"
+    },
+    {
+      "name": "뜨라또리아 샘킴",
+      "aliases": [
+        "뜨라또리아 샘킴"
+      ],
+      "address": "서울 강남구 도산대로49길 10-3 2층",
+      "chef": "샘킴",
+      "contestant": "샘킴",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-11",
+      "oldPlaceId": "2054936882"
+    },
+    {
+      "name": "오스테리아 샘킴",
+      "aliases": [
+        "오스리아 샘킴",
+        "오스리아 샘킴"
+      ],
+      "address": "서울 마포구 월드컵로1길 14 딜라이트스퀘어A동 1차 2층",
+      "chef": "샘킴",
+      "contestant": "샘킴",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-10",
+      "oldPlaceId": "752409345"
+    },
+    {
+      "name": "시리얼고메2.0",
+      "aliases": [
+        "시리얼고메2.0"
+      ],
+      "address": "",
+      "chef": "레이먼킴",
+      "contestant": "레이먼킴",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "KOCHI",
+      "aliases": [
+        "KOCHI"
+      ],
+      "address": "",
+      "chef": "심성철",
+      "contestant": "심성철",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "해외 식당"
+    },
+    {
+      "name": "Mari",
+      "aliases": [
+        "Mari"
+      ],
+      "address": "",
+      "chef": "심성철",
+      "contestant": "심성철",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "해외 식당"
+    },
+    {
+      "name": "소울 SOUL",
+      "aliases": [
+        "소울",
+        "소울"
+      ],
+      "address": "서울 용산구 신흥로26길 35 바나힐 지하1층",
+      "chef": "김희은",
+      "contestant": "김희은",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-15",
+      "oldPlaceId": "404432674"
+    },
+    {
+      "name": "에그앤플라워 해방촌 본점",
+      "aliases": [
+        "에그앤플라워",
+        "에그앤플라워"
+      ],
+      "address": "서울 용산구 신흥로26길 35 1-2층",
+      "chef": "김희은",
+      "contestant": "김희은",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-14",
+      "oldPlaceId": "1838545503"
+    },
+    {
+      "name": "고료리 켄",
+      "aliases": [
+        "고료리 켄"
+      ],
+      "address": "서울 강남구 언주로152길 15-3 2층",
+      "chef": "김건",
+      "contestant": "김건",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-5",
+      "oldPlaceId": "651104505"
+    },
+    {
+      "name": "이치에",
+      "aliases": [
+        "이치에"
+      ],
+      "address": "서울 강남구 선릉로155길 23-3 2층",
+      "chef": "김건",
+      "contestant": "김건",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-7",
+      "oldPlaceId": "18835270"
+    },
+    {
+      "name": "회현식당",
+      "aliases": [
+        "회현식당"
+      ],
+      "address": "서울 중구 퇴계로2길 9-8 2층",
+      "chef": "김건",
+      "contestant": "김건",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-6",
+      "oldPlaceId": "1572703534"
+    },
+    {
+      "name": "천상현의 천상",
+      "aliases": [
+        "천상현의 천상"
+      ],
+      "address": "서울 서초구 매헌로 16 라시따델라모다 6층 6164호",
+      "chef": "천상현",
+      "contestant": "천상현",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-27",
+      "oldPlaceId": "1111103493"
+    },
+    {
+      "name": "봉래헌",
+      "aliases": [
+        "봉래헌"
+      ],
+      "address": "서울 강서구 방화대로 94 별관",
+      "chef": "이금희",
+      "contestant": "이금희",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-21",
+      "oldPlaceId": "7907275"
+    },
+    {
+      "name": "나무 Namu",
+      "aliases": [
+        "나무 Namu"
+      ],
+      "address": "",
+      "chef": "제니 월든",
+      "contestant": "제니 월든",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "해외 식당"
+    },
+    {
+      "name": "가지 Gaji",
+      "aliases": [
+        "가지 Gaji"
+      ],
+      "address": "",
+      "chef": "제니 월든",
+      "contestant": "제니 월든",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "해외 식당"
+    },
+    {
+      "name": "크라운돼지",
+      "aliases": [
+        "크라운돼지"
+      ],
+      "address": "서울 강남구 강남대로156길 17-1 지상1층,2층",
+      "chef": "송훈",
+      "contestant": "송훈",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-16",
+      "oldPlaceId": "2057523686"
+    },
+    {
+      "name": "백운한정식",
+      "aliases": [
+        "백운한정식"
+      ],
+      "address": "",
+      "chef": "임성근",
+      "contestant": "임성근",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "출연 당시와 현재 소속 또는 영업점 근거 추가 확인"
+    },
+    {
+      "name": "윤서울",
+      "aliases": [
+        "윤서울"
+      ],
+      "address": "서울 강남구 선릉로 805 W빌딩 1층",
+      "chef": "김도윤",
+      "contestant": "김도윤",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-12",
+      "oldPlaceId": "312810588"
+    },
+    {
+      "name": "136길 육미",
+      "aliases": [
+        "136길 육미"
+      ],
+      "address": "",
+      "chef": "최강록",
+      "contestant": "최강록",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "출연 당시와 현재 소속 또는 영업점 근거 추가 확인"
+    },
+    {
+      "name": "코자차 kojacha",
+      "aliases": [
+        "코자차(Kozacha)",
+        "코자차"
+      ],
+      "address": "서울 강남구 학동로97길 17 진흥빌딩 1층",
+      "chef": "최유강",
+      "contestant": "최유강",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-24",
+      "oldPlaceId": "1136269268"
+    },
+    {
+      "name": "테이블포포",
+      "aliases": [
+        "테이블포포"
+      ],
+      "address": "서울 용산구 대사관로31길 25-12 5층",
+      "chef": "김성운",
+      "contestant": "김성운",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-16",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-white-18",
+      "oldPlaceId": "14650440"
+    },
+    {
+      "name": "셰누프라이빗키친",
+      "aliases": [
+        "셰누프라이빗키친"
+      ],
+      "address": "",
+      "chef": "안녕 봉주르",
+      "contestant": "안녕 봉주르",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "드레스덴 그린",
+      "aliases": [
+        "드레스덴 그린"
+      ],
+      "address": "서울 강남구 도산대로 420 청담스퀘어 B동 2층 222호",
+      "chef": "천생연분",
+      "contestant": "천생연분",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-28",
+      "oldPlaceId": "1815611132"
+    },
+    {
+      "name": "소바쥬",
+      "aliases": [
+        "소바쥬"
+      ],
+      "address": "서울 마포구 큰우물로 75 성지빌딩 지하1층 22호",
+      "chef": "무쇠팔",
+      "contestant": "무쇠팔",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-34",
+      "oldPlaceId": "619030447"
+    },
+    {
+      "name": "모노로그",
+      "aliases": [
+        "모노로그"
+      ],
+      "address": "",
+      "chef": "칼마카세",
+      "contestant": "칼마카세",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "출연 당시와 현재 소속 또는 영업점 근거 추가 확인"
+    },
+    {
+      "name": "독도16도",
+      "aliases": [
+        "독도16도"
+      ],
+      "address": "서울 종로구 필운대로5가길 2 3층",
+      "chef": "4평 외톨이",
+      "contestant": "4평 외톨이",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-17",
+      "oldPlaceId": "698575660"
+    },
+    {
+      "name": "수퍼판",
+      "aliases": [
+        "수퍼판"
+      ],
+      "address": "서울 강남구 논현로167길 15 휴에프빌딩 2층",
+      "chef": "서울 엄마",
+      "contestant": "서울엄마",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-24",
+      "oldPlaceId": "26457126"
+    },
+    {
+      "name": "온지음 레스토랑",
+      "aliases": [
+        "온지음 레스토랑"
+      ],
+      "address": "",
+      "chef": "반찬술사",
+      "contestant": "반찬술사",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "옥동식",
+      "aliases": [
+        "옥동식"
+      ],
+      "address": "서울 마포구 양화로7길 44-10 1층",
+      "chef": "뉴욕에 간 돼지곰탕",
+      "contestant": "뉴욕에 간 돼지곰탕",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-11",
+      "oldPlaceId": "1797997961"
+    },
+    {
+      "name": "더 이탈리안 클럽",
+      "aliases": [
+        "더 이탈리안 클럽"
+      ],
+      "address": "",
+      "chef": "키친보스",
+      "contestant": "키친보스",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "해방촌 윤주당",
+      "aliases": [
+        "해방촌 윤주당"
+      ],
+      "address": "",
+      "chef": "술 빚는 윤주모",
+      "contestant": "술 빚는 윤주모",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "동경밥상 본점",
+      "aliases": [
+        "동경밥상 본점",
+        "동경밥상"
+      ],
+      "address": "부산 수영구 남천바다로 34-6 1층",
+      "chef": "부채도사",
+      "contestant": "부채도사",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-13",
+      "oldPlaceId": "1281283194"
+    },
+    {
+      "name": "유용욱 바베큐 연구소",
+      "aliases": [
+        "유용욱바베큐연구소"
+      ],
+      "address": "서울 용산구 한강대로84길 5-7",
+      "chef": "바베큐연구소장",
+      "contestant": "바베큐연구소장",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-10",
+      "oldPlaceId": "63387122"
+    },
+    {
+      "name": "IMOK Smoke Dining",
+      "aliases": [
+        "이목스모크다이닝",
+        "이목스모크다이닝"
+      ],
+      "address": "서울 강남구 압구정로2길 6",
+      "chef": "바베큐연구소장",
+      "contestant": "바베큐연구소장",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-9",
+      "oldPlaceId": "485505101"
+    },
+    {
+      "name": "Original Numbers 청담",
+      "aliases": [
+        "오리지널 넘버스",
+        "오리지널 넘버스"
+      ],
+      "address": "서울 강남구 도산대로55길 24 1층",
+      "chef": "삐딱한 천재",
+      "contestant": "삐딱한 천재",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-23",
+      "oldPlaceId": "1952752710"
+    },
+    {
+      "name": "BISTROT de YOUNTVILLE",
+      "aliases": [
+        "BISTYROT de YOUNTVILLE",
+        "BISTYROT de YOUNTVILLE",
+        "비스트로 드 욘트빌"
+      ],
+      "address": "서울 강남구 선릉로158길 13-7 이안빌딩 1층",
+      "chef": "프렌치 파파",
+      "contestant": "프렌치 파파",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": "culinary-class-wars-s2-black-5",
+      "oldPlaceId": "15884436"
+    },
+    {
+      "name": "쌤쌤쌤 용산점",
+      "aliases": [
+        "쌤쌤쌤 용산점"
+      ],
+      "address": "",
+      "chef": "유행왕",
+      "contestant": "유행왕",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "금룡",
+      "aliases": [
+        "금룡"
+      ],
+      "address": "",
+      "chef": "중식 마녀",
+      "contestant": "중식 마녀",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null,
+      "holdReason": "출연 당시와 현재 소속 또는 영업점 근거 추가 확인"
+    },
+    {
+      "name": "솔밤",
+      "aliases": [
+        "솔밤"
+      ],
+      "address": "",
+      "chef": "아기 맹수",
+      "contestant": "아기 맹수",
+      "season": 2,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "sourceDate": "2025-12-18",
+      "evidenceType": "supplied_guide_needs_affiliation_check",
+      "legacyId": null,
+      "oldPlaceId": null
+    },
+    {
+      "name": "베수비오",
+      "aliases": [],
+      "address": "서울 중구 다산로24길 28 2층",
+      "chef": "권성준",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://app.catchtable.co.kr/ct/shop/vesuvio",
+      "sourceDate": "2026-09-24",
+      "evidenceType": "current_booking_affiliation",
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "단일 코스메뉴",
+          "price": "240,000원"
+        }
+      ]
+    },
+    {
+      "name": "노뜨르",
+      "aliases": [],
+      "address": "서울 강남구 선릉로155길 13 2층",
+      "chef": "윤남노",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://app.catchtable.co.kr/ct/shop/notre",
+      "sourceDate": "2026-09-24",
+      "evidenceType": "current_booking_affiliation",
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "Amuse-Bouche",
+          "price": "45,000원"
+        }
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "이준",
+      "restaurants": [
+        {
+          "name": "스와니예",
+          "chef": "이준",
+          "matchedLegacyId": "culinary-class-wars-s2-white-1"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "손종원",
+      "restaurants": [
+        {
+          "name": "이타닉 가든",
+          "chef": "손종원",
+          "matchedLegacyId": "culinary-class-wars-s2-white-9"
+        },
+        {
+          "name": "라망시크레",
+          "chef": "손종원",
+          "matchedLegacyId": "culinary-class-wars-s2-white-8"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "선재스님",
+      "restaurants": [],
+      "hasRestaurant": false
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "후덕죽",
+      "restaurants": [
+        {
+          "name": "호빈",
+          "chef": "후덕죽",
+          "matchedLegacyId": "culinary-class-wars-s2-white-23"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "박효남",
+      "restaurants": [],
+      "hasRestaurant": false
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "정호영",
+      "restaurants": [
+        {
+          "name": "카덴",
+          "chef": "정호영",
+          "matchedLegacyId": "culinary-class-wars-s2-white-26"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "샘킴",
+      "restaurants": [
+        {
+          "name": "뜨라또리아 샘킴",
+          "chef": "샘킴",
+          "matchedLegacyId": "culinary-class-wars-s2-white-11"
+        },
+        {
+          "name": "오스리아 샘킴",
+          "chef": "샘킴",
+          "matchedLegacyId": "culinary-class-wars-s2-white-10"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "레이먼킴",
+      "restaurants": [
+        {
+          "name": "시리얼고메2.0",
+          "chef": "레이먼킴",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "심성철",
+      "restaurants": [
+        {
+          "name": "KOCHI",
+          "chef": "심성철",
+          "matchedLegacyId": null
+        },
+        {
+          "name": "Mari",
+          "chef": "심성철",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "김희은",
+      "restaurants": [
+        {
+          "name": "소울",
+          "chef": "김희은",
+          "matchedLegacyId": "culinary-class-wars-s2-white-15"
+        },
+        {
+          "name": "에그앤플라워",
+          "chef": "김희은",
+          "matchedLegacyId": "culinary-class-wars-s2-white-14"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "김건",
+      "restaurants": [
+        {
+          "name": "고료리 켄",
+          "chef": "김건",
+          "matchedLegacyId": "culinary-class-wars-s2-white-5"
+        },
+        {
+          "name": "이치에",
+          "chef": "김건",
+          "matchedLegacyId": "culinary-class-wars-s2-white-7"
+        },
+        {
+          "name": "회현식당",
+          "chef": "김건",
+          "matchedLegacyId": "culinary-class-wars-s2-white-6"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "천상현",
+      "restaurants": [
+        {
+          "name": "천상현의 천상",
+          "chef": "천상현",
+          "matchedLegacyId": "culinary-class-wars-s2-white-27"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "이금희",
+      "restaurants": [
+        {
+          "name": "봉래헌",
+          "chef": "이금희",
+          "matchedLegacyId": "culinary-class-wars-s2-white-21"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "제니 월든",
+      "restaurants": [
+        {
+          "name": "나무 Namu",
+          "chef": "제니 월든",
+          "matchedLegacyId": null
+        },
+        {
+          "name": "가지 Gaji",
+          "chef": "제니 월든",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "송훈",
+      "restaurants": [
+        {
+          "name": "크라운돼지",
+          "chef": "송훈",
+          "matchedLegacyId": "culinary-class-wars-s2-white-16"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "임성근",
+      "restaurants": [
+        {
+          "name": "백운한정식",
+          "chef": "임성근",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "김도윤",
+      "restaurants": [
+        {
+          "name": "윤서울",
+          "chef": "김도윤",
+          "matchedLegacyId": "culinary-class-wars-s2-white-12"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "최강록",
+      "restaurants": [
+        {
+          "name": "136길 육미",
+          "chef": "최강록",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "최유강",
+      "restaurants": [
+        {
+          "name": "코자차(Kozacha)",
+          "chef": "최유강",
+          "matchedLegacyId": "culinary-class-wars-s2-white-24"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-백수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "김성운",
+      "restaurants": [
+        {
+          "name": "테이블포포",
+          "chef": "김성운",
+          "matchedLegacyId": "culinary-class-wars-s2-white-18"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "안녕 봉주르",
+      "restaurants": [
+        {
+          "name": "셰누프라이빗키친",
+          "chef": "안녕 봉주르",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "천생연분",
+      "restaurants": [
+        {
+          "name": "드레스덴 그린",
+          "chef": "천생연분",
+          "matchedLegacyId": "culinary-class-wars-s2-black-28"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "무쇠팔",
+      "restaurants": [
+        {
+          "name": "소바쥬",
+          "chef": "무쇠팔",
+          "matchedLegacyId": "culinary-class-wars-s2-black-34"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "칼마카세",
+      "restaurants": [
+        {
+          "name": "모노로그",
+          "chef": "칼마카세",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "4평 외톨이",
+      "restaurants": [
+        {
+          "name": "독도16도",
+          "chef": "4평 외톨이",
+          "matchedLegacyId": "culinary-class-wars-s2-black-17"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "서울엄마",
+      "restaurants": [
+        {
+          "name": "수퍼판",
+          "chef": "서울엄마",
+          "matchedLegacyId": "culinary-class-wars-s2-black-24"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "반찬술사",
+      "restaurants": [
+        {
+          "name": "온지음 레스토랑",
+          "chef": "반찬술사",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "뉴욕에 간 돼지곰탕",
+      "restaurants": [
+        {
+          "name": "옥동식",
+          "chef": "뉴욕에 간 돼지곰탕",
+          "matchedLegacyId": "culinary-class-wars-s2-black-11"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "키친보스",
+      "restaurants": [
+        {
+          "name": "더 이탈리안 클럽",
+          "chef": "키친보스",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "술 빚는 윤주모",
+      "restaurants": [
+        {
+          "name": "해방촌 윤주당",
+          "chef": "술 빚는 윤주모",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "부채도사",
+      "restaurants": [
+        {
+          "name": "동경밥상 본점",
+          "chef": "부채도사",
+          "matchedLegacyId": "culinary-class-wars-s2-black-13"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "바베큐연구소장",
+      "restaurants": [
+        {
+          "name": "유용욱바베큐연구소",
+          "chef": "바베큐연구소장",
+          "matchedLegacyId": "culinary-class-wars-s2-black-10"
+        },
+        {
+          "name": "이목스모크다이닝",
+          "chef": "바베큐연구소장",
+          "matchedLegacyId": "culinary-class-wars-s2-black-9"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "삐딱한 천재",
+      "restaurants": [
+        {
+          "name": "오리지널 넘버스",
+          "chef": "삐딱한 천재",
+          "matchedLegacyId": "culinary-class-wars-s2-black-23"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "프렌치 파파",
+      "restaurants": [
+        {
+          "name": "BISTYROT de YOUNTVILLE",
+          "chef": "프렌치 파파",
+          "matchedLegacyId": "culinary-class-wars-s2-black-5"
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "유행왕",
+      "restaurants": [
+        {
+          "name": "쌤쌤쌤 용산점",
+          "chef": "유행왕",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "중식 마녀",
+      "restaurants": [
+        {
+          "name": "금룡",
+          "chef": "중식 마녀",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "아기 맹수",
+      "restaurants": [
+        {
+          "name": "솔밤",
+          "chef": "아기 맹수",
+          "matchedLegacyId": null
+        }
+      ],
+      "hasRestaurant": true
+    },
+    {
+      "sourceUrl": "https://tournwine.com/entry/흑백요리사2-흑수저-셰프-출연진-및-식당-리스트-총정리",
+      "chef": "요리 괴물",
+      "restaurants": [],
+      "hasRestaurant": false
+    }
+  ],
+  "unmatchedSeason1": [
+    {
+      "heading": " 심사위원",
+      "addresses": []
+    },
+    {
+      "heading": " 선경 롱기스트",
+      "addresses": [
+        "■ Sepnkyoung Longest 유튜브 채널 운영(구독자 220만)"
+      ]
+    },
+    {
+      "heading": " 에드워드 리 - 미국 루이스빌 610 매그놀리아 / 나미 모던 코리안 스테이크 하우스",
+      "addresses": [
+        "■ 매그놀리아 : 610 W Magnolia Ave, Louisville, KY",
+        "■ 나미 모던 코리안 스테이크 하우스 : 835 E Main St Louisville, KY 40206"
+      ]
+    },
+    {
+      "heading": " 조셉 리저우드 - 서울 신사동 에빗",
+      "addresses": [
+        "■ 서울 강남구 도산대로45길 10-5"
+      ]
+    },
+    {
+      "heading": " 최강록 - 서울 잠실 식당네오",
+      "addresses": [
+        "■ 서울 송파구 삼전로12길 4"
+      ]
+    },
+    {
+      "heading": " 간귀 - 에다마메 남영",
+      "addresses": [
+        "■ 서울 용산구 한강대로76길 11-40"
+      ]
+    },
+    {
+      "heading": " 급식대가",
+      "addresses": [
+        "■ 전직 학교 급식 조리사"
+      ]
+    },
+    {
+      "heading": " 불꽃남자 - 비스트로스파크",
+      "addresses": [
+        "■ 현재 영업종료"
+      ]
+    },
+    {
+      "heading": " 셀럽의 셰프 - Buto",
+      "addresses": [
+        "■ 서울 용산구 한남대로27가길 32"
+      ]
+    },
+    {
+      "heading": " 승우아빠 - 유튜브",
+      "addresses": [
+        "■ 유튜브 승우아빠 채널 운영(구독자 138만)"
+      ]
+    },
+    {
+      "heading": " 중식여신 - 홍콩 블랙 쉽 레스토랑 / 홍콩 그랜드 마제스틱",
+      "addresses": [
+        "■ 그랜드 마제스틱 : G/F, Central Magistracy, Tai Kwun, 1 Arbuthnot Rd, Central, Hong Kong"
+      ]
+    },
+    {
+      "heading": " 300억 반찬 CEO - 광진구 도시곳간 대표이사",
+      "addresses": [
+        "■ 프랜차이즈 '도시곳간'"
+      ]
+    },
+    {
+      "heading": " B급 셰프 - 제주 넘은 봄",
+      "addresses": [
+        "■ 제주 제주시 구좌읍 김녕로1길 75-1"
+      ]
+    },
+    {
+      "heading": " 뉴욕 장금이 - 줄리엣 커이터링",
+      "addresses": [
+        "■ 케이터링 업체"
+      ]
+    },
+    {
+      "heading": " 레시피 뱅크 - 심보울, 심수제 스토어",
+      "addresses": [
+        "■ 스마트스토어"
+      ]
+    },
+    {
+      "heading": " 캠핑맨 - 유투브 캠핑맨 / 로프컴퍼니대표",
+      "addresses": [
+        "■ 미미옥, 버거보이 등"
+      ]
+    },
+    {
+      "heading": " 풀메 요리사 - 신사동 이야이야앤프랜즈",
+      "addresses": [
+        "■ 서울 강남구 도산대로51길 22 1"
+      ]
+    },
+    {
+      "heading": " 후포리 촌놈 - 성동구 제이드앤워터",
+      "addresses": [
+        "■ 서울 성동구 한림말3길 29",
+        "■ 25년 공군요리사",
+        "■ KO든램지 - 연남동 스시혜와 (영업종료) / 유튜버 혜쭈 동생",
+        "■ 고프로",
+        "■ 공사판 셰프",
+        "■ 국내파스타 - 현재 무소속",
+        "■ 껌이지 형 - 챔보 유투브 채널 운영",
+        "■ 남극 셰프 - 유투버 남극셰프 / 안양 남극의순대국 (영업종료추정)"
+      ]
+    },
+    {
+      "heading": " 더티코리안",
+      "addresses": [
+        "■ 라따뚜이"
+      ]
+    },
+    {
+      "heading": " 빙그레",
+      "addresses": [
+        "■ 슈퍼땅콩 - 청담 b3713 (영업종료)",
+        "■ 스페인 모델",
+        "■ 오사카 한식선생님",
+        "■ 요리하는 첼리스트 - 현재 무소속 추정"
+      ]
+    },
+    {
+      "heading": " 월클 레시피 - 유튜브 만원요리 최씨남매 운영",
+      "addresses": [
+        "■ 은수저 - 유투브 은수저",
+        "■ 정육맨",
+        "■ 캐나다 삼촌 - 뉴욕 레스토랑 모모후쿠 수셰프 (전)",
+        "■ 타이셀렉트",
+        "■ 탈북 요리사",
+        "■ 포커페이스 - 서울 강남 코리(영업종료 추정) 총괄 셰프",
+        "■ 한식 꼰대 - 마포구 더다음(영업종료)",
+        "■ 헬스 키친",
+        "■ 호랑이 포차",
+        "■ 황금 막내 - 무소속 (Institut Lyfe 재학)"
+      ]
+    }
+  ]
+}

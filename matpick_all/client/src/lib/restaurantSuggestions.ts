@@ -11,6 +11,7 @@ export type SuggestionDraft = {
   requestId: string;
   name: string;
   location: string;
+  locationDetail?: string;
   mapUrl: string;
   menus: SuggestedMenu[];
   checkedAt: string;
@@ -23,6 +24,7 @@ export type SuggestionReceipt = {
   id: string;
   createdAt: number;
   status: string;
+  storage?: "local";
 };
 export type SuggestionItem = Omit<SuggestionDraft, "menus"> & {
   menus: { name: string; price: number | null; unit: string }[];
@@ -43,6 +45,7 @@ export function newSuggestion(): SuggestionDraft {
     requestId: crypto.randomUUID(),
     name: "",
     location: "",
+    locationDetail: "",
     mapUrl: "",
     menus: [emptyMenu()],
     checkedAt: "",
@@ -76,6 +79,11 @@ export function readSuggestionDraft(): {
     ])
       if (typeof draft[field] !== "string") return fallback;
     if (!["visitor", "owner", "discovered"].includes(draft.relationship))
+      return fallback;
+    if (
+      draft.locationDetail != null &&
+      typeof draft.locationDetail !== "string"
+    )
       return fallback;
     if (
       !Array.isArray(draft.tags) ||

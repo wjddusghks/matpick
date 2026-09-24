@@ -17,6 +17,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import { useSeo } from "@/lib/seo";
+import SuggestionAddressSearch from "@/components/SuggestionAddressSearch";
 import {
   emptyMenu,
   newSuggestion,
@@ -34,7 +35,7 @@ const steps = [
   {
     label: "식당 찾기",
     title: "어떤 식당을 알려주실 건가요?",
-    description: "정확한 주소를 몰라도 괜찮아요. 동네와 지점만 알려주세요.",
+    description: "식당 이름을 적고, 주소 검색으로 정확한 위치를 찾아주세요.",
     icon: MapPin,
   },
   {
@@ -228,13 +229,23 @@ export default function SuggestRestaurant() {
           </span>
           <p className="suggest-eyebrow">THANK YOU FOR YOUR PICK</p>
           <h1 ref={titleRef} tabIndex={-1}>
-            맛있는 제보,
+            {receipt.storage === "local" ? "로컬 접수함에," : "맛있는 제보,"}
             <br />잘 받았어요!
           </h1>
           <p>
-            <strong>{draft.name}</strong>의 정보를 운영자가 확인할게요.
-            <br />
-            보내주신 정보는 검토 후 맛픽에 반영됩니다.
+            {receipt.storage === "local" ? (
+              <>
+                <strong>{draft.name}</strong> 제보를 이 컴퓨터에 저장했어요.
+                <br />
+                운영 사이트에는 전송되지 않았어요.
+              </>
+            ) : (
+              <>
+                <strong>{draft.name}</strong>의 정보를 운영자가 확인할게요.
+                <br />
+                보내주신 정보는 검토 후 맛픽에 반영됩니다.
+              </>
+            )}
           </p>
           <div className="suggest-receipt">
             <span>제보 접수 번호</span>
@@ -372,29 +383,13 @@ export default function SuggestRestaurant() {
                       />
                       {errorText("name")}
                     </div>
-                    <div className="suggest-field">
-                      <label htmlFor="suggest-location">
-                        어디에 있나요?{" "}
-                        <span className="suggest-required">필수</span>
-                      </label>
-                      <div className="suggest-input-icon">
-                        <MapPin size={18} aria-hidden="true" />
-                        <input
-                          {...fieldProps("location")}
-                          value={draft.location}
-                          maxLength={300}
-                          autoComplete="off"
-                          placeholder="예: 부산 해운대구 중동, 해운대역 3번 출구 근처"
-                          onChange={event =>
-                            update("location", event.target.value)
-                          }
-                        />
-                      </div>
-                      <p className="suggest-help">
-                        도로명 주소 또는 동네·역 이름과 지점을 적어 주세요.
-                      </p>
-                      {errorText("location")}
-                    </div>
+                    <SuggestionAddressSearch
+                      value={draft.location}
+                      detail={draft.locationDetail || ""}
+                      error={errors.location}
+                      onChange={value => update("location", value)}
+                      onDetailChange={value => update("locationDetail", value)}
+                    />
                     <div className="suggest-field">
                       <label htmlFor="suggest-mapUrl">
                         지도나 식당 링크 <span>선택</span>
@@ -644,7 +639,11 @@ export default function SuggestRestaurant() {
                         </button>
                       </div>
                       <strong>{draft.name}</strong>
-                      <p>{draft.location}</p>
+                      <p>
+                        {[draft.location, draft.locationDetail]
+                          .filter(Boolean)
+                          .join(" ")}
+                      </p>
                       <small>
                         {selectedMenus.length
                           ? `메뉴 ${selectedMenus.length}개${draft.checkedAt ? ` · ${draft.checkedAt} 확인` : ""}`
@@ -699,6 +698,11 @@ export default function SuggestRestaurant() {
                 <div className="suggest-send-error" role="alert">
                   {sendError}
                 </div>
+              )}
+              {import.meta.env.DEV && (
+                <p className="suggest-draft-note">
+                  로컬 개발 화면이에요. 제보는 이 컴퓨터의 접수함에 저장됩니다.
+                </p>
               )}
               <div className="suggest-actions">
                 {step > 0 && (

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "topic_enrichment_baekjong-wok_35a4a0af6d81",
+    "name": "노벨반점",
+    "address": "전북 전주시 완산구 풍남문2길 100 (전동3가 56-4)",
+    "query": "전북 전주시 완산구 풍남문2길 100",
+    "before": {
+      "lat": 35.813626,
+      "lng": 127.144067
+    },
+    "status": "coordinate_resolved",
+    "alternateParcel": "전북 전주시 완산구 전동3가 56-4",
+    "foundPlaces": [
+      {
+        "id": "8858319",
+        "name": "노벨반점",
+        "roadAddress": "전북특별자치도 전주시 완산구 풍남문2길 102",
+        "parcelAddress": "전북특별자치도 전주시 완산구 전동3가 57-3 1층",
+        "lat": 35.81366317,
+        "lng": 127.14404481,
+        "category": "음식점",
+        "categoryDetail": "중국요리",
+        "open": "Y",
+        "url": "https://place.map.kakao.com/8858319"
+      }
+    ],
+    "alternateCoordinates": [
+      {
+        "address": "전북특별자치도 전주시 완산구 전동3가 56-4",
+        "lat": 35.8136490348471,
+        "lng": 127.144183762429,
+        "relatedAddress": " "
+      }
+    ],
+    "candidate": {
+      "id": "8858319",
+      "name": "노벨반점",
+      "roadAddress": "전북특별자치도 전주시 완산구 풍남문2길 102",
+      "parcelAddress": "전북특별자치도 전주시 완산구 전동3가 57-3 1층",
+      "lat": 35.81366317,
+      "lng": 127.14404481,
+      "category": "음식점",
+      "categoryDetail": "중국요리",
+      "open": "Y",
+      "url": "https://place.map.kakao.com/8858319"
+    },
+    "correctedAddress": "전북특별자치도 전주시 완산구 풍남문2길 102",
+    "basis": "current_listing_crosschecked",
+    "additionalSource": "https://www.tabling.co.kr/place/677cc96666de5f069878fd37"
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_f2a43dc3ec28",
+    "name": "태광식당",
+    "address": "제주 제주시 탑동로 144 (용담일동 119)",
+    "query": "제주 제주시 탑동로 144",
+    "before": {
+      "lat": 33.512665,
+      "lng": 126.518691
+    },
+    "status": "coordinate_resolved",
+    "alternateParcel": "제주 제주시 용담일동 119",
+    "foundPlaces": [
+      {
+        "id": "24119106",
+        "name": "태광식당",
+        "roadAddress": "제주특별자치도 제주시 탑동로 142",
+        "parcelAddress": "제주특별자치도 제주시 용담일동 118 1층",
+        "lat": 33.51265676,
+        "lng": 126.51867113,
+        "category": "음식점",
+        "categoryDetail": "한식",
+        "open": "Y",
+        "url": "https://place.map.kakao.com/24119106"
+      }
+    ],
+    "alternateCoordinates": [],
+    "candidate": {
+      "id": "24119106",
+      "name": "태광식당",
+      "roadAddress": "제주특별자치도 제주시 탑동로 142",
+      "parcelAddress": "제주특별자치도 제주시 용담일동 118 1층",
+      "lat": 33.51265676,
+      "lng": 126.51867113,
+      "category": "음식점",
+      "categoryDetail": "한식",
+      "open": "Y",
+      "url": "https://place.map.kakao.com/24119106"
+    },
+    "correctedAddress": "제주특별자치도 제주시 탑동로 142",
+    "basis": "current_listing_crosschecked",
+    "additionalSource": "https://www.visitjeju.net/kr/detail/view?contentsid=CNTS_000000000022632"
+  },
+  {
+    "id": "topic_enrichment_baekjong-wok_abff3c6bf28a",
+    "name": "언양각식당",
+    "address": "경남 창원시 의창구 용지로 253-1 (용호동 16-1)",
+    "query": "경남 창원시 의창구 용지로 253-1",
+    "before": {
+      "lat": 35.236117,
+      "lng": 128.687209
+    },
+    "status": "coordinate_resolved",
+    "alternateParcel": "경남 창원시 의창구 용호동 16-1",
+    "foundPlaces": [
+      {
+        "id": "21027093",
+        "name": "언양각식당",
+        "roadAddress": "경남 창원시 성산구 용지로 253-1",
+        "parcelAddress": "경남 창원시 성산구 용호동 16-1 1층",
+        "lat": 35.23610523,
+        "lng": 128.6872444,
+        "category": "음식점",
+        "categoryDetail": "불고기,두루치기",
+        "open": "Y",
+        "url": "https://place.map.kakao.com/21027093"
+      }
+    ],
+    "alternateCoordinates": [],
+    "candidate": {
+      "id": "21027093",
+      "name": "언양각식당",
+      "roadAddress": "경남 창원시 성산구 용지로 253-1",
+      "parcelAddress": "경남 창원시 성산구 용호동 16-1 1층",
+      "lat": 35.23610523,
+      "lng": 128.6872444,
+      "category": "음식점",
+      "categoryDetail": "불고기,두루치기",
+      "open": "Y",
+      "url": "https://place.map.kakao.com/21027093"
+    },
+    "correctedAddress": "경남 창원시 성산구 용지로 253-1",
+    "basis": "current_listing_crosschecked",
+    "additionalSource": "https://www.siksinhot.com/P/391365"
+  },
+  {
+    "id": "sikgaek-baekban-trip_restaurant_025",
+    "name": "부산 금성호",
+    "address": "부산 남구 용호3동 6-5",
+    "query": "부산 남구 용호3동 6-5",
+    "before": {
+      "lat": 35.128298,
+      "lng": 129.117194
+    },
+    "status": "coordinate_resolved",
+    "alternateParcel": "부산 남구 ",
+    "foundPlaces": [
+      {
+        "id": "1567918454",
+        "name": "금성호",
+        "roadAddress": "",
+        "parcelAddress": "부산 남구 용호동 6-5",
+        "lat": 35.12824819,
+        "lng": 129.11713603,
+        "category": "음식점",
+        "categoryDetail": "해물,생선",
+        "open": "Y",
+        "url": "https://place.map.kakao.com/1567918454"
+      },
+      {
+        "id": "787749318",
+        "name": "금성호",
+        "roadAddress": "부산 수영구 광안해변로312번길 60",
+        "parcelAddress": "부산 수영구 민락동 113-51 민락어민활어직판장 185호",
+        "lat": 35.15420104,
+        "lng": 129.12790304,
+        "category": "가정,생활",
+        "categoryDetail": "수산물판매",
+        "open": "N",
+        "url": "https://place.map.kakao.com/787749318"
+      }
+    ],
+    "alternateCoordinates": [],
+    "candidate": {
+      "id": "1567918454",
+      "name": "금성호",
+      "roadAddress": "",
+      "parcelAddress": "부산 남구 용호동 6-5",
+      "lat": 35.12824819,
+      "lng": 129.11713603,
+      "category": "음식점",
+      "categoryDetail": "해물,생선",
+      "open": "Y",
+      "url": "https://place.map.kakao.com/1567918454"
+    },
+    "correctedAddress": "부산 남구 용호동 6-5",
+    "basis": "administrative_neighborhood_to_legal_parcel"
+  }
+]

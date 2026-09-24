@@ -29,6 +29,8 @@ const searchExpansion = await read(
 const searchReport = await read(
   "../source-data/topic-expansion-2026-09-21/report.json"
 );
+const removed = await read('client/src/data/restaurant-permanent-deletions.json');
+const removedIds = new Set(removed.restaurants.map(row => row.id));
 test("all ten researched topics open real collections, preserving old restaurant URLs", () => {
   assert.equal(report.topics.length, 10);
   for (const t of report.topics) {
@@ -48,15 +50,12 @@ test("all ten researched topics open real collections, preserving old restaurant
       )
     );
   }
-  for (const r of before)
-    assert.ok(
-      data.restaurants.some(v => v.id === r.id),
-      `Changed existing ID: ${r.id}`
-    );
-  assert.equal(
-    data.restaurants.length,
-    before.length + report.newRestaurants + searchReport.newRestaurants
-  );
+  for (const r of before) {
+    assert.equal(data.restaurants.some(v => v.id === r.id), !removedIds.has(r.id), `Unexpected retention/deletion: ${r.id}`);
+  }
+  // Subsequent verified batches may add restaurants; existing IDs above must survive.
+  assert.ok(data.restaurants.length >=
+    before.length + report.newRestaurants + searchReport.newRestaurants - removedIds.size);
 });
 test("published candidates have source evidence, matching branches and current menu provenance", () => {
   for (const a of report.approved) {

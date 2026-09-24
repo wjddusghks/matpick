@@ -5,7 +5,16 @@ import { loadAppModules, projectRoot } from "./load-public-data.mjs";
 
 // Merge raw research sources at build time. Browsers load only the public result.
 const [{ publicDataset }] = await loadAppModules(["/src/data/buildPublicDataset.ts"]);
-const output = JSON.stringify(publicDataset) + "\n";
+// Menu IDs are deterministic, restaurant-local UI keys. Recreate them at load time
+// instead of transferring a different ordinal beside every menu name and price.
+const transportDataset = {
+  ...publicDataset,
+  restaurants: publicDataset.restaurants.map(restaurant => ({
+    ...restaurant,
+    menus: restaurant.menus?.map(({ id: _localKey, ...menu }) => menu),
+  })),
+};
+const output = JSON.stringify(transportDataset) + "\n";
 const filename = path.join(projectRoot, "client/src/data/generated/public-dataset.json");
 const previous = await readFile(filename, "utf8").catch(() => "");
 if (previous !== output) await writeFile(filename, output);

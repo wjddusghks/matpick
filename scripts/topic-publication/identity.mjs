@@ -36,12 +36,12 @@ export function addressParts(value) {
   ].map((m) => m[1]);
   const roads = [
     ...text.matchAll(
-      /([가-힣a-zA-Z0-9·.]+(?:대로|로|길))\s*(\d+(?:-\d+)?)(?!\d)/g,
+      /([가-힣a-zA-Z0-9·.]+(?:대로|로|길))\s*(\d+(?:-\d+)?)(?=\s|[,()]|$)/g,
     ),
   ].map((m) => `${m[1]}:${m[2]}`);
   const parcels = [
     ...text.matchAll(
-      /([가-힣0-9]+(?:동\d*가|로\d+가|동|리))\s*(\d+(?:-\d+)?)(?!\d)/g,
+      /([가-힣0-9]+(?:동\d*가|로\d+가|동|리))\s*(\d+(?:-\d+)?)(?=\s|[,()]|$)/g,
     ),
   ].map((m) => `${m[1]}:${m[2]}`);
   const floors = new Set();

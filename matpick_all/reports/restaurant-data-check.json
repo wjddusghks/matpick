@@ -1,7 +1,7 @@
 {
-  "restaurants": 3548,
-  "sourceLinks": 5824,
-  "aliases": 941,
+  "restaurants": 3630,
+  "sourceLinks": 5925,
+  "aliases": 924,
   "recommendationHolds": [
     {
       "id": "old-korean-100_restaurant_008",
@@ -52,6 +52,11 @@
       "id": "topic_enrichment_baekjong-wok_88ee18fc3f75",
       "name": "노량진수제비",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_6806254363fb",
+      "name": "돈파스팔레",
+      "reason": "봉천동 후보는 과거 주소. 연남동 동교로38안길18 이전 방문 기록 뒤 같은 건물 지하층의 폐업 재게시 자료가 있어 현재 층·영업 확인 전 보류."
     },
     {
       "id": "topic_enrichment_baekjong-wok_038286bba16a",
@@ -114,6 +119,11 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "topic_enrichment_baekjong-wok_e18df91f2f72",
+      "name": "풍미통닭",
+      "reason": "같은 식당의 중복 등록. 대표 기록으로 안내합니다."
+    },
+    {
       "id": "topic_enrichment_baekjong-wok_a966fb1dc9aa",
       "name": "화순반점",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
@@ -134,6 +144,11 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "sikgaek-baekban-trip_restaurant_020",
+      "name": "중리해녀촌",
+      "reason": "해녀촌 안 개별 점포별 메뉴·가격 귀속 확인 필요."
+    },
+    {
       "id": "sikgaek-baekban-trip_restaurant_045",
       "name": "목포 보리마당 가맥집",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
@@ -147,6 +162,11 @@
       "id": "sikgaek-baekban-trip_restaurant_115",
       "name": "수원 남보원불고기",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_131",
+      "name": "경화당제과",
+      "reason": "제조공장·택배 판매처의 현장 식사 또는 구매 이용 방식 확인 필요."
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_155",
@@ -214,6 +234,26 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "sikgaek-baekban-trip_restaurant_454",
+      "name": "전주 성가떡집",
+      "reason": "방송 원조가 없어지고 다른 위치에 동명 가게가 있다는 방문 글. 팔달로249/255 점포의 운영 승계 확인 전 보류."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_484",
+      "name": "고려당",
+      "reason": "같은 식당의 중복 등록. 대표 기록으로 안내합니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_655",
+      "name": "갈비탕집(갈비탕)",
+      "reason": "동일 마장동 할머니갈비탕의 블로그10-9와 지도10-7이 충돌. 건물번호 정정 및 정확한 좌표 확정 전 보류."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_662",
+      "name": "여주 팔남매",
+      "reason": "블로그 창동63-5는 시장 주소 후보이고 원본 하동249-8 여주점과 구분되지 않음. 시장 대표주소로 점포 주소를 교체하지 않음."
+    },
+    {
       "id": "sikgaek-baekban-trip_restaurant_679",
       "name": "영광 장보고굴비",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
@@ -259,9 +299,19 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "wednesday-gourmet_restaurant_466",
+      "name": "서울 어바웃진스",
+      "reason": "등록 주소의 인허가 폐업 이력 확인. 이전·재개업이 확인되면 재검토합니다."
+    },
+    {
       "id": "wednesday-gourmet_restaurant_480",
       "name": "서울 나 전복",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_502",
+      "name": "서울 육전식당 1호점",
+      "reason": "천호대로33은 기존3호점 이전 본점. 난계로30길16의 원본1호점 승계 확인 전 다른 지점으로 교체하지 않음."
     },
     {
       "id": "wednesday-gourmet_restaurant_541",
@@ -277,6 +327,11 @@
       "id": "topic_enrichment_ttoganjip_f3e84eac8444",
       "name": "마창수산직영횟집 내동점",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_904632528236",
+      "name": "가평 동화유원지 (동화펜션)",
+      "reason": "블로그 청군로607의 시설은 확인했으나 임초리42-1·원본643-6의 필지 및 현재 식당 이용 위치를 확정하지 못함. 새 주소·좌표 동시 반영 대기."
     },
     {
       "id": "topic_enrichment_delicious-guys_85adbc66bac1",
@@ -489,6 +544,11 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "topic_enrichment_delicious-guys_427c69891304",
+      "name": "양평 두메향기",
+      "reason": "2018년 블로그 목왕로592번길62-59, 지도62-6, 현재 인허가 두메향기길11이 충돌. 더 오래된 블로그 주소로 역갱신하지 않음."
+    },
+    {
       "id": "topic_enrichment_delicious-guys_5bd76c1003f2",
       "name": "영광 갯마을횟집",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
@@ -599,7 +659,7 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     }
   ],
-  "verifiedLocationCorrections": 733,
+  "verifiedLocationCorrections": 1061,
   "unclassified": [
     {
       "id": "r_92011579",
@@ -635,6 +695,41 @@
       "id": "r_5995d3b0",
       "name": "서울 진옥화할매원조닭한마리",
       "category": "닭한마리"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_0dcef7f8068b",
+      "name": "즐거운술상",
+      "category": "호프,요리주점"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_a1a6f381cb81",
+      "name": "중앙감속기",
+      "category": "퓨전요리"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_a1e1dfb5ff24",
+      "name": "깃든",
+      "category": "해물,생선"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_8c1ce57aebc2",
+      "name": "을지로보석",
+      "category": "술집"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_bb6de8a2c7dc",
+      "name": "마늘집",
+      "category": "닭요리"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_b9c903f0a656",
+      "name": "크라운돼지",
+      "category": "육류,고기"
+    },
+    {
+      "id": "culinary-class-wars_restaurant_e73a0b526183",
+      "name": "유용욱바베큐연구소",
+      "category": "육류,고기"
     },
     {
       "id": "culinary-class-wars_restaurant_acddb9fd28b5",
@@ -1152,11 +1247,6 @@
       "category": "바비큐"
     },
     {
-      "id": "topic_enrichment_baekjong-wok_7d54f4dd5491",
-      "name": "마녀커리크림치킨",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_baekjong-wok_866e69306f38",
       "name": "만석닭강정",
       "category": "치킨,닭강정"
@@ -1492,11 +1582,6 @@
       "category": "해물,생선요리"
     },
     {
-      "id": "topic_enrichment_baekjong-wok_29f7bffd4126",
-      "name": "영돈분식버거",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_baekjong-wok_ab7e3bc2800e",
       "name": "광주 영미오리탕",
       "category": "오리요리"
@@ -1532,11 +1617,6 @@
       "category": "해물,생선요리"
     },
     {
-      "id": "topic_enrichment_baekjong-wok_c2fb2621bd82",
-      "name": "용수천농원",
-      "category": "유기농산물"
-    },
-    {
       "id": "topic_enrichment_baekjong-wok_f69f2e03b2cd",
       "name": "용인닭집",
       "category": "닭요리"
@@ -1555,11 +1635,6 @@
       "id": "topic_enrichment_baekjong-wok_212c028dc6f7",
       "name": "원조40번",
       "category": ""
-    },
-    {
-      "id": "topic_enrichment_baekjong-wok_ee3194aae292",
-      "name": "원조광명할머니빈대떡",
-      "category": "전,빈대떡"
     },
     {
       "id": "topic_enrichment_baekjong-wok_02c0dd846eaa",
@@ -1595,11 +1670,6 @@
       "id": "topic_enrichment_baekjong-wok_86024cb2da59",
       "name": "원할매소문난닭한마리",
       "category": "닭요리"
-    },
-    {
-      "id": "topic_enrichment_baekjong-wok_291c9dfd8ca9",
-      "name": "위드유",
-      "category": "가구,인테리어"
     },
     {
       "id": "topic_enrichment_baekjong-wok_5c52f09e0973",
@@ -1767,11 +1837,6 @@
       "category": "치킨,닭강정"
     },
     {
-      "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
-      "name": "하하",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_baekjong-wok_651d9358ff7f",
       "name": "한라산도새기",
       "category": "돼지고기구이"
@@ -1857,11 +1922,6 @@
       "category": "메추리구이"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_005",
-      "name": "서산 삼길포수산물직매장 (지은이네)",
-      "category": "상인용 식사"
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_006",
       "name": "서산 가야슈퍼",
       "category": "쑥전"
@@ -1870,11 +1930,6 @@
       "id": "sikgaek-baekban-trip_restaurant_007",
       "name": "서산 옛날빵집",
       "category": "호떡, 찐빵"
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_008",
-      "name": "서산 정성맛집",
-      "category": "바지락초무침"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_009",
@@ -1898,7 +1953,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_020",
-      "name": "부산 중리해녀촌",
+      "name": "중리해녀촌",
       "category": "모듬 해물"
     },
     {
@@ -2063,7 +2118,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_093",
-      "name": "순천 풍미통닭",
+      "name": "풍미통닭",
       "category": "마늘통닭"
     },
     {
@@ -2158,7 +2213,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_131",
-      "name": "진해 경화당제과",
+      "name": "경화당제과",
       "category": "콩과자"
     },
     {
@@ -2188,7 +2243,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_139",
-      "name": "제주 몰고랑식당",
+      "name": "몰고랑몸국",
       "category": "몸국"
     },
     {
@@ -2287,11 +2342,6 @@
       "category": "감자국"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_167",
-      "name": "서울 우화식당",
-      "category": "코다리찜"
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_168",
       "name": "서울 골목식당",
       "category": "청국장"
@@ -2328,7 +2378,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_181",
-      "name": "여수 정다운식당",
+      "name": "정다운식당",
       "category": "물메기탕"
     },
     {
@@ -2470,11 +2520,6 @@
       "id": "sikgaek-baekban-trip_restaurant_246",
       "name": "서울 시장회집",
       "category": "알탕, 알찜"
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_249",
-      "name": "강릉 항구마차",
-      "category": "문어숙회"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_250",
@@ -2727,11 +2772,6 @@
       "category": "두부김치"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_373",
-      "name": "서울 장수식당",
-      "category": "민물잡어탕"
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_374",
       "name": "서울 설눈",
       "category": "평양온반"
@@ -2765,11 +2805,6 @@
       "id": "sikgaek-baekban-trip_restaurant_387",
       "name": "영암 텃밭가든",
       "category": "닭구이"
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_389",
-      "name": "영암 구림떡방아",
-      "category": "방앗간"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_390",
@@ -2952,13 +2987,8 @@
       "category": "서대, 조기전"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_479",
-      "name": "영월 노루목상회식당",
-      "category": "도토리묵밥"
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_484",
-      "name": "익산 고려당",
+      "name": "고려당",
       "category": "찐빵"
     },
     {
@@ -3035,11 +3065,6 @@
       "id": "sikgaek-baekban-trip_restaurant_522",
       "name": "평창 고마루",
       "category": "메밀국죽"
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_527",
-      "name": "무안 곰솔낙지 (곰솔가든)",
-      "category": "기절낙지"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_529",
@@ -3437,11 +3462,6 @@
       "category": "숨두부, 콩탕"
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_694",
-      "name": "성남 고미꽃시래",
-      "category": "시래기요리"
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_695",
       "name": "의왕 복진면",
       "category": "복어요리"
@@ -3470,11 +3490,6 @@
       "id": "sikgaek-baekban-trip_restaurant_702",
       "name": "가평 지중해",
       "category": "갈낙탕"
-    },
-    {
-      "id": "sikgaek-baekban-trip_restaurant_703",
-      "name": "가평 황보네주막",
-      "category": "두부김치"
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_704",
@@ -3987,11 +4002,6 @@
       "category": "한우등심"
     },
     {
-      "id": "wednesday-gourmet_restaurant_233",
-      "name": "서울 봉화전2",
-      "category": "육전"
-    },
-    {
       "id": "wednesday-gourmet_restaurant_234",
       "name": "서울 뜨락",
       "category": "소고기특수부위"
@@ -4152,11 +4162,6 @@
       "category": "치킨"
     },
     {
-      "id": "wednesday-gourmet_restaurant_330",
-      "name": "서울 돈차를리",
-      "category": "멕시코음식"
-    },
-    {
       "id": "wednesday-gourmet_restaurant_334",
       "name": "서울 강가네포차빈대떡",
       "category": "전,빈대떡"
@@ -4255,11 +4260,6 @@
       "id": "wednesday-gourmet_restaurant_402",
       "name": "서울 샐러드브라더스",
       "category": "다이어트,샐러드"
-    },
-    {
-      "id": "wednesday-gourmet_restaurant_403",
-      "name": "서울 레게치킨",
-      "category": "레게치킨"
     },
     {
       "id": "wednesday-gourmet_restaurant_404",
@@ -4387,11 +4387,6 @@
       "category": "실내포차"
     },
     {
-      "id": "wednesday-gourmet_restaurant_477",
-      "name": "서울 취천루",
-      "category": "만두"
-    },
-    {
       "id": "wednesday-gourmet_restaurant_478",
       "name": "서울 감촌",
       "category": "두부"
@@ -4445,11 +4440,6 @@
       "id": "wednesday-gourmet_restaurant_496",
       "name": "서울 송화산시도삭면",
       "category": "도삭면"
-    },
-    {
-      "id": "wednesday-gourmet_restaurant_500",
-      "name": "서울 영동막국수",
-      "category": "코다리"
     },
     {
       "id": "wednesday-gourmet_restaurant_502",
@@ -5167,24 +5157,9 @@
       "category": "민박"
     },
     {
-      "id": "topic_enrichment_delicious-guys_f2ce95784833",
-      "name": "가평 율림동산",
-      "category": "펜션"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_0f7d4edd6929",
       "name": "강릉 동화가든",
       "category": "두부요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_9de3277b4788",
-      "name": "거제 고현시장",
-      "category": "시장"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_21e9391aae5d",
-      "name": "고양 모녀반찬",
-      "category": "반찬가게"
     },
     {
       "id": "topic_enrichment_delicious-guys_3ba21d69fb29",
@@ -5207,11 +5182,6 @@
       "category": ""
     },
     {
-      "id": "topic_enrichment_delicious-guys_3b29f619e02f",
-      "name": "고양 허육도",
-      "category": "백숙,삼계탕"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_36a37afa5ed5",
       "name": "광명 듀드팡 (현재 폐업)",
       "category": ""
@@ -5228,7 +5198,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_77bad769a479",
-      "name": "구미 신상철선산곱창",
+      "name": "신상철선산곱창",
       "category": "곱창,막창,양"
     },
     {
@@ -5342,19 +5312,9 @@
       "category": ""
     },
     {
-      "id": "topic_enrichment_delicious-guys_31ad186ed499",
-      "name": "부산 한량 (현재 폐업)",
-      "category": "요리주점"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_e3bd553d16ab",
       "name": "부천 살몬마켓 (현재 폐업)",
       "category": ""
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_c6632de9a9de",
-      "name": "부천 장군집 주먹고기 (김준현)",
-      "category": "육류,고기요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_19afa1b8fbd9",
@@ -5437,11 +5397,6 @@
       "category": "떡,한과"
     },
     {
-      "id": "topic_enrichment_delicious-guys_ffe3d3cdca58",
-      "name": "서울 경원집 (현재 폐업)",
-      "category": "요리주점"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_e4f8b8b02a36",
       "name": "서울 고기대통령",
       "category": "소고기구이"
@@ -5497,11 +5452,6 @@
       "category": "닭요리"
     },
     {
-      "id": "topic_enrichment_delicious-guys_27e239f7eab5",
-      "name": "서울 꼴더덕꼴더덕 (현재 폐업)",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_06e98b427117",
       "name": "서울 꽃새우 영번지",
       "category": "해물,생선요리"
@@ -5513,7 +5463,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_da0e593a4d85",
-      "name": "서울 꾸띠자르당",
+      "name": "꾸띠자르당",
       "category": "패밀리레스토랑"
     },
     {
@@ -5550,11 +5500,6 @@
       "id": "topic_enrichment_delicious-guys_ef0039f5a324",
       "name": "서울 담뿍화로된장찌개",
       "category": "육류,고기요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_442a0c1066d4",
-      "name": "서울 대가향",
-      "category": ""
     },
     {
       "id": "topic_enrichment_delicious-guys_70d550713ab4",
@@ -5657,11 +5602,6 @@
       "category": "기사식당"
     },
     {
-      "id": "topic_enrichment_delicious-guys_781505d4388b",
-      "name": "서울 망원시장",
-      "category": "시장"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_c0faa5f2af2a",
       "name": "서울 먹깨비 해물아구찜",
       "category": "게요리"
@@ -5672,19 +5612,9 @@
       "category": "대게요리"
     },
     {
-      "id": "topic_enrichment_delicious-guys_3b7f8c3e65ff",
-      "name": "서울 면면 (현재 폐업)",
-      "category": "퓨전음식"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_ff0c5679e12f",
       "name": "서울 목포산꽃게",
       "category": "게요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_ac80cfe2b9e4",
-      "name": "서울 목포세발낙지산낙지전문 별관",
-      "category": ""
     },
     {
       "id": "topic_enrichment_delicious-guys_00e2930a6055",
@@ -5717,11 +5647,6 @@
       "category": "터키음식"
     },
     {
-      "id": "topic_enrichment_delicious-guys_0dcbf6710375",
-      "name": "서울 미인삼계탕 (현재 폐업)",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_7b9230ae6346",
       "name": "서울 바다회사랑 2호점",
       "category": "생선회"
@@ -5730,11 +5655,6 @@
       "id": "topic_enrichment_delicious-guys_3fb06260493c",
       "name": "서울 바른면집 건대점",
       "category": ""
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_c347ac8193f9",
-      "name": "서울 박달재자연식당",
-      "category": "육류,고기요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_78c8695bfbaf",
@@ -5787,11 +5707,6 @@
       "category": "패밀리레스토랑"
     },
     {
-      "id": "topic_enrichment_delicious-guys_ac2c94775517",
-      "name": "서울 뿔난황소곱창 건대본점",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_f03de4cec3bf",
       "name": "서울 사대부집곳간",
       "category": ""
@@ -5832,11 +5747,6 @@
       "category": ""
     },
     {
-      "id": "topic_enrichment_delicious-guys_d5ae0f219879",
-      "name": "서울 샤이바나 광화문점",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_7a4c17aaec2d",
       "name": "서울 서경도락 (출연한 논현점 폐업)",
       "category": "돼지고기구이"
@@ -5860,11 +5770,6 @@
       "id": "topic_enrichment_delicious-guys_e17388c86881",
       "name": "서울 소백산 양재별관",
       "category": "육류,고기요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_78a1dfd62a21",
-      "name": "서울 속초생선찜 (현재 폐업)",
-      "category": "해물,생선요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_5e5b8faa8ad1",
@@ -5927,11 +5832,6 @@
       "category": "찜닭"
     },
     {
-      "id": "topic_enrichment_delicious-guys_16ff450456e3",
-      "name": "서울 알리바바 (현재 폐업)",
-      "category": "중개업"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_58816928b801",
       "name": "서울 야고만두",
       "category": ""
@@ -5953,7 +5853,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_3ec3761ab69d",
-      "name": "서울 연남동주막",
+      "name": "주막",
       "category": "전통,민속주점"
     },
     {
@@ -5998,7 +5898,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_6e10ae6ae77f",
-      "name": "서울 원조 수구레",
+      "name": "원조수구레",
       "category": "소고기구이"
     },
     {
@@ -6023,7 +5923,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_468b6172f938",
-      "name": "서울 원조조박집 본관",
+      "name": "원조 조박집 본관",
       "category": "육류,고기요리"
     },
     {
@@ -6122,11 +6022,6 @@
       "category": "곱창,막창,양"
     },
     {
-      "id": "topic_enrichment_delicious-guys_e1d01622c0f1",
-      "name": "서울 청청 (현재 폐업)",
-      "category": "패션"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_2e76e44360a9",
       "name": "서울 초량돼지 (현재 폐업)",
       "category": ""
@@ -6182,11 +6077,6 @@
       "category": ""
     },
     {
-      "id": "topic_enrichment_delicious-guys_1ac9ba6b8cce",
-      "name": "서울 하오 (현재 폐업)",
-      "category": "요리주점"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_9f68ab232882",
       "name": "서울 한강껍데기",
       "category": "돼지고기구이"
@@ -6208,7 +6098,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_19b013b2a8de",
-      "name": "서울 해몽",
+      "name": "해몽",
       "category": "기업"
     },
     {
@@ -6347,11 +6237,6 @@
       "category": "해물,생선요리"
     },
     {
-      "id": "topic_enrichment_delicious-guys_b90394398463",
-      "name": "시흥 왕대통수라찜",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_6d764353e78b",
       "name": "안동 무주무손국수",
       "category": "가공식품"
@@ -6362,11 +6247,6 @@
       "category": "찜닭"
     },
     {
-      "id": "topic_enrichment_delicious-guys_16e8bdb9a845",
-      "name": "안산 삼수갑산",
-      "category": "요리주점"
-    },
-    {
       "id": "topic_enrichment_delicious-guys_91fe28347cb7",
       "name": "안산 후르셰다사마르칸트",
       "category": "아시아음식"
@@ -6375,11 +6255,6 @@
       "id": "topic_enrichment_delicious-guys_23d02e301620",
       "name": "안성 보리네생고깃간",
       "category": "육류,고기요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_9223f6137d67",
-      "name": "안양 굴따세",
-      "category": "굴요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_bc9a27662115",
@@ -6487,11 +6362,6 @@
       "category": ""
     },
     {
-      "id": "topic_enrichment_delicious-guys_d259315b8a09",
-      "name": "의왕 전라도일키로바지락칼국수",
-      "category": ""
-    },
-    {
       "id": "topic_enrichment_delicious-guys_cec52e5e4a94",
       "name": "의왕 청운누룽지백숙",
       "category": "백숙,삼계탕"
@@ -6563,7 +6433,7 @@
     },
     {
       "id": "topic_enrichment_delicious-guys_6dffbc7d8520",
-      "name": "인천 송도수블라키아",
+      "name": "수블라키아 송도본점",
       "category": "그리스음식"
     },
     {
@@ -6700,11 +6570,6 @@
       "id": "topic_enrichment_delicious-guys_3ea0a1309acb",
       "name": "파주 대장군집",
       "category": "돼지고기구이"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_89d6fb6597ee",
-      "name": "파주 문산자유시장",
-      "category": "시장"
     },
     {
       "id": "topic_enrichment_delicious-guys_04fc2c38ef90",
@@ -9070,6 +8935,131 @@
       "id": "topic_search_b53d6769e695",
       "name": "두부자통닭 암사점",
       "category": "치킨,닭강정"
+    },
+    {
+      "id": "requested_topic_0b7ccf40c3adc399",
+      "name": "더그랜드롯데 서울 라세느",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_ade215e12a9a218d",
+      "name": "63뷔페 파빌리온 더프리미엄",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_be595f0cbb1eb259",
+      "name": "서울신라호텔 더 파크뷰",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_de7fad6b93cce5f8",
+      "name": "포시즌스호텔서울 더마켓키친",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_5095387f2cd28dab",
+      "name": "조박집3 신관",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_98cefef3a71033f5",
+      "name": "이삭토스트 한남점",
+      "category": "토스트"
+    },
+    {
+      "id": "requested_topic_162b570333070517",
+      "name": "더 리버사이드 호텔 뷔페 더 가든키친",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_acf1812356869221",
+      "name": "편백집 아현점",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_7a19ae33011292b1",
+      "name": "우다움 신용산점",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_86e092e601813fcd",
+      "name": "램브라튼",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_2a1b57255d3cd719",
+      "name": "착한낙지 부평직영점",
+      "category": "해물,생선"
+    },
+    {
+      "id": "requested_topic_75ae382130792a12",
+      "name": "푸드익스체인지",
+      "category": "뷔페"
+    },
+    {
+      "id": "requested_topic_169d89bf0cdf11d3",
+      "name": "대게가 중동점",
+      "category": "게,대게"
+    },
+    {
+      "id": "requested_topic_2b79f194725a36b2",
+      "name": "한길포장마차",
+      "category": "실내포장마차"
+    },
+    {
+      "id": "requested_topic_7899ca2419161960",
+      "name": "계고기집",
+      "category": "닭요리"
+    },
+    {
+      "id": "requested_topic_b4e6602a8f7afadc",
+      "name": "용평회관",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_79294abdffc9c99d",
+      "name": "맘스터치 종각역점",
+      "category": "패스트푸드"
+    },
+    {
+      "id": "requested_topic_63e293a61f5d93c4",
+      "name": "쉐이크쉑 청담점",
+      "category": "패스트푸드"
+    },
+    {
+      "id": "requested_topic_6d34e2bfae15f7c3",
+      "name": "데블스도어 센트럴시티점",
+      "category": "호프,요리주점"
+    },
+    {
+      "id": "requested_topic_996de37a4181fd14",
+      "name": "교촌치킨 보광점",
+      "category": "치킨"
+    },
+    {
+      "id": "requested_topic_b1f138eecc03c2b1",
+      "name": "납작식당",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_698b4494ddb69974",
+      "name": "구스아일랜드 브루하우스",
+      "category": "호프,요리주점"
+    },
+    {
+      "id": "requested_topic_1b3dbc3997d63843",
+      "name": "도암식당",
+      "category": "육류,고기"
+    },
+    {
+      "id": "requested_topic_4640fd87257a4e82",
+      "name": "명랑핫도그 망원역점",
+      "category": "패스트푸드"
+    },
+    {
+      "id": "requested_topic_9e3602e96b7165c1",
+      "name": "최사장네닭",
+      "category": "닭요리"
     }
   ],
   "errors": [],
@@ -9131,6 +9121,46 @@
           "address": "충남 천안시 동남구 병천면 충절로 1749 1층",
           "lat": 36.762373,
           "lng": 127.299247
+        }
+      ]
+    },
+    {
+      "kind": "same-place-id-review",
+      "placeId": "8646891",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_372971463e2d",
+          "name": "고려당",
+          "address": "전북특별자치도 익산시 서동로32길 57",
+          "lat": 35.935543,
+          "lng": 126.977003
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_484",
+          "name": "고려당",
+          "address": "전북특별자치도 익산시 서동로32길 57",
+          "lat": 35.935543,
+          "lng": 126.977003
+        }
+      ]
+    },
+    {
+      "kind": "same-place-id-review",
+      "placeId": "21513162",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_e18df91f2f72",
+          "name": "풍미통닭",
+          "address": "전남 순천시 팔마1길 2",
+          "lat": 34.932463,
+          "lng": 127.514124
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093",
+          "name": "풍미통닭",
+          "address": "전남 순천시 팔마1길 2",
+          "lat": 34.932463,
+          "lng": 127.514124
         }
       ]
     },
@@ -9463,6 +9493,26 @@
     },
     {
       "kind": "shared-coordinate-review",
+      "point": "35.93554,126.97700",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_372971463e2d",
+          "name": "고려당",
+          "address": "전북특별자치도 익산시 서동로32길 57",
+          "lat": 35.935543,
+          "lng": 126.977003
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_484",
+          "name": "고려당",
+          "address": "전북특별자치도 익산시 서동로32길 57",
+          "lat": 35.935543,
+          "lng": 126.977003
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
       "point": "36.32849,127.42313",
       "restaurants": [
         {
@@ -9643,6 +9693,26 @@
     },
     {
       "kind": "shared-coordinate-review",
+      "point": "35.05074,126.72169",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_416156cd1d89",
+          "name": "송현불고기",
+          "address": "전남 나주시 건재로 193 (대호동 311-33)",
+          "lat": 35.05074,
+          "lng": 126.721689
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_369",
+          "name": "나주 송현불고기",
+          "address": "전남 나주시 건재로 193 (대호동 311-33)",
+          "lat": 35.050742,
+          "lng": 126.721689
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
       "point": "37.00743,127.27276",
       "restaurants": [
         {
@@ -9698,6 +9768,26 @@
           "address": "부산 영도구 중리남로 2-35 (동삼동 산65-1)",
           "lat": 35.067244,
           "lng": 129.066083
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "37.74409,127.04949",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_54c618a047c1",
+          "name": "오뎅식당",
+          "address": "경기 의정부시 호국로1309번길 7 (의정부동 220-58)",
+          "lat": 37.744093,
+          "lng": 127.049493
+        },
+        {
+          "id": "wednesday-gourmet_restaurant_048",
+          "name": "의정부 오뎅식당",
+          "address": "경기 의정부시 호국로1309번길 7 (의정부동 220-58)",
+          "lat": 37.744093,
+          "lng": 127.049493
         }
       ]
     },
@@ -9778,26 +9868,6 @@
           "address": "서울특별시 은평구 연서로28길 5 두꺼비집",
           "lat": 37.618185,
           "lng": 126.92113
-        }
-      ]
-    },
-    {
-      "kind": "shared-coordinate-review",
-      "point": "37.56089,126.81991",
-      "restaurants": [
-        {
-          "id": "topic_enrichment_baekjong-wok_9d6c4a564c2d",
-          "name": "원조수구레",
-          "address": "서울 강서구 양천로26길 10-6 (방화동 179-14)",
-          "lat": 37.560886,
-          "lng": 126.819911
-        },
-        {
-          "id": "topic_enrichment_delicious-guys_6e10ae6ae77f",
-          "name": "서울 원조 수구레",
-          "address": "서울 강서구 양천로26길 10-6 (방화동 179-14)",
-          "lat": 37.560886,
-          "lng": 126.819911
         }
       ]
     },
@@ -9950,6 +10020,26 @@
     },
     {
       "kind": "shared-coordinate-review",
+      "point": "34.93246,127.51412",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_baekjong-wok_e18df91f2f72",
+          "name": "풍미통닭",
+          "address": "전남 순천시 팔마1길 2",
+          "lat": 34.932463,
+          "lng": 127.514124
+        },
+        {
+          "id": "sikgaek-baekban-trip_restaurant_093",
+          "name": "풍미통닭",
+          "address": "전남 순천시 팔마1길 2",
+          "lat": 34.932463,
+          "lng": 127.514124
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
       "point": "37.52564,126.91862",
       "restaurants": [
         {
@@ -10092,6 +10182,26 @@
           "address": "서울 영등포구 여의나루로 117 (여의도동 21-3)",
           "lat": 37.526233,
           "lng": 126.931062
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "34.84128,128.41942",
+      "restaurants": [
+        {
+          "id": "sikgaek-baekban-trip_restaurant_231",
+          "name": "통영 훈이시락국",
+          "address": "경남 통영시 새터길 42-7 (서호동 177-417)",
+          "lat": 34.841284,
+          "lng": 128.419421
+        },
+        {
+          "id": "topic_enrichment_delicious-guys_d7ae2bf07d77",
+          "name": "통영 할매우짜",
+          "address": "경남 통영시 새터길 42-7 (서호동 177-417)",
+          "lat": 34.841284,
+          "lng": 128.419422
         }
       ]
     },
@@ -10311,21 +10421,21 @@
     },
     {
       "kind": "shared-coordinate-review",
-      "point": "37.56252,126.92713",
+      "point": "37.56222,126.92694",
       "restaurants": [
         {
           "id": "wednesday-gourmet_restaurant_399",
           "name": "서울 히메지",
-          "address": "서울 마포구 성미산로 200 (연남동 227-38)",
-          "lat": 37.562516,
-          "lng": 126.927127
+          "address": "서울 마포구 연남동 227-38",
+          "lat": 37.562215,
+          "lng": 126.926938
         },
         {
           "id": "wednesday-gourmet_restaurant_400",
           "name": "서울 커피리브레 연남점",
-          "address": "서울 마포구 성미산로 200 (연남동 227-38)",
-          "lat": 37.562516,
-          "lng": 126.927127
+          "address": "서울 마포구 연남동 227-38",
+          "lat": 37.562215,
+          "lng": 126.926938
         }
       ]
     },
@@ -10731,26 +10841,6 @@
     },
     {
       "kind": "shared-coordinate-review",
-      "point": "37.56253,126.98561",
-      "restaurants": [
-        {
-          "id": "topic_enrichment_delicious-guys_d408e66bf5d0",
-          "name": "서울 명동교자 본점",
-          "address": "서울 중구 명동10길 29 (명동2가 25-2)",
-          "lat": 37.562527,
-          "lng": 126.985609
-        },
-        {
-          "id": "topic_enrichment_michelin-selected_6c0413fd0259",
-          "name": "명동 교자",
-          "address": "중구 명동 10길 29, Seoul, 04537, 한국",
-          "lat": 37.562527,
-          "lng": 126.985609
-        }
-      ]
-    },
-    {
-      "kind": "shared-coordinate-review",
       "point": "37.55890,126.84389",
       "restaurants": [
         {
@@ -10786,6 +10876,26 @@
           "address": "서울 영등포구 도림로147길 1 (문래동4가 8-18)",
           "lat": 37.516644,
           "lng": 126.889236
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "37.52542,127.04981",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_delicious-guys_e0d1d1dd782b",
+          "name": "서울 청담정스시 (재방문, 현재 폐업)",
+          "address": "서울 강남구 도산대로87길 11 (청담동 122-30)",
+          "lat": 37.525418,
+          "lng": 127.049806
+        },
+        {
+          "id": "topic_enrichment_delicious-guys_0057e70f81a7",
+          "name": "서울 청담정스시 (현재 폐업)",
+          "address": "서울 강남구 도산대로87길 11 (청담동 122-30)",
+          "lat": 37.525418,
+          "lng": 127.049806
         }
       ]
     },
@@ -10866,6 +10976,46 @@
           "address": "충남 홍성군 홍성읍 아문길52번길 6 (오관리 393-2)",
           "lat": 36.600299,
           "lng": 126.663737
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "37.55590,127.00517",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_michelin-2-stars_e40f1a27b276",
+          "name": "라연",
+          "address": "중구 동호로 249, 신라호텔 23층, Seoul, 04605, 한국",
+          "lat": 37.555897,
+          "lng": 127.00517
+        },
+        {
+          "id": "requested_topic_43a4f124c1073ba5",
+          "name": "서울신라호텔 더 라이브러리",
+          "address": "서울 중구 동호로 249 1층",
+          "lat": 37.555897,
+          "lng": 127.005174
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "37.51371,127.10430",
+      "restaurants": [
+        {
+          "id": "topic_enrichment_michelin-1-star_306c2c698efe",
+          "name": "비채나",
+          "address": "송파구 올림픽로 300, 롯데월드 타워 81층, Seoul, 05551, 한국",
+          "lat": 37.513713,
+          "lng": 127.104302
+        },
+        {
+          "id": "topic_enrichment_michelin-selected_fd30be1c667a",
+          "name": "스테이",
+          "address": "송파구 올림픽로 300, 롯데월드 타워 81층, Seoul, 05551, 한국",
+          "lat": 37.513713,
+          "lng": 127.104302
         }
       ]
     },

@@ -148,6 +148,7 @@ export interface SourceLink {
   label?: string;
   note?: string;
   sourceUrl?: string;
+  broadcastDate?: string;
 }
 
 export interface MatpickDataSet {

@@ -18,19 +18,27 @@ const baseline = await read(
 const research = await read(
   "../source-data/topic-expansion-2026-09-21/research.json"
 );
+const removed = await read('client/src/data/restaurant-permanent-deletions.json');
+const removedIds = new Set(removed.restaurants.map(row => row.id));
 
 test("verified search batch adds 20 unique places and 25 topic connections while retaining five canonical IDs", () => {
   assert.equal(report.newRestaurants, 20);
   assert.equal(report.refreshedRestaurants, 5);
   assert.equal(report.topics.length, 11);
-  assert.equal(data.restaurants.length, baseline.restaurantCount + 20);
-  // Later research batches add new topic IDs; this batch's original links stay intact.
-  assert.equal(data.sourceLinks.filter(l => !l.id.startsWith("census_")).length, baseline.sourceLinkCount + 25);
+  assert.ok(data.restaurants.length >= baseline.restaurantCount + 20 - removedIds.size);
+  // Test this batch's evidence directly; later relocations and deletions change global totals.
+  for (const link of batch.sourceLinks) {
+    assert.ok(data.sourceLinks.some(current => current.id === link.id && current.restaurantId === link.restaurantId));
+  }
   for (const t of report.topics) {
     const linked = new Set(
       data.sourceLinks.filter(l => l.sourceId === t.id).map(l => l.restaurantId)
     );
-    assert.equal(linked.size, t.after, t.name);
+    const expected = new Set([
+      ...baseline.topics.find(topic => topic.id === t.id).restaurantIds,
+      ...batch.sourceLinks.filter(link => link.sourceId === t.id).map(link => link.restaurantId),
+    ].filter(id => !removedIds.has(id)));
+    for (const id of expected) assert.ok(linked.has(id), `${t.name}: ${id}`);
     assert.ok(t.refreshed > 0, t.name);
   }
   for (const r of batch.restaurants) {

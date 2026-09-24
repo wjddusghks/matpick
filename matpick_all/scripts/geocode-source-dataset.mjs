@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { resolveSourceDatasetPaths } from "./source-dataset-paths.mjs";
+import { selectExactGeocode } from "./geocode-result.mjs";
 
 const geocodeEndpoint = "https://maps.apigw.ntruss.com/map-geocode/v2/geocode";
 
@@ -27,6 +28,7 @@ async function readJson(filePath, fallback) {
 async function geocodeAddress(address, clientId, clientSecret) {
   const url = new URL(geocodeEndpoint);
   url.searchParams.set("query", address);
+  url.searchParams.set("count", "10");
 
   const response = await fetch(url, {
     headers: {
@@ -40,18 +42,7 @@ async function geocodeAddress(address, clientId, clientSecret) {
   }
 
   const payload = await response.json();
-  const first = payload?.addresses?.[0];
-  if (!first) {
-    return null;
-  }
-
-  const lat = Number(first.y);
-  const lng = Number(first.x);
-  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
-    return null;
-  }
-
-  return { lat, lng };
+  return selectExactGeocode(address, payload);
 }
 
 function delay(ms) {

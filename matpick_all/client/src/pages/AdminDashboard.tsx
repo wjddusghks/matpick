@@ -22,6 +22,7 @@ import {
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
+import { AdminSuggestionOverview } from "@/components/admin/SuggestionInboxPanel";
 import { useAuth } from "@/contexts/AuthContext";
 import {
   discoveryTopics,
@@ -32,7 +33,11 @@ import {
   visits,
 } from "@/data";
 import { featuredMapCollections } from "@/data/mapCollections";
-import { getAdminRegistrationKey, hasAdminConfiguration, isAdminUser } from "@/lib/admin";
+import {
+  getAdminRegistrationKey,
+  hasAdminConfiguration,
+  isAdminUser,
+} from "@/lib/admin";
 import { getDisplayName } from "@/lib/authProfile";
 import { useSeo } from "@/lib/seo";
 
@@ -279,9 +284,12 @@ function MemberTable({ members }: { members: MemberRecord[] }) {
     <section className={`${cardClass} mt-6`}>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-lg font-black text-[#171717]">최근 가입/로그인 회원</h2>
+          <h2 className="text-lg font-black text-[#171717]">
+            최근 가입/로그인 회원
+          </h2>
           <p className="mt-2 text-sm leading-6 text-[#6d6265]">
-            OAuth 첫 로그인, 가입 완료, 마지막 로그인 정보를 최근 순으로 보여줍니다.
+            OAuth 첫 로그인, 가입 완료, 마지막 로그인 정보를 최근 순으로
+            보여줍니다.
           </p>
         </div>
         <p className="rounded-full border border-[#ffd5db] bg-[#fff8f9] px-3 py-2 text-xs font-bold text-[#ff5f70]">
@@ -304,8 +312,11 @@ function MemberTable({ members }: { members: MemberRecord[] }) {
           </thead>
           <tbody>
             {members.length > 0 ? (
-              members.slice(0, 30).map((member) => (
-                <tr key={member.id} className="border-b border-[#f8edf0] last:border-b-0">
+              members.slice(0, 30).map(member => (
+                <tr
+                  key={member.id}
+                  className="border-b border-[#f8edf0] last:border-b-0"
+                >
                   <td className="py-4 pr-4">
                     <div className="flex items-center gap-3">
                       {member.profileImage ? (
@@ -364,7 +375,10 @@ function MemberTable({ members }: { members: MemberRecord[] }) {
               ))
             ) : (
               <tr>
-                <td colSpan={7} className="py-8 text-center font-semibold text-[#8a747a]">
+                <td
+                  colSpan={7}
+                  className="py-8 text-center font-semibold text-[#8a747a]"
+                >
                   아직 저장된 회원 데이터가 없습니다. 새 로그인부터 누적됩니다.
                 </td>
               </tr>
@@ -413,27 +427,29 @@ function AccessShell({
 export default function AdminDashboard() {
   const { isLoggedIn, user } = useAuth();
   const isAdmin = isAdminUser(user);
-  const [analyticsSummary, setAnalyticsSummary] =
-    useState<AnalyticsSummary>(emptyAnalyticsSummary);
-  const [analyticsStatus, setAnalyticsStatus] = useState<"idle" | "loading" | "ready" | "error">(
-    "idle"
+  const [analyticsSummary, setAnalyticsSummary] = useState<AnalyticsSummary>(
+    emptyAnalyticsSummary
   );
-  const [analyticsScope, setAnalyticsScope] = useState<AnalyticsSummary["scope"]>("today");
+  const [analyticsStatus, setAnalyticsStatus] = useState<
+    "idle" | "loading" | "ready" | "error"
+  >("idle");
+  const [analyticsScope, setAnalyticsScope] =
+    useState<AnalyticsSummary["scope"]>("today");
   const [analyticsError, setAnalyticsError] = useState("");
   const [memberDashboard, setMemberDashboard] =
     useState<MemberDashboard>(emptyMemberDashboard);
-  const [memberStatus, setMemberStatus] = useState<"idle" | "loading" | "ready" | "error">(
-    "idle"
-  );
+  const [memberStatus, setMemberStatus] = useState<
+    "idle" | "loading" | "ready" | "error"
+  >("idle");
   const [memberError, setMemberError] = useState("");
   const restaurantsWithCoordinates = restaurants.filter(
-    (restaurant) => restaurant.lat && restaurant.lng
+    restaurant => restaurant.lat && restaurant.lng
   ).length;
-  const restaurantsWithPhotos = restaurants.filter((restaurant) =>
+  const restaurantsWithPhotos = restaurants.filter(restaurant =>
     restaurant.imageUrl?.trim()
   ).length;
   const restaurantsWithMenus = restaurants.filter(
-    (restaurant) => (restaurant.menus?.length ?? 0) > 0
+    restaurant => (restaurant.menus?.length ?? 0) > 0
   ).length;
   const menuCount = restaurants.reduce(
     (sum, restaurant) => sum + (restaurant.menus?.length ?? 0),
@@ -458,26 +474,28 @@ export default function AdminDashboard() {
       },
       signal: controller.signal,
     })
-      .then(async (response) => {
+      .then(async response => {
         if (!response.ok) {
           const payload = await response.json().catch(() => ({}));
           throw new Error(payload?.error || "운영 지표를 불러오지 못했습니다.");
         }
         return response.json() as Promise<{ summary?: AnalyticsSummary }>;
       })
-      .then((payload) => {
+      .then(payload => {
         if (payload.summary) {
           setAnalyticsSummary(payload.summary);
         }
         setAnalyticsStatus("ready");
       })
-      .catch((error) => {
+      .catch(error => {
         if (controller.signal.aborted) {
           return;
         }
         setAnalyticsStatus("error");
         setAnalyticsError(
-          error instanceof Error ? error.message : "운영 지표를 불러오지 못했습니다."
+          error instanceof Error
+            ? error.message
+            : "운영 지표를 불러오지 못했습니다."
         );
       });
 
@@ -500,26 +518,28 @@ export default function AdminDashboard() {
       },
       signal: controller.signal,
     })
-      .then(async (response) => {
+      .then(async response => {
         if (!response.ok) {
           const payload = await response.json().catch(() => ({}));
           throw new Error(payload?.error || "회원 정보를 불러오지 못했습니다.");
         }
         return response.json() as Promise<{ dashboard?: MemberDashboard }>;
       })
-      .then((payload) => {
+      .then(payload => {
         if (payload.dashboard) {
           setMemberDashboard(payload.dashboard);
         }
         setMemberStatus("ready");
       })
-      .catch((error) => {
+      .catch(error => {
         if (controller.signal.aborted) {
           return;
         }
         setMemberStatus("error");
         setMemberError(
-          error instanceof Error ? error.message : "회원 정보를 불러오지 못했습니다."
+          error instanceof Error
+            ? error.message
+            : "회원 정보를 불러오지 못했습니다."
         );
       });
 
@@ -551,7 +571,9 @@ export default function AdminDashboard() {
         description="현재 로그인한 계정은 관리자 허용 목록에 등록되어 있지 않습니다. 아래 계정 키를 Vercel 환경변수 VITE_ADMIN_USER_IDS에 등록하면 이 계정으로 대시보드에 접근할 수 있습니다."
       >
         <div className="rounded-[8px] border border-[#ffe0e5] bg-[#fff8f9] px-4 py-3">
-          <p className="text-xs font-bold text-[#8a747a]">관리자 등록용 계정 키</p>
+          <p className="text-xs font-bold text-[#8a747a]">
+            관리자 등록용 계정 키
+          </p>
           <p className="mt-2 break-all font-mono text-sm font-bold text-[#171717]">
             {getAdminRegistrationKey(user)}
           </p>
@@ -591,7 +613,8 @@ export default function AdminDashboard() {
             맛픽 관리자 대시보드
           </h1>
           <p className="mt-3 max-w-[760px] break-keep text-sm leading-6 text-[#6d6265]">
-            데이터 투입 전에 식당, 주제, 출처, 검색 데이터의 현재 규모와 누락 상태를 빠르게 확인하는 운영 화면입니다.
+            데이터 투입 전에 식당, 주제, 출처, 검색 데이터의 현재 규모와 누락
+            상태를 빠르게 확인하는 운영 화면입니다.
           </p>
         </header>
 
@@ -608,13 +631,21 @@ export default function AdminDashboard() {
           >
             <Store className="h-4 w-4" /> 식당 · 메뉴 · 가격 관리
           </Link>
-          <Link href="/admin/topic-research" className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]">
+          <Link
+            href="/admin/topic-research"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]"
+          >
             <Search className="h-4 w-4" /> 신규 주제 · 조사 후보 검토
           </Link>
-          <Link href="/admin/suggestions" className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]">
+          <Link
+            href="/admin/suggestions"
+            className="inline-flex items-center gap-2 rounded-xl border border-[#eadfe2] bg-white px-5 py-3 text-sm font-bold hover:border-[#ff6b7b]"
+          >
             <MapPin className="h-4 w-4" /> 사용자 맛집 제보함
           </Link>
         </nav>
+
+        <AdminSuggestionOverview />
 
         <section className="mt-8">
           <div className="flex flex-wrap items-end justify-between gap-3">
@@ -640,7 +671,7 @@ export default function AdminDashboard() {
                 role="group"
                 aria-label="운영 지표 범위"
               >
-                {(["today", "all"] as const).map((scope) => (
+                {(["today", "all"] as const).map(scope => (
                   <button
                     key={scope}
                     type="button"
@@ -674,7 +705,11 @@ export default function AdminDashboard() {
             <StatCard
               label="페이지뷰"
               value={analyticsCounts.pageViews}
-              description={analyticsScope === "all" ? "누적 열린 전체 페이지 수" : "오늘 열린 전체 페이지 수"}
+              description={
+                analyticsScope === "all"
+                  ? "누적 열린 전체 페이지 수"
+                  : "오늘 열린 전체 페이지 수"
+              }
               icon={<BarChart3 className="h-5 w-5" />}
             />
             <StatCard
@@ -813,30 +848,44 @@ export default function AdminDashboard() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_1fr]">
           <section className={cardClass}>
-            <h2 className="text-lg font-black text-[#171717]">데이터 품질 체크</h2>
+            <h2 className="text-lg font-black text-[#171717]">
+              데이터 품질 체크
+            </h2>
             <div className="mt-4 space-y-3 text-sm">
               <div className="flex justify-between gap-4 border-b border-[#f1e4e7] pb-3">
-                <span className="font-semibold text-[#6d6265]">사진 보유 식당</span>
+                <span className="font-semibold text-[#6d6265]">
+                  사진 보유 식당
+                </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(restaurantsWithPhotos)} / {formatNumber(restaurants.length)}
+                  {formatNumber(restaurantsWithPhotos)} /{" "}
+                  {formatNumber(restaurants.length)}
                 </span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#f1e4e7] pb-3">
-                <span className="font-semibold text-[#6d6265]">좌표 누락 식당</span>
+                <span className="font-semibold text-[#6d6265]">
+                  좌표 누락 식당
+                </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(restaurants.length - restaurantsWithCoordinates)}
+                  {formatNumber(
+                    restaurants.length - restaurantsWithCoordinates
+                  )}
                 </span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#f1e4e7] pb-3">
-                <span className="font-semibold text-[#6d6265]">메뉴 누락 식당</span>
+                <span className="font-semibold text-[#6d6265]">
+                  메뉴 누락 식당
+                </span>
                 <span className="font-black text-[#171717]">
                   {formatNumber(restaurants.length - restaurantsWithMenus)}
                 </span>
               </div>
               <div className="flex justify-between gap-4">
-                <span className="font-semibold text-[#6d6265]">출처 데이터</span>
+                <span className="font-semibold text-[#6d6265]">
+                  출처 데이터
+                </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(sources.length)}개 · 방문 {formatNumber(visits.length)}건
+                  {formatNumber(sources.length)}개 · 방문{" "}
+                  {formatNumber(visits.length)}건
                 </span>
               </div>
             </div>
@@ -887,11 +936,13 @@ export default function AdminDashboard() {
         <section className={`${cardClass} mt-6`}>
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h2 className="text-lg font-black text-[#171717]">광고 수익 연동 상태</h2>
+              <h2 className="text-lg font-black text-[#171717]">
+                광고 수익 연동 상태
+              </h2>
               <p className="mt-2 max-w-[760px] break-keep text-sm leading-6 text-[#6d6265]">
-                애드핏과 쿠팡의 실제 수익 금액은 아직 자동 API 연동 전입니다. 지금은
-                노출과 클릭을 먼저 모아두고, 수익 데이터는 추후 API 또는 수동 입력
-                방식으로 붙일 수 있게 운영 지표 자리를 마련했습니다.
+                애드핏과 쿠팡의 실제 수익 금액은 아직 자동 API 연동 전입니다.
+                지금은 노출과 클릭을 먼저 모아두고, 수익 데이터는 추후 API 또는
+                수동 입력 방식으로 붙일 수 있게 운영 지표 자리를 마련했습니다.
               </p>
             </div>
             <div className="grid min-w-[240px] gap-2 text-sm">

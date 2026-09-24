@@ -91,6 +91,13 @@ test("guide and editorial lists are never labelled as television appearances", (
     "방송 소개"
   );
 });
+test("Dudley restaurants retain their creator topic rather than a blog-visit label", () => {
+  const source = { id: "the-dudley", name: "더들리", type: "creator" };
+  const result = sources.describeRestaurantSource(source, "라연");
+  assert.equal(result.name, "더들리");
+  assert.equal(result.badge, "소개 식당");
+  assert.doesNotMatch(result.description, /블로그 방문|영상에서/);
+});
 test("native share failure offers fallback, cancellation stays a cancellation", async t => {
   replaceGlobal(t, "navigator", {
     share: async () => {

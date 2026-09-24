@@ -34,6 +34,7 @@ function validateSuggestion(input) {
   if (input.consent !== true) fail("제보 정보 활용에 동의해 주세요.");
   const name = text(input.name, "식당 이름", 100, true);
   const location = text(input.location, "식당 위치", 300, true);
+  const locationDetail = text(input.locationDetail, "상세주소", 100);
   const mapUrl = text(input.mapUrl, "지도 또는 식당 링크", 1500);
   if (mapUrl) {
     try {
@@ -88,6 +89,7 @@ function validateSuggestion(input) {
     requestId: input.requestId.toLowerCase(),
     name,
     location,
+    ...(locationDetail ? { locationDetail } : {}),
     mapUrl,
     menus,
     tags: [...new Set(tags)],

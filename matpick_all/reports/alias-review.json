@@ -1,5 +1,5 @@
 {
-  "aliasCount": 941,
+  "aliasCount": 924,
   "unresolved": [
     {
       "id": "baekjong_wok_restaurant_028",
@@ -8,9 +8,93 @@
       "candidates": []
     },
     {
+      "id": "baekjong_wok_restaurant_047",
+      "name": "태광식당",
+      "address": "제주 제주시 탑동로 144",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_061",
+      "name": "원조광명할머니빈대떡",
+      "address": "경기 광명시 광이로13번길 21-5",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_067",
+      "name": "노벨반점",
+      "address": "전북 전주시 완산구 풍남문2길 100",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_074",
+      "name": "풍미통닭",
+      "address": "전남 순천시 성남뒷길 3",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_108",
+      "name": "고려당",
+      "address": "전북 익산시 중앙로 52",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_158",
+      "name": "언양각식당",
+      "address": "경남 창원시 의창구 용지로 253-1",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_186",
+      "name": "고단백식당",
+      "address": "대전 중구 대종로517번길 62",
+      "candidates": []
+    },
+    {
       "id": "baekjong_wok_restaurant_232",
       "name": "범일빈대떡",
       "address": "부산 동구 중앙대로 519",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_238",
+      "name": "하하",
+      "address": "서울 마포구 동교로 263",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_283",
+      "name": "위드유",
+      "address": "경기 안산시 단원구 광덕3로 167-12",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_316",
+      "name": "꼬꼬하우스",
+      "address": "대구 동구 아양로9길 10",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_320",
+      "name": "대구식당",
+      "address": "경남 함안군 함안면 북촌2길 50-27",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_332",
+      "name": "용수천농원",
+      "address": "대구 동구 용수동 468",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_354",
+      "name": "영돈분식버거",
+      "address": "경기 이천시 이섭대천로 1200",
+      "candidates": []
+    },
+    {
+      "id": "baekjong_wok_restaurant_374",
+      "name": "마녀커리크림치킨",
+      "address": "서울 마포구 마포구 동교로 227-5",
       "candidates": []
     },
     {
@@ -98,33 +182,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_0dcef7f8068b",
-      "name": "즐거운술상",
-      "address": "서울 도봉구 노해로 341",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_823ce4b63fcf",
-      "name": "티엔미미 강남점",
-      "address": "서울 서초구 사임당로 143",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_3c83923fbed2",
       "name": "티엔미미 홍대점",
       "address": "서울 마포구 양화로 144",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_02c166dbbfc6",
-      "name": "쵸이닷",
-      "address": "서울 강남구 도산대로 457",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_a1a6f381cb81",
-      "name": "중앙감속기",
-      "address": "서울 성동구 성수일로6길 7-1",
       "candidates": []
     },
     {
@@ -146,12 +206,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_24e77364fcbf",
-      "name": "그린볼",
-      "address": "강원도 강릉시 산양큰길22번길 30",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_b3e6b28f77c7",
       "name": "조광 201",
       "address": "서울 송파구 새말로10길 8",
@@ -170,27 +224,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_cb534bded442",
-      "name": "마마리다이닝",
-      "address": "서울 영등포구 국제금융로 10",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_e01ef0d786fe",
       "name": "가매일식",
       "address": "광주광역시 서구 상무대로 1104-26",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_cd91ec8f37f0",
-      "name": "광주옥1947",
-      "address": "광주광역시 서구 상무대로 1104-20",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_2c61b4451097",
-      "name": "장수나주곰탕",
-      "address": "광주광역시 서구 대남대로487번길 14",
       "candidates": []
     },
     {
@@ -266,21 +302,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_e67a2e2d1f96",
-      "name": "모리노 아루요",
-      "address": "제주도 제주시 애월읍 하소로 769-58",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_db2b092f7e49",
       "name": "오쁘띠베르",
       "address": "서울 종로구 자하문로 47-1",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_a1e1dfb5ff24",
-      "name": "깃든",
-      "address": "서울 강북구 월계로7나길 46-5 1층",
       "candidates": []
     },
     {
@@ -293,12 +317,6 @@
       "id": "culinary-class-wars_restaurant_99af2e574a23",
       "name": "야키토리묵",
       "address": "서울 마포구 성미산로 165-1",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_bdb1a0fd1d30",
-      "name": "홍보각",
-      "address": "서울 강남구 봉은사로 130",
       "candidates": []
     },
     {
@@ -326,27 +344,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_784a040e17ae",
-      "name": "본연",
-      "address": "서울 강남구 논현로 742",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_8c1ce57aebc2",
-      "name": "을지로보석",
-      "address": "서울 중구 마른내로11-10",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_a850299493e9",
       "name": "EVETT 에빗",
       "address": "서울 강남구 도산대로45길 10-5",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_6962c4f440c7",
-      "name": "나우 남영",
-      "address": "서울 용산구 원효로89길 23",
       "candidates": []
     },
     {
@@ -392,12 +392,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_60b7a76f60f6",
-      "name": "가야가야",
-      "address": "서울 마포구 양화로10길 15 1층",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_4af6a15a2a79",
       "name": "트리플본국밥",
       "address": "서울 송파구 법원로11길 11",
@@ -440,18 +434,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_b207a666f569",
-      "name": "에이넷",
-      "address": "서울 강남구 논현로159길 46-6",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_99a2df047c93",
-      "name": "윰드",
-      "address": "서울 강남구 도산대로58길 18",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_d64864fb41dd",
       "name": "피델리오",
       "address": "서울 마포구 월드컵로19길 31-1",
@@ -470,27 +452,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_bb6de8a2c7dc",
-      "name": "마늘집",
-      "address": "서울 마포구 양화로3길 15",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_371a249317d7",
-      "name": "전주비빔소리",
-      "address": "전북 전주시 완산구 경기전길 126",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_647f6614f2a0",
       "name": "촨촨지우바",
       "address": "서울 중구 대림상가 3층 가358,359",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_53a84cc06a72",
-      "name": "로기",
-      "address": "서울 용산구 한남대로27가길 32",
       "candidates": []
     },
     {
@@ -518,21 +482,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_026616780ddd",
-      "name": "심야식당세이지",
-      "address": "서울 은평구 연서로27길 13-6",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_25f1bfc4d508",
       "name": "야끼니꾸세이지",
       "address": "서울 은평구 연서로27길 13-6",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_800e9907a451",
-      "name": "후후세이지",
-      "address": "서울 성북구 정릉로26길 32",
       "candidates": []
     },
     {
@@ -548,12 +500,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_ef5a72e31b0b",
-      "name": "아오이토리",
-      "address": "서울 마포구 와우산로29길 8",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_e38fba4239ab",
       "name": "언니네 시골집",
       "address": "제주도 제주시 한경면 용수3길 38",
@@ -563,18 +509,6 @@
       "id": "culinary-class-wars_restaurant_c8b5dda2f3dd",
       "name": "잭잭",
       "address": "서울 용산구 회나무로6길 21",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_5a30ec0d5db0",
-      "name": "엄마 밥상",
-      "address": "경북 칠곡군 동명면 팔공산로 157",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_c936e672e4f1",
-      "name": "미트컬쳐",
-      "address": "강원도 강릉시 경강로 2629",
       "candidates": []
     },
     {
@@ -620,18 +554,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_537ca535d4c9",
-      "name": "엘몰리노",
-      "address": "서울 성동구 서울숲2길 19-18",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_26112d7cac2b",
-      "name": "와일드플라워",
-      "address": "서울 서초구 방배로26길19",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_44014054d77f",
       "name": "문쥬스",
       "address": "서울 서초구 서초대로25길33",
@@ -662,57 +584,15 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_f3bc09b7435c",
-      "name": "아타리",
-      "address": "서울 성동구 성덕정19길 13",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_4e4cf81b974f",
-      "name": "야키토리 혼바",
-      "address": "서울 용산구 후암로 79",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_3d52d5311405",
-      "name": "포그",
-      "address": "서울 마포구 독막로2길 34 1층",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_59f4d7f7fcfa",
       "name": "코리 KORII",
       "address": "서울 강남구 논현로152길 9",
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_d41eca485fba",
-      "name": "이야이야앤프렌즈",
-      "address": "서울 강남구 도산대로51길 22",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_54e9089481fc",
-      "name": "사브서울",
-      "address": "서울 강남구 논현로175길 6",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_acc3b52a443d",
-      "name": "더 시옷",
-      "address": "서울 중구 수표로 30",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_470e0c5cdf84",
       "name": "이도",
       "address": "서울 용산구 한강대로50길 14",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_75d8883f8a84",
-      "name": "장화",
-      "address": "경남 양산시 물금읍 증산역로 155",
       "candidates": []
     },
     {
@@ -752,12 +632,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_5faf20f61572",
-      "name": "회현식당",
-      "address": "서울 중구 퇴계로2길 9-8 2층",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_b286bde64972",
       "name": "이치에",
       "address": "서울 강남구 선릉로155길 23-3 2층",
@@ -773,18 +647,6 @@
       "id": "culinary-class-wars_restaurant_cbd144c315c0",
       "name": "이타닉 가든",
       "address": "서울 강남구 테헤란로 231 조선팰리스 36층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_a5247f1965d7",
-      "name": "오스테리아 샘킴",
-      "address": "서울 마포구 월드컵로1길 14 딜라이트스퀘어A동 1차 2층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_7bc1cc45b085",
-      "name": "뜨라또리아 샘킴",
-      "address": "서울 강남구 도산대로49길 10-3 2층",
       "candidates": []
     },
     {
@@ -809,12 +671,6 @@
       "id": "culinary-class-wars_restaurant_09f5966ae85b",
       "name": "소울 SOUL",
       "address": "서울 용산구 신흥로26길 35 바나힐 지하1층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_b9c903f0a656",
-      "name": "크라운돼지",
-      "address": "서울 강남구 강남대로156길 17-1 지상1층,2층",
       "candidates": []
     },
     {
@@ -872,18 +728,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_b55ae2ef9e87",
-      "name": "카덴",
-      "address": "서울 서대문구 연희로 173 거화빌딩 2층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_8bd764f1755f",
-      "name": "천상현의 천상",
-      "address": "서울 서초구 매헌로 16 라시따델라모다 6층 6164호",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_f8d3b75283f4",
       "name": "우동카덴",
       "address": "서울 서대문구 연희로 173 거화빌딩 1층",
@@ -926,33 +770,15 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_ec1909e01072",
-      "name": "중식당 청 한남점",
-      "address": "서울 용산구 한남대로20길 47-24 리플레이스 D동 2층",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_f3cd13fe500a",
       "name": "호시우보 여의도본점(TP타워)",
       "address": "서울 영등포구 의사당대로 96 TP타워 2층 203~204호",
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_d19db81ff41e",
-      "name": "더이탈리안 클럽 판교 테크원점",
-      "address": "경기 성남시 분당구 분당내곡로 131 1층 5-2호",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_5082c0642993",
       "name": "IMOK Smoke Dining",
       "address": "서울 강남구 압구정로2길 6",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_e73a0b526183",
-      "name": "유용욱 바베큐 연구소",
-      "address": "서울 용산구 한강대로84길 5-7",
       "candidates": []
     },
     {
@@ -977,12 +803,6 @@
       "id": "culinary-class-wars_restaurant_ec62b51e457a",
       "name": "동경밥상 제주점",
       "address": "제주특별자치도 제주시 애월읍 하귀14길 11-1 1층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_cc85d5e8028b",
-      "name": "쌤쌤쌤",
-      "address": "서울 용산구 한강대로50길 25 1층",
       "candidates": []
     },
     {
@@ -1034,27 +854,9 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_b0a5104f1260",
-      "name": "수퍼판",
-      "address": "서울 강남구 논현로167길 15 휴에프빌딩 2층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_fb3766ca062a",
-      "name": "윤주당",
-      "address": "서울 용산구 신흥로 81-1 1층",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_997b57b4b3cb",
       "name": "까델루뽀",
       "address": "서울 종로구 자하문로16길 5-5 1층",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_1e5ad716a5ce",
-      "name": "드레스덴 그린",
-      "address": "서울 강남구 도산대로 420 청담스퀘어 B동 2층 222호",
       "candidates": []
     },
     {
@@ -2732,9 +2534,243 @@
       "candidates": []
     },
     {
+      "id": "sikgaek-baekban-trip_restaurant_005",
+      "name": "서산 삼길포수산물직매장 (지은이네)",
+      "address": "충남 서산시 대산읍 삼길포1로 72-2 (화곡리 1883)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_008",
+      "name": "서산 정성맛집",
+      "address": "충남 서산시 시장3길 3 (동문동 900)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_167",
+      "name": "서울 우화식당",
+      "address": "서울 중구 충무로11길 18-4 (입정동 250)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_222",
+      "name": "서울 서촌통영",
+      "address": "서울 종로구 필운대로 47 (누하동 8-1)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_249",
+      "name": "강릉 항구마차",
+      "address": "강원 강릉시 옥계면 금진리 149-3",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_323",
+      "name": "광양 시장국밥",
+      "address": "전남 광양시 광양읍 백운로 3 (목성리 696-3)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_373",
+      "name": "서울 장수식당",
+      "address": "서울 서초구 서래로 50 (반포동 93-7)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_389",
+      "name": "영암 구림떡방아",
+      "address": "전남 영암군 군서면 도갑사로 6-7 (동구림리 48-13)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_392",
+      "name": "남원 인동할머니민박",
+      "address": "전북 남원시 운봉읍 삼산길 8-4 (산덕리 790-5)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_422",
+      "name": "경주 평양냉면집",
+      "address": "경북 경주시 원효로 109-2 (노동동 81-1)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_479",
+      "name": "영월 노루목상회식당",
+      "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_517",
+      "name": "광주 포비엣",
+      "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_527",
+      "name": "무안 곰솔낙지 (곰솔가든)",
+      "address": "전남 무안군 망운면 운해로 1447 (목동리 388-4)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_536",
+      "name": "하동 마루솔한정식식당",
+      "address": "경남 하동군 하동읍 시장1길 26-8 (읍내리 225-5)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_588",
+      "name": "울산 밀양시골밥상",
+      "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_605",
+      "name": "안양 호계분식",
+      "address": "경기 안양시 동안구 엘에스로45번길 6 (호계동 707-3)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_632",
+      "name": "구리 우미관",
+      "address": "경기 구리시 아차산로 57 (아천동 300-10)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_694",
+      "name": "성남 고미꽃시래",
+      "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_703",
+      "name": "가평 황보네주막",
+      "address": "경기 가평군 설악면 다락재로 8 (회곡리 산22-1)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_005",
+      "name": "서산 삼길포수산물직매장 (지은이네)",
+      "address": "충남 서산시 대산읍 삼길포1로 72-2 (화곡리 1883)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_008",
+      "name": "서산 정성맛집",
+      "address": "충남 서산시 시장3길 3 (동문동 900)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_861773db15ca",
+      "name": "금성호",
+      "address": "부산 남구 용호3동 6-5",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_059209e4f9de",
+      "name": "서울 경상도식당 (경상도집)",
+      "address": "서울 중구 을지로39길 29 (을지로6가 1-1)",
+      "candidates": []
+    },
+    {
       "id": "topic_enrichment_baekban-trip_302ed81ee2f5",
       "name": "천짓골식당",
       "address": "제주 서귀포시 중앙로41번길 4",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_167",
+      "name": "서울 우화식당",
+      "address": "서울 중구 충무로11길 18-4 (입정동 250)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_bbcaac080e83",
+      "name": "서울 서촌통영",
+      "address": "서울 종로구 필운대로 47 (누하동 8-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_20beec462001",
+      "name": "담양 미소댓잎국수 (담양국수거리)",
+      "address": "전남 담양군 담양읍 객사3길 20 (객사리 208)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_704624a38904",
+      "name": "강릉 항구마차",
+      "address": "강원 강릉시 옥계면 금진리 149-3",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_0cf613d8d2f2",
+      "name": "은진포차",
+      "address": "서울 영등포구 도림로133길 20",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_f9631b784347",
+      "name": "서울 덕원",
+      "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_323",
+      "name": "광양 시장국밥",
+      "address": "전남 광양시 광양읍 백운로 3 (목성리 696-3)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_d87046c871d3",
+      "name": "충주 올뱅이식당",
+      "address": "충북 충주시 신대1길 1 (단월동 451-4)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_373",
+      "name": "서울 장수식당",
+      "address": "서울 서초구 서래로 50 (반포동 93-7)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_389",
+      "name": "영암 구림떡방아",
+      "address": "전남 영암군 군서면 도갑사로 6-7 (동구림리 48-13)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_392",
+      "name": "남원 인동할머니민박",
+      "address": "전북 남원시 운봉읍 삼산길 8-4 (산덕리 790-5)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_422",
+      "name": "경주 평양냉면집",
+      "address": "경북 경주시 원효로 109-2 (노동동 81-1)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_479",
+      "name": "영월 노루목상회식당",
+      "address": "강원 영월군 김삿갓면 김삿갓로 216-3 (와석리 926)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_517",
+      "name": "광주 포비엣",
+      "address": "경기 광주시 경안로41번길 1 (경안동 36-35)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_527",
+      "name": "무안 곰솔낙지 (곰솔가든)",
+      "address": "전남 무안군 망운면 운해로 1447 (목동리 388-4)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_83fbe7425ae8",
+      "name": "하동 마루솔한정식식당",
+      "address": "경남 하동군 하동읍 시장1길 26-8 (읍내리 225-5)",
       "candidates": []
     },
     {
@@ -2744,9 +2780,333 @@
       "candidates": []
     },
     {
+      "id": "topic_enrichment_baekban-trip_3360e177da0a",
+      "name": "울산 밀양시골밥상",
+      "address": "울산 중구 내오산로 113-1 (태화동 741-10)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_5fae57cc1892",
+      "name": "안양 호계분식",
+      "address": "경기 안양시 동안구 엘에스로45번길 6 (호계동 707-3)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_1d49f78a446d",
+      "name": "횡성 작은밥집 소소반",
+      "address": "강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_3901c6ceae71",
+      "name": "대전 홍두깨칼국수",
+      "address": "대전 중구 충무로107번길 15 (대흥동 378-25)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_632",
+      "name": "구리 우미관",
+      "address": "경기 구리시 아차산로 57 (아천동 300-10)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekban-trip_87fd37d6b231",
+      "name": "갈비탕집(갈비탕)",
+      "address": "서울 성동구 청계천로10가길 10-7 (마장동 443-23)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_694",
+      "name": "성남 고미꽃시래",
+      "address": "경기 성남시 분당구 불정로 422 (서현동 335-2)",
+      "candidates": []
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_703",
+      "name": "가평 황보네주막",
+      "address": "경기 가평군 설악면 다락재로 8 (회곡리 산22-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_7d54f4dd5491",
+      "name": "마녀커리크림치킨",
+      "address": "서울 마포구 마포구 동교로 227-5 (연남동 373-14)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_29f7bffd4126",
+      "name": "영돈분식버거",
+      "address": "경기 이천시 이섭대천로 1200 (중리동 219)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_c2fb2621bd82",
+      "name": "용수천농원",
+      "address": "대구 동구 용수동 468",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_ee3194aae292",
+      "name": "원조광명할머니빈대떡",
+      "address": "경기 광명시 광이로13번길 21-5 (광명동 158-55)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_291c9dfd8ca9",
+      "name": "위드유",
+      "address": "경기 안산시 단원구 광덕3로 167-12 (고잔동 726-9)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_baekjong-wok_0b24555abc6a",
+      "name": "하하",
+      "address": "서울 마포구 동교로 263 (연남동 229-12)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_f2ce95784833",
+      "name": "가평 율림동산",
+      "address": "경기 가평군 청평면 안대성길 21-42 (대성리 360-5)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9de3277b4788",
+      "name": "거제 고현시장",
+      "address": "-",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_21e9391aae5d",
+      "name": "고양 모녀반찬",
+      "address": "경기 고양시 일산서구 대화로 120 (대화동 1450-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e4e1d2fdcca6",
+      "name": "고양 오향선",
+      "address": "경기 고양시 일산서구 중앙로 1493 (주엽동 138)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3b29f619e02f",
+      "name": "고양 허육도",
+      "address": "경기 고양시 덕양구 도래울로 104 (도내동 964)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_31ad186ed499",
+      "name": "부산 한량 (현재 폐업)",
+      "address": "부산 해운대구 마린시티3로 23 (우동 1435)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c6632de9a9de",
+      "name": "부천 장군집 주먹고기 (김준현)",
+      "address": "경기 부천시 부일로725번길 9 (역곡동 78-4)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ffe3d3cdca58",
+      "name": "서울 경원집 (현재 폐업)",
+      "address": "서울 종로구 사직로 133-6 (적선동 27)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_27e239f7eab5",
+      "name": "서울 꼴더덕꼴더덕 (현재 폐업)",
+      "address": "서울 동대문구 답십리로59가길 4 (답십리2동 2-179)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9fcd9d693015",
+      "name": "서울 능금산장",
+      "address": "서울 종로구 비봉2길 88 (구기동 7)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_442a0c1066d4",
+      "name": "서울 대가향",
+      "address": "서울 서초구 서초대로 339 (서초동 1689-5)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_86da46e68fa7",
+      "name": "서울 땅끝마을매생이굴국밥",
+      "address": "서울 용산구 원효로41길 18 (원효로3가 40-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3bba6fd5f0df",
+      "name": "서울 마더스 오피스 (현재 폐업)",
+      "address": "서울 용산구 녹사평대로46길 5 (이태원동 580)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_781505d4388b",
+      "name": "서울 망원시장",
+      "address": "-",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_3b7f8c3e65ff",
+      "name": "서울 면면 (현재 폐업)",
+      "address": "서울 서대문구 증가로 259 (북가좌동 343-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ac80cfe2b9e4",
+      "name": "서울 목포세발낙지산낙지전문 별관",
+      "address": "서울 은평구 통일로66길 4-17 (불광동 281-162)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0dcbf6710375",
+      "name": "서울 미인삼계탕 (현재 폐업)",
+      "address": "서울 강남구 영동대로 513 (삼성동 159)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0a42b124d5cd",
+      "name": "서울 미타우동",
+      "address": "서울 송파구 삼전로12길 4 (삼전동 3-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_c347ac8193f9",
+      "name": "서울 박달재자연식당",
+      "address": "서울 서초구 강남대로2길 7 (양재동 353-4)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_98a1531d8edb",
+      "name": "서울 버거샵",
+      "address": "서울 강남구 선릉로158길 14-1 (청담동 88-25)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b14eff4308d3",
+      "name": "서울 봉족발 (현재 폐업)",
+      "address": "서울 강남구 강남대로42길 11 (도곡동 954-12)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_ac2c94775517",
+      "name": "서울 뿔난황소곱창 건대본점",
+      "address": "서울 광진구 아차산로29길 16 (화양동 9-24)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d5ae0f219879",
+      "name": "서울 샤이바나 광화문점",
+      "address": "서울 중구 세종대로 136 (태평로1가 84)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_0d01fc9d4b92",
+      "name": "서울 서촌통영",
+      "address": "서울 종로구 필운대로 47 (누하동 8-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_78a1dfd62a21",
+      "name": "서울 속초생선찜 (현재 폐업)",
+      "address": "서울 은평구 연서로29길 30-18 (갈현동 431-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a9f6bc0c20d5",
+      "name": "서울 쌈마을 (문세윤, 현재 폐업)",
+      "address": "서울 관악구 남부순환로226길 31 (봉천동 1603-4)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_16ff450456e3",
+      "name": "서울 알리바바 (현재 폐업)",
+      "address": "서울 용산구 이태원로 203 (이태원동 124-9)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1a412dbca54a",
+      "name": "서울 오후청 (현재 폐업)",
+      "address": "서울 중구 남대문로1길 26-10 (북창동 104)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_fa480cd42f8d",
+      "name": "서울 전주중앙회관 (현재 폐업)",
+      "address": "서울 중구 명동8나길 19 (충무로1가 24-11)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e1d01622c0f1",
+      "name": "서울 청청 (현재 폐업)",
+      "address": "서울 강남구 논현로152길 36 (신사동 588-12)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1ac9ba6b8cce",
+      "name": "서울 하오 (현재 폐업)",
+      "address": "서울 강남구 삼성로85길 43 (대치동 895)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_a078ce797eee",
+      "name": "수원 박군자진주냉면",
+      "address": "경기 수원시 팔달구 효원로307번길 26 (인계동 1117)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_b90394398463",
+      "name": "시흥 왕대통수라찜",
+      "address": "경기 시흥시 호현로 277 (대야동 38-8)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_16e8bdb9a845",
+      "name": "안산 삼수갑산",
+      "address": "경기 안산시 상록구 댕이길 82 (사동 1348)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_9223f6137d67",
+      "name": "안양 굴따세",
+      "address": "경기 안양시 만안구 안양로 349 (안양동 695-21)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_d259315b8a09",
+      "name": "의왕 전라도일키로바지락칼국수",
+      "address": "경기 의왕시 안양판교로 379 (청계동 534)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_1f6081bd6c47",
+      "name": "전주 조점례남문피순대",
+      "address": "전북 전주시 완산구 전동3가 2-198",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_89d6fb6597ee",
+      "name": "파주 문산자유시장",
+      "address": "-",
+      "candidates": []
+    },
+    {
       "id": "topic_enrichment_old-korean-100_5a9cf62b1493",
       "name": "강산면옥 본점",
       "address": "대구 중구 교동길 27-8",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_101",
+      "name": "부산 해운대암소갈비집",
+      "address": "부산 해운대구 중동2로10번길 32-10 (중동 1225-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_8bdc538077a1",
+      "name": "제주 까사디노아",
+      "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
       "candidates": []
     },
     {
@@ -2756,9 +3116,51 @@
       "candidates": []
     },
     {
+      "id": "topic_enrichment_wednesday-gourmet_1a7b9cc65294",
+      "name": "서울 아침가리긴밭",
+      "address": "서울 강남구 언주로14길 9 (논현동 63-4)",
+      "candidates": []
+    },
+    {
       "id": "topic_enrichment_wednesday-gourmet_5e750da15fdf",
       "name": "서울 더 키친 살바토레 쿠오모 (폐업)",
       "address": "서울 강남구 언주로164길 29 (신사동 646-2)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_a926f2f081d4",
+      "name": "서울 봉화전2",
+      "address": "서울 강남구 영동대로106길 41 (삼성동 162-25)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_251",
+      "name": "서울 미타우동",
+      "address": "서울 송파구 삼전로12길 4 (삼전동 3-1)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_276",
+      "name": "서울 참숯닭",
+      "address": "서울 서초구 동산로6길 37 (양재동 368)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_290",
+      "name": "서울 스시효",
+      "address": "서울 서초구 신반포로33길 27 (잠원동 66-2)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_41aab56a0b6f",
+      "name": "서울 덕원",
+      "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_2feb822aa311",
+      "name": "서울 돈차를리",
+      "address": "서울 용산구 녹사평대로 238-1 (이태원동 650)",
       "candidates": []
     },
     {
@@ -2774,9 +3176,117 @@
       "candidates": []
     },
     {
+      "id": "wednesday-gourmet_restaurant_378",
+      "name": "서울 모이",
+      "address": "서울 용산구 한남대로18길 34 (한남동 30-1)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_4b872c115260",
+      "name": "서울 레게치킨",
+      "address": "서울 마포구 양화로23길 16 (동교동 147-19)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_410",
+      "name": "서울 초마",
+      "address": "서울 마포구 와우산로 72 (서교동 361-10)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_477",
+      "name": "서울 취천루",
+      "address": "서울 종로구 자하문로7길 9 (체부동 26)",
+      "candidates": []
+    },
+    {
       "id": "topic_enrichment_wednesday-gourmet_fe603574f3c3",
       "name": "빠오즈푸 본점",
       "address": "서울 광진구 광나루로 373",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_500",
+      "name": "서울 영동막국수",
+      "address": "서울 광진구 천호대로 581 (중곡동 140-19)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_101",
+      "name": "부산 해운대암소갈비집",
+      "address": "부산 해운대구 중동2로10번길 32-10 (중동 1225-1)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_139",
+      "name": "제주 까사디노아",
+      "address": "제주 서귀포시 안덕면 대평로 42 (창천리 901-1)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_233",
+      "name": "서울 봉화전2",
+      "address": "서울 강남구 영동대로106길 41 (삼성동 162-25)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_251",
+      "name": "서울 미타우동",
+      "address": "서울 송파구 삼전로12길 4 (삼전동 3-1)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_276",
+      "name": "서울 참숯닭",
+      "address": "서울 서초구 동산로6길 37 (양재동 368)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_290",
+      "name": "서울 스시효",
+      "address": "서울 서초구 신반포로33길 27 (잠원동 66-2)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_320",
+      "name": "서울 덕원",
+      "address": "서울 영등포구 버드나루로길 6 (영등포동2가 94-28)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_330",
+      "name": "서울 돈차를리",
+      "address": "서울 용산구 녹사평대로 238-1 (이태원동 650)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_378",
+      "name": "서울 모이",
+      "address": "서울 용산구 한남대로18길 34 (한남동 30-1)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_403",
+      "name": "서울 레게치킨",
+      "address": "서울 마포구 양화로23길 16 (동교동 147-19)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_410",
+      "name": "서울 초마",
+      "address": "서울 마포구 와우산로 72 (서교동 361-10)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_477",
+      "name": "서울 취천루",
+      "address": "서울 종로구 자하문로7길 9 (체부동 26)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_500",
+      "name": "서울 영동막국수",
+      "address": "서울 광진구 천호대로 581 (중곡동 140-19)",
       "candidates": []
     },
     {

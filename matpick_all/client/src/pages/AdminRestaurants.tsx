@@ -9,6 +9,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import {
   getRestaurantMenuItems,
   getSourcesByRestaurant,
+  getSourceLinksByRestaurant,
   restaurants,
   sources,
 } from "@/data";
@@ -134,6 +135,7 @@ export default function AdminRestaurants() {
       initialEdits={edits}
       getMenus={getRestaurantMenuItems}
       getSources={getSourcesByRestaurant}
+      getSourceLinks={getSourceLinksByRestaurant}
       configured={configured}
       ready={ready}
       loadError={loadError}

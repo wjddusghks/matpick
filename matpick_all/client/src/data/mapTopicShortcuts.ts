@@ -18,7 +18,7 @@ export type MapTopicShortcut = {
   imageFit?: "cover" | "contain";
 };
 
-export const mapTopicShortcuts: MapTopicShortcut[] = [
+const baseMapTopicShortcuts: MapTopicShortcut[] = [
   ...(researchedTopicShortcuts as MapTopicShortcut[]),
   ...(travelTopicShortcuts as MapTopicShortcut[]),
   {
@@ -84,16 +84,14 @@ export const mapTopicShortcuts: MapTopicShortcut[] = [
     name: { ko: "백종원의 3대천왕", en: "Baek Jong-won" },
     imageUrl: baekjongWokImage,
   },
-  ...(expansionTopicShortcuts as MapTopicShortcut[]).map(topic => ({
-    ...topic,
-    ...(
-      topicThumbnailImages as Record<
-        string,
-        Pick<MapTopicShortcut, "imageUrl" | "imageFit">
-      >
-    )[topic.value],
-  })),
+  ...(expansionTopicShortcuts as MapTopicShortcut[]),
 ];
+
+// Apply curated images to every topic, including later research imports.
+export const mapTopicShortcuts: MapTopicShortcut[] = baseMapTopicShortcuts.map(topic => ({
+  ...topic,
+  ...(topicThumbnailImages as Record<string, Pick<MapTopicShortcut, "imageUrl" | "imageFit">>)[topic.value],
+}));
 
 export function getMapTopicPath(topic: MapTopicShortcut) {
   return `/map?type=${topic.type}&value=${encodeURIComponent(topic.value)}`;

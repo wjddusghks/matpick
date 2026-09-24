@@ -36,6 +36,7 @@ import FavoriteTopicDialog, {
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import SiteFooter from "@/components/SiteFooter";
 import RestaurantSuggestionInvite from "@/components/RestaurantSuggestionInvite";
+import DiningMomentsMarquee from "@/components/DiningMomentsMarquee";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -154,6 +155,17 @@ const HOME_UI_KO = {
     { label: "직장 점심·회식", question: "오늘 식당은 내가 골라야 한다면?" },
     { label: "손님 대접", question: "모시고 갈 식당, 어디서부터 찾지?" },
     { label: "여행", question: "낯선 동네에서 뭘 먹어야 할까?" },
+    { label: "혼밥", question: "혼자여도 맛있는 한 끼 먹고 싶다면?" },
+    { label: "기념일", question: "오늘만큼은 조금 특별한 곳 없을까?" },
+    { label: "부모님과", question: "부모님 모시고 갈 식당이 고민이라면?" },
+    { label: "친구 모임", question: "다들 어디든 좋다는데, 어디로 가지?" },
+    { label: "주말 나들이", question: "놀러 온 김에 유명한 곳도 들를까?" },
+    { label: "퇴근 후", question: "수고한 오늘, 맛있는 걸 먹고 싶다면?" },
+    { label: "방송 속 맛집", question: "영상에서 본 그 식당, 여기 근처일까?" },
+    {
+      label: "갑작스러운 약속",
+      question: "지금 가까운 맛집부터 빠르게 고르자.",
+    },
   ],
   collectionMarqueeLabel: "지도로 바로 보는 지역별 유명 맛집",
   collectionModal: {
@@ -275,6 +287,14 @@ const HOME_UI_EN = {
       question: "Where do you start looking for a place?",
     },
     { label: "Travel", question: "What should we eat in a new neighborhood?" },
+    { label: "Solo dining", question: "A good meal, just for you?" },
+    { label: "Anniversary", question: "Where can we make tonight special?" },
+    { label: "With parents", question: "Where should we take the family?" },
+    { label: "With friends", question: "Everyone says anywhere. Now what?" },
+    { label: "Weekend trip", question: "A famous spot along the way?" },
+    { label: "After work", question: "Ready for a well-earned dinner?" },
+    { label: "Seen on screen", question: "Is that restaurant near us?" },
+    { label: "Last-minute plans", question: "Find a nearby favorite, fast." },
   ],
   collectionMarqueeLabel: "Famous local restaurant cards for the map",
   collectionModal: {
@@ -1735,6 +1755,12 @@ export default function Home() {
             {ui.heroSubtitle}
           </p>
 
+          <DiningMomentsMarquee
+            title={ui.diningMomentsTitle}
+            moments={ui.diningMoments}
+            english={locale === "en"}
+          />
+
           <div
             ref={searchRef}
             className="relative mt-8 w-full max-w-[810px] sm:mt-10"
@@ -1803,30 +1829,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </section>
-
-            <section
-              className="mt-7 border-t border-[#f3e8ea] pt-6 text-left sm:mt-9"
-              aria-labelledby="home-dining-moments"
-            >
-              <h2
-                id="home-dining-moments"
-                className="break-keep text-center text-[16px] font-bold leading-6 text-[#353033] sm:text-[18px]"
-              >
-                {ui.diningMomentsTitle}
-              </h2>
-              <ul className="mt-5 grid grid-cols-2 gap-x-5 gap-y-5 sm:gap-x-8 lg:grid-cols-4">
-                {ui.diningMoments.map(moment => (
-                  <li key={moment.label} className="min-w-0 break-keep">
-                    <p className="text-xs font-bold leading-5 text-[#bc5060]">
-                      {moment.label}
-                    </p>
-                    <p className="mt-1 text-[13px] font-medium leading-6 text-[#786b70] sm:text-sm">
-                      {moment.question}
-                    </p>
-                  </li>
-                ))}
-              </ul>
             </section>
 
             {isFocused ? (

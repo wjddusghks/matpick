@@ -6,8 +6,10 @@ import travelDiscovery from "./generated/travel-discovery.generated.json";
 import topicExpansion from "./generated/topic-expansion.generated.json";
 import searchTopicExpansion from "./generated/search-topic-expansion.generated.json";
 import researchedTopics from "./generated/researched-topics.generated.json";
+import requestedTopicExpansion from "./generated/requested-topic-expansion.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import restaurantExclusions from "./restaurant-exclusions.json";
+import { removePermanentlyDeletedRestaurants } from "./permanentRestaurantDeletions";
 import { creatorProfileImageOverrides } from "./creatorProfileImages";
 import { sourceProfileImageOverrides } from "./sourceProfileImages";
 import oldKorean100Dataset from "./generated/old-korean-100.generated.json";
@@ -474,6 +476,7 @@ const dataset = filterDatasetForVisibleContent(
     topicExpansion as SourceDataset,
     searchTopicExpansion as SourceDataset,
     researchedTopics as SourceDataset,
+    requestedTopicExpansion as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({
@@ -488,6 +491,12 @@ const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map(
   })
 );
 const excludedRestaurantIds = new Set(restaurantExclusions.restaurantIds);
+const requestedTopicPatches = Object.fromEntries(
+  Object.entries(requestedTopicExpansion.patches).map(([id, patch]) => [
+    dataset.restaurantAliases?.[id] ?? id,
+    patch,
+  ])
+) as Record<string, Partial<Restaurant>>;
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
   restaurants: dataset.restaurants.map(restaurant => ({
@@ -504,6 +513,7 @@ const normalizedDataset: MatpickDataSet = {
     ...(searchTopicExpansion.patches as Record<string, Partial<Restaurant>>)[
       restaurant.id
     ],
+    ...requestedTopicPatches[restaurant.id],
     ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
       restaurant.id
     ],
@@ -546,7 +556,7 @@ for (const link of originalLinks) {
   });
 }
 // Keep historical evidence on the old page and carry it to the relocated recommendation.
-export const publicDataset: MatpickDataSet = {
+export const publicDataset: MatpickDataSet = removePermanentlyDeletedRestaurants({
   ...normalizedDataset,
   // Canonical IDs resolve directly. Do not ship thousands of identity mappings.
   restaurantAliases: Object.fromEntries(
@@ -573,4 +583,4 @@ export const publicDataset: MatpickDataSet = {
     };
   }),
   sourceLinks: [...originalLinks, ...relocatedLinks],
-};
+});

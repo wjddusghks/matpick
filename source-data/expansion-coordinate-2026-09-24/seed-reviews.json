@@ -1,0 +1,400 @@
+{
+  "byName": {
+    "롯데호텔서울 라세느": {
+      "aliases": [
+        "더그랜드롯데 서울 라세느"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "63뷔페 파빌리온": {
+      "aliases": [
+        "63뷔페 파빌리온 더프리미엄"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "웨스틴조선호텔 스시조": {
+      "aliases": [
+        "웨스틴조선서울 스시조"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "스시조": {
+      "aliases": [
+        "웨스틴조선서울 스시조"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "홍연": {
+      "aliases": [
+        "웨스틴조선서울 홍연"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "을밀대 평양냉면": {
+      "aliases": [
+        "을밀대 본점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "The Round": {
+      "aliases": [
+        "더라운드 청담점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "오스테리아 오르조": {
+      "aliases": [
+        "오스테리아 오르조 한남"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "스시우미": {
+      "aliases": [
+        "스시우미 용산"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "우래옥": {
+      "aliases": [
+        "우래옥 본점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "트래버틴": {
+      "aliases": [
+        "트래버틴 용산"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "진미평양냉면": {
+      "aliases": [
+        "진미평양냉면 별관"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "마포양지설렁탕": {
+      "aliases": [
+        "마포양지설렁탕 도화점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "원조 조박집3": {
+      "aliases": [
+        "조박집3 신관"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "송쉐프": {
+      "aliases": [
+        "송쉐프 본점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "더리버사이드호텔 더가든키친": {
+      "aliases": [
+        "더 리버사이드 호텔 뷔페 더 가든키친"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "kkotssul": {
+      "aliases": [
+        "꽃술"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "우다움": {
+      "aliases": [
+        "우다움 신용산점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "홍만당": {
+      "aliases": [
+        "홍만당 명동본점"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "가매일식": {
+      "aliases": [
+        "가매"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "에그앤플라워 해방촌 본점": {
+      "aliases": [
+        "에그앤플라워"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "봉래헌": {
+      "aliases": [
+        "메이필드호텔 봉래헌"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "스와니예": {
+      "aliases": [
+        "SOIGNE"
+      ],
+      "identityReview": "상호 표기 차이 확인. 주소·층·호수는 별도로 대조"
+    },
+    "해방촌 윤주당": {
+      "name": "윤주당",
+      "aliases": [
+        "해방촌 윤주당",
+        "윤주당"
+      ],
+      "address": "서울 용산구 신흥로 81-1 1층",
+      "chef": "술 빚는 윤주모",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-25"
+    },
+    "쌤쌤쌤 용산점": {
+      "name": "쌤쌤쌤",
+      "aliases": [
+        "쌤쌤쌤 용산점",
+        "쌤쌤쌤"
+      ],
+      "address": "서울 용산구 한강대로50길 25 1층",
+      "chef": "유행왕",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-15"
+    },
+    "더 이탈리안 클럽": {
+      "name": "더이탈리안 클럽 판교 테크원점",
+      "aliases": [
+        "더 이탈리안 클럽",
+        "더이탈리안클럽 판교테크원점"
+      ],
+      "address": "경기 성남시 분당구 분당내곡로 131 1층 5-2호",
+      "chef": "키친 보스",
+      "evidenceType": "two_directory_identity_agreement",
+      "legacyId": "culinary-class-wars-s2-black-8"
+    },
+    "BISTROT de YOUNTVILLE": {
+      "evidenceType": "two_directory_identity_agreement"
+    },
+    "솔밤": {
+      "holdReason": "김시현 셰프 퇴사 확인. 현재 소속으로 등록하지 않음",
+      "correctionSource": "https://v.daum.net/v/20260406152700990"
+    },
+    "온지음 레스토랑": {
+      "holdReason": "반찬술사는 현재 온하루 소속. 온지음을 현재 운영 식당으로 표기하지 않음",
+      "correctionSource": "https://m.onharu.kr/product/zoom.html?product_no=664"
+    },
+    "시리얼고메2.0": {
+      "address": "경기 화성시 동탄대로 469-12 2층 2001호",
+      "evidenceType": "official_broadcast_chef_affiliation",
+      "affiliationSource": "https://www.mbn.co.kr/totalCastView/156696"
+    },
+    "셰누프라이빗키친": {
+      "address": "용산구 녹사평대로 210-6, 3층, Seoul, 04345, 한국",
+      "aliases": [
+        "셰누 프라이빗 키친"
+      ],
+      "evidenceType": "chef_agency_affiliation",
+      "chef": "고효일",
+      "affiliationSource": "https://waveseoul.com/portfolio/ko-hyoil-mathieu/"
+    },
+    "코레츠 라이브": {
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "런치 코스",
+          "price": "150,000원"
+        },
+        {
+          "id": "m1",
+          "name": "디너 대게코스",
+          "price": "290,000원"
+        },
+        {
+          "id": "m2",
+          "name": "디너 킹크랩코스",
+          "price": "380,000원"
+        }
+      ],
+      "verifiedMenuSource": "https://polle.com/place/3plumC/코레츠%20라이브",
+      "menuNote": ""
+    },
+    "베수비오": {
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "단일 코스메뉴",
+          "price": "240,000원",
+          "description": "이탈리안 코스, 단품 없음. 페이지에 변동 표시. 1인 1잔 주류 주문 조건 별도."
+        }
+      ],
+      "verifiedMenuSource": "https://app.catchtable.co.kr/ct/shop/vesuvio",
+      "menuNote": "이탈리안 코스, 단품 없음. 페이지에 변동 표시. 1인 1잔 주류 주문 조건 별도."
+    },
+    "노뜨르": {
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "Amuse-Bouche",
+          "price": "45,000원",
+          "description": "5가지 아뮤즈 부쉬, 인당 필수 주문. 전체 식사 코스 총액이 아님."
+        }
+      ],
+      "verifiedMenuSource": "https://app.catchtable.co.kr/ct/shop/notre",
+      "menuNote": "5가지 아뮤즈 부쉬, 인당 필수 주문. 전체 식사 코스 총액이 아님. 공유 단품의 표시 범위. 개별 요리별 확정 가격은 추가 확인."
+    },
+    "이타닉 가든": {
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "LUNCH",
+          "price": "250,000원"
+        },
+        {
+          "id": "m1",
+          "name": "DINNER",
+          "price": "370,000원"
+        }
+      ],
+      "verifiedMenuSource": "https://app.catchtable.co.kr/ct/shop/eatanicgarden?type=DINING",
+      "menuNote": ""
+    },
+    "서울신라호텔 라연": {
+      "aliases": [
+        "라연"
+      ]
+    },
+    "라연": {
+      "aliases": [
+        "서울신라호텔 라연"
+      ]
+    }
+  },
+  "extraSeeds": [
+    {
+      "name": "키보 에다마메",
+      "aliases": [
+        "에다마메 남영"
+      ],
+      "address": "서울 용산구 한강대로76길 11-40",
+      "chef": "현상욱",
+      "contestant": "간귀",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-23-1"
+    },
+    {
+      "name": "EVETT 에빗",
+      "aliases": [
+        "에빗",
+        "에빗"
+      ],
+      "address": "서울 강남구 도산대로45길 10-5",
+      "chef": "조셉 리저우드 Joseph Lidgerwood",
+      "contestant": "조셉 리저우드 Joseph Lidgerwood",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-37-1"
+    },
+    {
+      "name": "이야이야앤프렌즈",
+      "aliases": [
+        "이야이야 앤 프렌즈 도산"
+      ],
+      "address": "서울 강남구 도산대로51길 22",
+      "chef": "박태윤",
+      "contestant": "풀메 요리사",
+      "season": 1,
+      "sourceId": "culinary-class-wars-chefs",
+      "sourceUrl": "https://blog.naver.com/tour_toctoc/223593400472",
+      "sourceDate": "2024-09",
+      "evidenceType": "supplied_guide_corroborates_previous_research",
+      "legacyId": "culinary-class-wars-s1-89-1"
+    },
+    {
+      "name": "코레츠 라이브",
+      "address": "서울 성동구 성수이로 97 5층",
+      "aliases": [],
+      "sourceId": "the-dudley",
+      "sourceUrl": "https://www.youtube.com/watch?v=oMwUbOmKrOs&t=0s",
+      "sourceDate": "2026-09-08",
+      "evidenceType": "official_video_and_current_identity",
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "런치 코스",
+          "price": "150,000원"
+        },
+        {
+          "id": "m1",
+          "name": "디너 대게코스",
+          "price": "290,000원"
+        },
+        {
+          "id": "m2",
+          "name": "디너 킹크랩코스",
+          "price": "380,000원"
+        }
+      ]
+    },
+    {
+      "name": "모수 서울",
+      "address": "서울 용산구 회나무로41길 4",
+      "aliases": [
+        "모수"
+      ],
+      "sourceId": "the-dudley",
+      "sourceUrl": "https://www.youtube.com/watch?v=zSh388SyNsM",
+      "sourceDate": "2025-04-26",
+      "evidenceType": "official_video_and_current_identity"
+    },
+    {
+      "name": "이타닉 가든",
+      "address": "서울 강남구 테헤란로 231 조선팰리스 36층",
+      "aliases": [],
+      "sourceId": "the-dudley",
+      "sourceUrl": "https://www.youtube.com/watch?v=MrgtYa5E9Xg&t=0s",
+      "sourceDate": "2025-08-24",
+      "evidenceType": "official_video_and_current_identity",
+      "verifiedMenus": [
+        {
+          "id": "m0",
+          "name": "LUNCH",
+          "price": "250,000원"
+        },
+        {
+          "id": "m1",
+          "name": "DINNER",
+          "price": "370,000원"
+        }
+      ]
+    },
+    {
+      "name": "라연",
+      "address": "서울 중구 동호로 249 신라호텔 23층",
+      "aliases": [
+        "서울신라호텔 라연"
+      ],
+      "sourceId": "the-dudley",
+      "sourceUrl": "https://www.youtube.com/watch?v=LqD98-u_QyU",
+      "sourceDate": "2026-03-16",
+      "evidenceType": "official_video_and_current_identity",
+      "menuNote": "가격 인상 자료가 상충하여 지도 표시 금액은 방문 전 예약 페이지 재확인 필요"
+    },
+    {
+      "name": "가보정",
+      "address": "경기 수원시 팔달구 장다리로 282 (1관 기준)",
+      "aliases": [
+        "가보정 1관"
+      ],
+      "sourceId": "the-dudley",
+      "sourceUrl": "https://www.youtube.com/watch?v=1euRjQS5QcI",
+      "sourceDate": "2025-01-22",
+      "evidenceType": "official_video_and_current_identity"
+    }
+  ]
+}

@@ -58,6 +58,12 @@ export function describeRestaurantSource(
       ? `A Matpick collection based on public restaurant information from ${source.attribution.provider}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
       : `${source.attribution.provider}의 공개 음식점 자료를 바탕으로 맛픽이 구성한 여행 가이드입니다. 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않아요.`;
   }
+  if (source.id === "the-dudley") {
+    badge = english ? "Featured restaurant" : "소개 식당";
+    description = english
+      ? `${restaurantName} was introduced by The Dudley, a creator covering restaurants and food. Current menus and prices are checked separately.`
+      : `식당과 음식을 소개하는 크리에이터 더들리가 소개한 식당이에요. ${restaurantName}의 소개 이력을 모았으며, 현재 메뉴·가격은 별도로 대조합니다.`;
+  }
   if (source.id === "culinary-class-wars-chefs") {
     badge = english ? "Cast chef" : "출연 셰프";
     description = english

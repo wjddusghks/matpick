@@ -68,6 +68,8 @@ import {
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
+import { usePrivateGuides } from "@/contexts/PrivateGuidesContext";
+import { mergePrivateRestaurants, type PrivateGuideCatalog } from "@/lib/privateGuideCatalog";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
 const PrivateGuides = lazy(() => import("@/components/admin/PrivateGuides"));
@@ -848,7 +850,7 @@ export default function Home() {
     useState<SearchResult[]>(getRecentSearches);
   const [searchDataModule, setSearchDataModule] =
     useState<HomeDataModule | null>(null);
-  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
+  const [searchResultsState, setSearchResultsState] = useState<{ catalog: PrivateGuideCatalog | null; items: SearchResult[] }>({ catalog: null, items: [] });
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
@@ -875,6 +877,8 @@ export default function Home() {
   const locationRequestRef = useRef<AbortController | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
+  const privateGuides = usePrivateGuides();
+  const filteredResults = searchResultsState.catalog === privateGuides.catalog ? searchResultsState.items : [];
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } =
     useFavorites();
   const userDisplayName = getDisplayName(user);
@@ -936,7 +940,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!normalizedQuery) {
-      setFilteredResults([]);
+      setSearchResultsState({ catalog: privateGuides.catalog, items: [] });
       return;
     }
 
@@ -949,18 +953,19 @@ export default function Home() {
         }
 
         setSearchDataModule(dataModule);
-        setFilteredResults(dataModule.getSearchSuggestions(query, 8));
+        const catalog = mergePrivateRestaurants(dataModule.restaurants, privateGuides.restaurants);
+        setSearchResultsState({ catalog: privateGuides.catalog, items: dataModule.getSearchSuggestions(query, 8, catalog) });
       })
       .catch(() => {
         if (!ignore) {
-          setFilteredResults([]);
+          setSearchResultsState({ catalog: privateGuides.catalog, items: [] });
         }
       });
 
     return () => {
       ignore = true;
     };
-  }, [normalizedQuery, query]);
+  }, [normalizedQuery, query, privateGuides.catalog, privateGuides.restaurants]);
 
   useEffect(() => {
     if (!searchDataModule) {
@@ -1251,14 +1256,14 @@ export default function Home() {
   const handleSelect = useCallback(
     async (item: SearchResult) => {
       const normalizedItem = normalizeSearchResult(item, searchDataModule);
-      trackMarketingEvent("search_result_click", {
+      if (!privateGuides.restaurants.length) trackMarketingEvent("search_result_click", {
         query: normalizedQuery || "recent",
         result_type: normalizedItem.type,
         result_id: normalizedItem.id,
         result_name: normalizedItem.name,
       });
 
-      setRecentSearches(prev => {
+      if (!privateGuides.restaurants.length && !normalizedItem.adminOnly) setRecentSearches(prev => {
         const withoutCurrent = prev.filter(
           entry =>
             getSearchResultKey(entry) !== getSearchResultKey(normalizedItem)
@@ -1315,7 +1320,7 @@ export default function Home() {
 
       navigate("/map");
     },
-    [navigate, normalizedQuery, searchDataModule]
+    [navigate, normalizedQuery, searchDataModule, privateGuides.restaurants]
   );
 
   const handleDeleteRecent = useCallback((id: string) => {
@@ -1347,7 +1352,7 @@ export default function Home() {
   }, [locationState, navigate]);
 
   const handlePrimarySearch = useCallback(() => {
-    trackMarketingEvent("search_submit", {
+    if (!privateGuides.restaurants.length) trackMarketingEvent("search_submit", {
       query: normalizedQuery || "",
       has_query: Boolean(normalizedQuery),
       result_count: filteredResults.length,
@@ -1370,6 +1375,7 @@ export default function Home() {
     navigate(`/map?type=query&value=${encodeURIComponent(query.trim())}`);
   }, [
     filteredResults,
+    privateGuides.restaurants,
     handleNearbySearch,
     handleSelect,
     hoveredIndex,

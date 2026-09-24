@@ -1269,7 +1269,7 @@ function getFieldMatchScore(value: string, variants: string[], weight: number) {
   return score;
 }
 
-const restaurantSearchIndex = restaurants.map((restaurant) => {
+const buildRestaurantSearchIndex = (catalog: Restaurant[]) => catalog.map((restaurant) => {
   const menuNames = Array.from(
     new Set(
       [restaurant.representativeMenu, ...(restaurant.menus ?? []).map((menu) => menu.name)]
@@ -1278,6 +1278,7 @@ const restaurantSearchIndex = restaurants.map((restaurant) => {
     )
   );
   const sourceNames = getSourcesByRestaurant(restaurant.id).map(getSourceDisplayName);
+  if (restaurant.privateGuideIds?.length) sourceNames.push("레드리본", "Red Ribbon");
   const creatorNames = getCreatorsByRestaurant(restaurant.id).flatMap((creator) => [
     creator.name,
     creator.channelName,
@@ -1299,14 +1300,15 @@ const restaurantSearchIndex = restaurants.map((restaurant) => {
 
   return { restaurant, fields };
 });
+const restaurantSearchIndex = buildRestaurantSearchIndex(restaurants);
 
-function findRestaurantMatches(query: string): RestaurantSearchMatch[] {
+function findRestaurantMatches(query: string, catalog = restaurants): RestaurantSearchMatch[] {
   const terms = getRestaurantSearchTerms(query);
   if (terms.length === 0) {
     return [];
   }
 
-  return restaurantSearchIndex
+  return (catalog === restaurants ? restaurantSearchIndex : buildRestaurantSearchIndex(catalog))
     .filter(({ restaurant }) => isRestaurantRecommendable(restaurant))
     .map(({ restaurant, fields }) => {
       const matchTypes = new Set<RestaurantSearchMatchType>();
@@ -1375,8 +1377,8 @@ function findRestaurantMatches(query: string): RestaurantSearchMatch[] {
     );
 }
 
-export function getRestaurantSearchResults(query: string) {
-  const matches = findRestaurantMatches(query);
+export function getRestaurantSearchResults(query: string, catalog = restaurants) {
+  const matches = findRestaurantMatches(query, catalog);
   if (matches.length) return { matches, expandedArea: null };
   // We do not have station coordinates. Only broaden to an address-matched area,
   // and tell the visitor that this is an area search rather than a station radius.
@@ -1388,23 +1390,23 @@ export function getRestaurantSearchResults(query: string) {
     return station[1];
   }).join(" ");
   if (!stationAreas.length) return { matches, expandedArea: null };
-  const areaMatches = findRestaurantMatches(broaderQuery).filter(({ restaurant }) =>
+  const areaMatches = findRestaurantMatches(broaderQuery, catalog).filter(({ restaurant }) =>
     stationAreas.every(area => normalizeRestaurantSearchText(`${restaurant.region} ${restaurant.address}`).includes(area))
   );
   return { matches: areaMatches, expandedArea: areaMatches.length ? stationAreas.join(" · ") : null };
 }
 
-export function searchRestaurants(query: string): RestaurantSearchMatch[] {
-  return getRestaurantSearchResults(query).matches;
+export function searchRestaurants(query: string, catalog = restaurants): RestaurantSearchMatch[] {
+  return getRestaurantSearchResults(query, catalog).matches;
 }
 
-export function getSearchSuggestions(query: string, limit = 8): SearchResult[] {
+export function getSearchSuggestions(query: string, limit = 8, catalog = restaurants): SearchResult[] {
   const trimmedQuery = query.trim();
   if (!trimmedQuery) {
     return [];
   }
 
-  const restaurantMatches = searchRestaurants(trimmedQuery);
+  const restaurantMatches = searchRestaurants(trimmedQuery, catalog);
   const queryVariants = getRestaurantSearchVariants(trimmedQuery);
   const aggregateResult: SearchResult = {
     id: `query:${normalizeRestaurantSearchText(trimmedQuery)}`,
@@ -1430,6 +1432,7 @@ export function getSearchSuggestions(query: string, limit = 8): SearchResult[] {
       return queryVariants.some((variant) => searchable.includes(variant));
     });
   const restaurantResults = restaurantMatches.map<SearchResult>((match) => ({
+    adminOnly: match.restaurant.adminOnly,
     id: match.restaurant.id,
     type: "restaurant",
     name: match.restaurant.name,

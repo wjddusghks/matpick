@@ -195,7 +195,7 @@ export default function AnalyticsTracker() {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       const element = findTrackableElement(event.target);
-      if (!element) {
+      if (!element || element.closest("[data-private-content]")) {
         return;
       }
 

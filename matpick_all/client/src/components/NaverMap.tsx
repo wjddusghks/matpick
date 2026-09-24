@@ -1,4 +1,5 @@
 import { hasUsableCoordinates } from "@/lib/restaurantEligibility";
+import { restaurantDetailPath } from "@/lib/privateGuideCatalog";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getRestaurantMenuSummary, type Restaurant } from "@/data";
@@ -359,7 +360,7 @@ function createInfoContent(restaurant: Restaurant, isEnglish = false) {
   const category = escapeHtml(restaurant.category);
   const address = escapeHtml(restaurant.address || restaurant.region || "");
   const menuSummary = escapeHtml(getRestaurantMenuSummary(restaurant));
-  const restaurantHref = `/restaurant/${encodeURIComponent(restaurant.id)}`;
+  const restaurantHref = restaurantDetailPath(restaurant);
 
   return `
     <div style="

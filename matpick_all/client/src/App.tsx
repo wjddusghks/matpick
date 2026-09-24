@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation, useSearch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import AnalyticsTracker from "./components/AnalyticsTracker";
 import MarketingScripts from "./components/marketing/MarketingScripts";
@@ -10,7 +10,9 @@ import MonetizationScripts from "./components/monetization/MonetizationScripts";
 import MediaProtection from "./components/MediaProtection";
 import PrivacyConsentBanner from "./components/PrivacyConsentBanner";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider, useAuth } from "./contexts/AuthContext";
+import { isAdminUser } from "./lib/admin";
+import { PrivateGuidesProvider } from "./contexts/PrivateGuidesContext";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 import { LocaleProvider } from "./contexts/LocaleContext";
 import { loadRestaurantEdits } from "./lib/restaurantEdits";
@@ -52,6 +54,7 @@ const AdminRestaurants = lazy(
 );
 const AdminTopicResearch = lazy(() => import("./pages/AdminTopicResearch"));
 const AdminPrivateGuides = lazy(() => import("./pages/AdminPrivateGuides"));
+const AdminGuideRestaurant = lazy(withRestaurantEdits(() => import("./pages/AdminGuideRestaurant")));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
@@ -115,11 +118,21 @@ function Router() {
         <Route path="/admin/restaurants" component={AdminRestaurants} />
         <Route path="/admin/topic-research" component={AdminTopicResearch} />
         <Route path="/admin/private-guides" component={AdminPrivateGuides} />
+        <Route path="/admin/private-guides/restaurant/:id" component={AdminGuideRestaurant} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
   );
+}
+
+function VisitorTracking() {
+  const { user } = useAuth();
+  const [path] = useLocation();
+  const search = useSearch();
+  const params = new URLSearchParams(search);
+  if (isAdminUser(user) || path.startsWith("/admin/private-guides") || params.get("type") === "private-guide" || (params.get("value") || "").startsWith("private-guide:") || (params.get("selected") || "").startsWith("private-guide:")) return null;
+  return <><MarketingScripts/><AnalyticsTracker/></>;
 }
 
 function App() {
@@ -128,18 +141,19 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <LocaleProvider>
           <AuthProvider>
+            <PrivateGuidesProvider>
             <FavoritesProvider>
               <TooltipProvider>
                 <Toaster />
                 <MonetizationScripts />
                 <MediaProtection />
-                <MarketingScripts />
-                <AnalyticsTracker />
+                <VisitorTracking />
                 <AuthOnboardingModal />
                 <PrivacyConsentBanner />
                 <Router />
               </TooltipProvider>
             </FavoritesProvider>
+            </PrivateGuidesProvider>
           </AuthProvider>
         </LocaleProvider>
       </ThemeProvider>

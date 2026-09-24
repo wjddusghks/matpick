@@ -58,6 +58,9 @@ export interface RestaurantMenuPriceSource {
 }
 
 export interface Restaurant {
+  /** Runtime-only metadata from the authenticated private catalog. Never serialize publicly. */
+  adminOnly?: boolean;
+  privateGuideIds?: string[];
   id: string;
   name: string;
   region: string;
@@ -114,6 +117,7 @@ export interface Visit {
 }
 
 export interface SearchResult {
+  adminOnly?: boolean;
   id: string;
   type: "query" | "creator" | "region" | "food" | "restaurant" | "source";
   name: string;

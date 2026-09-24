@@ -1,4 +1,5 @@
 import {
+  Fragment,
   useDeferredValue,
   useEffect,
   useMemo,
@@ -57,6 +58,7 @@ import {
 import type { MenuItem, Restaurant, Source, SourceLink } from "@/data/types";
 import {
   getAdminAppearances,
+  groupAdminRestaurants,
   normalizeAdminRestaurantSearch,
 } from "@/lib/adminRestaurantAppearances";
 import {
@@ -94,6 +96,7 @@ export type ManagerView = {
   query?: string;
   sourceId?: string;
   episodeKey?: string;
+  viewMode?: "episodes" | "restaurants";
   filter?: Filter;
   page?: number;
   tab?: EditorTab;
@@ -209,6 +212,9 @@ export default function RestaurantManager({
   const deferredQuery = useDeferredValue(query);
   const [sourceId, setSourceId] = useState(initialView.sourceId || "");
   const [episodeKey, setEpisodeKey] = useState(initialView.episodeKey || "");
+  const [viewMode, setViewMode] = useState<"episodes" | "restaurants">(
+    initialView.viewMode || "episodes"
+  );
   const [filter, setFilter] = useState<Filter>(initialView.filter || "all");
   const [sort, setSort] = useState(initialView.sort || "default");
   const [page, setPage] = useState(initialView.page || 1);
@@ -241,6 +247,7 @@ export default function RestaurantManager({
   } | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const allowUnload = useRef(false);
   const restoredScroll = useRef(false);
@@ -304,11 +311,17 @@ export default function RestaurantManager({
       ).sort(
         (a, b) =>
           a.sourceName.localeCompare(b.sourceName, "ko") ||
-          a.episode.localeCompare(b.episode, "ko", { numeric: true })
+          b.season - a.season ||
+          b.episodeNumber - a.episodeNumber
       ),
     [entries, sourceId]
   );
   const missingMenus = entries.filter(e => !e.count).length;
+  useEffect(() => {
+    if (episodeKey && !episodeOptions.some(a => a.key === episodeKey)) {
+      setEpisodeKey("");
+    }
+  }, [episodeKey, episodeOptions]);
   const missingPrices = entries.filter(
     e => e.count && e.priced < e.count
   ).length;
@@ -331,8 +344,28 @@ export default function RestaurantManager({
     if (sort === "menus") items.sort((a, b) => a.count - b.count);
     return items;
   }, [entries, deferredQuery, sourceId, episodeKey, filter, editIds, sort]);
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const episodeGroups = useMemo(
+    () => groupAdminRestaurants(filtered, sourceId, episodeKey),
+    [filtered, sourceId, episodeKey]
+  );
+  const listRows = useMemo(
+    () =>
+      viewMode === "episodes"
+        ? episodeGroups.flatMap(group =>
+            group.entries.map(entry => ({ entry, group }))
+          )
+        : filtered.map(entry => ({ entry, group: null })),
+    [viewMode, episodeGroups, filtered]
+  );
+  const pageCount = Math.max(1, Math.ceil(listRows.length / PAGE_SIZE));
   const currentPage = Math.min(page, pageCount);
+  const pageRows = listRows.slice(
+    (currentPage - 1) * PAGE_SIZE,
+    currentPage * PAGE_SIZE
+  );
+  useEffect(() => {
+    if (listRef.current) listRef.current.scrollTop = 0;
+  }, [sourceId, episodeKey, filter, currentPage, viewMode, deferredQuery]);
   const menuRows = (draft?.menus || []).filter(
     menu =>
       (!menuQuery.trim() ||
@@ -533,6 +566,7 @@ export default function RestaurantManager({
         query,
         sourceId,
         episodeKey,
+        viewMode,
         filter,
         page: currentPage,
         sort,
@@ -625,10 +659,10 @@ export default function RestaurantManager({
           href="/admin/topic-research"
           className="am-nav-item"
           onClick={e => leave(e, "/admin/topic-research")}
-          title="신규 주제 · 조사 후보 검토"
+          title="주제별 식당 후보 검토"
         >
           <Search size={19} />
-          <span>신규 주제 검토</span>
+          <span>식당 후보 검토</span>
         </a>
         <div className="am-rail-bottom">
           <a
@@ -759,6 +793,26 @@ export default function RestaurantManager({
                 </h2>
                 <ListFilter size={17} />
               </div>
+              <div className="am-view-switch" aria-label="식당 목록 보기 방식">
+                <button
+                  aria-pressed={viewMode === "episodes"}
+                  onClick={() => {
+                    setViewMode("episodes");
+                    setPage(1);
+                  }}
+                >
+                  <Tv size={14} /> 방송·회차별
+                </button>
+                <button
+                  aria-pressed={viewMode === "restaurants"}
+                  onClick={() => {
+                    setViewMode("restaurants");
+                    setPage(1);
+                  }}
+                >
+                  <Store size={14} /> 식당별
+                </button>
+              </div>
               <label className="am-search">
                 <Search size={17} />
                 <input
@@ -837,6 +891,12 @@ export default function RestaurantManager({
                   </select>
                 </label>
               )}
+              {viewMode === "episodes" && (
+                <p className="am-group-note">
+                  프로그램별 최신 회차부터 묶었어요. 여러 회차에 나온 식당은 각
+                  회차에 표시됩니다.
+                </p>
+              )}
               <div className="am-pills" aria-label="확인 상태 필터">
                 {(
                   [
@@ -860,94 +920,131 @@ export default function RestaurantManager({
                 ))}
               </div>
             </div>
-            <div className="am-list-scroll" aria-busy={!ready}>
+            <div className="am-list-scroll" ref={listRef} aria-busy={!ready}>
               {!ready ? (
                 <div className="am-empty">
                   <Loader2 className="am-spin" />
                   <strong>식당을 불러오고 있어요</strong>
                 </div>
               ) : (
-                filtered
-                  .slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
-                  .map(({ restaurant: r, count, priced, appearances }) => (
-                    <button
-                      key={r.id}
-                      className={`am-restaurant ${selectedId === r.id ? "is-selected" : ""}`}
-                      aria-pressed={selectedId === r.id}
-                      onClick={() => choose(r.id)}
-                      disabled={saving}
-                    >
-                      <div className="am-restaurant-title">
-                        <strong>{r.name}</strong>
-                        {selectedId === r.id ? (
-                          <ChevronRight size={17} />
-                        ) : editIds.has(r.id) ? (
-                          <FilePenLine size={14} />
-                        ) : null}
-                      </div>
-                      <p>{r.address}</p>
-                      {appearances.length > 0 && (
-                        <div className="am-episode-badges">
-                          {appearances
-                            .filter(a => !sourceId || a.sourceId === sourceId)
-                            .slice(0, 2)
-                            .map(a => (
-                              <span
-                                key={a.key}
-                                title={`${a.sourceName} · ${a.episode}${a.date ? ` · ${a.date}` : ""}`}
-                              >
-                                <Tv size={11} />
-                                {a.sourceName} <b>{a.episode}</b>
-                              </span>
-                            ))}
-                          {appearances.filter(
-                            a => !sourceId || a.sourceId === sourceId
-                          ).length > 2 && (
-                            <small>
-                              +
+                pageRows.map(
+                  (
+                    {
+                      entry: { restaurant: r, count, priced, appearances },
+                      group,
+                    },
+                    index
+                  ) => (
+                    <Fragment key={`${group?.key || "list"}:${r.id}`}>
+                      {group &&
+                        (index === 0 ||
+                          pageRows[index - 1].group?.key !== group.key) && (
+                          <div className="am-episode-group-heading">
+                            <span className="am-episode-number">
+                              {group.appearance
+                                ? `${group.appearance.episodeNumber}회`
+                                : "미확인"}
+                            </span>
+                            <div>
+                              <h3>
+                                {group.appearance?.sourceName ||
+                                  sources.find(s => s.id === sourceId)?.name ||
+                                  "회차 정보 없는 식당"}
+                              </h3>
+                              <p>
+                                {group.appearance
+                                  ? `${group.appearance.season ? `시즌 ${group.appearance.season} · ` : ""}${group.entries.length}곳`
+                                  : "회차를 임의로 지정하지 않았어요"}
+                              </p>
+                            </div>
+                            {group.appearance?.date && (
+                              <time>{group.appearance.date.slice(0, 10)}</time>
+                            )}
+                          </div>
+                        )}
+                      <button
+                        key={r.id}
+                        className={`am-restaurant ${selectedId === r.id ? "is-selected" : ""}`}
+                        aria-pressed={selectedId === r.id}
+                        onClick={() => choose(r.id)}
+                        disabled={saving}
+                      >
+                        <div className="am-restaurant-title">
+                          <strong>{r.name}</strong>
+                          {selectedId === r.id ? (
+                            <ChevronRight size={17} />
+                          ) : editIds.has(r.id) ? (
+                            <FilePenLine size={14} />
+                          ) : null}
+                        </div>
+                        <p>{r.address}</p>
+                        {viewMode === "restaurants" &&
+                          appearances.length > 0 && (
+                            <div className="am-episode-badges">
+                              {appearances
+                                .filter(
+                                  a => !sourceId || a.sourceId === sourceId
+                                )
+                                .slice(0, 2)
+                                .map(a => (
+                                  <span
+                                    key={a.key}
+                                    title={`${a.sourceName} · ${a.episode}${a.date ? ` · ${a.date}` : ""}`}
+                                  >
+                                    <Tv size={11} />
+                                    {a.sourceName} <b>{a.episode}</b>
+                                  </span>
+                                ))}
                               {appearances.filter(
                                 a => !sourceId || a.sourceId === sourceId
-                              ).length - 2}
-                              개 회차
-                            </small>
+                              ).length > 2 && (
+                                <small>
+                                  +
+                                  {appearances.filter(
+                                    a => !sourceId || a.sourceId === sourceId
+                                  ).length - 2}
+                                  개 회차
+                                </small>
+                              )}
+                            </div>
+                          )}
+                        <div className="am-restaurant-meta">
+                          <span>
+                            <Utensils size={11} />
+                            메뉴 {count}
+                          </span>
+                          <span
+                            className={
+                              !count
+                                ? "am-muted"
+                                : priced < count
+                                  ? "am-text-amber"
+                                  : "am-text-green"
+                            }
+                          >
+                            {!count ? (
+                              "미등록"
+                            ) : priced < count ? (
+                              `가격 ${priced}/${count}`
+                            ) : (
+                              <>
+                                <Check size={11} />
+                                가격 완료
+                              </>
+                            )}
+                          </span>
+                          {["closed", "moved", "temporarily_closed"].includes(
+                            getOperationState(r)
+                          ) && (
+                            <span className="am-text-red">
+                              {states[getOperationState(r)]}
+                            </span>
                           )}
                         </div>
-                      )}
-                      <div className="am-restaurant-meta">
-                        <span>
-                          <Utensils size={11} />
-                          메뉴 {count}
-                        </span>
-                        <span
-                          className={
-                            !count
-                              ? "am-muted"
-                              : priced < count
-                                ? "am-text-amber"
-                                : "am-text-green"
-                          }
-                        >
-                          {!count ? (
-                            "미등록"
-                          ) : priced < count ? (
-                            `가격 ${priced}/${count}`
-                          ) : (
-                            <>
-                              <Check size={11} />
-                              가격 완료
-                            </>
-                          )}
-                        </span>
-                        {["closed", "moved", "temporarily_closed"].includes(
-                          getOperationState(r)
-                        ) && (
-                          <span className="am-text-red">
-                            {states[getOperationState(r)]}
-                          </span>
-                        )}
-                      </div>
-                    </button>
-                  ))
+                      </button>
+                    </Fragment>
+                  )
+                )
               )}
               {ready && !filtered.length && (
                 <div className="am-empty">

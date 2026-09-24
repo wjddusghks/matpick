@@ -1,0 +1,44 @@
+{
+  "createdAt": "2026-09-24",
+  "tool": "built-in image_gen",
+  "purpose": "Generic illustrative dining scenes for situation cards; not restaurant listing photos.",
+  "optimization": "400x400 JPEG quality 88; composition unchanged",
+  "assets": [
+    {
+      "name": "hosting",
+      "prompt": "Use case: photorealistic-natural. Asset: editorial lifestyle photograph for a small photo thumbnail on a Korean restaurant-discovery website. Create ONE square photograph, not a collage. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting, realistic, close framing that reads at 90px. No lettering, no logos, no watermarks, no brands, no UI, no border. This is a generic illustrative dining situation, not an identifiable real venue.\nScene: An elegant Korean table setting for welcoming guests, tasteful celadon plates with neatly arranged Korean dishes and brass cutlery on pale wood, soft window light, an understated floral stem, elevated hospitality, close 3/4 overhead composition, no people.",
+      "path": "matpick_all/client/public/dining-moments/hosting.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-ae6528ce-de69-4d4f-b51d-adfab02adc27.png"
+    },
+    {
+      "name": "travel",
+      "prompt": "Use case: photorealistic-natural. Create one square editorial lifestyle photograph for a small thumbnail on a Korean restaurant discovery website. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting realistic close framing readable at 90px. No lettering, logos, watermarks, UI or border. A generic illustrative dining situation, not an identifiable real venue. Scene: Coastal holiday lunch: grilled fish and colorful Korean side dishes on a sunlit wooden table next to a window overlooking the turquoise Jeju sea softly blurred in background. Food dominates foreground, relaxed and bright, no people.",
+      "path": "matpick_all/client/public/dining-moments/travel.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-325bdad1-2417-4985-8e60-80d41e40c5d4.png"
+    },
+    {
+      "name": "solo",
+      "prompt": "Use case: photorealistic-natural. Create one square editorial lifestyle photograph for a small thumbnail on a Korean restaurant discovery website. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting realistic close framing readable at 90px. No lettering, logos, watermarks, UI or border. A generic illustrative dining situation, not an identifiable real venue. Scene: One bowl of comforting Korean noodles, small kimchi dish and chopsticks on a quiet wooden counter by a window. Natural steam and rich broth texture, cozy daylight, a beautiful meal for one, no people.",
+      "path": "matpick_all/client/public/dining-moments/solo.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-9a16c9b3-af6f-4fca-8b8e-dc8eb0e25f15.png"
+    },
+    {
+      "name": "date",
+      "prompt": "Use case: photorealistic-natural. Create one square editorial lifestyle photograph for a small thumbnail on a Korean restaurant discovery website. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting realistic close framing readable at 90px. No lettering, logos, watermarks, UI or border. A generic illustrative dining situation, not an identifiable real venue. Scene: An intimate date-night table for two in a stylish Seoul bistro. Beautiful pasta dishes, two clear water glasses and a small candle, warm dusk window light and subtle bokeh. Food-focused, tasteful, no people.",
+      "path": "matpick_all/client/public/dining-moments/date.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-0390d94c-311b-4f97-bf51-dbb41fbb9b57.png"
+    },
+    {
+      "name": "work",
+      "prompt": "Use case: photorealistic-natural. Create one square editorial lifestyle photograph for a small thumbnail on a Korean restaurant discovery website. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting realistic close framing readable at 90px. No lettering, logos, watermarks, UI or border. A generic illustrative dining situation, not an identifiable real venue. Scene: Delicious Korean office lunch: bubbling doenjang stew in a black earthenware pot, rice and colorful banchan. Clean casual table, bright daylight, appetizing food magazine photography, no people.",
+      "path": "matpick_all/client/public/dining-moments/work.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-91fddd9e-00f2-426b-a206-222616a1938d.png"
+    },
+    {
+      "name": "friends",
+      "prompt": "Use case: photorealistic-natural. Create one square editorial lifestyle photograph for a small thumbnail on a Korean restaurant discovery website. Warm natural colors, sophisticated Korean lifestyle magazine art direction, tangible food textures, inviting realistic close framing readable at 90px. No lettering, logos, watermarks, UI or border. A generic illustrative dining situation, not an identifiable real venue. Scene: A Korean evening meal shared with friends: tabletop grilled meat in appetizing pieces, fresh lettuce and side dishes on a cozy restaurant table. Warm intimate light, casual and stylish, no hands or people.",
+      "path": "matpick_all/client/public/dining-moments/friends.jpg",
+      "generatedOriginal": "C:\\Users\\John\\.codex\\generated_images\\01a0b7ca-d756-7dd0-83f7-d17a7f76391a\\exec-0f712f41-2a06-4580-9493-2def47821ec6.png"
+    }
+  ]
+}

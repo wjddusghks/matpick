@@ -19,6 +19,7 @@ type Topic = {
   id: string;
   name: string;
   candidateRows: number;
+  candidateGroups: number;
   publishedRestaurants: number;
   pendingRows: number;
 };
@@ -35,6 +36,13 @@ type Row = {
     restaurantId: string | null;
     publishedRanks: number[];
     reason: string;
+    catalogState: string;
+    duplicateRows: number;
+    currentName: string | null;
+    currentAddress: string | null;
+    pendingRanks: number[];
+    possibleMatches: { id: string; name: string; address: string }[];
+    possibleMatchCount: number;
   };
 };
 type Detail = Row & {
@@ -73,6 +81,13 @@ type Result = {
   summary: {
     updatedAt: string;
     candidateRows: number;
+    candidateGroups: number;
+    duplicateRows: number;
+    alreadyLinkedGroups: number;
+    existingNeedsTopicGroups: number;
+    excludedGroups: number;
+    researchAsOf: string;
+    reasons: Record<string, number>;
     pendingCandidateRows: number;
     uniquePublishedRestaurants: number;
     sourceAssociations: number;
@@ -84,11 +99,20 @@ type Result = {
   pages: number;
 };
 const labels: Record<string, string> = {
-  published: "주제 연결 완료",
-  partly_published: "일부 주제 확인 필요",
+  published: "현재 등록·주제 연결 완료",
   identity_review: "상호·주소 대조 필요",
   source_review: "소개 출처 대조 필요",
   operation_review: "영업·이전 확인 필요",
+  excluded: "삭제 요청 · 검토 제외",
+  existing_needs_topic: "기존 식당 · 주제 연결 대조",
+};
+const catalogLabels: Record<string, string> = {
+  already_linked: "이미 등록된 식당·주제",
+  existing_needs_topic: "기존 식당 · 다른 소개 출처 대조",
+  unmatched: "등록 여부 미확정",
+  ambiguous: "동일 식당 후보 여러 곳",
+  possible_existing: "기존 식당 가능성 · 주소 대조",
+  excluded: "삭제 요청 반영",
 };
 const registryLabels: Record<string, string> = {
   registry_active: "인허가상 영업 기록",
@@ -156,7 +180,7 @@ export default function AdminTopicResearch() {
   const adminKey = user ? getAdminRegistrationKey(user) : "";
   const token = user?.syncToken || "";
   useSeo({
-    title: "신규 주제 · 조사 후보 검토",
+    title: "주제별 식당 후보 검토",
     description: "맛픽 관리자 조사 후보 검토",
     path: "/admin/topic-research",
     robots: "noindex,nofollow",
@@ -268,7 +292,7 @@ export default function AdminTopicResearch() {
             식당 · 메뉴 · 가격 관리
           </Link>
           <span aria-current="page" className="text-[#ad3f59]">
-            신규 주제 검토
+            식당 후보 검토
           </span>
         </nav>
         <header className="my-7">
@@ -276,12 +300,12 @@ export default function AdminTopicResearch() {
             MATPICK · CONTENT RESEARCH
           </p>
           <h1 className="mt-2 text-3xl font-black tracking-tight">
-            새로운 맛집, 꼼꼼하게 확인하기
+            10개 주제의 식당 조사 자료
           </h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[#746b75]">
-            조사 후보를 주제별로 대조하는 공간입니다. 상호·주소·위치와 소개
-            출처가 연결된 기존 식당만 공개하며, 후보 수에는 주제 간 중복이
-            포함됩니다.
+            방송·채널에서 추출한 식당 단서를 대조하는 공간입니다. 새로운 주제나
+            신규 식당이 확정된 목록이 아닙니다. 같은 식당으로 대조된 기록은
+            묶고, 현재 등록된 식당·주제와 삭제 요청을 반영했습니다.
           </p>
         </header>
         {result && (
@@ -291,24 +315,24 @@ export default function AdminTopicResearch() {
           >
             {[
               [
-                "전체 조사 후보",
-                result.summary.candidateRows,
-                "중복을 포함한 조사 행",
+                "중복 묶은 조사 후보",
+                result.summary.candidateGroups,
+                `원본 ${count(result.summary.candidateRows)}건 · 중복 ${count(result.summary.duplicateRows)}건 합침`,
               ],
               [
-                "검토 남은 후보",
+                "추가 대조 필요",
                 result.summary.pendingCandidateRows,
-                "일부 주제만 연결된 후보 포함",
+                "신규 식당 확정 수가 아닙니다",
               ],
               [
-                "주제 연결 식당",
-                result.summary.uniquePublishedRestaurants,
-                "기존 식당 · 신규 식당 추가 0곳",
+                "이미 등록·연결 완료",
+                result.summary.alreadyLinkedGroups,
+                "기본 검토 목록에서 제외",
               ],
               [
-                "공개 소개 출처",
-                result.summary.sourceAssociations,
-                "식당과 새 주제의 연결 수",
+                "기존 식당 · 출처 대조",
+                result.summary.existingNeedsTopicGroups,
+                "식당 재등록 없이 주제 연결 확인",
               ],
             ].map(([label, value, note]) => (
               <div key={label} className={`${box} p-4 sm:p-5`}>
@@ -322,6 +346,38 @@ export default function AdminTopicResearch() {
               </div>
             ))}
           </section>
+        )}
+        {result && (
+          <div className="mt-4 rounded-2xl border border-[#e1d9ee] bg-[#f0eaf7] p-5 text-sm leading-6 text-[#685374]">
+            <p className="font-bold">이 목록이 많이 남아 있는 이유</p>
+            <p className="mt-1">
+              같은 식당의 재방송·재방문, 주소 표기 차이, 기존 식당의 다른 방송
+              출처가 함께 수집돼 있습니다. 주소가 불명확한 기록은 중복 여부도
+              아직 확정할 수 없어 별도 대조가 필요합니다.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {[
+                ["identity_review", "상호·주소"],
+                ["source_review", "소개 출처"],
+                ["operation_review", "영업·이전"],
+              ].map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => {
+                    setStatus(key);
+                    setPage(1);
+                  }}
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-bold"
+                >
+                  {label} {count(result.summary.reasons[key] || 0)}건
+                </button>
+              ))}
+              <span className="px-2 py-1.5 text-xs">
+                삭제 요청 {count(result.summary.excludedGroups)}건은 검토에서
+                제외
+              </span>
+            </div>
+          </div>
         )}
         <section
           className={`${box} mt-6 p-4 sm:p-5`}
@@ -351,8 +407,8 @@ export default function AdminTopicResearch() {
                   setPage(1);
                 }}
               >
-                <option value="pending">검토 남은 후보</option>
-                <option value="all">전체 후보</option>
+                <option value="pending">추가 대조 필요한 후보</option>
+                <option value="all">전체 자료 (완료·제외 포함)</option>
                 {Object.entries(labels).map(([key, value]) => (
                   <option value={key} key={key}>
                     {value}
@@ -366,7 +422,7 @@ export default function AdminTopicResearch() {
               {
                 rank: 0,
                 name: "전체 주제",
-                candidateRows: result?.summary.candidateRows || 0,
+                candidateGroups: result?.summary.candidateGroups || 0,
               },
               ...topics,
             ].map(t => (
@@ -382,7 +438,7 @@ export default function AdminTopicResearch() {
               >
                 {t.name}
                 <span className="ml-1.5 opacity-65">
-                  {count(t.candidateRows)}
+                  {count(t.candidateGroups)}
                 </span>
               </button>
             ))}
@@ -397,8 +453,8 @@ export default function AdminTopicResearch() {
                 : "조사 자료 연결 중"}
           </p>
           <p>
-            조사 기준 {result?.summary.updatedAt || "2026-09-22"} · 전수 검증
-            진행 중
+            원본 조사 {result?.summary.researchAsOf || "2026-09-22"} · 현재 등록
+            데이터 대조 {result?.summary.updatedAt || "—"}
           </p>
         </div>
         {error && (
@@ -448,6 +504,11 @@ export default function AdminTopicResearch() {
                   </p>
                   <p className="mt-2 text-xs font-semibold text-[#ad3f59]">
                     {row.topicRanks.map(topicName).join(" · ")}
+                  </p>
+                  <p className="mt-2 text-[11px] text-[#6d7e82]">
+                    {catalogLabels[row.publication.catalogState]}
+                    {row.publication.duplicateRows > 0 &&
+                      ` · 같은 식당 기록 ${row.publication.duplicateRows + 1}건 묶음`}
                   </p>
                   <p className="mt-3 truncate text-xs text-[#928892]">
                     {row.menuLabels.length
@@ -538,6 +599,49 @@ export default function AdminTopicResearch() {
                     <p className="mt-3 text-sm leading-6 text-[#766876]">
                       {detail.address || "주소 미확인"}
                     </p>
+                    <div className="mt-4 rounded-xl bg-[#f2eef8] p-3 text-xs leading-6 text-[#70577e]">
+                      <b>{catalogLabels[detail.publication.catalogState]}</b>
+                      {detail.publication.currentName && (
+                        <p>
+                          현재 맛픽: {detail.publication.currentName} ·{" "}
+                          {detail.publication.currentAddress}
+                        </p>
+                      )}
+                      {detail.publication.pendingRanks.length > 0 && (
+                        <p>
+                          소개 출처 확인 필요:{" "}
+                          {detail.publication.pendingRanks
+                            .map(topicName)
+                            .join(" · ")}
+                        </p>
+                      )}
+                      {detail.publication.duplicateRows > 0 && (
+                        <p>
+                          같은 식당으로 대조된 원본{" "}
+                          {detail.publication.duplicateRows + 1}건의 출처를 함께
+                          보여줍니다.
+                        </p>
+                      )}
+                      {detail.publication.possibleMatches.length > 0 && (
+                        <div className="mt-2 border-t border-[#e5daed] pt-2">
+                          <p>
+                            이름이 같은 등록 식당{" "}
+                            {detail.publication.possibleMatchCount}곳이 있어요.
+                            주소·지점 확인 전에는 같은 식당으로 처리하지
+                            않습니다.
+                          </p>
+                          {detail.publication.possibleMatches.map(r => (
+                            <Link
+                              key={r.id}
+                              href={`/admin/restaurants?restaurantId=${encodeURIComponent(r.id)}`}
+                              className="mt-2 block underline"
+                            >
+                              {r.name} · {r.address}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {detail.topicRanks.map(rank => (
                         <span

@@ -65,7 +65,10 @@ test("research queue is private, paginated and filtered; individual evidence is 
     assert.equal((await call({}, headers, "POST")).code, 405);
     const all = await call({ status: "all", limit: "12" }, headers);
     assert.equal(all.code, 200);
-    assert.equal(all.body.total, 22117);
+    assert.equal(all.body.summary.candidateRows, 22117);
+    assert.equal(all.body.total, all.body.summary.candidateGroups);
+    assert.equal(all.body.total + all.body.summary.duplicateRows, 22117);
+    assert.ok(all.body.summary.duplicateRows > 0);
     assert.equal(all.body.rows.length, 12);
     assert.equal(all.headers["Cache-Control"], "no-store");
     assert.equal(all.body.rows[0].evidence, undefined);
@@ -75,6 +78,25 @@ test("research queue is private, paginated and filtered; individual evidence is 
     );
     const pending = await call({}, headers);
     assert.equal(pending.body.total, all.body.summary.pendingCandidateRows);
+    assert.ok(
+      pending.body.rows.every(
+        r => !["published", "excluded"].includes(r.publication.reason)
+      )
+    );
+    const removed = await call({ status: "excluded" }, headers);
+    assert.equal(removed.body.total, all.body.summary.excludedGroups);
+    const dudley = await call({ topic: "9" }, headers);
+    assert.equal(
+      dudley.body.total,
+      all.body.summary.topics.find(t => t.rank === 9).pendingRows
+    );
+    assert.ok(
+      dudley.body.rows.every(
+        r =>
+          r.publication.reason !== "source_review" ||
+          r.publication.pendingRanks.includes(9)
+      )
+    );
     const chef = await call(
       { topic: "10", status: "published", q: "윤서울" },
       headers

@@ -14,12 +14,46 @@ function readQueue() {
   } = require("../../source-data/topic-publication-2026-09-22/candidates.json");
   const {
     summary,
-    decisions,
-  } = require("../../source-data/topic-publication-2026-09-22/publication.json");
+    groups,
+  } = require("../../source-data/topic-publication-2026-09-22/review-state.json");
   const manual = require("../../source-data/topic-publication-2026-09-22/manual-associations.json");
-  const byId = new Map(decisions.map((d) => [d.id, d]));
-  const rows = records.map((r) => ({ ...r, publication: byId.get(r.id) }));
-  cache = { rows, byId: new Map(rows.map((r) => [r.id, r])), summary, manual };
+  const originals = new Map(records.map((r) => [r.id, r]));
+  const unique = (values) => [
+    ...new Map(values.map((value) => [JSON.stringify(value), value])).values(),
+  ];
+  const rows = groups.map((group) => {
+    const members = group.rowIds.map((id) => originals.get(id));
+    const first = members[0];
+    return {
+      ...first,
+      id: group.id,
+      rowIds: group.rowIds,
+      topicRanks: group.topicRanks,
+      publication: group.publication,
+      menuLabels: unique(members.flatMap((r) => r.menuLabels)),
+      menuClues: unique(members.flatMap((r) => r.menuClues)),
+      historicalPrices: unique(members.flatMap((r) => r.historicalPrices)),
+      registry: unique(members.flatMap((r) => r.registry)),
+      registryStatus:
+        members.find((r) =>
+          [
+            "registry_closed_at_address",
+            "floor_or_unit_conflict_review",
+            "registry_active_with_closed_history",
+          ].includes(r.registryStatus),
+        )?.registryStatus || first.registryStatus,
+      evidence: unique(members.flatMap((r) => r.evidence)),
+      searchText: members
+        .map((r) => `${r.name} ${r.address} ${r.menuLabels.join(" ")}`)
+        .join(" "),
+    };
+  });
+  cache = {
+    rows,
+    byId: new Map(rows.flatMap((r) => r.rowIds.map((id) => [id, r]))),
+    summary,
+    manual,
+  };
   return cache;
 }
 const scalar = (value) => (typeof value === "string" ? value : "");
@@ -33,6 +67,8 @@ const statuses = new Set([
   "identity_review",
   "source_review",
   "operation_review",
+  "excluded",
+  "existing_needs_topic",
 ]);
 
 module.exports = async function handler(req, res) {
@@ -67,14 +103,14 @@ module.exports = async function handler(req, res) {
       const row = data.byId.get(scalar(query.id));
       if (!row)
         return res.status(404).json({ error: "조사 후보를 찾을 수 없습니다." });
-      return res
-        .status(200)
-        .json({
-          row: {
-            ...row,
-            manualEvidence: data.manual.filter((m) => m.candidateId === row.id),
-          },
-        });
+      return res.status(200).json({
+        row: {
+          ...row,
+          manualEvidence: data.manual.filter((m) =>
+            row.rowIds.includes(m.candidateId),
+          ),
+        },
+      });
     }
     const search = normalize(scalar(query.q).slice(0, 200));
     const topic = Number(scalar(query.topic) || 0);
@@ -95,12 +131,19 @@ module.exports = async function handler(req, res) {
         (!topic || r.topicRanks.includes(topic)) &&
         (status === "all" ||
           (status === "pending"
-            ? r.publication.reason !== "published"
-            : r.publication.reason === status)) &&
-        (!search ||
-          normalize(
-            `${r.name} ${r.address} ${r.menuLabels.join(" ")}`,
-          ).includes(search)),
+            ? !["published", "excluded"].includes(r.publication.reason)
+            : status === "existing_needs_topic"
+              ? r.publication.catalogState === status
+              : r.publication.reason === status)) &&
+        (!(
+          topic &&
+          ["pending", "source_review", "existing_needs_topic"].includes(
+            status,
+          ) &&
+          r.publication.reason === "source_review"
+        ) ||
+          r.publication.pendingRanks.includes(topic)) &&
+        (!search || normalize(r.searchText).includes(search)),
     );
     const total = filtered.length;
     const pages = Math.max(1, Math.ceil(total / limit));
@@ -123,10 +166,8 @@ module.exports = async function handler(req, res) {
       .status(200)
       .json({ summary: data.summary, total, page, pages, limit, rows });
   } catch {
-    return res
-      .status(503)
-      .json({
-        error: "조사 자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
-      });
+    return res.status(503).json({
+      error: "조사 자료를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
+    });
   }
 };

@@ -60,9 +60,11 @@
 .dining-moment {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-width: 260px;
-  padding: 17px 21px;
+  gap: 0;
+  width: 318px;
+  min-height: 94px;
+  overflow: hidden;
+  padding: 0;
   border: 1px solid #ffffffeb;
   border-radius: 20px;
   background: linear-gradient(130deg, #ffffffc9, #fff3f679);
@@ -72,35 +74,30 @@
   backdrop-filter: blur(16px);
   color: #51434a;
 }
-.dining-moment-icon {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
+.dining-moment-photo {
+  position: relative;
+  width: 100px;
+  align-self: stretch;
+  min-height: 94px;
   flex-shrink: 0;
-  border-radius: 13px;
-  background: #ffe7ee;
-  color: #c75b7c;
+  background: #f0e6dc;
 }
-.dining-moment.tone-1 .dining-moment-icon {
-  background: #ede9ff;
-  color: #8370be;
+.dining-moment-photo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
 }
-.dining-moment.tone-2 .dining-moment-icon {
-  background: #fff0dc;
-  color: #b17b36;
+.dining-moment-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 72%, #fff7f849);
 }
-.dining-moment.tone-3 .dining-moment-icon {
-  background: #e5f2ed;
-  color: #568977;
-}
-.dining-moment.tone-4 .dining-moment-icon {
-  background: #e7effb;
-  color: #597da8;
-}
-.dining-moment.tone-5 .dining-moment-icon {
-  background: #f5e8f7;
-  color: #a06ba7;
+.dining-moment-copy {
+  padding: 15px 17px;
+  min-width: 0;
 }
 .dining-moment div > span {
   font-size: 11px;
@@ -111,7 +108,8 @@
   margin: 4px 0 0;
   font-size: 13px;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.6;
+  word-break: keep-all;
 }
 .dining-moments-track[data-paused="true"] {
   animation-play-state: paused;
@@ -131,9 +129,16 @@
     margin-top: 17px;
   }
   .dining-moment {
-    padding: 12px 16px;
-    min-width: 240px;
+    width: 282px;
+    min-height: 85px;
     border-radius: 17px;
+  }
+  .dining-moment-photo {
+    width: 83px;
+    min-height: 85px;
+  }
+  .dining-moment-copy {
+    padding: 12px 14px;
   }
   .dining-moments-heading h2 {
     font-size: 12px;

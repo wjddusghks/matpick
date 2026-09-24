@@ -8,6 +8,7 @@ const footerLinks = {
     policyTitle: "Policy",
     discover: [
       { href: "/map", label: "지도 보기" },
+      { href: "/suggest", label: "맛집 제보하기" },
       { href: "/about", label: "서비스 소개" },
     ],
     policy: [
@@ -28,6 +29,7 @@ const footerLinks = {
     policyTitle: "Policy",
     discover: [
       { href: "/map", label: "Map search" },
+      { href: "/suggest", label: "Suggest a restaurant" },
       { href: "/about", label: "About Matpick" },
     ],
     policy: [

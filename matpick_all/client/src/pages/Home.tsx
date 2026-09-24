@@ -35,6 +35,7 @@ import FavoriteTopicDialog, {
 } from "@/components/FavoriteTopicDialog";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import SiteFooter from "@/components/SiteFooter";
+import RestaurantSuggestionInvite from "@/components/RestaurantSuggestionInvite";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -1785,6 +1786,8 @@ export default function Home() {
               />
               {ui.nearbyMapButtonLabel}
             </button>
+
+            <RestaurantSuggestionInvite />
 
             <section
               className="mt-8 border-t border-[#f3e8ea] pt-6 text-center sm:mt-10 sm:pt-7"

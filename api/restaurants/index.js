@@ -6,6 +6,8 @@ const {
 } = require("../_requestGuards");
 
 module.exports = async function handler(req, res) {
+  if (req.query?.scope === "suggestions")
+    return require("./_suggestions")(req, res);
   if (req.query?.scope === "topic-research")
     return require("../admin/_topicResearch")(req, res);
   if (req.method === "POST" || req.query?.scope === "admin")

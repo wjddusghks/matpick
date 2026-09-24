@@ -38,6 +38,7 @@ const koreanSections: PolicySection[] = [
     bullets: [
       "소셜 로그인 및 회원 관리: 로그인 제공자, 제공자가 발급한 이용자 식별값, 이름·닉네임, 제공되는 경우 이메일과 프로필 이미지, 동의 시각 및 선택 설정. 로그인 유지, 계정 식별, 저장·댓글·리뷰 기능, 부정 이용 방지에 사용합니다.",
       "이용자 콘텐츠: 댓글·리뷰 본문, 평점, 업로드 사진, 작성·수정 시각, 연결된 식당 정보. 콘텐츠 표시, 수정·삭제 처리와 서비스 품질 관리에 사용합니다.",
+      "식당 제보: 이용자가 입력한 식당 이름·위치·메뉴·가격·출처 링크·추천 이유·식당과의 관계·확인일 및 정보 활용 동의 기록. 식당 정보 확인과 편집·공개에 사용하며 제보 원문은 관리자만 열람합니다. 이름·이메일·개인 연락처나 회원 계정 정보는 제보 폼에서 요구하지 않습니다.",
       "선택 연령대: 카카오·네이버 로그인에서 동의 후 제공된 연령대 또는 생년 정보로 계산한 연령대(예: 20대)를 후기 참고 정보로 사용합니다. 생년월일 원문은 저장하지 않으며, 연령대·산정 기준·확인 시각만 로그인 정보에 보관합니다. 후기 작성 시 별도로 공개를 선택한 경우에만 해당 후기의 연령대와 공개 동의 시각을 저장하고 표시합니다. 제공자 연령대는 만 나이와 다를 수 있으며 별도의 나이 본인인증을 의미하지 않습니다.",
       "자동 생성 정보: IP 주소, 브라우저·기기 정보, 요청 시각, 페이지 경로, 검색어, 클릭·광고 상호작용, 무작위 방문자·세션 식별값. 보안, 오류 대응, 이용 통계와 성능 개선에 사용합니다.",
       "위치 정보: 브라우저에서 이용자가 직접 권한을 허용한 경우의 현재 좌표. 주변 식당 정렬, 지도 표시와 경로 조회에 사용하며 회원 프로필에 좌표 자체를 저장하지 않습니다. 이동 시간 기능이 연결된 경우 현재 위치와 식당 좌표를 NAVER Maps(자동차)에 보내 경로를 조회합니다.",
@@ -58,6 +59,7 @@ const koreanSections: PolicySection[] = [
     bullets: [
       "회원 프로필과 회원 식별 정보: 회원 탈퇴 또는 삭제 요청 처리 시까지",
       "댓글·리뷰와 업로드 사진: 이용자가 삭제하거나 권리 침해·삭제 요청이 처리될 때까지",
+      "식당 제보 원문 및 동의 기록: 접수 후 180일. 작성 중인 내용은 해당 브라우저 탭의 세션 저장소에 임시 보관하며 제출 성공 시 삭제합니다. 제보 관련 삭제 문의에는 접수 번호를 함께 보내 주세요.",
       "일자별 익명·가명 이용 통계: 45일",
       "일자별 회원 운영 통계: 180일",
       "개인을 직접 식별하지 않는 누적 집계 통계: 서비스 운영 기간",
@@ -133,6 +135,7 @@ const englishSections: PolicySection[] = [
     bullets: [
       "Accounts: provider, provider-issued user ID, name or nickname, optional email and profile image, consent time, and settings for login, account management, saved places, and abuse prevention.",
       "User content: review text, ratings, photos, timestamps, and restaurant references for publishing and moderation.",
+      "Restaurant suggestions: submitted restaurant details, menus, prices, source links, recommendation notes, relationship to the restaurant, check date and consent record, used to verify, edit and publish restaurant information. Original submissions are visible only to administrators. The form does not request your name, email, personal contact details or account information.",
       "Optional age group: a coarse range supplied by Kakao or NAVER, or calculated from birth information provided with consent. We retain only the group, its basis and check time, not the original birth date. The group and consent time are attached to a review only when the writer separately chooses to publish it. Provider ranges may differ from international age and are not independent identity verification.",
       "Usage and security: IP address, browser or device data, request time, paths, searches, clicks, ad interactions, and random visitor or session IDs for security and aggregated analytics.",
       "Location: coordinates after browser permission, used for nearby sorting, maps and route lookup without storing them in your member profile. When travel-time services are enabled, the current and restaurant coordinates are sent to NAVER Maps for driving routes.",
@@ -147,6 +150,7 @@ const englishSections: PolicySection[] = [
     bullets: [
       "Account profile and identifiers: until account deletion is requested",
       "Reviews and uploaded photos: until deleted or a valid removal request is resolved",
+      "Restaurant suggestions and consent records: 180 days from submission. Drafts are kept in the current tab's session storage and removed after successful submission. Include your receipt number when requesting removal.",
       "Daily pseudonymous analytics: 45 days; daily member operations metrics: 180 days",
       "Non-identifying aggregate totals: while the service operates",
       "Browser identifiers and choices: until storage is cleared or choices are changed",

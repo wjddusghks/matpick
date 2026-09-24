@@ -26,6 +26,8 @@ const Home = lazy(withRestaurantEdits(() => import("./pages/Home")));
 const AuthCallback = lazy(() => import("./pages/AuthCallback"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
+const SuggestRestaurant = lazy(() => import("./pages/SuggestRestaurant"));
+const AdminSuggestions = lazy(() => import("./pages/AdminSuggestions"));
 const Explore = lazy(withRestaurantEdits(() => import("./pages/Explore")));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const ReviewFeed = lazy(
@@ -101,11 +103,14 @@ function Router() {
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={Terms} />
         <Route path="/contact" component={Contact} />
+        <Route path="/suggest" component={SuggestRestaurant} />
+        <Route path="/suggest/" component={SuggestRestaurant} />
         <Route path="/restaurant/:id" component={RestaurantDetail} />
         <Route path="/reviews" component={ReviewFeed} />
         <Route path="/creator/:id" component={CreatorDetail} />
         <Route path="/my/favorites" component={MyFavorites} />
         <Route path="/admin" component={AdminDashboard} />
+        <Route path="/admin/suggestions" component={AdminSuggestions} />
         <Route path="/admin/restaurants" component={AdminRestaurants} />
         <Route path="/admin/topic-research" component={AdminTopicResearch} />
         <Route path="/404" component={NotFound} />

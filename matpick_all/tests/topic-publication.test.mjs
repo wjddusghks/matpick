@@ -17,6 +17,8 @@ const removed = require('../client/src/data/restaurant-permanent-deletions.json'
 const overrides = require('../client/src/data/restaurant-overrides.json');
 const requestedBatch = require('../client/src/data/generated/requested-topic-expansion.generated.json');
 const requestedPublication = require('../../source-data/expansion-coordinate-2026-09-24/publication.json');
+const choizaBatch = require('../client/src/data/generated/choiza-road.generated.json');
+const choizaPublication = require('../../source-data/choiza-complete-2026-09-24/publication.json');
 const [data, shortcuts, eligibility] = await loadAppModules([
   "/src/data/index.ts",
   "/src/data/mapTopicShortcuts.ts",
@@ -119,21 +121,22 @@ test("directory listings, transcripts and unsafe links are not publication proof
 test("original census keeps its existing-only feed; verified expansion adds eligible sourced restaurants", () => {
   assert.equal(batch.sources.length, 10);
   assert.equal(batch.restaurants.length, 0);
-  assert.equal(data.restaurants.length, baseline.restaurants.length - removed.restaurants.length + requestedPublication.addedRestaurantRows);
+  assert.equal(data.restaurants.length, baseline.restaurants.length - removed.restaurants.length + requestedPublication.addedRestaurantRows + choizaPublication.newRestaurants);
   const existing = new Map(baseline.restaurants.map(r => [r.id, r]));
   for (const source of batch.sources) {
     assert.ok(shortcuts.mapTopicShortcuts.some(t => t.value === source.id));
     assert.ok(data.publicDiscoveryTopics.some(t => t.targetId === source.id));
     const linked = data.getRestaurantsBySource(source.id);
-    const expected = new Set([...batch.sourceLinks, ...requestedBatch.sourceLinks].filter(link => link.sourceId === source.id)
+    const expected = new Set([...batch.sourceLinks, ...requestedBatch.sourceLinks, ...choizaBatch.sourceLinks].filter(link => link.sourceId === source.id)
       .map(link => data.getRestaurantById(link.restaurantId))
       .filter(r => r && eligibility.isRestaurantRecommendable(r)).map(r => r.id));
     assert.deepEqual(new Set(linked.map(r => r.id)), expected);
     for (const r of linked) {
-      assert.ok(existing.has(r.id) || requestedBatch.restaurants.some(next => data.getRestaurantById(next.id)?.id === r.id));
+      assert.ok(existing.has(r.id) || [...requestedBatch.restaurants, ...choizaBatch.restaurants].some(next => data.getRestaurantById(next.id)?.id === r.id));
       assert.ok(eligibility.isRestaurantRecommendable(r), r.name);
       const requestedPatch = Object.entries(requestedBatch.patches).find(([id]) => data.getRestaurantById(id)?.id === r.id)?.[1];
-      const current = {...existing.get(r.id), ...requestedPatch, ...overrides[r.id]};
+      const choizaRestaurant = choizaBatch.restaurants.find(next => data.getRestaurantById(next.id)?.id === r.id);
+      const current = {...existing.get(r.id), ...requestedPatch, ...choizaRestaurant, ...overrides[r.id]};
       assert.equal(r.address, current.address);
       assert.equal(r.lat, Number(current.lat.toFixed(6)));
       assert.equal(r.lng, Number(current.lng.toFixed(6)));

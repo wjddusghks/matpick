@@ -7,6 +7,8 @@ export type RestaurantAppearance = {
   episode: string;
   episodeNumber: number;
   season: number;
+  series?: string;
+  part?: string;
   date?: string;
   url?: string;
 };
@@ -24,23 +26,28 @@ export function getAdminAppearances(
     if (
       !source ||
       !["tv_show", "creator"].includes(source.type) ||
-      !/(?:\bEP\.?\s*\d+|\bepisode\s*\d+|\d+\s*회(?:차)?)/i.test(label)
+      !(link.episodeNumber != null || /(?:\bEP\.?\s*\d+|\bepisode\s*\d+|\d+\s*회(?:차)?)/i.test(label))
     )
       continue;
     const episodeNumber = Number(
-      label.match(/(?:\bEP\.?\s*|\bepisode\s*)(\d+)/i)?.[1] ||
-        label.match(/(\d+)\s*회(?:차)?/)?.[1]
+      link.episodeNumber ?? (label.match(/(?:\bEP\.?\s*|\bepisode\s*)(\d+)/i)?.[1] ||
+        label.match(/(\d+)\s*회(?:차)?/)?.[1])
     );
-    const season = Number(label.match(/(?:시즌\s*|\bS)(\d+)/i)?.[1] || 0);
-    const key = `${source.id}:${season}:${episodeNumber}`;
+    if (!Number.isInteger(episodeNumber) || episodeNumber < 0) continue;
+    const season = Number(link.season ?? label.match(/(?:시즌\s*|\bS)(\d+)/i)?.[1] ?? 0);
+    const series = link.episodeSeries?.trim() || "";
+    const part = link.episodePart?.trim() || "";
+    const key = `${source.id}:${season}:${episodeNumber}${series ? `:${series}` : ""}${part ? `:${part}` : ""}`;
     if (!entries.has(key))
       entries.set(key, {
         key,
         sourceId: source.id,
         sourceName: source.name,
-        episode: `${season ? `시즌 ${season} · ` : ""}${episodeNumber}회`,
+        episode: `${series ? `${series} · ` : ""}${season ? `시즌 ${season} · ` : ""}${episodeNumber}회${part ? ` ${part}부` : ""}`,
         episodeNumber,
         season,
+        series,
+        part,
         date: link.broadcastDate,
         url: link.sourceUrl,
       });
@@ -48,8 +55,10 @@ export function getAdminAppearances(
   return Array.from(entries.values()).sort(
     (a, b) =>
       a.sourceName.localeCompare(b.sourceName, "ko") ||
+      (a.series || "").localeCompare(b.series || "", "ko") ||
       b.season - a.season ||
-      b.episodeNumber - a.episodeNumber
+      b.episodeNumber - a.episodeNumber ||
+      (a.part || "").localeCompare(b.part || "", "ko")
   );
 }
 
@@ -86,8 +95,10 @@ export function groupAdminRestaurants<
     if (!b.appearance) return -1;
     return (
       a.appearance.sourceName.localeCompare(b.appearance.sourceName, "ko") ||
+      (a.appearance.series || "").localeCompare(b.appearance.series || "", "ko") ||
       b.appearance.season - a.appearance.season ||
-      b.appearance.episodeNumber - a.appearance.episodeNumber
+      b.appearance.episodeNumber - a.appearance.episodeNumber ||
+      (a.appearance.part || "").localeCompare(b.appearance.part || "", "ko")
     );
   });
 }

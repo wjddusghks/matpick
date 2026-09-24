@@ -37,7 +37,7 @@ test('all applied coordinate decisions reach the public map without losing sourc
  const report=json('../../source-data/expansion-coordinate-2026-09-24/coordinate-applied.json');
  const data=json('../client/src/data/generated/public-dataset.json');
  assert.equal(report.audited,3476);
- for(const correction of report.applied){const current=data.restaurants.find(r=>r.id===correction.id);assert.ok(current,correction.id);assert.ok(distance(current,correction.after)<1,correction.name);assert.equal(current.address,correction.after.address);assert.ok(current.locationSourceUrls.length);}
+ for(const correction of report.applied){const current=data.restaurants.find(r=>r.id===correction.id);assert.ok(current,correction.id);assert.ok(distance(current,correction.after)<1,correction.name);assert.ok(sameGeocodeAddress(current.address,correction.after.address),correction.name);assert.ok(current.locationSourceUrls.length);}
 });
 test('new topic listings have an active matching place, sourced prices and no resurrected deletions',()=>{
  const batch=json('../client/src/data/generated/requested-topic-expansion.generated.json');
@@ -45,7 +45,8 @@ test('new topic listings have an active matching place, sourced prices and no re
  const deletions=json('../client/src/data/restaurant-permanent-deletions.json').restaurants;
  const data=json('../client/src/data/generated/public-dataset.json');
  const baseline=json('../../source-data/expansion-coordinate-2026-09-24/publication-baseline.json');
- assert.deepEqual(new Set(data.restaurants.map(r=>r.id)),new Set([...baseline.restaurantIds,...batch.restaurants.map(r=>data.restaurantAliases[r.id]||r.id)]));
+ const choiza=json('../client/src/data/generated/choiza-road.generated.json');
+ assert.deepEqual(new Set(data.restaurants.map(r=>r.id)),new Set([...baseline.restaurantIds,...batch.restaurants.map(r=>data.restaurantAliases[r.id]||r.id),...choiza.restaurants.map(r=>data.restaurantAliases[r.id]||r.id)]));
  for(const r of batch.restaurants){assert.ok(!isDeleted(r,deletions));assert.ok(r.menus.some(m=>/\d/.test(m.price||'')),r.name);assert.ok(r.menuPriceSources.length);assert.ok(verification.records.some(v=>v.place?.id===r.kakaoPlaceId&&v.place.status==='Y'&&v.place.category==='음식점'));const current=data.restaurants.find(p=>p.id===(data.restaurantAliases[r.id]||r.id));assert.ok(current,r.name);assert.ok(distance(r,current)<1,r.name);}
  for(const s of ['the-dudley','culinary-class-wars-chefs'])assert.ok(new Set(data.sourceLinks.filter(l=>l.sourceId===s).map(l=>l.restaurantId)).size>50);
 });

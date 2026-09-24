@@ -194,6 +194,26 @@
   }
 }
 
+@keyframes matpick-heart-pop {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3); }
+  50% { transform: scale(.9); }
+  75% { transform: scale(1.1); }
+}
+
+@keyframes matpick-heart-ripple {
+  from { transform: scale(0); opacity: .6; }
+  to { transform: scale(2.5); opacity: 0; }
+}
+
+.matpick-heart-pop { animation: matpick-heart-pop .4s ease-in-out; }
+.matpick-heart-ripple { animation: matpick-heart-ripple .4s ease-out forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .matpick-heart-pop { animation: none; }
+  .matpick-heart-ripple { display: none; }
+}
+
 .matpick-marquee-track {
   backface-visibility: hidden;
   display: flex;

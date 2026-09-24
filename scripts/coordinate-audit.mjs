@@ -46,18 +46,28 @@ export async function lookup(query) {
  const d=await res.json();return {checkedAt:new Date().toISOString(),query,url:u.href,addresses:(d.address||[]).map(p=>({address:p.addr,lat:Number(p.lat),lng:Number(p.lon),relatedAddress:p.related_prefix_address+' '+String(p.related_address||'').split('^')[0]})),places:(d.place||[]).map(p=>({id:String(p.confirmid),name:p.name,roadAddress:p.new_address||'',parcelAddress:p.address||'',lat:Number(p.lat),lng:Number(p.lon),category:p.cate_name_depth1,categoryDetail:p.last_cate_name,open:p.openoff_status,url:'https://place.map.kakao.com/'+p.confirmid}))};
 }
 async function main(){
- await fs.mkdir(auditDir,{recursive:true});
+ const outputDir=path.resolve(process.argv.find(x=>x.startsWith('--output='))?.slice(9)||auditDir);
+ await fs.mkdir(outputDir,{recursive:true});
  const d=JSON.parse(await fs.readFile(path.join(root,'matpick_all/client/src/data/generated/public-dataset.json'),'utf8'));
  const rows=d.restaurants;const queries=[...new Set(rows.filter(r=>!r.isOverseas).map(r=>cleanAddress(r.address)).filter(Boolean))];
  const limit=Number(process.argv.find(x=>x.startsWith('--limit='))?.split('=')[1]||queries.length);
- const cache=new Map();try{for(const line of (await fs.readFile(path.join(auditDir,'geocode-cache.ndjson'),'utf8')).split('\n').filter(Boolean)){const v=JSON.parse(line);cache.set(v.query,v);}}catch(e){if(e.code!=='ENOENT')throw e;}
+ const cache=new Map();
+ for(const dir of new Set([auditDir,outputDir]))try{for(const line of (await fs.readFile(path.join(dir,'geocode-cache.ndjson'),'utf8')).split('\n').filter(Boolean)){const v=JSON.parse(line);if(!v.error)cache.set(v.query,v);}}catch(e){if(e.code!=='ENOENT')throw e;}
  let next=0,done=0,blocked=false;const todo=queries.filter(q=>!cache.has(q)).slice(0,limit);
  async function worker(){while(next<todo.length&&!blocked){const query=todo[next++];let v;try{v=await lookup(query);}catch(e){v={query,error:e.message,checkedAt:new Date().toISOString()};if([403,429].includes(e.status))blocked=true;}
- cache.set(query,v);await fs.appendFile(path.join(auditDir,'geocode-cache.ndjson'),JSON.stringify(v)+'\n');done++;if(done%100===0)console.log(JSON.stringify({queried:done,total:todo.length}));await sleep(400);}}
+ cache.set(query,v);await fs.appendFile(path.join(outputDir,'geocode-cache.ndjson'),JSON.stringify(v)+'\n');done++;if(done%100===0)console.log(JSON.stringify({queried:done,total:todo.length}));await sleep(400);}}
  await Promise.all(Array.from({length:4},worker));
  const records=rows.map(r=>({id:r.id,name:r.name,address:r.address,query:cleanAddress(r.address),before:{lat:r.lat,lng:r.lng},...(r.isOverseas?{status:'overseas_out_of_scope'}:cache.has(cleanAddress(r.address))?chooseCoordinate(r,cache.get(cleanAddress(r.address))):{status:'not_queried'})}));
+ // A large building's address centroid must not overwrite a verified shop pin.
+ const placeChecks=JSON.parse(await fs.readFile(path.join(auditDir,'coordinate-place-check.json'),'utf8'));
+ for(const row of records){
+  const proof=placeChecks.find(p=>p.id===row.id&&p.basis==='same_name_and_address_place');
+  if(proof?.candidate&&sameGeocodeAddress(row.address,proof.candidate.roadAddress)&&distance(row.before,proof.candidate)<10){
+   row.status='coordinate_consistent';row.basis='same_name_and_address_place';row.addressCentroidOffsetMeters=row.offsetMeters;row.offsetMeters=Math.round(distance(row.before,proof.candidate));row.candidate=proof.candidate;row.sourceUrl=proof.sourceUrl;
+  }
+ }
  const counts=Object.fromEntries([...new Set(records.map(r=>r.status))].map(s=>[s,records.filter(r=>r.status===s).length]));
  const report={asOf:'2026-09-24',total:rows.length,uniqueQueries:queries.length,counts,complete:!records.some(r=>r.status==='not_queried'||r.status==='lookup_error'),records};
- await fs.writeFile(path.join(auditDir,'coordinate-audit.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({...report,records:undefined}));
+ await fs.writeFile(path.join(outputDir,'coordinate-audit.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({...report,records:undefined}));
 }
 if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))main().catch(e=>{console.error(e.message);process.exitCode=1;});

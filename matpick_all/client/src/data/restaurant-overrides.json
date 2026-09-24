@@ -3304,7 +3304,9 @@
     "locationSourceUrls": [
       "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EA%B0%95%EB%82%A8%EA%B5%AC+%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C92%EA%B8%B8+42&msFlag=A&sort=0"
     ],
-    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다."
+    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다.",
+    "address": "서울 강남구 도산대로92길 42 지하 1층",
+    "region": "서울 강남구"
   },
   "topic_enrichment_michelin-selected_eb66f982182f": {
     "lat": 37.50386501,
@@ -3659,5 +3661,13 @@
     "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다. 동일 상호·주소의 개별 점포 위치를 확인했습니다. 대형 부지의 주소 중심점보다 점포 위치를 우선합니다. 현재 영업 확인과는 별개입니다. 동일 상호·주소의 개별 점포 위치를 확인했습니다. 대형 부지의 주소 중심점보다 점포 위치를 우선합니다. 현재 영업 확인과는 별개입니다.",
     "kakaoPlaceId": "1567918454",
     "placeUrl": "https://place.map.kakao.com/1567918454"
+  },
+  "topic_enrichment_baekjong-wok_14555fade8e1": {
+    "recommendationHold": "정확한 점포 주소와 지도 위치를 확인 중으로 공개 추천에서 제외합니다.",
+    "dataReviewNote": "2026-09-24 전체 주소·좌표 대조: 개별 식당 주소로 확인되지 않았습니다. 폐업으로 판정하지 않았습니다."
+  },
+  "sikgaek-baekban-trip_restaurant_329": {
+    "recommendationHold": "정확한 점포 주소와 지도 위치를 확인 중으로 공개 추천에서 제외합니다.",
+    "dataReviewNote": "2026-09-24 전체 주소·좌표 대조: 개별 식당 주소로 확인되지 않았습니다. 폐업으로 판정하지 않았습니다."
   }
 }

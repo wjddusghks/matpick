@@ -311,8 +311,10 @@ export default function RestaurantManager({
       ).sort(
         (a, b) =>
           a.sourceName.localeCompare(b.sourceName, "ko") ||
+          (a.series || "").localeCompare(b.series || "", "ko") ||
           b.season - a.season ||
-          b.episodeNumber - a.episodeNumber
+          b.episodeNumber - a.episodeNumber ||
+          (a.part || "").localeCompare(b.part || "", "ko")
       ),
     [entries, sourceId]
   );
@@ -942,7 +944,7 @@ export default function RestaurantManager({
                           <div className="am-episode-group-heading">
                             <span className="am-episode-number">
                               {group.appearance
-                                ? `${group.appearance.episodeNumber}회`
+                                ? `${group.appearance.episodeNumber}회${group.appearance.part ? ` ${group.appearance.part}부` : ""}`
                                 : "미확인"}
                             </span>
                             <div>
@@ -953,7 +955,7 @@ export default function RestaurantManager({
                               </h3>
                               <p>
                                 {group.appearance
-                                  ? `${group.appearance.season ? `시즌 ${group.appearance.season} · ` : ""}${group.entries.length}곳`
+                                  ? `${group.appearance.series ? `${group.appearance.series} · ` : ""}${group.appearance.season ? `시즌 ${group.appearance.season} · ` : ""}${group.entries.length}곳`
                                   : "회차를 임의로 지정하지 않았어요"}
                               </p>
                             </div>

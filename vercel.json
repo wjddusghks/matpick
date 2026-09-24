@@ -2119,6 +2119,11 @@
       "permanent": true
     },
     {
+      "source": "/restaurant/choiza_place_ee7a358d1faac6bb",
+      "destination": "/restaurant/culinary-class-wars_restaurant_b452bb354e3a",
+      "permanent": true
+    },
+    {
       "source": "/restaurant/jeonhyunmoo-plan_restaurant_2f2dc3444e2a",
       "destination": "/restaurant/r_25f0fe79",
       "permanent": true
@@ -2256,6 +2261,11 @@
     {
       "source": "/restaurant/seoul-taste-100-2025-619",
       "destination": "/restaurant/culinary-class-wars_restaurant_acddb9fd28b5",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant/seoul-taste-100-2025-621",
+      "destination": "/restaurant/choiza_place_622a1c1d2fbafcdc",
       "permanent": true
     },
     {

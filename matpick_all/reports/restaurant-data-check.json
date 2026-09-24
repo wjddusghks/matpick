@@ -1,7 +1,7 @@
 {
-  "restaurants": 3630,
-  "sourceLinks": 5925,
-  "aliases": 924,
+  "restaurants": 3716,
+  "sourceLinks": 6037,
+  "aliases": 926,
   "recommendationHolds": [
     {
       "id": "old-korean-100_restaurant_008",
@@ -119,6 +119,11 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
+      "id": "topic_enrichment_baekjong-wok_14555fade8e1",
+      "name": "팥빙수, 단팥죽 골목",
+      "reason": "정확한 점포 주소와 지도 위치를 확인 중으로 공개 추천에서 제외합니다."
+    },
+    {
       "id": "topic_enrichment_baekjong-wok_e18df91f2f72",
       "name": "풍미통닭",
       "reason": "같은 식당의 중복 등록. 대표 기록으로 안내합니다."
@@ -212,6 +217,11 @@
       "id": "sikgaek-baekban-trip_restaurant_326",
       "name": "완도 장도식당슈퍼",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
+    },
+    {
+      "id": "sikgaek-baekban-trip_restaurant_329",
+      "name": "고성 항포구",
+      "reason": "정확한 점포 주소와 지도 위치를 확인 중으로 공개 추천에서 제외합니다."
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_333",
@@ -659,7 +669,7 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     }
   ],
-  "verifiedLocationCorrections": 1061,
+  "verifiedLocationCorrections": 1147,
   "unclassified": [
     {
       "id": "r_92011579",
@@ -9060,6 +9070,106 @@
       "id": "requested_topic_9e3602e96b7165c1",
       "name": "최사장네닭",
       "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_edbfd0677cd995e1",
+      "name": "넝쿨하눌가든",
+      "category": "오리"
+    },
+    {
+      "id": "choiza_place_97df2bf5095defdd",
+      "name": "남영돈",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_5670a3da45ca4d2a",
+      "name": "뫼촌",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_348286166fb44e8c",
+      "name": "한우촌",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_db5a4125cbfadec7",
+      "name": "초원 강남점",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_0197ed7434a487f8",
+      "name": "황토마당",
+      "category": "해물,생선"
+    },
+    {
+      "id": "choiza_place_e97aa8d2d8289053",
+      "name": "닭발집",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_05618f2a2d4f34be",
+      "name": "심마니약초백숙",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_abf75e896fc46197",
+      "name": "성미가든",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_36b775a9639c08d0",
+      "name": "골목식당",
+      "category": "꿩,타조"
+    },
+    {
+      "id": "choiza_place_3f2adc61d40febc2",
+      "name": "당골식당",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_80853c5e393d4b2d",
+      "name": "평사리참숯뒷통구이",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_9200072c0eeaaad7",
+      "name": "골목길포차",
+      "category": "실내포장마차"
+    },
+    {
+      "id": "choiza_place_b672fdef475d0f75",
+      "name": "신당한우곱창",
+      "category": "곱창,막창"
+    },
+    {
+      "id": "choiza_place_6b905ffb0b2a3688",
+      "name": "명화식육식당",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_432d7574314bd1fe",
+      "name": "꿉당 성수점",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_ff36791a801ae99b",
+      "name": "원주복추어탕",
+      "category": "추어"
+    },
+    {
+      "id": "choiza_place_8c1f1c5171b506b1",
+      "name": "사랑방 참숯화로구이",
+      "category": "육류,고기"
+    },
+    {
+      "id": "choiza_place_a2dd1b8e18b4ef31",
+      "name": "호수집 원조닭꼬치",
+      "category": "닭요리"
+    },
+    {
+      "id": "choiza_place_e959fb2b1f8a2fec",
+      "name": "모녀가리비",
+      "category": "조개"
     }
   ],
   "errors": [],

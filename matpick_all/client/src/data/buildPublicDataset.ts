@@ -7,6 +7,7 @@ import topicExpansion from "./generated/topic-expansion.generated.json";
 import searchTopicExpansion from "./generated/search-topic-expansion.generated.json";
 import researchedTopics from "./generated/researched-topics.generated.json";
 import requestedTopicExpansion from "./generated/requested-topic-expansion.generated.json";
+import choizaRoadExpansion from "./generated/choiza-road.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import restaurantExclusions from "./restaurant-exclusions.json";
 import { removePermanentlyDeletedRestaurants } from "./permanentRestaurantDeletions";
@@ -477,6 +478,7 @@ const dataset = filterDatasetForVisibleContent(
     searchTopicExpansion as SourceDataset,
     researchedTopics as SourceDataset,
     requestedTopicExpansion as SourceDataset,
+    choizaRoadExpansion as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({
@@ -492,7 +494,7 @@ const sourcesWithProfileImages: Source[] = (dataset.sources ?? []).map(
 );
 const excludedRestaurantIds = new Set(restaurantExclusions.restaurantIds);
 const requestedTopicPatches = Object.fromEntries(
-  Object.entries(requestedTopicExpansion.patches).map(([id, patch]) => [
+  Object.entries({ ...requestedTopicExpansion.patches, ...choizaRoadExpansion.patches }).map(([id, patch]) => [
     dataset.restaurantAliases?.[id] ?? id,
     patch,
   ])

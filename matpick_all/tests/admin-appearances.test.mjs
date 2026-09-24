@@ -9,6 +9,21 @@ const sources = [
   { id: "guide", name: "가이드", type: "guide" },
   { id: "creator", name: "채널", type: "creator" },
 ];
+
+test("spin-offs and multipart episodes retain separate groups", () => {
+  const links = [
+    { sourceId: "creator", season: 3, episodeNumber: 4, episodePart: "1" },
+    { sourceId: "creator", season: 3, episodeNumber: 4, episodePart: "2" },
+    { sourceId: "creator", episodeSeries: "온더웨이", episodeNumber: 1 },
+    { sourceId: "creator", episodeSeries: "다시 쓰는", episodeNumber: 1 },
+    { sourceId: "creator", episodeNumber: -1 },
+  ];
+  const appearances = helpers.getAdminAppearances(links, sources);
+  assert.equal(appearances.length, 4);
+  assert.equal(new Set(appearances.map(a => a.key)).size, 4);
+  assert.ok(appearances.some(a => a.episode === "시즌 3 · 4회 2부"));
+  assert.ok(appearances.some(a => a.episode === "온더웨이 · 1회"));
+});
 test("admin episode labels preserve seasons and distinguish different shows", () => {
   const result = helpers.getAdminAppearances(
     [

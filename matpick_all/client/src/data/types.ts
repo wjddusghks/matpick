@@ -149,6 +149,10 @@ export interface SourceLink {
   note?: string;
   sourceUrl?: string;
   broadcastDate?: string;
+  episodeSeries?: string;
+  episodeNumber?: number;
+  episodePart?: string;
+  season?: number;
 }
 
 export interface MatpickDataSet {

@@ -1,5 +1,7 @@
 import { isComposingSearch } from "@/lib/mapNavigation";
 import {
+  lazy,
+  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -68,6 +70,7 @@ import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
+const PrivateGuides = lazy(() => import("@/components/admin/PrivateGuides"));
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
@@ -1830,6 +1833,8 @@ export default function Home() {
                 </div>
               </div>
             </section>
+
+            {isAdmin && <Suspense fallback={null}><PrivateGuides compact /></Suspense>}
 
             {isFocused ? (
               <div className="absolute left-0 right-0 top-[74px] z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)] sm:top-[84px]">

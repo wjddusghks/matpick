@@ -35,7 +35,7 @@ export default function HeartButton({
 
     if (!isLoggedIn) {
       toast("로그인이 필요해요", {
-        description: "찜한 맛집은 로그인한 계정 기준으로 저장됩니다.",
+        description: "찜 목록은 로그인 후 현재 브라우저에 저장돼요.",
         action: {
           label: "홈으로",
           onClick: () => {

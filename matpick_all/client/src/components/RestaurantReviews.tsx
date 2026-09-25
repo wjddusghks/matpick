@@ -184,7 +184,6 @@ export default function RestaurantReviews({
       <AuthFeatureDialog
         open={authOpen}
         onOpenChange={setAuthOpen}
-        mode="review"
         redirectTo={reviewReturnPath(restaurantId)}
       />
       <div className="detail-section-heading">

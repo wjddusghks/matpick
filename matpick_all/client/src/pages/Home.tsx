@@ -23,7 +23,6 @@ import {
   Search,
   Send,
   Share2,
-  Star,
   Trash2,
   UtensilsCrossed,
   X,
@@ -92,20 +91,13 @@ const HOME_UI_KO = {
   regionLabel: "\uC9C0\uC5ED",
   foodLabel: "\uC74C\uC2DD\uC885\uB958",
   recentDeleteSuffix: "\uCD5C\uADFC \uAC80\uC0C9 \uC0AD\uC81C",
-  guestTitle: "\uB85C\uADF8\uC778\uD558\uBA74 \uC774\uB7F0 \uD61C\uD0DD\uC774!",
+  guestTitle: "로그인하고 맛집을 기록해요",
   benefits: {
-    saveTitle: "\uB9DB\uC9D1 \uC800\uC7A5",
-    saveDescription:
-      "\uAC00\uACE0 \uC2F6\uC740 \uB9DB\uC9D1\uC744 \uCC1C\uD574\uC11C \uB2E4\uC2DC \uD3B8\uD558\uAC8C \uCC3E\uC544\uBCFC \uC218 \uC788\uC5B4\uC694.",
-    communityTitle: "\uCEE4\uBBA4\uB2C8\uD2F0 \uCC38\uC5EC",
-    communityDescription:
-      "\uB9AC\uBDF0\uC640 \uC758\uACAC\uC744 \uB0A8\uAE30\uACE0 \uB2E4\uB978 \uC0AC\uC6A9\uC790\uC640 \uD568\uAED8 \uACF5\uC720\uD560 \uC218 \uC788\uC5B4\uC694.",
-    ratingTitle: "\uB098\uB9CC\uC758 \uD3C9\uC810",
-    ratingDescription:
-      "\uBC29\uBB38\uD55C \uB9DB\uC9D1\uC744 \uAE30\uB85D\uD574 \uB450\uACE0 \uB2E4\uC2DC \uBE44\uAD50\uD560 \uC218 \uC788\uC5B4\uC694.",
-    topicTitle: "\uC8FC\uC81C\uBCC4 \uC800\uC7A5",
-    topicDescription:
-      "\uB370\uC774\uD2B8, \uD63C\uBC25, \uC5EC\uD589 \uCC98\uB7FC \uC6D0\uD558\uB294 \uD14C\uB9C8\uB85C \uB9DB\uC9D1\uC744 \uB098\uB220 \uB2F4\uC544\uB458 \uC218 \uC788\uC5B4\uC694.",
+    saveTitle: "맛집 찜",
+    saveDescription: "가고 싶은 맛집을 찜하고 저장 목록에서 다시 찾아보세요.",
+    reviewTitle: "별점·한 줄 후기",
+    reviewDescription: "다녀온 식당에 별점과 솔직한 후기를 남겨보세요. 사진은 필요 없어요.",
+    storageNote: "찜 목록은 현재 브라우저에만 저장되며, 다른 기기와 동기화되지 않아요.",
   },
   location: {
     deniedTitle:
@@ -214,20 +206,13 @@ const HOME_UI_EN = {
   regionLabel: "Region",
   foodLabel: "Cuisine",
   recentDeleteSuffix: "remove recent search",
-  guestTitle: "Sign in to unlock more with Matpick",
+  guestTitle: "Save places, share a review",
   benefits: {
-    saveTitle: "Save places",
-    saveDescription:
-      "Bookmark the restaurants you want to visit and come back to them faster later.",
-    communityTitle: "Join the community",
-    communityDescription:
-      "Leave reviews, share photos, and see what other diners thought about each place.",
-    ratingTitle: "Your own ratings",
-    ratingDescription:
-      "Keep personal ratings for the places you visited and compare them again later.",
-    topicTitle: "Save by topic",
-    topicDescription:
-      "Organize restaurants into themes like date night, solo meals, or travel courses.",
+    saveTitle: "Save restaurants",
+    saveDescription: "Bookmark places you want to visit and find them in your saved list.",
+    reviewTitle: "Stars and a short review",
+    reviewDescription: "Share a rating and an honest review after your visit. No photo needed.",
+    storageNote: "Saved places stay in this browser and do not sync across devices.",
   },
   location: {
     deniedTitle: "Location access is blocked",
@@ -740,21 +725,12 @@ function GuestPanel({ redirectTo }: { redirectTo: string }) {
         />
         <BenefitItem
           icon={<MessageCircleMore className="h-5 w-5" />}
-          title={ui.benefits.communityTitle}
-          description={ui.benefits.communityDescription}
-        />
-        <BenefitItem
-          icon={<Star className="h-5 w-5 fill-current" />}
-          title={ui.benefits.ratingTitle}
-          description={ui.benefits.ratingDescription}
-        />
-        <BenefitItem
-          icon={<Plus className="h-5 w-5" />}
-          title={ui.benefits.topicTitle}
-          description={ui.benefits.topicDescription}
+          title={ui.benefits.reviewTitle}
+          description={ui.benefits.reviewDescription}
         />
       </div>
-      <SocialLoginButtons redirectTo={redirectTo} className="mt-6" />
+      <p className="mt-4 text-xs leading-5 text-[#8b8b8b]">{ui.benefits.storageNote}</p>
+      <SocialLoginButtons redirectTo={redirectTo} className="mt-5" />
     </div>
   );
 }

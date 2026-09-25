@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { adsenseClient, isAdsenseLiveHost } from "@/lib/adConfig";
 import {
   PRIVACY_PREFERENCES_EVENT,
   hasAdvertisingConsent,
@@ -26,7 +27,7 @@ function ensureScript(
 
   const existing =
     document.getElementById(id) ||
-    Array.from(document.scripts).find((script) => script.src === src);
+    Array.from(document.scripts).find(script => script.src === src);
   if (existing) {
     if (!existing.id) {
       existing.id = id;
@@ -52,7 +53,9 @@ function upsertMeta(name: string, content: string) {
     return;
   }
 
-  let meta = document.head.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+  let meta = document.head.querySelector<HTMLMetaElement>(
+    `meta[name="${name}"]`
+  );
   if (!meta) {
     meta = document.createElement("meta");
     meta.setAttribute("name", name);
@@ -63,8 +66,9 @@ function upsertMeta(name: string, content: string) {
 }
 
 export default function MonetizationScripts() {
-  const adsenseClient = import.meta.env.VITE_ADSENSE_CLIENT?.trim() ?? "";
-  const [advertisingAllowed, setAdvertisingAllowed] = useState(hasAdvertisingConsent);
+  const [advertisingAllowed, setAdvertisingAllowed] = useState(
+    hasAdvertisingConsent
+  );
 
   useEffect(() => {
     const handlePreferences = (event: Event) => {
@@ -72,9 +76,15 @@ export default function MonetizationScripts() {
       setAdvertisingAllowed(preferences?.advertising === true);
     };
 
-    window.addEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+    window.addEventListener(
+      PRIVACY_PREFERENCES_EVENT,
+      handlePreferences as EventListener
+    );
     return () =>
-      window.removeEventListener(PRIVACY_PREFERENCES_EVENT, handlePreferences as EventListener);
+      window.removeEventListener(
+        PRIVACY_PREFERENCES_EVENT,
+        handlePreferences as EventListener
+      );
   }, []);
 
   useEffect(() => {
@@ -83,7 +93,7 @@ export default function MonetizationScripts() {
     }
 
     upsertMeta("google-adsense-account", adsenseClient);
-    if (!advertisingAllowed) {
+    if (!advertisingAllowed || !isAdsenseLiveHost()) {
       return;
     }
 
@@ -98,12 +108,6 @@ export default function MonetizationScripts() {
     }
 
     if (script.getAttribute("data-ready") === "true") {
-      window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
-      return;
-    }
-
-    if (Array.isArray(window.adsbygoogle)) {
-      script.setAttribute("data-ready", "true");
       window.dispatchEvent(new CustomEvent(ADSENSE_READY_EVENT));
       return;
     }

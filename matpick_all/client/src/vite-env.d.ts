@@ -8,6 +8,8 @@ interface ImportMetaEnv {
   readonly VITE_MONETIZATION_PROVIDER?: string;
   readonly VITE_ADSENSE_CLIENT?: string;
   readonly VITE_ADSENSE_SLOT_INLINE?: string;
+  readonly VITE_ADSENSE_SLOT_HOME_DISCOVERY?: string;
+  readonly VITE_ADSENSE_SLOT_HOME_TOPICS?: string;
   readonly VITE_KAKAO_ADFIT_UNIT?: string;
   readonly VITE_KAKAO_ADFIT_WIDTH?: string;
   readonly VITE_KAKAO_ADFIT_HEIGHT?: string;

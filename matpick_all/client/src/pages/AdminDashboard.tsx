@@ -645,9 +645,6 @@ export default function AdminDashboard() {
           </Link>
         </nav>
 
-        <Link href="/admin/private-guides" className="mt-5 flex items-center justify-between rounded-2xl border border-[#edc9d0] bg-[#fff5f6] px-5 py-4 text-sm font-bold text-[#9c354c]">
-          <span>관리자 전용 · 레드리본 지역별 가이드</span><span aria-hidden="true">→</span>
-        </Link>
 
         <AdminSuggestionOverview />
 

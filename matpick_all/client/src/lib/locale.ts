@@ -14,11 +14,13 @@ const cuisineTranslations: Record<string, string> = {
 };
 
 export function getBrowserFallbackLocale(): AppLocale {
-  if (typeof navigator === "undefined") {
+  // Canonical pages stay Korean for first-time visitors and search engines.
+  // An explicit visitor choice, rather than IP/browser language, enables English.
+  try {
+    return window.localStorage.getItem("matpick_locale") === "en" ? "en" : "ko";
+  } catch {
     return "ko";
   }
-
-  return navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
 }
 
 export function isEnglishLocale(locale: AppLocale) {

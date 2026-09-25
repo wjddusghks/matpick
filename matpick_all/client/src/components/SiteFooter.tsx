@@ -4,10 +4,12 @@ import { openPrivacySettings } from "@/lib/privacyConsent";
 
 const footerLinks = {
   ko: {
-    discoverTitle: "Discover",
-    policyTitle: "Policy",
+    discoverTitle: "맛픽 둘러보기",
+    policyTitle: "이용 안내",
     discover: [
-      { href: "/map", label: "지도 보기" },
+      { href: "/map", label: "맛집 지도" },
+      { href: "/explore", label: "방송·유튜브별 맛집" },
+      { href: "/reviews", label: "맛집 후기" },
       { href: "/suggest", label: "맛집 제보하기" },
       { href: "/about", label: "서비스 소개" },
     ],
@@ -17,12 +19,12 @@ const footerLinks = {
       { href: "/contact", label: "문의 안내" },
     ],
     description:
-      "Matpick은 크리에이터, 가이드, 방송에 소개된 맛집을 한곳에서 비교하고 지도 위에서 찾을 수 있도록 정리한 맛집 탐색 서비스입니다.",
-    note:
-      "카드 이미지와 편집 데이터의 무단 복제·재배포·대량 수집을 금지합니다. 출처, 광고 및 운영 기준은 소개와 정책 문서에서 확인할 수 있습니다.",
+      "맛픽은 크리에이터, 가이드, 방송에 소개된 맛집을 한곳에서 비교하고 지도 위에서 찾을 수 있도록 정리한 맛집 탐색 서비스입니다.",
+    note: "카드 이미지와 편집 데이터의 무단 복제·재배포·대량 수집을 금지합니다. 출처, 광고 및 운영 기준은 소개와 정책 문서에서 확인할 수 있습니다.",
     privacySettings: "광고·분석 설정",
     domainLabel: "운영 도메인: matpick.co.kr",
-    copyright: (year: number) => `© ${year} Matpick. Curated dining discovery for Korea.`,
+    copyright: (year: number) =>
+      `© ${year} Matpick. Curated dining discovery for Korea.`,
   },
   en: {
     discoverTitle: "Discover",
@@ -39,16 +41,16 @@ const footerLinks = {
     ],
     description:
       "Matpick helps you compare restaurants featured by creators, guides, and TV shows in one place and continue the journey on the map.",
-    note:
-      "Unauthorized copying, redistribution, or bulk collection of card artwork and editorial data is prohibited. Sources, ads, and operating rules are documented in the policy pages.",
+    note: "Unauthorized copying, redistribution, or bulk collection of card artwork and editorial data is prohibited. Sources, ads, and operating rules are documented in the policy pages.",
     privacySettings: "Advertising and analytics settings",
     domainLabel: "Live domain: matpick.co.kr",
-    copyright: (year: number) => `© ${year} Matpick. Curated dining discovery for Korea.`,
+    copyright: (year: number) =>
+      `© ${year} Matpick. Curated dining discovery for Korea.`,
   },
 } as const;
 
 export default function SiteFooter() {
-  const { locale } = useLocale();
+  const { locale, changeLocale } = useLocale();
   const copy = footerLinks[locale];
 
   return (
@@ -56,7 +58,10 @@ export default function SiteFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-start">
           <div className="max-w-xl">
-            <Link href="/" className="inline-flex items-center gap-2 text-decoration-none">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-decoration-none"
+            >
               <span
                 aria-hidden="true"
                 className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#ff7b83] text-lg font-black text-white shadow-[0_10px_30px_rgba(255,123,131,0.2)]"
@@ -64,10 +69,12 @@ export default function SiteFooter() {
                 M
               </span>
               <span className="text-lg font-black tracking-[-0.03em] text-[#1a1a1a]">
-                Matpick
+                {locale === "ko" ? "맛픽" : "Matpick"}
               </span>
             </Link>
-            <p className="mt-4 text-sm leading-7 text-[#6d6465]">{copy.description}</p>
+            <p className="mt-4 text-sm leading-7 text-[#6d6465]">
+              {copy.description}
+            </p>
             <p className="mt-4 text-xs leading-6 text-[#968c8d]">{copy.note}</p>
           </div>
 
@@ -77,7 +84,7 @@ export default function SiteFooter() {
                 {copy.discoverTitle}
               </h2>
               <div className="mt-4 flex flex-col gap-3">
-                {copy.discover.map((link) => (
+                {copy.discover.map(link => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -94,7 +101,7 @@ export default function SiteFooter() {
                 {copy.policyTitle}
               </h2>
               <div className="mt-4 flex flex-col gap-3">
-                {copy.policy.map((link) => (
+                {copy.policy.map(link => (
                   <Link
                     key={link.href}
                     href={link.href}
@@ -109,6 +116,14 @@ export default function SiteFooter() {
                   className="w-fit text-left text-sm font-medium text-[#3a3031] transition hover:text-[#ff7b83]"
                 >
                   {copy.privacySettings}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => changeLocale(locale === "ko" ? "en" : "ko")}
+                  className="w-fit text-left text-sm font-medium text-[#3a3031] hover:text-[#ff7b83]"
+                  lang={locale === "ko" ? "en" : "ko"}
+                >
+                  {locale === "ko" ? "English" : "한국어로 보기"}
                 </button>
               </div>
             </div>

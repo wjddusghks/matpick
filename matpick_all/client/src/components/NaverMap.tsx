@@ -1,5 +1,5 @@
 import { hasUsableCoordinates } from "@/lib/restaurantEligibility";
-import { restaurantDetailPath } from "@/lib/privateGuideCatalog";
+import { restaurantDetailPath } from "@/lib/restaurantNavigation";
 import { useLocale } from "@/contexts/LocaleContext";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getRestaurantMenuSummary, type Restaurant } from "@/data";

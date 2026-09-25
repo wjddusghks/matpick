@@ -1,7 +1,5 @@
 import { isComposingSearch } from "@/lib/mapNavigation";
 import {
-  lazy,
-  Suspense,
   useCallback,
   useEffect,
   useMemo,
@@ -39,6 +37,8 @@ import SocialLoginButtons from "@/components/SocialLoginButtons";
 import SiteFooter from "@/components/SiteFooter";
 import RestaurantSuggestionInvite from "@/components/RestaurantSuggestionInvite";
 import DiningMomentsMarquee from "@/components/DiningMomentsMarquee";
+import HomeAdsense from "@/components/monetization/HomeAdsense";
+import siteMetadata from "@/data/siteMetadata.json";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -68,11 +68,8 @@ import {
 } from "@/lib/privacyConsent";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import type { SearchResult } from "@/data/types";
-import { usePrivateGuides } from "@/contexts/PrivateGuidesContext";
-import { mergePrivateRestaurants, type PrivateGuideCatalog } from "@/lib/privateGuideCatalog";
 import matpickLogo from "../assets/matpick-logo-final 2.png";
 
-const PrivateGuides = lazy(() => import("@/components/admin/PrivateGuides"));
 const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
@@ -145,14 +142,14 @@ const HOME_UI_KO = {
   heroHeadline: "어디서 먹지? 고민될 땐, 맛픽.",
   heroSubtitle:
     "방송·유튜브·가이드 속 맛집을 내 주변 지도에서 찾고, 오늘 갈 곳을 골라보세요.",
-  searchPlaceholder: "지역·식당 검색",
-  searchHelperText: "약속 장소나 동네 이름으로, 지도에서 바로 찾아보세요.",
+  searchPlaceholder: "비워두면 내 주변 맛집",
+  searchHelperText:
+    "아무것도 입력하지 않고 검색하면 내 주변 맛집 지도가 열려요. 지역·식당명으로도 검색할 수 있어요.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "어떤 이야기로 맛집을 찾아볼까요?",
   topicSectionAction: "전체 주제",
   topicCardCta: "맛집 보기",
   searchButtonLabel: "\uAC80\uC0C9",
-  nearbyMapButtonLabel: "내 주변 맛집 지도 보기",
   sourceProofLabel: "궁금했던 그 맛집, 소개된 방송·채널·가이드부터 찾아보세요.",
   diningMomentsTitle: "식당 고르는 순간마다, 맛픽.",
   diningMoments: [
@@ -266,15 +263,14 @@ const HOME_UI_EN = {
   heroHeadline: "Where to eat? Start with Matpick.",
   heroSubtitle:
     "Find restaurants featured on TV, YouTube, and dining guides on a map near you. Pick your next stop.",
-  searchPlaceholder: "Area or restaurant",
+  searchPlaceholder: "Search with no text for nearby places",
   searchHelperText:
-    "Search your meeting spot or neighborhood to see restaurants on the map.",
+    "Leave the search empty to open your nearby map, or enter an area or restaurant.",
   topicSectionEyebrow: "MATPICK COLLECTION",
   topicSectionTitle: "Choose a story, then find a table",
   topicSectionAction: "All topics",
   topicCardCta: "View restaurants",
   searchButtonLabel: "Search",
-  nearbyMapButtonLabel: "See nearby restaurants on the map",
   sourceProofLabel:
     "Start with the show, channel, or guide where you saw that restaurant.",
   diningMomentsTitle: "For every “where should we eat?” moment.",
@@ -850,7 +846,7 @@ export default function Home() {
     useState<SearchResult[]>(getRecentSearches);
   const [searchDataModule, setSearchDataModule] =
     useState<HomeDataModule | null>(null);
-  const [searchResultsState, setSearchResultsState] = useState<{ catalog: PrivateGuideCatalog | null; items: SearchResult[] }>({ catalog: null, items: [] });
+  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
@@ -877,8 +873,6 @@ export default function Home() {
   const locationRequestRef = useRef<AbortController | null>(null);
   const [, navigate] = useLocation();
   const { isLoggedIn, user, logout } = useAuth();
-  const privateGuides = usePrivateGuides();
-  const filteredResults = searchResultsState.catalog === privateGuides.catalog ? searchResultsState.items : [];
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } =
     useFavorites();
   const userDisplayName = getDisplayName(user);
@@ -902,10 +896,10 @@ export default function Home() {
   useSeo({
     title: isEnglish
       ? "Matpick | Find famous restaurants near you"
-      : "맛픽 Matpick | 내 주변 유명 맛집 찾기",
+      : siteMetadata.title,
     description: isEnglish
       ? "Choosing a restaurant for a date, a work meal, guests, or a trip? Find places featured on TV, YouTube, and dining guides on a map near you with Matpick."
-      : "데이트, 직장 점심·회식, 손님 대접, 여행 중 어디서 먹을지 고민될 때. 방송·유튜브·가이드에 소개된 식당을 내 주변 지도에서 찾고 오늘 갈 곳을 골라보세요.",
+      : siteMetadata.description,
     path: "/",
     locale,
     jsonLd: [
@@ -935,12 +929,11 @@ export default function Home() {
   const normalizedQuery = query.trim().toLowerCase();
 
   const activeItems = normalizedQuery ? filteredResults : recentSearches;
-  const hasSearchQuery = Boolean(normalizedQuery);
   const homeShortcutTopics = mapTopicShortcuts;
 
   useEffect(() => {
     if (!normalizedQuery) {
-      setSearchResultsState({ catalog: privateGuides.catalog, items: [] });
+      setFilteredResults([]);
       return;
     }
 
@@ -953,19 +946,18 @@ export default function Home() {
         }
 
         setSearchDataModule(dataModule);
-        const catalog = mergePrivateRestaurants(dataModule.restaurants, privateGuides.restaurants);
-        setSearchResultsState({ catalog: privateGuides.catalog, items: dataModule.getSearchSuggestions(query, 8, catalog) });
+        setFilteredResults(dataModule.getSearchSuggestions(query, 8));
       })
       .catch(() => {
         if (!ignore) {
-          setSearchResultsState({ catalog: privateGuides.catalog, items: [] });
+          setFilteredResults([]);
         }
       });
 
     return () => {
       ignore = true;
     };
-  }, [normalizedQuery, query, privateGuides.catalog, privateGuides.restaurants]);
+  }, [normalizedQuery, query]);
 
   useEffect(() => {
     if (!searchDataModule) {
@@ -1256,14 +1248,14 @@ export default function Home() {
   const handleSelect = useCallback(
     async (item: SearchResult) => {
       const normalizedItem = normalizeSearchResult(item, searchDataModule);
-      if (!privateGuides.restaurants.length) trackMarketingEvent("search_result_click", {
+      trackMarketingEvent("search_result_click", {
         query: normalizedQuery || "recent",
         result_type: normalizedItem.type,
         result_id: normalizedItem.id,
         result_name: normalizedItem.name,
       });
 
-      if (!privateGuides.restaurants.length && !normalizedItem.adminOnly) setRecentSearches(prev => {
+      setRecentSearches(prev => {
         const withoutCurrent = prev.filter(
           entry =>
             getSearchResultKey(entry) !== getSearchResultKey(normalizedItem)
@@ -1320,7 +1312,7 @@ export default function Home() {
 
       navigate("/map");
     },
-    [navigate, normalizedQuery, searchDataModule, privateGuides.restaurants]
+    [navigate, normalizedQuery, searchDataModule]
   );
 
   const handleDeleteRecent = useCallback((id: string) => {
@@ -1342,17 +1334,12 @@ export default function Home() {
       source: "home",
     });
 
-    if (locationState === "granted") {
-      navigate("/map?type=nearby");
-      return;
-    }
-
-    setLocationFeedback(null);
-    setShowLocationPrompt(true);
+    setIsFocused(false);
+    navigate("/map?type=nearby");
   }, [locationState, navigate]);
 
   const handlePrimarySearch = useCallback(() => {
-    if (!privateGuides.restaurants.length) trackMarketingEvent("search_submit", {
+    trackMarketingEvent("search_submit", {
       query: normalizedQuery || "",
       has_query: Boolean(normalizedQuery),
       result_count: filteredResults.length,
@@ -1375,7 +1362,6 @@ export default function Home() {
     navigate(`/map?type=query&value=${encodeURIComponent(query.trim())}`);
   }, [
     filteredResults,
-    privateGuides.restaurants,
     handleNearbySearch,
     handleSelect,
     hoveredIndex,
@@ -1523,6 +1509,14 @@ export default function Home() {
         onOpenChange={setShowTopicDialog}
       />
 
+      <div className="relative z-10 border-b border-[#f2e6e9] bg-[#fff5f780] px-2 pt-2 sm:px-6">
+        <DiningMomentsMarquee
+          title={ui.diningMomentsTitle}
+          moments={ui.diningMoments}
+          english={locale === "en"}
+        />
+      </div>
+
       <header className="relative z-20 flex items-start justify-between gap-3 px-4 py-4 sm:px-8 sm:py-6">
         <button type="button" onClick={() => navigate("/")} className="p-0">
           <img
@@ -1533,6 +1527,13 @@ export default function Home() {
         </button>
 
         <div className="flex flex-wrap items-start justify-end gap-2 sm:gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-[#efdee3] bg-white/80 px-3 text-xs font-semibold text-[#745a66] transition hover:bg-[#fff0f4] sm:min-h-11 sm:px-4 sm:text-sm"
+          >
+            <MessageCircleMore size={16} aria-hidden="true" />
+            {isEnglish ? "Contact" : "문의하기"}
+          </Link>
           {isLoggedIn ? (
             <>
               {isAdmin ? (
@@ -1764,12 +1765,6 @@ export default function Home() {
             {ui.heroSubtitle}
           </p>
 
-          <DiningMomentsMarquee
-            title={ui.diningMomentsTitle}
-            moments={ui.diningMoments}
-            english={locale === "en"}
-          />
-
           <div
             ref={searchRef}
             className="relative mt-8 w-full max-w-[810px] sm:mt-10"
@@ -1797,7 +1792,6 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={handlePrimarySearch}
-                  disabled={!hasSearchQuery}
                   className="inline-flex h-11 flex-shrink-0 items-center justify-center gap-1.5 rounded-[18px] bg-[#ff7b83] px-4 text-sm font-bold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:bg-[#eadfe1] sm:h-12 sm:px-6 sm:text-base"
                   aria-label={ui.searchButtonLabel}
                 >
@@ -1810,18 +1804,21 @@ export default function Home() {
               {ui.searchHelperText}
             </p>
 
-            <button
-              type="button"
-              onClick={handleNearbySearch}
-              className="mx-auto mt-5 inline-flex min-h-12 w-full max-w-[360px] items-center justify-center gap-2 rounded-[20px] border border-[#ffd1d7] bg-white/92 px-5 py-3 text-[15px] font-bold text-[#353033] shadow-[0_10px_30px_rgba(80,46,56,0.07)] transition hover:border-[#ff9eaa] hover:bg-[#fff8f9] sm:mt-6 sm:min-h-14 sm:text-base"
+            <nav
+              aria-label={isEnglish ? "Explore Matpick" : "맛픽 둘러보기"}
+              className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-3 text-xs font-semibold text-[#846575] sm:text-sm"
             >
-              <MapPin
-                className="h-5 w-5 shrink-0 text-[#ff6f7c]"
-                strokeWidth={2.2}
-              />
-              {ui.nearbyMapButtonLabel}
-            </button>
-
+              {siteMetadata.navigation.map(item => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="underline-offset-4 hover:text-[#d74f73] hover:underline"
+                >
+                  {isEnglish ? item.en : item.label}
+                </Link>
+              ))}
+            </nav>
+            <HomeAdsense placement="discovery" />
             <RestaurantSuggestionInvite />
 
             <section
@@ -1840,7 +1837,7 @@ export default function Home() {
               </div>
             </section>
 
-            {isAdmin && <Suspense fallback={null}><PrivateGuides compact /></Suspense>}
+            <HomeAdsense placement="topics" />
 
             {isFocused ? (
               <div className="absolute left-0 right-0 top-[74px] z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)] sm:top-[84px]">

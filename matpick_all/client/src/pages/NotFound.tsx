@@ -2,8 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home } from "lucide-react";
 import { useLocation } from "wouter";
+import { useSeo } from "@/lib/seo";
 
 export default function NotFound() {
+  useSeo({
+    title: "페이지를 찾을 수 없습니다",
+    description:
+      "요청한 페이지가 없거나 삭제되었습니다. 맛픽 홈에서 다시 찾아보세요.",
+    robots: "noindex,follow",
+  });
   const [, setLocation] = useLocation();
 
   const handleGoHome = () => {
@@ -24,13 +31,13 @@ export default function NotFound() {
           <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
 
           <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
+            페이지를 찾을 수 없어요
           </h2>
 
           <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
+            요청한 페이지가 없거나 삭제되었어요.
             <br />
-            It may have been moved or deleted.
+            맛픽 홈에서 다시 찾아보세요.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -39,7 +46,7 @@ export default function NotFound() {
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
             >
               <Home className="w-4 h-4 mr-2" />
-              Go Home
+              맛픽 홈으로
             </Button>
           </div>
         </CardContent>

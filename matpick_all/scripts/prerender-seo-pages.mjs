@@ -1,3 +1,5 @@
+import adsenseDefaults from "../client/src/data/adsense.json" with { type: "json" };
+import siteMetadata from "../client/src/data/siteMetadata.json" with { type: "json" };
 import { loadPublicData } from "./load-public-data.mjs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -37,7 +39,7 @@ function replaceTag(html, pattern, replacement) {
 
 function injectJsonLd(html, jsonLd) {
   const payload = JSON.stringify(jsonLd).replace(/</g, "\\u003c");
-  const scriptTag = `<script type="application/ld+json">${payload}</script>`;
+  const scriptTag = `<script type="application/ld+json" data-matpick-seo="jsonld">${payload}</script>`;
   if (html.includes("</head>")) {
     return html.replace("</head>", `  ${scriptTag}\n  </head>`);
   }
@@ -57,7 +59,7 @@ function buildStaticFallback(metadata) {
         ...links,
         { href: "/explore", label: "주제별 맛집 탐색" },
         { href: "/map", label: "맛집 지도" },
-        { href: "/about", label: "Matpick 편집 기준" },
+        { href: "/about", label: "맛픽 서비스 소개" },
       ].map((link) => [link.href, link])
     ).values()
   ).slice(0, 16);
@@ -65,13 +67,13 @@ function buildStaticFallback(metadata) {
   return `<main data-static-fallback="true" style="min-height:100vh;background:#fffafa;color:#21191b;font-family:'Noto Sans KR',sans-serif">
     <header style="border-bottom:1px solid #f1e1e4;background:#fff;padding:18px 24px">
       <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px">
-        <a href="/" style="color:#e95869;font-size:20px;font-weight:800;text-decoration:none">Matpick</a>
+        <a href="/" style="color:#e95869;font-size:20px;font-weight:800;text-decoration:none">맛픽</a>
         <span style="color:#766b6d;font-size:13px">출처와 맥락을 함께 보는 맛집 탐색</span>
       </div>
     </header>
     <article style="max-width:960px;margin:0 auto;padding:48px 24px 64px">
       <p style="margin:0 0 10px;color:#e95869;font-size:12px;font-weight:800;text-transform:uppercase">${escapeHtml(
-        content.eyebrow ?? "Matpick Guide"
+        content.eyebrow ?? "맛픽 가이드"
       )}</p>
       <h1 style="margin:0;font-size:34px;line-height:1.3">${escapeHtml(metadata.title)}</h1>
       <div style="max-width:760px;margin-top:24px;color:#5f5557;font-size:16px;line-height:1.9">
@@ -175,7 +177,7 @@ function renderHtml(template, metadata) {
   }
 
   html = html.replace(
-    /<script type="application\/ld\+json">.*?<\/script>/gs,
+    /<script type="application\/ld\+json"[^>]*>.*?<\/script>/gs,
     ""
   );
 
@@ -206,7 +208,7 @@ async function main() {
     data.getDiscoveryTopicEpisodes(topic.slug).map((episode) => ({ ...episode, topicName: topic.name }))
   );
   const defaultImage = absoluteUrl(siteUrl, "/og-default.png");
-  const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
+  const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || adsenseDefaults.client;
   const restaurantById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
   const restaurantLinks = (restaurantIds, limit = 12) =>
     Array.from(new Set(restaurantIds))
@@ -219,44 +221,31 @@ async function main() {
       }));
 
   const homeHtml = renderHtml(template, {
-    title: "맛픽 Matpick | 내 주변 맛집 추천 지도",
-    description:
-      "유튜브, 방송, 가이드에 소개된 맛집을 한곳에서 찾고 지도와 상세 정보로 비교해보는 맛집 탐색 서비스.",
-    url: absoluteUrl(siteUrl, "/"),
-    image: defaultImage,
-    type: "website",
-    adsenseClient,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: absoluteUrl(siteUrl, "/"), image: defaultImage, type: "website", adsenseClient,
     staticContent: {
-      eyebrow: "Curated Dining Discovery",
+      eyebrow: "식당 고르는 순간마다, 맛픽.",
       paragraphs: [
-        `Matpick은 ${restaurants.length.toLocaleString("ko-KR")}개 식당 정보를 출처, 지역, 음식 종류와 지도 좌표 기준으로 정리합니다. 방송·크리에이터·가이드별 목록을 같은 화면에서 비교하고 각 식당의 소개 맥락을 확인할 수 있습니다.`,
-        "식당 카드 이미지는 탐색을 위한 자체 편집 자료이며, 주소·대표 메뉴·영업 상태는 확인 가능한 자료를 기준으로 계속 보완합니다.",
+        "검색어 없이 검색하면 내 주변 맛집 지도가 열립니다. 지역이나 식당명을 입력하거나 방송·유튜브·가이드 주제를 선택해 오늘 갈 식당을 찾아보세요.",
+        "데이트, 직장 점심·회식, 손님 대접, 여행 중 식당을 고를 때 소개 출처와 확인된 메뉴·가격·주소를 함께 살펴볼 수 있습니다. 가격과 영업 정보는 방문 전 매장에서 다시 확인해 주세요."
       ],
-      links: discoveryTopics.slice(0, 10).map((topic) => ({
-        href: `/explore/topic/${encodeURIComponent(topic.slug)}`,
-        label: `${topic.name} 맛집`,
-      })),
+      links: [...siteMetadata.navigation, { href: "/contact", label: "문의하기" }, ...discoveryTopics.slice(0, 8).map(topic => ({ href: `/explore/topic/${encodeURIComponent(topic.slug)}`, label: `${topic.name} 맛집` }))],
     },
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      name: "Matpick",
-      url: absoluteUrl(siteUrl, "/"),
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${absoluteUrl(siteUrl, "/map")}?type=restaurant&value={search_term_string}`,
-        "query-input": "required name=search_term_string",
-      },
-    },
+    jsonLd: [
+      { "@context": "https://schema.org", "@type": "WebSite", name: siteMetadata.name, alternateName: siteMetadata.alternateName, inLanguage: "ko-KR", url: absoluteUrl(siteUrl, "/"), description: siteMetadata.description,
+        potentialAction: { "@type": "SearchAction", target: `${absoluteUrl(siteUrl, "/map")}?type=query&value={search_term_string}`, "query-input": "required name=search_term_string" } },
+      { "@context": "https://schema.org", "@type": "Organization", name: siteMetadata.name, alternateName: siteMetadata.alternateName, url: absoluteUrl(siteUrl, "/"), logo: absoluteUrl(siteUrl, "/web-app-manifest-512x512.png") }
+    ],
   });
   await writeFile(path.join(distDir, "index.html"), homeHtml, "utf8");
 
   await writeRouteHtml(
     "explore",
     renderHtml(template, {
-      title: "맛집 탐색 | 지역별 크리에이터 추천 맛집",
+      title: "방송·유튜브별 맛집 모음 | 맛픽",
       description:
-        "지역, 음식 종류, 크리에이터 기준으로 맛집을 탐색하고 상세 페이지로 이동할 수 있는 Matpick 탐색 페이지.",
+        "또간집, 전현무계획, 먹을텐데 등 방송·유튜브·가이드별 맛집을 찾아보세요. 지역과 음식 종류로 골라 메뉴·가격·주소와 소개 출처를 확인할 수 있습니다.",
       url: absoluteUrl(siteUrl, "/explore"),
       image: defaultImage,
       type: "website",
@@ -309,7 +298,7 @@ async function main() {
         type: "website",
         adsenseClient,
         staticContent: {
-          eyebrow: "Matpick Topic",
+          eyebrow: "맛픽 Topic",
           paragraphs: [
             `${topic.name} 출처와 연결된 식당 ${topicRestaurantCount.toLocaleString(
               "ko-KR"
@@ -367,7 +356,7 @@ async function main() {
     renderHtml(template, {
       title: "맛집 지도 | 내 주변과 추천 맛집 보기",
       description:
-        "추천 맛집을 지도에서 확인하고 현재 위치를 기준으로 가까운 식당을 비교할 수 있는 Matpick 지도 페이지.",
+        "추천 맛집을 지도에서 확인하고 현재 위치를 기준으로 가까운 식당을 비교할 수 있는 맛픽 지도 페이지.",
       url: absoluteUrl(siteUrl, "/map"),
       image: defaultImage,
       type: "website",
@@ -390,9 +379,9 @@ async function main() {
   await writeRouteHtml(
     "about",
     renderHtml(template, {
-      title: "Matpick 서비스 소개 | 데이터 출처와 운영 기준",
+      title: "맛픽 서비스 소개 | 데이터 출처와 운영 기준",
       description:
-        "Matpick이 어떤 방식으로 맛집 데이터를 수집, 정리, 보강하는지와 서비스 운영 기준을 소개합니다.",
+        "맛픽이 어떤 방식으로 맛집 데이터를 수집, 정리, 보강하는지와 서비스 운영 기준을 소개합니다.",
       url: absoluteUrl(siteUrl, "/about"),
       image: defaultImage,
       type: "website",
@@ -400,7 +389,7 @@ async function main() {
       staticContent: {
         eyebrow: "Editorial Standards",
         paragraphs: [
-          "Matpick은 공개된 방송·가이드·크리에이터 목록을 바탕으로 지점을 구분하고 주소, 카테고리, 대표 메뉴와 좌표를 구조화합니다. 출처와 회차는 보존하며 확인된 폐업 정보도 기록으로 남깁니다.",
+          "맛픽은 공개된 방송·가이드·크리에이터 목록을 바탕으로 지점을 구분하고 주소, 카테고리, 대표 메뉴와 좌표를 구조화합니다. 출처와 회차는 보존하며 확인된 폐업 정보도 기록으로 남깁니다.",
           "식당 카드 이미지는 자체 편집 자료이고 일부는 생성형 이미지 도구의 도움을 받아 제작될 수 있습니다. 실제 매장 촬영 사진이나 방송 원본 화면을 의미하지 않습니다.",
         ],
         links: [{ href: "/contact", label: "정보 정정 및 권리 문의" }],
@@ -408,7 +397,7 @@ async function main() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        name: "Matpick 서비스 소개",
+        name: "맛픽 서비스 소개",
         url: absoluteUrl(siteUrl, "/about"),
       },
     })
@@ -417,9 +406,9 @@ async function main() {
   await writeRouteHtml(
     "privacy",
     renderHtml(template, {
-      title: "개인정보처리방침 | Matpick",
+      title: "개인정보처리방침 | 맛픽",
       description:
-        "Matpick의 개인정보 처리, 브라우저 저장소 사용, 위치 정보 처리와 광고 관련 정책을 안내합니다.",
+        "맛픽의 개인정보 처리, 브라우저 저장소 사용, 위치 정보 처리와 광고 관련 정책을 안내합니다.",
       url: absoluteUrl(siteUrl, "/privacy"),
       image: defaultImage,
       type: "website",
@@ -435,7 +424,7 @@ async function main() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Matpick 개인정보처리방침",
+        name: "맛픽 개인정보처리방침",
         url: absoluteUrl(siteUrl, "/privacy"),
       },
     })
@@ -444,8 +433,8 @@ async function main() {
   await writeRouteHtml(
     "terms",
     renderHtml(template, {
-      title: "이용약관 | Matpick",
-      description: "Matpick 서비스 이용 조건, 광고 및 외부 링크 정책, 면책과 운영 원칙을 안내합니다.",
+      title: "이용약관 | 맛픽",
+      description: "맛픽 서비스 이용 조건, 광고 및 외부 링크 정책, 면책과 운영 원칙을 안내합니다.",
       url: absoluteUrl(siteUrl, "/terms"),
       image: defaultImage,
       type: "website",
@@ -453,7 +442,7 @@ async function main() {
       staticContent: {
         eyebrow: "Terms of Service",
         paragraphs: [
-          "Matpick은 식당 정보 탐색 서비스이며 예약·주문·결제를 직접 제공하지 않습니다. 이용자 콘텐츠는 적법한 권리를 가진 자료만 올릴 수 있고, 카드 이미지와 편집 데이터의 무단 복제·재배포·대량 수집은 금지됩니다.",
+          "맛픽은 식당 정보 탐색 서비스이며 예약·주문·결제를 직접 제공하지 않습니다. 이용자 콘텐츠는 적법한 권리를 가진 자료만 올릴 수 있고, 카드 이미지와 편집 데이터의 무단 복제·재배포·대량 수집은 금지됩니다.",
           "광고와 제휴 링크는 편집 콘텐츠와 구분하며 식당 정보는 방문 전에 최신 상태를 다시 확인해야 합니다.",
         ],
         links: [{ href: "/contact", label: "약관 및 권리 문의" }],
@@ -461,7 +450,7 @@ async function main() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Matpick 이용약관",
+        name: "맛픽 이용약관",
         url: absoluteUrl(siteUrl, "/terms"),
       },
     })
@@ -470,9 +459,9 @@ async function main() {
   await writeRouteHtml(
     "contact",
     renderHtml(template, {
-      title: "문의 안내 | Matpick",
+      title: "문의 안내 | 맛픽",
       description:
-        "데이터 수정 요청, 서비스 개선 제안, 운영 문의를 위한 Matpick 문의 안내 페이지입니다.",
+        "데이터 수정 요청, 서비스 개선 제안, 운영 문의를 위한 맛픽 문의 안내 페이지입니다.",
       url: absoluteUrl(siteUrl, "/contact"),
       image: defaultImage,
       type: "website",
@@ -486,7 +475,7 @@ async function main() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "ContactPage",
-        name: "Matpick 문의 안내",
+        name: "맛픽 문의 안내",
         url: absoluteUrl(siteUrl, "/contact"),
       },
     })
@@ -495,7 +484,7 @@ async function main() {
   await writeRouteHtml(
     "reviews",
     renderHtml(template, {
-      title: "방문자 리뷰 모아보기 | Matpick",
+      title: "방문자 리뷰 모아보기 | 맛픽",
       description:
         "맛픽 사용자들이 직접 남긴 최신 리뷰와 사진을 한 화면에서 모아보고, 마음에 드는 식당으로 바로 이동해보세요.",
       url: absoluteUrl(siteUrl, "/reviews"),
@@ -511,7 +500,7 @@ async function main() {
       jsonLd: {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "Matpick 방문자 리뷰 모아보기",
+        name: "맛픽 방문자 리뷰 모아보기",
         url: absoluteUrl(siteUrl, "/reviews"),
       },
     })
@@ -525,8 +514,8 @@ async function main() {
       .map((visit) => visit.restaurantId)
       .filter(Boolean);
     const creatorHtml = renderHtml(template, {
-      title: `${creator.name} 추천 맛집 | Matpick`,
-      description: `${creator.name}이(가) 소개한 맛집과 채널 정보를 Matpick에서 확인해보세요.`,
+      title: `${creator.name} 추천 맛집 | 맛픽`,
+      description: `${creator.name}이(가) 소개한 맛집과 채널 정보를 맛픽에서 확인해보세요.`,
       url: creatorUrl,
       image: creatorImage,
       type: "profile",
@@ -581,8 +570,8 @@ async function main() {
         : "",
     ].filter(Boolean);
     const restaurantHtml = renderHtml(template, {
-      title: `${restaurant.name} 맛집 정보 | Matpick`,
-      description: `${restaurant.name}의 위치, 대표 메뉴, 추천 소스 정보를 Matpick에서 확인해보세요.`,
+      title: `${restaurant.name} 맛집 정보 | 맛픽`,
+      description: `${restaurant.name}의 위치, 대표 메뉴, 추천 소스 정보를 맛픽에서 확인해보세요.`,
       url: restaurantUrl,
       image: restaurantImage,
       type: "article",
@@ -590,7 +579,7 @@ async function main() {
       staticContent: {
         eyebrow: "Restaurant Detail",
         paragraphs: [
-          `${restaurant.name}은(는) Matpick의 방송·크리에이터·가이드 출처 데이터와 연결된 식당입니다. 아래 정보는 서로 다른 출처의 표기를 한 식당 기준으로 정리한 것이며, 방문 전에 최신 영업 상태와 가격을 확인하는 것이 좋습니다.`,
+          `${restaurant.name}은(는) 맛픽의 방송·크리에이터·가이드 출처 데이터와 연결된 식당입니다. 아래 정보는 서로 다른 출처의 표기를 한 식당 기준으로 정리한 것이며, 방문 전에 최신 영업 상태와 가격을 확인하는 것이 좋습니다.`,
         ],
         facts: restaurantFacts,
         links:

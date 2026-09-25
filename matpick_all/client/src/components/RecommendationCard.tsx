@@ -1,5 +1,5 @@
 import HeartButton from "@/components/HeartButton";
-import { restaurantDetailPath } from "@/lib/privateGuideCatalog";
+import { restaurantDetailPath } from "@/lib/restaurantNavigation";
 import { useState } from "react";
 import ShareSheet from "@/components/ShareSheet";
 import RestaurantSourceBadges from "@/components/RestaurantSourceBadges";
@@ -80,7 +80,6 @@ export default function RecommendationCard({
   );
   return (
     <article
-      data-private-content={restaurant.privateGuideIds?.length ? true : undefined}
       data-restaurant-id={restaurant.id}
       className={`border-b border-[#eee7e9] p-4 ${selected ? "bg-[#fff5f6]" : "bg-white"}`}
     >
@@ -101,7 +100,7 @@ export default function RecommendationCard({
             </Link>
           )}
         </div>
-        {!restaurant.adminOnly && <HeartButton restaurantId={restaurant.id} size="lg" />}
+        <HeartButton restaurantId={restaurant.id} size="lg" />
       </div>
       {menuSummary && (
         <p className="mt-2 text-sm font-semibold leading-5 text-[#52434b]">
@@ -113,7 +112,6 @@ export default function RecommendationCard({
         name={restaurant.name}
         english={english}
       />
-      {!!restaurant.privateGuideIds?.length && <p className="mt-2 inline-flex rounded-lg border border-[#eed0d7] bg-[#fff0f3] px-2 py-1 text-xs font-bold text-[#a9324d]">레드리본 · 관리자 전용</p>}
       <p className="mt-1 flex items-start gap-1 text-xs leading-5 text-[#82787d]">
         <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
         {restaurant.address}
@@ -128,7 +126,7 @@ export default function RecommendationCard({
         origin={origin}
         travel={travel}
         loading={travelLoading}
-        onRequest={restaurant.adminOnly ? undefined : onRequestTravel}
+        onRequest={onRequestTravel}
         english={english}
       />
       <div className="mt-3 flex items-center gap-2">
@@ -139,7 +137,7 @@ export default function RecommendationCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
-                !restaurant.adminOnly && trackMarketingEvent("directions_click", {
+                trackMarketingEvent("directions_click", {
                   restaurant_id: restaurant.id,
                   provider: "naver",
                   placement: "recommendation_card",
@@ -151,7 +149,7 @@ export default function RecommendationCard({
               {english ? "Naver directions" : "네이버 길찾기"}
             </a>
           )}
-        {!restaurant.adminOnly && <button
+        <button
           type="button"
           onClick={() => {
             setShareOpen(true);
@@ -166,7 +164,7 @@ export default function RecommendationCard({
         >
           <Share2 className="h-4 w-4" />
           {english ? "Share" : "공유"}
-        </button>}
+        </button>
         <Link
           href={restaurantDetailPath(restaurant)}
           className="inline-flex min-h-11 items-center px-2 text-sm text-[#756c70] underline underline-offset-4"
@@ -174,7 +172,7 @@ export default function RecommendationCard({
           {english ? "Details" : "상세"}
         </Link>
       </div>
-      {shareOpen && !restaurant.adminOnly && (
+      {shareOpen && (
         <ShareSheet
           open
           onClose={() => setShareOpen(false)}

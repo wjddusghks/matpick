@@ -5,8 +5,6 @@ import {
   withMapView,
 } from "@/lib/mapNavigation";
 import RecommendationCard from "@/components/RecommendationCard";
-import { usePrivateGuides } from "@/contexts/PrivateGuidesContext";
-import { mergePrivateRestaurants, resolveCurrentResults } from "@/lib/privateGuideCatalog";
 import { KakaoAdfitSlot } from "@/components/monetization/MonetizationSlot";
 import {
   findNearbyRecommendations,
@@ -183,12 +181,6 @@ function filterRestaurants(
   const isEnglish = locale === "en";
 
   switch (type) {
-    case "private-guide":
-      return {
-        restaurants: restaurants.filter(r => r.privateGuideIds?.includes(value)),
-        title: "레드리본",
-        description: "관리자 전용 · 내 위치에서 가까운 순서로 표시합니다.",
-      };
     case "nearby":
       return {
         restaurants: [...restaurants],
@@ -399,9 +391,11 @@ function SearchDropdownItem({
 }
 
 export default function SearchMap() {
-  const privateGuides = usePrivateGuides();
-  const catalog = useMemo(() => mergePrivateRestaurants(restaurants, privateGuides.restaurants), [privateGuides.restaurants]);
-  const catalogById = useMemo(() => new Map(catalog.map(r => [r.id, r])), [catalog]);
+  const catalog = restaurants;
+  const catalogById = useMemo(
+    () => new Map(catalog.map(r => [r.id, r])),
+    [catalog]
+  );
   const [, navigate] = useLocation();
   const { locale } = useLocale();
   const copy = MAP_COPY[locale];
@@ -426,13 +420,13 @@ export default function SearchMap() {
     restaurants: filteredRestaurants,
     title,
     description,
-  } = useMemo(
-    () => {
-      const result = filterRestaurants(type, value, topic, locale, catalog);
-      return { ...result, restaurants: result.restaurants.map(r => catalogById.get(r.id) ?? r) };
-    },
-    [locale, topic, type, value, catalog, catalogById]
-  );
+  } = useMemo(() => {
+    const result = filterRestaurants(type, value, topic, locale, catalog);
+    return {
+      ...result,
+      restaurants: result.restaurants.map(r => catalogById.get(r.id) ?? r),
+    };
+  }, [locale, topic, type, value, catalog, catalogById]);
   const eligibleRestaurants = useMemo(() => {
     const sourceIds = sourceFilter
       ? new Set(getRestaurantsBySource(sourceFilter).map(item => item.id))
@@ -443,10 +437,7 @@ export default function SearchMap() {
         (!sourceIds || sourceIds.has(item.id))
     );
   }, [filteredRestaurants, sourceFilter]);
-  const deferred = useDeferredValue(eligibleRestaurants);
-  // React may retain old results during a deferred render. Resolve every result
-  // against the current authorized catalog so logout removes private data immediately.
-  const deferredRestaurants = useMemo(() => resolveCurrentResults(deferred, catalogById, type === "private-guide" ? value : undefined), [deferred, catalogById, type, value]);
+  const deferredRestaurants = useDeferredValue(eligibleRestaurants);
 
   useSeo({
     title: copy.pageTitle(title),
@@ -455,8 +446,7 @@ export default function SearchMap() {
       topic ? `&topic=${encodeURIComponent(topic)}` : ""
     }&value=${encodeURIComponent(value)}`,
     locale,
-    robots: privateGuides.allowed || type === "private-guide" || value.startsWith("private-guide:") ? "noindex,nofollow" : "index,follow",
-    jsonLd: privateGuides.allowed || type === "private-guide" || value.startsWith("private-guide:") ? undefined : {
+    jsonLd: {
       "@context": "https://schema.org",
       "@type": "SearchResultsPage",
       name: copy.pageName(title),
@@ -646,7 +636,9 @@ export default function SearchMap() {
     setVisibleListCount(view.visibleCount);
     setSelectedId(
       view.selectedId ??
-        (type === "restaurant" ? (catalogById.get(value)?.id ?? getRestaurantById(value)?.id ?? null) : null)
+        (type === "restaurant"
+          ? (catalogById.get(value)?.id ?? getRestaurantById(value)?.id ?? null)
+          : null)
     );
   }, [searchString, type, value, catalogById]);
 
@@ -1020,9 +1012,7 @@ export default function SearchMap() {
             distanceMeters={getRestaurantDistance(restaurant)}
             origin={currentLocation}
             travel={travelTimes.values[restaurant.id]}
-            travelLoading={
-              travelTimes.loadingIds.includes(restaurant.id)
-            }
+            travelLoading={travelTimes.loadingIds.includes(restaurant.id)}
             onRequestTravel={() => void travelTimes.request(restaurant.id)}
             onSelect={() => selectRestaurant(restaurant.id)}
           />
@@ -1188,7 +1178,6 @@ export default function SearchMap() {
   const mapContent = (
     <>
       <NaverMap
-        key={privateGuides.catalog ? "admin-catalog" : "public-catalog"}
         restaurants={restaurantsForMap}
         selectedId={selectedId}
         currentLocation={currentLocation}
@@ -1237,18 +1226,8 @@ export default function SearchMap() {
 
   const mobileSheetHeight = mobileSheetExpanded ? "74dvh" : "43dvh";
 
-  if (type === "private-guide" && (!privateGuides.catalog || !filteredRestaurants.length)) {
-    return <main data-private-content className="min-h-screen bg-[#fff8f9] px-6 py-12 text-[#593c46]">
-      <a href="/" className="inline-flex min-h-11 items-center underline">맛픽 홈으로</a>
-      <section className="mx-auto mt-12 max-w-lg rounded-3xl border border-[#edd6dd] bg-white p-8">
-        <h1 className="text-2xl font-bold">관리자 전용 레드리본 지도</h1>
-        <p role="status" className="mt-4 leading-7">{!privateGuides.allowed ? "관리자 계정으로 로그인하면 이용할 수 있습니다." : privateGuides.error || (!privateGuides.catalog ? "관리자 권한과 데이터를 확인하고 있어요." : "이 지역에 등록된 레드리본 식당이 아직 없습니다. 이용 허가가 확인된 데이터를 등록하면 맛픽 지도에 표시됩니다.")}</p>
-        <a href="/admin/private-guides" className="mt-6 inline-flex min-h-11 items-center rounded-xl bg-[#b7233b] px-4 font-bold text-white">가이드 관리</a>
-      </section>
-    </main>;
-  }
   return (
-    <div data-private-content={privateGuides.restaurants.length ? true : undefined} className="h-[100dvh] overflow-hidden bg-white">
+    <div className="h-[100dvh] overflow-hidden bg-white">
       {isMobileLayout ? (
         <div className="relative h-full overflow-hidden bg-[#f6f6f6]">
           <section className="absolute inset-0">{mapContent}</section>

@@ -1,0 +1,12 @@
+{
+  "name": "맛픽",
+  "alternateName": "Matpick",
+  "title": "맛픽 | 방송·유튜브 맛집 지도, 내 주변 유명 맛집 찾기",
+  "description": "어디서 먹을지 고민될 때, 맛픽. 또간집·전현무계획·먹을텐데 등 방송과 유튜브에 소개된 맛집을 내 주변 지도에서 찾아보세요. 지역별 식당의 메뉴·가격·주소와 소개 출처를 비교하고 데이트, 회식, 여행에 갈 곳을 골라보세요.",
+  "navigation": [
+    { "href": "/map", "label": "맛집 지도", "en": "Restaurant map" },
+    { "href": "/explore", "label": "방송·유튜브별 맛집", "en": "Shows and channels" },
+    { "href": "/reviews", "label": "맛집 후기", "en": "Reviews" },
+    { "href": "/suggest", "label": "맛집 제보", "en": "Suggest a place" }
+  ]
+}

@@ -1278,7 +1278,6 @@ const buildRestaurantSearchIndex = (catalog: Restaurant[]) => catalog.map((resta
     )
   );
   const sourceNames = getSourcesByRestaurant(restaurant.id).map(getSourceDisplayName);
-  if (restaurant.privateGuideIds?.length) sourceNames.push("레드리본", "Red Ribbon");
   const creatorNames = getCreatorsByRestaurant(restaurant.id).flatMap((creator) => [
     creator.name,
     creator.channelName,
@@ -1432,7 +1431,6 @@ export function getSearchSuggestions(query: string, limit = 8, catalog = restaur
       return queryVariants.some((variant) => searchable.includes(variant));
     });
   const restaurantResults = restaurantMatches.map<SearchResult>((match) => ({
-    adminOnly: match.restaurant.adminOnly,
     id: match.restaurant.id,
     type: "restaurant",
     name: match.restaurant.name,

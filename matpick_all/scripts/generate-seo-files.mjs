@@ -1,3 +1,4 @@
+import adsenseDefaults from "../client/src/data/adsense.json" with { type: "json" };
 import { loadPublicData } from "./load-public-data.mjs";
 import { copyFile, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -103,7 +104,7 @@ Sitemap: ${siteUrl}/sitemap.xml
 }
 
 async function buildAdsTxt() {
-  const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || "";
+  const adsenseClient = process.env.VITE_ADSENSE_CLIENT?.trim() || adsenseDefaults.client;
   if (!adsenseClient) {
     await writeFile(
       path.join(publicDir, "ads.txt"),
@@ -120,8 +121,8 @@ async function buildAdsTxt() {
 
 async function buildManifest() {
   const manifest = {
-    name: "Matpick",
-    short_name: "Matpick",
+    name: "맛픽",
+    short_name: "맛픽",
     start_url: "/",
     display: "standalone",
     background_color: "#fff8f9",

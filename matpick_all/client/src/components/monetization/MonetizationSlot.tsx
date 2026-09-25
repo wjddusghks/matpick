@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { trackAnalyticsEvent } from "@/lib/analytics";
+import { adsenseClient, isAdsenseLiveHost } from "@/lib/adConfig";
 import {
   PRIVACY_PREFERENCES_EVENT,
   hasAdvertisingConsent,
@@ -207,10 +208,12 @@ export function AdsenseSlot({
   label?: string;
   slot?: string;
 }) {
-  const advertisingAllowed = useAdvertisingConsent();
+  const advertisingConsent = useAdvertisingConsent();
+  const advertisingAllowed = advertisingConsent && isAdsenseLiveHost();
   const insRef = useRef<HTMLModElement | null>(null);
+  const requestedElement = useRef<HTMLModElement | null>(null);
   const [isUnfilled, setIsUnfilled] = useState(false);
-  const client = import.meta.env.VITE_ADSENSE_CLIENT?.trim() ?? "";
+  const client = adsenseClient;
 
   useEffect(() => {
     if (!advertisingAllowed || !client || !slot || !insRef.current) {
@@ -221,7 +224,9 @@ export function AdsenseSlot({
 
     const renderAd = () => {
       if (
-        !element ||
+        requestedElement.current === element ||
+        !element.isConnected ||
+        element.getBoundingClientRect().width === 0 ||
         element.getAttribute("data-adsbygoogle-status") === "done"
       ) {
         return;
@@ -230,6 +235,7 @@ export function AdsenseSlot({
       try {
         window.adsbygoogle = window.adsbygoogle || [];
         window.adsbygoogle.push({});
+        requestedElement.current = element;
       } catch {
         // noop
       }
@@ -237,9 +243,15 @@ export function AdsenseSlot({
 
     renderAd();
     window.addEventListener("matpick:adsense-ready", renderAd);
+    const resize =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(renderAd)
+        : null;
+    resize?.observe(element);
 
     return () => {
       window.removeEventListener("matpick:adsense-ready", renderAd);
+      resize?.disconnect();
     };
   }, [advertisingAllowed, client, slot]);
 
@@ -663,8 +675,7 @@ export function CoupangSlot({
 function isProviderConfigured(provider: MonetizationProvider) {
   if (provider === "adsense") {
     return Boolean(
-      import.meta.env.VITE_ADSENSE_CLIENT?.trim() &&
-        import.meta.env.VITE_ADSENSE_SLOT_INLINE?.trim()
+      adsenseClient && import.meta.env.VITE_ADSENSE_SLOT_INLINE?.trim()
     );
   }
 

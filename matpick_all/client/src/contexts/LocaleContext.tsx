@@ -22,6 +22,7 @@ type RuntimeLocalePayload = {
 
 type LocaleContextValue = {
   locale: AppLocale;
+  changeLocale: (locale: AppLocale) => void;
   country: string;
   region: string;
   city: string;
@@ -32,6 +33,7 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue>({
   locale: "ko",
+  changeLocale: () => {},
   country: "",
   region: "",
   city: "",
@@ -70,8 +72,6 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
           return;
         }
 
-        const nextLocale = payload.locale === "en" ? "en" : "ko";
-        setLocale(nextLocale);
         setCountry(String(payload.country || ""));
         setRegion(String(payload.region || ""));
         setCity(String(payload.city || ""));
@@ -105,6 +105,14 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
   const value = useMemo<LocaleContextValue>(
     () => ({
       locale,
+      changeLocale: (next: AppLocale) => {
+        try {
+          window.localStorage.setItem("matpick_locale", next);
+        } catch {
+          /* Session-only choice if storage is unavailable. */
+        }
+        setLocale(next);
+      },
       country,
       region,
       city,
@@ -115,7 +123,9 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     [city, country, isOverseas, isReady, locale, region]
   );
 
-  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
+  return (
+    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
+  );
 }
 
 export function useLocale() {

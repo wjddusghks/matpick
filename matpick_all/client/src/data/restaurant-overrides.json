@@ -32,7 +32,50 @@
       "https://polle.com/place/37TlZv/%EC%9A%B0%EC%A0%95",
       "https://www.diningcode.com/profile.php?rid=D59MyIG8ydFc"
     ],
-    "dataReviewNote": "신당동 304-791 및 퇴계로76길 55 주소 일치 확인. 기존 카카오 조사 기록의 같은 주소 좌표와도 수 m 내 일치."
+    "dataReviewNote": "신당동 304-791 및 퇴계로76길 55 주소 일치 확인. 기존 카카오 조사 기록의 같은 주소 좌표와도 수 m 내 일치.",
+    "menus": [
+      {
+        "name": "해물떡볶이",
+        "price": "25,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "치즈떡볶이",
+        "price": "26,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "짜장떡볶이",
+        "price": "17,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "순한닭발",
+        "price": "10,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "매운닭발",
+        "price": "10,000원",
+        "id": "preserved_4"
+      },
+      {
+        "id": "six_menu_53c32f6b1ad2108c",
+        "name": "즉석떡볶이 2인",
+        "price": "17,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "해물떡볶이",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://polle.com/place/37TlZv/%EC%9A%B0%EC%A0%95",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
   },
   "topic_enrichment_delicious-guys_762a359e49ec": {
     "lat": 37.575556385831355,
@@ -3669,5 +3712,1829 @@
   "sikgaek-baekban-trip_restaurant_329": {
     "recommendationHold": "정확한 점포 주소와 지도 위치를 확인 중으로 공개 추천에서 제외합니다.",
     "dataReviewNote": "2026-09-24 전체 주소·좌표 대조: 개별 식당 주소로 확인되지 않았습니다. 폐업으로 판정하지 않았습니다."
+  },
+  "topic_enrichment_delicious-guys_7b9230ae6346": {
+    "menus": [
+      {
+        "name": "흑점줄전갱이(시마아지)",
+        "price": "75,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "흑점줄전갱이+참돔",
+        "price": "75,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "흑점줄전갱이+대광어",
+        "price": "70,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "흑점줄전갱이+연어",
+        "price": "70,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "랜덤 5가지 (당일작업)",
+        "price": "65,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "참돔+대광어",
+        "price": "60,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "참돔+생연어",
+        "price": "60,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "해물라면",
+        "price": "8,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "서더리 매운탕(회 드신 분)",
+        "price": "7,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "붕장어",
+        "price": "65,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "붕장어구이",
+        "price": "65,000원",
+        "id": "preserved_10"
+      },
+      {
+        "name": "생연어",
+        "price": "변동",
+        "id": "preserved_11"
+      },
+      {
+        "name": "가리비회",
+        "price": "25,000원",
+        "id": "preserved_12"
+      },
+      {
+        "name": "생우럭매운탕",
+        "price": "40,000원",
+        "id": "preserved_13"
+      },
+      {
+        "name": "모듬멍게",
+        "price": "35,000원",
+        "id": "preserved_14"
+      },
+      {
+        "id": "six_menu_dbc67975cf6389d0",
+        "name": "대방어 2인",
+        "price": "69000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_208d740e443e685e",
+        "name": "대방어 3인",
+        "price": "95000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_4e53ba0610153efc",
+        "name": "대방어 4~5인",
+        "price": "125000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_69f82d175c36b542",
+        "name": "대방어+대광어 2인",
+        "price": "69000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_e346a340771104e8",
+        "name": "대방어+대광어 3인",
+        "price": "95000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_1ba0ea2e3450078c",
+        "name": "대방어+대광어 4~5인",
+        "price": "125000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_0a4aa672bfb67b2b",
+        "name": "대방어+생연어 2인",
+        "price": "65000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_927c4d952520fe02",
+        "name": "대방어+생연어 3인",
+        "price": "89000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_208e20194fade861",
+        "name": "대방어+생연어 4~5인",
+        "price": "109000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_8b1b7efcb17950af",
+        "name": "대방어+농어 2인",
+        "price": "65000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_4fee9aa173bf7f42",
+        "name": "대방어+농어 3인",
+        "price": "89000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_d1e09243cfbf97c7",
+        "name": "대방어+농어 4~5인",
+        "price": "109000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_2d625453df1c5aba",
+        "name": "서더리 매운탕",
+        "price": "7000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_7d32dd92748e076d",
+        "name": "라면사리 (1개)",
+        "price": "1000원",
+        "description": "2026-03-04 자료의 가격 · 방문 전 확인"
+      }
+    ],
+    "representativeMenu": "흑점줄전갱이(시마아지)",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://wirbel.tistory.com/1236",
+        "label": "메뉴·가격 공개 자료",
+        "publishedAt": "2026-03-04"
+      }
+    ]
+  },
+  "topic_enrichment_ttoganjip_17cdef13a7c1": {
+    "menus": [
+      {
+        "name": "예약",
+        "price": "변동",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "조기구이",
+        "price": "20,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "지리.탕",
+        "price": "20,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "송어회무침",
+        "price": "15,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "2인분 이상 주문가능",
+        "price": "20,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "갈치구이",
+        "price": "20,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "병어사스미 대",
+        "price": "40,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "송어사스미 대",
+        "price": "30,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "병어회무침",
+        "price": "15,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "준치회무침",
+        "price": "15,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "2인분 이상 주문 가능",
+        "price": "20,000원",
+        "id": "preserved_10"
+      },
+      {
+        "id": "six_menu_fa3c8e26022a0de2",
+        "name": "우럭지리탕",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_e345f3dcde136797",
+        "name": "마른우럭",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_de91cc5c2128dd29",
+        "name": "붕장어",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_fad3089ab74e88db",
+        "name": "아구탕.아구찜.아구수육 1인분",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "예약",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=WBk1OECOMPsT",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "popular_restaurants_gangnam_katsu_by_konban": {
+    "menus": [
+      {
+        "name": "상로스카츠",
+        "price": "19,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "로스카츠",
+        "price": "17,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "히레카츠",
+        "price": "19,000원",
+        "id": "preserved_2"
+      },
+      {
+        "id": "six_menu_bd358262552a6c69",
+        "name": "로스카츠 (등심)",
+        "price": "17,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_de0dd9fb23700e78",
+        "name": "히레카츠 (안심)",
+        "price": "19,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_357eff29abd751c4",
+        "name": "난축맛돈 로스카츠 (등심)",
+        "price": "22,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_22ea1a36e421bbab",
+        "name": "난축맛돈 특로스카츠 (특등심)",
+        "price": "24,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_00a5ccb436fd7faa",
+        "name": "믹스카츠 (등심+안심)",
+        "price": "23,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_ab95982b69262ccc",
+        "name": "멘치카츠",
+        "price": "14,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_6e50a5a929d76744",
+        "name": "멘치카츠 (1pc.) & 냉우동",
+        "price": "14,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_0b19ad6cc427001e",
+        "name": "카츠카레",
+        "price": "13,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "상로스카츠 / 로스카츠 / 히레카츠",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=iOM3Hig1OV6v",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_delicious-guys_91fe28347cb7": {
+    "menus": [
+      {
+        "name": "PVov 소고기볶음밥",
+        "price": "14,900원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "Manty 왕만두",
+        "price": "15,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "Grilled Meat& Potatoes",
+        "price": "18,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "chiz Biz 양고기 감자",
+        "price": "15,500원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "Borsch 야채 소고기스프",
+        "price": "10,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "Lavash 얇은빵",
+        "price": "2,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "NON 빵",
+        "price": "2,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "Samsa kuruniy(닭고기 삼사)",
+        "price": "4,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "Samsa Kartoshka (감자삼사)",
+        "price": "4,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "Lepeshka s myasom 빵안에 고기",
+        "price": "6,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "(Svejiy)Tomato Salad 토마토오이샐러드",
+        "price": "4,000원",
+        "id": "preserved_10"
+      },
+      {
+        "name": "Olivier Salad 러시안샐러드",
+        "price": "4,000원",
+        "id": "preserved_11"
+      },
+      {
+        "name": "Morkovaha 당근김치샐러드",
+        "price": "4,000원",
+        "id": "preserved_12"
+      },
+      {
+        "name": "Paxlava 바클라바",
+        "price": "3,000원",
+        "id": "preserved_13"
+      },
+      {
+        "name": "Kompat 과일",
+        "price": "3,000원",
+        "id": "preserved_14"
+      },
+      {
+        "id": "six_menu_ffc563d37ed90080",
+        "name": "Shashlik Lamb 양고기꼬치(1꼬치)",
+        "price": "6,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f2644f085933801c",
+        "name": "Samsa 빵속에 고기",
+        "price": "5,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_54414d8891eaf869",
+        "name": "Kuriniy Shashlik(Chicken닭고기 꼬치",
+        "price": "6,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_779be3f3e0271015",
+        "name": "Kefir 생크림요구르트",
+        "price": "2,900원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f343349dbd9f2572",
+        "name": "Myaso grill 양갈비 감자바베큐",
+        "price": "18,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_34ba94bd99eca2e1",
+        "name": "Lagman 야채 칼국수",
+        "price": "10,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_9b0b4fac6bc56e3c",
+        "name": "Shurpa 양고기스프",
+        "price": "10,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c05dab9840a5aefb",
+        "name": "Chicken 뼈없는치킨",
+        "price": "12,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c315713a24f16da2",
+        "name": "Shashlik Beef 소고기 꼬치(1꼬치)",
+        "price": "6,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f5873cad7e22386d",
+        "name": "Shashlik pechen 소간꼬치",
+        "price": "5,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "PVov 소고기볶음밥",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=uDDgfeNhZSQ1",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_delicious-guys_135fb4788c60": {
+    "menus": [
+      {
+        "name": "수제돈가스",
+        "price": "9,000원",
+        "isSignature": true,
+        "id": "preserved_0",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "name": "김밥(2줄)",
+        "price": "6,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "냉면(물/비빔)",
+        "price": "9,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "쫄면",
+        "price": "7,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "비빔국수",
+        "price": "7,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "땡초김밥(2줄)",
+        "price": "3,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "참치김밥",
+        "price": "4,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "수제군만두",
+        "price": "7,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "수제찐만두",
+        "price": "7,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "우동",
+        "price": "6,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "떡만두국",
+        "price": "9,000원",
+        "id": "preserved_10"
+      }
+    ],
+    "representativeMenu": "수제돈가스",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=usxJdoNphOpP",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_ttoganjip_637b61a13ba0": {
+    "menus": [
+      {
+        "name": "소머리국밥",
+        "price": "10,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "왕족발 (소)",
+        "price": "20,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "돼지머리국밥",
+        "price": "8,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "콩나물국밥",
+        "price": "6,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "머리고기수육",
+        "price": "10,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "선지국밥",
+        "price": "6,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "곱창볶음 (2인분)",
+        "price": "15,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "새끼보국밥",
+        "price": "8,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "막창볶음 (소)",
+        "price": "20,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "막창볶음 (대)",
+        "price": "25,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "순대 (소)",
+        "price": "5,000원",
+        "id": "preserved_10"
+      },
+      {
+        "name": "순대 (대)",
+        "price": "10,000원",
+        "id": "preserved_11"
+      },
+      {
+        "name": "족발 (소)",
+        "price": "10,000원",
+        "id": "preserved_12"
+      },
+      {
+        "name": "족발 (대)",
+        "price": "16,000원",
+        "id": "preserved_13"
+      },
+      {
+        "name": "왕족발 (대)",
+        "price": "25,000원",
+        "id": "preserved_14"
+      },
+      {
+        "name": "옛날순대 (소)",
+        "price": "10,000원",
+        "id": "preserved_15"
+      },
+      {
+        "name": "옛날순대 (대)",
+        "price": "15,000원",
+        "id": "preserved_16"
+      },
+      {
+        "name": "새끼보",
+        "price": "10,000원",
+        "id": "preserved_17"
+      },
+      {
+        "id": "six_menu_a4b9c7d6da14cbb3",
+        "name": "순대 (규격별)",
+        "price": "5000/10000원",
+        "description": "2023-05-07 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_8b3e4c5777a87bb2",
+        "name": "머릿고기",
+        "price": "15000원",
+        "description": "2023-05-07 자료의 가격 · 방문 전 확인"
+      },
+      {
+        "id": "six_menu_981d5060024f0e5d",
+        "name": "족발 (규격별)",
+        "price": "8000/15000원",
+        "description": "2023-05-07 자료의 가격 · 방문 전 확인"
+      }
+    ],
+    "representativeMenu": "소머리국밥 (10,000원)",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://euneunwriter.tistory.com/entry/%EA%B4%91%EC%A3%BC-%EC%96%91%EB%8F%99%EC%8B%9C%EC%9E%A5-%EC%B0%90%EB%A7%9B%EC%A7%91-%EC%B6%94%EC%B2%9C-%EC%96%91%EB%8F%99%ED%86%B5%EB%8B%AD%EA%B3%BC-%EC%96%91%EB%8F%99%EC%88%9C%EB%8C%80-%EC%9B%90%ED%94%BD-%ED%8F%AC%EC%9E%A5-%EB%A9%94%EB%89%B4",
+        "label": "메뉴·가격 공개 자료",
+        "publishedAt": "2023-05-07"
+      }
+    ]
+  },
+  "topic_enrichment_ttoganjip_15b7eeedc88d": {
+    "menus": [
+      {
+        "name": "짜장",
+        "price": "7,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "우동",
+        "price": "9,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "간짜장",
+        "price": "9,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "삼선간짜장",
+        "price": "13,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "중깐",
+        "price": "9,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "짬뽕",
+        "price": "9,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "국밥",
+        "price": "10,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "볶음밥",
+        "price": "10,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "잡채밥",
+        "price": "10,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "삼선짬뽕",
+        "price": "13,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "울면",
+        "price": "10,000원",
+        "id": "preserved_10"
+      },
+      {
+        "name": "기스면",
+        "price": "10,000원",
+        "id": "preserved_11"
+      },
+      {
+        "name": "군만두",
+        "price": "6,000원",
+        "id": "preserved_12"
+      },
+      {
+        "name": "해물덮밥",
+        "price": "13,000원",
+        "id": "preserved_13"
+      },
+      {
+        "name": "송이덮밥",
+        "price": "13,000원",
+        "id": "preserved_14"
+      },
+      {
+        "id": "six_menu_c541e9f9ba12da29",
+        "name": "오무라이스",
+        "price": "11,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_ab6cc2573dd4cf8e",
+        "name": "잡탕밥",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_70d1c18289f8eaab",
+        "name": "잡채",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c61e1a2fa55edb4b",
+        "name": "탕수육 중",
+        "price": "25,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_7babcf87feacb304",
+        "name": "덴뿌라",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_845b84a08d97f1f7",
+        "name": "유산슬",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_fe1ec2833496685d",
+        "name": "양장피",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_bb5eef29dd908abe",
+        "name": "팔보채",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_ef86e6d8dc1a20a0",
+        "name": "깐쇼새우",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_bcfebcd4edaf659f",
+        "name": "난자완스",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "짜장",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=9Zv7XFM4i3oh",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_kim-three-meals_14": {
+    "menus": [
+      {
+        "id": "six_menu_c2a6f13b79827b31",
+        "name": "광어 중",
+        "price": "35,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_aab6555b403e8bf6",
+        "name": "우럭 중",
+        "price": "37,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_e3381da41a06595c",
+        "name": "연포탕",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_e2a02e75e1ab591a",
+        "name": "낙지초무침",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_79a0f7ac1689d7e1",
+        "name": "아나고",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_310719ca4b4f57f0",
+        "name": "멍게",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_8d6a6700d24b5e83",
+        "name": "해삼",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_fe035b3e47384a3f",
+        "name": "멍게+해삼",
+        "price": "25,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_831c21b298df6c9d",
+        "name": "산낙지",
+        "price": "25,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_dd92c44a324292c5",
+        "name": "골뱅이무침",
+        "price": "15,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_01bf491e0db2ead6",
+        "name": "아무거나",
+        "price": "35,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_17f9b19374ea7ca6",
+        "name": "새우튀김",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_42a31111e460e744",
+        "name": "도다리세꼬시 중",
+        "price": "35,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_0b55e0511249c51b",
+        "name": "오징어튀김",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c84ef2e10da6d81e",
+        "name": "계란말이",
+        "price": "10,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_4e9651062d6e749c",
+        "name": "여름 물회",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_868455b602f4fdb1",
+        "name": "여름 해산물물회",
+        "price": "35,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_05510f2eba470951",
+        "name": "가을 전어회",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_b570d5b226f3c139",
+        "name": "가을 전어구이",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_8d00a1253c20f4ba",
+        "name": "가을 전어무침",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_57a0bde82c1c67e2",
+        "name": "가을 산새우",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_68baa3fb2c20c3e8",
+        "name": "겨울 석화",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_1e3b93d16c057028",
+        "name": "겨울 방어(중)",
+        "price": "40,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f4c740abfec47d13",
+        "name": "서더리탕",
+        "price": "10,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_bbd97918912508b9",
+        "name": "겨울 방어(대)",
+        "price": "55,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_012026f28c95cccf",
+        "name": "겨울 방어(특대)",
+        "price": "70,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_a5119d74450c7e07",
+        "name": "부추전",
+        "price": "10,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_b5f040eda7d43e87",
+        "name": "모둠회",
+        "price": "50,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_99866c3d04ff275d",
+        "name": "광어 대",
+        "price": "45,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_cbc8505e04614600",
+        "name": "우럭 대",
+        "price": "49,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_2f7afcf1ba83cd04",
+        "name": "도다리세꼬시 대",
+        "price": "45,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_b97e7a7b8799215d",
+        "name": "우럭매운탕",
+        "price": "38,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "회",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=UA7juMhywwXA",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_chureupkyeon_20260921_12": {
+    "menus": [
+      {
+        "id": "six_menu_c62c51806e7f3f51",
+        "name": "생삼겹살",
+        "price": "8,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_fc94dfdc4fe2b852",
+        "name": "생오리로스 (한마리)",
+        "price": "45,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f552099fc98fa79b",
+        "name": "육개장",
+        "price": "7,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_fa70c8786c56b4ec",
+        "name": "김치찌개",
+        "price": "7,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_81b481de8d9cda62",
+        "name": "된장찌개",
+        "price": "7,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "생삼겹살 · 생오리로스 (한마리) · 육개장",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=Jjsm3hHwnOE7",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_baekjong-wok_2c2531d716fd": {
+    "menus": [
+      {
+        "name": "오므라이스",
+        "price": "8,500원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "원조김밥",
+        "price": "4,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "등심,치즈,피자,고구마,치킨돈가스",
+        "price": "8,500원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "신/너구리/자파게티",
+        "price": "4,500원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "돌솥비빔밥",
+        "price": "10,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "돈가스정식",
+        "price": "11,500원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "김치/누드/치즈/샐러드/땡초김밥",
+        "price": "5,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "매콤참치/소불고기김밥",
+        "price": "5,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "참치/김치/폭탄/참치김치/스팸주먹밥",
+        "price": "3,500원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "오징어.고구마 야채 3개",
+        "price": "3,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "김치/떡/치즈라면",
+        "price": "5,500원",
+        "id": "preserved_10"
+      },
+      {
+        "name": "떡만두/부대/오뎅라면",
+        "price": "6,000원",
+        "id": "preserved_11"
+      },
+      {
+        "name": "김치볶음밥",
+        "price": "8,500원",
+        "id": "preserved_12"
+      },
+      {
+        "name": "물/비빔냉면(여름)",
+        "price": "7,000원",
+        "id": "preserved_13"
+      },
+      {
+        "name": "콩국수(여름)",
+        "price": "7,000원",
+        "id": "preserved_14"
+      },
+      {
+        "id": "six_menu_f87c69d201d70b9d",
+        "name": "라볶이/쫄볶이",
+        "price": "8,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_45e28d2214d28fd0",
+        "name": "치즈라볶이/치즈쫄볶이",
+        "price": "9,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_5f77e6354b2822f6",
+        "name": "칼국수",
+        "price": "8,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_660b7ef67de2368d",
+        "name": "잔치국수",
+        "price": "7,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_b1442abf40420505",
+        "name": "쫄면",
+        "price": "7,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_dc18f668e85577eb",
+        "name": "돈가스",
+        "price": "8,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_6b8475d75c1c24ab",
+        "name": "떡국/만두국",
+        "price": "8,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_66221541ec1c8d2a",
+        "name": "떡만두국",
+        "price": "9,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_cb64b1a516366118",
+        "name": "우동",
+        "price": "5,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c3cbec3eb20a77bf",
+        "name": "오뎅우동",
+        "price": "6,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_a5ebc395583f52a5",
+        "name": "김치/된장/순두부찌개",
+        "price": "8,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_9bc31c85c42f00f8",
+        "name": "육개장",
+        "price": "9,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_90671505dce7f08a",
+        "name": "갈비탕",
+        "price": "9,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c13aaa618596067f",
+        "name": "뚝배기불고기",
+        "price": "7,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_147573b920ae0bf6",
+        "name": "불고기/제육/오징어/낙지덮밥",
+        "price": "9,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f84a247f6cc29060",
+        "name": "라면",
+        "price": "4,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_346b5a9aad1d7cf5",
+        "name": "비빔밥",
+        "price": "9,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_4e346c7f56ddd6e2",
+        "name": "계란밥",
+        "price": "6,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_7322a8d436b4e467",
+        "name": "주먹밥",
+        "price": "3,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "오므라이스",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=YuHGDjaCL6Yd",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_baekjong-wok_99bc597be18f": {
+    "menus": [
+      {
+        "name": "떡볶이+만두",
+        "price": "2,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "떡볶이만",
+        "price": "2,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "만두에 떡볶이 양념을 끼얹음",
+        "price": "2,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "흰만두 6개 (1인분)",
+        "price": "2,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "순대 (1인분)",
+        "price": "3,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "찐계란 2알",
+        "price": "1,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "사이다 (캔)",
+        "price": "2,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "콜라 (캔)",
+        "price": "2,000원",
+        "id": "preserved_7"
+      },
+      {
+        "id": "six_menu_42636fe09466bdb7",
+        "name": "달떡 (1인분)",
+        "price": "2,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_13ba6b053b571580",
+        "name": "떡볶이(1인분)",
+        "price": "2,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_d454048884ac9d75",
+        "name": "양념만두(1인분)",
+        "price": "2,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "떡볶이+만두",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=JOdKr6j37eb2",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_ttoganjip_96b65c6ad340": {
+    "menus": [
+      {
+        "name": "떡도리탕 조리 포장은 떡도리탕 1개당 사리 1개까지 주문 가능합니다. 끓이면서 드실 수 있으면 사리-따로 포장하시는걸 추천합니다",
+        "price": "2,500원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "주먹밥",
+        "price": "2,500원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "떡도리탕을 드신 후, 남은 국물에 넣고 볶아서 드시면 됩니다",
+        "price": "2,500원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "반조리-살짝 데쳐 기름기를 뺀 라면사리 입니다 사리 추가하여 조리 시 떡도리탕 1개당 사리1개까지 주문 가능합니다. 끓이면서 드실 수 있으면 사리-따로 포장하시는걸 추천합니다",
+        "price": "2,500원",
+        "id": "preserved_3"
+      },
+      {
+        "id": "six_menu_182f4580af50bb76",
+        "name": "떡도리탕 중(2~3인)",
+        "price": "30,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_6b27b0d208e3c545",
+        "name": "떡도리탕 대 (3~4인)",
+        "price": "39,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_e6e52d8c3e686716",
+        "name": "감자전",
+        "price": "13,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_50778c2a3bdadf42",
+        "name": "떡도리탕 소 (2인)",
+        "price": "20,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "떡도리탕 조리 포장은 떡도리탕 1개당 사리 1개까지 주문 가능합니다. 끓이면서 드실 수 있으면 사리-따로 포장하시는걸 추천합니다",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=sc5Dod0PQbPo",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "old-korean-100_restaurant_034": {
+    "menus": [
+      {
+        "name": "돼지국밥",
+        "price": "8,500원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "수육백반",
+        "price": "11,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "순대국밥",
+        "price": "8,500원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "내장국밥",
+        "price": "8,500원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "섞어국밥",
+        "price": "8,500원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "모듬국밥",
+        "price": "9,500원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "특돼지국밥",
+        "price": "9,500원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "수육(소)",
+        "price": "28,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "순대",
+        "price": "13,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "맛보기수육",
+        "price": "13,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "맛보기순대",
+        "price": "7,000원",
+        "id": "preserved_10"
+      },
+      {
+        "id": "six_menu_e68d89b2bbf53bb0",
+        "name": "따로국밥",
+        "price": "9000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_e3a8d27a04a8dd64",
+        "name": "찹쌀순대 소",
+        "price": "10000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_dca242b936ec70af",
+        "name": "찹쌀순대 대",
+        "price": "13000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c839cafcac08a589",
+        "name": "수육 대",
+        "price": "33000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "돼지국밥",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.visitbusan.net/index.do?menuCd=DOM_000000201002004001&uc_seq=2421",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_delicious-guys_daea096b94c1": {
+    "menus": [
+      {
+        "name": "쫄볶이",
+        "price": "3,500원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "라볶이",
+        "price": "3,500원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "라쫄면",
+        "price": "3,500원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "떡볶이",
+        "price": "3,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "라면",
+        "price": "3,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "컵떡볶이",
+        "price": "1,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "짜장 즉석주메뉴",
+        "price": "1,800원",
+        "id": "preserved_6"
+      },
+      {
+        "id": "six_menu_85781a2ff8ac49b0",
+        "name": "꼬마김밥 1개",
+        "price": "500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_1d0a6b7e4c1090b8",
+        "name": "야끼만두 1개",
+        "price": "500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_4d02172f2d0ffa10",
+        "name": "계란 1개",
+        "price": "500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_d4e2d707ac422c3f",
+        "name": "어묵 1개",
+        "price": "500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_d226010eb35dc858",
+        "name": "쫄면사리(2인분이상)",
+        "price": "1,800원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_f6596529244da982",
+        "name": "라면사리(2인분이상)",
+        "price": "1,800원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "쫄볶이",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://polle.com/place/2kwwwF/%EB%A9%B4%EB%8F%99%20%EB%96%A1%EB%B3%B6%EC%9D%B4",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_baekjong-wok_e4617623acfc": {
+    "menus": [
+      {
+        "name": "2인 기본",
+        "price": "8,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "3인 기본",
+        "price": "12,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "떡1인분+만두1+어묵1",
+        "price": "4,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "떡1인분+만두1+어묵1+계란1+핫도그1",
+        "price": "7,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "떡2인분+만두2+어묵2+계란2+핫도그1",
+        "price": "11,500원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "떡3인분+만두3+어묵3+계란3+핫도그2",
+        "price": "18,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "만두(2개)",
+        "price": "1,500원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "달걀(2개)",
+        "price": "1,500원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "어묵(2개)",
+        "price": "1,500원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "핫도그",
+        "price": "2,000원",
+        "id": "preserved_9"
+      },
+      {
+        "name": "탄산음료",
+        "price": "2,000원",
+        "id": "preserved_10"
+      },
+      {
+        "id": "six_menu_32e5026904e53451",
+        "name": "1인분",
+        "price": "5,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_45f85aa4158f6a61",
+        "name": "1세트",
+        "price": "8,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_41541eb4c22f7d47",
+        "name": "2인세트",
+        "price": "14,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_b58b727e59497ed9",
+        "name": "3인세트",
+        "price": "22,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_c77d628a458f6492",
+        "name": "계란1개",
+        "price": "1,000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "2인 기본",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://polle.com/place/4AW8wk/%ED%99%A9%EC%88%9C%EC%95%A0%20%EC%8B%A0%ED%86%A0%EB%B6%88%EC%9D%B4%20%EB%96%A1%EB%B3%B6%EC%9D%B4",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_baekjong-wok_8448b2a82478": {
+    "menus": [
+      {
+        "name": "라쫄떡볶이(1인분)",
+        "price": "2,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "라면",
+        "price": "2,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "김밥",
+        "price": "1,500원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "만두",
+        "price": "1,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "쫄면",
+        "price": "3,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "떡국",
+        "price": "3,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "떡만두국",
+        "price": "3,000원",
+        "id": "preserved_6"
+      },
+      {
+        "name": "칼국수",
+        "price": "3,000원",
+        "id": "preserved_7"
+      },
+      {
+        "name": "만두국",
+        "price": "3,000원",
+        "id": "preserved_8"
+      },
+      {
+        "name": "물/비빔 냉면",
+        "price": "3,500원",
+        "id": "preserved_9"
+      },
+      {
+        "id": "six_menu_5f0d3cb3f934855b",
+        "name": "비빔 냉면",
+        "price": "3,500원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "라쫄떡볶이(1인분)",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://www.diningcode.com/profile.php?rid=K9AN2JenwN7i",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
+  },
+  "topic_enrichment_baekjong-wok_a12a49cb9504": {
+    "menus": [
+      {
+        "name": "떡볶이",
+        "price": "2,000원",
+        "isSignature": true,
+        "id": "preserved_0"
+      },
+      {
+        "name": "만두4개",
+        "price": "1,000원",
+        "id": "preserved_1"
+      },
+      {
+        "name": "김밥",
+        "price": "3,000원",
+        "id": "preserved_2"
+      },
+      {
+        "name": "순대",
+        "price": "4,000원",
+        "id": "preserved_3"
+      },
+      {
+        "name": "오뎅3개",
+        "price": "1,000원",
+        "id": "preserved_4"
+      },
+      {
+        "name": "라면",
+        "price": "4,000원",
+        "id": "preserved_5"
+      },
+      {
+        "name": "사리",
+        "price": "1,500원",
+        "id": "preserved_6"
+      },
+      {
+        "id": "six_menu_d4b55c1e48b8b8c6",
+        "name": "오뎅튀김",
+        "price": "1000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      },
+      {
+        "id": "six_menu_7cf2369b40423b09",
+        "name": "만두튀김",
+        "price": "1000원",
+        "description": "자료 기준일 미상 · 방문 전 가격 확인"
+      }
+    ],
+    "representativeMenu": "떡볶이",
+    "menuPriceStatus": "supplemented-price-snapshot",
+    "menuPriceNote": "추가 메뉴는 출처에 게시된 가격 기록입니다. 항목별 자료 날짜를 확인해 주세요. 기준일 미상·과거 가격이 포함되며 현재 영업·가격은 방문 전 확인이 필요합니다.",
+    "menuPriceSources": [
+      {
+        "url": "https://daegu.edit-dept.com/article/store/1451/",
+        "label": "메뉴·가격 공개 자료"
+      }
+    ]
   }
 }

@@ -46,7 +46,8 @@ test('new topic listings have an active matching place, sourced prices and no re
  const data=json('../client/src/data/generated/public-dataset.json');
  const baseline=json('../../source-data/expansion-coordinate-2026-09-24/publication-baseline.json');
  const choiza=json('../client/src/data/generated/choiza-road.generated.json');
- assert.deepEqual(new Set(data.restaurants.map(r=>r.id)),new Set([...baseline.restaurantIds,...batch.restaurants.map(r=>data.restaurantAliases[r.id]||r.id),...choiza.restaurants.map(r=>data.restaurantAliases[r.id]||r.id)]));
+ const sixTopic=json('../client/src/data/generated/six-topic-research.generated.json');
+ assert.deepEqual(new Set(data.restaurants.map(r=>r.id)),new Set([...baseline.restaurantIds,...batch.restaurants.map(r=>data.restaurantAliases[r.id]||r.id),...choiza.restaurants.map(r=>data.restaurantAliases[r.id]||r.id),...sixTopic.restaurants.map(r=>r.id)]));
  for(const r of batch.restaurants){assert.ok(!isDeleted(r,deletions));assert.ok(r.menus.some(m=>/\d/.test(m.price||'')),r.name);assert.ok(r.menuPriceSources.length);assert.ok(verification.records.some(v=>v.place?.id===r.kakaoPlaceId&&v.place.status==='Y'&&v.place.category==='음식점'));const current=data.restaurants.find(p=>p.id===(data.restaurantAliases[r.id]||r.id));assert.ok(current,r.name);assert.ok(distance(r,current)<1,r.name);}
  for(const s of ['the-dudley','culinary-class-wars-chefs'])assert.ok(new Set(data.sourceLinks.filter(l=>l.sourceId===s).map(l=>l.restaurantId)).size>50);
 });

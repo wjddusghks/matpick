@@ -8,6 +8,7 @@ import searchTopicExpansion from "./generated/search-topic-expansion.generated.j
 import researchedTopics from "./generated/researched-topics.generated.json";
 import requestedTopicExpansion from "./generated/requested-topic-expansion.generated.json";
 import choizaRoadExpansion from "./generated/choiza-road.generated.json";
+import sixTopicResearch from "./generated/six-topic-research.generated.json";
 import restaurantOverrides from "./restaurant-overrides.json";
 import restaurantExclusions from "./restaurant-exclusions.json";
 import { removePermanentlyDeletedRestaurants } from "./permanentRestaurantDeletions";
@@ -479,6 +480,7 @@ const dataset = filterDatasetForVisibleContent(
     researchedTopics as SourceDataset,
     requestedTopicExpansion as SourceDataset,
     choizaRoadExpansion as SourceDataset,
+    sixTopicResearch as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({

@@ -42,7 +42,9 @@ const report = {
 assert.ok(!report.home.chunks.includes(catalog), "Home eagerly downloads the restaurant catalog");
 assert.ok(report.entry.gzipBytes < 200_000, "Entry JavaScript exceeds the 200 KB gzip budget");
 assert.ok(report.home.gzipBytes < 300_000, "Home JavaScript exceeds the 300 KB gzip budget");
-assert.ok(report.map.gzipBytes < 1_100_000, "Map JavaScript exceeds the 1.1 MB gzip budget");
+// The September six-topic publication grows the catalog from 3,716 to 4,339
+// restaurants (+16.8%). Allow that data growth while keeping home/entry budgets fixed.
+assert.ok(report.map.gzipBytes < 1_300_000, "Map JavaScript exceeds the 1.3 MB gzip budget");
 await mkdir(path.join(root, "reports"), { recursive: true });
 await writeFile(path.join(root, "reports/bundle-size.json"), JSON.stringify(report, null, 2) + "\n");
 console.log(`JavaScript gzip: entry ${report.entry.gzipBytes} B, home ${report.home.gzipBytes} B, map ${report.map.gzipBytes} B. Home catalog loading is deferred.`);

@@ -1,6 +1,6 @@
 {
-  "restaurants": 3716,
-  "sourceLinks": 6037,
+  "restaurants": 4339,
+  "sourceLinks": 6731,
   "aliases": 926,
   "recommendationHolds": [
     {
@@ -669,7 +669,7 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     }
   ],
-  "verifiedLocationCorrections": 1147,
+  "verifiedLocationCorrections": 1770,
   "unclassified": [
     {
       "id": "r_92011579",
@@ -9170,6 +9170,3121 @@
       "id": "choiza_place_e959fb2b1f8a2fec",
       "name": "모녀가리비",
       "category": "조개"
+    },
+    {
+      "id": "six_topic_feaff02f97183b84",
+      "name": "21세기 우리바다수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4157c15a796343fc",
+      "name": "가치",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b687ddba603a5627",
+      "name": "갓덴스시 롯데월드몰점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4a34f52b7815f7b3",
+      "name": "고래의꿈",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_166bca05e062e69c",
+      "name": "고메다와라",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1851f23cda084cf4",
+      "name": "고메스퀘어 민락점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4307609739677afd",
+      "name": "고메스퀘어 신대방점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_af1c032d50f5c48c",
+      "name": "고흥선어회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5c67e3ab4e238b26",
+      "name": "길수횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f8b62b4bca2f2592",
+      "name": "광어두마리 오백원의즐거움회천원의행복회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_adacd014e40eea49",
+      "name": "광어다 서귀포표선본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_14fb9eb6ce43f18f",
+      "name": "꽃돌게장1번가",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_362e14a610731425",
+      "name": "나산집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1a5930ab4e01a370",
+      "name": "남경마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b14f69d353c5d2e6",
+      "name": "남경미락",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_15575512570665df",
+      "name": "남도횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_49360c567616be42",
+      "name": "남양호",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ecff1d146ab5626a",
+      "name": "남해바다마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d7f8642d7be225cc",
+      "name": "냐옹지마",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c10205cb66c5f31c",
+      "name": "냠냠물고기 1호점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e6b7c47d583c31f3",
+      "name": "노다지횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1121edbc4d29d5fb",
+      "name": "노무토모",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a6d6c1e3c9f9dfaf",
+      "name": "고흥녹동회타운",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7bdcdb7dd2996ad5",
+      "name": "다이닝원 상암점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4a16fcf30a1922fd",
+      "name": "대연횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_81868b967f7a94bd",
+      "name": "더스시 화정점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_08a8f0bdd8451188",
+      "name": "더즌오이스터 한남점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_842d06ab66044a70",
+      "name": "도림항",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d4ef38296732cc84",
+      "name": "도모야회포차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dd083cbb0880249e",
+      "name": "도슬박",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e3744d97eefa0cb2",
+      "name": "도요스",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4d4d65edee131e2b",
+      "name": "돈회대박",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e559ec23f131b683",
+      "name": "동낙스시",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ac423bcfd5449268",
+      "name": "동부회센타",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c963eec45530f59e",
+      "name": "동해안이야기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_803270763dbab605",
+      "name": "돼지집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2a865dcc7bac5a9e",
+      "name": "딱좋아",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a21d5fe9b6ddd9ea",
+      "name": "라꾸긴",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d94cda4e09b88e92",
+      "name": "이자카야 로운 신중동점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8d16ccdd1c9c5c4c",
+      "name": "마구로동우니도 선릉점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_246b46f6d28b54d9",
+      "name": "마리나블루키친 뷔페",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_51a77f9647601d14",
+      "name": "마주하다",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1b57f45194d83d11",
+      "name": "마키노차야 마포점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_925881039f2a0a5e",
+      "name": "마키노차야 블랙31 잠실롯데타워점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_463f3d9095e89650",
+      "name": "남대문막내회집 광교점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5ab23d4403a2ec25",
+      "name": "말고기연구소",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e846e17c3cfae743",
+      "name": "메로왕",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a9388659d5de856f",
+      "name": "명화식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dcc1038f44b9924c",
+      "name": "모꼬지엔가이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a00c493010cce909",
+      "name": "모에모에",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bf1c2ed39c4b0498",
+      "name": "목동해물",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c5dbed374d6a3cfe",
+      "name": "묘수",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dfe6a63cccfd04fd",
+      "name": "무색",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d6a0131af187175f",
+      "name": "무스비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ed43956235779932",
+      "name": "물고기자리 논현점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_91d4c99e3942a085",
+      "name": "미동식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5e5529bcfc27fab1",
+      "name": "미래수산식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c9f76f36eb9c123c",
+      "name": "미소네",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1cd5f3035e4ffe95",
+      "name": "민지회수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f17d138b0f34a348",
+      "name": "바 고수부지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3c9998b84307a279",
+      "name": "바다로간코끼리꼬창",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_51b5b327ba27d076",
+      "name": "바다쉐프",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ca95b510f0c2423e",
+      "name": "바이킹스워프 잠실 헤리티지점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_860a36731cd3d7c7",
+      "name": "백년초밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a4409b201fcddc66",
+      "name": "백일도",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f56b22aa5283baa7",
+      "name": "보노보노 삼성점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e0dba345608d0160",
+      "name": "보물섬",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_96c184cc969345b8",
+      "name": "부자마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_81f73a3ba2c45b21",
+      "name": "불로회수산 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_eb144d1abc5113fe",
+      "name": "사조회참치 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_07e73a9f1319bccd",
+      "name": "사천횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_60efbf9d03d2c1cc",
+      "name": "살아있네",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_063dd811c2da8e5f",
+      "name": "삼다명가",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_feeb7e69721b4620",
+      "name": "상무초밥 일산라페스타점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9d35e969476f4efa",
+      "name": "새우까는집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9a7d4fba3b9e243f",
+      "name": "생선보따리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1b7fe433c226cbc",
+      "name": "서울초밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_39749b336882d545",
+      "name": "성환식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e5110b5b7a4586f5",
+      "name": "소문",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c03706c1c20798b3",
+      "name": "수궁해물이랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e72a6ce5467b9f1d",
+      "name": "수산포차청해",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1a19f034dd6a500",
+      "name": "수품어장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4c38713452565133",
+      "name": "숙빙고",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4c7c763cd24e5612",
+      "name": "숙성회사랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_baf8d286de28364c",
+      "name": "숙성회장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1018a8fb0893e38",
+      "name": "슈보카가리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d8a92f3da5f9b51f",
+      "name": "슈치쿠",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_86a7b980cb074cd8",
+      "name": "스시&스낵바 논데",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_999d859c9f81a9c0",
+      "name": "스시군",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9992446a42edf2c6",
+      "name": "스시로 명동성당점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f973f8227524672e",
+      "name": "스시마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9a1bddc888e4eaea",
+      "name": "스시메이진 구로점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9617417d29169bf7",
+      "name": "스시문정",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d9f81cdb9b8a4a33",
+      "name": "스시복",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d16a289721b7bcfc",
+      "name": "스시사카바 야마타츠",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3f01165722e532cf",
+      "name": "스시선명",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2f3a4e30efd584cc",
+      "name": "스시소라그린 잠실점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4690bd8f1979cda3",
+      "name": "스시쇼우야",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_627f2340781e1076",
+      "name": "스시앤올",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d90859f7ddd0b3b3",
+      "name": "스시우다",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f2c8db135d8fe836",
+      "name": "스시유나",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3266474fbde6f441",
+      "name": "스시이찌 가산점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1079cb6f163f04ee",
+      "name": "스시지현",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1fb67941ebf3f831",
+      "name": "스시쿄우다이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_429099f5763db2b5",
+      "name": "스시현",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cc279054e99a7bfd",
+      "name": "시메사바 순 은평점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_adb6219f6209650d",
+      "name": "시장스시",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1142ce625328542e",
+      "name": "식도원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3c11c539ee6ba1ba",
+      "name": "바르미심비디움2 사당점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_22e628bed999b103",
+      "name": "심해6광구",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_67d304e1c8cd3c19",
+      "name": "씨케이브",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c86122c6d18b0ef4",
+      "name": "아루히 나나",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1ac6397dd5c0e1bf",
+      "name": "아루히 니와",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6c43c3147abfbcec",
+      "name": "아바이회국수",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_771c3c1c20b2fb52",
+      "name": "야스미",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c155c049d5586afe",
+      "name": "어느멋진날",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_308d5967182a3067",
+      "name": "어다리횟집 목동점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bdac4c968a319b36",
+      "name": "어부마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_795c120a6321579f",
+      "name": "에덴수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_add97d2170a504bf",
+      "name": "여남회집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_de78516bd2369da5",
+      "name": "여수회관",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5417339ed2794744",
+      "name": "연륙교",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9022da2b77ae0563",
+      "name": "연수횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7d0b4185ae2bb152",
+      "name": "연화객당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_837bd319f2ffb700",
+      "name": "연화횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ad28e6f0c3a5cc6a",
+      "name": "오마카세정준",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_989e8092f933c57b",
+      "name": "오츠쿠리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b16a97018cf82302",
+      "name": "옹기꽃게장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_af4b439f89455da3",
+      "name": "요수정",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2b70cd8e146ebce1",
+      "name": "용명횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_078d2127c758efaf",
+      "name": "용뱅이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_29b2b70093bd945b",
+      "name": "우리포차 2호점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_413a80af3f333159",
+      "name": "우리회포차 사당점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1eadafd7d5099662",
+      "name": "우사미뷔페",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e7d604c323cdda7b",
+      "name": "우정통닭",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_facb38c53f54b2c9",
+      "name": "우주횟집 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_74f56a28e09d48b6",
+      "name": "우토",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e7ae074ccc45e6a0",
+      "name": "운카이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_88012daed61ad1ab",
+      "name": "울산회식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ed5487f33856484e",
+      "name": "이이요",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_43fec28a2b89e078",
+      "name": "이춘명숙성회 마곡직영점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_37736f073853001c",
+      "name": "인생횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_500a22801212b9ae",
+      "name": "임가네한우마을 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f596c0312ed24346",
+      "name": "자갈치횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0aa63917be708086",
+      "name": "자매수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e3aa3206bb6d2f85",
+      "name": "작은시장횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bbd390c7768222b4",
+      "name": "장라스시 장안사거리점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a640e4f5d2d8b5dc",
+      "name": "장봉배터집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_293e34163459b185",
+      "name": "장소",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9d335d2bb8fabe0e",
+      "name": "전류리 사랑호",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ed276876979e2a8f",
+      "name": "정과장횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e15ceec66d945cf1",
+      "name": "좋은소식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7ccd2fe7458b009a",
+      "name": "주나수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0cca388543e74de4",
+      "name": "주문진항샵20",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_30e3c26df713305a",
+      "name": "죽변물회막회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d6b45533c41bd021",
+      "name": "진주섬",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_88f5cc0e05e504d3",
+      "name": "진호횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7a9909e2ac548546",
+      "name": "참치열전",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d36b3341eec6e0d9",
+      "name": "참치한상",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_86827970e0eba2f1",
+      "name": "천구네",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ca0c3340d612bf66",
+      "name": "첨벙",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_971a4754f5a8812b",
+      "name": "청수산153",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b0199f023e4656f1",
+      "name": "청조다도해수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ccdff7af606cadeb",
+      "name": "청초수물회 속초본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_19858ca149883939",
+      "name": "청해진",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_667964b2fefc8f28",
+      "name": "초장집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_99451e3b177679eb",
+      "name": "카루 마곡 서울식물원점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3a62b63fabee0b0c",
+      "name": "코즈요리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ff8ad3f86795aa82",
+      "name": "쿠우쿠우 골드강동점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7b1b0f36ca068b56",
+      "name": "쿠우쿠우 골드구로점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2e39cb7600d186fb",
+      "name": "쿠우쿠우 골드 민락점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d46027132b9e94d3",
+      "name": "쿠우쿠우 골드상봉점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_307bb30a98f9356f",
+      "name": "쿠우쿠우 블루레일 건대직영점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2dbbf32528f623f7",
+      "name": "쿠지라",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ba8d9e59d336dde9",
+      "name": "킬맨참치 야당점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_db32af9b5acc4170",
+      "name": "타로야",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e13487678ae2478e",
+      "name": "타마",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1308082899758d4",
+      "name": "탄포포",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_871ef912dfcf5a6c",
+      "name": "토끼트멍",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ed6657266b581e13",
+      "name": "토리냥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e883cf283c44d88d",
+      "name": "페어몬트 앰배서더 서울스펙트럼",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_67684a8cf44670eb",
+      "name": "포항물회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cdf3af238e25c2e8",
+      "name": "하늘초밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d1e859d737d1882d",
+      "name": "하우스오브갓덴 스타필드애비뉴그랑서울점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7dfa65747c34b415",
+      "name": "하하횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ce57da4db4ca64f6",
+      "name": "한맏",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4fb2d1b12aa2fa63",
+      "name": "한성회세꼬시",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fc2926dd4af66209",
+      "name": "한판승부",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_009a107017f4c47d",
+      "name": "할머니운저리횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4264444bc1c700c3",
+      "name": "해녀김금단포장마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_42771541255b58d0",
+      "name": "해물포차꼴통 3호점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8c98caf57a5591d1",
+      "name": "해송복국",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cdfbd0346a574663",
+      "name": "해원 속초본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4fa1a6886c4a42c3",
+      "name": "행복생선",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a622285ce8c7009f",
+      "name": "행복수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4f597f7eb51d6ff2",
+      "name": "홍진참치",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_316639c1970d2c03",
+      "name": "환여횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d2c50a4f252ccc2c",
+      "name": "회뜨는포차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_754cd4b34e104350",
+      "name": "회춘식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_02a0117add5beac0",
+      "name": "횟집울릉도",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_804df25d1dcb3f0b",
+      "name": "효탄",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6e69398c490f6995",
+      "name": "후루사토",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_27c935ba2be3eace",
+      "name": "희희",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_48234c1611eed495",
+      "name": "히토리더사시미",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_51352f5e25636317",
+      "name": "위트앤미트 강남점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8ed0d4d8654d7c7f",
+      "name": "용골감나무집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_45e444a44bd8b1b5",
+      "name": "미프 무실본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_acc69a085d5cfbd3",
+      "name": "거부장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6bd5e677fe44d436",
+      "name": "고산식육점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fb59c91166bfbd7e",
+      "name": "공탄",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fea2fafbd0f53e36",
+      "name": "참숯꺼먹돼지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_db7f1470bb6154bd",
+      "name": "우진정육상회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ae350866312179f2",
+      "name": "김포 태백산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bda00a759398b222",
+      "name": "나우구이집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_79cc7f246f6082f4",
+      "name": "남부",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_21ae4bd272462de7",
+      "name": "청기와",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f82dea58f1f7e3dd",
+      "name": "지리산한우마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_db5241c85b0621f1",
+      "name": "마장동박현규",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7c5c296cd6e4a64e",
+      "name": "늘조은한우 구의직영점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4d586c776feeb650",
+      "name": "당산오돌 송도점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c28f1741ef7e7445",
+      "name": "우각정 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b6a8673c34200cb7",
+      "name": "은하수식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_551676bfb8b16d3b",
+      "name": "일통왕소금구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_474fab7bc924bc20",
+      "name": "땡구땡구 관저점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e1615e65166cde2e",
+      "name": "태능돌삼겹",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_72d2d606676b3bb8",
+      "name": "제주똥돼지오겹살",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_87720cff01868959",
+      "name": "모락식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7ae1012f2eb2dbc0",
+      "name": "돼지각시와연탄불",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_59be4bd9bb52c21f",
+      "name": "레이지버거클럽 부암점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7b59f5e5f3c1f5d6",
+      "name": "하누골흑돼지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_06b96004ba24e576",
+      "name": "야키토리 나루토",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fbed8f5036d134a6",
+      "name": "문경약돌돼지 참나무장작구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_570d27a4f1948492",
+      "name": "임시정부",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_39847b1191d66269",
+      "name": "본디",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d2a2de04e082ae4f",
+      "name": "대길숯불갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_17b1932257180289",
+      "name": "멧집찌개",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6b6489cc2e31a514",
+      "name": "석정갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_34bb25dd5bd7a5f6",
+      "name": "원조언양불고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_942f130dda5c4718",
+      "name": "일신명품한우",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_31999c1b84415d5a",
+      "name": "톤쇼우 광안점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_68f2f7278f49cbfb",
+      "name": "블루메쯔 분당수내점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5a6120922d4c41a2",
+      "name": "뽀빠이갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_078d832ac3a23732",
+      "name": "산청숯불가든 마곡",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9be7b40a21dc619e",
+      "name": "서울안심축산 마포용강점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_083ccd53924fb5ab",
+      "name": "부일갈매기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e3e9272321b2acea",
+      "name": "신사강정육점식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d61d9511c5d3abfa",
+      "name": "은수식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a27421cc52b52f19",
+      "name": "신도농장정육",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4f9d05d5d1f7b119",
+      "name": "쌍용부부정육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_75deab01b180577b",
+      "name": "철렵",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8d2a910554620b2a",
+      "name": "운봉산장양고기 안양점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_97fe9ef070834886",
+      "name": "화야",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_adc7b23452b58971",
+      "name": "황가네숯불생고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c74ee87166d8675d",
+      "name": "영양숯불갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5cfec05edc481c36",
+      "name": "오동추야",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0c1c4339990d7cb8",
+      "name": "유첨지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7f67116587277f9e",
+      "name": "왕재봉흑돼지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_76e50e7204f5de81",
+      "name": "부라더고깃집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_51c8d4fe4eecffd1",
+      "name": "산정생불고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6ae39a7ce9bf9cfd",
+      "name": "연춘참숯석쇠구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9e5b6455963bec0f",
+      "name": "원조태성실비식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6ba0f3ad699a63db",
+      "name": "덕장한우",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1b909b319cea88a9",
+      "name": "먹심생고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a893248d4daba3f8",
+      "name": "막퍼주정육점식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_feabd9280cab047f",
+      "name": "최대포소금구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_37ba821b4e2941b8",
+      "name": "이츠야",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fc0e22a5d4dc22b6",
+      "name": "한우검정돼지 정육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6b6339ebff5e3e73",
+      "name": "강원정육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a1e360d4b0f5fce4",
+      "name": "워낭소리정육점식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a7282c008a892904",
+      "name": "백탄참숯불구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8406184c69f301e9",
+      "name": "온담 전주 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6c1951da59448374",
+      "name": "카츠모리조",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c85add33cec61615",
+      "name": "백운식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_49ac811bf49aeb1c",
+      "name": "제국한우짝갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8efe65924ae1b00e",
+      "name": "백마가든",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_82df8e6a4b5ddd73",
+      "name": "조이통통생구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d8a3aacb71c1cdbd",
+      "name": "진해숯불막창",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3546acfc5a73aa55",
+      "name": "대왕매실갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_23be8c2ce78000f1",
+      "name": "청기와 숯불촌",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_42d0da060f6f69f1",
+      "name": "나릿집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_817febfad040dacf",
+      "name": "명성축산물생고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5946273f935304a4",
+      "name": "삼미원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a916501eccb2b04f",
+      "name": "최강금돈까스",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4e66290a98ed730b",
+      "name": "대추나무집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dd47c6d70fa35800",
+      "name": "봉운장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2bf41a918da96deb",
+      "name": "남산회관정육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_59ed0ef95c3cb85d",
+      "name": "불광식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_488191f8460219c0",
+      "name": "세신구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_969f18aa1d75ac1e",
+      "name": "죽도숯불간받이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7b3bb511e19c385f",
+      "name": "나주개미집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d708d1d94782337b",
+      "name": "만돈만리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b63b78bb1818b099",
+      "name": "장다리한우마당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_46765ddb9c59fa0c",
+      "name": "헤키",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_050382bf88c47289",
+      "name": "호천생갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_be36664544a3569c",
+      "name": "홍천사랑말한우식당 홍천점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_eccba1b280097983",
+      "name": "밴댕이천국연탄구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cb967a986845bab5",
+      "name": "횃불",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f973907854ec4ad9",
+      "name": "가나막창",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4bfadfb97d7a8192",
+      "name": "가덕도병어집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cfddc582fea99eb0",
+      "name": "가미레스토랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_72d804a705904935",
+      "name": "가미섬",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_71ef833e4b5ad8e0",
+      "name": "가보 식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_44c4b6a4e7b2310f",
+      "name": "갈릴리횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_72669e06e59f5325",
+      "name": "거창횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_69128ab4c1156f28",
+      "name": "경주누룽지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_91644e3fe1beb927",
+      "name": "고기싸롱 신림역점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_08a5af9e6a975f3c",
+      "name": "고기해상",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0d58b1e78aaefee0",
+      "name": "고성실비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b2aafe909e74f8e7",
+      "name": "고성횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a3f5f8161a4df9ae",
+      "name": "고향집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a3053bdf71d02695",
+      "name": "곤양식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d84c022f0af3331c",
+      "name": "골목갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_65547b2a71b9b4f0",
+      "name": "골목길식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b78f2d70e8c689ca",
+      "name": "골목집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_69338c689400c41e",
+      "name": "광화냉면",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2fabe87f116c4b70",
+      "name": "괴목국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6e5817983930d7c2",
+      "name": "구천식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7a54ad83e6ab181c",
+      "name": "국민수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_55d9d8f23edb04bc",
+      "name": "국성",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_63c93a75540caff4",
+      "name": "금향",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_eb256d56fbb0c342",
+      "name": "길성관",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ba17816c74a7989a",
+      "name": "김삿갓막걸리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f346027fa8b73bc7",
+      "name": "김쉐프의 골때리는맛집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ac771e62170364b5",
+      "name": "김천식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a910bbe344b92a20",
+      "name": "꾸바꾸바",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b58fddf5a1a2efb9",
+      "name": "끼리네한상",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dc2a4f6998d1b6c4",
+      "name": "나영왕돈까스",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a4b7c5aed4cb29c9",
+      "name": "나주곰탕",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_458c59d70df823ba",
+      "name": "남강실비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4a2b90699d4215d4",
+      "name": "남해설천횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3800dbd9b3f50a63",
+      "name": "남해수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_65562a1b9350cb43",
+      "name": "노다지집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d9f3890b09fd409d",
+      "name": "노들강변",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dd3134935c0aac99",
+      "name": "놀부식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1531d8fe411fc54",
+      "name": "농심가 식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f062f0f4b75fa75b",
+      "name": "니하오",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c2698509a5616fa0",
+      "name": "다다치킨호프",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4743418d0f6c3506",
+      "name": "다옴",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d35c04b5140dc8a7",
+      "name": "달구마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b6c0f92a1a485c6d",
+      "name": "대동찌짐아지매",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_338bc31699241ece",
+      "name": "대명돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f03112966142885c",
+      "name": "대명반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6c6e94a1c24517c2",
+      "name": "대물집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_de7d99f0b1e66c72",
+      "name": "대박",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ad220a069b1e7cfd",
+      "name": "대성관",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_568a63c58d6ee6e5",
+      "name": "대일분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e6e9c59a80ce0581",
+      "name": "대통령생라면 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e2696b8963c12f10",
+      "name": "덕이꿀꿀이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9930a287713d5634",
+      "name": "동대구회",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d17e8965f04b8124",
+      "name": "동래특돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8792eb855446e3e0",
+      "name": "동양식육점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d4c2969bc1b63965",
+      "name": "동원반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a624b2c62b09461f",
+      "name": "동일반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4ae0f57ea28150b4",
+      "name": "돼지꼬리집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_088c4d198a7e6bbe",
+      "name": "또바기반다찌",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_773b391963671e97",
+      "name": "리엔",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b5c1ca7b19ab6ccf",
+      "name": "만월",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d50d48f78c2377c2",
+      "name": "맛깔뷔페",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1e7403d994472a9f",
+      "name": "맛나식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_69d750f6caefa641",
+      "name": "매일식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c95a071875976340",
+      "name": "멍석마당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3f6a5dd526747492",
+      "name": "멕시칸양념치킨 우암체인점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2311b0d7238f014f",
+      "name": "명현만 챔피언간장게장 서울본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_206b9e9aa75abd82",
+      "name": "문경축산농협 약돌한우프라자",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_524787b22b4787e5",
+      "name": "물금횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1416eabb342b91ff",
+      "name": "미가원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e29d5009a9eebe66",
+      "name": "미각반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a5dc18f9712aefed",
+      "name": "미성칼국수",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9c8d1d3599cbea45",
+      "name": "미소갈비찜",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ec091732c202338d",
+      "name": "바다실비식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_beaccd2831875f93",
+      "name": "바다향기회식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4f474a666302fb6f",
+      "name": "바램소주방",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_734f62e04a687d49",
+      "name": "박가시락국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9b9803b4ec7ba8b3",
+      "name": "박서방식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7b9affccde01bcf2",
+      "name": "배따라기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_19244dd315edcaab",
+      "name": "백양숯불갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d72a8c1925a015b4",
+      "name": "별장횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f30d54f14664e5a7",
+      "name": "별장횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_97a242832fb0fc67",
+      "name": "부용지게촌",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_db5ec6a6124a178d",
+      "name": "부일식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3e150c2e8a5b2b89",
+      "name": "북경",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1a6fe42c665b6f19",
+      "name": "북경만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9306c806fedcd86d",
+      "name": "북경반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0640b92448d42736",
+      "name": "분식마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7a01ac7634791e26",
+      "name": "불야성소주방",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2c2f0bc2e2f20f2c",
+      "name": "블랙데이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_650e7b3fed8a71fe",
+      "name": "빈궁",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c1d3608bf70007d5",
+      "name": "사계절식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5a32d78f64dbdea0",
+      "name": "사능정육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_adca1db3f1336f83",
+      "name": "산더미미성돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_337398ad274078cb",
+      "name": "산동만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2da595b9c5f99ea2",
+      "name": "산동성",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2581c9af308ee2c9",
+      "name": "산동식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8b91dd2abee1d117",
+      "name": "산에들에",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4fee7da7486556eb",
+      "name": "산장식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3686a0ad4d2b5229",
+      "name": "삼가돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_27b8212d80b936d6",
+      "name": "삼진갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_28addd56e4072f86",
+      "name": "삼포식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_593ce12bd62ccf7c",
+      "name": "선산식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_61b2c9ed0d2c260d",
+      "name": "선월만두반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_345f3493638e3bea",
+      "name": "설성식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6a6aff888879a4f1",
+      "name": "섬마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_156389240e5b91b6",
+      "name": "성모반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_58d9ba437c4f2e5d",
+      "name": "성안숯불갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2573f305879e5dae",
+      "name": "소림각",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_db465d5de13ae74d",
+      "name": "소문난뒷고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b20fe1abbc9b17d7",
+      "name": "소문들었소",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fc6746d149799123",
+      "name": "소혜반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3e1fff4408974ee9",
+      "name": "손맛한식뷔페",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a86ffb954d9290a8",
+      "name": "송림생오리 참숯불구이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f6709c37c9f2ca46",
+      "name": "수복회관",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_90a4f748f35f9782",
+      "name": "수육&김치",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cb939fcd053c925f",
+      "name": "수정마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1f937f888b23ec31",
+      "name": "술독에빠진사람들",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8f41333c92322b01",
+      "name": "술따라길따라",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b6b43e3bb72c7867",
+      "name": "술시다드루와",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e845f32946df33bb",
+      "name": "승리돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7c4a3f5ff7d57736",
+      "name": "시골추어탕",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e64f68deefde28ee",
+      "name": "시청우동",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0a27c1dcf76ab55c",
+      "name": "신동양",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1d40cf8f2c3a9dc0",
+      "name": "신라국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c750abf0f0195b10",
+      "name": "신라초밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_006445326138ba5f",
+      "name": "신정식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ded6662fd2bbffff",
+      "name": "신짬뽕",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_01a92bda6a17643e",
+      "name": "실비식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ace3688a8b1529b6",
+      "name": "실안횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a11040e53bbd6e1b",
+      "name": "싱싱식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_537cebe41ecaa885",
+      "name": "싱싱회수산",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3a5d2a4427d14aa2",
+      "name": "아리랑한식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9636f84bb09276da",
+      "name": "아줌마우동",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4f29632325d50376",
+      "name": "암뽕수육 본가점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4d6ed73ae61afa6d",
+      "name": "옛날옛적에",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a85a1657cd0071e7",
+      "name": "엄마식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4bb13049bc39b1f1",
+      "name": "엄정분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_21eb1e9c9e4f4254",
+      "name": "연안부두짬뽕전문점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f2cfbe0cf0650322",
+      "name": "연화랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8b8f2e73cc10dd10",
+      "name": "영광맛집&cafe",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9c044240be7aca3a",
+      "name": "영팔식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5c28748b2afd2d6f",
+      "name": "예천반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bf93f3c80e550999",
+      "name": "옛날그빵집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_82121c3f1338e7ba",
+      "name": "옛날할매순대",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_71f57348f574df96",
+      "name": "오돈 3호광장점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_998e886ab298bb1b",
+      "name": "오복식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9397d16285c2a5d8",
+      "name": "오복식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ca96150fea438045",
+      "name": "오봉산가든",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5fe8567f1c5d25d3",
+      "name": "오쿠바",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_74acd5d7ab9e65a6",
+      "name": "옥산식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_54aa9faf93d06c28",
+      "name": "옥성반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_aba6599dca8351a0",
+      "name": "왕돼지집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ba0e118862d10c12",
+      "name": "용산마루",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8b4e1cff722a7cca",
+      "name": "우성식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_80875cb5fb041434",
+      "name": "원산면옥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_91a88f44786a14d8",
+      "name": "원조순대집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_44a2f04eab87cde4",
+      "name": "원조우정식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cccaf0e18478eb45",
+      "name": "월성식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c304954c4211de29",
+      "name": "웰빙과일통에빠진돼지들",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c34159c828758463",
+      "name": "웰빙마차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_49849d69ab3d37da",
+      "name": "유객주",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9874a3b91e98cb3f",
+      "name": "유성식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a9c41bd35321df4e",
+      "name": "유성횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_08a4eef5bdd5da3a",
+      "name": "유정분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_44fe559e84aea360",
+      "name": "은하수실비식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a82745ffb4920436",
+      "name": "두리양평해장국",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2a8d305b45979d39",
+      "name": "의령돼지꼬리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_be2185e3ced43e84",
+      "name": "이선장해물포차",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cf9dec1052f417eb",
+      "name": "이슬마루실비식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d37e6650366c0e81",
+      "name": "인동초",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_13b407e16a63b58b",
+      "name": "일구향만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_79ba67087917e662",
+      "name": "일오삼수제돈까스",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ef2ed79786645d3f",
+      "name": "임정원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_47d56d533e7f9f7f",
+      "name": "장터소국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_01295304a8c295be",
+      "name": "전원집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3209fcb139ca74b1",
+      "name": "고속반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_766c624712d5c7b7",
+      "name": "정담",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0130a5ec98492fab",
+      "name": "정마담식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_08ce5947b0481f9c",
+      "name": "정분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_57c7f089c7d6b3c6",
+      "name": "제일식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ecd0b038a0e6fd06",
+      "name": "주산반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_257447d602f9f070",
+      "name": "중국전통수제만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ca7ecb096b89d687",
+      "name": "중동오뎅집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_26ded63892c33d69",
+      "name": "중마동가자가자가자",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cebe56b458058ac8",
+      "name": "지수농원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6fef5ef6c284196d",
+      "name": "진경숯불갈비",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5b4318118900f00b",
+      "name": "진동고현횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f283939daa485dab",
+      "name": "진주양분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4857a5a1f1bc128b",
+      "name": "짬뽕차이나",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cb86196a3c877569",
+      "name": "차돌식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_3a03904a3710aed9",
+      "name": "착한통술",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_659132ebaaa28842",
+      "name": "참조은식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c80e6e72d4943fe6",
+      "name": "창포한방족발",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_90f6de30f489d647",
+      "name": "처가집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c92daad9bd7af08f",
+      "name": "천리집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_80c26e33dbacef19",
+      "name": "천안문",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_06907a57f9823eb8",
+      "name": "청용횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5b352e4ee70bbeab",
+      "name": "청자식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9588a199091c4c36",
+      "name": "청하감자탕",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c3ae635b26a73889",
+      "name": "촌뽕 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_27d36d14eee90822",
+      "name": "최가네식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6a4a3bde47381e6e",
+      "name": "코리아나돈가스전문점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fae8139dee037760",
+      "name": "태창식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_94639385e9e60231",
+      "name": "태평양분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fdce4d8a7706e333",
+      "name": "택전반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7ab565a5a73e3b31",
+      "name": "통영뒷고기",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_66e738b60eba09c0",
+      "name": "통큰돈가스 주례점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2221788f8f134aeb",
+      "name": "티발돈까스의집 김해점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c6bca6b411a131c2",
+      "name": "파라다이스떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a7953b1ce76bf13f",
+      "name": "파랑새",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c84ea373b98d3fd3",
+      "name": "파스타라프",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_89c4073a37fd6bb8",
+      "name": "파전신랑막걸리신부",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2f6f2283b55d085a",
+      "name": "플랜비 부산서면점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bc6f0dfecb33b296",
+      "name": "하동집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_090b9e63a0457809",
+      "name": "하마돈까스",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7f679e9a31574a6a",
+      "name": "학마을",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e4c6ae7c6b2a5427",
+      "name": "한상반다찌",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_13cabac015d2068b",
+      "name": "한우나라식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1bdd1edce0aff8b5",
+      "name": "한우목장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_348a8915400cd952",
+      "name": "한우프라자셀프식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_45273702c612d94f",
+      "name": "할매밥집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7ac9e8e6206eeb5c",
+      "name": "할매함흥냉면",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dca54b79a4506ed3",
+      "name": "함양지리산흑돼지",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fc6bfa4bd0bebab9",
+      "name": "함흥통닭",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a8d5f50c9cdf0d7c",
+      "name": "합수식육식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_04e46a10f302e91e",
+      "name": "해남식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f0c47f221466d806",
+      "name": "해동반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c585d9d7916ee5de",
+      "name": "해물사랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ab4d40d0b167b4fc",
+      "name": "해변의꽃게 포항점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_464588c44519eb58",
+      "name": "현대반점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_89af0f25edb23ec9",
+      "name": "현아네",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9c6aeef0c905f3e4",
+      "name": "호호돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_762d0d410ea57762",
+      "name": "홍미식당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_617a2477035432ea",
+      "name": "황토방뼈해장국",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_47e40c32a92bd9c2",
+      "name": "황해면옥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6658c0e325d0bcb6",
+      "name": "효진수산횟집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_646d2dcbe90585f3",
+      "name": "희경이네분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7b99680aa0b01ced",
+      "name": "6.25떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a0b749a3c5d47f3b",
+      "name": "고관함박",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c7ec9a4c88ed2f5d",
+      "name": "과일떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cb2e57a7765fd5c9",
+      "name": "교촌필방",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2836757476f26caa",
+      "name": "김밥천국 압구정역점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a3481d36d75e720d",
+      "name": "꿀사발떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b0204a210efd4ac8",
+      "name": "노리터즉석떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_894da338f3cf69c7",
+      "name": "달볶이 숙명여대점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_f925197343b966c2",
+      "name": "대박각",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ca3e79c99b65f387",
+      "name": "동대문엽기떡볶이 구로점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_903dc6c1044bff9e",
+      "name": "드림랜드",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_460ffdb05f259f38",
+      "name": "레알짱 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dbf5c452e4c9eaf6",
+      "name": "마뇨떡볶이 신림점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5550f7eb0a331701",
+      "name": "마떡다이천 광운대본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_dcb5b65ffa9ba762",
+      "name": "마루팥빙수단팥죽 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5d948ff553e19f4b",
+      "name": "마복림할머니집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a2848dae56e53fe7",
+      "name": "만나떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8821599162c4e573",
+      "name": "맑은샘",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2f1e240a3539cac3",
+      "name": "맛자랑떡볶이 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4b78d6ab7a7e9da9",
+      "name": "맹자네떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cf777472c45465de",
+      "name": "멕스칸즉석햄버거",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_13532305d2db50eb",
+      "name": "모두랑",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9c4cb1c95593734e",
+      "name": "백설대학",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7d8e8c5d613360a9",
+      "name": "보슬보슬 압구정본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d122da4c2828d38b",
+      "name": "본동 전 분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_217036b99630d824",
+      "name": "본전돼지국밥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ec4f8201e41137b5",
+      "name": "부산어묵 길음시장점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1a0409f46984b152",
+      "name": "부산어묵 용산점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_67f73ed0da1d388c",
+      "name": "불티나만두찐빵",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_16d6137fd1bb91b1",
+      "name": "빙그레분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1654c33be02c5264",
+      "name": "빨간부산오뎅",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7d049b4010599971",
+      "name": "빨강고구마떡볶이 발산본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1c5fa620694398aa",
+      "name": "삼미분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_cbe445a8a9df3b93",
+      "name": "삼양동순대떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_16d5d64a8b0c3ac9",
+      "name": "생앤맥주판",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c8f4a00dce0eeba1",
+      "name": "선화당",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_357fe98963505ac9",
+      "name": "선화슈퍼가맥",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_16b5391b18614658",
+      "name": "소구장",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1903d6aba1e124a7",
+      "name": "소문난 떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_33c6cdc6ef89ca52",
+      "name": "소문난만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_c9ba4473ca3712bc",
+      "name": "송쭈집 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_06a45b823b2002de",
+      "name": "순금이떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_40d4b048372a1012",
+      "name": "숭덕분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_30881724ec4d1acc",
+      "name": "슈퍼스타떡볶이 신용산본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a37800cd1b5e7a26",
+      "name": "스케줄 청담",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0a3261bbd375383e",
+      "name": "시장떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5a0b577160c5d58a",
+      "name": "신천궁전떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d3dcaed9f29b4a26",
+      "name": "신흥떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_5a76896158878647",
+      "name": "아이러브신당동",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_52cde0e9f99309be",
+      "name": "아찌떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_85e9452d4dfe0ead",
+      "name": "악어떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ff355c790273cc40",
+      "name": "애슐리퀸즈 NC송파점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_85d2dd60deffb584",
+      "name": "양지떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8b7009ecb6c84a36",
+      "name": "얼레꼴레만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_ed7d206210a7e7f2",
+      "name": "엄지척떡볶이 방신시장점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1315e7302b718957",
+      "name": "영국이네분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bd3f61aff2aae99b",
+      "name": "영우동",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6f07ed2118969c31",
+      "name": "영즉석떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a027b31251c4b3e5",
+      "name": "오떡24시",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_4c1bd74a09687959",
+      "name": "오빠네옛날떡볶이 웨스턴돔점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d8b4e77ee016f0aa",
+      "name": "옥당분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_0e2995b266696f1f",
+      "name": "와우신내떡 노량진점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_54cf6ae33f96a2fb",
+      "name": "유리즉석떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_e6aaeb04fc6a4ab0",
+      "name": "유원",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8f06695d039f0ad5",
+      "name": "육작",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_1c4847713ced8de5",
+      "name": "은혜즉석떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_b818ec9c80fdd2f5",
+      "name": "이가네만두",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2ea7ae646be6e5e4",
+      "name": "이상한떡볶이집",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6e846e3c09a0e6f3",
+      "name": "임가네김밥떡볶이전문점 장안본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_83c73abaa8f1e297",
+      "name": "주부리",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_bd9ac730cd8612d7",
+      "name": "즉떡이네",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_83fe41bfbd005e42",
+      "name": "진아분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_31ff66ee23c134d0",
+      "name": "짱떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_64a414b11e6f907a",
+      "name": "짱이네분식",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6cd01f9188d80b11",
+      "name": "청담91떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d3e59fa83277903e",
+      "name": "칠공주떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_27477d1fe492c938",
+      "name": "카우",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_9b72ed06a8a3d377",
+      "name": "코끼리즉석떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_a4035b0ab25495c2",
+      "name": "파란하늘",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_7e1209ca56a78654",
+      "name": "푸른하늘",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_fe8faa35e95ddeae",
+      "name": "한상가득왕솥뚜껑 상암본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_2746b5698ab55e0a",
+      "name": "한스즉석떡볶이 중곡1호점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_70c98983b2e8a908",
+      "name": "할매찜닭발엽불떡",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_015fdbdccee80615",
+      "name": "합정조이떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_8c924dfad03f3a95",
+      "name": "해오름감자탕 신당본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_d07712b5728ce3bd",
+      "name": "호월일가 본점",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_6250523cb9d54e5b",
+      "name": "홍대씨부엉",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_acf81f4d71ff035b",
+      "name": "홍이네옛날떡볶이",
+      "category": "음식점"
+    },
+    {
+      "id": "six_topic_19cb7043203e9b26",
+      "name": "BBQ 여의도역점",
+      "category": "음식점"
     }
   ],
   "errors": [],
@@ -10479,6 +13594,26 @@
           "address": "서울 서초구 동광로39길 79 (반포동 72-3)",
           "lat": 37.498508,
           "lng": 126.999532
+        }
+      ]
+    },
+    {
+      "kind": "shared-coordinate-review",
+      "point": "37.52101,126.92399",
+      "restaurants": [
+        {
+          "id": "wednesday-gourmet_restaurant_327",
+          "name": "서울 패트릭스와플",
+          "address": "서울 영등포구 의사당대로 108 (여의도동 37)",
+          "lat": 37.521014,
+          "lng": 126.923992
+        },
+        {
+          "id": "six_topic_c86122c6d18b0ef4",
+          "name": "아루히 나나",
+          "address": "서울 영등포구 의사당대로 108 아일렉스 지층 B03호",
+          "lat": 37.521015,
+          "lng": 126.923992
         }
       ]
     },

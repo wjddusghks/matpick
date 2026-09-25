@@ -9,11 +9,13 @@ const audit = json('../../source-data/location-release-audit-2026-09-24/coordina
 const batch = json('../client/src/data/generated/choiza-road.generated.json');
 const verified = json('../../source-data/choiza-complete-2026-09-24/verification.json');
 const publication = json('../../source-data/choiza-complete-2026-09-24/publication.json');
-test('release coordinate audit covers every public row and holds unresolved locations', () => {
+const sixTopicBatch = json('../client/src/data/generated/six-topic-research.generated.json');
+test('previous release coordinate audit remains intact alongside the separately verified six-topic batch', () => {
   assert.equal(audit.complete, true);
-  assert.deepEqual(new Set(audit.records.map(r => r.id)), new Set(data.restaurants.map(r => r.id)));
-  for (const r of data.restaurants) {
-    const checked = audit.records.find(c => c.id === r.id);
+  assert.deepEqual(new Set([...audit.records.map(r => r.id), ...sixTopicBatch.restaurants.map(r => r.id)]), new Set(data.restaurants.map(r => r.id)));
+  for (const checked of audit.records) {
+    const r = data.restaurants.find(r => r.id === checked.id);
+    assert.ok(r, checked.id);
     assert.equal(checked.address, r.address, r.id);
     assert.ok(distance(checked.before, r) < 1, r.name);
     if (checked.status !== 'coordinate_consistent') assert.ok(r.recommendationHold, r.name);

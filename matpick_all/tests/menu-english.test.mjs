@@ -101,7 +101,7 @@ test("the current corpus has useful semantic coverage, tracked separately from r
     else romanizedOnlyRows += 1;
   }
 
-  assert.equal(names.length, 39_764);
+  assert.equal(names.length, 39_816);
   assert.ok(semanticRows / koreanRows > 0.9, `${semanticRows}/${koreanRows}`);
   assert.ok(romanizedOnlyRows > 0, "unresolved romanized rows must remain visible to the audit");
 });

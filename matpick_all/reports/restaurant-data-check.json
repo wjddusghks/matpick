@@ -1,6 +1,6 @@
 {
-  "restaurants": 4339,
-  "sourceLinks": 6731,
+  "restaurants": 4337,
+  "sourceLinks": 6728,
   "aliases": 926,
   "recommendationHolds": [
     {
@@ -254,11 +254,6 @@
       "reason": "같은 식당의 중복 등록. 대표 기록으로 안내합니다."
     },
     {
-      "id": "sikgaek-baekban-trip_restaurant_655",
-      "name": "갈비탕집(갈비탕)",
-      "reason": "동일 마장동 할머니갈비탕의 블로그10-9와 지도10-7이 충돌. 건물번호 정정 및 정확한 좌표 확정 전 보류."
-    },
-    {
       "id": "sikgaek-baekban-trip_restaurant_662",
       "name": "여주 팔남매",
       "reason": "블로그 창동63-5는 시장 주소 후보이고 원본 하동249-8 여주점과 구분되지 않음. 시장 대표주소로 점포 주소를 교체하지 않음."
@@ -309,19 +304,9 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
-      "id": "wednesday-gourmet_restaurant_466",
-      "name": "서울 어바웃진스",
-      "reason": "등록 주소의 인허가 폐업 이력 확인. 이전·재개업이 확인되면 재검토합니다."
-    },
-    {
       "id": "wednesday-gourmet_restaurant_480",
       "name": "서울 나 전복",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
-    },
-    {
-      "id": "wednesday-gourmet_restaurant_502",
-      "name": "서울 육전식당 1호점",
-      "reason": "천호대로33은 기존3호점 이전 본점. 난계로30길16의 원본1호점 승계 확인 전 다른 지점으로 교체하지 않음."
     },
     {
       "id": "wednesday-gourmet_restaurant_541",
@@ -644,11 +629,6 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     },
     {
-      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
-      "name": "평택 나귀당귀",
-      "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
-    },
-    {
       "id": "topic_enrichment_delicious-guys_79437a7edfb4",
       "name": "하남 신돈까스본점 (유민상, 폐업)",
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
@@ -669,7 +649,7 @@
       "reason": "메뉴·가격 및 지점 재확인이 필요한 항목으로 공개 추천에서 제외했습니다."
     }
   ],
-  "verifiedLocationCorrections": 1770,
+  "verifiedLocationCorrections": 1771,
   "unclassified": [
     {
       "id": "r_92011579",
@@ -1608,7 +1588,7 @@
     },
     {
       "id": "topic_enrichment_baekjong-wok_28f264d7f33b",
-      "name": "온천할머니집",
+      "name": "지산골온천보리밥",
       "category": ""
     },
     {
@@ -3193,7 +3173,7 @@
     },
     {
       "id": "sikgaek-baekban-trip_restaurant_593",
-      "name": "서울 한우다이닝 울릉",
+      "name": "김인복의광평 강남직영점",
       "category": "한우모듬구이"
     },
     {
@@ -4372,11 +4352,6 @@
       "category": "만두"
     },
     {
-      "id": "wednesday-gourmet_restaurant_466",
-      "name": "서울 어바웃진스",
-      "category": "바비큐"
-    },
-    {
       "id": "wednesday-gourmet_restaurant_468",
       "name": "서울 크래프트루",
       "category": "맥주안주"
@@ -4453,7 +4428,7 @@
     },
     {
       "id": "wednesday-gourmet_restaurant_502",
-      "name": "서울 육전식당 1호점",
+      "name": "육전식당 신설동본점",
       "category": "육류,고기요리"
     },
     {
@@ -6610,11 +6585,6 @@
       "id": "topic_enrichment_delicious-guys_f78bdf3226a2",
       "name": "평택 군계폐계닭",
       "category": "닭요리"
-    },
-    {
-      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
-      "name": "평택 나귀당귀",
-      "category": "육류,고기요리"
     },
     {
       "id": "topic_enrichment_delicious-guys_6ac4060b48cd",
@@ -13681,26 +13651,6 @@
           "address": "서울 마포구 연남동 227-38",
           "lat": 37.562215,
           "lng": 126.926938
-        }
-      ]
-    },
-    {
-      "kind": "shared-coordinate-review",
-      "point": "37.57274,126.97337",
-      "restaurants": [
-        {
-          "id": "wednesday-gourmet_restaurant_465",
-          "name": "서울 평안도만두집",
-          "address": "서울 종로구 새문안로3길 30 (내수동 167)",
-          "lat": 37.572737,
-          "lng": 126.973371
-        },
-        {
-          "id": "wednesday-gourmet_restaurant_466",
-          "name": "서울 어바웃진스",
-          "address": "서울 종로구 새문안로3길 30 (내수동 167)",
-          "lat": 37.572737,
-          "lng": 126.973371
         }
       ]
     },

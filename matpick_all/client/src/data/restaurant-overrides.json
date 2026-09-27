@@ -1234,8 +1234,113 @@
     ]
   },
   "wednesday-gourmet_restaurant_502": {
-    "recommendationHold": "천호대로33은 기존3호점 이전 본점. 난계로30길16의 원본1호점 승계 확인 전 다른 지점으로 교체하지 않음.",
-    "dataReviewNote": "2026-09-24 재대조: 천호대로33은 기존3호점 이전 본점. 난계로30길16의 원본1호점 승계 확인 전 다른 지점으로 교체하지 않음."
+    "dataReviewNote": "2026-09-28 사용자 이전 확인: 기존 방송 식당이 천호대로 33으로 이전한 현재 육전식당 신설동본점으로 사용자 확인. 별도 이전 근거의 메뉴만 적용하고 육전제면소 메뉴는 사용하지 않음.",
+    "name": "육전식당 신설동본점",
+    "address": "서울 동대문구 천호대로 33 1층",
+    "region": "서울 동대문구",
+    "lat": 37.5741106601623,
+    "lng": 127.026981260648,
+    "phone": "02-2234-6373",
+    "locationVerifiedAt": "2026-09-28",
+    "locationSourceUrls": [
+      "https://pcmap.place.naver.com/restaurant/37621125/home",
+      "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC+%EC%B2%9C%ED%98%B8%EB%8C%80%EB%A1%9C+33&msFlag=A&sort=0"
+    ],
+    "operationState": "operating",
+    "operationVerifiedAt": "2026-09-28",
+    "operationSourceUrl": "https://pcmap.place.naver.com/restaurant/37621125/home",
+    "menus": [
+      {
+        "id": "naver_20260927_0c4106a82a671351",
+        "name": "통목살 150g",
+        "price": "19,000원"
+      },
+      {
+        "id": "naver_20260927_bc080f79777ceb6e",
+        "name": "통삼겹 150g",
+        "price": "19,000원"
+      },
+      {
+        "id": "naver_20260927_d34f073e68b38bdc",
+        "name": "항정살 150g",
+        "price": "21,000원"
+      },
+      {
+        "id": "naver_20260927_bb1935964a6ca0ab",
+        "name": "오겹살 170g",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_268776bcf16dbadf",
+        "name": "생갈비 200g",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_13468da762d45054",
+        "name": "양념 껍데기",
+        "price": "14,000원"
+      },
+      {
+        "id": "naver_20260927_89bcf44f0373b266",
+        "name": "돈갈비탕",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_acb18e711ff0c651",
+        "name": "마무리 김치찌개",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_3407c3f9e07334ee",
+        "name": "갓 지짐 들기름 막국수",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_1cb89dadee8fea62",
+        "name": "도토리묵 냉칼국수",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_f5134be341997520",
+        "name": "들기름 간장생면",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_26c87f5f8c0f90e8",
+        "name": "동치미 물냉면",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_60b9a85fa22cc829",
+        "name": "비빔냉면",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_349de875209857a0",
+        "name": "더덕무침",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_06eee822c02b7a52",
+        "name": "돈육전",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_f641bef82f308f13",
+        "name": "우슬편육",
+        "price": "13,000원"
+      }
+    ],
+    "representativeMenu": "통목살 150g / 통삼겹 150g / 항정살 150g",
+    "menuPriceStatus": "naver-current-menu-2026-09-28",
+    "menuPriceVerifiedAt": "2026-09-28",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/37621125/menu/list"
+      }
+    ],
+    "menuPriceNote": "2026-09-28 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_09f0c72f7cff": {
     "lat": 37.5489811,
@@ -1590,15 +1695,32 @@
     "menuPriceNote": "네이버 주문 화면에서 포장 탭을 선택한 상태의 표시 가격이며 매장 가격과 동일한지 확인되지 않았습니다. · 주문 화면에서 확인된 일부 메뉴이며 품절 메뉴는 포함하지 않았습니다. · 포장비 50원 별도입니다."
   },
   "sikgaek-baekban-trip_restaurant_655": {
-    "recommendationHold": "동일 마장동 할머니갈비탕의 블로그10-9와 지도10-7이 충돌. 건물번호 정정 및 정확한 좌표 확정 전 보류.",
-    "dataReviewNote": "2026-09-24 재대조: 동일 마장동 할머니갈비탕의 블로그10-9와 지도10-7이 충돌. 건물번호 정정 및 정확한 좌표 확정 전 보류. 기존 지번 주소의 위치만 대조했습니다. 현재 영업·이전 여부 확인과는 별개입니다. 기존 지번 주소의 위치만 대조했습니다. 현재 영업·이전 여부 확인과는 별개입니다. 기존 지번 주소의 위치만 대조했습니다. 현재 영업·이전 여부 확인과는 별개입니다.",
+    "dataReviewNote": "2026-09-28 사용자 동일성 확인: 기존 일반명 갈비탕집과 현재 상호 마장동 할머니 갈비탕은 같은 식당으로 사용자 확인.",
     "lat": 37.569745132097,
     "lng": 127.033424555468,
     "address": "서울 성동구 청계천로10가길 10-9",
     "locationVerifiedAt": "2026-09-24",
     "locationSourceUrls": [
       "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EC%84%B1%EB%8F%99%EA%B5%AC+%EB%A7%88%EC%9E%A5%EB%8F%99+443-23&msFlag=A&sort=0"
-    ]
+    ],
+    "name": "마장동 할머니 갈비탕",
+    "menus": [
+      {
+        "id": "naver_20260927_874776f80ac42765",
+        "name": "갈비탕",
+        "price": "14,000원"
+      }
+    ],
+    "representativeMenu": "갈비탕",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/1266006822/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_c09759896ab3": {
     "lat": 37.54816220077471,
@@ -1821,15 +1943,6 @@
         "label": "블로그 방문 당시 가격"
       }
     ]
-  },
-  "wednesday-gourmet_restaurant_466": {
-    "recommendationHold": "등록 주소의 인허가 폐업 이력 확인. 이전·재개업이 확인되면 재검토합니다.",
-    "dataReviewNote": "2026-09-24 재대조. 새문안로3길30 지하1층107호의 2026-01-19 폐업 인허가가 있다. 남아 있는 바비큐·샌드위치 메뉴는 현재 운영 여부가 확인되지 않아 가격 등록을 보류한다. 인허가 자료 수집일 2026-09-21.",
-    "operationState": "closed",
-    "operationVerifiedAt": "2026-09-21",
-    "operationSourceUrl": "https://data.seoul.go.kr/dataList/OA-16084/S/1/datasetView.do",
-    "menuPriceStatus": "historical-only",
-    "menuPriceNote": "폐업 이력이 확인된 주소의 과거 가격은 현재 가격으로 채택하지 않았습니다."
   },
   "topic_enrichment_michelin-bib-gourmand_84d3bb3472b6": {
     "menus": [
@@ -10582,5 +10695,258 @@
       }
     ],
     "menuPriceNote": "관리자 재조회에서 메뉴 8개와 가격 표시가 정상임을 확인했다. 짬뽕밥은 9,000원이다. · 2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_baekjong-wok_28f264d7f33b": {
+    "name": "지산골온천보리밥",
+    "dataReviewNote": "2026-09-28 사용자 동일성 확인: 온천할머니집과 현재 상호 지산골온천보리밥은 같은 식당으로 사용자 확인.",
+    "menus": [
+      {
+        "id": "naver_20260927_25605f46abba347e",
+        "name": "보리밥",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_42423b9f9c557dd1",
+        "name": "제육볶음",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_58f4c64becf6e2d3",
+        "name": "도토리묵",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "보리밥 / 제육볶음 / 도토리묵",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1135838529/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_218": {
+    "name": "조샌집",
+    "dataReviewNote": "2026-09-28 사용자 동일성 확인: 기존 조센집 표기와 현재 상호 조샌집은 같은 식당으로 사용자 확인.",
+    "menus": [
+      {
+        "id": "naver_20260927_3ef0d546444ca8a9",
+        "name": "민물고기 튀김(대)",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_b19509b8c9cda182",
+        "name": "민물고기 튀김(소)",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_5c8834fcc5add9b4",
+        "name": "어탕국수",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_8b920750f0132f9f",
+        "name": "어탕밥",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "민물고기 튀김(대) / 민물고기 튀김(소) / 어탕국수",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11842660/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_593": {
+    "name": "김인복의광평 강남직영점",
+    "dataReviewNote": "2026-09-28 사용자 동일성 확인: 한우다이닝 울릉이 김인복의광평 강남직영점으로 상호를 바꾼 같은 식당으로 사용자 확인.",
+    "menus": [
+      {
+        "id": "naver_20260927_a735eb08ab095d2d",
+        "name": "순메밀 평양냉면",
+        "price": "17,000원",
+        "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀면입니다."
+      },
+      {
+        "id": "naver_20260927_74e81112dca9b894",
+        "name": "골동면",
+        "price": "19,000원",
+        "description": "다채로운 고명에 특제 간장과 들기름을 더해 비벼먹는 전통의 멋을 담은 골동면입니다."
+      },
+      {
+        "id": "naver_20260927_aba83b9a0daccf2d",
+        "name": "난축맛돈 구이",
+        "price": "33,000원",
+        "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 입니다."
+      },
+      {
+        "id": "naver_20260927_ca2c4c9b83783532",
+        "name": "양념돼지갈비",
+        "price": "33,000원",
+        "description": "육질 좋은 삼겹살을 얇게 저며 천양 양념에 깊이 숙성 박포갈비를 재현한 양념돼지갈비"
+      },
+      {
+        "id": "naver_20260927_c152df7e00107f08",
+        "name": "육회한우니",
+        "price": "68,000원",
+        "description": "신선한 한우 육회와 신선한 우니가 어우러진 섬세한 풍미의 조화 냉동우니는 사용하지 않습니다"
+      },
+      {
+        "id": "naver_20260927_3e200a583654eb12",
+        "name": "평양냉면과 돔베고기",
+        "price": "26,000원",
+        "description": "순메밀 냉면과 광평 돔베고기를 함께 먹을 수 있는 한상차림 (물/비빔 중 택 1)"
+      },
+      {
+        "id": "naver_20260927_efda237566e9b17e",
+        "name": "한우 숯불구이정식",
+        "price": "39,000원",
+        "description": "한우1++ 갈비살로 제공됩니다. [물/비빔/솥밥 중 택1] *14:30 까지 주문가능"
+      },
+      {
+        "id": "naver_20260927_517440c8f354e615",
+        "name": "난축맛돈 목살",
+        "price": "33,000원",
+        "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 목살"
+      },
+      {
+        "id": "naver_20260927_090dba6be29061fd",
+        "name": "난축맛돈 삼겹살",
+        "price": "33,000원",
+        "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 삼겹살"
+      },
+      {
+        "id": "naver_20260927_00ddaf581438517a",
+        "name": "한우육회 180g",
+        "price": "42,000원",
+        "description": "신선한 한우를 사용해 고소하고 달큰한 육향이 살아있는 정통 한우육회"
+      },
+      {
+        "id": "naver_20260927_fc501d2f0f2ff079",
+        "name": "골동면과 돔베고기",
+        "price": "27,000원",
+        "description": "골동면과 광평 돔베고기를 함께 먹을 수 있는 한상차림"
+      },
+      {
+        "id": "naver_20260927_a82ba737f3a84e1b",
+        "name": "한우곰탕",
+        "price": "19,000원",
+        "description": "한우 양지와 사태로 푹 끓인 한우곰탕. 특 사이즈는 21000원 입니다."
+      },
+      {
+        "id": "naver_20260927_25c9b948dabbd673",
+        "name": "순메밀 비빔냉면",
+        "price": "17,000원",
+        "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀 비빔냉면"
+      },
+      {
+        "id": "naver_20260927_ae1a1da5e2ad16aa",
+        "name": "한우 생갈비 1대 (생/양념)",
+        "price": "130,000원",
+        "description": "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다."
+      },
+      {
+        "id": "naver_20260927_2ffebcea360a015a",
+        "name": "1++ 한우살치살 130g",
+        "price": "91,000원"
+      },
+      {
+        "id": "naver_20260927_b7dec78180fee472",
+        "name": "1++ 한우안창살 130g",
+        "price": "96,000원"
+      }
+    ],
+    "representativeMenu": "순메밀 평양냉면 / 골동면 / 난축맛돈 구이",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1745222116/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_128": {
+    "name": "대정칼국수",
+    "dataReviewNote": "2026-09-28 사용자 동일성 확인: 대정소바와 현재 상호 대정칼국수는 같은 식당으로 사용자 확인.",
+    "menus": [
+      {
+        "id": "naver_20260927_8e34e1f42f5ed9a3",
+        "name": "만두",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_abf6840ccd2ece6f",
+        "name": "떡국",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_122b2fe8999674bc",
+        "name": "소바정식세트",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_53265e8543f52514",
+        "name": "자루소바",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_25b5fa3a73ae15ae",
+        "name": "메밀콩국수정식",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_72c1c4f032d95aa5",
+        "name": "메밀콩국수",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_93e2fd54473aa91e",
+        "name": "온모밀정식",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_ee8034f3546662d7",
+        "name": "냉모밀",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_71f9571f4c4d7f8c",
+        "name": "칼국수",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_92dfc5f4690f4cbe",
+        "name": "만두국",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_9d2ce278f354c7d3",
+        "name": "떡만둣국",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_a5334ab11f884440",
+        "name": "녹두전",
+        "price": "12,000원"
+      }
+    ],
+    "representativeMenu": "만두 / 떡국 / 소바정식세트",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/17485826/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   }
 }

@@ -7,6 +7,10 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const reportDirectory = path.resolve(root, "../outputs/guided-naver-menu");
 const summaryPath = path.join(reportDirectory, "summary.json");
+const relocationPath = path.join(
+  reportDirectory,
+  "yukjeon-relocation-2026-09-28.json",
+);
 const publicDataPath = path.join(
   root,
   "matpick_all/client/src/data/generated/public-dataset.json",
@@ -15,12 +19,86 @@ const overridesPath = path.join(
   root,
   "matpick_all/client/src/data/restaurant-overrides.json",
 );
+const deletionsPath = path.join(
+  root,
+  "matpick_all/client/src/data/restaurant-permanent-deletions.json",
+);
 const evidenceDirectory = path.join(
   root,
   "source-data/naver-menu-live-2026-09-27",
 );
 const evidencePath = path.join(evidenceDirectory, "verified-menu-overrides.json");
 const checkedAt = "2026-09-27";
+const userIdentityConfirmationAt = "2026-09-28";
+
+const identityReviewDecisions = new Map([
+  [
+    "topic_enrichment_baekjong-wok_28f264d7f33b",
+    {
+      disposition: "apply-current-name-and-menu",
+      currentName: "지산골온천보리밥",
+      note: "온천할머니집과 현재 상호 지산골온천보리밥은 같은 식당으로 사용자 확인.",
+    },
+  ],
+  [
+    "sikgaek-baekban-trip_restaurant_218",
+    {
+      disposition: "apply-current-name-and-menu",
+      currentName: "조샌집",
+      note: "기존 조센집 표기와 현재 상호 조샌집은 같은 식당으로 사용자 확인.",
+    },
+  ],
+  [
+    "sikgaek-baekban-trip_restaurant_593",
+    {
+      disposition: "apply-current-name-and-menu",
+      currentName: "김인복의광평 강남직영점",
+      note: "한우다이닝 울릉이 김인복의광평 강남직영점으로 상호를 바꾼 같은 식당으로 사용자 확인.",
+    },
+  ],
+  [
+    "sikgaek-baekban-trip_restaurant_655",
+    {
+      disposition: "apply-current-name-and-menu",
+      currentName: "마장동 할머니 갈비탕",
+      note: "기존 일반명 갈비탕집과 현재 상호 마장동 할머니 갈비탕은 같은 식당으로 사용자 확인.",
+    },
+  ],
+  [
+    "wednesday-gourmet_restaurant_128",
+    {
+      disposition: "apply-current-name-and-menu",
+      currentName: "대정칼국수",
+      note: "대정소바와 현재 상호 대정칼국수는 같은 식당으로 사용자 확인.",
+    },
+  ],
+  [
+    "wednesday-gourmet_restaurant_466",
+    {
+      disposition: "permanently-delete",
+      currentBusinessName: "진서칼국수만두",
+      reason: "owner_confirmed_closed_business_changed_removal",
+      note: "어바웃진스는 폐업했고 같은 주소의 현재 메뉴는 다른 업소 진서칼국수만두의 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음.",
+    },
+  ],
+  [
+    "wednesday-gourmet_restaurant_502",
+    {
+      disposition: "apply-relocation-evidence",
+      currentName: "육전식당 신설동본점",
+      note: "기존 방송 식당이 천호대로 33으로 이전한 현재 육전식당 신설동본점으로 사용자 확인. 별도 이전 근거의 메뉴만 적용하고 육전제면소 메뉴는 사용하지 않음.",
+    },
+  ],
+  [
+    "topic_enrichment_delicious-guys_e9deefd0dd9f",
+    {
+      disposition: "permanently-delete",
+      currentBusinessName: "황금목장 염소요리전문점",
+      reason: "owner_confirmed_closed_removal",
+      note: "나귀당귀는 폐업한 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음.",
+    },
+  ],
+]);
 
 const readJson = async (filename) =>
   JSON.parse(await readFile(filename, "utf8"));
@@ -125,11 +203,14 @@ function resolveRestaurantId(record, publicRestaurants) {
   return { id: exact[0].id, resolvedBy: "exact-name-address" };
 }
 
-function buildSourceRecord(record, publicRestaurants) {
+function buildSourceRecord(record, publicRestaurants, identityDecision = null) {
   const { id, resolvedBy } = resolveRestaurantId(record, publicRestaurants);
   let sourceMenus;
   let menuGroup;
-  if (record.classification === "numeric_menu_acquired") {
+  if (
+    record.classification === "numeric_menu_acquired" ||
+    identityDecision?.disposition === "apply-current-name-and-menu"
+  ) {
     menuGroup = "numeric-current-menu";
     sourceMenus = record.menus.map((menu) => {
       const excludedPendingReview =
@@ -168,7 +249,15 @@ function buildSourceRecord(record, publicRestaurants) {
     restaurantId: id,
     reportRestaurantId: record.restaurantId,
     identityResolution: resolvedBy,
-    name: record.name,
+    name: identityDecision?.currentName ?? record.name,
+    ...(identityDecision
+      ? {
+          historicalName: record.name,
+          identityReviewClassification: record.classification,
+          userIdentityConfirmationAt,
+          identityReviewNote: identityDecision.note,
+        }
+      : {}),
     address: record.address,
     classification: record.classification,
     menuGroup,
@@ -212,6 +301,52 @@ function buildAdminRecord(adminRecord, publicRestaurants) {
   };
 }
 
+function buildRelocationRecord(relocation, publicRestaurants) {
+  const catalog = publicRestaurants.find(
+    (restaurant) => restaurant.id === relocation.restaurantId,
+  );
+  assert.ok(catalog, `Missing relocation catalog identity: ${relocation.restaurantId}`);
+  assert.equal(relocation.checkedAt, userIdentityConfirmationAt);
+  assert.equal(relocation.userConfirmedRelocationAt, userIdentityConfirmationAt);
+  assert.equal(relocation.menus.length, 16);
+  return {
+    restaurantId: relocation.restaurantId,
+    reportRestaurantId: relocation.restaurantId,
+    identityResolution: "user-confirmed-relocation-existing-id",
+    name: relocation.name,
+    historicalName: relocation.previousName,
+    address: relocation.address,
+    classification: "user_confirmed_relocation_current_menu",
+    identityReviewClassification: "menu_evidence_identity_review",
+    menuGroup: "numeric-current-menu",
+    checkedAt: relocation.checkedAt,
+    sourceUrl: relocation.sourceUrl,
+    sourceIdentity: placeIdentity(relocation.sourceUrl),
+    coverageSource: "browser-relocation-followup",
+    evidenceFile: path.basename(relocationPath),
+    reviewNote: relocation.note,
+    identityReviewNote: identityReviewDecisions.get(relocation.restaurantId).note,
+    userIdentityConfirmationAt,
+    itemReviewNotes: [],
+    productionPatch: {
+      name: relocation.name,
+      address: relocation.address,
+      region: "서울 동대문구",
+      lat: relocation.geocode.candidate.lat,
+      lng: relocation.geocode.candidate.lng,
+      phone: relocation.phone,
+      locationVerifiedAt: relocation.checkedAt,
+      locationSourceUrls: [relocation.homeSourceUrl, relocation.geocode.lookup.url],
+      operationState: "operating",
+      operationVerifiedAt: relocation.checkedAt,
+      operationSourceUrl: relocation.homeSourceUrl,
+      recommendationHold: undefined,
+      dataReviewNote: `${relocation.checkedAt} 사용자 이전 확인: ${identityReviewDecisions.get(relocation.restaurantId).note}`,
+    },
+    menus: relocation.menus,
+  };
+}
+
 function menuPatch(sourceRecord) {
   const menus = sourceRecord.menus
     .filter((menu) => menu.productionDisposition !== "excluded-pending-review")
@@ -224,21 +359,21 @@ function menuPatch(sourceRecord) {
       : {}),
     }));
   const commonSnapshotNote =
-    "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다.";
-  let menuPriceStatus = "naver-current-menu-2026-09-27";
+    `${sourceRecord.checkedAt} 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다.`;
+  let menuPriceStatus = `naver-current-menu-${sourceRecord.checkedAt}`;
   let sourceLabel = "네이버 플레이스 현재 메뉴";
   let menuPriceNote = commonSnapshotNote;
   if (sourceRecord.menuGroup === "admin-saved-current-menu") {
-    menuPriceStatus = "admin-verified-naver-menu-2026-09-27";
+    menuPriceStatus = `admin-verified-naver-menu-${sourceRecord.checkedAt}`;
     sourceLabel = "네이버 플레이스 메뉴 관리자 재조회";
     menuPriceNote = appendUnique([sourceRecord.reviewNote, commonSnapshotNote]);
   } else if (sourceRecord.menuGroup === "variable-price-menu") {
-    menuPriceStatus = "naver-current-variable-price-menu-2026-09-27";
+    menuPriceStatus = `naver-current-variable-price-menu-${sourceRecord.checkedAt}`;
     sourceLabel = "네이버 플레이스 변동 가격 메뉴";
     menuPriceNote =
       "2026-09-27 공개 메뉴판에 고정 금액 없이 가격 변동으로 표시된 메뉴입니다. 0원이 아니며 주문 전 현재 가격 확인이 필요합니다.";
   } else if (sourceRecord.menuGroup === "normalized-order-menu") {
-    menuPriceStatus = "naver-order-partial-takeout-selected-2026-09-27";
+    menuPriceStatus = `naver-order-partial-takeout-selected-${sourceRecord.checkedAt}`;
     sourceLabel = "네이버 주문 화면 표시 가격 (포장 선택·매장 가격 미확인)";
     menuPriceNote = appendUnique([
       "네이버 주문 화면에서 포장 탭을 선택한 상태의 표시 가격이며 매장 가격과 동일한지 확인되지 않았습니다.",
@@ -252,21 +387,31 @@ function menuPatch(sourceRecord) {
     ]);
   }
   return {
+    ...(sourceRecord.userIdentityConfirmationAt
+      ? {
+          name: sourceRecord.name,
+          dataReviewNote: `${sourceRecord.userIdentityConfirmationAt} 사용자 동일성 확인: ${sourceRecord.identityReviewNote}`,
+          recommendationHold: undefined,
+        }
+      : {}),
+    ...(sourceRecord.productionPatch ?? {}),
     menus,
     representativeMenu: menus
       .slice(0, 3)
       .map((menu) => menu.name)
       .join(" / "),
     menuPriceStatus,
-    menuPriceVerifiedAt: checkedAt,
+    menuPriceVerifiedAt: sourceRecord.checkedAt,
     menuPriceSources: [{ label: sourceLabel, url: sourceRecord.sourceUrl }],
     menuPriceNote,
   };
 }
 
 const summary = await readJson(summaryPath);
+const relocation = await readJson(relocationPath);
 const publicData = await readJson(publicDataPath);
 const overrides = await readJson(overridesPath);
+const deletions = await readJson(deletionsPath);
 assert.equal(summary.generatedAt, "2026-09-27T21:34:39+09:00");
 assert.equal(summary.classificationCounts.numeric_menu_acquired, 68);
 assert.equal(summary.classificationCounts.variable_price_only, 4);
@@ -275,6 +420,28 @@ assert.equal(summary.classificationCounts.menu_evidence_identity_review, 8);
 assert.equal(summary.collection.identityVerifiedNumericMenuItems, 719);
 assert.equal(summary.collection.identityVerifiedNumericItemsIncludingAdminSavedUltra, 727);
 assert.equal(summary.collection.orderStructuredMenuItemsPendingUse, 34);
+
+const identityReviewRecords = summary.restaurants.filter(
+  (record) => record.classification === "menu_evidence_identity_review",
+);
+assert.equal(identityReviewRecords.length, 8);
+assert.deepEqual(
+  new Set(identityReviewRecords.map((record) => record.restaurantId)),
+  new Set(identityReviewDecisions.keys()),
+);
+const confirmedIdentityRecords = identityReviewRecords.filter(
+  (record) =>
+    identityReviewDecisions.get(record.restaurantId)?.disposition ===
+    "apply-current-name-and-menu",
+);
+assert.equal(confirmedIdentityRecords.length, 5);
+assert.equal(
+  confirmedIdentityRecords.reduce(
+    (total, record) => total + record.menus.length,
+    0,
+  ),
+  36,
+);
 
 const selectedLiveRecords = summary.restaurants.filter((record) =>
   [
@@ -287,11 +454,19 @@ const sourceRecords = [
   ...selectedLiveRecords.map((record) =>
     buildSourceRecord(record, publicData.restaurants),
   ),
+  ...confirmedIdentityRecords.map((record) =>
+    buildSourceRecord(
+      record,
+      publicData.restaurants,
+      identityReviewDecisions.get(record.restaurantId),
+    ),
+  ),
+  buildRelocationRecord(relocation, publicData.restaurants),
   buildAdminRecord(summary.adminSavedOutsideLiveTargets, publicData.restaurants),
 ];
 const targetIds = sourceRecords.map((record) => record.restaurantId);
-assert.equal(sourceRecords.length, 75);
-assert.equal(new Set(targetIds).size, 75);
+assert.equal(sourceRecords.length, 81);
+assert.equal(new Set(targetIds).size, 81);
 assert.ok(
   sourceRecords.every((record) =>
     publicData.restaurants.some(
@@ -311,10 +486,10 @@ const variableRecords = sourceRecords.filter(
 const orderRecords = sourceRecords.filter(
   (record) => record.menuGroup === "normalized-order-menu",
 );
-assert.equal(numericRecords.length, 69);
+assert.equal(numericRecords.length, 75);
 assert.equal(
   numericRecords.reduce((total, record) => total + record.menus.length, 0),
-  727,
+  779,
 );
 assert.equal(variableRecords.length, 4);
 assert.equal(
@@ -328,7 +503,7 @@ assert.equal(
 );
 assert.equal(
   sourceRecords.reduce((total, record) => total + record.menus.length, 0),
-  765,
+  817,
 );
 const productionMenuCount = sourceRecords.reduce(
   (total, record) =>
@@ -338,7 +513,7 @@ const productionMenuCount = sourceRecords.reduce(
     ).length,
   0,
 );
-assert.equal(productionMenuCount, 764);
+assert.equal(productionMenuCount, 816);
 
 const duplicatePhysicalSources = [...Map.groupBy(sourceRecords, (record) => record.sourceIdentity)]
   .filter(([, records]) => records.length > 1)
@@ -351,7 +526,7 @@ const duplicatePhysicalSources = [...Map.groupBy(sourceRecords, (record) => reco
   }));
 assert.equal(duplicatePhysicalSources.length, 1);
 assert.equal(duplicatePhysicalSources[0].sourceIdentity, "naver-place:11706951");
-assert.equal(new Set(sourceRecords.map((record) => record.sourceIdentity)).size, 74);
+assert.equal(new Set(sourceRecords.map((record) => record.sourceIdentity)).size, 80);
 
 const excluded = Object.fromEntries(
   Object.entries(Map.groupBy(summary.restaurants, (record) => record.classification))
@@ -375,6 +550,24 @@ const excluded = Object.fromEntries(
       },
     ]),
 );
+excluded.menu_evidence_identity_review = {
+  restaurantCount: 2,
+  numericMenuEvidenceCount: 11,
+  restaurantIds: identityReviewRecords
+    .filter(
+      (record) =>
+        identityReviewDecisions.get(record.restaurantId)?.disposition ===
+        "permanently-delete",
+    )
+    .map((record) => record.restaurantId),
+  wrongBusinessMenuEvidenceRejected: {
+    restaurantId: relocation.restaurantId,
+    numericMenuEvidenceCount: 15,
+    sourceUrl: identityReviewRecords.find(
+      (record) => record.restaurantId === relocation.restaurantId,
+    ).sourceUrl,
+  },
+};
 
 const evidence = {
   schemaVersion: 1,
@@ -388,7 +581,9 @@ const evidence = {
       "order_menu_pending",
       "admin_saved_numeric_menu",
     ],
-    identityReviewApplied: false,
+    identityReviewApplied: true,
+    identityReviewBasis:
+      "2026-09-28 사용자 확인으로 5개 동일 식당의 현재 상호와 메뉴를 반영하고, 육전식당 이전 근거를 별도 반영하며, 폐업 2개는 영구 삭제",
     variablePriceRepresentation:
       "가격 변동 문자열로 저장하며 0원으로 변환하지 않음",
     orderPriceContext:
@@ -397,12 +592,12 @@ const evidence = {
       "여수 자연횟집 하바그린티빙수 9,000원은 원문 증거와 검토 메모를 보존하되 검증 전 productionDisposition=excluded-pending-review로 공개 메뉴에서 제외",
   },
   counts: {
-    targetRestaurantIds: 75,
-    physicalSourceIdentities: 74,
+    targetRestaurantIds: 81,
+    physicalSourceIdentities: 80,
     duplicatePhysicalSourceGroups: 1,
-    currentNumericRestaurants: 68,
-    currentNumericSourceMenus: 719,
-    currentNumericProductionMenus: 718,
+    currentNumericRestaurants: 74,
+    currentNumericSourceMenus: 771,
+    currentNumericProductionMenus: 770,
     adminSavedNumericRestaurants: 1,
     adminSavedNumericMenus: 8,
     variablePriceRestaurants: 4,
@@ -410,13 +605,27 @@ const evidence = {
     normalizedOrderRestaurants: 2,
     normalizedOrderMenus: 34,
     ambiguousMenusExcludedFromProduction: 1,
-    totalSourceMenus: 765,
-    totalProductionMenus: 764,
-    identityReviewRestaurantsExcluded: 8,
-    identityReviewNumericMenusExcluded: 62,
+    totalSourceMenus: 817,
+    totalProductionMenus: 816,
+    identityReviewRestaurantsAppliedFromOriginalEvidence: 5,
+    identityReviewNumericMenusAppliedFromOriginalEvidence: 36,
+    identityReviewRestaurantsAppliedFromRelocationEvidence: 1,
+    identityReviewNumericMenusRejectedAsWrongBusiness: 15,
+    relocationNumericMenusApplied: 16,
+    identityReviewRestaurantsPermanentlyDeleted: 2,
+    identityReviewNumericMenusRejectedForDeletedRestaurants: 11,
+    identityReviewRestaurantsExcluded: 2,
+    identityReviewNumericMenusExcluded: 11,
   },
   duplicatePhysicalSources,
   excluded,
+  identityReviewDecisions: identityReviewRecords.map((record) => ({
+    ...record,
+    checkedAt,
+    userIdentityConfirmationAt,
+    decision: identityReviewDecisions.get(record.restaurantId),
+  })),
+  relocationEvidence: relocation,
   restaurants: sourceRecords,
 };
 
@@ -428,8 +637,8 @@ for (const sourceRecord of sourceRecords) {
   const previous = overrides[sourceRecord.restaurantId] ?? {};
   const previousMenus = previous.menus ?? [];
   const oursAlready =
-    previous.menuPriceVerifiedAt === checkedAt &&
-    String(previous.menuPriceStatus ?? "").includes("2026-09-27") &&
+    previous.menuPriceVerifiedAt === sourceRecord.checkedAt &&
+    String(previous.menuPriceStatus ?? "").includes(sourceRecord.checkedAt) &&
     previous.menuPriceSources?.some(
       (source) =>
         placeIdentity(source.url) === sourceRecord.sourceIdentity,
@@ -452,19 +661,60 @@ for (const sourceRecord of sourceRecords) {
 }
 assert.deepEqual(conflicts, [], "Refusing to replace an existing nonempty menu edit");
 
+const deletionRecordsById = new Map(
+  identityReviewRecords.map((record) => [record.restaurantId, record]),
+);
+const newTombstones = [...identityReviewDecisions]
+  .filter(([, decision]) => decision.disposition === "permanently-delete")
+  .map(([restaurantId, decision]) => {
+    const record = deletionRecordsById.get(restaurantId);
+    assert.ok(record, `Missing identity-review deletion source: ${restaurantId}`);
+    return {
+      id: restaurantId,
+      name: record.name,
+      address: record.address,
+      reason: decision.reason,
+      deletedAt: userIdentityConfirmationAt,
+      note: decision.note,
+      evidenceClassification: record.classification,
+      evidenceCheckedAt: checkedAt,
+      evidenceSourceUrl: record.sourceUrl,
+      userIdentityConfirmationAt,
+      currentBusinessName: decision.currentBusinessName,
+    };
+  });
+let tombstonesAdded = 0;
+let tombstoneOverridesRemoved = 0;
+for (const tombstone of newTombstones) {
+  const existing = deletions.restaurants.find((row) => row.id === tombstone.id);
+  if (existing) {
+    assert.deepEqual(existing, tombstone);
+  } else {
+    deletions.restaurants.push(tombstone);
+    tombstonesAdded += 1;
+  }
+  if (overrides[tombstone.id]) {
+    delete overrides[tombstone.id];
+    tombstoneOverridesRemoved += 1;
+  }
+}
+
 await mkdir(evidenceDirectory, { recursive: true });
 await writeFile(evidencePath, stableJson(evidence), "utf8");
 await writeFile(overridesPath, stableJson(overrides), "utf8");
+await writeFile(deletionsPath, stableJson(deletions), "utf8");
 console.log(
   JSON.stringify(
     {
       applied,
       unchanged,
       conflicts,
+      tombstonesAdded,
+      tombstoneOverridesRemoved,
       targetRestaurantIds: sourceRecords.length,
       totalMenus: evidence.counts.totalProductionMenus,
-      numericSourceMenus: 727,
-      numericProductionMenus: 726,
+      numericSourceMenus: 779,
+      numericProductionMenus: 778,
       variablePriceMenus: 4,
       normalizedOrderMenus: 34,
       physicalSourceIdentities: evidence.counts.physicalSourceIdentities,

@@ -10,18 +10,19 @@
       "order_menu_pending",
       "admin_saved_numeric_menu"
     ],
-    "identityReviewApplied": false,
+    "identityReviewApplied": true,
+    "identityReviewBasis": "2026-09-28 사용자 확인으로 5개 동일 식당의 현재 상호와 메뉴를 반영하고, 육전식당 이전 근거를 별도 반영하며, 폐업 2개는 영구 삭제",
     "variablePriceRepresentation": "가격 변동 문자열로 저장하며 0원으로 변환하지 않음",
     "orderPriceContext": "네이버 주문 화면에서 포장 선택 상태의 표시 가격. 매장 가격 동일 여부 미확인. 포장불가 상품 조건 유지.",
     "ambiguousItemHandling": "여수 자연횟집 하바그린티빙수 9,000원은 원문 증거와 검토 메모를 보존하되 검증 전 productionDisposition=excluded-pending-review로 공개 메뉴에서 제외"
   },
   "counts": {
-    "targetRestaurantIds": 75,
-    "physicalSourceIdentities": 74,
+    "targetRestaurantIds": 81,
+    "physicalSourceIdentities": 80,
     "duplicatePhysicalSourceGroups": 1,
-    "currentNumericRestaurants": 68,
-    "currentNumericSourceMenus": 719,
-    "currentNumericProductionMenus": 718,
+    "currentNumericRestaurants": 74,
+    "currentNumericSourceMenus": 771,
+    "currentNumericProductionMenus": 770,
     "adminSavedNumericRestaurants": 1,
     "adminSavedNumericMenus": 8,
     "variablePriceRestaurants": 4,
@@ -29,10 +30,17 @@
     "normalizedOrderRestaurants": 2,
     "normalizedOrderMenus": 34,
     "ambiguousMenusExcludedFromProduction": 1,
-    "totalSourceMenus": 765,
-    "totalProductionMenus": 764,
-    "identityReviewRestaurantsExcluded": 8,
-    "identityReviewNumericMenusExcluded": 62
+    "totalSourceMenus": 817,
+    "totalProductionMenus": 816,
+    "identityReviewRestaurantsAppliedFromOriginalEvidence": 5,
+    "identityReviewNumericMenusAppliedFromOriginalEvidence": 36,
+    "identityReviewRestaurantsAppliedFromRelocationEvidence": 1,
+    "identityReviewNumericMenusRejectedAsWrongBusiness": 15,
+    "relocationNumericMenusApplied": 16,
+    "identityReviewRestaurantsPermanentlyDeleted": 2,
+    "identityReviewNumericMenusRejectedForDeletedRestaurants": 11,
+    "identityReviewRestaurantsExcluded": 2,
+    "identityReviewNumericMenusExcluded": 11
   },
   "duplicatePhysicalSources": [
     {
@@ -51,7 +59,849 @@
       "disposition": "기존 식당 ID를 모두 유지하고 동일 메뉴 스냅샷을 각각 적용"
     }
   ],
-  "excluded": {},
+  "excluded": {
+    "menu_evidence_identity_review": {
+      "restaurantCount": 2,
+      "numericMenuEvidenceCount": 11,
+      "restaurantIds": [
+        "wednesday-gourmet_restaurant_466",
+        "topic_enrichment_delicious-guys_e9deefd0dd9f"
+      ],
+      "wrongBusinessMenuEvidenceRejected": {
+        "restaurantId": "wednesday-gourmet_restaurant_502",
+        "numericMenuEvidenceCount": 15,
+        "sourceUrl": "https://m.place.naver.com/restaurant/32699872/menu"
+      }
+    }
+  },
+  "identityReviewDecisions": [
+    {
+      "name": "온천할머니집",
+      "address": "광주 동구 지호로127번길 29 (지산동 67-21)",
+      "restaurantId": "topic_enrichment_baekjong-wok_28f264d7f33b",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 3,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "보리밥",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "제육볶음",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도토리묵",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/1135838529/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호는 지산골온천보리밥이며 주소·상호에 온천할머니보리밥 표기가 있으나 동일성 확정 전이다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-current-name-and-menu",
+        "currentName": "지산골온천보리밥",
+        "note": "온천할머니집과 현재 상호 지산골온천보리밥은 같은 식당으로 사용자 확인."
+      }
+    },
+    {
+      "name": "함양 조센집",
+      "address": "경남 함양군 함양읍 학사루길 36 (운림리 35-5)",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_218",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 4,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "민물고기 튀김(대)",
+          "price": "40,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "민물고기 튀김(소)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        },
+        {
+          "name": "어탕국수",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "어탕밥",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/11842660/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 표기 조샌집과 기존 상호 조센집의 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-current-name-and-menu",
+        "currentName": "조샌집",
+        "note": "기존 조센집 표기와 현재 상호 조샌집은 같은 식당으로 사용자 확인."
+      }
+    },
+    {
+      "name": "서울 한우다이닝 울릉",
+      "address": "서울 서초구 서운로 135 (서초동 1322-11)",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_593",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 16,
+      "pendingMenuCount": 3,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "순메밀 평양냉면",
+          "price": "17,000원",
+          "variablePrice": false,
+          "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀면입니다."
+        },
+        {
+          "name": "골동면",
+          "price": "19,000원",
+          "variablePrice": false,
+          "description": "다채로운 고명에 특제 간장과 들기름을 더해 비벼먹는 전통의 멋을 담은 골동면입니다."
+        },
+        {
+          "name": "난축맛돈 구이",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 입니다."
+        },
+        {
+          "name": "양념돼지갈비",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "육질 좋은 삼겹살을 얇게 저며 천양 양념에 깊이 숙성 박포갈비를 재현한 양념돼지갈비"
+        },
+        {
+          "name": "육회한우니",
+          "price": "68,000원",
+          "variablePrice": false,
+          "description": "신선한 한우 육회와 신선한 우니가 어우러진 섬세한 풍미의 조화 냉동우니는 사용하지 않습니다"
+        },
+        {
+          "name": "평양냉면과 돔베고기",
+          "price": "26,000원",
+          "variablePrice": false,
+          "description": "순메밀 냉면과 광평 돔베고기를 함께 먹을 수 있는 한상차림 (물/비빔 중 택 1)",
+          "quantityOrConditions": [
+            "(물/비빔 중 택 1)"
+          ]
+        },
+        {
+          "name": "한우 숯불구이정식",
+          "price": "39,000원",
+          "variablePrice": false,
+          "description": "한우1++ 갈비살로 제공됩니다. [물/비빔/솥밥 중 택1] *14:30 까지 주문가능",
+          "quantityOrConditions": [
+            "[물/비빔/솥밥 중 택1]",
+            "주문가능"
+          ]
+        },
+        {
+          "name": "난축맛돈 목살",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 목살"
+        },
+        {
+          "name": "난축맛돈 삼겹살",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 삼겹살"
+        },
+        {
+          "name": "한우육회 180g",
+          "price": "42,000원",
+          "variablePrice": false,
+          "description": "신선한 한우를 사용해 고소하고 달큰한 육향이 살아있는 정통 한우육회",
+          "quantityOrConditions": [
+            "180g"
+          ]
+        },
+        {
+          "name": "골동면과 돔베고기",
+          "price": "27,000원",
+          "variablePrice": false,
+          "description": "골동면과 광평 돔베고기를 함께 먹을 수 있는 한상차림"
+        },
+        {
+          "name": "한우곰탕",
+          "price": "19,000원",
+          "variablePrice": false,
+          "description": "한우 양지와 사태로 푹 끓인 한우곰탕. 특 사이즈는 21000원 입니다."
+        },
+        {
+          "name": "순메밀 비빔냉면",
+          "price": "17,000원",
+          "variablePrice": false,
+          "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀 비빔냉면"
+        },
+        {
+          "name": "한우 생갈비 1대 (생/양념)",
+          "price": "130,000원",
+          "variablePrice": false,
+          "description": "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다.",
+          "quantityOrConditions": [
+            "1대",
+            "(생/양념)",
+            "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다"
+          ]
+        },
+        {
+          "name": "1++ 한우살치살 130g",
+          "price": "91,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "130g"
+          ]
+        },
+        {
+          "name": "1++ 한우안창살 130g",
+          "price": "96,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "130g"
+          ]
+        }
+      ],
+      "pendingMenus": [
+        {
+          "name": "한우 등심",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "description": "100g 55000원 무게에 따라 가격이 다릅니다. 직원에게 문의해주세요.",
+          "quantityOrConditions": [
+            "100g",
+            "무게에 따라 가격이 다릅니다",
+            "직원에게 문의해주세요"
+          ],
+          "pendingReason": "price_has_no_numeric_amount"
+        },
+        {
+          "name": "한우 안심",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "description": "100g 60000원 무게에 따라 가격이 다릅니다. 직원에게 문의해주세요.",
+          "quantityOrConditions": [
+            "100g",
+            "무게에 따라 가격이 다릅니다",
+            "직원에게 문의해주세요"
+          ],
+          "pendingReason": "price_has_no_numeric_amount"
+        },
+        {
+          "name": "우니한판",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "pendingReason": "price_has_no_numeric_amount"
+        }
+      ],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/1745222116/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 김인복의광평 강남직영점으로 달라 메뉴 16개를 운영 반영에서 제외한다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-current-name-and-menu",
+        "currentName": "김인복의광평 강남직영점",
+        "note": "한우다이닝 울릉이 김인복의광평 강남직영점으로 상호를 바꾼 같은 식당으로 사용자 확인."
+      }
+    },
+    {
+      "name": "갈비탕집(갈비탕)",
+      "address": "서울 성동구 청계천로10가길 10-9",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_655",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_address_match_name_review",
+      "numericMenuCount": 1,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "갈비탕",
+          "price": "14,000원"
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1266006822/menu",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch2-2026-09-27.json",
+      "reviewNote": "기존 상호가 일반명이고 장소 이전 가능성이 있어 메뉴 근거의 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-current-name-and-menu",
+        "currentName": "마장동 할머니 갈비탕",
+        "note": "기존 일반명 갈비탕집과 현재 상호 마장동 할머니 갈비탕은 같은 식당으로 사용자 확인."
+      }
+    },
+    {
+      "name": "군산 대정소바",
+      "address": "전북 군산시 구영7길 34-1 (월명동 5-8)",
+      "restaurantId": "wednesday-gourmet_restaurant_128",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 12,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "만두",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡국",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소바정식세트",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "자루소바",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "메밀콩국수정식",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "메밀콩국수",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "온모밀정식",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "냉모밀",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "칼국수",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "만두국",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡만둣국",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "녹두전",
+          "price": "12,000원",
+          "variablePrice": false
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/17485826/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 대정칼국수로 확인되어 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-current-name-and-menu",
+        "currentName": "대정칼국수",
+        "note": "대정소바와 현재 상호 대정칼국수는 같은 식당으로 사용자 확인."
+      }
+    },
+    {
+      "name": "서울 어바웃진스",
+      "address": "서울 종로구 새문안로3길 30 (내수동 167)",
+      "restaurantId": "wednesday-gourmet_restaurant_466",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 3,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "진서칼국수",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "들기름비빔장과 얼큰비빔장이 함께 제공되는 깊고 담백한 맛의 자가제면 칼국수"
+        },
+        {
+          "name": "콩국수(5~10월)",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(5~10월)"
+          ]
+        },
+        {
+          "name": "손만두",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "고기의 풍부한 육즙과 아삭한 채소의 조화"
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/37336378/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 진서칼국수만두로 달라 메뉴 3개를 운영 반영에서 제외한다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "permanently-delete",
+        "currentBusinessName": "진서칼국수만두",
+        "reason": "owner_confirmed_closed_business_changed_removal",
+        "note": "어바웃진스는 폐업했고 같은 주소의 현재 메뉴는 다른 업소 진서칼국수만두의 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음."
+      }
+    },
+    {
+      "name": "서울 육전식당 1호점",
+      "address": "서울 동대문구 난계로30길 16 (신설동 104-3)",
+      "restaurantId": "wednesday-gourmet_restaurant_502",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 15,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "들기름 막국수",
+          "price": "13,000원",
+          "variablePrice": false,
+          "description": "방앗간에서 직접 짜낸 국내산 들기름 과 갓지짐 명실상부 육전식당 대표 메뉴"
+        },
+        {
+          "name": "튀김치우동",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "홍합 동죽 조개육수에 칼칼한 김치 쫄깃한 우동면!!"
+        },
+        {
+          "name": "납작냉우동",
+          "price": "12,000원",
+          "variablePrice": false,
+          "description": "우동 반죽을 납작하게 눌러 특이한 식감과 쯔유 들기름의 조화가 일품인 냉우동"
+        },
+        {
+          "name": "비빔 탄탄멘",
+          "price": "12,000원",
+          "variablePrice": false,
+          "description": "고소한 계란카츠와 진한 한우 우족 육수에 매콤함이 가미된 프리미엄 탄탄멘"
+        },
+        {
+          "name": "보약칼국수",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "8가지 한약재 소고기로 정성껏 우려 전복까지 올라간 그대로의 보약! 그리고 다시마채 초"
+        },
+        {
+          "name": "들깨버섯 칼국수/수제비",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "정성껏 우린 닭육수에 국내산 들깨가루로 풍미를 더한 메뉴"
+        },
+        {
+          "name": "비빔막국수",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "특제 양념장이 일품인 육전식당 대표 메뉴중 하나"
+        },
+        {
+          "name": "🔥여름한정🔥냉모밀면",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "자가제면한 모밀면과 특제 육수! 여름한정 메뉴",
+          "quantityOrConditions": [
+            "한정🔥냉모밀면",
+            "한정 메뉴"
+          ]
+        },
+        {
+          "name": "육전 소고기 국밥",
+          "price": "13,000원",
+          "variablePrice": false,
+          "description": "진하게 우려낸 소고기 육수에 특제 양념으로 맛을낸 보양 한그릇"
+        },
+        {
+          "name": "육전손만두 4p",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "어머니께 전수받은 만두 래시피를 재연한 손맛이 담긴 손만두"
+        },
+        {
+          "name": "신설 칼국수",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "20년전 시작되었던 매뉴를 재탄생 ! 다시돌아온 신설칼국수!"
+        },
+        {
+          "name": "얼큰 신설칼국수",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "신설동 에서 시작했던 그 옛 맛을 살려 얼큰함을 더한 시그니처 메뉴"
+        },
+        {
+          "name": "고기덮밥(족발장조림)",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "특제소스에 졸인 족발이 올라간 특제덮밥",
+          "quantityOrConditions": [
+            "(족발장조림)"
+          ]
+        },
+        {
+          "name": "두부카츠 3pcs",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "손두부에 카트 튀김의 노하우를 입힌 별미"
+        },
+        {
+          "name": "버섯 고로케",
+          "price": "8,000원",
+          "variablePrice": false,
+          "description": "표고버섯이 통채로! 바삭하고 버섯의 식감이 일푼"
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/32699872/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 육전제면소로 달라 메뉴 15개를 운영 반영에서 제외한다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "apply-relocation-evidence",
+        "currentName": "육전식당 신설동본점",
+        "note": "기존 방송 식당이 천호대로 33으로 이전한 현재 육전식당 신설동본점으로 사용자 확인. 별도 이전 근거의 메뉴만 적용하고 육전제면소 메뉴는 사용하지 않음."
+      }
+    },
+    {
+      "name": "평택 나귀당귀",
+      "address": "경기 평택시 조개터로26번길 21-3 (합정동 906-5)",
+      "restaurantId": "topic_enrichment_delicious-guys_e9deefd0dd9f",
+      "classification": "menu_evidence_identity_review",
+      "classificationLabel": "메뉴 근거·동일성 검토",
+      "rawStatus": "collected_menu_text_address_matched",
+      "numericMenuCount": 8,
+      "pendingMenuCount": 0,
+      "orderRawEntryCount": 0,
+      "orderStructuredMenuCount": 0,
+      "menus": [
+        {
+          "name": "염소탕",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "어린염소 육수에 사골육수 추가해서 시원합니다."
+        },
+        {
+          "name": "한우 소 불고기 1+ (200g)",
+          "price": "17,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(200g)"
+          ]
+        },
+        {
+          "name": "염소탕 (특)",
+          "price": "18,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(특)"
+          ]
+        },
+        {
+          "name": "염소전골(1인/2인이상)",
+          "price": "26,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1인/2인이상)"
+          ]
+        },
+        {
+          "name": "염소수육(1인/2인이상)",
+          "price": "28,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1인/2인이상)"
+          ]
+        },
+        {
+          "name": "염소무침(1인/2인이상)",
+          "price": "28,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1인/2인이상)"
+          ]
+        },
+        {
+          "name": "염소갈비전골(1인/2인이상)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1인/2인이상)"
+          ]
+        },
+        {
+          "name": "염소갈비수육 (1인/2인이상)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1인/2인이상)"
+          ]
+        }
+      ],
+      "pendingMenus": [],
+      "orderMenuPending": [],
+      "structuredOrderMenus": [],
+      "orderContext": null,
+      "sourceUrl": "https://m.place.naver.com/restaurant/36614739/menu",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 황금목장 염소요리전문점으로 달라 메뉴 8개를 운영 반영에서 제외한다.",
+      "itemReviewNotes": [],
+      "checkedAt": "2026-09-27",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "decision": {
+        "disposition": "permanently-delete",
+        "currentBusinessName": "황금목장 염소요리전문점",
+        "reason": "owner_confirmed_closed_removal",
+        "note": "나귀당귀는 폐업한 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음."
+      }
+    }
+  ],
+  "relocationEvidence": {
+    "restaurantId": "wednesday-gourmet_restaurant_502",
+    "name": "육전식당 신설동본점",
+    "previousName": "서울 육전식당 1호점",
+    "address": "서울 동대문구 천호대로 33 1층",
+    "phone": "02-2234-6373",
+    "checkedAt": "2026-09-28",
+    "menuSourceUpdatedAt": "2026-05-02",
+    "sourceUrl": "https://pcmap.place.naver.com/restaurant/37621125/menu/list",
+    "homeSourceUrl": "https://pcmap.place.naver.com/restaurant/37621125/home",
+    "userConfirmedRelocationAt": "2026-09-28",
+    "geocode": {
+      "query": "서울 동대문구 천호대로 33",
+      "status": "coordinate_correction",
+      "basis": "exact_address_geocode",
+      "offsetMeters": null,
+      "candidate": {
+        "address": "서울 동대문구 천호대로 33",
+        "lat": 37.5741106601623,
+        "lng": 127.026981260648,
+        "relatedAddress": "서울 동대문구 신설동 92-79"
+      },
+      "lookup": {
+        "checkedAt": "2026-09-27T23:45:19.959Z",
+        "query": "서울 동대문구 천호대로 33",
+        "url": "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC+%EC%B2%9C%ED%98%B8%EB%8C%80%EB%A1%9C+33&msFlag=A&sort=0",
+        "addresses": [
+          {
+            "address": "서울 동대문구 천호대로 33",
+            "lat": 37.5741106601623,
+            "lng": 127.026981260648,
+            "relatedAddress": "서울 동대문구 신설동 92-79"
+          }
+        ],
+        "places": [
+          {
+            "id": "10331494",
+            "name": "육전식당 신설본점",
+            "roadAddress": "서울 동대문구 천호대로 33",
+            "parcelAddress": "서울 동대문구 신설동 92-79 1-2층",
+            "lat": 37.5741103,
+            "lng": 127.0269816,
+            "category": "음식점",
+            "categoryDetail": "육류,고기",
+            "open": "Y",
+            "url": "https://place.map.kakao.com/10331494"
+          },
+          {
+            "id": "1735174938",
+            "name": "재능교육",
+            "roadAddress": "서울 동대문구 천호대로 33",
+            "parcelAddress": "서울 동대문구 신설동 92-79",
+            "lat": 37.57410129,
+            "lng": 127.02696462,
+            "category": "교육,학문",
+            "categoryDetail": "학습지",
+            "open": "N",
+            "url": "https://place.map.kakao.com/1735174938"
+          },
+          {
+            "id": "1111323922",
+            "name": "육전티에프에스",
+            "roadAddress": "서울 동대문구 천호대로 33",
+            "parcelAddress": "서울 동대문구 신설동 92-79",
+            "lat": 37.5741103,
+            "lng": 127.0269816,
+            "category": "음식점",
+            "categoryDetail": "음식점",
+            "open": "N",
+            "url": "https://place.map.kakao.com/1111323922"
+          },
+          {
+            "id": "9949498",
+            "name": "유한금속",
+            "roadAddress": "서울 동대문구 천호대로 33",
+            "parcelAddress": "서울 동대문구 신설동 92-79",
+            "lat": 37.5741121,
+            "lng": 127.02699632,
+            "category": "서비스,산업",
+            "categoryDetail": "배관,누수시공",
+            "open": "N",
+            "url": "https://place.map.kakao.com/9949498"
+          }
+        ]
+      }
+    },
+    "menus": [
+      {
+        "name": "통목살 150g",
+        "price": "19,000원"
+      },
+      {
+        "name": "통삼겹 150g",
+        "price": "19,000원"
+      },
+      {
+        "name": "항정살 150g",
+        "price": "21,000원"
+      },
+      {
+        "name": "오겹살 170g",
+        "price": "20,000원"
+      },
+      {
+        "name": "생갈비 200g",
+        "price": "22,000원"
+      },
+      {
+        "name": "양념 껍데기",
+        "price": "14,000원"
+      },
+      {
+        "name": "돈갈비탕",
+        "price": "12,000원"
+      },
+      {
+        "name": "마무리 김치찌개",
+        "price": "9,000원"
+      },
+      {
+        "name": "갓 지짐 들기름 막국수",
+        "price": "12,000원"
+      },
+      {
+        "name": "도토리묵 냉칼국수",
+        "price": "12,000원"
+      },
+      {
+        "name": "들기름 간장생면",
+        "price": "11,000원"
+      },
+      {
+        "name": "동치미 물냉면",
+        "price": "10,000원"
+      },
+      {
+        "name": "비빔냉면",
+        "price": "10,000원"
+      },
+      {
+        "name": "더덕무침",
+        "price": "10,000원"
+      },
+      {
+        "name": "돈육전",
+        "price": "12,000원"
+      },
+      {
+        "name": "우슬편육",
+        "price": "13,000원"
+      }
+    ],
+    "note": "네이버 홈 주소와 이전 본점 상호 대조. 추천 메뉴 중복 제거. 홍보 설명 제외. 원문 돈🐷육전 표기는 돈육전으로 정리. 육전제면소 메뉴 15개 사용하지 않음."
+  },
   "restaurants": [
     {
       "restaurantId": "topic_enrichment_baekjong-wok_503b608be01c",
@@ -5985,6 +6835,453 @@
           "variablePrice": false,
           "description": "엑스트라버진 올리브오일에 절인 통올리브가 들어가 짭짭함이 잘 어우러진 바게트",
           "productionDescription": "엑스트라버진 올리브오일에 절인 통올리브가 들어가 짭짭함이 잘 어우러진 바게트"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_baekjong-wok_28f264d7f33b",
+      "reportRestaurantId": "topic_enrichment_baekjong-wok_28f264d7f33b",
+      "identityResolution": "report",
+      "name": "지산골온천보리밥",
+      "historicalName": "온천할머니집",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "identityReviewNote": "온천할머니집과 현재 상호 지산골온천보리밥은 같은 식당으로 사용자 확인.",
+      "address": "광주 동구 지호로127번길 29 (지산동 67-21)",
+      "classification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1135838529/menu",
+      "sourceIdentity": "naver-place:1135838529",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호는 지산골온천보리밥이며 주소·상호에 온천할머니보리밥 표기가 있으나 동일성 확정 전이다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "보리밥",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "제육볶음",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도토리묵",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_218",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_218",
+      "identityResolution": "report",
+      "name": "조샌집",
+      "historicalName": "함양 조센집",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "identityReviewNote": "기존 조센집 표기와 현재 상호 조샌집은 같은 식당으로 사용자 확인.",
+      "address": "경남 함양군 함양읍 학사루길 36 (운림리 35-5)",
+      "classification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11842660/menu",
+      "sourceIdentity": "naver-place:11842660",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 표기 조샌집과 기존 상호 조센집의 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "민물고기 튀김(대)",
+          "price": "40,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "민물고기 튀김(소)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        },
+        {
+          "name": "어탕국수",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "어탕밥",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_593",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_593",
+      "identityResolution": "report",
+      "name": "김인복의광평 강남직영점",
+      "historicalName": "서울 한우다이닝 울릉",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "identityReviewNote": "한우다이닝 울릉이 김인복의광평 강남직영점으로 상호를 바꾼 같은 식당으로 사용자 확인.",
+      "address": "서울 서초구 서운로 135 (서초동 1322-11)",
+      "classification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1745222116/menu",
+      "sourceIdentity": "naver-place:1745222116",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 김인복의광평 강남직영점으로 달라 메뉴 16개를 운영 반영에서 제외한다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "순메밀 평양냉면",
+          "price": "17,000원",
+          "variablePrice": false,
+          "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀면입니다.",
+          "productionDescription": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀면입니다."
+        },
+        {
+          "name": "골동면",
+          "price": "19,000원",
+          "variablePrice": false,
+          "description": "다채로운 고명에 특제 간장과 들기름을 더해 비벼먹는 전통의 멋을 담은 골동면입니다.",
+          "productionDescription": "다채로운 고명에 특제 간장과 들기름을 더해 비벼먹는 전통의 멋을 담은 골동면입니다."
+        },
+        {
+          "name": "난축맛돈 구이",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 입니다.",
+          "productionDescription": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 입니다."
+        },
+        {
+          "name": "양념돼지갈비",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "육질 좋은 삼겹살을 얇게 저며 천양 양념에 깊이 숙성 박포갈비를 재현한 양념돼지갈비",
+          "productionDescription": "육질 좋은 삼겹살을 얇게 저며 천양 양념에 깊이 숙성 박포갈비를 재현한 양념돼지갈비"
+        },
+        {
+          "name": "육회한우니",
+          "price": "68,000원",
+          "variablePrice": false,
+          "description": "신선한 한우 육회와 신선한 우니가 어우러진 섬세한 풍미의 조화 냉동우니는 사용하지 않습니다",
+          "productionDescription": "신선한 한우 육회와 신선한 우니가 어우러진 섬세한 풍미의 조화 냉동우니는 사용하지 않습니다"
+        },
+        {
+          "name": "평양냉면과 돔베고기",
+          "price": "26,000원",
+          "variablePrice": false,
+          "description": "순메밀 냉면과 광평 돔베고기를 함께 먹을 수 있는 한상차림 (물/비빔 중 택 1)",
+          "quantityOrConditions": [
+            "(물/비빔 중 택 1)"
+          ],
+          "productionDescription": "순메밀 냉면과 광평 돔베고기를 함께 먹을 수 있는 한상차림 (물/비빔 중 택 1)"
+        },
+        {
+          "name": "한우 숯불구이정식",
+          "price": "39,000원",
+          "variablePrice": false,
+          "description": "한우1++ 갈비살로 제공됩니다. [물/비빔/솥밥 중 택1] *14:30 까지 주문가능",
+          "quantityOrConditions": [
+            "[물/비빔/솥밥 중 택1]",
+            "주문가능"
+          ],
+          "productionDescription": "한우1++ 갈비살로 제공됩니다. [물/비빔/솥밥 중 택1] *14:30 까지 주문가능"
+        },
+        {
+          "name": "난축맛돈 목살",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 목살",
+          "productionDescription": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 목살"
+        },
+        {
+          "name": "난축맛돈 삼겹살",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 삼겹살",
+          "productionDescription": "제주가 품고 키운 토종 재래 흑돼지 그 특별함을 고스란히 담은 난축맛돈 삼겹살"
+        },
+        {
+          "name": "한우육회 180g",
+          "price": "42,000원",
+          "variablePrice": false,
+          "description": "신선한 한우를 사용해 고소하고 달큰한 육향이 살아있는 정통 한우육회",
+          "quantityOrConditions": [
+            "180g"
+          ],
+          "productionDescription": "신선한 한우를 사용해 고소하고 달큰한 육향이 살아있는 정통 한우육회"
+        },
+        {
+          "name": "골동면과 돔베고기",
+          "price": "27,000원",
+          "variablePrice": false,
+          "description": "골동면과 광평 돔베고기를 함께 먹을 수 있는 한상차림",
+          "productionDescription": "골동면과 광평 돔베고기를 함께 먹을 수 있는 한상차림"
+        },
+        {
+          "name": "한우곰탕",
+          "price": "19,000원",
+          "variablePrice": false,
+          "description": "한우 양지와 사태로 푹 끓인 한우곰탕. 특 사이즈는 21000원 입니다.",
+          "productionDescription": "한우 양지와 사태로 푹 끓인 한우곰탕. 특 사이즈는 21000원 입니다."
+        },
+        {
+          "name": "순메밀 비빔냉면",
+          "price": "17,000원",
+          "variablePrice": false,
+          "description": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀 비빔냉면",
+          "productionDescription": "제주의 드넓은 메밀밭에서 자란 메밀로 정성껏 뽑은 순메밀 비빔냉면"
+        },
+        {
+          "name": "한우 생갈비 1대 (생/양념)",
+          "price": "130,000원",
+          "variablePrice": false,
+          "description": "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다.",
+          "quantityOrConditions": [
+            "1대",
+            "(생/양념)",
+            "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다"
+          ],
+          "productionDescription": "최소중량 200g (100g 65000원) 생갈비 1대로 제공해드립니다."
+        },
+        {
+          "name": "1++ 한우살치살 130g",
+          "price": "91,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "130g"
+          ]
+        },
+        {
+          "name": "1++ 한우안창살 130g",
+          "price": "96,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "130g"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_655",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_655",
+      "identityResolution": "report",
+      "name": "마장동 할머니 갈비탕",
+      "historicalName": "갈비탕집(갈비탕)",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "identityReviewNote": "기존 일반명 갈비탕집과 현재 상호 마장동 할머니 갈비탕은 같은 식당으로 사용자 확인.",
+      "address": "서울 성동구 청계천로10가길 10-9",
+      "classification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1266006822/menu",
+      "sourceIdentity": "naver-place:1266006822",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch2-2026-09-27.json",
+      "reviewNote": "기존 상호가 일반명이고 장소 이전 가능성이 있어 메뉴 근거의 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "갈비탕",
+          "price": "14,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_128",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_128",
+      "identityResolution": "report",
+      "name": "대정칼국수",
+      "historicalName": "군산 대정소바",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "identityReviewNote": "대정소바와 현재 상호 대정칼국수는 같은 식당으로 사용자 확인.",
+      "address": "전북 군산시 구영7길 34-1 (월명동 5-8)",
+      "classification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/17485826/menu",
+      "sourceIdentity": "naver-place:17485826",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": "네이버 상호가 대정칼국수로 확인되어 동일성 검토가 필요하다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "만두",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡국",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소바정식세트",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "자루소바",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "메밀콩국수정식",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "메밀콩국수",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "온모밀정식",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "냉모밀",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "칼국수",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "만두국",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡만둣국",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "녹두전",
+          "price": "12,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_502",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_502",
+      "identityResolution": "user-confirmed-relocation-existing-id",
+      "name": "육전식당 신설동본점",
+      "historicalName": "서울 육전식당 1호점",
+      "address": "서울 동대문구 천호대로 33 1층",
+      "classification": "user_confirmed_relocation_current_menu",
+      "identityReviewClassification": "menu_evidence_identity_review",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-28",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/37621125/menu/list",
+      "sourceIdentity": "naver-place:37621125",
+      "coverageSource": "browser-relocation-followup",
+      "evidenceFile": "yukjeon-relocation-2026-09-28.json",
+      "reviewNote": "네이버 홈 주소와 이전 본점 상호 대조. 추천 메뉴 중복 제거. 홍보 설명 제외. 원문 돈🐷육전 표기는 돈육전으로 정리. 육전제면소 메뉴 15개 사용하지 않음.",
+      "identityReviewNote": "기존 방송 식당이 천호대로 33으로 이전한 현재 육전식당 신설동본점으로 사용자 확인. 별도 이전 근거의 메뉴만 적용하고 육전제면소 메뉴는 사용하지 않음.",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "itemReviewNotes": [],
+      "productionPatch": {
+        "name": "육전식당 신설동본점",
+        "address": "서울 동대문구 천호대로 33 1층",
+        "region": "서울 동대문구",
+        "lat": 37.5741106601623,
+        "lng": 127.026981260648,
+        "phone": "02-2234-6373",
+        "locationVerifiedAt": "2026-09-28",
+        "locationSourceUrls": [
+          "https://pcmap.place.naver.com/restaurant/37621125/home",
+          "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC+%EC%B2%9C%ED%98%B8%EB%8C%80%EB%A1%9C+33&msFlag=A&sort=0"
+        ],
+        "operationState": "operating",
+        "operationVerifiedAt": "2026-09-28",
+        "operationSourceUrl": "https://pcmap.place.naver.com/restaurant/37621125/home",
+        "dataReviewNote": "2026-09-28 사용자 이전 확인: 기존 방송 식당이 천호대로 33으로 이전한 현재 육전식당 신설동본점으로 사용자 확인. 별도 이전 근거의 메뉴만 적용하고 육전제면소 메뉴는 사용하지 않음."
+      },
+      "menus": [
+        {
+          "name": "통목살 150g",
+          "price": "19,000원"
+        },
+        {
+          "name": "통삼겹 150g",
+          "price": "19,000원"
+        },
+        {
+          "name": "항정살 150g",
+          "price": "21,000원"
+        },
+        {
+          "name": "오겹살 170g",
+          "price": "20,000원"
+        },
+        {
+          "name": "생갈비 200g",
+          "price": "22,000원"
+        },
+        {
+          "name": "양념 껍데기",
+          "price": "14,000원"
+        },
+        {
+          "name": "돈갈비탕",
+          "price": "12,000원"
+        },
+        {
+          "name": "마무리 김치찌개",
+          "price": "9,000원"
+        },
+        {
+          "name": "갓 지짐 들기름 막국수",
+          "price": "12,000원"
+        },
+        {
+          "name": "도토리묵 냉칼국수",
+          "price": "12,000원"
+        },
+        {
+          "name": "들기름 간장생면",
+          "price": "11,000원"
+        },
+        {
+          "name": "동치미 물냉면",
+          "price": "10,000원"
+        },
+        {
+          "name": "비빔냉면",
+          "price": "10,000원"
+        },
+        {
+          "name": "더덕무침",
+          "price": "10,000원"
+        },
+        {
+          "name": "돈육전",
+          "price": "12,000원"
+        },
+        {
+          "name": "우슬편육",
+          "price": "13,000원"
         }
       ]
     },

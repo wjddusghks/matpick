@@ -615,6 +615,32 @@
       "reason": "owner_requested_unresolved_menu_removal",
       "deletedAt": "2026-09-24",
       "note": "추가 대조 후 가격 미반영 55개 중 운영자 요청으로 영구 삭제. 폐업 확정과는 별개입니다."
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_466",
+      "name": "서울 어바웃진스",
+      "address": "서울 종로구 새문안로3길 30 (내수동 167)",
+      "reason": "owner_confirmed_closed_business_changed_removal",
+      "deletedAt": "2026-09-28",
+      "note": "어바웃진스는 폐업했고 같은 주소의 현재 메뉴는 다른 업소 진서칼국수만두의 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음.",
+      "evidenceClassification": "menu_evidence_identity_review",
+      "evidenceCheckedAt": "2026-09-27",
+      "evidenceSourceUrl": "https://m.place.naver.com/restaurant/37336378/menu",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "currentBusinessName": "진서칼국수만두"
+    },
+    {
+      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
+      "name": "평택 나귀당귀",
+      "address": "경기 평택시 조개터로26번길 21-3 (합정동 906-5)",
+      "reason": "owner_confirmed_closed_removal",
+      "deletedAt": "2026-09-28",
+      "note": "나귀당귀는 폐업한 것으로 사용자 확인. 기존 식당을 영구 삭제하며 현재 업소의 메뉴를 전용하지 않음.",
+      "evidenceClassification": "menu_evidence_identity_review",
+      "evidenceCheckedAt": "2026-09-27",
+      "evidenceSourceUrl": "https://m.place.naver.com/restaurant/36614739/menu",
+      "userIdentityConfirmationAt": "2026-09-28",
+      "currentBusinessName": "황금목장 염소요리전문점"
     }
   ]
 }

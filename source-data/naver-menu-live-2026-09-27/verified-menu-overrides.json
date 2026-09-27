@@ -1,0 +1,6042 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-27",
+  "generatedFrom": "../outputs/guided-naver-menu/summary.json",
+  "sourceSummaryGeneratedAt": "2026-09-27T21:34:39+09:00",
+  "policy": {
+    "selectedClassifications": [
+      "numeric_menu_acquired",
+      "variable_price_only",
+      "order_menu_pending",
+      "admin_saved_numeric_menu"
+    ],
+    "identityReviewApplied": false,
+    "variablePriceRepresentation": "가격 변동 문자열로 저장하며 0원으로 변환하지 않음",
+    "orderPriceContext": "네이버 주문 화면에서 포장 선택 상태의 표시 가격. 매장 가격 동일 여부 미확인. 포장불가 상품 조건 유지.",
+    "ambiguousItemHandling": "여수 자연횟집 하바그린티빙수 9,000원은 원문 증거와 검토 메모를 보존하되 검증 전 productionDisposition=excluded-pending-review로 공개 메뉴에서 제외"
+  },
+  "counts": {
+    "targetRestaurantIds": 75,
+    "physicalSourceIdentities": 74,
+    "duplicatePhysicalSourceGroups": 1,
+    "currentNumericRestaurants": 68,
+    "currentNumericSourceMenus": 719,
+    "currentNumericProductionMenus": 718,
+    "adminSavedNumericRestaurants": 1,
+    "adminSavedNumericMenus": 8,
+    "variablePriceRestaurants": 4,
+    "variablePriceMenus": 4,
+    "normalizedOrderRestaurants": 2,
+    "normalizedOrderMenus": 34,
+    "ambiguousMenusExcludedFromProduction": 1,
+    "totalSourceMenus": 765,
+    "totalProductionMenus": 764,
+    "identityReviewRestaurantsExcluded": 8,
+    "identityReviewNumericMenusExcluded": 62
+  },
+  "duplicatePhysicalSources": [
+    {
+      "sourceIdentity": "naver-place:11706951",
+      "restaurantIds": [
+        "topic_enrichment_baekjong-wok_86024cb2da59",
+        "topic_enrichment_delicious-guys_eafd72ff9c21"
+      ],
+      "names": [
+        "원할매소문난닭한마리",
+        "서울 원조원할매소문난닭한마리"
+      ],
+      "addresses": [
+        "서울 종로구 종로40가길 25 (종로5가 282-21)"
+      ],
+      "disposition": "기존 식당 ID를 모두 유지하고 동일 메뉴 스냅샷을 각각 적용"
+    }
+  ],
+  "excluded": {},
+  "restaurants": [
+    {
+      "restaurantId": "topic_enrichment_baekjong-wok_503b608be01c",
+      "reportRestaurantId": "topic_enrichment_baekjong-wok_503b608be01c",
+      "identityResolution": "report",
+      "name": "묘향만두",
+      "address": "경기 구리시 아차산로 63 (아천동 300-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/11667161/menu?fromPanelNum=1&additionalHeight=76&timestamp=202609272114&locale=ko&svcName=map_pcv5&searchText=%EB%AC%98%ED%96%A5%EB%A7%8C%EB%91%90",
+      "sourceIdentity": "naver-place:11667161",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "만두국",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "묘향뚝배기",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "찐만두",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "만두전골",
+          "price": "43,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "녹두빈대떡",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오이소박이국수",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "묘향비빔국수(들기름)",
+          "price": "11,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(들기름)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_baekjong-wok_54f0433ffeb5",
+      "reportRestaurantId": "topic_enrichment_baekjong-wok_54f0433ffeb5",
+      "identityResolution": "report",
+      "name": "백화양곱창",
+      "address": "부산 중구 자갈치로23번길 6 (남포동6가 32)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11861258/menu",
+      "sourceIdentity": "naver-place:11861258",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "양곱창",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "양(모듬)",
+          "price": "39,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(모듬)"
+          ]
+        },
+        {
+          "name": "볶음밥",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "맥주/소주",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "음료",
+          "price": "2,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_baekjong-wok_86024cb2da59",
+      "reportRestaurantId": "topic_enrichment_baekjong-wok_86024cb2da59",
+      "identityResolution": "report",
+      "name": "원할매소문난닭한마리",
+      "address": "서울 종로구 종로40가길 25 (종로5가 282-21)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/11706951/menu?fromPanelNum=1&additionalHeight=76&timestamp=202609272116&locale=ko&svcName=map_pcv5&searchText=%EC%9B%90%ED%95%A0%EB%A7%A4%EC%86%8C%EB%AC%B8%EB%82%9C%EB%8B%AD%ED%95%9C%EB%A7%88%EB%A6%AC",
+      "sourceIdentity": "naver-place:11706951",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "닭한마리",
+          "price": "33,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "칼국수사리",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡사리",
+          "price": "1,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "버섯사리",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭한마리A세트(2인)",
+          "price": "37,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(2인)"
+          ]
+        },
+        {
+          "name": "닭한마리B세트(3인)",
+          "price": "55,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(3인)"
+          ]
+        },
+        {
+          "name": "닭한마리C세트(4인)",
+          "price": "69,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(4인)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_017",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_017",
+      "identityResolution": "report",
+      "name": "서울 성원식품",
+      "address": "서울 중구 을지로20길 36 (인현동2가 92-10)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1095267629/menu",
+      "sourceIdentity": "naver-place:1095267629",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "LA갈비 1인분",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "1인분",
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "오징어볶음 + 면사리",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "스팸 소",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "대 15000",
+          "productionDescription": "대 15000"
+        },
+        {
+          "name": "제육볶음",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "계란말이",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "스팸김치찌개",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "점심-오징어볶음 2인이상",
+          "price": "8,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ]
+        },
+        {
+          "name": "점심-제육볶음 2인이상",
+          "price": "8,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ]
+        },
+        {
+          "name": "점심-고등어구이",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "점심-김치찌개",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "점심-청국장",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "점심-된장, 순두부",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "LA갈비 2인분+된장+공기밥2",
+          "price": "38,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2인분"
+          ]
+        },
+        {
+          "name": "오징어,제육볶음+국+공기밥2인",
+          "price": "15,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2인"
+          ]
+        },
+        {
+          "name": "LA갈비 1인분+된장+공기밥",
+          "price": "17,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1인분"
+          ]
+        },
+        {
+          "name": "김치찌개",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_068",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_068",
+      "identityResolution": "report",
+      "name": "인천 인천당",
+      "address": "인천 중구 참외전로 138 (용동 2)",
+      "classification": "variable_price_only",
+      "menuGroup": "variable-price-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/20780272/menu",
+      "sourceIdentity": "naver-place:20780272",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "생과자",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "description": "생과자",
+          "pendingReason": "price_has_no_numeric_amount",
+          "productionDescription": "고정 금액 미표시. 주문 전 가격 확인 필요."
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_106",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_106",
+      "identityResolution": "report",
+      "name": "서울 경상도식당 (경상도집)",
+      "address": "서울 중구 을지로6가 1-1",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/32839659/menu",
+      "sourceIdentity": "naver-place:32839659",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "국내산돼지갈비 1인분",
+          "price": "17,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1인분"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_130",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_130",
+      "identityResolution": "report",
+      "name": "광주 창신식당",
+      "address": "광주 서구 금화로492번길 18-1 (농성동 627-16)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/13570681/menu",
+      "sourceIdentity": "naver-place:13570681",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "돼지고기",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "조기구이",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "우렁된장국",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "홍어",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "황실이전",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "김치찌개",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "보쌈고기",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "두부김치",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "삼합",
+          "price": "25,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전어구이",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_139",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_139",
+      "identityResolution": "report",
+      "name": "몰고랑몸국",
+      "address": "제주특별자치도 서귀포시 중앙로 111 1층",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/16918445/menu",
+      "sourceIdentity": "naver-place:16918445",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "순대 한접시",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "두루치기",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "몸국",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "흑도새기국",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "보말국",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순두부",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어조림",
+          "price": "25,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_148",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_148",
+      "identityResolution": "report",
+      "name": "구례 당치민박산장",
+      "address": "전남 구례군 토지면 당치길 145 (내동리 137-1)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11823178/menu",
+      "sourceIdentity": "naver-place:11823178",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "닭구이",
+          "price": "80,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "항아리오리훈제",
+          "price": "75,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도토리묵",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "파전",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "약초막걸리",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_181",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_181",
+      "identityResolution": "report",
+      "name": "정다운식당",
+      "address": "전남 여수시 돌산읍 무술목길 142-1 본관 3층",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/2063118717/menu",
+      "sourceIdentity": "naver-place:2063118717",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "여수 암꽃게장 (돌산 간장게장)",
+          "price": "37,000원",
+          "variablePrice": false,
+          "description": "2TV생생정보 2221회 방영 메뉴 (간장암꽃게장 + 양념꽃게 + 새우장 + 전복장",
+          "quantityOrConditions": [
+            "(돌산 간장게장)"
+          ],
+          "productionDescription": "2TV생생정보 2221회 방영 메뉴 (간장암꽃게장 + 양념꽃게 + 새우장 + 전복장"
+        },
+        {
+          "name": "돌산 꽃게탕 + 여수 게장 백반",
+          "price": "23,000원",
+          "variablePrice": false,
+          "description": "MBC every1 어서와한국은처음이지 출연, 여수 꽃게탕 (꽃게탕+양념게장+간장돌게장)",
+          "quantityOrConditions": [
+            "(꽃게탕+양념게장+간장돌게장)"
+          ],
+          "productionDescription": "MBC every1 어서와한국은처음이지 출연, 여수 꽃게탕 (꽃게탕+양념게장+간장돌게장)"
+        },
+        {
+          "name": "여수 갈치조림 + 돌게장 백반",
+          "price": "23,000원",
+          "variablePrice": false,
+          "description": "매콤달콤 갈치조림 + 간장돌게장 + 양념게장 + 새우장 (2인 이상 가능)",
+          "quantityOrConditions": [
+            "(2인 이상 가능)"
+          ],
+          "productionDescription": "매콤달콤 갈치조림 + 간장돌게장 + 양념게장 + 새우장 (2인 이상 가능)"
+        },
+        {
+          "name": "여수게장 꽃게정식",
+          "price": "50,000원",
+          "variablePrice": false,
+          "description": "생생정보통 방영메뉴,여수 돌산 꽃게 코스 (꽃게탕+간장암꽃게장+양념꽃게+새우장+전복장)",
+          "quantityOrConditions": [
+            "(꽃게탕+간장암꽃게장+양념꽃게+새우장+전복장)"
+          ],
+          "productionDescription": "생생정보통 방영메뉴,여수 돌산 꽃게 코스 (꽃게탕+간장암꽃게장+양념꽃게+새우장+전복장)"
+        },
+        {
+          "name": "여수 갈치정식 (게장코스)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "description": "생생정보통 방영, 여수 갈치조림 + 간장암꽃게장 + 양념꽃게 + 새우장 코스",
+          "quantityOrConditions": [
+            "(게장코스)"
+          ],
+          "productionDescription": "생생정보통 방영, 여수 갈치조림 + 간장암꽃게장 + 양념꽃게 + 새우장 코스"
+        },
+        {
+          "name": "돌산 양념꽃게장 세트",
+          "price": "25,000원",
+          "variablePrice": false,
+          "description": "매콤달콤 양념꽃게장 + 간장돌게장 + 새우장 + 전복장",
+          "productionDescription": "매콤달콤 양념꽃게장 + 간장돌게장 + 새우장 + 전복장"
+        },
+        {
+          "name": "여수 암꽃게장 추가 (1마리)",
+          "price": "25,000원",
+          "variablePrice": false,
+          "description": "마리당 250g 내외, 간장 숙성 암꽃게",
+          "quantityOrConditions": [
+            "(1마리)",
+            "250g"
+          ],
+          "productionDescription": "마리당 250g 내외, 간장 숙성 암꽃게"
+        },
+        {
+          "name": "돌산 양념꽃게 추가 (1마리)",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "마리당 250g 내외, 매콤달콤 양념",
+          "quantityOrConditions": [
+            "(1마리)",
+            "250g"
+          ],
+          "productionDescription": "마리당 250g 내외, 매콤달콤 양념"
+        },
+        {
+          "name": "어린이 돈까스 (아이 메뉴)",
+          "price": "9,000원",
+          "variablePrice": false,
+          "description": "가족외식 아이 메뉴, 매장 직접 조리",
+          "quantityOrConditions": [
+            "(아이 메뉴)"
+          ],
+          "productionDescription": "가족외식 아이 메뉴, 매장 직접 조리"
+        },
+        {
+          "name": "여수 전복장 추가 (1마리)",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "신선한 국내산 전복장 (마리당)",
+          "quantityOrConditions": [
+            "(1마리)",
+            "(마리당)"
+          ],
+          "productionDescription": "신선한 국내산 전복장 (마리당)"
+        },
+        {
+          "name": "여수 새우장 추가 (1마리)",
+          "price": "1,000원",
+          "variablePrice": false,
+          "description": "짜지 않은 간장 새우장(마리당)",
+          "quantityOrConditions": [
+            "(1마리)",
+            "(마리당)"
+          ],
+          "productionDescription": "짜지 않은 간장 새우장(마리당)"
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_185",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_185",
+      "identityResolution": "report",
+      "name": "여수 추억꺼리",
+      "address": "전남 여수시 시전6길 22 (신기동 73-6)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1665192378/menu",
+      "sourceIdentity": "naver-place:1665192378",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "동태머리찜(대)",
+          "price": "35,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "장어구이",
+          "price": "35,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "깨장어구이(대)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "장어머리",
+          "price": "35,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_228",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_228",
+      "identityResolution": "report",
+      "name": "담양 부부식당",
+      "address": "전남 담양군 담양읍 중앙로 18 (지침리 668)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/17356745/menu",
+      "sourceIdentity": "naver-place:17356745",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "백반",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "국밥",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "추어탕",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "콩나물해장국",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "주물럭(300g)",
+          "price": "20,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(300g)"
+          ]
+        },
+        {
+          "name": "삼겹살",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오징어볶음(소)",
+          "price": "20,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        },
+        {
+          "name": "생선찌개(소)",
+          "price": "20,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_253",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_253",
+      "identityResolution": "report",
+      "name": "강릉 미경이네 횟집",
+      "address": "강원 강릉시 주문진읍 해안로 2017-1 (주문리 829-72)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/13333219/menu",
+      "sourceIdentity": "naver-place:13333219",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch2-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "성게미역국",
+          "price": "18,000원"
+        },
+        {
+          "name": "스페셜물회",
+          "price": "27,000원"
+        },
+        {
+          "name": "회덮밥",
+          "price": "17,000원"
+        },
+        {
+          "name": "물회",
+          "price": "17,000원"
+        },
+        {
+          "name": "초밥",
+          "price": "17,000원"
+        },
+        {
+          "name": "특섭국",
+          "price": "18,000원"
+        },
+        {
+          "name": "섭국",
+          "price": "16,000원"
+        },
+        {
+          "name": "섭미역국",
+          "price": "16,000원"
+        },
+        {
+          "name": "성게비빔밥",
+          "price": "18,000원"
+        },
+        {
+          "name": "멍게비빔밥",
+          "price": "17,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_296",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_296",
+      "identityResolution": "report",
+      "name": "양주 동언집 (동언식당)",
+      "address": "경기 양주시 덕정1길 15-3 (덕정동 350-63)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/18077876/menu",
+      "sourceIdentity": "naver-place:18077876",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "제주 갈치찌개 특",
+          "price": "80,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "제주 갈치찌개 大",
+          "price": "70,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "제주 갈치찌개 中",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "제주 갈치찌개 小",
+          "price": "50,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_311",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_311",
+      "identityResolution": "report",
+      "name": "인천 중국물만두",
+      "address": "인천 부평구 주부토로32번길 27 (부평동 252-56)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1680292085/menu",
+      "sourceIdentity": "naver-place:1680292085",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "볶음면",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "탕수육",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭날개요리",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "쯔란심관",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "돼지귀무침",
+          "price": "8,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_321",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_321",
+      "identityResolution": "report",
+      "name": "광양 예촌식당",
+      "address": "전남 광양시 남산1길 27 (광영동 729-12)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1199351171/menu",
+      "sourceIdentity": "naver-place:1199351171",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "생선구이특식",
+          "price": "15,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_344",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_344",
+      "identityResolution": "report",
+      "name": "순창 백야촌",
+      "address": "전북 순창군 팔덕면 담순로 889-13 (덕천리 245-23)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/19779399/menu",
+      "sourceIdentity": "naver-place:19779399",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "잔치국수",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "열무국수",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "비빔국수",
+          "price": "9,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_398",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_398",
+      "identityResolution": "report",
+      "name": "청송 팔팔식당 (88식당)",
+      "address": "경북 청송군 진보면 경동로 5157 (신촌리 32-7)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/12034750/menu",
+      "sourceIdentity": "naver-place:12034750",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "닭백숙 1인분",
+          "price": "15,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1인분"
+          ]
+        },
+        {
+          "name": "[인기] 들깨백숙",
+          "price": "17,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "[인기]"
+          ]
+        },
+        {
+          "name": "닭날개/봉",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭불백숙 2인기준",
+          "price": "38,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2인"
+          ]
+        },
+        {
+          "name": "닭불고기 1접시",
+          "price": "14,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1접시"
+          ]
+        },
+        {
+          "name": "매콤닭발",
+          "price": "15,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_442",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_442",
+      "identityResolution": "report",
+      "name": "영동 선미식당",
+      "address": "충북 영동군 학산면 서산로 39-1 (서산리 810-5)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/17745305/menu",
+      "sourceIdentity": "naver-place:17745305",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "우동",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "손짜장",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "짬뽕",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "탕수육",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "울면",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "볶음밥",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "잡채밥",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "뎀부라",
+          "price": "14,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "국밥",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "계란탕",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "간짜장",
+          "price": "7,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_477",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_477",
+      "identityResolution": "report",
+      "name": "여수 산들네 전집 (서시장)",
+      "address": "전남 여수시 서교4길 9-1 (서교동 280-104)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1187361152/menu",
+      "sourceIdentity": "naver-place:1187361152",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "산적1장",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "3장 21,000",
+          "productionDescription": "3장 21,000"
+        },
+        {
+          "name": "서대전1장",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "3장18000",
+          "productionDescription": "3장18000"
+        },
+        {
+          "name": "명태1장",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "3장 15000",
+          "productionDescription": "3장 15000"
+        },
+        {
+          "name": "조기전 1장",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "3장 15000",
+          "productionDescription": "3장 15000"
+        },
+        {
+          "name": "육전 1장",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "새우전 1팩",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1팩"
+          ]
+        },
+        {
+          "name": "동그랑땡 소",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "동그랑땡 대",
+          "price": "10,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_529",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_529",
+      "identityResolution": "report",
+      "name": "무안 삼부자낙지",
+      "address": "전남 무안군 삼향읍 남악5로52번길 13-7 (남악리 1721)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1704419845/menu",
+      "sourceIdentity": "naver-place:1704419845",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "한우낙지탕탕이(중)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "한우낙지탕탕이(대)",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "낙지탕탕이(중)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "낙지탕탕이(대)",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "낙지초무침(중)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "낙지초무침(대)",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "낙지제육볶음(중)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "낙지제육볶음(대)",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "연포탕(중)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "연포탕(대)",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_576",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_576",
+      "identityResolution": "report",
+      "name": "남양주 광천정육점식당",
+      "address": "경기 남양주시 진접읍 광릉내로 52 (부평리 525-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/19728440/menu",
+      "sourceIdentity": "naver-place:19728440",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "소머리주물럭 대",
+          "price": "47,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소머리주물럭 중",
+          "price": "37,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소머리전골 대",
+          "price": "57,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소머리전골 중",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한우스지탕",
+          "price": "17,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "돼지껍데기 大",
+          "price": "22,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소머리국밥",
+          "price": "13,000~15,000원",
+          "variablePrice": false,
+          "description": "보통 13000/특 15000",
+          "productionDescription": "보통 13000/특 15000"
+        },
+        {
+          "name": "육회비빔밥",
+          "price": "13,000~24,000원",
+          "variablePrice": false,
+          "description": "보통 13000 / 특 24000",
+          "productionDescription": "보통 13000 / 특 24000"
+        },
+        {
+          "name": "녹차삼겹살",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "육회",
+          "price": "45,000~58,000원",
+          "variablePrice": false,
+          "description": "중 45000/대 58000",
+          "productionDescription": "중 45000/대 58000"
+        },
+        {
+          "name": "소머리수육",
+          "price": "47,000~60,000원",
+          "variablePrice": false,
+          "description": "중 47000 / 대 60000",
+          "productionDescription": "중 47000 / 대 60000"
+        },
+        {
+          "name": "소고기주물럭 200g",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "200g"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_610",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_610",
+      "identityResolution": "report",
+      "name": "소소반",
+      "address": "강원특별자치도 횡성군 서원면 옥계9길 119",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/465334417/menu",
+      "sourceIdentity": "naver-place:465334417",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [
+        {
+          "menu": "서울불고기정식 1인",
+          "note": "27,000원은 불고기+밥, 34,000원은 불고기+물냉면/비빔냉면 택1 구성으로 원문 조건이 다른 항목이다."
+        }
+      ],
+      "menus": [
+        {
+          "name": "서울불고기정식 1인",
+          "price": "27,000원",
+          "variablePrice": false,
+          "description": "불고기 + 밥",
+          "quantityOrConditions": [
+            "1인"
+          ],
+          "productionDescription": "불고기 + 밥"
+        },
+        {
+          "name": "황태순두부해장국",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "조랭이미역국",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭볶음탕",
+          "price": "68,000원",
+          "variablePrice": false,
+          "description": "4인기준, 공기밥별도",
+          "quantityOrConditions": [
+            "4인"
+          ],
+          "productionDescription": "4인기준, 공기밥별도"
+        },
+        {
+          "name": "서울불고기 정식 1인",
+          "price": "34,000원",
+          "variablePrice": false,
+          "description": "불고기 + 물냉면,비빔냉면 택1",
+          "quantityOrConditions": [
+            "1인",
+            "택1"
+          ],
+          "productionDescription": "불고기 + 물냉면,비빔냉면 택1"
+        },
+        {
+          "name": "장터소고기국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한우곰탕",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "속초코다리비빔냉면",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "계절메뉴",
+          "productionDescription": "계절메뉴"
+        },
+        {
+          "name": "물냉면",
+          "price": "13,000원",
+          "variablePrice": false,
+          "description": "계절메뉴",
+          "productionDescription": "계절메뉴"
+        },
+        {
+          "name": "두부조림",
+          "price": "55,000원",
+          "variablePrice": false,
+          "description": "4인기준, 공기밥별도",
+          "quantityOrConditions": [
+            "4인"
+          ],
+          "productionDescription": "4인기준, 공기밥별도"
+        },
+        {
+          "name": "삼겹살",
+          "price": "18,000원",
+          "variablePrice": false,
+          "description": "170g",
+          "quantityOrConditions": [
+            "170g"
+          ],
+          "productionDescription": "170g"
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_621",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_621",
+      "identityResolution": "report",
+      "name": "태안 자연산횟집오대감튀김",
+      "address": "충남 태안군 안면읍 백사장1길 117 (창기리 1269-25)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1004325055/menu",
+      "sourceIdentity": "naver-place:1004325055",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "간장게장정식",
+          "price": "25,000원",
+          "variablePrice": false,
+          "description": "간장게장정식",
+          "productionDescription": "간장게장정식"
+        },
+        {
+          "name": "대하장정식",
+          "price": "25,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "생선구이+젓갈정식+간장게장(2인)",
+          "price": "80,000원",
+          "variablePrice": false,
+          "description": "생선구이(고등어/갈치) 담백하고 여행시 백반맛집 입니다.",
+          "quantityOrConditions": [
+            "(2인)",
+            "(고등어/갈치)"
+          ],
+          "productionDescription": "생선구이(고등어/갈치) 담백하고 여행시 백반맛집 입니다."
+        },
+        {
+          "name": "게국지(2인)",
+          "price": "60,000원",
+          "variablePrice": false,
+          "description": "향토음식 게국지 건강음식",
+          "quantityOrConditions": [
+            "(2인)"
+          ],
+          "productionDescription": "향토음식 게국지 건강음식"
+        },
+        {
+          "name": "박하지정식",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "간장해물모둠장",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치구이",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "조개라면(1인)",
+          "price": "12,000원",
+          "variablePrice": false,
+          "description": "2인이상 주문 가능",
+          "quantityOrConditions": [
+            "(1인)",
+            "2인",
+            "이상 주문 가능"
+          ],
+          "productionDescription": "2인이상 주문 가능"
+        },
+        {
+          "name": "생선구이+젓갈정식+간장게장(3인)",
+          "price": "120,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(3인)"
+          ]
+        },
+        {
+          "name": "젓갈정식(1인)",
+          "price": "20,000원",
+          "variablePrice": false,
+          "description": "2인이상 주문 가능",
+          "quantityOrConditions": [
+            "(1인)",
+            "2인",
+            "이상 주문 가능"
+          ],
+          "productionDescription": "2인이상 주문 가능"
+        },
+        {
+          "name": "보리굴비정식(1인)",
+          "price": "25,000원",
+          "variablePrice": false,
+          "description": "2인이상 주문 가능",
+          "quantityOrConditions": [
+            "(1인)",
+            "2인",
+            "이상 주문 가능"
+          ],
+          "productionDescription": "2인이상 주문 가능"
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_662",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_662",
+      "identityResolution": "report",
+      "name": "여주 팔남매",
+      "address": "경기 여주시 여흥로11번길 57 (하동 249-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1649346313/menu",
+      "sourceIdentity": "naver-place:1649346313",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "고기만두(10개)",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "국내산 돼지고기와 양질의 재료로 신선하게 당일 만들어 제공해 드립니다",
+          "quantityOrConditions": [
+            "(10개)"
+          ],
+          "productionDescription": "국내산 돼지고기와 양질의 재료로 신선하게 당일 만들어 제공해 드립니다"
+        },
+        {
+          "name": "김치만두(10개)",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "신선한 재료로 당일 만들어 재공해 드립니다.",
+          "quantityOrConditions": [
+            "(10개)"
+          ],
+          "productionDescription": "신선한 재료로 당일 만들어 재공해 드립니다."
+        },
+        {
+          "name": "꽈베기,팥도나스,찐빵,호밀빵,술빵3개",
+          "price": "2,000원",
+          "variablePrice": false,
+          "description": "생효모를 사용하여 소화가 잘되고 맛있습니다~~",
+          "quantityOrConditions": [
+            "3개"
+          ],
+          "productionDescription": "생효모를 사용하여 소화가 잘되고 맛있습니다~~"
+        },
+        {
+          "name": "찹쌀도나스",
+          "price": "2,000원",
+          "variablePrice": false,
+          "description": "100% 가까운 찹쌀도나스의 참 맛을 알려 드립니다~",
+          "productionDescription": "100% 가까운 찹쌀도나스의 참 맛을 알려 드립니다~"
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_672",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_672",
+      "identityResolution": "report",
+      "name": "대구 산골기사식당",
+      "address": "대구 동구 팔공산로 1666 (백안동 573)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1191756266/menu",
+      "sourceIdentity": "naver-place:1191756266",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "하얀순두부",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순두부송이찌개",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "촌두부",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도토리묵",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "호박전",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "파전",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "부추전",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "냉콩국수",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "계절별미",
+          "productionDescription": "계절별미"
+        },
+        {
+          "name": "순두부찌개",
+          "price": "12,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "sikgaek-baekban-trip_restaurant_680",
+      "reportRestaurantId": "sikgaek-baekban-trip_restaurant_680",
+      "identityResolution": "report",
+      "name": "함평 제일식당",
+      "address": "전남 함평군 월야면 전하길 65-1 (월야리 259-70)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/17145272/menu",
+      "sourceIdentity": "naver-place:17145272",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "백반",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "생고기한접시",
+          "price": "35,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_003",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_003",
+      "identityResolution": "report",
+      "name": "인천 원조선창집장어구이",
+      "address": "인천 강화군 선원면 해안동로 1199 (신정리 319-10)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/13570689/menu",
+      "sourceIdentity": "naver-place:13570689",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "강화갯벌장어",
+          "price": "120,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민물장어구이(1kg)",
+          "price": "100,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1kg)"
+          ]
+        },
+        {
+          "name": "잔치국수",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "돌솥밥",
+          "price": "4,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_005",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_005",
+      "identityResolution": "report",
+      "name": "인천 막줄래횟집",
+      "address": "인천 미추홀구 경인로438번길 10 (주안동 300-23)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/19490123/menu",
+      "sourceIdentity": "naver-place:19490123",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "삼치회",
+          "price": "85,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "하모 샤브샤브",
+          "price": "130,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "새조개 샤브샤브",
+          "price": "120,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "농어",
+          "price": "95,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민어",
+          "price": "100,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_009",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_009",
+      "identityResolution": "report",
+      "name": "인천 화선횟집",
+      "address": "인천 중구 우현로49번길 11-25 (신포동 5-10)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/12016383/menu",
+      "sourceIdentity": "naver-place:12016383",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "민어회-소",
+          "price": "90,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "중",
+          "price": "110,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "대",
+          "price": "130,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "특대",
+          "price": "150,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민어전",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민어탕",
+          "price": "20,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_052",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_052",
+      "identityResolution": "report",
+      "name": "평택 파주옥 평택본점",
+      "address": "경기 평택시 중앙2로 3 (평택동 46-13)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11848058/menu",
+      "sourceIdentity": "naver-place:11848058",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "도가니안주 반접시",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "곰탕",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈비곰탕",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도가니탕",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수육 반접시",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수육 한접시",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도가니안주 한접시",
+          "price": "40,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_086",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_086",
+      "identityResolution": "report",
+      "name": "영주 묵호문어집",
+      "address": "경북 영주시 영주로224번길 8 (영주동 326-6)",
+      "classification": "variable_price_only",
+      "menuGroup": "variable-price-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/15025748/menu",
+      "sourceIdentity": "naver-place:15025748",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "숙회",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "pendingReason": "price_has_no_numeric_amount",
+          "productionDescription": "고정 금액 미표시. 주문 전 가격 확인 필요."
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_093",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_093",
+      "identityResolution": "report",
+      "name": "포항 해구식당",
+      "address": "경북 포항시 북구 중앙상가2길 18 (남빈동 526)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/15136029/menu",
+      "sourceIdentity": "naver-place:15136029",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "꽁치과메기",
+          "price": "30,000원",
+          "variablePrice": false,
+          "description": "햇꽁치 나왔습니다~~~^^",
+          "productionDescription": "햇꽁치 나왔습니다~~~^^"
+        },
+        {
+          "name": "청어과메기",
+          "price": "30,000원",
+          "variablePrice": false,
+          "description": "시즌종료",
+          "productionDescription": "시즌종료"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_123",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_123",
+      "identityResolution": "report",
+      "name": "여수 자연횟집",
+      "address": "전남 여수시 대경도5길 25 (경호동 235-1)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/12846683/menu",
+      "sourceIdentity": "naver-place:12846683",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [
+        {
+          "menu": "하바그린티빙수",
+          "note": "9,000원 원문은 확인했으나 횟집 업종에서 이례적인 메뉴이므로 해당 항목만 추가 검토한다."
+        }
+      ],
+      "menus": [
+        {
+          "name": "하모사시미",
+          "price": "70,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "하바그린티빙수",
+          "price": "9,000원",
+          "variablePrice": false,
+          "productionDisposition": "excluded-pending-review"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_156",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_156",
+      "identityResolution": "report",
+      "name": "제주 물항식당 탑동점",
+      "address": "제주 제주시 임항로 37-4 (건입동 1319-14)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11712303/menu",
+      "sourceIdentity": "naver-place:11712303",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "갈치구이",
+          "price": "55,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치구이 백반",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "삼치회",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치회",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어회",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치조림-대",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "성게국",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한치물회",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "모듬회",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민어회",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한치무침",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어조림 -중",
+          "price": "35,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어조림 소",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어구이",
+          "price": "25,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복뚝배기",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치국",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한치덮밥",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "자리물회",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "병어회",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "자리회",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "가리젓",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "1box~20000 /",
+          "productionDescription": "1box~20000 /"
+        },
+        {
+          "name": "게장 1kg",
+          "price": "20,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1kg"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_168",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_168",
+      "identityResolution": "report",
+      "name": "서울 한추",
+      "address": "서울 강남구 논현로175길 68 (신사동 549-9)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/13358436/menu",
+      "sourceIdentity": "naver-place:13358436",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "후라이드치킨",
+          "price": "24,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한추떡볶이",
+          "price": "23,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "양념치킨",
+          "price": "26,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고추튀김",
+          "price": "24,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭똥집튀김",
+          "price": "23,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오징어튀김",
+          "price": "24,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "야채튀김",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "골뱅이무침",
+          "price": "31,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "계란말이",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순두부탕",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오뎅탕",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "번데기탕",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "육포",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한치구이",
+          "price": "19,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오징어구이",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "황도",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "햇반",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "치킨양념장",
+          "price": "500원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_174",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_174",
+      "identityResolution": "report",
+      "name": "서울 새벽집 청담동점",
+      "address": "서울 강남구 도산대로101길 6 (청담동 129-10)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11680234/menu",
+      "sourceIdentity": "naver-place:11680234",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "꽃등심(150g)",
+          "price": "85,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(150g)"
+          ]
+        },
+        {
+          "name": "양념갈비(260g)",
+          "price": "85,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(260g)"
+          ]
+        },
+        {
+          "name": "생고기(150g)",
+          "price": "85,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(150g)"
+          ]
+        },
+        {
+          "name": "불고기(200g)",
+          "price": "42,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(200g)"
+          ]
+        },
+        {
+          "name": "샤브샤브(160g)",
+          "price": "42,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(160g)"
+          ]
+        },
+        {
+          "name": "육회(200g)",
+          "price": "42,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(200g)"
+          ]
+        },
+        {
+          "name": "국수전골",
+          "price": "32,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "간장게장",
+          "price": "82,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한우 갈비탕",
+          "price": "28,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "육회비빔밥",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "따로국밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "콩나물 국밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "멸치김치찌개",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "돼지김치찌개",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "조랭이만두국",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "된장찌개",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "냉면",
+          "price": "11,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_178",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_178",
+      "identityResolution": "report",
+      "name": "서울 우시야 본점",
+      "address": "서울 강남구 도산대로27길 16 (신사동 586-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/36175042/menu",
+      "sourceIdentity": "naver-place:36175042",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "우시야 한우룸코스",
+          "price": "130,000원",
+          "variablePrice": false,
+          "description": "육사시미,우설,특수부위3종(채끝,안심,부채 인당180그람),꼬리찜,꼬리구이,식사(밥,묵은지조림),디저트",
+          "quantityOrConditions": [
+            "(채끝,안심,부채 인당180그람)",
+            "(밥,묵은지조림)"
+          ],
+          "productionDescription": "육사시미,우설,특수부위3종(채끝,안심,부채 인당180그람),꼬리찜,꼬리구이,식사(밥,묵은지조림),디저트"
+        },
+        {
+          "name": "🐂우시야 한우79코스",
+          "price": "79,000원",
+          "variablePrice": false,
+          "description": "육사시미, 우설, 특수부위3종(채끝,안심,부채150g), 꼬리찜, 꼬리구이, 식사(밥, 묵은지조림),디저트",
+          "quantityOrConditions": [
+            "(채끝,안심,부채150g)",
+            "(밥, 묵은지조림)"
+          ],
+          "productionDescription": "육사시미, 우설, 특수부위3종(채끝,안심,부채150g), 꼬리찜, 꼬리구이, 식사(밥, 묵은지조림),디저트"
+        },
+        {
+          "name": "신규",
+          "price": "59,000원",
+          "variablePrice": false,
+          "description": "🐂우시야 한우59코스\n우설, 특수부위3종(채끝,안심,부채120g), 꼬리구이, 식사 (밥, 한우묵은지조림),디저트",
+          "quantityOrConditions": [
+            "(채끝,안심,부채120g)",
+            "(밥, 한우묵은지조림)"
+          ],
+          "productionDescription": "🐂우시야 한우59코스 우설, 특수부위3종(채끝,안심,부채120g), 꼬리구이, 식사 (밥, 한우묵은지조림),디저트"
+        },
+        {
+          "name": "기린 이치방 프리미엄 생맥주",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "380ml",
+          "productionDescription": "380ml"
+        },
+        {
+          "name": "스텔라 아르투아 병맥주",
+          "price": "9,000원",
+          "variablePrice": false,
+          "description": "500ml",
+          "productionDescription": "500ml"
+        },
+        {
+          "name": "크리스마스코스",
+          "price": "119,000원",
+          "variablePrice": false,
+          "description": "육회,우설, 고기6종,꼬리구이,특양,대창,식사(솥밥,한우묵은지조림),디저트",
+          "quantityOrConditions": [
+            "(솥밥,한우묵은지조림)"
+          ],
+          "productionDescription": "육회,우설, 고기6종,꼬리구이,특양,대창,식사(솥밥,한우묵은지조림),디저트"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_212",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_212",
+      "identityResolution": "report",
+      "name": "서울 장스테이크하우스",
+      "address": "서울 강남구 압구정로 314 (신사동 639)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/31936212/menu",
+      "sourceIdentity": "naver-place:31936212",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "1++ 한우 스테이크 런치 코스",
+          "price": "59,000원",
+          "variablePrice": false,
+          "description": "주말에도 이용 가능합니다.",
+          "productionDescription": "주말에도 이용 가능합니다."
+        },
+        {
+          "name": "1++ 한우 티본스테이크 런치 코스",
+          "price": "84,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "활바닷가재 & 1++한우스테이크 코스",
+          "price": "99,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "1++ 한우 포터하우스 시그니처 세트",
+          "price": "149,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "1++ 한우 테이스팅 시그니처 세트",
+          "price": "143,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "1++ 한우 포터하우스 베이직 세트",
+          "price": "136,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "1++ 한우 테이스팅 베이직 세트",
+          "price": "131,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "1++ 한우 등심 스테이크 300g",
+          "price": "120,000원",
+          "variablePrice": false,
+          "description": "100g / 40,000",
+          "quantityOrConditions": [
+            "300g",
+            "100g"
+          ],
+          "productionDescription": "100g / 40,000"
+        },
+        {
+          "name": "1++ 한우 채끝 스테이크 300g",
+          "price": "126,000원",
+          "variablePrice": false,
+          "description": "100g / 42,000",
+          "quantityOrConditions": [
+            "300g",
+            "100g"
+          ],
+          "productionDescription": "100g / 42,000"
+        },
+        {
+          "name": "1++ 한우 새우살 스테이크 300g",
+          "price": "144,000원",
+          "variablePrice": false,
+          "description": "100g / 48,000",
+          "quantityOrConditions": [
+            "300g",
+            "100g"
+          ],
+          "productionDescription": "100g / 48,000"
+        },
+        {
+          "name": "1++ 한우 샤토브리앙 300g",
+          "price": "150,000원",
+          "variablePrice": false,
+          "description": "100g / 50,000",
+          "quantityOrConditions": [
+            "300g",
+            "100g"
+          ],
+          "productionDescription": "100g / 50,000"
+        },
+        {
+          "name": "1++ 한우 포터하우스 800g",
+          "price": "248,000원",
+          "variablePrice": false,
+          "description": "100g / 31,000",
+          "quantityOrConditions": [
+            "800g",
+            "100g"
+          ],
+          "productionDescription": "100g / 31,000"
+        },
+        {
+          "name": "앤초비 알리오 올리오",
+          "price": "24,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "와사비 & 화이트 라구 리가토니",
+          "price": "28,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "활바닷가재 & 토마토 스파게티니",
+          "price": "39,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "활바닷가재 & 비스크 리조또",
+          "price": "39,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_248",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_248",
+      "identityResolution": "report",
+      "name": "서울 제주아줌마집",
+      "address": "서울 강동구 풍성로58길 34 (성내동 428-9)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/33636532/menu",
+      "sourceIdentity": "naver-place:33636532",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "전복해물탕 소",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복해물탕 중",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복해물탕 대",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치조림 중",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치조림-대",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "병어조림",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복물회",
+          "price": "55,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한치물회",
+          "price": "60,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "갈치구이",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "옥돔구이",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고등어구이",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "홍해삼",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소라숙회",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "무늬오징어숙회(제철메뉴)",
+          "price": "30,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(제철메뉴)"
+          ]
+        },
+        {
+          "name": "대구탕",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "생멸치조림",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "양미리조림",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "우럭탕",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "물메기탕",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "삼식이탕",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소라무침",
+          "price": "40,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "도루묵구이",
+          "price": "30,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_259",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_259",
+      "identityResolution": "report",
+      "name": "서울 벽제갈비 방이본점",
+      "address": "서울 송파구 양재대로71길 1-4 (방이동 205-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11819083/menu",
+      "sourceIdentity": "naver-place:11819083",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "설화 생갈비(200g)",
+          "price": "160,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(200g)"
+          ]
+        },
+        {
+          "name": "설화 꽃등심(100g당)",
+          "price": "95,000원",
+          "variablePrice": false,
+          "description": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다.",
+          "quantityOrConditions": [
+            "(100g당)"
+          ],
+          "productionDescription": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다."
+        },
+        {
+          "name": "설화안심(100g당)",
+          "price": "90,000원",
+          "variablePrice": false,
+          "description": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다.",
+          "quantityOrConditions": [
+            "(100g당)"
+          ],
+          "productionDescription": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다."
+        },
+        {
+          "name": "설화한우 양념갈비(200g)",
+          "price": "73,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(200g)"
+          ]
+        },
+        {
+          "name": "한우생양념구이",
+          "price": "58,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한우불고기",
+          "price": "42,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "채끝등심정식(점심한정)",
+          "price": "69,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심한정)"
+          ]
+        },
+        {
+          "name": "모둠구이정식(점심한정)",
+          "price": "59,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심한정)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_261",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_261",
+      "identityResolution": "report",
+      "name": "서울 서두산딤섬 2호점",
+      "address": "서울 송파구 올림픽로32길 18-23 (방이동 63)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1636164848/menu",
+      "sourceIdentity": "naver-place:1636164848",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "새우볶음밥",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "고추잡채덮밥",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "마파두부덮밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "잡채덮밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "볶음밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "가지튀김",
+          "price": "25,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "야채볶음",
+          "price": "22,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "군만두 10개",
+          "price": "12,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "10개"
+          ]
+        },
+        {
+          "name": "물만두 13개",
+          "price": "12,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "13개"
+          ]
+        },
+        {
+          "name": "훈툰",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "샤오롱빠오 8개",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "8개"
+          ]
+        },
+        {
+          "name": "칭따오",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "충칭라쯔지딩",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "매운조개볶음",
+          "price": "28,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "딤섬 6개",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "6개"
+          ]
+        },
+        {
+          "name": "볶음밥/마파두부밥/잡채덮밥",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "루비딤섬 4개",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "4개"
+          ]
+        },
+        {
+          "name": "에메랄드딤섬 4개",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "4개"
+          ]
+        },
+        {
+          "name": "순새우딤섬 4개",
+          "price": "13,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "4개"
+          ]
+        },
+        {
+          "name": "먹물딤섬",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수정딤섬 2개",
+          "price": "8,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "2개"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_281",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_281",
+      "identityResolution": "report",
+      "name": "서울 스시고",
+      "address": "서울 서초구 사평대로22길 15 (반포동 94-10)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/18289522/menu",
+      "sourceIdentity": "naver-place:18289522",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "디너코스",
+          "price": "150,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "런치코스",
+          "price": "75,000원",
+          "variablePrice": false,
+          "description": "1부 12:00분~13:10분 2부 13:30분~14:40분",
+          "productionDescription": "1부 12:00분~13:10분 2부 13:30분~14:40분"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_354",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_354",
+      "identityResolution": "report",
+      "name": "서울 모터시티바이매니멀 본점",
+      "address": "서울 용산구 이태원로 140-1 (이태원동 56-30)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/38331689/menu",
+      "sourceIdentity": "naver-place:38331689",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "JACKSON 5",
+          "price": "28,900원",
+          "variablePrice": false,
+          "description": "모터시티의 시그니처 피자로 짭조름하면서도 매콤함을 레드소스가 중심을 잡아주는 피자",
+          "productionDescription": "모터시티의 시그니처 피자로 짭조름하면서도 매콤함을 레드소스가 중심을 잡아주는 피자"
+        },
+        {
+          "name": "Meatzza",
+          "price": "31,900원",
+          "variablePrice": false,
+          "description": "진한 라구소스와 육즙 가득한 고기들의 향연인 피자",
+          "productionDescription": "진한 라구소스와 육즙 가득한 고기들의 향연인 피자"
+        },
+        {
+          "name": "DELUXE HORSEMAN",
+          "price": "29,800원",
+          "variablePrice": false,
+          "description": "분명 피자인데 건강한 느낌이 드는 신기한 피자",
+          "productionDescription": "분명 피자인데 건강한 느낌이 드는 신기한 피자"
+        },
+        {
+          "name": "Detroit Hottie's",
+          "price": "29,800원",
+          "variablePrice": false,
+          "description": "새콤한 레드소스, 핫허니와 더불어 신선한 느낌의 매운맛을 보여주는 고추페스토가 킥인 피자",
+          "productionDescription": "새콤한 레드소스, 핫허니와 더불어 신선한 느낌의 매운맛을 보여주는 고추페스토가 킥인 피자"
+        },
+        {
+          "name": "CRISPY MUSHROOM",
+          "price": "11,800원",
+          "variablePrice": false,
+          "description": "이탈리안 시즈닝이 된 통 양송이 튀김과 크리미 갈릭 디핑 소스",
+          "productionDescription": "이탈리안 시즈닝이 된 통 양송이 튀김과 크리미 갈릭 디핑 소스"
+        },
+        {
+          "name": "BUFFALO",
+          "price": "13,500원",
+          "variablePrice": false,
+          "description": "그동안 알고 있던 버팔로윙의 고정관념을 깨주는, 핫소스 베이스의 시큼한 미국 본토의 맛",
+          "productionDescription": "그동안 알고 있던 버팔로윙의 고정관념을 깨주는, 핫소스 베이스의 시큼한 미국 본토의 맛"
+        },
+        {
+          "name": "Chipotle Pasta",
+          "price": "26,900원",
+          "variablePrice": false,
+          "description": "꾸덕하면서도 치폴레 소스만의 새콤하면서 약간의 매운맛이 느껴지는 투움바 파스타",
+          "productionDescription": "꾸덕하면서도 치폴레 소스만의 새콤하면서 약간의 매운맛이 느껴지는 투움바 파스타"
+        },
+        {
+          "name": "HALF & HALF",
+          "price": "25,900원",
+          "variablePrice": false,
+          "description": "모터시티의 모든 피자를 반반으로 즐겨요!",
+          "productionDescription": "모터시티의 모든 피자를 반반으로 즐겨요!"
+        },
+        {
+          "name": "CHEESE PIZZA",
+          "price": "24,900원",
+          "variablePrice": false,
+          "description": "달달한 메이플 허니와 함께 단짠단짠을 맛볼 수 있는 심플한 치즈피자",
+          "productionDescription": "달달한 메이플 허니와 함께 단짠단짠을 맛볼 수 있는 심플한 치즈피자"
+        },
+        {
+          "name": "CLASSIC PEPPERONI",
+          "price": "25,900원",
+          "variablePrice": false,
+          "description": "'Simple is the best'의 정석인 페퍼로니 피자",
+          "productionDescription": "'Simple is the best'의 정석인 페퍼로니 피자"
+        },
+        {
+          "name": "EXTRA PEPPERONI",
+          "price": "27,900원",
+          "variablePrice": false,
+          "description": "페퍼로니는 많으면 좋은 사람들을 위한 피자",
+          "productionDescription": "페퍼로니는 많으면 좋은 사람들을 위한 피자"
+        },
+        {
+          "name": "Hot Vege Supreme",
+          "price": "27,900원",
+          "variablePrice": false,
+          "description": "베지테리언 피자로 끝에 톡 쏘는 매콤한 맛이 일품인 피자",
+          "productionDescription": "베지테리언 피자로 끝에 톡 쏘는 매콤한 맛이 일품인 피자"
+        },
+        {
+          "name": "Sausage & Mushrooms",
+          "price": "27,900원",
+          "variablePrice": false,
+          "description": "직관적이게 맛있는, 새콤하면서도 짭짤하면서 버섯의 식감까지 살아 있는 피자",
+          "productionDescription": "직관적이게 맛있는, 새콤하면서도 짭짤하면서 버섯의 식감까지 살아 있는 피자"
+        },
+        {
+          "name": "Green Hot Cheese Pie",
+          "price": "27,900원",
+          "variablePrice": false,
+          "description": "짭짤한 치즈 피자 위에 핫허니와 아루굴라가 추가된 피자",
+          "productionDescription": "짭짤한 치즈 피자 위에 핫허니와 아루굴라가 추가된 피자"
+        },
+        {
+          "name": "Hot Hunny Pepperoni",
+          "price": "28,900원",
+          "variablePrice": false,
+          "description": "짭쪼름한 페퍼로니에 매콤하면서도 달달한 꿀까지 추가된 피자",
+          "productionDescription": "짭쪼름한 페퍼로니에 매콤하면서도 달달한 꿀까지 추가된 피자"
+        },
+        {
+          "name": "SWEET CORN BASIL",
+          "price": "28,900원",
+          "variablePrice": false,
+          "description": "아이들도 부담없이 먹을 수 있는 콘피자",
+          "productionDescription": "아이들도 부담없이 먹을 수 있는 콘피자"
+        },
+        {
+          "name": "MOTOWN SUPREME",
+          "price": "28,900원",
+          "variablePrice": false,
+          "description": "모터시티만의 토핑 가득, 입안에 꽉 차는 콤비네이션 피자",
+          "productionDescription": "모터시티만의 토핑 가득, 입안에 꽉 차는 콤비네이션 피자"
+        },
+        {
+          "name": "MC X Square Pie Guys",
+          "price": "28,900원",
+          "variablePrice": false,
+          "description": "미국에서 유명한 스퀘어 파이 가이즈와 서울의 모터시티의 콜라보 피자",
+          "productionDescription": "미국에서 유명한 스퀘어 파이 가이즈와 서울의 모터시티의 콜라보 피자"
+        },
+        {
+          "name": "TRUFFLEBACONMUSHROOM",
+          "price": "30,900원",
+          "variablePrice": false,
+          "description": "코끝을 찌르는 트러플향과 더불어 묵직하게 들어오는 소스가 일품인 피자",
+          "productionDescription": "코끝을 찌르는 트러플향과 더불어 묵직하게 들어오는 소스가 일품인 피자"
+        },
+        {
+          "name": "CREAMY CHIPOTLE",
+          "price": "13,500원",
+          "variablePrice": false,
+          "description": "새콤하면서도 매콤한 마성의 소유자 치킨윙",
+          "productionDescription": "새콤하면서도 매콤한 마성의 소유자 치킨윙"
+        },
+        {
+          "name": "CREAMYGARLICPARMESAN",
+          "price": "13,500원",
+          "variablePrice": false,
+          "description": "꾸덕한 치즈와 더불어 바삭한 마늘칩이 올라간 윙",
+          "productionDescription": "꾸덕한 치즈와 더불어 바삭한 마늘칩이 올라간 윙"
+        },
+        {
+          "name": "Salt & Pepper",
+          "price": "13,500원",
+          "variablePrice": false,
+          "description": "양념은 저리가라! 근본은 후라이드.",
+          "productionDescription": "양념은 저리가라! 근본은 후라이드."
+        },
+        {
+          "name": "TOOWOOMBA PASTA",
+          "price": "24,900원",
+          "variablePrice": false,
+          "description": "매니멀 스모크하우스 베이컨, 다양한 종류의 버섯, 트러플 크림, 레지아노, 스파게티",
+          "productionDescription": "매니멀 스모크하우스 베이컨, 다양한 종류의 버섯, 트러플 크림, 레지아노, 스파게티"
+        },
+        {
+          "name": "Spicy Oil Pasta",
+          "price": "25,900원",
+          "variablePrice": false,
+          "description": "매운맛이 추가된 오일 쉬림프 파스타",
+          "productionDescription": "매운맛이 추가된 오일 쉬림프 파스타"
+        },
+        {
+          "name": "GALRLIC CRUNCH FRIES",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "얇고 바삭한 감자튀김의 정석",
+          "productionDescription": "얇고 바삭한 감자튀김의 정석"
+        },
+        {
+          "name": "Truffle Garlic Fries",
+          "price": "13,500원",
+          "variablePrice": false,
+          "description": "트러플향과 더불어 마늘 소스가 올라간 감자튀김",
+          "productionDescription": "트러플향과 더불어 마늘 소스가 올라간 감자튀김"
+        },
+        {
+          "name": "Mexican Street Fries",
+          "price": "12,000원",
+          "variablePrice": false,
+          "description": "손가락까지 쪽쪽 빨아먹는, 시즈닝이 들어간 감자튀김",
+          "productionDescription": "손가락까지 쪽쪽 빨아먹는, 시즈닝이 들어간 감자튀김"
+        },
+        {
+          "name": "MotorCity Cobb Salad",
+          "price": "16,900원",
+          "variablePrice": false,
+          "description": "드레싱부터 토핑까지 골라먹는 샐러드 드레싱: 발사믹 / 레몬, 토핑 : 베이컨 / 새우",
+          "productionDescription": "드레싱부터 토핑까지 골라먹는 샐러드 드레싱: 발사믹 / 레몬, 토핑 : 베이컨 / 새우"
+        },
+        {
+          "name": "Bacon Caesar Salad",
+          "price": "13,900원",
+          "variablePrice": false
+        },
+        {
+          "name": "HOUSE PICKLE",
+          "price": "2,000원",
+          "variablePrice": false,
+          "description": "매장에서 직접 만드는 단맛 없는 하우스 메이드 피클",
+          "productionDescription": "매장에서 직접 만드는 단맛 없는 하우스 메이드 피클"
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_362",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_362",
+      "identityResolution": "report",
+      "name": "서울 키에리",
+      "address": "서울 용산구 이태원로26길 16-8 (이태원동 73-7)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/37848376/menu",
+      "sourceIdentity": "naver-place:37848376",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "아메리카노",
+          "price": "5,600원",
+          "variablePrice": false
+        },
+        {
+          "name": "카페라떼/카페모카/카라멜마끼아또",
+          "price": "5,900원",
+          "variablePrice": false
+        },
+        {
+          "name": "코코넛 커피",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "바닐라 라떼",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "카모마일티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "페퍼민트티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "히비스커스티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "콜드브루",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "콜드브루라떼",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "소리라떼",
+          "price": "5,800원",
+          "variablePrice": false
+        },
+        {
+          "name": "루이보스티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "자스민플라워티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "로얄밀크티",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "타로밀크티",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "민트초코라떼",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "녹차라떼",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "초콜릿라떼",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "얼그레이 티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "잉그리쉬블랙퍼스트티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "다즐링티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "푸어실론티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "레이디 그레이디 티",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "레몬보이차",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "자몽 오렌지에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "드리플베리에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "핑크레몬에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "망고패션후르츠에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "히비스커스에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "애플시나몬에이드",
+          "price": "7,500원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_377",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_377",
+      "identityResolution": "report",
+      "name": "서울 아티장베이커스 한남점",
+      "address": "서울 용산구 한남대로18길 26 (한남동 30-3)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/31383349/menu",
+      "sourceIdentity": "naver-place:31383349",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "아티장크로와상",
+          "price": "4,300원",
+          "variablePrice": false
+        },
+        {
+          "name": "라우겐크루아상",
+          "price": "4,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "클래식 사워도우",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "호밀사워도우",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "무화과 사워도우",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "크랜베리스콘",
+          "price": "4,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "시오빵",
+          "price": "2,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "메이플피칸스콘",
+          "price": "4,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "우유 데니쉬",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "통밀 호두 크랜베리 샤워도우",
+          "price": "7,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "당근파운드케이크",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "아티장 앙버터",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "밤식빵",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "통밀 100% 식빵",
+          "price": "8,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "러스크",
+          "price": "4,500원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "wednesday-gourmet_restaurant_446",
+      "reportRestaurantId": "wednesday-gourmet_restaurant_446",
+      "identityResolution": "report",
+      "name": "서울 정돈 대학로본점",
+      "address": "서울 종로구 대학로9길 12 (명륜4가 107)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/37126807/menu",
+      "sourceIdentity": "naver-place:37126807",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "A세트",
+          "price": "46,800원",
+          "variablePrice": false,
+          "description": "등심돈카츠+새우&안심돈카츠+카레 세트",
+          "productionDescription": "등심돈카츠+새우&안심돈카츠+카레 세트"
+        },
+        {
+          "name": "B세트",
+          "price": "41,800원",
+          "variablePrice": false,
+          "description": "등심&안심돈카츠+생선카츠or치킨카츠+카레",
+          "productionDescription": "등심&안심돈카츠+생선카츠or치킨카츠+카레"
+        },
+        {
+          "name": "등심돈카츠",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "안심돈카츠",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "등심&안심돈카츠",
+          "price": "21,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "치킨카츠",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "생선카츠",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "스페셜 등심돈카츠",
+          "price": "21,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "새우&안심돈카츠",
+          "price": "28,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "새우&등심돈카츠",
+          "price": "27,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "치즈카츠",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "단품메뉴(2p)",
+          "quantityOrConditions": [
+            "(2p)"
+          ],
+          "productionDescription": "단품메뉴(2p)"
+        },
+        {
+          "name": "새우카츠",
+          "price": "13,000원",
+          "variablePrice": false,
+          "description": "단품메뉴 (블랙타이거 새우 2p)",
+          "quantityOrConditions": [
+            "(블랙타이거 새우 2p)"
+          ],
+          "productionDescription": "단품메뉴 (블랙타이거 새우 2p)"
+        },
+        {
+          "name": "카츠산도",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "단품메뉴",
+          "productionDescription": "단품메뉴"
+        },
+        {
+          "name": "카레",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "단품메뉴",
+          "productionDescription": "단품메뉴"
+        },
+        {
+          "name": "치즈카레",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "단품메뉴",
+          "productionDescription": "단품메뉴"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_6a1a6bada12c",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_6a1a6bada12c",
+      "identityResolution": "report",
+      "name": "경양카츠 연남점",
+      "address": "서울특별시 마포구 동교로 238-1 1층 경양카츠",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/place/1128364627/menu/list",
+      "sourceIdentity": "https://m.place.naver.com/place/1128364627/menu/list",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "안심카츠",
+          "price": "16,400원",
+          "variablePrice": false,
+          "description": "수분감 있게 적절한 익힘정도로 튀겨내, 부드럽고 담백한 안심카츠",
+          "productionDescription": "수분감 있게 적절한 익힘정도로 튀겨내, 부드럽고 담백한 안심카츠"
+        },
+        {
+          "name": "치즈카츠",
+          "price": "16,400원",
+          "variablePrice": false,
+          "description": "등심에 천연치즈를 감싸 튀겨내, 치즈의 고소함과 등심의 고소함이 조화를 이루는 카츠",
+          "productionDescription": "등심에 천연치즈를 감싸 튀겨내, 치즈의 고소함과 등심의 고소함이 조화를 이루는 카츠"
+        },
+        {
+          "name": "제육 왕돈까스",
+          "price": "16,500원",
+          "variablePrice": false,
+          "description": "칼칼한 고추장 양념으로 센 불에 볶아낸 제육에 불에 그을린 대파 슬라이스를 올린 왕 돈까스",
+          "productionDescription": "칼칼한 고추장 양념으로 센 불에 볶아낸 제육에 불에 그을린 대파 슬라이스를 올린 왕 돈까스"
+        },
+        {
+          "name": "경양식 돈까스&미니국수",
+          "price": "14,900원",
+          "variablePrice": false,
+          "description": "바삭한 식감과 부드러운 육질의 돈까스와 브라운 소스가 더해져 달콤하고 새콤한 경양식 돈까스",
+          "productionDescription": "바삭한 식감과 부드러운 육질의 돈까스와 브라운 소스가 더해져 달콤하고 새콤한 경양식 돈까스"
+        },
+        {
+          "name": "서울 수비드 수육카츠",
+          "price": "23,900원",
+          "variablePrice": false,
+          "description": "삼겹 부위를 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 수육카츠",
+          "productionDescription": "삼겹 부위를 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 수육카츠"
+        },
+        {
+          "name": "서울 수비드 족발카츠",
+          "price": "20,900원",
+          "variablePrice": false,
+          "description": "앞다리살을 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 족발카츠",
+          "productionDescription": "앞다리살을 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 족발카츠"
+        },
+        {
+          "name": "등심카츠",
+          "price": "16,400원",
+          "variablePrice": false,
+          "description": "가장 대중적인 돈카츠인 등심카츠. 살코기의 담백한 맛과 끝부분 지방의 고소함이 일품",
+          "productionDescription": "가장 대중적인 돈카츠인 등심카츠. 살코기의 담백한 맛과 끝부분 지방의 고소함이 일품"
+        },
+        {
+          "name": "특등심카츠",
+          "price": "18,900원",
+          "variablePrice": false,
+          "description": "담백한 등심과 기름진 가브리살이 붙은 부위로, 두가지 맛을 즐길수있는 매력적인 카츠",
+          "productionDescription": "담백한 등심과 기름진 가브리살이 붙은 부위로, 두가지 맛을 즐길수있는 매력적인 카츠"
+        },
+        {
+          "name": "안심등심카츠",
+          "price": "17,400원",
+          "variablePrice": false,
+          "description": "부드럽고 담백한 두가지 카츠부위를 한번에 맛보실수있게 준비드린 안X등심 카츠",
+          "productionDescription": "부드럽고 담백한 두가지 카츠부위를 한번에 맛보실수있게 준비드린 안X등심 카츠"
+        },
+        {
+          "name": "바질치즈카츠",
+          "price": "16,600원",
+          "variablePrice": false,
+          "description": "향긋한 바질페스토를 넣은 치즈카츠에 그라나파다노와 핑크페퍼를 곁들여 산뜻하게 즐기는 카츠",
+          "productionDescription": "향긋한 바질페스토를 넣은 치즈카츠에 그라나파다노와 핑크페퍼를 곁들여 산뜻하게 즐기는 카츠"
+        },
+        {
+          "name": "돈카츠 나베 (※겨울 한정※)",
+          "price": "13,900원",
+          "variablePrice": false,
+          "description": "갓김치와 김치육수로, 추운겨울 몸을 녹여줄 따듯한 찌개 위에 알등심카츠를 올려낸 김치나베",
+          "quantityOrConditions": [
+            "(※겨울 한정※)"
+          ],
+          "productionDescription": "갓김치와 김치육수로, 추운겨울 몸을 녹여줄 따듯한 찌개 위에 알등심카츠를 올려낸 김치나베"
+        },
+        {
+          "name": "대파 매콤 크림 파스타 & 안심카츠",
+          "price": "17,400원",
+          "variablePrice": false,
+          "description": "그을린 대파의 향과 매콤칼칼한 크림, 노른자 궁합에 안심카츠까지 올려낸 파스타",
+          "productionDescription": "그을린 대파의 향과 매콤칼칼한 크림, 노른자 궁합에 안심카츠까지 올려낸 파스타"
+        },
+        {
+          "name": "트러플 버섯 크림 파스타 & 안심카츠",
+          "price": "17,400원",
+          "variablePrice": false,
+          "description": "크림소스에 안심카츠와 버섯, 세계 3대 진미 중 하나인 트러플 향을 은은하게 내어낸 파스타",
+          "quantityOrConditions": [
+            "3대"
+          ],
+          "productionDescription": "크림소스에 안심카츠와 버섯, 세계 3대 진미 중 하나인 트러플 향을 은은하게 내어낸 파스타"
+        },
+        {
+          "name": "경양 어묵우동",
+          "price": "8,900원",
+          "variablePrice": false,
+          "description": "돈카츠와 곁들일 사이드중 가장 대중적인 어묵우동",
+          "productionDescription": "돈카츠와 곁들일 사이드중 가장 대중적인 어묵우동"
+        },
+        {
+          "name": "경양 포차 우동",
+          "price": "7,900원",
+          "variablePrice": false,
+          "description": "경양카츠 겨울 신메뉴! 얼큰한 포차 우동",
+          "productionDescription": "경양카츠 겨울 신메뉴! 얼큰한 포차 우동"
+        },
+        {
+          "name": "경양 냉 소바",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "무더운 여름, 입과 속을 시원하게 풀어내줄 경양 냉소바",
+          "productionDescription": "무더운 여름, 입과 속을 시원하게 풀어내줄 경양 냉소바"
+        },
+        {
+          "name": "경양 카레 (소)",
+          "price": "3,500원",
+          "variablePrice": false,
+          "description": "경양카츠만의 레시피로 만든 경양카레",
+          "quantityOrConditions": [
+            "(소)"
+          ],
+          "productionDescription": "경양카츠만의 레시피로 만든 경양카레"
+        },
+        {
+          "name": "경양 카레 (대)",
+          "price": "6,500원",
+          "variablePrice": false,
+          "description": "경양카츠만의 레시피로 만든 경양카레",
+          "quantityOrConditions": [
+            "(대)"
+          ],
+          "productionDescription": "경양카츠만의 레시피로 만든 경양카레"
+        },
+        {
+          "name": "키리모찌",
+          "price": "3,500원",
+          "variablePrice": false,
+          "description": "바삭하게 튀겨낸 키리모찌에 꿀과 소금을 곁들여 제공합니다",
+          "productionDescription": "바삭하게 튀겨낸 키리모찌에 꿀과 소금을 곁들여 제공합니다"
+        },
+        {
+          "name": "고구마 치즈 고로케",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "한우 고로케",
+          "price": "6,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "경양 안심 가라아게",
+          "price": "6,900원",
+          "variablePrice": false
+        },
+        {
+          "name": "새우튀김",
+          "price": "5,900원",
+          "variablePrice": false,
+          "description": "손바닥 길이의 새우를 경양카츠만의 튀김옷으로 튀겨 제공합니다.",
+          "productionDescription": "손바닥 길이의 새우를 경양카츠만의 튀김옷으로 튀겨 제공합니다."
+        },
+        {
+          "name": "경양식혜",
+          "price": "4,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_78f4300f2b66",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_78f4300f2b66",
+      "identityResolution": "report",
+      "name": "두꺼비집",
+      "address": "서울특별시 은평구 연서로28길 5 두꺼비집",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/33875198/menu/list",
+      "sourceIdentity": "naver-place:33875198",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "불오징어",
+          "price": "22,000원",
+          "isSignature": true
+        },
+        {
+          "name": "오징어+삼겹살",
+          "price": "32,000원",
+          "isSignature": true
+        },
+        {
+          "name": "볶음밥",
+          "price": "2,000원"
+        },
+        {
+          "name": "주먹밥",
+          "price": "3,000원"
+        },
+        {
+          "name": "야채추가",
+          "price": "2,000원"
+        },
+        {
+          "name": "치즈추가",
+          "price": "3,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_824718559044",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_824718559044",
+      "identityResolution": "report",
+      "name": "앞산큰골집 앞산본점",
+      "address": "대구광역시 남구 큰골길 35 앞산큰골집 앞산본점",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1614860888/menu/list",
+      "sourceIdentity": "naver-place:1614860888",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "[신메뉴]방앗간 들기름 메밀 막국수",
+          "price": "8,400원"
+        },
+        {
+          "name": "등갈비찜 (찜갈비)",
+          "price": "14,500원"
+        },
+        {
+          "name": "[점심특선]장모님 박분남 뚝배기 제육",
+          "price": "10,900원"
+        },
+        {
+          "name": "가마솥 곤드레밥",
+          "price": "3,500원"
+        },
+        {
+          "name": "봉평 전통방식 메밀전 추가",
+          "price": "2,500원"
+        },
+        {
+          "name": "등갈비 포장(밀키트)",
+          "price": "12,500원"
+        },
+        {
+          "name": "강원도 옥수수 막걸리",
+          "price": "5,000원"
+        },
+        {
+          "name": "간장 갈비찜",
+          "price": "14,500원"
+        },
+        {
+          "name": "사리",
+          "price": "2,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_170debd05759",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_170debd05759",
+      "identityResolution": "report",
+      "name": "우정식육식당",
+      "address": "전라남도 목포시 신흥로69번길 18-1",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/20001077/menu",
+      "sourceIdentity": "naver-place:20001077",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "woojung-mokpo-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "갈비탕",
+          "price": "16,000원"
+        },
+        {
+          "name": "불고기백반",
+          "price": "11,000원"
+        },
+        {
+          "name": "생고기비빔밥",
+          "price": "15,000원"
+        },
+        {
+          "name": "한우암소와낙지탕탕이",
+          "price": "74,000원"
+        },
+        {
+          "name": "생고기 400g",
+          "price": "52,000원"
+        },
+        {
+          "name": "육회 400g",
+          "price": "52,000원"
+        },
+        {
+          "name": "살치살, 간접살, 안창살 600g",
+          "price": "150,000원"
+        },
+        {
+          "name": "미식가 모듬 600g",
+          "price": "90,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_cc57af7d3de9",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_cc57af7d3de9",
+      "identityResolution": "report",
+      "name": "자코비버거 본점",
+      "address": "서울특별시 용산구 신흥로 38 1층 자코비버거",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/13000071/menu",
+      "sourceIdentity": "naver-place:13000071",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "jacoby-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "클래식 더블 치즈 버거",
+          "price": "10,900원"
+        },
+        {
+          "name": "자코비 버거",
+          "price": "11,900원"
+        },
+        {
+          "name": "15cm 독일 수제소세지 핫도그",
+          "price": "11,900원"
+        },
+        {
+          "name": "클래식 트리플 치즈 버거",
+          "price": "14,900원"
+        },
+        {
+          "name": "아보카도 베이컨 버거",
+          "price": "13,900원"
+        },
+        {
+          "name": "발사믹 치킨 샐러드",
+          "price": "17,900원"
+        },
+        {
+          "name": "고수 더블 치즈 버거",
+          "price": "11,900원"
+        },
+        {
+          "name": "버섯 버거",
+          "price": "12,900원"
+        },
+        {
+          "name": "자코비 더블 패티 버거",
+          "price": "16,900원"
+        },
+        {
+          "name": "블루 하와이언 베이컨 버거",
+          "price": "12,900원"
+        },
+        {
+          "name": "더블 치즈 베이컨 버거",
+          "price": "12,900원"
+        },
+        {
+          "name": "칠리 베이컨 버거",
+          "price": "12,900원"
+        },
+        {
+          "name": "칠리 치킨 버거",
+          "price": "12,900원"
+        },
+        {
+          "name": "새우 버거",
+          "price": "13,900원"
+        },
+        {
+          "name": "클래식 더블 치즈 버거 세트",
+          "price": "20,800원"
+        },
+        {
+          "name": "자코비 버거 세트",
+          "price": "21,800원"
+        },
+        {
+          "name": "고수 더블 치즈 버거 세트",
+          "price": "21,800원"
+        },
+        {
+          "name": "클래식 트리플 치즈 버거 세트",
+          "price": "24,800원"
+        },
+        {
+          "name": "버섯 버거 세트",
+          "price": "22,800원"
+        },
+        {
+          "name": "자코비 더블 패티 버거 세트",
+          "price": "26,800원"
+        },
+        {
+          "name": "블루 하와이언 베이컨 버거 세트",
+          "price": "22,800원"
+        },
+        {
+          "name": "더블 치즈 베이컨 버거 세트",
+          "price": "22,800원"
+        },
+        {
+          "name": "칠리 베이컨 버거 세트",
+          "price": "22,800원"
+        },
+        {
+          "name": "칠리치킨 버거 세트",
+          "price": "22,800원"
+        },
+        {
+          "name": "아보카도 베이컨 버거 세트",
+          "price": "23,800원"
+        },
+        {
+          "name": "새우 버거 세트",
+          "price": "23,800원"
+        },
+        {
+          "name": "소고기 타코 (2pcs)",
+          "price": "12,900원"
+        },
+        {
+          "name": "소고기 비리야 타코 (2pcs)",
+          "price": "12,900원"
+        },
+        {
+          "name": "치킨 타코 (2pcs)",
+          "price": "12,900원"
+        },
+        {
+          "name": "칠리 치킨 타코 (2pcs)",
+          "price": "12,900원"
+        },
+        {
+          "name": "새우 타코 (2pcs)",
+          "price": "12,900원"
+        },
+        {
+          "name": "치킨 퀘사디아",
+          "price": "16,900원"
+        },
+        {
+          "name": "15cm 독일 수제소세지 칠리 베이컨 핫도그",
+          "price": "13,900원"
+        },
+        {
+          "name": "30cm 독일 수제소세지 핫도그",
+          "price": "15,900원"
+        },
+        {
+          "name": "30cm 독일 수제소세지 칠리 베이컨 핫도그",
+          "price": "17,900원"
+        },
+        {
+          "name": "까르보나라 파스타",
+          "price": "18,900원"
+        },
+        {
+          "name": "(작은사이즈) 까르보나라 파스타",
+          "price": "15,900원"
+        },
+        {
+          "name": "할라피뇨 올리브 파스타",
+          "price": "18,900원"
+        },
+        {
+          "name": "(작은사이즈) 할라피뇨 올리브 파스타",
+          "price": "15,900원"
+        },
+        {
+          "name": "뽀모도로 파스타",
+          "price": "18,900원"
+        },
+        {
+          "name": "(작은사이즈) 뽀모도로 파스타",
+          "price": "15,900원"
+        },
+        {
+          "name": "씨푸드 파스타",
+          "price": "18,900원"
+        },
+        {
+          "name": "(작은사이즈) 씨푸드 파스타",
+          "price": "15,900원"
+        },
+        {
+          "name": "칠리 새우 파스타",
+          "price": "18,900원"
+        },
+        {
+          "name": "(작은사이즈) 칠리 새우 파스타",
+          "price": "15,900원"
+        },
+        {
+          "name": "1/2 발사믹 치킨 샐러드",
+          "price": "14,900원"
+        },
+        {
+          "name": "1/2 시저 치킨 샐러드",
+          "price": "14,900원"
+        },
+        {
+          "name": "1/2 아보카도 샐러드",
+          "price": "15,900원"
+        },
+        {
+          "name": "시저 치킨 샐러드",
+          "price": "17,900원"
+        },
+        {
+          "name": "아보카도 샐러드",
+          "price": "18,900원"
+        },
+        {
+          "name": "핫윙(8조각)",
+          "price": "12,900원"
+        },
+        {
+          "name": "마일드윙(8조각)",
+          "price": "12,900원"
+        },
+        {
+          "name": "감자튀김",
+          "price": "11,900원"
+        },
+        {
+          "name": "치즈감자튀김",
+          "price": "14,900원"
+        },
+        {
+          "name": "마늘감자튀김",
+          "price": "14,900원"
+        },
+        {
+          "name": "과카몰리 감자튀김",
+          "price": "16,900원"
+        },
+        {
+          "name": "칠리치즈 감자튀김",
+          "price": "16,900원"
+        },
+        {
+          "name": "베이컨치즈 감자튀김 with 사워크림",
+          "price": "16,900원"
+        },
+        {
+          "name": "생수(500ml)",
+          "price": "1,000원"
+        },
+        {
+          "name": "콜라(355ml)",
+          "price": "3,000원"
+        },
+        {
+          "name": "제로콜라(355ml)",
+          "price": "3,000원"
+        },
+        {
+          "name": "스프라이트(355ml)",
+          "price": "3,000원"
+        },
+        {
+          "name": "웰치스 포도(355ml)",
+          "price": "3,000원"
+        },
+        {
+          "name": "닥터페퍼(355ml)",
+          "price": "3,000원"
+        },
+        {
+          "name": "진저엘(250ml)",
+          "price": "3,000원"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_1ab96dccedb9",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_1ab96dccedb9",
+      "identityResolution": "report",
+      "name": "고양 산촌",
+      "address": "경기 고양시 덕양구 보광로 234 (벽제동 582-1)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11723359/menu",
+      "sourceIdentity": "naver-place:11723359",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "정식",
+          "price": "27,000원",
+          "variablePrice": false,
+          "description": "정식",
+          "productionDescription": "정식"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_4f053d6c0b33",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_4f053d6c0b33",
+      "identityResolution": "report",
+      "name": "구리 파로호 민물매운탕 (남양주점 폐업)",
+      "address": "경기 구리시 장자대로1번길 62-5 (교문동 798-8)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/38710312/menu",
+      "sourceIdentity": "naver-place:38710312",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "(점심) 메기매운탕",
+          "price": "35,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심)"
+          ]
+        },
+        {
+          "name": "(점심)얼큰수제비",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "보리밥포함",
+          "quantityOrConditions": [
+            "(점심)"
+          ],
+          "productionDescription": "보리밥포함"
+        },
+        {
+          "name": "빠가+메기매운탕(소)",
+          "price": "55,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        },
+        {
+          "name": "메기매운탕(중)",
+          "price": "45,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "쏘가리(중)",
+          "price": "130,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "빠가(소)",
+          "price": "60,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        },
+        {
+          "name": "잡어(소)",
+          "price": "60,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(소)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_77bad769a479",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_77bad769a479",
+      "identityResolution": "report",
+      "name": "신상철선산곱창",
+      "address": "경북 구미시 원남로10길 9",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1564887664/menu",
+      "sourceIdentity": "naver-place:1564887664",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "선산곱창전골",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "곱창 1인분",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1인분"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_fe8cc5b36b2c",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_fe8cc5b36b2c",
+      "identityResolution": "report",
+      "name": "남양주 매봉골황제능이버섯",
+      "address": "경기 남양주시 화도읍 북한강로 1362 (금남리 511-79)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/31887116/menu",
+      "sourceIdentity": "naver-place:31887116",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "황제해신탕(대)",
+          "price": "135,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "황제 해신탕 (중)",
+          "price": "105,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "해신탕 (대)",
+          "price": "115,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(대)"
+          ]
+        },
+        {
+          "name": "해신탕 (중)",
+          "price": "85,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(중)"
+          ]
+        },
+        {
+          "name": "오리백숙",
+          "price": "79,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "토종닭백숙",
+          "price": "79,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "반마리백숙",
+          "price": "48,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "토종닭볶음탕",
+          "price": "79,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복 삼계탕",
+          "price": "22,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "삼계탕",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "능이주",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "메밀전병",
+          "price": "15,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_ddc70c60bd16",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_ddc70c60bd16",
+      "identityResolution": "report",
+      "name": "서울 32파르페 (출연한 명동점 폐업)",
+      "address": "서울 마포구 홍익로3길 35 (서교동 365-17)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/717568148/menu",
+      "sourceIdentity": "naver-place:717568148",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "32 파르페 소프트 아이스크림",
+          "price": "3,000원",
+          "variablePrice": false,
+          "description": "32cm 소프트 아이스크림 입니다. 절대 기울이면 안돼요~~~!!",
+          "productionDescription": "32cm 소프트 아이스크림 입니다. 절대 기울이면 안돼요~~~!!"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_91a0989425bb",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_91a0989425bb",
+      "identityResolution": "report",
+      "name": "서울 나폴레옹과자점 본점",
+      "address": "서울 성북구 성북로 7 (성북동1가 35-5)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11627707/menu",
+      "sourceIdentity": "naver-place:11627707",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "구로칸토 슈니탱",
+          "price": "30,000원",
+          "variablePrice": false,
+          "description": "파이 사이사이에 진한 모카크림을 샌드하는 정성 가득 들어간 나폴레옹 시그니처!",
+          "productionDescription": "파이 사이사이에 진한 모카크림을 샌드하는 정성 가득 들어간 나폴레옹 시그니처!"
+        },
+        {
+          "name": "다크비쇼",
+          "price": "25,000원",
+          "variablePrice": false,
+          "description": "다크초콜릿으로 더욱 진하고 맛있어진 쇼콜라비스큐슈니탱!",
+          "productionDescription": "다크초콜릿으로 더욱 진하고 맛있어진 쇼콜라비스큐슈니탱!"
+        },
+        {
+          "name": "통팥빵",
+          "price": "3,300원",
+          "variablePrice": false,
+          "description": "매일매일 직접 끓이는 알알이 살아있는 통팥을 넣은 빵!",
+          "productionDescription": "매일매일 직접 끓이는 알알이 살아있는 통팥을 넣은 빵!"
+        },
+        {
+          "name": "단팥빵",
+          "price": "2,900원",
+          "variablePrice": false,
+          "description": "직접 불리고, 삶고, 졸인 팥앙금이 들어간 기본 단팥빵",
+          "productionDescription": "직접 불리고, 삶고, 졸인 팥앙금이 들어간 기본 단팥빵"
+        },
+        {
+          "name": "고소한 맛 사라다빵",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "매일 직접 손질하는 신선한 야채와 계란 & 감자가 들어가는 나폴레옹과자점 시그니처 빵!",
+          "productionDescription": "매일 직접 손질하는 신선한 야채와 계란 & 감자가 들어가는 나폴레옹과자점 시그니처 빵!"
+        },
+        {
+          "name": "크림빵",
+          "price": "3,300원",
+          "variablePrice": false,
+          "description": "매일 신선한 우유&계란으로 직접 끓이는 커스터드크림이 샌드된 크림빵",
+          "productionDescription": "매일 신선한 우유&계란으로 직접 끓이는 커스터드크림이 샌드된 크림빵"
+        },
+        {
+          "name": "초콜릿빵",
+          "price": "3,300원",
+          "variablePrice": false,
+          "description": "다크초콜릿이 들어가 진한 초코크림이 들어간 촉촉한 초코크림빵",
+          "productionDescription": "다크초콜릿이 들어가 진한 초코크림이 들어간 촉촉한 초코크림빵"
+        },
+        {
+          "name": "크로와상",
+          "price": "4,600원",
+          "variablePrice": false,
+          "description": "깊은 버터 향이 일품이며 바삭, 촉촉함이 특별합니다",
+          "productionDescription": "깊은 버터 향이 일품이며 바삭, 촉촉함이 특별합니다"
+        },
+        {
+          "name": "초코크로와상",
+          "price": "5,900원",
+          "variablePrice": false,
+          "description": "바삭한 크로와상 속에 초코스틱이 들어있고 고소한 버터향이 입안 가득 퍼집니다.",
+          "productionDescription": "바삭한 크로와상 속에 초코스틱이 들어있고 고소한 버터향이 입안 가득 퍼집니다."
+        },
+        {
+          "name": "뜯어먹는치즈빵",
+          "price": "6,500원",
+          "variablePrice": false,
+          "description": "크림치즈가 반죽에 스며들듯 녹아있는 부드러운 치즈빵",
+          "productionDescription": "크림치즈가 반죽에 스며들듯 녹아있는 부드러운 치즈빵"
+        },
+        {
+          "name": "크랜베리소프트",
+          "price": "7,000원",
+          "variablePrice": false,
+          "description": "달콤한 코코넛 토핑과 크랜베리를 송송 얹은 부드러운 빵",
+          "productionDescription": "달콤한 코코넛 토핑과 크랜베리를 송송 얹은 부드러운 빵"
+        },
+        {
+          "name": "통호밀통호두식빵",
+          "price": "7,500원",
+          "variablePrice": false,
+          "description": "호두 반태와 피칸 반태가 들어간 호밀식빵, 고소해서 건강식빵 중에 가장 인기가 좋습니다",
+          "productionDescription": "호두 반태와 피칸 반태가 들어간 호밀식빵, 고소해서 건강식빵 중에 가장 인기가 좋습니다"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_ee645a2ca8bf",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_ee645a2ca8bf",
+      "identityResolution": "report",
+      "name": "라온아토",
+      "address": "서울 서대문구 증가로4길 13",
+      "classification": "order_menu_pending",
+      "menuGroup": "normalized-order-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.booking.naver.com/order/bizes/729025/items/4519147?theme=place&refererCode=menutab&lang=ko&area=ple",
+      "sourceIdentity": "naver-order:729025",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "orderContext": {
+        "priceContext": "Naver order screen; takeout selected. Not verified as dine-in pricing.",
+        "coverage": "Partial rendered items only. Sold-out items were excluded by the page.",
+        "additionalFee": "Takeout packaging fee 50 KRW",
+        "productionApplied": false
+      },
+      "menus": [
+        {
+          "name": "추억의 왕돈까스",
+          "price": "13,900원",
+          "conditionsText": "추억 속 그 맛! 경양식 왕돈까스",
+          "productionDescription": ""
+        },
+        {
+          "name": "고르곤졸라 피자",
+          "price": "14,900원",
+          "conditionsText": "치즈 매니아에게 추천! 고르곤졸라 치즈가 듬뿍",
+          "productionDescription": ""
+        },
+        {
+          "name": "루꼴라 피자",
+          "price": "17,900원",
+          "conditionsText": "신선하고 푸룻푸룻한 루꼴라가 가득",
+          "productionDescription": ""
+        },
+        {
+          "name": "알리오올리오 파스타",
+          "price": "13,900원",
+          "conditionsText": "한국인이라면 강추! 마늘향이 좋은 오일 파스타",
+          "productionDescription": ""
+        },
+        {
+          "name": "꽃게 로제 파스타",
+          "price": "14,900원",
+          "conditionsText": "속이 꽉찬 꽃게와 크리미한 로제 소스의 만남",
+          "productionDescription": ""
+        },
+        {
+          "name": "크림 버섯 닭가슴살 리조또",
+          "price": "12,900원",
+          "conditionsText": "아이 메뉴로 추천! 크리미한 소스가 부담없어요",
+          "productionDescription": ""
+        },
+        {
+          "name": "콤비네이션 피자",
+          "price": "15,900원",
+          "conditionsText": "여러 토핑이 가득한 가장 베이직한 피자",
+          "productionDescription": ""
+        },
+        {
+          "name": "크림치즈 포테이토 피자",
+          "price": "14,900원",
+          "conditionsText": "부드러운 크림치즈와 포테이토의 만남",
+          "productionDescription": ""
+        },
+        {
+          "name": "마르게리따 피자",
+          "price": "15,900원",
+          "conditionsText": "특제 토마토 소스와 모짜렐라의 조합이 최고!",
+          "productionDescription": ""
+        },
+        {
+          "name": "불고기 스테이크 피자",
+          "price": "17,900원",
+          "conditionsText": "단짠단짠의 실패할 수 없는 조합",
+          "productionDescription": ""
+        },
+        {
+          "name": "도쿄 카레",
+          "price": "12,000원",
+          "conditionsText": "보통 카레보다 진한 맛과 향이 매력적",
+          "productionDescription": ""
+        },
+        {
+          "name": "데미그라스 함박스테이크",
+          "price": "14,900원",
+          "conditionsText": "부드러운 스테이크와 데미그라스 소스의 만남",
+          "productionDescription": ""
+        },
+        {
+          "name": "해물 토마토 파스타",
+          "price": "13,900원",
+          "conditionsText": "해물과 부드러운 토마토의 실패할 수 없는 조합",
+          "productionDescription": ""
+        },
+        {
+          "name": "매콤 새우 베이컨 크림 파스타",
+          "price": "13,900원",
+          "conditionsText": "시원한 새우에 짭짤한 베이컨이 매력인 파스타",
+          "productionDescription": ""
+        },
+        {
+          "name": "포테이토콘 파스타",
+          "price": "13,900원",
+          "conditionsText": "크리미한 감자와 고소한 옥수수의 조합이 최고",
+          "productionDescription": ""
+        },
+        {
+          "name": "해물 토마토 리조또",
+          "price": "12,900원",
+          "conditionsText": "시원한 해물과 토마토가 어우러진 리조또",
+          "productionDescription": ""
+        },
+        {
+          "name": "크림 베이컨 버섯 리조또",
+          "price": "12,900원",
+          "productionDescription": ""
+        },
+        {
+          "name": "쉬림프 화덕 리조또",
+          "price": "15,900원",
+          "productionDescription": ""
+        },
+        {
+          "name": "과일 야채 모둠 샐러드",
+          "price": "15,900원",
+          "conditionsText": "제철 과일과 신선한 야채가 들어가는 샐러드",
+          "productionDescription": ""
+        },
+        {
+          "name": "오늘의 수프",
+          "price": "6,000원",
+          "conditionsText": "매일 달라지는 라온아토표 특제 수프",
+          "productionDescription": "메뉴는 매일 변경됨."
+        },
+        {
+          "name": "아메리카노",
+          "price": "3,500원",
+          "productionDescription": ""
+        },
+        {
+          "name": "바닐라라떼",
+          "price": "4,500원",
+          "productionDescription": ""
+        },
+        {
+          "name": "카페모카",
+          "price": "4,500원",
+          "productionDescription": ""
+        },
+        {
+          "name": "카페라떼",
+          "price": "4,000원",
+          "productionDescription": ""
+        },
+        {
+          "name": "연유라떼",
+          "price": "4,500원",
+          "productionDescription": ""
+        },
+        {
+          "name": "펩시콜라",
+          "price": "2,000원",
+          "productionDescription": ""
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_1f639412e442",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_1f639412e442",
+      "identityResolution": "report",
+      "name": "서울 신사동인동 (옛향기가득한동인동옛추억)",
+      "address": "서울 강남구 강남대로156길 14 (신사동 511-4)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11726653/menu",
+      "sourceIdentity": "naver-place:11726653",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "동인동찜갈비",
+          "price": "24,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "덜매운찜갈비",
+          "price": "24,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "쭈꾸미",
+          "price": "17,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "모듬전",
+          "price": "30,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "동그랑땡",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "깻잎전",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "굴전",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "생선전",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "두부전",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "술국",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "점심 쭈꾸미정식",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "버섯 매운탕",
+          "price": "11,000원",
+          "variablePrice": false,
+          "description": "2인이상",
+          "quantityOrConditions": [
+            "2인",
+            "이상"
+          ],
+          "productionDescription": "2인이상"
+        },
+        {
+          "name": "따로국밥",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "비빔밥",
+          "price": "9,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_3ec3761ab69d",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_3ec3761ab69d",
+      "identityResolution": "report",
+      "name": "주막",
+      "address": "서울 마포구 동교로23길 64 1층",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1988636142/menu",
+      "sourceIdentity": "naver-place:1988636142",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "털레기수제비",
+          "price": "24,000원",
+          "variablePrice": false,
+          "description": "털레기는 경기북부에서 즐겨 먹었던 수제비란 뜻으로 보리새우와 시래기, 얼갈이, 감자 및 된장을 넣어 끓이는 즉석 손수제비로 구수하고 시원한 국물맛이 일품입니다.",
+          "productionDescription": "털레기는 경기북부에서 즐겨 먹었던 수제비란 뜻으로 보리새우와 시래기, 얼갈이, 감자 및 된장을 넣어 끓이는 즉석 손수제비로 구수하고 시원한 국물맛이 일품입니다."
+        },
+        {
+          "name": "쭈꾸미볶음",
+          "price": "18,000원",
+          "variablePrice": false,
+          "description": "불을 붙여 볶아내어 특유의 불맛이 느껴지며, 매니아가 많은 음식으로 매콤하고 탱글탱글한 맛이 일품입니다. 보리밥과 함께 드시면 맛이 더욱 좋습니다.",
+          "productionDescription": "불을 붙여 볶아내어 특유의 불맛이 느껴지며, 매니아가 많은 음식으로 매콤하고 탱글탱글한 맛이 일품입니다. 보리밥과 함께 드시면 맛이 더욱 좋습니다."
+        },
+        {
+          "name": "보리밥",
+          "price": "10,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "쭈꾸미정식(2인)",
+          "price": "22,000원",
+          "variablePrice": false,
+          "description": "2인",
+          "quantityOrConditions": [
+            "(2인)",
+            "2인"
+          ],
+          "productionDescription": "2인"
+        },
+        {
+          "name": "제육정식(2인)",
+          "price": "22,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(2인)"
+          ]
+        },
+        {
+          "name": "코다리정식",
+          "price": "26,000원",
+          "variablePrice": false,
+          "description": "2인",
+          "quantityOrConditions": [
+            "2인"
+          ],
+          "productionDescription": "2인"
+        },
+        {
+          "name": "제육볶음",
+          "price": "18,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "코다리구이",
+          "price": "22,000원",
+          "variablePrice": false,
+          "description": "최사의 품질의 코다리를 엄선하여 48시간 양념에 숙성하며 화학조미료를 일체 사용하지 않고 조리하여 담백하고 부드러우며 감칠맛이 뛰어납니다.",
+          "productionDescription": "최사의 품질의 코다리를 엄선하여 48시간 양념에 숙성하며 화학조미료를 일체 사용하지 않고 조리하여 담백하고 부드러우며 감칠맛이 뛰어납니다."
+        },
+        {
+          "name": "녹두전(1장)",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(1장)"
+          ]
+        },
+        {
+          "name": "동동주",
+          "price": "8,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_e986f0307607",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_e986f0307607",
+      "identityResolution": "report",
+      "name": "서울 우정낙지",
+      "address": "서울 종로구 삼일대로17길 46 (관철동 19-16)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1501619204/menu",
+      "sourceIdentity": "naver-place:1501619204",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "낙지볶음",
+          "price": "27,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "조개탕",
+          "price": "17,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "감자탕",
+          "price": "16,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "파전",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "감자전",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "계란말이",
+          "price": "9,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "낙지보쌈",
+          "price": "42,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "낙지한마리수제비",
+          "price": "11,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "낙지숙회",
+          "price": "33,000원",
+          "variablePrice": false,
+          "description": "통낙지2마리",
+          "quantityOrConditions": [
+            "2마리"
+          ],
+          "productionDescription": "통낙지2마리"
+        },
+        {
+          "name": "낙지비빔밥+미니수제비(점심한정메뉴)",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심한정메뉴)"
+          ]
+        },
+        {
+          "name": "낙지수제비+미니비빔밥(점심한정메뉴)",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심한정메뉴)"
+          ]
+        },
+        {
+          "name": "낙지칼국수+미니비빔밥(점심한정메뉴)",
+          "price": "10,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(점심한정메뉴)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_eafd72ff9c21",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_eafd72ff9c21",
+      "identityResolution": "report",
+      "name": "서울 원조원할매소문난닭한마리",
+      "address": "서울 종로구 종로40가길 25 (종로5가 282-21)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11706951/menu",
+      "sourceIdentity": "naver-place:11706951",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "닭한마리",
+          "price": "33,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "칼국수사리",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "떡사리",
+          "price": "1,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "버섯사리",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "닭한마리A세트(2인)",
+          "price": "37,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(2인)"
+          ]
+        },
+        {
+          "name": "닭한마리B세트(3인)",
+          "price": "55,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(3인)"
+          ]
+        },
+        {
+          "name": "닭한마리C세트(4인)",
+          "price": "69,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(4인)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_68dd74a39391",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_68dd74a39391",
+      "identityResolution": "report",
+      "name": "서울 유림 강서점 (출연한 김포점 폐업)",
+      "address": "서울 강서구 공항대로71길 5 (염창동 280-6)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/19866704/menu",
+      "sourceIdentity": "naver-place:19866704",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "토종닭도리탕 한마리(포장)",
+          "price": "50,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(포장)"
+          ]
+        },
+        {
+          "name": "토종닭도리탕 한마리 반(포장)",
+          "price": "74,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(포장)"
+          ]
+        },
+        {
+          "name": "능이토종닭백숙 한마리(포장)",
+          "price": "62,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(포장)"
+          ]
+        },
+        {
+          "name": "능이토종닭백숙 한마리 반(포장)",
+          "price": "92,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(포장)"
+          ]
+        },
+        {
+          "name": "능이한방오리 한마리(포장)",
+          "price": "67,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(포장)"
+          ]
+        },
+        {
+          "name": "토종닭도리탕 1마리",
+          "price": "53,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "능이토종닭백숙 1마리",
+          "price": "65,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "능이한방오리 1마리",
+          "price": "70,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "토종닭도리탕 1마리반",
+          "price": "77,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "능이토종닭백숙 1마리반",
+          "price": "95,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "능이한방오리 1마리반",
+          "price": "102,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1마리"
+          ]
+        },
+        {
+          "name": "찰밥",
+          "price": "3,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "볶음밥",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "삼계탕",
+          "price": "17,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_01d996824267",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_01d996824267",
+      "identityResolution": "report",
+      "name": "서울 한옥집 김치찜 본점",
+      "address": "서울 서대문구 통일로9길 12 (냉천동 20-1)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11593472/menu",
+      "sourceIdentity": "naver-place:11593472",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "6개월 비법 숙성의 묵은지 김치찜",
+          "price": "11,500원",
+          "variablePrice": false,
+          "description": "\"서대문역맛집의 전설 그 시작의 요리. 6개월 비법 숙성 된 김치의 깊은 풍미! \"",
+          "quantityOrConditions": [
+            "6개"
+          ],
+          "productionDescription": "\"서대문역맛집의 전설 그 시작의 요리. 6개월 비법 숙성 된 김치의 깊은 풍미! \""
+        },
+        {
+          "name": "얼큰 시원하고 깊은 국물의 김치찌개",
+          "price": "11,500원",
+          "variablePrice": false,
+          "description": "\"얼큰 칼칼 국물에 숙성 김치의 킥! 밥순삭 보장. 두부와 돼지고기의 조화 예술\"",
+          "productionDescription": "\"얼큰 칼칼 국물에 숙성 김치의 킥! 밥순삭 보장. 두부와 돼지고기의 조화 예술\""
+        },
+        {
+          "name": "언제나 옳은 치즈 계란말이",
+          "price": "11,500원",
+          "variablePrice": false,
+          "description": "\"치즈 폭탄 계란말이! 쫀득+크리미의 환상 조합\"",
+          "productionDescription": "\"치즈 폭탄 계란말이! 쫀득+크리미의 환상 조합\""
+        },
+        {
+          "name": "진한 육수의 등뼈 전골(대)",
+          "price": "49,000원",
+          "variablePrice": false,
+          "description": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\"",
+          "quantityOrConditions": [
+            "(대)"
+          ],
+          "productionDescription": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\""
+        },
+        {
+          "name": "진한 육수의 등뼈 전골(소)",
+          "price": "39,000원",
+          "variablePrice": false,
+          "description": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\"",
+          "quantityOrConditions": [
+            "(소)"
+          ],
+          "productionDescription": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\""
+        },
+        {
+          "name": "매콤새콤한 돼지고기 수육무침(대)",
+          "price": "29,000원",
+          "variablePrice": false,
+          "description": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\"",
+          "quantityOrConditions": [
+            "(대)"
+          ],
+          "productionDescription": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\""
+        },
+        {
+          "name": "매콤새콤한 돼지고기 수육무침(소)",
+          "price": "21,000원",
+          "variablePrice": false,
+          "description": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\"",
+          "quantityOrConditions": [
+            "(소)"
+          ],
+          "productionDescription": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\""
+        },
+        {
+          "name": "남녀노소 좋아하는 떡갈비",
+          "price": "10,500원",
+          "variablePrice": false,
+          "description": "\"달짠 소스 듬뿍! 육즙 터지는 비주얼 폭발 한 입\"",
+          "productionDescription": "\"달짠 소스 듬뿍! 육즙 터지는 비주얼 폭발 한 입\""
+        },
+        {
+          "name": "한옥집 도시락",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "\"한 끼 든든한 구성! 김치+고기+계란의 완벽한 밸런스\"",
+          "productionDescription": "\"한 끼 든든한 구성! 김치+고기+계란의 완벽한 밸런스\""
+        },
+        {
+          "name": "한옥집 김치(5kg)",
+          "price": "49,000원",
+          "variablePrice": false,
+          "description": "\"서대문김치찜의 모든 요리의 근간, 오리지널 숙성 김치, 비교 불가의 진한 킥\"",
+          "quantityOrConditions": [
+            "(5kg)"
+          ],
+          "productionDescription": "\"서대문김치찜의 모든 요리의 근간, 오리지널 숙성 김치, 비교 불가의 진한 킥\""
+        },
+        {
+          "name": "◆ 김치찜 찜고기 추가 (대)",
+          "price": "11,500원",
+          "variablePrice": false,
+          "description": "한옥집 김치찜 추가 입니다.",
+          "quantityOrConditions": [
+            "(대)"
+          ],
+          "productionDescription": "한옥집 김치찜 추가 입니다."
+        },
+        {
+          "name": "◆ 김치찜 찜고기 추가 (소)",
+          "price": "6,500원",
+          "variablePrice": false,
+          "description": "한옥집 김치찜 찜고기 추가입니다.",
+          "quantityOrConditions": [
+            "(소)"
+          ],
+          "productionDescription": "한옥집 김치찜 찜고기 추가입니다."
+        },
+        {
+          "name": "◆ 김치찌개 찌개고기 추가",
+          "price": "6,500원",
+          "variablePrice": false,
+          "description": "김치찌개 찌개고기 추가입니다.",
+          "productionDescription": "김치찌개 찌개고기 추가입니다."
+        },
+        {
+          "name": "◆ 김치등뼈전골 등뼈 추가",
+          "price": "20,000원",
+          "variablePrice": false,
+          "description": "김치등뼈전골 등뼈 추가 입니다",
+          "productionDescription": "김치등뼈전골 등뼈 추가 입니다"
+        },
+        {
+          "name": "◆ 김치등뼈전골 김치 추가",
+          "price": "11,500원",
+          "variablePrice": false,
+          "description": "김치등뼈전골 김치추가입니다.",
+          "productionDescription": "김치등뼈전골 김치추가입니다."
+        },
+        {
+          "name": "공기밥",
+          "price": "1,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "라면사리",
+          "price": "1,000원",
+          "variablePrice": false,
+          "description": "김치찌개 주문시 라면사리 처음 기본 제공. 이후 추가",
+          "productionDescription": "김치찌개 주문시 라면사리 처음 기본 제공. 이후 추가"
+        },
+        {
+          "name": "옹심이사리",
+          "price": "4,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "소주",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "막걸리",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "맥주",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "매화수",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "청하",
+          "price": "6,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "복분자",
+          "price": "12,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "콜라",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "사이다",
+          "price": "2,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "환타(파인)",
+          "price": "2,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "(파인)"
+          ]
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_1a92f60a87f6",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_1a92f60a87f6",
+      "identityResolution": "report",
+      "name": "의령 남산떡방앗간 (의령망개떡)",
+      "address": "경남 의령군 의령읍 의병로18길 3-4 (서동리 485-16)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11717036/menu",
+      "sourceIdentity": "naver-place:11717036",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "의령망개떡12개",
+          "price": "10,000원",
+          "variablePrice": false,
+          "description": "의령망개떡12개10,000원입니다",
+          "quantityOrConditions": [
+            "12개"
+          ],
+          "productionDescription": "의령망개떡12개10,000원입니다"
+        },
+        {
+          "name": "20개",
+          "price": "15,000원",
+          "variablePrice": false,
+          "description": "의령망개떡 20개 15000원",
+          "quantityOrConditions": [
+            "20개"
+          ],
+          "productionDescription": "의령망개떡 20개 15000원"
+        },
+        {
+          "name": "40개",
+          "price": "30,000원",
+          "variablePrice": false,
+          "description": "40개 30000원",
+          "quantityOrConditions": [
+            "40개"
+          ],
+          "productionDescription": "40개 30000원"
+        },
+        {
+          "name": "의령망개떡 1개",
+          "price": "1,000원",
+          "variablePrice": false,
+          "quantityOrConditions": [
+            "1개"
+          ]
+        },
+        {
+          "name": "망개떡 6개",
+          "price": "5,000원",
+          "variablePrice": false,
+          "description": "의령망개떡 6개 5000원입니다.",
+          "quantityOrConditions": [
+            "6개"
+          ],
+          "productionDescription": "의령망개떡 6개 5000원입니다."
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_c173b427d693",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_c173b427d693",
+      "identityResolution": "report",
+      "name": "제주 애월빵공장 앤 카페",
+      "address": "제주 제주시 애월읍 금성5길 42-15 (금성리 472-13)",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1516216333/menu",
+      "sourceIdentity": "naver-place:1516216333",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "애월샌드 2세트",
+          "price": "34,000원",
+          "variablePrice": false,
+          "description": "프리미엄수제쿠키, 고메버터, 2세트 20개입, 땅콩샌드 10개, 한라봉샌드 10개",
+          "quantityOrConditions": [
+            "20개",
+            "10개"
+          ],
+          "productionDescription": "프리미엄수제쿠키, 고메버터, 2세트 20개입, 땅콩샌드 10개, 한라봉샌드 10개"
+        },
+        {
+          "name": "애월샌드 1세트",
+          "price": "18,000원",
+          "variablePrice": false,
+          "description": "고급수제샌드,고메버터, 1세트 10개입, 땅콩샌드 5개, 한라봉샌드 5개, 2종류 택1",
+          "quantityOrConditions": [
+            "10개",
+            "5개",
+            "택1"
+          ],
+          "productionDescription": "고급수제샌드,고메버터, 1세트 10개입, 땅콩샌드 5개, 한라봉샌드 5개, 2종류 택1"
+        },
+        {
+          "name": "현무암쌀빵",
+          "price": "6,900원",
+          "variablePrice": false,
+          "description": "제주 현무암을 형상화하여 쌀로 만들어 식감이 쫀득하고 건강을 생각한 애월빵공장의 시그니처빵",
+          "productionDescription": "제주 현무암을 형상화하여 쌀로 만들어 식감이 쫀득하고 건강을 생각한 애월빵공장의 시그니처빵"
+        },
+        {
+          "name": "한라봉무스",
+          "price": "5,800원",
+          "variablePrice": false,
+          "description": "제주도 한라봉을 닮은 부드러움의 끝을 보여주며 새콤달콤함으로 무장한 무스케이크.",
+          "productionDescription": "제주도 한라봉을 닮은 부드러움의 끝을 보여주며 새콤달콤함으로 무장한 무스케이크."
+        },
+        {
+          "name": "딸기팡도르",
+          "price": "7,800원",
+          "variablePrice": false,
+          "description": "최고급 버터와 달걀을 사용해 저온 숙성한 달콤함과 부드러움을 한번에 느낄 수 있는 빵",
+          "productionDescription": "최고급 버터와 달걀을 사용해 저온 숙성한 달콤함과 부드러움을 한번에 느낄 수 있는 빵"
+        },
+        {
+          "name": "현무암쌀빵 3구 패키지",
+          "price": "19,000원",
+          "variablePrice": false,
+          "description": "애월빵공장카페의 시그니처빵인 현무암쌀빵의 선물 패키지. 다양한사이즈의 선물패키지가 있습니다",
+          "productionDescription": "애월빵공장카페의 시그니처빵인 현무암쌀빵의 선물 패키지. 다양한사이즈의 선물패키지가 있습니다"
+        },
+        {
+          "name": "딸기라떼",
+          "price": "7,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "감귤쥬스",
+          "price": "8,000원",
+          "variablePrice": false,
+          "description": "제주의 신선한 한라봉감귤쥬스",
+          "productionDescription": "제주의 신선한 한라봉감귤쥬스"
+        },
+        {
+          "name": "제주당근주스",
+          "price": "8,000원",
+          "variablePrice": false,
+          "description": "당근으로 가장 유명한 제주시 구좌읍으로 당근으로 만든 주스",
+          "productionDescription": "당근으로 가장 유명한 제주시 구좌읍으로 당근으로 만든 주스"
+        },
+        {
+          "name": "한라봉에이드",
+          "price": "8,000원",
+          "variablePrice": false,
+          "description": "한라봉 본연의 맛이 듬뿍 느껴지는 에이드",
+          "productionDescription": "한라봉 본연의 맛이 듬뿍 느껴지는 에이드"
+        },
+        {
+          "name": "히비스커스 유자티(hot)",
+          "price": "7,500원",
+          "variablePrice": false,
+          "description": "히비스커스 유자티-맛과 여유, 그리고 멋진 사진 한장",
+          "quantityOrConditions": [
+            "(hot)"
+          ],
+          "productionDescription": "히비스커스 유자티-맛과 여유, 그리고 멋진 사진 한장"
+        },
+        {
+          "name": "에메랄드비치에이드",
+          "price": "8,000원",
+          "variablePrice": false,
+          "description": "애월의 에메랄드 비치를 한잔에 담은 상큼한 시그니처 에이드",
+          "productionDescription": "애월의 에메랄드 비치를 한잔에 담은 상큼한 시그니처 에이드"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_delicious-guys_a9894aaf4dda",
+      "reportRestaurantId": "topic_enrichment_delicious-guys_a9894aaf4dda",
+      "identityResolution": "report",
+      "name": "태안 대한횟집 만세튀김",
+      "address": "충남 태안군 안면읍 백사장1길 119 (창기리 1269-96)",
+      "classification": "order_menu_pending",
+      "menuGroup": "normalized-order-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.booking.naver.com/order/bizes/243302/items/5514475?theme=place&refererCode=menutab&lang=ko&area=ple",
+      "sourceIdentity": "naver-order:243302",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "orderContext": {
+        "priceContext": "Naver order screen; takeout selected. Not verified as dine-in pricing.",
+        "coverage": "Partial rendered items only. Sold-out items were excluded by the page.",
+        "additionalFee": null,
+        "productionApplied": false
+      },
+      "menus": [
+        {
+          "name": "활어회 추천메뉴2인",
+          "price": "90,000원",
+          "conditionsText": "활어회+쓰끼다시+만세튀김+물회+매운탕+라면사리or칼국수사리 *매운탕 필요하실때 말씀해주세요(사진은 4인 기준 입니다.) *계절에따라 활어회는 변경될 수 있습니다. (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "구성: 활어회, 쓰끼다시, 만세튀김, 물회, 매운탕, 라면사리 또는 칼국수사리. 매운탕은 요청 시 제공. 활어회는 계절에 따라 변경될 수 있음."
+        },
+        {
+          "name": "몽땅조개구이스페셜2인(포장불가)",
+          "price": "75,000원",
+          "conditionsText": "조개구이+전복+만세튀김+떡볶이+오징어+후식칼국수 (사진은 4인 기준 입니다.) (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "포장불가. 구성: 조개구이, 전복, 만세튀김, 떡볶이, 오징어, 후식 칼국수."
+        },
+        {
+          "name": "게국지세트3인",
+          "price": "80,000원",
+          "conditionsText": "개국지란?? 충청남도의 향토 음식으로 게를 손질하여 겉절이 김치와 함께 끓여 내는 음식(사진은 4인 기준 입니다.) 2인 : 개국지+간장게장(1마리) 3인 : 개국지+간장게장(1마리)+양념게장 4인 : 개국지+간장게장(2마리)+양념게장 * 공기밥 포함",
+          "productionDescription": "구성: 게국지, 간장게장 1마리, 양념게장. 공기밥 포함."
+        },
+        {
+          "name": "주말제철세트메뉴2인",
+          "price": "90,000원",
+          "conditionsText": "방어or광어+만세튀김+물회+매운탕+라면사리or칼국수사리 *매운탕 필요하실때 말씀해주세요(사진은 4인 기준 입니다.) *계절에따라 활어회는 변경될 수 있습니다. (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "구성: 방어 또는 광어, 만세튀김, 물회, 매운탕, 라면사리 또는 칼국수사리. 매운탕은 요청 시 제공. 활어회는 계절에 따라 변경될 수 있음."
+        },
+        {
+          "name": "회+대하구이 세트2인(포장불가)",
+          "price": "120,000원",
+          "conditionsText": "활어회+대하구이+스끼다시+매운탕 * 산대하로 변경을 원하시면 2만원을 더 추가하시면 산대하로 변경됩니다.(사진은 4인 기준 입니다.) * 대하 냉동 * 매운탕을 개국지로 변경시 2만원 추가 (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "포장불가. 구성: 활어회, 냉동 대하구이, 쓰끼다시, 매운탕. 산대하 변경 20,000원 추가. 매운탕을 게국지로 변경 시 20,000원 추가."
+        },
+        {
+          "name": "조개+대하구이세트2인(포장불가)",
+          "price": "99,000원",
+          "conditionsText": "조개구이+대하구이(냉동)+만세튀김+회덮밥 회덮밥-2,3인 1개 / 4인 2개(사진은 2인 기준 입니다.) (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "포장불가. 구성: 조개구이, 냉동 대하구이, 만세튀김, 회덮밥 1개."
+        },
+        {
+          "name": "대한 스페셜 세트2인(포장불가)",
+          "price": "150,000원",
+          "conditionsText": "활어회+대하구이(냉동)+스끼다시+조개구이/찜+매운탕 (사진은 4인 기준 입니다.)",
+          "productionDescription": "포장불가. 구성: 활어회, 냉동 대하구이, 쓰끼다시, 조개구이 또는 조개찜, 매운탕."
+        },
+        {
+          "name": "모듬튀김",
+          "price": "17,000원",
+          "conditionsText": "베이비꽃게,꽃게튀김,고구마튀김,새우튀김,오징어튀김 (메뉴 사진과 상이할 수 있습니다.)",
+          "productionDescription": "구성: 베이비꽃게, 꽃게튀김, 고구마튀김, 새우튀김, 오징어튀김."
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_michelin-1-star_d4132c79cb30",
+      "reportRestaurantId": "topic_enrichment_michelin-1-star_d4132c79cb30",
+      "identityResolution": "report",
+      "name": "가겐 바이 최준호",
+      "address": "강남구 압구정로 80길 19-1, 2층, Seoul, 06015, 한국",
+      "classification": "variable_price_only",
+      "menuGroup": "variable-price-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/1618063021/menu",
+      "sourceIdentity": "naver-place:1618063021",
+      "coverageSource": "preexisting-evidence",
+      "evidenceFile": "address-matched-batch2-2026-09-27.json",
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "오마카세",
+          "price": "가격 변동",
+          "pendingReason": "price_has_no_numeric_amount",
+          "variablePrice": true,
+          "productionDescription": "고정 금액 미표시. 주문 전 가격 확인 필요."
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "reportRestaurantId": "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a",
+      "identityResolution": "report",
+      "name": "합천국밥집",
+      "address": "남구 용호로 235, Busan, 48593, 한국",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/11872316/menu",
+      "sourceIdentity": "naver-place:11872316",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "따로국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수육백반",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수육 대",
+          "price": "50,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "수육 소",
+          "price": "45,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "섞어따로국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "내장따로국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순대따로국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "모듬따로국밥",
+          "price": "13,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순대 소",
+          "price": "35,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "순대 대",
+          "price": "40,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_michelin-selected_a9953d60b184",
+      "reportRestaurantId": "topic_enrichment_michelin-selected_a9953d60b184",
+      "identityResolution": "report",
+      "name": "비네토",
+      "address": "수영구 수영로 522번길 55, Busan, 48299, 한국",
+      "classification": "variable_price_only",
+      "menuGroup": "variable-price-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1178835898/menu",
+      "sourceIdentity": "naver-place:1178835898",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "와인",
+          "price": "가격 변동",
+          "variablePrice": true,
+          "pendingReason": "price_has_no_numeric_amount",
+          "productionDescription": "고정 금액 미표시. 주문 전 가격 확인 필요."
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_michelin-selected_02984ce7e69c",
+      "reportRestaurantId": "topic_enrichment_michelin-selected_02984ce7e69c",
+      "identityResolution": "report",
+      "name": "알고리즘",
+      "address": "강남구 도산대로 49길 8, 2층, Seoul, 06019, 한국",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1783920347/menu",
+      "sourceIdentity": "naver-place:1783920347",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "디너 코스",
+          "price": "150,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "mogeultende_1e6e35c19f83",
+      "reportRestaurantId": null,
+      "identityResolution": "exact-name-address",
+      "name": "완도전복",
+      "address": "서울 중구 동호로5길 2 1층",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/13499059/menu",
+      "sourceIdentity": "naver-place:13499059",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "전복죽 한마리",
+          "price": "20,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복회 한마리",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복구이 한마리",
+          "price": "15,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "전복버터구이 한마리",
+          "price": "15,000원",
+          "variablePrice": false
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_life-master_20260921_3",
+      "reportRestaurantId": null,
+      "identityResolution": "exact-name-address",
+      "name": "꽁띠꽁띠뉴",
+      "address": "부산 해운대구 센텀중앙로 145 더샵센텀파크1차아파트 상가3동 112,114호",
+      "classification": "numeric_menu_acquired",
+      "menuGroup": "numeric-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://m.place.naver.com/restaurant/1035646929/menu",
+      "sourceIdentity": "naver-place:1035646929",
+      "coverageSource": "browser-batch-latest",
+      "evidenceFile": null,
+      "reviewNote": null,
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "에비앙꽁띠 바게트",
+          "price": "4,500원",
+          "variablePrice": false,
+          "description": "프랑스밀가루와 라벨루즈 게랑드 천일염, 에비앙 생수로 만든 바게트로 꽁띠꽁띠뉴의 시그니처.",
+          "productionDescription": "프랑스밀가루와 라벨루즈 게랑드 천일염, 에비앙 생수로 만든 바게트로 꽁띠꽁띠뉴의 시그니처."
+        },
+        {
+          "name": "마늘바게트",
+          "price": "5,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "솜사탕머랭",
+          "price": "5,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "탕종우유식빵",
+          "price": "3,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "소금버터식빵",
+          "price": "4,500원",
+          "variablePrice": false
+        },
+        {
+          "name": "호두크렌베리식빵",
+          "price": "4,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "트리플치즈 치아바타",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "콜비잭, 체더, 몬테리잭 3가지치즈와 그라나다빠다노를 뿌려 치즈풍미 가득한 치아바타",
+          "productionDescription": "콜비잭, 체더, 몬테리잭 3가지치즈와 그라나다빠다노를 뿌려 치즈풍미 가득한 치아바타"
+        },
+        {
+          "name": "무화과크림치즈 치아바타",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "오렌지와 바닐라빈을 넣어 당절임한 무화과와 크림치즈를 올려 구워낸 치아바타",
+          "productionDescription": "오렌지와 바닐라빈을 넣어 당절임한 무화과와 크림치즈를 올려 구워낸 치아바타"
+        },
+        {
+          "name": "그린올리브치아바타",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "엑스트리버진 올리브오일에 숙성시킨 그린올리브와 롤치즈가 듬뿍들어있는 치아바타",
+          "productionDescription": "엑스트리버진 올리브오일에 숙성시킨 그린올리브와 롤치즈가 듬뿍들어있는 치아바타"
+        },
+        {
+          "name": "플레인치아바타",
+          "price": "2,500원",
+          "variablePrice": false,
+          "description": "저온숙성으로 깊은 풍미와 겉은바삭하고 쫄깃한 식감의 기본 치아바타",
+          "productionDescription": "저온숙성으로 깊은 풍미와 겉은바삭하고 쫄깃한 식감의 기본 치아바타"
+        },
+        {
+          "name": "햄치즈소금빵",
+          "price": "4,000원",
+          "variablePrice": false
+        },
+        {
+          "name": "오리지날깜빠뉴",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "군더더기 없이 깔끔하고 씹을수록 구수한맛이 나는 식사빵",
+          "productionDescription": "군더더기 없이 깔끔하고 씹을수록 구수한맛이 나는 식사빵"
+        },
+        {
+          "name": "국산팥 소금빵",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "국내산 수제팥이 들어간 바삭한 소금빵",
+          "productionDescription": "국내산 수제팥이 들어간 바삭한 소금빵"
+        },
+        {
+          "name": "서산감태&명란 바게트소금빵",
+          "price": "4,000원",
+          "variablePrice": false,
+          "description": "짭짜름한 명란과 서산감태가 어우러진 소금빵",
+          "productionDescription": "짭짜름한 명란과 서산감태가 어우러진 소금빵"
+        },
+        {
+          "name": "바게트 소금빵",
+          "price": "3,000원",
+          "variablePrice": false,
+          "description": "바삭한 바게트 식감의 소금빵",
+          "productionDescription": "바삭한 바게트 식감의 소금빵"
+        },
+        {
+          "name": "그랑드 꽁띠 바게트",
+          "price": "6,500원",
+          "variablePrice": false,
+          "description": "에비앙꽁띠 바게트를 넉넉하게 드실수 있는 사이즈입니다",
+          "productionDescription": "에비앙꽁띠 바게트를 넉넉하게 드실수 있는 사이즈입니다"
+        },
+        {
+          "name": "소금 꽁띠 바게트",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "가염버터를 가득 채워 바짝하게 구운 어디에도 없는 바게트",
+          "productionDescription": "가염버터를 가득 채워 바짝하게 구운 어디에도 없는 바게트"
+        },
+        {
+          "name": "허니고르곤졸라 꽁띠 바게트",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "꼬릿한 고르곤졸라와 달콤한 꿀이 조화로운 바게트",
+          "productionDescription": "꼬릿한 고르곤졸라와 달콤한 꿀이 조화로운 바게트"
+        },
+        {
+          "name": "썬드라이드 토마토 꽁띠 바게트",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "정성들여만든 썬드라이트 토마토와 생바질을 넣어 만든 바게트",
+          "productionDescription": "정성들여만든 썬드라이트 토마토와 생바질을 넣어 만든 바게트"
+        },
+        {
+          "name": "쇼콜라꽁띠 바게트",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "쌉싸름한 초코베이스 바게트 속을 진한 다크초코청크로 가득 체운 바게트",
+          "productionDescription": "쌉싸름한 초코베이스 바게트 속을 진한 다크초코청크로 가득 체운 바게트"
+        },
+        {
+          "name": "통올리브 꽁띠 바게트",
+          "price": "6,000원",
+          "variablePrice": false,
+          "description": "엑스트라버진 올리브오일에 절인 통올리브가 들어가 짭짭함이 잘 어우러진 바게트",
+          "productionDescription": "엑스트라버진 올리브오일에 절인 통올리브가 들어가 짭짭함이 잘 어우러진 바게트"
+        }
+      ]
+    },
+    {
+      "restaurantId": "topic_enrichment_ttoganjip_c9f1e4066d53",
+      "reportRestaurantId": "topic_enrichment_ttoganjip_c9f1e4066d53",
+      "identityResolution": "admin-saved-existing-id",
+      "name": "울트라반점 귀산본점",
+      "address": "경상남도 창원시 성산구 삼귀로 135",
+      "classification": "admin_saved_numeric_menu",
+      "menuGroup": "admin-saved-current-menu",
+      "checkedAt": "2026-09-27",
+      "sourceUrl": "https://pcmap.place.naver.com/restaurant/205701181/menu",
+      "sourceIdentity": "naver-place:205701181",
+      "coverageSource": "admin-recheck",
+      "evidenceFile": "ultra-gwisan-2026-09-27.json",
+      "reviewNote": "관리자 재조회에서 메뉴 8개와 가격 표시가 정상임을 확인했다. 짬뽕밥은 9,000원이다.",
+      "itemReviewNotes": [],
+      "menus": [
+        {
+          "name": "짜장밥",
+          "price": "7,000원"
+        },
+        {
+          "name": "새우볶음밥",
+          "price": "9,000원"
+        },
+        {
+          "name": "짜장밥곱빼기",
+          "price": "9,000원"
+        },
+        {
+          "name": "새우볶음밥곱빼기",
+          "price": "11,000원"
+        },
+        {
+          "name": "맑은짬뽕밥",
+          "price": "9,000원"
+        },
+        {
+          "name": "울트라짬뽕",
+          "price": "9,000원"
+        },
+        {
+          "name": "울트라짜장면",
+          "price": "7,000원"
+        },
+        {
+          "name": "짬뽕밥",
+          "price": "9,000원"
+        }
+      ]
+    }
+  ]
+}

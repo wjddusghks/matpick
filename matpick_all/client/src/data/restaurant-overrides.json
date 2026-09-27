@@ -225,7 +225,81 @@
       "https://blog.naver.com/lager1813/223796127548"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 강원 횡성군 서원면 옥계사일길 27 (옥계리 561-1). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_271d02040a3b209b",
+        "name": "서울불고기정식 1인",
+        "price": "27,000원",
+        "description": "불고기 + 밥"
+      },
+      {
+        "id": "naver_20260927_a9a38092177530c1",
+        "name": "황태순두부해장국",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_c26530961d6b267c",
+        "name": "조랭이미역국",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_6409cb935a5b25d9",
+        "name": "닭볶음탕",
+        "price": "68,000원",
+        "description": "4인기준, 공기밥별도"
+      },
+      {
+        "id": "naver_20260927_67340a03092f2e94",
+        "name": "서울불고기 정식 1인",
+        "price": "34,000원",
+        "description": "불고기 + 물냉면,비빔냉면 택1"
+      },
+      {
+        "id": "naver_20260927_d491571e69df77a2",
+        "name": "장터소고기국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_5166185ee6dfded4",
+        "name": "한우곰탕",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_3704e8aa34d4a5a6",
+        "name": "속초코다리비빔냉면",
+        "price": "15,000원",
+        "description": "계절메뉴"
+      },
+      {
+        "id": "naver_20260927_f01ac2aa22971a38",
+        "name": "물냉면",
+        "price": "13,000원",
+        "description": "계절메뉴"
+      },
+      {
+        "id": "naver_20260927_c724968f306ee7f1",
+        "name": "두부조림",
+        "price": "55,000원",
+        "description": "4인기준, 공기밥별도"
+      },
+      {
+        "id": "naver_20260927_eee0644641ce9fb6",
+        "name": "삼겹살",
+        "price": "18,000원",
+        "description": "170g"
+      }
+    ],
+    "representativeMenu": "서울불고기정식 1인 / 황태순두부해장국 / 조랭이미역국",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/465334417/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_904632528236": {
     "recommendationHold": "블로그 청군로607의 시설은 확인했으나 임초리42-1·원본643-6의 필지 및 현재 식당 이용 위치를 확정하지 못함. 새 주소·좌표 동시 반영 대기.",
@@ -504,7 +578,43 @@
   },
   "sikgaek-baekban-trip_restaurant_662": {
     "recommendationHold": "블로그 창동63-5는 시장 주소 후보이고 원본 하동249-8 여주점과 구분되지 않음. 시장 대표주소로 점포 주소를 교체하지 않음.",
-    "dataReviewNote": "2026-09-24 재대조: 블로그 창동63-5는 시장 주소 후보이고 원본 하동249-8 여주점과 구분되지 않음. 시장 대표주소로 점포 주소를 교체하지 않음."
+    "dataReviewNote": "2026-09-24 재대조: 블로그 창동63-5는 시장 주소 후보이고 원본 하동249-8 여주점과 구분되지 않음. 시장 대표주소로 점포 주소를 교체하지 않음.",
+    "menus": [
+      {
+        "id": "naver_20260927_b83ed8a61bbd063b",
+        "name": "고기만두(10개)",
+        "price": "5,000원",
+        "description": "국내산 돼지고기와 양질의 재료로 신선하게 당일 만들어 제공해 드립니다"
+      },
+      {
+        "id": "naver_20260927_ce9d058f2e405dd6",
+        "name": "김치만두(10개)",
+        "price": "5,000원",
+        "description": "신선한 재료로 당일 만들어 재공해 드립니다."
+      },
+      {
+        "id": "naver_20260927_eacb853c5c631560",
+        "name": "꽈베기,팥도나스,찐빵,호밀빵,술빵3개",
+        "price": "2,000원",
+        "description": "생효모를 사용하여 소화가 잘되고 맛있습니다~~"
+      },
+      {
+        "id": "naver_20260927_def9bee2876400b6",
+        "name": "찹쌀도나스",
+        "price": "2,000원",
+        "description": "100% 가까운 찹쌀도나스의 참 맛을 알려 드립니다~"
+      }
+    ],
+    "representativeMenu": "고기만두(10개) / 김치만두(10개) / 꽈베기,팥도나스,찐빵,호밀빵,술빵3개",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1649346313/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_2509e6fccc08": {
     "menus": [
@@ -813,7 +923,29 @@
       "https://blog.naver.com/innofoodtour/224420843550"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 경북 구미시 금오산로22길 36-8 (원평동 396-12). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 경북 구미시 금오산로22길 36-8 (원평동 396-12). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_1a6fe00695479786",
+        "name": "선산곱창전골",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_317ea001179f7187",
+        "name": "곱창 1인분",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "선산곱창전골 / 곱창 1인분",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1564887664/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_41b4514b8b18": {
     "lat": 36.07745594018085,
@@ -1153,7 +1285,74 @@
       "https://blog.naver.com/mely1004/224395178723"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 서울 마포구 월드컵북로6길 56 (동교동 204-5). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 서울 마포구 월드컵북로6길 56 (동교동 204-5). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_33e5124726dd0975",
+        "name": "털레기수제비",
+        "price": "24,000원",
+        "description": "털레기는 경기북부에서 즐겨 먹었던 수제비란 뜻으로 보리새우와 시래기, 얼갈이, 감자 및 된장을 넣어 끓이는 즉석 손수제비로 구수하고 시원한 국물맛이 일품입니다."
+      },
+      {
+        "id": "naver_20260927_cc2bad19084fc049",
+        "name": "쭈꾸미볶음",
+        "price": "18,000원",
+        "description": "불을 붙여 볶아내어 특유의 불맛이 느껴지며, 매니아가 많은 음식으로 매콤하고 탱글탱글한 맛이 일품입니다. 보리밥과 함께 드시면 맛이 더욱 좋습니다."
+      },
+      {
+        "id": "naver_20260927_720acda8e76a1dec",
+        "name": "보리밥",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_1861aa398d1e0474",
+        "name": "쭈꾸미정식(2인)",
+        "price": "22,000원",
+        "description": "2인"
+      },
+      {
+        "id": "naver_20260927_7ad2aae88b9d8f83",
+        "name": "제육정식(2인)",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_952a0150bb02bc41",
+        "name": "코다리정식",
+        "price": "26,000원",
+        "description": "2인"
+      },
+      {
+        "id": "naver_20260927_1cff9a0027cff092",
+        "name": "제육볶음",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_ef4d61bb3312159c",
+        "name": "코다리구이",
+        "price": "22,000원",
+        "description": "최사의 품질의 코다리를 엄선하여 48시간 양념에 숙성하며 화학조미료를 일체 사용하지 않고 조리하여 담백하고 부드러우며 감칠맛이 뛰어납니다."
+      },
+      {
+        "id": "naver_20260927_d7b84bf2070c32c8",
+        "name": "녹두전(1장)",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_973f26dfa8bb85c7",
+        "name": "동동주",
+        "price": "8,000원"
+      }
+    ],
+    "representativeMenu": "털레기수제비 / 쭈꾸미볶음 / 보리밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1988636142/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_468b6172f938": {
     "lat": 37.5400466,
@@ -1245,7 +1444,150 @@
       "https://blog.naver.com/miinddo/223391120054"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 서울 서대문구 증가로6길 12-17 (남가좌동 339-9). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 서울 서대문구 증가로6길 12-17 (남가좌동 339-9). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_b5753f03093038f3",
+        "name": "추억의 왕돈까스",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_7b128e750b8d6294",
+        "name": "고르곤졸라 피자",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_684354ae072427a3",
+        "name": "루꼴라 피자",
+        "price": "17,900원"
+      },
+      {
+        "id": "naver_20260927_3557e9f8d2549ae3",
+        "name": "알리오올리오 파스타",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_35e2936e79dec77d",
+        "name": "꽃게 로제 파스타",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_d4622f5f4f179398",
+        "name": "크림 버섯 닭가슴살 리조또",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_831de7ba36507ad3",
+        "name": "콤비네이션 피자",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_3ca809ab0584c0de",
+        "name": "크림치즈 포테이토 피자",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_758fb25837768f54",
+        "name": "마르게리따 피자",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_2ddcf5b4510904b1",
+        "name": "불고기 스테이크 피자",
+        "price": "17,900원"
+      },
+      {
+        "id": "naver_20260927_d54986c7bf1e556a",
+        "name": "도쿄 카레",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_2684b96a29eb2c7b",
+        "name": "데미그라스 함박스테이크",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_af1a3ed132323353",
+        "name": "해물 토마토 파스타",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_6d4b80335aa8f082",
+        "name": "매콤 새우 베이컨 크림 파스타",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_84451272d4ca6ae3",
+        "name": "포테이토콘 파스타",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_19ef2b014f5b87d7",
+        "name": "해물 토마토 리조또",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_74c552badeefd0a9",
+        "name": "크림 베이컨 버섯 리조또",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_558ee6600aff5b45",
+        "name": "쉬림프 화덕 리조또",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_d55f2863e2fa5f41",
+        "name": "과일 야채 모둠 샐러드",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_d627fb36316ba6c7",
+        "name": "오늘의 수프",
+        "price": "6,000원",
+        "description": "메뉴는 매일 변경됨."
+      },
+      {
+        "id": "naver_20260927_3acf17dfe608e7d2",
+        "name": "아메리카노",
+        "price": "3,500원"
+      },
+      {
+        "id": "naver_20260927_c5b291b220027554",
+        "name": "바닐라라떼",
+        "price": "4,500원"
+      },
+      {
+        "id": "naver_20260927_072f5be67c8e8949",
+        "name": "카페모카",
+        "price": "4,500원"
+      },
+      {
+        "id": "naver_20260927_f30342e76118c1f8",
+        "name": "카페라떼",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_cc9a81aba4966b57",
+        "name": "연유라떼",
+        "price": "4,500원"
+      },
+      {
+        "id": "naver_20260927_83a4798d1aaa7203",
+        "name": "펩시콜라",
+        "price": "2,000원"
+      }
+    ],
+    "representativeMenu": "추억의 왕돈까스 / 고르곤졸라 피자 / 루꼴라 피자",
+    "menuPriceStatus": "naver-order-partial-takeout-selected-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 주문 화면 표시 가격 (포장 선택·매장 가격 미확인)",
+        "url": "https://m.booking.naver.com/order/bizes/729025/items/4519147?theme=place&refererCode=menutab&lang=ko&area=ple"
+      }
+    ],
+    "menuPriceNote": "네이버 주문 화면에서 포장 탭을 선택한 상태의 표시 가격이며 매장 가격과 동일한지 확인되지 않았습니다. · 주문 화면에서 확인된 일부 메뉴이며 품절 메뉴는 포함하지 않았습니다. · 포장비 50원 별도입니다."
   },
   "sikgaek-baekban-trip_restaurant_655": {
     "recommendationHold": "동일 마장동 할머니갈비탕의 블로그10-9와 지도10-7이 충돌. 건물번호 정정 및 정확한 좌표 확정 전 보류.",
@@ -1870,7 +2212,85 @@
       "https://blog.naver.com/finehoami1/224348233107"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 전남 여수시 봉산남8길 7 (봉산동 275-18). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 전남 여수시 봉산남8길 7 (봉산동 275-18). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_d6d0929528ca131f",
+        "name": "여수 암꽃게장 (돌산 간장게장)",
+        "price": "37,000원",
+        "description": "2TV생생정보 2221회 방영 메뉴 (간장암꽃게장 + 양념꽃게 + 새우장 + 전복장"
+      },
+      {
+        "id": "naver_20260927_df6ba0b9fc8130c3",
+        "name": "돌산 꽃게탕 + 여수 게장 백반",
+        "price": "23,000원",
+        "description": "MBC every1 어서와한국은처음이지 출연, 여수 꽃게탕 (꽃게탕+양념게장+간장돌게장)"
+      },
+      {
+        "id": "naver_20260927_8ffc2de784da1ece",
+        "name": "여수 갈치조림 + 돌게장 백반",
+        "price": "23,000원",
+        "description": "매콤달콤 갈치조림 + 간장돌게장 + 양념게장 + 새우장 (2인 이상 가능)"
+      },
+      {
+        "id": "naver_20260927_d1773c18c987dbca",
+        "name": "여수게장 꽃게정식",
+        "price": "50,000원",
+        "description": "생생정보통 방영메뉴,여수 돌산 꽃게 코스 (꽃게탕+간장암꽃게장+양념꽃게+새우장+전복장)"
+      },
+      {
+        "id": "naver_20260927_c7b8f472a466f289",
+        "name": "여수 갈치정식 (게장코스)",
+        "price": "50,000원",
+        "description": "생생정보통 방영, 여수 갈치조림 + 간장암꽃게장 + 양념꽃게 + 새우장 코스"
+      },
+      {
+        "id": "naver_20260927_eafd01f79f12c38a",
+        "name": "돌산 양념꽃게장 세트",
+        "price": "25,000원",
+        "description": "매콤달콤 양념꽃게장 + 간장돌게장 + 새우장 + 전복장"
+      },
+      {
+        "id": "naver_20260927_21788f45edb80a91",
+        "name": "여수 암꽃게장 추가 (1마리)",
+        "price": "25,000원",
+        "description": "마리당 250g 내외, 간장 숙성 암꽃게"
+      },
+      {
+        "id": "naver_20260927_db66c5c442d2661b",
+        "name": "돌산 양념꽃게 추가 (1마리)",
+        "price": "15,000원",
+        "description": "마리당 250g 내외, 매콤달콤 양념"
+      },
+      {
+        "id": "naver_20260927_ab0375e7ef0d244c",
+        "name": "어린이 돈까스 (아이 메뉴)",
+        "price": "9,000원",
+        "description": "가족외식 아이 메뉴, 매장 직접 조리"
+      },
+      {
+        "id": "naver_20260927_108377aa594656a2",
+        "name": "여수 전복장 추가 (1마리)",
+        "price": "5,000원",
+        "description": "신선한 국내산 전복장 (마리당)"
+      },
+      {
+        "id": "naver_20260927_9ac3ecec08e3d548",
+        "name": "여수 새우장 추가 (1마리)",
+        "price": "1,000원",
+        "description": "짜지 않은 간장 새우장(마리당)"
+      }
+    ],
+    "representativeMenu": "여수 암꽃게장 (돌산 간장게장) / 돌산 꽃게탕 + 여수 게장 백반 / 여수 갈치조림 + 돌게장 백반",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/2063118717/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "sikgaek-baekban-trip_restaurant_476": {
     "menus": [
@@ -2078,7 +2498,54 @@
       "https://blog.naver.com/halfpoktan/224056049545"
     ],
     "recommendationHold": "",
-    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132). 가격과 영업 여부는 별도 근거 기준."
+    "dataReviewNote": "2026-09-24 블로그 주소 우선 대조 후 주소와 좌표를 함께 교체. 이전 주소: 제주 서귀포시 장수로 72 몰고랑식당 (서홍동 397-132). 가격과 영업 여부는 별도 근거 기준.",
+    "menus": [
+      {
+        "id": "naver_20260927_df5ab875e87c97de",
+        "name": "순대 한접시",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_76ed05f605194593",
+        "name": "두루치기",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_11113bf747fdd861",
+        "name": "몸국",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_308e2e4960177968",
+        "name": "흑도새기국",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_1173bbcd6060318f",
+        "name": "보말국",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_725ce20959795612",
+        "name": "순두부",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_46bce18dbc3b2ddd",
+        "name": "고등어조림",
+        "price": "25,000원"
+      }
+    ],
+    "representativeMenu": "순대 한접시 / 두루치기 / 몸국",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/16918445/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_8086682d2737": {
     "lat": 33.25024578970686,
@@ -2834,7 +3301,25 @@
     "locationSourceUrls": [
       "https://search.map.kakao.com/mapsearch/map.daum?q=%EA%B2%BD%EA%B8%B0+%EA%B3%A0%EC%96%91%EC%8B%9C+%EB%8D%95%EC%96%91%EA%B5%AC+%EB%B3%B4%EA%B4%91%EB%A1%9C+234&msFlag=A&sort=0"
     ],
-    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다."
+    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다.",
+    "menus": [
+      {
+        "id": "naver_20260927_575fdfc5a82d2575",
+        "name": "정식",
+        "price": "27,000원",
+        "description": "정식"
+      }
+    ],
+    "representativeMenu": "정식",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11723359/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_delicious-guys_85adbc66bac1": {
     "lat": 37.6850072284746,
@@ -3326,7 +3811,24 @@
     "locationSourceUrls": [
       "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EA%B0%95%EB%82%A8%EA%B5%AC+%EB%8F%84%EC%82%B0%EB%8C%80%EB%A1%9C49%EA%B8%B8+8&msFlag=A&sort=0"
     ],
-    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다."
+    "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다.",
+    "menus": [
+      {
+        "id": "naver_20260927_2b58c32081a77c41",
+        "name": "디너 코스",
+        "price": "150,000원"
+      }
+    ],
+    "representativeMenu": "디너 코스",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1783920347/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "topic_enrichment_michelin-selected_481548d630df": {
     "lat": 37.51889249,
@@ -3415,7 +3917,139 @@
     ],
     "dataReviewNote": "등록 주소와 지도 위치를 대조해 정정했습니다. 현재 영업 여부를 확인한 표시는 아닙니다. 동일 상호·주소의 개별 점포 위치를 확인했습니다. 대형 부지의 주소 중심점보다 점포 위치를 우선합니다. 현재 영업 확인과는 별개입니다. 동일 상호·주소의 개별 점포 위치를 확인했습니다. 대형 부지의 주소 중심점보다 점포 위치를 우선합니다. 현재 영업 확인과는 별개입니다.",
     "kakaoPlaceId": "1707743242",
-    "placeUrl": "https://place.map.kakao.com/1707743242"
+    "placeUrl": "https://place.map.kakao.com/1707743242",
+    "menus": [
+      {
+        "id": "naver_20260927_f7dad46a149382bb",
+        "name": "에비앙꽁띠 바게트",
+        "price": "4,500원",
+        "description": "프랑스밀가루와 라벨루즈 게랑드 천일염, 에비앙 생수로 만든 바게트로 꽁띠꽁띠뉴의 시그니처."
+      },
+      {
+        "id": "naver_20260927_dab6ed581c8714cf",
+        "name": "마늘바게트",
+        "price": "5,500원"
+      },
+      {
+        "id": "naver_20260927_70fa77e6eef471fb",
+        "name": "솜사탕머랭",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_5075ab75c65eea42",
+        "name": "탕종우유식빵",
+        "price": "3,500원"
+      },
+      {
+        "id": "naver_20260927_29cd71d71d36e82d",
+        "name": "소금버터식빵",
+        "price": "4,500원"
+      },
+      {
+        "id": "naver_20260927_0bd1e79648c7bb28",
+        "name": "호두크렌베리식빵",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_649e8b8e483bbfb4",
+        "name": "트리플치즈 치아바타",
+        "price": "4,000원",
+        "description": "콜비잭, 체더, 몬테리잭 3가지치즈와 그라나다빠다노를 뿌려 치즈풍미 가득한 치아바타"
+      },
+      {
+        "id": "naver_20260927_53d78dde7ce6f381",
+        "name": "무화과크림치즈 치아바타",
+        "price": "4,000원",
+        "description": "오렌지와 바닐라빈을 넣어 당절임한 무화과와 크림치즈를 올려 구워낸 치아바타"
+      },
+      {
+        "id": "naver_20260927_4504a9db9084dd09",
+        "name": "그린올리브치아바타",
+        "price": "4,000원",
+        "description": "엑스트리버진 올리브오일에 숙성시킨 그린올리브와 롤치즈가 듬뿍들어있는 치아바타"
+      },
+      {
+        "id": "naver_20260927_c30e17924c9cafce",
+        "name": "플레인치아바타",
+        "price": "2,500원",
+        "description": "저온숙성으로 깊은 풍미와 겉은바삭하고 쫄깃한 식감의 기본 치아바타"
+      },
+      {
+        "id": "naver_20260927_ab790bed354de224",
+        "name": "햄치즈소금빵",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_420202cc57fa36af",
+        "name": "오리지날깜빠뉴",
+        "price": "6,000원",
+        "description": "군더더기 없이 깔끔하고 씹을수록 구수한맛이 나는 식사빵"
+      },
+      {
+        "id": "naver_20260927_555034ac2f4dc678",
+        "name": "국산팥 소금빵",
+        "price": "4,000원",
+        "description": "국내산 수제팥이 들어간 바삭한 소금빵"
+      },
+      {
+        "id": "naver_20260927_b7a0dbc854100a71",
+        "name": "서산감태&명란 바게트소금빵",
+        "price": "4,000원",
+        "description": "짭짜름한 명란과 서산감태가 어우러진 소금빵"
+      },
+      {
+        "id": "naver_20260927_df8182a1b1096e51",
+        "name": "바게트 소금빵",
+        "price": "3,000원",
+        "description": "바삭한 바게트 식감의 소금빵"
+      },
+      {
+        "id": "naver_20260927_4cd404e33340b020",
+        "name": "그랑드 꽁띠 바게트",
+        "price": "6,500원",
+        "description": "에비앙꽁띠 바게트를 넉넉하게 드실수 있는 사이즈입니다"
+      },
+      {
+        "id": "naver_20260927_b6a012c685e9c602",
+        "name": "소금 꽁띠 바게트",
+        "price": "6,000원",
+        "description": "가염버터를 가득 채워 바짝하게 구운 어디에도 없는 바게트"
+      },
+      {
+        "id": "naver_20260927_812e193bdb9b277c",
+        "name": "허니고르곤졸라 꽁띠 바게트",
+        "price": "6,000원",
+        "description": "꼬릿한 고르곤졸라와 달콤한 꿀이 조화로운 바게트"
+      },
+      {
+        "id": "naver_20260927_1fbba61815183d5d",
+        "name": "썬드라이드 토마토 꽁띠 바게트",
+        "price": "6,000원",
+        "description": "정성들여만든 썬드라이트 토마토와 생바질을 넣어 만든 바게트"
+      },
+      {
+        "id": "naver_20260927_8e8613b0a9985336",
+        "name": "쇼콜라꽁띠 바게트",
+        "price": "6,000원",
+        "description": "쌉싸름한 초코베이스 바게트 속을 진한 다크초코청크로 가득 체운 바게트"
+      },
+      {
+        "id": "naver_20260927_4b7aa3366c0f019c",
+        "name": "통올리브 꽁띠 바게트",
+        "price": "6,000원",
+        "description": "엑스트라버진 올리브오일에 절인 통올리브가 들어가 짭짭함이 잘 어우러진 바게트"
+      }
+    ],
+    "representativeMenu": "에비앙꽁띠 바게트 / 마늘바게트 / 솜사탕머랭",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1035646929/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "sikgaek-baekban-trip_restaurant_524": {
     "lat": 35.1631136,
@@ -3464,7 +4098,24 @@
     "locationSourceUrls": [
       "https://search.map.kakao.com/mapsearch/map.daum?q=%EC%84%9C%EC%9A%B8+%EC%A4%91%EA%B5%AC+%EC%9D%84%EC%A7%80%EB%A1%9C6%EA%B0%80+1-1&msFlag=A&sort=0"
     ],
-    "dataReviewNote": "기존 지번 주소의 위치만 대조했습니다. 현재 영업·이전 여부 확인과는 별개입니다."
+    "dataReviewNote": "기존 지번 주소의 위치만 대조했습니다. 현재 영업·이전 여부 확인과는 별개입니다.",
+    "menus": [
+      {
+        "id": "naver_20260927_f195e2d2a20ec0ef",
+        "name": "국내산돼지갈비 1인분",
+        "price": "17,000원"
+      }
+    ],
+    "representativeMenu": "국내산돼지갈비 1인분",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/32839659/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   },
   "sikgaek-baekban-trip_restaurant_290": {
     "lat": 37.7659963273162,
@@ -5536,5 +6187,4400 @@
         "label": "메뉴·가격 공개 자료"
       }
     ]
+  },
+  "topic_enrichment_baekjong-wok_503b608be01c": {
+    "menus": [
+      {
+        "id": "naver_20260927_f3a53825060d9bd3",
+        "name": "만두국",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_db99b2daa27398e9",
+        "name": "묘향뚝배기",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_7e23b15d731d305e",
+        "name": "찐만두",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_ce681cc137355a67",
+        "name": "만두전골",
+        "price": "43,000원"
+      },
+      {
+        "id": "naver_20260927_e3e8b98745cb5a3a",
+        "name": "녹두빈대떡",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_c80b06b56fd67060",
+        "name": "오이소박이국수",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_81422385f33ed6e9",
+        "name": "묘향비빔국수(들기름)",
+        "price": "11,000원"
+      }
+    ],
+    "representativeMenu": "만두국 / 묘향뚝배기 / 찐만두",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/11667161/menu?fromPanelNum=1&additionalHeight=76&timestamp=202609272114&locale=ko&svcName=map_pcv5&searchText=%EB%AC%98%ED%96%A5%EB%A7%8C%EB%91%90"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_baekjong-wok_54f0433ffeb5": {
+    "menus": [
+      {
+        "id": "naver_20260927_7eebb8f46d8ed83b",
+        "name": "양곱창",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_0340dfcffa214ae7",
+        "name": "양(모듬)",
+        "price": "39,000원"
+      },
+      {
+        "id": "naver_20260927_b03b8c6840fb081c",
+        "name": "볶음밥",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_f39a13bdf1cae403",
+        "name": "맥주/소주",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_95c34a02d89cec37",
+        "name": "음료",
+        "price": "2,000원"
+      }
+    ],
+    "representativeMenu": "양곱창 / 양(모듬) / 볶음밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11861258/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_baekjong-wok_86024cb2da59": {
+    "menus": [
+      {
+        "id": "naver_20260927_5fe6ad5e61460c6a",
+        "name": "닭한마리",
+        "price": "33,000원"
+      },
+      {
+        "id": "naver_20260927_a3ac6716a46ee66d",
+        "name": "칼국수사리",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_3242a1c96cef179f",
+        "name": "떡사리",
+        "price": "1,000원"
+      },
+      {
+        "id": "naver_20260927_fc29c34627d35279",
+        "name": "버섯사리",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_71dafa3f7ce3575d",
+        "name": "닭한마리A세트(2인)",
+        "price": "37,000원"
+      },
+      {
+        "id": "naver_20260927_e65486623b5c383d",
+        "name": "닭한마리B세트(3인)",
+        "price": "55,000원"
+      },
+      {
+        "id": "naver_20260927_5d2f67ceab5c5212",
+        "name": "닭한마리C세트(4인)",
+        "price": "69,000원"
+      }
+    ],
+    "representativeMenu": "닭한마리 / 칼국수사리 / 떡사리",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/11706951/menu?fromPanelNum=1&additionalHeight=76&timestamp=202609272116&locale=ko&svcName=map_pcv5&searchText=%EC%9B%90%ED%95%A0%EB%A7%A4%EC%86%8C%EB%AC%B8%EB%82%9C%EB%8B%AD%ED%95%9C%EB%A7%88%EB%A6%AC"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_017": {
+    "menus": [
+      {
+        "id": "naver_20260927_83099b1e60d5275f",
+        "name": "LA갈비 1인분",
+        "price": "15,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_55bd959c4b215060",
+        "name": "오징어볶음 + 면사리",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_3856ce3791829b0e",
+        "name": "스팸 소",
+        "price": "10,000원",
+        "description": "대 15000"
+      },
+      {
+        "id": "naver_20260927_0b79f5dbf8f58ad4",
+        "name": "제육볶음",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_0be848b0528866a7",
+        "name": "계란말이",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_bbd5006c89096541",
+        "name": "스팸김치찌개",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_ada4e4f5606580cb",
+        "name": "점심-오징어볶음 2인이상",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_9a69f268af942249",
+        "name": "점심-제육볶음 2인이상",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_2853ac9a3716f2e1",
+        "name": "점심-고등어구이",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_3a2d8482f1a293a6",
+        "name": "점심-김치찌개",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_c5960b46df20a2b3",
+        "name": "점심-청국장",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_a25597404c5a8e74",
+        "name": "점심-된장, 순두부",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_6a5a4465e0eb5da3",
+        "name": "LA갈비 2인분+된장+공기밥2",
+        "price": "38,000원"
+      },
+      {
+        "id": "naver_20260927_1eb9c221e383c45c",
+        "name": "오징어,제육볶음+국+공기밥2인",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_3c628f0195265995",
+        "name": "LA갈비 1인분+된장+공기밥",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_efb2e76147c38715",
+        "name": "김치찌개",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "LA갈비 1인분 / 오징어볶음 + 면사리 / 스팸 소",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1095267629/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_068": {
+    "menus": [
+      {
+        "id": "naver_20260927_1252a9d630fac2b1",
+        "name": "생과자",
+        "price": "가격 변동",
+        "description": "고정 금액 미표시. 주문 전 가격 확인 필요."
+      }
+    ],
+    "representativeMenu": "생과자",
+    "menuPriceStatus": "naver-current-variable-price-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 변동 가격 메뉴",
+        "url": "https://m.place.naver.com/restaurant/20780272/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 메뉴판에 고정 금액 없이 가격 변동으로 표시된 메뉴입니다. 0원이 아니며 주문 전 현재 가격 확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_130": {
+    "menus": [
+      {
+        "id": "naver_20260927_9ade22593b2bdc85",
+        "name": "돼지고기",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_9c94975ad76e0ee7",
+        "name": "조기구이",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_eb8803366f9c2237",
+        "name": "우렁된장국",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_a7bb97c55e4cbd18",
+        "name": "홍어",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_cbd2580543a12ad4",
+        "name": "황실이전",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_24bddd66f9cf60e8",
+        "name": "김치찌개",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_e5e6fff946d68f3c",
+        "name": "보쌈고기",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_b5e9b082cbc9d74b",
+        "name": "두부김치",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_0722c03987958e3a",
+        "name": "삼합",
+        "price": "25,000원"
+      },
+      {
+        "id": "naver_20260927_acc8001a1682d594",
+        "name": "전어구이",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "돼지고기 / 조기구이 / 우렁된장국",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/13570681/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_148": {
+    "menus": [
+      {
+        "id": "naver_20260927_8f19fc5afe42513b",
+        "name": "닭구이",
+        "price": "80,000원"
+      },
+      {
+        "id": "naver_20260927_f031811592fe080c",
+        "name": "항아리오리훈제",
+        "price": "75,000원"
+      },
+      {
+        "id": "naver_20260927_49519b818ef1c040",
+        "name": "도토리묵",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_2b5de3c6b31e5868",
+        "name": "파전",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_06c6a232d9f13023",
+        "name": "약초막걸리",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "닭구이 / 항아리오리훈제 / 도토리묵",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11823178/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_185": {
+    "menus": [
+      {
+        "id": "naver_20260927_caba506e69dac411",
+        "name": "동태머리찜(대)",
+        "price": "35,000원"
+      },
+      {
+        "id": "naver_20260927_0e5b58cbb0b91c6f",
+        "name": "장어구이",
+        "price": "35,000원"
+      },
+      {
+        "id": "naver_20260927_188d53b31cb2e49e",
+        "name": "깨장어구이(대)",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_eec76e0fba2b5705",
+        "name": "장어머리",
+        "price": "35,000원"
+      }
+    ],
+    "representativeMenu": "동태머리찜(대) / 장어구이 / 깨장어구이(대)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1665192378/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_228": {
+    "menus": [
+      {
+        "id": "naver_20260927_333ca5e16c4b5cde",
+        "name": "백반",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_4098204f804c6fb7",
+        "name": "국밥",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_337de515a5421dab",
+        "name": "추어탕",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_d6863e933ad25fbf",
+        "name": "콩나물해장국",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_b2ccd59be088971d",
+        "name": "주물럭(300g)",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_a6666b0637a08b0b",
+        "name": "삼겹살",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_d8928241cfa3ba75",
+        "name": "오징어볶음(소)",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_dd081ef5d94d2403",
+        "name": "생선찌개(소)",
+        "price": "20,000원"
+      }
+    ],
+    "representativeMenu": "백반 / 국밥 / 추어탕",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/17356745/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_253": {
+    "menus": [
+      {
+        "id": "naver_20260927_e3428809413c7add",
+        "name": "성게미역국",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_3fdc1b973b5f7a4c",
+        "name": "스페셜물회",
+        "price": "27,000원"
+      },
+      {
+        "id": "naver_20260927_b81888eddd6aa56a",
+        "name": "회덮밥",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_20e4565a17bd9364",
+        "name": "물회",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_cd4cce0d8c3524c8",
+        "name": "초밥",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_8a00d02654100753",
+        "name": "특섭국",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_9e7ccce7294788ec",
+        "name": "섭국",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_f4553976d55bfd41",
+        "name": "섭미역국",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_f4e56ea595b99dd3",
+        "name": "성게비빔밥",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_c9f57f6cb8e547ad",
+        "name": "멍게비빔밥",
+        "price": "17,000원"
+      }
+    ],
+    "representativeMenu": "성게미역국 / 스페셜물회 / 회덮밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/13333219/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_296": {
+    "menus": [
+      {
+        "id": "naver_20260927_4df7333723f7a9eb",
+        "name": "제주 갈치찌개 특",
+        "price": "80,000원"
+      },
+      {
+        "id": "naver_20260927_9b7f46eaf4092c15",
+        "name": "제주 갈치찌개 大",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_deb22e1ac092c646",
+        "name": "제주 갈치찌개 中",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_b03847f93998d4cb",
+        "name": "제주 갈치찌개 小",
+        "price": "50,000원"
+      }
+    ],
+    "representativeMenu": "제주 갈치찌개 특 / 제주 갈치찌개 大 / 제주 갈치찌개 中",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/18077876/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_311": {
+    "menus": [
+      {
+        "id": "naver_20260927_e72030944e5c467f",
+        "name": "볶음면",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_d3ab5135434f0e4d",
+        "name": "탕수육",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_eeef60bc6a9f5143",
+        "name": "닭날개요리",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_05030835496fca28",
+        "name": "쯔란심관",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_6c6fbafac88d11f6",
+        "name": "돼지귀무침",
+        "price": "8,000원"
+      }
+    ],
+    "representativeMenu": "볶음면 / 탕수육 / 닭날개요리",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1680292085/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_321": {
+    "menus": [
+      {
+        "id": "naver_20260927_e891c5cf82328872",
+        "name": "생선구이특식",
+        "price": "15,000원"
+      }
+    ],
+    "representativeMenu": "생선구이특식",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1199351171/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_344": {
+    "menus": [
+      {
+        "id": "naver_20260927_e2b1a7a67f5afd8d",
+        "name": "잔치국수",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_33cd103979adb2eb",
+        "name": "열무국수",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_724432fc32158350",
+        "name": "비빔국수",
+        "price": "9,000원"
+      }
+    ],
+    "representativeMenu": "잔치국수 / 열무국수 / 비빔국수",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/19779399/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_398": {
+    "menus": [
+      {
+        "id": "naver_20260927_af8f917728732df6",
+        "name": "닭백숙 1인분",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_381f89090727f624",
+        "name": "[인기] 들깨백숙",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_0a650aee6928b3da",
+        "name": "닭날개/봉",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_81afb0791b7680c3",
+        "name": "닭불백숙 2인기준",
+        "price": "38,000원"
+      },
+      {
+        "id": "naver_20260927_548b2f2738d6e2bf",
+        "name": "닭불고기 1접시",
+        "price": "14,000원"
+      },
+      {
+        "id": "naver_20260927_3e3642b9a6de6385",
+        "name": "매콤닭발",
+        "price": "15,000원"
+      }
+    ],
+    "representativeMenu": "닭백숙 1인분 / [인기] 들깨백숙 / 닭날개/봉",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/12034750/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_442": {
+    "menus": [
+      {
+        "id": "naver_20260927_363f174cced1f3d8",
+        "name": "우동",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_4ad57bd105dcfed2",
+        "name": "손짜장",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_e7c359d22f486b50",
+        "name": "짬뽕",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_fa7a243c6e8a9d01",
+        "name": "탕수육",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_ce3450341f522ae6",
+        "name": "울면",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_849313b1c7fc5f88",
+        "name": "볶음밥",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_265d45282e6b9676",
+        "name": "잡채밥",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_81410cc31b3652ed",
+        "name": "뎀부라",
+        "price": "14,000원"
+      },
+      {
+        "id": "naver_20260927_fe3f464501e4b6d6",
+        "name": "국밥",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_299f544281a41b33",
+        "name": "계란탕",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_3277d86b867bcddf",
+        "name": "간짜장",
+        "price": "7,000원"
+      }
+    ],
+    "representativeMenu": "우동 / 손짜장 / 짬뽕",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/17745305/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_477": {
+    "menus": [
+      {
+        "id": "naver_20260927_0c3bc9c2aa626499",
+        "name": "산적1장",
+        "price": "7,000원",
+        "description": "3장 21,000"
+      },
+      {
+        "id": "naver_20260927_c386653c285e6467",
+        "name": "서대전1장",
+        "price": "6,000원",
+        "description": "3장18000"
+      },
+      {
+        "id": "naver_20260927_c42dae35b3344d9d",
+        "name": "명태1장",
+        "price": "5,000원",
+        "description": "3장 15000"
+      },
+      {
+        "id": "naver_20260927_1d0480e25a487ead",
+        "name": "조기전 1장",
+        "price": "5,000원",
+        "description": "3장 15000"
+      },
+      {
+        "id": "naver_20260927_e60719aaccf36707",
+        "name": "육전 1장",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_2e8c0c26c9c6c57b",
+        "name": "새우전 1팩",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_7078a07b4222ecb8",
+        "name": "동그랑땡 소",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_6ca4e91bb6b26356",
+        "name": "동그랑땡 대",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "산적1장 / 서대전1장 / 명태1장",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1187361152/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_529": {
+    "menus": [
+      {
+        "id": "naver_20260927_11f6e17ce48594af",
+        "name": "한우낙지탕탕이(중)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_c8eade2cb26755f8",
+        "name": "한우낙지탕탕이(대)",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_67fc288ff228d72c",
+        "name": "낙지탕탕이(중)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_d260a3fc1c9e3a77",
+        "name": "낙지탕탕이(대)",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_2fd460e54fe249b3",
+        "name": "낙지초무침(중)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_1611a8c135dfdd37",
+        "name": "낙지초무침(대)",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_85de852f06d4114a",
+        "name": "낙지제육볶음(중)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_564adf187ffbcd93",
+        "name": "낙지제육볶음(대)",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_ad824bcbeb792d34",
+        "name": "연포탕(중)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_512955b5ce97d1ed",
+        "name": "연포탕(대)",
+        "price": "70,000원"
+      }
+    ],
+    "representativeMenu": "한우낙지탕탕이(중) / 한우낙지탕탕이(대) / 낙지탕탕이(중)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1704419845/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_576": {
+    "menus": [
+      {
+        "id": "naver_20260927_12d547b2d826cdf2",
+        "name": "소머리주물럭 대",
+        "price": "47,000원"
+      },
+      {
+        "id": "naver_20260927_6e4b97bc0bcba12a",
+        "name": "소머리주물럭 중",
+        "price": "37,000원"
+      },
+      {
+        "id": "naver_20260927_eb47ba18972ea7ba",
+        "name": "소머리전골 대",
+        "price": "57,000원"
+      },
+      {
+        "id": "naver_20260927_eb19128af12511ae",
+        "name": "소머리전골 중",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_204c85fb15586dcd",
+        "name": "한우스지탕",
+        "price": "17,500원"
+      },
+      {
+        "id": "naver_20260927_4b21f77dd7e5c1dd",
+        "name": "돼지껍데기 大",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_b31b3e7ad00cbf5f",
+        "name": "소머리국밥",
+        "price": "13,000~15,000원",
+        "description": "보통 13000/특 15000"
+      },
+      {
+        "id": "naver_20260927_a50125c86373ff6f",
+        "name": "육회비빔밥",
+        "price": "13,000~24,000원",
+        "description": "보통 13000 / 특 24000"
+      },
+      {
+        "id": "naver_20260927_fcdbcc782fe00f63",
+        "name": "녹차삼겹살",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_c48a27b20eab47fb",
+        "name": "육회",
+        "price": "45,000~58,000원",
+        "description": "중 45000/대 58000"
+      },
+      {
+        "id": "naver_20260927_f8cdf9f66b6ab7e7",
+        "name": "소머리수육",
+        "price": "47,000~60,000원",
+        "description": "중 47000 / 대 60000"
+      },
+      {
+        "id": "naver_20260927_d487349f156f486d",
+        "name": "소고기주물럭 200g",
+        "price": "30,000원"
+      }
+    ],
+    "representativeMenu": "소머리주물럭 대 / 소머리주물럭 중 / 소머리전골 대",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/19728440/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_621": {
+    "menus": [
+      {
+        "id": "naver_20260927_9407677e84bea724",
+        "name": "간장게장정식",
+        "price": "25,000원",
+        "description": "간장게장정식"
+      },
+      {
+        "id": "naver_20260927_d8185311c1c9b63f",
+        "name": "대하장정식",
+        "price": "25,000원"
+      },
+      {
+        "id": "naver_20260927_9e4b82dfb3729cbf",
+        "name": "생선구이+젓갈정식+간장게장(2인)",
+        "price": "80,000원",
+        "description": "생선구이(고등어/갈치) 담백하고 여행시 백반맛집 입니다."
+      },
+      {
+        "id": "naver_20260927_37042906a90a5a13",
+        "name": "게국지(2인)",
+        "price": "60,000원",
+        "description": "향토음식 게국지 건강음식"
+      },
+      {
+        "id": "naver_20260927_27301812b5d40fde",
+        "name": "박하지정식",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_571eead2e1808f87",
+        "name": "간장해물모둠장",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_eb7fa1e409a8a14c",
+        "name": "갈치구이",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_f1092a7e9332a97f",
+        "name": "조개라면(1인)",
+        "price": "12,000원",
+        "description": "2인이상 주문 가능"
+      },
+      {
+        "id": "naver_20260927_8b32c866c7303d98",
+        "name": "생선구이+젓갈정식+간장게장(3인)",
+        "price": "120,000원"
+      },
+      {
+        "id": "naver_20260927_fe4d0a5e0ce39105",
+        "name": "젓갈정식(1인)",
+        "price": "20,000원",
+        "description": "2인이상 주문 가능"
+      },
+      {
+        "id": "naver_20260927_71f2a3ad1ab17710",
+        "name": "보리굴비정식(1인)",
+        "price": "25,000원",
+        "description": "2인이상 주문 가능"
+      }
+    ],
+    "representativeMenu": "간장게장정식 / 대하장정식 / 생선구이+젓갈정식+간장게장(2인)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1004325055/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_672": {
+    "menus": [
+      {
+        "id": "naver_20260927_2c88fb9c999cdca9",
+        "name": "하얀순두부",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_a56c9f7214bd943f",
+        "name": "순두부송이찌개",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_015b0526618c222f",
+        "name": "촌두부",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_3c74e18739d2e23e",
+        "name": "도토리묵",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_519dc4347f517940",
+        "name": "호박전",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_bd737b8ba2d0117f",
+        "name": "파전",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_fdca8c4c785b3137",
+        "name": "부추전",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_31c242bbdf6b0c61",
+        "name": "냉콩국수",
+        "price": "10,000원",
+        "description": "계절별미"
+      },
+      {
+        "id": "naver_20260927_58cd6a2e492d5430",
+        "name": "순두부찌개",
+        "price": "12,000원"
+      }
+    ],
+    "representativeMenu": "하얀순두부 / 순두부송이찌개 / 촌두부",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1191756266/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "sikgaek-baekban-trip_restaurant_680": {
+    "menus": [
+      {
+        "id": "naver_20260927_23729cad2252d4c9",
+        "name": "백반",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_f625388c9f1db7fd",
+        "name": "생고기한접시",
+        "price": "35,000원"
+      }
+    ],
+    "representativeMenu": "백반 / 생고기한접시",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/17145272/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_003": {
+    "menus": [
+      {
+        "id": "naver_20260927_bbd162ef5a3a147e",
+        "name": "강화갯벌장어",
+        "price": "120,000원"
+      },
+      {
+        "id": "naver_20260927_295f22f948afb909",
+        "name": "민물장어구이(1kg)",
+        "price": "100,000원"
+      },
+      {
+        "id": "naver_20260927_8a2c3c99780916c4",
+        "name": "잔치국수",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_3aeb3c25b782bc36",
+        "name": "돌솥밥",
+        "price": "4,000원"
+      }
+    ],
+    "representativeMenu": "강화갯벌장어 / 민물장어구이(1kg) / 잔치국수",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/13570689/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_005": {
+    "menus": [
+      {
+        "id": "naver_20260927_559a4fd4b78319a4",
+        "name": "삼치회",
+        "price": "85,000원"
+      },
+      {
+        "id": "naver_20260927_022ac0725e0937c4",
+        "name": "하모 샤브샤브",
+        "price": "130,000원"
+      },
+      {
+        "id": "naver_20260927_0b22f4b18cdfb64a",
+        "name": "새조개 샤브샤브",
+        "price": "120,000원"
+      },
+      {
+        "id": "naver_20260927_caf68ad91adbc115",
+        "name": "농어",
+        "price": "95,000원"
+      },
+      {
+        "id": "naver_20260927_76f7d1d7087b3e92",
+        "name": "민어",
+        "price": "100,000원"
+      }
+    ],
+    "representativeMenu": "삼치회 / 하모 샤브샤브 / 새조개 샤브샤브",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/19490123/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_009": {
+    "menus": [
+      {
+        "id": "naver_20260927_b136b18eb31437d7",
+        "name": "민어회-소",
+        "price": "90,000원"
+      },
+      {
+        "id": "naver_20260927_205dd6f30604168d",
+        "name": "중",
+        "price": "110,000원"
+      },
+      {
+        "id": "naver_20260927_382d2ac28e7ee8bb",
+        "name": "대",
+        "price": "130,000원"
+      },
+      {
+        "id": "naver_20260927_dca248d5f98c8eb1",
+        "name": "특대",
+        "price": "150,000원"
+      },
+      {
+        "id": "naver_20260927_7a7aca65ea2f0aa5",
+        "name": "민어전",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_3e9d7a93a03afa6e",
+        "name": "민어탕",
+        "price": "20,000원"
+      }
+    ],
+    "representativeMenu": "민어회-소 / 중 / 대",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/12016383/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_052": {
+    "menus": [
+      {
+        "id": "naver_20260927_146eb9a517f76ef3",
+        "name": "도가니안주 반접시",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_0c43ea15cd92e621",
+        "name": "곰탕",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_ba8974573b9a3daa",
+        "name": "갈비곰탕",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_31971c27f65bff34",
+        "name": "도가니탕",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_ca633b7d2ee0c7ea",
+        "name": "수육 반접시",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_36eab645ce43dd1f",
+        "name": "수육 한접시",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_b1a60ee9d720feb1",
+        "name": "도가니안주 한접시",
+        "price": "40,000원"
+      }
+    ],
+    "representativeMenu": "도가니안주 반접시 / 곰탕 / 갈비곰탕",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11848058/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_086": {
+    "menus": [
+      {
+        "id": "naver_20260927_5ba5a268a0f4170d",
+        "name": "숙회",
+        "price": "가격 변동",
+        "description": "고정 금액 미표시. 주문 전 가격 확인 필요."
+      }
+    ],
+    "representativeMenu": "숙회",
+    "menuPriceStatus": "naver-current-variable-price-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 변동 가격 메뉴",
+        "url": "https://m.place.naver.com/restaurant/15025748/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 메뉴판에 고정 금액 없이 가격 변동으로 표시된 메뉴입니다. 0원이 아니며 주문 전 현재 가격 확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_093": {
+    "menus": [
+      {
+        "id": "naver_20260927_b233ae5368bf7d0f",
+        "name": "꽁치과메기",
+        "price": "30,000원",
+        "description": "햇꽁치 나왔습니다~~~^^"
+      },
+      {
+        "id": "naver_20260927_0b6e459472636a63",
+        "name": "청어과메기",
+        "price": "30,000원",
+        "description": "시즌종료"
+      }
+    ],
+    "representativeMenu": "꽁치과메기 / 청어과메기",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/15136029/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_123": {
+    "menus": [
+      {
+        "id": "naver_20260927_a456709d99ff75ff",
+        "name": "하모사시미",
+        "price": "70,000원"
+      }
+    ],
+    "representativeMenu": "하모사시미",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/12846683/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_156": {
+    "menus": [
+      {
+        "id": "naver_20260927_03ead06ca22c05f6",
+        "name": "갈치구이",
+        "price": "55,000원"
+      },
+      {
+        "id": "naver_20260927_8976da949779b895",
+        "name": "갈치구이 백반",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_0dc2f648c8718c07",
+        "name": "삼치회",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_7926b59643b17546",
+        "name": "갈치회",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_6efb3bc1b61d7f5f",
+        "name": "고등어회",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_39d208b5550d0fdf",
+        "name": "갈치조림-대",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_e5b45f647a96721a",
+        "name": "성게국",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_e1fc33c328136b93",
+        "name": "한치물회",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_2d0792a36527d037",
+        "name": "모듬회",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_e5aba9f82ad2eb85",
+        "name": "민어회",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_540599f1b266432b",
+        "name": "한치무침",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_c934cba0d95dba3b",
+        "name": "고등어조림 -중",
+        "price": "35,000원"
+      },
+      {
+        "id": "naver_20260927_a8f7a0feb703c7f6",
+        "name": "고등어조림 소",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_7ff1777720075fe1",
+        "name": "고등어구이",
+        "price": "25,000원"
+      },
+      {
+        "id": "naver_20260927_669d0390dc1088ca",
+        "name": "전복뚝배기",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_267a9d1db6d51308",
+        "name": "갈치국",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_65fe33778bc912fd",
+        "name": "한치덮밥",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_53f36ef587ac7c54",
+        "name": "자리물회",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_a1e2f1ba1c09dc3b",
+        "name": "병어회",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_7cb7d5a1fe5fd3e7",
+        "name": "자리회",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_f816c742a3d6844f",
+        "name": "가리젓",
+        "price": "7,000원",
+        "description": "1box~20000 /"
+      },
+      {
+        "id": "naver_20260927_6506b183bee34016",
+        "name": "게장 1kg",
+        "price": "20,000원"
+      }
+    ],
+    "representativeMenu": "갈치구이 / 갈치구이 백반 / 삼치회",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11712303/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_168": {
+    "menus": [
+      {
+        "id": "naver_20260927_c31dfb6b02523218",
+        "name": "후라이드치킨",
+        "price": "24,000원"
+      },
+      {
+        "id": "naver_20260927_53e443d5a13c8c86",
+        "name": "한추떡볶이",
+        "price": "23,000원"
+      },
+      {
+        "id": "naver_20260927_ad3e475a4b5bd51a",
+        "name": "양념치킨",
+        "price": "26,000원"
+      },
+      {
+        "id": "naver_20260927_815a8b48c44c619b",
+        "name": "고추튀김",
+        "price": "24,000원"
+      },
+      {
+        "id": "naver_20260927_9f07eeae85eac37e",
+        "name": "닭똥집튀김",
+        "price": "23,000원"
+      },
+      {
+        "id": "naver_20260927_7c636c2748d05262",
+        "name": "오징어튀김",
+        "price": "24,000원"
+      },
+      {
+        "id": "naver_20260927_76d118561397ef55",
+        "name": "야채튀김",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_d61ade7d866a5482",
+        "name": "골뱅이무침",
+        "price": "31,000원"
+      },
+      {
+        "id": "naver_20260927_66780b700e0fddff",
+        "name": "계란말이",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_7448605a023537de",
+        "name": "순두부탕",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_d79bb10a177821cb",
+        "name": "오뎅탕",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_27acfbd648c53abc",
+        "name": "번데기탕",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_495c2dcc8e96d5b6",
+        "name": "육포",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_e6e21a4e67e40957",
+        "name": "한치구이",
+        "price": "19,000원"
+      },
+      {
+        "id": "naver_20260927_c5e89b5e734873c3",
+        "name": "오징어구이",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_bb2ef76a57b3a83a",
+        "name": "황도",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_61a21028ca621cef",
+        "name": "햇반",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_96c13a29f5727372",
+        "name": "치킨양념장",
+        "price": "500원"
+      }
+    ],
+    "representativeMenu": "후라이드치킨 / 한추떡볶이 / 양념치킨",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/13358436/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_174": {
+    "menus": [
+      {
+        "id": "naver_20260927_4ce2e2e0b11b0d1d",
+        "name": "꽃등심(150g)",
+        "price": "85,000원"
+      },
+      {
+        "id": "naver_20260927_3ddb50d801883e2c",
+        "name": "양념갈비(260g)",
+        "price": "85,000원"
+      },
+      {
+        "id": "naver_20260927_385b757d4216552f",
+        "name": "생고기(150g)",
+        "price": "85,000원"
+      },
+      {
+        "id": "naver_20260927_14f5e8a54ebfc8dd",
+        "name": "불고기(200g)",
+        "price": "42,000원"
+      },
+      {
+        "id": "naver_20260927_279be703ce358842",
+        "name": "샤브샤브(160g)",
+        "price": "42,000원"
+      },
+      {
+        "id": "naver_20260927_7194d54930bc444a",
+        "name": "육회(200g)",
+        "price": "42,000원"
+      },
+      {
+        "id": "naver_20260927_df89003e0e56b1f0",
+        "name": "국수전골",
+        "price": "32,000원"
+      },
+      {
+        "id": "naver_20260927_26159b8b496f5352",
+        "name": "간장게장",
+        "price": "82,000원"
+      },
+      {
+        "id": "naver_20260927_dd7dc5674211e213",
+        "name": "한우 갈비탕",
+        "price": "28,000원"
+      },
+      {
+        "id": "naver_20260927_a801761b0b4cefe7",
+        "name": "육회비빔밥",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_36ecbb1ed5c5845b",
+        "name": "따로국밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_e124d63db4e4f238",
+        "name": "콩나물 국밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_0f8ea6e00fd9a795",
+        "name": "멸치김치찌개",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_e52d18c8296a30d8",
+        "name": "돼지김치찌개",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_176323d2a047069a",
+        "name": "조랭이만두국",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_d6fb46bab10b24a7",
+        "name": "된장찌개",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_018ed6eb11853953",
+        "name": "냉면",
+        "price": "11,000원"
+      }
+    ],
+    "representativeMenu": "꽃등심(150g) / 양념갈비(260g) / 생고기(150g)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11680234/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_178": {
+    "menus": [
+      {
+        "id": "naver_20260927_ea75fb48ff96637a",
+        "name": "우시야 한우룸코스",
+        "price": "130,000원",
+        "description": "육사시미,우설,특수부위3종(채끝,안심,부채 인당180그람),꼬리찜,꼬리구이,식사(밥,묵은지조림),디저트"
+      },
+      {
+        "id": "naver_20260927_33fd8271dc66e8c8",
+        "name": "🐂우시야 한우79코스",
+        "price": "79,000원",
+        "description": "육사시미, 우설, 특수부위3종(채끝,안심,부채150g), 꼬리찜, 꼬리구이, 식사(밥, 묵은지조림),디저트"
+      },
+      {
+        "id": "naver_20260927_e0513a7cb4434543",
+        "name": "신규",
+        "price": "59,000원",
+        "description": "🐂우시야 한우59코스 우설, 특수부위3종(채끝,안심,부채120g), 꼬리구이, 식사 (밥, 한우묵은지조림),디저트"
+      },
+      {
+        "id": "naver_20260927_4f6fdb689a4165e5",
+        "name": "기린 이치방 프리미엄 생맥주",
+        "price": "15,000원",
+        "description": "380ml"
+      },
+      {
+        "id": "naver_20260927_b666edc5c2b501e1",
+        "name": "스텔라 아르투아 병맥주",
+        "price": "9,000원",
+        "description": "500ml"
+      },
+      {
+        "id": "naver_20260927_85c9f7c8c6bb4fb7",
+        "name": "크리스마스코스",
+        "price": "119,000원",
+        "description": "육회,우설, 고기6종,꼬리구이,특양,대창,식사(솥밥,한우묵은지조림),디저트"
+      }
+    ],
+    "representativeMenu": "우시야 한우룸코스 / 🐂우시야 한우79코스 / 신규",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/36175042/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_212": {
+    "menus": [
+      {
+        "id": "naver_20260927_a35352eb5d8fe682",
+        "name": "1++ 한우 스테이크 런치 코스",
+        "price": "59,000원",
+        "description": "주말에도 이용 가능합니다."
+      },
+      {
+        "id": "naver_20260927_33fc78fbc1bfc562",
+        "name": "1++ 한우 티본스테이크 런치 코스",
+        "price": "84,000원"
+      },
+      {
+        "id": "naver_20260927_312cca6bfb98f82f",
+        "name": "활바닷가재 & 1++한우스테이크 코스",
+        "price": "99,000원"
+      },
+      {
+        "id": "naver_20260927_d452ac2dcaf97f56",
+        "name": "1++ 한우 포터하우스 시그니처 세트",
+        "price": "149,000원"
+      },
+      {
+        "id": "naver_20260927_2c4e2f61f64fe783",
+        "name": "1++ 한우 테이스팅 시그니처 세트",
+        "price": "143,500원"
+      },
+      {
+        "id": "naver_20260927_5f1afb2d21a8034e",
+        "name": "1++ 한우 포터하우스 베이직 세트",
+        "price": "136,500원"
+      },
+      {
+        "id": "naver_20260927_f6b5ab8a9a89236f",
+        "name": "1++ 한우 테이스팅 베이직 세트",
+        "price": "131,000원"
+      },
+      {
+        "id": "naver_20260927_6f0374d04a650287",
+        "name": "1++ 한우 등심 스테이크 300g",
+        "price": "120,000원",
+        "description": "100g / 40,000"
+      },
+      {
+        "id": "naver_20260927_17a86094f6d4c93d",
+        "name": "1++ 한우 채끝 스테이크 300g",
+        "price": "126,000원",
+        "description": "100g / 42,000"
+      },
+      {
+        "id": "naver_20260927_6abe560b67cc0442",
+        "name": "1++ 한우 새우살 스테이크 300g",
+        "price": "144,000원",
+        "description": "100g / 48,000"
+      },
+      {
+        "id": "naver_20260927_b6c7ea810678a4a0",
+        "name": "1++ 한우 샤토브리앙 300g",
+        "price": "150,000원",
+        "description": "100g / 50,000"
+      },
+      {
+        "id": "naver_20260927_0183d71669ce3f58",
+        "name": "1++ 한우 포터하우스 800g",
+        "price": "248,000원",
+        "description": "100g / 31,000"
+      },
+      {
+        "id": "naver_20260927_01418d054836d6c5",
+        "name": "앤초비 알리오 올리오",
+        "price": "24,000원"
+      },
+      {
+        "id": "naver_20260927_991f104e8976298b",
+        "name": "와사비 & 화이트 라구 리가토니",
+        "price": "28,000원"
+      },
+      {
+        "id": "naver_20260927_d3413087a03925cd",
+        "name": "활바닷가재 & 토마토 스파게티니",
+        "price": "39,000원"
+      },
+      {
+        "id": "naver_20260927_bba91c75783be6d0",
+        "name": "활바닷가재 & 비스크 리조또",
+        "price": "39,000원"
+      }
+    ],
+    "representativeMenu": "1++ 한우 스테이크 런치 코스 / 1++ 한우 티본스테이크 런치 코스 / 활바닷가재 & 1++한우스테이크 코스",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/31936212/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_248": {
+    "menus": [
+      {
+        "id": "naver_20260927_ab882668a1f69546",
+        "name": "전복해물탕 소",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_b0ce50699e31ca2f",
+        "name": "전복해물탕 중",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_e391986bf9e3c7e3",
+        "name": "전복해물탕 대",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_c8d149854d8ebbb0",
+        "name": "갈치조림 중",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_6b8f3f2963727c47",
+        "name": "갈치조림-대",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_fe78d0be36d8c208",
+        "name": "병어조림",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_578cc3da21ab6834",
+        "name": "전복물회",
+        "price": "55,000원"
+      },
+      {
+        "id": "naver_20260927_b4c855d7f5277b52",
+        "name": "한치물회",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_bceee00f81215bee",
+        "name": "갈치구이",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_7de93b3be91f1931",
+        "name": "옥돔구이",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_69c6f791ab06a7c3",
+        "name": "고등어구이",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_3a9fc542d29cc72d",
+        "name": "홍해삼",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_d304990e1cf68298",
+        "name": "소라숙회",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_81a1abd18c42b57b",
+        "name": "무늬오징어숙회(제철메뉴)",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_d957a2eb5ef00929",
+        "name": "대구탕",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_05b5206d74a4e5f5",
+        "name": "생멸치조림",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_f8779c6e15224918",
+        "name": "양미리조림",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_7bcbbbb7f365ddd6",
+        "name": "우럭탕",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_e49e1ad17b4c37ab",
+        "name": "물메기탕",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_9e22c59e65834295",
+        "name": "삼식이탕",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_4b248b2ac1e32b46",
+        "name": "소라무침",
+        "price": "40,000원"
+      },
+      {
+        "id": "naver_20260927_8ae09ab49f11f369",
+        "name": "도루묵구이",
+        "price": "30,000원"
+      }
+    ],
+    "representativeMenu": "전복해물탕 소 / 전복해물탕 중 / 전복해물탕 대",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/33636532/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_259": {
+    "menus": [
+      {
+        "id": "naver_20260927_070c9a34b6c4f8f3",
+        "name": "설화 생갈비(200g)",
+        "price": "160,000원"
+      },
+      {
+        "id": "naver_20260927_fe0af0048b3cfc3d",
+        "name": "설화 꽃등심(100g당)",
+        "price": "95,000원",
+        "description": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다."
+      },
+      {
+        "id": "naver_20260927_2ca63771e9cb3cc7",
+        "name": "설화안심(100g당)",
+        "price": "90,000원",
+        "description": "중량 단위로 판매하며, 주문 시 맛있게 즐길 수 있는 두께를 추천해드립니다."
+      },
+      {
+        "id": "naver_20260927_075c00f6294a8ce4",
+        "name": "설화한우 양념갈비(200g)",
+        "price": "73,000원"
+      },
+      {
+        "id": "naver_20260927_1512772fb45f3d60",
+        "name": "한우생양념구이",
+        "price": "58,000원"
+      },
+      {
+        "id": "naver_20260927_b986360594e73743",
+        "name": "한우불고기",
+        "price": "42,000원"
+      },
+      {
+        "id": "naver_20260927_1eeda84ad3957b34",
+        "name": "채끝등심정식(점심한정)",
+        "price": "69,000원"
+      },
+      {
+        "id": "naver_20260927_d6375d2071833571",
+        "name": "모둠구이정식(점심한정)",
+        "price": "59,000원"
+      }
+    ],
+    "representativeMenu": "설화 생갈비(200g) / 설화 꽃등심(100g당) / 설화안심(100g당)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11819083/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_261": {
+    "menus": [
+      {
+        "id": "naver_20260927_4a8144a80f262306",
+        "name": "새우볶음밥",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_e02786f547eee799",
+        "name": "고추잡채덮밥",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_56c1584b73e6b5b5",
+        "name": "마파두부덮밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_e6704851c2058cbf",
+        "name": "잡채덮밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_340acf4588d135a6",
+        "name": "볶음밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_6b48b6e581316861",
+        "name": "가지튀김",
+        "price": "25,000원"
+      },
+      {
+        "id": "naver_20260927_f180d329dbbf2c9f",
+        "name": "야채볶음",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_c21b7c4059c28c46",
+        "name": "군만두 10개",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_b74fb36d3ea6d39a",
+        "name": "물만두 13개",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_fb5f0ba114ddc360",
+        "name": "훈툰",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_3f2dcf899941dec8",
+        "name": "샤오롱빠오 8개",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_676941a9e291c50c",
+        "name": "칭따오",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_de5759a927c0d15c",
+        "name": "충칭라쯔지딩",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_8e18504ff7f4b7ba",
+        "name": "매운조개볶음",
+        "price": "28,000원"
+      },
+      {
+        "id": "naver_20260927_df3264a4f36907a0",
+        "name": "딤섬 6개",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_514d65adfd9b09a8",
+        "name": "볶음밥/마파두부밥/잡채덮밥",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_94c3e4fefe800a6b",
+        "name": "루비딤섬 4개",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_7e59806db9542f27",
+        "name": "에메랄드딤섬 4개",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_40322e1817933475",
+        "name": "순새우딤섬 4개",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_016fe54bb1b7660b",
+        "name": "먹물딤섬",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_291c763e102cc8c2",
+        "name": "수정딤섬 2개",
+        "price": "8,000원"
+      }
+    ],
+    "representativeMenu": "새우볶음밥 / 고추잡채덮밥 / 마파두부덮밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1636164848/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_281": {
+    "menus": [
+      {
+        "id": "naver_20260927_d4e0a14c6952af10",
+        "name": "디너코스",
+        "price": "150,000원"
+      },
+      {
+        "id": "naver_20260927_1aea01b7d51d9d7c",
+        "name": "런치코스",
+        "price": "75,000원",
+        "description": "1부 12:00분~13:10분 2부 13:30분~14:40분"
+      }
+    ],
+    "representativeMenu": "디너코스 / 런치코스",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/18289522/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_354": {
+    "menus": [
+      {
+        "id": "naver_20260927_5d874db21c063626",
+        "name": "JACKSON 5",
+        "price": "28,900원",
+        "description": "모터시티의 시그니처 피자로 짭조름하면서도 매콤함을 레드소스가 중심을 잡아주는 피자"
+      },
+      {
+        "id": "naver_20260927_79ec5f1d6268d944",
+        "name": "Meatzza",
+        "price": "31,900원",
+        "description": "진한 라구소스와 육즙 가득한 고기들의 향연인 피자"
+      },
+      {
+        "id": "naver_20260927_583c94e61f1983d6",
+        "name": "DELUXE HORSEMAN",
+        "price": "29,800원",
+        "description": "분명 피자인데 건강한 느낌이 드는 신기한 피자"
+      },
+      {
+        "id": "naver_20260927_06816ddcae86bc93",
+        "name": "Detroit Hottie's",
+        "price": "29,800원",
+        "description": "새콤한 레드소스, 핫허니와 더불어 신선한 느낌의 매운맛을 보여주는 고추페스토가 킥인 피자"
+      },
+      {
+        "id": "naver_20260927_24475a92cc328535",
+        "name": "CRISPY MUSHROOM",
+        "price": "11,800원",
+        "description": "이탈리안 시즈닝이 된 통 양송이 튀김과 크리미 갈릭 디핑 소스"
+      },
+      {
+        "id": "naver_20260927_a2ae902bd6779025",
+        "name": "BUFFALO",
+        "price": "13,500원",
+        "description": "그동안 알고 있던 버팔로윙의 고정관념을 깨주는, 핫소스 베이스의 시큼한 미국 본토의 맛"
+      },
+      {
+        "id": "naver_20260927_b6466767907abb48",
+        "name": "Chipotle Pasta",
+        "price": "26,900원",
+        "description": "꾸덕하면서도 치폴레 소스만의 새콤하면서 약간의 매운맛이 느껴지는 투움바 파스타"
+      },
+      {
+        "id": "naver_20260927_35a9c27b626f223f",
+        "name": "HALF & HALF",
+        "price": "25,900원",
+        "description": "모터시티의 모든 피자를 반반으로 즐겨요!"
+      },
+      {
+        "id": "naver_20260927_b92c3565f819dd04",
+        "name": "CHEESE PIZZA",
+        "price": "24,900원",
+        "description": "달달한 메이플 허니와 함께 단짠단짠을 맛볼 수 있는 심플한 치즈피자"
+      },
+      {
+        "id": "naver_20260927_5e66f080323d5949",
+        "name": "CLASSIC PEPPERONI",
+        "price": "25,900원",
+        "description": "'Simple is the best'의 정석인 페퍼로니 피자"
+      },
+      {
+        "id": "naver_20260927_82115d4781d52e44",
+        "name": "EXTRA PEPPERONI",
+        "price": "27,900원",
+        "description": "페퍼로니는 많으면 좋은 사람들을 위한 피자"
+      },
+      {
+        "id": "naver_20260927_27b4ddfe7554f41b",
+        "name": "Hot Vege Supreme",
+        "price": "27,900원",
+        "description": "베지테리언 피자로 끝에 톡 쏘는 매콤한 맛이 일품인 피자"
+      },
+      {
+        "id": "naver_20260927_62a3e628194a79e6",
+        "name": "Sausage & Mushrooms",
+        "price": "27,900원",
+        "description": "직관적이게 맛있는, 새콤하면서도 짭짤하면서 버섯의 식감까지 살아 있는 피자"
+      },
+      {
+        "id": "naver_20260927_60cfd4dc6f160c98",
+        "name": "Green Hot Cheese Pie",
+        "price": "27,900원",
+        "description": "짭짤한 치즈 피자 위에 핫허니와 아루굴라가 추가된 피자"
+      },
+      {
+        "id": "naver_20260927_4509befbbb117a2c",
+        "name": "Hot Hunny Pepperoni",
+        "price": "28,900원",
+        "description": "짭쪼름한 페퍼로니에 매콤하면서도 달달한 꿀까지 추가된 피자"
+      },
+      {
+        "id": "naver_20260927_51a8eafa4977cb87",
+        "name": "SWEET CORN BASIL",
+        "price": "28,900원",
+        "description": "아이들도 부담없이 먹을 수 있는 콘피자"
+      },
+      {
+        "id": "naver_20260927_8f149cc5d0dbf4d9",
+        "name": "MOTOWN SUPREME",
+        "price": "28,900원",
+        "description": "모터시티만의 토핑 가득, 입안에 꽉 차는 콤비네이션 피자"
+      },
+      {
+        "id": "naver_20260927_b40012908e0489f0",
+        "name": "MC X Square Pie Guys",
+        "price": "28,900원",
+        "description": "미국에서 유명한 스퀘어 파이 가이즈와 서울의 모터시티의 콜라보 피자"
+      },
+      {
+        "id": "naver_20260927_1294e8fee2da9477",
+        "name": "TRUFFLEBACONMUSHROOM",
+        "price": "30,900원",
+        "description": "코끝을 찌르는 트러플향과 더불어 묵직하게 들어오는 소스가 일품인 피자"
+      },
+      {
+        "id": "naver_20260927_fcff9771476456c2",
+        "name": "CREAMY CHIPOTLE",
+        "price": "13,500원",
+        "description": "새콤하면서도 매콤한 마성의 소유자 치킨윙"
+      },
+      {
+        "id": "naver_20260927_26ed49ab9b456304",
+        "name": "CREAMYGARLICPARMESAN",
+        "price": "13,500원",
+        "description": "꾸덕한 치즈와 더불어 바삭한 마늘칩이 올라간 윙"
+      },
+      {
+        "id": "naver_20260927_37ed480da8dd86bf",
+        "name": "Salt & Pepper",
+        "price": "13,500원",
+        "description": "양념은 저리가라! 근본은 후라이드."
+      },
+      {
+        "id": "naver_20260927_9e66366b22650496",
+        "name": "TOOWOOMBA PASTA",
+        "price": "24,900원",
+        "description": "매니멀 스모크하우스 베이컨, 다양한 종류의 버섯, 트러플 크림, 레지아노, 스파게티"
+      },
+      {
+        "id": "naver_20260927_8503efa048b776f5",
+        "name": "Spicy Oil Pasta",
+        "price": "25,900원",
+        "description": "매운맛이 추가된 오일 쉬림프 파스타"
+      },
+      {
+        "id": "naver_20260927_49cd443e1ef2bffd",
+        "name": "GALRLIC CRUNCH FRIES",
+        "price": "10,000원",
+        "description": "얇고 바삭한 감자튀김의 정석"
+      },
+      {
+        "id": "naver_20260927_7f5fe07bd2392c53",
+        "name": "Truffle Garlic Fries",
+        "price": "13,500원",
+        "description": "트러플향과 더불어 마늘 소스가 올라간 감자튀김"
+      },
+      {
+        "id": "naver_20260927_5c102e6d7f699b18",
+        "name": "Mexican Street Fries",
+        "price": "12,000원",
+        "description": "손가락까지 쪽쪽 빨아먹는, 시즈닝이 들어간 감자튀김"
+      },
+      {
+        "id": "naver_20260927_4251841e1e87882a",
+        "name": "MotorCity Cobb Salad",
+        "price": "16,900원",
+        "description": "드레싱부터 토핑까지 골라먹는 샐러드 드레싱: 발사믹 / 레몬, 토핑 : 베이컨 / 새우"
+      },
+      {
+        "id": "naver_20260927_4334cdde0be02807",
+        "name": "Bacon Caesar Salad",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_efb6ad305174536a",
+        "name": "HOUSE PICKLE",
+        "price": "2,000원",
+        "description": "매장에서 직접 만드는 단맛 없는 하우스 메이드 피클"
+      }
+    ],
+    "representativeMenu": "JACKSON 5 / Meatzza / DELUXE HORSEMAN",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/38331689/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_362": {
+    "menus": [
+      {
+        "id": "naver_20260927_0c034d7830dafc00",
+        "name": "아메리카노",
+        "price": "5,600원"
+      },
+      {
+        "id": "naver_20260927_f4182453b2729845",
+        "name": "카페라떼/카페모카/카라멜마끼아또",
+        "price": "5,900원"
+      },
+      {
+        "id": "naver_20260927_e9d1301677f16cfb",
+        "name": "코코넛 커피",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_02592577fff2e6de",
+        "name": "바닐라 라떼",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_ec9e6906405b7e87",
+        "name": "카모마일티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_a21614447972fcc1",
+        "name": "페퍼민트티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_15760e4de3dad870",
+        "name": "히비스커스티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_f35853d141a67f31",
+        "name": "콜드브루",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_42023104e86c2da4",
+        "name": "콜드브루라떼",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_30ff27af507405fd",
+        "name": "소리라떼",
+        "price": "5,800원"
+      },
+      {
+        "id": "naver_20260927_2526c49d1dd24dba",
+        "name": "루이보스티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_d02b0b18294aa6d5",
+        "name": "자스민플라워티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_3937e8373bc501df",
+        "name": "로얄밀크티",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_c9702f66e29e5297",
+        "name": "타로밀크티",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_22077b7ac9e58aed",
+        "name": "민트초코라떼",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_96d442514b2cac1f",
+        "name": "녹차라떼",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_87f6eae58a1a1fb4",
+        "name": "초콜릿라떼",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_f891d41b041e58a3",
+        "name": "얼그레이 티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_48335677a2cc2f63",
+        "name": "잉그리쉬블랙퍼스트티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_d221064f9d2eb82e",
+        "name": "다즐링티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_98bc6f3f95454bc8",
+        "name": "푸어실론티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_194b4b73ebeae1f4",
+        "name": "레이디 그레이디 티",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_fa695b5f15de3eda",
+        "name": "레몬보이차",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_254dcfb7b26cf69c",
+        "name": "자몽 오렌지에이드",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_1b4c616ff4877145",
+        "name": "드리플베리에이드",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_be5b6a7bcb673272",
+        "name": "핑크레몬에이드",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_e41c95b2035c9d89",
+        "name": "망고패션후르츠에이드",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_20dd55eea0ec51e0",
+        "name": "히비스커스에이드",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_a8e096c896d9437c",
+        "name": "애플시나몬에이드",
+        "price": "7,500원"
+      }
+    ],
+    "representativeMenu": "아메리카노 / 카페라떼/카페모카/카라멜마끼아또 / 코코넛 커피",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/37848376/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_377": {
+    "menus": [
+      {
+        "id": "naver_20260927_0bb04b1dee0684ba",
+        "name": "아티장크로와상",
+        "price": "4,300원"
+      },
+      {
+        "id": "naver_20260927_6d2fef57605003fe",
+        "name": "라우겐크루아상",
+        "price": "4,500원"
+      },
+      {
+        "id": "naver_20260927_b0fe8222d7ebe563",
+        "name": "클래식 사워도우",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_d159b141cc482488",
+        "name": "호밀사워도우",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_b53645bc9fd6ba92",
+        "name": "무화과 사워도우",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_b45f21a8e10eb08c",
+        "name": "크랜베리스콘",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_55ae3f97f1a7af44",
+        "name": "시오빵",
+        "price": "2,500원"
+      },
+      {
+        "id": "naver_20260927_cca3ed31d3f868b0",
+        "name": "메이플피칸스콘",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_2d31e5095221febe",
+        "name": "우유 데니쉬",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_879fc2f9da484098",
+        "name": "통밀 호두 크랜베리 샤워도우",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_b4b4dc1862f14023",
+        "name": "당근파운드케이크",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_ff9fba9a2faf7d38",
+        "name": "아티장 앙버터",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_45773396fabc9d61",
+        "name": "밤식빵",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_ad28a8dd244c0e43",
+        "name": "통밀 100% 식빵",
+        "price": "8,000원"
+      },
+      {
+        "id": "naver_20260927_9280d51d3c801567",
+        "name": "러스크",
+        "price": "4,500원"
+      }
+    ],
+    "representativeMenu": "아티장크로와상 / 라우겐크루아상 / 클래식 사워도우",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/31383349/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "wednesday-gourmet_restaurant_446": {
+    "menus": [
+      {
+        "id": "naver_20260927_ed1da54764e5fa39",
+        "name": "A세트",
+        "price": "46,800원",
+        "description": "등심돈카츠+새우&안심돈카츠+카레 세트"
+      },
+      {
+        "id": "naver_20260927_563529a55d10d5ac",
+        "name": "B세트",
+        "price": "41,800원",
+        "description": "등심&안심돈카츠+생선카츠or치킨카츠+카레"
+      },
+      {
+        "id": "naver_20260927_10bb67476fd8f8c9",
+        "name": "등심돈카츠",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_c7a43b7cbd9aaf5b",
+        "name": "안심돈카츠",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_b220482a966b6afd",
+        "name": "등심&안심돈카츠",
+        "price": "21,000원"
+      },
+      {
+        "id": "naver_20260927_5afe38eb5ca818e7",
+        "name": "치킨카츠",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_0e8694afc544a029",
+        "name": "생선카츠",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_8ca24abd3ed44edf",
+        "name": "스페셜 등심돈카츠",
+        "price": "21,000원"
+      },
+      {
+        "id": "naver_20260927_3a63612da7adbd81",
+        "name": "새우&안심돈카츠",
+        "price": "28,000원"
+      },
+      {
+        "id": "naver_20260927_971fb8d3e75cf13b",
+        "name": "새우&등심돈카츠",
+        "price": "27,000원"
+      },
+      {
+        "id": "naver_20260927_ecf515e132ad95a3",
+        "name": "치즈카츠",
+        "price": "4,000원",
+        "description": "단품메뉴(2p)"
+      },
+      {
+        "id": "naver_20260927_972cd824a762dc52",
+        "name": "새우카츠",
+        "price": "13,000원",
+        "description": "단품메뉴 (블랙타이거 새우 2p)"
+      },
+      {
+        "id": "naver_20260927_9b19cc6b2de1d735",
+        "name": "카츠산도",
+        "price": "10,000원",
+        "description": "단품메뉴"
+      },
+      {
+        "id": "naver_20260927_2af7d74c059db467",
+        "name": "카레",
+        "price": "6,000원",
+        "description": "단품메뉴"
+      },
+      {
+        "id": "naver_20260927_d72429c0e4530a27",
+        "name": "치즈카레",
+        "price": "7,000원",
+        "description": "단품메뉴"
+      }
+    ],
+    "representativeMenu": "A세트 / B세트 / 등심돈카츠",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/37126807/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_6a1a6bada12c": {
+    "menus": [
+      {
+        "id": "naver_20260927_63c597a3c2fc9f4d",
+        "name": "안심카츠",
+        "price": "16,400원",
+        "description": "수분감 있게 적절한 익힘정도로 튀겨내, 부드럽고 담백한 안심카츠"
+      },
+      {
+        "id": "naver_20260927_abfc5d1ff0c79fcb",
+        "name": "치즈카츠",
+        "price": "16,400원",
+        "description": "등심에 천연치즈를 감싸 튀겨내, 치즈의 고소함과 등심의 고소함이 조화를 이루는 카츠"
+      },
+      {
+        "id": "naver_20260927_d4eb5968e33157a4",
+        "name": "제육 왕돈까스",
+        "price": "16,500원",
+        "description": "칼칼한 고추장 양념으로 센 불에 볶아낸 제육에 불에 그을린 대파 슬라이스를 올린 왕 돈까스"
+      },
+      {
+        "id": "naver_20260927_360aa03acb92e283",
+        "name": "경양식 돈까스&미니국수",
+        "price": "14,900원",
+        "description": "바삭한 식감과 부드러운 육질의 돈까스와 브라운 소스가 더해져 달콤하고 새콤한 경양식 돈까스"
+      },
+      {
+        "id": "naver_20260927_bc2690fd5d148dc1",
+        "name": "서울 수비드 수육카츠",
+        "price": "23,900원",
+        "description": "삼겹 부위를 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 수육카츠"
+      },
+      {
+        "id": "naver_20260927_7a9030467e9a1e9e",
+        "name": "서울 수비드 족발카츠",
+        "price": "20,900원",
+        "description": "앞다리살을 특제 육수로 삶은뒤 겉을 바삭하게 튀겨내, 촉촉한 육즙이 가득한 족발카츠"
+      },
+      {
+        "id": "naver_20260927_4a4c3340a82f8a6d",
+        "name": "등심카츠",
+        "price": "16,400원",
+        "description": "가장 대중적인 돈카츠인 등심카츠. 살코기의 담백한 맛과 끝부분 지방의 고소함이 일품"
+      },
+      {
+        "id": "naver_20260927_566797b566ca5a77",
+        "name": "특등심카츠",
+        "price": "18,900원",
+        "description": "담백한 등심과 기름진 가브리살이 붙은 부위로, 두가지 맛을 즐길수있는 매력적인 카츠"
+      },
+      {
+        "id": "naver_20260927_693f8fd5ea340c7a",
+        "name": "안심등심카츠",
+        "price": "17,400원",
+        "description": "부드럽고 담백한 두가지 카츠부위를 한번에 맛보실수있게 준비드린 안X등심 카츠"
+      },
+      {
+        "id": "naver_20260927_3ee92d46b02200fb",
+        "name": "바질치즈카츠",
+        "price": "16,600원",
+        "description": "향긋한 바질페스토를 넣은 치즈카츠에 그라나파다노와 핑크페퍼를 곁들여 산뜻하게 즐기는 카츠"
+      },
+      {
+        "id": "naver_20260927_b348d9cf9a1b9bd1",
+        "name": "돈카츠 나베 (※겨울 한정※)",
+        "price": "13,900원",
+        "description": "갓김치와 김치육수로, 추운겨울 몸을 녹여줄 따듯한 찌개 위에 알등심카츠를 올려낸 김치나베"
+      },
+      {
+        "id": "naver_20260927_b535b126b11d48c9",
+        "name": "대파 매콤 크림 파스타 & 안심카츠",
+        "price": "17,400원",
+        "description": "그을린 대파의 향과 매콤칼칼한 크림, 노른자 궁합에 안심카츠까지 올려낸 파스타"
+      },
+      {
+        "id": "naver_20260927_5481a1edf3547cde",
+        "name": "트러플 버섯 크림 파스타 & 안심카츠",
+        "price": "17,400원",
+        "description": "크림소스에 안심카츠와 버섯, 세계 3대 진미 중 하나인 트러플 향을 은은하게 내어낸 파스타"
+      },
+      {
+        "id": "naver_20260927_31e4a4bbdb15e7a2",
+        "name": "경양 어묵우동",
+        "price": "8,900원",
+        "description": "돈카츠와 곁들일 사이드중 가장 대중적인 어묵우동"
+      },
+      {
+        "id": "naver_20260927_98864554db005ad6",
+        "name": "경양 포차 우동",
+        "price": "7,900원",
+        "description": "경양카츠 겨울 신메뉴! 얼큰한 포차 우동"
+      },
+      {
+        "id": "naver_20260927_ec96d69b76bff5a2",
+        "name": "경양 냉 소바",
+        "price": "7,000원",
+        "description": "무더운 여름, 입과 속을 시원하게 풀어내줄 경양 냉소바"
+      },
+      {
+        "id": "naver_20260927_ef1e0752f4a0a8dc",
+        "name": "경양 카레 (소)",
+        "price": "3,500원",
+        "description": "경양카츠만의 레시피로 만든 경양카레"
+      },
+      {
+        "id": "naver_20260927_13078fbd256c9501",
+        "name": "경양 카레 (대)",
+        "price": "6,500원",
+        "description": "경양카츠만의 레시피로 만든 경양카레"
+      },
+      {
+        "id": "naver_20260927_fbe4d4e41cfd61ea",
+        "name": "키리모찌",
+        "price": "3,500원",
+        "description": "바삭하게 튀겨낸 키리모찌에 꿀과 소금을 곁들여 제공합니다"
+      },
+      {
+        "id": "naver_20260927_62c3e853bd6a3c4a",
+        "name": "고구마 치즈 고로케",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_8ea5f542f1384da1",
+        "name": "한우 고로케",
+        "price": "6,500원"
+      },
+      {
+        "id": "naver_20260927_5c5db1ba38855811",
+        "name": "경양 안심 가라아게",
+        "price": "6,900원"
+      },
+      {
+        "id": "naver_20260927_83ddc52e383510cf",
+        "name": "새우튀김",
+        "price": "5,900원",
+        "description": "손바닥 길이의 새우를 경양카츠만의 튀김옷으로 튀겨 제공합니다."
+      },
+      {
+        "id": "naver_20260927_74d7b28fa483769c",
+        "name": "경양식혜",
+        "price": "4,000원"
+      }
+    ],
+    "representativeMenu": "안심카츠 / 치즈카츠 / 제육 왕돈까스",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/place/1128364627/menu/list"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_78f4300f2b66": {
+    "menus": [
+      {
+        "id": "naver_20260927_956d282e2237ce03",
+        "name": "불오징어",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_b91740f4f1107194",
+        "name": "오징어+삼겹살",
+        "price": "32,000원"
+      },
+      {
+        "id": "naver_20260927_ecef5ab9c81207ce",
+        "name": "볶음밥",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_2fd534614b0e0652",
+        "name": "주먹밥",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_b503bb76dcf17edb",
+        "name": "야채추가",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_ed641d282eb4cca9",
+        "name": "치즈추가",
+        "price": "3,000원"
+      }
+    ],
+    "representativeMenu": "불오징어 / 오징어+삼겹살 / 볶음밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/33875198/menu/list"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_824718559044": {
+    "menus": [
+      {
+        "id": "naver_20260927_1cad57a6ca72864e",
+        "name": "[신메뉴]방앗간 들기름 메밀 막국수",
+        "price": "8,400원"
+      },
+      {
+        "id": "naver_20260927_216e46cd9cfd15a6",
+        "name": "등갈비찜 (찜갈비)",
+        "price": "14,500원"
+      },
+      {
+        "id": "naver_20260927_266ae35cae0f2e0c",
+        "name": "[점심특선]장모님 박분남 뚝배기 제육",
+        "price": "10,900원"
+      },
+      {
+        "id": "naver_20260927_2a207491aa946c2c",
+        "name": "가마솥 곤드레밥",
+        "price": "3,500원"
+      },
+      {
+        "id": "naver_20260927_a9e6b3f70d6caf2c",
+        "name": "봉평 전통방식 메밀전 추가",
+        "price": "2,500원"
+      },
+      {
+        "id": "naver_20260927_f65272ea2b33adab",
+        "name": "등갈비 포장(밀키트)",
+        "price": "12,500원"
+      },
+      {
+        "id": "naver_20260927_b6d00aed84890364",
+        "name": "강원도 옥수수 막걸리",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_62e35e525455f535",
+        "name": "간장 갈비찜",
+        "price": "14,500원"
+      },
+      {
+        "id": "naver_20260927_eb84122d945ea2ed",
+        "name": "사리",
+        "price": "2,000원"
+      }
+    ],
+    "representativeMenu": "[신메뉴]방앗간 들기름 메밀 막국수 / 등갈비찜 (찜갈비) / [점심특선]장모님 박분남 뚝배기 제육",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/1614860888/menu/list"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_170debd05759": {
+    "menus": [
+      {
+        "id": "naver_20260927_f3e5d0e9e3858be5",
+        "name": "갈비탕",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_63656ac287a70565",
+        "name": "불고기백반",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_ad3338dba8cbbfe2",
+        "name": "생고기비빔밥",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_c6ab2e16cb3d55df",
+        "name": "한우암소와낙지탕탕이",
+        "price": "74,000원"
+      },
+      {
+        "id": "naver_20260927_523f1106509a70a0",
+        "name": "생고기 400g",
+        "price": "52,000원"
+      },
+      {
+        "id": "naver_20260927_42e3740e306f8e19",
+        "name": "육회 400g",
+        "price": "52,000원"
+      },
+      {
+        "id": "naver_20260927_744972e4a755c17d",
+        "name": "살치살, 간접살, 안창살 600g",
+        "price": "150,000원"
+      },
+      {
+        "id": "naver_20260927_1a615cb859cf4332",
+        "name": "미식가 모듬 600g",
+        "price": "90,000원"
+      }
+    ],
+    "representativeMenu": "갈비탕 / 불고기백반 / 생고기비빔밥",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/20001077/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_cc57af7d3de9": {
+    "menus": [
+      {
+        "id": "naver_20260927_ce6009e8d0eab276",
+        "name": "클래식 더블 치즈 버거",
+        "price": "10,900원"
+      },
+      {
+        "id": "naver_20260927_bc50936daf0d4f32",
+        "name": "자코비 버거",
+        "price": "11,900원"
+      },
+      {
+        "id": "naver_20260927_4d4ab7e33ef3469c",
+        "name": "15cm 독일 수제소세지 핫도그",
+        "price": "11,900원"
+      },
+      {
+        "id": "naver_20260927_21c940ba92e338f1",
+        "name": "클래식 트리플 치즈 버거",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_6f08206a1d96a22e",
+        "name": "아보카도 베이컨 버거",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_38f4bff730868019",
+        "name": "발사믹 치킨 샐러드",
+        "price": "17,900원"
+      },
+      {
+        "id": "naver_20260927_5751761f1086b73e",
+        "name": "고수 더블 치즈 버거",
+        "price": "11,900원"
+      },
+      {
+        "id": "naver_20260927_daa105fa2988dbab",
+        "name": "버섯 버거",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_32e8c818f3cd0f81",
+        "name": "자코비 더블 패티 버거",
+        "price": "16,900원"
+      },
+      {
+        "id": "naver_20260927_cd7177c817a7e538",
+        "name": "블루 하와이언 베이컨 버거",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_bdc3e8db84ddceea",
+        "name": "더블 치즈 베이컨 버거",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_b501fa5f06247658",
+        "name": "칠리 베이컨 버거",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_740aff7d5bd4d1f6",
+        "name": "칠리 치킨 버거",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_4e5065c4b12f605a",
+        "name": "새우 버거",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_6fab6dece5d46816",
+        "name": "클래식 더블 치즈 버거 세트",
+        "price": "20,800원"
+      },
+      {
+        "id": "naver_20260927_dc31db6a47684135",
+        "name": "자코비 버거 세트",
+        "price": "21,800원"
+      },
+      {
+        "id": "naver_20260927_4f2904abde55a40a",
+        "name": "고수 더블 치즈 버거 세트",
+        "price": "21,800원"
+      },
+      {
+        "id": "naver_20260927_ead51900543ebd1e",
+        "name": "클래식 트리플 치즈 버거 세트",
+        "price": "24,800원"
+      },
+      {
+        "id": "naver_20260927_803de26a91f5c85a",
+        "name": "버섯 버거 세트",
+        "price": "22,800원"
+      },
+      {
+        "id": "naver_20260927_bbf0db1ece955767",
+        "name": "자코비 더블 패티 버거 세트",
+        "price": "26,800원"
+      },
+      {
+        "id": "naver_20260927_bff603c6d7c1b0db",
+        "name": "블루 하와이언 베이컨 버거 세트",
+        "price": "22,800원"
+      },
+      {
+        "id": "naver_20260927_adb3171c6538093b",
+        "name": "더블 치즈 베이컨 버거 세트",
+        "price": "22,800원"
+      },
+      {
+        "id": "naver_20260927_1ecef43901fbdcfd",
+        "name": "칠리 베이컨 버거 세트",
+        "price": "22,800원"
+      },
+      {
+        "id": "naver_20260927_d2bf16c53f574e58",
+        "name": "칠리치킨 버거 세트",
+        "price": "22,800원"
+      },
+      {
+        "id": "naver_20260927_9dee370928905728",
+        "name": "아보카도 베이컨 버거 세트",
+        "price": "23,800원"
+      },
+      {
+        "id": "naver_20260927_9935ec0c718fb103",
+        "name": "새우 버거 세트",
+        "price": "23,800원"
+      },
+      {
+        "id": "naver_20260927_c675c13218ff484e",
+        "name": "소고기 타코 (2pcs)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_a618ab4f800aee71",
+        "name": "소고기 비리야 타코 (2pcs)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_621e3402d8df1aaf",
+        "name": "치킨 타코 (2pcs)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_c58244d6b3009798",
+        "name": "칠리 치킨 타코 (2pcs)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_c4a9a7ca5ea66ff9",
+        "name": "새우 타코 (2pcs)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_1d7ceb2f399ecd5e",
+        "name": "치킨 퀘사디아",
+        "price": "16,900원"
+      },
+      {
+        "id": "naver_20260927_568d71cd19ba724e",
+        "name": "15cm 독일 수제소세지 칠리 베이컨 핫도그",
+        "price": "13,900원"
+      },
+      {
+        "id": "naver_20260927_94269c31d0349437",
+        "name": "30cm 독일 수제소세지 핫도그",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_a1be03769a9547e7",
+        "name": "30cm 독일 수제소세지 칠리 베이컨 핫도그",
+        "price": "17,900원"
+      },
+      {
+        "id": "naver_20260927_7a06e9e5582539e8",
+        "name": "까르보나라 파스타",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_d04fbb168d4f8273",
+        "name": "(작은사이즈) 까르보나라 파스타",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_25ff75c96febea23",
+        "name": "할라피뇨 올리브 파스타",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_444241b234223333",
+        "name": "(작은사이즈) 할라피뇨 올리브 파스타",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_8536d927f39aceec",
+        "name": "뽀모도로 파스타",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_0f29ff0610a2880b",
+        "name": "(작은사이즈) 뽀모도로 파스타",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_dd9420b601438f88",
+        "name": "씨푸드 파스타",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_c9e0f60a3c106ba1",
+        "name": "(작은사이즈) 씨푸드 파스타",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_f3a6f38ef7dbd43c",
+        "name": "칠리 새우 파스타",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_ff69dacc803e9cd7",
+        "name": "(작은사이즈) 칠리 새우 파스타",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_9e4137d3c6cc9f74",
+        "name": "1/2 발사믹 치킨 샐러드",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_44e8d1e869afd48e",
+        "name": "1/2 시저 치킨 샐러드",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_85833a5f54ddefa8",
+        "name": "1/2 아보카도 샐러드",
+        "price": "15,900원"
+      },
+      {
+        "id": "naver_20260927_670e591580be206f",
+        "name": "시저 치킨 샐러드",
+        "price": "17,900원"
+      },
+      {
+        "id": "naver_20260927_9fdf1bdf1f43319e",
+        "name": "아보카도 샐러드",
+        "price": "18,900원"
+      },
+      {
+        "id": "naver_20260927_906b8970ad97a503",
+        "name": "핫윙(8조각)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_b7461d695a97a1fb",
+        "name": "마일드윙(8조각)",
+        "price": "12,900원"
+      },
+      {
+        "id": "naver_20260927_7d1e841d8cbc4a49",
+        "name": "감자튀김",
+        "price": "11,900원"
+      },
+      {
+        "id": "naver_20260927_ac43943d45a04626",
+        "name": "치즈감자튀김",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_9756cdab91442e85",
+        "name": "마늘감자튀김",
+        "price": "14,900원"
+      },
+      {
+        "id": "naver_20260927_7cabf950c5519c84",
+        "name": "과카몰리 감자튀김",
+        "price": "16,900원"
+      },
+      {
+        "id": "naver_20260927_d882a332bb1099e0",
+        "name": "칠리치즈 감자튀김",
+        "price": "16,900원"
+      },
+      {
+        "id": "naver_20260927_abe98adf75c280af",
+        "name": "베이컨치즈 감자튀김 with 사워크림",
+        "price": "16,900원"
+      },
+      {
+        "id": "naver_20260927_2ab4a99a555ade9c",
+        "name": "생수(500ml)",
+        "price": "1,000원"
+      },
+      {
+        "id": "naver_20260927_6671488c383d6d8a",
+        "name": "콜라(355ml)",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_8c4818ee09103c8e",
+        "name": "제로콜라(355ml)",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_83f88e168e6721ef",
+        "name": "스프라이트(355ml)",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_3547095cde9d5e9c",
+        "name": "웰치스 포도(355ml)",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_4b25edb94e29a500",
+        "name": "닥터페퍼(355ml)",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_4b077ef9ed3d570e",
+        "name": "진저엘(250ml)",
+        "price": "3,000원"
+      }
+    ],
+    "representativeMenu": "클래식 더블 치즈 버거 / 자코비 버거 / 15cm 독일 수제소세지 핫도그",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/13000071/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_4f053d6c0b33": {
+    "menus": [
+      {
+        "id": "naver_20260927_44473b202d5715b6",
+        "name": "(점심) 메기매운탕",
+        "price": "35,000원"
+      },
+      {
+        "id": "naver_20260927_e61a1aca25d05dc6",
+        "name": "(점심)얼큰수제비",
+        "price": "10,000원",
+        "description": "보리밥포함"
+      },
+      {
+        "id": "naver_20260927_95f9f46aff17a176",
+        "name": "빠가+메기매운탕(소)",
+        "price": "55,000원"
+      },
+      {
+        "id": "naver_20260927_9da3e0362a865de3",
+        "name": "메기매운탕(중)",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_a91e737e53518511",
+        "name": "쏘가리(중)",
+        "price": "130,000원"
+      },
+      {
+        "id": "naver_20260927_f63a42c37b0af690",
+        "name": "빠가(소)",
+        "price": "60,000원"
+      },
+      {
+        "id": "naver_20260927_b245b869918ad1bd",
+        "name": "잡어(소)",
+        "price": "60,000원"
+      }
+    ],
+    "representativeMenu": "(점심) 메기매운탕 / (점심)얼큰수제비 / 빠가+메기매운탕(소)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/38710312/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_fe8cc5b36b2c": {
+    "menus": [
+      {
+        "id": "naver_20260927_9996c0b010a49d0d",
+        "name": "황제해신탕(대)",
+        "price": "135,000원"
+      },
+      {
+        "id": "naver_20260927_8741b905878c8df0",
+        "name": "황제 해신탕 (중)",
+        "price": "105,000원"
+      },
+      {
+        "id": "naver_20260927_6e45c30df71c6c4b",
+        "name": "해신탕 (대)",
+        "price": "115,000원"
+      },
+      {
+        "id": "naver_20260927_881f492472cb4364",
+        "name": "해신탕 (중)",
+        "price": "85,000원"
+      },
+      {
+        "id": "naver_20260927_583c71ec82962358",
+        "name": "오리백숙",
+        "price": "79,000원"
+      },
+      {
+        "id": "naver_20260927_e21f24edf6372a3b",
+        "name": "토종닭백숙",
+        "price": "79,000원"
+      },
+      {
+        "id": "naver_20260927_92b31f8efed8ad5b",
+        "name": "반마리백숙",
+        "price": "48,000원"
+      },
+      {
+        "id": "naver_20260927_e2735d42da86f222",
+        "name": "토종닭볶음탕",
+        "price": "79,000원"
+      },
+      {
+        "id": "naver_20260927_b797e1302b41a60f",
+        "name": "전복 삼계탕",
+        "price": "22,000원"
+      },
+      {
+        "id": "naver_20260927_dd0b9c61a0cf4b3d",
+        "name": "삼계탕",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_f2f1e29b4b7a108b",
+        "name": "능이주",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_a049a9509a0a14ac",
+        "name": "메밀전병",
+        "price": "15,000원"
+      }
+    ],
+    "representativeMenu": "황제해신탕(대) / 황제 해신탕 (중) / 해신탕 (대)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/31887116/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_ddc70c60bd16": {
+    "menus": [
+      {
+        "id": "naver_20260927_ba8cd0cbdc770957",
+        "name": "32 파르페 소프트 아이스크림",
+        "price": "3,000원",
+        "description": "32cm 소프트 아이스크림 입니다. 절대 기울이면 안돼요~~~!!"
+      }
+    ],
+    "representativeMenu": "32 파르페 소프트 아이스크림",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/717568148/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_91a0989425bb": {
+    "menus": [
+      {
+        "id": "naver_20260927_185eedf8ad19088b",
+        "name": "구로칸토 슈니탱",
+        "price": "30,000원",
+        "description": "파이 사이사이에 진한 모카크림을 샌드하는 정성 가득 들어간 나폴레옹 시그니처!"
+      },
+      {
+        "id": "naver_20260927_3de1c196367f6d6d",
+        "name": "다크비쇼",
+        "price": "25,000원",
+        "description": "다크초콜릿으로 더욱 진하고 맛있어진 쇼콜라비스큐슈니탱!"
+      },
+      {
+        "id": "naver_20260927_fee46dd3fce5b5bb",
+        "name": "통팥빵",
+        "price": "3,300원",
+        "description": "매일매일 직접 끓이는 알알이 살아있는 통팥을 넣은 빵!"
+      },
+      {
+        "id": "naver_20260927_dc3402e41f8efda5",
+        "name": "단팥빵",
+        "price": "2,900원",
+        "description": "직접 불리고, 삶고, 졸인 팥앙금이 들어간 기본 단팥빵"
+      },
+      {
+        "id": "naver_20260927_7a639aaad9517677",
+        "name": "고소한 맛 사라다빵",
+        "price": "6,000원",
+        "description": "매일 직접 손질하는 신선한 야채와 계란 & 감자가 들어가는 나폴레옹과자점 시그니처 빵!"
+      },
+      {
+        "id": "naver_20260927_e9a61ad7556dda37",
+        "name": "크림빵",
+        "price": "3,300원",
+        "description": "매일 신선한 우유&계란으로 직접 끓이는 커스터드크림이 샌드된 크림빵"
+      },
+      {
+        "id": "naver_20260927_e138af52a9d574af",
+        "name": "초콜릿빵",
+        "price": "3,300원",
+        "description": "다크초콜릿이 들어가 진한 초코크림이 들어간 촉촉한 초코크림빵"
+      },
+      {
+        "id": "naver_20260927_b3c3d6aa7637af43",
+        "name": "크로와상",
+        "price": "4,600원",
+        "description": "깊은 버터 향이 일품이며 바삭, 촉촉함이 특별합니다"
+      },
+      {
+        "id": "naver_20260927_0ded822b60c2ae7b",
+        "name": "초코크로와상",
+        "price": "5,900원",
+        "description": "바삭한 크로와상 속에 초코스틱이 들어있고 고소한 버터향이 입안 가득 퍼집니다."
+      },
+      {
+        "id": "naver_20260927_7bf6b7e1d561b818",
+        "name": "뜯어먹는치즈빵",
+        "price": "6,500원",
+        "description": "크림치즈가 반죽에 스며들듯 녹아있는 부드러운 치즈빵"
+      },
+      {
+        "id": "naver_20260927_b6e39d4441c80a8d",
+        "name": "크랜베리소프트",
+        "price": "7,000원",
+        "description": "달콤한 코코넛 토핑과 크랜베리를 송송 얹은 부드러운 빵"
+      },
+      {
+        "id": "naver_20260927_b31f4ea392db9ce2",
+        "name": "통호밀통호두식빵",
+        "price": "7,500원",
+        "description": "호두 반태와 피칸 반태가 들어간 호밀식빵, 고소해서 건강식빵 중에 가장 인기가 좋습니다"
+      }
+    ],
+    "representativeMenu": "구로칸토 슈니탱 / 다크비쇼 / 통팥빵",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11627707/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_1f639412e442": {
+    "menus": [
+      {
+        "id": "naver_20260927_f4950b4a703c0b6e",
+        "name": "동인동찜갈비",
+        "price": "24,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_a46127499d44f596",
+        "name": "덜매운찜갈비",
+        "price": "24,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_ad17768998310e96",
+        "name": "쭈꾸미",
+        "price": "17,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_41a3b6ab1e1c3e89",
+        "name": "모듬전",
+        "price": "30,000원"
+      },
+      {
+        "id": "naver_20260927_d715be0b053c26c2",
+        "name": "동그랑땡",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_8cfe392221f67ab8",
+        "name": "깻잎전",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_a70c05a8c838d8eb",
+        "name": "굴전",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_b417135ec4b040f9",
+        "name": "생선전",
+        "price": "18,000원"
+      },
+      {
+        "id": "naver_20260927_0ffee6d5dd214c98",
+        "name": "두부전",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_01f7091abd282281",
+        "name": "술국",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_dd020e938006da98",
+        "name": "점심 쭈꾸미정식",
+        "price": "11,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_a33d14bf3a5aafe2",
+        "name": "버섯 매운탕",
+        "price": "11,000원",
+        "description": "2인이상"
+      },
+      {
+        "id": "naver_20260927_4e57967da32a14ed",
+        "name": "따로국밥",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_47dd5a2ed4fa947f",
+        "name": "비빔밥",
+        "price": "9,000원"
+      }
+    ],
+    "representativeMenu": "동인동찜갈비 / 덜매운찜갈비 / 쭈꾸미",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11726653/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_e986f0307607": {
+    "menus": [
+      {
+        "id": "naver_20260927_138fce77d3adbb39",
+        "name": "낙지볶음",
+        "price": "27,000원"
+      },
+      {
+        "id": "naver_20260927_a2589083bb3da0bb",
+        "name": "조개탕",
+        "price": "17,000원"
+      },
+      {
+        "id": "naver_20260927_9ae7efbcb6784cf9",
+        "name": "감자탕",
+        "price": "16,000원"
+      },
+      {
+        "id": "naver_20260927_52e3ad739eee9817",
+        "name": "파전",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_bc2cb5f5df05c2fd",
+        "name": "감자전",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_3aaf080f618447c0",
+        "name": "계란말이",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_a7c4f1e9378eba52",
+        "name": "낙지보쌈",
+        "price": "42,000원"
+      },
+      {
+        "id": "naver_20260927_de733c7f3b252230",
+        "name": "낙지한마리수제비",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_d12769714dab0dbe",
+        "name": "낙지숙회",
+        "price": "33,000원",
+        "description": "통낙지2마리"
+      },
+      {
+        "id": "naver_20260927_34aa194fca69b426",
+        "name": "낙지비빔밥+미니수제비(점심한정메뉴)",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_1156965078633c4f",
+        "name": "낙지수제비+미니비빔밥(점심한정메뉴)",
+        "price": "10,000원"
+      },
+      {
+        "id": "naver_20260927_ee0c932382d015fa",
+        "name": "낙지칼국수+미니비빔밥(점심한정메뉴)",
+        "price": "10,000원"
+      }
+    ],
+    "representativeMenu": "낙지볶음 / 조개탕 / 감자탕",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1501619204/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_eafd72ff9c21": {
+    "menus": [
+      {
+        "id": "naver_20260927_65d8a364dd4914d7",
+        "name": "닭한마리",
+        "price": "33,000원"
+      },
+      {
+        "id": "naver_20260927_8bca56c297e0158d",
+        "name": "칼국수사리",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_58facda16f2a451c",
+        "name": "떡사리",
+        "price": "1,000원"
+      },
+      {
+        "id": "naver_20260927_254610eabfa250d6",
+        "name": "버섯사리",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_7da9a6ea76d10ce9",
+        "name": "닭한마리A세트(2인)",
+        "price": "37,000원"
+      },
+      {
+        "id": "naver_20260927_62b63a60c2958d31",
+        "name": "닭한마리B세트(3인)",
+        "price": "55,000원"
+      },
+      {
+        "id": "naver_20260927_d2297887e2d4cb03",
+        "name": "닭한마리C세트(4인)",
+        "price": "69,000원"
+      }
+    ],
+    "representativeMenu": "닭한마리 / 칼국수사리 / 떡사리",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11706951/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_68dd74a39391": {
+    "menus": [
+      {
+        "id": "naver_20260927_1ad09f59836d3ab9",
+        "name": "토종닭도리탕 한마리(포장)",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_ccea284de1364f7d",
+        "name": "토종닭도리탕 한마리 반(포장)",
+        "price": "74,000원"
+      },
+      {
+        "id": "naver_20260927_6a3dd49727348f27",
+        "name": "능이토종닭백숙 한마리(포장)",
+        "price": "62,000원"
+      },
+      {
+        "id": "naver_20260927_31bad818f381d7ce",
+        "name": "능이토종닭백숙 한마리 반(포장)",
+        "price": "92,000원"
+      },
+      {
+        "id": "naver_20260927_e5e287c34bd1d79c",
+        "name": "능이한방오리 한마리(포장)",
+        "price": "67,000원"
+      },
+      {
+        "id": "naver_20260927_9713d687706094d3",
+        "name": "토종닭도리탕 1마리",
+        "price": "53,000원"
+      },
+      {
+        "id": "naver_20260927_36634be70167e28e",
+        "name": "능이토종닭백숙 1마리",
+        "price": "65,000원"
+      },
+      {
+        "id": "naver_20260927_8fce120613fbce64",
+        "name": "능이한방오리 1마리",
+        "price": "70,000원"
+      },
+      {
+        "id": "naver_20260927_38b3db9e88214ce3",
+        "name": "토종닭도리탕 1마리반",
+        "price": "77,000원"
+      },
+      {
+        "id": "naver_20260927_28263e48e250fdd3",
+        "name": "능이토종닭백숙 1마리반",
+        "price": "95,000원"
+      },
+      {
+        "id": "naver_20260927_8f7a1f10087cac64",
+        "name": "능이한방오리 1마리반",
+        "price": "102,000원"
+      },
+      {
+        "id": "naver_20260927_9c4b43e9d4d24662",
+        "name": "찰밥",
+        "price": "3,000원"
+      },
+      {
+        "id": "naver_20260927_e7a84beee4544f6f",
+        "name": "볶음밥",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_a343083dc68d7ada",
+        "name": "삼계탕",
+        "price": "17,000원"
+      }
+    ],
+    "representativeMenu": "토종닭도리탕 한마리(포장) / 토종닭도리탕 한마리 반(포장) / 능이토종닭백숙 한마리(포장)",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/19866704/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_01d996824267": {
+    "menus": [
+      {
+        "id": "naver_20260927_2d20559a9b8e5ebc",
+        "name": "6개월 비법 숙성의 묵은지 김치찜",
+        "price": "11,500원",
+        "description": "\"서대문역맛집의 전설 그 시작의 요리. 6개월 비법 숙성 된 김치의 깊은 풍미! \""
+      },
+      {
+        "id": "naver_20260927_1373140bffc9a52e",
+        "name": "얼큰 시원하고 깊은 국물의 김치찌개",
+        "price": "11,500원",
+        "description": "\"얼큰 칼칼 국물에 숙성 김치의 킥! 밥순삭 보장. 두부와 돼지고기의 조화 예술\""
+      },
+      {
+        "id": "naver_20260927_8afa25e83123ed46",
+        "name": "언제나 옳은 치즈 계란말이",
+        "price": "11,500원",
+        "description": "\"치즈 폭탄 계란말이! 쫀득+크리미의 환상 조합\""
+      },
+      {
+        "id": "naver_20260927_73bce9fa672f97f8",
+        "name": "진한 육수의 등뼈 전골(대)",
+        "price": "49,000원",
+        "description": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\""
+      },
+      {
+        "id": "naver_20260927_572ac997e66679f1",
+        "name": "진한 육수의 등뼈 전골(소)",
+        "price": "39,000원",
+        "description": "\"푹 고아낸 등뼈와 채소가 조화로운 전골 요리. 한 입 먹으면 속까지 풀리는 푸짐함\""
+      },
+      {
+        "id": "naver_20260927_364b6c9294feda76",
+        "name": "매콤새콤한 돼지고기 수육무침(대)",
+        "price": "29,000원",
+        "description": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\""
+      },
+      {
+        "id": "naver_20260927_f48b93c3c2c66d72",
+        "name": "매콤새콤한 돼지고기 수육무침(소)",
+        "price": "21,000원",
+        "description": "\"매콤새콤 양념에 탱글한 수육! 아삭한 채소와 찰떡 조합\""
+      },
+      {
+        "id": "naver_20260927_240f47fee10c0e86",
+        "name": "남녀노소 좋아하는 떡갈비",
+        "price": "10,500원",
+        "description": "\"달짠 소스 듬뿍! 육즙 터지는 비주얼 폭발 한 입\""
+      },
+      {
+        "id": "naver_20260927_77a7688e034ab958",
+        "name": "한옥집 도시락",
+        "price": "15,000원",
+        "description": "\"한 끼 든든한 구성! 김치+고기+계란의 완벽한 밸런스\""
+      },
+      {
+        "id": "naver_20260927_33945e766ed57d50",
+        "name": "한옥집 김치(5kg)",
+        "price": "49,000원",
+        "description": "\"서대문김치찜의 모든 요리의 근간, 오리지널 숙성 김치, 비교 불가의 진한 킥\""
+      },
+      {
+        "id": "naver_20260927_e498ac7ec232657d",
+        "name": "◆ 김치찜 찜고기 추가 (대)",
+        "price": "11,500원",
+        "description": "한옥집 김치찜 추가 입니다."
+      },
+      {
+        "id": "naver_20260927_b11d46f850bc21d1",
+        "name": "◆ 김치찜 찜고기 추가 (소)",
+        "price": "6,500원",
+        "description": "한옥집 김치찜 찜고기 추가입니다."
+      },
+      {
+        "id": "naver_20260927_fa4460f68cc04688",
+        "name": "◆ 김치찌개 찌개고기 추가",
+        "price": "6,500원",
+        "description": "김치찌개 찌개고기 추가입니다."
+      },
+      {
+        "id": "naver_20260927_fb403bee7e8a00d9",
+        "name": "◆ 김치등뼈전골 등뼈 추가",
+        "price": "20,000원",
+        "description": "김치등뼈전골 등뼈 추가 입니다"
+      },
+      {
+        "id": "naver_20260927_7ee974f5cdcd84dc",
+        "name": "◆ 김치등뼈전골 김치 추가",
+        "price": "11,500원",
+        "description": "김치등뼈전골 김치추가입니다."
+      },
+      {
+        "id": "naver_20260927_f5f9b50756a44748",
+        "name": "공기밥",
+        "price": "1,000원"
+      },
+      {
+        "id": "naver_20260927_2b83165d77faedb3",
+        "name": "라면사리",
+        "price": "1,000원",
+        "description": "김치찌개 주문시 라면사리 처음 기본 제공. 이후 추가"
+      },
+      {
+        "id": "naver_20260927_45f486d79d32db30",
+        "name": "옹심이사리",
+        "price": "4,000원"
+      },
+      {
+        "id": "naver_20260927_6b96608bc9c6212d",
+        "name": "소주",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_4f01c25e2f952495",
+        "name": "막걸리",
+        "price": "5,000원"
+      },
+      {
+        "id": "naver_20260927_570c66f984911415",
+        "name": "맥주",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_003d1d319de1e111",
+        "name": "매화수",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_52bf5c95e93611e5",
+        "name": "청하",
+        "price": "6,000원"
+      },
+      {
+        "id": "naver_20260927_152cecc4717de00a",
+        "name": "복분자",
+        "price": "12,000원"
+      },
+      {
+        "id": "naver_20260927_b3fa570dc63f5828",
+        "name": "콜라",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_9841966257651beb",
+        "name": "사이다",
+        "price": "2,000원"
+      },
+      {
+        "id": "naver_20260927_bc62529dd7a834ae",
+        "name": "환타(파인)",
+        "price": "2,000원"
+      }
+    ],
+    "representativeMenu": "6개월 비법 숙성의 묵은지 김치찜 / 얼큰 시원하고 깊은 국물의 김치찌개 / 언제나 옳은 치즈 계란말이",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11593472/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_1a92f60a87f6": {
+    "menus": [
+      {
+        "id": "naver_20260927_04e1fbf2aa8f61e8",
+        "name": "의령망개떡12개",
+        "price": "10,000원",
+        "description": "의령망개떡12개10,000원입니다"
+      },
+      {
+        "id": "naver_20260927_62d16c7de90242e6",
+        "name": "20개",
+        "price": "15,000원",
+        "description": "의령망개떡 20개 15000원"
+      },
+      {
+        "id": "naver_20260927_86ffc33ed5740e5b",
+        "name": "40개",
+        "price": "30,000원",
+        "description": "40개 30000원"
+      },
+      {
+        "id": "naver_20260927_58b70167e2317876",
+        "name": "의령망개떡 1개",
+        "price": "1,000원"
+      },
+      {
+        "id": "naver_20260927_7162e778839858d5",
+        "name": "망개떡 6개",
+        "price": "5,000원",
+        "description": "의령망개떡 6개 5000원입니다."
+      }
+    ],
+    "representativeMenu": "의령망개떡12개 / 20개 / 40개",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11717036/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_c173b427d693": {
+    "menus": [
+      {
+        "id": "naver_20260927_f2d89fed8f9f1b0c",
+        "name": "애월샌드 2세트",
+        "price": "34,000원",
+        "description": "프리미엄수제쿠키, 고메버터, 2세트 20개입, 땅콩샌드 10개, 한라봉샌드 10개"
+      },
+      {
+        "id": "naver_20260927_993cc1ee77bfc92f",
+        "name": "애월샌드 1세트",
+        "price": "18,000원",
+        "description": "고급수제샌드,고메버터, 1세트 10개입, 땅콩샌드 5개, 한라봉샌드 5개, 2종류 택1"
+      },
+      {
+        "id": "naver_20260927_122548e999219b93",
+        "name": "현무암쌀빵",
+        "price": "6,900원",
+        "description": "제주 현무암을 형상화하여 쌀로 만들어 식감이 쫀득하고 건강을 생각한 애월빵공장의 시그니처빵"
+      },
+      {
+        "id": "naver_20260927_681107a373542252",
+        "name": "한라봉무스",
+        "price": "5,800원",
+        "description": "제주도 한라봉을 닮은 부드러움의 끝을 보여주며 새콤달콤함으로 무장한 무스케이크."
+      },
+      {
+        "id": "naver_20260927_a7ae67ffe7f1f566",
+        "name": "딸기팡도르",
+        "price": "7,800원",
+        "description": "최고급 버터와 달걀을 사용해 저온 숙성한 달콤함과 부드러움을 한번에 느낄 수 있는 빵"
+      },
+      {
+        "id": "naver_20260927_b02f92a8a7cb913e",
+        "name": "현무암쌀빵 3구 패키지",
+        "price": "19,000원",
+        "description": "애월빵공장카페의 시그니처빵인 현무암쌀빵의 선물 패키지. 다양한사이즈의 선물패키지가 있습니다"
+      },
+      {
+        "id": "naver_20260927_c38bb6357c5149b3",
+        "name": "딸기라떼",
+        "price": "7,500원"
+      },
+      {
+        "id": "naver_20260927_9d4412092c71b92e",
+        "name": "감귤쥬스",
+        "price": "8,000원",
+        "description": "제주의 신선한 한라봉감귤쥬스"
+      },
+      {
+        "id": "naver_20260927_27088e3ee237ab4f",
+        "name": "제주당근주스",
+        "price": "8,000원",
+        "description": "당근으로 가장 유명한 제주시 구좌읍으로 당근으로 만든 주스"
+      },
+      {
+        "id": "naver_20260927_3aaa54ea65e4edda",
+        "name": "한라봉에이드",
+        "price": "8,000원",
+        "description": "한라봉 본연의 맛이 듬뿍 느껴지는 에이드"
+      },
+      {
+        "id": "naver_20260927_f790f075958476a1",
+        "name": "히비스커스 유자티(hot)",
+        "price": "7,500원",
+        "description": "히비스커스 유자티-맛과 여유, 그리고 멋진 사진 한장"
+      },
+      {
+        "id": "naver_20260927_ee072c82e10a584e",
+        "name": "에메랄드비치에이드",
+        "price": "8,000원",
+        "description": "애월의 에메랄드 비치를 한잔에 담은 상큼한 시그니처 에이드"
+      }
+    ],
+    "representativeMenu": "애월샌드 2세트 / 애월샌드 1세트 / 현무암쌀빵",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1516216333/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_delicious-guys_a9894aaf4dda": {
+    "menus": [
+      {
+        "id": "naver_20260927_4ffe7f58223ef36f",
+        "name": "활어회 추천메뉴2인",
+        "price": "90,000원",
+        "description": "구성: 활어회, 쓰끼다시, 만세튀김, 물회, 매운탕, 라면사리 또는 칼국수사리. 매운탕은 요청 시 제공. 활어회는 계절에 따라 변경될 수 있음."
+      },
+      {
+        "id": "naver_20260927_16344bba78176278",
+        "name": "몽땅조개구이스페셜2인(포장불가)",
+        "price": "75,000원",
+        "description": "포장불가. 구성: 조개구이, 전복, 만세튀김, 떡볶이, 오징어, 후식 칼국수."
+      },
+      {
+        "id": "naver_20260927_09024c651f1d67d9",
+        "name": "게국지세트3인",
+        "price": "80,000원",
+        "description": "구성: 게국지, 간장게장 1마리, 양념게장. 공기밥 포함."
+      },
+      {
+        "id": "naver_20260927_8a3411bb9047d664",
+        "name": "주말제철세트메뉴2인",
+        "price": "90,000원",
+        "description": "구성: 방어 또는 광어, 만세튀김, 물회, 매운탕, 라면사리 또는 칼국수사리. 매운탕은 요청 시 제공. 활어회는 계절에 따라 변경될 수 있음."
+      },
+      {
+        "id": "naver_20260927_55bee5661d9965f2",
+        "name": "회+대하구이 세트2인(포장불가)",
+        "price": "120,000원",
+        "description": "포장불가. 구성: 활어회, 냉동 대하구이, 쓰끼다시, 매운탕. 산대하 변경 20,000원 추가. 매운탕을 게국지로 변경 시 20,000원 추가."
+      },
+      {
+        "id": "naver_20260927_0f0db05badb41588",
+        "name": "조개+대하구이세트2인(포장불가)",
+        "price": "99,000원",
+        "description": "포장불가. 구성: 조개구이, 냉동 대하구이, 만세튀김, 회덮밥 1개."
+      },
+      {
+        "id": "naver_20260927_1db6d572e44d7bdc",
+        "name": "대한 스페셜 세트2인(포장불가)",
+        "price": "150,000원",
+        "description": "포장불가. 구성: 활어회, 냉동 대하구이, 쓰끼다시, 조개구이 또는 조개찜, 매운탕."
+      },
+      {
+        "id": "naver_20260927_5a476ee732db1489",
+        "name": "모듬튀김",
+        "price": "17,000원",
+        "description": "구성: 베이비꽃게, 꽃게튀김, 고구마튀김, 새우튀김, 오징어튀김."
+      }
+    ],
+    "representativeMenu": "활어회 추천메뉴2인 / 몽땅조개구이스페셜2인(포장불가) / 게국지세트3인",
+    "menuPriceStatus": "naver-order-partial-takeout-selected-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 주문 화면 표시 가격 (포장 선택·매장 가격 미확인)",
+        "url": "https://m.booking.naver.com/order/bizes/243302/items/5514475?theme=place&refererCode=menutab&lang=ko&area=ple"
+      }
+    ],
+    "menuPriceNote": "네이버 주문 화면에서 포장 탭을 선택한 상태의 표시 가격이며 매장 가격과 동일한지 확인되지 않았습니다. · 주문 화면에서 확인된 일부 메뉴이며 품절 메뉴는 포함하지 않았습니다. · 상품명에 포장불가가 명시된 항목은 해당 조건을 그대로 유지했습니다."
+  },
+  "topic_enrichment_michelin-1-star_d4132c79cb30": {
+    "menus": [
+      {
+        "id": "naver_20260927_b00fdfc53bfaa361",
+        "name": "오마카세",
+        "price": "가격 변동",
+        "description": "고정 금액 미표시. 주문 전 가격 확인 필요."
+      }
+    ],
+    "representativeMenu": "오마카세",
+    "menuPriceStatus": "naver-current-variable-price-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 변동 가격 메뉴",
+        "url": "https://pcmap.place.naver.com/restaurant/1618063021/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 메뉴판에 고정 금액 없이 가격 변동으로 표시된 메뉴입니다. 0원이 아니며 주문 전 현재 가격 확인이 필요합니다."
+  },
+  "topic_enrichment_michelin-bib-gourmand_1ab13c29ad2a": {
+    "menus": [
+      {
+        "id": "naver_20260927_bb85fcf8d41de574",
+        "name": "따로국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_7bcb4d4606dc8f39",
+        "name": "수육백반",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_58484e02ca13ec2f",
+        "name": "수육 대",
+        "price": "50,000원"
+      },
+      {
+        "id": "naver_20260927_9159a5588fe2eb5d",
+        "name": "수육 소",
+        "price": "45,000원"
+      },
+      {
+        "id": "naver_20260927_baf6f9eaaf12056f",
+        "name": "섞어따로국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_771305ec53fc90d7",
+        "name": "내장따로국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_19890f063ef5a7ef",
+        "name": "순대따로국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_e2fb6d06b34757cd",
+        "name": "모듬따로국밥",
+        "price": "13,000원"
+      },
+      {
+        "id": "naver_20260927_8bc55d1c1c4e915b",
+        "name": "순대 소",
+        "price": "35,000원"
+      },
+      {
+        "id": "naver_20260927_59b13b01948d25ba",
+        "name": "순대 대",
+        "price": "40,000원"
+      }
+    ],
+    "representativeMenu": "따로국밥 / 수육백반 / 수육 대",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/11872316/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_michelin-selected_a9953d60b184": {
+    "menus": [
+      {
+        "id": "naver_20260927_39555818572a111a",
+        "name": "와인",
+        "price": "가격 변동",
+        "description": "고정 금액 미표시. 주문 전 가격 확인 필요."
+      }
+    ],
+    "representativeMenu": "와인",
+    "menuPriceStatus": "naver-current-variable-price-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 변동 가격 메뉴",
+        "url": "https://m.place.naver.com/restaurant/1178835898/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 메뉴판에 고정 금액 없이 가격 변동으로 표시된 메뉴입니다. 0원이 아니며 주문 전 현재 가격 확인이 필요합니다."
+  },
+  "mogeultende_1e6e35c19f83": {
+    "menus": [
+      {
+        "id": "naver_20260927_12979be8a3f5ecc8",
+        "name": "전복죽 한마리",
+        "price": "20,000원"
+      },
+      {
+        "id": "naver_20260927_bcffc684ee8a7e14",
+        "name": "전복회 한마리",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_49162e03a2139ce7",
+        "name": "전복구이 한마리",
+        "price": "15,000원"
+      },
+      {
+        "id": "naver_20260927_dc0b5b9bbbcfb91a",
+        "name": "전복버터구이 한마리",
+        "price": "15,000원"
+      }
+    ],
+    "representativeMenu": "전복죽 한마리 / 전복회 한마리 / 전복구이 한마리",
+    "menuPriceStatus": "naver-current-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 현재 메뉴",
+        "url": "https://m.place.naver.com/restaurant/13499059/menu"
+      }
+    ],
+    "menuPriceNote": "2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
+  },
+  "topic_enrichment_ttoganjip_c9f1e4066d53": {
+    "menus": [
+      {
+        "id": "naver_20260927_2664c697284c03fa",
+        "name": "짜장밥",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_9b0a21a99a4b4de7",
+        "name": "새우볶음밥",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_0991df093808fb01",
+        "name": "짜장밥곱빼기",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_751f0b84fa66c924",
+        "name": "새우볶음밥곱빼기",
+        "price": "11,000원"
+      },
+      {
+        "id": "naver_20260927_d843e7e59a1e65af",
+        "name": "맑은짬뽕밥",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_87dccfc6acd2b862",
+        "name": "울트라짬뽕",
+        "price": "9,000원"
+      },
+      {
+        "id": "naver_20260927_468b1b0dd3bada7a",
+        "name": "울트라짜장면",
+        "price": "7,000원"
+      },
+      {
+        "id": "naver_20260927_4abc574ef4a7cd43",
+        "name": "짬뽕밥",
+        "price": "9,000원"
+      }
+    ],
+    "representativeMenu": "짜장밥 / 새우볶음밥 / 짜장밥곱빼기",
+    "menuPriceStatus": "admin-verified-naver-menu-2026-09-27",
+    "menuPriceVerifiedAt": "2026-09-27",
+    "menuPriceSources": [
+      {
+        "label": "네이버 플레이스 메뉴 관리자 재조회",
+        "url": "https://pcmap.place.naver.com/restaurant/205701181/menu"
+      }
+    ],
+    "menuPriceNote": "관리자 재조회에서 메뉴 8개와 가격 표시가 정상임을 확인했다. 짬뽕밥은 9,000원이다. · 2026-09-27 공개 화면의 가격·수량·구성 조건 스냅샷이며 방문 또는 주문 전 재확인이 필요합니다."
   }
 }

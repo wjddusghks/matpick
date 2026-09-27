@@ -884,6 +884,7 @@ export const EXACT_MENU_TRANSLATIONS: Readonly<Record<string, string>> = {
  * avoid uncertain species: ambiguous house words remain romanized.
  */
 export const MENU_LEXICON: Readonly<Record<string, string>> = {
+  "리조또": "risotto",
   // Multi-word culinary forms (longest match wins).
   "숯불구이": "charcoal-grilled", "소금구이": "salt-grilled", "양념구이": "seasoned grilled",
   "간장구이": "soy-glazed grilled", "직화구이": "flame-grilled", "화로구이": "brazier-grilled",
@@ -1114,6 +1115,7 @@ function normalizeSource(value: string) {
 
 function translateMetadata(value: string) {
   return value
+    .replace(/^巨大\s*(?=양념갈비)/, "Geodae ")
     .replace(/([\d,]+)\s*(?:원)?\s*~\s*([\d,]+)\s*원/g, "₩$1–₩$2")
     .replace(/([\d,]+)\s*원/g, "₩$1")
     .replace(/(\d+)\s*인\s*이상/g, "for $1+ people")

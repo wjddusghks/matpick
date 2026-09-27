@@ -6,12 +6,12 @@ Generated from `client/src/data/generated/public-dataset.json`. The report count
 | --- | ---: | ---: |
 | Total | 39,000 | 25,369 |
 | Reviewed exact phrase | 9,393 | 844 |
-| Fully semantic | 23,096 (59.65%) | 10,339 (41.16%) |
-| Partial semantic + romanized remainder | 13,307 | 12,625 |
-| Romanized only / unresolved | 2,318 | 2,154 |
+| Fully semantic | 23,106 (59.67%) | 10,349 (41.2%) |
+| Partial semantic + romanized remainder | 13,304 | 12,622 |
+| Romanized only / unresolved | 2,311 | 2,147 |
 | Already non-Korean | 279 | 251 |
 
-Semantic translation appears in 94.01% of Korean menu rows and covers 68.9% of Hangul characters. Romanization is not counted as translation.
+Semantic translation appears in 94.03% of Korean menu rows and covers 68.94% of Hangul characters. Romanization is not counted as translation.
 
 ## Highest-frequency unresolved names
 

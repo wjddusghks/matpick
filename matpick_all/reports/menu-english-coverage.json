@@ -9,30 +9,30 @@
   "rowCoverage": {
     "total": 39000,
     "exact": 9393,
-    "fullSemantic": 23096,
-    "partialSemantic": 13307,
-    "romanizedOnly": 2318,
+    "fullSemantic": 23106,
+    "partialSemantic": 13304,
+    "romanizedOnly": 2311,
     "nonKorean": 279,
-    "withSemanticTranslation": 36403,
+    "withSemanticTranslation": 36410,
     "hangulCharacters": 237743,
-    "semanticallyTranslatedHangulCharacters": 163809,
-    "semanticRowPercent": 94.01,
-    "fullSemanticPercent": 59.65,
-    "semanticCharacterPercent": 68.9
+    "semanticallyTranslatedHangulCharacters": 163902,
+    "semanticRowPercent": 94.03,
+    "fullSemanticPercent": 59.67,
+    "semanticCharacterPercent": 68.94
   },
   "uniqueNameCoverage": {
     "total": 25369,
     "exact": 844,
-    "fullSemantic": 10339,
-    "partialSemantic": 12625,
-    "romanizedOnly": 2154,
+    "fullSemantic": 10349,
+    "partialSemantic": 12622,
+    "romanizedOnly": 2147,
     "nonKorean": 251,
-    "withSemanticTranslation": 22964,
+    "withSemanticTranslation": 22971,
     "hangulCharacters": 182866,
-    "semanticallyTranslatedHangulCharacters": 112506,
-    "semanticRowPercent": 91.42,
-    "fullSemanticPercent": 41.16,
-    "semanticCharacterPercent": 61.52
+    "semanticallyTranslatedHangulCharacters": 112599,
+    "semanticRowPercent": 91.45,
+    "fullSemanticPercent": 41.2,
+    "semanticCharacterPercent": 61.57
   },
   "topUnresolvedSegments": [
     {
@@ -493,10 +493,6 @@
     },
     {
       "segment": "레몬",
-      "rows": 29
-    },
-    {
-      "segment": "리조또",
       "rows": 29
     },
     {
@@ -1233,6 +1229,10 @@
     },
     {
       "segment": "부채살",
+      "rows": 15
+    },
+    {
+      "segment": "블루베리",
       "rows": 15
     }
   ],

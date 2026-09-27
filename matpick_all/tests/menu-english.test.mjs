@@ -31,10 +31,12 @@ test("frequent complete dishes use conventional semantic English names", () => {
     ["대패삼겹살", "thin-sliced pork belly"],
     ["생강차", "ginger tea"],
     ["전복 리조또", "abalone risotto"],
+    ["전복리조또", "abalone risotto"],
     ["후토마키(반줄)", "futomaki (half roll)"],
     ["안거미", "angeomi beef cut"],
     ["짝갈비살", "paired rib meat"],
     ["巨大 양념갈비", "Geodae marinated short ribs"],
+    ["巨大 양념갈비(240g)", "Geodae marinated short ribs (240g)"],
   ]);
 
   for (const [korean, english] of cases) {

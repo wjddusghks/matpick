@@ -1236,11 +1236,11 @@ export default function Home() {
 
     const deletedCount = deleteTopics(selectedTopicIdsForDelete);
     if (deletedCount > 0) {
-      toast.success(`${deletedCount}개의 주제를 삭제했어요.`);
+      toast.success(isEnglish ? `${deletedCount} collections deleted.` : `${deletedCount}개의 주제를 삭제했어요.`);
     }
     setSelectedTopicIdsForDelete([]);
     setIsTopicDeleteMode(false);
-  }, [deleteTopics, selectedTopicIdsForDelete]);
+  }, [deleteTopics, selectedTopicIdsForDelete, isEnglish]);
 
   const handleOpenTopicPage = useCallback(
     (topicId: string) => {
@@ -1615,7 +1615,7 @@ export default function Home() {
                         onClick={() => setShowTopicDialog(true)}
                         className="inline-flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border border-[#ffd2d8] bg-white px-4 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff2f4] sm:min-w-[160px] sm:flex-1"
                       >
-                        <Plus className="h-4 w-4" />내 주제 추가하기
+                        <Plus className="h-4 w-4" />{isEnglish ? "Create a collection" : "내 주제 추가하기"}
                       </button>
                       {topics.length > 0 ? (
                         <button
@@ -1631,15 +1631,14 @@ export default function Home() {
                           }`}
                         >
                           <Trash2 className="h-4 w-4" />
-                          {isTopicDeleteMode ? "삭제 취소" : "주제 삭제하기"}
+                          {isTopicDeleteMode ? (isEnglish ? "Cancel" : "삭제 취소") : (isEnglish ? "Delete collections" : "주제 삭제하기")}
                         </button>
                       ) : null}
                     </div>
 
                     {topics.length === 0 ? (
                       <p className="mt-3 text-xs leading-5 text-[#8d8d8d]">
-                        아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행,
-                        혼밥 같은 테마별로 나눠보세요.
+                        {isEnglish ? "No collections yet. Organize saved restaurants for dates, trips, or solo meals." : "아직 만든 주제가 없어요. 저장한 맛집을 데이트, 여행, 혼밥 같은 테마별로 나눠보세요."}
                       </p>
                     ) : (
                       <div className="mt-3 space-y-2">
@@ -1677,7 +1676,7 @@ export default function Home() {
                                     toggleTopicDeleteSelection(topic.id)
                                   }
                                   className="flex h-6 w-6 items-center justify-center rounded-full text-[#ff6b7b]"
-                                  aria-label={`${topic.name} 삭제 선택`}
+                                  aria-label={isEnglish ? `Select ${romanizeKoreanText(topic.name)} for deletion` : `${topic.name} 삭제 선택`}
                                 >
                                   {selectedTopicIdsForDelete.includes(
                                     topic.id
@@ -1691,8 +1690,7 @@ export default function Home() {
                               <FavoriteTopicBadge topic={topic} />
                             </div>
                             <span className="flex-shrink-0 text-xs font-semibold text-[#8a8a8a]">
-                              저장된 식당 : {getTopicRestaurantCount(topic.id)}
-                              곳
+                              {isEnglish ? `${getTopicRestaurantCount(topic.id)} saved restaurants` : `저장된 식당 : ${getTopicRestaurantCount(topic.id)}곳`}
                             </span>
                           </div>
                         ))}
@@ -1707,7 +1705,7 @@ export default function Home() {
                           disabled={selectedTopicIdsForDelete.length === 0}
                           className="inline-flex h-10 w-full items-center justify-center rounded-full bg-[#ff6b7b] text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-45"
                         >
-                          선택한 주제 삭제하기{" "}
+                          {isEnglish ? "Delete selected collections" : "선택한 주제 삭제하기"}{" "}
                           {selectedTopicIdsForDelete.length > 0
                             ? `(${selectedTopicIdsForDelete.length})`
                             : ""}

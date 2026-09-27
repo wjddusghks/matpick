@@ -64,7 +64,21 @@ import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import { getLocalizedAddress, getLocalizedDiscoveryTitle, getLocalizedEditorialSummary, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedCreatorName,
+  getLocalizedDiscoveryTitle,
+  getLocalizedEditorialSummary,
+  getLocalizedEpisodeLabel,
+  getLocalizedMenuName,
+  getLocalizedPriceText,
+  getLocalizedRegion,
+  getLocalizedRestaurantName,
+  getLocalizedSourceName,
+  romanizeKoreanText,
+  translateCuisineLabel,
+  type AppLocale,
+} from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 import {
@@ -260,7 +274,7 @@ const EXPLORE_COPY = {
     topicLine: (topic: DiscoveryTopic) =>
       `You are browsing restaurants curated under ${getLocalizedDiscoveryTitle(topic.name, "en")}.`,
     episodeLine: (episode: DiscoveryTopicEpisode) =>
-      `You are browsing only the restaurants featured in ${romanizeKoreanText(episode.episode)}.`,
+      `You are browsing only the restaurants featured in ${getLocalizedEpisodeLabel(episode.episode, "en")}.`,
     topicShortcutLabel: "Topic shortcuts",
     topicHeading: "My topics",
     episodeHeading: "Episodes",
@@ -331,6 +345,15 @@ function getEpisodeCardTitle(episode: DiscoveryTopicEpisode) {
   return title.replace(/^\[[^\]]+\]\s*/, "").trim() || episode.episode;
 }
 
+function getLocalizedEpisodeTitle(episode: DiscoveryTopicEpisode, locale: AppLocale) {
+  if (locale === "ko") return getEpisodeDisplayTitle(episode);
+  return getLocalizedEditorialSummary(
+    getEpisodeDisplayTitle(episode),
+    locale,
+    getLocalizedEpisodeLabel(episode.episode, locale)
+  );
+}
+
 function getEpisodeCardPalette(index: number) {
   return EPISODE_CARD_PALETTES[index % EPISODE_CARD_PALETTES.length];
 }
@@ -362,17 +385,21 @@ function buildEpisodeStorySlides({
       getLocalizedAddress(restaurant.address, locale) ||
       (locale === "en" ? "Restaurant details are coming soon." : "식당 정보를 정리 중입니다."),
     tags: [
-      restaurant.category || (locale === "en" ? "Restaurant" : "맛집"),
-      getRestaurantPrimaryPrice(restaurant) || restaurant.region || "",
+      restaurant.category
+        ? translateCuisineLabel(restaurant.category, locale)
+        : (locale === "en" ? "Restaurant" : "맛집"),
+      getLocalizedPriceText(getRestaurantPrimaryPrice(restaurant), locale) ||
+        getLocalizedRegion(restaurant.region, locale) ||
+        "",
     ].filter(Boolean),
     background: getEpisodeCardPalette(index + 1),
-    imageUrl: getRestaurantDisplayImage(restaurant).src,
+    imageUrl: getRestaurantDisplayImage(restaurant, { locale }).src,
   }));
 
   return [
     {
       id: "cover",
-      eyebrow: `${getLocalizedDiscoveryTitle(topic.name, locale)} ${locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}`,
+      eyebrow: `${getLocalizedDiscoveryTitle(topic.name, locale)} ${getLocalizedEpisodeLabel(episode.episode, locale)}`,
       title: getLocalizedEditorialSummary(
         getEpisodeCardTitle(episode),
         locale,
@@ -768,7 +795,7 @@ function EpisodeCollectionCard({
       }}
       className="group relative aspect-[2/3] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
       style={{ background: getEpisodeCardPalette(index) }}
-      aria-label={`${locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
+      aria-label={`${getLocalizedEpisodeLabel(episode.episode, locale)} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
       {mainImageUrl ? (
         <img
@@ -788,7 +815,7 @@ function EpisodeCollectionCard({
       ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
         <div>
-          <p className="text-sm font-black leading-5 text-white/80">{locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}</p>
+          <p className="text-sm font-black leading-5 text-white/80">{getLocalizedEpisodeLabel(episode.episode, locale)}</p>
           <h3 className="mt-8 break-keep text-[28px] font-black leading-[1.08] tracking-normal sm:text-[31px]">
             {getLocalizedEditorialSummary(getEpisodeCardTitle(episode), locale, "Episode restaurant highlights")}
           </h3>
@@ -910,7 +937,7 @@ function EpisodeStoryModal({
     try {
       if (navigator.share) {
         await navigator.share({
-          title: getEpisodeDisplayTitle(episode),
+          title: getLocalizedEpisodeTitle(episode, locale),
           text: getLocalizedEditorialSummary(episode.description, locale, `${episode.count} featured restaurants.`),
           url: shareUrl,
         });
@@ -995,7 +1022,7 @@ function EpisodeStoryModal({
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-label={getEpisodeDisplayTitle(episode)}
+      aria-label={getLocalizedEpisodeTitle(episode, locale)}
     >
       <div
         className="relative h-[min(740px,calc(100vh-2rem))] w-full max-w-[720px] overflow-hidden rounded-[24px] bg-[#070b10] shadow-[0_28px_90px_rgba(0,0,0,0.32)]"
@@ -1130,7 +1157,7 @@ function EpisodeStoryModal({
 
         <div className="pointer-events-none absolute bottom-5 left-5 z-20 max-w-[360px] text-left sm:left-6">
           <p className="line-clamp-1 text-xs font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-            {getLocalizedDiscoveryTitle(topic.name, locale)} · {locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
+            {getLocalizedDiscoveryTitle(topic.name, locale)} · {getLocalizedEpisodeLabel(episode.episode, locale)}
           </p>
         </div>
 
@@ -1150,7 +1177,7 @@ function EpisodeStoryModal({
                     {locale === "en" ? "Comments" : "댓글"} {comments.length}
                   </p>
                   <p className="mt-1 line-clamp-1 text-xs font-semibold text-white/55">
-                    {locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
+                    {getLocalizedEpisodeLabel(episode.episode, locale)}
                   </p>
                 </div>
                 <button
@@ -1322,7 +1349,7 @@ function buildSeoContent({
       : romanizeKoreanText(rawTopicKeyword)
     : rawTopicKeyword;
   const episodeKeyword = presetEpisode
-    ? locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode
+    ? getLocalizedEpisodeLabel(presetEpisode.episode, locale)
     : "";
 
   if (presetEpisode && presetTopic) {
@@ -1550,7 +1577,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         breadcrumbItems.push({
           "@type": "ListItem",
           position: 4,
-          name: locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode,
+          name: getLocalizedEpisodeLabel(presetEpisode.episode, locale),
           item: buildAbsoluteUrl(presetEpisode.path),
         });
       }
@@ -1894,8 +1921,8 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               className="text-xl font-bold tracking-[-0.03em]"
               style={{ fontFamily: "'Black Han Sans', sans-serif" }}
             >
-              <span className="text-[#111111]">맛</span>
-              <span className="text-[#ff7b83]">픽</span>
+              <span className="text-[#111111]">{locale === "en" ? "Mat" : "맛"}</span>
+              <span className="text-[#ff7b83]">{locale === "en" ? "pick" : "픽"}</span>
             </span>
           </button>
 
@@ -2061,7 +2088,12 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 {additionalDiscoveryOptions.map((option) => (
                   <SourceAvatarButton
                     key={option.key}
-                    option={locale === "en" ? { ...option, name: romanizeKoreanText(option.name) } : option}
+                    option={locale === "en" ? {
+                      ...option,
+                      name: option.kind === "source"
+                        ? getLocalizedSourceName(option.name, locale)
+                        : getLocalizedCreatorName(option.name, locale),
+                    } : option}
                     selected={selectedDiscoveryKeys.includes(option.key)}
                     onClick={() => toggleDiscovery(option.key)}
                     fallbackLabel={copy.allLabel}
@@ -2085,7 +2117,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                         : "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd1d7] hover:text-[#ff7b83]"
                     }`}
                   >
-                    <span>{presetEpisode ? (locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode) : copy.allLabel}</span>
+                    <span>{presetEpisode ? getLocalizedEpisodeLabel(presetEpisode.episode, locale) : copy.allLabel}</span>
                     <span className="text-[11px] text-[#b58f95]">
                       {isEpisodeMenuOpen
                         ? copy.episodeClose
@@ -2113,7 +2145,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                         {topicEpisodes.map((episode) => (
                           <FilterChip
                             key={episode.slug}
-                            label={locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
+                            label={getLocalizedEpisodeLabel(episode.episode, locale)}
                             selected={presetEpisode?.slug === episode.slug}
                             onClick={() => {
                               setIsEpisodeMenuOpen(false);
@@ -2203,7 +2235,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
               {regions.map((region) => (
                 <FilterChip
                   key={region}
-                  label={region}
+                  label={getLocalizedRegion(region, locale)}
                   tone="peach"
                   selected={selectedRegion === region}
                   onClick={() => handleRegionSelect(region)}

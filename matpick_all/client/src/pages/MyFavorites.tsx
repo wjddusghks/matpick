@@ -17,7 +17,15 @@ import { getDisplayName } from "@/lib/authProfile";
 import {
   type FavoriteTopic,
 } from "@/lib/favoriteTopics";
-import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedMenuName,
+  getLocalizedRestaurantName,
+  hasKoreanText,
+  romanizeKoreanText,
+  translateCuisineLabel,
+  type AppLocale,
+} from "@/lib/locale";
 import {
   formatRestaurantBroadcastBadge,
   formatRestaurantFoundingBadge,
@@ -133,7 +141,9 @@ function FavoriteRestaurantCard({
   locale: AppLocale;
   ui: MyFavoritesCopy;
 }) {
-  const displayImage = getRestaurantDisplayImage(restaurant);
+  const displayName = getLocalizedRestaurantName(restaurant.name, locale);
+  const displayAddress = getLocalizedAddress(restaurant.address || restaurant.region, locale);
+  const displayImage = getRestaurantDisplayImage(restaurant, { locale });
   const cuisineLabel = restaurant.category
     ? translateCuisineLabel(restaurant.category, locale)
     : "";
@@ -150,7 +160,7 @@ function FavoriteRestaurantCard({
           <div className="relative aspect-[16/10] overflow-hidden">
             <img
               src={displayImage.src}
-              alt={restaurant.name}
+              alt={displayName}
               className="h-full w-full object-cover"
             />
             {!displayImage.hasPhoto ? (
@@ -169,14 +179,14 @@ function FavoriteRestaurantCard({
           </div>
 
           <div className="p-5">
-            <h2 className="text-lg font-bold text-[#1b1b1b]">{restaurant.name}</h2>
+            <h2 className="text-lg font-bold text-[#1b1b1b]">{displayName}</h2>
             <p className="mt-1 text-sm text-[#878787]">
-              {restaurant.address || restaurant.region || ui.addressPending}
+              {displayAddress || ui.addressPending}
             </p>
 
             {restaurant.representativeMenu ? (
               <p className="mt-3 line-clamp-1 text-sm font-medium text-[#ff6b6b]">
-                {ui.representativeMenu} {restaurant.representativeMenu}
+                {ui.representativeMenu} {getLocalizedMenuName(restaurant.representativeMenu, locale)}
               </p>
             ) : null}
 
@@ -271,6 +281,7 @@ export default function MyFavorites() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { isLoggedIn, user } = useAuth();
   const { locale } = useLocale();
+  const isEnglish = locale === "en";
   const {
     favorites,
     topics,
@@ -411,8 +422,8 @@ export default function MyFavorites() {
               className="text-2xl font-black tracking-[-0.08em]"
               style={{ fontFamily: "'Black Han Sans', sans-serif" }}
             >
-              <span className="text-[#111111]">맛</span>
-              <span className="text-[#ff7b83]">픽</span>
+              <span className="text-[#111111]">{isEnglish ? "Mat" : "맛"}</span>
+              <span className="text-[#ff7b83]">{isEnglish ? "pick" : "픽"}</span>
             </span>
           </Link>
         </div>
@@ -423,7 +434,7 @@ export default function MyFavorites() {
           className="inline-flex items-center gap-2 rounded-full border border-[#ece7e8] bg-white px-4 py-2 text-sm font-semibold text-[#555] transition hover:border-[#ffd0d5] hover:bg-[#fff8f9]"
         >
           <CircleUserRound className="h-4 w-4 text-[#ff7b83]" />
-          <span>{getDisplayName(user)}</span>
+          <span>{isEnglish && hasKoreanText(getDisplayName(user)) ? romanizeKoreanText(getDisplayName(user)) : getDisplayName(user)}</span>
         </button>
       </nav>
 
@@ -525,7 +536,7 @@ export default function MyFavorites() {
                 {topicSections.map((section) => (
                   <FavoritesSection
                     key={section.topic.id}
-                    title={section.topic.name}
+                    title={isEnglish && hasKoreanText(section.topic.name) ? romanizeKoreanText(section.topic.name) : section.topic.name}
                     description={ui.topicSectionDescription}
                     restaurants={section.restaurants}
                     userId={user.id}
@@ -551,7 +562,7 @@ export default function MyFavorites() {
 
             {activeView === "topic" && selectedTopicSection ? (
               <FavoritesSection
-                title={selectedTopicSection.topic.name}
+                title={isEnglish && hasKoreanText(selectedTopicSection.topic.name) ? romanizeKoreanText(selectedTopicSection.topic.name) : selectedTopicSection.topic.name}
                 description={ui.selectedTopicDescription}
                 restaurants={selectedTopicSection.restaurants}
                 userId={user.id}

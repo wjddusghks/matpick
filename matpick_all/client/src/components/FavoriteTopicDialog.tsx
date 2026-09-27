@@ -19,6 +19,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useLocale } from "@/contexts/LocaleContext";
+import { hasKoreanText, romanizeKoreanText } from "@/lib/locale";
 
 export function FavoriteTopicBadge({
   topic,
@@ -28,6 +29,10 @@ export function FavoriteTopicBadge({
   active?: boolean;
 }) {
   const tone = getFavoriteTopicTone(topic.colorKey);
+  const { isEnglish } = useLocale();
+  const displayName = isEnglish && hasKoreanText(topic.name)
+    ? romanizeKoreanText(topic.name)
+    : topic.name;
 
   return (
     <span
@@ -36,7 +41,7 @@ export function FavoriteTopicBadge({
       }`}
     >
       <span>{getFavoriteTopicIconSymbol(topic.iconKey)}</span>
-      <span className="truncate">{topic.name}</span>
+      <span className="truncate">{displayName}</span>
     </span>
   );
 }

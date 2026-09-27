@@ -20,7 +20,7 @@ import {
   hasUsableCoordinates,
   isRestaurantRecommendable,
 } from "@/lib/restaurantEligibility";
-import { getLocalizedAddress, getLocalizedMenuName, getLocalizedRestaurantName, translateCuisineLabel } from "@/lib/locale";
+import { getLocalizedAddress, getLocalizedMenuName, getLocalizedRestaurantName, getLocalizedSourceName, translateCuisineLabel } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
 
 export default function RecommendationCard({
@@ -177,7 +177,7 @@ export default function RecommendationCard({
           open
           onClose={() => setShareOpen(false)}
           title={getLocalizedRestaurantName(restaurant.name, locale)}
-          text={labels.join(" · ")}
+          text={labels.map(label => getLocalizedSourceName(label, locale)).join(" · ")}
           url={buildAbsoluteUrl(
             `/restaurant/${encodeURIComponent(restaurant.id)}`
           )}

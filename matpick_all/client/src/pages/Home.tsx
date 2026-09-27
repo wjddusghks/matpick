@@ -41,7 +41,19 @@ import siteMetadata from "@/data/siteMetadata.json";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import { getLocalizedAddress, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedCreatorName,
+  getLocalizedRegion,
+  getLocalizedRestaurantName,
+  getLocalizedSearchLabel,
+  getLocalizedSearchDetail,
+  getLocalizedSourceName,
+  getLocalizedSubscriberCount,
+  hasKoreanText,
+  romanizeKoreanText,
+  translateCuisineLabel,
+} from "@/lib/locale";
 import {
   getMapCollectionPath,
   type MapCollectionTopic,
@@ -539,31 +551,51 @@ function SearchResultItem({
 
   if (item.type === "query") {
     accentLabel =
-      item.matchLabel ??
+      getLocalizedSearchLabel(item.matchLabel, locale) ||
       (ui.foodLabel === "Cuisine" ? "All matches" : "통합 검색");
     detailText =
-      item.matchedText ??
-      `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}개`;
+      getLocalizedSearchDetail(item.matchedText, item.matchLabel, locale) ||
+      (isEnglish
+        ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+        : `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}개`);
   } else if (item.type === "creator") {
     accentLabel = item.platform ?? "Creator";
-    detailText = `${ui.subscriberPrefix}${item.subscribers ?? "-"}`;
+    detailText = `${ui.subscriberPrefix}${item.subscribers ? getLocalizedSubscriberCount(item.subscribers, locale) : "-"}`;
   } else if (item.type === "region") {
-    accentLabel = item.parentRegion ?? ui.regionLabel;
-    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+    accentLabel = item.parentRegion ? getLocalizedRegion(item.parentRegion, locale) : ui.regionLabel;
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "food") {
     accentLabel = ui.foodLabel;
-    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else if (item.type === "source") {
     accentLabel =
-      item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
-    detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
+      getLocalizedSearchLabel(item.sourceTypeLabel, locale) || (ui.foodLabel === "Cuisine" ? "Source" : "출처");
+    detailText = isEnglish
+      ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
+      : `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
     accentLabel = item.matchLabel ?? (item.category ? translateCuisineLabel(item.category, locale) : ui.restaurantLabel);
-    detailText = getLocalizedAddress(item.matchedText ?? item.address ?? "", locale);
+    detailText = getLocalizedSearchDetail(
+      item.matchedText ?? item.address ?? "",
+      item.matchLabel,
+      locale
+    );
   }
   const displayName = item.type === "restaurant"
     ? getLocalizedRestaurantName(item.name, locale)
-    : isEnglish ? romanizeKoreanText(item.name) : item.name;
+    : item.type === "source"
+      ? getLocalizedSourceName(item.name, locale)
+      : item.type === "creator"
+        ? getLocalizedCreatorName(item.name, locale)
+        : item.type === "region"
+          ? getLocalizedRegion(item.name, locale)
+          : item.type === "food"
+            ? translateCuisineLabel(item.name, locale)
+            : getLocalizedSearchLabel(item.name, locale);
 
   return (
     <div
@@ -840,7 +872,10 @@ export default function Home() {
   const { isLoggedIn, user, logout } = useAuth();
   const { favoritesCount, topics, deleteTopics, getTopicRestaurantCount } =
     useFavorites();
-  const userDisplayName = getDisplayName(user);
+  const rawUserDisplayName = getDisplayName(user);
+  const userDisplayName = isEnglish && hasKoreanText(rawUserDisplayName)
+    ? romanizeKoreanText(rawUserDisplayName)
+    : rawUserDisplayName;
   const isAdmin = isAdminUser(user);
   const providerLabel =
     user?.provider === "kakao"
@@ -871,8 +906,8 @@ export default function Home() {
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "맛픽",
-        alternateName: "Matpick",
+        name: isEnglish ? "Matpick" : "맛픽",
+        alternateName: isEnglish ? undefined : "Matpick",
         url: buildAbsoluteUrl("/"),
         potentialAction: {
           "@type": "SearchAction",
@@ -883,8 +918,8 @@ export default function Home() {
       {
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "맛픽",
-        alternateName: "Matpick",
+        name: isEnglish ? "Matpick" : "맛픽",
+        alternateName: isEnglish ? undefined : "Matpick",
         url: buildAbsoluteUrl("/"),
         logo: buildAbsoluteUrl("/web-app-manifest-512x512.png"),
       },

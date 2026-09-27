@@ -44,7 +44,20 @@ import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import "./RestaurantDetail.css";
 import { describeRestaurantSource } from "@/lib/restaurantSources";
-import { getLocalizedAddress, getLocalizedDayLabel, getLocalizedHoursText, getLocalizedMenuName, getLocalizedPriceText, getLocalizedRestaurantName, hasKoreanText, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedDayLabel,
+  getLocalizedHoursText,
+  getLocalizedMenuName,
+  getLocalizedPriceText,
+  getLocalizedProviderName,
+  getLocalizedRegion,
+  getLocalizedRestaurantName,
+  getLocalizedSourceName,
+  hasKoreanText,
+  romanizeKoreanText,
+  translateCuisineLabel,
+} from "@/lib/locale";
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
@@ -115,7 +128,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
   const showCategory = Boolean(category && category !== "미분류");
   const mapPath = `/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`;
   const shareUrl = buildAbsoluteUrl(`/restaurant/${restaurant.id}`);
-  const displayImage = getRestaurantDisplayImage(restaurant);
+  const displayImage = getRestaurantDisplayImage(restaurant, { locale });
   const shareImage = displayImage.hasPhoto
     ? displayImage.src
     : "/og-default.png";
@@ -171,7 +184,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
         streetAddress: displayAddress,
         addressCountry: restaurant.country || "KR",
       },
-      ...(showCategory ? { servesCuisine: category } : {}),
+      ...(showCategory && category ? { servesCuisine: translateCuisineLabel(category, locale) } : {}),
       ...(reviewSummary.count
         ? {
             aggregateRating: {
@@ -186,7 +199,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
 
   async function copyAddress() {
     try {
-      await navigator.clipboard.writeText(restaurant.address);
+      await navigator.clipboard.writeText(displayAddress);
       toast.success(isEnglish ? "Address copied." : "주소를 복사했어요.");
     } catch {
       toast.error(
@@ -235,7 +248,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
           className="detail-logo"
           aria-label={isEnglish ? "Matpick home" : "맛픽 홈"}
         >
-          맛<span>픽</span>
+          {isEnglish ? <>Mat<span>pick</span></> : <>맛<span>픽</span></>}
         </Link>
         <div className="detail-nav-actions">
           <HeartButton restaurantId={restaurant.id} size="lg" />
@@ -259,7 +272,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
         <header className="detail-overview">
           <p className="detail-eyebrow">
             {[
-              isEnglish ? romanizeKoreanText(restaurant.region) : restaurant.region,
+              getLocalizedRegion(restaurant.region, locale),
               showCategory && category ? translateCuisineLabel(category, locale) : null,
             ]
               .filter(Boolean)
@@ -509,7 +522,11 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                       : "메뉴·가격 출처와 기준일"}
                   </summary>
                   {restaurant.menuPriceNote && (
-                    <p>{restaurant.menuPriceNote}</p>
+                    <p>
+                      {isEnglish && hasKoreanText(restaurant.menuPriceNote)
+                        ? "An additional menu-source note is available in Korean only."
+                        : restaurant.menuPriceNote}
+                    </p>
                   )}
                   {restaurant.menuPriceSources
                     .filter(source => /^https?:\/\//.test(source.url))
@@ -551,7 +568,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     href={`/map?type=source&value=${encodeURIComponent(source.id)}`}
                     className="detail-source-link"
                   >
-                    <span>{isEnglish ? romanizeKoreanText(getSourceDisplayName(source)) : getSourceDisplayName(source)}</span>
+                    <span>{getLocalizedSourceName(getSourceDisplayName(source), locale)}</span>
                     <ArrowUpRight aria-hidden="true" />
                   </Link>
                 ))}
@@ -563,13 +580,13 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     className="detail-small-note"
                     key={`${source.id}-attribution`}
                   >
-                    {isEnglish ? romanizeKoreanText(source.name) : source.name} · {isEnglish ? "Data from " : "자료 제공: "}
+                    {getLocalizedSourceName(source.name, locale)} · {isEnglish ? "Data from " : "자료 제공: "}
                     <a
                       href={source.attribution!.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {isEnglish ? romanizeKoreanText(source.attribution!.provider) : source.attribution!.provider}
+                      {getLocalizedProviderName(source.attribution!.provider, locale)}
                     </a>
                   </p>
                 ))}
@@ -577,7 +594,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                 const source = sources.find(source => source.id === link.sourceId);
                 if (!source) return null;
                 return <div key={link.id} className="mt-3 rounded-xl bg-[#faf5f7] p-3 text-xs leading-6 text-[#75656d]">
-                  <a href={link.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#a83c57] underline underline-offset-4">{isEnglish ? romanizeKoreanText(getSourceDisplayName(source)) : getSourceDisplayName(source)} · {isEnglish ? "Original reference" : "소개 원문 보기"}</a>
+                  <a href={link.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#a83c57] underline underline-offset-4">{getLocalizedSourceName(getSourceDisplayName(source), locale)} · {isEnglish ? "Original reference" : "소개 원문 보기"}</a>
                   <span className="ml-2">{isEnglish ? "Source record" : link.label}</span>
                   <p>{source.id === "culinary-class-wars-chefs" ? describeRestaurantSource(source, restaurant.name, isEnglish).description : isEnglish ? "Historical feature; confirm current operation, menu and prices before visiting." : "소개 당시 기록입니다. 현재 영업·메뉴·가격은 방문 전 확인해 주세요."}</p>
                 </div>;

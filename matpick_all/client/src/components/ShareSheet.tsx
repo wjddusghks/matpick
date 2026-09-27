@@ -10,6 +10,7 @@ import {
 import { copyShareLink, shareNatively } from "@/lib/share";
 import { buildAbsoluteUrl } from "@/lib/seo";
 import { useLocale } from "@/contexts/LocaleContext";
+import { hasKoreanText, romanizeKoreanText } from "@/lib/locale";
 
 interface ShareSheetProps {
   open: boolean;
@@ -75,6 +76,8 @@ export default function ShareSheet({
 }: ShareSheetProps) {
   const { locale } = useLocale();
   const english = locale === "en";
+  const displayTitle = english && hasKoreanText(title) ? romanizeKoreanText(title) : title;
+  const displayText = english && hasKoreanText(text) ? romanizeKoreanText(text) : text;
   const [status, setStatus] = useState("");
   const [busy, setBusy] = useState(false);
   const input = useRef<HTMLInputElement>(null);
@@ -103,7 +106,7 @@ export default function ShareSheet({
     }
   };
   const nativeShare = async () => {
-    const result = await shareNatively({ title, text, url: shareUrl });
+    const result = await shareNatively({ title: displayTitle, text: displayText, url: shareUrl });
     if (result === "unavailable")
       setStatus(
         english
@@ -122,14 +125,14 @@ export default function ShareSheet({
       sdk.Share!.sendDefault({
         objectType: "feed",
         content: {
-          title,
-          description: text,
+          title: displayTitle,
+          description: displayText,
           imageUrl: buildAbsoluteUrl(candidate),
           link: { mobileWebUrl: shareUrl, webUrl: shareUrl },
         },
         buttons: [
           {
-            title: "맛집 보기",
+            title: english ? "View restaurant" : "맛집 보기",
             link: { mobileWebUrl: shareUrl, webUrl: shareUrl },
           },
         ],
@@ -147,13 +150,13 @@ export default function ShareSheet({
   const links = [
     {
       name: "LINE",
-      url: `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(text)}`,
+      url: `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(displayText)}`,
       icon: <span className="text-xs font-black">LINE</span>,
       color: "bg-[#e9f9ee] text-[#168444]",
     },
     {
       name: "X",
-      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareUrl)}`,
+      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(displayText)}&url=${encodeURIComponent(shareUrl)}`,
       icon: <X className="h-5 w-5" />,
       color: "bg-[#f2f2f2] text-[#222]",
     },
@@ -176,7 +179,7 @@ export default function ShareSheet({
           {english ? "Share this place" : "같이 갈 사람에게 공유"}
         </DialogTitle>
         <DialogDescription className="text-sm text-[#85717a]">
-          {title}
+          {displayTitle}
         </DialogDescription>
         <button
           type="button"

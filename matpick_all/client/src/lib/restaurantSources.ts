@@ -5,7 +5,12 @@ import {
   getSourceDisplayName,
 } from "@/data";
 import type { Source } from "@/data/types";
-import { getEnglishRestaurantName, romanizeKoreanText } from "@/lib/locale";
+import {
+  getEnglishCreatorName,
+  getEnglishProviderName,
+  getEnglishRestaurantName,
+  getEnglishSourceName,
+} from "@/lib/locale";
 
 export function describeRestaurantSource(
   source: Source,
@@ -17,8 +22,8 @@ export function describeRestaurantSource(
     source.provider && !["raw-source", "Matpick"].includes(source.provider)
       ? source.provider
       : "";
-  const name = english ? romanizeKoreanText(rawName) : rawName;
-  const provider = english ? romanizeKoreanText(rawProvider) : rawProvider;
+  const name = english ? getEnglishSourceName(rawName) : rawName;
+  const provider = english ? getEnglishProviderName(rawProvider) : rawProvider;
   const displayedRestaurantName = english
     ? getEnglishRestaurantName(restaurantName)
     : restaurantName;
@@ -61,7 +66,7 @@ export function describeRestaurantSource(
   if (source.attribution) {
     badge = english ? "Matpick collection" : "맛픽 여행 가이드";
     description = english
-      ? `A Matpick collection based on public restaurant information from ${romanizeKoreanText(source.attribution.provider)}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
+      ? `A Matpick collection based on public restaurant information from ${getEnglishProviderName(source.attribution.provider)}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
       : `${source.attribution.provider}의 공개 음식점 자료를 바탕으로 맛픽이 구성한 여행 가이드입니다. 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않아요.`;
   }
   if (source.id === "the-dudley") {
@@ -90,7 +95,7 @@ export function getRestaurantSourceBadges(
   );
   for (const creator of getCreatorsByRestaurant(id)) {
     const rawName = getCreatorDisplayName(creator);
-    const name = english ? romanizeKoreanText(rawName) : rawName;
+    const name = english ? getEnglishCreatorName(rawName) : rawName;
     if (
       sources.some(source => source.creatorId === creator.id) ||
       entries.some(entry => entry.name === name || entry.name === rawName)

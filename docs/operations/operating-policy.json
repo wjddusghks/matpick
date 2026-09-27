@@ -8,7 +8,10 @@
   },
   "channels": {
     "naver_blog": "nasa1769",
-    "instagram": "matpick.co.kr"
+    "instagram": "matpick.co.kr",
+    "kakao_channel": "맛픽 Matpick (_BxkhxiX)",
+    "pinterest": "nasa1769 / 맛픽 Matpick | Korea Food Guide only",
+    "threads": "matpick.co.kr"
   },
   "maxDaysAhead": 2,
   "requireHashtags": true,
@@ -18,7 +21,7 @@
   },
   "publicCompetitorNames": "omit; retain evidence internally; never remove legally required attribution to reuse material",
   "englishPositioningRequired": true,
-  "newChannels": "drafts until user connects and identifies a Matpick account",
+  "newChannels": "Kakao public posts, Pinterest dedicated board and Threads ready; Daangn blocked pending original activity proof. Verify native limits at each submission.",
   "routing": {
     "repetitive": "code",
     "drafts": "gpt-5.6-luna",

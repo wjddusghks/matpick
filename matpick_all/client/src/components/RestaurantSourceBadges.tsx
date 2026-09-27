@@ -6,7 +6,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { getRestaurantSourceBadges } from "@/lib/restaurantSources";
-import { romanizeKoreanText } from "@/lib/locale";
 
 function SourceBadge({
   source,
@@ -37,7 +36,7 @@ function SourceBadge({
   );
   const Icon =
     source.kind === "tv" ? Tv : source.kind === "video" ? Play : BookOpen;
-  const displayName = english ? romanizeKoreanText(source.name) : source.name;
+  const displayName = source.name;
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>

@@ -22,7 +22,14 @@ import {
 } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import { useLocale } from "@/contexts/LocaleContext";
-import { getLocalizedAddress, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedCreatorName,
+  getLocalizedMenuName,
+  getLocalizedRestaurantName,
+  getLocalizedSubscriberCount,
+  translateCuisineLabel,
+} from "@/lib/locale";
 import { getNextCatalogPageHref, runtimeCatalogPageInfo } from "@/data/runtimeDataset";
 
 // Logo is rendered inline as SVG
@@ -32,7 +39,7 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
   const { isEnglish, locale } = useLocale();
   const recCount = getRecommendationCount(restaurant.id);
   const recCreators = getCreatorsByRestaurant(restaurant.id);
-  const displayImage = getRestaurantDisplayImage(restaurant);
+  const displayImage = getRestaurantDisplayImage(restaurant, { locale });
   const broadcastBadge = formatRestaurantBroadcastBadge(
     getRestaurantBroadcastMeta(restaurant.id),
     locale
@@ -98,11 +105,17 @@ export default function CreatorDetail() {
   const [, navigate] = useLocation();
   const creator = creators.find((c) => c.id === id);
   const { isEnglish, locale } = useLocale();
+  const creatorName = creator
+    ? getLocalizedCreatorName(getCreatorDisplayName(creator), locale)
+    : "";
+  const channelName = creator
+    ? getLocalizedCreatorName(creator.channelName, locale)
+    : "";
 
   useSeo({
-    title: creator ? (isEnglish ? `${creator.name} restaurant picks` : `${creator.name} 추천 맛집`) : (isEnglish ? "Creator" : "크리에이터"),
+    title: creator ? (isEnglish ? `${creatorName} restaurant picks` : `${creator.name} 추천 맛집`) : (isEnglish ? "Creator" : "크리에이터"),
     description: creator
-      ? isEnglish ? `Explore restaurants featured by ${creator.name} and learn more about the channel.` : `${creator.name}이 소개한 맛집과 채널 정보를 맛픽에서 한눈에 확인해보세요.`
+      ? isEnglish ? `Explore restaurants featured by ${creatorName} and learn more about the channel.` : `${creator.name}이 소개한 맛집과 채널 정보를 맛픽에서 한눈에 확인해보세요.`
       : isEnglish ? "Matpick creator page" : "맛픽 크리에이터 페이지",
     path: creator ? `/creator/${creator.id}` : "/creator",
     type: "profile",
@@ -111,7 +124,7 @@ export default function CreatorDetail() {
       ? {
           "@context": "https://schema.org",
           "@type": "Person",
-          name: creator.name,
+          name: creatorName,
           image: creator.profileImage,
           url: buildAbsoluteUrl(`/creator/${creator.id}`),
           sameAs: creator.youtubeUrl ? [creator.youtubeUrl] : undefined,
@@ -162,19 +175,19 @@ export default function CreatorDetail() {
         >
           <img
             src={creator.profileImage}
-            alt={getCreatorDisplayName(creator)}
+            alt={creatorName}
             className="h-20 w-20 rounded-full object-cover border-3 border-[#FFCDC9] shadow-md sm:h-24 sm:w-24"
           />
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-[#1a1a1a] sm:text-3xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-              {isEnglish ? romanizeKoreanText(getCreatorDisplayName(creator)) : getCreatorDisplayName(creator)}
+              {creatorName}
             </h1>
-            <p className="text-sm text-[#888]">{isEnglish ? romanizeKoreanText(creator.channelName) : creator.channelName}</p>
+            <p className="text-sm text-[#888]">{channelName}</p>
             <div className="flex flex-wrap items-center gap-3 text-sm text-[#666] sm:gap-4">
               {creator.subscribers && (
                 <span className="flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-[#FD7979]" />
-                  {isEnglish ? `${creator.subscribers} subscribers` : `구독자 ${creator.subscribers}`}
+                  {isEnglish ? `${getLocalizedSubscriberCount(creator.subscribers, locale)} subscribers` : `구독자 ${creator.subscribers}`}
                 </span>
               )}
               <span className="flex items-center gap-1.5 text-red-500">

@@ -1,3 +1,5 @@
+import { getEnglishMenuName as translateEnglishMenuName } from "./menuEnglish.ts";
+
 export type AppLocale = "ko" | "en";
 
 const cuisineTranslations: Record<string, string> = {
@@ -17,7 +19,6 @@ const cuisineTranslations: Record<string, string> = {
   해산물: "Seafood",
   분식: "Korean snacks",
   술집: "Bar & pub",
-  베이커리: "Bakery",
   중식당: "Chinese restaurant",
   "해물,생선요리": "Seafood",
   국수: "Noodles",
@@ -59,6 +60,47 @@ const cuisineTranslations: Record<string, string> = {
   막국수: "Buckwheat noodles",
   김밥: "Gimbap",
   바비큐: "Barbecue",
+  일식당: "Japanese restaurant",
+  일식집: "Japanese restaurant",
+  해물: "Seafood",
+  "해물,생선": "Seafood",
+  카페: "Cafe",
+  디저트: "Dessert",
+  베이커리: "Bakery",
+  이탈리아음식: "Italian",
+  이탈리안: "Italian",
+  이탤리언: "Italian",
+  프랑스음식: "French",
+  태국음식: "Thai",
+  인도음식: "Indian",
+  "아시아음식": "Asian",
+  아시안: "Asian",
+  멕시코음식: "Mexican",
+  "멕시코,남미음식": "Mexican & Latin American",
+  햄버거: "Burgers",
+  이자카야: "Izakaya",
+  일본식주점: "Japanese pub",
+  호프: "Pub",
+  "호프,요리주점": "Pub & dining bar",
+  요리주점: "Dining bar",
+  와인바: "Wine bar",
+  브런치: "Brunch",
+  비건: "Vegan",
+  베지테리안: "Vegetarian",
+  뷰페: "Buffet",
+  패밀리레스토랑: "Family restaurant",
+  레스토랑: "Restaurant",
+  커피전문점: "Coffee shop",
+  디저트카페: "Dessert cafe",
+  브런치카페: "Brunch cafe",
+  "제과,베이커리": "Bakery",
+  "제과,제빵": "Bakery",
+  패스트푸드: "Fast food",
+  포장마차: "Street-food pub",
+  실내포장마차: "Indoor street-food pub",
+  기업: "Business",
+  미용실: "Hair salon",
+  사진: "Photography",
 };
 
 const INITIAL_ROMANIZATION = [
@@ -91,163 +133,70 @@ const ENGLISH_PLACE_REPLACEMENTS: Array<[RegExp, string]> = [
   [/경상남도/g, "Gyeongsangnam-do"],
 ];
 
-const FOOD_TRANSLATIONS: Array<[RegExp, string]> = [
-  [/한우\s*안심/g, "Korean beef tenderloin"],
-  [/아구찜|아귀찜/g, "braised monkfish"],
-  [/밀면/g, "wheat noodles"],
-  [/맛집/g, "restaurants"],
-  [/양장피/g, "seafood and vegetables with mustard sauce"],
-  [/잡탕밥/g, "assorted toppings over rice"],
-  [/전복죽/g, "abalone porridge"],
-  [/팔보채/g, "stir-fried mixed seafood and vegetables"],
-  [/새우튀김/g, "shrimp tempura"],
-  [/유산슬밥/g, "yusanseul with rice"],
-  [/유산슬/g, "yusanseul stir-fry"],
-  [/깐풍새우/g, "kkanpung shrimp"],
-  [/깐풍기/g, "kkanpunggi spicy garlic chicken"],
-  [/마파두부밥/g, "mapo tofu with rice"],
-  [/마파두부/g, "mapo tofu"],
-  [/고추잡채/g, "stir-fried peppers and meat"],
-  [/골뱅이무침/g, "spicy sea-snail salad"],
-  [/고기국수/g, "meat noodle soup"],
-  [/생선구이/g, "grilled fish"],
-  [/갈치구이/g, "grilled hairtail"],
-  [/옥돔구이/g, "grilled tilefish"],
-  [/내장탕/g, "offal soup"],
-  [/오뎅탕|어묵탕/g, "fish cake soup"],
-  [/장어탕/g, "eel soup"],
-  [/매운탕/g, "spicy fish stew"],
-  [/알탕/g, "fish roe stew"],
-  [/산낙지/g, "live octopus"],
-  [/닭똥집/g, "chicken gizzards"],
-  [/머리고기/g, "boiled head-meat slices"],
-  [/녹두전/g, "mung bean pancake"],
-  [/부추전/g, "chive pancake"],
-  [/굴전/g, "oyster pancake"],
-  [/육전/g, "pan-fried meat slices"],
-  [/에스프레소/g, "espresso"],
-  [/카푸치노/g, "cappuccino"],
-  [/얼그레이/g, "Earl Grey tea"],
-  [/울면/g, "thick noodle soup"],
-  [/라조기/g, "chicken in chili sauce"],
-  [/편육/g, "sliced pressed meat"],
-  [/잡채/g, "stir-fried glass noodles"],
-  [/해삼/g, "sea cucumber"],
-  [/멍게/g, "sea squirt"],
-  [/백반/g, "Korean set meal"],
-  [/오뎅|어묵/g, "fish cake"],
-  [/2인이상/g, "for two or more people"],
-  [/생선까스/g, "fish cutlet"],
-  [/고등어구이/g, "grilled mackerel"],
-  [/녹두빈대떡/g, "mung bean pancake"],
-  [/두부김치/g, "tofu with stir-fried kimchi"],
-  [/열무국수/g, "young-radish noodles"],
-  [/황태구이/g, "grilled dried pollock"],
-  [/김치전/g, "kimchi pancake"],
-  [/동태찌개/g, "pollock stew"],
-  [/떡갈비/g, "grilled short-rib patties"],
-  [/항정살/g, "jowl cut"],
-  [/차돌박이/g, "beef brisket"],
-  [/목살/g, "neck cut"],
-  [/추어탕/g, "loach soup"],
-  [/대구탕/g, "cod soup"],
-  [/빈대떡/g, "mung bean pancake"],
-  [/순두부/g, "soft tofu"],
-  [/온면/g, "warm noodles"],
-  [/짜장/g, "black bean sauce"],
-  [/쫄면/g, "spicy chewy noodles"],
-  [/막걸리/g, "makgeolli rice wine"],
-  [/사이다/g, "lemon-lime soda"],
-  [/음료/g, "drink"],
-  [/나시고랭/g, "nasi goreng"],
-  [/폐업/g, "closed"],
-  [/꼬리곰탕/g, "oxtail soup"],
-  [/도가니수육/g, "boiled ox knee slices"],
-  [/도가니탕/g, "ox knee soup"],
-  [/비빔국수/g, "spicy mixed noodles"],
-  [/잔치국수/g, "banquet noodles"],
-  [/콩국수/g, "noodles in cold soy milk"],
-  [/계란찜/g, "steamed eggs"],
-  [/계란말이/g, "rolled omelet"],
-  [/낙지볶음/g, "stir-fried octopus"],
-  [/오징어볶음/g, "stir-fried squid"],
-  [/갈치조림/g, "braised hairtail"],
-  [/닭도리탕|닭볶음탕/g, "spicy braised chicken"],
-  [/감자전/g, "potato pancake"],
-  [/메밀전병/g, "buckwheat rolls"],
-  [/모듬전|모둠전/g, "assorted savory pancakes"],
-  [/도토리묵/g, "acorn jelly"],
-  [/공기밥/g, "bowl of rice"],
-  [/볶음밥/g, "fried rice"],
-  [/떡국/g, "rice cake soup"],
-  [/육개장/g, "spicy beef soup"],
-  [/해장국/g, "hangover soup"],
-  [/청국장/g, "fermented soybean stew"],
-  [/간짜장/g, "dry-style black bean noodles"],
-  [/잡채밥/g, "japchae with rice"],
-  [/짜장밥/g, "black bean sauce with rice"],
-  [/돼지갈비/g, "pork ribs"],
-  [/육회/g, "Korean-style raw meat"],
-  [/수육/g, "boiled meat slices"],
-  [/곰탕/g, "gomtang soup"],
-  [/수제비/g, "hand-torn noodle soup"],
-  [/순대/g, "Korean blood sausage"],
-  [/술국/g, "hearty sausage soup"],
-  [/누룽지/g, "scorched rice"],
-  [/사리/g, "extra noodles"],
-  [/소주/g, "soju"],
-  [/청하/g, "Cheongha rice wine"],
-  [/맥주/g, "beer"],
-  [/음료수/g, "soft drink"],
-  [/돼지국밥/g, "pork soup with rice"],
-  [/소고기국밥/g, "beef soup with rice"],
-  [/국밥/g, "soup with rice"],
-  [/김치찌개/g, "kimchi stew"],
-  [/된장찌개/g, "soybean paste stew"],
-  [/순두부찌개/g, "soft tofu stew"],
-  [/부대찌개/g, "army-base stew"],
-  [/삼겹살/g, "pork belly"],
-  [/불고기/g, "bulgogi"],
-  [/비빔밥/g, "bibimbap"],
-  [/냉면/g, "cold noodles"],
-  [/칼국수/g, "knife-cut noodles"],
-  [/막국수/g, "buckwheat noodles"],
-  [/라멘/g, "ramen"],
-  [/라면/g, "ramyeon"],
-  [/우동/g, "udon"],
-  [/짜장면/g, "black bean noodles"],
-  [/짬뽕/g, "spicy seafood noodle soup"],
-  [/떡볶이/g, "tteokbokki"],
-  [/김밥/g, "gimbap"],
-  [/만두/g, "dumplings"],
-  [/닭갈비/g, "spicy stir-fried chicken"],
-  [/갈비탕/g, "short rib soup"],
-  [/설렁탕/g, "ox bone soup"],
-  [/감자탕/g, "pork back-bone stew"],
-  [/삼계탕/g, "ginseng chicken soup"],
-  [/보쌈/g, "boiled pork wraps"],
-  [/족발/g, "braised pork trotters"],
-  [/닭발/g, "chicken feet"],
-  [/곱창/g, "small intestines"],
-  [/대창/g, "large intestines"],
-  [/막창/g, "intestines"],
-  [/제육볶음/g, "spicy stir-fried pork"],
-  [/돈가스|돈까스/g, "pork cutlet"],
-  [/초밥/g, "sushi"],
-  [/회덮밥/g, "sashimi rice bowl"],
-  [/물회/g, "spicy raw seafood soup"],
-  [/파전/g, "green onion pancake"],
-  [/해물전/g, "seafood pancake"],
-  [/닭강정/g, "sweet crispy chicken"],
-  [/치킨/g, "chicken"],
-  [/커피/g, "coffee"],
-  [/아메리카노/g, "Americano"],
-  [/카페라떼|라떼/g, "cafe latte"],
-  [/1인분/g, "one serving"],
-  [/2인분/g, "two servings"],
-  [/시가/g, "market price"],
-  [/가격변동|변동/g, "price varies"],
-];
+const ENGLISH_SOURCE_NAMES: Record<string, string> = {
+  "한국인이 사랑하는 오래된 한식당 100선": "100 Historic Korean Restaurants",
+  "한국인 100선": "100 Historic Korean Restaurants",
+  "백종원의 3대천왕": "Baek Jong-won's Top 3 Chef Kings",
+  "식객 허영만의 백반기행": "Heo Young-man's Hometown Food Travel",
+  "백반기행": "Hometown Food Travel",
+  "수요미식회 맛집리스트": "Wednesday Food Talk Restaurant List",
+  "수요미식회": "Wednesday Food Talk",
+  "또간집": "Ttoganjip",
+  "인기맛집": "Popular Restaurants",
+  "맛있는 녀석들": "Tasty Guys",
+  "미쉐린": "MICHELIN Guide",
+  "부산 한입": "A Bite of Busan",
+  "제주 한입": "A Bite of Jeju",
+  "전현무계획": "Jeon Hyun-moo's Plan",
+  "생활의 달인": "Master of Living",
+  "토요일은 밥이 좋아": "Saturday Is for Food",
+  "동네 한 바퀴": "A Walk Around the Neighborhood",
+  "성시경 먹을텐데": "Sung Si-kyung's Eat What?",
+  "츄릅켠": "Chureupkyeon",
+  "제주에디": "Jeju Eddy",
+  "김사원세끼": "Employee Kim's Three Meals",
+  "서울미식 100선": "Taste of Seoul 100",
+  "백년가게": "Century Stores",
+  "착한가격업소": "Good Price Businesses",
+  "섬마을훈태": "Island Village Hoon-tae",
+  "정육왕": "Meat King",
+  "회사랑": "Hoe Sarang",
+  "떡볶퀸": "Tteokbokqueen",
+  "최자로드": "Choiza Road",
+  "2TV 생생정보": "2TV Live Info",
+  "생방송 투데이": "Live Today",
+  "오늘N": "Today N",
+  "더들리": "The Dudley",
+  "흑백요리사 출연 셰프 식당": "Culinary Class Wars Chef Restaurants",
+};
+
+const ENGLISH_PROVIDER_NAMES: Record<string, string> = {
+  "E채널": "E Channel",
+  "성시경": "Sung Si Kyung",
+  "츄릅켠": "Chureupkyeon",
+  "제주에디": "Jeju Eddy",
+  "김사원세끼": "Employee Kim's Three Meals",
+  "서울관광재단": "Seoul Tourism Organization",
+  "중소벤처기업부": "Ministry of SMEs and Startups",
+  "행정안전부·지방자치단체": "Ministry of the Interior and Safety & local governments",
+  "섬마을훈태": "Island Village Hoon-tae",
+  "정육왕": "Meat King",
+  "회사랑": "Hoe Sarang",
+  "떡볶퀸": "Tteokbokqueen",
+  "최자로드": "Choiza Road",
+  "더들리": "The Dudley",
+  "맛픽": "Matpick",
+};
+
+const ENGLISH_CREATOR_NAMES: Record<string, string> = {
+  "풍자": "Pungja",
+  "성시경": "Sung Si-kyung",
+  "맛있는 녀석들": "Tasty Guys",
+  "쥐양": "Tzuyang",
+  "스튜디오수제": "Studio Suze",
+  "성시경 SUNG SI KYUNG": "Sung Si Kyung",
+  "tzuyang쥐양": "Tzuyang",
+};
 
 const DISCOVERY_TITLE_TRANSLATIONS: Record<string, string> = {
   "부산 한입": "A Bite of Busan",
@@ -262,10 +211,6 @@ const DISCOVERY_TITLE_TRANSLATIONS: Record<string, string> = {
   "수요미식회": "Wednesday Food Talk",
   "백종원의 3대천왕": "Baek Jong-won’s Top 3 Chef Kings",
 };
-
-const ORDERED_FOOD_TRANSLATIONS = [...FOOD_TRANSLATIONS].sort(
-  ([left], [right]) => right.source.length - left.source.length
-);
 
 function romanizeHangulSyllables(value: string) {
   return value.replace(/[가-힣]+/g, word => {
@@ -295,25 +240,149 @@ export function getEnglishRestaurantName(value: string) {
 export function getEnglishAddress(value: string) {
   let prepared = value;
   for (const [pattern, replacement] of ENGLISH_PLACE_REPLACEMENTS) {
-    prepared = prepared.replace(pattern, `${replacement} `);
-  }
-  return romanizeKoreanText(prepared).replace(/\s+,/g, ",").replace(/\s+/g, " ").trim();
-}
-
-export function getEnglishMenuName(value: string) {
-  let prepared = value;
-  // Specific dish names must run before generic substrings such as 짜장 or
-  // 순두부, otherwise a partial replacement prevents the exact translation.
-  for (const [pattern, replacement] of ORDERED_FOOD_TRANSLATIONS) {
     prepared = prepared.replace(pattern, replacement);
   }
   prepared = prepared
-    .replace(/\(\s*대\s*\)/g, " (large)")
-    .replace(/\(\s*중\s*\)/g, " (medium)")
-    .replace(/\(\s*소\s*\)/g, " (small)")
-    .replace(/(\d+)\s*인분/g, "$1 servings")
-    .replace(/(\d+)\s*인/g, "for $1");
-  return romanizeKoreanText(prepared).replace(/\s+/g, " ").trim();
+    .replace(/\b(Seoul|Busan|Daegu|Incheon|Gwangju|Daejeon|Ulsan|Sejong|Jeju)\s+/g, "$1, ")
+    .replace(/\b(Gyeonggi-do|Gangwon-do|Chungcheongbuk-do|Chungcheongnam-do|Jeonbuk-do|Jeollanam-do|Gyeongsangbuk-do|Gyeongsangnam-do)\s+/g, "$1, ")
+    .replace(/\uC9C0\uD558\s*(\d+)\s*\uCE35/g, "Basement level $1")
+    .replace(/(\d+)\s*\uCE35/g, "Floor $1")
+    .replace(/([A-Za-z]?-?\d+[A-Za-z-]*)\s*\uD638/g, "Unit $1")
+    .replace(/(\d+(?:-\d+)?)\s*\uBC88\uC9C0/g, "$1")
+    .replace(/([\uAC00-\uD7A3]+?)(\d*)\uB300\uB85C(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-daero`)
+    .replace(/([\uAC00-\uD7A3]+?)(\d*)\uB85C(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-ro`)
+    .replace(/([\uAC00-\uD7A3]+?)(\d*)\uAE38(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-gil`)
+    .replace(/(\d+)\s*\uAE38(?=\s|,|$)/g, "$1-gil")
+    .replace(/([\uAC00-\uD7A3]+)\uD2B9\uBCC4\uC790\uCE58\uC2DC(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-si`)
+    .replace(/([\uAC00-\uD7A3]+)\uC2DC(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-si`)
+    .replace(/([\uAC00-\uD7A3]+)\uAD6C(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-gu`)
+    .replace(/([\uAC00-\uD7A3]+)\uAD70(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-gun`)
+    .replace(/([\uAC00-\uD7A3]+)\uC74D(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-eup`)
+    .replace(/([\uAC00-\uD7A3]+)\uBA74(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-myeon`)
+    .replace(/([\uAC00-\uD7A3]+)\uB3D9(\d*)\uAC00(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}-dong ${number}-ga`)
+    .replace(/([\uAC00-\uD7A3]+)\uB3D9(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-dong`)
+    .replace(/([\uAC00-\uD7A3]+)\uB9AC(?=\s|,|$)/g, (_, root) => `${romanizeHangulSyllables(root)}-ri`)
+    .replace(/([\uAC00-\uD7A3]+)\uBE4C\uB529/g, (_, root) => `${romanizeHangulSyllables(root)} Building`)
+    .replace(/([\uAC00-\uD7A3]+)\uD0C0\uC6CC/g, (_, root) => `${romanizeHangulSyllables(root)} Tower`)
+    .replace(/([\uAC00-\uD7A3]+)\uC0C1\uAC00/g, (_, root) => `${romanizeHangulSyllables(root)} Shopping Arcade`)
+    .replace(/\uC0C1\uAC00(?=\s|,|$)/g, "Shopping Arcade")
+    .replace(/\uCF54\uC5D1\uC2A4/g, "COEX");
+  return romanizeKoreanText(prepared)
+    .replace(/\b([A-Z][A-Za-z]+-(?:si|gu|gun|eup|myeon|dong|ri))\s+/g, "$1, ")
+    .replace(/\s+,/g, ",")
+    .replace(/,\s*,+/g, ",")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function getEnglishSourceName(value: string) {
+  const trimmed = value.trim();
+  return ENGLISH_SOURCE_NAMES[trimmed] ?? romanizeKoreanText(trimmed);
+}
+
+export function getLocalizedSourceName(value: string, locale: AppLocale) {
+  return locale === "en" ? getEnglishSourceName(value) : value;
+}
+
+export function getEnglishProviderName(value: string) {
+  const trimmed = value.trim();
+  return ENGLISH_PROVIDER_NAMES[trimmed] ?? romanizeKoreanText(trimmed);
+}
+
+export function getLocalizedProviderName(value: string, locale: AppLocale) {
+  return locale === "en" ? getEnglishProviderName(value) : value;
+}
+
+export function getEnglishCreatorName(value: string) {
+  const trimmed = value.trim();
+  return ENGLISH_CREATOR_NAMES[trimmed] ?? getEnglishSourceName(trimmed);
+}
+
+export function getLocalizedCreatorName(value: string, locale: AppLocale) {
+  return locale === "en" ? getEnglishCreatorName(value) : value;
+}
+
+export function getEnglishEpisodeLabel(value: string) {
+  const translated = value
+    .replace(/\uC81C\s*(\d+)\s*\uD68C/g, "Episode $1")
+    .replace(/(\d+)\s*\uD68C/g, "Episode $1")
+    .replace(/(\d+)\s*\uBD80/g, "Part $1")
+    .replace(/\uC2DC\uC98C\s*(\d+)/g, "Season $1")
+    .replace(/(\d{4})\s*\uB144\s*(\d{1,2})\s*\uC6D4\s*(\d{1,2})\s*\uC77C/g, "$1-$2-$3")
+    .replace(/(\d{1,2})\s*\uC6D4\s*(\d{1,2})\s*\uC77C/g, "$1/$2");
+  return romanizeKoreanText(translated);
+}
+
+export function getLocalizedEpisodeLabel(value: string, locale: AppLocale) {
+  return locale === "en" ? getEnglishEpisodeLabel(value) : value;
+}
+
+export function getLocalizedRegion(value: string, locale: AppLocale) {
+  return locale === "en" ? getEnglishAddress(value) : value;
+}
+
+export function getLocalizedSearchLabel(value: string | null | undefined, locale: AppLocale) {
+  if (!value || locale === "ko") return value ?? "";
+  const labels: Record<string, string> = {
+    "\uC774\uB984": "Name",
+    "\uC2DD\uB2F9\uBA85": "Restaurant",
+    "\uC8FC\uC18C": "Address",
+    "\uC9C0\uC5ED": "Region",
+    "\uBA54\uB274": "Menu",
+    "\uB300\uD45C\uBA54\uB274": "Signature menu",
+    "\uCE74\uD14C\uACE0\uB9AC": "Cuisine",
+    "\uCD9C\uCC98": "Source",
+    "\uBC29\uC1A1": "TV show",
+    "\uBC29\uC1A1\u00B7\uAC00\uC774\uB4DC": "Show or guide",
+    "\uD06C\uB9AC\uC5D0\uC774\uD130": "Creator",
+    "\uD1B5\uD569 \uAC80\uC0C9": "All matches",
+    "\uBA54\uB274 \uC77C\uCE58": "Menu match",
+    "\uC9C0\uC5ED \uC77C\uCE58": "Region match",
+    "\uCE74\uD14C\uACE0\uB9AC \uC77C\uCE58": "Cuisine match",
+    "\uBC29\uC1A1\u00B7\uCD9C\uCC98 \uC77C\uCE58": "Show or source match",
+    "\uC2DD\uB2F9\uBA85 \uC77C\uCE58": "Name match",
+    "\uAC00\uC774\uB4DC": "Guide",
+    "\uBBF8\uC250\uB9B0": "MICHELIN Guide",
+    "\uAE30\uAD00 \uC120\uC815": "Institution selection",
+    "\uCC45": "Book",
+    "\uB9E4\uAC70\uC9C4": "Magazine",
+  };
+  return labels[value.trim()] ?? romanizeKoreanText(value);
+}
+
+export function getLocalizedSearchDetail(
+  value: string | null | undefined,
+  matchLabel: string | null | undefined,
+  locale: AppLocale
+) {
+  if (!value || locale === "ko") return value ?? "";
+  const trimmed = value.trim();
+  if (matchLabel === "\uBA54\uB274 \uC77C\uCE58") {
+    return trimmed.split(/\s*\u00B7\s*/).map(getEnglishMenuName).join(" · ");
+  }
+  if (matchLabel === "\uCE74\uD14C\uACE0\uB9AC \uC77C\uCE58") {
+    return translateCuisineLabel(trimmed, locale);
+  }
+  if (matchLabel === "\uC9C0\uC5ED \uC77C\uCE58" || /[\uAC00-\uD7A3]+(?:\uB85C|\uAE38|\uAD6C|\uC2DC|\uB3D9|\uC74D|\uBA74)(?:\s|\d|$)/.test(trimmed)) {
+    return getEnglishAddress(trimmed);
+  }
+  const aggregate = trimmed.match(/^\uBA54\uB274\u00B7\uCE74\uD14C\uACE0\uB9AC\u00B7\uC9C0\uC5ED\uC5D0\uC11C\s*([\d,]+)\uACF3$/);
+  if (aggregate) return `${aggregate[1]} restaurants across menus, cuisines, and regions`;
+  const count = trimmed.match(/^(?:\uB9DB\uC9D1|\uC2DD\uB2F9)\s*([\d,]+)(?:\uAC1C|\uACF3)$/);
+  if (count) return `${count[1]} restaurants`;
+  return getLocalizedSearchLabel(trimmed, locale);
+}
+
+export function getLocalizedSubscriberCount(value: string, locale: AppLocale) {
+  if (locale === "ko") return value;
+  const match = value.trim().match(/^([\d,.]+)\s*\uB9CC$/);
+  if (!match) return romanizeKoreanText(value);
+  const amount = Number(match[1].replace(/,/g, "")) / 100;
+  return `${Number.isInteger(amount) ? amount : amount.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")}M`;
+}
+
+export function getEnglishMenuName(value: string) {
+  return translateEnglishMenuName(value);
 }
 
 export function getLocalizedRestaurantName(value: string, locale: AppLocale) {
@@ -375,7 +444,7 @@ export function getLocalizedHoursText(value: string, locale: AppLocale) {
 
 export function getLocalizedDiscoveryTitle(value: string, locale: AppLocale) {
   if (locale === "ko") return value;
-  return DISCOVERY_TITLE_TRANSLATIONS[value] ?? romanizeKoreanText(value);
+  return ENGLISH_SOURCE_NAMES[value] ?? DISCOVERY_TITLE_TRANSLATIONS[value] ?? getEnglishSourceName(value);
 }
 
 export function getLocalizedEditorialSummary(

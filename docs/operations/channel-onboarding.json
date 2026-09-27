@@ -1,31 +1,35 @@
 {
   "requestedAt": "2026-09-27",
-  "status": "awaiting-current-code-work-then-user-registration",
+  "status": "three-new-channels-ready-daangn-proof-required",
   "userWillRegister": true,
   "channels": [
     {
       "channel": "kakao_channel",
-      "entryUrl": "https://center-pf.kakao.com/",
-      "account": null,
-      "publishingEnabled": false
+      "entryUrl": "https://business.kakao.com/space/10694127/channel/_BxkhxiX/posts",
+      "account": "맛픽 Matpick (_BxkhxiX)",
+      "publishingEnabled": true,
+      "observedSession": "Channel created; public and searchable enabled; native post/draft/schedule controls verified. Public channel posts only; no paid messages."
     },
     {
       "channel": "pinterest",
-      "entryUrl": "https://www.pinterest.com/business/create/",
-      "account": null,
-      "publishingEnabled": false
+      "entryUrl": "https://ca.pinterest.com/nasa1769/맛픽-matpick-korea-food-guide/",
+      "account": "nasa1769",
+      "publishingEnabled": true,
+      "observedSession": "User approved existing account, dedicated public Matpick board created. Native pin scheduling enabled after upload. Setup-only logo draft titled [설정 확인용 초안 · 발행 금지] must never be published."
     },
     {
       "channel": "daangn_business",
       "entryUrl": "https://business.daangn.com/",
-      "account": null,
-      "publishingEnabled": false
+      "account": "맛픽 (profile setup incomplete)",
+      "publishingEnabled": false,
+      "observedSession": "Online service; 생활정보제공서비스; Seoul Mapo-gu Seogyo-dong selected as service region, physical location display off. Requires business certificate or original photo of real branded activity material. Screenshots and AI images not accepted."
     },
     {
       "channel": "threads",
-      "entryUrl": "https://www.threads.com/",
-      "account": null,
-      "publishingEnabled": false
+      "entryUrl": "https://www.threads.com/@matpick.co.kr",
+      "account": "matpick.co.kr",
+      "publishingEnabled": true,
+      "observedSession": "User confirmed Terms at action time. Signup complete; account and native schedule calendar verified. No post submitted in setup."
     }
   ],
   "activationRequirements": [

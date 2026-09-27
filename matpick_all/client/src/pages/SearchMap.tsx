@@ -75,7 +75,23 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
-import { getLocalizedAddress, getLocalizedDiscoveryTitle, getLocalizedEditorialSummary, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import {
+  getLocalizedAddress,
+  getLocalizedCreatorName,
+  getLocalizedDiscoveryTitle,
+  getLocalizedEditorialSummary,
+  getLocalizedEpisodeLabel,
+  getLocalizedMenuName,
+  getLocalizedRegion,
+  getLocalizedRestaurantName,
+  getLocalizedSearchLabel,
+  getLocalizedSearchDetail,
+  getLocalizedSourceName,
+  getLocalizedSubscriberCount,
+  romanizeKoreanText,
+  translateCuisineLabel,
+  type AppLocale,
+} from "@/lib/locale";
 import { useSeo } from "@/lib/seo";
 
 const MAP_COPY = {
@@ -223,7 +239,7 @@ function filterRestaurants(
         restaurants: restaurants.filter(restaurant =>
           episodeRestaurantIds.has(restaurant.id)
         ),
-        title: isEnglish ? `${getLocalizedDiscoveryTitle(topic.name, locale)} ${romanizeKoreanText(episode.episode)}` : `${topic.name} ${episode.episode}`,
+        title: `${getLocalizedDiscoveryTitle(topic.name, locale)} ${getLocalizedEpisodeLabel(episode.episode, locale)}`,
         description: getLocalizedEditorialSummary(episode.description, locale, `${episode.count} restaurants featured in this episode.`),
       };
     }
@@ -232,7 +248,7 @@ function filterRestaurants(
 
       return {
         restaurants: [...restaurants],
-        title: copy.creatorRestaurants(isEnglish ? romanizeKoreanText(creator ? getCreatorDisplayName(creator) : value) : creator ? getCreatorDisplayName(creator) : value),
+        title: copy.creatorRestaurants(getLocalizedCreatorName(creator ? getCreatorDisplayName(creator) : value, locale)),
       };
     }
     case "query": {
@@ -244,7 +260,7 @@ function filterRestaurants(
     case "region":
       return {
         restaurants: [...restaurants],
-        title: copy.regionRestaurants(isEnglish ? romanizeKoreanText(value) : value),
+        title: copy.regionRestaurants(getLocalizedRegion(value, locale)),
       };
     case "food":
       return {
@@ -258,7 +274,7 @@ function filterRestaurants(
       return {
         restaurants: getRestaurantsBySource(value),
         title: source
-          ? copy.sourceRestaurants(isEnglish ? getLocalizedDiscoveryTitle(getSourceDisplayName(source), locale) : getSourceDisplayName(source))
+          ? copy.sourceRestaurants(getLocalizedSourceName(getSourceDisplayName(source), locale))
           : copy.searchResults,
       };
     }
@@ -298,14 +314,14 @@ function SearchDropdownItem({
   let detailText = "";
 
   if (item.type === "query") {
-    accentLabel = item.matchLabel ?? (isEnglish ? "All matches" : "통합 검색");
+    accentLabel = getLocalizedSearchLabel(item.matchLabel, locale) || (isEnglish ? "All matches" : "통합 검색");
     detailText =
-      item.matchedText ?? copy.resultCount(item.restaurantCount ?? 0);
+      getLocalizedSearchDetail(item.matchedText, item.matchLabel, locale) || copy.resultCount(item.restaurantCount ?? 0);
   } else if (item.type === "creator") {
     accentLabel = item.platform ?? copy.creatorLabel;
-    detailText = item.subscribers ?? "";
+    detailText = item.subscribers ? getLocalizedSubscriberCount(item.subscribers, locale) : "";
   } else if (item.type === "region") {
-    accentLabel = item.parentRegion ?? copy.regionLabel;
+    accentLabel = item.parentRegion ? getLocalizedRegion(item.parentRegion, locale) : copy.regionLabel;
     detailText = isEnglish
       ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
       : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
@@ -315,21 +331,33 @@ function SearchDropdownItem({
       ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
       : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else if (item.type === "source") {
-    accentLabel = item.sourceTypeLabel ?? copy.sourceLabel;
+    accentLabel = getLocalizedSearchLabel(item.sourceTypeLabel, locale) || copy.sourceLabel;
     detailText = isEnglish
       ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
       : `맛집 ${(item.restaurantCount ?? 0).toLocaleString()}곳`;
   } else {
     accentLabel =
-      item.matchLabel ??
+      getLocalizedSearchLabel(item.matchLabel, locale) ||
       (item.category
         ? translateCuisineLabel(item.category, locale)
         : copy.searchResults);
-    detailText = getLocalizedAddress(item.matchedText ?? item.address ?? "", locale);
+    detailText = getLocalizedSearchDetail(
+      item.matchedText ?? item.address ?? "",
+      item.matchLabel,
+      locale
+    );
   }
   const displayName = item.type === "restaurant"
     ? getLocalizedRestaurantName(item.name, locale)
-    : isEnglish ? romanizeKoreanText(item.name) : item.name;
+    : item.type === "source"
+      ? getLocalizedSourceName(item.name, locale)
+      : item.type === "creator"
+        ? getLocalizedCreatorName(item.name, locale)
+        : item.type === "region"
+          ? getLocalizedRegion(item.name, locale)
+          : item.type === "food"
+            ? translateCuisineLabel(item.name, locale)
+            : getLocalizedSearchLabel(item.name, locale);
 
   return (
     <button

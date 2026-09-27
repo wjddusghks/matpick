@@ -271,6 +271,7 @@ export default function ReviewFeed() {
                       width: 480,
                       height: 320,
                       reviewPhotoUrl: review.photos[0] ?? "",
+                      locale,
                     })
                   : null;
 

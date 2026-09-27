@@ -1,10 +1,20 @@
 import type { MenuItem, Restaurant } from "@/data/types";
 import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
+import {
+  getLocalizedAddress,
+  getLocalizedEpisodeLabel,
+  getLocalizedMenuName,
+  getLocalizedPriceText,
+  getLocalizedRestaurantName,
+  translateCuisineLabel,
+  type AppLocale,
+} from "@/lib/locale";
 
 type RestaurantImageOptions = {
   width?: number;
   height?: number;
   reviewPhotoUrl?: string | null;
+  locale?: AppLocale;
 };
 
 export type RestaurantDisplayImage = {
@@ -175,28 +185,38 @@ function buildPlaceholderSvg(
     Restaurant,
     "id" | "name" | "category" | "representativeMenu" | "menus" | "address"
   >,
-  { width = DEFAULT_IMAGE_WIDTH, height = DEFAULT_IMAGE_HEIGHT }: RestaurantImageOptions = {}
+  {
+    width = DEFAULT_IMAGE_WIDTH,
+    height = DEFAULT_IMAGE_HEIGHT,
+    locale = "ko",
+  }: RestaurantImageOptions = {}
 ) {
   const theme = pickCuisineTheme(restaurant.category);
   const menuItems = normalizeMenuItems(restaurant);
   const heroMenu = truncateText(
-    menuItems.find((menu) => menu.isSignature)?.name ||
-      menuItems[0]?.name ||
-      restaurant.representativeMenu.trim() ||
-      restaurant.name.trim() ||
+    getLocalizedMenuName(menuItems.find((menu) => menu.isSignature)?.name || "", locale) ||
+      getLocalizedMenuName(menuItems[0]?.name || "", locale) ||
+      getLocalizedMenuName(restaurant.representativeMenu.trim(), locale) ||
+      getLocalizedRestaurantName(restaurant.name.trim(), locale) ||
       theme.label,
     28
   );
   const secondaryLine =
-    menuItems.find((menu) => menu.price)?.price ||
-    truncateText(restaurant.address.trim() || restaurant.name.trim() || theme.label, 28);
+    getLocalizedPriceText(menuItems.find((menu) => menu.price)?.price || "", locale) ||
+    truncateText(
+      getLocalizedAddress(restaurant.address.trim(), locale) ||
+        getLocalizedRestaurantName(restaurant.name.trim(), locale) ||
+        theme.label,
+      28
+    );
   const categoryLabel = truncateText(
-    restaurant.category.trim() || theme.label,
+    translateCuisineLabel(restaurant.category.trim(), locale) || theme.label,
     18
   );
+  const accessibleName = getLocalizedRestaurantName(restaurant.name, locale);
 
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(restaurant.name)}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(accessibleName)}">
       <defs>
         <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stop-color="${theme.gradientStart}" />
@@ -308,8 +328,13 @@ export function formatRestaurantBroadcastBadge(
   }
 
   if (broadcastMeta.count <= 1) {
-    const episodeLabel = truncateBadgeText(broadcastMeta.primaryEpisode, 18);
-    return locale === "en" ? `Episode ${episodeLabel}` : `방송 ${episodeLabel}`;
+    const episodeLabel = truncateBadgeText(
+      getLocalizedEpisodeLabel(broadcastMeta.primaryEpisode, locale),
+      18
+    );
+    return locale === "en"
+      ? /^Episode\b/i.test(episodeLabel) ? episodeLabel : `Episode ${episodeLabel}`
+      : `방송 ${episodeLabel}`;
   }
 
   return locale === "en"

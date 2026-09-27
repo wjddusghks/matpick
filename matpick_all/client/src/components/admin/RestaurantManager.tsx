@@ -21,7 +21,6 @@ import {
   FilePenLine,
   LayoutDashboard,
   Link2,
-  ListFilter,
   Loader2,
   MapPin,
   Plus,
@@ -80,6 +79,8 @@ import {
   type RestaurantDraft,
 } from "@/lib/adminRestaurantEditor";
 import "./restaurant-manager.css";
+import AdminAddressLookup from "./AdminAddressLookup";
+import type { AddressResult } from "@/lib/addressSearch";
 
 const states = {
   unknown: "영업 미확인",
@@ -90,7 +91,7 @@ const states = {
 };
 const PAGE_SIZE = 30;
 const noSourceLinks = (): SourceLink[] => [];
-type Filter = "all" | "menus" | "prices" | "edited";
+type Filter = "all" | "menus" | "prices" | "edited" | "deleted";
 export type ManagerView = {
   selectedId?: string;
   query?: string;
@@ -108,7 +109,7 @@ export type ManagerView = {
 export type SaveRestaurantInput = {
   restaurantId: string;
   expectedRevision: number;
-  action: "save" | "reset";
+  action: "save" | "reset" | "delete" | "restore";
   changes: Record<string, unknown>;
 };
 type Props = {
@@ -126,6 +127,7 @@ type Props = {
   onSaved?: (view: ManagerView) => void;
   initialView?: ManagerView;
   saved?: boolean;
+  lookupAddress?: (query: string) => Promise<AddressResult[]>;
 };
 
 function toDraft(restaurant: Restaurant, menus: MenuItem[]): RestaurantDraft {
@@ -206,6 +208,7 @@ export default function RestaurantManager({
   onSaved,
   initialView = {},
   saved = false,
+  lookupAddress,
 }: Props) {
   const [edits, setEdits] = useState(initialEdits);
   const [query, setQuery] = useState(initialView.query || "");
@@ -242,7 +245,7 @@ export default function RestaurantManager({
   const [pasteText, setPasteText] = useState("");
   const [focusField, setFocusField] = useState("");
   const [pending, setPending] = useState<{
-    kind: "switch" | "discard" | "exit" | "reset";
+    kind: "switch" | "discard" | "exit" | "reset" | "delete" | "restore";
     value?: string;
   } | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -252,11 +255,16 @@ export default function RestaurantManager({
   const allowUnload = useRef(false);
   const restoredScroll = useRef(false);
   const records = useMemo(
-    () => applyRestaurantEdits(restaurants, edits),
+    () => applyRestaurantEdits(restaurants, edits, { includeDeleted: true }),
     [restaurants, edits]
   );
   const selected = records.find(r => r.id === selectedId);
   const edit = edits.find(e => e.restaurantId === selectedId);
+  const deletedIds = useMemo(
+    () => new Set(edits.filter(e => e.deletedAt).map(e => e.restaurantId)),
+    [edits]
+  );
+  const isDeleted = deletedIds.has(selectedId);
   const dirty = Boolean(
     draft && initial && JSON.stringify(draft) !== JSON.stringify(initial)
   );
@@ -264,7 +272,7 @@ export default function RestaurantManager({
     () =>
       new Set(
         edits
-          .filter(e => Object.keys(e.changes).length)
+          .filter(e => !e.deletedAt && Object.keys(e.changes).length)
           .map(e => e.restaurantId)
       ),
     [edits]
@@ -318,23 +326,29 @@ export default function RestaurantManager({
       ),
     [entries, sourceId]
   );
-  const missingMenus = entries.filter(e => !e.count).length;
+  const missingMenus = entries.filter(
+    e => !deletedIds.has(e.restaurant.id) && !e.count
+  ).length;
   useEffect(() => {
     if (episodeKey && !episodeOptions.some(a => a.key === episodeKey)) {
       setEpisodeKey("");
     }
   }, [episodeKey, episodeOptions]);
   const missingPrices = entries.filter(
-    e => e.count && e.priced < e.count
+    e => !deletedIds.has(e.restaurant.id) && e.count && e.priced < e.count
   ).length;
   const filtered = useMemo(() => {
     const term = normalizeAdminRestaurantSearch(deferredQuery.trim());
     const items = entries.filter(
       e =>
+        (filter === "deleted"
+          ? deletedIds.has(e.restaurant.id)
+          : !deletedIds.has(e.restaurant.id)) &&
         (!term || e.text.includes(term)) &&
         (!sourceId || e.sourceIds.includes(sourceId)) &&
         (!episodeKey || e.appearances.some(a => a.key === episodeKey)) &&
         (filter === "all" ||
+          filter === "deleted" ||
           (filter === "menus" && !e.count) ||
           (filter === "prices" && e.count > e.priced) ||
           (filter === "edited" && editIds.has(e.restaurant.id)))
@@ -345,7 +359,16 @@ export default function RestaurantManager({
       );
     if (sort === "menus") items.sort((a, b) => a.count - b.count);
     return items;
-  }, [entries, deferredQuery, sourceId, episodeKey, filter, editIds, sort]);
+  }, [
+    entries,
+    deferredQuery,
+    sourceId,
+    episodeKey,
+    filter,
+    editIds,
+    deletedIds,
+    sort,
+  ]);
   const episodeGroups = useMemo(
     () => groupAdminRestaurants(filtered, sourceId, episodeKey),
     [filtered, sourceId, episodeKey]
@@ -380,6 +403,16 @@ export default function RestaurantManager({
     draft?.menus.filter(m => hasKnownMenuPrice(m.price)).length || 0;
   const summary = menuChangeSummary(initial?.menus || [], draft?.menus || []);
   const pasted = useMemo(() => parseMenuPaste(pasteText), [pasteText]);
+  const newPasteRows = pasted.rows.filter(
+    row =>
+      !draft?.menus.some(
+        menu =>
+          menu.name.trim() === row.name &&
+          formatMenuPrice(menu.price || "") === row.price
+      )
+  );
+  const duplicatePasteCount =
+    pasted.duplicates + pasted.rows.length - newPasteRows.length;
   const capacity = 100 - (draft?.menus.length || 0);
   const selectedSources = selected ? getSources(selected.id) : [];
   const selectedAppearances =
@@ -539,8 +572,9 @@ export default function RestaurantManager({
     setMenuQuery("");
     setMenuFilter("all");
   }
-  async function save(action: "save" | "reset") {
+  async function save(action: SaveRestaurantInput["action"]) {
     if (!draft || !initial || !selected || saving || !configured) return;
+    if (isDeleted && (action === "save" || action === "reset")) return;
     const problem =
       action === "save" ? validateRestaurantDraft(draft, initial) : null;
     if (problem) {
@@ -561,7 +595,7 @@ export default function RestaurantManager({
         expectedRevision: edit?.revision || 0,
         action,
         changes:
-          action === "reset" ? {} : buildRestaurantChanges(draft, initial),
+          action === "save" ? buildRestaurantChanges(draft, initial) : {},
       });
       const view = {
         selectedId,
@@ -569,7 +603,12 @@ export default function RestaurantManager({
         sourceId,
         episodeKey,
         viewMode,
-        filter,
+        filter:
+          action === "delete"
+            ? ("deleted" as const)
+            : action === "restore"
+              ? ("all" as const)
+              : filter,
         page: currentPage,
         sort,
         tab,
@@ -584,10 +623,16 @@ export default function RestaurantManager({
       setInitial(draft);
       setUndo([]);
       setChecked([]);
+      if (action === "delete") setFilter("deleted");
+      if (action === "restore") setFilter("all");
       setStatus(
-        action === "reset"
-          ? "수집 원본으로 복원했어요."
-          : "수정한 정보를 저장했어요."
+        action === "delete"
+          ? "식당을 삭제했어요. 검색·지도에서 제외되며 여기에서 복구할 수 있어요."
+          : action === "restore"
+            ? "식당을 복구했어요."
+            : action === "reset"
+              ? "수집 원본으로 복원했어요."
+              : "수정한 정보를 저장했어요."
       );
       if (onSaved) {
         allowUnload.current = true;
@@ -618,6 +663,8 @@ export default function RestaurantManager({
       window.location.assign(action.value);
     }
     if (action?.kind === "reset") void save("reset");
+    if (action?.kind === "delete") void save("delete");
+    if (action?.kind === "restore") void save("restore");
   }
 
   return (
@@ -723,7 +770,7 @@ export default function RestaurantManager({
               {
                 key: "all",
                 label: "전체 식당",
-                count: records.length,
+                count: records.length - deletedIds.size,
                 note: "맛픽에 등록된 모든 식당",
                 icon: Store,
                 tone: "rose",
@@ -793,7 +840,18 @@ export default function RestaurantManager({
                 <h2>
                   식당 목록 <span>{filtered.length.toLocaleString()}</span>
                 </h2>
-                <ListFilter size={17} />
+                <button
+                  className={`am-trash-filter ${filter === "deleted" ? "is-active" : ""}`}
+                  aria-pressed={filter === "deleted"}
+                  onClick={() => {
+                    setQuickFilter(filter === "deleted" ? "all" : "deleted");
+                    setQuery("");
+                    setSourceId("");
+                    setEpisodeKey("");
+                  }}
+                >
+                  <Trash2 size={14} /> 삭제된 식당 {deletedIds.size}
+                </button>
               </div>
               <div className="am-view-switch" aria-label="식당 목록 보기 방식">
                 <button
@@ -1134,7 +1192,7 @@ export default function RestaurantManager({
                         className={`am-state ${draft.operationState === "operating" ? "is-open" : ""}`}
                       >
                         <i />
-                        {states[draft.operationState]}
+                        {isDeleted ? "삭제됨" : states[draft.operationState]}
                       </span>
                     </div>
                     <p>
@@ -1167,662 +1225,721 @@ export default function RestaurantManager({
                       </div>
                     )}
                   </div>
-                  <a
-                    className="am-icon-btn am-detail-link"
-                    title="사용자 상세 화면 보기"
-                    aria-label="사용자 상세 화면 보기"
-                    href={`/restaurant/${encodeURIComponent(selected.id)}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ArrowUpRight size={19} />
-                  </a>
+                  {!isDeleted && (
+                    <a
+                      className="am-icon-btn am-detail-link"
+                      title="사용자 상세 화면 보기"
+                      aria-label="사용자 상세 화면 보기"
+                      href={`/restaurant/${encodeURIComponent(selected.id)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ArrowUpRight size={19} />
+                    </a>
+                  )}
                 </header>
-                <Tabs.Root
-                  value={tab}
-                  onValueChange={value => setTab(value as EditorTab)}
-                  className="am-tabs"
+                <div
+                  className={`am-restaurant-lifecycle ${isDeleted ? "is-deleted" : ""}`}
                 >
-                  <Tabs.List
-                    className="am-tab-list"
-                    aria-label="식당 편집 항목"
+                  <span>
+                    {isDeleted
+                      ? "검색·지도에서 제외된 식당이에요. 복구하면 기존 정보가 돌아옵니다."
+                      : "폐업했거나 잘못 등록된 식당인가요?"}
+                  </span>
+                  <button
+                    type="button"
+                    className="am-btn am-btn-white"
+                    disabled={saving || !configured}
+                    onClick={() =>
+                      setPending({ kind: isDeleted ? "restore" : "delete" })
+                    }
                   >
-                    <Tabs.Trigger disabled={saving} value="menus">
-                      <Utensils size={15} />
-                      메뉴·가격<span>{draft.menus.length}</span>
-                    </Tabs.Trigger>
-                    <Tabs.Trigger disabled={saving} value="info">
-                      <Store size={15} />
-                      기본정보
-                    </Tabs.Trigger>
-                    <Tabs.Trigger disabled={saving} value="sources">
-                      <Link2 size={15} />
-                      출처·메모
-                    </Tabs.Trigger>
-                  </Tabs.List>
-                  <div className="am-editor-body" ref={bodyRef}>
-                    <Tabs.Content value="menus" className="am-tab-content">
-                      <fieldset disabled={saving || !configured}>
-                        <div className="am-menu-heading">
-                          <div>
-                            <h3>메뉴와 가격</h3>
-                            <p>메뉴명과 가격을 눌러 바로 수정하세요.</p>
-                          </div>
-                          <div className="am-menu-actions">
-                            <button
-                              type="button"
-                              className="am-btn am-btn-white am-paste-button"
-                              onClick={() => setPasteOpen(true)}
-                              disabled={capacity <= 0}
-                            >
-                              <ClipboardPaste size={15} />
-                              <span>여러 메뉴 추가</span>
-                            </button>
-                            <button
-                              type="button"
-                              className="am-btn am-btn-primary"
-                              onClick={() => addMenus()}
-                              disabled={capacity <= 0}
-                            >
-                              <Plus size={17} />
-                              메뉴 추가
-                            </button>
-                          </div>
-                        </div>
-                        <div className="am-menu-tools">
-                          <label className="am-search am-menu-search">
-                            <Search size={15} />
-                            <input
-                              aria-label="메뉴 검색"
-                              placeholder="메뉴 찾기"
-                              value={menuQuery}
-                              onChange={e => {
-                                setMenuQuery(e.target.value);
-                                setChecked([]);
-                              }}
-                            />
-                            {menuQuery && (
+                    {isDeleted ? <RotateCcw size={15} /> : <Trash2 size={15} />}
+                    {isDeleted ? "식당 복구" : "식당 삭제"}
+                  </button>
+                </div>
+                <fieldset className="am-editable-fields" disabled={isDeleted}>
+                  <Tabs.Root
+                    value={tab}
+                    onValueChange={value => setTab(value as EditorTab)}
+                    className="am-tabs"
+                  >
+                    <Tabs.List
+                      className="am-tab-list"
+                      aria-label="식당 편집 항목"
+                    >
+                      <Tabs.Trigger disabled={saving} value="menus">
+                        <Utensils size={15} />
+                        메뉴·가격<span>{draft.menus.length}</span>
+                      </Tabs.Trigger>
+                      <Tabs.Trigger disabled={saving} value="info">
+                        <Store size={15} />
+                        기본정보
+                      </Tabs.Trigger>
+                      <Tabs.Trigger disabled={saving} value="sources">
+                        <Link2 size={15} />
+                        출처·메모
+                      </Tabs.Trigger>
+                    </Tabs.List>
+                    <div className="am-editor-body" ref={bodyRef}>
+                      <Tabs.Content value="menus" className="am-tab-content">
+                        <fieldset disabled={saving || !configured}>
+                          <div className="am-menu-heading">
+                            <div>
+                              <h3>메뉴와 가격</h3>
+                              <p>메뉴명과 가격을 눌러 바로 수정하세요.</p>
+                            </div>
+                            <div className="am-menu-actions">
                               <button
                                 type="button"
-                                aria-label="메뉴 검색 지우기"
-                                onClick={() => setMenuQuery("")}
+                                className="am-btn am-btn-white am-paste-button"
+                                onClick={() => setPasteOpen(true)}
+                                disabled={capacity <= 0}
                               >
-                                <X size={13} />
+                                <ClipboardPaste size={15} />
+                                <span>여러 메뉴 추가</span>
                               </button>
-                            )}
-                          </label>
-                          <select
-                            aria-label="메뉴 보기 필터"
-                            value={menuFilter}
-                            onChange={e => {
-                              setMenuFilter(e.target.value);
-                              setChecked([]);
-                            }}
-                          >
-                            <option value="all">
-                              전체 메뉴 {draft.menus.length}
-                            </option>
-                            <option value="missing">
-                              금액 미확인 {draft.menus.length - pricedCount}
-                            </option>
-                            <option value="signature">대표 메뉴</option>
-                          </select>
-                          <span className="am-menu-progress">
-                            <span>
-                              가격 입력{" "}
-                              <b>
-                                {pricedCount}/{draft.menus.length}
-                              </b>
-                            </span>
-                            <i>
-                              <i
-                                style={{
-                                  width: `${draft.menus.length ? (pricedCount / draft.menus.length) * 100 : 0}%`,
-                                }}
-                              />
-                            </i>
-                          </span>
-                        </div>
-                        {undo.length > 0 && (
-                          <div className="am-undo" role="status">
-                            <span>
-                              메뉴 {undo[undo.length - 1].length}개를
-                              삭제했어요. 저장 전까지 되돌릴 수 있어요.
-                            </span>
-                            <button type="button" onClick={undoDelete}>
-                              <RotateCcw size={13} />
-                              되돌리기
-                            </button>
-                          </div>
-                        )}
-                        {checked.length > 0 && (
-                          <div className="am-bulk">
-                            <span>
-                              <CheckCheck size={15} />
-                              <b>{checked.length}개 선택</b>
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => removeMenus(checked)}
-                            >
-                              <Trash2 size={14} />
-                              선택 삭제
-                            </button>
-                            <button
-                              type="button"
-                              className="am-icon-btn"
-                              aria-label="메뉴 선택 해제"
-                              onClick={() => setChecked([])}
-                            >
-                              <X size={14} />
-                            </button>
-                          </div>
-                        )}
-                        {draft.menus.length > 0 && (
-                          <div className="am-table-head">
-                            <input
-                              type="checkbox"
-                              aria-label="표시된 메뉴 전체 선택"
-                              checked={
-                                menuRows.length > 0 &&
-                                menuRows.every(m => checked.includes(m.id))
-                              }
-                              onChange={e =>
-                                setChecked(
-                                  e.target.checked
-                                    ? menuRows.map(m => m.id)
-                                    : []
-                                )
-                              }
-                            />
-                            <span>대표</span>
-                            <span>메뉴명</span>
-                            <span className="am-price-label">가격</span>
-                            <span className="am-row-action-label">관리</span>
-                          </div>
-                        )}
-                        <div
-                          className="am-menu-table"
-                          aria-label="메뉴 편집 목록"
-                        >
-                          {menuRows.map(menu => {
-                            const original = initial.menus.find(
-                              m => m.id === menu.id
-                            );
-                            const isNew = !original;
-                            const changed =
-                              original &&
-                              JSON.stringify(original) !== JSON.stringify(menu);
-                            const index =
-                              draft.menus.findIndex(m => m.id === menu.id) + 1;
-                            return (
-                              <div
-                                key={menu.id}
-                                className={`am-menu-row ${isNew ? "is-new" : changed ? "is-changed" : ""} ${checked.includes(menu.id) ? "is-checked" : ""}`}
-                              >
-                                <input
-                                  className="am-row-check"
-                                  type="checkbox"
-                                  aria-label={`메뉴 ${index} 선택`}
-                                  checked={checked.includes(menu.id)}
-                                  onChange={e =>
-                                    setChecked(current =>
-                                      e.target.checked
-                                        ? [...current, menu.id]
-                                        : current.filter(id => id !== menu.id)
-                                    )
-                                  }
-                                />
-                                <button
-                                  type="button"
-                                  className={`am-signature ${menu.isSignature ? "is-signature" : ""}`}
-                                  aria-label={`메뉴 ${index} 대표 메뉴`}
-                                  aria-pressed={Boolean(menu.isSignature)}
-                                  title="대표 메뉴로 표시"
-                                  onClick={() =>
-                                    updateMenu(menu.id, {
-                                      isSignature: !menu.isSignature,
-                                    })
-                                  }
-                                >
-                                  <Star size={17} />
-                                </button>
-                                <div className="am-menu-name">
-                                  <input
-                                    aria-label={`메뉴명 ${index}`}
-                                    data-editor-field={`name-${menu.id}`}
-                                    aria-invalid={
-                                      issue?.field === `name-${menu.id}`
-                                    }
-                                    maxLength={200}
-                                    value={menu.name}
-                                    placeholder="메뉴 이름 입력"
-                                    onChange={e =>
-                                      updateMenu(menu.id, {
-                                        name: e.target.value,
-                                      })
-                                    }
-                                  />
-                                  {isNew ? (
-                                    <small className="am-new-label">NEW</small>
-                                  ) : changed ? (
-                                    <span
-                                      className="am-change-dot"
-                                      title="수정한 메뉴"
-                                    />
-                                  ) : null}
-                                </div>
-                                <input
-                                  className={`am-price ${!hasKnownMenuPrice(menu.price) ? "is-missing" : ""}`}
-                                  aria-label={`가격 ${index}`}
-                                  data-editor-field={`price-${menu.id}`}
-                                  aria-invalid={
-                                    issue?.field === `price-${menu.id}`
-                                  }
-                                  maxLength={120}
-                                  value={menu.price || ""}
-                                  placeholder="금액 미확인"
-                                  onChange={e =>
-                                    updateMenu(menu.id, {
-                                      price: e.target.value,
-                                    })
-                                  }
-                                  onBlur={e => {
-                                    const formatted = formatMenuPrice(
-                                      e.target.value
-                                    );
-                                    if (formatted !== e.target.value)
-                                      updateMenu(menu.id, { price: formatted });
-                                  }}
-                                />
-                                <div className="am-row-actions">
-                                  <button
-                                    type="button"
-                                    className={`am-icon-btn ${expanded.includes(menu.id) ? "is-active" : ""}`}
-                                    aria-label={`메뉴 ${index} 설명 편집`}
-                                    aria-expanded={expanded.includes(menu.id)}
-                                    title="메뉴 설명"
-                                    onClick={() =>
-                                      setExpanded(current =>
-                                        current.includes(menu.id)
-                                          ? current.filter(id => id !== menu.id)
-                                          : [...current, menu.id]
-                                      )
-                                    }
-                                  >
-                                    <ChevronDown size={15} />
-                                  </button>
-                                  <button
-                                    type="button"
-                                    className="am-icon-btn am-delete"
-                                    aria-label={`메뉴 ${index} 삭제`}
-                                    title="메뉴 삭제"
-                                    onClick={() => removeMenus([menu.id])}
-                                  >
-                                    <Trash2 size={15} />
-                                  </button>
-                                </div>
-                                {expanded.includes(menu.id) && (
-                                  <label className="am-menu-description">
-                                    메뉴 설명
-                                    <input
-                                      aria-label={`메뉴 설명 ${index}`}
-                                      value={menu.description || ""}
-                                      maxLength={500}
-                                      placeholder="양, 구성, 주문 조건 등을 적어 주세요"
-                                      onChange={e =>
-                                        updateMenu(menu.id, {
-                                          description: e.target.value,
-                                        })
-                                      }
-                                    />
-                                  </label>
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                        {!menuRows.length && (
-                          <div className="am-empty am-menu-empty">
-                            <span className="am-empty-icon">
-                              <Utensils size={26} />
-                            </span>
-                            <strong>
-                              {draft.menus.length
-                                ? "조건에 맞는 메뉴가 없어요"
-                                : "첫 메뉴를 등록해 주세요"}
-                            </strong>
-                            <p>
-                              {draft.menus.length
-                                ? "검색어나 메뉴 필터를 변경해 보세요."
-                                : "메뉴 이름과 가격만 있으면 충분해요."}
-                            </p>
-                            {!draft.menus.length && (
                               <button
                                 type="button"
                                 className="am-btn am-btn-primary"
                                 onClick={() => addMenus()}
+                                disabled={capacity <= 0}
                               >
-                                <Plus size={16} />첫 메뉴 추가
+                                <Plus size={17} />
+                                메뉴 추가
                               </button>
+                            </div>
+                          </div>
+                          <div className="am-menu-tools">
+                            <label className="am-search am-menu-search">
+                              <Search size={15} />
+                              <input
+                                aria-label="메뉴 검색"
+                                placeholder="메뉴 찾기"
+                                value={menuQuery}
+                                onChange={e => {
+                                  setMenuQuery(e.target.value);
+                                  setChecked([]);
+                                }}
+                              />
+                              {menuQuery && (
+                                <button
+                                  type="button"
+                                  aria-label="메뉴 검색 지우기"
+                                  onClick={() => setMenuQuery("")}
+                                >
+                                  <X size={13} />
+                                </button>
+                              )}
+                            </label>
+                            <select
+                              aria-label="메뉴 보기 필터"
+                              value={menuFilter}
+                              onChange={e => {
+                                setMenuFilter(e.target.value);
+                                setChecked([]);
+                              }}
+                            >
+                              <option value="all">
+                                전체 메뉴 {draft.menus.length}
+                              </option>
+                              <option value="missing">
+                                금액 미확인 {draft.menus.length - pricedCount}
+                              </option>
+                              <option value="signature">대표 메뉴</option>
+                            </select>
+                            <span className="am-menu-progress">
+                              <span>
+                                가격 입력{" "}
+                                <b>
+                                  {pricedCount}/{draft.menus.length}
+                                </b>
+                              </span>
+                              <i>
+                                <i
+                                  style={{
+                                    width: `${draft.menus.length ? (pricedCount / draft.menus.length) * 100 : 0}%`,
+                                  }}
+                                />
+                              </i>
+                            </span>
+                          </div>
+                          {undo.length > 0 && (
+                            <div className="am-undo" role="status">
+                              <span>
+                                메뉴 {undo[undo.length - 1].length}개를
+                                삭제했어요. 저장 전까지 되돌릴 수 있어요.
+                              </span>
+                              <button type="button" onClick={undoDelete}>
+                                <RotateCcw size={13} />
+                                되돌리기
+                              </button>
+                            </div>
+                          )}
+                          {checked.length > 0 && (
+                            <div className="am-bulk">
+                              <span>
+                                <CheckCheck size={15} />
+                                <b>{checked.length}개 선택</b>
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => removeMenus(checked)}
+                              >
+                                <Trash2 size={14} />
+                                선택 삭제
+                              </button>
+                              <button
+                                type="button"
+                                className="am-icon-btn"
+                                aria-label="메뉴 선택 해제"
+                                onClick={() => setChecked([])}
+                              >
+                                <X size={14} />
+                              </button>
+                            </div>
+                          )}
+                          {draft.menus.length > 0 && (
+                            <div className="am-table-head">
+                              <input
+                                type="checkbox"
+                                aria-label="표시된 메뉴 전체 선택"
+                                checked={
+                                  menuRows.length > 0 &&
+                                  menuRows.every(m => checked.includes(m.id))
+                                }
+                                onChange={e =>
+                                  setChecked(
+                                    e.target.checked
+                                      ? menuRows.map(m => m.id)
+                                      : []
+                                  )
+                                }
+                              />
+                              <span>대표</span>
+                              <span>메뉴명</span>
+                              <span className="am-price-label">가격</span>
+                              <span className="am-row-action-label">관리</span>
+                            </div>
+                          )}
+                          <div
+                            className="am-menu-table"
+                            aria-label="메뉴 편집 목록"
+                          >
+                            {menuRows.map(menu => {
+                              const original = initial.menus.find(
+                                m => m.id === menu.id
+                              );
+                              const isNew = !original;
+                              const changed =
+                                original &&
+                                JSON.stringify(original) !==
+                                  JSON.stringify(menu);
+                              const index =
+                                draft.menus.findIndex(m => m.id === menu.id) +
+                                1;
+                              return (
+                                <div
+                                  key={menu.id}
+                                  className={`am-menu-row ${isNew ? "is-new" : changed ? "is-changed" : ""} ${checked.includes(menu.id) ? "is-checked" : ""}`}
+                                >
+                                  <input
+                                    className="am-row-check"
+                                    type="checkbox"
+                                    aria-label={`메뉴 ${index} 선택`}
+                                    checked={checked.includes(menu.id)}
+                                    onChange={e =>
+                                      setChecked(current =>
+                                        e.target.checked
+                                          ? [...current, menu.id]
+                                          : current.filter(id => id !== menu.id)
+                                      )
+                                    }
+                                  />
+                                  <button
+                                    type="button"
+                                    className={`am-signature ${menu.isSignature ? "is-signature" : ""}`}
+                                    aria-label={`메뉴 ${index} 대표 메뉴`}
+                                    aria-pressed={Boolean(menu.isSignature)}
+                                    title="대표 메뉴로 표시"
+                                    onClick={() =>
+                                      updateMenu(menu.id, {
+                                        isSignature: !menu.isSignature,
+                                      })
+                                    }
+                                  >
+                                    <Star size={17} />
+                                  </button>
+                                  <div className="am-menu-name">
+                                    <input
+                                      aria-label={`메뉴명 ${index}`}
+                                      data-editor-field={`name-${menu.id}`}
+                                      aria-invalid={
+                                        issue?.field === `name-${menu.id}`
+                                      }
+                                      maxLength={200}
+                                      value={menu.name}
+                                      placeholder="메뉴 이름 입력"
+                                      onChange={e =>
+                                        updateMenu(menu.id, {
+                                          name: e.target.value,
+                                        })
+                                      }
+                                    />
+                                    {isNew ? (
+                                      <small className="am-new-label">
+                                        NEW
+                                      </small>
+                                    ) : changed ? (
+                                      <span
+                                        className="am-change-dot"
+                                        title="수정한 메뉴"
+                                      />
+                                    ) : null}
+                                  </div>
+                                  <input
+                                    className={`am-price ${!hasKnownMenuPrice(menu.price) ? "is-missing" : ""}`}
+                                    aria-label={`가격 ${index}`}
+                                    data-editor-field={`price-${menu.id}`}
+                                    aria-invalid={
+                                      issue?.field === `price-${menu.id}`
+                                    }
+                                    maxLength={120}
+                                    value={menu.price || ""}
+                                    placeholder="금액 미확인"
+                                    onChange={e =>
+                                      updateMenu(menu.id, {
+                                        price: e.target.value,
+                                      })
+                                    }
+                                    onBlur={e => {
+                                      const formatted = formatMenuPrice(
+                                        e.target.value
+                                      );
+                                      if (formatted !== e.target.value)
+                                        updateMenu(menu.id, {
+                                          price: formatted,
+                                        });
+                                    }}
+                                  />
+                                  <div className="am-row-actions">
+                                    <button
+                                      type="button"
+                                      className={`am-icon-btn ${expanded.includes(menu.id) ? "is-active" : ""}`}
+                                      aria-label={`메뉴 ${index} 설명 편집`}
+                                      aria-expanded={expanded.includes(menu.id)}
+                                      title="메뉴 설명"
+                                      onClick={() =>
+                                        setExpanded(current =>
+                                          current.includes(menu.id)
+                                            ? current.filter(
+                                                id => id !== menu.id
+                                              )
+                                            : [...current, menu.id]
+                                        )
+                                      }
+                                    >
+                                      <ChevronDown size={15} />
+                                    </button>
+                                    <button
+                                      type="button"
+                                      className="am-icon-btn am-delete"
+                                      aria-label={`메뉴 ${index} 삭제`}
+                                      title="메뉴 삭제"
+                                      onClick={() => removeMenus([menu.id])}
+                                    >
+                                      <Trash2 size={15} />
+                                    </button>
+                                  </div>
+                                  {expanded.includes(menu.id) && (
+                                    <label className="am-menu-description">
+                                      메뉴 설명
+                                      <input
+                                        aria-label={`메뉴 설명 ${index}`}
+                                        value={menu.description || ""}
+                                        maxLength={500}
+                                        placeholder="양, 구성, 주문 조건 등을 적어 주세요"
+                                        onChange={e =>
+                                          updateMenu(menu.id, {
+                                            description: e.target.value,
+                                          })
+                                        }
+                                      />
+                                    </label>
+                                  )}
+                                </div>
+                              );
+                            })}
+                          </div>
+                          {!menuRows.length && (
+                            <div className="am-empty am-menu-empty">
+                              <span className="am-empty-icon">
+                                <Utensils size={26} />
+                              </span>
+                              <strong>
+                                {draft.menus.length
+                                  ? "조건에 맞는 메뉴가 없어요"
+                                  : "첫 메뉴를 등록해 주세요"}
+                              </strong>
+                              <p>
+                                {draft.menus.length
+                                  ? "검색어나 메뉴 필터를 변경해 보세요."
+                                  : "메뉴 이름과 가격만 있으면 충분해요."}
+                              </p>
+                              {!draft.menus.length && (
+                                <button
+                                  type="button"
+                                  className="am-btn am-btn-primary"
+                                  onClick={() => addMenus()}
+                                >
+                                  <Plus size={16} />첫 메뉴 추가
+                                </button>
+                              )}
+                            </div>
+                          )}
+                          {draft.menus.length > 0 && (
+                            <button
+                              type="button"
+                              className="am-add-row"
+                              onClick={() => addMenus()}
+                              disabled={capacity <= 0}
+                            >
+                              <Plus size={16} />
+                              {capacity > 0
+                                ? "새 메뉴 추가"
+                                : "메뉴 100개 등록 완료"}
+                            </button>
+                          )}
+                          <div className="am-menu-footnote">
+                            <Star size={13} />
+                            <span>
+                              별표는 대표 메뉴로 노출돼요. 가격은 숫자만
+                              입력해도 원 단위로 정리돼요. ‘싯가’도 입력할 수
+                              있어요.
+                            </span>
+                          </div>
+                        </fieldset>
+                      </Tabs.Content>
+                      <Tabs.Content value="info" className="am-tab-content">
+                        <fieldset
+                          disabled={saving || !configured}
+                          className="am-info-content"
+                        >
+                          <div className="am-content-title">
+                            <span className="am-section-icon">
+                              <Store size={19} />
+                            </span>
+                            <div>
+                              <h3>식당 기본정보</h3>
+                              <p>
+                                이름, 위치, 영업 상태를 한곳에서 관리하세요.
+                              </p>
+                            </div>
+                          </div>
+                          <div className="am-reference-links">
+                            <a
+                              className="am-btn am-btn-white"
+                              href={`https://map.naver.com/p/search/${encodeURIComponent(draft.name + " " + draft.address)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              네이버지도 확인
+                              <ArrowUpRight size={14} />
+                            </a>
+                            <a
+                              className="am-btn am-btn-white"
+                              href={`https://map.kakao.com/?q=${encodeURIComponent(draft.name + " " + draft.address)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              카카오지도 확인
+                              <ArrowUpRight size={14} />
+                            </a>
+                            {selected.locationVerifiedAt && (
+                              <small>
+                                위치 확인{" "}
+                                {selected.locationVerifiedAt.slice(0, 10)}
+                              </small>
                             )}
                           </div>
-                        )}
-                        {draft.menus.length > 0 && (
-                          <button
-                            type="button"
-                            className="am-add-row"
-                            onClick={() => addMenus()}
-                            disabled={capacity <= 0}
-                          >
-                            <Plus size={16} />
-                            {capacity > 0
-                              ? "새 메뉴 추가"
-                              : "메뉴 100개 등록 완료"}
-                          </button>
-                        )}
-                        <div className="am-menu-footnote">
-                          <Star size={13} />
-                          <span>
-                            별표는 대표 메뉴로 노출돼요. 가격은 숫자만 입력해도
-                            원 단위로 정리돼요. ‘싯가’도 입력할 수 있어요.
-                          </span>
-                        </div>
-                      </fieldset>
-                    </Tabs.Content>
-                    <Tabs.Content value="info" className="am-tab-content">
-                      <fieldset
-                        disabled={saving || !configured}
-                        className="am-info-content"
-                      >
-                        <div className="am-content-title">
-                          <span className="am-section-icon">
-                            <Store size={19} />
-                          </span>
-                          <div>
-                            <h3>식당 기본정보</h3>
-                            <p>이름, 위치, 영업 상태를 한곳에서 관리하세요.</p>
-                          </div>
-                        </div>
-                        <div className="am-reference-links">
-                          <a
-                            className="am-btn am-btn-white"
-                            href={`https://map.naver.com/p/search/${encodeURIComponent(draft.name + " " + draft.address)}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            네이버지도 확인
-                            <ArrowUpRight size={14} />
-                          </a>
-                          <a
-                            className="am-btn am-btn-white"
-                            href={`https://map.kakao.com/?q=${encodeURIComponent(draft.name + " " + draft.address)}`}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            카카오지도 확인
-                            <ArrowUpRight size={14} />
-                          </a>
-                          {selected.locationVerifiedAt && (
-                            <small>
-                              위치 확인{" "}
-                              {selected.locationVerifiedAt.slice(0, 10)}
-                            </small>
-                          )}
-                        </div>
-                        <div className="am-field-grid">
-                          <Field
-                            name="name"
-                            label="식당명"
-                            value={draft.name}
-                            onChange={v => update("name", v)}
-                            maxLength={200}
-                            issue={issue}
-                          />
-                          <Field
-                            name="category"
-                            label="음식 종류"
-                            value={draft.category}
-                            onChange={v => update("category", v)}
-                            maxLength={100}
-                            issue={issue}
-                          />
-                          <Field
-                            name="region"
-                            label="지역"
-                            value={draft.region}
-                            onChange={v => update("region", v)}
-                            maxLength={100}
-                            issue={issue}
-                          />
-                          <Field
-                            name="phone"
-                            label="전화번호"
-                            value={draft.phone}
-                            onChange={v => update("phone", v)}
-                            type="tel"
-                            maxLength={80}
-                          />
-                          <div className="am-full">
+                          <div className="am-field-grid">
                             <Field
-                              name="address"
-                              label="주소"
-                              value={draft.address}
-                              onChange={v => update("address", v)}
+                              name="name"
+                              label="식당명"
+                              value={draft.name}
+                              onChange={v => update("name", v)}
+                              maxLength={200}
+                              issue={issue}
+                            />
+                            <Field
+                              name="category"
+                              label="음식 종류"
+                              value={draft.category}
+                              onChange={v => update("category", v)}
+                              maxLength={100}
+                              issue={issue}
+                            />
+                            <Field
+                              name="region"
+                              label="지역"
+                              value={draft.region}
+                              onChange={v => update("region", v)}
+                              maxLength={100}
+                              issue={issue}
+                            />
+                            <Field
+                              name="phone"
+                              label="전화번호"
+                              value={draft.phone}
+                              onChange={v => update("phone", v)}
+                              type="tel"
+                              maxLength={80}
+                            />
+                            <div className="am-full">
+                              <Field
+                                name="address"
+                                label="주소"
+                                value={draft.address}
+                                onChange={v => update("address", v)}
+                                issue={issue}
+                              />
+                              <AdminAddressLookup
+                                key={selectedId}
+                                address={draft.address}
+                                disabled={saving || !configured || isDeleted}
+                                lookup={lookupAddress}
+                                onSelect={result => {
+                                  setDraft(current =>
+                                    current
+                                      ? {
+                                          ...current,
+                                          address:
+                                            result.roadAddress ||
+                                            result.jibunAddress,
+                                          lat: String(result.lat),
+                                          lng: String(result.lng),
+                                        }
+                                      : current
+                                  );
+                                  setStatus("");
+                                  setIssue(null);
+                                  setError("");
+                                }}
+                              />
+                            </div>
+                            <Field
+                              name="lat"
+                              label="위도"
+                              value={draft.lat}
+                              onChange={v => update("lat", v)}
+                              type="number"
+                              issue={issue}
+                            />
+                            <Field
+                              name="lng"
+                              label="경도"
+                              value={draft.lng}
+                              onChange={v => update("lng", v)}
+                              type="number"
                               issue={issue}
                             />
                           </div>
-                          <Field
-                            name="lat"
-                            label="위도"
-                            value={draft.lat}
-                            onChange={v => update("lat", v)}
-                            type="number"
-                            issue={issue}
-                          />
-                          <Field
-                            name="lng"
-                            label="경도"
-                            value={draft.lng}
-                            onChange={v => update("lng", v)}
-                            type="number"
-                            issue={issue}
-                          />
-                        </div>
-                        <p className="am-inline-tip">
-                          <MapPin size={14} />
-                          주소를 변경했다면 지도에 표시될 위도·경도도 확인해
-                          주세요.
-                        </p>
-                        <div className="am-operation">
-                          <label className="am-field">
-                            <span>영업 상태</span>
-                            <select
-                              value={draft.operationState}
-                              onChange={e =>
-                                update(
-                                  "operationState",
-                                  e.target
-                                    .value as RestaurantDraft["operationState"]
-                                )
-                              }
-                            >
-                              {Object.entries(states).map(([key, value]) => (
-                                <option key={key} value={key}>
-                                  {value}
-                                </option>
-                              ))}
-                            </select>
-                          </label>
-                          <p>
-                            휴업·폐업·이전으로 저장한 식당은 추천 목록에서
-                            제외됩니다.
+                          <p className="am-inline-tip">
+                            <MapPin size={14} />
+                            위의 ‘주소·좌표 찾기’에서 결과를 선택하면 좌표가
+                            함께 입력됩니다. 필요하면 위도·경도를 직접 수정할
+                            수도 있어요.
                           </p>
-                        </div>
-                      </fieldset>
-                    </Tabs.Content>
-                    <Tabs.Content value="sources" className="am-tab-content">
-                      <fieldset
-                        disabled={saving || !configured}
-                        className="am-info-content"
-                      >
-                        <div className="am-content-title">
-                          <span className="am-section-icon">
-                            <ShieldCheck size={20} />
-                          </span>
-                          <div>
-                            <h3>믿을 수 있는 메뉴 정보</h3>
+                          <div className="am-operation">
+                            <label className="am-field">
+                              <span>영업 상태</span>
+                              <select
+                                value={draft.operationState}
+                                onChange={e =>
+                                  update(
+                                    "operationState",
+                                    e.target
+                                      .value as RestaurantDraft["operationState"]
+                                  )
+                                }
+                              >
+                                {Object.entries(states).map(([key, value]) => (
+                                  <option key={key} value={key}>
+                                    {value}
+                                  </option>
+                                ))}
+                              </select>
+                            </label>
                             <p>
-                              확인한 날짜와 출처를 남겨 다음 관리를 편하게
-                              하세요.
+                              휴업·폐업·이전으로 저장한 식당은 추천 목록에서
+                              제외됩니다.
                             </p>
                           </div>
-                        </div>
-                        <div className="am-date-row">
-                          <Field
-                            name="menuPriceVerifiedAt"
-                            label="가격 정보를 확인한 날짜"
-                            value={draft.menuPriceVerifiedAt}
-                            onChange={v => update("menuPriceVerifiedAt", v)}
-                            type="date"
-                            issue={issue}
-                          />
-                          <button
-                            type="button"
-                            className="am-btn am-btn-white"
-                            onClick={() =>
-                              update(
-                                "menuPriceVerifiedAt",
-                                new Date().toLocaleDateString("en-CA", {
-                                  timeZone: "Asia/Seoul",
-                                })
-                              )
-                            }
-                          >
-                            오늘로 입력
-                          </button>
-                        </div>
-                        <p className="am-inline-tip">
-                          실제로 확인한 날짜만 입력해 주세요. 확인하지 않았다면
-                          비워 두세요.
-                        </p>
-                        <label className="am-field am-note">
-                          <span>
-                            가격 정보 메모 <small>공개 데이터에 포함</small>
-                          </span>
-                          <textarea
-                            value={draft.menuPriceNote}
-                            onChange={e =>
-                              update("menuPriceNote", e.target.value)
-                            }
-                            maxLength={1000}
-                            rows={4}
-                            placeholder="가격 변동, 전화 확인 내용, 다음에 확인할 항목을 기록하세요."
-                          />
-                        </label>
-                        <div className="am-section-heading am-source-heading">
-                          <h3>
-                            가격 정보 출처{" "}
-                            <span>{draft.menuPriceSources.length}</span>
-                          </h3>
-                          <button
-                            type="button"
-                            className="am-btn am-btn-white"
-                            disabled={draft.menuPriceSources.length >= 10}
-                            onClick={() =>
-                              update("menuPriceSources", [
-                                ...draft.menuPriceSources,
-                                { label: "", url: "" },
-                              ])
-                            }
-                          >
-                            <Plus size={15} />
-                            출처 추가
-                          </button>
-                        </div>
-                        {draft.menuPriceSources.map((source, index) => (
-                          <div className="am-source-card" key={index}>
-                            <div className="am-source-number">
-                              <Link2 size={15} />
-                            </div>
+                        </fieldset>
+                      </Tabs.Content>
+                      <Tabs.Content value="sources" className="am-tab-content">
+                        <fieldset
+                          disabled={saving || !configured}
+                          className="am-info-content"
+                        >
+                          <div className="am-content-title">
+                            <span className="am-section-icon">
+                              <ShieldCheck size={20} />
+                            </span>
                             <div>
-                              <Field
-                                name={`source-label-${index}`}
-                                label={`출처 이름 ${index + 1}`}
-                                value={source.label}
-                                onChange={v =>
-                                  update(
-                                    "menuPriceSources",
-                                    draft.menuPriceSources.map((s, i) =>
-                                      i === index ? { ...s, label: v } : s
-                                    )
-                                  )
-                                }
-                                maxLength={100}
-                              />
-                              <Field
-                                name={`source-${index}`}
-                                label={`출처 링크 ${index + 1}`}
-                                value={source.url}
-                                onChange={v =>
-                                  update(
-                                    "menuPriceSources",
-                                    draft.menuPriceSources.map((s, i) =>
-                                      i === index ? { ...s, url: v } : s
-                                    )
-                                  )
-                                }
-                                maxLength={2000}
-                                type="url"
-                                issue={issue}
-                              />
-                            </div>
-                            <button
-                              type="button"
-                              className="am-icon-btn am-delete"
-                              aria-label={`출처 ${index + 1} 삭제`}
-                              onClick={() =>
-                                update(
-                                  "menuPriceSources",
-                                  draft.menuPriceSources.filter(
-                                    (_, i) => i !== index
-                                  )
-                                )
-                              }
-                            >
-                              <Trash2 size={16} />
-                            </button>
-                          </div>
-                        ))}
-                        {!draft.menuPriceSources.length && (
-                          <p className="am-no-sources">
-                            네이버·카카오 지도나 식당 공식 메뉴 링크를 추가할 수
-                            있어요.
-                          </p>
-                        )}
-                        {editIds.has(selected.id) && (
-                          <div className="am-reset-section">
-                            <div>
-                              <strong>수집 원본으로 복원</strong>
+                              <h3>믿을 수 있는 메뉴 정보</h3>
                               <p>
-                                이 식당의 관리자 수정 내용을 해제하고 원본
-                                정보를 불러옵니다.
+                                확인한 날짜와 출처를 남겨 다음 관리를 편하게
+                                하세요.
                               </p>
                             </div>
+                          </div>
+                          <div className="am-date-row">
+                            <Field
+                              name="menuPriceVerifiedAt"
+                              label="가격 정보를 확인한 날짜"
+                              value={draft.menuPriceVerifiedAt}
+                              onChange={v => update("menuPriceVerifiedAt", v)}
+                              type="date"
+                              issue={issue}
+                            />
                             <button
                               type="button"
                               className="am-btn am-btn-white"
-                              onClick={() => setPending({ kind: "reset" })}
+                              onClick={() =>
+                                update(
+                                  "menuPriceVerifiedAt",
+                                  new Date().toLocaleDateString("en-CA", {
+                                    timeZone: "Asia/Seoul",
+                                  })
+                                )
+                              }
                             >
-                              <RotateCcw size={14} />
-                              원본 복원
+                              오늘로 입력
                             </button>
                           </div>
-                        )}
-                      </fieldset>
-                    </Tabs.Content>
-                  </div>
-                </Tabs.Root>
+                          <p className="am-inline-tip">
+                            실제로 확인한 날짜만 입력해 주세요. 확인하지
+                            않았다면 비워 두세요.
+                          </p>
+                          <label className="am-field am-note">
+                            <span>
+                              가격 정보 메모 <small>공개 데이터에 포함</small>
+                            </span>
+                            <textarea
+                              value={draft.menuPriceNote}
+                              onChange={e =>
+                                update("menuPriceNote", e.target.value)
+                              }
+                              maxLength={1000}
+                              rows={4}
+                              placeholder="가격 변동, 전화 확인 내용, 다음에 확인할 항목을 기록하세요."
+                            />
+                          </label>
+                          <div className="am-section-heading am-source-heading">
+                            <h3>
+                              가격 정보 출처{" "}
+                              <span>{draft.menuPriceSources.length}</span>
+                            </h3>
+                            <button
+                              type="button"
+                              className="am-btn am-btn-white"
+                              disabled={draft.menuPriceSources.length >= 10}
+                              onClick={() =>
+                                update("menuPriceSources", [
+                                  ...draft.menuPriceSources,
+                                  { label: "", url: "" },
+                                ])
+                              }
+                            >
+                              <Plus size={15} />
+                              출처 추가
+                            </button>
+                          </div>
+                          {draft.menuPriceSources.map((source, index) => (
+                            <div className="am-source-card" key={index}>
+                              <div className="am-source-number">
+                                <Link2 size={15} />
+                              </div>
+                              <div>
+                                <Field
+                                  name={`source-label-${index}`}
+                                  label={`출처 이름 ${index + 1}`}
+                                  value={source.label}
+                                  onChange={v =>
+                                    update(
+                                      "menuPriceSources",
+                                      draft.menuPriceSources.map((s, i) =>
+                                        i === index ? { ...s, label: v } : s
+                                      )
+                                    )
+                                  }
+                                  maxLength={100}
+                                />
+                                <Field
+                                  name={`source-${index}`}
+                                  label={`출처 링크 ${index + 1}`}
+                                  value={source.url}
+                                  onChange={v =>
+                                    update(
+                                      "menuPriceSources",
+                                      draft.menuPriceSources.map((s, i) =>
+                                        i === index ? { ...s, url: v } : s
+                                      )
+                                    )
+                                  }
+                                  maxLength={2000}
+                                  type="url"
+                                  issue={issue}
+                                />
+                              </div>
+                              <button
+                                type="button"
+                                className="am-icon-btn am-delete"
+                                aria-label={`출처 ${index + 1} 삭제`}
+                                onClick={() =>
+                                  update(
+                                    "menuPriceSources",
+                                    draft.menuPriceSources.filter(
+                                      (_, i) => i !== index
+                                    )
+                                  )
+                                }
+                              >
+                                <Trash2 size={16} />
+                              </button>
+                            </div>
+                          ))}
+                          {!draft.menuPriceSources.length && (
+                            <p className="am-no-sources">
+                              네이버·카카오 지도나 식당 공식 메뉴 링크를 추가할
+                              수 있어요.
+                            </p>
+                          )}
+                          {editIds.has(selected.id) && (
+                            <div className="am-reset-section">
+                              <div>
+                                <strong>수집 원본으로 복원</strong>
+                                <p>
+                                  이 식당의 관리자 수정 내용을 해제하고 원본
+                                  정보를 불러옵니다.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                className="am-btn am-btn-white"
+                                onClick={() => setPending({ kind: "reset" })}
+                              >
+                                <RotateCcw size={14} />
+                                원본 복원
+                              </button>
+                            </div>
+                          )}
+                        </fieldset>
+                      </Tabs.Content>
+                    </div>
+                  </Tabs.Root>
+                </fieldset>
                 <footer className={`am-savebar ${dirty ? "is-dirty" : ""}`}>
                   {error && (
                     <div className="am-save-error" role="alert">
@@ -1873,7 +1990,7 @@ export default function RestaurantManager({
                     <button
                       type="submit"
                       className="am-btn am-btn-primary am-save"
-                      disabled={!dirty || saving || !configured}
+                      disabled={!dirty || saving || !configured || isDeleted}
                     >
                       {saving ? (
                         <Loader2 size={16} className="am-spin" />
@@ -1897,44 +2014,52 @@ export default function RestaurantManager({
             </span>
             <DialogTitle>여러 메뉴를 한 번에 추가</DialogTitle>
             <DialogDescription>
-              엑셀의 메뉴명·가격 두 열을 복사해서 붙여 넣으세요. 가격이 없으면
-              메뉴명만 입력해도 돼요.
+              네이버지도 메뉴 영역을 복사해서 그대로 붙여 넣으세요. 메뉴명 다음
+              줄의 가격, 한 줄로 된 메뉴·가격, 엑셀 두 열을 자동으로 나눠
+              드려요.
             </DialogDescription>
           </DialogHeader>
           <label className="am-field">
-            <span>한 줄에 메뉴 하나 · 최대 {capacity}개 추가</span>
+            <span>메뉴와 가격 붙여넣기 · 최대 {capacity}개 추가</span>
             <textarea
               aria-label="여러 메뉴 붙여넣기"
               value={pasteText}
               onChange={e => setPasteText(e.target.value)}
-              rows={7}
-              placeholder={"김치찌개\t9000\n된장찌개\t8500\n계란말이\t12000"}
+              rows={6}
+              placeholder={
+                "대표\n김치찌개\n9,000원\n된장찌개\n8,500원\n계란말이 12,000원"
+              }
             />
           </label>
           <div className="am-paste-preview" aria-live="polite">
-            {pasted.errors.length ? (
-              <p className="am-text-red">{pasted.errors[0]}</p>
-            ) : pasted.rows.length > capacity ? (
+            {pasted.errors.map((error, index) => (
+              <p className="am-text-red" key={index}>
+                {error}
+              </p>
+            ))}
+            {newPasteRows.length > capacity && (
               <p className="am-text-red">
                 {capacity}개까지 추가할 수 있어요. 행 수를 줄여 주세요.
               </p>
-            ) : (
-              <>
-                <strong>{pasted.rows.length}개 메뉴 준비됨</strong>
-                {pasted.rows.slice(0, 3).map((row, i) => (
-                  <p key={i}>
-                    <span>{row.name}</span>
-                    <b>{row.price || "금액 미확인"}</b>
-                  </p>
-                ))}
-                {pasted.rows.length > 3 && (
-                  <small>
-                    외 {pasted.rows.length - 3}개 · 추가 후 표에서 수정할 수
-                    있어요.
-                  </small>
-                )}
-              </>
             )}
+            <strong>{newPasteRows.length}개 메뉴 미리보기</strong>
+            {duplicatePasteCount > 0 && (
+              <small>
+                메뉴명·가격이 같은 중복 {duplicatePasteCount}개는 제외했어요.
+              </small>
+            )}
+            <div className="am-paste-rows">
+              {newPasteRows.map((row, i) => (
+                <p key={i}>
+                  <span>{row.name}</span>
+                  <b>{row.price || "금액 미확인"}</b>
+                </p>
+              ))}
+            </div>
+            <small>
+              메뉴명·금액을 확인하세요. 추가 후 수정할 수 있으며 ‘변경사항
+              저장’을 눌러야 반영돼요. 가격 출처·확인일도 함께 기록해 주세요.
+            </small>
           </div>
           <DialogFooter>
             <button
@@ -1948,14 +2073,14 @@ export default function RestaurantManager({
               type="button"
               className="am-btn am-btn-primary"
               disabled={
-                !pasted.rows.length ||
+                !newPasteRows.length ||
                 pasted.errors.length > 0 ||
-                pasted.rows.length > capacity
+                newPasteRows.length > capacity
               }
-              onClick={() => addMenus(pasted.rows)}
+              onClick={() => addMenus(newPasteRows)}
             >
               <Plus size={16} />
-              {pasted.rows.length}개 메뉴 추가
+              {newPasteRows.length}개 메뉴 추가
             </button>
           </DialogFooter>
         </DialogContent>
@@ -1969,14 +2094,22 @@ export default function RestaurantManager({
         <AlertDialogContent className="am-dialog">
           <AlertDialogHeader>
             <AlertDialogTitle>
-              {pending?.kind === "reset"
-                ? "수집 원본으로 복원할까요?"
-                : "저장하지 않은 변경사항이 있어요"}
+              {pending?.kind === "delete"
+                ? `${selected?.name} 식당을 삭제할까요?`
+                : pending?.kind === "restore"
+                  ? `${selected?.name} 식당을 복구할까요?`
+                  : pending?.kind === "reset"
+                    ? "수집 원본으로 복원할까요?"
+                    : "저장하지 않은 변경사항이 있어요"}
             </AlertDialogTitle>
             <AlertDialogDescription>
-              {pending?.kind === "reset"
-                ? "이 식당에 저장한 관리자 수정 내용을 모두 해제합니다. 수집한 원본으로 돌아가며 복원 기록은 남습니다."
-                : "계속하면 지금 수정한 내용은 저장되지 않아요. 편집을 계속하려면 돌아가기를 선택하세요."}
+              {pending?.kind === "delete"
+                ? `${selected?.address} · 검색·지도·상세 화면에서 제외합니다. 저장하지 않은 변경사항은 버리고, 마지막 저장 정보는 ‘삭제된 식당’에서 복구할 수 있어요.`
+                : pending?.kind === "restore"
+                  ? "삭제하기 전 저장된 메뉴·가격·주소로 복구합니다. 기존 영업 상태도 유지되니 재개업했다면 기본정보에서 영업 상태를 확인해 주세요."
+                  : pending?.kind === "reset"
+                    ? "이 식당에 저장한 관리자 수정 내용을 모두 해제합니다. 수집한 원본으로 돌아가며 복원 기록은 남습니다."
+                    : "계속하면 지금 수정한 내용은 저장되지 않아요. 편집을 계속하려면 돌아가기를 선택하세요."}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -1985,11 +2118,15 @@ export default function RestaurantManager({
               className="am-confirm-button"
               onClick={confirmPending}
             >
-              {pending?.kind === "reset"
-                ? "원본으로 복원"
-                : pending?.kind === "discard"
-                  ? "변경 취소"
-                  : "저장하지 않고 이동"}
+              {pending?.kind === "delete"
+                ? "식당 삭제"
+                : pending?.kind === "restore"
+                  ? "식당 복구"
+                  : pending?.kind === "reset"
+                    ? "원본으로 복원"
+                    : pending?.kind === "discard"
+                      ? "변경 취소"
+                      : "저장하지 않고 이동"}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

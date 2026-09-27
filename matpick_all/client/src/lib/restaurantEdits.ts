@@ -4,6 +4,7 @@ export type RestaurantEdit = {
   restaurantId: string;
   revision: number;
   updatedAt: string;
+  deletedAt?: string | null;
   changes: Partial<Restaurant>;
 };
 
@@ -29,12 +30,18 @@ export function loadRestaurantEdits() {
 
 export function applyRestaurantEdits(
   base: Restaurant[],
-  edits = savedEdits
+  edits = savedEdits,
+  options: { includeDeleted?: boolean } = {}
 ): Restaurant[] {
-  const byId = new Map(edits.map(edit => [edit.restaurantId, edit.changes]));
-  return base.map(restaurant => ({
-    ...restaurant,
-    ...byId.get(restaurant.id),
-    id: restaurant.id,
-  }));
+  const byId = new Map(edits.map(edit => [edit.restaurantId, edit]));
+  return base
+    .filter(
+      restaurant =>
+        options.includeDeleted || !byId.get(restaurant.id)?.deletedAt
+    )
+    .map(restaurant => ({
+      ...restaurant,
+      ...byId.get(restaurant.id)?.changes,
+      id: restaurant.id,
+    }));
 }

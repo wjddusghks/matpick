@@ -194,3 +194,29 @@ test("address results retain road and lot values, reject empty rows and duplicat
     else globalThis.sessionStorage = previous;
   }
 });
+test("geocoding preserves WGS84 longitude x and latitude y without swapping or inventing missing values", () => {
+  const item = {
+    roadAddress: "서울특별시 중구 세종대로 110",
+    jibunAddress: "서울 중구 태평로1가 31",
+  };
+  const [located] = address.normalizeAddressResults([
+    { ...item, x: "126.97794", y: "37.56631" },
+  ]);
+  assert.equal(located.lat, 37.56631);
+  assert.equal(located.lng, 126.97794);
+  assert.equal(address.hasAddressCoordinates(located), true);
+  for (const point of [
+    { x: null, y: null },
+    { x: "", y: "" },
+    { x: "126.97", y: "" },
+    { x: "37.56", y: "126.97" },
+    { x: "no-coordinate", y: "37.56" },
+    { x: 0, y: 0 },
+    { x: true, y: true },
+  ]) {
+    const [result] = address.normalizeAddressResults([{ ...item, ...point }]);
+    assert.equal(address.hasAddressCoordinates(result), false);
+    assert.ok(!("lat" in result));
+    assert.ok(!("lng" in result));
+  }
+});

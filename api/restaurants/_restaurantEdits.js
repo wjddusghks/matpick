@@ -121,6 +121,11 @@ function validateChanges(input, restaurantId) {
       fail("영업 상태를 확인해 주세요.");
     result.operationState = input.operationState;
   }
+  if (["address", "lat", "lng"].some((key) => key in input)) {
+    // An old audit must not appear to verify newly edited coordinates or an address.
+    result.locationVerifiedAt = "";
+    result.locationSourceUrls = [];
+  }
   if ("menus" in input) {
     if (!Array.isArray(input.menus) || input.menus.length > 100)
       fail("메뉴는 최대 100개까지 등록할 수 있습니다.");
@@ -195,6 +200,8 @@ async function saveEdit({
   actor,
   action = "save",
 }) {
+  if (!["save", "reset", "delete", "restore"].includes(action))
+    fail("작업을 확인해 주세요.");
   if (!Number.isSafeInteger(expectedRevision) || expectedRevision < 0)
     fail("수정 버전이 올바르지 않습니다. 새로고침해 주세요.");
   const previousRaw = await redis(["HGET", EDITS_KEY, restaurantId]);
@@ -205,11 +212,18 @@ async function saveEdit({
       "다른 창에서 이 식당을 먼저 수정했습니다. 새로고침 후 다시 확인해 주세요.",
       409,
     );
+  if (previous?.deletedAt && ["save", "reset"].includes(action))
+    fail("삭제된 식당입니다. 먼저 식당을 복구해 주세요.", 409);
+  const now = new Date().toISOString();
   const edit = {
     restaurantId,
     revision: expectedRevision + 1,
-    updatedAt: new Date().toISOString(),
-    changes: action === "reset" ? {} : { ...previous?.changes, ...changes },
+    updatedAt: now,
+    deletedAt: action === "delete" ? (previous?.deletedAt || now) : null,
+    changes: action === "reset" ? {} : {
+      ...previous?.changes,
+      ...(action === "save" ? changes : {}),
+    },
   };
   // Compare and write atomically; concurrent edits must never silently overwrite each other.
   const script = `

@@ -1,6 +1,7 @@
 import { createServer } from "vite";
+const port = Number(process.env.ADMIN_PREVIEW_PORT || 3011);
 const server = await createServer({
-  server: { port: 3011, host: "127.0.0.1" },
+  server: { port, host: "127.0.0.1", strictPort: true },
   plugins: [
     {
       name: "admin-editor-local-preview",
@@ -28,5 +29,5 @@ const server = await createServer({
 });
 await server.listen();
 console.log(
-  "Local-only admin preview: http://127.0.0.1:3011/__admin-editor-preview"
+  `Local-only admin preview: http://localhost:${port}/__admin-editor-preview`
 );

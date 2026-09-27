@@ -21,14 +21,23 @@ test("deployment remains within the current twelve-function plan", () => {
   const apiRoot = fileURLToPath(new URL("../../api/", import.meta.url));
   function functionsIn(directory) {
     return readdirSync(directory, { withFileTypes: true }).flatMap(entry =>
-      entry.name.startsWith("_") ? [] : entry.isDirectory() ? functionsIn(path.join(directory, entry.name)) : entry.name.endsWith(".js") ? [entry.name] : []
+      entry.name.startsWith("_")
+        ? []
+        : entry.isDirectory()
+          ? functionsIn(path.join(directory, entry.name))
+          : entry.name.endsWith(".js")
+            ? [entry.name]
+            : []
     );
   }
   assert.ok(functionsIn(apiRoot).length <= 12);
 });
 
 test("shared catalog endpoint requires admin authorization for metadata and all writes", async () => {
-  for (const request of [{ method: "GET", query: { scope: "admin" } }, { method: "POST", body: {} }]) {
+  for (const request of [
+    { method: "GET", query: { scope: "admin" } },
+    { method: "POST", body: {} },
+  ]) {
     const res = response();
     await publicHandler({ ...request, headers: {} }, res);
     assert.equal(res.code, 403);
@@ -125,8 +134,24 @@ test("invalid coordinates, fake verification dates, unsafe URLs and uneditable f
     assert.throws(() => validateChanges(changes, "r_test"), { status: 400 });
   }
 });
+test("address and coordinate edits invalidate the previous location audit", () => {
+  const changes = validateChanges(
+    { address: "서울특별시 중구 세종대로 110", lat: 37.56631, lng: 126.97794 },
+    "r_test"
+  );
+  assert.equal(changes.lat, 37.56631);
+  assert.equal(changes.lng, 126.97794);
+  assert.equal(changes.locationVerifiedAt, "");
+  assert.deepEqual(changes.locationSourceUrls, []);
+  assert.ok(
+    !(
+      "locationVerifiedAt" in
+      validateChanges({ phone: "02-000-0000" }, "r_test")
+    )
+  );
+});
 
-test("public overlays preserve original data and restaurant identity; tombstones restore base", () => {
+test("public overlays preserve originals; deleted restaurants only remain in the admin catalog", () => {
   const base = [
     {
       ...dataset.restaurants[0],
@@ -143,6 +168,17 @@ test("public overlays preserve original data and restaurant identity; tombstones
   assert.equal(updated[0].name, "수정 상호");
   assert.deepEqual(updated[0].menus, []);
   assert.equal(JSON.stringify(base), original);
+  const deleted = { ...edit, deletedAt: "2026-09-26T00:00:00.000Z" };
+  assert.deepEqual(client.applyRestaurantEdits(base, [deleted]), []);
+  assert.equal(
+    client.applyRestaurantEdits(base, [deleted], { includeDeleted: true })[0]
+      .name,
+    "수정 상호"
+  );
+  assert.deepEqual(
+    client.applyRestaurantEdits(base, [{ ...deleted, deletedAt: null }]),
+    updated
+  );
   assert.deepEqual(
     client.applyRestaurantEdits(base, [{ ...edit, changes: {} }]),
     base
@@ -298,6 +334,72 @@ test("durable edit roundtrip uses atomic version checks and separates public edi
         });
         assert.deepEqual(reset.changes, {});
         assert.equal(reset.revision, 3);
+        const deleted = await saveEdit({
+          restaurantId: "r_test",
+          expectedRevision: 3,
+          changes: { name: "ignored" },
+          action: "delete",
+          actor: "operator",
+        });
+        assert.ok(deleted.deletedAt);
+        assert.deepEqual(deleted.changes, reset.changes);
+        for (const action of ["save", "reset"]) {
+          await assert.rejects(
+            saveEdit({
+              restaurantId: "r_test",
+              expectedRevision: 4,
+              changes: {},
+              action,
+              actor: "operator",
+            }),
+            { status: 409 }
+          );
+        }
+        await assert.rejects(
+          saveEdit({
+            restaurantId: "r_test",
+            expectedRevision: 3,
+            changes: {},
+            action: "restore",
+            actor: "operator",
+          }),
+          { status: 409 }
+        );
+        const restored = await saveEdit({
+          restaurantId: "r_test",
+          expectedRevision: 4,
+          changes: {},
+          action: "restore",
+          actor: "operator",
+        });
+        assert.equal(restored.deletedAt, null);
+        assert.equal(restored.revision, 5);
+        assert.deepEqual(restored.changes, reset.changes);
+        const priced = await saveEdit({
+          restaurantId: "r_test",
+          expectedRevision: 5,
+          changes: {
+            menus: [{ name: "수육", price: "35,000원" }],
+            address: "서울 마포구",
+          },
+          actor: "operator",
+        });
+        const trashed = await saveEdit({
+          restaurantId: "r_test",
+          expectedRevision: 6,
+          changes: {},
+          action: "delete",
+          actor: "operator",
+        });
+        const recovered = await saveEdit({
+          restaurantId: "r_test",
+          expectedRevision: 7,
+          changes: { menus: [] },
+          action: "restore",
+          actor: "operator",
+        });
+        assert.deepEqual(trashed.changes, priced.changes);
+        assert.deepEqual(recovered.changes, priced.changes);
       } finally {
         globalThis.fetch = originalFetch;
       }

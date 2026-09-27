@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createRoot } from "react-dom/client";
 import RestaurantManager from "@/components/admin/RestaurantManager";
 import {
-  restaurants,
+  restaurantCatalog,
   sources,
   getRestaurantMenuItems,
   getSourcesByRestaurant,
@@ -12,6 +12,7 @@ import "@/index.css";
 function Preview() {
   const [edits, setEdits] = useState<RestaurantEdit[]>([]);
   const [fail, setFail] = useState(false);
+  const [geocodeFixture, setGeocodeFixture] = useState(false);
   return (
     <>
       <div
@@ -36,13 +37,39 @@ function Preview() {
           저장 오류 재현
         </label>{" "}
         · 로컬 검수 / 운영 데이터 변경 없음
+        <label>
+          <input
+            type="checkbox"
+            checked={geocodeFixture}
+            onChange={e => setGeocodeFixture(e.target.checked)}
+          />
+          주소 검색 샘플 응답
+        </label>
       </div>
       <RestaurantManager
-        restaurants={restaurants}
+        restaurants={restaurantCatalog}
         sources={sources}
         initialEdits={edits}
         getMenus={getRestaurantMenuItems}
         getSources={getSourcesByRestaurant}
+        lookupAddress={
+          geocodeFixture
+            ? async query => {
+                await new Promise(resolve => setTimeout(resolve, 800));
+                if (query.includes("오류")) throw new Error("검수용 오류");
+                if (query.includes("없음")) return [];
+                return [
+                  {
+                    roadAddress: "서울특별시 중구 세종대로 110",
+                    jibunAddress: "서울특별시 중구 태평로1가 31",
+                    lat: 37.56631,
+                    lng: 126.97794,
+                  },
+                  { roadAddress: "좌표 없는 샘플", jibunAddress: "" },
+                ];
+              }
+            : undefined
+        }
         configured
         ready
         onRetry={() => {}}
@@ -55,6 +82,8 @@ function Preview() {
             restaurantId: input.restaurantId,
             revision: (old?.revision || 0) + 1,
             updatedAt: new Date().toISOString(),
+            deletedAt:
+              input.action === "delete" ? new Date().toISOString() : null,
             changes:
               input.action === "reset"
                 ? {}

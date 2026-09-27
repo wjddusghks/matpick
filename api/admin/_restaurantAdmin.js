@@ -57,10 +57,10 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: "요청 형식이 올바르지 않습니다." });
     if (!restaurantIds.has(body.restaurantId))
       return res.status(404).json({ error: "등록된 식당을 찾을 수 없습니다." });
-    if (!["save", "reset"].includes(body.action))
+    if (!["save", "reset", "delete", "restore"].includes(body.action))
       return res.status(400).json({ error: "작업을 확인해 주세요." });
     const changes =
-      body.action === "reset"
+      body.action !== "save"
         ? {}
         : validateChanges(body.changes, body.restaurantId);
     const edit = await saveEdit({

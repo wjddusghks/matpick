@@ -68,6 +68,43 @@ test("menu save validates names without blocking on preexisting missing category
   d.menus[0].name = "";
   assert.equal(editor.validateRestaurantDraft(d, initial).field, "name-a");
 });
+test("Naver vertical and inline menu text pairs prices and discards badges and duplicates", () => {
+  const result = editor.parseMenuPaste(
+    "메뉴\n메뉴판 이미지\n대표\n게장정식\n45,000원\n간장게장(포장)\n40,000원\n게장정식 추가 40,000원\n인기 게장정식\n45,000원\n더보기"
+  );
+  assert.deepEqual(result.rows, [
+    { name: "게장정식", price: "45,000원" },
+    { name: "간장게장(포장)", price: "40,000원" },
+    { name: "게장정식 추가", price: "40,000원" },
+  ]);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.duplicates, 1);
+});
+test("copied links, quantity names, price ranges and variable prices are preserved", () => {
+  const result = editor.parseMenuPaste(
+    "- [만두(6개)](https://example.com/menu/1)\n***6,000***원\n한우(100g) 20,000~30,000원\n모둠회\n변동\n국수\n8000"
+  );
+  assert.deepEqual(result.rows, [
+    { name: "만두(6개)", price: "6,000원" },
+    { name: "한우(100g)", price: "20,000~30,000원" },
+    { name: "모둠회", price: "변동" },
+    { name: "국수", price: "8,000원" },
+  ]);
+  assert.deepEqual(result.errors, []);
+});
+test("ambiguous descriptions, orphan prices and negative prices are blocked rather than guessed", () => {
+  for (const value of [
+    "국밥\n든든한 한 끼\n9,000원",
+    "9,000원",
+    "국밥\n-9,000원",
+    "국밥 -9,000원",
+    "만두\n6개\n8,000원",
+  ]) {
+    const result = editor.parseMenuPaste(value);
+    assert.equal(result.rows.length, 0, value);
+    assert.ok(result.errors.length, value);
+  }
+});
 test("invalid coordinates, dates and source links route to the right tab", () => {
   for (const [field, value, tab] of [
     ["lat", "0", "info"],

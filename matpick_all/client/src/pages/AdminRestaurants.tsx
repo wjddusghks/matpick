@@ -10,7 +10,7 @@ import {
   getRestaurantMenuItems,
   getSourcesByRestaurant,
   getSourceLinksByRestaurant,
-  restaurants,
+  restaurantCatalog,
   sources,
 } from "@/data";
 import { getAdminRegistrationKey, isAdminUser } from "@/lib/admin";
@@ -130,7 +130,7 @@ export default function AdminRestaurants() {
     );
   return (
     <RestaurantManager
-      restaurants={restaurants}
+      restaurants={restaurantCatalog}
       sources={sources}
       initialEdits={edits}
       getMenus={getRestaurantMenuItems}

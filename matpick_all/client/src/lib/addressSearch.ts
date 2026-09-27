@@ -1,5 +1,25 @@
 import { ensureNaverMapsSdk } from "./naverMaps";
-export type AddressResult = { roadAddress: string; jibunAddress: string };
+export type AddressResult = {
+  roadAddress: string;
+  jibunAddress: string;
+  lat?: number;
+  lng?: number;
+};
+export type LocatedAddressResult = AddressResult & { lat: number; lng: number };
+export function hasAddressCoordinates(
+  result: AddressResult
+): result is LocatedAddressResult {
+  return (
+    typeof result.lat === "number" &&
+    Number.isFinite(result.lat) &&
+    result.lat !== 0 &&
+    Math.abs(result.lat) <= 90 &&
+    typeof result.lng === "number" &&
+    Number.isFinite(result.lng) &&
+    result.lng !== 0 &&
+    Math.abs(result.lng) <= 180
+  );
+}
 const cache = new Map<string, AddressResult[]>();
 const pending = new Map<string, Promise<AddressResult[]>>();
 export function normalizeAddressResults(value: unknown): AddressResult[] {
@@ -12,12 +32,32 @@ export function normalizeAddressResults(value: unknown): AddressResult[] {
         (typeof item.roadAddress === "string" ||
           typeof item.jibunAddress === "string")
     )
-    .map(item => ({
-      roadAddress:
-        typeof item.roadAddress === "string" ? item.roadAddress.trim() : "",
-      jibunAddress:
-        typeof item.jibunAddress === "string" ? item.jibunAddress.trim() : "",
-    }))
+    .map(item => {
+      // NAVER returns longitude as x and latitude as y, in WGS84 degrees.
+      const point = {
+        lat:
+          typeof item.y === "string" || typeof item.y === "number"
+            ? Number(item.y)
+            : NaN,
+        lng:
+          typeof item.x === "string" || typeof item.x === "number"
+            ? Number(item.x)
+            : NaN,
+      };
+      return {
+        roadAddress:
+          typeof item.roadAddress === "string" ? item.roadAddress.trim() : "",
+        jibunAddress:
+          typeof item.jibunAddress === "string" ? item.jibunAddress.trim() : "",
+        ...(hasAddressCoordinates({
+          roadAddress: "",
+          jibunAddress: "",
+          ...point,
+        })
+          ? point
+          : {}),
+      };
+    })
     .filter(item => {
       const key = item.roadAddress || item.jibunAddress;
       if (!key || seen.has(key)) return false;

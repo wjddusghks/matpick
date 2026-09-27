@@ -82,6 +82,8 @@ const dataset = {
   })),
 } as MatpickDataSet;
 const normalizedDataset = { ...dataset, restaurants: applyRestaurantEdits(dataset.restaurants) };
+// The editor needs originals, including deleted records, for restore and reset.
+export const restaurantCatalog: Restaurant[] = dataset.restaurants;
 const publicDataSourceIds = new Set(dataset.sources?.map(source => source.id) ?? []);
 const sourceBackedCreatorIds = new Set(dataset.sources?.map(source => source.creatorId).filter(Boolean) ?? []);
 const creatorDisplayNameOverrides: Record<string, string> = {

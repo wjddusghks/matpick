@@ -168,22 +168,85 @@ export function restoreRemovedMenus(
 export function parseMenuPaste(value: string) {
   const rows: Array<{ name: string; price: string }> = [];
   const errors: string[] = [];
-  value.split(/\r?\n/).forEach((line, index) => {
-    if (!line.trim()) return;
-    const columns = line.split("\t");
-    const name = columns[0].trim();
-    const price = formatMenuPrice(columns[1] || "");
+  let duplicates = 0;
+  const pending: Array<{ text: string; line: number }> = [];
+  const seen = new Set<string>();
+  const amount = "(?:\\d{1,3}(?:,\\d{3})+|\\d+)";
+  const pricePattern = `(?:${amount}\\s*원(?:\\s*[~～–-]\\s*${amount}\\s*원)?|${amount}\\s*[~～–-]\\s*${amount}\\s*원|시가|싯가|변동(?:가격)?(?:\\s*\\(.*\\))?|가격\\s*문의|무료)`;
+  const priceOnly = new RegExp(
+    `^(?:${pricePattern}|\\d{1,3}(?:,\\d{3})+|\\d{4,})$`
+  );
+  const inline = new RegExp(`^(.+?)\\s+(?:[:：]\\s*)?(${pricePattern})$`);
+  function add(name: string, rawPrice: string, line: number) {
+    const price = formatMenuPrice(rawPrice);
     if (
-      columns.length > 2 ||
       !name ||
       name.length > 200 ||
       price.length > 120 ||
       /^[-−]\s*\d/.test(price)
+    ) {
+      errors.push(`${line}행: 메뉴명과 가격을 확인해 주세요.`);
+      return;
+    }
+    const key = `${name.replace(/\s+/g, " ")}\t${price}`;
+    if (seen.has(key)) {
+      duplicates++;
+      return;
+    }
+    seen.add(key);
+    rows.push({ name, price });
+  }
+  function flushNames() {
+    pending.splice(0).forEach(item => add(item.text, "", item.line));
+  }
+  value.split(/\r?\n/).forEach((raw, index) => {
+    const line = raw
+      .replace(/\[([^\]]+)\]\(https?:\/\/[^\s]+\)/g, "$1")
+      .replace(/[\u200B-\u200D\uFEFF]/g, "")
+      .replace(/\u00a0/g, " ")
+      .replace(/^[ \t]*[-•·]\s+(?=\D)/, "")
+      .replace(/\*\*/g, "")
+      .replace(/\*/g, "")
+      .trim();
+    if (
+      !line ||
+      /^(?:대표|인기|추천|메뉴|메뉴판|메뉴판 이미지|메뉴 이미지|사진|더보기|접기|펼쳐보기|주문|주문하기|네이버페이|이미지 준비중|메뉴 더보기|홈|리뷰|정보)$/.test(
+        line
+      )
     )
-      errors.push(`${index + 1}행: 메뉴명과 가격 두 열을 확인해 주세요.`);
-    else rows.push({ name, price });
+      return;
+    if (/^https?:\/\//.test(line)) return;
+    const cleaned = line.replace(/^(?:대표|인기)\s+/, "");
+    if (raw.includes("\t")) {
+      flushNames();
+      const columns = cleaned.split("\t");
+      if (columns.length > 2)
+        errors.push(`${index + 1}행: 메뉴명과 가격 두 열을 확인해 주세요.`);
+      else add(columns[0].trim(), columns[1]?.trim() || "", index + 1);
+      return;
+    }
+    if (/(?:^|\s)[-−]\s*\d/.test(cleaned)) {
+      errors.push(`${index + 1}행: 음수 가격은 입력할 수 없어요.`);
+      pending.length = 0;
+      return;
+    }
+    if (priceOnly.test(cleaned)) {
+      if (pending.length === 1) add(pending[0].text, cleaned, pending[0].line);
+      else
+        errors.push(
+          `${index + 1}행: ‘${cleaned}’ 바로 위에 메뉴명 하나만 남겨 주세요. 설명·수량·안내 문구는 지워 주세요.`
+        );
+      pending.length = 0;
+      return;
+    }
+    const match = cleaned.match(inline);
+    if (match) {
+      flushNames();
+      add(match[1].trim(), match[2], index + 1);
+    } else pending.push({ text: cleaned, line: index + 1 });
   });
-  return { rows, errors };
+  flushNames();
+  return { rows, errors, duplicates };
 }
 
 export function menuChangeSummary(initial: MenuItem[], current: MenuItem[]) {

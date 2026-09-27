@@ -38,6 +38,18 @@ test("English addresses keep numbers and use readable Korean address suffixes", 
     getEnglishAddress("서울시 강남구 역삼동 820-9 글라스타워 12층"),
     "Seoul, Gangnam-gu, Yeoksam-dong, 820-9 Geulraseu Tower Floor 12"
   );
+  assert.equal(
+    getEnglishAddress("부산 해운대구"),
+    "Busan, Haeundae-gu"
+  );
+  assert.equal(
+    getEnglishAddress("서울특별시 영등포구"),
+    "Seoul, Yeongdeungpo-gu"
+  );
+  assert.equal(
+    getEnglishAddress("서울 마포구 월드컵대로145번길 10 1-2층"),
+    "Seoul, Mapo-gu, Woldeukeop-daero 145beon-gil 10 Floors 1–2"
+  );
   assert.equal(hasKoreanText(getEnglishAddress("인천광역시 중구 신흥동1가 34-1 상가 지하1층")), false);
 });
 
@@ -48,6 +60,7 @@ test("established source and creator names stay consistent in English", () => {
   assert.equal(getEnglishCreatorName("성시경"), "Sung Si-kyung");
   assert.equal(getEnglishCreatorName("스튜디오수제"), "Studio Suze");
   assert.equal(getEnglishProviderName("중소벤처기업부"), "Ministry of SMEs and Startups");
+  assert.equal(getEnglishProviderName("부산광역시"), "Busan Metropolitan City");
   assert.equal(getEnglishEpisodeLabel("제12회 2부"), "Episode 12 Part 2");
 });
 

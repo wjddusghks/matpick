@@ -871,6 +871,12 @@ export const EXACT_MENU_TRANSLATIONS: Readonly<Record<string, string>> = {
   "전복 율무 리조또,샐러드": "abalone and Job's tears risotto, salad",
   "참옥돔(메인)": "tilefish (main)",
   "초코바게트": "chocolate baguette",
+  "전복 리조또": "abalone risotto",
+  "후토마키(반줄)": "futomaki (half roll)",
+  "후토마끼(반줄)": "futomaki (half roll)",
+  "안거미": "angeomi beef cut",
+  "짝갈비살": "paired rib meat",
+  "巨大 양념갈비": "Geodae marinated short ribs",
 };
 
 /**
@@ -1111,9 +1117,9 @@ function translateMetadata(value: string) {
     .replace(/([\d,]+)\s*(?:원)?\s*~\s*([\d,]+)\s*원/g, "₩$1–₩$2")
     .replace(/([\d,]+)\s*원/g, "₩$1")
     .replace(/(\d+)\s*인\s*이상/g, "for $1+ people")
-    .replace(/(\d+)\s*인분/g, "$1 servings")
+    .replace(/(\d+)\s*인분/g, (_, count: string) => `${count} ${count === "1" ? "serving" : "servings"}`)
     .replace(/(\d+)\s*인(?=세트|정식|코스)/g, "for $1 ")
-    .replace(/(\d+)\s*인(?![가-힣])/g, "for $1 people")
+    .replace(/(\d+)\s*인(?![가-힣])/g, (_, count: string) => `for ${count} ${count === "1" ? "person" : "people"}`)
     .replace(/(\d+)\s*개(?![가-힣])/g, "$1 pieces")
     .replace(/(\d+)\s*마리(?![가-힣])/g, "$1 whole")
     .replace(/(\d+)\s*잔(?![가-힣])/g, "$1 glasses")

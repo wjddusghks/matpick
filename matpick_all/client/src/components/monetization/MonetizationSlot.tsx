@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/contexts/LocaleContext";
 import { trackAnalyticsEvent } from "@/lib/analytics";
 import { adsenseClient, isAdsenseLiveHost } from "@/lib/adConfig";
 import {
@@ -695,13 +696,15 @@ function isProviderConfigured(provider: MonetizationProvider) {
 
 export function RevenuePlacement({
   providers,
-  label = "광고",
+  label,
   className = "",
 }: {
   providers: MonetizationProvider[];
   label?: string;
   className?: string;
 }) {
+  const { locale } = useLocale();
+  const displayLabel = label ?? (locale === "en" ? "Advertisement" : "광고");
   const advertisingAllowed = useAdvertisingConsent();
   const enabledProviders = providers.filter(isProviderConfigured);
   const visibleProviders = enabledProviders.filter(
@@ -712,7 +715,7 @@ export function RevenuePlacement({
   }
 
   return (
-    <aside className={`space-y-4 ${className}`} aria-label={label}>
+    <aside className={`space-y-4 ${className}`} aria-label={displayLabel}>
       {visibleProviders.map(provider => (
         <DeferredSlot
           key={provider}
@@ -720,7 +723,7 @@ export function RevenuePlacement({
         >
           <MonetizationSlot
             provider={provider}
-            label={provider === "coupang" ? "제휴 광고" : label}
+            label={provider === "coupang" ? (locale === "en" ? "Affiliate advertisement" : "제휴 광고") : displayLabel}
           />
         </DeferredSlot>
       ))}

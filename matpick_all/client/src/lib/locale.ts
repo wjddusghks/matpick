@@ -114,23 +114,23 @@ const FINAL_ROMANIZATION = [
 ] as const;
 
 const ENGLISH_PLACE_REPLACEMENTS: Array<[RegExp, string]> = [
-  [/서울특별시|서울시|서울/g, "Seoul"],
-  [/부산광역시|부산시|부산/g, "Busan"],
-  [/대구광역시|대구시|대구/g, "Daegu"],
-  [/인천광역시|인천시|인천/g, "Incheon"],
-  [/광주광역시|광주시|광주/g, "Gwangju"],
-  [/대전광역시|대전시|대전/g, "Daejeon"],
-  [/울산광역시|울산시|울산/g, "Ulsan"],
-  [/세종특별자치시|세종시|세종/g, "Sejong"],
-  [/제주특별자치도|제주도|제주/g, "Jeju"],
-  [/경기도/g, "Gyeonggi-do"],
-  [/강원특별자치도|강원도/g, "Gangwon-do"],
-  [/충청북도/g, "Chungcheongbuk-do"],
-  [/충청남도/g, "Chungcheongnam-do"],
-  [/전북특별자치도|전라북도/g, "Jeonbuk-do"],
-  [/전라남도/g, "Jeollanam-do"],
-  [/경상북도/g, "Gyeongsangbuk-do"],
-  [/경상남도/g, "Gyeongsangnam-do"],
+  [/(^|[\s,(])(?:서울특별시|서울시|서울)(?=[\s,)]|$)/g, "$1Seoul"],
+  [/(^|[\s,(])(?:부산광역시|부산시|부산)(?=[\s,)]|$)/g, "$1Busan"],
+  [/(^|[\s,(])(?:대구광역시|대구시|대구)(?=[\s,)]|$)/g, "$1Daegu"],
+  [/(^|[\s,(])(?:인천광역시|인천시|인천)(?=[\s,)]|$)/g, "$1Incheon"],
+  [/(^|[\s,(])(?:광주광역시|광주시|광주)(?=[\s,)]|$)/g, "$1Gwangju"],
+  [/(^|[\s,(])(?:대전광역시|대전시|대전)(?=[\s,)]|$)/g, "$1Daejeon"],
+  [/(^|[\s,(])(?:울산광역시|울산시|울산)(?=[\s,)]|$)/g, "$1Ulsan"],
+  [/(^|[\s,(])(?:세종특별자치시|세종시|세종)(?=[\s,)]|$)/g, "$1Sejong"],
+  [/(^|[\s,(])(?:제주특별자치도|제주도|제주)(?=[\s,)]|$)/g, "$1Jeju"],
+  [/(^|[\s,(])경기도(?=[\s,)]|$)/g, "$1Gyeonggi-do"],
+  [/(^|[\s,(])(?:강원특별자치도|강원도)(?=[\s,)]|$)/g, "$1Gangwon-do"],
+  [/(^|[\s,(])충청북도(?=[\s,)]|$)/g, "$1Chungcheongbuk-do"],
+  [/(^|[\s,(])충청남도(?=[\s,)]|$)/g, "$1Chungcheongnam-do"],
+  [/(^|[\s,(])(?:전북특별자치도|전라북도)(?=[\s,)]|$)/g, "$1Jeonbuk-do"],
+  [/(^|[\s,(])전라남도(?=[\s,)]|$)/g, "$1Jeollanam-do"],
+  [/(^|[\s,(])경상북도(?=[\s,)]|$)/g, "$1Gyeongsangbuk-do"],
+  [/(^|[\s,(])경상남도(?=[\s,)]|$)/g, "$1Gyeongsangnam-do"],
 ];
 
 const ENGLISH_SOURCE_NAMES: Record<string, string> = {
@@ -171,6 +171,7 @@ const ENGLISH_SOURCE_NAMES: Record<string, string> = {
 };
 
 const ENGLISH_PROVIDER_NAMES: Record<string, string> = {
+  "부산광역시": "Busan Metropolitan City",
   "E채널": "E Channel",
   "성시경": "Sung Si Kyung",
   "츄릅켠": "Chureupkyeon",
@@ -192,10 +193,10 @@ const ENGLISH_CREATOR_NAMES: Record<string, string> = {
   "풍자": "Pungja",
   "성시경": "Sung Si-kyung",
   "맛있는 녀석들": "Tasty Guys",
-  "쥐양": "Tzuyang",
+  "쯔양": "Tzuyang",
   "스튜디오수제": "Studio Suze",
   "성시경 SUNG SI KYUNG": "Sung Si Kyung",
-  "tzuyang쥐양": "Tzuyang",
+  "tzuyang쯔양": "Tzuyang",
 };
 
 const DISCOVERY_TITLE_TRANSLATIONS: Record<string, string> = {
@@ -245,10 +246,14 @@ export function getEnglishAddress(value: string) {
   prepared = prepared
     .replace(/\b(Seoul|Busan|Daegu|Incheon|Gwangju|Daejeon|Ulsan|Sejong|Jeju)\s+/g, "$1, ")
     .replace(/\b(Gyeonggi-do|Gangwon-do|Chungcheongbuk-do|Chungcheongnam-do|Jeonbuk-do|Jeollanam-do|Gyeongsangbuk-do|Gyeongsangnam-do)\s+/g, "$1, ")
+    .replace(/\uC9C0\uD558\s*(\d+)\s*[-~～–]\s*(\d+)\s*\uCE35/g, "Basement levels $1–$2")
+    .replace(/(\d+)\s*[-~～–]\s*(\d+)\s*\uCE35/g, "Floors $1–$2")
     .replace(/\uC9C0\uD558\s*(\d+)\s*\uCE35/g, "Basement level $1")
     .replace(/(\d+)\s*\uCE35/g, "Floor $1")
     .replace(/([A-Za-z]?-?\d+[A-Za-z-]*)\s*\uD638/g, "Unit $1")
     .replace(/(\d+(?:-\d+)?)\s*\uBC88\uC9C0/g, "$1")
+    .replace(/([\uAC00-\uD7A3]+)\uB300\uB85C\s*(\d+)\s*\uBC88\uAE38(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}-daero ${number}beon-gil`)
+    .replace(/([\uAC00-\uD7A3]+)(\d+)\uBC88\uAE38(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)} ${number}beon-gil`)
     .replace(/([\uAC00-\uD7A3]+?)(\d*)\uB300\uB85C(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-daero`)
     .replace(/([\uAC00-\uD7A3]+?)(\d*)\uB85C(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-ro`)
     .replace(/([\uAC00-\uD7A3]+?)(\d*)\uAE38(?=\s|,|$)/g, (_, root, number) => `${romanizeHangulSyllables(root)}${number ? ` ${number}` : ""}-gil`)

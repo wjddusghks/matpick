@@ -30,6 +30,11 @@ test("frequent complete dishes use conventional semantic English names", () => {
     ["청경채볶음", "stir-fried bok choy"],
     ["대패삼겹살", "thin-sliced pork belly"],
     ["생강차", "ginger tea"],
+    ["전복 리조또", "abalone risotto"],
+    ["후토마키(반줄)", "futomaki (half roll)"],
+    ["안거미", "angeomi beef cut"],
+    ["짝갈비살", "paired rib meat"],
+    ["巨大 양념갈비", "Geodae marinated short ribs"],
   ]);
 
   for (const [korean, english] of cases) {
@@ -58,6 +63,8 @@ test("sizes, servings, prices, and separators retain their source facts", () => 
   assert.equal(getEnglishMenuName("모듬회 / 2인분"), "assorted sashimi / 2 servings");
   assert.equal(getEnglishMenuName("10,000~20,000원"), "₩10,000–₩20,000");
   assert.equal(getEnglishMenuName("2인이상 주문 가능"), "for 2+ people order available");
+  assert.equal(getEnglishMenuName("1인분"), "1 serving");
+  assert.equal(getEnglishMenuName("1인"), "for 1 person");
 });
 
 test("ambiguous meat names stay species-neutral", () => {

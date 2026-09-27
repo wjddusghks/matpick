@@ -5,13 +5,13 @@ Generated from `client/src/data/generated/public-dataset.json`. The report count
 | Measure | Menu rows | Distinct names |
 | --- | ---: | ---: |
 | Total | 39,000 | 25,369 |
-| Reviewed exact phrase | 9,390 | 841 |
-| Fully semantic | 23,089 (59.63%) | 10,332 (41.13%) |
-| Partial semantic + romanized remainder | 13,310 | 12,628 |
-| Romanized only / unresolved | 2,322 | 2,158 |
+| Reviewed exact phrase | 9,393 | 844 |
+| Fully semantic | 23,096 (59.65%) | 10,339 (41.16%) |
+| Partial semantic + romanized remainder | 13,307 | 12,625 |
+| Romanized only / unresolved | 2,318 | 2,154 |
 | Already non-Korean | 279 | 251 |
 
-Semantic translation appears in 94% of Korean menu rows and covers 68.89% of Hangul characters. Romanization is not counted as translation.
+Semantic translation appears in 94.01% of Korean menu rows and covers 68.9% of Hangul characters. Romanization is not counted as translation.
 
 ## Highest-frequency unresolved names
 
@@ -20,7 +20,7 @@ Semantic translation appears in 94% of Korean menu rows and covers 68.89% of Han
 | 멸고국수 | Myeolgo noodles | 7 | 멸고 |
 | 아강발 | Agangbal | 5 | 아강발 |
 | [기본재료] 숙주,알배추,청경채,팽이,새송이,느타리버섯, 푸주,건두부,두부피,넙적당면,스모크햄 기본재료외에 완자류등은 따로 추가해주시거나 셀프마라탕으로 메뉴 선택해주세요 | [ regular Jaeryo ] mung bean sprouts, Al napa cabbage, bok choy, Paengi, Sae pine mushroom, Neutari mushroom, Puju, Geon tofu, tofu Pi, Neopjeokdang noodles, Seumokeuhaem regular Jaeryooee Wanjaryudeungeun Ttaro extra Haejusigeona Selpeu mala Tangeuro menu choice Haejuseyo | 4 | 재료, 알, 팽이, 새, 느타리, 푸주, 건, 피, 넙적당, 스모크햄, 재료외에, 완자류등은, 따로, 해주시거나, 셀프, 탕으로, 해주세요 |
-| 이필당족발 + 이필꽃보쌈김치(서비스) + 막국수(서비스/1인분) + 우거지된장국 + 쌈세트 + 5칸양양념도시락 [보쌈김치와 막국수는 포장/배달에만 서비스로 제공됩니다.] | Ipildang braised pork trotters + Ipilkkot boiled pork wraps kimchi (Seobiseu) + buckwheat noodles (Seobiseu / 1 servings) + dried cabbage soybean paste soup + Ssam set + 5 Kanyang seasoned lunch box [ boiled pork wraps kimchi Wa buckwheat noodles Neun takeout / Baedaleman Seobiseuro Jegongdoepnida.] | 4 | 이필당, 이필꽃, 서비스, 서비스, 쌈, 칸양, 와, 는, 배달에만, 서비스로, 제공됩니다 |
+| 이필당족발 + 이필꽃보쌈김치(서비스) + 막국수(서비스/1인분) + 우거지된장국 + 쌈세트 + 5칸양양념도시락 [보쌈김치와 막국수는 포장/배달에만 서비스로 제공됩니다.] | Ipildang braised pork trotters + Ipilkkot boiled pork wraps kimchi (Seobiseu) + buckwheat noodles (Seobiseu / 1 serving) + dried cabbage soybean paste soup + Ssam set + 5 Kanyang seasoned lunch box [ boiled pork wraps kimchi Wa buckwheat noodles Neun takeout / Baedaleman Seobiseuro Jegongdoepnida.] | 4 | 이필당, 이필꽃, 서비스, 서비스, 쌈, 칸양, 와, 는, 배달에만, 서비스로, 제공됩니다 |
 | 새끼보국밥 | Saekkibo soup with rice | 4 | 새끼보 |
 | 마나 | Mana | 4 | 마나 |
 | 수초면 | Sucho noodles | 4 | 수초 |
@@ -89,7 +89,7 @@ Semantic translation appears in 94% of Korean menu rows and covers 68.89% of Han
 | 얼큰하고 구수한 옛날 장터국밥의 깊은맛! | spicy Hago Gusuhan old-fashioned Jangteo soup with rice Ui Gipeunmat ! | 2 | 하고, 구수한, 장터, 의, 깊은맛 |
 | 얼큰함을 품은 국물에 바삭 새우튀김이 더해진 '얼큰우동+새우튀김2p' | spicy Hameul Pumeun Gukmule crispy shrimp tempura I Deohaejin ' spicy udon + shrimp tempura 2p' | 2 | 함을, 품은, 국물에, 이, 더해진 |
 | 찰진 한우육회! 이건 꼭 드셔야 합니다. | Chaljin Korean beef tartare ! Igeon Kkok Deusyeoya Hapnida. | 2 | 찰진, 이건, 꼭, 드셔야, 합니다 |
-| 1인 1메뉴 주문 부탁드립니다. 테이블당 기본 2인분 이상 주문 | for 1 people 1 menu order Butakdeuripnida. Teibeuldang regular 2 servings or more order | 2 | 부탁드립니다, 테이블당 |
+| 1인 1메뉴 주문 부탁드립니다. 테이블당 기본 2인분 이상 주문 | for 1 person 1 menu order Butakdeuripnida. Teibeuldang regular 2 servings or more order | 2 | 부탁드립니다, 테이블당 |
 | 곱창전골에 우동사리는 언제나 정답입니다. | small intestines hot pot E extra udon noodles Neun Eonjena Jeongdapipnida. | 2 | 에, 는, 언제나, 정답입니다 |
 | 백겹의 라자냐(한정수량) | Baekgyeopui Rajanya (Hanjeongsuryang) | 2 | 백겹의, 라자냐, 한정수량 |
 | 리코타이거 라비올로 | Rikotaigeo Rabiolro | 2 | 리코타이거, 라비올로 |

@@ -8,31 +8,31 @@
   },
   "rowCoverage": {
     "total": 39000,
-    "exact": 9390,
-    "fullSemantic": 23089,
-    "partialSemantic": 13310,
-    "romanizedOnly": 2322,
+    "exact": 9393,
+    "fullSemantic": 23096,
+    "partialSemantic": 13307,
+    "romanizedOnly": 2318,
     "nonKorean": 279,
-    "withSemanticTranslation": 36399,
+    "withSemanticTranslation": 36403,
     "hangulCharacters": 237743,
-    "semanticallyTranslatedHangulCharacters": 163789,
-    "semanticRowPercent": 94,
-    "fullSemanticPercent": 59.63,
-    "semanticCharacterPercent": 68.89
+    "semanticallyTranslatedHangulCharacters": 163809,
+    "semanticRowPercent": 94.01,
+    "fullSemanticPercent": 59.65,
+    "semanticCharacterPercent": 68.9
   },
   "uniqueNameCoverage": {
     "total": 25369,
-    "exact": 841,
-    "fullSemantic": 10332,
-    "partialSemantic": 12628,
-    "romanizedOnly": 2158,
+    "exact": 844,
+    "fullSemantic": 10339,
+    "partialSemantic": 12625,
+    "romanizedOnly": 2154,
     "nonKorean": 251,
-    "withSemanticTranslation": 22960,
+    "withSemanticTranslation": 22964,
     "hangulCharacters": 182866,
-    "semanticallyTranslatedHangulCharacters": 112486,
-    "semanticRowPercent": 91.41,
-    "fullSemanticPercent": 41.13,
-    "semanticCharacterPercent": 61.51
+    "semanticallyTranslatedHangulCharacters": 112506,
+    "semanticRowPercent": 91.42,
+    "fullSemanticPercent": 41.16,
+    "semanticCharacterPercent": 61.52
   },
   "topUnresolvedSegments": [
     {
@@ -1285,7 +1285,7 @@
     },
     {
       "korean": "이필당족발 + 이필꽃보쌈김치(서비스) + 막국수(서비스/1인분) + 우거지된장국 + 쌈세트 + 5칸양양념도시락 [보쌈김치와 막국수는 포장/배달에만 서비스로 제공됩니다.]",
-      "english": "Ipildang braised pork trotters + Ipilkkot boiled pork wraps kimchi (Seobiseu) + buckwheat noodles (Seobiseu / 1 servings) + dried cabbage soybean paste soup + Ssam set + 5 Kanyang seasoned lunch box [ boiled pork wraps kimchi Wa buckwheat noodles Neun takeout / Baedaleman Seobiseuro Jegongdoepnida.]",
+      "english": "Ipildang braised pork trotters + Ipilkkot boiled pork wraps kimchi (Seobiseu) + buckwheat noodles (Seobiseu / 1 serving) + dried cabbage soybean paste soup + Ssam set + 5 Kanyang seasoned lunch box [ boiled pork wraps kimchi Wa buckwheat noodles Neun takeout / Baedaleman Seobiseuro Jegongdoepnida.]",
       "rows": 4,
       "translatedHangulCharacters": 33,
       "totalHangulCharacters": 63,
@@ -2452,7 +2452,7 @@
     },
     {
       "korean": "1인 1메뉴 주문 부탁드립니다. 테이블당 기본 2인분 이상 주문",
-      "english": "for 1 people 1 menu order Butakdeuripnida. Teibeuldang regular 2 servings or more order",
+      "english": "for 1 person 1 menu order Butakdeuripnida. Teibeuldang regular 2 servings or more order",
       "rows": 2,
       "translatedHangulCharacters": 13,
       "totalHangulCharacters": 23,
@@ -3731,7 +3731,7 @@
     },
     {
       "korean": "혀밀구이/혀밀소금구이 (1인분)",
-      "english": "Hyeomil grilled / Hyeomil salt-grilled (1 servings)",
+      "english": "Hyeomil grilled / Hyeomil salt-grilled (1 serving)",
       "rows": 2,
       "translatedHangulCharacters": 8,
       "totalHangulCharacters": 12,
@@ -4609,7 +4609,7 @@
     },
     {
       "korean": "시레기밥1인",
-      "english": "Siregi rice for 1 people",
+      "english": "Siregi rice for 1 person",
       "rows": 2,
       "translatedHangulCharacters": 2,
       "totalHangulCharacters": 5,

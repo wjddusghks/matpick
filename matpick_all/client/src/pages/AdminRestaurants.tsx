@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import RestaurantManager, {
@@ -8,10 +8,15 @@ import RestaurantManager, {
 import { useAuth } from "@/contexts/AuthContext";
 import { getAdminRegistrationKey, isAdminUser } from "@/lib/admin";
 import type { RestaurantEdit } from "@/lib/restaurantEdits";
+import {
+  fetchAdminRestaurantCatalog,
+  indexAdminCatalogSources,
+} from "@/lib/adminRestaurantCatalog";
 import { useSeo } from "@/lib/seo";
 import type { Restaurant, Source, SourceLink } from "@/data/types";
 
 const VIEW_KEY = "matpick_admin_restaurant_view_v2";
+const getRestaurantMenus = (restaurant: Restaurant) => restaurant.menus ?? [];
 function readView(): ManagerView {
   const params = new URLSearchParams(window.location.search);
   let view: ManagerView = {};
@@ -59,45 +64,18 @@ export default function AdminRestaurants() {
       "x-matpick-admin-key": getAdminRegistrationKey(user),
       "x-matpick-admin-token": user.syncToken || "",
     };
-    void (async () => {
-      const nextCatalog = {
-        restaurants: [] as Restaurant[],
-        sources: [] as Source[],
-        sourceLinks: [] as SourceLink[],
-      };
-      let cursor: string | null = "0";
-      let firstBody: { edits: RestaurantEdit[]; configured: boolean } | null = null;
-      while (cursor != null) {
-        const response: Response = await fetch(
-          `/api/restaurants?scope=admin&includeCatalog=1&cursor=${encodeURIComponent(cursor)}`,
-          { headers, signal: controller.signal, cache: "no-store" }
-        );
-        const body: {
-          edits: RestaurantEdit[];
-          configured: boolean;
-          error?: string;
-          catalog: {
-            restaurants: Restaurant[];
-            sources: Source[];
-            sourceLinks: SourceLink[];
-            nextCursor: string | null;
-          };
-        } = await response.json();
-        if (!response.ok) throw new Error(
-          body.error || "식당 관리 정보를 불러오지 못했습니다."
-        );
-        firstBody ??= body;
-        nextCatalog.restaurants.push(...body.catalog.restaurants);
-        nextCatalog.sourceLinks.push(...body.catalog.sourceLinks);
-        if (!nextCatalog.sources.length) nextCatalog.sources = body.catalog.sources;
-        cursor = body.catalog.nextCursor;
-      }
-      if (controller.signal.aborted || !firstBody) return;
-      setEdits(firstBody.edits);
-      setConfigured(firstBody.configured);
-      setCatalog(nextCatalog);
-      setReady(true);
-    })().catch(reason => {
+    void fetchAdminRestaurantCatalog({
+      headers,
+      signal: controller.signal,
+    })
+      .then(body => {
+        if (controller.signal.aborted) return;
+        setEdits(body.edits);
+        setConfigured(body.configured);
+        setCatalog(body.catalog);
+        setReady(true);
+      })
+      .catch(reason => {
         if (!controller.signal.aborted)
           setLoadError(
             reason instanceof Error
@@ -107,6 +85,21 @@ export default function AdminRestaurants() {
       });
     return () => controller.abort();
   }, [allowed, user, retry]);
+
+  const sourceIndex = useMemo(
+    () => indexAdminCatalogSources(catalog.sources, catalog.sourceLinks),
+    [catalog.sources, catalog.sourceLinks]
+  );
+  const getSources = useCallback(
+    (restaurantId: string) =>
+      sourceIndex.sourcesByRestaurant.get(restaurantId) || [],
+    [sourceIndex]
+  );
+  const getSourceLinks = useCallback(
+    (restaurantId: string) =>
+      sourceIndex.linksByRestaurant.get(restaurantId) || [],
+    [sourceIndex]
+  );
 
   async function save(input: SaveRestaurantInput): Promise<RestaurantEdit> {
     if (!allowed || !user) throw new Error("관리자 로그인이 필요합니다.");
@@ -155,15 +148,9 @@ export default function AdminRestaurants() {
       restaurants={catalog.restaurants}
       sources={catalog.sources}
       initialEdits={edits}
-      getMenus={restaurant => restaurant.menus ?? []}
-      getSources={restaurantId => {
-        const ids = new Set(catalog.sourceLinks
-          .filter(link => link.restaurantId === restaurantId)
-          .map(link => link.sourceId));
-        return catalog.sources.filter(source => ids.has(source.id));
-      }}
-      getSourceLinks={restaurantId => catalog.sourceLinks
-        .filter(link => link.restaurantId === restaurantId)}
+      getMenus={getRestaurantMenus}
+      getSources={getSources}
+      getSourceLinks={getSourceLinks}
       configured={configured}
       ready={ready}
       loadError={loadError}

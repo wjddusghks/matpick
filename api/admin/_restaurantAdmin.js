@@ -14,6 +14,32 @@ const dataset = require("../../matpick_all/client/src/data/generated/public-data
 const restaurantIds = new Set(
   dataset.restaurants.map((restaurant) => restaurant.id),
 );
+const ADMIN_CATALOG_PAGE_SIZE = 800;
+const sourceLinksByRestaurant = new Map();
+for (const link of dataset.sourceLinks || []) {
+  const links = sourceLinksByRestaurant.get(link.restaurantId) || [];
+  links.push(link);
+  sourceLinksByRestaurant.set(link.restaurantId, links);
+}
+
+function catalogPage(offset, includeMetadata) {
+  const restaurants = dataset.restaurants.slice(
+    offset,
+    offset + ADMIN_CATALOG_PAGE_SIZE,
+  );
+  const nextOffset = offset + restaurants.length;
+  return {
+    restaurants,
+    ...(includeMetadata ? { sources: dataset.sources || [] } : {}),
+    sourceLinks: restaurants.flatMap(
+      (restaurant) => sourceLinksByRestaurant.get(restaurant.id) || [],
+    ),
+    pageSize: ADMIN_CATALOG_PAGE_SIZE,
+    totalCount: dataset.restaurants.length,
+    nextCursor:
+      nextOffset < dataset.restaurants.length ? String(nextOffset) : null,
+  };
+}
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -43,10 +69,23 @@ module.exports = async function handler(req, res) {
     )
       return;
     if (req.method === "GET") {
+      const includeCatalog = req.query?.includeCatalog === "1";
+      const offset = Math.max(
+        0,
+        Number.parseInt(String(req.query?.cursor || "0"), 10) || 0,
+      );
+      // Cursor zero carries the edit snapshot used for the whole admin load.
+      // Continuation pages remain authenticated and rate limited, but avoid
+      // rereading the same durable edit state for every catalog chunk.
+      if (includeCatalog && offset > 0) {
+        return res.status(200).json({
+          catalog: catalogPage(offset, false),
+        });
+      }
       const editState = await readEdits();
       if (req.query?.summaryOnly === "1") {
         const editsById = new Map(
-          editState.edits.map((edit) => [edit.restaurantId, edit])
+          editState.edits.map((edit) => [edit.restaurantId, edit]),
         );
         const publicRestaurants = dataset.restaurants
           .filter((restaurant) => !editsById.get(restaurant.id)?.deletedAt)
@@ -60,39 +99,27 @@ module.exports = async function handler(req, res) {
           summary: {
             restaurantCount: publicRestaurants.length,
             restaurantsWithCoordinates: publicRestaurants.filter(
-              (restaurant) => restaurant.lat && restaurant.lng
+              (restaurant) => restaurant.lat && restaurant.lng,
             ).length,
             restaurantsWithPhotos: publicRestaurants.filter((restaurant) =>
-              restaurant.imageUrl?.trim()
+              restaurant.imageUrl?.trim(),
             ).length,
             restaurantsWithMenus: publicRestaurants.filter(
-              (restaurant) => (restaurant.menus?.length || 0) > 0
+              (restaurant) => (restaurant.menus?.length || 0) > 0,
             ).length,
             menuCount: publicRestaurants.reduce(
               (sum, restaurant) => sum + (restaurant.menus?.length || 0),
-              0
+              0,
             ),
             sourceCount: (dataset.sources || []).length,
             visitCount: (dataset.visits || []).length,
           },
         });
       }
-      if (req.query?.includeCatalog !== "1") return res.status(200).json(editState);
-      const offset = Math.max(0, Number.parseInt(String(req.query?.cursor || "0"), 10) || 0);
-      const pageSize = 200;
-      const restaurants = dataset.restaurants.slice(offset, offset + pageSize);
-      const restaurantIds = new Set(restaurants.map((restaurant) => restaurant.id));
-      const nextOffset = offset + restaurants.length;
+      if (!includeCatalog) return res.status(200).json(editState);
       return res.status(200).json({
         ...editState,
-        catalog: {
-          restaurants,
-          sources: dataset.sources || [],
-          sourceLinks: (dataset.sourceLinks || []).filter((link) =>
-            restaurantIds.has(link.restaurantId)
-          ),
-          nextCursor: nextOffset < dataset.restaurants.length ? String(nextOffset) : null,
-        },
+        catalog: catalogPage(offset, true),
       });
     }
     const raw =

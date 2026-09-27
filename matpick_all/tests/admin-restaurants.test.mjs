@@ -15,7 +15,10 @@ const handler = require("../../api/admin/_restaurantAdmin.js");
 const publicHandler = require("../../api/restaurants/index.js");
 const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
 const dataset = require("../client/src/data/generated/public-dataset.json");
-const [client] = await loadAppModules(["/src/lib/restaurantEdits.ts"]);
+const [client, catalogClient] = await loadAppModules([
+  "/src/lib/restaurantEdits.ts",
+  "/src/lib/adminRestaurantCatalog.ts",
+]);
 
 test("deployment remains within the current twelve-function plan", () => {
   const apiRoot = fileURLToPath(new URL("../../api/", import.meta.url));
@@ -42,6 +45,193 @@ test("shared catalog endpoint requires admin authorization for metadata and all 
     await publicHandler({ ...request, headers: {} }, res);
     assert.equal(res.code, 403);
   }
+});
+
+test("admin catalog sends bounded pages and metadata only on the authenticated first page", async () => {
+  await withEnv(
+    {
+      ...noStorage,
+      ADMIN_USER_IDS: "naver:catalog-test-admin",
+      AUTH_PROFILE_SIGNING_SECRET: "catalog-test-secret-only",
+    },
+    async () => {
+      const headers = {
+        "x-forwarded-for": "192.0.2.81",
+        "x-matpick-admin-key": "naver:catalog-test-admin",
+        "x-matpick-admin-token": createProfileSyncToken("catalog-test-admin"),
+      };
+      const first = response();
+      await handler(
+        {
+          method: "GET",
+          headers,
+          query: { includeCatalog: "1", cursor: "0" },
+        },
+        first
+      );
+      assert.equal(first.code, 200);
+      assert.deepEqual(first.body.edits, []);
+      assert.equal(first.body.configured, false);
+      assert.equal(first.body.catalog.pageSize, 800);
+      assert.equal(first.body.catalog.totalCount, dataset.restaurants.length);
+      assert.equal(first.body.catalog.restaurants.length, 800);
+      assert.equal(first.body.catalog.nextCursor, "800");
+      assert.deepEqual(first.body.catalog.sources, dataset.sources);
+      assert.deepEqual(
+        first.body.catalog.restaurants[0].menus,
+        dataset.restaurants[0].menus
+      );
+      assert.ok(Buffer.byteLength(JSON.stringify(first.body)) < 3_500_000);
+
+      const restaurantIds = first.body.catalog.restaurants.map(
+        restaurant => restaurant.id
+      );
+      const sourceLinkIds = first.body.catalog.sourceLinks.map(link => link.id);
+      let cursor = first.body.catalog.nextCursor;
+      while (cursor != null) {
+        const continuation = response();
+        await handler(
+          {
+            method: "GET",
+            headers,
+            query: { includeCatalog: "1", cursor },
+          },
+          continuation
+        );
+        assert.equal(continuation.code, 200);
+        assert.equal("edits" in continuation.body, false);
+        assert.equal("configured" in continuation.body, false);
+        assert.equal("sources" in continuation.body.catalog, false);
+        const pageIds = new Set(
+          continuation.body.catalog.restaurants.map(restaurant => restaurant.id)
+        );
+        assert.ok(
+          continuation.body.catalog.sourceLinks.every(link =>
+            pageIds.has(link.restaurantId)
+          )
+        );
+        assert.ok(
+          Buffer.byteLength(JSON.stringify(continuation.body)) < 4_000_000
+        );
+        restaurantIds.push(
+          ...continuation.body.catalog.restaurants.map(
+            restaurant => restaurant.id
+          )
+        );
+        sourceLinkIds.push(
+          ...continuation.body.catalog.sourceLinks.map(link => link.id)
+        );
+        cursor = continuation.body.catalog.nextCursor;
+      }
+      assert.deepEqual(
+        restaurantIds,
+        dataset.restaurants.map(restaurant => restaurant.id)
+      );
+      assert.equal(new Set(restaurantIds).size, dataset.restaurants.length);
+      assert.equal(sourceLinkIds.length, dataset.sourceLinks.length);
+      assert.deepEqual(
+        new Set(sourceLinkIds),
+        new Set(dataset.sourceLinks.map(link => link.id))
+      );
+    }
+  );
+});
+
+test("admin catalog client bounds continuation concurrency and keeps page order", async () => {
+  const requested = [];
+  let active = 0;
+  let peakActive = 0;
+  const fetcher = async url => {
+    const cursor = Number(
+      new URL(url, "https://matpick.test").searchParams.get("cursor")
+    );
+    requested.push(cursor);
+    active += 1;
+    peakActive = Math.max(peakActive, active);
+    if (cursor)
+      await new Promise(resolve => setTimeout(resolve, 7 - cursor / 2));
+    active -= 1;
+    const restaurants = [cursor, cursor + 1]
+      .filter(id => id < 10)
+      .map(id => ({ id: `r${id}`, name: `식당 ${id}`, menus: [] }));
+    return {
+      ok: true,
+      json: async () => ({
+        ...(cursor === 0 ? { edits: [], configured: true } : {}),
+        catalog: {
+          restaurants,
+          ...(cursor === 0 ? { sources: [{ id: "tv", name: "방송" }] } : {}),
+          sourceLinks: restaurants.map(restaurant => ({
+            id: `l-${restaurant.id}`,
+            restaurantId: restaurant.id,
+            sourceId: "tv",
+          })),
+          pageSize: 2,
+          totalCount: 10,
+          nextCursor: cursor + 2 < 10 ? String(cursor + 2) : null,
+        },
+      }),
+    };
+  };
+  const result = await catalogClient.fetchAdminRestaurantCatalog({
+    headers: {},
+    fetcher,
+  });
+  assert.deepEqual(
+    [...requested].sort((a, b) => a - b),
+    [0, 2, 4, 6, 8]
+  );
+  assert.equal(peakActive, 3);
+  assert.deepEqual(
+    result.catalog.restaurants.map(restaurant => restaurant.id),
+    Array.from({ length: 10 }, (_, index) => `r${index}`)
+  );
+  assert.equal(result.catalog.sourceLinks.length, 10);
+
+  const index = catalogClient.indexAdminCatalogSources(
+    result.catalog.sources,
+    result.catalog.sourceLinks
+  );
+  assert.deepEqual(
+    index.linksByRestaurant.get("r3").map(link => link.id),
+    ["l-r3"]
+  );
+  assert.deepEqual(
+    index.sourcesByRestaurant.get("r3").map(source => source.id),
+    ["tv"]
+  );
+});
+
+test("admin catalog client keeps the linked-cursor fallback for rolling deploys", async () => {
+  const requested = [];
+  const fetcher = async url => {
+    const cursor = new URL(url, "https://matpick.test").searchParams.get(
+      "cursor"
+    );
+    requested.push(cursor);
+    const page = cursor === "0" ? 0 : 1;
+    return {
+      ok: true,
+      json: async () => ({
+        ...(page === 0 ? { edits: [], configured: true } : {}),
+        catalog: {
+          restaurants: [{ id: `legacy-${page}`, menus: [] }],
+          ...(page === 0 ? { sources: [] } : {}),
+          sourceLinks: [],
+          nextCursor: page === 0 ? "legacy-next" : null,
+        },
+      }),
+    };
+  };
+  const result = await catalogClient.fetchAdminRestaurantCatalog({
+    headers: {},
+    fetcher,
+  });
+  assert.deepEqual(requested, ["0", "legacy-next"]);
+  assert.deepEqual(
+    result.catalog.restaurants.map(restaurant => restaurant.id),
+    ["legacy-0", "legacy-1"]
+  );
 });
 
 function response() {

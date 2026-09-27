@@ -138,6 +138,7 @@ export interface Source {
   imageUrl?: string;
   creatorId?: string;
   attribution?: { provider: string; url: string; license?: string };
+  restaurantCount?: number;
 }
 
 export interface SourceLink {

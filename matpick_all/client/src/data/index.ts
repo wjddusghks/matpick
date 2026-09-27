@@ -1,4 +1,4 @@
-import publicDataset from "./generated/public-dataset.json";
+import publicDataset, { runtimeTopicEpisodes } from "./runtimeDataset";
 import { applyRestaurantEdits } from "@/lib/restaurantEdits";
 import legacyRestaurantAliases from "./legacy-restaurant-aliases.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
@@ -164,6 +164,16 @@ sourceLinks.forEach((link) => {
   const restaurantIds = restaurantIdsBySourceId.get(link.sourceId) ?? new Set<string>();
   restaurantIds.add(link.restaurantId);
   restaurantIdsBySourceId.set(link.sourceId, restaurantIds);
+
+  const creatorId = sources.find((source) => source.id === link.sourceId)?.creatorId;
+  if (creatorId) {
+    const creatorIds = creatorIdsByRestaurantId.get(link.restaurantId) ?? new Set<string>();
+    creatorIds.add(creatorId);
+    creatorIdsByRestaurantId.set(link.restaurantId, creatorIds);
+    const creatorRestaurantIds = restaurantIdsByCreatorId.get(creatorId) ?? new Set<string>();
+    creatorRestaurantIds.add(link.restaurantId);
+    restaurantIdsByCreatorId.set(creatorId, creatorRestaurantIds);
+  }
 });
 
 restaurants.forEach((restaurant) => {
@@ -476,7 +486,7 @@ export function getRestaurantsBySource(sourceId: string) {
 }
 
 export function getSourceRestaurantCount(sourceId: string) {
-  return getRestaurantsBySource(sourceId).length;
+  return getSourceById(sourceId)?.restaurantCount ?? getRestaurantsBySource(sourceId).length;
 }
 
 export function getSourceSubdivisions(sourceId: string): SourceSubdivision[] {
@@ -764,6 +774,10 @@ const discoveryTopicEpisodesBySlug = new Map<string, DiscoveryTopicEpisode[]>(
           getEpisodeSortValue(a.episode) - getEpisodeSortValue(b.episode) ||
           sortText(a.episode, b.episode)
       );
+
+    if (runtimeTopicEpisodes.some((episode) => episode.topicSlug === topic.slug)) {
+      episodes = runtimeTopicEpisodes.filter((episode) => episode.topicSlug === topic.slug);
+    }
 
     return [topic.slug, episodes];
   })

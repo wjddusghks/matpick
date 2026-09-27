@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
+import { useLocale } from "@/contexts/LocaleContext";
 
 interface HeartButtonProps {
   restaurantId: string;
@@ -24,6 +25,7 @@ export default function HeartButton({
 }: HeartButtonProps) {
   const { isLoggedIn } = useAuth();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { isEnglish } = useLocale();
   const [isAnimating, setIsAnimating] = useState(false);
 
   const liked = isFavorite(restaurantId);
@@ -34,10 +36,10 @@ export default function HeartButton({
     event.stopPropagation();
 
     if (!isLoggedIn) {
-      toast("로그인이 필요해요", {
-        description: "찜 목록은 로그인 후 현재 브라우저에 저장돼요.",
+      toast(isEnglish ? "Sign in required" : "로그인이 필요해요", {
+        description: isEnglish ? "Your saved list is stored in this browser after sign-in." : "찜 목록은 로그인 후 현재 브라우저에 저장돼요.",
         action: {
-          label: "홈으로",
+          label: isEnglish ? "Home" : "홈으로",
           onClick: () => {
             window.location.assign("/");
           },
@@ -50,9 +52,9 @@ export default function HeartButton({
     const nextState = toggleFavorite(restaurantId);
 
     if (nextState) {
-      toast.success("찜한 맛집에 추가했어요.", { duration: 1500 });
+      toast.success(isEnglish ? "Added to saved restaurants." : "찜한 맛집에 추가했어요.", { duration: 1500 });
     } else {
-      toast("찜한 맛집에서 제거했어요.", { duration: 1500 });
+      toast(isEnglish ? "Removed from saved restaurants." : "찜한 맛집에서 제거했어요.", { duration: 1500 });
     }
 
     window.setTimeout(() => setIsAnimating(false), 400);
@@ -67,9 +69,9 @@ export default function HeartButton({
           ? "bg-red-50 hover:bg-red-100"
           : "border border-gray-200 bg-white/85 hover:bg-white"
       } ${className}`}
-      aria-label={liked ? "찜 해제" : "찜하기"}
+      aria-label={liked ? (isEnglish ? "Remove from saved" : "찜 해제") : (isEnglish ? "Save restaurant" : "찜하기")}
       aria-pressed={liked}
-      title={liked ? "찜 해제" : "찜하기"}
+      title={liked ? (isEnglish ? "Remove from saved" : "찜 해제") : (isEnglish ? "Save restaurant" : "찜하기")}
     >
       {isAnimating && liked && (
         <span aria-hidden="true" className="matpick-heart-ripple pointer-events-none absolute inset-0 rounded-full bg-red-300" />
@@ -96,7 +98,7 @@ export default function HeartButton({
             liked ? "text-[#FD7979]" : "text-[#999]"
           }`}
         >
-          {liked ? "찜됨" : "찜하기"}
+          {liked ? (isEnglish ? "Saved" : "찜됨") : (isEnglish ? "Save" : "찜하기")}
         </span>
       ) : null}
     </button>

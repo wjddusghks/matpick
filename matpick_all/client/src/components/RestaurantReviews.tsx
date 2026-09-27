@@ -19,6 +19,7 @@ import {
   readRestaurantReviews,
   storeRestaurantReviews,
 } from "@/lib/restaurantReviewData";
+import { hasKoreanText, romanizeKoreanText } from "@/lib/locale";
 
 export default function RestaurantReviews({
   restaurantId,
@@ -396,7 +397,7 @@ export default function RestaurantReviews({
         {reviews.slice(0, expanded ? undefined : 3).map(review => (
           <article key={review.id} className="detail-review-item">
             <div className="detail-review-byline">
-              <strong>{review.user}</strong>
+              <strong>{isEnglish && hasKoreanText(review.user) ? romanizeKoreanText(review.user) : review.user}</strong>
               <ReviewAgeBadge review={review} english={isEnglish} />
               <span>{review.date}</span>
               <span
@@ -406,7 +407,13 @@ export default function RestaurantReviews({
                 ★ {review.stars}
               </span>
             </div>
-            {review.text && <p>{review.text}</p>}
+            {review.text && (
+              <p>
+                {isEnglish && hasKoreanText(review.text)
+                  ? "This review was submitted in Korean. An English translation is not available."
+                  : review.text}
+              </p>
+            )}
             {!!review.photos.length && (
               <details className="detail-review-photos">
                 <summary>

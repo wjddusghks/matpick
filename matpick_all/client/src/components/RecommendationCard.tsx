@@ -20,7 +20,7 @@ import {
   hasUsableCoordinates,
   isRestaurantRecommendable,
 } from "@/lib/restaurantEligibility";
-import { translateCuisineLabel } from "@/lib/locale";
+import { getLocalizedAddress, getLocalizedMenuName, getLocalizedRestaurantName, translateCuisineLabel } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
 
 export default function RecommendationCard({
@@ -49,7 +49,7 @@ export default function RecommendationCard({
   const [shareOpen, setShareOpen] = useState(false);
   const labels = getRestaurantRecommendationLabels(restaurant.id);
   const menuSummary = getRestaurantMenuItems(restaurant)
-    .map(menu => menu.name.trim())
+    .map(menu => getLocalizedMenuName(menu.name.trim(), locale))
     .filter(name => !/^(메인|추가|점심|저녁|추천|대표)?\s*메뉴$/.test(name))
     .slice(0, 3)
     .join(" · ");
@@ -69,7 +69,7 @@ export default function RecommendationCard({
           </span>
         )}
         <span className="text-base font-bold text-[#262126]">
-          {restaurant.name}
+          {getLocalizedRestaurantName(restaurant.name, locale)}
         </span>
       </span>
       <span className="mt-1 block text-xs text-[#756c70]">
@@ -114,7 +114,7 @@ export default function RecommendationCard({
       />
       <p className="mt-1 flex items-start gap-1 text-xs leading-5 text-[#82787d]">
         <MapPin className="mt-0.5 h-3 w-3 shrink-0" />
-        {restaurant.address}
+        {getLocalizedAddress(restaurant.address, locale)}
       </p>
       {notice && (
         <p role="status" className="mt-2 text-xs font-medium text-[#a44137]">
@@ -158,7 +158,7 @@ export default function RecommendationCard({
             });
           }}
           aria-label={
-            english ? `Share ${restaurant.name}` : `${restaurant.name} 공유`
+            english ? `Share ${getLocalizedRestaurantName(restaurant.name, locale)}` : `${restaurant.name} 공유`
           }
           className="flex min-h-11 items-center justify-center gap-1 rounded-xl border border-[#e7dfe2] px-3 text-xs text-[#655c61]"
         >
@@ -176,7 +176,7 @@ export default function RecommendationCard({
         <ShareSheet
           open
           onClose={() => setShareOpen(false)}
-          title={restaurant.name}
+          title={getLocalizedRestaurantName(restaurant.name, locale)}
           text={labels.join(" · ")}
           url={buildAbsoluteUrl(
             `/restaurant/${encodeURIComponent(restaurant.id)}`

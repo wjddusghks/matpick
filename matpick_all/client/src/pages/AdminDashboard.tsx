@@ -27,10 +27,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import {
   discoveryTopics,
   publicDiscoveryTopics,
-  restaurants,
-  searchData,
-  sources,
-  visits,
 } from "@/data";
 import { featuredMapCollections } from "@/data/mapCollections";
 import {
@@ -47,6 +43,16 @@ const cardClass =
 type AnalyticsEntry = {
   label: string;
   count: number;
+};
+
+type CatalogSummary = {
+  restaurantCount: number;
+  restaurantsWithCoordinates: number;
+  restaurantsWithPhotos: number;
+  restaurantsWithMenus: number;
+  menuCount: number;
+  sourceCount: number;
+  visitCount: number;
 };
 
 type AnalyticsSummary = {
@@ -442,21 +448,39 @@ export default function AdminDashboard() {
     "idle" | "loading" | "ready" | "error"
   >("idle");
   const [memberError, setMemberError] = useState("");
-  const restaurantsWithCoordinates = restaurants.filter(
-    restaurant => restaurant.lat && restaurant.lng
-  ).length;
-  const restaurantsWithPhotos = restaurants.filter(restaurant =>
-    restaurant.imageUrl?.trim()
-  ).length;
-  const restaurantsWithMenus = restaurants.filter(
-    restaurant => (restaurant.menus?.length ?? 0) > 0
-  ).length;
-  const menuCount = restaurants.reduce(
-    (sum, restaurant) => sum + (restaurant.menus?.length ?? 0),
-    0
-  );
+  const [catalogSummary, setCatalogSummary] = useState<CatalogSummary | null>(null);
+  const [catalogStatus, setCatalogStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const analyticsCounts = analyticsSummary.counts;
   const memberCounts = memberDashboard.summary;
+
+  useEffect(() => {
+    if (!isLoggedIn || !user || !isAdmin) return;
+    const controller = new AbortController();
+    setCatalogStatus("loading");
+    fetch("/api/restaurants?scope=admin&summaryOnly=1", {
+      headers: {
+        "x-matpick-admin-key": getAdminRegistrationKey(user),
+        "x-matpick-admin-token": user.syncToken ?? "",
+      },
+      cache: "no-store",
+      signal: controller.signal,
+    })
+      .then(async response => {
+        const payload = await response.json().catch(() => ({}));
+        if (!response.ok || !payload.summary) {
+          throw new Error(payload.error || "카탈로그 요약을 불러오지 못했습니다.");
+        }
+        return payload.summary as CatalogSummary;
+      })
+      .then(summary => {
+        setCatalogSummary(summary);
+        setCatalogStatus("ready");
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setCatalogStatus("error");
+      });
+    return () => controller.abort();
+  }, [isAdmin, isLoggedIn, user]);
 
   useEffect(() => {
     if (!isLoggedIn || !user || !isAdmin) {
@@ -823,14 +847,18 @@ export default function AdminDashboard() {
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatCard
             label="식당 데이터"
-            value={restaurants.length}
-            description={`좌표 등록 ${formatNumber(restaurantsWithCoordinates)}곳`}
+            value={catalogSummary?.restaurantCount ?? "—"}
+            description={catalogSummary
+              ? `좌표 등록 ${formatNumber(catalogSummary.restaurantsWithCoordinates)}곳`
+              : catalogStatus === "error" ? "카탈로그 요약을 불러오지 못했습니다" : "카탈로그 요약 불러오는 중"}
             icon={<Store className="h-5 w-5" />}
           />
           <StatCard
             label="메뉴 데이터"
-            value={menuCount}
-            description={`메뉴 보유 식당 ${formatNumber(restaurantsWithMenus)}곳`}
+            value={catalogSummary?.menuCount ?? "—"}
+            description={catalogSummary
+              ? `메뉴 보유 식당 ${formatNumber(catalogSummary.restaurantsWithMenus)}곳`
+              : catalogStatus === "error" ? "카탈로그 요약을 불러오지 못했습니다" : "카탈로그 요약 불러오는 중"}
             icon={<Database className="h-5 w-5" />}
           />
           <StatCard
@@ -842,7 +870,9 @@ export default function AdminDashboard() {
           <StatCard
             label="지도 카드"
             value={featuredMapCollections.length}
-            description={`검색 인덱스 ${formatNumber(searchData.length)}개`}
+            description={catalogSummary
+              ? `보호된 식당 인덱스 ${formatNumber(catalogSummary.restaurantCount)}개`
+              : catalogStatus === "error" ? "카탈로그 요약을 불러오지 못했습니다" : "카탈로그 요약 불러오는 중"}
             icon={<MapPin className="h-5 w-5" />}
           />
         </div>
@@ -858,8 +888,9 @@ export default function AdminDashboard() {
                   사진 보유 식당
                 </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(restaurantsWithPhotos)} /{" "}
-                  {formatNumber(restaurants.length)}
+                  {catalogSummary
+                    ? `${formatNumber(catalogSummary.restaurantsWithPhotos)} / ${formatNumber(catalogSummary.restaurantCount)}`
+                    : "—"}
                 </span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#f1e4e7] pb-3">
@@ -867,9 +898,9 @@ export default function AdminDashboard() {
                   좌표 누락 식당
                 </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(
-                    restaurants.length - restaurantsWithCoordinates
-                  )}
+                  {catalogSummary
+                    ? formatNumber(catalogSummary.restaurantCount - catalogSummary.restaurantsWithCoordinates)
+                    : "—"}
                 </span>
               </div>
               <div className="flex justify-between gap-4 border-b border-[#f1e4e7] pb-3">
@@ -877,7 +908,9 @@ export default function AdminDashboard() {
                   메뉴 누락 식당
                 </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(restaurants.length - restaurantsWithMenus)}
+                  {catalogSummary
+                    ? formatNumber(catalogSummary.restaurantCount - catalogSummary.restaurantsWithMenus)
+                    : "—"}
                 </span>
               </div>
               <div className="flex justify-between gap-4">
@@ -885,8 +918,9 @@ export default function AdminDashboard() {
                   출처 데이터
                 </span>
                 <span className="font-black text-[#171717]">
-                  {formatNumber(sources.length)}개 · 방문{" "}
-                  {formatNumber(visits.length)}건
+                  {catalogSummary
+                    ? `${formatNumber(catalogSummary.sourceCount)}개 · 방문 ${formatNumber(catalogSummary.visitCount)}건`
+                    : catalogStatus === "error" ? "요약 불러오기 실패" : "불러오는 중"}
                 </span>
               </div>
             </div>

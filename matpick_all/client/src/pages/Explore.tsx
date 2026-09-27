@@ -64,7 +64,7 @@ import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
 import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
-import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import { getLocalizedAddress, getLocalizedDiscoveryTitle, getLocalizedEditorialSummary, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
 import {
@@ -74,8 +74,28 @@ import {
   getRestaurantPrimaryPrice,
 } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
+import { getNextCatalogPageHref } from "@/data/runtimeDataset";
 
 const ALL_FILTER = "all";
+
+const ENGLISH_COLLECTION_COPY: Record<string, { title: string; eyebrow: string; description: string; area: string }> = {
+  "popular-hongdae-ramen-best4": { title: "EP1 Hongdae Ramen BEST 4", eyebrow: "A route for rich, satisfying ramen", description: "Four popular ramen restaurants around Hongdae and Yeonnam-dong.", area: "Hongdae" },
+  "popular-gangnam-tonkatsu-best3": { title: "EP2 Gangnam Pork Cutlet BEST 3", eyebrow: "For a crisp cutlet in Gangnam", description: "Three popular pork cutlet restaurants around Gangnam and Apgujeong.", area: "Gangnam" },
+  "popular-daehakro-tteokbokki-best3": { title: "EP3 Daehak-ro Tteokbokki BEST 3", eyebrow: "A casual bite around Daehak-ro", description: "Three popular tteokbokki and snack-food restaurants around Daehak-ro and Hyehwa.", area: "Daehak-ro" },
+  "popular-yeongdeungpo-jjamppong-best4": { title: "EP4 Yeongdeungpo Jjamppong BEST 4", eyebrow: "For a smoky, spicy bowl", description: "Four popular jjamppong restaurants, from long-running local spots to extra-spicy bowls.", area: "Yeongdeungpo" },
+  "popular-suwon-chicken-best4": { title: "EP5 Suwon Whole Chicken BEST 4", eyebrow: "Start here on Suwon Chicken Street", description: "Four popular whole-chicken restaurants around Suwon Chicken Street and Haenggung.", area: "Suwon" },
+  "popular-jeonju-bibimbap-best3": { title: "EP6 Jeonju Bibimbap BEST 3", eyebrow: "A first meal in Jeonju", description: "Three popular restaurants for bibimbap and Korean set meals in Jeonju.", area: "Jeonju" },
+  "popular-cheongju-spicy-galbijjim-best3": { title: "EP7 Cheongju Spicy Braised Ribs BEST 3", eyebrow: "When spicy braised ribs call in Cheongju", description: "Three popular spicy braised-rib restaurants around central Cheongju.", area: "Cheongju" },
+};
+
+function getCollectionCopy(collection: MapCollectionTopic, locale: AppLocale) {
+  return locale === "en" ? ENGLISH_COLLECTION_COPY[collection.slug] ?? {
+    title: romanizeKoreanText(collection.title),
+    eyebrow: "A Matpick restaurant collection",
+    description: `${collection.targetCount} restaurants selected for this map collection.`,
+    area: romanizeKoreanText(collection.areaLabel),
+  } : { title: collection.title, eyebrow: collection.eyebrow, description: collection.description, area: collection.areaLabel };
+}
 
 type DiscoveryKind = "creator" | "source";
 
@@ -238,9 +258,9 @@ const EXPLORE_COPY = {
     pageDescription:
       "Choose a theme like Ttoganjip or Michelin, browse its restaurant cards, then open the matching places on the map.",
     topicLine: (topic: DiscoveryTopic) =>
-      `You are browsing restaurants curated under ${topic.name}.`,
+      `You are browsing restaurants curated under ${getLocalizedDiscoveryTitle(topic.name, "en")}.`,
     episodeLine: (episode: DiscoveryTopicEpisode) =>
-      `You are browsing only the restaurants featured in ${episode.episode}.`,
+      `You are browsing only the restaurants featured in ${romanizeKoreanText(episode.episode)}.`,
     topicShortcutLabel: "Topic shortcuts",
     topicHeading: "My topics",
     episodeHeading: "Episodes",
@@ -336,10 +356,10 @@ function buildEpisodeStorySlides({
   const restaurantSlides = episodeRestaurants.map((restaurant, index) => ({
     id: `restaurant-${restaurant.id}`,
     eyebrow: locale === "en" ? `Pick ${index + 1}` : `맛집 ${index + 1}`,
-    title: restaurant.name,
+    title: getLocalizedRestaurantName(restaurant.name, locale),
     description:
-      getRestaurantMenuSummary(restaurant) ||
-      restaurant.address ||
+      getLocalizedMenuName(getRestaurantMenuSummary(restaurant), locale) ||
+      getLocalizedAddress(restaurant.address, locale) ||
       (locale === "en" ? "Restaurant details are coming soon." : "식당 정보를 정리 중입니다."),
     tags: [
       restaurant.category || (locale === "en" ? "Restaurant" : "맛집"),
@@ -352,13 +372,18 @@ function buildEpisodeStorySlides({
   return [
     {
       id: "cover",
-      eyebrow: `${topic.name} ${episode.episode}`,
-      title: getEpisodeCardTitle(episode),
+      eyebrow: `${getLocalizedDiscoveryTitle(topic.name, locale)} ${locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}`,
+      title: getLocalizedEditorialSummary(
+        getEpisodeCardTitle(episode),
+        locale,
+        `${getLocalizedDiscoveryTitle(topic.name, locale)} episode highlights`
+      ),
       description:
-        episode.description ||
-        (locale === "en"
-          ? `${episode.count} restaurants featured in this episode.`
-          : `이 회차에 소개된 맛집 ${episode.count}곳을 모았습니다.`),
+        getLocalizedEditorialSummary(
+          episode.description,
+          locale,
+          `${episode.count} restaurants featured in this episode.`
+        ),
       tags: [
         locale === "en" ? `${episode.count} places` : `${episode.count}곳`,
         locale === "en" ? "Episode" : "회차별 카드",
@@ -497,7 +522,7 @@ function TtoganjipEpisodeGrid({
   onOpen: (index: number) => void;
 }) {
   const title =
-    locale === "en" ? `${topic.name} episode cards` : `${topic.name} 회차별 맛집 카드`;
+    locale === "en" ? `${getLocalizedDiscoveryTitle(topic.name, locale)} episode cards` : `${topic.name} 회차별 맛집 카드`;
   const description =
     locale === "en"
       ? "Ttoganjip is the first theme here. More themes such as Michelin will be added later in the same card format."
@@ -555,7 +580,7 @@ function PopularRestaurantCollectionGrid({
     (collection) => !POPULAR_RESTAURANT_TOPIC_EXCLUDED_COLLECTION_SLUGS.has(collection.slug)
   );
   const title =
-    locale === "en" ? `${topic.name} card collections` : `${topic.name} 카드 묶음`;
+    locale === "en" ? `${getLocalizedDiscoveryTitle(topic.name, locale)} card collections` : `${topic.name} 카드 묶음`;
   const description =
     locale === "en"
       ? "Popular restaurant content is organized as card collections first. Open a card to see only the matching restaurants on the map."
@@ -576,7 +601,9 @@ function PopularRestaurantCollectionGrid({
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {visibleCollections.map((collection, index) => (
+        {visibleCollections.map((collection, index) => {
+          const collectionCopy = getCollectionCopy(collection, locale);
+          return (
           <Link
             key={collection.slug}
             href={getMapCollectionPath(collection.slug)}
@@ -588,7 +615,7 @@ function PopularRestaurantCollectionGrid({
             }
             className="group relative aspect-[1122/1402] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
             style={{ background: collection.palette.background }}
-            aria-label={`${collection.title} ${locale === "en" ? "open map" : "지도 보기"}`}
+            aria-label={`${collectionCopy.title} ${locale === "en" ? "open map" : "지도 보기"}`}
           >
             {collection.imageUrl ? (
               <img
@@ -609,7 +636,7 @@ function PopularRestaurantCollectionGrid({
                   {locale === "en" ? `Card ${index + 1}` : `카드 ${index + 1}`}
                 </p>
                 <h3 className="mt-8 break-keep text-[28px] font-black leading-[1.08] tracking-normal sm:text-[31px]">
-                  {collection.title}
+                  {collectionCopy.title}
                 </h3>
               </div>
 
@@ -625,17 +652,18 @@ function PopularRestaurantCollectionGrid({
                       key={tag}
                       className="rounded-full bg-white/20 px-2.5 py-1 text-[11px] font-black"
                     >
-                      {tag}
+                      {locale === "en" ? getLocalizedMenuName(tag, locale) : tag}
                     </span>
                   ))}
                 </div>
                 <p className="line-clamp-2 break-keep text-[13px] font-semibold leading-5 text-white/80">
-                  {collection.description}
+                  {collectionCopy.description}
                 </p>
               </div>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
@@ -665,12 +693,13 @@ function SourceRestaurantCollectionGrid({
           ? "Michelin"
           : "Topic";
   const title =
-    locale === "en" ? `${topic.name} restaurant cards` : `${topic.name} 맛집 카드`;
+    locale === "en" ? `${getLocalizedDiscoveryTitle(topic.name, locale)} restaurant cards` : `${topic.name} 맛집 카드`;
   const description =
-    topic.description ||
-    (locale === "en"
-      ? "Browse the restaurants in this topic as visual cards."
-      : "이 주제에 포함된 맛집을 카드 형태로 모아봤어요.");
+    getLocalizedEditorialSummary(
+      topic.description,
+      locale,
+      "Browse the restaurants in this topic as visual cards."
+    ) || "이 주제에 포함된 맛집을 카드 형태로 모아봤어요.";
 
   if (restaurants.length === 0) {
     return (
@@ -739,7 +768,7 @@ function EpisodeCollectionCard({
       }}
       className="group relative aspect-[2/3] w-full overflow-hidden rounded-[8px] text-left text-white shadow-[0_18px_45px_rgba(28,24,34,0.16)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_rgba(28,24,34,0.22)]"
       style={{ background: getEpisodeCardPalette(index) }}
-      aria-label={`${episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
+      aria-label={`${locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
       {mainImageUrl ? (
         <img
@@ -759,9 +788,9 @@ function EpisodeCollectionCard({
       ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between p-5 sm:p-6">
         <div>
-          <p className="text-sm font-black leading-5 text-white/80">{episode.episode}</p>
+          <p className="text-sm font-black leading-5 text-white/80">{locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}</p>
           <h3 className="mt-8 break-keep text-[28px] font-black leading-[1.08] tracking-normal sm:text-[31px]">
-            {getEpisodeCardTitle(episode)}
+            {getLocalizedEditorialSummary(getEpisodeCardTitle(episode), locale, "Episode restaurant highlights")}
           </h3>
         </div>
 
@@ -775,7 +804,7 @@ function EpisodeCollectionCard({
             </span>
           </div>
           <p className="line-clamp-2 break-keep text-[13px] font-semibold leading-5 text-white/80">
-            {episode.description}
+            {getLocalizedEditorialSummary(episode.description, locale, `${episode.count} featured restaurants.`)}
           </p>
         </div>
       </div>
@@ -882,7 +911,7 @@ function EpisodeStoryModal({
       if (navigator.share) {
         await navigator.share({
           title: getEpisodeDisplayTitle(episode),
-          text: episode.description,
+          text: getLocalizedEditorialSummary(episode.description, locale, `${episode.count} featured restaurants.`),
           url: shareUrl,
         });
       } else if (navigator.clipboard) {
@@ -1101,7 +1130,7 @@ function EpisodeStoryModal({
 
         <div className="pointer-events-none absolute bottom-5 left-5 z-20 max-w-[360px] text-left sm:left-6">
           <p className="line-clamp-1 text-xs font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.65)]">
-            {topic.name} · {episode.episode}
+            {getLocalizedDiscoveryTitle(topic.name, locale)} · {locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
           </p>
         </div>
 
@@ -1121,7 +1150,7 @@ function EpisodeStoryModal({
                     {locale === "en" ? "Comments" : "댓글"} {comments.length}
                   </p>
                   <p className="mt-1 line-clamp-1 text-xs font-semibold text-white/55">
-                    {episode.episode}
+                    {locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
                   </p>
                 </div>
                 <button
@@ -1143,7 +1172,7 @@ function EpisodeStoryModal({
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-black text-white">matpick_user</p>
                         <p className="mt-1 break-keep text-sm font-semibold leading-6 text-white/85">
-                          {comment.text}
+                          {locale === "en" && /[가-힣]/.test(comment.text) ? "This comment was submitted in Korean. An English translation is not available." : comment.text}
                         </p>
                         <p className="mt-1 text-xs font-semibold text-white/45">
                           {locale === "en" ? "Reply" : "답글 달기"}
@@ -1284,15 +1313,23 @@ function buildSeoContent({
     presetTopic?.kind === "creator"
       ? creators.find((creator) => creator.id === presetTopic.targetId) ?? null
       : null;
-  const topicKeyword = matchedCreator
+  const rawTopicKeyword = matchedCreator
     ? `${getCreatorDisplayName(matchedCreator)} ${presetTopic?.name ?? ""}`.trim()
     : presetTopic?.name ?? "";
+  const topicKeyword = locale === "en"
+    ? presetTopic
+      ? getLocalizedDiscoveryTitle(presetTopic.name, locale)
+      : romanizeKoreanText(rawTopicKeyword)
+    : rawTopicKeyword;
+  const episodeKeyword = presetEpisode
+    ? locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode
+    : "";
 
   if (presetEpisode && presetTopic) {
     if (locale === "en") {
       return {
-        title: `${topicKeyword} ${presetEpisode.episode} restaurant list`,
-        description: `Browse the restaurant list featured in ${presetEpisode.episode} from ${topicKeyword} on Matpick.`,
+        title: `${topicKeyword} ${episodeKeyword} restaurant list`,
+        description: `Browse the restaurant list featured in ${episodeKeyword} from ${topicKeyword} on Matpick.`,
       };
     }
 
@@ -1504,7 +1541,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         {
           "@type": "ListItem",
           position: 3,
-          name: presetTopic.name,
+          name: getLocalizedDiscoveryTitle(presetTopic.name, locale),
           item: buildAbsoluteUrl(presetTopic.path),
         },
       ];
@@ -1513,7 +1550,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         breadcrumbItems.push({
           "@type": "ListItem",
           position: 4,
-          name: presetEpisode.episode,
+          name: locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode,
           item: buildAbsoluteUrl(presetEpisode.path),
         });
       }
@@ -1526,7 +1563,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
     }
 
     return items;
-  }, [copy.pageTitle, presetEpisode, presetTopic, seoContent.description, seoContent.title, seoPath]);
+  }, [copy.pageTitle, locale, presetEpisode, presetTopic, seoContent.description, seoContent.title, seoPath]);
 
   useSeo({
     title: seoContent.title,
@@ -1781,9 +1818,13 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         ? "Popular restaurants are grouped into card collections instead of a long restaurant list."
         : "인기맛집은 식당을 한꺼번에 펼치지 않고 카드 묶음 단위로 정리해서 보여드립니다."
       : isSourceRestaurantCardOverview && presetTopic
-        ? presetTopic.description || copy.pageDescription
+        ? getLocalizedEditorialSummary(presetTopic.description, locale, copy.pageDescription)
         : copy.pageDescription;
-  const contextDescription = presetEpisode?.description || presetTopic?.description || "";
+  const contextDescription = presetEpisode
+    ? getLocalizedEditorialSummary(presetEpisode.description, locale, copy.pageDescription)
+    : presetTopic
+      ? getLocalizedEditorialSummary(presetTopic.description, locale, copy.pageDescription)
+      : "";
   const topicMapPath = presetTopic ? buildMapPathForTopic(presetTopic) : "";
 
   const handleCategorySelect = (category: string) => {
@@ -1998,7 +2039,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 {publicDiscoveryTopics.map((topic) => (
                   <SourceAvatarButton
                     key={topic.slug}
-                    option={{ name: topic.name, imageUrl: topic.imageUrl }}
+                    option={{ name: getLocalizedDiscoveryTitle(topic.name, locale), imageUrl: topic.imageUrl }}
                     selected={topic.slug === topicSlug}
                     href={topic.slug === topicSlug ? "/explore" : topic.path}
                     onClick={() =>
@@ -2020,7 +2061,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 {additionalDiscoveryOptions.map((option) => (
                   <SourceAvatarButton
                     key={option.key}
-                    option={option}
+                    option={locale === "en" ? { ...option, name: romanizeKoreanText(option.name) } : option}
                     selected={selectedDiscoveryKeys.includes(option.key)}
                     onClick={() => toggleDiscovery(option.key)}
                     fallbackLabel={copy.allLabel}
@@ -2044,7 +2085,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                         : "border-[#ebe6e7] bg-white text-[#666] hover:border-[#ffd1d7] hover:text-[#ff7b83]"
                     }`}
                   >
-                    <span>{presetEpisode ? presetEpisode.episode : copy.allLabel}</span>
+                    <span>{presetEpisode ? (locale === "en" ? romanizeKoreanText(presetEpisode.episode) : presetEpisode.episode) : copy.allLabel}</span>
                     <span className="text-[11px] text-[#b58f95]">
                       {isEpisodeMenuOpen
                         ? copy.episodeClose
@@ -2072,7 +2113,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                         {topicEpisodes.map((episode) => (
                           <FilterChip
                             key={episode.slug}
-                            label={episode.episode}
+                            label={locale === "en" ? romanizeKoreanText(episode.episode) : episode.episode}
                             selected={presetEpisode?.slug === episode.slug}
                             onClick={() => {
                               setIsEpisodeMenuOpen(false);
@@ -2105,7 +2146,7 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                     type="button"
                     onClick={() => handleFavoriteTopicSelect(topic.id)}
                     className="transition"
-                    title={`${topic.name} (${getTopicRestaurantCount(topic.id)})`}
+                    title={`${locale === "en" ? romanizeKoreanText(topic.name) : topic.name} (${getTopicRestaurantCount(topic.id)})`}
                   >
                     <FavoriteTopicBadge topic={topic} active={selectedTopicId === topic.id} />
                   </button>
@@ -2259,6 +2300,16 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
         visibleCount < deferredRestaurants.length ? (
           <div ref={loadMoreRef} className="py-8 text-center text-sm font-medium text-[#9a8f92]">
             {copy.loadMore}
+          </div>
+        ) : null}
+        {getNextCatalogPageHref() ? (
+          <div className="mx-auto max-w-sm px-5 py-8 text-center">
+            <Link
+              href={getNextCatalogPageHref()!}
+              className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-[#f1becb] bg-white px-5 text-sm font-bold text-[#c24d63]"
+            >
+              {locale === "en" ? "Next restaurants" : "다음 맛집 보기"}
+            </Link>
           </div>
         ) : null}
       </main>

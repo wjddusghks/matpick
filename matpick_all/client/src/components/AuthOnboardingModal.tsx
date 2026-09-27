@@ -6,9 +6,11 @@ import {
   hasCompletedProfile,
   sanitizeNickname,
 } from "@/lib/authProfile";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export default function AuthOnboardingModal() {
   const { user, isLoggedIn, completeUserProfile } = useAuth();
+  const { isEnglish } = useLocale();
   const [nickname, setNickname] = useState("");
   const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
   const [acceptedIdentity, setAcceptedIdentity] = useState(false);
@@ -48,19 +50,16 @@ export default function AuthOnboardingModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(17,17,17,0.38)] px-4">
       <div className="w-full max-w-[480px] rounded-[30px] border border-[#ffd7dd] bg-white p-7 shadow-[0_28px_90px_rgba(0,0,0,0.16)]">
-        <p className="text-sm font-semibold text-[#ff7b83]">첫 로그인 설정</p>
+        <p className="text-sm font-semibold text-[#ff7b83]">{isEnglish ? "First-time setup" : "첫 로그인 설정"}</p>
         <h2 className="mt-2 text-[26px] font-black leading-tight text-[#171717]">
-          닉네임과 동의 정보를
-          <br />
-          한 번만 설정해 주세요
+          {isEnglish ? <>Choose a nickname and<br />review your preferences</> : <>닉네임과 동의 정보를<br />한 번만 설정해 주세요</>}
         </h2>
         <p className="mt-3 text-sm leading-6 text-[#737373]">
-          {getDisplayName(user)} 계정으로 로그인되었습니다. 서비스 안에서 보여줄 닉네임을
-          정하고, 기본 동의 항목을 확인해 주세요.
+          {isEnglish ? <>You signed in as {getDisplayName(user)}. Choose the nickname shown in Matpick and review the consent items below.</> : <>{getDisplayName(user)} 계정으로 로그인되었습니다. 서비스 안에서 보여줄 닉네임을 정하고, 기본 동의 항목을 확인해 주세요.</>}
         </p>
 
         <div className="mt-6">
-          <label className="text-sm font-semibold text-[#222222]">닉네임</label>
+          <label className="text-sm font-semibold text-[#222222]">{isEnglish ? "Nickname" : "닉네임"}</label>
           <input
             type="text"
             value={nickname}
@@ -68,11 +67,11 @@ export default function AuthOnboardingModal() {
               setNickname(sanitizeNickname(event.target.value));
               setError(null);
             }}
-            placeholder="최대 6자"
+            placeholder={isEnglish ? "Up to 6 characters" : "최대 6자"}
             maxLength={6}
             className="mt-2 h-12 w-full rounded-2xl border border-[#ffd5db] px-4 text-sm font-medium text-[#171717] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.12)]"
           />
-          <p className="mt-2 text-xs text-[#9a9a9a]">{normalizedNickname.length}/6자</p>
+          <p className="mt-2 text-xs text-[#9a9a9a]">{normalizedNickname.length}/6{isEnglish ? " characters" : "자"}</p>
         </div>
 
         <div className="mt-6 space-y-3 rounded-[24px] bg-[#fff7f8] p-5">
@@ -87,25 +86,25 @@ export default function AuthOnboardingModal() {
               className="mt-1 h-4 w-4 rounded border-[#ffb8c1] text-[#ff7b83] focus:ring-[#ffb8c1]"
             />
             <span>
-              [필수]{" "}
+              {isEnglish ? "[Required] I have read and agree to the " : "[필수] "}
               <Link
                 href="/terms"
                 target="_blank"
                 onClick={(event) => event.stopPropagation()}
                 className="font-bold text-[#e75b6c] underline"
               >
-                이용약관
+                {isEnglish ? "Terms of Service" : "이용약관"}
               </Link>
-              과{" "}
+              {isEnglish ? " and " : "과 "}
               <Link
                 href="/privacy"
                 target="_blank"
                 onClick={(event) => event.stopPropagation()}
                 className="font-bold text-[#e75b6c] underline"
               >
-                개인정보처리방침
+                {isEnglish ? "Privacy Policy" : "개인정보처리방침"}
               </Link>
-              을 확인하고 동의합니다.
+              {isEnglish ? "." : "을 확인하고 동의합니다."}
             </span>
           </label>
 
@@ -119,7 +118,7 @@ export default function AuthOnboardingModal() {
               }}
               className="mt-1 h-4 w-4 rounded border-[#ffb8c1] text-[#ff7b83] focus:ring-[#ffb8c1]"
             />
-            <span>[필수] 소셜 로그인 식별값을 회원 식별과 계정 유지에 사용하는 데 동의합니다.</span>
+            <span>{isEnglish ? "[Required] I agree that my social sign-in identifier may be used to identify and maintain my account." : "[필수] 소셜 로그인 식별값을 회원 식별과 계정 유지에 사용하는 데 동의합니다."}</span>
           </label>
 
           <label className="flex cursor-pointer items-start gap-3 text-sm text-[#333333]">
@@ -129,7 +128,7 @@ export default function AuthOnboardingModal() {
               onChange={(event) => setAllowLocationPersonalization(event.target.checked)}
               className="mt-1 h-4 w-4 rounded border-[#ffb8c1] text-[#ff7b83] focus:ring-[#ffb8c1]"
             />
-            <span>[선택] 위치 기반 추천과 가까운 맛집 정렬에 활용하는 데 동의합니다.</span>
+            <span>{isEnglish ? "[Optional] Use my location for nearby recommendations and distance sorting." : "[선택] 위치 기반 추천과 가까운 맛집 정렬에 활용하는 데 동의합니다."}</span>
           </label>
         </div>
 
@@ -143,12 +142,12 @@ export default function AuthOnboardingModal() {
           type="button"
           onClick={async () => {
             if (!normalizedNickname) {
-              setError("닉네임을 입력해 주세요.");
+              setError(isEnglish ? "Enter a nickname." : "닉네임을 입력해 주세요.");
               return;
             }
 
             if (!acceptedPrivacy || !acceptedIdentity) {
-              setError("필수 동의 항목을 먼저 확인해 주세요.");
+              setError(isEnglish ? "Please accept the required items first." : "필수 동의 항목을 먼저 확인해 주세요.");
               return;
             }
 
@@ -161,13 +160,13 @@ export default function AuthOnboardingModal() {
               setError(
                 profileError instanceof Error
                   ? profileError.message
-                  : "프로필 설정 중 문제가 발생했습니다."
+                  : isEnglish ? "There was a problem setting up your profile." : "프로필 설정 중 문제가 발생했습니다."
               );
             }
           }}
           className="mt-6 flex h-12 w-full items-center justify-center rounded-full bg-[#ff7b83] text-sm font-semibold text-white transition hover:brightness-95"
         >
-          시작하기
+          {isEnglish ? "Get started" : "시작하기"}
         </button>
       </div>
     </div>

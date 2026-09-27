@@ -36,7 +36,8 @@ import {
   X,
 } from "lucide-react";
 import { toast } from "sonner";
-import { useLocation, useSearch } from "wouter";
+import { Link, useLocation, useSearch } from "wouter";
+import { getNextCatalogPageHref, runtimeCatalogPageInfo } from "@/data/runtimeDataset";
 import {
   creators,
   getCreatorDisplayName,
@@ -74,7 +75,7 @@ import {
   saveStoredLocation,
   type StoredLocation,
 } from "@/lib/location";
-import { translateCuisineLabel, type AppLocale } from "@/lib/locale";
+import { getLocalizedAddress, getLocalizedDiscoveryTitle, getLocalizedEditorialSummary, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel, type AppLocale } from "@/lib/locale";
 import { useSeo } from "@/lib/seo";
 
 const MAP_COPY = {
@@ -201,8 +202,8 @@ function filterRestaurants(
           restaurants,
           getRestaurantsBySource,
         }),
-        title: collection.title,
-        description: collection.description,
+        title: isEnglish ? getLocalizedMenuName(collection.title, locale) : collection.title,
+        description: getLocalizedEditorialSummary(collection.description, locale, "A curated Matpick restaurant collection."),
       };
     }
     case "episode": {
@@ -222,54 +223,32 @@ function filterRestaurants(
         restaurants: restaurants.filter(restaurant =>
           episodeRestaurantIds.has(restaurant.id)
         ),
-        title: `${topic.name} ${episode.episode}`,
-        description: episode.description,
+        title: isEnglish ? `${getLocalizedDiscoveryTitle(topic.name, locale)} ${romanizeKoreanText(episode.episode)}` : `${topic.name} ${episode.episode}`,
+        description: getLocalizedEditorialSummary(episode.description, locale, `${episode.count} restaurants featured in this episode.`),
       };
     }
     case "creator": {
-      const creator = creators.find(
-        item => item.id === value || item.name === value
-      );
-      if (!creator) {
-        return {
-          restaurants: [],
-          title: copy.searchResults,
-        };
-      }
+      const creator = creators.find(item => item.id === value || item.name === value);
 
       return {
-        restaurants: getRestaurantsByCreator(creator.id),
-        title: copy.creatorRestaurants(getCreatorDisplayName(creator)),
+        restaurants: [...restaurants],
+        title: copy.creatorRestaurants(isEnglish ? romanizeKoreanText(creator ? getCreatorDisplayName(creator) : value) : creator ? getCreatorDisplayName(creator) : value),
       };
     }
     case "query": {
-      const result = getRestaurantSearchResults(value, restaurants);
       return {
-        restaurants: result.matches.map(match => match.restaurant),
-        title: isEnglish ? `Results for “${value}”` : `“${value}” 관련 맛집`,
-        description: result.expandedArea
-          ? isEnglish
-            ? `Broadened to addresses in ${result.expandedArea}. Check each address before choosing.`
-            : `‘${result.expandedArea}’ 지역으로 넓혀 찾았어요. 식당 주소를 확인해 주세요.`
-          : undefined,
+        restaurants: [...restaurants],
+        title: isEnglish ? `Results for “${romanizeKoreanText(value)}”` : `“${value}” 관련 맛집`,
       };
     }
     case "region":
       return {
-        restaurants: searchRestaurants(value, restaurants)
-          .filter(match => match.matchTypes.includes("location"))
-          .map(match => match.restaurant),
-        title: copy.regionRestaurants(value),
+        restaurants: [...restaurants],
+        title: copy.regionRestaurants(isEnglish ? romanizeKoreanText(value) : value),
       };
     case "food":
       return {
-        restaurants: searchRestaurants(value, restaurants)
-          .filter(match =>
-            match.matchTypes.some(
-              type => type === "menu" || type === "category"
-            )
-          )
-          .map(match => match.restaurant),
+        restaurants: [...restaurants],
         title: copy.cuisineRestaurants(
           isEnglish ? translateCuisineLabel(value, "en") : value
         ),
@@ -279,7 +258,7 @@ function filterRestaurants(
       return {
         restaurants: getRestaurantsBySource(value),
         title: source
-          ? copy.sourceRestaurants(getSourceDisplayName(source))
+          ? copy.sourceRestaurants(isEnglish ? getLocalizedDiscoveryTitle(getSourceDisplayName(source), locale) : getSourceDisplayName(source))
           : copy.searchResults,
       };
     }
@@ -288,7 +267,7 @@ function filterRestaurants(
       const restaurant = restaurants.find(r => r.id === publicId);
       return {
         restaurants: restaurant ? [restaurant] : [],
-        title: restaurant?.name ?? copy.searchResults,
+        title: restaurant ? getLocalizedRestaurantName(restaurant.name, locale) : copy.searchResults,
       };
     }
     default:
@@ -346,8 +325,11 @@ function SearchDropdownItem({
       (item.category
         ? translateCuisineLabel(item.category, locale)
         : copy.searchResults);
-    detailText = item.matchedText ?? item.address ?? "";
+    detailText = getLocalizedAddress(item.matchedText ?? item.address ?? "", locale);
   }
+  const displayName = item.type === "restaurant"
+    ? getLocalizedRestaurantName(item.name, locale)
+    : isEnglish ? romanizeKoreanText(item.name) : item.name;
 
   return (
     <button
@@ -363,7 +345,7 @@ function SearchDropdownItem({
         {item.image ? (
           <img
             src={item.image}
-            alt={item.name}
+            alt={displayName}
             className="h-full w-full object-cover"
           />
         ) : item.type === "region" ? (
@@ -377,7 +359,7 @@ function SearchDropdownItem({
 
       <div className="min-w-0 flex-1">
         <p className="truncate text-sm font-semibold text-[#1a1a1a]">
-          {item.name}
+          {displayName}
         </p>
         <div className="mt-1 flex items-center gap-2 text-xs">
           <span className="shrink-0 font-semibold text-[#ff7b83]">
@@ -517,6 +499,10 @@ export default function SearchMap() {
           toast.success(copy.locationUpdated);
         }
 
+        if (type === "nearby") {
+          window.location.reload();
+        }
+
         return location;
       } catch (error) {
         if (error instanceof LocationRequestError && error.code === "aborted") {
@@ -555,7 +541,7 @@ export default function SearchMap() {
         }
       }
     },
-    [copy]
+    [copy, type]
   );
 
   const nearbyResults = useMemo(
@@ -584,6 +570,9 @@ export default function SearchMap() {
     type === "nearby" ? domesticRestaurants : orderedRestaurants;
   const totalAvailable =
     type === "nearby" ? nearbyResults.totalCount : listRestaurants.length;
+  const reportedTotal = type === "restaurant"
+    ? listRestaurants.length
+    : runtimeCatalogPageInfo.totalCount ?? listRestaurants.length;
 
   useEffect(() => {
     if (
@@ -1048,6 +1037,16 @@ export default function SearchMap() {
               )}
           </div>
         ) : null}
+        {getNextCatalogPageHref() ? (
+          <div className="p-4 pt-0">
+            <Link
+              href={getNextCatalogPageHref()!}
+              className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#f1becb] bg-white px-4 py-3 text-sm font-bold text-[#c24d63]"
+            >
+              {locale === "en" ? "Next results" : "다음 맛집 보기"}
+            </Link>
+          </div>
+        ) : null}
       </>
     ) : type === "nearby" && !currentLocation && !isLocating ? (
       <div className="px-6 py-10 text-center">
@@ -1157,7 +1156,7 @@ export default function SearchMap() {
       <div className="flex items-center justify-between gap-3">
         <p className="truncate text-sm font-bold text-[#282426]">{title}</p>
         <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-xs font-bold text-[#ff6f7c] shadow-sm">
-          {copy.resultCount(listRestaurants.length)}
+          {copy.resultCount(reportedTotal)}
         </span>
       </div>
       {type === "nearby" && currentLocation && nearbyResults.expanded && (
@@ -1260,7 +1259,7 @@ export default function SearchMap() {
                       {title}
                     </p>
                     <span className="shrink-0 text-xs font-bold text-[#ff6f7c]">
-                      {copy.resultCount(listRestaurants.length)}
+                      {copy.resultCount(reportedTotal)}
                     </span>
                   </div>
                 </div>

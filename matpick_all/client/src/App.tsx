@@ -14,52 +14,35 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { isAdminUser } from "./lib/admin";
 import { FavoritesProvider } from "./contexts/FavoritesContext";
 import { LocaleProvider } from "./contexts/LocaleContext";
-import { loadRestaurantEdits } from "./lib/restaurantEdits";
+import { useLocale } from "./contexts/LocaleContext";
+import CatalogScopeReload from "./components/CatalogScopeReload";
 
-function withRestaurantEdits<T>(loadPage: () => Promise<T>) {
-  return async () => {
-    await loadRestaurantEdits();
-    return loadPage();
-  };
-}
-
-const Home = lazy(withRestaurantEdits(() => import("./pages/Home")));
+const Home = lazy(() => import("./pages/Home"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const SuggestRestaurant = lazy(() => import("./pages/SuggestRestaurant"));
 const AdminSuggestions = lazy(() => import("./pages/AdminSuggestions"));
-const Explore = lazy(withRestaurantEdits(() => import("./pages/Explore")));
+const Explore = lazy(() => import("./pages/Explore"));
 const Privacy = lazy(() => import("./pages/Privacy"));
-const ReviewFeed = lazy(
-  withRestaurantEdits(() => import("./pages/ReviewFeed"))
-);
-const SearchMap = lazy(withRestaurantEdits(() => import("./pages/SearchMap")));
-const RestaurantDetail = lazy(
-  withRestaurantEdits(() => import("./pages/RestaurantDetail"))
-);
+const ReviewFeed = lazy(() => import("./pages/ReviewFeed"));
+const SearchMap = lazy(() => import("./pages/SearchMap"));
+const RestaurantDetail = lazy(() => import("./pages/RestaurantDetail"));
 const Terms = lazy(() => import("./pages/Terms"));
-const CreatorDetail = lazy(
-  withRestaurantEdits(() => import("./pages/CreatorDetail"))
-);
-const MyFavorites = lazy(
-  withRestaurantEdits(() => import("./pages/MyFavorites"))
-);
-const AdminDashboard = lazy(
-  withRestaurantEdits(() => import("./pages/AdminDashboard"))
-);
-const AdminRestaurants = lazy(
-  withRestaurantEdits(() => import("./pages/AdminRestaurants"))
-);
+const CreatorDetail = lazy(() => import("./pages/CreatorDetail"));
+const MyFavorites = lazy(() => import("./pages/MyFavorites"));
+const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
+const AdminRestaurants = lazy(() => import("./pages/AdminRestaurants"));
 const AdminTopicResearch = lazy(() => import("./pages/AdminTopicResearch"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function PageLoader() {
+  const { isEnglish } = useLocale();
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-[#f6f6f5] text-sm font-semibold text-[#7a7174]">
       <div role="status" className="text-center">
         <div className="mx-auto mb-3 h-7 w-7 animate-spin rounded-full border-2 border-[#f0d8df] border-t-[#ef6479] motion-reduce:animate-none" />
-        화면을 불러오고 있어요
+        {isEnglish ? "Loading…" : "화면을 불러오고 있어요"}
       </div>
     </div>
   );
@@ -140,6 +123,7 @@ function App() {
           <AuthProvider>
             <FavoritesProvider>
               <TooltipProvider>
+                <CatalogScopeReload />
                 <Toaster />
                 <MonetizationScripts />
                 <MediaProtection />

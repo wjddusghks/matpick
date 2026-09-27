@@ -28,7 +28,9 @@ function getClientIp(req) {
     req.headers?.["x-vercel-forwarded-for"] ||
     req.headers?.["X-Vercel-Forwarded-For"] ||
     "";
-  const candidate = String(forwardedFor || vercelForwardedFor || realIp || "")
+  // Vercel supplies its own forwarding header. Prefer it over the generic
+  // header so a caller cannot choose a new rate-limit identity per request.
+  const candidate = String(vercelForwardedFor || forwardedFor || realIp || "")
     .split(",")
     .map((value) => value.trim())
     .find(Boolean);

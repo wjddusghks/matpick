@@ -8,6 +8,7 @@ const storeModule = require.resolve(
   "../../api/restaurants/_suggestionStore.js"
 );
 const handlerModule = require.resolve("../../api/restaurants/_suggestions.js");
+const catalogModule = require.resolve("../../api/restaurants/_catalog.js");
 const retentionMs = 180 * 86400000;
 const fail = (message, status) => {
   throw Object.assign(new Error(message), { status });
@@ -141,6 +142,26 @@ export function localSuggestionsPlugin() {
       );
       server.middlewares.use(async (req, res, next) => {
         const url = new URL(req.url || "/", "http://localhost");
+        if (
+          url.pathname === "/api/restaurants" &&
+          url.searchParams.get("scope") === "catalog"
+        ) {
+          const address = req.socket.remoteAddress;
+          if (!["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(address)) {
+            res.writeHead(403, { "Content-Type": "application/json" });
+            res.end(JSON.stringify({ error: "Local catalog access is restricted." }));
+            return;
+          }
+          const result = require(catalogModule).queryCatalog(
+            Object.fromEntries(url.searchParams)
+          );
+          res.writeHead(result.status, {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+          });
+          res.end(JSON.stringify(result.body));
+          return;
+        }
         if (
           url.pathname !== "/api/restaurants" ||
           url.searchParams.get("scope") !== "suggestions"

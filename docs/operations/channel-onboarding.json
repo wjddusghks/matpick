@@ -1,0 +1,42 @@
+{
+  "requestedAt": "2026-09-27",
+  "status": "awaiting-current-code-work-then-user-registration",
+  "userWillRegister": true,
+  "channels": [
+    {
+      "channel": "kakao_channel",
+      "entryUrl": "https://center-pf.kakao.com/",
+      "account": null,
+      "publishingEnabled": false
+    },
+    {
+      "channel": "pinterest",
+      "entryUrl": "https://www.pinterest.com/business/create/",
+      "account": null,
+      "publishingEnabled": false
+    },
+    {
+      "channel": "daangn_business",
+      "entryUrl": "https://business.daangn.com/",
+      "account": null,
+      "publishingEnabled": false
+    },
+    {
+      "channel": "threads",
+      "entryUrl": "https://www.threads.com/",
+      "account": null,
+      "publishingEnabled": false
+    }
+  ],
+  "activationRequirements": [
+    "User completes registration and identifies the Matpick account",
+    "Verify service eligibility and actual publishing/scheduling capabilities",
+    "Record audience, language and frequency before enabling recurrence",
+    "Use native publishing; do not promise unsupported scheduled posting or bypass platform limits"
+  ],
+  "dailyPerChannel": {
+    "en": 2,
+    "ko": 2
+  },
+  "publishTime": "11:00 Asia/Seoul"
+}

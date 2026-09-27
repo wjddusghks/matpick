@@ -30,6 +30,7 @@ import {
   type SuggestionReceipt,
 } from "@/lib/restaurantSuggestions";
 import "./restaurant-suggestions.css";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const steps = [
   {
@@ -57,7 +58,22 @@ const relationships = [
   { value: "discovered", label: "알려주고 싶은 곳이에요" },
 ] as const;
 
+const englishSteps = [
+  { label: "Find the restaurant", title: "Which restaurant would you like to share?", description: "Enter its name and use address search to choose the exact location.", icon: MapPin },
+  { label: "Menu and price", title: "What should people order?", description: "One recommendation is enough. Add a price only if you know it.", icon: UtensilsCrossed },
+  { label: "Why you recommend it", title: "What makes this place worth a visit?", description: "Tell us when to go or who it suits. A short note still helps.", icon: Heart },
+] as const;
+
+const englishRelationships = [
+  { value: "visitor", label: "I have visited" },
+  { value: "owner", label: "I run this place" },
+  { value: "discovered", label: "I want to share it" },
+] as const;
+
 export default function SuggestRestaurant() {
+  const { isEnglish, locale } = useLocale();
+  const localizedSteps = isEnglish ? englishSteps : steps;
+  const localizedRelationships = isEnglish ? englishRelationships : relationships;
   const [initial] = useState(readSuggestionDraft);
   const [draft, setDraft] = useState(initial.draft);
   const [step, setStep] = useState(initial.step);
@@ -71,10 +87,10 @@ export default function SuggestRestaurant() {
   const busy = useRef(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useSeo({
-    title: "맛집 제보",
-    description:
-      "나만 알기 아까운 식당을 맛픽에 알려주세요. 사진이나 로그인 없이 식당, 메뉴, 가격을 간편하게 제보할 수 있어요.",
+    title: isEnglish ? "Suggest a restaurant" : "맛집 제보",
+    description: isEnglish ? "Share a restaurant with Matpick without signing in or uploading a photo." : "나만 알기 아까운 식당을 맛픽에 알려주세요. 사진이나 로그인 없이 식당, 메뉴, 가격을 간편하게 제보할 수 있어요.",
     path: "/suggest",
+    locale,
   });
 
   useEffect(() => {
@@ -136,11 +152,11 @@ export default function SuggestRestaurant() {
   async function submit(event: FormEvent) {
     event.preventDefault();
     if (busy.current) return;
-    const nextErrors = validateSuggestionStep(draft, step, consent);
+    const nextErrors = validateSuggestionStep(draft, step, consent, locale);
     if (Object.keys(nextErrors).length) return showErrors(nextErrors);
     if (step < 2) return move(step + 1);
     for (let i = 0; i < 2; i++) {
-      const previousErrors = validateSuggestionStep(draft, i, consent);
+      const previousErrors = validateSuggestionStep(draft, i, consent, locale);
       if (Object.keys(previousErrors).length) {
         move(i);
         showErrors(previousErrors);
@@ -161,7 +177,7 @@ export default function SuggestRestaurant() {
       if (!response.ok || !body?.ok || typeof body.receipt?.id !== "string")
         throw new Error(
           body?.error ||
-            "아직 제보를 접수하지 못했어요. 입력 내용은 그대로 있으니 잠시 후 다시 시도해 주세요."
+            (isEnglish ? "We could not submit this yet. Your entries are still here; please try again shortly." : "아직 제보를 접수하지 못했어요. 입력 내용은 그대로 있으니 잠시 후 다시 시도해 주세요.")
         );
       setReceipt(body.receipt);
       try {
@@ -174,7 +190,7 @@ export default function SuggestRestaurant() {
       setSendError(
         error instanceof Error && error.name !== "TimeoutError"
           ? error.message
-          : "연결이 지연되고 있어요. 다시 보내도 같은 제보는 중복 접수되지 않아요."
+          : isEnglish ? "The connection is taking too long. Retrying will not create a duplicate submission." : "연결이 지연되고 있어요. 다시 보내도 같은 제보는 중복 접수되지 않아요."
       );
     } finally {
       busy.current = false;
@@ -213,13 +229,13 @@ export default function SuggestRestaurant() {
       className={`suggest-page ${step > 0 && !receipt ? "suggest-page--progress" : ""}`}
     >
       <header className="suggest-header">
-        <Link href="/" className="suggest-brand" aria-label="맛픽 홈">
-          맛<span>픽</span>
+        <Link href="/" className="suggest-brand" aria-label={isEnglish ? "Matpick home" : "맛픽 홈"}>
+          {isEnglish ? "Mat" : "맛"}<span>{isEnglish ? "pick" : "픽"}</span>
           <span className="suggest-header-divider" />
-          <small>함께 채우는 맛집 지도</small>
+          <small>{isEnglish ? "A restaurant map shaped by diners" : "함께 채우는 맛집 지도"}</small>
         </Link>
         <Link href="/" className="suggest-home">
-          <ArrowLeft size={16} aria-hidden="true" /> 홈으로
+          <ArrowLeft size={16} aria-hidden="true" /> {isEnglish ? "Home" : "홈으로"}
         </Link>
       </header>
       {receipt ? (
@@ -229,34 +245,30 @@ export default function SuggestRestaurant() {
           </span>
           <p className="suggest-eyebrow">THANK YOU FOR YOUR PICK</p>
           <h1 ref={titleRef} tabIndex={-1}>
-            {receipt.storage === "local" ? "로컬 접수함에," : "맛있는 제보,"}
-            <br />잘 받았어요!
+            {isEnglish ? (receipt.storage === "local" ? "Saved locally," : "Thank you,") : (receipt.storage === "local" ? "로컬 접수함에," : "맛있는 제보,")}
+            <br />{isEnglish ? "we received your pick!" : "잘 받았어요!"}
           </h1>
           <p>
             {receipt.storage === "local" ? (
               <>
-                <strong>{draft.name}</strong> 제보를 이 컴퓨터에 저장했어요.
-                <br />
-                운영 사이트에는 전송되지 않았어요.
+                {isEnglish ? <>Your suggestion for <strong>{draft.name}</strong> was saved on this computer.<br />It was not sent to the live site.</> : <><strong>{draft.name}</strong> 제보를 이 컴퓨터에 저장했어요.<br />운영 사이트에는 전송되지 않았어요.</>}
               </>
             ) : (
               <>
-                <strong>{draft.name}</strong>의 정보를 운영자가 확인할게요.
-                <br />
-                보내주신 정보는 검토 후 맛픽에 반영됩니다.
+                {isEnglish ? <>Our team will check the information for <strong>{draft.name}</strong>.<br />Approved details will be added to Matpick.</> : <><strong>{draft.name}</strong>의 정보를 운영자가 확인할게요.<br />보내주신 정보는 검토 후 맛픽에 반영됩니다.</>}
               </>
             )}
           </p>
           <div className="suggest-receipt">
-            <span>제보 접수 번호</span>
+            <span>{isEnglish ? "Submission reference" : "제보 접수 번호"}</span>
             <code>{receipt.id}</code>
-            <small>문의할 때 이 번호를 함께 알려주세요.</small>
+            <small>{isEnglish ? "Include this number if you contact us." : "문의할 때 이 번호를 함께 알려주세요."}</small>
           </div>
           <Link href="/map" className="suggest-primary">
-            다른 맛집 둘러보기 <ArrowRight size={18} />
+            {isEnglish ? "Explore more restaurants" : "다른 맛집 둘러보기"} <ArrowRight size={18} />
           </Link>
           <button type="button" className="suggest-text-button" onClick={reset}>
-            한 곳 더 알려주기
+            {isEnglish ? "Suggest another place" : "한 곳 더 알려주기"}
           </button>
         </main>
       ) : (
@@ -266,24 +278,20 @@ export default function SuggestRestaurant() {
               <span /> YOUR PICK, OUR MAP
             </p>
             <h1>
-              누군가의 다음 한 끼가
-              <br />
-              <em>당신의 맛집</em>이 되도록.
+              {isEnglish ? <>Help someone discover<br /><em>their next great meal.</em></> : <>누군가의 다음 한 끼가<br /><em>당신의 맛집</em>이 되도록.</>}
             </h1>
             <p className="suggest-intro">
-              자꾸 생각나는 그 집, 맛픽에 알려주세요.
-              <br />
-              당신의 한마디가 좋은 선택의 시작이 돼요.
+              {isEnglish ? <>Share the place you keep thinking about.<br />Your note can help someone choose well.</> : <>자꾸 생각나는 그 집, 맛픽에 알려주세요.<br />당신의 한마디가 좋은 선택의 시작이 돼요.</>}
             </p>
             <div className="suggest-perks">
               <span>
-                <Check size={14} /> 로그인 없이
+                <Check size={14} /> {isEnglish ? "No sign-in" : "로그인 없이"}
               </span>
               <span>
-                <Check size={14} /> 사진 없이
+                <Check size={14} /> {isEnglish ? "No photo needed" : "사진 없이"}
               </span>
               <span>
-                <Check size={14} /> 아는 만큼만
+                <Check size={14} /> {isEnglish ? "Share what you know" : "아는 만큼만"}
               </span>
             </div>
             <div className="suggest-preview" aria-hidden="true">
@@ -300,32 +308,32 @@ export default function SuggestRestaurant() {
                 <span className="suggest-map-dot" />
               </div>
               <div className="suggest-preview-content">
-                <span className="suggest-mini-label">당신이 발견한 한 곳</span>
-                <strong>{draft.name || "나의 단골 맛집"}</strong>
+                <span className="suggest-mini-label">{isEnglish ? "A place you discovered" : "당신이 발견한 한 곳"}</span>
+                <strong>{draft.name || (isEnglish ? "My local favorite" : "나의 단골 맛집")}</strong>
                 <p>
                   <MapPin size={13} />{" "}
-                  {draft.location || "맛있는 기억이 있는 동네"}
+                  {draft.location || (isEnglish ? "A neighborhood worth remembering" : "맛있는 기억이 있는 동네")}
                 </p>
                 <div className="suggest-preview-menu">
                   <UtensilsCrossed size={16} />
-                  <span>{selectedMenus[0]?.name || "꼭 먹어봐야 할 메뉴"}</span>
+                  <span>{selectedMenus[0]?.name || (isEnglish ? "A must-try menu item" : "꼭 먹어봐야 할 메뉴")}</span>
                   <b>
                     {selectedMenus[0]?.price
-                      ? `${Number(selectedMenus[0].price.replace(/,/g, "")).toLocaleString()}원`
-                      : "당신의 추천"}
+                      ? `${isEnglish ? "₩" : ""}${Number(selectedMenus[0].price.replace(/,/g, "")).toLocaleString()}${isEnglish ? "" : "원"}`
+                      : isEnglish ? "Your pick" : "당신의 추천"}
                   </b>
                 </div>
               </div>
             </div>
             <p className="suggest-story-note">
-              <Sparkles size={16} /> 제보는 운영자가 확인한 뒤 반영해요.
+              <Sparkles size={16} /> {isEnglish ? "Our team reviews suggestions before publishing." : "제보는 운영자가 확인한 뒤 반영해요."}
             </p>
           </aside>
 
           <div className="suggest-workspace">
-            <nav className="suggest-progress" aria-label="제보 작성 단계">
+            <nav className="suggest-progress" aria-label={isEnglish ? "Submission steps" : "제보 작성 단계"}>
               <ol>
-                {steps.map((item, i) => (
+                {localizedSteps.map((item, i) => (
                   <li
                     key={item.label}
                     className={
@@ -356,14 +364,13 @@ export default function SuggestRestaurant() {
                   STEP 0{step + 1} <span>/ 03</span>
                 </span>
                 <h2 ref={titleRef} tabIndex={-1}>
-                  {steps[step].title}
+                  {localizedSteps[step].title}
                 </h2>
-                <p>{steps[step].description}</p>
+                <p>{localizedSteps[step].description}</p>
               </div>
               {restored && (
                 <p className="suggest-draft-note">
-                  <Check size={14} /> 이 탭에서 작성하던 내용을 이어서
-                  보여드려요.
+                  <Check size={14} /> {isEnglish ? "Restored the draft from this tab." : "이 탭에서 작성하던 내용을 이어서 보여드려요."}
                 </p>
               )}
               <fieldset disabled={sending} className="suggest-fields">
@@ -371,14 +378,14 @@ export default function SuggestRestaurant() {
                   <>
                     <div className="suggest-field">
                       <label htmlFor="suggest-name">
-                        식당 이름 <span className="suggest-required">필수</span>
+                        {isEnglish ? "Restaurant name" : "식당 이름"} <span className="suggest-required">{isEnglish ? "Required" : "필수"}</span>
                       </label>
                       <input
                         {...fieldProps("name")}
                         value={draft.name}
                         maxLength={100}
                         autoComplete="off"
-                        placeholder="예: ○○국밥 해운대점"
+                        placeholder={isEnglish ? "Enter the name exactly as shown in Korea" : "예: ○○국밥 해운대점"}
                         onChange={event => update("name", event.target.value)}
                       />
                       {errorText("name")}
@@ -392,7 +399,7 @@ export default function SuggestRestaurant() {
                     />
                     <div className="suggest-field">
                       <label htmlFor="suggest-mapUrl">
-                        지도나 식당 링크 <span>선택</span>
+                        {isEnglish ? "Map or restaurant link" : "지도나 식당 링크"} <span>{isEnglish ? "Optional" : "선택"}</span>
                       </label>
                       <div className="suggest-input-icon">
                         <Link2 size={18} aria-hidden="true" />
@@ -402,23 +409,23 @@ export default function SuggestRestaurant() {
                           inputMode="url"
                           value={draft.mapUrl}
                           maxLength={1500}
-                          placeholder="네이버·카카오 지도 공유 링크 붙여 넣기"
+                          placeholder={isEnglish ? "Paste a Naver or Kakao Map link" : "네이버·카카오 지도 공유 링크 붙여 넣기"}
                           onChange={event =>
                             update("mapUrl", event.target.value)
                           }
                         />
                       </div>
                       <p className="suggest-help">
-                        링크가 있으면 같은 이름의 다른 식당과 구분하기 쉬워요.
+                        {isEnglish ? "A link helps distinguish places with similar names." : "링크가 있으면 같은 이름의 다른 식당과 구분하기 쉬워요."}
                       </p>
                       {errorText("mapUrl")}
                     </div>
                     <div className="suggest-soft-note">
                       <MapPin size={20} />
                       <p>
-                        <strong>식당 이름과 위치만 알아도 괜찮아요.</strong>
+                        <strong>{isEnglish ? "The name and location are enough." : "식당 이름과 위치만 알아도 괜찮아요."}</strong>
                         <br />
-                        다음에 나오는 메뉴와 추천 이유는 선택 항목이에요.
+                        {isEnglish ? "Menu details and your reason are optional." : "다음에 나오는 메뉴와 추천 이유는 선택 항목이에요."}
                       </p>
                     </div>
                   </>
@@ -428,7 +435,7 @@ export default function SuggestRestaurant() {
                     <div className="suggest-field">
                       <div className="suggest-label-row">
                         <label>
-                          추천 메뉴 <span>선택 · 최대 8개</span>
+                          {isEnglish ? "Recommended menu" : "추천 메뉴"} <span>{isEnglish ? "Optional · up to 8" : "선택 · 최대 8개"}</span>
                         </label>
                         <span className="suggest-count">
                           {draft.menus.length} / 8
@@ -438,11 +445,11 @@ export default function SuggestRestaurant() {
                         {draft.menus.map((menu, i) => (
                           <div className="suggest-menu-row" key={i}>
                             <div className="suggest-menu-top">
-                              <span>추천 메뉴 {i + 1}</span>
+                              <span>{isEnglish ? `Menu item ${i + 1}` : `추천 메뉴 ${i + 1}`}</span>
                               {draft.menus.length > 1 && (
                                 <button
                                   type="button"
-                                  aria-label={`메뉴 ${i + 1} 삭제`}
+                                  aria-label={isEnglish ? `Remove menu item ${i + 1}` : `메뉴 ${i + 1} 삭제`}
                                   onClick={() => {
                                     update(
                                       "menus",
@@ -461,13 +468,13 @@ export default function SuggestRestaurant() {
                               className="suggest-sr-only"
                               htmlFor={`suggest-menu-${i}-name`}
                             >
-                              메뉴 {i + 1} 이름
+                              {isEnglish ? `Menu item ${i + 1} name` : `메뉴 ${i + 1} 이름`}
                             </label>
                             <input
                               {...fieldProps(`menu-${i}-name`)}
                               value={menu.name}
                               maxLength={80}
-                              placeholder="예: 돼지국밥"
+                              placeholder={isEnglish ? "Enter the menu name as listed" : "예: 돼지국밥"}
                               onChange={event =>
                                 updateMenu(i, "name", event.target.value)
                               }
@@ -476,7 +483,7 @@ export default function SuggestRestaurant() {
                             <div className="suggest-menu-bottom">
                               <div>
                                 <label htmlFor={`suggest-menu-${i}-price`}>
-                                  가격 <span>모르면 비워두세요</span>
+                                  {isEnglish ? "Price" : "가격"} <span>{isEnglish ? "Leave blank if unknown" : "모르면 비워두세요"}</span>
                                 </label>
                                 <div className="suggest-price-input">
                                   <input
@@ -490,7 +497,7 @@ export default function SuggestRestaurant() {
                                         : ""
                                     }
                                     maxLength={10}
-                                    placeholder="예: 10,000"
+                                    placeholder={isEnglish ? "e.g. 10,000" : "예: 10,000"}
                                     onChange={event =>
                                       updateMenu(
                                         i,
@@ -502,19 +509,19 @@ export default function SuggestRestaurant() {
                                       )
                                     }
                                   />
-                                  <span>원</span>
+                                  <span>{isEnglish ? "KRW" : "원"}</span>
                                 </div>
                                 {errorText(`menu-${i}-price`)}
                               </div>
                               <div>
                                 <label htmlFor={`suggest-menu-${i}-unit`}>
-                                  수량 기준 <span>선택</span>
+                                  {isEnglish ? "Serving unit" : "수량 기준"} <span>{isEnglish ? "Optional" : "선택"}</span>
                                 </label>
                                 <input
                                   id={`suggest-menu-${i}-unit`}
                                   value={menu.unit}
                                   maxLength={40}
-                                  placeholder="예: 1인분, 소(小)"
+                                  placeholder={isEnglish ? "e.g. one serving, small" : "예: 1인분, 소(小)"}
                                   onChange={event =>
                                     updateMenu(i, "unit", event.target.value)
                                   }
@@ -532,13 +539,13 @@ export default function SuggestRestaurant() {
                             update("menus", [...draft.menus, emptyMenu()])
                           }
                         >
-                          <Plus size={17} /> 메뉴 하나 더 알려주기
+                          <Plus size={17} /> {isEnglish ? "Add another menu item" : "메뉴 하나 더 알려주기"}
                         </button>
                       )}
                     </div>
                     <div className="suggest-field">
                       <label htmlFor="suggest-checkedAt">
-                        언제 확인한 정보인가요? <span>선택</span>
+                        {isEnglish ? "When did you check this?" : "언제 확인한 정보인가요?"} <span>{isEnglish ? "Optional" : "선택"}</span>
                       </label>
                       <input
                         {...fieldProps("checkedAt")}
@@ -555,13 +562,13 @@ export default function SuggestRestaurant() {
                     </div>
                     <div className="suggest-field">
                       <label htmlFor="suggest-sourceNote">
-                        어디서 확인했나요? <span>선택</span>
+                        {isEnglish ? "Where did you verify it?" : "어디서 확인했나요?"} <span>{isEnglish ? "Optional" : "선택"}</span>
                       </label>
                       <input
                         id="suggest-sourceNote"
                         value={draft.sourceNote}
                         maxLength={300}
-                        placeholder="예: 직접 방문한 메뉴판, 식당 공식 홈페이지"
+                        placeholder={isEnglish ? "e.g. in-store menu or official website" : "예: 직접 방문한 메뉴판, 식당 공식 홈페이지"}
                         onChange={event =>
                           update("sourceNote", event.target.value)
                         }
@@ -573,7 +580,7 @@ export default function SuggestRestaurant() {
                   <>
                     <fieldset className="suggest-field">
                       <legend>
-                        어떤 날 가기 좋을까요? <span>선택 · 여러 개 가능</span>
+                        {isEnglish ? "What occasion is it good for?" : "어떤 날 가기 좋을까요?"} <span>{isEnglish ? "Optional · choose several" : "선택 · 여러 개 가능"}</span>
                       </legend>
                       <div className="suggest-tags">
                         {suggestionTags.map(tag => (
@@ -591,21 +598,21 @@ export default function SuggestRestaurant() {
                             }
                           >
                             {draft.tags.includes(tag) && <Check size={14} />}
-                            {tag}
+                            {isEnglish ? ({ "데이트": "Date", "혼밥": "Solo dining", "가족 식사": "Family meal", "친구 모임": "Friends", "여행": "Travel", "가성비": "Good value" } as Record<string, string>)[tag] : tag}
                           </button>
                         ))}
                       </div>
                     </fieldset>
                     <div className="suggest-field">
                       <label htmlFor="suggest-reason">
-                        어떤 점이 좋았나요? <span>선택</span>
+                        {isEnglish ? "What did you like?" : "어떤 점이 좋았나요?"} <span>{isEnglish ? "Optional" : "선택"}</span>
                       </label>
                       <textarea
                         id="suggest-reason"
                         value={draft.reason}
                         maxLength={1000}
                         rows={4}
-                        placeholder="예: 혼자 가도 편하고, 국밥에 고기가 넉넉해요. 점심에는 조금 기다려야 해요."
+                        placeholder={isEnglish ? "e.g. Comfortable for solo diners, generous portions, and a short lunch wait." : "예: 혼자 가도 편하고, 국밥에 고기가 넉넉해요. 점심에는 조금 기다려야 해요."}
                         onChange={event => update("reason", event.target.value)}
                       />
                       <p className="suggest-character-count">
@@ -613,9 +620,9 @@ export default function SuggestRestaurant() {
                       </p>
                     </div>
                     <fieldset className="suggest-field">
-                      <legend>어떻게 아는 식당인가요?</legend>
+                      <legend>{isEnglish ? "How do you know this restaurant?" : "어떻게 아는 식당인가요?"}</legend>
                       <div className="suggest-relationships">
-                        {relationships.map(item => (
+                        {localizedRelationships.map(item => (
                           <label key={item.value}>
                             <input
                               type="radio"
@@ -633,9 +640,9 @@ export default function SuggestRestaurant() {
                     </fieldset>
                     <div className="suggest-review">
                       <div>
-                        <span>보내기 전 확인</span>
+                        <span>{isEnglish ? "Review before sending" : "보내기 전 확인"}</span>
                         <button type="button" onClick={() => move(0)}>
-                          수정 <ChevronRight size={13} />
+                          {isEnglish ? "Edit" : "수정"} <ChevronRight size={13} />
                         </button>
                       </div>
                       <strong>{draft.name}</strong>
@@ -646,8 +653,8 @@ export default function SuggestRestaurant() {
                       </p>
                       <small>
                         {selectedMenus.length
-                          ? `메뉴 ${selectedMenus.length}개${draft.checkedAt ? ` · ${draft.checkedAt} 확인` : ""}`
-                          : "메뉴 정보는 운영자가 추가로 확인할게요."}
+                          ? isEnglish ? `${selectedMenus.length} menu items${draft.checkedAt ? ` · checked ${draft.checkedAt}` : ""}` : `메뉴 ${selectedMenus.length}개${draft.checkedAt ? ` · ${draft.checkedAt} 확인` : ""}`
+                          : isEnglish ? "Our team will check the menu details." : "메뉴 정보는 운영자가 추가로 확인할게요."}
                       </small>
                     </div>
                     <div className="suggest-consent">
@@ -663,20 +670,18 @@ export default function SuggestRestaurant() {
                         />
                         <span>
                           <strong>
-                            제보 정보 활용에 동의해요. <b>필수</b>
+                            {isEnglish ? "I agree to the use of this submission." : "제보 정보 활용에 동의해요."} <b>{isEnglish ? "Required" : "필수"}</b>
                           </strong>
                           <small>
-                            직접 확인했거나 공유할 수 있는 정보를 보내며, 맛픽이
-                            식당 정보 확인·편집·공개에 활용하는 데 동의합니다.
+                            {isEnglish ? "I am sharing information I verified or may lawfully share, and agree that Matpick may verify, edit, and publish it." : "직접 확인했거나 공유할 수 있는 정보를 보내며, 맛픽이 식당 정보 확인·편집·공개에 활용하는 데 동의합니다."}
                           </small>
                         </span>
                       </label>
                       {errorText("consent")}
                       <p>
-                        개인 연락처는 적지 말아 주세요. 제보 원문은 관리자만
-                        열람하며 접수 후 180일간 보관합니다.{" "}
+                        {isEnglish ? "Do not include personal contact details. Only administrators can read the original submission, which is kept for 180 days. " : "개인 연락처는 적지 말아 주세요. 제보 원문은 관리자만 열람하며 접수 후 180일간 보관합니다. "}
                         <Link href="/privacy" target="_blank">
-                          개인정보처리방침
+                          {isEnglish ? "Privacy Policy" : "개인정보처리방침"}
                         </Link>
                       </p>
                     </div>
@@ -701,7 +706,7 @@ export default function SuggestRestaurant() {
               )}
               {import.meta.env.DEV && (
                 <p className="suggest-draft-note">
-                  로컬 개발 화면이에요. 제보는 이 컴퓨터의 접수함에 저장됩니다.
+                  {isEnglish ? "Local development mode: submissions are saved only on this computer." : "로컬 개발 화면이에요. 제보는 이 컴퓨터의 접수함에 저장됩니다."}
                 </p>
               )}
               <div className="suggest-actions">
@@ -712,7 +717,7 @@ export default function SuggestRestaurant() {
                     onClick={() => move(step - 1)}
                     disabled={sending}
                   >
-                    <ArrowLeft size={17} /> 이전
+                    <ArrowLeft size={17} /> {isEnglish ? "Back" : "이전"}
                   </button>
                 )}
                 <button
@@ -724,31 +729,31 @@ export default function SuggestRestaurant() {
                   {sending ? (
                     <>
                       <LoaderCircle size={18} className="suggest-spinner" />{" "}
-                      제보 보내는 중
+                      {isEnglish ? "Sending…" : "제보 보내는 중"}
                     </>
                   ) : step === 2 ? (
                     <>
-                      맛집 제보 보내기 <Send size={17} />
+                      {isEnglish ? "Send suggestion" : "맛집 제보 보내기"} <Send size={17} />
                     </>
                   ) : (
                     <>
-                      다음으로 <ArrowRight size={18} />
+                      {isEnglish ? "Continue" : "다음으로"} <ArrowRight size={18} />
                     </>
                   )}
                 </button>
               </div>
               <p className="suggest-bottom-note">
                 {step === 0
-                  ? "필수 정보는 딱 2개. 나머지는 아는 만큼만 알려주세요."
+                  ? isEnglish ? "Only the name and location are required. Share anything else you know." : "필수 정보는 딱 2개. 나머지는 아는 만큼만 알려주세요."
                   : step === 1
-                    ? "메뉴를 몰라도 ‘다음으로’를 눌러 계속할 수 있어요."
-                    : "제보 내용은 바로 공개되지 않고, 확인을 거쳐 반영돼요."}
+                    ? isEnglish ? "You can continue without adding a menu." : "메뉴를 몰라도 ‘다음으로’를 눌러 계속할 수 있어요."
+                    : isEnglish ? "Suggestions are reviewed before they appear publicly." : "제보 내용은 바로 공개되지 않고, 확인을 거쳐 반영돼요."}
               </p>
             </form>
             <p className="suggest-footer">
-              함께 발견하고, 함께 나누는 맛집. <Link href="/">맛픽</Link>
+              {isEnglish ? "Discover and share good food together. " : "함께 발견하고, 함께 나누는 맛집. "}<Link href="/">{isEnglish ? "Matpick" : "맛픽"}</Link>
               <span>·</span>
-              <Link href="/contact">문의하기</Link>
+              <Link href="/contact">{isEnglish ? "Contact" : "문의하기"}</Link>
             </p>
           </div>
         </main>

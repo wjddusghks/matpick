@@ -85,7 +85,8 @@ export function useSeo({
   jsonLd,
 }: SeoInput) {
   useEffect(() => {
-    const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+    const localizedSiteName = locale === "en" ? "Matpick" : SITE_NAME;
+    const fullTitle = title.includes(localizedSiteName) ? title : `${title} | ${localizedSiteName}`;
     const canonical = makeAbsoluteUrl(path);
     const imageUrl = makeAbsoluteUrl(image);
     const htmlLang = locale === "en" ? "en" : "ko";
@@ -99,7 +100,7 @@ export function useSeo({
     upsertMeta("robots", robots);
     upsertMeta("og:locale", ogLocale, "property");
     upsertMeta("og:locale:alternate", alternateOgLocale, "property");
-    upsertMeta("og:site_name", SITE_NAME, "property");
+    upsertMeta("og:site_name", localizedSiteName, "property");
     upsertMeta("og:type", type, "property");
     upsertMeta("og:title", fullTitle, "property");
     upsertMeta("og:description", description, "property");

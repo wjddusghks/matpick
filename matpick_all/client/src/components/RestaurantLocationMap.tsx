@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Restaurant } from "@/data/types";
+import { getLocalizedRestaurantName } from "@/lib/locale";
 import {
   ensureNaverMapsSdk,
   NAVER_MAPS_AUTH_FAILURE_EVENT,
@@ -50,7 +51,7 @@ export default function RestaurantLocationMap({
         marker = new naver.maps.Marker({
           map,
           position,
-          title: restaurant.name,
+          title: getLocalizedRestaurantName(restaurant.name, english ? "en" : "ko"),
           clickable: false,
         });
         observer = new ResizeObserver(() => {
@@ -74,12 +75,12 @@ export default function RestaurantLocationMap({
       marker?.setMap(null);
       map?.destroy();
     };
-  }, [restaurant.id, restaurant.lat, restaurant.lng, restaurant.name]);
+  }, [restaurant.id, restaurant.lat, restaurant.lng, restaurant.name, english]);
   return (
     <div
       className="detail-mini-map"
       aria-label={
-        restaurant.name + (english ? " neighborhood map" : " 주변 지도")
+        getLocalizedRestaurantName(restaurant.name, english ? "en" : "ko") + (english ? " neighborhood map" : " 주변 지도")
       }
     >
       <div ref={container} className="detail-mini-map-canvas" />

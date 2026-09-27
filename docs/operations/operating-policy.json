@@ -1,0 +1,28 @@
+{
+  "effectiveDate": "2026-09-27",
+  "timezone": "Asia/Seoul",
+  "publishTime": "11:00",
+  "dailyPerChannel": {
+    "ko": 2,
+    "en": 2
+  },
+  "channels": {
+    "naver_blog": "nasa1769",
+    "instagram": "matpick.co.kr"
+  },
+  "maxDaysAhead": 2,
+  "requireHashtags": true,
+  "naverHashtagLanguage": {
+    "ko": "Korean only; #맛픽",
+    "en": "English only; #Matpick"
+  },
+  "publicCompetitorNames": "omit; retain evidence internally; never remove legally required attribution to reuse material",
+  "englishPositioningRequired": true,
+  "newChannels": "drafts until user connects and identifies a Matpick account",
+  "routing": {
+    "repetitive": "code",
+    "drafts": "gpt-5.6-luna",
+    "translationAndVerification": "gpt-5.6-sol",
+    "images": "imagegen"
+  }
+}

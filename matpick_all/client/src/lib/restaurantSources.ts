@@ -5,17 +5,23 @@ import {
   getSourceDisplayName,
 } from "@/data";
 import type { Source } from "@/data/types";
+import { getEnglishRestaurantName, romanizeKoreanText } from "@/lib/locale";
 
 export function describeRestaurantSource(
   source: Source,
   restaurantName: string,
   english = false
 ) {
-  const name = getSourceDisplayName(source);
-  const provider =
+  const rawName = getSourceDisplayName(source);
+  const rawProvider =
     source.provider && !["raw-source", "Matpick"].includes(source.provider)
       ? source.provider
       : "";
+  const name = english ? romanizeKoreanText(rawName) : rawName;
+  const provider = english ? romanizeKoreanText(rawProvider) : rawProvider;
+  const displayedRestaurantName = english
+    ? getEnglishRestaurantName(restaurantName)
+    : restaurantName;
   const kind =
     source.type === "tv_show"
       ? "tv"
@@ -34,7 +40,7 @@ export function describeRestaurantSource(
         ? "영상 소개"
         : "가이드 수록";
   let description = english
-    ? `${name} is a ${kind === "tv" ? "food TV program" : kind === "video" ? "food video series" : "restaurant guide"}${provider ? ` (${provider})` : ""}. ${restaurantName} appears in its records collected by Matpick.`
+    ? `${name} is a ${kind === "tv" ? "food TV program" : kind === "video" ? "food video series" : "restaurant guide"}${provider ? ` (${provider})` : ""}. ${displayedRestaurantName} appears in its records collected by Matpick.`
     : `${provider ? `${provider}의 ` : ""}${kind === "tv" ? "음식과 식당을 소개하는 TV 프로그램" : kind === "video" ? "식당을 찾아가 음식을 소개하는 영상 콘텐츠" : "식당을 모아 소개하는 가이드"}입니다. ${restaurantName}의 소개 이력이 맛픽에 수록되어 있어요.`;
   if (source.id === "sikgaek-baekban-trip")
     description = english
@@ -42,26 +48,26 @@ export function describeRestaurantSource(
       : `허영만이 각 지역의 식당과 밥상을 찾아가는 TV CHOSUN의 음식 기행 프로그램입니다. ${restaurantName}이 이 프로그램에 소개되었어요.`;
   if (source.id === "popular-restaurants")
     description = english
-      ? `Matpick's collection of restaurants by area and food. ${restaurantName} is included in this collection.`
+      ? `Matpick's collection of restaurants by area and food. ${displayedRestaurantName} is included in this collection.`
       : `맛픽이 지역과 음식 주제별로 모은 식당 목록입니다. ${restaurantName}이 이 목록에 포함되어 있어요.`;
   if (source.id === "old-korean-100")
     description = english
-      ? `A collection of 100 long-established Korean restaurants. ${restaurantName} is included in the collection.`
+      ? `A collection of 100 long-established Korean restaurants. ${displayedRestaurantName} is included in the collection.`
       : `오래된 한식당 100곳을 모은 「한국인이 사랑하는 오래된 한식당 100선」에 ${restaurantName}이 수록되어 있어요.`;
   if (source.id === "michelin")
     description = english
-      ? `${restaurantName} appears in Matpick's MICHELIN Guide records. A guide listing does not by itself mean a Michelin star; categories and years can differ.`
+      ? `${displayedRestaurantName} appears in Matpick's MICHELIN Guide records. A guide listing does not by itself mean a Michelin star; categories and years can differ.`
       : `세계 여러 나라의 식당을 선정하는 미쉐린 가이드의 수록 이력이 있는 식당이에요. 가이드 수록과 스타 획득은 다르며, 선정 연도와 등급은 달라질 수 있어요.`;
   if (source.attribution) {
     badge = english ? "Matpick collection" : "맛픽 여행 가이드";
     description = english
-      ? `A Matpick collection based on public restaurant information from ${source.attribution.provider}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
+      ? `A Matpick collection based on public restaurant information from ${romanizeKoreanText(source.attribution.provider)}. Inclusion does not mean a TV appearance or a first-hand Matpick review.`
       : `${source.attribution.provider}의 공개 음식점 자료를 바탕으로 맛픽이 구성한 여행 가이드입니다. 방송 출연이나 맛픽의 직접 방문 평가를 뜻하지 않아요.`;
   }
   if (source.id === "the-dudley") {
     badge = english ? "Featured restaurant" : "소개 식당";
     description = english
-      ? `${restaurantName} was introduced by The Dudley, a creator covering restaurants and food. Current menus and prices are checked separately.`
+      ? `${displayedRestaurantName} was introduced by The Dudley, a creator covering restaurants and food. Current menus and prices are checked separately.`
       : `식당과 음식을 소개하는 크리에이터 더들리가 소개한 식당이에요. ${restaurantName}의 소개 이력을 모았으며, 현재 메뉴·가격은 별도로 대조합니다.`;
   }
   if (source.id === "culinary-class-wars-chefs") {
@@ -83,10 +89,11 @@ export function getRestaurantSourceBadges(
     describeRestaurantSource(source, restaurantName, english)
   );
   for (const creator of getCreatorsByRestaurant(id)) {
-    const name = getCreatorDisplayName(creator);
+    const rawName = getCreatorDisplayName(creator);
+    const name = english ? romanizeKoreanText(rawName) : rawName;
     if (
       sources.some(source => source.creatorId === creator.id) ||
-      entries.some(entry => entry.name === name)
+      entries.some(entry => entry.name === name || entry.name === rawName)
     )
       continue;
     entries.push({
@@ -95,7 +102,7 @@ export function getRestaurantSourceBadges(
       kind: "video",
       badge: english ? "Video feature" : "영상 소개",
       description: english
-        ? `${restaurantName} was featured in ${name}'s food videos.`
+        ? `${getEnglishRestaurantName(restaurantName)} was featured in ${name}'s food videos.`
         : `${name}의 음식·식당 영상에서 ${restaurantName}이 소개되었어요.`,
     });
   }

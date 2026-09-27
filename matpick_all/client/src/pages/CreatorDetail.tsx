@@ -21,18 +21,23 @@ import {
   getRestaurantDisplayImage,
 } from "@/lib/restaurantPresentation";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
+import { useLocale } from "@/contexts/LocaleContext";
+import { getLocalizedAddress, getLocalizedMenuName, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
+import { getNextCatalogPageHref, runtimeCatalogPageInfo } from "@/data/runtimeDataset";
 
 // Logo is rendered inline as SVG
 
 function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; index: number }) {
   const [, navigate] = useLocation();
+  const { isEnglish, locale } = useLocale();
   const recCount = getRecommendationCount(restaurant.id);
   const recCreators = getCreatorsByRestaurant(restaurant.id);
   const displayImage = getRestaurantDisplayImage(restaurant);
   const broadcastBadge = formatRestaurantBroadcastBadge(
-    getRestaurantBroadcastMeta(restaurant.id)
+    getRestaurantBroadcastMeta(restaurant.id),
+    locale
   );
-  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear);
+  const foundingBadge = formatRestaurantFoundingBadge(restaurant.foundingYear, locale);
 
   return (
     <motion.div
@@ -45,22 +50,22 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
       <div className="relative h-44 overflow-hidden">
         <img
           src={displayImage.src}
-          alt={restaurant.name}
+          alt={getLocalizedRestaurantName(restaurant.name, locale)}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         {!displayImage.hasPhoto && (
           <div className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-[#6f7280] backdrop-blur-sm">
-            사진 준비 중
+            {isEnglish ? "Photo coming soon" : "사진 준비 중"}
           </div>
         )}
         {recCount > 1 && (
           <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full text-xs font-bold text-white shadow-lg" style={{ background: "linear-gradient(135deg, #FD7979, #FDACAC)" }}>
-            🔥 {recCount}개 출처에 소개
+            🔥 {isEnglish ? `Featured by ${recCount} sources` : `${recCount}개 출처에 소개`}
           </div>
         )}
         <div className="absolute left-3 bottom-3 flex max-w-[80%] flex-wrap gap-2">
           <div className="rounded-full bg-white/90 px-2.5 py-1 text-xs font-medium text-[#666] backdrop-blur-sm">
-            {restaurant.category}
+            {translateCuisineLabel(restaurant.category, locale)}
           </div>
           {foundingBadge ? (
             <div className="rounded-full bg-[#fff4f5] px-2.5 py-1 text-xs font-semibold text-[#ff6f7c] backdrop-blur-sm">
@@ -77,11 +82,11 @@ function MiniRestaurantCard({ restaurant, index }: { restaurant: Restaurant; ind
 
       <div className="p-4">
         <h3 className="font-bold text-lg text-[#1a1a1a] mb-1 group-hover:text-[#FD7979] transition-colors" style={{ fontFamily: "'Noto Sans KR', sans-serif" }}>
-          {restaurant.name}
+          {getLocalizedRestaurantName(restaurant.name, locale)}
         </h3>
-        <p className="text-sm text-[#888] mb-2 truncate">{restaurant.address}</p>
+        <p className="text-sm text-[#888] mb-2 truncate">{getLocalizedAddress(restaurant.address, locale)}</p>
         <div className="text-sm font-medium text-[#FD7979]" style={{ fontFamily: "'DM Mono', monospace" }}>
-          {restaurant.representativeMenu}
+          {getLocalizedMenuName(restaurant.representativeMenu, locale)}
         </div>
       </div>
     </motion.div>
@@ -92,14 +97,16 @@ export default function CreatorDetail() {
   const { id } = useParams<{ id: string }>();
   const [, navigate] = useLocation();
   const creator = creators.find((c) => c.id === id);
+  const { isEnglish, locale } = useLocale();
 
   useSeo({
-    title: creator ? `${creator.name} 추천 맛집` : "크리에이터",
+    title: creator ? (isEnglish ? `${creator.name} restaurant picks` : `${creator.name} 추천 맛집`) : (isEnglish ? "Creator" : "크리에이터"),
     description: creator
-      ? `${creator.name}이 소개한 맛집과 채널 정보를 맛픽에서 한눈에 확인해보세요.`
-      : "맛픽 크리에이터 페이지",
+      ? isEnglish ? `Explore restaurants featured by ${creator.name} and learn more about the channel.` : `${creator.name}이 소개한 맛집과 채널 정보를 맛픽에서 한눈에 확인해보세요.`
+      : isEnglish ? "Matpick creator page" : "맛픽 크리에이터 페이지",
     path: creator ? `/creator/${creator.id}` : "/creator",
     type: "profile",
+    locale,
     jsonLd: creator
       ? {
           "@context": "https://schema.org",
@@ -117,8 +124,8 @@ export default function CreatorDetail() {
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <p className="text-6xl mb-4">🎬</p>
-          <p className="text-lg text-[#888] mb-4">크리에이터를 찾을 수 없습니다</p>
-          <button onClick={() => navigate("/")} className="px-6 py-2 rounded-full bg-[#FD7979] text-white font-medium border-none">홈으로</button>
+          <p className="text-lg text-[#888] mb-4">{isEnglish ? "Creator not found" : "크리에이터를 찾을 수 없습니다"}</p>
+          <button onClick={() => navigate("/")} className="px-6 py-2 rounded-full bg-[#FD7979] text-white font-medium border-none">{isEnglish ? "Home" : "홈으로"}</button>
         </div>
       </div>
     );
@@ -138,7 +145,7 @@ export default function CreatorDetail() {
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
               <div className="w-6 h-6 rounded-full bg-[#FD7979]/10 flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FD7979" strokeWidth="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
               <span className="font-bold text-lg" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-                <span className="text-[#1a1a1a]">맛</span><span className="text-[#FD7979]">픽</span>
+                <span className="text-[#1a1a1a]">{isEnglish ? "Mat" : "맛"}</span><span className="text-[#FD7979]">{isEnglish ? "pick" : "픽"}</span>
               </span>
             </div>
           </div>
@@ -160,14 +167,14 @@ export default function CreatorDetail() {
           />
           <div className="space-y-2">
             <h1 className="text-2xl font-bold text-[#1a1a1a] sm:text-3xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-              {getCreatorDisplayName(creator)}
+              {isEnglish ? romanizeKoreanText(getCreatorDisplayName(creator)) : getCreatorDisplayName(creator)}
             </h1>
-            <p className="text-sm text-[#888]">{creator.channelName}</p>
+            <p className="text-sm text-[#888]">{isEnglish ? romanizeKoreanText(creator.channelName) : creator.channelName}</p>
             <div className="flex flex-wrap items-center gap-3 text-sm text-[#666] sm:gap-4">
               {creator.subscribers && (
                 <span className="flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-[#FD7979]" />
-                  구독자 {creator.subscribers}
+                  {isEnglish ? `${creator.subscribers} subscribers` : `구독자 ${creator.subscribers}`}
                 </span>
               )}
               <span className="flex items-center gap-1.5 text-red-500">
@@ -175,7 +182,7 @@ export default function CreatorDetail() {
                 YouTube
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="text-[#FD7979] font-bold">{recommendedRestaurants.length}</span>곳 추천
+                <span className="text-[#FD7979] font-bold">{recommendedRestaurants.length}</span> {isEnglish ? "places featured" : "곳 추천"}
               </span>
             </div>
           </div>
@@ -185,7 +192,7 @@ export default function CreatorDetail() {
       {/* 추천 맛집 */}
       <section className="max-w-6xl mx-auto px-4 pb-12 sm:pb-16">
         <h2 className="mb-6 text-lg font-bold text-[#1a1a1a] sm:text-xl" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-          추천한 맛집 ({recommendedRestaurants.length}곳)
+          {isEnglish ? `Featured restaurants (${recommendedRestaurants.length})` : `추천한 맛집 (${recommendedRestaurants.length}곳)`}
         </h2>
         <div className="mb-6">
           <RevenuePlacement providers={["kakao", "coupang"]} />
@@ -195,15 +202,23 @@ export default function CreatorDetail() {
             <MiniRestaurantCard key={restaurant.id} restaurant={restaurant} index={i} />
           ))}
         </div>
+        {runtimeCatalogPageInfo.hasMore && getNextCatalogPageHref() && (
+          <a
+            href={getNextCatalogPageHref()!}
+            className="mx-auto mt-8 block w-fit rounded-full bg-[#FD7979] px-6 py-3 font-semibold text-white no-underline"
+          >
+            {isEnglish ? "More restaurants" : "맛집 더 보기"}
+          </a>
+        )}
       </section>
 
       {/* Footer */}
       <footer className="hidden">
         <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-[#888]">
           <span className="font-bold text-[#1a1a1a]" style={{ fontFamily: "'Black Han Sans', sans-serif" }}>
-            <span>맛</span><span className="text-[#FD7979]">픽</span>
+            <span>{isEnglish ? "Mat" : "맛"}</span><span className="text-[#FD7979]">{isEnglish ? "pick" : "픽"}</span>
           </span>
-          <span>크리에이터 추천 맛집 큐레이션 플랫폼 (테스트 버전)</span>
+          <span>{isEnglish ? "Restaurant discovery from creator recommendations (test version)" : "크리에이터 추천 맛집 큐레이션 플랫폼 (테스트 버전)"}</span>
         </div>
       </footer>
     </div>

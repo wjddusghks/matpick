@@ -18,6 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export function FavoriteTopicBadge({
   topic,
@@ -48,6 +49,7 @@ export default function FavoriteTopicDialog({
   onOpenChange: (open: boolean) => void;
 }) {
   const { createTopic } = useFavorites();
+  const { isEnglish } = useLocale();
   const [name, setName] = useState("");
   const [selectedIconKey, setSelectedIconKey] = useState(favoriteTopicIconOptions[0].key);
   const [selectedColorKey, setSelectedColorKey] = useState(favoriteTopicColorOptions[0].key);
@@ -62,7 +64,7 @@ export default function FavoriteTopicDialog({
 
   const previewTopic: FavoriteTopic = {
     id: "preview",
-    name: sanitizeFavoriteTopicName(name) || "주제 이름",
+    name: sanitizeFavoriteTopicName(name) || (isEnglish ? "Topic name" : "주제 이름"),
     iconKey: selectedIconKey,
     colorKey: selectedColorKey,
     createdAt: 0,
@@ -76,11 +78,11 @@ export default function FavoriteTopicDialog({
     });
 
     if (!nextTopic) {
-      toast("주제 이름을 입력해 주세요.");
+      toast(isEnglish ? "Enter a topic name." : "주제 이름을 입력해 주세요.");
       return;
     }
 
-    toast.success(`"${nextTopic.name}" 주제를 만들었어요.`);
+    toast.success(isEnglish ? `Created “${nextTopic.name}”.` : `"${nextTopic.name}" 주제를 만들었어요.`);
     onOpenChange(false);
   };
 
@@ -88,22 +90,21 @@ export default function FavoriteTopicDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[560px]">
         <DialogHeader>
-          <DialogTitle>주제 만들기</DialogTitle>
+          <DialogTitle>{isEnglish ? "Create a collection" : "주제 만들기"}</DialogTitle>
           <DialogDescription>
-            식당을 모아둘 나만의 주제를 만들어 보세요. 주제 이름은 {FAVORITE_TOPIC_NAME_LIMIT}자까지
-            입력할 수 있어요.
+            {isEnglish ? `Create a personal collection for restaurants. Names can be up to ${FAVORITE_TOPIC_NAME_LIMIT} characters.` : <>식당을 모아둘 나만의 주제를 만들어 보세요. 주제 이름은 {FAVORITE_TOPIC_NAME_LIMIT}자까지 입력할 수 있어요.</>}
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-[#232323]">주제 이름</label>
+            <label className="text-sm font-semibold text-[#232323]">{isEnglish ? "Collection name" : "주제 이름"}</label>
             <input
               type="text"
               value={name}
               maxLength={FAVORITE_TOPIC_NAME_LIMIT}
               onChange={(event) => setName(event.target.value)}
-              placeholder="예: 데이트 코스"
+              placeholder={isEnglish ? "e.g. Date-night picks" : "예: 데이트 코스"}
               className="h-11 w-full rounded-2xl border border-[#f0d7dc] bg-white px-4 text-sm text-[#1d1d1d] outline-none transition focus:border-[#ff7b83] focus:shadow-[0_0_0_3px_rgba(255,123,131,0.12)]"
             />
             <p className="text-right text-xs text-[#999999]">
@@ -112,7 +113,7 @@ export default function FavoriteTopicDialog({
           </div>
 
           <div className="space-y-3">
-            <p className="text-sm font-semibold text-[#232323]">아이콘 선택</p>
+            <p className="text-sm font-semibold text-[#232323]">{isEnglish ? "Choose an icon" : "아이콘 선택"}</p>
             <div className="grid grid-cols-3 gap-3">
               {favoriteTopicIconOptions.map((option) => (
                 <button
@@ -126,14 +127,14 @@ export default function FavoriteTopicDialog({
                   }`}
                 >
                   <span className="text-lg">{option.symbol}</span>
-                  <span className="text-sm font-medium">{option.label}</span>
+                  <span className="text-sm font-medium">{isEnglish ? ({ fork: "Meal", date: "Date", trip: "Trip", night: "Late night", spicy: "Spicy", dessert: "Dessert" } as const)[option.key] : option.label}</span>
                 </button>
               ))}
             </div>
           </div>
 
           <div className="space-y-3">
-            <p className="text-sm font-semibold text-[#232323]">테마 컬러</p>
+            <p className="text-sm font-semibold text-[#232323]">{isEnglish ? "Theme color" : "테마 컬러"}</p>
             <div className="grid grid-cols-3 gap-3">
               {favoriteTopicColorOptions.map((option) => (
                 <button
@@ -147,7 +148,7 @@ export default function FavoriteTopicDialog({
                   }`}
                 >
                   <span className={`h-4 w-4 rounded-full ${option.swatchClassName}`} />
-                  <span className="text-sm font-medium text-[#444444]">{option.label}</span>
+                  <span className="text-sm font-medium text-[#444444]">{isEnglish ? ({ coral: "Coral", amber: "Amber", mint: "Mint", sky: "Sky", violet: "Violet", rose: "Rose" } as const)[option.key] : option.label}</span>
                 </button>
               ))}
             </div>
@@ -167,14 +168,14 @@ export default function FavoriteTopicDialog({
             onClick={() => onOpenChange(false)}
             className="inline-flex h-11 w-full items-center justify-center rounded-full border border-[#e8e2e3] px-5 text-sm font-semibold text-[#666666] transition hover:bg-[#f8f8f8] sm:w-auto"
           >
-            닫기
+            {isEnglish ? "Close" : "닫기"}
           </button>
           <button
             type="button"
             onClick={handleCreate}
             className="inline-flex h-11 w-full items-center justify-center whitespace-nowrap rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95 sm:w-auto"
           >
-            주제 만들기
+            {isEnglish ? "Create collection" : "주제 만들기"}
           </button>
         </DialogFooter>
       </DialogContent>

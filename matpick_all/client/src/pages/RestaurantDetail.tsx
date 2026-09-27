@@ -44,6 +44,7 @@ import { trackMarketingEvent } from "@/lib/marketing";
 import { buildAbsoluteUrl, useSeo } from "@/lib/seo";
 import "./RestaurantDetail.css";
 import { describeRestaurantSource } from "@/lib/restaurantSources";
+import { getLocalizedAddress, getLocalizedDayLabel, getLocalizedHoursText, getLocalizedMenuName, getLocalizedPriceText, getLocalizedRestaurantName, hasKoreanText, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
 
 export default function RestaurantDetail() {
   const { id } = useParams<{ id: string }>();
@@ -61,11 +62,12 @@ export default function RestaurantDetail() {
 }
 
 function MissingRestaurant() {
-  const { isEnglish } = useLocale();
+  const { isEnglish, locale } = useLocale();
   useSeo({
-    title: "식당을 찾을 수 없어요",
-    description: "지도에서 다른 식당을 찾아보세요.",
+    title: isEnglish ? "Restaurant not found" : "식당을 찾을 수 없어요",
+    description: isEnglish ? "Find another restaurant on the map." : "지도에서 다른 식당을 찾아보세요.",
     robots: "noindex,follow",
+    locale,
   });
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-5 p-5">
@@ -106,6 +108,9 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
   const canNavigate =
     isRestaurantRecommendable(restaurant) && hasUsableCoordinates(restaurant);
   const menuSummary = getRestaurantMenuSummary(restaurant);
+  const displayName = getLocalizedRestaurantName(restaurant.name, locale);
+  const displayAddress = getLocalizedAddress(restaurant.address, locale);
+  const displayMenuSummary = getLocalizedMenuName(menuSummary, locale);
   const category = restaurant.category?.trim();
   const showCategory = Boolean(category && category !== "미분류");
   const mapPath = `/map?type=restaurant&value=${encodeURIComponent(restaurant.id)}`;
@@ -149,8 +154,8 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
   }, [restaurant.id]);
 
   useSeo({
-    title: `${restaurant.name} ${isEnglish ? "Menu & location" : "메뉴·후기·위치"}`,
-    description: `${restaurant.name}${menuSummary ? ` · ${menuSummary}` : ""}. ${isEnglish ? "See where it was featured, visitor reviews and directions." : "소개된 방송·가이드, 방문자 후기와 길찾기를 한눈에 확인하세요."}`,
+    title: `${displayName} ${isEnglish ? "Menu & location" : "메뉴·후기·위치"}`,
+    description: `${displayName}${displayMenuSummary ? ` · ${displayMenuSummary}` : ""}. ${isEnglish ? "See where it was featured, visitor reviews and directions." : "소개된 방송·가이드, 방문자 후기와 길찾기를 한눈에 확인하세요."}`,
     path: `/restaurant/${restaurant.id}`,
     image: shareImage,
     type: "article",
@@ -158,12 +163,12 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      name: restaurant.name,
+      name: displayName,
       image: buildAbsoluteUrl(shareImage),
       url: shareUrl,
       address: {
         "@type": "PostalAddress",
-        streetAddress: restaurant.address,
+        streetAddress: displayAddress,
         addressCountry: restaurant.country || "KR",
       },
       ...(showCategory ? { servesCuisine: category } : {}),
@@ -204,8 +209,8 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
       <ShareSheet
         open={shareOpen}
         onClose={() => setShareOpen(false)}
-        title={restaurant.name}
-        text={`${restaurant.name}${menuSummary ? ` · ${menuSummary}` : ""}`}
+        title={displayName}
+        text={`${displayName}${displayMenuSummary ? ` · ${displayMenuSummary}` : ""}`}
         url={shareUrl}
         imageUrl={shareImage}
       />
@@ -253,12 +258,15 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
       <main className="detail-layout">
         <header className="detail-overview">
           <p className="detail-eyebrow">
-            {[restaurant.region, showCategory ? category : null]
+            {[
+              isEnglish ? romanizeKoreanText(restaurant.region) : restaurant.region,
+              showCategory && category ? translateCuisineLabel(category, locale) : null,
+            ]
               .filter(Boolean)
               .join(" · ")}
           </p>
-          <h1>{restaurant.name}</h1>
-          {menuSummary && <p className="detail-menu-headline">{menuSummary}</p>}
+          <h1>{displayName}</h1>
+          {menuSummary && <p className="detail-menu-headline">{displayMenuSummary}</p>}
           <div className="detail-overview-meta">
             {sources.length > 0 && (
               <a href="#detail-sources">
@@ -323,7 +331,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
               />
             )}
             <p className="detail-address">
-              {restaurant.address ||
+              {displayAddress ||
                 (isEnglish ? "Address not available" : "주소 정보가 없어요")}
             </p>
             {restaurant.address && (
@@ -384,8 +392,8 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                 <div>
                   {hours.map(item => (
                     <p className="detail-hours" key={item.day}>
-                      <strong>{item.day}</strong>
-                      <span>{item.hours.join(" · ")}</span>
+                      <strong>{getLocalizedDayLabel(item.day, locale)}</strong>
+                      <span>{item.hours.map(value => getLocalizedHoursText(value, locale)).join(" · ")}</span>
                     </p>
                   ))}
                   {facilities.length > 0 && (
@@ -443,7 +451,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                   <li key={menu.id}>
                     <div>
                       <p>
-                        {menu.name}
+                        {getLocalizedMenuName(menu.name, locale)}
                         {menu.isSignature && (
                           <span className="detail-signature">
                             {isEnglish ? "Signature" : "대표"}
@@ -452,7 +460,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                       </p>
                       {menu.description && (
                         <span className="detail-menu-description">
-                          {menu.description}
+                          {isEnglish && hasKoreanText(menu.description) ? getLocalizedMenuName(menu.description, locale) : menu.description}
                         </span>
                       )}
                     </div>
@@ -463,7 +471,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                           : "detail-price detail-price-missing"
                       }
                     >
-                      {menu.price ||
+                      {menu.price ? getLocalizedPriceText(menu.price, locale) :
                         (isEnglish ? "Unverified price" : "가격 미확인")}
                     </strong>
                   </li>
@@ -513,7 +521,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {source.label || (isEnglish ? "Source" : "원문 보기")}
+                          {(isEnglish && source.label ? romanizeKoreanText(source.label) : source.label) || (isEnglish ? "Source" : "원문 보기")}
                         </a>
                         {source.publishedAt &&
                           ` · ${isEnglish ? "Source date" : "자료 기준"} ${source.publishedAt.slice(0, 10)}`}
@@ -543,7 +551,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     href={`/map?type=source&value=${encodeURIComponent(source.id)}`}
                     className="detail-source-link"
                   >
-                    <span>{getSourceDisplayName(source)}</span>
+                    <span>{isEnglish ? romanizeKoreanText(getSourceDisplayName(source)) : getSourceDisplayName(source)}</span>
                     <ArrowUpRight aria-hidden="true" />
                   </Link>
                 ))}
@@ -555,13 +563,13 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     className="detail-small-note"
                     key={`${source.id}-attribution`}
                   >
-                    {source.name} · {isEnglish ? "Data from " : "자료 제공: "}
+                    {isEnglish ? romanizeKoreanText(source.name) : source.name} · {isEnglish ? "Data from " : "자료 제공: "}
                     <a
                       href={source.attribution!.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {source.attribution!.provider}
+                      {isEnglish ? romanizeKoreanText(source.attribution!.provider) : source.attribution!.provider}
                     </a>
                   </p>
                 ))}
@@ -569,8 +577,8 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                 const source = sources.find(source => source.id === link.sourceId);
                 if (!source) return null;
                 return <div key={link.id} className="mt-3 rounded-xl bg-[#faf5f7] p-3 text-xs leading-6 text-[#75656d]">
-                  <a href={link.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#a83c57] underline underline-offset-4">{getSourceDisplayName(source)} · {isEnglish ? "Original reference" : "소개 원문 보기"}</a>
-                  <span className="ml-2">{link.label}</span>
+                  <a href={link.sourceUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#a83c57] underline underline-offset-4">{isEnglish ? romanizeKoreanText(getSourceDisplayName(source)) : getSourceDisplayName(source)} · {isEnglish ? "Original reference" : "소개 원문 보기"}</a>
+                  <span className="ml-2">{isEnglish ? "Source record" : link.label}</span>
                   <p>{source.id === "culinary-class-wars-chefs" ? describeRestaurantSource(source, restaurant.name, isEnglish).description : isEnglish ? "Historical feature; confirm current operation, menu and prices before visiting." : "소개 당시 기록입니다. 현재 영업·메뉴·가격은 방문 전 확인해 주세요."}</p>
                 </div>;
               })}
@@ -585,7 +593,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                     {isEnglish ? "Watch the original videos" : "소개 영상 보기"}
                   </summary>
                   <div className="detail-video-list">
-                    {visits.map(visit => (
+                    {visits.map((visit, index) => (
                       <a
                         key={visit.id}
                         href={visit.videoUrl}
@@ -598,7 +606,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                           })
                         }
                       >
-                        {visit.videoTitle}
+                        {isEnglish ? `Original video ${index + 1}` : visit.videoTitle}
                         <ArrowUpRight aria-hidden="true" />
                       </a>
                     ))}

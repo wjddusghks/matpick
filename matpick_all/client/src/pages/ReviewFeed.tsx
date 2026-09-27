@@ -3,7 +3,8 @@ import ReviewAgeBadge from "@/components/ReviewAgeBadge";
 import { Link } from "wouter";
 import { ArrowLeft, Camera, MessageSquareText, Star } from "lucide-react";
 import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
-import { getRestaurantById } from "@/data";
+import type { Restaurant } from "@/data/types";
+import { loadCatalogPage } from "@/lib/catalogApi";
 import { trackMarketingEvent } from "@/lib/marketing";
 import { getRestaurantDisplayImage } from "@/lib/restaurantPresentation";
 import {
@@ -14,6 +15,8 @@ import {
   type SharedReview,
 } from "@/lib/reviews";
 import { useSeo } from "@/lib/seo";
+import { useLocale } from "@/contexts/LocaleContext";
+import { getLocalizedAddress, getLocalizedRestaurantName, hasKoreanText, romanizeKoreanText } from "@/lib/locale";
 
 type FeedReview = SharedReview & {
   restaurantId: string;
@@ -23,6 +26,8 @@ export default function ReviewFeed() {
   const [reviews, setReviews] = useState<FeedReview[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortMode, setSortMode] = useState<ReviewSortMode>("latest");
+  const [restaurantsById, setRestaurantsById] = useState<Map<string, Restaurant>>(new Map());
+  const { isEnglish, locale } = useLocale();
 
   useEffect(() => {
     let ignore = false;
@@ -40,15 +45,31 @@ export default function ReviewFeed() {
           return;
         }
 
-        setReviews(
-          Array.isArray(payload.reviews)
+        const nextReviews = Array.isArray(payload.reviews)
             ? payload.reviews.filter(
                 (review): review is FeedReview =>
                   typeof review.restaurantId === "string" &&
                   review.restaurantId.length > 0
               )
-            : []
-        );
+            : [];
+        setReviews(nextReviews);
+        const ids = Array.from(new Set(nextReviews.map(review => review.restaurantId)));
+        void Promise.all(
+          Array.from({ length: Math.ceil(ids.length / 24) }, (_, index) =>
+            loadCatalogPage({
+              type: "ids",
+              ids: ids.slice(index * 24, index * 24 + 24),
+              limit: 24,
+            })
+          )
+        ).then(pages => {
+          if (!ignore) {
+            setRestaurantsById(new Map(
+              pages.flatMap(page => page.restaurants)
+                .map(restaurant => [restaurant.id, restaurant as Restaurant])
+            ));
+          }
+        }).catch(() => {});
       })
       .catch(() => {
         if (!ignore) {
@@ -83,10 +104,11 @@ export default function ReviewFeed() {
   );
 
   useSeo({
-    title: "방문자 리뷰 모아보기",
-    description: "맛픽 사용자들이 남긴 최신 리뷰와 사진을 한곳에서 둘러보세요.",
+    title: isEnglish ? "Visitor reviews" : "방문자 리뷰 모아보기",
+    description: isEnglish ? "Browse the latest ratings, reviews, and photos shared by Matpick visitors." : "맛픽 사용자들이 남긴 최신 리뷰와 사진을 한곳에서 둘러보세요.",
     path: "/reviews",
     type: "website",
+    locale,
   });
 
   return (
@@ -104,7 +126,7 @@ export default function ReviewFeed() {
               window.location.href = "/";
             }}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-[#f1d9de] bg-[#fff7f8] text-[#444] transition hover:border-[#ffb3be] hover:text-[#ff6f7c]"
-            aria-label="뒤로가기"
+            aria-label={isEnglish ? "Go back" : "뒤로가기"}
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -113,7 +135,7 @@ export default function ReviewFeed() {
               Review Feed
             </p>
             <h1 className="mt-1 text-[22px] font-black tracking-[-0.03em] text-[#171717] sm:text-[28px]">
-              방문자 리뷰 모아보기
+              {isEnglish ? "Visitor reviews" : "방문자 리뷰 모아보기"}
             </h1>
           </div>
         </div>
@@ -124,24 +146,23 @@ export default function ReviewFeed() {
               <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
                   <p className="text-sm font-semibold text-[#ff7b83]">
-                    어떤 메뉴를 먹었고, 다시 가고 싶은지 함께 나눠요.
+                    {isEnglish ? "Share what you tried and whether you would return." : "어떤 메뉴를 먹었고, 다시 가고 싶은지 함께 나눠요."}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-[#7a7a7a]">
-                    사진 없이 별점과 한 줄이면 충분해요. 식당을 찾아 상세
-                    화면에서 직접 다녀온 경험을 남겨주세요.
+                    {isEnglish ? "A rating and a short note are enough. Find a restaurant and share your visit from its details page." : "사진 없이 별점과 한 줄이면 충분해요. 식당을 찾아 상세 화면에서 직접 다녀온 경험을 남겨주세요."}
                   </p>
                   <Link
                     href="/map"
                     className="mt-3 inline-flex min-h-11 items-center rounded-xl bg-[#f4537e] px-4 py-2 text-sm font-semibold text-white"
                   >
-                    후기 남길 식당 찾기
+                    {isEnglish ? "Find a restaurant to review" : "후기 남길 식당 찾기"}
                   </Link>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { key: "latest" as const, label: "최신순" },
-                    { key: "photos" as const, label: "사진 많은 순" },
-                    { key: "top" as const, label: "높은 평점순" },
+                    { key: "latest" as const, label: isEnglish ? "Latest" : "최신순" },
+                    { key: "photos" as const, label: isEnglish ? "Most photos" : "사진 많은 순" },
+                    { key: "top" as const, label: isEnglish ? "Highest rated" : "높은 평점순" },
                   ].map(option => (
                     <button
                       key={option.key}
@@ -170,11 +191,10 @@ export default function ReviewFeed() {
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <div>
                     <h2 className="text-lg font-black tracking-[-0.02em] text-[#191919]">
-                      사진 모아보기
+                      {isEnglish ? "Photo gallery" : "사진 모아보기"}
                     </h2>
                     <p className="mt-1 text-sm text-[#868686]">
-                      방문자들이 직접 올린 최근 사진 {galleryPhotos.length}장을
-                      먼저 볼 수 있어요.
+                      {isEnglish ? `See ${galleryPhotos.length} recent visitor photos.` : <>방문자들이 직접 올린 최근 사진 {galleryPhotos.length}장을 먼저 볼 수 있어요.</>}
                     </p>
                   </div>
                   <Camera className="h-5 w-5 text-[#ff7b83]" />
@@ -182,7 +202,7 @@ export default function ReviewFeed() {
                 <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-6">
                   {galleryPhotos.map(photo => {
                     const restaurant = photo.restaurantId
-                      ? getRestaurantById(photo.restaurantId)
+                      ? restaurantsById.get(photo.restaurantId)
                       : null;
 
                     return (
@@ -209,16 +229,16 @@ export default function ReviewFeed() {
                         <div className="group overflow-hidden rounded-[20px] border border-[#f2e6e9] bg-[#fff8f9]">
                           <img
                             src={photo.url}
-                            alt={`${photo.user} 리뷰 사진`}
+                            alt={isEnglish ? `Review photo by ${photo.user}` : `${photo.user} 리뷰 사진`}
                             className="aspect-square w-full object-cover transition duration-300 group-hover:scale-[1.03]"
                             loading="lazy"
                           />
                           <div className="px-3 py-2">
                             <p className="truncate text-xs font-semibold text-[#252525]">
-                              {restaurant?.name ?? "리뷰 사진"}
+                              {restaurant ? getLocalizedRestaurantName(restaurant.name, locale) : (isEnglish ? "Review photo" : "리뷰 사진")}
                             </p>
                             <p className="truncate text-[11px] text-[#8a8a8a]">
-                              {photo.user}
+                              {isEnglish && hasKoreanText(photo.user) ? romanizeKoreanText(photo.user) : photo.user}
                             </p>
                           </div>
                         </div>
@@ -234,19 +254,18 @@ export default function ReviewFeed() {
             <section className="space-y-4">
               {isLoading ? (
                 <div className="rounded-[30px] border border-dashed border-[#eed7db] bg-white px-6 py-16 text-center text-sm text-[#8b8b8b]">
-                  리뷰 피드를 불러오는 중이에요.
+                  {isEnglish ? "Loading reviews…" : "리뷰 피드를 불러오는 중이에요."}
                 </div>
               ) : null}
 
               {!isLoading && visibleReviews.length === 0 ? (
                 <div className="rounded-[30px] border border-dashed border-[#eed7db] bg-white px-6 py-16 text-center text-sm text-[#8b8b8b]">
-                  아직 공용 리뷰가 많지 않아요. 첫 리뷰를 남겨보면 이 피드에도
-                  바로 반영돼요.
+                  {isEnglish ? "There are no public reviews yet. Be the first to add one from a restaurant page." : "아직 공용 리뷰가 많지 않아요. 첫 리뷰를 남겨보면 이 피드에도 바로 반영돼요."}
                 </div>
               ) : null}
 
               {visibleReviews.map((review, index) => {
-                const restaurant = getRestaurantById(review.restaurantId);
+                const restaurant = restaurantsById.get(review.restaurantId);
                 const displayImage = restaurant
                   ? getRestaurantDisplayImage(restaurant, {
                       width: 480,
@@ -281,22 +300,22 @@ export default function ReviewFeed() {
                                 <div className="relative">
                                   <img
                                     src={displayImage?.src}
-                                    alt={restaurant.name}
+                                    alt={getLocalizedRestaurantName(restaurant.name, locale)}
                                     className="aspect-[4/3] w-full object-cover"
                                     loading="lazy"
                                   />
                                   {displayImage?.source === "review" ? (
                                     <span className="absolute left-3 top-3 rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-semibold text-[#ff6f7c] backdrop-blur">
-                                      방문자 사진
+                                      {isEnglish ? "Visitor photo" : "방문자 사진"}
                                     </span>
                                   ) : null}
                                 </div>
                                 <div className="space-y-1 px-4 py-4">
                                   <p className="text-base font-black tracking-[-0.02em] text-[#191919]">
-                                    {restaurant.name}
+                                    {getLocalizedRestaurantName(restaurant.name, locale)}
                                   </p>
                                   <p className="line-clamp-2 text-sm leading-6 text-[#747474]">
-                                    {restaurant.address}
+                                    {getLocalizedAddress(restaurant.address, locale)}
                                   </p>
                                 </div>
                               </div>
@@ -309,12 +328,12 @@ export default function ReviewFeed() {
                             <div className="min-w-0">
                               <div className="flex flex-wrap items-center gap-3">
                                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#ffecee] text-sm font-bold text-[#ff7b83]">
-                                  {review.user.slice(0, 1)}
+                                  {(isEnglish && hasKoreanText(review.user) ? romanizeKoreanText(review.user) : review.user).slice(0, 1)}
                                 </div>
                                 <div>
                                   <p className="flex items-center gap-2 text-sm font-semibold text-[#171717]">
-                                    {review.user}
-                                    <ReviewAgeBadge review={review} />
+                                    {isEnglish && hasKoreanText(review.user) ? romanizeKoreanText(review.user) : review.user}
+                                    <ReviewAgeBadge review={review} english={isEnglish} />
                                   </p>
                                   <p className="text-xs text-[#999999]">
                                     {review.date}
@@ -330,7 +349,7 @@ export default function ReviewFeed() {
 
                           {review.text ? (
                             <p className="mt-4 text-sm leading-7 text-[#4f4f4f]">
-                              {review.text}
+                              {isEnglish && hasKoreanText(review.text) ? "This review was submitted in Korean. An English translation is not available." : review.text}
                             </p>
                           ) : null}
 
@@ -343,7 +362,7 @@ export default function ReviewFeed() {
                                 >
                                   <img
                                     src={photo}
-                                    alt={`${review.user} 리뷰 사진 ${index + 1}`}
+                                    alt={isEnglish ? `Review photo ${index + 1} by ${review.user}` : `${review.user} 리뷰 사진 ${index + 1}`}
                                     className="aspect-square w-full object-cover"
                                     loading="lazy"
                                   />
@@ -356,9 +375,9 @@ export default function ReviewFeed() {
                             <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[#f4ecee] pt-4">
                               <div className="text-sm text-[#7f7f7f]">
                                 <span className="font-semibold text-[#ff7b83]">
-                                  {restaurant.name}
+                                  {getLocalizedRestaurantName(restaurant.name, locale)}
                                 </span>{" "}
-                                상세 페이지에서 메뉴와 위치를 더 볼 수 있어요.
+                                {isEnglish ? "See menus and location details on the restaurant page." : "상세 페이지에서 메뉴와 위치를 더 볼 수 있어요."}
                               </div>
                               <Link
                                 href={`/restaurant/${restaurant.id}`}
@@ -375,7 +394,7 @@ export default function ReviewFeed() {
                                 }
                               >
                                 <div className="inline-flex items-center gap-2 rounded-full bg-[#ff7b83] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(255,123,131,0.22)]">
-                                  식당 상세 보기
+                                  {isEnglish ? "View restaurant" : "식당 상세 보기"}
                                 </div>
                               </Link>
                             </div>
@@ -401,7 +420,7 @@ export default function ReviewFeed() {
               <div className="mt-4 space-y-4">
                 <div className="rounded-[24px] bg-[#fff7f8] px-4 py-4">
                   <p className="text-xs font-semibold text-[#8d8d8d]">
-                    전체 리뷰
+                    {isEnglish ? "All reviews" : "전체 리뷰"}
                   </p>
                   <p className="mt-1 text-[30px] font-black tracking-[-0.03em] text-[#171717]">
                     {summary.count.toLocaleString()}
@@ -409,7 +428,7 @@ export default function ReviewFeed() {
                 </div>
                 <div className="rounded-[24px] bg-[#fff7f8] px-4 py-4">
                   <p className="text-xs font-semibold text-[#8d8d8d]">
-                    평균 평점
+                    {isEnglish ? "Average rating" : "평균 평점"}
                   </p>
                   <p className="mt-1 text-[30px] font-black tracking-[-0.03em] text-[#171717]">
                     {summary.count > 0 ? summary.average.toFixed(1) : "-"}
@@ -417,7 +436,7 @@ export default function ReviewFeed() {
                 </div>
                 <div className="rounded-[24px] bg-[#fff7f8] px-4 py-4">
                   <p className="text-xs font-semibold text-[#8d8d8d]">
-                    사진 리뷰
+                    {isEnglish ? "Reviews with photos" : "사진 리뷰"}
                   </p>
                   <p className="mt-1 text-[30px] font-black tracking-[-0.03em] text-[#171717]">
                     {summary.withPhotosCount.toLocaleString()}
@@ -430,21 +449,18 @@ export default function ReviewFeed() {
               <div className="flex items-center gap-2">
                 <MessageSquareText className="h-5 w-5 text-[#ff7b83]" />
                 <h2 className="text-base font-black tracking-[-0.02em] text-[#1b1b1b]">
-                  둘러보면 좋은 이유
+                  {isEnglish ? "What you can find here" : "둘러보면 좋은 이유"}
                 </h2>
               </div>
               <ul className="mt-4 space-y-3 text-sm leading-6 text-[#6f6f6f]">
                 <li>
-                  식당 상세에서 바로 리뷰를 확인하고, 사진 있는 리뷰만 빠르게
-                  훑어볼 수 있어요.
+                  {isEnglish ? "Open any restaurant to see its reviews, or scan recent photos here." : "식당 상세에서 바로 리뷰를 확인하고, 사진 있는 리뷰만 빠르게 훑어볼 수 있어요."}
                 </li>
                 <li>
-                  최신순, 사진 많은 순, 높은 평점순으로 분위기와 만족도를
-                  비교하기 쉬워요.
+                  {isEnglish ? "Sort by recency, photo count, or rating to compare recent experiences." : "최신순, 사진 많은 순, 높은 평점순으로 분위기와 만족도를 비교하기 쉬워요."}
                 </li>
                 <li>
-                  마음에 드는 식당은 상세 페이지로 바로 넘어가 메뉴와 지도를
-                  이어서 볼 수 있어요.
+                  {isEnglish ? "Continue to a restaurant page for menus, its Korean address, and map directions." : "마음에 드는 식당은 상세 페이지로 바로 넘어가 메뉴와 지도를 이어서 볼 수 있어요."}
                 </li>
               </ul>
             </div>

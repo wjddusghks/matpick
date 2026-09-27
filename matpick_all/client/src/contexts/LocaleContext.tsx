@@ -76,6 +76,18 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
         setRegion(String(payload.region || ""));
         setCity(String(payload.city || ""));
         setIsOverseas(Boolean(payload.isOverseas));
+        // Respect an explicit visitor choice. For first-time visitors, use the
+        // server's country / Accept-Language decision so overseas visitors do
+        // not land on an otherwise Korean-only interface.
+        let hasStoredPreference = false;
+        try {
+          hasStoredPreference = window.localStorage.getItem("matpick_locale") != null;
+        } catch {
+          /* The runtime locale still works when storage is unavailable. */
+        }
+        if (!hasStoredPreference && (payload.locale === "ko" || payload.locale === "en")) {
+          setLocale(payload.locale);
+        }
       } catch {
         if (!ignore) {
           setLocale(getBrowserFallbackLocale());

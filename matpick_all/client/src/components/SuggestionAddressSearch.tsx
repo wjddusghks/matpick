@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, LoaderCircle, MapPin, Search, X } from "lucide-react";
 import { searchAddresses, type AddressResult } from "@/lib/addressSearch";
+import { useLocale } from "@/contexts/LocaleContext";
 export default function SuggestionAddressSearch({
   value,
   detail,
@@ -14,6 +15,7 @@ export default function SuggestionAddressSearch({
   onChange: (address: string) => void;
   onDetailChange: (detail: string) => void;
 }) {
+  const { isEnglish } = useLocale();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<AddressResult[]>([]);
@@ -49,7 +51,7 @@ export default function SuggestionAddressSearch({
         setSearchError(
           error instanceof Error
             ? error.message
-            : "주소 검색에 연결하지 못했어요."
+            : isEnglish ? "Could not connect to address search." : "주소 검색에 연결하지 못했어요."
         );
     } finally {
       if (request.current === current) setLoading(false);
@@ -65,7 +67,7 @@ export default function SuggestionAddressSearch({
     <>
       <div className="suggest-field">
         <label htmlFor="suggest-location">
-          어디에 있나요? <span className="suggest-required">필수</span>
+          {isEnglish ? "Where is it?" : "어디에 있나요?"} <span className="suggest-required">{isEnglish ? "Required" : "필수"}</span>
         </label>
         <div className="suggest-address-row">
           <div className="suggest-input-icon">
@@ -75,7 +77,7 @@ export default function SuggestionAddressSearch({
               value={value}
               maxLength={300}
               autoComplete="street-address"
-              placeholder="예: 해운대해변로 264 또는 중동 1411-1"
+              placeholder={isEnglish ? "e.g. 해운대해변로 264 or 중동 1411-1" : "예: 해운대해변로 264 또는 중동 1411-1"}
               aria-invalid={Boolean(error)}
               aria-describedby={
                 error ? "suggest-error-location" : "suggest-address-help"
@@ -107,15 +109,15 @@ export default function SuggestionAddressSearch({
             ) : (
               <Search size={16} aria-hidden="true" />
             )}{" "}
-            주소 검색
+            {isEnglish ? "Search address" : "주소 검색"}
           </button>
         </div>
         <p className="suggest-help" id="suggest-address-help">
-          도로명·건물번호 또는 지번으로 검색하고 정확한 주소를 선택해 주세요.
+          {isEnglish ? "Search by Korean road name, building number, or lot number, then choose the exact address." : "도로명·건물번호 또는 지번으로 검색하고 정확한 주소를 선택해 주세요."}
         </p>
         {selected === value && selected && (
           <p className="suggest-address-selected">
-            <Check size={14} /> 검색한 주소가 입력됐어요.
+            <Check size={14} /> {isEnglish ? "The selected address has been entered." : "검색한 주소가 입력됐어요."}
           </p>
         )}
         {error && (
@@ -131,17 +133,17 @@ export default function SuggestionAddressSearch({
           <section
             id="suggest-address-search"
             className="suggest-address-search"
-            aria-label="주소 검색 결과"
+            aria-label={isEnglish ? "Address search results" : "주소 검색 결과"}
           >
             <div className="suggest-address-search-heading">
-              <strong>주소 검색 결과</strong>
+              <strong>{isEnglish ? "Address search results" : "주소 검색 결과"}</strong>
               <button
                 type="button"
                 onClick={() => {
                   cancelSearch();
                   searchButton.current?.focus();
                 }}
-                aria-label="주소 검색 닫기"
+                aria-label={isEnglish ? "Close address search" : "주소 검색 닫기"}
               >
                 <X size={18} />
               </button>
@@ -149,8 +151,7 @@ export default function SuggestionAddressSearch({
             <div aria-live="polite" aria-busy={loading}>
               {loading ? (
                 <p className="suggest-address-status">
-                  <LoaderCircle size={18} className="suggest-spinner" /> 주소를
-                  찾고 있어요.
+                  <LoaderCircle size={18} className="suggest-spinner" /> {isEnglish ? "Searching addresses…" : "주소를 찾고 있어요."}
                 </p>
               ) : searchError ? (
                 <p className="suggest-address-status" role="alert">
@@ -165,9 +166,9 @@ export default function SuggestionAddressSearch({
                           type="button"
                           onClick={() => select(result.roadAddress)}
                         >
-                          <span>도로명</span>
+                          <span>{isEnglish ? "Road address" : "도로명"}</span>
                           <strong>{result.roadAddress}</strong>
-                          <span className="suggest-address-choose">선택</span>
+                          <span className="suggest-address-choose">{isEnglish ? "Choose" : "선택"}</span>
                         </button>
                       )}
                       {result.jibunAddress && (
@@ -175,9 +176,9 @@ export default function SuggestionAddressSearch({
                           type="button"
                           onClick={() => select(result.jibunAddress)}
                         >
-                          <span>지번</span>
+                          <span>{isEnglish ? "Lot address" : "지번"}</span>
                           <strong>{result.jibunAddress}</strong>
-                          <span className="suggest-address-choose">선택</span>
+                          <span className="suggest-address-choose">{isEnglish ? "Choose" : "선택"}</span>
                         </button>
                       )}
                     </li>
@@ -185,18 +186,17 @@ export default function SuggestionAddressSearch({
                 </ul>
               ) : (
                 <p className="suggest-address-status">
-                  ‘{searched}’ 검색 결과가 없어요. 시·군·구와 도로명, 건물번호를
-                  함께 입력해 주세요.
+                  {isEnglish ? <>No results for “{searched}”. Include the Korean city/district, road name, and building number.</> : <>‘{searched}’ 검색 결과가 없어요. 시·군·구와 도로명, 건물번호를 함께 입력해 주세요.</>}
                 </p>
               )}
             </div>
-            <p className="suggest-address-provider">주소 검색 · NAVER Maps</p>
+            <p className="suggest-address-provider">{isEnglish ? "Address search" : "주소 검색"} · NAVER Maps</p>
           </section>
         )}
       </div>
       <div className="suggest-field">
         <label htmlFor="suggest-locationDetail">
-          상세주소 <span>선택</span>
+          {isEnglish ? "Address details" : "상세주소"} <span>{isEnglish ? "Optional" : "선택"}</span>
         </label>
         <input
           ref={detailInput}
@@ -204,7 +204,7 @@ export default function SuggestionAddressSearch({
           value={detail}
           maxLength={100}
           autoComplete="address-line2"
-          placeholder="예: 2층, 101호, ○○상가 안쪽"
+          placeholder={isEnglish ? "e.g. 2층, 101호 (floor/unit in Korean)" : "예: 2층, 101호, ○○상가 안쪽"}
           onChange={event => onDetailChange(event.target.value)}
         />
       </div>

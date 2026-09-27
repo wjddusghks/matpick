@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getRestaurantMenuSummary, type Restaurant } from "@/data";
 import type { StoredLocation } from "@/lib/location";
 import { ensureNaverMapsSdk, isNaverMapsReady, NAVER_MAPS_AUTH_FAILURE_EVENT } from "@/lib/naverMaps";
+import { getEnglishAddress, getEnglishMenuName, getEnglishRestaurantName, translateCuisineLabel } from "@/lib/locale";
 
 interface NaverMapProps {
   restaurants: Restaurant[];
@@ -356,10 +357,10 @@ function escapeHtml(value: unknown) {
 }
 
 function createInfoContent(restaurant: Restaurant, isEnglish = false) {
-  const name = escapeHtml(restaurant.name);
-  const category = escapeHtml(restaurant.category);
-  const address = escapeHtml(restaurant.address || restaurant.region || "");
-  const menuSummary = escapeHtml(getRestaurantMenuSummary(restaurant));
+  const name = escapeHtml(isEnglish ? getEnglishRestaurantName(restaurant.name) : restaurant.name);
+  const category = escapeHtml(isEnglish ? translateCuisineLabel(restaurant.category, "en") : restaurant.category);
+  const address = escapeHtml(isEnglish ? getEnglishAddress(restaurant.address || restaurant.region || "") : restaurant.address || restaurant.region || "");
+  const menuSummary = escapeHtml(isEnglish ? getEnglishMenuName(getRestaurantMenuSummary(restaurant)) : getRestaurantMenuSummary(restaurant));
   const restaurantHref = restaurantDetailPath(restaurant);
 
   return `
@@ -765,11 +766,11 @@ export default function NaverMap({
           map,
           title:
             entry.type === "restaurant"
-              ? entry.restaurant.name
+              ? isEnglish ? getEnglishRestaurantName(entry.restaurant.name) : entry.restaurant.name
               : `${entry.count} restaurants`,
           icon:
             entry.type === "restaurant"
-              ? createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: entry.restaurant.name })
+              ? createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: isEnglish ? getEnglishRestaurantName(entry.restaurant.name) : entry.restaurant.name })
               : createClusterIcon(entry.count),
           zIndex:
             entry.type === "restaurant"
@@ -954,7 +955,7 @@ export default function NaverMap({
         entry.restaurant.id === nearestRestaurantId && selectedId == null;
 
       try {
-        marker.setIcon(createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: entry.restaurant.name }));
+        marker.setIcon(createMarkerIcon({ isSelected, isNearest, rank: restaurantRankRef.current.get(entry.restaurant.id), name: isEnglish ? getEnglishRestaurantName(entry.restaurant.name) : entry.restaurant.name }));
         (marker as any).setZIndex?.(isSelected ? 200 : isNearest ? 150 : 1);
       } catch {
         // noop

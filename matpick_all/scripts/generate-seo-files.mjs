@@ -85,6 +85,7 @@ ${entries
 async function buildRobots(siteUrl) {
   const content = `User-agent: *
 Allow: /
+Disallow: /api/
 
 User-agent: Googlebot-Image
 Disallow: /card-data/

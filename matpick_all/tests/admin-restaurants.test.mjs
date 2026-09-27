@@ -303,8 +303,8 @@ test("durable edit roundtrip uses atomic version checks and separates public edi
         assert.deepEqual((await readEdits()).edits, [edit]);
         const publicRes = response();
         await publicHandler({ method: "GET", headers: {} }, publicRes);
-        assert.equal(publicRes.code, 200);
-        assert.ok(!JSON.stringify(publicRes.body).includes("operator"));
+        assert.equal(publicRes.code, 404);
+        assert.ok(!JSON.stringify(publicRes.body).includes("저장 식당"));
         const patched = await saveEdit({
           restaurantId: "r_test",
           expectedRevision: 1,

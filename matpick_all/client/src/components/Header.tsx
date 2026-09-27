@@ -4,8 +4,10 @@
  */
 import { Link } from "wouter";
 import { UtensilsCrossed } from "lucide-react";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export default function Header() {
+  const { isEnglish } = useLocale();
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md">
       <div className="container flex items-center justify-between h-16">
@@ -18,7 +20,7 @@ export default function Header() {
             className="text-xl font-bold tracking-tight text-foreground"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            맛픽
+            {isEnglish ? "Matpick" : "맛픽"}
           </span>
         </Link>
 

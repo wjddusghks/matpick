@@ -6,11 +6,14 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { getRestaurantSourceBadges } from "@/lib/restaurantSources";
+import { romanizeKoreanText } from "@/lib/locale";
 
 function SourceBadge({
   source,
+  english,
 }: {
   source: ReturnType<typeof getRestaurantSourceBadges>[number];
+  english: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const mouseInside = useRef(false);
@@ -34,6 +37,7 @@ function SourceBadge({
   );
   const Icon =
     source.kind === "tv" ? Tv : source.kind === "video" ? Play : BookOpen;
+  const displayName = english ? romanizeKoreanText(source.name) : source.name;
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -55,11 +59,11 @@ function SourceBadge({
             event.preventDefault();
             setOpen(current => (mouseInside.current ? true : !current));
           }}
-          aria-label={`${source.name} · ${source.badge} 설명`}
+          aria-label={`${displayName} · ${source.badge} ${english ? "information" : "설명"}`}
           className="inline-flex min-h-9 max-w-full items-center gap-1.5 rounded-lg border border-[#f0d8de] bg-[#fff5f7] px-2.5 py-1.5 text-left text-[11px] text-[#a83c57] focus-visible:outline-2 focus-visible:outline-[#ef6479]"
         >
           <Icon aria-hidden className="h-3.5 w-3.5 shrink-0" />
-          <span className="font-bold">{source.name}</span>
+          <span className="font-bold">{displayName}</span>
           <span className="shrink-0 text-[10px]">{source.badge}</span>
           <Info aria-hidden className="h-3 w-3 shrink-0 opacity-60" />
         </button>
@@ -73,7 +77,7 @@ function SourceBadge({
         onCloseAutoFocus={event => event.preventDefault()}
         className="z-[60] w-72 max-w-[calc(100vw-32px)] rounded-2xl border-[#eed9df] bg-white p-4 shadow-xl"
       >
-        <p className="text-sm font-bold text-[#292127]">{source.name}</p>
+        <p className="text-sm font-bold text-[#292127]">{displayName}</p>
         <p className="mt-2 text-xs leading-6 text-[#75656d]">
           {source.description}
         </p>
@@ -99,7 +103,7 @@ export default function RestaurantSourceBadges({
       aria-label={english ? "Featured in" : "소개된 방송·가이드"}
     >
       {badges.map(source => (
-        <SourceBadge key={source.id} source={source} />
+        <SourceBadge key={source.id} source={source} english={english} />
       ))}
     </div>
   );

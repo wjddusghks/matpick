@@ -42,7 +42,59 @@ module.exports = async function handler(req, res) {
       }))
     )
       return;
-    if (req.method === "GET") return res.status(200).json(await readEdits());
+    if (req.method === "GET") {
+      const editState = await readEdits();
+      if (req.query?.summaryOnly === "1") {
+        const editsById = new Map(
+          editState.edits.map((edit) => [edit.restaurantId, edit])
+        );
+        const publicRestaurants = dataset.restaurants
+          .filter((restaurant) => !editsById.get(restaurant.id)?.deletedAt)
+          .map((restaurant) => ({
+            ...restaurant,
+            ...(editsById.get(restaurant.id)?.changes || {}),
+            id: restaurant.id,
+          }));
+        return res.status(200).json({
+          configured: editState.configured,
+          summary: {
+            restaurantCount: publicRestaurants.length,
+            restaurantsWithCoordinates: publicRestaurants.filter(
+              (restaurant) => restaurant.lat && restaurant.lng
+            ).length,
+            restaurantsWithPhotos: publicRestaurants.filter((restaurant) =>
+              restaurant.imageUrl?.trim()
+            ).length,
+            restaurantsWithMenus: publicRestaurants.filter(
+              (restaurant) => (restaurant.menus?.length || 0) > 0
+            ).length,
+            menuCount: publicRestaurants.reduce(
+              (sum, restaurant) => sum + (restaurant.menus?.length || 0),
+              0
+            ),
+            sourceCount: (dataset.sources || []).length,
+            visitCount: (dataset.visits || []).length,
+          },
+        });
+      }
+      if (req.query?.includeCatalog !== "1") return res.status(200).json(editState);
+      const offset = Math.max(0, Number.parseInt(String(req.query?.cursor || "0"), 10) || 0);
+      const pageSize = 200;
+      const restaurants = dataset.restaurants.slice(offset, offset + pageSize);
+      const restaurantIds = new Set(restaurants.map((restaurant) => restaurant.id));
+      const nextOffset = offset + restaurants.length;
+      return res.status(200).json({
+        ...editState,
+        catalog: {
+          restaurants,
+          sources: dataset.sources || [],
+          sourceLinks: (dataset.sourceLinks || []).filter((link) =>
+            restaurantIds.has(link.restaurantId)
+          ),
+          nextCursor: nextOffset < dataset.restaurants.length ? String(nextOffset) : null,
+        },
+      });
+    }
     const raw =
       typeof req.body === "string" ? req.body : JSON.stringify(req.body || {});
     if (Buffer.byteLength(raw) > 100000)

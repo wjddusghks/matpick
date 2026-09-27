@@ -41,6 +41,7 @@ import siteMetadata from "@/data/siteMetadata.json";
 import { useAuth } from "@/contexts/AuthContext";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
+import { getLocalizedAddress, getLocalizedRestaurantName, romanizeKoreanText, translateCuisineLabel } from "@/lib/locale";
 import {
   getMapCollectionPath,
   type MapCollectionTopic,
@@ -73,15 +74,6 @@ const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
-
-type HomeDataModule = typeof import("@/data");
-
-let homeDataModulePromise: Promise<HomeDataModule> | null = null;
-
-function loadHomeDataModule() {
-  homeDataModulePromise ??= import("@/data");
-  return homeDataModulePromise;
-}
 
 const HOME_UI_KO = {
   brandFirst: "\uB9DB",
@@ -199,8 +191,8 @@ const HOME_UI_KO = {
 } as const;
 
 const HOME_UI_EN = {
-  brandFirst: HOME_UI_KO.brandFirst,
-  brandSecond: HOME_UI_KO.brandSecond,
+  brandFirst: "Mat",
+  brandSecond: "pick",
   restaurantLabel: "Restaurants",
   subscriberPrefix: "Subscribers ",
   regionLabel: "Region",
@@ -363,14 +355,9 @@ function getSearchResultKey(item: Pick<SearchResult, "type" | "id">) {
 }
 
 function normalizeSearchResult(
-  item: SearchResult,
-  dataModule?: HomeDataModule | null
+  item: SearchResult
 ) {
-  const latest = dataModule?.mockSearchData.find(
-    entry => getSearchResultKey(entry) === getSearchResultKey(item)
-  );
-
-  return latest ? { ...item, ...latest } : item;
+  return item;
 }
 
 function getRecentSearches(): SearchResult[] {
@@ -546,6 +533,7 @@ function SearchResultItem({
   onDelete?: () => void;
 }) {
   const ui = useHomeUi();
+  const { locale, isEnglish } = useLocale();
   let accentLabel: string = ui.restaurantLabel;
   let detailText = "";
 
@@ -570,9 +558,12 @@ function SearchResultItem({
       item.sourceTypeLabel ?? (ui.foodLabel === "Cuisine" ? "Source" : "출처");
     detailText = `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
-    accentLabel = item.matchLabel ?? item.category ?? ui.restaurantLabel;
-    detailText = item.matchedText ?? item.address ?? "";
+    accentLabel = item.matchLabel ?? (item.category ? translateCuisineLabel(item.category, locale) : ui.restaurantLabel);
+    detailText = getLocalizedAddress(item.matchedText ?? item.address ?? "", locale);
   }
+  const displayName = item.type === "restaurant"
+    ? getLocalizedRestaurantName(item.name, locale)
+    : isEnglish ? romanizeKoreanText(item.name) : item.name;
 
   return (
     <div
@@ -595,13 +586,13 @@ function SearchResultItem({
         {item.type === "creator" && item.image ? (
           <img
             src={item.image}
-            alt={item.name}
+            alt={displayName}
             className="h-full w-full rounded-full border border-[#ffd9de] object-cover"
           />
         ) : item.type === "source" && item.image ? (
           <img
             src={item.image}
-            alt={item.name}
+            alt={displayName}
             className="h-full w-full rounded-[20px] border border-[#ffe1d8] object-cover"
           />
         ) : item.type === "region" ? (
@@ -623,7 +614,7 @@ function SearchResultItem({
 
       <div className="min-w-0 flex-1 text-left">
         <p className="truncate text-[18px] font-semibold text-[#161616]">
-          {item.name}
+          {displayName}
         </p>
         <div className="mt-1 flex min-w-0 items-center gap-3 text-[14px]">
           <span className="shrink-0 font-medium text-[#ff7b83]">
@@ -641,7 +632,7 @@ function SearchResultItem({
             onDelete();
           }}
           className="rounded-full p-2 text-[#1f1f1f] transition hover:bg-[#fff3f4]"
-          aria-label={`${item.name} ${ui.recentDeleteSuffix}`}
+          aria-label={`${displayName} ${ui.recentDeleteSuffix}`}
         >
           <X className="h-8 w-8" strokeWidth={1.8} />
         </button>
@@ -820,8 +811,6 @@ export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState(-1);
   const [recentSearches, setRecentSearches] =
     useState<SearchResult[]>(getRecentSearches);
-  const [searchDataModule, setSearchDataModule] =
-    useState<HomeDataModule | null>(null);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
@@ -914,15 +903,53 @@ export default function Home() {
     }
 
     let ignore = false;
+    const controller = new AbortController();
+    const params = new URLSearchParams({
+      view: "list",
+      type: "search",
+      q: query,
+      limit: "7",
+    });
 
-    loadHomeDataModule()
-      .then(dataModule => {
-        if (ignore) {
-          return;
-        }
-
-        setSearchDataModule(dataModule);
-        setFilteredResults(dataModule.getSearchSuggestions(query, 8));
+    params.set("scope", "catalog");
+    fetch(`/api/restaurants?${params}`, {
+      headers: { Accept: "application/json" },
+      credentials: "same-origin",
+      signal: controller.signal,
+    })
+      .then(async response => {
+        if (!response.ok) throw new Error("Search unavailable");
+        return response.json() as Promise<{
+          restaurants?: Array<{
+            id: string;
+            name: string;
+            category: string;
+            address: string;
+          }>;
+        }>;
+      })
+      .then(payload => {
+        if (ignore) return;
+        const matches: SearchResult[] = (payload.restaurants ?? []).map(restaurant => ({
+          id: restaurant.id,
+          type: "restaurant",
+          name: restaurant.name,
+          category: restaurant.category,
+          address: restaurant.address,
+          matchLabel: "식당 검색",
+          matchedText: restaurant.address || restaurant.category,
+        }));
+        setFilteredResults([
+          {
+            id: `query:${encodeURIComponent(query.trim().toLowerCase())}`,
+            type: "query",
+            name: query.trim(),
+            restaurantCount: matches.length,
+            matchLabel: "통합 검색",
+            matchedText: "식당명·메뉴·지역 검색",
+          },
+          ...matches,
+        ]);
       })
       .catch(() => {
         if (!ignore) {
@@ -932,30 +959,9 @@ export default function Home() {
 
     return () => {
       ignore = true;
+      controller.abort();
     };
   }, [normalizedQuery, query]);
-
-  useEffect(() => {
-    if (!searchDataModule) {
-      return;
-    }
-
-    setRecentSearches(prev => {
-      const normalized = prev.map(item =>
-        normalizeSearchResult(item, searchDataModule)
-      );
-      const changed = normalized.some(
-        (item, index) => JSON.stringify(item) !== JSON.stringify(prev[index])
-      );
-
-      if (changed) {
-        saveRecentSearches(normalized);
-        return normalized;
-      }
-
-      return prev;
-    });
-  }, [searchDataModule]);
 
   const closeLoginPanel = useCallback(() => {
     if (loginTimeoutRef.current) {
@@ -1211,19 +1217,11 @@ export default function Home() {
     [closeAccountPanel, navigate]
   );
 
-  const primeSearchData = useCallback(() => {
-    loadHomeDataModule()
-      .then(dataModule => {
-        setSearchDataModule(dataModule);
-      })
-      .catch(() => {
-        // Search falls back to the map query route if the data chunk is unavailable.
-      });
-  }, []);
+  const primeSearchData = useCallback(() => {}, []);
 
   const handleSelect = useCallback(
     async (item: SearchResult) => {
-      const normalizedItem = normalizeSearchResult(item, searchDataModule);
+      const normalizedItem = normalizeSearchResult(item);
       trackMarketingEvent("search_result_click", {
         query: normalizedQuery || "recent",
         result_type: normalizedItem.type,
@@ -1288,7 +1286,7 @@ export default function Home() {
 
       navigate("/map");
     },
-    [navigate, normalizedQuery, searchDataModule]
+    [navigate, normalizedQuery]
   );
 
   const handleDeleteRecent = useCallback((id: string) => {

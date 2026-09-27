@@ -80,8 +80,35 @@ function enforceSameOrigin(req, res) {
   return true;
 }
 
+function enforceBrowserRequest(req, res) {
+  if (!enforceSameOrigin(req, res)) {
+    return false;
+  }
+
+  const fetchSite = String(getHeader(req, "sec-fetch-site") || "")
+    .trim()
+    .toLowerCase();
+  if (["same-origin", "same-site"].includes(fetchSite)) {
+    return true;
+  }
+
+  const referer = String(getHeader(req, "referer") || "").trim();
+  const allowedOrigins = getAllowedOrigins(req);
+  try {
+    if (referer && allowedOrigins.has(new URL(referer).origin)) {
+      return true;
+    }
+  } catch {
+    // Invalid referrers are rejected below.
+  }
+
+  res.status(403).json({ error: "This endpoint is only available from Matpick pages." });
+  return false;
+}
+
 module.exports = {
   applyApiSecurityHeaders,
+  enforceBrowserRequest,
   enforceSameOrigin,
   getExpectedOrigin,
   getRequestOrigin,

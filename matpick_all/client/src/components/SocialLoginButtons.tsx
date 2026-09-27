@@ -1,4 +1,5 @@
 import { useAuth } from "@/contexts/AuthContext";
+import { useLocale } from "@/contexts/LocaleContext";
 
 interface SocialLoginButtonsProps {
   redirectTo?: string;
@@ -23,6 +24,7 @@ export default function SocialLoginButtons({
 }: SocialLoginButtonsProps) {
   const { loginWithKakao, loginWithNaver, oauthEnabled, isAuthenticating } =
     useAuth();
+  const { isEnglish } = useLocale();
 
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
@@ -33,7 +35,9 @@ export default function SocialLoginButtons({
         className="flex items-center justify-center gap-2 rounded-xl bg-[#FEE500] px-4 py-3 text-sm font-semibold text-[#3C1E1E] transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <KakaoIcon />
-        {oauthEnabled.kakao ? "카카오 로그인" : "카카오 로그인 준비 중"}
+        {oauthEnabled.kakao
+          ? isEnglish ? "Continue with Kakao" : "카카오 로그인"
+          : isEnglish ? "Kakao sign-in coming soon" : "카카오 로그인 준비 중"}
       </button>
       <button
         type="button"
@@ -42,7 +46,9 @@ export default function SocialLoginButtons({
         className="flex items-center justify-center gap-2 rounded-xl bg-[#03C75A] px-4 py-3 text-sm font-semibold text-white transition hover:brightness-95 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <NaverIcon />
-        {oauthEnabled.naver ? "네이버 로그인" : "네이버 로그인 준비 중"}
+        {oauthEnabled.naver
+          ? isEnglish ? "Continue with Naver" : "네이버 로그인"
+          : isEnglish ? "Naver sign-in coming soon" : "네이버 로그인 준비 중"}
       </button>
     </div>
   );

@@ -13,6 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { useLocale } from "@/contexts/LocaleContext";
 
 export default function FavoriteTopicPickerDialog({
   open,
@@ -27,6 +28,7 @@ export default function FavoriteTopicPickerDialog({
 }) {
   const { topics, isRestaurantInTopic, toggleRestaurantInTopic } =
     useFavorites();
+  const { isEnglish } = useLocale();
   const [showCreateDialog, setShowCreateDialog] = useState(false);
 
   const assignedTopicIds = useMemo(
@@ -45,7 +47,11 @@ export default function FavoriteTopicPickerDialog({
       topic_name: topicName,
     });
     toast.success(
-      nextState
+      isEnglish
+        ? nextState
+          ? `Added “${restaurantName}” to “${topicName}”.`
+          : `Removed “${restaurantName}” from “${topicName}”.`
+        : nextState
         ? `"${restaurantName}"을 "${topicName}"에 담았어요.`
         : `"${topicName}"에서 "${restaurantName}"을 뺐어요.`
     );
@@ -56,8 +62,8 @@ export default function FavoriteTopicPickerDialog({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[560px]">
           <DialogHeader>
-            <DialogTitle>주제에 담기</DialogTitle>
-            <DialogDescription>"{restaurantName}"을 담을 주제를 고르세요.</DialogDescription>
+            <DialogTitle>{isEnglish ? "Add to a collection" : "주제에 담기"}</DialogTitle>
+            <DialogDescription>{isEnglish ? <>Choose a collection for “{restaurantName}”.</> : <>"{restaurantName}"을 담을 주제를 고르세요.</>}</DialogDescription>
           </DialogHeader>
 
           {topics.length > 0 ? (
@@ -82,7 +88,7 @@ export default function FavoriteTopicPickerDialog({
                         active ? "text-[#ff6b7b]" : "text-[#888888]"
                       }`}
                     >
-                      {active ? "한번 더 누르면 취소" : "주제에 담기"}
+                      {active ? (isEnglish ? "Press again to remove" : "한번 더 누르면 취소") : (isEnglish ? "Add to collection" : "주제에 담기")}
                     </span>
                   </button>
                 );
@@ -91,11 +97,10 @@ export default function FavoriteTopicPickerDialog({
           ) : (
             <div className="rounded-3xl border border-dashed border-[#ffd5db] bg-[#fffafb] px-5 py-6 text-center">
               <p className="text-sm font-semibold text-[#232323]">
-                아직 만든 주제가 없어요
+                {isEnglish ? "No collections yet" : "아직 만든 주제가 없어요"}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#868686]">
-                먼저 주제를 하나 만들면 저장한 맛집을 테마별로 정리할 수
-                있어요.
+                {isEnglish ? "Create a collection to organize saved restaurants by theme." : "먼저 주제를 하나 만들면 저장한 맛집을 테마별로 정리할 수 있어요."}
               </p>
             </div>
           )}
@@ -109,14 +114,14 @@ export default function FavoriteTopicPickerDialog({
               }}
               className="inline-flex h-11 items-center justify-center rounded-full border border-[#ffd1d7] bg-[#fff7f8] px-5 text-sm font-semibold text-[#ff6b7b] transition hover:bg-[#fff1f3]"
             >
-              주제 만들기
+              {isEnglish ? "Create collection" : "주제 만들기"}
             </button>
             <button
               type="button"
               onClick={() => onOpenChange(false)}
               className="inline-flex h-11 items-center justify-center rounded-full bg-[#ff7b83] px-5 text-sm font-semibold text-white transition hover:brightness-95"
             >
-              닫기
+              {isEnglish ? "Close" : "닫기"}
             </button>
           </DialogFooter>
         </DialogContent>

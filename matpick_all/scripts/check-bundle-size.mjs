@@ -10,8 +10,8 @@ const entry = Object.keys(manifest).find(key => manifest[key].isEntry);
 assert.ok(entry, "Missing application entry in Vite manifest");
 const home = Object.keys(manifest).find(key => key.endsWith("/Home.tsx"));
 const map = Object.keys(manifest).find(key => key.endsWith("/SearchMap.tsx"));
-// Vite names a module shared by lazy and static routes as an internal chunk.
-const catalog = (manifest[home]?.dynamicImports ?? []).find(key =>
+// Vite names the data utilities shared by catalog-backed routes as an internal chunk.
+const catalog = (manifest[map]?.imports ?? []).find(key =>
   manifest[key]?.name === "index" && !manifest[key]?.isEntry);
 assert.ok(home && map && catalog, "Expected routes and lazy catalog in manifest");
 
@@ -42,9 +42,27 @@ const report = {
 assert.ok(!report.home.chunks.includes(catalog), "Home eagerly downloads the restaurant catalog");
 assert.ok(report.entry.gzipBytes < 200_000, "Entry JavaScript exceeds the 200 KB gzip budget");
 assert.ok(report.home.gzipBytes < 300_000, "Home JavaScript exceeds the 300 KB gzip budget");
-// The September six-topic publication grows the catalog from 3,716 to 4,339
-// restaurants (+16.8%). Allow that data growth while keeping home/entry budgets fixed.
-assert.ok(report.map.gzipBytes < 1_300_000, "Map JavaScript exceeds the 1.3 MB gzip budget");
+assert.ok(report.map.gzipBytes < 350_000, "Map JavaScript exceeds the 350 KB gzip budget");
+
+// A few catalog rows in a UI chunk can be legitimate, but IDs sampled across the
+// source dataset appearing together indicate the generated bulk payload leaked.
+const publicDataset = JSON.parse(await readFile(
+  path.join(root, "client/src/data/generated/public-dataset.json"),
+  "utf8"
+));
+const sentinels = [0.2, 0.5, 0.8].map(position =>
+  publicDataset.restaurants[Math.floor(publicDataset.restaurants.length * position)]?.id
+).filter(Boolean);
+const javascript = (await Promise.all(
+  Object.values(manifest)
+    .map(entry => entry.file)
+    .filter(file => file.endsWith(".js"))
+    .map(file => readFile(path.join(root, "dist", file), "utf8"))
+)).join("\n");
+assert.ok(
+  !sentinels.every(id => javascript.includes(id)),
+  "The generated restaurant dataset was emitted into public JavaScript"
+);
 await mkdir(path.join(root, "reports"), { recursive: true });
 await writeFile(path.join(root, "reports/bundle-size.json"), JSON.stringify(report, null, 2) + "\n");
-console.log(`JavaScript gzip: entry ${report.entry.gzipBytes} B, home ${report.home.gzipBytes} B, map ${report.map.gzipBytes} B. Home catalog loading is deferred.`);
+console.log(`JavaScript gzip: entry ${report.entry.gzipBytes} B, home ${report.home.gzipBytes} B, map ${report.map.gzipBytes} B. Bulk catalog payload absent from public JavaScript.`);

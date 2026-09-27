@@ -6,16 +6,10 @@ import RestaurantManager, {
   type SaveRestaurantInput,
 } from "@/components/admin/RestaurantManager";
 import { useAuth } from "@/contexts/AuthContext";
-import {
-  getRestaurantMenuItems,
-  getSourcesByRestaurant,
-  getSourceLinksByRestaurant,
-  restaurantCatalog,
-  sources,
-} from "@/data";
 import { getAdminRegistrationKey, isAdminUser } from "@/lib/admin";
 import type { RestaurantEdit } from "@/lib/restaurantEdits";
 import { useSeo } from "@/lib/seo";
+import type { Restaurant, Source, SourceLink } from "@/data/types";
 
 const VIEW_KEY = "matpick_admin_restaurant_view_v2";
 function readView(): ManagerView {
@@ -39,6 +33,11 @@ export default function AdminRestaurants() {
   const [edits, setEdits] = useState<RestaurantEdit[]>([]);
   const [ready, setReady] = useState(false);
   const [configured, setConfigured] = useState(false);
+  const [catalog, setCatalog] = useState<{
+    restaurants: Restaurant[];
+    sources: Source[];
+    sourceLinks: SourceLink[];
+  }>({ restaurants: [], sources: [], sourceLinks: [] });
   const [loadError, setLoadError] = useState("");
   const [retry, setRetry] = useState(0);
   const [initialView] = useState(readView);
@@ -56,26 +55,49 @@ export default function AdminRestaurants() {
     const controller = new AbortController();
     setReady(false);
     setLoadError("");
-    fetch("/api/restaurants?scope=admin", {
-      headers: {
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken || "",
-      },
-      signal: controller.signal,
-      cache: "no-store",
-    })
-      .then(async response => {
-        const body = await response.json();
-        if (!response.ok)
-          throw new Error(
-            body.error || "식당 관리 정보를 불러오지 못했습니다."
-          );
-        if (controller.signal.aborted) return;
-        setEdits(body.edits);
-        setConfigured(body.configured);
-        setReady(true);
-      })
-      .catch(reason => {
+    const headers = {
+      "x-matpick-admin-key": getAdminRegistrationKey(user),
+      "x-matpick-admin-token": user.syncToken || "",
+    };
+    void (async () => {
+      const nextCatalog = {
+        restaurants: [] as Restaurant[],
+        sources: [] as Source[],
+        sourceLinks: [] as SourceLink[],
+      };
+      let cursor: string | null = "0";
+      let firstBody: { edits: RestaurantEdit[]; configured: boolean } | null = null;
+      while (cursor != null) {
+        const response: Response = await fetch(
+          `/api/restaurants?scope=admin&includeCatalog=1&cursor=${encodeURIComponent(cursor)}`,
+          { headers, signal: controller.signal, cache: "no-store" }
+        );
+        const body: {
+          edits: RestaurantEdit[];
+          configured: boolean;
+          error?: string;
+          catalog: {
+            restaurants: Restaurant[];
+            sources: Source[];
+            sourceLinks: SourceLink[];
+            nextCursor: string | null;
+          };
+        } = await response.json();
+        if (!response.ok) throw new Error(
+          body.error || "식당 관리 정보를 불러오지 못했습니다."
+        );
+        firstBody ??= body;
+        nextCatalog.restaurants.push(...body.catalog.restaurants);
+        nextCatalog.sourceLinks.push(...body.catalog.sourceLinks);
+        if (!nextCatalog.sources.length) nextCatalog.sources = body.catalog.sources;
+        cursor = body.catalog.nextCursor;
+      }
+      if (controller.signal.aborted || !firstBody) return;
+      setEdits(firstBody.edits);
+      setConfigured(firstBody.configured);
+      setCatalog(nextCatalog);
+      setReady(true);
+    })().catch(reason => {
         if (!controller.signal.aborted)
           setLoadError(
             reason instanceof Error
@@ -130,12 +152,18 @@ export default function AdminRestaurants() {
     );
   return (
     <RestaurantManager
-      restaurants={restaurantCatalog}
-      sources={sources}
+      restaurants={catalog.restaurants}
+      sources={catalog.sources}
       initialEdits={edits}
-      getMenus={getRestaurantMenuItems}
-      getSources={getSourcesByRestaurant}
-      getSourceLinks={getSourceLinksByRestaurant}
+      getMenus={restaurant => restaurant.menus ?? []}
+      getSources={restaurantId => {
+        const ids = new Set(catalog.sourceLinks
+          .filter(link => link.restaurantId === restaurantId)
+          .map(link => link.sourceId));
+        return catalog.sources.filter(source => ids.has(source.id));
+      }}
+      getSourceLinks={restaurantId => catalog.sourceLinks
+        .filter(link => link.restaurantId === restaurantId)}
       configured={configured}
       ready={ready}
       loadError={loadError}

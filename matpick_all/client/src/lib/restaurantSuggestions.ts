@@ -118,13 +118,15 @@ export function readSuggestionDraft(): {
 export function validateSuggestionStep(
   draft: SuggestionDraft,
   step: number,
-  consent: boolean
+  consent: boolean,
+  locale: "ko" | "en" = "ko"
 ) {
+  const english = locale === "en";
   const errors: Record<string, string> = {};
   if (step === 0) {
-    if (!draft.name.trim()) errors.name = "식당 이름을 알려주세요.";
+    if (!draft.name.trim()) errors.name = english ? "Enter the restaurant name." : "식당 이름을 알려주세요.";
     if (!draft.location.trim())
-      errors.location = "지역이나 주소를 알려주세요. 예: 부산 해운대구 중동";
+      errors.location = english ? "Enter an area or Korean address, e.g. 부산 해운대구 중동." : "지역이나 주소를 알려주세요. 예: 부산 해운대구 중동";
     if (draft.mapUrl.trim()) {
       try {
         const url = new URL(draft.mapUrl.trim());
@@ -135,22 +137,20 @@ export function validateSuggestionStep(
         )
           throw new Error();
       } catch {
-        errors.mapUrl =
-          "https:// 또는 http://로 시작하는 링크를 붙여 넣어 주세요.";
+        errors.mapUrl = english ? "Paste a link that begins with https:// or http://." : "https:// 또는 http://로 시작하는 링크를 붙여 넣어 주세요.";
       }
     }
   }
   if (step === 1) {
     draft.menus.forEach((menu, i) => {
       if (!menu.name.trim() && (menu.price.trim() || menu.unit.trim()))
-        errors[`menu-${i}-name`] = "이 메뉴의 이름도 알려주세요.";
+        errors[`menu-${i}-name`] = english ? "Enter a name for this menu item." : "이 메뉴의 이름도 알려주세요.";
       if (
         menu.price &&
         (!/^[\d,]+$/.test(menu.price) ||
           Number(menu.price.replace(/,/g, "")) > 10000000)
       )
-        errors[`menu-${i}-price`] =
-          "가격은 0~10,000,000원 사이로 입력해 주세요.";
+        errors[`menu-${i}-price`] = english ? "Enter a price between ₩0 and ₩10,000,000." : "가격은 0~10,000,000원 사이로 입력해 주세요.";
     });
     const date = draft.checkedAt;
     if (
@@ -161,9 +161,9 @@ export function validateSuggestionStep(
         date >
           new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" }))
     )
-      errors.checkedAt = "오늘 또는 이전 날짜를 선택해 주세요.";
+      errors.checkedAt = english ? "Choose today or an earlier date." : "오늘 또는 이전 날짜를 선택해 주세요.";
   }
   if (step === 2 && !consent)
-    errors.consent = "제보 정보 활용에 동의해 주세요.";
+    errors.consent = english ? "Agree to the use of your submission." : "제보 정보 활용에 동의해 주세요.";
   return errors;
 }

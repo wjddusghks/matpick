@@ -88,13 +88,26 @@ export async function fetchAdminRestaurantCatalog(
   const ordered = Array.from(pages.entries())
     .sort(([left], [right]) => left - right)
     .map(([, page]) => page);
+  const editedLinks = (first.edits || []).flatMap(edit =>
+    Array.isArray(edit.changes.sourceLinks)
+      ? [{ restaurantId: edit.restaurantId, links: edit.changes.sourceLinks }]
+      : []
+  );
+  const overriddenRestaurantIds = new Set(
+    editedLinks.map(entry => entry.restaurantId)
+  );
   return {
     edits: first.edits || [],
     configured: Boolean(first.configured),
     catalog: {
       restaurants: ordered.flatMap(page => page.restaurants),
       sources: first.catalog.sources || [],
-      sourceLinks: ordered.flatMap(page => page.sourceLinks),
+      sourceLinks: [
+        ...ordered
+          .flatMap(page => page.sourceLinks)
+          .filter(link => !overriddenRestaurantIds.has(link.restaurantId)),
+        ...editedLinks.flatMap(entry => entry.links),
+      ],
     },
   };
 }

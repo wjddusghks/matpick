@@ -1,4 +1,4 @@
-import type { MenuItem, Restaurant } from "@/data/types";
+import type { MenuItem, Restaurant, SourceLink } from "@/data/types";
 
 export type EditorTab = "menus" | "info" | "sources";
 export function hasKnownMenuPrice(price?: string) {
@@ -20,6 +20,7 @@ export type RestaurantDraft = {
   menuPriceVerifiedAt: string;
   menuPriceNote: string;
   menuPriceSources: Array<{ url: string; label: string }>;
+  sourceLinks: SourceLink[];
 };
 
 export function formatMenuPrice(value: string) {
@@ -57,6 +58,29 @@ export function buildRestaurantChanges(
     changes.menuPriceSources = draft.menuPriceSources.filter(source =>
       source.url.trim()
     );
+  if ("sourceLinks" in changes)
+    changes.sourceLinks = draft.sourceLinks.map((link, index) => {
+      const label = link.label?.trim();
+      const note = link.note?.trim();
+      const sourceUrl = link.sourceUrl?.trim();
+      const broadcastDate = link.broadcastDate?.trim();
+      return {
+        id: link.id || `admin:${index + 1}`,
+        restaurantId: link.restaurantId,
+        sourceId: link.sourceId,
+        ...(Number.isFinite(link.ordinal) ? { ordinal: link.ordinal } : {}),
+        ...(label ? { label } : {}),
+        ...(note ? { note } : {}),
+        ...(sourceUrl ? { sourceUrl } : {}),
+        ...(broadcastDate ? { broadcastDate } : {}),
+        ...(link.episodeSeries ? { episodeSeries: link.episodeSeries } : {}),
+        ...(Number.isFinite(link.episodeNumber)
+          ? { episodeNumber: link.episodeNumber }
+          : {}),
+        ...(link.episodePart ? { episodePart: link.episodePart } : {}),
+        ...(Number.isFinite(link.season) ? { season: link.season } : {}),
+      };
+    });
   return changes;
 }
 
@@ -147,6 +171,46 @@ export function validateRestaurantDraft(
           field: `source-${index}`,
         };
       }
+    }
+  }
+  if ("sourceLinks" in changes) {
+    if (draft.sourceLinks.length > 20)
+      return {
+        message: "방송·가이드 출처는 최대 20개까지 등록할 수 있어요.",
+        tab: "sources",
+        field: "sourceLinks",
+      };
+    for (const [index, link] of Array.from(draft.sourceLinks.entries())) {
+      if (!link.sourceId.trim())
+        return {
+          message: "방송·채널·가이드를 선택해 주세요.",
+          tab: "sources",
+          field: `broadcast-source-${index}`,
+        };
+      if (link.sourceUrl) {
+        try {
+          const parsed = new URL(link.sourceUrl);
+          if (!["https:", "http:"].includes(parsed.protocol)) throw new Error();
+        } catch {
+          return {
+            message: "방송 출처 링크를 http 또는 https 주소로 입력해 주세요.",
+            tab: "sources",
+            field: `broadcast-url-${index}`,
+          };
+        }
+      }
+      if (
+        link.broadcastDate &&
+        (!/^\d{4}-\d{2}-\d{2}$/.test(link.broadcastDate) ||
+          !Number.isFinite(Date.parse(link.broadcastDate)) ||
+          new Date(link.broadcastDate).toISOString().slice(0, 10) !==
+            link.broadcastDate)
+      )
+        return {
+          message: "방송일을 확인해 주세요.",
+          tab: "sources",
+          field: `broadcast-date-${index}`,
+        };
     }
   }
   return null;

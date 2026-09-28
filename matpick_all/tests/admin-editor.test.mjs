@@ -15,6 +15,7 @@ const initial = {
   menuPriceSources: [],
   menuPriceVerifiedAt: "",
   menuPriceNote: "",
+  sourceLinks: [],
 };
 test("formatting preserves market prices and never guesses malformed prices", () => {
   for (const [input, output] of [
@@ -122,4 +123,40 @@ test("invalid coordinates, dates and source links route to the right tab", () =>
       tab
     );
   }
+});
+
+test("broadcast sources are editable and validate source, URL and date", () => {
+  const source = {
+    id: "admin:r_test:1",
+    restaurantId: "r_test",
+    sourceId: "wednesday-gourmet",
+    label: "EP.173",
+    sourceUrl: "https://example.com/episode/173",
+    broadcastDate: "2026-09-28",
+  };
+  const draft = { ...structuredClone(initial), sourceLinks: [source] };
+  assert.equal(editor.validateRestaurantDraft(draft, initial), null);
+  assert.deepEqual(editor.buildRestaurantChanges(draft, initial).sourceLinks, [source]);
+
+  assert.equal(
+    editor.validateRestaurantDraft(
+      { ...draft, sourceLinks: [{ ...source, sourceId: "" }] },
+      initial
+    ).field,
+    "broadcast-source-0"
+  );
+  assert.equal(
+    editor.validateRestaurantDraft(
+      { ...draft, sourceLinks: [{ ...source, sourceUrl: "javascript:alert(1)" }] },
+      initial
+    ).field,
+    "broadcast-url-0"
+  );
+  assert.equal(
+    editor.validateRestaurantDraft(
+      { ...draft, sourceLinks: [{ ...source, broadcastDate: "2026-02-30" }] },
+      initial
+    ).field,
+    "broadcast-date-0"
+  );
 });

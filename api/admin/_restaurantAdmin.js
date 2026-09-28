@@ -14,6 +14,7 @@ const dataset = require("../../matpick_all/client/src/data/generated/public-data
 const restaurantIds = new Set(
   dataset.restaurants.map((restaurant) => restaurant.id),
 );
+const sourceIds = new Set((dataset.sources || []).map((source) => source.id));
 const ADMIN_CATALOG_PAGE_SIZE = 800;
 const sourceLinksByRestaurant = new Map();
 for (const link of dataset.sourceLinks || []) {
@@ -22,7 +23,7 @@ for (const link of dataset.sourceLinks || []) {
   sourceLinksByRestaurant.set(link.restaurantId, links);
 }
 
-function catalogPage(offset, includeMetadata) {
+function catalogPage(offset, includeMetadata, editsById = new Map()) {
   const restaurants = dataset.restaurants.slice(
     offset,
     offset + ADMIN_CATALOG_PAGE_SIZE,
@@ -31,9 +32,12 @@ function catalogPage(offset, includeMetadata) {
   return {
     restaurants,
     ...(includeMetadata ? { sources: dataset.sources || [] } : {}),
-    sourceLinks: restaurants.flatMap(
-      (restaurant) => sourceLinksByRestaurant.get(restaurant.id) || [],
-    ),
+    sourceLinks: restaurants.flatMap((restaurant) => {
+      const edited = editsById.get(restaurant.id)?.changes?.sourceLinks;
+      return Array.isArray(edited)
+        ? edited
+        : sourceLinksByRestaurant.get(restaurant.id) || [];
+    }),
     pageSize: ADMIN_CATALOG_PAGE_SIZE,
     totalCount: dataset.restaurants.length,
     nextCursor:
@@ -83,10 +87,10 @@ module.exports = async function handler(req, res) {
         });
       }
       const editState = await readEdits();
+      const editsById = new Map(
+        editState.edits.map((edit) => [edit.restaurantId, edit]),
+      );
       if (req.query?.summaryOnly === "1") {
-        const editsById = new Map(
-          editState.edits.map((edit) => [edit.restaurantId, edit]),
-        );
         const publicRestaurants = dataset.restaurants
           .filter((restaurant) => !editsById.get(restaurant.id)?.deletedAt)
           .map((restaurant) => ({
@@ -119,7 +123,7 @@ module.exports = async function handler(req, res) {
       if (!includeCatalog) return res.status(200).json(editState);
       return res.status(200).json({
         ...editState,
-        catalog: catalogPage(offset, true),
+        catalog: catalogPage(offset, true, editsById),
       });
     }
     const raw =
@@ -141,7 +145,7 @@ module.exports = async function handler(req, res) {
     const changes =
       body.action !== "save"
         ? {}
-        : validateChanges(body.changes, body.restaurantId);
+        : validateChanges(body.changes, body.restaurantId, sourceIds);
     const edit = await saveEdit({
       restaurantId: body.restaurantId,
       expectedRevision: body.expectedRevision,

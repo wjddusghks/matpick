@@ -63,7 +63,7 @@ function url(value) {
   return result;
 }
 
-function validateChanges(input, restaurantId) {
+function validateChanges(input, restaurantId, validSourceIds = null) {
   if (!input || typeof input !== "object" || Array.isArray(input))
     fail("수정할 식당 정보를 확인해 주세요.");
   const fields = [
@@ -79,6 +79,7 @@ function validateChanges(input, restaurantId) {
     "menuPriceVerifiedAt",
     "menuPriceSources",
     "menuPriceNote",
+    "sourceLinks",
   ];
   if (Object.keys(input).some((key) => !fields.includes(key)))
     fail("수정할 수 없는 항목이 포함되어 있습니다.");
@@ -178,6 +179,57 @@ function validateChanges(input, restaurantId) {
       url: url(source?.url),
       label: text(source?.label ?? "", "출처 이름", 100),
     }));
+  }
+  if ("sourceLinks" in input) {
+    if (!Array.isArray(input.sourceLinks) || input.sourceLinks.length > 20)
+      fail("방송·가이드 출처는 최대 20개까지 등록할 수 있습니다.");
+    result.sourceLinks = input.sourceLinks.map((link, index) => {
+      if (!link || typeof link !== "object" || Array.isArray(link))
+        fail("방송 출처 정보를 확인해 주세요.");
+      const sourceId = text(link.sourceId, "방송·채널·가이드", 100, true);
+      if (validSourceIds && !validSourceIds.has(sourceId))
+        fail("등록된 방송·채널·가이드를 선택해 주세요.");
+      const sourceUrl = link.sourceUrl
+        ? url(link.sourceUrl)
+        : "";
+      const broadcastDate = text(link.broadcastDate ?? "", "방송일", 10);
+      if (
+        broadcastDate &&
+        (!/^\d{4}-\d{2}-\d{2}$/.test(broadcastDate) ||
+          !Number.isFinite(Date.parse(broadcastDate)) ||
+          new Date(broadcastDate).toISOString().slice(0, 10) !== broadcastDate)
+      )
+        fail("방송일을 확인해 주세요.");
+      const optionalInteger = (key, label) => {
+        if (link[key] == null) return undefined;
+        if (!Number.isInteger(link[key]) || link[key] < 1 || link[key] > 100000)
+          fail(`${label}을 확인해 주세요.`);
+        return link[key];
+      };
+      const ordinal = optionalInteger("ordinal", "출처 순서");
+      const episodeNumber = optionalInteger("episodeNumber", "회차");
+      const season = optionalInteger("season", "시즌");
+      const episodeSeries = text(
+        link.episodeSeries ?? "",
+        "방송 시리즈",
+        100,
+      );
+      const episodePart = text(link.episodePart ?? "", "방송 부", 20);
+      return {
+        id: `admin:${restaurantId}:${index + 1}`,
+        restaurantId,
+        sourceId,
+        label: text(link.label ?? "", "회차·소개 문구", 200),
+        note: text(link.note ?? "", "방송 출처 메모", 500),
+        sourceUrl,
+        broadcastDate,
+        ...(ordinal ? { ordinal } : {}),
+        ...(episodeSeries ? { episodeSeries } : {}),
+        ...(episodeNumber ? { episodeNumber } : {}),
+        ...(episodePart ? { episodePart } : {}),
+        ...(season ? { season } : {}),
+      };
+    });
   }
   return result;
 }

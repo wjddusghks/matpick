@@ -503,29 +503,36 @@ const requestedTopicPatches = Object.fromEntries(
 ) as Record<string, Partial<Restaurant>>;
 const normalizedDataset: MatpickDataSet = {
   ...dataset,
-  restaurants: dataset.restaurants.map(restaurant => ({
-    ...restaurant,
-    ...(!restaurant.menus?.length
-      ? (menuResearch as Record<string, Partial<Restaurant>>)[restaurant.id]
-      : {}),
-    ...(existingDataEnrichment as Record<string, Partial<Restaurant>>)[
-      restaurant.id
-    ],
-    ...(menuPriceFollowup as Record<string, Partial<Restaurant>>)[
-      restaurant.id
-    ],
-    ...(searchTopicExpansion.patches as Record<string, Partial<Restaurant>>)[
-      restaurant.id
-    ],
-    ...requestedTopicPatches[restaurant.id],
-    ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
-      restaurant.id
-    ],
-    ...(excludedRestaurantIds.has(restaurant.id)
-      ? { recommendationHold: restaurantExclusions.reason }
-      : {}),
-    id: restaurant.id,
-  })),
+  restaurants: dataset.restaurants.map(restaurant => {
+    const normalized: Restaurant = {
+      ...restaurant,
+      ...(!restaurant.menus?.length
+        ? (menuResearch as Record<string, Partial<Restaurant>>)[restaurant.id]
+        : {}),
+      ...(existingDataEnrichment as Record<string, Partial<Restaurant>>)[
+        restaurant.id
+      ],
+      ...(menuPriceFollowup as Record<string, Partial<Restaurant>>)[
+        restaurant.id
+      ],
+      ...(searchTopicExpansion.patches as Record<string, Partial<Restaurant>>)[
+        restaurant.id
+      ],
+      ...requestedTopicPatches[restaurant.id],
+      ...(restaurantOverrides as Record<string, Omit<Partial<Restaurant>, "id">>)[
+        restaurant.id
+      ],
+      ...(excludedRestaurantIds.has(restaurant.id)
+        ? { recommendationHold: restaurantExclusions.reason }
+        : {}),
+      id: restaurant.id,
+    };
+    // A maintained menu is the administrator's explicit signal that this
+    // listing is active. Keep all menu-backed records on one lifecycle state.
+    return normalized.menus?.length
+      ? { ...normalized, operationState: "operating", operationStatus: "영업 중" }
+      : normalized;
+  }),
   creators: creatorsWithProfileImages,
   sources: sourcesWithProfileImages,
 };

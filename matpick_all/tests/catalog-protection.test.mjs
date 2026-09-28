@@ -122,6 +122,49 @@ test("durable edits apply and deleted restaurants stay out of public results", (
   assert.equal(queryCatalog({ view: "detail", id: deleted.id }, edits).status, 404);
 });
 
+test("broadcast source edits replace source relationships in public catalog queries", () => {
+  const restaurant = dataset.restaurants.find(row =>
+    dataset.sourceLinks.some(link => link.restaurantId === row.id)
+  );
+  const replacementSource = dataset.sources.find(source =>
+    !dataset.sourceLinks.some(
+      link => link.restaurantId === restaurant.id && link.sourceId === source.id
+    )
+  );
+  const replacement = {
+    id: `admin:${restaurant.id}:1`,
+    restaurantId: restaurant.id,
+    sourceId: replacementSource.id,
+    label: "관리자 추가",
+  };
+  const edits = [
+    {
+      restaurantId: restaurant.id,
+      changes: { sourceLinks: [replacement] },
+      deletedAt: null,
+    },
+  ];
+  const detail = queryCatalog({ view: "detail", id: restaurant.id }, edits);
+  assert.deepEqual(detail.body.sourceLinks, [replacement]);
+  let cursor;
+  let found = false;
+  do {
+    const sourceResult = queryCatalog(
+      {
+        view: "list",
+        type: "source",
+        value: replacementSource.id,
+        limit: 100,
+        cursor,
+      },
+      edits
+    );
+    found ||= sourceResult.body.restaurants.some(row => row.id === restaurant.id);
+    cursor = sourceResult.body.nextCursor || undefined;
+  } while (cursor && !found);
+  assert.equal(found, true);
+});
+
 test("featured ranking, creator scope and episode scope preserve server semantics", () => {
   const featured = queryCatalog({ view: "list", type: "featured", limit: 24 }).body.restaurants;
   const linkCounts = featured.map(row => dataset.sourceLinks.filter(link => link.restaurantId === row.id).length);

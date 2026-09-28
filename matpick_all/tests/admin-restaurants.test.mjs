@@ -317,12 +317,60 @@ test("invalid coordinates, fake verification dates, unsafe URLs and uneditable f
     { menuPriceSources: [{ url: "https://user:password@example.com" }] },
     { id: "other" },
     { rating: 5 },
-    { sourceLinks: [] },
+    { sourceLinks: [{ sourceId: "unknown", sourceUrl: "javascript:alert(1)" }] },
     null,
     [],
   ]) {
     assert.throws(() => validateChanges(changes, "r_test"), { status: 400 });
   }
+});
+
+test("broadcast source edits are normalized and restricted to known sources", () => {
+  const known = new Set(["wednesday-gourmet"]);
+  const changes = validateChanges(
+    {
+      sourceLinks: [
+        {
+          sourceId: "wednesday-gourmet",
+          label: " EP.173 ",
+          sourceUrl: "https://example.com/episode/173",
+          broadcastDate: "2026-09-28",
+          ordinal: 173,
+          episodeSeries: "정규편",
+          episodeNumber: 173,
+          episodePart: "1",
+          season: 2,
+        },
+      ],
+    },
+    "r_test",
+    known
+  );
+  assert.deepEqual(changes.sourceLinks, [
+    {
+      id: "admin:r_test:1",
+      restaurantId: "r_test",
+      sourceId: "wednesday-gourmet",
+      label: "EP.173",
+      note: "",
+      sourceUrl: "https://example.com/episode/173",
+      broadcastDate: "2026-09-28",
+      ordinal: 173,
+      episodeSeries: "정규편",
+      episodeNumber: 173,
+      episodePart: "1",
+      season: 2,
+    },
+  ]);
+  assert.throws(
+    () =>
+      validateChanges(
+        { sourceLinks: [{ sourceId: "not-known" }] },
+        "r_test",
+        known
+      ),
+    { status: 400 }
+  );
 });
 test("address and coordinate edits invalidate the previous location audit", () => {
   const changes = validateChanges(

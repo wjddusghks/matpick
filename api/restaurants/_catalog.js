@@ -70,9 +70,9 @@ function slugifyEpisode(value) {
     .replace(/^-+|-+$/g, "") || "episode";
 }
 
-function getSourceEpisodeGroups(sourceId) {
+function getSourceEpisodeGroups(sourceId, sourceLinks = dataset.sourceLinks || []) {
   const grouped = new Map();
-  for (const link of dataset.sourceLinks || []) {
+  for (const link of sourceLinks) {
     if (link.sourceId !== sourceId) continue;
     const label = String(link.label || (Number.isFinite(link.ordinal) ? `EP.${link.ordinal}` : "")).trim();
     if (!label) continue;
@@ -120,14 +120,14 @@ function isAvailable(restaurant) {
     !/폐업|이전|휴업|permanently\s*closed|temporarily\s*closed|relocated/i.test(restaurant.operationStatus || "");
 }
 
-function sourceLabels(restaurantId) {
-  return (linksByRestaurant.get(restaurantId) || [])
+function sourceLabels(restaurantId, linkIndex = linksByRestaurant) {
+  return (linkIndex.get(restaurantId) || [])
     .map((link) => sourceById.get(link.sourceId)?.name)
     .filter(Boolean)
     .slice(0, 4);
 }
 
-function toSummary(restaurant) {
+function toSummary(restaurant, linkIndex = linksByRestaurant) {
   const menus = (restaurant.menus || []).slice(0, 3).map((menu, index) => ({
     id: menu.id || `m${index.toString(36)}`,
     name: menu.name,
@@ -150,7 +150,7 @@ function toSummary(restaurant) {
     operationState: restaurant.operationState,
     operationStatus: restaurant.operationStatus,
     isOverseas: restaurant.isOverseas === true,
-    sourceLabels: sourceLabels(restaurant.id),
+    sourceLabels: sourceLabels(restaurant.id, linkIndex),
   };
 }
 
@@ -189,8 +189,29 @@ function encodeCursor(offset) {
 function queryCatalog(query, edits = []) {
   const restaurants = applyEdits(dataset.restaurants, edits).filter(isAvailable);
   const restaurantsById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
+  const linkOverrides = new Map(
+    edits
+      .filter((edit) => Array.isArray(edit?.changes?.sourceLinks))
+      .map((edit) => [edit.restaurantId, edit.changes.sourceLinks]),
+  );
+  const effectiveSourceLinks = [
+    ...(dataset.sourceLinks || []).filter(
+      (link) => !linkOverrides.has(link.restaurantId),
+    ),
+    ...Array.from(linkOverrides.values()).flat(),
+  ];
+  const currentLinksByRestaurant = new Map();
+  const currentRestaurantIdsBySource = new Map();
+  for (const link of effectiveSourceLinks) {
+    const links = currentLinksByRestaurant.get(link.restaurantId) || [];
+    links.push(link);
+    currentLinksByRestaurant.set(link.restaurantId, links);
+    const ids = currentRestaurantIdsBySource.get(link.sourceId) || new Set();
+    ids.add(link.restaurantId);
+    currentRestaurantIdsBySource.set(link.sourceId, ids);
+  }
   const availableRestaurantIdsBySource = new Map();
-  for (const link of dataset.sourceLinks || []) {
+  for (const link of effectiveSourceLinks) {
     if (restaurantsById.has(link.restaurantId)) {
       const ids = availableRestaurantIdsBySource.get(link.sourceId) || new Set();
       ids.add(link.restaurantId);
@@ -208,7 +229,7 @@ function queryCatalog(query, edits = []) {
     const id = resolveId(requestedId, restaurantsById);
     if (!id) return { status: 404, body: { error: "Restaurant not found" } };
     const restaurant = addMenuIds(restaurantsById.get(id));
-    const sourceLinks = linksByRestaurant.get(id) || [];
+    const sourceLinks = currentLinksByRestaurant.get(id) || [];
     const sources = sourceLinks.map((link) => sourceById.get(link.sourceId)).filter(Boolean);
     return {
       status: 200,
@@ -259,7 +280,7 @@ function queryCatalog(query, edits = []) {
     };
     const needles = [q, englishAliases[q]].filter(Boolean);
     results = restaurants.filter((restaurant) => {
-      const links = linksByRestaurant.get(restaurant.id) || [];
+      const links = currentLinksByRestaurant.get(restaurant.id) || [];
       const sources = links.map((link) => sourceById.get(link.sourceId)?.name || "");
       return [restaurant.name, restaurant.address, restaurant.region, restaurant.category,
         restaurant.representativeMenu, ...(restaurant.menus || []).map((menu) => menu.name), ...sources]
@@ -267,7 +288,7 @@ function queryCatalog(query, edits = []) {
     });
   } else if (type === "source") {
     if (!sourceById.has(value)) return { status: 404, body: { error: "Source not found" } };
-    const ids = restaurantIdsBySource.get(value) || new Set();
+    const ids = currentRestaurantIdsBySource.get(value) || new Set();
     results = restaurants.filter((restaurant) => ids.has(restaurant.id));
   } else if (type === "region") {
     const target = normalize(value);
@@ -294,7 +315,7 @@ function queryCatalog(query, edits = []) {
     const sourceIds = new Set((dataset.sources || [])
       .filter((source) => source.creatorId === value)
       .map((source) => source.id));
-    const ids = new Set((dataset.sourceLinks || [])
+    const ids = new Set(effectiveSourceLinks
       .filter((link) => sourceIds.has(link.sourceId))
       .map((link) => link.restaurantId));
     results = restaurants.filter((restaurant) => ids.has(restaurant.id));
@@ -307,15 +328,15 @@ function queryCatalog(query, edits = []) {
       const sourceIds = new Set((dataset.sources || [])
         .filter((source) => source.creatorId === topic.targetId)
         .map((source) => source.id));
-      const ids = new Set((dataset.sourceLinks || [])
+      const ids = new Set(effectiveSourceLinks
         .filter((link) => sourceIds.has(link.sourceId))
         .map((link) => link.restaurantId));
       results = restaurants.filter((restaurant) => ids.has(restaurant.id));
     } else if (!sourceById.has(topic.targetId)) {
       return { status: 404, body: { error: "Topic source not found" } };
     } else {
-    let ids = restaurantIdsBySource.get(topic.targetId) || new Set();
-    topicEpisodeGroups = getSourceEpisodeGroups(topic.targetId);
+    let ids = currentRestaurantIdsBySource.get(topic.targetId) || new Set();
+    topicEpisodeGroups = getSourceEpisodeGroups(topic.targetId, effectiveSourceLinks);
     const requestedEpisode = String(query.episode || "").trim();
     if (requestedEpisode) {
       const matched = topicEpisodeGroups.find((group) => group.slug === requestedEpisode)?.links || [];
@@ -327,7 +348,7 @@ function queryCatalog(query, edits = []) {
     results = restaurants
       .map((restaurant) => ({
         ...restaurant,
-        recommendationCount: (linksByRestaurant.get(restaurant.id) || []).length,
+        recommendationCount: (currentLinksByRestaurant.get(restaurant.id) || []).length,
       }))
       .sort((left, right) =>
         right.recommendationCount - left.recommendationCount ||
@@ -350,7 +371,7 @@ function queryCatalog(query, edits = []) {
     status: 200,
     body: {
       restaurants: page.map((restaurant) => ({
-        ...toSummary(restaurant),
+        ...toSummary(restaurant, currentLinksByRestaurant),
         ...(Number.isFinite(restaurant.distanceKm) ? { distanceKm: restaurant.distanceKm } : {}),
       })),
       nextCursor: hasMore ? encodeCursor(nextOffset) : null,
@@ -372,7 +393,7 @@ function queryCatalog(query, edits = []) {
       })),
       creators: publicCreators,
       sources: publicSources,
-      sourceLinks: (dataset.sourceLinks || []).filter((link) => pageIds.has(link.restaurantId)),
+      sourceLinks: effectiveSourceLinks.filter((link) => pageIds.has(link.restaurantId)),
       restaurantAliases: Object.fromEntries(
         Object.entries(dataset.restaurantAliases || {}).filter(([, target]) => pageIds.has(target)),
       ),

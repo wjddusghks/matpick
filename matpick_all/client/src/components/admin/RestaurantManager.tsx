@@ -130,7 +130,11 @@ type Props = {
   lookupAddress?: (query: string) => Promise<AddressResult[]>;
 };
 
-function toDraft(restaurant: Restaurant, menus: MenuItem[]): RestaurantDraft {
+function toDraft(
+  restaurant: Restaurant,
+  menus: MenuItem[],
+  sourceLinks: SourceLink[]
+): RestaurantDraft {
   return {
     name: restaurant.name,
     address: restaurant.address,
@@ -155,6 +159,7 @@ function toDraft(restaurant: Restaurant, menus: MenuItem[]): RestaurantDraft {
       url: source.url,
       label: source.label || "",
     })),
+    sourceLinks: sourceLinks.map(link => ({ ...link })),
   };
 }
 function Field({
@@ -423,14 +428,14 @@ export default function RestaurantManager({
   }, [initialEdits]);
   useEffect(() => {
     if (!ready || !selected) return;
-    const next = toDraft(selected, getMenus(selected));
+    const next = toDraft(selected, getMenus(selected), getSourceLinks(selected.id));
     setDraft(next);
     setInitial(next);
     setChecked([]);
     setExpanded([]);
     setUndo([]);
     setIssue(null);
-  }, [ready, selected, getMenus]);
+  }, [ready, selected, getMenus, getSourceLinks]);
   useEffect(() => {
     if (!draft || restoredScroll.current) return;
     restoredScroll.current = true;
@@ -597,15 +602,23 @@ export default function RestaurantManager({
         changes:
           action === "save" ? buildRestaurantChanges(draft, initial) : {},
       });
+      const nextSelectedId =
+        action === "delete"
+          ? entries.find(
+              entry =>
+                entry.restaurant.id !== selected.id &&
+                !deletedIds.has(entry.restaurant.id)
+            )?.restaurant.id || ""
+          : selectedId;
       const view = {
-        selectedId,
+        selectedId: nextSelectedId,
         query,
         sourceId,
         episodeKey,
         viewMode,
         filter:
           action === "delete"
-            ? ("deleted" as const)
+            ? ("all" as const)
             : action === "restore"
               ? ("all" as const)
               : filter,
@@ -623,7 +636,10 @@ export default function RestaurantManager({
       setInitial(draft);
       setUndo([]);
       setChecked([]);
-      if (action === "delete") setFilter("deleted");
+      if (action === "delete") {
+        setFilter("all");
+        setSelectedId(nextSelectedId);
+      }
       if (action === "restore") setFilter("all");
       setStatus(
         action === "delete"
@@ -1794,6 +1810,144 @@ export default function RestaurantManager({
                               </p>
                             </div>
                           </div>
+                          <section className="am-broadcast-sources">
+                            <div className="am-section-heading am-source-heading">
+                              <div>
+                                <h3>
+                                  방송·채널·가이드 출처{" "}
+                                  <span>{draft.sourceLinks.length}</span>
+                                </h3>
+                                <p>
+                                  식당이 소개된 프로그램과 회차를 사용자 상세 화면에
+                                  연결합니다.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                className="am-btn am-btn-white"
+                                disabled={draft.sourceLinks.length >= 20}
+                                onClick={() =>
+                                  update("sourceLinks", [
+                                    ...draft.sourceLinks,
+                                    {
+                                      id: `admin:${selected.id}:${crypto.randomUUID()}`,
+                                      restaurantId: selected.id,
+                                      sourceId: sources[0]?.id || "",
+                                      label: "",
+                                      sourceUrl: "",
+                                      broadcastDate: "",
+                                    },
+                                  ])
+                                }
+                              >
+                                <Plus size={15} />
+                                방송 출처 추가
+                              </button>
+                            </div>
+                            {draft.sourceLinks.map((link, index) => (
+                              <div className="am-source-card am-broadcast-card" key={link.id || index}>
+                                <div className="am-source-number">
+                                  <Tv size={15} />
+                                </div>
+                                <div className="am-broadcast-fields">
+                                  <label className="am-field">
+                                    <span>방송·채널·가이드 {index + 1}</span>
+                                    <select
+                                      data-editor-field={`broadcast-source-${index}`}
+                                      value={link.sourceId}
+                                      aria-invalid={issue?.field === `broadcast-source-${index}`}
+                                      onChange={event =>
+                                        update(
+                                          "sourceLinks",
+                                          draft.sourceLinks.map((item, itemIndex) =>
+                                            itemIndex === index
+                                              ? { ...item, sourceId: event.target.value }
+                                              : item
+                                          )
+                                        )
+                                      }
+                                    >
+                                      <option value="">선택해 주세요</option>
+                                      {sources.map(source => (
+                                        <option key={source.id} value={source.id}>
+                                          {source.name}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </label>
+                                  <Field
+                                    name={`broadcast-label-${index}`}
+                                    label="회차·소개 문구"
+                                    value={link.label || ""}
+                                    onChange={value =>
+                                      update(
+                                        "sourceLinks",
+                                        draft.sourceLinks.map((item, itemIndex) =>
+                                          itemIndex === index
+                                            ? { ...item, label: value }
+                                            : item
+                                        )
+                                      )
+                                    }
+                                    maxLength={200}
+                                  />
+                                  <Field
+                                    name={`broadcast-url-${index}`}
+                                    label="소개 영상·방송 링크"
+                                    value={link.sourceUrl || ""}
+                                    onChange={value =>
+                                      update(
+                                        "sourceLinks",
+                                        draft.sourceLinks.map((item, itemIndex) =>
+                                          itemIndex === index
+                                            ? { ...item, sourceUrl: value }
+                                            : item
+                                        )
+                                      )
+                                    }
+                                    maxLength={2000}
+                                    type="url"
+                                    issue={issue}
+                                  />
+                                  <Field
+                                    name={`broadcast-date-${index}`}
+                                    label="방송·게시일"
+                                    value={link.broadcastDate || ""}
+                                    onChange={value =>
+                                      update(
+                                        "sourceLinks",
+                                        draft.sourceLinks.map((item, itemIndex) =>
+                                          itemIndex === index
+                                            ? { ...item, broadcastDate: value }
+                                            : item
+                                        )
+                                      )
+                                    }
+                                    type="date"
+                                    issue={issue}
+                                  />
+                                </div>
+                                <button
+                                  type="button"
+                                  className="am-icon-btn am-delete"
+                                  aria-label={`방송 출처 ${index + 1} 삭제`}
+                                  onClick={() =>
+                                    update(
+                                      "sourceLinks",
+                                      draft.sourceLinks.filter((_, itemIndex) => itemIndex !== index)
+                                    )
+                                  }
+                                >
+                                  <Trash2 size={16} />
+                                </button>
+                              </div>
+                            ))}
+                            {!draft.sourceLinks.length && (
+                              <p className="am-no-sources">
+                                아직 연결된 방송·채널·가이드가 없습니다.
+                              </p>
+                            )}
+                          </section>
                           <div className="am-date-row">
                             <Field
                               name="menuPriceVerifiedAt"

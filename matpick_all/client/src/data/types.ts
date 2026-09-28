@@ -96,6 +96,8 @@ export interface Restaurant {
   menuPriceVerifiedAt?: string;
   menuPriceNote?: string;
   menuPriceSources?: RestaurantMenuPriceSource[];
+  /** 관리자 편집으로 덮어쓴 방송·채널·가이드 연결. */
+  sourceLinks?: SourceLink[];
 }
 
 export interface Visit {

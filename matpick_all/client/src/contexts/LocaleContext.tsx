@@ -52,6 +52,11 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let ignore = false;
+    const requestedLocale = new URLSearchParams(window.location.search).get("lang");
+    const hasRequestedLocale = requestedLocale === "en" || requestedLocale === "ko";
+    if (hasRequestedLocale) {
+      try { window.localStorage.setItem("matpick_locale", requestedLocale); } catch { /* Optional storage. */ }
+    }
 
     async function hydrateRuntimeContext() {
       try {
@@ -85,7 +90,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
         } catch {
           /* The runtime locale still works when storage is unavailable. */
         }
-        if (!hasStoredPreference && (payload.locale === "ko" || payload.locale === "en")) {
+        if (!hasRequestedLocale && !hasStoredPreference && (payload.locale === "ko" || payload.locale === "en")) {
           setLocale(payload.locale);
         }
       } catch {

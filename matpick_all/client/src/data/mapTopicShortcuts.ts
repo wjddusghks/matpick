@@ -19,6 +19,7 @@ export type MapTopicShortcut = {
 };
 
 const baseMapTopicShortcuts: MapTopicShortcut[] = [
+  { slug: "community-picks", type: "source", value: "community-picks", name: { ko: "추천식당", en: "Community Picks" }, imageUrl: "/source-covers/community-picks.svg" },
   ...(researchedTopicShortcuts as MapTopicShortcut[]),
   ...(travelTopicShortcuts as MapTopicShortcut[]),
   {

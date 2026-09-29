@@ -137,7 +137,7 @@ export function SuggestionInboxPanel({
             <small>보관 중인 모든 제보</small>
           </span>
         </button>
-        {(["pending", "reviewed", "archived"] as const).map((key, i) => {
+        {(["pending", "approved", "rejected"] as const).map((key, i) => {
           const Icon = [Clock3, CheckCircle2, Inbox][i];
           return (
             <button
@@ -206,7 +206,7 @@ export function SuggestionInboxPanel({
               )}
             </label>
             <div className="si-filters">
-              {(["all", "pending", "reviewed", "archived"] as const).map(
+              {(["all", "pending", "approved", "rejected"] as const).map(
                 key => (
                   <button
                     key={key}
@@ -432,6 +432,14 @@ export function SuggestionInboxPanel({
                     <span>
                       확인 출처 <b>{selected.sourceNote || "미제보"}</b>
                     </span>
+                    <span>
+                      지도 좌표{" "}
+                      <b>
+                        {Number.isFinite(selected.lat) && Number.isFinite(selected.lng)
+                          ? `${selected.lat}, ${selected.lng}`
+                          : "미확인 · 승인 불가"}
+                      </b>
+                    </span>
                   </div>
                 </section>
                 <section className="si-reason">
@@ -454,18 +462,18 @@ export function SuggestionInboxPanel({
               <footer className="si-review-actions">
                 <p>
                   <CheckCircle2 size={15} />
-                  정보를 확인했다면 처리 상태를 남겨 주세요.
+                  주소와 좌표를 대조한 뒤 공개 여부를 결정해 주세요.
                   <small>
-                    확인 완료로 표시해도 공개 지도에 자동 등록되지는 않습니다.
+                    승인하면 추천식당 주제와 공개 지도에 바로 반영됩니다.
                   </small>
                 </p>
                 <div>
                   <button
                     className="si-button"
-                    disabled={!!saving || selected.status === "archived"}
-                    onClick={() => void update(selected, "archived")}
+                    disabled={!!saving || selected.status === "rejected"}
+                    onClick={() => void update(selected, "rejected")}
                   >
-                    보류
+                    {selected.status === "approved" ? "공개 취소" : "반려"}
                   </button>
                   {selected.status !== "pending" && (
                     <button
@@ -478,15 +486,20 @@ export function SuggestionInboxPanel({
                   )}
                   <button
                     className="si-button si-button-primary"
-                    disabled={!!saving || selected.status === "reviewed"}
-                    onClick={() => void update(selected, "reviewed")}
+                    disabled={
+                      !!saving ||
+                      selected.status === "approved" ||
+                      !Number.isFinite(selected.lat) ||
+                      !Number.isFinite(selected.lng)
+                    }
+                    onClick={() => void update(selected, "approved")}
                   >
                     {saving === selected.id ? (
                       <LoaderCircle className="si-spin" size={15} />
                     ) : (
                       <Check size={16} />
                     )}
-                    확인 완료
+                    지도에 승인
                   </button>
                 </div>
               </footer>

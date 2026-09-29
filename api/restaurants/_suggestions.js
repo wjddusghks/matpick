@@ -20,8 +20,9 @@ function createSuggestionHandler(store = suggestionStore) {
       return res.status(405).json({ error: "Method not allowed" });
     }
     if (!enforceSameOrigin(req, res)) return;
+    let auth = null;
     if (req.method !== "POST") {
-      const auth = authorizeAdminRequest({
+      auth = authorizeAdminRequest({
         adminKey: req.headers?.["x-matpick-admin-key"],
         syncToken: req.headers?.["x-matpick-admin-token"],
       });
@@ -60,8 +61,15 @@ function createSuggestionHandler(store = suggestionStore) {
         return res.status(400).json({ error: "요청 형식을 확인해 주세요." });
       }
       if (req.method === "PATCH") {
-        await updateSuggestion(body?.requestId, body?.status);
-        return res.status(200).json({ ok: true });
+        const publication = await updateSuggestion(
+          body?.requestId,
+          body?.status,
+          auth.userId,
+        );
+        return res.status(200).json({
+          ok: true,
+          ...(publication ? { restaurantId: publication.restaurant.id } : {}),
+        });
       }
       const receipt = await saveSuggestion(validateSuggestion(body));
       return res.status(200).json({ ok: true, receipt });

@@ -26,7 +26,7 @@ export function createLocalSuggestionStore(file) {
         if (error.code !== "ENOENT") throw error;
         items = [];
       }
-      items = items.filter(item => item.createdAt > Date.now() - retentionMs);
+      items = items.filter(item => item.status === "approved" || item.createdAt > Date.now() - retentionMs);
       const value = run(items);
       await mkdir(path.dirname(file), { recursive: true });
       const temp = `${file}.tmp`;
@@ -81,13 +81,29 @@ export function createLocalSuggestionStore(file) {
     },
     updateSuggestion(requestId, status) {
       return transaction(items => {
-        if (!["pending", "reviewed", "archived"].includes(status))
+        if (!["pending", "approved", "rejected", "reviewed", "archived"].includes(status))
           fail("처리 상태를 확인해 주세요.", 400);
         const item = items.find(row => row.requestId === requestId);
         if (!item) fail("제보를 찾을 수 없습니다.", 404);
+        if (status === "approved") {
+          const publication = require(storeModule).buildPublication(item, "local-admin");
+          const duplicate = items
+            .filter(row => row.requestId !== requestId && row.status === "approved")
+            .map(row => require(storeModule).buildPublication(row, "local-admin"))
+            .some(row => row.dedupeKey === publication.dedupeKey);
+          if (duplicate)
+            fail("이미 승인된 같은 이름과 주소의 추천식당이 있습니다.", 409);
+        }
         item.status = status;
         item.reviewedAt = Date.now();
       });
+    },
+    listPublishedSuggestions() {
+      return transaction(items =>
+        items
+          .filter(item => item.status === "approved")
+          .map(item => require(storeModule).buildPublication(item, "local-admin"))
+      );
     },
   };
 }
@@ -153,7 +169,9 @@ export function localSuggestionsPlugin() {
             return;
           }
           const result = require(catalogModule).queryCatalog(
-            Object.fromEntries(url.searchParams)
+            Object.fromEntries(url.searchParams),
+            [],
+            await store.listPublishedSuggestions()
           );
           res.writeHead(result.status, {
             "Content-Type": "application/json; charset=utf-8",

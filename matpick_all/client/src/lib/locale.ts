@@ -282,6 +282,7 @@ export function getEnglishAddress(value: string) {
 
 export function getEnglishSourceName(value: string) {
   const trimmed = value.trim();
+  if (trimmed === "추천식당") return "Community Picks";
   return ENGLISH_SOURCE_NAMES[trimmed] ?? romanizeKoreanText(trimmed);
 }
 
@@ -329,6 +330,8 @@ export function getLocalizedRegion(value: string, locale: AppLocale) {
 export function getLocalizedSearchLabel(value: string | null | undefined, locale: AppLocale) {
   if (!value || locale === "ko") return value ?? "";
   const labels: Record<string, string> = {
+    "유사 검색어": "Similar match",
+    "식당 검색": "Restaurant search",
     "\uC774\uB984": "Name",
     "\uC2DD\uB2F9\uBA85": "Restaurant",
     "\uC8FC\uC18C": "Address",
@@ -362,6 +365,8 @@ export function getLocalizedSearchDetail(
 ) {
   if (!value || locale === "ko") return value ?? "";
   const trimmed = value.trim();
+  const allMatches = trimmed.match(/^식당명·메뉴·지역·출처에서\s*([\d,]+)곳$/);
+  if (allMatches) return `${allMatches[1]} restaurants across names, menus, areas, and sources`;
   if (matchLabel === "\uBA54\uB274 \uC77C\uCE58") {
     return trimmed.split(/\s*\u00B7\s*/).map(getEnglishMenuName).join(" · ");
   }
@@ -467,6 +472,8 @@ export function getBrowserFallbackLocale(): AppLocale {
   // Canonical pages stay Korean for first-time visitors and search engines.
   // An explicit visitor choice, rather than IP/browser language, enables English.
   try {
+    const requested = new URLSearchParams(window.location.search).get("lang");
+    if (requested === "en" || requested === "ko") return requested;
     return window.localStorage.getItem("matpick_locale") === "en" ? "en" : "ko";
   } catch {
     return "ko";

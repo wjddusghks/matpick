@@ -578,7 +578,7 @@ function SearchResultItem({
       ? `${(item.restaurantCount ?? 0).toLocaleString()} restaurants`
       : `${ui.restaurantLabel} ${(item.restaurantCount ?? 0).toLocaleString()}\uAC1C`;
   } else {
-    accentLabel = item.matchLabel ?? (item.category ? translateCuisineLabel(item.category, locale) : ui.restaurantLabel);
+    accentLabel = getLocalizedSearchLabel(item.matchLabel, locale) || (item.category ? translateCuisineLabel(item.category, locale) : ui.restaurantLabel);
     detailText = getLocalizedSearchDetail(
       item.matchedText ?? item.address ?? "",
       item.matchLabel,
@@ -943,11 +943,11 @@ export default function Home() {
       view: "list",
       type: "search",
       q: query,
-      limit: "7",
+      limit: "16",
     });
 
     params.set("scope", "catalog");
-    fetch(`/api/restaurants?${params}`, {
+    const searchTimer = window.setTimeout(() => { void fetch(`/api/restaurants?${params}`, {
       headers: { Accept: "application/json" },
       credentials: "same-origin",
       signal: controller.signal,
@@ -955,6 +955,7 @@ export default function Home() {
       .then(async response => {
         if (!response.ok) throw new Error("Search unavailable");
         return response.json() as Promise<{
+          suggestions?: SearchResult[];
           restaurants?: Array<{
             id: string;
             name: string;
@@ -965,6 +966,10 @@ export default function Home() {
       })
       .then(payload => {
         if (ignore) return;
+        if (payload.suggestions?.length) {
+          setFilteredResults(payload.suggestions);
+          return;
+        }
         const matches: SearchResult[] = (payload.restaurants ?? []).map(restaurant => ({
           id: restaurant.id,
           type: "restaurant",
@@ -990,10 +995,11 @@ export default function Home() {
         if (!ignore) {
           setFilteredResults([]);
         }
-      });
+      }); }, 350);
 
     return () => {
       ignore = true;
+      window.clearTimeout(searchTimer);
       controller.abort();
     };
   }, [normalizedQuery, query]);
@@ -1851,7 +1857,7 @@ export default function Home() {
                 <div className="border-t border-[#ffb2ba] bg-white">
                   {normalizedQuery ? (
                     filteredResults.length > 0 ? (
-                      <div className="py-2">
+                      <div className="max-h-[60vh] overflow-y-auto py-2">
                         <div className="flex items-center justify-between px-7 py-3">
                           <p className="text-[16px] font-semibold text-[#1d1d1d]">
                             {ui.dropdown.resultsTitle}

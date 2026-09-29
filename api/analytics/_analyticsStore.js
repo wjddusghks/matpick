@@ -55,6 +55,7 @@ function getDayKeys(day) {
     searches: `${keyPrefix}:searches`,
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
+    campaigns: `${keyPrefix}:campaigns`,
   };
 }
 
@@ -68,6 +69,7 @@ function getAllKeys() {
     searches: `${keyPrefix}:searches`,
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
+    campaigns: `${keyPrefix}:campaigns`,
   };
 }
 
@@ -157,7 +159,21 @@ function normalizeEvent(input) {
     query,
     targetLabel,
     durationMs,
+    campaign: campaignFromPath(input?.path),
   };
+}
+
+// Only campaign slugs are aggregated, never arbitrary query strings or identities.
+function campaignFromPath(path) {
+  if (typeof path !== "string" || !path.startsWith("/") || path.length > 2000) return "";
+  const params = new URL(path, "https://matpick.co.kr").searchParams;
+  const slug = key => {
+    const value = (params.get(key) || "").toLowerCase();
+    return /^[a-z0-9_-]{1,80}$/.test(value) ? value : "";
+  };
+  const source = slug("utm_source");
+  if (!["instagram", "threads", "pinterest", "naver", "naver_blog", "kakao"].includes(source)) return "";
+  return [source, slug("utm_medium") || "social", slug("utm_campaign") || "unspecified", slug("utm_content") || "unspecified"].join(" / ");
 }
 
 function ensureFallbackBucket(bucket) {
@@ -174,6 +190,7 @@ function ensureFallbackBucket(bucket) {
     searches: new Map(),
     events: new Map(),
     clicks: new Map(),
+    campaigns: new Map(),
   };
   FALLBACK_STORE.set(bucket, next);
   return next;
@@ -222,7 +239,12 @@ function applyFallbackEvent(store, event) {
     store.visitors.add(hashIdentity(event.visitorId));
   }
   if (event.type === "session_start" && event.sessionId) {
+    const isNew = !store.sessions.has(hashIdentity(event.sessionId));
     store.sessions.add(hashIdentity(event.sessionId));
+    if (isNew && event.campaign) {
+      store.campaigns ||= new Map();
+      incrementMap(store.campaigns, event.campaign);
+    }
   }
 
   if (event.type === "page_view") {
@@ -273,7 +295,8 @@ async function recordKvEventForKeys(keys, event) {
     commands.push(["SADD", keys.visitors, hashIdentity(event.visitorId)]);
   }
   if (event.type === "session_start" && event.sessionId) {
-    commands.push(["SADD", keys.sessions, hashIdentity(event.sessionId)]);
+    // Redis handles concurrent retries atomically: one attributed arrival per session.
+    commands.push(["EVAL", "local added = redis.call('SADD', KEYS[1], ARGV[1]); if added == 1 and ARGV[2] ~= '' then redis.call('HINCRBY', KEYS[2], ARGV[2], 1); end; return added", "2", keys.sessions, keys.campaigns, hashIdentity(event.sessionId), event.campaign]);
   }
 
   if (event.type === "page_view") {
@@ -382,13 +405,14 @@ async function readFallbackSummary(options) {
     topSearches: entriesFromHash(Object.fromEntries(store.searches.entries())),
     topEvents: entriesFromHash(Object.fromEntries(store.events.entries())),
     topClicks: entriesFromHash(Object.fromEntries(store.clicks.entries())),
+    topCampaigns: entriesFromHash(Object.fromEntries((store.campaigns || new Map()).entries()), 20),
   };
 }
 
 async function readKvSummary(options) {
   const { day, scope } = normalizeSummaryOptions(options);
   const keys = getSummaryKeys(scope, day);
-  const [countsPayload, visitorPayload, sessionPayload, pathsPayload, searchesPayload, eventsPayload, clicksPayload] =
+  const [countsPayload, visitorPayload, sessionPayload, pathsPayload, searchesPayload, eventsPayload, clicksPayload, campaignsPayload] =
     await Promise.all([
       requestRedis(["HGETALL", keys.counts]),
       requestRedis(["SCARD", keys.visitors]),
@@ -397,6 +421,7 @@ async function readKvSummary(options) {
       requestRedis(["HGETALL", keys.searches]),
       requestRedis(["HGETALL", keys.events]),
       requestRedis(["HGETALL", keys.clicks]),
+      requestRedis(["HGETALL", keys.campaigns]),
     ]);
 
   const countsHash = hashToObject(countsPayload?.result);
@@ -428,6 +453,7 @@ async function readKvSummary(options) {
     topSearches: entriesFromHash(searchesPayload?.result),
     topEvents: entriesFromHash(eventsPayload?.result),
     topClicks: entriesFromHash(clicksPayload?.result),
+    topCampaigns: entriesFromHash(campaignsPayload?.result, 20),
   };
 }
 

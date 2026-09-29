@@ -5,8 +5,10 @@ import { SUGGESTIONS_API, type SuggestionItem } from "./restaurantSuggestions";
 
 export const suggestionStatuses = {
   pending: "검토 대기",
-  reviewed: "확인 완료",
-  archived: "보류",
+  approved: "공개 중",
+  rejected: "반려",
+  reviewed: "이전 확인",
+  archived: "이전 보류",
 };
 export function useSuggestionInbox() {
   const { user } = useAuth();

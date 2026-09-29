@@ -2,8 +2,11 @@ const { createHash, randomUUID } = require("node:crypto");
 
 const PREFIX = "matpick:restaurant-suggestion:v1:";
 const INDEX = "matpick:restaurant-suggestions:v1";
+const PUBLISHED = "matpick:community-restaurants:v1";
+const PUBLISHED_DEDUPE = "matpick:community-restaurants:dedupe:v1";
 const RETENTION_SECONDS = 180 * 24 * 60 * 60;
 const TAGS = ["데이트", "혼밥", "가족 식사", "친구 모임", "여행", "가성비"];
+const dataset = require("../../matpick_all/client/src/data/generated/public-dataset.json");
 
 function fail(message, status = 400) {
   throw Object.assign(new Error(message), { status });
@@ -35,6 +38,19 @@ function validateSuggestion(input) {
   const name = text(input.name, "식당 이름", 100, true);
   const location = text(input.location, "식당 위치", 300, true);
   const locationDetail = text(input.locationDetail, "상세주소", 100);
+  const lat = input.lat == null || input.lat === "" ? null : Number(input.lat);
+  const lng = input.lng == null || input.lng === "" ? null : Number(input.lng);
+  if (
+    (lat == null) !== (lng == null) ||
+    (lat != null &&
+      (!Number.isFinite(lat) ||
+        !Number.isFinite(lng) ||
+        lat === 0 ||
+        lng === 0 ||
+        Math.abs(lat) > 90 ||
+        Math.abs(lng) > 180))
+  )
+    fail("식당 위치 좌표를 확인해 주세요.");
   const mapUrl = text(input.mapUrl, "지도 또는 식당 링크", 1500);
   if (mapUrl) {
     try {
@@ -90,6 +106,7 @@ function validateSuggestion(input) {
     name,
     location,
     ...(locationDetail ? { locationDetail } : {}),
+    ...(lat != null ? { lat, lng } : {}),
     mapUrl,
     menus,
     tags: [...new Set(tags)],
@@ -98,6 +115,96 @@ function validateSuggestion(input) {
     reason: text(input.reason, "추천 이유", 1000),
     sourceNote: text(input.sourceNote, "정보 출처", 300),
     consentVersion: "restaurant-suggestion-v1",
+  };
+}
+
+function normalizeIdentity(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLocaleLowerCase("ko-KR")
+    .replace(/\s+/g, "")
+    .replace(/[-._,/#!$%^&*;:{}=`~()'"?<>+\[\]\\|·ㆍ]/g, "");
+}
+
+function broadRegion(address) {
+  const aliases = {
+    서울특별시: "서울", 부산광역시: "부산", 대구광역시: "대구",
+    인천광역시: "인천", 광주광역시: "광주", 대전광역시: "대전",
+    울산광역시: "울산", 세종특별자치시: "세종", 경기도: "경기",
+    강원특별자치도: "강원", 충청북도: "충북", 충청남도: "충남",
+    전북특별자치도: "전북", 전라북도: "전북", 전라남도: "전남",
+    경상북도: "경북", 경상남도: "경남", 제주특별자치도: "제주",
+  };
+  const value = String(address || "").trim();
+  const prefix = Object.keys(aliases).find((candidate) => value.startsWith(candidate));
+  return prefix ? aliases[prefix] : value.split(/\s+/)[0] || "기타";
+}
+
+function distanceKm(left, right) {
+  const radians = (value) => (value * Math.PI) / 180;
+  const deltaLat = radians(right.lat - left.lat);
+  const deltaLng = radians(right.lng - left.lng);
+  const a = Math.sin(deltaLat / 2) ** 2 +
+    Math.cos(radians(left.lat)) * Math.cos(radians(right.lat)) *
+    Math.sin(deltaLng / 2) ** 2;
+  return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function buildPublication(item, actor = "") {
+  if (
+    !Number.isFinite(item.lat) ||
+    !Number.isFinite(item.lng) ||
+    item.lat === 0 ||
+    item.lng === 0
+  )
+    fail("주소 검색으로 좌표가 확인된 제보만 승인할 수 있습니다.", 409);
+  const normalizedName = normalizeIdentity(item.name);
+  const normalizedAddress = normalizeIdentity(item.location);
+  const duplicate = dataset.restaurants.find((restaurant) =>
+    normalizedName === normalizeIdentity(restaurant.name) &&
+    (normalizedAddress === normalizeIdentity(restaurant.address) ||
+      (Number.isFinite(restaurant.lat) && Number.isFinite(restaurant.lng) &&
+        distanceKm(item, restaurant) <= 0.1)),
+  );
+  if (duplicate)
+    fail(`이미 등록된 식당입니다: ${duplicate.name}`, 409);
+  const id = `community-${item.requestId}`;
+  const address = [item.location, item.locationDetail].filter(Boolean).join(" ");
+  const menus = (Array.isArray(item.menus) ? item.menus : []).map((menu, index) => ({
+    id: `${id}-menu-${index + 1}`,
+    name: menu.name,
+    ...(menu.price == null ? {} : { price: String(menu.price) }),
+    ...(menu.unit ? { description: menu.unit } : {}),
+    isSignature: index === 0,
+  }));
+  const publishedAt = Date.now();
+  return {
+    requestId: item.requestId,
+    dedupeKey: `${normalizedName}:${normalizedAddress}`,
+    publishedAt,
+    moderatedBy: actor,
+    restaurant: {
+      id,
+      name: item.name,
+      region: broadRegion(item.location),
+      address,
+      category: "추천식당",
+      representativeMenu: menus[0]?.name || "",
+      lat: item.lat,
+      lng: item.lng,
+      imageUrl: "",
+      menus,
+      operationState: "unknown",
+      operationStatus: "사용자 제보 · 운영자 위치 확인",
+      locationVerifiedAt: new Date(publishedAt).toISOString().slice(0, 10),
+      ...(item.mapUrl ? { placeUrl: item.mapUrl } : {}),
+    },
+    sourceLink: {
+      id: `community-link-${item.requestId}`,
+      restaurantId: id,
+      sourceId: "community-picks",
+      label: "사용자 추천",
+    },
   };
 }
 
@@ -164,15 +271,15 @@ async function saveSuggestion(input) {
 }
 
 async function listSuggestions(page = 0) {
-  await redis([
-    "ZREMRANGEBYSCORE",
-    INDEX,
-    "-inf",
-    Date.now() - RETENTION_SECONDS * 1000,
-  ]);
+  // Approved submissions remain reviewable for revocation; only expired records
+  // may be removed from the inbox index.
   const keys = await redis(["ZREVRANGE", INDEX, page * 50, page * 50 + 49]);
   if (!Array.isArray(keys)) fail("제보 목록을 확인하지 못했습니다.", 503);
   const values = keys.length ? await redis(["MGET", ...keys]) : [];
+  if (Array.isArray(values)) {
+    const expired = keys.filter((key, index) => !values[index]);
+    if (expired.length) await redis(["ZREM", INDEX, ...expired]);
+  }
   const total = Number(await redis(["ZCARD", INDEX]));
   if (!Array.isArray(values) || !Number.isFinite(total))
     fail("제보 목록을 확인하지 못했습니다.", 503);
@@ -192,31 +299,83 @@ async function listSuggestions(page = 0) {
   };
 }
 
-async function updateSuggestion(requestId, status) {
+async function updateSuggestion(requestId, status, actor = "") {
   if (
     typeof requestId !== "string" ||
     !/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i.test(requestId) ||
-    !["pending", "reviewed", "archived"].includes(status)
+    !["pending", "approved", "rejected", "reviewed", "archived"].includes(status)
   )
     fail("처리 상태를 확인해 주세요.");
+  const key = `${PREFIX}${requestId.toLowerCase()}`;
+  const existingRaw = await redis(["GET", key]);
+  if (typeof existingRaw !== "string")
+    fail("제보를 찾을 수 없습니다. 목록을 새로고침해 주세요.", 404);
+  const existing = JSON.parse(existingRaw);
+  const publication = status === "approved" ? buildPublication(existing, actor) : null;
   const result = await redis([
     "EVAL",
     `
     local raw = redis.call('GET', KEYS[1])
     if not raw then return 0 end
     local item = cjson.decode(raw)
+    local publishedId = 'community-' .. item.requestId
+    if ARGV[1] == 'approved' then
+      local duplicateId = redis.call('HGET', KEYS[3], ARGV[4])
+      if duplicateId and duplicateId ~= publishedId then return -1 end
+      redis.call('HSET', KEYS[2], publishedId, ARGV[3])
+      redis.call('HSET', KEYS[3], ARGV[4], publishedId)
+      redis.call('PERSIST', KEYS[1])
+      redis.call('ZADD', KEYS[4], ARGV[2], KEYS[1])
+    else
+      local publicationRaw = redis.call('HGET', KEYS[2], publishedId)
+      if publicationRaw then
+        local publication = cjson.decode(publicationRaw)
+        if redis.call('HGET', KEYS[3], publication.dedupeKey) == publishedId then
+          redis.call('HDEL', KEYS[3], publication.dedupeKey)
+        end
+        redis.call('HDEL', KEYS[2], publishedId)
+      end
+    end
     item.status = ARGV[1]
     item.reviewedAt = tonumber(ARGV[2])
     redis.call('SET', KEYS[1], cjson.encode(item), 'KEEPTTL')
+    if ARGV[1] ~= 'approved' and redis.call('TTL', KEYS[1]) < 0 then
+      redis.call('EXPIRE', KEYS[1], ARGV[5])
+    end
     return 1
   `,
-    1,
-    `${PREFIX}${requestId.toLowerCase()}`,
+    4,
+    key,
+    PUBLISHED,
+    PUBLISHED_DEDUPE,
+    INDEX,
     status,
     Date.now(),
+    publication ? JSON.stringify(publication) : "",
+    publication?.dedupeKey || "",
+    RETENTION_SECONDS,
   ]);
+  if (result === -1)
+    fail("이미 승인된 같은 이름과 주소의 추천식당이 있습니다.", 409);
   if (result !== 1)
     fail("제보를 찾을 수 없습니다. 목록을 새로고침해 주세요.", 404);
+  return publication;
+}
+
+async function listPublishedSuggestions() {
+  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return [];
+  const values = await redis(["HVALS", PUBLISHED]);
+  if (!Array.isArray(values)) fail("추천식당 목록을 확인하지 못했습니다.", 503);
+  return values.flatMap((value) => {
+    try {
+      const publication = JSON.parse(value);
+      return publication?.restaurant && publication?.sourceLink ? [publication] : [];
+    } catch {
+      return [];
+    }
+  });
 }
 
 module.exports = {
@@ -224,4 +383,6 @@ module.exports = {
   saveSuggestion,
   listSuggestions,
   updateSuggestion,
+  listPublishedSuggestions,
+  buildPublication,
 };

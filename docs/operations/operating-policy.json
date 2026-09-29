@@ -1,7 +1,15 @@
 {
-  "effectiveDate": "2026-09-27",
+  "effectiveDate": "2026-09-29",
+  "experiment": {
+    "name": "international-growth-14-day",
+    "startDate": "2026-09-29",
+    "endDate": "2026-10-12",
+    "hypothesis": "Traveler-intent restaurant comparisons may earn more useful attention than generic how-to or logo-heavy cards; low views are not yet proven to have this cause.",
+    "evidenceLimit": "Fresh account and too few published comparison days; treat results as directional association, not causation."
+  },
   "timezone": "Asia/Seoul",
-  "publishTime": "11:00",
+  "workStart": "11:00",
+  "publishMode": "immediate-as-ready",
   "dailyPerChannel": {
     "ko": 2,
     "en": 2
@@ -13,19 +21,87 @@
     "pinterest": "nasa1769 / 맛픽 Matpick | Korea Food Guide only",
     "threads": "matpick.co.kr"
   },
-  "maxDaysAhead": 2,
-  "requireHashtags": true,
-  "naverHashtagLanguage": {
-    "ko": "Korean only; #맛픽",
-    "en": "English only; #Matpick"
+  "noNewSchedules": true,
+  "maxDaysAhead": 0,
+  "constraints": {
+    "newChannels": false,
+    "directMessages": false,
+    "unsolicitedComments": false,
+    "paidAds": false,
+    "excludedChannels": [
+      "daangn_business"
+    ]
   },
-  "publicCompetitorNames": "omit; retain evidence internally; never remove legally required attribution to reuse material",
-  "englishPositioningRequired": true,
-  "newChannels": "Kakao public posts, Pinterest dedicated board and Threads ready; Daangn blocked pending original activity proof. Verify native limits at each submission.",
+  "contentDirection": {
+    "deprioritize": [
+      "generic how-to",
+      "logo-heavy cards",
+      "repeated service introductions"
+    ],
+    "prioritize": "verified restaurant-specific traveler intent: neighborhood or station + food + budget",
+    "instagram": "original saveable 3-5 slide comparisons",
+    "pinterest": "search-first evergreen pins with relevant title/description keywords, mobile visual, and deeplink when supported",
+    "threads": "native concise useful question or decision criterion; do not duplicate an ad",
+    "naver": "query-specific title and opening using neighborhood or station + food + use case or budget",
+    "englishImages": "English-only image text; add a helpful food gloss and only verified facts"
+  },
+  "attribution": {
+    "perPostUtmWhenLinkSupported": true,
+    "utmCampaign": "international_20260929_14d",
+    "utmFields": [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content"
+    ],
+    "instagramCaptionClickableLinkClaim": false,
+    "valueFormat": "lowercase ASCII letters, digits, underscore, hyphen; max 80 characters",
+    "allowedSources": [
+      "instagram",
+      "threads",
+      "pinterest",
+      "naver",
+      "kakao"
+    ],
+    "contentIdFormat": "YYYYMMDD_en-or-ko_region_food_format"
+  },
+  "metrics": {
+    "windows": [
+      "24h",
+      "7d"
+    ],
+    "fields": [
+      "impressions",
+      "reach",
+      "saves",
+      "profile_visits",
+      "link_clicks",
+      "site_visits"
+    ],
+    "unavailableValue": null,
+    "comparison": "matched channel, language, format, and topic cohorts; do not infer causation or fabricate zeros"
+  },
+  "references": {
+    "pinterest": "https://create.pinterest.com/fundamentals/",
+    "threadsRecommendationsAndInsights": "https://about.fb.com/news/2025/03/new-threads-features-more-personalized-experience-you-control/",
+    "threadsConversations": "https://about.fb.com/news/2024/10/find-your-community-with-new-threads-educational-insights/"
+  },
   "routing": {
     "repetitive": "code",
     "drafts": "gpt-5.6-luna",
     "translationAndVerification": "gpt-5.6-sol",
     "images": "imagegen"
-  }
+  },
+  "excludedChannels": [
+    "daangn_business"
+  ],
+  "requireHashtags": true,
+  "naverHashtagLanguage": {
+    "en": "English only; #Matpick",
+    "ko": "Korean only; #맛픽"
+  },
+  "englishPositioningRequired": true,
+  "automationPrepTime": "11:00",
+  "publicCompetitorNames": "omit; retain evidence internally; preserve legally required attribution",
+  "publishTime": "as-ready-after-11:00"
 }

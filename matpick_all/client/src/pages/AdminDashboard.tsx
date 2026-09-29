@@ -79,6 +79,7 @@ type AnalyticsSummary = {
   topSearches: AnalyticsEntry[];
   topEvents: AnalyticsEntry[];
   topClicks: AnalyticsEntry[];
+  topCampaigns?: AnalyticsEntry[];
 };
 
 type MemberRecord = {
@@ -965,6 +966,14 @@ export default function AdminDashboard() {
             title="클릭 위치"
             description={`${formatAnalyticsScopeLabel(analyticsSummary.scope)} 기준 지도와 광고 클릭이 많이 발생한 위치입니다.`}
             entries={analyticsSummary.topClicks}
+          />
+        </div>
+
+        <div className="mt-6">
+          <MetricList
+            title="홍보 채널·콘텐츠별 유입"
+            description="분석 동의 후 UTM 링크로 시작한 세션 수입니다. 채널 / 매체 / 캠페인 / 글 ID 순서이며, SNS 조회수·클릭수나 전체 방문자 수와 다릅니다. 같은 세션의 재전송은 중복 집계하지 않습니다."
+            entries={analyticsSummary.topCampaigns || []}
           />
         </div>
 

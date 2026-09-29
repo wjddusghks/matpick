@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Check, LoaderCircle, MapPin, Search, X } from "lucide-react";
-import { searchAddresses, type AddressResult } from "@/lib/addressSearch";
+import {
+  hasAddressCoordinates,
+  searchAddresses,
+  type AddressResult,
+} from "@/lib/addressSearch";
 import { useLocale } from "@/contexts/LocaleContext";
 export default function SuggestionAddressSearch({
   value,
@@ -12,7 +16,7 @@ export default function SuggestionAddressSearch({
   value: string;
   detail: string;
   error?: string;
-  onChange: (address: string) => void;
+  onChange: (address: string, point?: { lat: number; lng: number }) => void;
   onDetailChange: (detail: string) => void;
 }) {
   const { isEnglish } = useLocale();
@@ -57,8 +61,11 @@ export default function SuggestionAddressSearch({
       if (request.current === current) setLoading(false);
     }
   }
-  function select(address: string) {
-    onChange(address);
+  function select(address: string, result: AddressResult) {
+    onChange(address, hasAddressCoordinates(result) ? {
+      lat: result.lat,
+      lng: result.lng,
+    } : undefined);
     setSelected(address);
     cancelSearch();
     requestAnimationFrame(() => detailInput.current?.focus());
@@ -164,7 +171,7 @@ export default function SuggestionAddressSearch({
                       {result.roadAddress && (
                         <button
                           type="button"
-                          onClick={() => select(result.roadAddress)}
+                          onClick={() => select(result.roadAddress, result)}
                         >
                           <span>{isEnglish ? "Road address" : "도로명"}</span>
                           <strong>{result.roadAddress}</strong>
@@ -174,7 +181,7 @@ export default function SuggestionAddressSearch({
                       {result.jibunAddress && (
                         <button
                           type="button"
-                          onClick={() => select(result.jibunAddress)}
+                          onClick={() => select(result.jibunAddress, result)}
                         >
                           <span>{isEnglish ? "Lot address" : "지번"}</span>
                           <strong>{result.jibunAddress}</strong>

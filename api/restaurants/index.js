@@ -7,6 +7,7 @@ const {
 } = require("../_requestGuards");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { queryCatalog } = require("./_catalog");
+const { listPublishedSuggestions } = require("./_suggestionStore");
 
 async function enforceCatalogLimits(req, res) {
   const ip = getClientIp(req);
@@ -54,8 +55,8 @@ module.exports = async function handler(req, res) {
     res.setHeader("Cross-Origin-Resource-Policy", "same-origin");
     if (!enforceBrowserRequest(req, res)) return;
     if (!(await enforceCatalogLimits(req, res))) return;
-    const { edits } = await readEdits();
-    const result = queryCatalog(req.query || {}, edits);
+    const [{ edits }, publications] = await Promise.all([readEdits(), listPublishedSuggestions()]);
+    const result = queryCatalog(req.query || {}, edits, publications);
     return res.status(result.status).json(result.body);
   } catch {
     return res

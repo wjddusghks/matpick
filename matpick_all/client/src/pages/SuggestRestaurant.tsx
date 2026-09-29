@@ -394,7 +394,21 @@ export default function SuggestRestaurant() {
                       value={draft.location}
                       detail={draft.locationDetail || ""}
                       error={errors.location}
-                      onChange={value => update("location", value)}
+                      onChange={(value, point) => {
+                        setDraft(current => ({
+                          ...current,
+                          location: value,
+                          ...(point
+                            ? { lat: point.lat, lng: point.lng }
+                            : { lat: undefined, lng: undefined }),
+                        }));
+                        setErrors(current => {
+                          const next = { ...current };
+                          delete next.location;
+                          return next;
+                        });
+                        setSendError("");
+                      }}
                       onDetailChange={value => update("locationDetail", value)}
                     />
                     <div className="suggest-field">

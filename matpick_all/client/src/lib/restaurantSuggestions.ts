@@ -12,6 +12,8 @@ export type SuggestionDraft = {
   name: string;
   location: string;
   locationDetail?: string;
+  lat?: number;
+  lng?: number;
   mapUrl: string;
   menus: SuggestedMenu[];
   checkedAt: string;
@@ -30,7 +32,7 @@ export type SuggestionItem = Omit<SuggestionDraft, "menus"> & {
   menus: { name: string; price: number | null; unit: string }[];
   id: string;
   createdAt: number;
-  status: "pending" | "reviewed" | "archived";
+  status: "pending" | "approved" | "rejected" | "reviewed" | "archived";
 };
 export const SUGGESTIONS_API = "/api/restaurants?scope=suggestions";
 export const SUGGESTION_DRAFT_KEY = "matpick:suggestion-draft:v1";
@@ -83,6 +85,14 @@ export function readSuggestionDraft(): {
     if (
       draft.locationDetail != null &&
       typeof draft.locationDetail !== "string"
+    )
+      return fallback;
+    if (
+      (draft.lat != null || draft.lng != null) &&
+      (!Number.isFinite(draft.lat) ||
+        !Number.isFinite(draft.lng) ||
+        draft.lat === 0 ||
+        draft.lng === 0)
     )
       return fallback;
     if (

@@ -257,12 +257,12 @@ test("admin inbox paginates and preserves empty menu/tag arrays after Lua update
       [50, 99]
     );
   }, true));
-test("moderation preserves original expiry and a missing record cannot be updated", async () =>
+test("moderation rejects missing records before publication", async () =>
   sandbox(async () => {
     globalThis.fetch = async (_url, options) => {
       const command = JSON.parse(options.body);
-      assert.match(command[1], /KEEPTTL/);
-      return { ok: true, json: async () => ({ result: 0 }) };
+      assert.equal(command[0], "GET");
+      return { ok: true, json: async () => ({ result: null }) };
     };
     await assert.rejects(updateSuggestion(randomUUID(), "reviewed"), {
       status: 404,

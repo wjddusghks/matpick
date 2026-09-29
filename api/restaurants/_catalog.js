@@ -1,9 +1,16 @@
 const dataset = require("../../matpick_all/client/src/data/generated/public-dataset.json");
 const discoveryTopics = require("../../matpick_all/client/src/data/discovery-topics.json");
+const {
+  matchFields,
+  normalizeSearchText,
+  searchRestaurants,
+} = require("./_search");
 
 const MAX_PAGE_SIZE = 24;
 const MAX_RESULT_OFFSET = dataset.restaurants.length;
-const sourceById = new Map((dataset.sources || []).map((source) => [source.id, source]));
+const communitySource = { id: "community-picks", name: "추천식당", type: "other", provider: "맛픽", description: "사용자가 제보하고 운영자가 승인한 식당 · Community Picks", imageUrl: "/source-covers/community-picks.svg" };
+const allSources = [...(dataset.sources || []), communitySource];
+const sourceById = new Map(allSources.map((source) => [source.id, source]));
 const publicCreators = Array.from(new Map([
   ...(dataset.sources || [])
     .filter((source) => source.creatorId)
@@ -186,8 +193,8 @@ function encodeCursor(offset) {
   return Buffer.from(String(offset), "utf8").toString("base64url");
 }
 
-function queryCatalog(query, edits = []) {
-  const restaurants = applyEdits(dataset.restaurants, edits).filter(isAvailable);
+function queryCatalog(query, edits = [], publications = []) {
+  const restaurants = applyEdits([...dataset.restaurants, ...publications.map(p => p.restaurant)], edits).filter(isAvailable);
   const restaurantsById = new Map(restaurants.map((restaurant) => [restaurant.id, restaurant]));
   const linkOverrides = new Map(
     edits
@@ -199,6 +206,7 @@ function queryCatalog(query, edits = []) {
       (link) => !linkOverrides.has(link.restaurantId),
     ),
     ...Array.from(linkOverrides.values()).flat(),
+    ...publications.filter(p => !linkOverrides.has(p.restaurant.id)).map(p => p.sourceLink),
   ];
   const currentLinksByRestaurant = new Map();
   const currentRestaurantIdsBySource = new Map();
@@ -218,7 +226,7 @@ function queryCatalog(query, edits = []) {
       availableRestaurantIdsBySource.set(link.sourceId, ids);
     }
   }
-  const publicSources = (dataset.sources || []).map((source) => ({
+  const publicSources = allSources.map((source) => ({
     ...source,
     restaurantCount: availableRestaurantIdsBySource.get(source.id)?.size || 0,
   }));
@@ -259,6 +267,8 @@ function queryCatalog(query, edits = []) {
   const value = String(query.value || "").trim();
   let results = [];
   let topicEpisodeGroups = [];
+  let searchSuggestions = [];
+  let searchDetailsById = new Map();
 
   if (type === "ids") {
     const ids = String(query.ids || "").split(",").map((id) => id.trim()).filter(Boolean);
@@ -267,25 +277,78 @@ function queryCatalog(query, edits = []) {
     }
     results = ids.map((id) => restaurantsById.get(resolveId(id, restaurantsById))).filter(Boolean);
   } else if (type === "search") {
-    const q = normalize(query.q);
-    if (!q || q.length > 80 || (q.length === 1 && /^[a-z0-9]$/i.test(q))) {
+    const rawQuery = String(query.q || "").trim();
+    const q = normalizeSearchText(rawQuery);
+    if (!q || q.length > 80 || (/^[a-z0-9]+$/i.test(q) && q.length < 3)) {
       return { status: 400, body: { error: "Enter a specific search term" } };
     }
-    const englishAliases = {
-      seoul: "서울", busan: "부산", daegu: "대구", incheon: "인천",
-      gwangju: "광주", daejeon: "대전", ulsan: "울산", sejong: "세종",
-      gyeonggi: "경기", gangwon: "강원", chungbuk: "충북", chungnam: "충남",
-      jeonbuk: "전북", jeonnam: "전남", gyeongbuk: "경북", gyeongnam: "경남",
-      jeju: "제주",
-    };
-    const needles = [q, englishAliases[q]].filter(Boolean);
-    results = restaurants.filter((restaurant) => {
-      const links = currentLinksByRestaurant.get(restaurant.id) || [];
-      const sources = links.map((link) => sourceById.get(link.sourceId)?.name || "");
-      return [restaurant.name, restaurant.address, restaurant.region, restaurant.category,
-        restaurant.representativeMenu, ...(restaurant.menus || []).map((menu) => menu.name), ...sources]
-        .some((field) => needles.some((needle) => normalize(field).includes(needle)));
+    const rankedMatches = searchRestaurants(rawQuery, restaurants, (restaurantId) => {
+      const links = currentLinksByRestaurant.get(restaurantId) || [];
+      return links.map((link) => sourceById.get(link.sourceId)).filter(Boolean);
     });
+    results = rankedMatches.map((match) => match.restaurant);
+    searchDetailsById = new Map(rankedMatches.map((match) => [match.restaurant.id, match]));
+
+    const countAndRank = (values, type, weight) => {
+      const counts = new Map();
+      for (const value of values.filter(Boolean)) counts.set(value, (counts.get(value) || 0) + 1);
+      return Array.from(counts, ([name, restaurantCount]) => ({
+        name,
+        restaurantCount,
+        match: matchFields(rawQuery, [{ type, value: name, weight }]),
+      })).filter((entry) => entry.match)
+        .sort((left, right) => right.match.score - left.match.score || right.restaurantCount - left.restaurantCount);
+    };
+    const regionMatches = countAndRank(restaurants.map((restaurant) => restaurant.region), "location", 78)
+      .slice(0, 3).map((entry) => ({
+        id: `region:${normalizeSearchText(entry.name)}`,
+        type: "region",
+        name: entry.name,
+        parentRegion: broadRegion(entry.name),
+        restaurantCount: entry.restaurantCount,
+      }));
+    const foodMatches = countAndRank(restaurants.map((restaurant) => restaurant.category), "category", 84)
+      .slice(0, 3).map((entry) => ({
+        id: `food:${normalizeSearchText(entry.name)}`,
+        type: "food",
+        name: entry.name,
+        restaurantCount: entry.restaurantCount,
+      }));
+    const sourceMatches = publicSources.map((source) => ({
+      source,
+      match: matchFields(rawQuery, [
+        { type: "source", value: source.name, weight: 70 },
+        { type: "source", value: source.description, weight: 58 },
+        { type: "source", value: source.provider, weight: 52 },
+        { type: "source", value: source.type, weight: 48 },
+      ]),
+    })).filter((entry) => entry.match && entry.source.restaurantCount > 0)
+      .sort((left, right) => right.match.score - left.match.score || right.source.restaurantCount - left.source.restaurantCount)
+      .slice(0, 3).map(({ source }) => ({
+        id: source.id,
+        type: "source",
+        name: source.name,
+        image: source.imageUrl,
+        restaurantCount: source.restaurantCount,
+        sourceTypeLabel: source.type,
+      }));
+    const restaurantMatches = rankedMatches.slice(0, 14).map((match) => ({
+      id: match.restaurant.id,
+      type: "restaurant",
+      name: match.restaurant.name,
+      category: match.restaurant.category,
+      address: match.restaurant.address,
+      matchLabel: match.matchLabel,
+      matchedText: match.matchedText,
+    }));
+    searchSuggestions = [{
+      id: `query:${q}`,
+      type: "query",
+      name: rawQuery,
+      restaurantCount: rankedMatches.length,
+      matchLabel: "통합 검색",
+      matchedText: `식당명·메뉴·지역·출처에서 ${rankedMatches.length.toLocaleString()}곳`,
+    }, ...regionMatches, ...foodMatches, ...sourceMatches, ...restaurantMatches].slice(0, 24);
   } else if (type === "source") {
     if (!sourceById.has(value)) return { status: 404, body: { error: "Source not found" } };
     const ids = currentRestaurantIdsBySource.get(value) || new Set();
@@ -359,7 +422,7 @@ function queryCatalog(query, edits = []) {
 
   if (type === "nearby") {
     results.sort((left, right) => left.distanceKm - right.distanceKm);
-  } else if (!["featured", "ids"].includes(type)) {
+  } else if (!["featured", "ids", "search"].includes(type)) {
     results.sort((left, right) =>
       String(left.name || "").localeCompare(String(right.name || ""), "ko-KR"));
   }
@@ -372,8 +435,13 @@ function queryCatalog(query, edits = []) {
     body: {
       restaurants: page.map((restaurant) => ({
         ...toSummary(restaurant, currentLinksByRestaurant),
+        ...(searchDetailsById.has(restaurant.id) ? {
+          matchLabel: searchDetailsById.get(restaurant.id).matchLabel,
+          matchedText: searchDetailsById.get(restaurant.id).matchedText,
+        } : {}),
         ...(Number.isFinite(restaurant.distanceKm) ? { distanceKm: restaurant.distanceKm } : {}),
       })),
+      ...(type === "search" ? { suggestions: searchSuggestions } : {}),
       nextCursor: hasMore ? encodeCursor(nextOffset) : null,
       hasMore,
       totalCount: results.length,

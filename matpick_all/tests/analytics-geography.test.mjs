@@ -128,6 +128,34 @@ test("pre-existing visitors remain explicitly unclassified", async () => {
   }
 });
 
+test("page summaries strip and merge sensitive legacy query strings", async () => {
+  const store = globalThis.__MATPICK_ANALYTICS_STORE__;
+  const all = store.get("all");
+  const run = `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  const pathname = `/auth/callback/test-${run}`;
+  const first = `${pathname}?code=secret-one&state=private-one`;
+  const second = `${pathname}?code=secret-two&state=private-two`;
+  all.paths.set(first, 700_000);
+  all.paths.set(second, 800_000);
+
+  try {
+    const summary = await readAnalyticsSummary({ scope: "all" });
+    assert.deepEqual(summary.topPages[0], {
+      label: pathname,
+      count: 1_500_000,
+    });
+    assert.ok(
+      summary.topPages.every(
+        entry =>
+          !entry.label.includes("code=") && !entry.label.includes("state=")
+      )
+    );
+  } finally {
+    all.paths.delete(first);
+    all.paths.delete(second);
+  }
+});
+
 test("Redis assigns visitor geography atomically and reads coverage", async () => {
   const oldFetch = globalThis.fetch;
   const previousUrl = process.env.KV_REST_API_URL;
@@ -151,6 +179,13 @@ test("Redis assigns visitor geography atomically and reads coverage", async () =
       result = ["domestic", "2", "foreign", "1", "unknown", "1"];
     } else if (command[0] === "HGETALL" && command[1].endsWith(":countries")) {
       result = ["KR", "2", "US", "1"];
+    } else if (command[0] === "HGETALL" && command[1].endsWith(":paths")) {
+      result = [
+        "/auth/callback/kakao?code=first&state=one",
+        "2",
+        "/auth/callback/kakao?code=second&state=two",
+        "3",
+      ];
     } else if (command[0] === "HGETALL") {
       result = [];
     }
@@ -190,6 +225,9 @@ test("Redis assigns visitor geography atomically and reads coverage", async () =
     assert.deepEqual(summary.topCountries, [
       { label: "KR", count: 2 },
       { label: "US", count: 1 },
+    ]);
+    assert.deepEqual(summary.topPages, [
+      { label: "/auth/callback/kakao", count: 5 },
     ]);
   } finally {
     globalThis.fetch = oldFetch;

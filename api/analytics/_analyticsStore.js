@@ -121,12 +121,12 @@ function sanitizeText(value, fallback = "", maxLength = 160) {
 }
 
 function sanitizePath(value) {
-  const path = sanitizeText(value, "/", 220);
+  const path = sanitizeText(value, "/", 2000).split(/[?#]/, 1)[0];
   if (!path.startsWith("/")) {
     return "/";
   }
 
-  return path;
+  return path.slice(0, 220) || "/";
 }
 
 function sanitizeEventName(value) {
@@ -272,6 +272,18 @@ function entriesFromHash(hash, limit = 8) {
         right.count - left.count || left.label.localeCompare(right.label),
     )
     .slice(0, limit);
+}
+
+function entriesFromPathHash(hash, limit = 8) {
+  const merged = new Map();
+  for (const [label, value] of Object.entries(hashToObject(hash))) {
+    const count = Number(value) || 0;
+    if (count > 0) {
+      incrementMap(merged, sanitizePath(label), count);
+    }
+  }
+
+  return entriesFromHash(Object.fromEntries(merged.entries()), limit);
 }
 
 async function expireDayKeys(keys) {
@@ -527,7 +539,7 @@ async function readFallbackSummary(options) {
         store.visitors.size - geographyTracked,
       ),
     },
-    topPages: entriesFromHash(Object.fromEntries(store.paths.entries())),
+    topPages: entriesFromPathHash(Object.fromEntries(store.paths.entries())),
     topSearches: entriesFromHash(Object.fromEntries(store.searches.entries())),
     topEvents: entriesFromHash(Object.fromEntries(store.events.entries())),
     topClicks: entriesFromHash(Object.fromEntries(store.clicks.entries())),
@@ -609,7 +621,7 @@ async function readKvSummary(options) {
       unknown: numberFromHash(geographyHash, "unknown"),
       historicalUnclassified: Math.max(0, visitorCount - geographyTracked),
     },
-    topPages: entriesFromHash(pathsPayload?.result),
+    topPages: entriesFromPathHash(pathsPayload?.result),
     topSearches: entriesFromHash(searchesPayload?.result),
     topEvents: entriesFromHash(eventsPayload?.result),
     topClicks: entriesFromHash(clicksPayload?.result),

@@ -664,6 +664,13 @@ export default function AdminDashboard() {
   >("idle");
   const analyticsCounts = analyticsSummary.counts;
   const memberCounts = memberDashboard.summary;
+  const uncategorizedAdEvents = Math.max(
+    0,
+    analyticsCounts.adImpressions -
+      analyticsCounts.adsenseImpressions -
+      analyticsCounts.adfitImpressions -
+      analyticsCounts.coupangImpressions
+  );
 
   useEffect(() => {
     if (!isLoggedIn || !user || !isAdmin) return;
@@ -998,9 +1005,9 @@ export default function AdminDashboard() {
               unavailable={analyticsStatus === "error"}
             />
             <StatCard
-              label="광고 노출"
+              label="광고 슬롯 이벤트"
               value={analyticsCounts.adImpressions}
-              description="애드핏과 쿠팡 슬롯 렌더링 합산"
+              description="광고 코드 요청·표시를 사이트에서 기록한 합계"
               icon={<Megaphone className="h-5 w-5" />}
               loading={
                 analyticsStatus === "loading" || analyticsStatus === "idle"
@@ -1008,29 +1015,9 @@ export default function AdminDashboard() {
               unavailable={analyticsStatus === "error"}
             />
             <StatCard
-              label="애드핏 노출"
-              value={analyticsCounts.adfitImpressions}
-              description={`애드핏 클릭 ${formatNumber(analyticsCounts.adfitClicks)}회`}
-              icon={<Megaphone className="h-5 w-5" />}
-              loading={
-                analyticsStatus === "loading" || analyticsStatus === "idle"
-              }
-              unavailable={analyticsStatus === "error"}
-            />
-            <StatCard
-              label="쿠팡 노출"
-              value={analyticsCounts.coupangImpressions}
-              description={`쿠팡 클릭 ${formatNumber(analyticsCounts.coupangClicks)}회`}
-              icon={<Megaphone className="h-5 w-5" />}
-              loading={
-                analyticsStatus === "loading" || analyticsStatus === "idle"
-              }
-              unavailable={analyticsStatus === "error"}
-            />
-            <StatCard
-              label="광고 클릭"
+              label="광고 클릭 이벤트"
               value={analyticsCounts.adClicks}
-              description="추적 가능한 제휴 링크 클릭 합산"
+              description="사이트에서 감지할 수 있는 광고·제휴 클릭 합계"
               icon={<MousePointerClick className="h-5 w-5" />}
               loading={
                 analyticsStatus === "loading" || analyticsStatus === "idle"
@@ -1308,17 +1295,28 @@ export default function AdminDashboard() {
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h2 className="text-lg font-black text-[#171717]">
-                광고 수익 연동 상태
+                광고 이벤트 · 수익 연동 상태
               </h2>
               <p className="mt-2 max-w-[760px] break-keep text-sm leading-6 text-[#6d6265]">
-                애드핏과 쿠팡의 실제 수익 금액은 아직 자동 API 연동 전입니다.
-                지금은 노출과 클릭을 먼저 모아두고, 수익 데이터는 추후 API 또는
-                수동 입력 방식으로 붙일 수 있게 운영 지표 자리를 마련했습니다.
+                아래 수치는 사이트 코드가 기록한 슬롯 요청·표시와 클릭
+                이벤트입니다. 광고 사업자가 확정한 유효 노출, 클릭, 청구 또는
+                수익 보고서와 같지 않습니다. 실제 수익 금액은 아직 자동 API 연동
+                전입니다.
               </p>
             </div>
             <div className="grid min-w-[240px] gap-2 text-sm">
               <div className="flex justify-between gap-4 rounded-[8px] bg-[#fff8f9] px-4 py-3">
-                <span className="font-bold text-[#6d6265]">애드핏 노출</span>
+                <span className="font-bold text-[#6d6265]">
+                  애드센스 슬롯 요청
+                </span>
+                <span className="font-black text-[#171717]">
+                  {formatNumber(analyticsCounts.adsenseImpressions)}
+                </span>
+              </div>
+              <div className="flex justify-between gap-4 rounded-[8px] bg-[#fff8f9] px-4 py-3">
+                <span className="font-bold text-[#6d6265]">
+                  애드핏 슬롯 요청
+                </span>
                 <span className="font-black text-[#171717]">
                   {formatNumber(analyticsCounts.adfitImpressions)}
                 </span>
@@ -1330,7 +1328,9 @@ export default function AdminDashboard() {
                 </span>
               </div>
               <div className="flex justify-between gap-4 rounded-[8px] bg-[#fff8f9] px-4 py-3">
-                <span className="font-bold text-[#6d6265]">쿠팡 노출</span>
+                <span className="font-bold text-[#6d6265]">
+                  쿠팡 표시 이벤트
+                </span>
                 <span className="font-black text-[#171717]">
                   {formatNumber(analyticsCounts.coupangImpressions)}
                 </span>
@@ -1341,6 +1341,16 @@ export default function AdminDashboard() {
                   {formatNumber(analyticsCounts.coupangClicks)}
                 </span>
               </div>
+              {uncategorizedAdEvents > 0 ? (
+                <div className="flex justify-between gap-4 rounded-[8px] bg-[#f7f4f5] px-4 py-3">
+                  <span className="font-bold text-[#6d6265]">
+                    기타·이전 슬롯 이벤트
+                  </span>
+                  <span className="font-black text-[#171717]">
+                    {formatNumber(uncategorizedAdEvents)}
+                  </span>
+                </div>
+              ) : null}
             </div>
           </div>
         </section>

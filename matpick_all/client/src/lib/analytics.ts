@@ -41,7 +41,11 @@ function readStorage(storage: Storage | undefined, key: string) {
   }
 }
 
-function writeStorage(storage: Storage | undefined, key: string, value: string) {
+function writeStorage(
+  storage: Storage | undefined,
+  key: string,
+  value: string
+) {
   try {
     storage?.setItem(key, value);
   } catch {
@@ -93,12 +97,19 @@ export function markAnalyticsSessionStarted() {
   return true;
 }
 
+export function sanitizeClientAnalyticsPath(path: string) {
+  const pathname = path.split(/[?#]/, 1)[0];
+  return pathname.startsWith("/auth/callback/") ? pathname : path;
+}
+
 export function getCurrentAnalyticsPath() {
   if (typeof window === "undefined") {
     return "/";
   }
 
-  return `${window.location.pathname}${window.location.search}`;
+  return sanitizeClientAnalyticsPath(
+    `${window.location.pathname}${window.location.search}`
+  );
 }
 
 export function trackAnalyticsEvent(
@@ -117,7 +128,7 @@ export function trackAnalyticsEvent(
   const payload = {
     ...input,
     type,
-    path: input.path || getCurrentAnalyticsPath(),
+    path: sanitizeClientAnalyticsPath(input.path || getCurrentAnalyticsPath()),
     visitorId: getAnalyticsVisitorId(),
     sessionId: getAnalyticsSessionId(),
   };

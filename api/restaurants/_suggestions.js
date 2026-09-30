@@ -65,6 +65,8 @@ function createSuggestionHandler(store = suggestionStore) {
           body?.requestId,
           body?.status,
           auth.userId,
+          body?.draft || null,
+          body?.action !== "save",
         );
         return res.status(200).json({
           ok: true,

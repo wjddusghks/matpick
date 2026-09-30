@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import {
   ArrowUpRight,
@@ -13,16 +13,21 @@ import {
   MapPin,
   MessageSquareHeart,
   RefreshCw,
+  Save,
   Search,
   Utensils,
   X,
 } from "lucide-react";
+import AdminAddressLookup from "./AdminAddressLookup";
+import RestaurantLocationMap from "@/components/RestaurantLocationMap";
+import type { Restaurant } from "@/data/types";
 import type { SuggestionItem } from "@/lib/restaurantSuggestions";
 import {
   suggestionStatuses as statuses,
   useSuggestionInbox,
 } from "@/lib/useSuggestionInbox";
 import "./suggestion-inbox.css";
+import "./restaurant-manager.css";
 
 const relationships = {
   visitor: "직접 방문",
@@ -41,8 +46,10 @@ type InboxProps = {
   reload: () => void;
   update: (
     item: SuggestionItem,
-    status: SuggestionItem["status"]
+    status: SuggestionItem["status"],
+    draft?: Partial<SuggestionItem>
   ) => Promise<void>;
+  saveDraft: (item: SuggestionItem, draft: Partial<SuggestionItem>) => Promise<void>;
 };
 const date = (value: number) =>
   new Date(value).toLocaleDateString("ko-KR", {
@@ -63,6 +70,7 @@ export function SuggestionInboxPanel({
   setPage,
   reload,
   update,
+  saveDraft,
 }: InboxProps) {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
@@ -72,6 +80,7 @@ export function SuggestionInboxPanel({
   const [mobileDetail, setMobileDetail] = useState(
     () => new URLSearchParams(window.location.search).has("id")
   );
+  const [draft, setDraft] = useState<SuggestionItem | null>(null);
   const counts = Object.fromEntries(
     Object.keys(statuses).map(key => [
       key,
@@ -88,6 +97,11 @@ export function SuggestionInboxPanel({
         .includes(term)
   );
   const selected = visible.find(item => item.id === selectedId) || visible[0];
+  useEffect(() => {
+    setDraft(selected ? structuredClone(selected) : null);
+  }, [selected?.id, selected?.editedAt, selected?.status]);
+  const patchDraft = (patch: Partial<SuggestionItem>, resetsLocation = false) =>
+    setDraft(current => current ? { ...current, ...patch, ...(resetsLocation ? { locationVerified: false } : {}) } : current);
   const setStatusFilter = (value: string) => {
     setFilter(value);
     setMobileDetail(false);
@@ -394,6 +408,35 @@ export function SuggestionInboxPanel({
                 </div>
               </header>
               <div className="si-detail-body">
+                {draft && (
+                  <section className="si-editor" aria-label="공개 정보 편집">
+                    <div className="si-section-title"><h3>공개 정보 편집</h3><span>저장 후 승인</span></div>
+                    <label>식당명<input value={draft.name} maxLength={100} onChange={e => patchDraft({ name: e.target.value })} /></label>
+                    <label>주소<input value={draft.location} maxLength={300} onChange={e => patchDraft({ location: e.target.value }, true)} /></label>
+                    <label>상세주소<input value={draft.locationDetail || ""} maxLength={100} onChange={e => patchDraft({ locationDetail: e.target.value }, true)} /></label>
+                    <AdminAddressLookup address={draft.location} disabled={!!saving} onSelect={result => patchDraft({ location: result.roadAddress || result.jibunAddress, lat: result.lat, lng: result.lng, locationVerified: false })} />
+                    <div className="si-coordinate-grid">
+                      <label>위도<input type="number" step="any" value={draft.lat ?? ""} onChange={e => patchDraft({ lat: e.target.value === "" ? null : Number(e.target.value) }, true)} /></label>
+                      <label>경도<input type="number" step="any" value={draft.lng ?? ""} onChange={e => patchDraft({ lng: e.target.value === "" ? null : Number(e.target.value) }, true)} /></label>
+                    </div>
+                    <a className="si-map-preview" target="_blank" rel="noopener noreferrer" href={`https://map.naver.com/p/search/${encodeURIComponent(`${draft.lat ?? ""},${draft.lng ?? ""}`)}`}>좌표를 지도에서 미리 확인 <ExternalLink size={13} /></a>
+                    {Number.isFinite(draft.lat) && Number.isFinite(draft.lng) && (
+                      <RestaurantLocationMap english={false} restaurant={{ id: `suggestion-${draft.requestId}`, name: draft.name || "제보 식당", lat: draft.lat, lng: draft.lng } as Restaurant} />
+                    )}
+                    <label className="si-verify"><input type="checkbox" checked={draft.locationVerified === true} disabled={!Number.isFinite(draft.lat) || !Number.isFinite(draft.lng)} onChange={e => patchDraft({ locationVerified: e.target.checked })} /> 주소와 지도 핀 위치를 확인했습니다</label>
+                    <label>대표 이미지 URL<input type="url" value={draft.imageUrl || ""} placeholder="https://… (선택)" onChange={e => patchDraft({ imageUrl: e.target.value })} /></label>
+                    <div className="si-editor-menus">
+                      {draft.menus.map((menu, index) => <div key={index}>
+                        <input aria-label={`메뉴 ${index + 1} 이름`} value={menu.name} placeholder="메뉴명" onChange={e => patchDraft({ menus: draft.menus.map((m, i) => i === index ? { ...m, name: e.target.value } : m) })} />
+                        <input aria-label={`메뉴 ${index + 1} 가격`} type="number" min="0" max="10000000" value={menu.price ?? ""} placeholder="가격" onChange={e => patchDraft({ menus: draft.menus.map((m, i) => i === index ? { ...m, price: e.target.value === "" ? null : Number(e.target.value) } : m) })} />
+                        <input aria-label={`메뉴 ${index + 1} 단위`} value={menu.unit || ""} placeholder="1인분/소" onChange={e => patchDraft({ menus: draft.menus.map((m, i) => i === index ? { ...m, unit: e.target.value } : m) })} />
+                        <button type="button" onClick={() => patchDraft({ menus: draft.menus.filter((_, i) => i !== index) })}>삭제</button>
+                      </div>)}
+                      {draft.menus.length < 8 && <button type="button" className="si-button" onClick={() => patchDraft({ menus: [...draft.menus, { name: "", price: null, unit: "" }] })}>메뉴 추가</button>}
+                    </div>
+                    <button className="si-button si-button-primary" disabled={!!saving || !draft.name.trim() || !draft.location.trim()} onClick={() => void saveDraft(selected, draft)}><Save size={15} /> 초안 저장</button>
+                  </section>
+                )}
                 <section className="si-menu-section">
                   <div className="si-section-title">
                     <h3>
@@ -488,18 +531,18 @@ export function SuggestionInboxPanel({
                     className="si-button si-button-primary"
                     disabled={
                       !!saving ||
-                      selected.status === "approved" ||
-                      !Number.isFinite(selected.lat) ||
-                      !Number.isFinite(selected.lng)
+                      !draft?.locationVerified ||
+                      !Number.isFinite(draft?.lat) ||
+                      !Number.isFinite(draft?.lng)
                     }
-                    onClick={() => void update(selected, "approved")}
+                    onClick={() => void update(selected, "approved", draft || undefined)}
                   >
                     {saving === selected.id ? (
                       <LoaderCircle className="si-spin" size={15} />
                     ) : (
                       <Check size={16} />
                     )}
-                    지도에 승인
+                    {selected.status === "approved" ? "공개 정보 업데이트" : "지도에 승인"}
                   </button>
                 </div>
               </footer>

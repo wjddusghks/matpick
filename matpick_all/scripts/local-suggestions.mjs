@@ -79,21 +79,26 @@ export function createLocalSuggestionStore(file) {
         pageSize: 50,
       }));
     },
-    updateSuggestion(requestId, status) {
+    updateSuggestion(requestId, status, actor = "local-admin", draft = null, publish = true) {
       return transaction(items => {
         if (!["pending", "approved", "rejected", "reviewed", "archived"].includes(status))
           fail("처리 상태를 확인해 주세요.", 400);
         const item = items.find(row => row.requestId === requestId);
         if (!item) fail("제보를 찾을 수 없습니다.", 404);
-        if (status === "approved") {
-          const publication = require(storeModule).buildPublication(item, "local-admin");
+        const edited = draft
+          ? require(storeModule).validateAdminDraft(draft, item)
+          : item;
+        Object.assign(item, edited);
+        if (status === "approved" && publish) {
+          const publication = require(storeModule).buildPublication(item, actor);
           const duplicate = items
             .filter(row => row.requestId !== requestId && row.status === "approved")
-            .map(row => require(storeModule).buildPublication(row, "local-admin"))
-            .some(row => row.dedupeKey === publication.dedupeKey);
+            .some(row => row.publication?.dedupeKey === publication.dedupeKey);
           if (duplicate)
             fail("이미 승인된 같은 이름과 주소의 추천식당이 있습니다.", 409);
+          item.publication = publication;
         }
+        if (status !== "approved") delete item.publication;
         item.status = status;
         item.reviewedAt = Date.now();
       });
@@ -101,8 +106,8 @@ export function createLocalSuggestionStore(file) {
     listPublishedSuggestions() {
       return transaction(items =>
         items
-          .filter(item => item.status === "approved")
-          .map(item => require(storeModule).buildPublication(item, "local-admin"))
+          .filter(item => item.status === "approved" && item.publication)
+          .map(item => item.publication)
       );
     },
   };

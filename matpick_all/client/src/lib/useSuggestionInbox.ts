@@ -56,7 +56,9 @@ export function useSuggestionInbox() {
   }, [allowed, user, page, revision]);
   async function update(
     item: SuggestionItem,
-    status: SuggestionItem["status"]
+    status: SuggestionItem["status"],
+    draft?: Partial<SuggestionItem>,
+    action?: "save"
   ) {
     if (!allowed || !user || saving) return;
     setSaving(item.id);
@@ -70,7 +72,7 @@ export function useSuggestionInbox() {
           "x-matpick-admin-key": getAdminRegistrationKey(user),
           "x-matpick-admin-token": user.syncToken || "",
         },
-        body: JSON.stringify({ requestId: item.requestId, status }),
+        body: JSON.stringify({ requestId: item.requestId, status, draft, action }),
         signal: AbortSignal.timeout(20000),
       });
       const body = await response.json().catch(() => null);
@@ -78,10 +80,14 @@ export function useSuggestionInbox() {
         throw new Error(body?.error || "상태를 변경하지 못했습니다.");
       setItems(current =>
         current.map(entry =>
-          entry.id === item.id ? { ...entry, status } : entry
+          entry.id === item.id ? { ...entry, ...draft, status } : entry
         )
       );
-      setNotice(`${item.name}: ${suggestionStatuses[status]}로 변경했습니다.`);
+      setNotice(
+        action === "save"
+          ? `${draft?.name || item.name}: 편집 초안을 저장했습니다.`
+          : `${draft?.name || item.name}: ${suggestionStatuses[status]}로 변경했습니다.`
+      );
     } catch (reason) {
       setError(
         reason instanceof Error ? reason.message : "저장에 실패했습니다."
@@ -90,6 +96,8 @@ export function useSuggestionInbox() {
       setSaving("");
     }
   }
+  const saveDraft = (item: SuggestionItem, draft: Partial<SuggestionItem>) =>
+    update(item, item.status, draft, "save");
   return {
     items,
     page,
@@ -100,6 +108,7 @@ export function useSuggestionInbox() {
     notice,
     setPage,
     update,
+    saveDraft,
     reload: () => setRevision(value => value + 1),
   };
 }

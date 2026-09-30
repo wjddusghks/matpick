@@ -3,7 +3,7 @@ import { createServer } from "vite";
 import { createRequire } from "node:module";
 import { randomUUID } from "node:crypto";
 const require = createRequire(import.meta.url);
-const handler = require("../../api/restaurants/_suggestions.js");
+const handler = require("../../api/restaurants/index.js");
 const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
 const {
   validateSuggestion,
@@ -11,6 +11,7 @@ const {
 } = require("../../api/restaurants/_suggestionStore.js");
 const stored = new Map();
 const counts = new Map();
+const hashes = new Map();
 process.env.KV_REST_API_URL = "https://suggestion-preview.invalid";
 process.env.KV_REST_API_TOKEN = "local-preview-only";
 process.env.ADMIN_USER_IDS = "naver:local-suggestion-preview";
@@ -35,17 +36,23 @@ globalThis.fetch = async (url, options) => {
       .slice(Number(command[2]), Number(command[3]) + 1);
   else if (command[0] === "MGET")
     result = command.slice(1).map(key => stored.get(key) || null);
+  else if (command[0] === "GET") result = stored.get(command[1]) || null;
+  else if (command[0] === "HVALS")
+    result = [...(hashes.get(command[1])?.values() || [])];
   else if (command[0] === "EVAL" && command[2] === 2) {
     if (!stored.has(command[3])) stored.set(command[3], command[5]);
     result = stored.get(command[3]);
-  } else if (command[0] === "EVAL" && command[2] === 1) {
+  } else if (command[0] === "EVAL" && command[2] === 4) {
     const raw = stored.get(command[3]);
     if (!raw) result = 0;
     else {
-      stored.set(
-        command[3],
-        JSON.stringify({ ...JSON.parse(raw), status: command[4] })
-      );
+      const status = command[7];
+      stored.set(command[3], JSON.stringify({ ...JSON.parse(command[12]), status }));
+      const publications = hashes.get(command[4]) || new Map();
+      hashes.set(command[4], publications);
+      const publishedId = `community-${JSON.parse(raw).requestId}`;
+      if (status === "approved" && command[13] === "publish") publications.set(publishedId, command[9]);
+      else if (status !== "approved") publications.delete(publishedId);
       result = 1;
     }
   } else throw new Error("Unimplemented preview command");
@@ -89,9 +96,9 @@ const server = await createServer({
         if (
           (source === "@/contexts/AuthContext" ||
             source.replaceAll("\\", "/").endsWith("/contexts/AuthContext")) &&
-          importer
-            ?.replaceAll("\\", "/")
-            .endsWith("/pages/AdminSuggestions.tsx")
+          ["/pages/AdminSuggestions.tsx", "/lib/useSuggestionInbox.ts"].some(suffix =>
+            importer?.replaceAll("\\", "/").endsWith(suffix)
+          )
         )
           return "\0suggestion-preview-auth";
       },
@@ -110,10 +117,7 @@ const server = await createServer({
           if (!req.url?.startsWith("/api/")) return next();
           const url = new URL(req.url, "http://127.0.0.1:5186");
           res.setHeader("Content-Type", "application/json; charset=utf-8");
-          if (
-            url.pathname !== "/api/restaurants" ||
-            url.searchParams.get("scope") !== "suggestions"
-          ) {
+          if (url.pathname !== "/api/restaurants") {
             res.end(
               JSON.stringify({ ok: true, edits: [], reviews: [], comments: [] })
             );

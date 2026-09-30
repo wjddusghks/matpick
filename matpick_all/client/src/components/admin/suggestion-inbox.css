@@ -617,6 +617,19 @@
   margin-top: 22px;
   overflow-wrap: anywhere;
 }
+
+.si-editor { display:grid; gap:12px; padding:20px; border:1px solid #eadde1; border-radius:16px; background:#fffafb; }
+.si-editor > label { display:grid; gap:6px; color:#5f5660; font-size:12px; font-weight:700; }
+.si-editor input { width:100%; border:1px solid #ded9dc; border-radius:9px; padding:10px 12px; background:white; color:#282328; font:inherit; }
+.si-coordinate-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.si-coordinate-grid label { display:grid; gap:6px; font-size:12px; font-weight:700; }
+.si-map-preview { display:inline-flex; align-items:center; gap:5px; color:#a83250; font-size:12px; font-weight:700; }
+.si-editor .si-verify { display:flex; grid-template-columns:none; flex-direction:row; align-items:center; padding:10px; border-radius:9px; background:#fff0f3; }
+.si-editor .si-verify input { width:16px; }
+.si-editor-menus { display:grid; gap:7px; }
+.si-editor-menus > div { display:grid; grid-template-columns:minmax(0,1fr) 110px 100px auto; gap:7px; }
+.si-editor-menus > div button { border:0; background:transparent; color:#9d3850; }
+@media (max-width: 640px) { .si-coordinate-grid { grid-template-columns:1fr; } .si-editor-menus > div { grid-template-columns:1fr 90px 80px auto; } }
 .si-review-actions {
   padding: 18px 28px;
   border-top: 1px solid #ede5f2;

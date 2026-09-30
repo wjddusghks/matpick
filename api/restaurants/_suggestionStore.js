@@ -118,6 +118,45 @@ function validateSuggestion(input) {
   };
 }
 
+function validateAdminDraft(input, existing) {
+  if (!input || typeof input !== "object" || Array.isArray(input))
+    fail("편집 내용을 확인해 주세요.");
+  const candidate = {
+    ...existing,
+    ...input,
+    requestId: existing.requestId,
+    consent: true,
+    menus: (Array.isArray(input.menus) ? input.menus : existing.menus || [])
+      .map((menu) => ({
+          ...menu,
+          price: menu?.price == null ? "" : String(menu.price),
+        })),
+  };
+  const clean = validateSuggestion(candidate);
+  const imageUrl = text(input.imageUrl ?? existing.imageUrl, "대표 이미지 URL", 1500);
+  if (imageUrl) {
+    try {
+      const url = new URL(imageUrl);
+      if (!["https:", "http:"].includes(url.protocol) || url.username || url.password)
+        throw new Error();
+    } catch {
+      fail("대표 이미지 URL은 http:// 또는 https:// 주소로 입력해 주세요.");
+    }
+  }
+  return {
+    ...existing,
+    ...clean,
+    locationDetail: clean.locationDetail || "",
+    lat: clean.lat ?? null,
+    lng: clean.lng ?? null,
+    imageUrl,
+    locationVerified:
+      input.locationVerified === true &&
+      Number.isFinite(clean.lat) && Number.isFinite(clean.lng),
+    editedAt: Date.now(),
+  };
+}
+
 function normalizeIdentity(value) {
   return String(value || "")
     .normalize("NFKC")
@@ -152,12 +191,13 @@ function distanceKm(left, right) {
 
 function buildPublication(item, actor = "") {
   if (
+    item.locationVerified !== true ||
     !Number.isFinite(item.lat) ||
     !Number.isFinite(item.lng) ||
     item.lat === 0 ||
     item.lng === 0
   )
-    fail("주소 검색으로 좌표가 확인된 제보만 승인할 수 있습니다.", 409);
+    fail("주소와 좌표를 확인 완료한 제보만 승인할 수 있습니다.", 409);
   const normalizedName = normalizeIdentity(item.name);
   const normalizedAddress = normalizeIdentity(item.location);
   const duplicate = dataset.restaurants.find((restaurant) =>
@@ -192,7 +232,7 @@ function buildPublication(item, actor = "") {
       representativeMenu: menus[0]?.name || "",
       lat: item.lat,
       lng: item.lng,
-      imageUrl: "",
+      imageUrl: item.imageUrl || "",
       menus,
       operationState: "unknown",
       operationStatus: "사용자 제보 · 운영자 위치 확인",
@@ -299,7 +339,7 @@ async function listSuggestions(page = 0) {
   };
 }
 
-async function updateSuggestion(requestId, status, actor = "") {
+async function updateSuggestion(requestId, status, actor = "", draft = null, publish = true) {
   if (
     typeof requestId !== "string" ||
     !/^[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}$/i.test(requestId) ||
@@ -311,7 +351,8 @@ async function updateSuggestion(requestId, status, actor = "") {
   if (typeof existingRaw !== "string")
     fail("제보를 찾을 수 없습니다. 목록을 새로고침해 주세요.", 404);
   const existing = JSON.parse(existingRaw);
-  const publication = status === "approved" ? buildPublication(existing, actor) : null;
+  const edited = draft ? validateAdminDraft(draft, existing) : existing;
+  const publication = status === "approved" && publish ? buildPublication(edited, actor) : null;
   const result = await redis([
     "EVAL",
     `
@@ -319,14 +360,21 @@ async function updateSuggestion(requestId, status, actor = "") {
     if not raw then return 0 end
     local item = cjson.decode(raw)
     local publishedId = 'community-' .. item.requestId
-    if ARGV[1] == 'approved' then
+    if ARGV[1] == 'approved' and ARGV[7] == 'publish' then
       local duplicateId = redis.call('HGET', KEYS[3], ARGV[4])
       if duplicateId and duplicateId ~= publishedId then return -1 end
+      local oldPublicationRaw = redis.call('HGET', KEYS[2], publishedId)
+      if oldPublicationRaw then
+        local oldPublication = cjson.decode(oldPublicationRaw)
+        if oldPublication.dedupeKey ~= ARGV[4] and redis.call('HGET', KEYS[3], oldPublication.dedupeKey) == publishedId then
+          redis.call('HDEL', KEYS[3], oldPublication.dedupeKey)
+        end
+      end
       redis.call('HSET', KEYS[2], publishedId, ARGV[3])
       redis.call('HSET', KEYS[3], ARGV[4], publishedId)
       redis.call('PERSIST', KEYS[1])
       redis.call('ZADD', KEYS[4], ARGV[2], KEYS[1])
-    else
+    elseif ARGV[1] ~= 'approved' then
       local publicationRaw = redis.call('HGET', KEYS[2], publishedId)
       if publicationRaw then
         local publication = cjson.decode(publicationRaw)
@@ -336,6 +384,7 @@ async function updateSuggestion(requestId, status, actor = "") {
         redis.call('HDEL', KEYS[2], publishedId)
       end
     end
+    item = cjson.decode(ARGV[6])
     item.status = ARGV[1]
     item.reviewedAt = tonumber(ARGV[2])
     redis.call('SET', KEYS[1], cjson.encode(item), 'KEEPTTL')
@@ -354,6 +403,8 @@ async function updateSuggestion(requestId, status, actor = "") {
     publication ? JSON.stringify(publication) : "",
     publication?.dedupeKey || "",
     RETENTION_SECONDS,
+    JSON.stringify(edited),
+    publish ? "publish" : "save",
   ]);
   if (result === -1)
     fail("이미 승인된 같은 이름과 주소의 추천식당이 있습니다.", 409);
@@ -385,4 +436,5 @@ module.exports = {
   updateSuggestion,
   listPublishedSuggestions,
   buildPublication,
+  validateAdminDraft,
 };

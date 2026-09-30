@@ -9,6 +9,7 @@ const {
   saveSuggestion,
   listSuggestions,
   updateSuggestion,
+  validateAdminDraft,
 } = require("../../api/restaurants/_suggestionStore.js");
 const handler = require("../../api/restaurants/index.js");
 const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
@@ -85,6 +86,20 @@ test("only restaurant identity and consent are required; unknown prices stay unk
     0
   );
   assert.equal(result.name, input.name);
+});
+test("administrator drafts sanitize editable fields and reset unverified locations", () => {
+  const existing = { ...validateSuggestion(base()), id: "one", status: "pending" };
+  const draft = validateAdminDraft({
+    name: "  수정 국밥  ", location: "서울 중구 세종대로 110",
+    lat: 37.5665, lng: 126.978, locationVerified: true,
+    imageUrl: "https://images.example.test/store.jpg",
+    menus: [{ name: "국밥", price: 12000, unit: "1인분" }],
+  }, existing);
+  assert.equal(draft.name, "수정 국밥");
+  assert.equal(draft.locationVerified, true);
+  assert.equal(draft.menus[0].price, 12000);
+  assert.throws(() => validateAdminDraft({ ...draft, imageUrl: "javascript:alert(1)" }, existing), { status: 400 });
+  assert.equal(validateAdminDraft({ ...draft, lat: null, lng: null }, existing).locationVerified, false);
 });
 test("invalid identity, consent, links, price, date and spam fail server validation", () => {
   for (const patch of [

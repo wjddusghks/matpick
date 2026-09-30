@@ -57,6 +57,7 @@ const normalizedGroups = searchAliases.groups.map((group) =>
 const groupsByAlias = new Map();
 normalizedGroups.forEach((group) => group.forEach((alias) => groupsByAlias.set(alias, group)));
 const stopWords = new Set(searchAliases.stopWords.map(normalizeSearchText));
+const SEARCH_DOCUMENT_CACHE = new WeakMap();
 
 function getSearchVariants(value) {
   const normalized = normalizeSearchText(value);
@@ -125,34 +126,65 @@ function fuzzyContains(value, needle) {
   return false;
 }
 
-function matchSearchField(value, variants, allowFuzzy = true) {
-  const normalized = normalizeSearchText(value);
+function prepareSearchField(field) {
+  return {
+    ...field,
+    normalized: normalizeSearchText(field.value),
+    romanized: null,
+    initials: null,
+  };
+}
+
+function matchPreparedSearchField(field, variants, allowFuzzy = true) {
+  const { normalized } = field;
   if (!normalized) return null;
-  const romanized = romanizeSearchText(value);
-  const initials = getHangulInitials(value);
   let best = null;
+
+  // Bilingual aliases normally contain the Korean equivalent. Direct forms
+  // are much cheaper than romanizing every unrelated catalog field.
   for (const variant of variants) {
     let candidate = null;
     if (normalized === variant) candidate = { score: 32, kind: "exact" };
     else if (normalized.startsWith(variant)) candidate = { score: 24, kind: "prefix" };
     else if (normalized.includes(variant)) candidate = { score: 18, kind: "contains" };
-    else if (/^[a-z0-9]{3,}$/.test(variant) && romanized.includes(variant)) candidate = { score: 15, kind: "romanized" };
-    else if (/^[ㄱ-ㅎ]{2,}$/.test(variant) && initials.includes(variant)) candidate = { score: 13, kind: "initials" };
-    else if (allowFuzzy && fuzzyContains(normalized, variant)) candidate = { score: 7, kind: "typo" };
     if (candidate && (!best || candidate.score > best.score)) best = candidate;
+  }
+  if (best) return best;
+
+  const latinVariants = variants.filter((variant) => /^[a-z0-9]{3,}$/.test(variant));
+  if (latinVariants.length) {
+    field.romanized ??= romanizeSearchText(field.value);
+    if (latinVariants.some((variant) => field.romanized.includes(variant))) {
+      return { score: 15, kind: "romanized" };
+    }
+  }
+
+  const initialVariants = variants.filter((variant) => /^[ㄱ-ㅎ]{2,}$/.test(variant));
+  if (initialVariants.length) {
+    field.initials ??= getHangulInitials(field.value);
+    if (initialVariants.some((variant) => field.initials.includes(variant))) {
+      return { score: 13, kind: "initials" };
+    }
+  }
+
+  if (allowFuzzy && variants.some((variant) => fuzzyContains(normalized, variant))) {
+    return { score: 7, kind: "typo" };
   }
   return best;
 }
 
-function matchFields(query, fields, allowFuzzy = true) {
-  const terms = getSearchTerms(query);
+function matchSearchField(value, variants, allowFuzzy = true) {
+  return matchPreparedSearchField(prepareSearchField({ value }), variants, allowFuzzy);
+}
+
+function matchPreparedFields(terms, fields, allowFuzzy = true) {
   if (!terms.length) return null;
   const matches = [];
   let score = 0;
   for (const variants of terms) {
     let best = null;
     for (const field of fields) {
-      const match = matchSearchField(field.value, variants, allowFuzzy);
+      const match = matchPreparedSearchField(field, variants, allowFuzzy);
       if (!match) continue;
       const weighted = field.weight + match.score;
       if (!best || weighted > best.score) best = { ...field, ...match, score: weighted };
@@ -164,27 +196,47 @@ function matchFields(query, fields, allowFuzzy = true) {
   return { score, matches };
 }
 
+function matchFields(query, fields, allowFuzzy = true) {
+  return matchPreparedFields(
+    getSearchTerms(query),
+    fields.map(prepareSearchField),
+    allowFuzzy,
+  );
+}
+
+function getSearchDocument(restaurant, getSources) {
+  const sources = getSources(restaurant.id);
+  const sourceSignature = sources
+    .map((source) => source.id || [source.name, source.type, source.provider].join(":"))
+    .join("\u0001");
+  const cached = SEARCH_DOCUMENT_CACHE.get(restaurant);
+  if (cached?.sourceSignature === sourceSignature) return cached.fields;
+
+  const menus = Array.from(new Set([
+    restaurant.representativeMenu,
+    ...(restaurant.menus || []).map((menu) => menu.name),
+  ].map((value) => String(value || "").trim()).filter(Boolean)));
+  const fields = [
+    { type: "name", value: restaurant.name, weight: 120 },
+    ...menus.map((value) => ({ type: "menu", value, weight: 98 })),
+    { type: "category", value: restaurant.category, weight: 84 },
+    { type: "location", value: restaurant.region, weight: 78 },
+    { type: "location", value: restaurant.address, weight: 74 },
+    ...sources.flatMap((source) => [
+      { type: "source", value: source.name, weight: 62 },
+      { type: "source", value: source.description, weight: 50 },
+      { type: "source", value: source.provider, weight: 46 },
+      { type: "source", value: source.type, weight: 42 },
+    ]),
+  ].map(prepareSearchField);
+  SEARCH_DOCUMENT_CACHE.set(restaurant, { sourceSignature, fields });
+  return fields;
+}
+
 function searchRestaurants(query, restaurants, getSources, allowFuzzy = false) {
+  const terms = getSearchTerms(query);
   const results = restaurants.map((restaurant) => {
-    const menus = Array.from(new Set([
-      restaurant.representativeMenu,
-      ...(restaurant.menus || []).map((menu) => menu.name),
-    ].map((value) => String(value || "").trim()).filter(Boolean)));
-    const sources = getSources(restaurant.id);
-    const fields = [
-      { type: "name", value: restaurant.name, weight: 120 },
-      ...menus.map((value) => ({ type: "menu", value, weight: 98 })),
-      { type: "category", value: restaurant.category, weight: 84 },
-      { type: "location", value: restaurant.region, weight: 78 },
-      { type: "location", value: restaurant.address, weight: 74 },
-      ...sources.flatMap((source) => [
-        { type: "source", value: source.name, weight: 62 },
-        { type: "source", value: source.description, weight: 50 },
-        { type: "source", value: source.provider, weight: 46 },
-        { type: "source", value: source.type, weight: 42 },
-      ]),
-    ];
-    const result = matchFields(query, fields, allowFuzzy);
+    const result = matchPreparedFields(terms, getSearchDocument(restaurant, getSources), allowFuzzy);
     if (!result) return null;
     const matchedMenus = result.matches.filter((match) => match.type === "menu")
       .map((match) => match.value).filter(Boolean).slice(0, 3);
@@ -211,8 +263,10 @@ module.exports = {
   getSearchTerms,
   getSearchVariants,
   matchFields,
+  matchPreparedFields,
   matchSearchField,
   normalizeSearchText,
+  prepareSearchField,
   romanizeSearchText,
   searchRestaurants,
 };

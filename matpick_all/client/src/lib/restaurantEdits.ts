@@ -4,6 +4,8 @@ export type RestaurantEdit = {
   restaurantId: string;
   revision: number;
   updatedAt: string;
+  createRequestId?: string;
+  createdAt?: string;
   deletedAt?: string | null;
   changes: Partial<Restaurant>;
 };
@@ -34,7 +36,11 @@ export function applyRestaurantEdits(
   options: { includeDeleted?: boolean } = {}
 ): Restaurant[] {
   const byId = new Map(edits.map(edit => [edit.restaurantId, edit]));
-  return base
+  const baseIds = new Set(base.map(restaurant => restaurant.id));
+  const created = edits
+    .filter(edit => edit.createdAt && !baseIds.has(edit.restaurantId))
+    .map(edit => ({ id: edit.restaurantId, ...edit.changes }) as Restaurant);
+  return [...base, ...created]
     .filter(
       restaurant =>
         options.includeDeleted || !byId.get(restaurant.id)?.deletedAt

@@ -80,6 +80,7 @@ import {
 } from "@/lib/adminRestaurantEditor";
 import "./restaurant-manager.css";
 import AdminAddressLookup from "./AdminAddressLookup";
+import CreateRestaurantDialog from "./CreateRestaurantDialog";
 import type { AddressResult } from "@/lib/addressSearch";
 
 const states = {
@@ -124,6 +125,10 @@ type Props = {
   loadError?: string;
   onRetry: () => void;
   onSave: (input: SaveRestaurantInput) => Promise<RestaurantEdit>;
+  onCreate: (
+    changes: Record<string, unknown>,
+    registration: { requestId: string; locationValidated: true }
+  ) => Promise<RestaurantEdit>;
   onSaved?: (view: ManagerView) => void;
   initialView?: ManagerView;
   saved?: boolean;
@@ -210,6 +215,7 @@ export default function RestaurantManager({
   loadError,
   onRetry,
   onSave,
+  onCreate,
   onSaved,
   initialView = {},
   saved = false,
@@ -247,6 +253,7 @@ export default function RestaurantManager({
   const [error, setError] = useState("");
   const [issue, setIssue] = useState<DraftIssue | null>(null);
   const [pasteOpen, setPasteOpen] = useState(false);
+  const [createOpen, setCreateOpen] = useState(false);
   const [pasteText, setPasteText] = useState("");
   const [focusField, setFocusField] = useState("");
   const [pending, setPending] = useState<{
@@ -428,7 +435,11 @@ export default function RestaurantManager({
   }, [initialEdits]);
   useEffect(() => {
     if (!ready || !selected) return;
-    const next = toDraft(selected, getMenus(selected), getSourceLinks(selected.id));
+    const next = toDraft(
+      selected,
+      getMenus(selected),
+      getSourceLinks(selected.id)
+    );
     setDraft(next);
     setInitial(next);
     setChecked([]);
@@ -683,6 +694,28 @@ export default function RestaurantManager({
     if (action?.kind === "restore") void save("restore");
   }
 
+  async function createRestaurant(
+    changes: Record<string, unknown>,
+    registration: { requestId: string; locationValidated: true }
+  ) {
+    const created = await onCreate(changes, registration);
+    const view: ManagerView = {
+      selectedId: created.restaurantId,
+      sourceId: "",
+      episodeKey: "",
+      viewMode: "restaurants",
+      filter: "all",
+      page: 1,
+      tab: "menus",
+    };
+    allowUnload.current = true;
+    if (onSaved) onSaved(view);
+    else
+      window.location.assign(
+        `/admin/restaurants?restaurantId=${encodeURIComponent(created.restaurantId)}&saved=1`
+      );
+  }
+
   return (
     <main className={`am ${mobileEditor ? "am-show-editor" : ""}`}>
       <nav className="am-rail" aria-label="관리자 탐색">
@@ -769,6 +802,19 @@ export default function RestaurantManager({
               <i />
               {!ready ? "연결 중" : configured ? "저장소 연결됨" : "조회 전용"}
             </span>
+            <button
+              type="button"
+              className="am-btn am-btn-primary"
+              disabled={!ready || !configured || saving || dirty}
+              title={
+                dirty
+                  ? "변경사항을 먼저 저장하거나 취소해 주세요."
+                  : "새 식당 등록"
+              }
+              onClick={() => setCreateOpen(true)}
+            >
+              <Plus size={15} /> 새 식당 등록
+            </button>
             <a
               className="am-btn am-btn-white"
               href="/"
@@ -1818,8 +1864,8 @@ export default function RestaurantManager({
                                   <span>{draft.sourceLinks.length}</span>
                                 </h3>
                                 <p>
-                                  식당이 소개된 프로그램과 회차를 사용자 상세 화면에
-                                  연결합니다.
+                                  식당이 소개된 프로그램과 회차를 사용자 상세
+                                  화면에 연결합니다.
                                 </p>
                               </div>
                               <button
@@ -1845,7 +1891,10 @@ export default function RestaurantManager({
                               </button>
                             </div>
                             {draft.sourceLinks.map((link, index) => (
-                              <div className="am-source-card am-broadcast-card" key={link.id || index}>
+                              <div
+                                className="am-source-card am-broadcast-card"
+                                key={link.id || index}
+                              >
                                 <div className="am-source-number">
                                   <Tv size={15} />
                                 </div>
@@ -1855,21 +1904,32 @@ export default function RestaurantManager({
                                     <select
                                       data-editor-field={`broadcast-source-${index}`}
                                       value={link.sourceId}
-                                      aria-invalid={issue?.field === `broadcast-source-${index}`}
+                                      aria-invalid={
+                                        issue?.field ===
+                                        `broadcast-source-${index}`
+                                      }
                                       onChange={event =>
                                         update(
                                           "sourceLinks",
-                                          draft.sourceLinks.map((item, itemIndex) =>
-                                            itemIndex === index
-                                              ? { ...item, sourceId: event.target.value }
-                                              : item
+                                          draft.sourceLinks.map(
+                                            (item, itemIndex) =>
+                                              itemIndex === index
+                                                ? {
+                                                    ...item,
+                                                    sourceId:
+                                                      event.target.value,
+                                                  }
+                                                : item
                                           )
                                         )
                                       }
                                     >
                                       <option value="">선택해 주세요</option>
                                       {sources.map(source => (
-                                        <option key={source.id} value={source.id}>
+                                        <option
+                                          key={source.id}
+                                          value={source.id}
+                                        >
                                           {source.name}
                                         </option>
                                       ))}
@@ -1882,10 +1942,11 @@ export default function RestaurantManager({
                                     onChange={value =>
                                       update(
                                         "sourceLinks",
-                                        draft.sourceLinks.map((item, itemIndex) =>
-                                          itemIndex === index
-                                            ? { ...item, label: value }
-                                            : item
+                                        draft.sourceLinks.map(
+                                          (item, itemIndex) =>
+                                            itemIndex === index
+                                              ? { ...item, label: value }
+                                              : item
                                         )
                                       )
                                     }
@@ -1898,10 +1959,11 @@ export default function RestaurantManager({
                                     onChange={value =>
                                       update(
                                         "sourceLinks",
-                                        draft.sourceLinks.map((item, itemIndex) =>
-                                          itemIndex === index
-                                            ? { ...item, sourceUrl: value }
-                                            : item
+                                        draft.sourceLinks.map(
+                                          (item, itemIndex) =>
+                                            itemIndex === index
+                                              ? { ...item, sourceUrl: value }
+                                              : item
                                         )
                                       )
                                     }
@@ -1916,10 +1978,14 @@ export default function RestaurantManager({
                                     onChange={value =>
                                       update(
                                         "sourceLinks",
-                                        draft.sourceLinks.map((item, itemIndex) =>
-                                          itemIndex === index
-                                            ? { ...item, broadcastDate: value }
-                                            : item
+                                        draft.sourceLinks.map(
+                                          (item, itemIndex) =>
+                                            itemIndex === index
+                                              ? {
+                                                  ...item,
+                                                  broadcastDate: value,
+                                                }
+                                              : item
                                         )
                                       )
                                     }
@@ -1934,7 +2000,9 @@ export default function RestaurantManager({
                                   onClick={() =>
                                     update(
                                       "sourceLinks",
-                                      draft.sourceLinks.filter((_, itemIndex) => itemIndex !== index)
+                                      draft.sourceLinks.filter(
+                                        (_, itemIndex) => itemIndex !== index
+                                      )
                                     )
                                   }
                                 >
@@ -2160,6 +2228,13 @@ export default function RestaurantManager({
           </section>
         </div>
       </div>
+      <CreateRestaurantDialog
+        open={createOpen}
+        sources={sources}
+        onOpenChange={setCreateOpen}
+        onCreate={createRestaurant}
+        lookupAddress={lookupAddress}
+      />
       <Dialog open={pasteOpen} onOpenChange={setPasteOpen}>
         <DialogContent className="am-dialog">
           <DialogHeader>

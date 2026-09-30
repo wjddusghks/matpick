@@ -1,5 +1,8 @@
 const EDITS_KEY = "matpick:restaurant-edits:v1";
 const HISTORY_KEY = "matpick:restaurant-edits:history:v1";
+const CREATE_IDENTITY_KEY = "matpick:restaurant-create-identities:v1";
+const CREATE_REQUEST_PREFIX = "matpick:restaurant-create-request:v1:";
+const { randomUUID } = require("node:crypto");
 
 function fail(message, status = 400) {
   throw Object.assign(new Error(message), { status });
@@ -189,9 +192,7 @@ function validateChanges(input, restaurantId, validSourceIds = null) {
       const sourceId = text(link.sourceId, "방송·채널·가이드", 100, true);
       if (validSourceIds && !validSourceIds.has(sourceId))
         fail("등록된 방송·채널·가이드를 선택해 주세요.");
-      const sourceUrl = link.sourceUrl
-        ? url(link.sourceUrl)
-        : "";
+      const sourceUrl = link.sourceUrl ? url(link.sourceUrl) : "";
       const broadcastDate = text(link.broadcastDate ?? "", "방송일", 10);
       if (
         broadcastDate &&
@@ -209,11 +210,7 @@ function validateChanges(input, restaurantId, validSourceIds = null) {
       const ordinal = optionalInteger("ordinal", "출처 순서");
       const episodeNumber = optionalInteger("episodeNumber", "회차");
       const season = optionalInteger("season", "시즌");
-      const episodeSeries = text(
-        link.episodeSeries ?? "",
-        "방송 시리즈",
-        100,
-      );
+      const episodeSeries = text(link.episodeSeries ?? "", "방송 시리즈", 100);
       const episodePart = text(link.episodePart ?? "", "방송 부", 20);
       return {
         id: `admin:${restaurantId}:${index + 1}`,
@@ -232,6 +229,40 @@ function validateChanges(input, restaurantId, validSourceIds = null) {
     });
   }
   return result;
+}
+
+function validateNewRestaurant(
+  input,
+  restaurantId,
+  validSourceIds = null,
+  locationValidated = false,
+) {
+  const result = validateChanges(input, restaurantId, validSourceIds);
+  for (const key of [
+    "name",
+    "region",
+    "address",
+    "category",
+    "lat",
+    "lng",
+    "menus",
+    "sourceLinks",
+  ]) {
+    if (!(key in result)) fail("새 식당의 필수 정보를 모두 입력해 주세요.");
+  }
+  if (!result.sourceLinks.length)
+    fail("새 식당이 소개된 주제와 회차를 하나 이상 등록해 주세요.");
+  if (result.sourceLinks.some((link) => !link.label))
+    fail("새 식당의 회차·소개 문구를 입력해 주세요.");
+  if (!result.menus.length) fail("새 식당의 메뉴를 하나 이상 등록해 주세요.");
+  if (locationValidated !== true)
+    fail("주소 검색 결과와 지도에서 식당 위치를 확인해 주세요.");
+  return {
+    ...result,
+    imageUrl: "",
+    locationVerifiedAt: new Date().toISOString(),
+    locationSourceUrls: [],
+  };
 }
 
 async function readEdits() {
@@ -271,11 +302,18 @@ async function saveEdit({
     restaurantId,
     revision: expectedRevision + 1,
     updatedAt: now,
-    deletedAt: action === "delete" ? (previous?.deletedAt || now) : null,
-    changes: action === "reset" ? {} : {
-      ...previous?.changes,
-      ...(action === "save" ? changes : {}),
-    },
+    ...(previous?.createRequestId
+      ? { createRequestId: previous.createRequestId }
+      : {}),
+    ...(previous?.createdAt ? { createdAt: previous.createdAt } : {}),
+    deletedAt: action === "delete" ? previous?.deletedAt || now : null,
+    changes:
+      action === "reset"
+        ? {}
+        : {
+            ...previous?.changes,
+            ...(action === "save" ? changes : {}),
+          },
   };
   // Compare and write atomically; concurrent edits must never silently overwrite each other.
   const script = `
@@ -308,4 +346,73 @@ async function saveEdit({
   return edit;
 }
 
-module.exports = { readEdits, saveEdit, validateChanges };
+async function createRestaurant({ changes, actor, requestId, identity }) {
+  if (
+    typeof requestId !== "string" ||
+    !/^[a-zA-Z0-9_-]{16,100}$/.test(requestId)
+  )
+    fail("등록 요청 식별자를 확인해 주세요.");
+  if (typeof identity !== "string" || !identity || identity.length > 1000)
+    fail("식당 중복 확인 정보가 올바르지 않습니다.");
+  const restaurantId = `admin_${randomUUID().replace(/-/g, "")}`;
+  const now = new Date().toISOString();
+  const registeredChanges = {
+    ...changes,
+    menus: (changes.menus || []).map((menu, index) => ({
+      ...menu,
+      id: `${restaurantId}_admin_menu_${index + 1}`,
+    })),
+    sourceLinks: (changes.sourceLinks || []).map((link, index) => ({
+      ...link,
+      id: `admin:${restaurantId}:${index + 1}`,
+      restaurantId,
+    })),
+  };
+  const edit = {
+    restaurantId,
+    revision: 1,
+    createRequestId: requestId,
+    createdAt: now,
+    updatedAt: now,
+    deletedAt: null,
+    changes: registeredChanges,
+  };
+  const script = `
+    local previous = redis.call('GET', KEYS[4])
+    if previous then return previous end
+    if redis.call('HEXISTS', KEYS[3], ARGV[4]) == 1 then return '__duplicate__' end
+    if redis.call('HEXISTS', KEYS[1], ARGV[1]) == 1 then return '__collision__' end
+    redis.call('HSET', KEYS[1], ARGV[1], ARGV[2])
+    redis.call('HSET', KEYS[3], ARGV[4], ARGV[1])
+    redis.call('SET', KEYS[4], ARGV[2], 'EX', 86400)
+    redis.call('LPUSH', KEYS[2], cjson.encode({previous=false, next=ARGV[2], actor=ARGV[3], action='create'}))
+    redis.call('LTRIM', KEYS[2], 0, 499)
+    return ARGV[2]
+  `;
+  const result = await redis([
+    "EVAL",
+    script,
+    4,
+    EDITS_KEY,
+    HISTORY_KEY,
+    CREATE_IDENTITY_KEY,
+    `${CREATE_REQUEST_PREFIX}${requestId}`,
+    restaurantId,
+    JSON.stringify(edit),
+    actor,
+    identity,
+  ]);
+  if (result === "__duplicate__")
+    fail("같은 이름과 주소의 식당이 이미 등록되어 있습니다.", 409);
+  if (result === "__collision__")
+    fail("식당 식별자를 만들지 못했습니다. 다시 시도해 주세요.", 409);
+  return typeof result === "string" ? JSON.parse(result) : result;
+}
+
+module.exports = {
+  createRestaurant,
+  readEdits,
+  saveEdit,
+  validateChanges,
+  validateNewRestaurant,
+};

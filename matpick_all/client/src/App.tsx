@@ -16,6 +16,7 @@ import { FavoritesProvider } from "./contexts/FavoritesContext";
 import { LocaleProvider } from "./contexts/LocaleContext";
 import { useLocale } from "./contexts/LocaleContext";
 import CatalogScopeReload from "./components/CatalogScopeReload";
+import AdBlockGate from "./components/monetization/AdBlockGate";
 
 const Home = lazy(() => import("./pages/Home"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback"));
@@ -130,7 +131,9 @@ function App() {
                 <VisitorTracking />
                 <AuthOnboardingModal />
                 <PrivacyConsentBanner />
-                <Router />
+                <AdBlockGate>
+                  <Router />
+                </AdBlockGate>
               </TooltipProvider>
             </FavoritesProvider>
           </AuthProvider>

@@ -41,6 +41,7 @@ const koreanSections: PolicySection[] = [
       "식당 제보: 이용자가 입력한 식당 이름·위치·메뉴·가격·출처 링크·추천 이유·식당과의 관계·확인일 및 정보 활용 동의 기록. 식당 정보 확인과 편집·공개에 사용하며 제보 원문은 관리자만 열람합니다. 이름·이메일·개인 연락처나 회원 계정 정보는 제보 폼에서 요구하지 않습니다.",
       "선택 연령대: 카카오·네이버 로그인에서 동의 후 제공된 연령대 또는 생년 정보로 계산한 연령대(예: 20대)를 후기 참고 정보로 사용합니다. 생년월일 원문은 저장하지 않으며, 연령대·산정 기준·확인 시각만 로그인 정보에 보관합니다. 후기 작성 시 별도로 공개를 선택한 경우에만 해당 후기의 연령대와 공개 동의 시각을 저장하고 표시합니다. 제공자 연령대는 만 나이와 다를 수 있으며 별도의 나이 본인인증을 의미하지 않습니다.",
       "자동 생성 정보: IP 주소, 브라우저·기기 정보, 요청 시각, 페이지 경로, 검색어, 클릭·광고 상호작용, 무작위 방문자·세션 식별값. 보안, 오류 대응, 이용 통계와 성능 개선에 사용합니다.",
+      "방문 지역 통계: 분석에 동의한 신규 익명 방문자의 첫 이벤트에서 Vercel이 IP를 바탕으로 제공한 2자리 국가 코드만 저장해 국내·해외·국가 확인 불가로 집계합니다. 이 지역 집계를 위해 원본 IP 주소를 저장하지 않으며, 국가 코드가 없거나 유효하지 않으면 ‘확인 불가’로 분류합니다. 기능 도입 전에 누적된 방문자는 국가를 추정해 소급 분류하지 않습니다.",
       "위치 정보: 브라우저에서 이용자가 직접 권한을 허용한 경우의 현재 좌표. 주변 식당 정렬, 지도 표시와 경로 조회에 사용하며 회원 프로필에 좌표 자체를 저장하지 않습니다. 이동 시간 기능이 연결된 경우 현재 위치와 식당 좌표를 NAVER Maps(자동차)에 보내 경로를 조회합니다.",
       "브라우저 저장소: 로그인 상태, 즐겨찾기, 최근 이용 상태, 개인정보·쿠키 선택값. 선택한 기능 유지와 사용자 경험 제공에 사용합니다.",
     ],
@@ -114,7 +115,7 @@ const koreanSections: PolicySection[] = [
     title: "10. 아동, 변경 고지와 시행일",
     paragraphs: [
       "Matpick은 만 14세 미만 아동을 대상으로 회원 서비스를 제공하지 않습니다. 만 14세 미만 이용자의 정보가 법정대리인 동의 없이 수집된 사실을 확인하면 지체 없이 삭제합니다.",
-      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 9월 20일입니다. 선택 연령대 공개 기능을 추가했습니다.",
+      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 10월 1일입니다. 익명 방문 지역 집계 기준을 추가했습니다.",
     ],
   },
 ];
@@ -138,6 +139,7 @@ const englishSections: PolicySection[] = [
       "Restaurant suggestions: submitted restaurant details, menus, prices, source links, recommendation notes, relationship to the restaurant, check date and consent record, used to verify, edit and publish restaurant information. Original submissions are visible only to administrators. The form does not request your name, email, personal contact details or account information.",
       "Optional age group: a coarse range supplied by Kakao or NAVER, or calculated from birth information provided with consent. We retain only the group, its basis and check time, not the original birth date. The group and consent time are attached to a review only when the writer separately chooses to publish it. Provider ranges may differ from international age and are not independent identity verification.",
       "Usage and security: IP address, browser or device data, request time, paths, searches, clicks, ad interactions, and random visitor or session IDs for security and aggregated analytics.",
+      "Visitor geography: for the first event from a new pseudonymous visitor who has allowed analytics, we retain only the two-letter country code that Vercel derives from the request IP and aggregate it as domestic, foreign, or country unavailable. We do not retain the raw IP address for this geography metric. Missing or invalid codes remain unavailable, and visitors counted before this feature are not retroactively assigned a country.",
       "Location: coordinates after browser permission, used for nearby sorting, maps and route lookup without storing them in your member profile. When travel-time services are enabled, the current and restaurant coordinates are sent to NAVER Maps for driving routes.",
       "Browser storage: login state, favorites, recent state, and privacy choices needed to preserve requested features.",
     ],
@@ -183,7 +185,7 @@ const englishSections: PolicySection[] = [
     title: "7. Security, children, and effective date",
     paragraphs: [
       "We use HTTPS, origin checks, rate limits, allowlisted and signed-token admin access, security headers, limited logs, and same-origin image controls. No internet service can eliminate all risk.",
-      "Matpick does not target children under 14. This policy is effective September 20, 2026, with optional review age sharing added. Material changes will be announced on this page or in the service.",
+      "Matpick does not target children under 14. This policy is effective October 1, 2026, with the pseudonymous visitor-geography rules added. Material changes will be announced on this page or in the service.",
     ],
   },
 ];
@@ -206,7 +208,7 @@ export default function Privacy() {
       "@type": "WebPage",
       name: `Matpick ${title}`,
       url: buildAbsoluteUrl("/privacy"),
-      dateModified: "2026-09-20",
+      dateModified: "2026-10-01",
     },
   });
 

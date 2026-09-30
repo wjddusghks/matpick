@@ -8,8 +8,10 @@ if (!globalThis.__MATPICK_ANALYTICS_STORE__) {
 }
 
 function getKvConfig() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  const url =
+    process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
+  const token =
+    process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
 
   if (!url || !token) {
     return null;
@@ -56,6 +58,8 @@ function getDayKeys(day) {
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
     campaigns: `${keyPrefix}:campaigns`,
+    geography: `${keyPrefix}:geography`,
+    countries: `${keyPrefix}:countries`,
   };
 }
 
@@ -70,6 +74,8 @@ function getAllKeys() {
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
     campaigns: `${keyPrefix}:campaigns`,
+    geography: `${keyPrefix}:geography`,
+    countries: `${keyPrefix}:countries`,
   };
 }
 
@@ -82,7 +88,10 @@ function normalizeSummaryOptions(options) {
   }
 
   const scope = options?.scope === "all" ? "all" : "today";
-  const day = typeof options?.day === "string" && options.day.trim() ? options.day.trim() : getKoreaDay();
+  const day =
+    typeof options?.day === "string" && options.day.trim()
+      ? options.day.trim()
+      : getKoreaDay();
   return { day, scope };
 }
 
@@ -91,7 +100,11 @@ function getSummaryKeys(scope, day) {
 }
 
 function hashIdentity(value) {
-  return crypto.createHash("sha256").update(String(value)).digest("hex").slice(0, 32);
+  return crypto
+    .createHash("sha256")
+    .update(String(value))
+    .digest("hex")
+    .slice(0, 32);
 }
 
 function sanitizeText(value, fallback = "", maxLength = 160) {
@@ -138,7 +151,14 @@ function normalizeDuration(value) {
   return Math.min(Math.round(durationMs), 30 * 60 * 1000);
 }
 
-function normalizeEvent(input) {
+function normalizeCountryCode(value) {
+  const countryCode = sanitizeText(value, "", 2).toUpperCase();
+  return /^[A-Z]{2}$/.test(countryCode) && countryCode !== "XX"
+    ? countryCode
+    : "";
+}
+
+function normalizeEvent(input, context = {}) {
   const type = sanitizeEventName(input?.type);
   const path = sanitizePath(input?.path);
   const visitorId = sanitizeText(input?.visitorId, "", 120);
@@ -146,7 +166,11 @@ function normalizeEvent(input) {
   const provider = sanitizeProvider(input?.provider);
   const name = sanitizeEventName(input?.name || input?.eventName || type);
   const query = sanitizeText(input?.query, "", 80).toLowerCase();
-  const targetLabel = sanitizeText(input?.targetLabel || input?.label || input?.href, "", 140);
+  const targetLabel = sanitizeText(
+    input?.targetLabel || input?.label || input?.href,
+    "",
+    140,
+  );
   const durationMs = normalizeDuration(input?.durationMs);
 
   return {
@@ -160,20 +184,37 @@ function normalizeEvent(input) {
     targetLabel,
     durationMs,
     campaign: campaignFromPath(input?.path),
+    countryCode: normalizeCountryCode(context.countryCode),
   };
 }
 
 // Only campaign slugs are aggregated, never arbitrary query strings or identities.
 function campaignFromPath(path) {
-  if (typeof path !== "string" || !path.startsWith("/") || path.length > 2000) return "";
+  if (typeof path !== "string" || !path.startsWith("/") || path.length > 2000)
+    return "";
   const params = new URL(path, "https://matpick.co.kr").searchParams;
-  const slug = key => {
+  const slug = (key) => {
     const value = (params.get(key) || "").toLowerCase();
     return /^[a-z0-9_-]{1,80}$/.test(value) ? value : "";
   };
   const source = slug("utm_source");
-  if (!["instagram", "threads", "pinterest", "naver", "naver_blog", "kakao"].includes(source)) return "";
-  return [source, slug("utm_medium") || "social", slug("utm_campaign") || "unspecified", slug("utm_content") || "unspecified"].join(" / ");
+  if (
+    ![
+      "instagram",
+      "threads",
+      "pinterest",
+      "naver",
+      "naver_blog",
+      "kakao",
+    ].includes(source)
+  )
+    return "";
+  return [
+    source,
+    slug("utm_medium") || "social",
+    slug("utm_campaign") || "unspecified",
+    slug("utm_content") || "unspecified",
+  ].join(" / ");
 }
 
 function ensureFallbackBucket(bucket) {
@@ -191,6 +232,8 @@ function ensureFallbackBucket(bucket) {
     events: new Map(),
     clicks: new Map(),
     campaigns: new Map(),
+    geography: new Map(),
+    countries: new Map(),
   };
   FALLBACK_STORE.set(bucket, next);
   return next;
@@ -224,19 +267,39 @@ function entriesFromHash(hash, limit = 8) {
       count: Number(value) || 0,
     }))
     .filter((entry) => entry.count > 0)
-    .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label))
+    .sort(
+      (left, right) =>
+        right.count - left.count || left.label.localeCompare(right.label),
+    )
     .slice(0, limit);
 }
 
 async function expireDayKeys(keys) {
   await Promise.all(
-    Object.values(keys).map((key) => requestRedis(["EXPIRE", key, String(60 * 60 * 24 * 45)]))
+    Object.values(keys).map((key) =>
+      requestRedis(["EXPIRE", key, String(60 * 60 * 24 * 45)]),
+    ),
   );
 }
 
 function applyFallbackEvent(store, event) {
   if (event.visitorId) {
-    store.visitors.add(hashIdentity(event.visitorId));
+    const visitorHash = hashIdentity(event.visitorId);
+    const isNewVisitor = !store.visitors.has(visitorHash);
+    store.visitors.add(visitorHash);
+    if (isNewVisitor) {
+      store.geography ||= new Map();
+      store.countries ||= new Map();
+      const bucket = event.countryCode
+        ? event.countryCode === "KR"
+          ? "domestic"
+          : "foreign"
+        : "unknown";
+      incrementMap(store.geography, bucket);
+      if (event.countryCode) {
+        incrementMap(store.countries, event.countryCode);
+      }
+    }
   }
   if (event.type === "session_start" && event.sessionId) {
     const isNew = !store.sessions.has(hashIdentity(event.sessionId));
@@ -279,7 +342,10 @@ function applyFallbackEvent(store, event) {
   if (event.type === "ad_click") {
     incrementMap(store.counts, "adClicks");
     incrementMap(store.counts, `${event.provider}Clicks`);
-    incrementMap(store.clicks, `${event.provider}:${event.targetLabel || event.path}`);
+    incrementMap(
+      store.clicks,
+      `${event.provider}:${event.targetLabel || event.path}`,
+    );
   }
 }
 
@@ -292,11 +358,37 @@ async function recordKvEventForKeys(keys, event) {
   const commands = [];
 
   if (event.visitorId) {
-    commands.push(["SADD", keys.visitors, hashIdentity(event.visitorId)]);
+    const geographyBucket = event.countryCode
+      ? event.countryCode === "KR"
+        ? "domestic"
+        : "foreign"
+      : "unknown";
+    // The first event for a pseudonymous visitor assigns exactly one geography
+    // bucket. Only the country code supplied by the server is retained; raw IPs
+    // are never passed to or stored by the analytics store.
+    commands.push([
+      "EVAL",
+      "local added = redis.call('SADD', KEYS[1], ARGV[1]); if added == 1 then redis.call('HINCRBY', KEYS[2], ARGV[2], 1); if ARGV[3] ~= '' then redis.call('HINCRBY', KEYS[3], ARGV[3], 1); end; end; return added",
+      "3",
+      keys.visitors,
+      keys.geography,
+      keys.countries,
+      hashIdentity(event.visitorId),
+      geographyBucket,
+      event.countryCode,
+    ]);
   }
   if (event.type === "session_start" && event.sessionId) {
     // Redis handles concurrent retries atomically: one attributed arrival per session.
-    commands.push(["EVAL", "local added = redis.call('SADD', KEYS[1], ARGV[1]); if added == 1 and ARGV[2] ~= '' then redis.call('HINCRBY', KEYS[2], ARGV[2], 1); end; return added", "2", keys.sessions, keys.campaigns, hashIdentity(event.sessionId), event.campaign]);
+    commands.push([
+      "EVAL",
+      "local added = redis.call('SADD', KEYS[1], ARGV[1]); if added == 1 and ARGV[2] ~= '' then redis.call('HINCRBY', KEYS[2], ARGV[2], 1); end; return added",
+      "2",
+      keys.sessions,
+      keys.campaigns,
+      hashIdentity(event.sessionId),
+      event.campaign,
+    ]);
   }
 
   if (event.type === "page_view") {
@@ -305,13 +397,23 @@ async function recordKvEventForKeys(keys, event) {
   }
 
   if (event.type === "duration" && event.durationMs > 0) {
-    commands.push(["HINCRBY", keys.counts, "durationMs", String(event.durationMs)]);
+    commands.push([
+      "HINCRBY",
+      keys.counts,
+      "durationMs",
+      String(event.durationMs),
+    ]);
     commands.push(["HINCRBY", keys.counts, "durationSamples", "1"]);
   }
 
   if (event.type === "map_click") {
     commands.push(["HINCRBY", keys.counts, "mapClicks", "1"]);
-    commands.push(["HINCRBY", keys.clicks, event.targetLabel || event.path, "1"]);
+    commands.push([
+      "HINCRBY",
+      keys.clicks,
+      event.targetLabel || event.path,
+      "1",
+    ]);
   }
 
   if (event.type === "search" && event.query) {
@@ -325,7 +427,12 @@ async function recordKvEventForKeys(keys, event) {
 
   if (event.type === "ad_impression") {
     commands.push(["HINCRBY", keys.counts, "adImpressions", "1"]);
-    commands.push(["HINCRBY", keys.counts, `${event.provider}Impressions`, "1"]);
+    commands.push([
+      "HINCRBY",
+      keys.counts,
+      `${event.provider}Impressions`,
+      "1",
+    ]);
   }
 
   if (event.type === "ad_click") {
@@ -360,9 +467,9 @@ async function recordKvEvent(day, event) {
   }
 }
 
-async function recordAnalyticsEvent(input) {
+async function recordAnalyticsEvent(input, context = {}) {
   const day = getKoreaDay();
-  const event = normalizeEvent(input);
+  const event = normalizeEvent(input, context);
 
   if (getKvConfig()) {
     await recordKvEvent(day, event);
@@ -379,6 +486,13 @@ async function readFallbackSummary(options) {
   const counts = Object.fromEntries(store.counts.entries());
   const durationMs = Number(counts.durationMs || 0);
   const durationSamples = Number(counts.durationSamples || 0);
+  const geography = Object.fromEntries(
+    (store.geography || new Map()).entries(),
+  );
+  const geographyTracked =
+    Number(geography.domestic || 0) +
+    Number(geography.foreign || 0) +
+    Number(geography.unknown || 0);
 
   return {
     day,
@@ -389,7 +503,9 @@ async function readFallbackSummary(options) {
       sessions: store.sessions.size,
       pageViews: Number(counts.pageViews || 0),
       avgDurationSeconds:
-        durationSamples > 0 ? Math.round(durationMs / durationSamples / 1000) : 0,
+        durationSamples > 0
+          ? Math.round(durationMs / durationSamples / 1000)
+          : 0,
       mapClicks: Number(counts.mapClicks || 0),
       searches: Number(counts.searches || 0),
       adImpressions: Number(counts.adImpressions || 0),
@@ -401,43 +517,80 @@ async function readFallbackSummary(options) {
       adsenseImpressions: Number(counts.adsenseImpressions || 0),
       adsenseClicks: Number(counts.adsenseClicks || 0),
     },
+    visitorGeography: {
+      tracked: geographyTracked,
+      domestic: Number(geography.domestic || 0),
+      foreign: Number(geography.foreign || 0),
+      unknown: Number(geography.unknown || 0),
+      historicalUnclassified: Math.max(
+        0,
+        store.visitors.size - geographyTracked,
+      ),
+    },
     topPages: entriesFromHash(Object.fromEntries(store.paths.entries())),
     topSearches: entriesFromHash(Object.fromEntries(store.searches.entries())),
     topEvents: entriesFromHash(Object.fromEntries(store.events.entries())),
     topClicks: entriesFromHash(Object.fromEntries(store.clicks.entries())),
-    topCampaigns: entriesFromHash(Object.fromEntries((store.campaigns || new Map()).entries()), 20),
+    topCampaigns: entriesFromHash(
+      Object.fromEntries((store.campaigns || new Map()).entries()),
+      20,
+    ),
+    topCountries: entriesFromHash(
+      Object.fromEntries((store.countries || new Map()).entries()),
+      12,
+    ),
   };
 }
 
 async function readKvSummary(options) {
   const { day, scope } = normalizeSummaryOptions(options);
   const keys = getSummaryKeys(scope, day);
-  const [countsPayload, visitorPayload, sessionPayload, pathsPayload, searchesPayload, eventsPayload, clicksPayload, campaignsPayload] =
-    await Promise.all([
-      requestRedis(["HGETALL", keys.counts]),
-      requestRedis(["SCARD", keys.visitors]),
-      requestRedis(["SCARD", keys.sessions]),
-      requestRedis(["HGETALL", keys.paths]),
-      requestRedis(["HGETALL", keys.searches]),
-      requestRedis(["HGETALL", keys.events]),
-      requestRedis(["HGETALL", keys.clicks]),
-      requestRedis(["HGETALL", keys.campaigns]),
-    ]);
+  const [
+    countsPayload,
+    visitorPayload,
+    sessionPayload,
+    pathsPayload,
+    searchesPayload,
+    eventsPayload,
+    clicksPayload,
+    campaignsPayload,
+    geographyPayload,
+    countriesPayload,
+  ] = await Promise.all([
+    requestRedis(["HGETALL", keys.counts]),
+    requestRedis(["SCARD", keys.visitors]),
+    requestRedis(["SCARD", keys.sessions]),
+    requestRedis(["HGETALL", keys.paths]),
+    requestRedis(["HGETALL", keys.searches]),
+    requestRedis(["HGETALL", keys.events]),
+    requestRedis(["HGETALL", keys.clicks]),
+    requestRedis(["HGETALL", keys.campaigns]),
+    requestRedis(["HGETALL", keys.geography]),
+    requestRedis(["HGETALL", keys.countries]),
+  ]);
 
   const countsHash = hashToObject(countsPayload?.result);
   const durationMs = numberFromHash(countsHash, "durationMs");
   const durationSamples = numberFromHash(countsHash, "durationSamples");
+  const visitorCount = Number(visitorPayload?.result || 0);
+  const geographyHash = hashToObject(geographyPayload?.result);
+  const geographyTracked =
+    numberFromHash(geographyHash, "domestic") +
+    numberFromHash(geographyHash, "foreign") +
+    numberFromHash(geographyHash, "unknown");
 
   return {
     day,
     scope,
     storage: "kv",
     counts: {
-      visitors: Number(visitorPayload?.result || 0),
+      visitors: visitorCount,
       sessions: Number(sessionPayload?.result || 0),
       pageViews: numberFromHash(countsHash, "pageViews"),
       avgDurationSeconds:
-        durationSamples > 0 ? Math.round(durationMs / durationSamples / 1000) : 0,
+        durationSamples > 0
+          ? Math.round(durationMs / durationSamples / 1000)
+          : 0,
       mapClicks: numberFromHash(countsHash, "mapClicks"),
       searches: numberFromHash(countsHash, "searches"),
       adImpressions: numberFromHash(countsHash, "adImpressions"),
@@ -449,15 +602,25 @@ async function readKvSummary(options) {
       adsenseImpressions: numberFromHash(countsHash, "adsenseImpressions"),
       adsenseClicks: numberFromHash(countsHash, "adsenseClicks"),
     },
+    visitorGeography: {
+      tracked: geographyTracked,
+      domestic: numberFromHash(geographyHash, "domestic"),
+      foreign: numberFromHash(geographyHash, "foreign"),
+      unknown: numberFromHash(geographyHash, "unknown"),
+      historicalUnclassified: Math.max(0, visitorCount - geographyTracked),
+    },
     topPages: entriesFromHash(pathsPayload?.result),
     topSearches: entriesFromHash(searchesPayload?.result),
     topEvents: entriesFromHash(eventsPayload?.result),
     topClicks: entriesFromHash(clicksPayload?.result),
     topCampaigns: entriesFromHash(campaignsPayload?.result, 20),
+    topCountries: entriesFromHash(countriesPayload?.result, 12),
   };
 }
 
-async function readAnalyticsSummary(options = { day: getKoreaDay(), scope: "today" }) {
+async function readAnalyticsSummary(
+  options = { day: getKoreaDay(), scope: "today" },
+) {
   if (getKvConfig()) {
     return readKvSummary(options);
   }

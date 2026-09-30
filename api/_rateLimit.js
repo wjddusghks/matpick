@@ -142,8 +142,39 @@ async function enforceRateLimit(req, res, options) {
   return true;
 }
 
+async function enforceRateLimits(req, res, policies) {
+  const subject = getClientIp(req);
+  const checks = await Promise.all(policies.map(async (policy) => ({
+    policy,
+    state: await checkRateLimit({ ...policy, subject: String(policy.subject || subject) }),
+  })));
+  const blocked = checks.find(({ state }) => !state.allowed);
+  const displayed = blocked || checks[0];
+
+  if (displayed) {
+    res.setHeader("X-RateLimit-Limit", String(displayed.state.limit));
+    res.setHeader("X-RateLimit-Remaining", String(displayed.state.remaining));
+    res.setHeader("X-RateLimit-Window", String(displayed.state.windowSec));
+  }
+  if (!blocked) return true;
+
+  logSecurityEvent("warn", "rate-limit-blocked", {
+    bucket: String(blocked.policy.bucket || "default"),
+    subject: maskValue(String(blocked.policy.subject || subject)),
+    limit: blocked.state.limit,
+    windowSec: blocked.state.windowSec,
+    count: blocked.state.count,
+  });
+  res.setHeader("Retry-After", String(blocked.state.windowSec));
+  res.status(429).json({
+    error: blocked.policy.message || "Too many requests. Please try again later.",
+  });
+  return false;
+}
+
 module.exports = {
   checkRateLimit,
   enforceRateLimit,
+  enforceRateLimits,
   getClientIp,
 };

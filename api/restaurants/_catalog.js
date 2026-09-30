@@ -7,7 +7,7 @@ const {
 } = require("./_search");
 
 const MAX_PAGE_SIZE = 24;
-const MAX_RESULT_OFFSET = dataset.restaurants.length;
+const MAX_RESULT_OFFSET = 100000;
 const communitySource = { id: "community-picks", name: "추천식당", type: "other", provider: "맛픽", description: "사용자가 제보하고 운영자가 승인한 식당 · Community Picks", imageUrl: "/source-covers/community-picks.svg" };
 const allSources = [...(dataset.sources || []), communitySource];
 const sourceById = new Map(allSources.map((source) => [source.id, source]));
@@ -40,12 +40,18 @@ for (const link of dataset.sourceLinks || []) {
 
 function applyEdits(restaurants, edits = []) {
   const editsById = new Map(edits.map((edit) => [edit.restaurantId, edit]));
-  return restaurants
+  const baseIds = new Set(restaurants.map((restaurant) => restaurant.id));
+  const created = edits
+    .filter((edit) => edit.createdAt && !baseIds.has(edit.restaurantId))
+    .map((edit) => ({ id: edit.restaurantId, ...edit.changes }));
+  return [...restaurants, ...created]
     .filter((restaurant) => !editsById.get(restaurant.id)?.deletedAt)
-    .map((restaurant) => ({
-      ...restaurant,
-      ...(editsById.get(restaurant.id)?.changes || {}),
-    }));
+    .map((restaurant) => {
+      const edit = editsById.get(restaurant.id);
+      if (!edit?.changes || !Object.keys(edit.changes).length ||
+          (edit.createdAt && !baseIds.has(restaurant.id))) return restaurant;
+      return { ...restaurant, ...edit.changes, id: restaurant.id };
+    });
 }
 
 function addMenuIds(restaurant) {

@@ -14,9 +14,9 @@ const {
   isKoreanPoint,
 } = require("./_providers");
 const dataset = require("../../matpick_all/client/src/data/generated/public-dataset.json");
-const restaurants = new Map(
-  dataset.restaurants.map((restaurant) => [restaurant.id, restaurant]),
-);
+const { applyEdits } = require("../restaurants/_catalog");
+const { readEdits } = require("../restaurants/_restaurantEdits");
+const { listPublishedSuggestions } = require("../restaurants/_suggestionStore");
 
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
@@ -42,6 +42,27 @@ module.exports = async function handler(req, res) {
   } catch {
     return res.status(400).json({ error: "Invalid request" });
   }
+  let restaurants = new Map(
+    dataset.restaurants.map((restaurant) => [restaurant.id, restaurant]),
+  );
+  try {
+    const [{ edits }, publications] = await Promise.all([
+      readEdits(),
+      listPublishedSuggestions(),
+    ]);
+    restaurants = new Map(
+      applyEdits(
+        [
+          ...dataset.restaurants,
+          ...publications.map((item) => item.restaurant),
+        ],
+        edits,
+      ).map((restaurant) => [restaurant.id, restaurant]),
+    );
+  } catch {
+    // Keep bundled destinations available while the dynamic restaurant store
+    // is temporarily unavailable.
+  }
   if (
     !isKoreanPoint(body?.origin) ||
     !Array.isArray(body?.restaurantIds) ||
@@ -50,11 +71,9 @@ module.exports = async function handler(req, res) {
       (id) => typeof id !== "string" || !restaurants.has(id),
     )
   )
-    return res
-      .status(400)
-      .json({
-        error: "A valid origin and exactly one restaurant ID are required",
-      });
+    return res.status(400).json({
+      error: "A valid origin and exactly one restaurant ID are required",
+    });
   const destinations = [...new Set(body.restaurantIds)].map((id) =>
     restaurants.get(id),
   );
@@ -84,24 +103,20 @@ module.exports = async function handler(req, res) {
       return;
     const restaurant = destinations[0];
     if (!config.id || !config.secret)
-      return res
-        .status(200)
-        .json({
-          routes: [
-            {
-              restaurantId: restaurant.id,
-              driving: { status: "not_configured" },
-            },
-          ],
-        });
+      return res.status(200).json({
+        routes: [
+          {
+            restaurantId: restaurant.id,
+            driving: { status: "not_configured" },
+          },
+        ],
+      });
     const cached = await readRouteCache(body.origin, restaurant);
     if (cached)
-      return res
-        .status(200)
-        .json({
-          routes: [{ restaurantId: restaurant.id, ...cached }],
-          checkedAt: cached.checkedAt,
-        });
+      return res.status(200).json({
+        routes: [{ restaurantId: restaurant.id, ...cached }],
+        checkedAt: cached.checkedAt,
+      });
     if (!(await reserveRouteCall()))
       return res
         .status(429)

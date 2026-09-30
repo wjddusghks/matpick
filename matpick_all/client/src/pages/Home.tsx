@@ -86,6 +86,7 @@ const RECENT_KEY = "matpick_recent_searches";
 const LOCATION_STATUS_KEY = "matpick_location_permission";
 const LOCATION_DISMISSED_KEY = "matpick_location_prompt_dismissed";
 const COLLECTION_SOCIAL_KEY = "matpick_collection_social";
+const SEARCH_DEBOUNCE_MS = 180;
 
 const HOME_UI_KO = {
   brandFirst: "\uB9DB",
@@ -190,6 +191,8 @@ const HOME_UI_KO = {
   dropdown: {
     resultsTitle: "\uAC80\uC0C9 \uACB0\uACFC",
     resultsSuffix: "\uAC1C \uD56D\uBAA9",
+    loadingTitle: "관련 맛집을 찾고 있어요.",
+    loadingDescription: "식당명·메뉴·지역·방송 정보를 함께 확인하고 있어요.",
     emptyResultsTitle: "일치하는 검색 결과가 없어요.",
     emptyResultsDescription:
       "다른 지역이나 식당 이름으로 검색하거나, 아래 방송·가이드별 맛집을 살펴보세요.",
@@ -311,6 +314,8 @@ const HOME_UI_EN = {
   dropdown: {
     resultsTitle: "Search results",
     resultsSuffix: " results",
+    loadingTitle: "Finding related restaurants...",
+    loadingDescription: "Checking restaurant names, menus, locations, and sources.",
     emptyResultsTitle: "No matching result yet.",
     emptyResultsDescription:
       "Try a different keyword or browse the curated topic shortcuts below.",
@@ -844,6 +849,7 @@ export default function Home() {
   const [recentSearches, setRecentSearches] =
     useState<SearchResult[]>(getRecentSearches);
   const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
+  const [resolvedSearchQuery, setResolvedSearchQuery] = useState("");
   const [showLoginPanel, setShowLoginPanel] = useState(false);
   const [isLoginPanelPinned, setIsLoginPanelPinned] = useState(false);
   const [showAccountPanel, setShowAccountPanel] = useState(false);
@@ -927,13 +933,23 @@ export default function Home() {
   });
 
   const normalizedQuery = query.trim().toLowerCase();
+  const normalizedApiQuery = normalizedQuery
+    .normalize("NFC")
+    .replace(/\s+/g, "")
+    .replace(/[-._,/#!$%^&*;:{}=`~()'"?<>+\[\]\\|·ㆍ]/g, "");
+  const canRequestSearch = Boolean(normalizedApiQuery) &&
+    (!/^[a-z0-9]+$/i.test(normalizedApiQuery) || normalizedApiQuery.length >= 3);
+  const isSearchPending = canRequestSearch && resolvedSearchQuery !== normalizedApiQuery;
 
-  const activeItems = normalizedQuery ? filteredResults : recentSearches;
+  const activeItems = normalizedQuery
+    ? isSearchPending ? [] : filteredResults
+    : recentSearches;
   const homeShortcutTopics = mapTopicShortcuts;
 
   useEffect(() => {
-    if (!normalizedQuery) {
+    if (!canRequestSearch) {
       setFilteredResults([]);
+      setResolvedSearchQuery(normalizedApiQuery);
       return;
     }
 
@@ -968,6 +984,7 @@ export default function Home() {
         if (ignore) return;
         if (payload.suggestions?.length) {
           setFilteredResults(payload.suggestions);
+          setResolvedSearchQuery(normalizedApiQuery);
           return;
         }
         const matches: SearchResult[] = (payload.restaurants ?? []).map(restaurant => ({
@@ -990,19 +1007,21 @@ export default function Home() {
           },
           ...matches,
         ]);
+        setResolvedSearchQuery(normalizedApiQuery);
       })
       .catch(() => {
         if (!ignore) {
           setFilteredResults([]);
+          setResolvedSearchQuery(normalizedApiQuery);
         }
-      }); }, 350);
+    }); }, SEARCH_DEBOUNCE_MS);
 
     return () => {
       ignore = true;
       window.clearTimeout(searchTimer);
       controller.abort();
     };
-  }, [normalizedQuery, query]);
+  }, [canRequestSearch, normalizedApiQuery, query]);
 
   const closeLoginPanel = useCallback(() => {
     if (loginTimeoutRef.current) {
@@ -1357,7 +1376,7 @@ export default function Home() {
     trackMarketingEvent("search_submit", {
       query: normalizedQuery || "",
       has_query: Boolean(normalizedQuery),
-      result_count: filteredResults.length,
+      result_count: isSearchPending ? 0 : filteredResults.length,
     });
 
     if (!normalizedQuery) {
@@ -1365,9 +1384,10 @@ export default function Home() {
       return;
     }
 
-    const selectedItem =
-      (hoveredIndex >= 0 ? filteredResults[hoveredIndex] : undefined) ??
-      filteredResults.find(item => item.type === "query");
+    const selectedItem = isSearchPending
+      ? undefined
+      : (hoveredIndex >= 0 ? filteredResults[hoveredIndex] : undefined) ??
+        filteredResults.find(item => item.type === "query");
 
     if (selectedItem) {
       handleSelect(selectedItem);
@@ -1380,6 +1400,7 @@ export default function Home() {
     handleNearbySearch,
     handleSelect,
     hoveredIndex,
+    isSearchPending,
     navigate,
     normalizedQuery,
     query,
@@ -1856,7 +1877,16 @@ export default function Home() {
               <div className="absolute left-0 right-0 top-[74px] z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)] sm:top-[84px]">
                 <div className="border-t border-[#ffb2ba] bg-white">
                   {normalizedQuery ? (
-                    filteredResults.length > 0 ? (
+                    isSearchPending ? (
+                      <div className="px-7 py-10 text-left" role="status" aria-live="polite">
+                        <p className="animate-pulse text-[17px] font-semibold text-[#1f1f1f]">
+                          {ui.dropdown.loadingTitle}
+                        </p>
+                        <p className="mt-2 text-[14px] leading-6 text-[#8d8d8d]">
+                          {ui.dropdown.loadingDescription}
+                        </p>
+                      </div>
+                    ) : filteredResults.length > 0 ? (
                       <div className="max-h-[60vh] overflow-y-auto py-2">
                         <div className="flex items-center justify-between px-7 py-3">
                           <p className="text-[16px] font-semibold text-[#1d1d1d]">

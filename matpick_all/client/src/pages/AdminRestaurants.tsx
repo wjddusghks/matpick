@@ -116,6 +116,25 @@ export default function AdminRestaurants() {
     if (!response.ok) throw new Error(body.error || "저장하지 못했습니다.");
     return body.edit;
   }
+  async function create(
+    changes: Record<string, unknown>,
+    registration: { requestId: string; locationValidated: true }
+  ): Promise<RestaurantEdit> {
+    if (!allowed || !user) throw new Error("관리자 로그인이 필요합니다.");
+    const response = await fetch("/api/restaurants", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-matpick-admin-key": getAdminRegistrationKey(user),
+        "x-matpick-admin-token": user.syncToken || "",
+      },
+      body: JSON.stringify({ action: "create", changes, ...registration }),
+    });
+    const body = await response.json();
+    if (!response.ok)
+      throw new Error(body.error || "식당을 등록하지 못했습니다.");
+    return body.edit;
+  }
   function savedView(view: ManagerView) {
     try {
       sessionStorage.setItem(
@@ -156,6 +175,7 @@ export default function AdminRestaurants() {
       loadError={loadError}
       onRetry={() => setRetry(n => n + 1)}
       onSave={save}
+      onCreate={create}
       onSaved={savedView}
       initialView={initialView}
       saved={saved}

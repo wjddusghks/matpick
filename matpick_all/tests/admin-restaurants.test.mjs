@@ -7,10 +7,13 @@ import { fileURLToPath } from "node:url";
 import { loadAppModules } from "../scripts/load-public-data.mjs";
 const require = createRequire(import.meta.url);
 const {
+  createRestaurant,
   validateChanges,
+  validateNewRestaurant,
   saveEdit,
   readEdits,
 } = require("../../api/restaurants/_restaurantEdits.js");
+const { queryCatalog } = require("../../api/restaurants/_catalog.js");
 const handler = require("../../api/admin/_restaurantAdmin.js");
 const publicHandler = require("../../api/restaurants/index.js");
 const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
@@ -317,7 +320,9 @@ test("invalid coordinates, fake verification dates, unsafe URLs and uneditable f
     { menuPriceSources: [{ url: "https://user:password@example.com" }] },
     { id: "other" },
     { rating: 5 },
-    { sourceLinks: [{ sourceId: "unknown", sourceUrl: "javascript:alert(1)" }] },
+    {
+      sourceLinks: [{ sourceId: "unknown", sourceUrl: "javascript:alert(1)" }],
+    },
     null,
     [],
   ]) {
@@ -370,6 +375,301 @@ test("broadcast source edits are normalized and restricted to known sources", ()
         known
       ),
     { status: 400 }
+  );
+});
+
+function newRestaurantChanges(overrides = {}) {
+  return {
+    name: "새 맛픽식당",
+    region: "서울 마포구",
+    address: "서울 마포구 월드컵북로 1",
+    category: "한식",
+    lat: 37.56,
+    lng: 126.9,
+    operationState: "operating",
+    menus: [{ name: "국밥", price: "10,000원", isSignature: true }],
+    sourceLinks: [
+      {
+        sourceId: "popular-restaurants",
+        label: "2026 인기맛집",
+      },
+    ],
+    ...overrides,
+  };
+}
+
+test("new restaurants require a geocoded map confirmation, topic episode and menu", () => {
+  const sourceIds = new Set(["popular-restaurants"]);
+  assert.throws(
+    () =>
+      validateNewRestaurant(
+        newRestaurantChanges(),
+        "pending_test",
+        sourceIds,
+        false
+      ),
+    { status: 400 }
+  );
+  for (const patch of [
+    { menus: [] },
+    { sourceLinks: [] },
+    { sourceLinks: [{ sourceId: "popular-restaurants", label: "" }] },
+  ]) {
+    assert.throws(
+      () =>
+        validateNewRestaurant(
+          newRestaurantChanges(patch),
+          "pending_test",
+          sourceIds,
+          true
+        ),
+      { status: 400 }
+    );
+  }
+  const result = validateNewRestaurant(
+    newRestaurantChanges(),
+    "pending_test",
+    sourceIds,
+    true
+  );
+  assert.equal(result.locationVerifiedAt.length > 10, true);
+  assert.equal(result.sourceLinks[0].label, "2026 인기맛집");
+  assert.equal(result.menus[0].name, "국밥");
+});
+
+test("created restaurant edits join public detail, topic, nearby and client catalogs", () => {
+  const edit = {
+    restaurantId: "admin_public_test",
+    revision: 1,
+    createdAt: "2026-10-01T00:00:00.000Z",
+    updatedAt: "2026-10-01T00:00:00.000Z",
+    deletedAt: null,
+    changes: {
+      ...newRestaurantChanges(),
+      imageUrl: "",
+      representativeMenu: "국밥",
+      menus: [{ id: "menu-1", name: "국밥", price: "10,000원" }],
+      sourceLinks: [
+        {
+          id: "admin:admin_public_test:1",
+          restaurantId: "admin_public_test",
+          sourceId: "popular-restaurants",
+          label: "2026 인기맛집",
+        },
+      ],
+    },
+  };
+  const detail = queryCatalog(
+    { view: "detail", id: edit.restaurantId },
+    [edit],
+    []
+  );
+  assert.equal(detail.status, 200);
+  assert.equal(detail.body.restaurant.name, "새 맛픽식당");
+  assert.equal(detail.body.sourceLinks[0].sourceId, "popular-restaurants");
+
+  for (const query of [
+    { view: "list", type: "source", value: "popular-restaurants" },
+    { view: "list", type: "nearby", lat: "37.56", lng: "126.9" },
+    { view: "list", type: "search", q: "새 맛픽식당" },
+  ]) {
+    const result = queryCatalog(query, [edit], []);
+    assert.equal(result.status, 200);
+    assert.ok(
+      result.body.restaurants.some(
+        restaurant => restaurant.id === edit.restaurantId
+      )
+    );
+  }
+  assert.equal(
+    client.applyRestaurantEdits([], [edit])[0].id,
+    edit.restaurantId
+  );
+  assert.deepEqual(
+    client.applyRestaurantEdits([], [{ ...edit, deletedAt: "2026-10-01" }]),
+    []
+  );
+});
+
+test("restaurant creation is atomically idempotent and rejects another request for the same identity", async () => {
+  await withEnv(
+    {
+      ...noStorage,
+      KV_REST_API_URL: "https://redis-create.test.invalid",
+      KV_REST_API_TOKEN: "test-only",
+    },
+    async () => {
+      const originalFetch = globalThis.fetch;
+      let requestValue = null;
+      let identity = null;
+      let historyWrites = 0;
+      globalThis.fetch = async (_url, options) => {
+        const command = JSON.parse(options.body);
+        assert.equal(command[0], "EVAL");
+        assert.match(command[1], /redis\.call\('GET', KEYS\[4\]\)/);
+        assert.match(command[1], /HEXISTS', KEYS\[3\]/);
+        if (requestValue && command[6].endsWith("same-request-1234")) {
+          return { ok: true, json: async () => ({ result: requestValue }) };
+        }
+        if (identity === command[10]) {
+          return { ok: true, json: async () => ({ result: "__duplicate__" }) };
+        }
+        identity = command[10];
+        requestValue = command[8];
+        historyWrites++;
+        return { ok: true, json: async () => ({ result: requestValue }) };
+      };
+      try {
+        const changes = validateNewRestaurant(
+          newRestaurantChanges(),
+          "pending_test",
+          new Set(["popular-restaurants"]),
+          true
+        );
+        const first = await createRestaurant({
+          changes,
+          actor: "naver:operator",
+          requestId: "same-request-1234",
+          identity: "새맛픽식당:서울마포구월드컵북로1",
+        });
+        const retried = await createRestaurant({
+          changes,
+          actor: "naver:operator",
+          requestId: "same-request-1234",
+          identity: "새맛픽식당:서울마포구월드컵북로1",
+        });
+        assert.equal(retried.restaurantId, first.restaurantId);
+        assert.equal(historyWrites, 1);
+        assert.ok(
+          first.changes.sourceLinks[0].restaurantId.startsWith("admin_")
+        );
+        await assert.rejects(
+          createRestaurant({
+            changes,
+            actor: "naver:operator",
+            requestId: "other-request-1234",
+            identity: "새맛픽식당:서울마포구월드컵북로1",
+          }),
+          { status: 409 }
+        );
+      } finally {
+        globalThis.fetch = originalFetch;
+      }
+    }
+  );
+});
+
+test("admin create API requires signed auth, reuses request IDs and compares effective edited identities", async () => {
+  await withEnv(
+    {
+      ...noStorage,
+      KV_REST_API_URL: "https://redis-create-api.test.invalid",
+      KV_REST_API_TOKEN: "test-only",
+      ADMIN_USER_IDS: "naver:create-api-admin",
+      AUTH_PROFILE_SIGNING_SECRET: "create-api-secret-only",
+    },
+    async () => {
+      const originalFetch = globalThis.fetch;
+      const stored = new Map();
+      const requests = new Map();
+      const identities = new Set();
+      globalThis.fetch = async (_url, options = {}) => {
+        if (!options.body)
+          return { ok: true, json: async () => ({ result: 1 }) };
+        const command = JSON.parse(options.body);
+        if (command[0] === "HVALS")
+          return {
+            ok: true,
+            json: async () => ({ result: [...stored.values()] }),
+          };
+        if (command[0] === "EVAL" && command[2] === 4) {
+          if (requests.has(command[6]))
+            return {
+              ok: true,
+              json: async () => ({ result: requests.get(command[6]) }),
+            };
+          if (identities.has(command[10]))
+            return {
+              ok: true,
+              json: async () => ({ result: "__duplicate__" }),
+            };
+          stored.set(command[7], command[8]);
+          requests.set(command[6], command[8]);
+          identities.add(command[10]);
+          return { ok: true, json: async () => ({ result: command[8] }) };
+        }
+        throw new Error(`Unexpected command ${command[0]}`);
+      };
+      const headers = {
+        "x-forwarded-for": "192.0.2.120",
+        "x-matpick-admin-key": "naver:create-api-admin",
+        "x-matpick-admin-token": createProfileSyncToken("create-api-admin"),
+      };
+      const body = {
+        action: "create",
+        requestId: "api-create-request-1234",
+        locationValidated: true,
+        changes: newRestaurantChanges(),
+      };
+      try {
+        const first = response();
+        await handler({ method: "POST", headers, body }, first);
+        assert.equal(first.code, 201);
+        assert.ok(first.body.edit.restaurantId.startsWith("admin_"));
+        const retry = response();
+        await handler({ method: "POST", headers, body }, retry);
+        assert.equal(retry.code, 200);
+        assert.equal(
+          retry.body.edit.restaurantId,
+          first.body.edit.restaurantId
+        );
+
+        const duplicate = response();
+        await handler(
+          {
+            method: "POST",
+            headers,
+            body: { ...body, requestId: "api-create-request-5678" },
+          },
+          duplicate
+        );
+        assert.equal(duplicate.code, 409);
+
+        const original = dataset.restaurants[0];
+        stored.set(
+          original.id,
+          JSON.stringify({
+            restaurantId: original.id,
+            revision: 1,
+            updatedAt: "2026-10-01T00:00:00.000Z",
+            deletedAt: null,
+            changes: {
+              name: "관리자 수정 상호",
+              address: "서울 중구 관리자수정로 10",
+            },
+          })
+        );
+        const editedDuplicate = response();
+        await handler(
+          {
+            method: "POST",
+            headers,
+            body: {
+              ...body,
+              requestId: "api-create-request-9012",
+              changes: newRestaurantChanges({
+                name: "관리자 수정 상호",
+                address: "서울 중구 관리자수정로 10",
+              }),
+            },
+          },
+          editedDuplicate
+        );
+        assert.equal(editedDuplicate.code, 409);
+      } finally {
+        globalThis.fetch = originalFetch;
+      }
+    }
   );
 });
 test("address and coordinate edits invalidate the previous location audit", () => {

@@ -93,18 +93,57 @@ test("copied links, quantity names, price ranges and variable prices are preserv
   ]);
   assert.deepEqual(result.errors, []);
 });
-test("ambiguous descriptions, orphan prices and negative prices are blocked rather than guessed", () => {
+test("Naver descriptions between a menu name and price are skipped", () => {
+  const result = editor.parseMenuPaste(
+    "양꼬치+파김치(찐궁합)\n텐텐양꼬치에서만 맛볼수있는 파김치와양꼬치의조합\n18,000원\n\n대표\n숯불숙성통양갈비바베큐(소)+파김치\n(2인분)건대에서 유일하게 파김치와 통양갈비의조합을 맛볼수 있는 텐텐양꼬치\n55,000원\n대표\n숯불숙성통양갈비바베큐(중)\n3인분\n65,000원\n대표\n숯불숙성통양갈비바베큐(대)+파김치\n(4인분) 건대에서 유일하게 숙성하여 만든 통양갈비 바베큐입니다.\n75,000원\n대표\n숯불숙성통양다리(소)+파김치\n3시간전 예약\n70,000원\n대표\n숯불숙성통양다리(중)+파김치\n3시간전예약\n80,000원\n대표\n숯불숙성통양다리(대)+파김치\n3시간전예약\n90,000원\n대표\n꿔바로우(소)\n100% 찹쌀튀김을 사용하여 기존의 꿔바로우와는 확연히 다릅니다.\n15,000원\n바지락볶음\n칭따오와 바지락볶음 생각한 그 이상의 조화\n22,000원\n\n양꼬치+파김치(찐궁합)\n설명\n18,000원\n숯불숙성통양갈비바베큐(소)+파김치\n설명\n55,000원\n숯불숙성통양갈비바베큐(중)\n설명\n65,000원\n숯불숙성통양갈비바베큐(대)+파김치\n설명\n75,000원\n숯불숙성통양다리(소)+파김치\n설명\n70,000원\n숯불숙성통양다리(중)+파김치\n설명\n80,000원"
+  );
+  assert.equal(result.rows.length, 9);
+  assert.equal(result.duplicates, 6);
+  assert.equal(result.ignoredDescriptions, 15);
+  assert.deepEqual(result.errors, []);
+  assert.deepEqual(result.rows.at(-1), { name: "바지락볶음", price: "22,000원" });
+});
+test("orphan and negative prices are blocked rather than guessed", () => {
   for (const value of [
-    "국밥\n든든한 한 끼\n9,000원",
     "9,000원",
     "국밥\n-9,000원",
     "국밥 -9,000원",
-    "만두\n6개\n8,000원",
   ]) {
     const result = editor.parseMenuPaste(value);
     assert.equal(result.rows.length, 0, value);
     assert.ok(result.errors.length, value);
   }
+});
+test("CSV remains supported and same-name price conflicts stay visible", () => {
+  const result = editor.parseMenuPaste(
+    '"국수","10,000원"\n"국수","11,000원"\n"만두(6개)","8,000원"'
+  );
+  assert.equal(result.rows.length, 3);
+  assert.deepEqual(result.conflicts, [
+    { name: "국수", prices: ["10,000원", "11,000원"] },
+  ]);
+});
+test("blank lines and badges keep separate Naver card boundaries", () => {
+  const result = editor.parseMenuPaste("김밥\n\n대표\n라면\n5,000원");
+  assert.deepEqual(result.rows, [
+    { name: "김밥", price: "" },
+    { name: "라면", price: "5,000원" },
+  ]);
+});
+test("prices mentioned inside descriptions do not replace the card price", () => {
+  const result = editor.parseMenuPaste(
+    "가족세트\n2인 기준 20,000원 상당 구성\n35,000원"
+  );
+  assert.deepEqual(result.rows, [{ name: "가족세트", price: "35,000원" }]);
+  assert.equal(result.ignoredDescriptions, 1);
+  assert.deepEqual(result.errors, []);
+});
+test("an inline price at the end of a description is surfaced for review", () => {
+  const result = editor.parseMenuPaste(
+    "가족세트\n추가 선택 20,000원\n35,000원"
+  );
+  assert.equal(result.rows.length, 0);
+  assert.ok(result.errors.some(error => error.includes("설명 안의 가격")));
 });
 test("invalid coordinates, dates and source links route to the right tab", () => {
   for (const [field, value, tab] of [

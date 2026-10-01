@@ -425,6 +425,20 @@ export default function RestaurantManager({
   );
   const duplicatePasteCount =
     pasted.duplicates + pasted.rows.length - newPasteRows.length;
+  const pasteConflicts = useMemo(() => {
+    const prices = new Map<string, Set<string>>();
+    for (const menu of [...(draft?.menus || []), ...pasted.rows]) {
+      const name = menu.name.trim().replace(/\s+/g, " ");
+      const price = formatMenuPrice(menu.price || "");
+      if (!name || !price) continue;
+      const values = prices.get(name) || new Set<string>();
+      values.add(price);
+      prices.set(name, values);
+    }
+    return Array.from(prices)
+      .filter(([, values]) => values.size > 1)
+      .map(([name, values]) => ({ name, prices: Array.from(values) }));
+  }, [draft?.menus, pasted.rows]);
   const capacity = 100 - (draft?.menus.length || 0);
   const selectedSources = selected ? getSources(selected.id) : [];
   const selectedAppearances =
@@ -2245,7 +2259,8 @@ export default function RestaurantManager({
             <DialogDescription>
               네이버지도 메뉴 영역을 복사해서 그대로 붙여 넣으세요. 메뉴명 다음
               줄의 가격, 한 줄로 된 메뉴·가격, 엑셀 두 열을 자동으로 나눠
-              드려요.
+              드려요. 대표 배지와 설명 문구, 같은 메뉴·가격의 중복은 자동으로
+              제외해요.
             </DialogDescription>
           </DialogHeader>
           <label className="am-field">
@@ -2277,6 +2292,19 @@ export default function RestaurantManager({
                 메뉴명·가격이 같은 중복 {duplicatePasteCount}개는 제외했어요.
               </small>
             )}
+            {pasted.ignoredDescriptions > 0 && (
+              <small>
+                메뉴명과 가격 사이의 설명·수량 안내 {pasted.ignoredDescriptions}줄은
+                메뉴에 넣지 않았어요.
+              </small>
+            )}
+            {pasteConflicts.map(conflict => (
+              <p className="am-text-red" key={conflict.name}>
+                검토 필요: ‘{conflict.name}’ 가격이 {conflict.prices.join(" / ")}로
+                서로 달라요. 추가한 뒤 실제 가격이 아닌 행을 수정하거나 삭제해
+                주세요.
+              </p>
+            ))}
             <div className="am-paste-rows">
               {newPasteRows.map((row, i) => (
                 <p key={i}>

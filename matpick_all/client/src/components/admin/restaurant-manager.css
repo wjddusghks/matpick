@@ -62,6 +62,21 @@
   justify-content: space-between;
   gap: 12px;
 }
+.am-create-menu-actions,
+.am-create-paste-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.am-create-paste-panel {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #dfe4eb;
+  border-radius: 10px;
+  background: white;
+}
 .am-create-map-check {
   display: grid;
   gap: 11px;
@@ -138,6 +153,15 @@
   font-size: 12px;
 }
 @media (max-width: 620px) {
+  .am-create-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .am-create-menu-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
   .am-create-dialog .am-field-grid {
     grid-template-columns: 1fr;
   }

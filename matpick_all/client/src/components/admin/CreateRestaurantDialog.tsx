@@ -1,6 +1,7 @@
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import {
   ArrowUpRight,
+  ClipboardPaste,
   Loader2,
   MapPin,
   Plus,
@@ -18,7 +19,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import type { Source } from "@/data/types";
-import { formatMenuPrice } from "@/lib/adminRestaurantEditor";
+import {
+  formatMenuPrice,
+  parseMenuPaste,
+} from "@/lib/adminRestaurantEditor";
 import AdminAddressLookup from "./AdminAddressLookup";
 import type { AddressResult } from "@/lib/addressSearch";
 
@@ -70,6 +74,8 @@ export default function CreateRestaurantDialog({
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [requestId, setRequestId] = useState(() => crypto.randomUUID());
+  const [pasteOpen, setPasteOpen] = useState(false);
+  const [pasteText, setPasteText] = useState("");
 
   useEffect(() => {
     if (!open) return;
@@ -79,7 +85,69 @@ export default function CreateRestaurantDialog({
     setSaving(false);
     setError("");
     setRequestId(crypto.randomUUID());
+    setPasteOpen(false);
+    setPasteText("");
   }, [open, sources]);
+
+  const pasted = useMemo(() => parseMenuPaste(pasteText), [pasteText]);
+  const nonEmptyMenus = form.menus.filter(
+    menu => menu.name.trim() || menu.price.trim()
+  );
+  const newPasteRows = pasted.rows.filter(
+    row =>
+      !nonEmptyMenus.some(
+        menu =>
+          menu.name.trim().replace(/\s+/g, " ") === row.name &&
+          formatMenuPrice(menu.price) === row.price
+      )
+  );
+  const duplicatePasteCount =
+    pasted.duplicates + pasted.rows.length - newPasteRows.length;
+  const pasteConflicts = useMemo(() => {
+    const prices = new Map<string, Set<string>>();
+    for (const menu of [...nonEmptyMenus, ...pasted.rows]) {
+      const name = menu.name.trim().replace(/\s+/g, " ");
+      const price = formatMenuPrice(menu.price);
+      if (!name || !price) continue;
+      const values = prices.get(name) || new Set<string>();
+      values.add(price);
+      prices.set(name, values);
+    }
+    return Array.from(prices)
+      .filter(([, values]) => values.size > 1)
+      .map(([name, values]) => ({ name, prices: Array.from(values) }));
+  }, [nonEmptyMenus, pasted.rows]);
+  const pasteCapacity = 100 - nonEmptyMenus.length;
+
+  function togglePastePanel() {
+    setPasteOpen(current => !current);
+    setPasteText("");
+  }
+
+  function addPastedMenus() {
+    if (
+      !newPasteRows.length ||
+      pasted.errors.length ||
+      newPasteRows.length > pasteCapacity
+    )
+      return;
+    setForm(current => ({
+      ...current,
+      menus: [
+        ...current.menus.filter(
+          menu => menu.name.trim() || menu.price.trim()
+        ),
+        ...newPasteRows.map(row => ({
+          id: crypto.randomUUID(),
+          name: row.name,
+          price: row.price,
+        })),
+      ],
+    }));
+    setPasteText("");
+    setPasteOpen(false);
+    setError("");
+  }
 
   function setField(
     key: keyof Omit<ReturnType<typeof initialForm>, "menus">,
@@ -341,20 +409,112 @@ export default function CreateRestaurantDialog({
               <h3>
                 <Utensils size={16} /> 메뉴·가격 *
               </h3>
-              <button
-                type="button"
-                className="am-btn am-btn-white"
-                disabled={form.menus.length >= 100}
-                onClick={() =>
-                  setForm(current => ({
-                    ...current,
-                    menus: [...current.menus, newMenu()],
-                  }))
-                }
-              >
-                <Plus size={14} /> 메뉴 추가
-              </button>
+              <div className="am-create-menu-actions">
+                <button
+                  type="button"
+                  className="am-btn am-btn-white"
+                  disabled={pasteCapacity <= 0}
+                  aria-expanded={pasteOpen}
+                  onClick={togglePastePanel}
+                >
+                  <ClipboardPaste size={14} /> 여러 메뉴 추가
+                </button>
+                <button
+                  type="button"
+                  className="am-btn am-btn-white"
+                  disabled={form.menus.length >= 100}
+                  onClick={() =>
+                    setForm(current => ({
+                      ...current,
+                      menus: [...current.menus, newMenu()],
+                    }))
+                  }
+                >
+                  <Plus size={14} /> 메뉴 추가
+                </button>
+              </div>
             </div>
+            {pasteOpen && (
+              <div className="am-create-paste-panel">
+                <label className="am-field">
+                  <span>메뉴와 가격 붙여넣기 · 최대 {pasteCapacity}개 추가</span>
+                  <textarea
+                    autoFocus
+                    aria-label="여러 메뉴 붙여넣기"
+                    value={pasteText}
+                    onChange={event => setPasteText(event.target.value)}
+                    rows={6}
+                    placeholder={
+                      "대표\n김치찌개\n9,000원\n된장찌개\n8,500원\n계란말이 12,000원"
+                    }
+                  />
+                </label>
+                <div className="am-paste-preview" aria-live="polite">
+                  {pasted.errors.map((pasteError, index) => (
+                    <p className="am-text-red" key={index}>
+                      {pasteError}
+                    </p>
+                  ))}
+                  {newPasteRows.length > pasteCapacity && (
+                    <p className="am-text-red">
+                      {pasteCapacity}개까지 추가할 수 있어요. 행 수를 줄여 주세요.
+                    </p>
+                  )}
+                  <strong>{newPasteRows.length}개 메뉴 미리보기</strong>
+                  {duplicatePasteCount > 0 && (
+                    <small>
+                      메뉴명·가격이 같은 중복 {duplicatePasteCount}개는 제외했어요.
+                    </small>
+                  )}
+                  {pasted.ignoredDescriptions > 0 && (
+                    <small>
+                      메뉴명과 가격 사이의 설명·수량 안내{" "}
+                      {pasted.ignoredDescriptions}줄은 메뉴에 넣지 않았어요.
+                    </small>
+                  )}
+                  {pasteConflicts.map(conflict => (
+                    <p className="am-text-red" key={conflict.name}>
+                      검토 필요: ‘{conflict.name}’ 가격이{" "}
+                      {conflict.prices.join(" / ")}로 서로 달라요. 추가한 뒤 실제
+                      가격이 아닌 행을 수정하거나 삭제해 주세요.
+                    </p>
+                  ))}
+                  <div className="am-paste-rows">
+                    {newPasteRows.map((row, index) => (
+                      <p key={`${row.name}-${row.price}-${index}`}>
+                        <span>{row.name}</span>
+                        <b>{row.price || "금액 미확인"}</b>
+                      </p>
+                    ))}
+                  </div>
+                  <small>
+                    메뉴명·금액을 확인하세요. 추가한 뒤에도 수정할 수 있으며 식당
+                    등록 전에는 저장되지 않아요.
+                  </small>
+                </div>
+                <div className="am-create-paste-actions">
+                  <button
+                    type="button"
+                    className="am-btn am-btn-white"
+                    onClick={togglePastePanel}
+                  >
+                    취소
+                  </button>
+                  <button
+                    type="button"
+                    className="am-btn am-btn-primary"
+                    disabled={
+                      !newPasteRows.length ||
+                      pasted.errors.length > 0 ||
+                      newPasteRows.length > pasteCapacity
+                    }
+                    onClick={addPastedMenus}
+                  >
+                    <Plus size={14} /> {newPasteRows.length}개 메뉴 추가
+                  </button>
+                </div>
+              </div>
+            )}
             <div className="am-create-menus">
               {form.menus.map((menu, index) => (
                 <div className="am-create-menu" key={menu.id}>

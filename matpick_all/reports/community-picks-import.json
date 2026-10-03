@@ -1,0 +1,3671 @@
+{
+  "schemaVersion": 1,
+  "sourceId": "community-picks",
+  "inputFiles": [
+    "source-data/community-picks/workbook-normalized.json",
+    "source-data/community-picks/naver-normalized.json"
+  ],
+  "inputEntries": 1334,
+  "excludedNonRestaurants": 5,
+  "canonicalRestaurants": 1306,
+  "matchedExisting": 258,
+  "newCandidates": 1056,
+  "newRestaurants": 1024,
+  "pendingCount": 32,
+  "errors": [],
+  "ambiguous": [],
+  "duplicateCatalogMatches": [
+    {
+      "sourceEntryId": "naver-shared:1027428155",
+      "name": "양양메밀막국수",
+      "address": "서울 서초구 동광로15길 10 1층",
+      "selectedId": "wednesday-gourmet_restaurant_272",
+      "candidateIds": [
+        "wednesday-gourmet_restaurant_272",
+        "topic_enrichment_michelin-bib-gourmand_400fdcd4654f"
+      ]
+    },
+    {
+      "sourceEntryId": "naver-shared:1444452250",
+      "name": "봉자마라탕",
+      "address": "서울 광진구 동일로18길 22",
+      "selectedId": "topic_enrichment_delicious-guys_96c2b4dcd3f3",
+      "candidateIds": [
+        "topic_enrichment_delicious-guys_96c2b4dcd3f3",
+        "topic_enrichment_ttoganjip_b15167c22646"
+      ]
+    },
+    {
+      "sourceEntryId": "naver-shared:1501316334",
+      "name": "사루카메",
+      "address": "서울 마포구 연남로 15",
+      "selectedId": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "candidateIds": [
+        "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+        "popular_restaurants_hongdae_sarukame"
+      ]
+    },
+    {
+      "sourceEntryId": "naver-shared:2945022968",
+      "name": "성심당 본점",
+      "address": "대전 중구 대종로480번길 15",
+      "selectedId": "topic_enrichment_delicious-guys_f0f749ca5ad4",
+      "candidateIds": [
+        "topic_enrichment_delicious-guys_f0f749ca5ad4",
+        "topic_enrichment_ttoganjip_1fb945c8c364"
+      ]
+    },
+    {
+      "sourceEntryId": "naver-shared:3981441399",
+      "name": "옥동식",
+      "address": "서울 마포구 양화로7길 44-10",
+      "selectedId": "r_b2b49897",
+      "candidateIds": [
+        "r_b2b49897",
+        "topic_enrichment_michelin-bib-gourmand_948a029ffc18"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-042",
+      "name": "원조숯불닭불고기집",
+      "address": "강원 춘천시 낙원길 28-4",
+      "selectedId": "sikgaek-baekban-trip_restaurant_173",
+      "candidateIds": [
+        "sikgaek-baekban-trip_restaurant_173",
+        "topic_enrichment_baekjong-wok_8ac9e1c41519"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-016",
+      "name": "황금콩밭",
+      "address": "서울 마포구 마포대로16길 9",
+      "selectedId": "wednesday-gourmet_restaurant_392",
+      "candidateIds": [
+        "wednesday-gourmet_restaurant_392",
+        "topic_enrichment_michelin-bib-gourmand_6cb2e113c1f6"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-116",
+      "name": "자하손만두",
+      "address": "서울 종로구 백석동길 12",
+      "selectedId": "r_7219cb87",
+      "candidateIds": [
+        "r_7219cb87",
+        "topic_enrichment_michelin-bib-gourmand_ed52a9039e17"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-237",
+      "name": "우동 카덴",
+      "address": "서울 마포구 양화로7안길 2-1",
+      "selectedId": "wednesday-gourmet_restaurant_406",
+      "candidateIds": [
+        "wednesday-gourmet_restaurant_406",
+        "topic_enrichment_delicious-guys_05a5e3d94384"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-284",
+      "name": "우래옥",
+      "address": "서울 중구 창경궁로 62-29",
+      "selectedId": "r_eb889504",
+      "candidateIds": [
+        "r_eb889504",
+        "topic_enrichment_michelin-bib-gourmand_1d0eef4e4955"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-285",
+      "name": "황생가칼국수",
+      "address": "서울 종로구 북촌로5길 78",
+      "selectedId": "r_e1a8060c",
+      "candidateIds": [
+        "r_e1a8060c",
+        "topic_enrichment_michelin-bib-gourmand_fb0c6b2123ee"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-349",
+      "name": "구복만두",
+      "address": "서울 용산구 두텁바위로 7",
+      "selectedId": "wednesday-gourmet_restaurant_339",
+      "candidateIds": [
+        "wednesday-gourmet_restaurant_339",
+        "topic_enrichment_michelin-selected_e35ef71e95ff"
+      ]
+    },
+    {
+      "sourceEntryId": "redribbon:서울-351",
+      "name": "쟈니덤플링 본관",
+      "address": "서울 용산구 보광로59길 33",
+      "selectedId": "wednesday-gourmet_restaurant_341",
+      "candidateIds": [
+        "wednesday-gourmet_restaurant_341",
+        "topic_enrichment_ttoganjip_d720e0042666"
+      ]
+    }
+  ],
+  "pending": [
+    {
+      "restaurantId": "community_pick_811760fd466644de",
+      "sourceEntryIds": [
+        "naver-shared:1027344652"
+      ],
+      "name": "스페이스원 버거",
+      "address": "서울특별시 마포구 서교동 358-91 1층 스페이스원 수제버거",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_9e04232542d87b2c",
+      "sourceEntryIds": [
+        "naver-shared:1027357950"
+      ],
+      "name": "페인트커피&바",
+      "address": "서울특별시 성북구 성북동1가 41 1층",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_2b162a832b54ffce",
+      "sourceEntryIds": [
+        "naver-shared:1444661323"
+      ],
+      "name": "캐비스트리",
+      "address": "서울 강남구 도산대로37길 21",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_628fc4f3395e0ac2",
+      "sourceEntryIds": [
+        "naver-shared:1451047053"
+      ],
+      "name": "소곤",
+      "address": "서울 강서구 공항대로 205",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_ed50a4b415d6e7f1",
+      "sourceEntryIds": [
+        "naver-shared:1924537077"
+      ],
+      "name": "엘릿",
+      "address": "서울 성동구 서울숲2길 15",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_8774c956f7b50a2a",
+      "sourceEntryIds": [
+        "naver-shared:2121872757"
+      ],
+      "name": "탭샵바 도산대로점",
+      "address": "서울 강남구 도산대로 150",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_a95ceb4c076f9809",
+      "sourceEntryIds": [
+        "naver-shared:2646382919"
+      ],
+      "name": "해피베네핏 성수",
+      "address": "서울 성동구 성수이로7길 27",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_e0a64da1951d021d",
+      "sourceEntryIds": [
+        "naver-shared:3502247935"
+      ],
+      "name": "도요스 스시다온",
+      "address": "서울 성북구 한천로80길 51",
+      "reasons": [
+        "네이버 장소 정보 비활성: 현재 지점 확인 필요"
+      ]
+    },
+    {
+      "restaurantId": "community_pick_de37007aba662d87",
+      "sourceEntryIds": [
+        "redribbon:강원·춘천-029"
+      ],
+      "name": "방동가든",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_86cf7134d28933d3",
+      "sourceEntryIds": [
+        "redribbon:강원·춘천-055"
+      ],
+      "name": "평양숨두부집",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_a97d6d3150725847",
+      "sourceEntryIds": [
+        "redribbon:강원·춘천-060"
+      ],
+      "name": "천복 순대국밥",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_231b3fe9d7f8f8c5",
+      "sourceEntryIds": [
+        "redribbon:강원·춘천-076"
+      ],
+      "name": "바다마을",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_9b4bbd2f3c5a5bec",
+      "sourceEntryIds": [
+        "redribbon:경기·인천-013"
+      ],
+      "name": "운정 도미솥",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_63deead906831de9",
+      "sourceEntryIds": [
+        "redribbon:경기·인천-080"
+      ],
+      "name": "일템포",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_e2db99acafd4c32f",
+      "sourceEntryIds": [
+        "redribbon:경상도-001"
+      ],
+      "name": "바다집",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_9d43a2656a822d2a",
+      "sourceEntryIds": [
+        "redribbon:경상도-045"
+      ],
+      "name": "릭버거",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_d7e485379b9432dd",
+      "sourceEntryIds": [
+        "redribbon:경상도-048"
+      ],
+      "name": "곱곱 구미옥계점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_e0f42c403569e7a9",
+      "sourceEntryIds": [
+        "redribbon:경상도-081"
+      ],
+      "name": "포레스트",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_20a7ed603a9260a6",
+      "sourceEntryIds": [
+        "redribbon:경상도-087"
+      ],
+      "name": "키친동백",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_346ebe6fe2876295",
+      "sourceEntryIds": [
+        "redribbon:경상도-115"
+      ],
+      "name": "신신반점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_d6503d6d266592db",
+      "sourceEntryIds": [
+        "redribbon:경상도-127"
+      ],
+      "name": "거제옥 거제동본점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_4c6b93b28d96ffcd",
+      "sourceEntryIds": [
+        "redribbon:경상도-151"
+      ],
+      "name": "꽃가람 남포직영점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_ee31656ebd25cd74",
+      "sourceEntryIds": [
+        "redribbon:서울-079"
+      ],
+      "name": "달리아 다이닝",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_00319ac928e89182",
+      "sourceEntryIds": [
+        "redribbon:서울-124"
+      ],
+      "name": "화춘옥 청담점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_17fb24eed523de5c",
+      "sourceEntryIds": [
+        "redribbon:서울-131"
+      ],
+      "name": "키키",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_b9b46dbb68bc054f",
+      "sourceEntryIds": [
+        "redribbon:서울-169"
+      ],
+      "name": "엉클스키친",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_ca4e565b928cbdf1",
+      "sourceEntryIds": [
+        "redribbon:서울-191"
+      ],
+      "name": "코타 텍사스바베큐",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_9378248aff9400a2",
+      "sourceEntryIds": [
+        "redribbon:서울-199"
+      ],
+      "name": "리얼타운비즈니스타코 상봉본점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_93eec59a5f90fa6c",
+      "sourceEntryIds": [
+        "redribbon:서울-234"
+      ],
+      "name": "츄리츄리",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_a7ca63c535977f7b",
+      "sourceEntryIds": [
+        "redribbon:서울-302"
+      ],
+      "name": "부산양곱창",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_e372c8e17ddd248e",
+      "sourceEntryIds": [
+        "redribbon:전라도-006"
+      ],
+      "name": "성식당",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    },
+    {
+      "restaurantId": "community_pick_404356b2285487bc",
+      "sourceEntryIds": [
+        "redribbon:전라도-062"
+      ],
+      "name": "덴푸라코에루 첨단본점",
+      "address": "",
+      "reasons": [
+        "새 식당에 주소가 없습니다.",
+        "새 식당에 유효한 좌표가 없습니다."
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "sourceEntryId": "naver-shared:1027344289",
+      "restaurantId": "choiza_place_97df2bf5095defdd",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "caa8580703b39436e4048f5879fd8c59650dda859869eaba002216ef8bf170c5",
+      "protectedDigest": "ba43c905345f395bac773a5eddf231c45429ff7b5760ca113b7a2235bda6580f"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027354254",
+      "restaurantId": "wednesday-gourmet_restaurant_386",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "60db2fd7814dec88cb192ae6faad5ef7b84a25c7b299a4c2d40193b959f9386a",
+      "protectedDigest": "62d02b6fee11289b32ba809518ea56f82070fd3845d54bb350edb1b2d30568ac"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027363257",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_154",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0b66851ec0742cf68e21b60ae6b1f501f487b63c11b02289b0fbe129cae42d7e",
+      "protectedDigest": "2db399262fef5bcf954ac93dd59df1d728a7d8623fa59757bd86ce2ecc5f8673"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027363495",
+      "restaurantId": "choiza_place_c58252f44eb31992",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "d97f81e3ae2cbd57cbb7365ae6397b87c9e06fafa53db8363d92d87e3505bc2e",
+      "protectedDigest": "39d1bbbe78d871d68e03cfac36183c9e18ff386059021504fbdf5050b95260c4"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027422893",
+      "restaurantId": "topic_enrichment_baekjong-wok_68b32e359685",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d71085ed1788823815b294105bc34311610e7ab93e444590b63e4673f0107925",
+      "protectedDigest": "cb4ece734a85b10b231b5da00669ed2d18e9fdb3c92d3108fad01f8110cf3528"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027423571",
+      "restaurantId": "wednesday-gourmet_restaurant_345",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c6b407fbb8682ac86709ba59f8a7ab2bc3e7cd849d0f2154a427e4dd46963a85",
+      "protectedDigest": "1ec1ab266009dfe23f4a2f374d66768b29fc633a371b1da5bf191517628ea831"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027426090",
+      "restaurantId": "culinary-class-wars_restaurant_a1a6f381cb81",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "5f3f094fb0e04505fd4d730a524d31f47463361b8bcb8da675aa6a73143106fb",
+      "protectedDigest": "428549ae1bbe0a5cd1cd4a2cef3321cf56603faf8e57e02ee7c5740f11ff11e8"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027428155",
+      "restaurantId": "wednesday-gourmet_restaurant_272",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "43809e56536c2bc5d1f052736e33b7e99fc03aa70bbcabceee911b1ceb483171",
+      "protectedDigest": "ccb8f193b693634fd816974719544c1e054c8d7f23459abecfb85f6bd40f84b0"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027454636",
+      "restaurantId": "topic_enrichment_baekjong-wok_f7e757266e9e",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "73702e9fcb71c9525dd6f8c341b7e77d168a9236ca5dd4cb3d2f950cc1635065",
+      "protectedDigest": "234736fbc1f4c318b64dd79fa4967b2bc4a7894268865b70c454e74aa5deaee8"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027463161",
+      "restaurantId": "wednesday-gourmet_restaurant_304",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "8fdf9226f20e9ce28f2d4ee921862645884460a9827c33d0bef21d3a6aa5b6b8",
+      "protectedDigest": "e1370a1d3966d949e83d9fb0c8fbcb3e3d40da2dc7d08ff97005a44a8b53022f"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027466117",
+      "restaurantId": "six_topic_357fe98963505ac9",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "23f19527af13dfab643e7b3f697ca78fe24f482dc75465a5769c8c6e69ebcadb",
+      "protectedDigest": "55e4ccb1134f72ff6acb92ea263dbee906da01e68ac425f947e2fc74a6f1bf29"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027470975",
+      "restaurantId": "topic_enrichment_baekjong-wok_b2b1bc48bdef",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d7ab0b00828f2579877c598c5db6e28c95151f7c340fd1839c92c30314f6b060",
+      "protectedDigest": "50b17a0767f18632e34fa91f7e59e4d52bd318c638e014588a2794fb5d55f6c9"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027482770",
+      "restaurantId": "wednesday-gourmet_restaurant_482",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "4de9692d05dee0c92f8221e2f79374f779c269bd8f05b2eb5c5712ef80a89514",
+      "protectedDigest": "043fe36977ab3f5ecc6909db376e3569daca93b731b6c2f6775aecbdde278a43"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027488426",
+      "restaurantId": "wednesday-gourmet_restaurant_442",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2ff3dd537a79c7b9f71abdf672186d13fdc67cf8d2c2be5502c19f2885f352d2",
+      "protectedDigest": "3accaa8519d1305d39daabddf757c1f673b342251d97972d2014e17e9b943a32"
+    },
+    {
+      "sourceEntryId": "naver-shared:1441387573",
+      "restaurantId": "topic_enrichment_ttoganjip_888dde365096",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "72a0a9f2515df93785eb7bdaf2c47d28dac1bac27c318695413ffec0d3b2151b",
+      "protectedDigest": "0e4ef172132cb37dbbf0763e81d979ee1dbb81d8ce2785b202d11cd857a964c2"
+    },
+    {
+      "sourceEntryId": "naver-shared:1443393990",
+      "restaurantId": "mogeultende_c96c1f2512bb",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "5129d9990616471cf3b8d58689c8f79262a3fdb877adea3fe4b9d9db0fc7fb8f",
+      "protectedDigest": "d6fa2d97672f6c1ac882f0345aa0008bd670929b9209cb992e9321d2927b48c2"
+    },
+    {
+      "sourceEntryId": "naver-shared:1444452250",
+      "restaurantId": "topic_enrichment_delicious-guys_96c2b4dcd3f3",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "11f14f08d3b97d1e233d6965dd16d199b590cea386b57489939b82e4c1d07ceb",
+      "protectedDigest": "8a770f9bca0bcd4051c16892cfdfa03cecb046d87e114f051d686d5989d27edb"
+    },
+    {
+      "sourceEntryId": "naver-shared:1448624107",
+      "restaurantId": "six_topic_e13487678ae2478e",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "b1772380b1c4c9b5d5b4dd6ab7cd8d590bda6379b3c896667526e3d45b926243",
+      "protectedDigest": "a6d1a4320a902c3736421edda1d4f0d496530320747b2e4922d76a198ee40d42"
+    },
+    {
+      "sourceEntryId": "naver-shared:1450499755",
+      "restaurantId": "topic_enrichment_ttoganjip_934e2a1c7195",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "61d16146731063bad74f9f626799c26073176a2f86ad68a032ed986fbbfeed48",
+      "protectedDigest": "d0fca2c6e599ffba50ef2676b01b9f6ad32a1a441e6767f30ae24def725b7b53"
+    },
+    {
+      "sourceEntryId": "naver-shared:1450505707",
+      "restaurantId": "mogeultende_dfdecd83b7c9",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e439dee52b1443100c5f411f550de987678b05b3b31ccd743348112a0935cd12",
+      "protectedDigest": "8cd749b59ee00ee3904a9ee157d7ef0947529dddd31df67358736a0b0fb06e99"
+    },
+    {
+      "sourceEntryId": "naver-shared:1451018879",
+      "restaurantId": "topic_enrichment_delicious-guys_093e2657ada3",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f43556675766f3ed6d9c2592a89f5667b4fe539d260a25da57ff8439d42469e0",
+      "protectedDigest": "8e0db76c441178fc0835126bc2646df59979ddfeb466f0181519247f14303c96"
+    },
+    {
+      "sourceEntryId": "naver-shared:1451082571",
+      "restaurantId": "topic_search_13e080d706ff",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "82d1480cb39965ead1444586320423564f92a7d30cfa9b5a8f383068f6c61a10",
+      "protectedDigest": "b92a3ffa90108dbca67887ff2825f17e32ef66e256e9377b39f86eca3a96e3c3"
+    },
+    {
+      "sourceEntryId": "naver-shared:1451099067",
+      "restaurantId": "six_topic_ed43956235779932",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f5930b042375821d44266c03a876f116b95eada96e10f37350dc7252ac198af0",
+      "protectedDigest": "d28167f03e15b556429ecec520d7b51f236a6fd6d1186e8403a949b2cd6eacfc"
+    },
+    {
+      "sourceEntryId": "naver-shared:1461821044",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_592",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a07bc74463f1afaf229f8f75fe94d9ca40bd01897c17bd832169b3afa2357739",
+      "protectedDigest": "f1264b1994cbcc7ebe2fee0abe4d1cbb4deff438d992a6c4c9c5d12f702cb117"
+    },
+    {
+      "sourceEntryId": "naver-shared:1462790780",
+      "restaurantId": "topic_enrichment_ttoganjip_dd29f34c9210",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "15b643d51501eece29c2f434c9616427065983c0e3c2e83ca77a936b0238b051",
+      "protectedDigest": "27c99a4c8c0ee16029566179eb5b3e4472fc2f784a81b4574f613bc03c896f78"
+    },
+    {
+      "sourceEntryId": "naver-shared:1462882491",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_016",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "fc60215c7d92e6c19bc97d99c1cc63ffbf618bd9375e3aea0c17c93035b4e308",
+      "protectedDigest": "983839d6efe5ad9dffaa628ca9943e2ea7f5bbee9581914db430e46b14570dc2"
+    },
+    {
+      "sourceEntryId": "naver-shared:1462914325",
+      "restaurantId": "culinary-class-wars_restaurant_02c166dbbfc6",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c1d180b27ca7cd244f2ad04b5a72fd4db43b236e891994c28f20abb7e80ea8dc",
+      "protectedDigest": "a95146a0543888433ba8d90bb8a5bdfdc3bd5d7586a35a7309e64a8e14d280d6"
+    },
+    {
+      "sourceEntryId": "naver-shared:1463002396",
+      "restaurantId": "wednesday-gourmet_restaurant_190",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "13775f177aed029e11f320abba22623eec22ca70f4cdb2d700335863e7e6493f",
+      "protectedDigest": "90f3a95167897d3f9dba3b122bdb38fc1424a8d29636669f3512d0ae9c28e900"
+    },
+    {
+      "sourceEntryId": "naver-shared:1492862241",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_44dd899c268f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7530a23bedd7790cc067cd22186c2ffe99e068345e0d9e4020692a3d428d9575",
+      "protectedDigest": "1e3f04d47b4a617794ede9d196579b512a79a4c130ba7ffe6c154b099b4eea6f"
+    },
+    {
+      "sourceEntryId": "naver-shared:1492918348",
+      "restaurantId": "topic_enrichment_michelin-selected_a92ba873923d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "49473b7ab2a77a5970a60c925b828da5c4c9b5f6a4f1b44a10572c4a7471ccad",
+      "protectedDigest": "f15b19c5a638d5e73c1c28b95420d93eaf191ff48b427c3d9adac6f0c0ed4ff1"
+    },
+    {
+      "sourceEntryId": "naver-shared:1498581102",
+      "restaurantId": "topic_enrichment_ttoganjip_c52de78c3347",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "fe36a762c369fe0591b6d1bffca55b4112d5e84d64aa3487a124f8804dd9fa3e",
+      "protectedDigest": "bc65a402811bdb5a5550bd0c5ad8927f570791633481c366dcede199bdfc10e4"
+    },
+    {
+      "sourceEntryId": "naver-shared:1498582716",
+      "restaurantId": "travel_busan-bite_124",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ae060131f2b5b647028dceff0f748017145d4b5e2e8f0533488bc6f26c74dbec",
+      "protectedDigest": "412b53d70ddf672f719f1fc0950917badcc96c1cce09bb5e2a6bf70656206dad"
+    },
+    {
+      "sourceEntryId": "naver-shared:1500147778",
+      "restaurantId": "choiza_place_91a44ea230703f61",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "97f7dab316118f897b24a2f8299e9d044b71c622eb7d0f342af53589c3998e25",
+      "protectedDigest": "86aec161ad4b12fe475fd2ba4901a2bc3c26e09dcfa7f7636edf2292fe63284a"
+    },
+    {
+      "sourceEntryId": "naver-shared:1501316334",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "95e0d4c82971689e9b5f4636989323005d81af4596945e4b91677cd3579f8136",
+      "protectedDigest": "2290ebef9db34c93e2537702f91b974e49c7328059ca740fc8e1e3657e645f96"
+    },
+    {
+      "sourceEntryId": "naver-shared:1501404477",
+      "restaurantId": "topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "46910525bb38919c68498c21675b62f268b9d6bf1fc62be3ffd1c3900d241d77",
+      "protectedDigest": "8274eb04965a4e63854f66348163ee3b033bc7ba77696784456da4ba43bc5bd5"
+    },
+    {
+      "sourceEntryId": "naver-shared:1501456806",
+      "restaurantId": "topic_enrichment_michelin-3-stars_90fd82c780a7",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f7a1488c3c087bbb67a9e08774f2926112bd4adb03c417dd8dd112b5ed2ec467",
+      "protectedDigest": "b2fa1bb62aa7022fdd853fa493f3a055dda336410bbf67d8d20c0f8cd3e3c0de"
+    },
+    {
+      "sourceEntryId": "naver-shared:1548824067",
+      "restaurantId": "six_topic_37ba821b4e2941b8",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d8e74d91986072184567f3d509d25ede39c9a5593e71d2350c67d0eefe8d7623",
+      "protectedDigest": "7d587237a7a7aabe0f24b1320e5aa79f4ab3e99f955b9161f9f2af9c1ebf144c"
+    },
+    {
+      "sourceEntryId": "naver-shared:1548887829",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "c8374a23049817bb356b20ed635a8d9e445bc7caf5fe891d6e140021b78e478b",
+      "protectedDigest": "fc2bcba2b72839d66a9336da3b0e4d9553c8e038525f5d22617e1372b23eead4"
+    },
+    {
+      "sourceEntryId": "naver-shared:1572346363",
+      "restaurantId": "six_topic_429099f5763db2b5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "582c225976244d782ebe0e969de29f93a0b44bf8d5f5c4f7cc5c529b481f7c05",
+      "protectedDigest": "22d6641c261f7ac840b9e9b4e71b25b904c24a52f392851823ede1cc1b213ba7"
+    },
+    {
+      "sourceEntryId": "naver-shared:1594327096",
+      "restaurantId": "topic_neighborhood-walk_20260921_16",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c0b259f44ced2426368ab9af1f8294d708c875d93a319a409a1bfd4e26120b8a",
+      "protectedDigest": "24f824850a6ededb9bd6bc83d03db0be00e5cc4baeea11d315a6e2cfbaeeb5a2"
+    },
+    {
+      "sourceEntryId": "naver-shared:1621875092",
+      "restaurantId": "culinary-class-wars_restaurant_acc3b52a443d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7f031e627c68faaf097f0047bf525ece7f61d21ba9ac3b694014ec0340f0ba97",
+      "protectedDigest": "9a6b18e52cda2920259422764f7b34fe2efe076d5eba7c90c113d70e0399035d"
+    },
+    {
+      "sourceEntryId": "naver-shared:1644217784",
+      "restaurantId": "six_topic_c1018a8fb0893e38",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "6692674c6c41aaa02c8d993c2af22593671cff628e0f4e6b636f3fd6ea478980",
+      "protectedDigest": "d42616e617cc46bebd430c12459c2be201396d17d22492d7bc92637e749eb39e"
+    },
+    {
+      "sourceEntryId": "naver-shared:1687775137",
+      "restaurantId": "six_topic_7ccd2fe7458b009a",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "22700e8d2083408b6595b5b41658f638c963af615c01fe19277e5433a06b4191",
+      "protectedDigest": "a2ff4c0330dfd768a7f290ddc4ceba4ebdbe130a24b248fad07c5a1ec02a3d62"
+    },
+    {
+      "sourceEntryId": "naver-shared:1777348938",
+      "restaurantId": "topic_enrichment_ttoganjip_ef1fb3e282d6",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9bc979d369b334e0f4d75d19055325e9368e9c0983094b92fc4aa4f695691f22",
+      "protectedDigest": "892816986a0906677d875147efe9111a6725a9ce706114035aac7d1f75f0108b"
+    },
+    {
+      "sourceEntryId": "naver-shared:1790989003",
+      "restaurantId": "r_70da37bb",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f2b1dc613100d34ecfa784e23ae034e09c4e9b9d50a20c56db93103a276622df",
+      "protectedDigest": "fb5c4c2e2e24a80ebdb5b1910edac32c99233588f799ba3ebeb7efa21a24f22d"
+    },
+    {
+      "sourceEntryId": "naver-shared:1801248537",
+      "restaurantId": "topic_enrichment_michelin-selected_472601101a28",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c3a37cefb588b16dc3e55acb156ee11ad089cf5263a2582476258350ebf754ad",
+      "protectedDigest": "522309909282f4a9803462fd826643bb52df902d62af22feb4b43e08ba4d48a4"
+    },
+    {
+      "sourceEntryId": "naver-shared:1915794965",
+      "restaurantId": "mogeultende_1b0bd8d9149c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e0b725e293e66da4978615d63e1649e989b7ed49f2fb3961106198c701c63700",
+      "protectedDigest": "50c9736df94fd320c77f3090dfd710299946e723ef67f62d41fd7d3fc001ce7e"
+    },
+    {
+      "sourceEntryId": "naver-shared:1999571613",
+      "restaurantId": "topic_enrichment_baekjong-wok_8448b2a82478",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "5114b250e9327f75ff806d1897d89eeacbcc620c7e8ee2ca26686a530a48546e",
+      "protectedDigest": "e71cbb693830cf0e2eb5dd59b57dbcb08e7eb843ccb48325cd99a517a0e565f6"
+    },
+    {
+      "sourceEntryId": "naver-shared:2015959223",
+      "restaurantId": "six_topic_e3744d97eefa0cb2",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "75d87d7a411f3c41e128336a7342e418ae6125df631825f6ace77c1de8dbfae8",
+      "protectedDigest": "e70afdf9d38f96e54ab079d63f73b1fece3daca3b4c54b84be05f98adafd2b3f"
+    },
+    {
+      "sourceEntryId": "naver-shared:2153580362",
+      "restaurantId": "culinary-class-wars_restaurant_53a84cc06a72",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9c4ba178ab9d6e39468335ac8ee03c8936e11455b76cdde4282667bd95b17c03",
+      "protectedDigest": "6159db6733ba29d331796e3f69c7b5d3e19b082290028bd8e409cad11d563265"
+    },
+    {
+      "sourceEntryId": "naver-shared:2244823151",
+      "restaurantId": "mogeultende_17646b81a6a7",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "140c7d3b2c5ba16b8f343f27d4bf555d76fbcbce205fcd3b234ff1e5ee136f08",
+      "protectedDigest": "ef7aab7f531e349dd3c73a5c1f8411ef9bf5b180b26905194a86dbccbf0e8b1e"
+    },
+    {
+      "sourceEntryId": "naver-shared:2244831232",
+      "restaurantId": "topic_enrichment_michelin-selected_a0e8d40d2c75",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "df9659d8005d8ac25346b2a49f7b2e2cae5c7d45a2f4adcb39c120e79dd21d49",
+      "protectedDigest": "92c3336ca83b1e49add9415f3884b9ae085a577be5bb1b3027fb81718abd09f4"
+    },
+    {
+      "sourceEntryId": "naver-shared:2411413125",
+      "restaurantId": "culinary-class-wars_restaurant_3c83923fbed2",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "10df644b677e188b58cef77669e9d6b0f0202cb4bd23d0577f6f8d98391c2134",
+      "protectedDigest": "51fdce534bbcbe9121dcc8e565576eae156ea58669e9aa24c7cf4c9b46f5838e"
+    },
+    {
+      "sourceEntryId": "naver-shared:2646380430",
+      "restaurantId": "topic_enrichment_ttoganjip_af541292429e",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "df891c54cdf8d0adf4c19f328efb5564be93f40bd58114469de4dc9de0386019",
+      "protectedDigest": "ab05a63890c14bf0ae439651bc7674fa748aa0188ebdeb7b826a6fb3a33b7e93"
+    },
+    {
+      "sourceEntryId": "naver-shared:2646392552",
+      "restaurantId": "six_topic_d90859f7ddd0b3b3",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "749ab6ba86bd5b5a8ec2daed6732e213812532805a450dcd4db6309435c02957",
+      "protectedDigest": "6e6c05232571b6f39dd7d6ddba1de41259a5c9e8737f1178a87b7fd6cb540b57"
+    },
+    {
+      "sourceEntryId": "naver-shared:2792233849",
+      "restaurantId": "culinary-class-wars_restaurant_e67a2e2d1f96",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f8878e38d194d1dc6b60ae41af71998744d5994068eebe1f02b34a032a4c7560",
+      "protectedDigest": "a136aaf39bc6233d6b350516c5790831c5e0fcbaf3d7dedd64ad69cc8ed39755"
+    },
+    {
+      "sourceEntryId": "naver-shared:2792254845",
+      "restaurantId": "culinary-class-wars_restaurant_9b13563baeca",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9f11559f7920e2cac51cc3d2b0d74216c685ebbfb3e72c6ff62a20335be28eec",
+      "protectedDigest": "24a6fd6c7a1a43ff7b5eb4ea9b0f99ed270a7ad9283b19c9e0012dd53af1b60c"
+    },
+    {
+      "sourceEntryId": "naver-shared:2945022968",
+      "restaurantId": "topic_enrichment_delicious-guys_f0f749ca5ad4",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "d3acabd8852be95f1f70d03e207d2db02e14471a4d178d8848cc5a64e7a211b0",
+      "protectedDigest": "9d317271e50b8a95cc11b726d1161d85a7bc413268d9fd83d72ac733b23bf1a7"
+    },
+    {
+      "sourceEntryId": "naver-shared:2945031555",
+      "restaurantId": "topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2e4230122cbb83daf217ad91fc29a3535a9ae65391bbcae1c25bc0f9826aaefd",
+      "protectedDigest": "bb21cbb3371ba9e43c871bbcaf391637c0d69e6977331d08a5ccbae7be548934"
+    },
+    {
+      "sourceEntryId": "naver-shared:3233814796",
+      "restaurantId": "topic_enrichment_michelin-1-star_f598df305b4f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e21bb84e4c2e53286258889c743c4e010229839934d00516d5cce368f569cd25",
+      "protectedDigest": "b2f1612fe0f6c528d151e65e6cc5844209635d87a4d9224082c4371b2041bace"
+    },
+    {
+      "sourceEntryId": "naver-shared:3233827039",
+      "restaurantId": "six_topic_31999c1b84415d5a",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "52143d9cd8e8c44e8d4563c4fe99c5410bb2b6c4b39eb4b33fdda62313715d47",
+      "protectedDigest": "7f8262626b5fc4fd11474d936b07b298ab27c4e94d7ef7e8e976a6c7ac156fb0"
+    },
+    {
+      "sourceEntryId": "naver-shared:3303454303",
+      "restaurantId": "topic_enrichment_delicious-guys_f24d54f590b5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2173446427b661a25556d99761a4dfe301f9910edaf453b05d6e74c504856e6d",
+      "protectedDigest": "73efa984e593e0f3c063646807eb5ca6fb2f7da364e17bf575a33d748f37dc4e"
+    },
+    {
+      "sourceEntryId": "naver-shared:3478709332",
+      "restaurantId": "culinary-class-wars_restaurant_537ca535d4c9",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0c4892c1dfb6582da0a4b51c7109431810a0a94e991601b1d70982edad278ce3",
+      "protectedDigest": "81cfbf8d74a761efa1c8f55bf90ee7a6bdd06cc087982c98aadb1ef91e167c0f"
+    },
+    {
+      "sourceEntryId": "naver-shared:3560781263",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "aae16ea0903dd8bd85eb5f1cea3bafef69b37c27283174b3343c6e64eaa0736d",
+      "protectedDigest": "5d726d0761e9578c009524fe63176e0a6be0168cd38261fbd0497e71e94ef209"
+    },
+    {
+      "sourceEntryId": "naver-shared:3560953721",
+      "restaurantId": "six_topic_ed6657266b581e13",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e3224c9aef511bf19349993cad3419dcea8f64d20318fca0625eea4d1d13a7a0",
+      "protectedDigest": "667ada36feb2298a66968bcf64c5378116bbae7937de4cc668e33fb8e9460e5a"
+    },
+    {
+      "sourceEntryId": "naver-shared:3605060081",
+      "restaurantId": "topic_enrichment_michelin-selected_5e661df02477",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "b4a1f39464a8b784e8308d5f91cbafbbf1cade9fb949f8f72e6f6480d49ecee6",
+      "protectedDigest": "07172674c5b4ef3ec663dbcbbb651d419198065713d117f2bbd44bc61edcef89"
+    },
+    {
+      "sourceEntryId": "naver-shared:3814715934",
+      "restaurantId": "topic_enrichment_baekjong-wok_ff5a2b8b0477",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "124656164a47c78a2f78211e6253a91e16ad7262e70fa501a2c4901e8675de31",
+      "protectedDigest": "5191994f037687f40cb1071f6e53306db80bc876c68dbd23858c66b2edacbac7"
+    },
+    {
+      "sourceEntryId": "naver-shared:3814729149",
+      "restaurantId": "six_topic_c1308082899758d4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7b36b8c5e10301d5869b9c9aa70e61e6080e8d5e6e12736610c24081dc05760e",
+      "protectedDigest": "cdbd68d88cb2d025c4154fd54f380548f5b6b87f56ba928cfa3eb1997f1bf3aa"
+    },
+    {
+      "sourceEntryId": "naver-shared:3814751361",
+      "restaurantId": "topic_enrichment_michelin-selected_481548d630df",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "4dc19e5c984758c5ea4dde227c0b94ec92c2287829f95c9a21a6a84273425000",
+      "protectedDigest": "3bc39b8bbca3d15bfe5ab9978c07d794b1e725622fa42afa121464a9aa2ab9d9"
+    },
+    {
+      "sourceEntryId": "naver-shared:3981441399",
+      "restaurantId": "r_b2b49897",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "bd1be67f298ff2386d2c661badfe23784bfceb410531bf9d2735154a3cdd4f69",
+      "protectedDigest": "012e6bcebf980cc47a942b5c5ab65b1dee6103a1b8d4f4ccd6cbe7642a3e93fc"
+    },
+    {
+      "sourceEntryId": "naver-shared:4026049734",
+      "restaurantId": "six_topic_d16a289721b7bcfc",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a804e6a2fe9943b9d7900dbdf4d1945c379e2121817011ca9503d121b115e75b",
+      "protectedDigest": "bd4dfe7579970a40ab4e9054dbe0772d8b0197f02f919c3aad8a4aa01fbead5e"
+    },
+    {
+      "sourceEntryId": "naver-shared:4150815399",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ed179876e7a43a74a6bdee9c6b34282beb66fcb31c85d83c7c2ecee7532a9d37",
+      "protectedDigest": "836f17fcf28fa69d3a4427de4b93e89700656c7afc3c4750cd7d14b84d83ce00"
+    },
+    {
+      "sourceEntryId": "naver-shared:4251918753",
+      "restaurantId": "wednesday-gourmet_restaurant_306",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0780ecc01a623478b5514e99e571208e213b49f9aeb1ef172f42c7f7d9b77d5a",
+      "protectedDigest": "8a6dbc1f7139618657e2c27d4de686941ab24c181e23f654e1fe36c5138a1ee9"
+    },
+    {
+      "sourceEntryId": "naver-shared:4291245007",
+      "restaurantId": "six_topic_1079cb6f163f04ee",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "512124a209b230e52013a83dcdee5816deced2f5c666ed4df3eb1ffeec877159",
+      "protectedDigest": "586a6d4804465d228bc1a51796917171d664a27fb28ab80fbe285aa33b1f9568"
+    },
+    {
+      "sourceEntryId": "naver-shared:4327133521",
+      "restaurantId": "six_topic_4690bd8f1979cda3",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "cecb865805a3dc50c527d9c445df08ee2958f1427911bd03a3f7fc2033d3c5b7",
+      "protectedDigest": "9000894a0af065977b2c0f88864b70843a83c9e36b89975a407935ee5cb73aa3"
+    },
+    {
+      "sourceEntryId": "naver-shared:4354146596",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_119",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "78bb8e527cbacddcbe5654a60894eb6cc220e8731522e2efe394af0ba30a82ee",
+      "protectedDigest": "61e415b20d9440d11137e807b6e986e14a0dbde1bd5941c9115f3b4f50ea82e6"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440145284",
+      "restaurantId": "topic_enrichment_michelin-2-stars_1f775d4caaf7",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f703050e3b76b325d4d8297c578c3ef140e885e6ea4b25845e403de3a5050138",
+      "protectedDigest": "fff2115aeadb277d32625bb9dc012218ecb7080d5a4c847a23bddc4794f722a8"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440148069",
+      "restaurantId": "six_topic_d8a92f3da5f9b51f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "cbaf61b1d4a5e1e812c0adbae5068455e38bd437fcf7bb356f64417d7b0235d8",
+      "protectedDigest": "0666917d0cc4edaf95485d3ad29abcfce4d4ebde28d0816938db737647070f3a"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440180529",
+      "restaurantId": "topic_enrichment_michelin-selected_6fb776637c0e",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ed5b1236cc8a662357f594e0d7d914d3ff8a716acbac33d6f8025c7de6b6b98c",
+      "protectedDigest": "92908657a5b9058afaf772855b13422ca38aad1fd7eff43403bb476fd04de1ec"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440199143",
+      "restaurantId": "topic_enrichment_delicious-guys_60b503e0830b",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a6898c8a793c967a8d73676581e54fa4c4c24e53b5ab9ed86e73ec104190e860",
+      "protectedDigest": "d31e1bfb116ad01713e5063f0adce7bb8296491b6965e9c3effcf5308f80b4b1"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440284921",
+      "restaurantId": "topic_enrichment_michelin-selected_cf767a913e72",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7745fd969abae8cca41fe76d813760014c7ee18c9cccc2dcd347205fc221b48f",
+      "protectedDigest": "c4cb2382b1791dddaf8cc1b2834fcc05d5e98390c2ab90a1456a9bbd121674e8"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440418980",
+      "restaurantId": "culinary-class-wars_restaurant_ec1909e01072",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "dfa0b10371216446df85c7771330a343532fd221ba592231e57ee059c7ce1467",
+      "protectedDigest": "0d1d6f4d2dd056bca06c98ed9df81a80c700ee1d322a4cd06b985f7e61e292e3"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440428424",
+      "restaurantId": "culinary-class-wars_restaurant_d4c6ace32b09",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7c49ee207f0b78009bd0c7ff39fb007381514008a619cdad6eb0320e5b1ad66a",
+      "protectedDigest": "df8afde1765714e7fb6f7fbc59b35d10e612e9c1183ec16face0de1660992be7"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440431735",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_281",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "1051d5348c8ebc5b8de746939c11372990ba29e56a79ac9b242c1f353950afa9",
+      "protectedDigest": "42de6f1289c36b62a6ce3f4098fca7d2552c0b051b49a2b14ece4235d07f35ea"
+    },
+    {
+      "sourceEntryId": "naver-shared:4440435208",
+      "restaurantId": "topic_enrichment_michelin-selected_82bfaa6228a5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "1971544f47cde0e6b974679c29cf20b7c35270e34fc2aedaca490c757dbe0ee2",
+      "protectedDigest": "d13abfec215d6271a564516c2ba6ef0288d68e7a880a933ccd67b0f13014ba7e"
+    },
+    {
+      "sourceEntryId": "naver-shared:4502704722",
+      "restaurantId": "old-korean-100_restaurant_079",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "38a68d39281c95c92dd9d323c095b9d11a367c67a648a9077997296c9cce1f28",
+      "protectedDigest": "4fd4c7f12a37f50cb75daf83f69eb2abda9e6bd3a965e92a110480e16ea0740c"
+    },
+    {
+      "sourceEntryId": "naver-shared:4527947313",
+      "restaurantId": "topic_enrichment_delicious-guys_60b503e0830b",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a6898c8a793c967a8d73676581e54fa4c4c24e53b5ab9ed86e73ec104190e860",
+      "protectedDigest": "d31e1bfb116ad01713e5063f0adce7bb8296491b6965e9c3effcf5308f80b4b1"
+    },
+    {
+      "sourceEntryId": "naver-shared:4545529968",
+      "restaurantId": "topic_enrichment_ttoganjip_cfc87706cb8f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "73d76b56099cdd70ebba93a7fb2d6caf5247aff788182d1b1c3ba10964171abe",
+      "protectedDigest": "ebc71c198149ce2c9de85fbabf4f75e8cdd65ea90d53d5d2a0b40a45cfaaf453"
+    },
+    {
+      "sourceEntryId": "naver-shared:4546262647",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "6db1a9c18bf52f913424c983576d370c9dccf3bc66cfa4ecfdb2de5dfa7c662d",
+      "protectedDigest": "ea4aae2eab1f295b9b768a47cc72518ffee43a0de0a903097b3120eba3869f75"
+    },
+    {
+      "sourceEntryId": "naver-shared:4715497439",
+      "restaurantId": "topic_enrichment_ttoganjip_4f6134c23aef",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "deb53ca912c0f8af09cb714ed46116f5384c8f0cf40a4fa54fc7fbe7a44e73a7",
+      "protectedDigest": "02e38d259a214f05e2ec0621a64944515bbc84f7ffc4548124ce5940d362e264"
+    },
+    {
+      "sourceEntryId": "naver-shared:4715501536",
+      "restaurantId": "requested_topic_ade215e12a9a218d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "8b30c48171ee206cbe8d8d06308b5b3de0f03fc62ba894efcf4fa2ec2a7be7e7",
+      "protectedDigest": "9b4ab759ffa840d796622dc7b62263da8476285edced15ee8ca9ec1942597141"
+    },
+    {
+      "sourceEntryId": "naver-shared:4716527146",
+      "restaurantId": "topic_neighborhood-walk_12",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "87b4a0f43c674fb6c981b1c54fe90ac9cb71ea59b4addd24010de5a931cf7558",
+      "protectedDigest": "4b783d574baf2c9f95179455f5982921ce202b9def2bd6a3f001d8cba984a4f1"
+    },
+    {
+      "sourceEntryId": "naver-shared:4741614676",
+      "restaurantId": "wednesday-gourmet_restaurant_452",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "bedcb2b2d63840bb6d2701ecee684c523cebc04b3c33ba5bc4c62392483bb5f6",
+      "protectedDigest": "b04bb0b2d527483c9381f03339d9e0ebc0303b0b937b069a20be4efa85eab2b9"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-001",
+      "restaurantId": "old-korean-100_restaurant_036",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "aaf82c5d1ca337eed4f39463cec1bbd0e5c011ad3e860d6c0cce94928ade6056",
+      "protectedDigest": "0f0d64186f27d2a0896143bed785ef01dce917b40c61caa4a641402cf7a20b3f"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-007",
+      "restaurantId": "topic_neighborhood-walk_20260921_29",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "4ddc0cde6f9bdd62b579885e5b7b5d6600591eba413114a1c16de2fad5325aea",
+      "protectedDigest": "0b23703569b6d087c5e2b992104e7553cae9ebf3d99e147168b3a0b82f70e129"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-023",
+      "restaurantId": "mogeultende_307a9d0bce27",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "3b8a9dd03eab946d3ca9a5a0f9051b5c0828e4b1c421bf86619a1c5180895a35",
+      "protectedDigest": "7db1c4492ad5dca37e1950c9a8a1a21c5cd7b5fdfb33d2f51ea5fc5f031ab276"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-035",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_495494dd8378",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e6f74f864fae0993547646e917598f691ccb61732cd5d3ac4cabe4d9de1ca659",
+      "protectedDigest": "9bff7b6aaee4c5ae453c1ec2bbee6c16f19ed9c5f138c08cbc489083c19ee231"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-036",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_626",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "0ef661b0b2445f6afc26ccc676bc0171aed77afcdbfcbeb6afa92fae055311bd",
+      "protectedDigest": "a951165eeb8160687db63690e3e34470f8a7556dad90a97ef2a67ae535893dca"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-041",
+      "restaurantId": "topic_enrichment_delicious-guys_8043e2187cc3",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7e3e25941946ecfc8526960d8adcb6e741447b483bb869beaa4981c59898dbf0",
+      "protectedDigest": "519afd01db1ad3132c26162334bb956be5f0d5b9a50975e21606b71ef7ebcd3e"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-042",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_173",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "477c15efce0f7babe3e003d576de2e920f9dfeaf67637ec64f2452ceb05a3ae8",
+      "protectedDigest": "c2a19dbe223b3a616148cf173d8a49cea369600dc1fa1491407a8e81f76a8a2d"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-051",
+      "restaurantId": "topic_enrichment_delicious-guys_bae7cf5551c2",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c562b5533ba7184d3444c85529d0e73fa5d5621b385a14b9fb0f05866d8611e0",
+      "protectedDigest": "cab2d208b84f68fc01a1da1b7afbc97b803ca615b2c3dd1fa07a8865eba10c64"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-065",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_27de1ce012d9",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "bf7af115d09a6cf15940093df4cf5851f480c940464ba1b80123154b1c9cd29c",
+      "protectedDigest": "4ecede6e8400166558278170e3969de178511abb527ae4f28deeb9d38ee8282a"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-069",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_191",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "45de90f562c764dd1f902292be479b2c3d536af527661bf6cfd4609bc8bb4c8a",
+      "protectedDigest": "a8fdcccdee1f7ca5fa966b0cfbdd4c8089848c0ec240667c37b05f8c3bbccfa9"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-075",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_557",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f081f4410936705e1f4915a7f81184abc27e7a22389064d5dc8f9a8b4d5c5481",
+      "protectedDigest": "b7ad15656937ecba306f427c645af23e51a8fa2e20d82edd21aab37735b8a917"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-081",
+      "restaurantId": "culinary-class-wars_restaurant_24e77364fcbf",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2301e8f4fd3cb42de99fd9c32d879bb073ce5dc8ec4a9effc751de2f09b9b252",
+      "protectedDigest": "1c11a8b44a4aff88f2339e6eb3fe87c22f9d8f7d5fd3e78c7328fa52f5849a33"
+    },
+    {
+      "sourceEntryId": "redribbon:강원·춘천-082",
+      "restaurantId": "topic_enrichment_baekjong-wok_ceb270c08ab4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7fc38dc424159dc4db52f4229f500303e5307d078eb4d12296ce6e9021b300aa",
+      "protectedDigest": "aa942e4edd56e62642b473a5a319c4c83900bbf44bb38b6463876674b2e5229f"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-016",
+      "restaurantId": "topic_enrichment_ttoganjip_735b26768427",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7ae996aeb5387f0591fb2698820d3154514e041cbbba7b4258014a425a623ec9",
+      "protectedDigest": "b92949073477b06a123c7401dfac8b5add57428109df0f64ff969aa0b1b80eda"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-022",
+      "restaurantId": "topic_enrichment_baekjong-wok_4faae9f8dc1f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ced02eb52b57d5bcbaed82ab9a17bab66c7650bb035b406a5a8d831326b2f950",
+      "protectedDigest": "e32c8cbcdbc799049bdff2e91b4d76478230641040f4a9906866868356cbbc98"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-035",
+      "restaurantId": "old-korean-100_restaurant_075",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0c0355306703d31e583ca531673a1481f389995ce529e6ea4722109012e51c92",
+      "protectedDigest": "93fdced44e5c0a57ef1715b9b8cce8795e8b6e5c41e5678aa5f20ed2f0f3f2b2"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-038",
+      "restaurantId": "wednesday-gourmet_restaurant_030",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "3602e39fa9ff88610de16ed59e15cccd51942b10f281837d625e700d2089c3ba",
+      "protectedDigest": "d6dce55ec19268e497aa2f406761470832cadb79f73e8f3973e48cdf29a8db11"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-060",
+      "restaurantId": "topic_enrichment_baekjong-wok_dfc9645e8dd2",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2c6098f75a18eeeff10dc74f0515ef7882ae30a88dfea28f04adb65531201742",
+      "protectedDigest": "d79f719794f9b709f7395f9d4d209156744ee7e79d87ee7969a1963d3a951a2a"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-065",
+      "restaurantId": "topic_enrichment_ttoganjip_54b4d8798b3a",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a493aec48e2e55c390ae70ad4b026f48638d7dffab8fd5e139c74a54a15239f2",
+      "protectedDigest": "6b55f43477ca4e731c3bf49735314951cbe3fcf2f197cd0330074be16d1aede3"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-081",
+      "restaurantId": "topic_enrichment_delicious-guys_91fe28347cb7",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "aa6eab708fa1a07df40e091f57fac2ec31933f0e417a5a3c03481de8895bb0f3",
+      "protectedDigest": "ba9c2c41f79df343f8d462cffdf047237eb9a06c78779e1ddc7f1338c8e09669"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-085",
+      "restaurantId": "six_topic_68f2f7278f49cbfb",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "cbc0c24787c2cf515f044a8c45c2ad765275d195b2424138af0a538c169eacca",
+      "protectedDigest": "b253a94e5cb04614a5ba051c285d92d7ca8a7bd6dbd94e3c72c2f94e0ebf463e"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-087",
+      "restaurantId": "wednesday-gourmet_restaurant_036",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ac92a13970257299c64504d3ab10bb36922c2a70b1598cec5e82d361addf3d4c",
+      "protectedDigest": "0166d2d92c9da6e6d7fa28e19bdde97f3235e0a9f187a57df8ad7f7573c6522a"
+    },
+    {
+      "sourceEntryId": "redribbon:경기·인천-093",
+      "restaurantId": "wednesday-gourmet_restaurant_013",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "f2ded1c4a4226c9f6dcf7b29d10cb96a07fec1360c8a0a15f4ef87fff0671eec",
+      "protectedDigest": "a28d4046bac93f11c4463468bba2ddc9712636632ae8cf037e6fea38e790efbe"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-017",
+      "restaurantId": "travel_busan-bite_2337",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "1b82efffe750b1461f83f048f9c367bbc5a1c8313f1150fa502791052247b4aa",
+      "protectedDigest": "7f38f0620ce4d22a315f86f8cae5f251de5c1962834103fa49553e5feab023a5"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-018",
+      "restaurantId": "topic_enrichment_ttoganjip_2357543f33ec",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "99facf7cafa5c7b262df4cc4d225782fb6c1d33e8f9a3fd343bf1848a1dc7d0a",
+      "protectedDigest": "cf3b0c7df860ef7ca1724aa17e5cf46f2f279213bff6d2c2292013c1f3b76c8d"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-021",
+      "restaurantId": "old-korean-100_restaurant_043",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "9e25a15c4d473e08f04c2583a1b51b6c521222befc429b055754d98bc865c353",
+      "protectedDigest": "023947b0eec4d69a11b1ab9772b4531a3fa79add33b30e18d3eb3cd272e92266"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-022",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e52dcf23c6fc27042ce3fbf8b23e52626c6c8ab7131571f42fe81b2371df215a",
+      "protectedDigest": "b26c9bd7560f15e4fb491ab414c84c77909dcd18c789a5e73f8481ff960db1fa"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-024",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "a4bed7d7856e95be497d1d75f7f0cd4aefb774b74ff5b0005d5913a1a964ad65",
+      "protectedDigest": "237da9ba10f588cd4d207a2b845e552000f64df72661cd4a0bf6d8b2eda76ab4"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-026",
+      "restaurantId": "wednesday-gourmet_restaurant_096",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "1cea67b1b7e241abc7ffb6e1ac5e5054cdaf1e6d0cd18ee76f04e7854fa1aac6",
+      "protectedDigest": "13d82bc99056192d658d709bdd7a5f6288bd5990c6f03382a4dd1d5fca83a659"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-028",
+      "restaurantId": "six_topic_31999c1b84415d5a",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "52143d9cd8e8c44e8d4563c4fe99c5410bb2b6c4b39eb4b33fdda62313715d47",
+      "protectedDigest": "7f8262626b5fc4fd11474d936b07b298ab27c4e94d7ef7e8e976a6c7ac156fb0"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-031",
+      "restaurantId": "topic_enrichment_michelin-selected_908a4831bea9",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "d6933c6e33c824a01041240219378fcc7b7a96a28aef89a206fa6c5885a6912f",
+      "protectedDigest": "0e068d20df62610efc0e89b9c2876ff9792ffe90a55f56627f64278665d0bd7e"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-033",
+      "restaurantId": "topic_enrichment_ttoganjip_d282e224f916",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0dcf06b23b8d072dca8efcee02091fd25523ea5947f5f17270b0001083ec6e4c",
+      "protectedDigest": "3e48b48d7a72fbb0c1f87f800b4d6f83e93e0e88d3f282d0de462775d7b752ca"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-038",
+      "restaurantId": "travel_busan-bite_1250",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c38d7095eb34e789baac350542d385d671c0e74f314157660edfee6c8d3846c0",
+      "protectedDigest": "64687eef1699cc0b8d00dcd922c55cbb07c3fc845ef6990bb4cdbc714b7acc16"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-040",
+      "restaurantId": "travel_busan-bite_124",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "ae060131f2b5b647028dceff0f748017145d4b5e2e8f0533488bc6f26c74dbec",
+      "protectedDigest": "412b53d70ddf672f719f1fc0950917badcc96c1cce09bb5e2a6bf70656206dad"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-050",
+      "restaurantId": "wednesday-gourmet_restaurant_084",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "ec36be5d08d0d79e569d7fdbcd1bfa7b5a637bdd979d0daa721e3af59bcb535d",
+      "protectedDigest": "e46d8eddaf1e57a5c80ef2bcb8794fd76b3b7e8359deabb2f2d3c168b9b84cb6"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-052",
+      "restaurantId": "topic_enrichment_ttoganjip_d32627ba7687",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "bf037ac11072a3d387f4335795045c7691ee29969ff92694e8487e229a73edf3",
+      "protectedDigest": "3f5d9a10c7bfbdd0ffc3621ba0c8d5779a925b2591563da5451b4725d06300f9"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-072",
+      "restaurantId": "wednesday-gourmet_restaurant_103",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "5f62cd145227a106b5b9612f9114929cd6681d9bb5de17f834415aa71aa65f00",
+      "protectedDigest": "2218323578a5fa8052db67451accbd822079a506b275863b8cdcba633e1cdaae"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-076",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_233",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "91549a0ce1b1c54892827566de896d21e714a7eeb96aa33eedeedff55935d6ea",
+      "protectedDigest": "a0359a51ad111abf77f670be77701c8a943675bee140348f5c5867ce6a949ee2"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-096",
+      "restaurantId": "topic_enrichment_baekjong-wok_66256bf45936",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "29309543e111b49b0c8cb99b599fbe2abd719cd883f03e7d1e749cee3dc48cdd",
+      "protectedDigest": "9c6f5f9381a3ea65849c0cc6ed799d1086eb0cc72db7bfe69c3690fcb233fab0"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-100",
+      "restaurantId": "topic_search_15c75c8ed857",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "6ad02f2c7b38daabc4c45e90496b8cde73998fc9f71584b3d7f7c9b1687704ab",
+      "protectedDigest": "0f44197fd36c846fa5d581e5da73c1bc3f640ed6d2c047d20cf46b9761561884"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-109",
+      "restaurantId": "travel_busan-bite_204",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a8b2eeb0ab947a81ee1cf471cf60a523a040fd136be926a8cb6e02f319614073",
+      "protectedDigest": "4900cc065fa1965072e7c4d862cc2a731093d6f59d1cb45e923f29653e45eccc"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-113",
+      "restaurantId": "travel_busan-bite_198",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c60653d8c920f243ae4ef3378e9ee8e0c84a57d2ef1ae11bab626032b2974717",
+      "protectedDigest": "4e778436b3e3354b6e88c9edf2d8264e3a6a9b40b24f758a7fded3ed57477ad7"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-126",
+      "restaurantId": "topic_enrichment_delicious-guys_f608cae867ba",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "2cd2e293df5123913d4d2401e8b38f9669fd56fc5bae11ea4a16cf25a89d48fa",
+      "protectedDigest": "3602d76d541668ca064c46864d4f1e01b20f3764d1e16444fca5e3e081d0dc3e"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-128",
+      "restaurantId": "topic_enrichment_baekjong-wok_01e2f132b695",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "581843116fbc9941eaf45312047220f98fec50f1235b6d11cac3340535ff98fc",
+      "protectedDigest": "9713a521175e266a39ad9f190da7a9e9bbe3f7987a0041437297bf2d70d2c8a6"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-133",
+      "restaurantId": "topic_enrichment_baekjong-wok_c238c8eb5c74",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "02fbf5d8989fe91ad259c4ff22f0afc68511de7973a9b19211a92a1e7caaf776",
+      "protectedDigest": "89cfee7958334c3cc387072ace8a0f302ce38be97eee4d7c49795bc297ceecab"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-143",
+      "restaurantId": "topic_enrichment_baekjong-wok_0e790ce92b82",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "3b60fd4c944f4b9142cd1c8b0ce80618f2098be873d93e4d35db433b17ef1ef7",
+      "protectedDigest": "05c3898823680d10f238313892baf77949fefeac9c37e2cd6e1c78230f2810d1"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-144",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_aeb387f4c550",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d19eae2832d0af5de61fc700a5830b69d9a60ea7c32d5836b24760e8fdd83174",
+      "protectedDigest": "52376b81abc284a541fab810ef149c17074698cbde40c08dd1cbc790478ea51b"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-154",
+      "restaurantId": "travel_busan-bite_1252",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d22de82812f025099ae50971580c8cc2c20ccccf90a6e8f8c2b8b4e4d557a480",
+      "protectedDigest": "63832e5bcecce0ede0e7d8c68e0fbb708878f0d063564db9027f5247c7d33e11"
+    },
+    {
+      "sourceEntryId": "redribbon:경상도-157",
+      "restaurantId": "topic_enrichment_baekjong-wok_e4d22e240dfc",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "472b840c85e4bd72c89322b29969e42bb8f8e90c3e356b8d08d3d1241ceedbca",
+      "protectedDigest": "7c550672ea8adb3f5e697544ebfa9c85fe567a6554a44273593d6f6084846973"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-011",
+      "restaurantId": "r_f6168fc8",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "b4a0cca5a066f01b1070de0860934aec1b1b88220314fa010d56041280072370",
+      "protectedDigest": "6c9a9460d3ede80d3b30e89d2cc45ed4bc313585acd82b5da8c1bb62875a99ac"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-013",
+      "restaurantId": "r_9aab737c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9d63cea8a672424959489c5fc4a1d61fb515153bbad0c3018ed807b955afe263",
+      "protectedDigest": "5f5ba7a5b39e5479e9127bea40909529ed311f15841e26b486f2e707f1225ae5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-014",
+      "restaurantId": "topic_enrichment_michelin-selected_d146241e05f5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c1fe66d3976c0a6de46f27eba7f37ebb1f0b9a7c535a67dbb25ed8200f3eaf76",
+      "protectedDigest": "079d1eacd26c717154e9f4b6401123705890102b46e19e1e517b13fdb04831ed"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-015",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_531",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9c59df3c2c7bc3ea6e45b2cfe089461b4d9b4de3afabd8800be1d47d87a3a041",
+      "protectedDigest": "7aca96855a227d002e5a1fd70fee8846f6677f43894f4dbb1370577d971701a0"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-016",
+      "restaurantId": "wednesday-gourmet_restaurant_392",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "e7e8761baf05013ba8d8c5a508009561b4a96ce670d96f05b5164aa290a32ea8",
+      "protectedDigest": "750f9f6b712a75efc27d38871a3b8edc5e32be3c30a5a3d6f466b38c97a17617"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-017",
+      "restaurantId": "topic_enrichment_delicious-guys_79267d8cd423",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "30463405f7626cc3aa8d4242d7cadc2d7258845b3cceca06ce27675b7a86d9ae",
+      "protectedDigest": "ea3491b26a28b808087de002a888513bb3f551caeb925dc8be289adb1eed413d"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-024",
+      "restaurantId": "wednesday-gourmet_restaurant_202",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "a4778fb98e71f4301e7844269250b5b7a54b576c15c252f475b8c7485aa070d4",
+      "protectedDigest": "41fe3dbb5610065d2dce401d5ee5797d313b801f8bd5158ed6e90115fe9ac06d"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-033",
+      "restaurantId": "wednesday-gourmet_restaurant_215",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "42cb2b14545b3f3e4d1537d74b4fc819a460faed1e52a513598ebfd5a4147e96",
+      "protectedDigest": "4eacb6823e45fef35ad01159835bdd95fd27f39eb1b030a422a25f9a39858e6c"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-042",
+      "restaurantId": "mogeultende_0b570f10435c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7b7b96176b3f8115d310c7ad559d37924cec7781e699e7ba4f7fd4911ef007c2",
+      "protectedDigest": "094b0e9a22f1666fd070f7a840d0ecc6d903bbf47ecc5cd6d31b290386608495"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-046",
+      "restaurantId": "topic_enrichment_michelin-selected_73db764ec566",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "683d08365e37987645e53d68df0e631be598df886a622b47e752bbe09e4589c1",
+      "protectedDigest": "ebae345bfa4fd5abfeb479cc4014e342e1b82d249b6bda505fed7433425fe696"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-049",
+      "restaurantId": "wednesday-gourmet_restaurant_511",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0724ae6c29fd50fcdedf37f6fc54ebc0c5f0b7015374b8822e38a1b974a74b06",
+      "protectedDigest": "a3e0528189c950dd9e1f2cbc85d8fc110f3fcb46d8b6fb2103f37a84a1558cfa"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-054",
+      "restaurantId": "culinary-class-wars_restaurant_5faf20f61572",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f2407b7f47da3b7bb2bb12dca1e8fa98e6e1db96988cbc1fc25a6369d9285e05",
+      "protectedDigest": "0e22bdfc7f54545d568bf5870f11ac1fe35fdd691207a030be65ab0d5c4d8e3f"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-064",
+      "restaurantId": "culinary-class-wars_restaurant_3c83923fbed2",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "10df644b677e188b58cef77669e9d6b0f0202cb4bd23d0577f6f8d98391c2134",
+      "protectedDigest": "51fdce534bbcbe9121dcc8e565576eae156ea58669e9aa24c7cf4c9b46f5838e"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-069",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9c8803c6a5e78f1771cbbcabe6c69e6c34ee2096af3ee886c2abdb2d1d881c97",
+      "protectedDigest": "cd4de625f624e6824046c75791be05d573c595594cab83893b554ea9ff0426b3"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-075",
+      "restaurantId": "wednesday-gourmet_restaurant_358",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9ab0f4355c7d9dad85957fcbc928a6e9e3e89d558ab6d93a0d38dd374ad4f583",
+      "protectedDigest": "61f107eba77791d94cc93f6e8dee32a3cc3a615616f8d2f432599d648f2601ff"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-077",
+      "restaurantId": "requested_topic_88da62e111917f3f",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f4ca874b79ad266e0523b5d959b1931fd95485e97d7b21dc6fc7299dc4b5bef6",
+      "protectedDigest": "469a3e24134677d0bbb03f2c9aa875a0bfac13caf320c7cc28b43ba148385baa"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-096",
+      "restaurantId": "mogeultende_956416a15aad",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "72ff34e2c40bf23b4041c7fb58ca3c1c3ab998a013562d7ab1c48d8171f8813a",
+      "protectedDigest": "60379a5acab291ad8216d153c1c3885e24c5e7969cd9c21063108aa72cae6859"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-097",
+      "restaurantId": "wednesday-gourmet_restaurant_336",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "41c7d43a88e0bcec4ce7325d8a33127fcef50ea2f6ea539441179bc468e8eba7",
+      "protectedDigest": "31ca03f82ee825e5320fb2a6af6c866733a9cbeb2dbc2f5f73cb3c4264d8e04c"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-099",
+      "restaurantId": "topic_enrichment_ttoganjip_f19065df624b",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "bf0a4ee92d3a04245de60a2ad10e75cc6f4d1a22369ae13f2e299e6260481c9e",
+      "protectedDigest": "24543f53067035a299ba7f7154d473358251c8ce762035aca4f14aaa3bb97715"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-102",
+      "restaurantId": "mogeultende_8cf850d13d0f",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "730b3e6772d5f76647c0999269f8cba2f20f9235b3d69157e06da3c215c529d9",
+      "protectedDigest": "424834a75bb7763561ff6a63c1396a70d8b49c332a8e682a7dbe059989d67bdd"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-103",
+      "restaurantId": "choiza_place_fbe0dc47478fad10",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f0f3fdbac009702f6c2a5684e275160ad7f5c206ff52dd16e4cbce47736bc496",
+      "protectedDigest": "753194b841a0c939072da359d58912eee2ea0bb7ed945575f5f8e4133d819550"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-104",
+      "restaurantId": "topic_enrichment_delicious-guys_07bbd29ec47c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "000c3d467151f85c510f5704e96a976563130946f2b3d9daa34658e7e48c4387",
+      "protectedDigest": "d764f05f9fbaa66b9f8545ea4aeea5acdf81c013c2de61197e732c3b87e69c90"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-105",
+      "restaurantId": "topic_enrichment_michelin-selected_9a98cbb18585",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2ca10c2065cf12f292285cafa63448007dd86b1a52a86ab4b3f06b38a4d310f0",
+      "protectedDigest": "547b817aaea522f79855dcff9eecc60e164795bb44f5eb1591a56cf37411dcdd"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-108",
+      "restaurantId": "mogeultende_16fde98822c4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0ff864c7e70c390ad1b369aa5f1d2d462fecf09dc92f4780f638c2ea4f0b249d",
+      "protectedDigest": "814506e4bfffabb8268860af66c89a840f3f9890b1fd45e6f848e53fb9ac89e2"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-113",
+      "restaurantId": "culinary-class-wars_restaurant_8c1ce57aebc2",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "b0ef864a0896e25812b8901c0cef1758547ff2136dfcf80bf44a9b79ac6d3de4",
+      "protectedDigest": "5ee05367f37fd258270a84316f5c1037cce680caa5007f027d89bd5ca38883f2"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-116",
+      "restaurantId": "r_7219cb87",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "26a60b0f98cdf72f9a3cee29827a6e4a10b36bd01b98bae2c635e41f2696adcc",
+      "protectedDigest": "4eb1a349eedba93cb31835d41c3cc9f77b9182a821de6abe56fd14750ac55ca5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-120",
+      "restaurantId": "wednesday-gourmet_restaurant_520",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c8fbcc82cb81f761e0ddb8c3071c7e2879e00a0aa3e122eb3c44cd2d51616bae",
+      "protectedDigest": "904a21fa0e7175f26c649dd8ab8f37b38269de2d1e84a5659b1d010d1684742e"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-121",
+      "restaurantId": "wednesday-gourmet_restaurant_165",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "be8a6aaa4627891d5f6f9ab241e416a150100265c66309330d8bab63e680cb94",
+      "protectedDigest": "3f8742661148d327ebaf32bd1877ca4e961bd0e4da9ad9bb3734e3d249221e28"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-123",
+      "restaurantId": "mogeultende_e457dc73cc60",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "5347874b2b5da5289fa08fa750ab17ef809a7aa1eff3108d3d6834169d41395a",
+      "protectedDigest": "74a61658d06a13442f1f41821b3b523fb2ad4db9fe2ff0f0eb236beed649f337"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-146",
+      "restaurantId": "topic_enrichment_michelin-selected_c68e238e90b6",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7e5942f11a3facd984dbf62570b5b1f67afd667008bb6160b31860e8289eee43",
+      "protectedDigest": "46c107ed819d9cf4541485f16c85a023a2832da5bc8703dc91181f073fadbcb8"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-147",
+      "restaurantId": "topic_enrichment_ttoganjip_af541292429e",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "df891c54cdf8d0adf4c19f328efb5564be93f40bd58114469de4dc9de0386019",
+      "protectedDigest": "ab05a63890c14bf0ae439651bc7674fa748aa0188ebdeb7b826a6fb3a33b7e93"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-153",
+      "restaurantId": "topic_enrichment_michelin-selected_f8354bd7c8f4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2815ffdd39b9ac28756320114254b71f9fab1f82bdab5154a4013653d6948a47",
+      "protectedDigest": "3e65bc61d3dded5028f0a74cfb384937a14b66cfab06b92752e2fbaf34e34fcd"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-160",
+      "restaurantId": "topic_enrichment_delicious-guys_f60f5b497f77",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "4737f0ec191b39c2e6292e268c922348b1714e0aea6ce6ac4c9e7d23f56b04d3",
+      "protectedDigest": "355da49cc64c5db7f10b1869fa7f05d2e0452e28e61c70c223962e140b8d43b8"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-174",
+      "restaurantId": "wednesday-gourmet_restaurant_302",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9cd59c99a4820414a84eaaafccd8a230a731588217f4a35c588c13df519d6476",
+      "protectedDigest": "76aeaed9a9261c0e12888304a43e3ca530de6d0dd3d738782b5320a40e0f0ccc"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-180",
+      "restaurantId": "mogeultende_0e4c9cb16731",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "6578eb322ec4fb5f8a8cff4b5059ea3699207480ed933a42a845292de1b8011e",
+      "protectedDigest": "37cafce92c0ae52ea78854d1324376d37fc536d715f099db95ac0e65c80cf5ad"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-184",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_222a9f7f7db6",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9a0ff0d444c0ab34a6dea85059896827d3a640a5852e79b1a9991fe7a8a47d7e",
+      "protectedDigest": "ca19b6e92aa9efedfc7f86981c7c7789999ab6e9fdb5743c233bec18bb54d743"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-205",
+      "restaurantId": "topic_enrichment_michelin-selected_a6780b884be0",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "867dfa7e1843767b47b982194a8cecdb226a2ebe4f5aefa21c9e11e34ff98c92",
+      "protectedDigest": "d21cd69e1f3afd13d5b5853d279bbe486dd448c4f26c9715b4899a041a31d82a"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-206",
+      "restaurantId": "wednesday-gourmet_restaurant_504",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c11836422e1983942b7dacdf6325deabdd6b15b0e521d60ef4e5ef397843e510",
+      "protectedDigest": "18118966945b5d39b464cd0b205d692a9450ca75d35fee5d88e1b6b60aea9b6f"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-207",
+      "restaurantId": "choiza_place_341fccc9c9751b91",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "d99d97175cd6010d29ca2607aeab48dbdd1f87f167460d8f08e150920112dafe",
+      "protectedDigest": "290c10996e35ff2df78e22a9fb6d441737f7d5d211db1e470e77b5e923afefd4"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-208",
+      "restaurantId": "topic_enrichment_michelin-selected_b6512ce876de",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ce179f59d0850cd328d3dc2964f52550ca66856164c16bf67ed1f062dc9dae47",
+      "protectedDigest": "b8647eac4e892b06c6590b2b6c87603e11ed2d9bcbaa5b7ab21d2a97a06ae9e1"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-211",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_065",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2352750a81182ec8111333cc20c1686acecd5d1759b1d68e78dfa364534e2489",
+      "protectedDigest": "27b0017a81506fab3715ed79d6bdd49020440113848ecb17b6ca575c3b7e77fa"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-217",
+      "restaurantId": "wednesday-gourmet_restaurant_506",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "fa2523d0316bca2555a965ea6c215d2577785bcbb05fb83e014c25709d638d58",
+      "protectedDigest": "276251c2684ad1f99b208d77b33557cfeede1cee76ab1b70d39bf10f2b3edf54"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-218",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "88261f736fa357dc6dd3c98de3fb746f9c00abba9a8df73e8f4efc99a1c04361",
+      "protectedDigest": "542a1d52bac5fab3471a2f2c6ec90af641da03502f2bb04a58b2e8056d0f92b0"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-224",
+      "restaurantId": "topic_enrichment_delicious-guys_bd29a6baf7a5",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "81b9a11e42b679b647167d86ab5aacd751f0d27c0e7ec43c4c127d0d8d204dd4",
+      "protectedDigest": "843b2f22209f0412a0c21b7829af42b35c3421efd52ef13792835e9c465f7b1f"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-225",
+      "restaurantId": "choiza_place_c72f1e5e9e52bf0a",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "bbac60ae1c1e233d5f6f89669440855ed6986ebd3a6410c6e57141644f99344e",
+      "protectedDigest": "317e1fe33b9208b3169995b0926e239edda00873596a29b686c49b6bc0d3745b"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-227",
+      "restaurantId": "popular_restaurants_hongdae_itsumo_ramen",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "efdd1d5e4bceaec830c3a5285239a64afe79f18285c369461fa13a0e9122107d",
+      "protectedDigest": "94def2c278baaf07e84f5f2c5a70f83b11d54dc0d1ed83a1ca1b56a6ce5e4898"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-229",
+      "restaurantId": "topic_enrichment_ttoganjip_6a1a6bada12c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "60f5c3d8d78e574bb520dca04bf616576f3779c1be588a9cbba8557343c00002",
+      "protectedDigest": "8f96cdf60c8894069753d5eab04b5ef3e1dffdede7ee3960b3703025b158a312"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-233",
+      "restaurantId": "wednesday-gourmet_restaurant_388",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "9eea0849a418db46fe6a71be6a7baa0e03b8f1ea834cd64f8053a570df8c7dae",
+      "protectedDigest": "c411dca820f2f9205889140d227450f7a075cb40e6dc3b0b3f1dbc699555a8c1"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-236",
+      "restaurantId": "wednesday-gourmet_restaurant_386",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "60db2fd7814dec88cb192ae6faad5ef7b84a25c7b299a4c2d40193b959f9386a",
+      "protectedDigest": "62d02b6fee11289b32ba809518ea56f82070fd3845d54bb350edb1b2d30568ac"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-237",
+      "restaurantId": "wednesday-gourmet_restaurant_406",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "50cf93148f8384152940b4e2f856a76cec38ff82aa4092da556348db6f788584",
+      "protectedDigest": "5956ac36dc9ee2a89c61e7ae3bf6aab1f8eacf10d241dbd7619302b1b67203f6"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-239",
+      "restaurantId": "requested_topic_9e3602e96b7165c1",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "835b4a669351bd2703ec3023c51e1696978fd0b226d3620d9db82df68993e6ea",
+      "protectedDigest": "e7dc6a6ff26daa349464e5e5bdd9d74de398f0be159843513d7a75bde1d44316"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-241",
+      "restaurantId": "wednesday-gourmet_restaurant_474",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a9e860958b7260ca341bcb421fedf2fd2147d2c64b275803946975c965658a7a",
+      "protectedDigest": "f7ba51a26749bd2f32708c1151d04500a94e5399c1b3cf94be62ffce739b9d04"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-246",
+      "restaurantId": "requested_topic_666c14b70accf8d8",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "4424c996de58ac5801f5f742f10de91fd35f52c42b1edcc79b2c7db48cc35169",
+      "protectedDigest": "c934bc627e74a12f8ae0c2d0a56e90f01b483111430c629d8553754e37192aa2"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-250",
+      "restaurantId": "topic_enrichment_baekjong-wok_f98670458f00",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7379f6bbcec1616edd9f1e547e8f478710f8f39a8b247573e8db26ddd0016fa8",
+      "protectedDigest": "10e0c088baa44de95d996eabb36937524610db91cdd432e8c614b9dc89e79ec6"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-252",
+      "restaurantId": "wednesday-gourmet_restaurant_381",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "918365bab58680624586a8c622ac4667a8de8ea068d524bc7884ae57d0f45069",
+      "protectedDigest": "472abb0eba7d9d8ad54a9ce46c02cf1c92e4d0ee2af2ffbc7d8339dc1b58208d"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-257",
+      "restaurantId": "topic_enrichment_michelin-selected_a92ba873923d",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "49473b7ab2a77a5970a60c925b828da5c4c9b5f6a4f1b44a10572c4a7471ccad",
+      "protectedDigest": "f15b19c5a638d5e73c1c28b95420d93eaf191ff48b427c3d9adac6f0c0ed4ff1"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-265",
+      "restaurantId": "requested_topic_ad6f8164c0725b6c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a089e7b9a84ca47ee84530a5c387316dfaa228f81cc454f8849756a497016938",
+      "protectedDigest": "eec7fdc88b3139ec392fff928239f648da2363063c31d5bb1a6b2ebc70c2a7dc"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-268",
+      "restaurantId": "topic_enrichment_delicious-guys_8ea81784606c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "5f86b0f94f72211fb5ec9daec57d1e12cef56b8e17b284edbdc5d8402e678df5",
+      "protectedDigest": "4268114302be800164f85c35c95a2d3e386a815b954cf32e669cc6bc23508b34"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-269",
+      "restaurantId": "wednesday-gourmet_restaurant_368",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f74694f1e04eb50fb8e0fd1b10e84181424c48d437e56c359bb9dbdaf5608200",
+      "protectedDigest": "2e155e41e9476a41f6066301133b15deb8f3fa2325de041f63bbd44cd9952624"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-271",
+      "restaurantId": "topic_enrichment_michelin-selected_0476aa088e94",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "814ac2cd644283665ebe47450c7ce3cbeccd90a2666a902360f3ea1a590fdde4",
+      "protectedDigest": "52080dc7f2794cdf946de53744a5387fce095c12f5171c40c1e015e778e383b2"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-275",
+      "restaurantId": "topic_enrichment_delicious-guys_48b9796ef90f",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "0c03d6c44dd15559136523c02d5d25455fa62ccf8cf0f284d835800be9bf0019",
+      "protectedDigest": "82b36f57591d5879d78233334b098b0732f7149a86ee2df48501363a3860a298"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-284",
+      "restaurantId": "r_eb889504",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "c48c154f68b46cb5048694186ae64e2e9d672558b707558e76627fd706e4c014",
+      "protectedDigest": "999e039f7941782984d8a899d12a3bda98edf1ded6ca063c767abb59327b880e"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-285",
+      "restaurantId": "r_e1a8060c",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "f9c35a3d63391c2c833e30ddbc36da804611c87ea0d16c1d23e2f9b087c655bf",
+      "protectedDigest": "c333b3ca44121850e9247a3fe273433fd32fbf59913fd80691eb9b4117992d19"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-287",
+      "restaurantId": "topic_enrichment_baekjong-wok_deb27c91e90a",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ea2f7d182084f451687b2fa3cc8129adae5a3e22f6f1a058ed0576dc0347bc73",
+      "protectedDigest": "8e03b8d3388c250b8b3d56e9061adb9b0902539379e19e9141276d296baa749e"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-288",
+      "restaurantId": "requested_topic_fdb12bb59ce9206d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "40c3f0fd6dfb29831cb2f2acafb57b62d8113916518c46f2747cf5831630b089",
+      "protectedDigest": "14423f95e5a173c74de887ddff041252164a310afe791546efe6f477eb2eb91d"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-291",
+      "restaurantId": "requested_topic_7145bb018a228d3d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "b6a412669345581a14fa1518cd68e155194073d6f3f10b178e45d89ee89c65db",
+      "protectedDigest": "c4f21c1a3d6331e9db16959152fc0bb530a99964985ea5294e187d8a52030ac5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-292",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "a239a89e3ddd3405d20a8ce2e69fad41936e0879a0c36fe600041c04c9ca9dde",
+      "protectedDigest": "4f87fc160e05c6479b4ca4dc893824258b435798f83646f8482157f333bca628"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-293",
+      "restaurantId": "wednesday-gourmet_restaurant_467",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "14a9fc3015df561cd4584db538a6dd62be149f36912628582c0f9e59e7e4472b",
+      "protectedDigest": "951483f93a251e61ccbc28ea8df0f86016a4b431f11e647c9af1119119c552b1"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-294",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_469",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "d75633652d64872d23d77ca6e4475910962270119bd244198685532061b893b3",
+      "protectedDigest": "34ccebbbd9c3dd0716c8e466f97d7eb8d2e04c6d9451578edddcb601e2a3f321"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-295",
+      "restaurantId": "six_topic_51352f5e25636317",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "3af6a7e8d19e58599f4b70d39de2e871d76eac248030ab54988d7076f31c9ae1",
+      "protectedDigest": "6ddc24f28b04017d657503098ad0f599485a4794f632eb6d2cb5de624e5d83e4"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-301",
+      "restaurantId": "mogeultende_3cbc3f126c0b",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ca12d999a05c2b51e62643ff30ace63acb0867a664586ca60f7e15f64e756a64",
+      "protectedDigest": "da6b8c9e51e437344183ff32854c64f4513fe1138aece635fc47c8f785e37570"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-304",
+      "restaurantId": "wednesday-gourmet_restaurant_232",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ccc280d31273a3803f2b61ea33834bc3bdf552343a754c477404f825441ad487",
+      "protectedDigest": "dac2b16ba705eb3f9b3a9791fa9bda6f74966da27281cdaeb1dea4d15e090f1b"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-306",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_597",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "897276c29349ef2e8fae8fa0448f6483948e7a5fa4a150362351537d73571519",
+      "protectedDigest": "2e05e694bdd501c2260a371f441d885117a19137252718a806e1ba061298aa32"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-308",
+      "restaurantId": "wednesday-gourmet_restaurant_241",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7b1ca3036dc943b77672054a893c90b5f0ad6c2d8dfa497f7d3647ae390346d7",
+      "protectedDigest": "4e449f3c363e4f5d414547a9bd2dc42c2deeb9d69e98d4100ade20f1680f1d5f"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-309",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_1cd3067a3a95",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "8814e95d8389e8f96315ea6512a4fa7882e70cabc33626bc329135a236e4c45a",
+      "protectedDigest": "95655d8c2bfa32fd229f190e77eec6c92a7dced8fd32aaf9677e40acf3132492"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-311",
+      "restaurantId": "topic_enrichment_delicious-guys_1af207dffa40",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "198d0f8808e6ac39c92119fb533b15d3d996e5385936403172954941c95e2737",
+      "protectedDigest": "8021e3c31a03670bfc2cd31c9dbfcc4eac127ecd8f0efd9c06f4f88de71c672a"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-317",
+      "restaurantId": "wednesday-gourmet_restaurant_493",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "29f12e7ed6799e3327d114cb92874e282ab62a8ac3c122d3e4b491eaa3fd754b",
+      "protectedDigest": "cf64e8f97676dcc63225c236743903ff272372104b5006eface82c6a3120c0ca"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-319",
+      "restaurantId": "wednesday-gourmet_restaurant_496",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "fdb1e82088f4e29ec668744699bc2d560650fd92a046a090cd9a33b191049cfa",
+      "protectedDigest": "073b4b74774fbe9017e378ef2b9ffaa93be000f269d4bc23b4eb161c9594f6c5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-324",
+      "restaurantId": "wednesday-gourmet_restaurant_430",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c894f7646b1e135c502f50e1d4cc6f8fc76d76e14d24bb82eb4a3cba4a2d82c9",
+      "protectedDigest": "fd825c45c1741d89f682dcbf7c3be40917e6b3927ca7df3d085d2dd21616b3ba"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-331",
+      "restaurantId": "topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2025e3525dd2210a477d1b3538276b9e27518cfb357300eadbeda5e549d4a4f1",
+      "protectedDigest": "051460b799e22ac69e07f1cb6e11b6ca1421c811f304120df1f82723d223b8a5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-332",
+      "restaurantId": "wednesday-gourmet_restaurant_264",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2662a2b11d5defe27e246392f56a76749c42411a39a2f913778768b16d3857b9",
+      "protectedDigest": "2c2f27f23acf93c43ef645654e6c59b445c72bdc8fe16337a0a4b4832f70c500"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-339",
+      "restaurantId": "choiza_place_d2eee18465fb3eaa",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0ab2dac23d56961ec21d503da86c6452958a96409974887f6228e2379ff67674",
+      "protectedDigest": "b4c0c5630ab146c90c4037737a6286e88a8a2976f1bf793805da408d4ee0391a"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-342",
+      "restaurantId": "topic_enrichment_baekjong-wok_e089b5d65612",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "08569e34ce18433fa9f3633d0927b50182167f21e5436ed3f22c7dafdfb2e0e0",
+      "protectedDigest": "b8d32f2990d39e455dd3c6f479cb01415f52855ee97efca692787b2c76ea4ff6"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-349",
+      "restaurantId": "wednesday-gourmet_restaurant_339",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "16824c03a072a0157b23324406f6c1dd7383d01073ce3963c88ee48a9a1fd899",
+      "protectedDigest": "acf09fc7bf282a4966f8e643054a30c6ccfee7949515d848e04c93d0e93f2b8b"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-350",
+      "restaurantId": "topic_enrichment_delicious-guys_00e2930a6055",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e652c8cbbe50aa58b167d171dffb9e07bdbbc579b96f926bbaa1098bcbc44574",
+      "protectedDigest": "6667932f4faddb85ee722954d4c9eb14bf3a4680aa082b9c1ce3c4e0c72b3ba0"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-351",
+      "restaurantId": "wednesday-gourmet_restaurant_341",
+      "matchBasis": "duplicate_catalog_identity_preferred_canonical",
+      "payloadDigest": "7b517b9418cfebfd9c7bc82b6dd63aaaec6d5c616eccc66984254e95afe8fc5a",
+      "protectedDigest": "1d294712fad3c12d4be1fdaaf7bd33afe139e9ea07e747d22ee2bcfc0a080c55"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-354",
+      "restaurantId": "wednesday-gourmet_restaurant_360",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "0b947126db0a8519dfb5f59414379e144d08fc4702419b3a91046e82695bc0ee",
+      "protectedDigest": "1a499bb235cb9e8282d825310b2ce60aa66129ce3520a51e5ecabc43667e2fb5"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-355",
+      "restaurantId": "wednesday-gourmet_restaurant_366",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "29a60dc5f81f7dff2db6b882276efcd94ac4eb5f62112439401ddfb1c19b35eb",
+      "protectedDigest": "3d94b0bc2ace8e53c09be036333c86a1eef6924a64e8c463d6cea30ca3daeb61"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-359",
+      "restaurantId": "wednesday-gourmet_restaurant_375",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "76a998eb873abf22a318de104832365e59f8573934735c9344b61864fffafc20",
+      "protectedDigest": "69abef3ae39527ac87c444a75492e9752ab1c146892b8f4d6cd75ad94d44b9d2"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-360",
+      "restaurantId": "choiza_place_97df2bf5095defdd",
+      "matchBasis": "same_input_place_id_as_existing_match",
+      "payloadDigest": "caa8580703b39436e4048f5879fd8c59650dda859869eaba002216ef8bf170c5",
+      "protectedDigest": "ba43c905345f395bac773a5eddf231c45429ff7b5760ca113b7a2235bda6580f"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-364",
+      "restaurantId": "wednesday-gourmet_restaurant_528",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c3c09ba144ac44c186ca495cb777784713eda41d74a169cedbf9d4beef8f0aa0",
+      "protectedDigest": "e03b275495a87af965687cdcfa5efc499ad9b0c8dab5db8ffe1da4d55a963061"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-367",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_487",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "35bf9790de2dbbf94b7e48d367886669af00c50339d2cb4f523b8f87eb4b9f8e",
+      "protectedDigest": "dc3664a372d8f2da89545358c0d5da8abc7cc92d439cacd1c30fc789da6f916b"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-368",
+      "restaurantId": "wednesday-gourmet_restaurant_542",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "76aac768af25736f45550a60d85e28847df89f997a5ca0ef5d89e7998f64002d",
+      "protectedDigest": "20b682395dc9e98cc8f2e3b6dab2e8d26a55a3db3ecff389c2ad25499f24c879"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-370",
+      "restaurantId": "topic_enrichment_delicious-guys_23a16aca288b",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "ccb5efa30859c93e5712db3432305f1090ab85148ac27498e3bd502289e1f9b1",
+      "protectedDigest": "554d712a1308e2bc36d7113f5619af327082a69839bcbc36996169cf101fcaae"
+    },
+    {
+      "sourceEntryId": "redribbon:서울-371",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_594",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "6be91ff3ac6e1c3f33b1093a8dff2d88178304031da0345c4362cf748229e748",
+      "protectedDigest": "785839ee31f5310bae64e163a450d625e024d2b6a820d9955ad73ab94de1cc1a"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-010",
+      "restaurantId": "topic_enrichment_baekjong-wok_64cb792abe47",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "dc93ea8555a1b0646035ea8850fcf8b0663fa36a7f5c555bd068bc21c2d16045",
+      "protectedDigest": "a7ba252ebc960c88fdd1a32a30387139ff3f5543947d881f9ffea63308f935f2"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-011",
+      "restaurantId": "topic_enrichment_delicious-guys_7ecf0b49763c",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "893d8a42da10b1fae6e1ff8e55a9a9a63a9ced281cc54a7407a72646a7d57c22",
+      "protectedDigest": "c32de6a9bd42d51b32dda74a20f18e21f23609ca2b4da04f1bb25ec7956d4fd4"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-013",
+      "restaurantId": "mogeultende_15e5a9983558",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "44fe7c6fa7c740e3f88db69aec3111b0101f946c9bd8bd42bb296db092220099",
+      "protectedDigest": "2df14799b3ea91bfb9cd6791ad00d37018395244764cefa127ef16305bbb2756"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-015",
+      "restaurantId": "topic_enrichment_baekjong-wok_f712ffe69f88",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "83c2dc6db82d8684f9501a5b6dbf4bb08ad0f49e0009d34ec4e98cd6cd198b6e",
+      "protectedDigest": "53a774565ca3b3d5b60b06a8de76f145ca811454ebb18ec9d0c1103d750abf7c"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-018",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_c91c6a54578d",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "2ad2dbf03f2581b1cc409d0b68a5154615b383794a4d66f7b2f128090ddb7914",
+      "protectedDigest": "55e2992f8b122f865a8722cc9d943f89a8d4cb492d0c819d895dc8460ee21467"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-021",
+      "restaurantId": "wednesday-gourmet_restaurant_130",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "1aae00d637f4c789f02f7bb00d7decb82cb28e0ed0d7175c367886ddaa443f89",
+      "protectedDigest": "ae604d02314122d6ec752723ce92821ae82bd905b7bec97d4591ef7c385bf5f9"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-025",
+      "restaurantId": "six_topic_0a27c1dcf76ab55c",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "82fa3a1bf48ad5aa9713aa220c6bd83ba5fdd8dd23bd529e5b84dff7219c5dfe",
+      "protectedDigest": "f6568ffbb6c33a7431b4458df9293da5dc98b5276f49a24213bcbb43d6bb60e2"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-030",
+      "restaurantId": "old-korean-100_restaurant_058",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "c208b1453f897a59c9a08beb8245a439c767a5c8d4cf5150604cda8c374f6b6e",
+      "protectedDigest": "31ad8a18301d6c8cbd2d567cc04593bf54a0694a1eb12b0ad22974334f1c2aeb"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-032",
+      "restaurantId": "topic_enrichment_baekjong-wok_ffeffb429425",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "7263f9bfc5fe3e79d1737d6b561bfd7e6b9ccf80886d5715fd9445daab6df964",
+      "protectedDigest": "dfa09ac457b2381e8021abd511832288fbc5f33b462af345929780b5d0dc845d"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-042",
+      "restaurantId": "topic_enrichment_baekjong-wok_f37d9ff802de",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "33e39cb27bc717c6a0bfc9b8099199df0b1814b38a5246cca5a7dd2de36dd4d5",
+      "protectedDigest": "e1f75e00383721f699eccb243f811ede55c19257199af8b792cfd1907196e92c"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-043",
+      "restaurantId": "topic_enrichment_baekjong-wok_2acce0e57504",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "e9bf3b7705389551b5b3ceaddee0ca2073efd494ebe16eb20c4254a22b6f910d",
+      "protectedDigest": "f8e47e48ba2c4a07f543280e180e5c426eb59cde96ef70312de59a7a435caf98"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-048",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_417",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "308d5b10ff6558143fd4649a0a7c837f7bae13ed517832ede0067e47d6328f9d",
+      "protectedDigest": "d2916df3d9beda9715203d55c21adc8a56537bd844366b41a807b0585cd0b50c"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-049",
+      "restaurantId": "sikgaek-baekban-trip_restaurant_184",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "b08d5a7f76293f4b18ee835925d2f481d802320b8faacc807fb430ed3c5e12e3",
+      "protectedDigest": "985c2549815d83f1ed17c5f98cff64408c5b46ea898c2e1407924ccd9a8dec1a"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-050",
+      "restaurantId": "old-korean-100_restaurant_078",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "3fccca388481120ab2ff13ef42667762356b807add3e400e734a2f9263d30fc7",
+      "protectedDigest": "5e012bfc9945122c811cab2daad02d706098137e1ef4a32055e72a03bee3ef48"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-061",
+      "restaurantId": "topic_enrichment_baekjong-wok_8f6c67ed9af4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "f628ed822f6026996dc152dc81e1d90794642fb13986f3bacd8e34d42494ee25",
+      "protectedDigest": "642a046ad0f7d95bdba0b394d2dca24ab8aacd9117b5d7d11192812db4631fb7"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-070",
+      "restaurantId": "topic_enrichment_ttoganjip_beab5ad2ba02",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "8e6fd336741709db7eb80d6f81a619849283392006b0c22359911fca631ffd0c",
+      "protectedDigest": "252c070684a7f29b8b0ac408b21fd554046998eb760f5e5ee28eb5e5897f1969"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-071",
+      "restaurantId": "culinary-class-wars_restaurant_cd91ec8f37f0",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "881255fec36f25d0955b1cf51fe1aa838a539579a36cc62fcd4e48000130d91a",
+      "protectedDigest": "b68752ba0cd8dce748cce7dc21b4682057f39d893badecdbed5bbf1b06743352"
+    },
+    {
+      "sourceEntryId": "redribbon:전라도-073",
+      "restaurantId": "topic_enrichment_baekjong-wok_f9f4a3d81b45",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "a54ec722a0dc2b6330f9bdfa659993c83150b61d1fc94ccf86b2b7baae0d063d",
+      "protectedDigest": "3b04f0c024c11a4a8336e09a9266834c1284f624dc0177928898bd29545cc021"
+    },
+    {
+      "sourceEntryId": "redribbon:제주도-011",
+      "restaurantId": "choiza_place_b63b95c5ef8210d4",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "82a467084a1443082962296cdc657a1be2dff9186909973b5624ae1afa4e2b23",
+      "protectedDigest": "586c710fa262abbc9ee7a17ccf034b64f7b13dd02b2f07bfdbfafa4a274a653b"
+    },
+    {
+      "sourceEntryId": "redribbon:제주도-015",
+      "restaurantId": "jeonhyunmoo-plan_restaurant_24e167c37991",
+      "matchBasis": "same_name_within_100m",
+      "payloadDigest": "0be43337099bf94de4319ad13af0d774a800bb7c81d34d377816d8af01653ed6",
+      "protectedDigest": "e16eb552f2fcdaaaa2dcf676a6fc75e652a9cecf71c47e929619ea8ddd7d7ce8"
+    },
+    {
+      "sourceEntryId": "redribbon:제주도-022",
+      "restaurantId": "travel_jeju-bite_11fe917470f733f2-row-2432",
+      "matchBasis": "same_name_and_address",
+      "payloadDigest": "01baa5b4d5386c494c053efc5dd6a8f82b5cb3774cf3a6a14a4f2a1ec5dc932d",
+      "protectedDigest": "20a50fb813f653d05c969c89af4ec1c46fa2bb635f457f848314f80ee2e598e5"
+    }
+  ],
+  "entryRestaurantIds": {
+    "naver-shared:1027328432": "community_pick_7c352424ff42614e",
+    "naver-shared:1027330100": "community_pick_986ce1d090cddc13",
+    "naver-shared:1027330924": "community_pick_c7422af40c1a2a43",
+    "naver-shared:1027337098": "community_pick_888a3b2aed0e459d",
+    "naver-shared:1027338927": "community_pick_3080e9086e9b2621",
+    "naver-shared:1027339746": "community_pick_28049bf64c4a5271",
+    "naver-shared:1027340651": "community_pick_50b12765858dd37c",
+    "naver-shared:1027341051": "community_pick_4e33aee7e6fb4701",
+    "naver-shared:1027342513": "community_pick_a75dced9a6e27721",
+    "naver-shared:1027342932": "community_pick_7ef25017cb4e1cfe",
+    "naver-shared:1027343474": "community_pick_d38ab61bff5b8d37",
+    "naver-shared:1027343783": "community_pick_777633e3cf304b8f",
+    "naver-shared:1027343956": "community_pick_d41fcc52c01f467b",
+    "naver-shared:1027344289": "choiza_place_97df2bf5095defdd",
+    "naver-shared:1027344652": "community_pick_811760fd466644de",
+    "naver-shared:1027344909": "community_pick_7f83b7e1521a2c34",
+    "naver-shared:1027349629": "community_pick_1c328634aeebb98f",
+    "naver-shared:1027349977": "community_pick_2924caedeeef234e",
+    "naver-shared:1027350413": "community_pick_cbe4c85c89690603",
+    "naver-shared:1027354254": "wednesday-gourmet_restaurant_386",
+    "naver-shared:1027354617": "community_pick_de7cd856ae5b9dab",
+    "naver-shared:1027355589": "community_pick_6972b5fee99287ae",
+    "naver-shared:1027355990": "community_pick_8dda55719d3cd76f",
+    "naver-shared:1027356621": "community_pick_c24a4a0ab5b2c598",
+    "naver-shared:1027357950": "community_pick_9e04232542d87b2c",
+    "naver-shared:1027358241": "community_pick_7558c799d5518242",
+    "naver-shared:1027358590": "community_pick_ac4ffdb9ad380a30",
+    "naver-shared:1027359325": "community_pick_93832b40df5c273b",
+    "naver-shared:1027361182": "community_pick_3970745f8fb6a621",
+    "naver-shared:1027361434": "community_pick_f63dbc8fe577151f",
+    "naver-shared:1027362119": "community_pick_901c4120a4f4ec27",
+    "naver-shared:1027362363": "community_pick_d4a90c641e3daef9",
+    "naver-shared:1027362664": "community_pick_4561fc5a645955ee",
+    "naver-shared:1027362926": "community_pick_c40a4a19879e4ef5",
+    "naver-shared:1027363257": "sikgaek-baekban-trip_restaurant_154",
+    "naver-shared:1027363495": "choiza_place_c58252f44eb31992",
+    "naver-shared:1027363930": "community_pick_c72a94fb7a163fd5",
+    "naver-shared:1027364606": "community_pick_db6535fd2947a5a7",
+    "naver-shared:1027422343": "community_pick_c9dba96bca9cf2c8",
+    "naver-shared:1027422893": "topic_enrichment_baekjong-wok_68b32e359685",
+    "naver-shared:1027423571": "wednesday-gourmet_restaurant_345",
+    "naver-shared:1027424270": "community_pick_db50c971c4907bc3",
+    "naver-shared:1027424759": "community_pick_e3a0575b5eda511c",
+    "naver-shared:1027425635": "community_pick_8961f69af3245bc6",
+    "naver-shared:1027426090": "culinary-class-wars_restaurant_a1a6f381cb81",
+    "naver-shared:1027426575": "community_pick_823fc203488c9e70",
+    "naver-shared:1027427073": "community_pick_25b66b85750c4d14",
+    "naver-shared:1027428155": "wednesday-gourmet_restaurant_272",
+    "naver-shared:1027428530": "community_pick_33bd97ff2d15b17a",
+    "naver-shared:1027430001": "community_pick_04a0dcbf7c9f92e8",
+    "naver-shared:1027432369": "community_pick_f5f04bfcb4e85d00",
+    "naver-shared:1027441210": "community_pick_28cdbadd88e549b4",
+    "naver-shared:1027441880": "community_pick_dd0b5ee1ed958cb5",
+    "naver-shared:1027442533": "community_pick_160381bf4b546a91",
+    "naver-shared:1027443627": "community_pick_8975e4e02c532b07",
+    "naver-shared:1027444129": "community_pick_a84e856ceb230540",
+    "naver-shared:1027450667": "community_pick_63f8df821c13acef",
+    "naver-shared:1027451880": "community_pick_6f00c30c7ead2166",
+    "naver-shared:1027452502": "community_pick_6da1cbd9258febc2",
+    "naver-shared:1027454258": "community_pick_3780b07bfb99c7f3",
+    "naver-shared:1027454636": "topic_enrichment_baekjong-wok_f7e757266e9e",
+    "naver-shared:1027455205": "community_pick_12552f9c8ae9f727",
+    "naver-shared:1027462281": "community_pick_b6533e856c3b76df",
+    "naver-shared:1027462743": "community_pick_57178c415bf1b7ea",
+    "naver-shared:1027463161": "wednesday-gourmet_restaurant_304",
+    "naver-shared:1027464327": "community_pick_69fc599df35f8ad2",
+    "naver-shared:1027465276": "community_pick_51e5b4b760ae4376",
+    "naver-shared:1027465621": "community_pick_802a3e6ca88d73e0",
+    "naver-shared:1027466117": "six_topic_357fe98963505ac9",
+    "naver-shared:1027466543": "community_pick_8780a3c0fdb9f5d5",
+    "naver-shared:1027466872": "community_pick_c02ab9141bbd5244",
+    "naver-shared:1027467569": "community_pick_2750d0ec91724581",
+    "naver-shared:1027468175": "community_pick_81dcc8d663bf84b7",
+    "naver-shared:1027469052": "community_pick_2bcd83e6700af6c8",
+    "naver-shared:1027470975": "topic_enrichment_baekjong-wok_b2b1bc48bdef",
+    "naver-shared:1027471419": "community_pick_c48782dea6164a83",
+    "naver-shared:1027471859": "community_pick_5c310e5ec6475f51",
+    "naver-shared:1027472605": "community_pick_c4cdb084d34af371",
+    "naver-shared:1027473074": "community_pick_033736d5ac2ac96a",
+    "naver-shared:1027473567": "community_pick_3fc61ee48b4ca40f",
+    "naver-shared:1027474341": "community_pick_ee2887ed79266255",
+    "naver-shared:1027474772": "community_pick_65dd4f522db62026",
+    "naver-shared:1027478839": "community_pick_018197335c12f583",
+    "naver-shared:1027480978": "community_pick_93f630371f8ea222",
+    "naver-shared:1027481325": "community_pick_cff110d42aec22ea",
+    "naver-shared:1027482770": "wednesday-gourmet_restaurant_482",
+    "naver-shared:1027483587": "community_pick_c48bb13416a67e67",
+    "naver-shared:1027484031": "community_pick_8b8031e31b8b1a79",
+    "naver-shared:1027484444": "community_pick_ab58f86a058ff249",
+    "naver-shared:1027487762": "community_pick_abbc7f339f6f1493",
+    "naver-shared:1027488426": "wednesday-gourmet_restaurant_442",
+    "naver-shared:1027488843": "community_pick_4cad3ed6584ab56a",
+    "naver-shared:1061024204": "community_pick_ce49c31fad31df0c",
+    "naver-shared:1277439787": "community_pick_e9e074c61bc5472d",
+    "naver-shared:1411865733": "community_pick_4eca2a288238a8f8",
+    "naver-shared:1441218775": "community_pick_24a5de4f08138c5a",
+    "naver-shared:1441370665": "community_pick_cf7f3bcfc1d140b7",
+    "naver-shared:1441387573": "topic_enrichment_ttoganjip_888dde365096",
+    "naver-shared:1441414369": "community_pick_240da2e8bc1fffe0",
+    "naver-shared:1441415539": "community_pick_cd61c59a1b36c389",
+    "naver-shared:1441437366": "community_pick_9c22814ed444b2bc",
+    "naver-shared:1441442503": "community_pick_72b2c5dcc78545b5",
+    "naver-shared:1443162357": "community_pick_8fe96fe6b07d0fb3",
+    "naver-shared:1443223281": "community_pick_33b703b4ea75596c",
+    "naver-shared:1443383466": "community_pick_bd4407b2d8731b22",
+    "naver-shared:1443393990": "mogeultende_c96c1f2512bb",
+    "naver-shared:1444452250": "topic_enrichment_delicious-guys_96c2b4dcd3f3",
+    "naver-shared:1444661323": "community_pick_2b162a832b54ffce",
+    "naver-shared:1448506320": "community_pick_518583ce6eaef5bd",
+    "naver-shared:1448512620": "community_pick_8c46480c783d1138",
+    "naver-shared:1448565957": "community_pick_d389675ea95275e6",
+    "naver-shared:1448566946": "community_pick_d8b26159aa1c7e57",
+    "naver-shared:1448620488": "community_pick_787dcf497c5c9aac",
+    "naver-shared:1448624107": "six_topic_e13487678ae2478e",
+    "naver-shared:1448635829": "community_pick_da8c53d0bbaffa7f",
+    "naver-shared:1448649015": "community_pick_5abe933c00ca5dd9",
+    "naver-shared:1449823218": "community_pick_5f1fa32a87201ef0",
+    "naver-shared:1449853663": "community_pick_7d98cc14a618d4bd",
+    "naver-shared:1449855613": "community_pick_d257d1de7a82385a",
+    "naver-shared:1449856055": "community_pick_40da3b757718cfef",
+    "naver-shared:1450461188": "community_pick_d42a6a71fd8b615a",
+    "naver-shared:1450479941": "community_pick_d5fb8e8c1c4c1b0f",
+    "naver-shared:1450499755": "topic_enrichment_ttoganjip_934e2a1c7195",
+    "naver-shared:1450505707": "mogeultende_dfdecd83b7c9",
+    "naver-shared:1450519948": "community_pick_1a1f7d6a89164b48",
+    "naver-shared:1450559174": "community_pick_0d621db3f4de5ef7",
+    "naver-shared:1451018221": "community_pick_88c3fada22538bc5",
+    "naver-shared:1451018879": "topic_enrichment_delicious-guys_093e2657ada3",
+    "naver-shared:1451047053": "community_pick_628fc4f3395e0ac2",
+    "naver-shared:1451047775": "community_pick_e25b78758eb176ae",
+    "naver-shared:1451077983": "community_pick_30e7d8607bdc11b2",
+    "naver-shared:1451078573": "community_pick_322189b7e0d5ccba",
+    "naver-shared:1451082571": "topic_search_13e080d706ff",
+    "naver-shared:1451089071": "community_pick_ec64c85847d05f53",
+    "naver-shared:1451099067": "six_topic_ed43956235779932",
+    "naver-shared:1451100562": "community_pick_728114185a5d665f",
+    "naver-shared:1451103900": "community_pick_811b4acfb7a8ef26",
+    "naver-shared:1460661476": "community_pick_6c21fee779d6139f",
+    "naver-shared:1460665159": "community_pick_0b7486d3d53b9b8a",
+    "naver-shared:1460666188": "community_pick_0df5e34695fb290e",
+    "naver-shared:1460675263": "community_pick_1608bfb0502fa8c2",
+    "naver-shared:1460689424": "community_pick_53f94b79a1f89354",
+    "naver-shared:1460694391": "community_pick_afe6ba6fbc419e27",
+    "naver-shared:1460709450": "community_pick_2cb939c0f67e10f3",
+    "naver-shared:1460722944": "community_pick_17d8e4bfea2c9ef4",
+    "naver-shared:1460784308": "community_pick_6bde2ab7ce541fba",
+    "naver-shared:1461821044": "sikgaek-baekban-trip_restaurant_592",
+    "naver-shared:1461851919": "community_pick_a9fca240a1d4fa49",
+    "naver-shared:1461853190": "community_pick_63115dff1595934d",
+    "naver-shared:1461898398": "community_pick_b5e1fcd6b4d43425",
+    "naver-shared:1461901646": "community_pick_d3462aebc8cfc9d5",
+    "naver-shared:1462761001": "community_pick_4d64b25f82edcaac",
+    "naver-shared:1462790780": "topic_enrichment_ttoganjip_dd29f34c9210",
+    "naver-shared:1462833408": "community_pick_28ecb3a6dcadf916",
+    "naver-shared:1462882491": "sikgaek-baekban-trip_restaurant_016",
+    "naver-shared:1462914325": "culinary-class-wars_restaurant_02c166dbbfc6",
+    "naver-shared:1462982745": "community_pick_d8cff8ce1a7d72c4",
+    "naver-shared:1463002396": "wednesday-gourmet_restaurant_190",
+    "naver-shared:1492838543": "community_pick_41d91f9bb9bb3340",
+    "naver-shared:1492862241": "jeonhyunmoo-plan_restaurant_44dd899c268f",
+    "naver-shared:1492870570": "community_pick_90c6bbbad8ded41e",
+    "naver-shared:1492916208": "community_pick_154716e94e7bfb19",
+    "naver-shared:1492918348": "topic_enrichment_michelin-selected_a92ba873923d",
+    "naver-shared:1498574941": "community_pick_9c13a5be08267179",
+    "naver-shared:1498575799": "community_pick_df033b84f0b652ac",
+    "naver-shared:1498581102": "topic_enrichment_ttoganjip_c52de78c3347",
+    "naver-shared:1498582716": "travel_busan-bite_124",
+    "naver-shared:1498740866": "community_pick_0695e5e60c81e7d4",
+    "naver-shared:1498896526": "community_pick_4944bf7e3fc4b5ec",
+    "naver-shared:1499186707": "community_pick_c362b51d087f869f",
+    "naver-shared:1499198253": "community_pick_db515b2a01ed4e4a",
+    "naver-shared:1500147778": "choiza_place_91a44ea230703f61",
+    "naver-shared:1501232856": "community_pick_12823d040ee52b78",
+    "naver-shared:1501264106": "community_pick_a1898962eeb676bc",
+    "naver-shared:1501273437": "community_pick_5af37dce0f17fb82",
+    "naver-shared:1501316334": "topic_enrichment_michelin-bib-gourmand_5f1271d3c019",
+    "naver-shared:1501404477": "topic_enrichment_michelin-2-stars_ee0ea1ef1717",
+    "naver-shared:1501456806": "topic_enrichment_michelin-3-stars_90fd82c780a7",
+    "naver-shared:1501585483": "community_pick_30d78d9102fd96ff",
+    "naver-shared:1501588364": "community_pick_96c064e26d18653e",
+    "naver-shared:1501594182": "community_pick_c37a000a9eb0340b",
+    "naver-shared:1501602885": "community_pick_33b3807ee8f62f2d",
+    "naver-shared:1501623807": "community_pick_686fd852d500740d",
+    "naver-shared:1501625003": "community_pick_128852f18b45b839",
+    "naver-shared:1501626031": "community_pick_42e2d0813371e347",
+    "naver-shared:1501629760": "community_pick_52a50274b8e56006",
+    "naver-shared:1501630420": "community_pick_fcc2aa8e2bd61666",
+    "naver-shared:1501633306": "community_pick_a02862db41e386c9",
+    "naver-shared:1501636202": "community_pick_6b0e992245ebe5f7",
+    "naver-shared:1501645248": "community_pick_58b228d5b04089b4",
+    "naver-shared:1501645984": "community_pick_2326011ffadc6d9d",
+    "naver-shared:1501649791": "community_pick_45e8c8e92cc689ad",
+    "naver-shared:1501656068": "community_pick_f8e2e7bc87da5305",
+    "naver-shared:1501659171": "community_pick_af1b8215a4c8a3fc",
+    "naver-shared:1509877697": "community_pick_b01bf7ca62c0c2f0",
+    "naver-shared:1509878826": "community_pick_6fb602f0fd1ae8f2",
+    "naver-shared:1514857977": "community_pick_d002f81de3b34900",
+    "naver-shared:1514858673": "community_pick_02cd907d02d51937",
+    "naver-shared:1539511116": "community_pick_300c35ec4b6c5c3a",
+    "naver-shared:1548824067": "six_topic_37ba821b4e2941b8",
+    "naver-shared:1548824714": "community_pick_c3e9085e5dbe861a",
+    "naver-shared:1548834149": "community_pick_9fb42c1a8a78afcc",
+    "naver-shared:1548875872": "community_pick_94071c151476d3af",
+    "naver-shared:1548876584": "community_pick_992c0a4a756f5bd4",
+    "naver-shared:1548887829": "topic_enrichment_michelin-bib-gourmand_58ff77b56e3b",
+    "naver-shared:1548918295": "community_pick_f5436606a0eae24e",
+    "naver-shared:1548938420": "community_pick_1db3ee5aba8779e9",
+    "naver-shared:1548977629": "community_pick_858c6c77d46619c9",
+    "naver-shared:1554673120": "community_pick_d0c244ec1fed324d",
+    "naver-shared:1558700860": "community_pick_ba77827932b1ec4f",
+    "naver-shared:1572346363": "six_topic_429099f5763db2b5",
+    "naver-shared:1581912618": "community_pick_69b0142b35621e73",
+    "naver-shared:1584939158": "community_pick_6ce4a4f605de7003",
+    "naver-shared:1584939897": "community_pick_61fa8f635ae847a7",
+    "naver-shared:1594324943": "community_pick_d56005e4cf0b606c",
+    "naver-shared:1594325976": "community_pick_2969d41c5629f151",
+    "naver-shared:1594327096": "topic_neighborhood-walk_20260921_16",
+    "naver-shared:1594328178": "community_pick_8ea902b7dfe742cd",
+    "naver-shared:1605546589": "community_pick_9bbdf7052a10ae58",
+    "naver-shared:1605547368": "community_pick_768b41760b7c6faf",
+    "naver-shared:1614705220": "community_pick_0856956177e0fd44",
+    "naver-shared:1621875092": "culinary-class-wars_restaurant_acc3b52a443d",
+    "naver-shared:1621876467": "community_pick_dc3ca52ae0df4d92",
+    "naver-shared:1621877081": "community_pick_f5148b695dc5716b",
+    "naver-shared:1627028631": "community_pick_350237a63041ca5f",
+    "naver-shared:1627365629": "community_pick_833df88ea6a0cc6d",
+    "naver-shared:1644217784": "six_topic_c1018a8fb0893e38",
+    "naver-shared:1650094620": "community_pick_6bff5660befddd41",
+    "naver-shared:1655071455": "community_pick_6719d1abd2ddef6e",
+    "naver-shared:1670146814": "community_pick_a837e6351487db35",
+    "naver-shared:1675997779": "community_pick_4f4c8ce922a5d716",
+    "naver-shared:1683073803": "community_pick_2f6e4acb82923ae0",
+    "naver-shared:1683074417": "community_pick_3ef7e47b89c95e74",
+    "naver-shared:1687775137": "six_topic_7ccd2fe7458b009a",
+    "naver-shared:1720510758": "community_pick_5ee691d1e69be458",
+    "naver-shared:1726079049": "community_pick_f34e84e01751b722",
+    "naver-shared:1733821358": "community_pick_d964b1023a747de6",
+    "naver-shared:1733865381": "community_pick_fffdb0b4ef456483",
+    "naver-shared:1733935442": "community_pick_90eda161fd20250d",
+    "naver-shared:1733939682": "community_pick_f2084403c9d404b1",
+    "naver-shared:1733947891": "community_pick_55e0cb0c8c3a9da0",
+    "naver-shared:1733953898": "community_pick_a487dd957243ec20",
+    "naver-shared:1733994446": "community_pick_c715451598945670",
+    "naver-shared:1734340077": "community_pick_c68fce391cd90253",
+    "naver-shared:1737266820": "community_pick_aa71bda66f666912",
+    "naver-shared:1746203071": "community_pick_613cc3c6ccdfdc04",
+    "naver-shared:1749332756": "community_pick_2c969b206a0fda58",
+    "naver-shared:1762435406": "community_pick_48ec38467c849646",
+    "naver-shared:1777348938": "topic_enrichment_ttoganjip_ef1fb3e282d6",
+    "naver-shared:1790989003": "r_70da37bb",
+    "naver-shared:1790990324": "community_pick_89bc437eccd9a457",
+    "naver-shared:1797267470": "community_pick_f45a67c6f804375c",
+    "naver-shared:1801248537": "topic_enrichment_michelin-selected_472601101a28",
+    "naver-shared:1812966136": "community_pick_c8038fed86ef56bd",
+    "naver-shared:1813015930": "community_pick_3a67f3db4d1c2273",
+    "naver-shared:1843937630": "community_pick_003a0743f625b6d9",
+    "naver-shared:1862725790": "community_pick_9f746aba0d41be77",
+    "naver-shared:1862726893": "community_pick_7ca6a655d5e6fd2b",
+    "naver-shared:1890327433": "community_pick_913d0436f16a7476",
+    "naver-shared:1890329196": "community_pick_b0ce63e5e78d9fee",
+    "naver-shared:1903649996": "community_pick_023f39808fb3d048",
+    "naver-shared:1915793982": "community_pick_8bfef9569aabf088",
+    "naver-shared:1915794965": "mogeultende_1b0bd8d9149c",
+    "naver-shared:1924537077": "community_pick_ed50a4b415d6e7f1",
+    "naver-shared:1999540418": "community_pick_1278d182a5debbd5",
+    "naver-shared:1999542261": "community_pick_effde359233fc3d4",
+    "naver-shared:1999559140": "community_pick_f43d1c681610fa98",
+    "naver-shared:1999565681": "community_pick_0da64b2ee5048119",
+    "naver-shared:1999571613": "topic_enrichment_baekjong-wok_8448b2a82478",
+    "naver-shared:2015955374": "community_pick_c123123981fd88ec",
+    "naver-shared:2015959223": "six_topic_e3744d97eefa0cb2",
+    "naver-shared:2028009035": "community_pick_a5878498612af3c5",
+    "naver-shared:2047765626": "community_pick_2408bc45c4079d79",
+    "naver-shared:2121872757": "community_pick_8774c956f7b50a2a",
+    "naver-shared:2121874538": "community_pick_f877c10a6a314c98",
+    "naver-shared:2121875960": "community_pick_c4a6a476e99aceea",
+    "naver-shared:2121881358": "community_pick_a3172aaf428f08f1",
+    "naver-shared:2153576746": "community_pick_17b844de5f2ab246",
+    "naver-shared:2153580362": "culinary-class-wars_restaurant_53a84cc06a72",
+    "naver-shared:2153582659": "community_pick_cc4fd373203311e0",
+    "naver-shared:2244811674": "community_pick_1c23fc21bb3b314c",
+    "naver-shared:2244815765": "community_pick_874c1821c01a1149",
+    "naver-shared:2244818898": "community_pick_990b1e9bbd9cd1ab",
+    "naver-shared:2244823151": "mogeultende_17646b81a6a7",
+    "naver-shared:2244827384": "community_pick_44d9ccd9312b97a9",
+    "naver-shared:2244829357": "community_pick_4088e9e30819400d",
+    "naver-shared:2244831232": "topic_enrichment_michelin-selected_a0e8d40d2c75",
+    "naver-shared:2270729091": "community_pick_e9aa34f4a5df259c",
+    "naver-shared:2270731086": "community_pick_0515b6ce7b876b7e",
+    "naver-shared:2411413125": "culinary-class-wars_restaurant_3c83923fbed2",
+    "naver-shared:2411414769": "community_pick_3b5f27db0d40ea59",
+    "naver-shared:2411420119": "community_pick_29b948bf0acdbd6a",
+    "naver-shared:2411427694": "community_pick_5c8dc66b33fc6914",
+    "naver-shared:2411431498": "community_pick_1394ae6558d94bea",
+    "naver-shared:2646378429": "community_pick_61cd48b19b0bdb2a",
+    "naver-shared:2646380430": "topic_enrichment_ttoganjip_af541292429e",
+    "naver-shared:2646382919": "community_pick_a95ceb4c076f9809",
+    "naver-shared:2646386027": "community_pick_9ecbf51c306c5800",
+    "naver-shared:2646389653": "community_pick_ad4344677d041545",
+    "naver-shared:2646392552": "six_topic_d90859f7ddd0b3b3",
+    "naver-shared:2646396458": "community_pick_884bbe5066c5bd83",
+    "naver-shared:2646399831": "community_pick_b8600bea67f8d644",
+    "naver-shared:2646403343": "community_pick_da81bcd1db0fb1ff",
+    "naver-shared:2646405768": "community_pick_c624c54e410812dc",
+    "naver-shared:2646407817": "community_pick_108eab708af8e025",
+    "naver-shared:2646410992": "community_pick_484fabaff24123fa",
+    "naver-shared:2646412233": "community_pick_a9202f83b5b258f8",
+    "naver-shared:2646421739": "community_pick_308564c8a5bbde1d",
+    "naver-shared:2792228227": "community_pick_9bbdf76aafc32fb5",
+    "naver-shared:2792233849": "culinary-class-wars_restaurant_e67a2e2d1f96",
+    "naver-shared:2792239507": "community_pick_932e683a3062f95e",
+    "naver-shared:2792247063": "community_pick_3a296540c69d2a04",
+    "naver-shared:2792254845": "culinary-class-wars_restaurant_9b13563baeca",
+    "naver-shared:2792257877": "community_pick_2f440e1001eadedc",
+    "naver-shared:2792267820": "community_pick_489e6d7980e582f5",
+    "naver-shared:2876453917": "community_pick_c0d94004d5bd6b58",
+    "naver-shared:2876457173": "community_pick_3afd5dce28a6bb3b",
+    "naver-shared:2876459451": "community_pick_c3aa09040dd9be6e",
+    "naver-shared:2945015903": "community_pick_396b9d58add34286",
+    "naver-shared:2945018465": "community_pick_437d657ce40ca162",
+    "naver-shared:2945022968": "topic_enrichment_delicious-guys_f0f749ca5ad4",
+    "naver-shared:2945031555": "topic_enrichment_michelin-2-stars_4b8c738a2ffd",
+    "naver-shared:2945033557": "community_pick_17dc8ec99c0f735a",
+    "naver-shared:2995658951": "community_pick_821a9f27a43f1050",
+    "naver-shared:2995659845": "community_pick_e18164c981109076",
+    "naver-shared:2995660936": "community_pick_28fc64245855394a",
+    "naver-shared:3039168438": "community_pick_d47150b61f09a20c",
+    "naver-shared:3039169979": "community_pick_d019b84c0862f06a",
+    "naver-shared:3039173115": "community_pick_7d0fbaaa2997db9a",
+    "naver-shared:3099484109": "community_pick_164e81a3b6190f2a",
+    "naver-shared:3148212540": "community_pick_9d5df8a081106d52",
+    "naver-shared:3148214117": "community_pick_58df94a1ec108f53",
+    "naver-shared:3233814796": "topic_enrichment_michelin-1-star_f598df305b4f",
+    "naver-shared:3233817655": "community_pick_c0e21d075680bfd2",
+    "naver-shared:3233821273": "community_pick_37eb093c9969bc8b",
+    "naver-shared:3233823275": "community_pick_4793033e54d3a4af",
+    "naver-shared:3233825300": "community_pick_804c9749659f9973",
+    "naver-shared:3233827039": "six_topic_31999c1b84415d5a",
+    "naver-shared:3303454303": "topic_enrichment_delicious-guys_f24d54f590b5",
+    "naver-shared:3303457275": "community_pick_700b38bb1362c907",
+    "naver-shared:3303459208": "community_pick_732bc6800cade3bc",
+    "naver-shared:3303462266": "community_pick_ed4b4ab256aecd17",
+    "naver-shared:3303464897": "community_pick_4da953962cab56f1",
+    "naver-shared:3303513744": "community_pick_d9fd7a0d9acdcb5a",
+    "naver-shared:3303519411": "community_pick_a66ad63b80ee0ba2",
+    "naver-shared:3346124144": "community_pick_525318b6baf069e2",
+    "naver-shared:3346131238": "community_pick_ecaa147b200874ac",
+    "naver-shared:3346135997": "community_pick_158e90712fda12ca",
+    "naver-shared:3416829367": "community_pick_8db01e32206bfcd0",
+    "naver-shared:3416830800": "community_pick_ba26c1b43b4ad7d0",
+    "naver-shared:3416834896": "community_pick_af55d754e44afe36",
+    "naver-shared:3416836427": "community_pick_bb2d81eac034fe8d",
+    "naver-shared:3416837711": "community_pick_d06a0f7a44be321b",
+    "naver-shared:3416843709": "community_pick_1494bba74327db72",
+    "naver-shared:3478709332": "culinary-class-wars_restaurant_537ca535d4c9",
+    "naver-shared:3478718583": "community_pick_0aaa191bfbec6d6e",
+    "naver-shared:3482336541": "community_pick_e64cfbeb65297314",
+    "naver-shared:3502219142": "community_pick_17da4c9d581df970",
+    "naver-shared:3502223535": "community_pick_a672983247b68382",
+    "naver-shared:3502225801": "community_pick_d373b31567e73d66",
+    "naver-shared:3502230920": "community_pick_4406fd4e2ebeb20f",
+    "naver-shared:3502233125": "community_pick_a048d543c5309318",
+    "naver-shared:3502240318": "community_pick_450927bcc97ed6db",
+    "naver-shared:3502245270": "community_pick_903cefc2659c607b",
+    "naver-shared:3502247935": "community_pick_e0a64da1951d021d",
+    "naver-shared:3560781263": "topic_enrichment_michelin-bib-gourmand_172e88cb161c",
+    "naver-shared:3560785299": "community_pick_09937a4f92382d3c",
+    "naver-shared:3560789949": "community_pick_59e5a614e2286339",
+    "naver-shared:3560798870": "community_pick_443c130877f0a233",
+    "naver-shared:3560949712": "community_pick_e971c0707d182888",
+    "naver-shared:3560953721": "six_topic_ed6657266b581e13",
+    "naver-shared:3605044622": "community_pick_44b48795b3b45bbe",
+    "naver-shared:3605047682": "community_pick_e93b5252581ff4ea",
+    "naver-shared:3605049888": "community_pick_a887e4a3abac2880",
+    "naver-shared:3605051348": "community_pick_eaa9894fd84492ba",
+    "naver-shared:3605053078": "community_pick_c50e444893888fba",
+    "naver-shared:3605054140": "community_pick_1ebeb3fb780eacaa",
+    "naver-shared:3605055497": "community_pick_258a3c4cf9dc3283",
+    "naver-shared:3605056396": "community_pick_ccf758fbefff3ccc",
+    "naver-shared:3605057563": "community_pick_fb5c07ded4af9f6f",
+    "naver-shared:3605060081": "topic_enrichment_michelin-selected_5e661df02477",
+    "naver-shared:3605061710": "community_pick_c830985209bc13d2",
+    "naver-shared:3605065556": "community_pick_7ef85fc30e4183df",
+    "naver-shared:3605068350": "community_pick_830d60a69c0efc16",
+    "naver-shared:3814710653": "community_pick_9d03a23bea75266b",
+    "naver-shared:3814712029": "community_pick_2bcdf8b5919885aa",
+    "naver-shared:3814715934": "topic_enrichment_baekjong-wok_ff5a2b8b0477",
+    "naver-shared:3814717329": "community_pick_a4d3d61b658f9180",
+    "naver-shared:3814718895": "community_pick_fe54535b2c8f61c1",
+    "naver-shared:3814724366": "community_pick_655919fd9eb3646d",
+    "naver-shared:3814728136": "community_pick_074fd661a9c0c178",
+    "naver-shared:3814729149": "six_topic_c1308082899758d4",
+    "naver-shared:3814733017": "community_pick_f4a8d984b91bc211",
+    "naver-shared:3814736076": "community_pick_f86c95a834fcd15f",
+    "naver-shared:3814742303": "community_pick_026ca9f71952ff9f",
+    "naver-shared:3814744467": "community_pick_77212f3262b1c2af",
+    "naver-shared:3814745808": "community_pick_181062f8fc6747d0",
+    "naver-shared:3814751361": "topic_enrichment_michelin-selected_481548d630df",
+    "naver-shared:3814752198": "community_pick_c000a50584c09028",
+    "naver-shared:3814756350": "community_pick_408a639899bb0be2",
+    "naver-shared:3814759750": "community_pick_536e018a3571068c",
+    "naver-shared:3814762416": "community_pick_ba047151fe3c65ba",
+    "naver-shared:3814763634": "community_pick_f7342a8c1fc3ad94",
+    "naver-shared:3814768140": "community_pick_f72f227c11cdaaf6",
+    "naver-shared:3814774469": "community_pick_ba33ea8c251443e9",
+    "naver-shared:3827213853": "community_pick_8ce40c7edee13ddf",
+    "naver-shared:3842020774": "community_pick_3eb9c6afd871f397",
+    "naver-shared:3842025699": "community_pick_6ad7dba7638e2bf2",
+    "naver-shared:3941721775": "community_pick_caaebb0ed7605892",
+    "naver-shared:3941728178": "community_pick_46b5349bb2663379",
+    "naver-shared:3981441399": "r_b2b49897",
+    "naver-shared:3981454130": "community_pick_10a9e6ffc688186d",
+    "naver-shared:4026049734": "six_topic_d16a289721b7bcfc",
+    "naver-shared:4150814263": "community_pick_377964166c254643",
+    "naver-shared:4150815399": "topic_enrichment_michelin-bib-gourmand_9386f81586dd",
+    "naver-shared:4150816389": "community_pick_c7dc72759b773678",
+    "naver-shared:4214542088": "community_pick_598db12dc00603a4",
+    "naver-shared:4228560118": "community_pick_6e564c421b462709",
+    "naver-shared:4251918753": "wednesday-gourmet_restaurant_306",
+    "naver-shared:4289177386": "community_pick_0976035e8ed9d391",
+    "naver-shared:4291245007": "six_topic_1079cb6f163f04ee",
+    "naver-shared:4327133521": "six_topic_4690bd8f1979cda3",
+    "naver-shared:4354146596": "sikgaek-baekban-trip_restaurant_119",
+    "naver-shared:4406548221": "community_pick_a1fb0191d10ff3d9",
+    "naver-shared:4406574885": "community_pick_bce469c880704ec1",
+    "naver-shared:4430644627": "community_pick_66b980a97986d8b5",
+    "naver-shared:4440145284": "topic_enrichment_michelin-2-stars_1f775d4caaf7",
+    "naver-shared:4440148069": "six_topic_d8a92f3da5f9b51f",
+    "naver-shared:4440151267": "community_pick_35c153225fa0721c",
+    "naver-shared:4440153338": "community_pick_5adce744cafd7eeb",
+    "naver-shared:4440160030": "community_pick_3f16c0117b551296",
+    "naver-shared:4440162626": "community_pick_9b70494492bb45d1",
+    "naver-shared:4440164522": "community_pick_a27066b0677ddb52",
+    "naver-shared:4440167914": "community_pick_1703b8994511b853",
+    "naver-shared:4440177244": "community_pick_bab84154b329cbb6",
+    "naver-shared:4440180529": "topic_enrichment_michelin-selected_6fb776637c0e",
+    "naver-shared:4440184312": "community_pick_bc2dc368c5936109",
+    "naver-shared:4440185284": "community_pick_ffb665ce9b623105",
+    "naver-shared:4440188355": "community_pick_769eaef586efbd9d",
+    "naver-shared:4440193854": "community_pick_6d911ea0bf9c3141",
+    "naver-shared:4440199143": "topic_enrichment_delicious-guys_60b503e0830b",
+    "naver-shared:4440206982": "community_pick_2b5ebd65b26a3bb2",
+    "naver-shared:4440232341": "community_pick_f0454bdf96572aa1",
+    "naver-shared:4440235391": "community_pick_8f71eae6c89a4e8a",
+    "naver-shared:4440259153": "community_pick_77f36ce160af02bd",
+    "naver-shared:4440274514": "community_pick_ddf042bc4d7feb84",
+    "naver-shared:4440282928": "community_pick_cfa39b536a5c943a",
+    "naver-shared:4440284921": "topic_enrichment_michelin-selected_cf767a913e72",
+    "naver-shared:4440299470": "community_pick_910fd0ef9faf429d",
+    "naver-shared:4440327112": "community_pick_fc07d1c3e60d82b0",
+    "naver-shared:4440332707": "community_pick_10c9f6b19e582af1",
+    "naver-shared:4440340518": "community_pick_68a7d41116d70156",
+    "naver-shared:4440350197": "community_pick_452ec0d00ecbfe80",
+    "naver-shared:4440370227": "community_pick_6411eea9030ff9b5",
+    "naver-shared:4440373841": "community_pick_24ce1b3e4a210e7f",
+    "naver-shared:4440375438": "community_pick_f85db6f7bb696030",
+    "naver-shared:4440376712": "community_pick_c7ce0e390ecf9c1e",
+    "naver-shared:4440380308": "community_pick_a96a7e9ecfb21bda",
+    "naver-shared:4440385510": "community_pick_a859805223b5c5e4",
+    "naver-shared:4440390968": "community_pick_74538360435b7ca4",
+    "naver-shared:4440408356": "community_pick_189c4e4579b7508e",
+    "naver-shared:4440411411": "community_pick_bf66186bba99fb0d",
+    "naver-shared:4440418980": "culinary-class-wars_restaurant_ec1909e01072",
+    "naver-shared:4440420746": "community_pick_6f3bbb07353ab16d",
+    "naver-shared:4440428424": "culinary-class-wars_restaurant_d4c6ace32b09",
+    "naver-shared:4440430580": "community_pick_e7e50a3b4851bae2",
+    "naver-shared:4440431735": "sikgaek-baekban-trip_restaurant_281",
+    "naver-shared:4440435208": "topic_enrichment_michelin-selected_82bfaa6228a5",
+    "naver-shared:4440439331": "community_pick_625c0adb930fd987",
+    "naver-shared:4440443679": "community_pick_d68374a94e64e9e4",
+    "naver-shared:4468833363": "community_pick_ff6948c7103a9622",
+    "naver-shared:4501639218": "community_pick_cdd742d321dd8a4a",
+    "naver-shared:4502704722": "old-korean-100_restaurant_079",
+    "naver-shared:4527939029": "community_pick_c11fdfff906afd95",
+    "naver-shared:4527942405": "community_pick_0f8b8ee3c2a2288b",
+    "naver-shared:4527944667": "community_pick_231fe9323b200d9a",
+    "naver-shared:4527947313": "topic_enrichment_delicious-guys_60b503e0830b",
+    "naver-shared:4527951370": "community_pick_1b0f071daa01f443",
+    "naver-shared:4527954164": "community_pick_e9537ec7e8bfff2b",
+    "naver-shared:4530734260": "community_pick_c2f60f571d7c436f",
+    "naver-shared:4533213985": "community_pick_43a494cfdc856b53",
+    "naver-shared:4545529968": "topic_enrichment_ttoganjip_cfc87706cb8f",
+    "naver-shared:4546262647": "topic_enrichment_michelin-bib-gourmand_e36ebd58cd26",
+    "naver-shared:4615599424": "community_pick_3f935f02b37e2bc1",
+    "naver-shared:4615599991": "community_pick_bd0550d4625b9d82",
+    "naver-shared:4615602413": "community_pick_fe339c6e349fccd4",
+    "naver-shared:4629339383": "community_pick_d31aa9503f0833a6",
+    "naver-shared:4629343953": "community_pick_39129bc734e4f020",
+    "naver-shared:4677383401": "community_pick_626f04d61172282e",
+    "naver-shared:4679045712": "community_pick_ed8e3d954776ea02",
+    "naver-shared:4708892010": "community_pick_90261fe5b9045196",
+    "naver-shared:4715497439": "topic_enrichment_ttoganjip_4f6134c23aef",
+    "naver-shared:4715500720": "community_pick_33b6c0d4472e63a4",
+    "naver-shared:4715501536": "requested_topic_ade215e12a9a218d",
+    "naver-shared:4715502102": "community_pick_16686932a713f560",
+    "naver-shared:4715504843": "community_pick_0682a9fd546ed6c7",
+    "naver-shared:4716237471": "community_pick_c4803799e60b3f79",
+    "naver-shared:4716527146": "topic_neighborhood-walk_12",
+    "naver-shared:4741186564": "community_pick_b0ec557b823afb2b",
+    "naver-shared:4741614676": "wednesday-gourmet_restaurant_452",
+    "redribbon:강원·춘천-001": "old-korean-100_restaurant_036",
+    "redribbon:강원·춘천-002": "community_pick_52288c986bd4bb93",
+    "redribbon:강원·춘천-003": "community_pick_cd2e8c78f4a59ed7",
+    "redribbon:강원·춘천-004": "community_pick_044224cf99c33e8c",
+    "redribbon:강원·춘천-005": "community_pick_37c5429d2e33c15e",
+    "redribbon:강원·춘천-006": "community_pick_d045a635d7d90f99",
+    "redribbon:강원·춘천-007": "topic_neighborhood-walk_20260921_29",
+    "redribbon:강원·춘천-008": "community_pick_bacd9f051dad061b",
+    "redribbon:강원·춘천-009": "community_pick_ebfa3dd74b6ecbd3",
+    "redribbon:강원·춘천-010": "community_pick_bb46f71e98371eb2",
+    "redribbon:강원·춘천-011": "community_pick_8b2f93320e87fcab",
+    "redribbon:강원·춘천-012": "community_pick_37e6704f382ec877",
+    "redribbon:강원·춘천-013": "community_pick_eb21884b74818735",
+    "redribbon:강원·춘천-014": "community_pick_024acd6722cf6934",
+    "redribbon:강원·춘천-015": "community_pick_cefca66c2c94d4aa",
+    "redribbon:강원·춘천-016": "community_pick_c1c8b6c92def2e53",
+    "redribbon:강원·춘천-017": "community_pick_c150fb4df5d5f9e7",
+    "redribbon:강원·춘천-018": "community_pick_5e93b868427219a4",
+    "redribbon:강원·춘천-019": "community_pick_92a981fc5b83f68c",
+    "redribbon:강원·춘천-020": "community_pick_b6206c79e8da72a2",
+    "redribbon:강원·춘천-021": "community_pick_068c0eb18ed8b2fc",
+    "redribbon:강원·춘천-022": "community_pick_9737c22992684177",
+    "redribbon:강원·춘천-023": "mogeultende_307a9d0bce27",
+    "redribbon:강원·춘천-024": "community_pick_b9b2ae04fe6b6037",
+    "redribbon:강원·춘천-025": "community_pick_66c2a5a423f7cf7e",
+    "redribbon:강원·춘천-026": "community_pick_057f1b660f6b6a4c",
+    "redribbon:강원·춘천-027": "community_pick_740c4829b2ae56f8",
+    "redribbon:강원·춘천-028": "community_pick_9e59c85f744e12cb",
+    "redribbon:강원·춘천-029": "community_pick_de37007aba662d87",
+    "redribbon:강원·춘천-030": "community_pick_7a985b626555b296",
+    "redribbon:강원·춘천-031": "community_pick_d60ca600098e0f7c",
+    "redribbon:강원·춘천-032": "community_pick_6791c90517da34f8",
+    "redribbon:강원·춘천-033": "community_pick_ed525ee296a1a215",
+    "redribbon:강원·춘천-034": "community_pick_672d7339b148c9b0",
+    "redribbon:강원·춘천-035": "jeonhyunmoo-plan_restaurant_495494dd8378",
+    "redribbon:강원·춘천-036": "sikgaek-baekban-trip_restaurant_626",
+    "redribbon:강원·춘천-037": "community_pick_d8af914b89778bca",
+    "redribbon:강원·춘천-038": "community_pick_da3b8d88a7e3d93d",
+    "redribbon:강원·춘천-039": "community_pick_0aeb826f116e9107",
+    "redribbon:강원·춘천-040": "community_pick_a3e2be0db3745c1d",
+    "redribbon:강원·춘천-041": "topic_enrichment_delicious-guys_8043e2187cc3",
+    "redribbon:강원·춘천-042": "sikgaek-baekban-trip_restaurant_173",
+    "redribbon:강원·춘천-043": "community_pick_4c3eb7aeea3d6c16",
+    "redribbon:강원·춘천-044": "community_pick_b5b28532ff6c1f29",
+    "redribbon:강원·춘천-045": "community_pick_e3e217cc0faf9beb",
+    "redribbon:강원·춘천-046": "community_pick_e4bafddb7672aa76",
+    "redribbon:강원·춘천-047": "community_pick_b73e9c459d86c835",
+    "redribbon:강원·춘천-048": "community_pick_cc17b4657f881277",
+    "redribbon:강원·춘천-049": "community_pick_f3bce62a3d6ec04c",
+    "redribbon:강원·춘천-050": "community_pick_74dff5a6a3ec30d8",
+    "redribbon:강원·춘천-051": "topic_enrichment_delicious-guys_bae7cf5551c2",
+    "redribbon:강원·춘천-052": "community_pick_8ccd555e5878350c",
+    "redribbon:강원·춘천-053": "community_pick_02e87b82ae46891a",
+    "redribbon:강원·춘천-054": "community_pick_de2a6047e7510e99",
+    "redribbon:강원·춘천-055": "community_pick_86cf7134d28933d3",
+    "redribbon:강원·춘천-056": "community_pick_7b7a0f21609583db",
+    "redribbon:강원·춘천-057": "community_pick_1c64eaa0158f1db0",
+    "redribbon:강원·춘천-058": "community_pick_ece04fe54a856adc",
+    "redribbon:강원·춘천-059": "community_pick_50ff43a989dde995",
+    "redribbon:강원·춘천-060": "community_pick_a97d6d3150725847",
+    "redribbon:강원·춘천-061": "community_pick_436d09060b8abb7e",
+    "redribbon:강원·춘천-062": "community_pick_bac0bba8bf6e908c",
+    "redribbon:강원·춘천-063": "community_pick_8305d0f2ef9ec871",
+    "redribbon:강원·춘천-064": "community_pick_b05c9b2d411b800f",
+    "redribbon:강원·춘천-065": "jeonhyunmoo-plan_restaurant_27de1ce012d9",
+    "redribbon:강원·춘천-066": "community_pick_e3fe729b52f790fb",
+    "redribbon:강원·춘천-067": "community_pick_de0a206213351321",
+    "redribbon:강원·춘천-068": "community_pick_a196ec7c21cec18f",
+    "redribbon:강원·춘천-069": "sikgaek-baekban-trip_restaurant_191",
+    "redribbon:강원·춘천-070": "community_pick_9ee1eef3407644bd",
+    "redribbon:강원·춘천-071": "community_pick_a635bc1ee59f16aa",
+    "redribbon:강원·춘천-072": "community_pick_c083ef95e9005539",
+    "redribbon:강원·춘천-073": "community_pick_89fcc20d51c6d444",
+    "redribbon:강원·춘천-074": "community_pick_b84f41d457ebe779",
+    "redribbon:강원·춘천-075": "sikgaek-baekban-trip_restaurant_557",
+    "redribbon:강원·춘천-076": "community_pick_231b3fe9d7f8f8c5",
+    "redribbon:강원·춘천-077": "community_pick_bfed040a67671c8f",
+    "redribbon:강원·춘천-078": "community_pick_4b2cce4f19d11ad8",
+    "redribbon:강원·춘천-079": "community_pick_67e1fd6a0b362bec",
+    "redribbon:강원·춘천-080": "community_pick_8d9afd776a947f60",
+    "redribbon:강원·춘천-081": "culinary-class-wars_restaurant_24e77364fcbf",
+    "redribbon:강원·춘천-082": "topic_enrichment_baekjong-wok_ceb270c08ab4",
+    "redribbon:강원·춘천-083": "community_pick_2a252c1837e56a42",
+    "redribbon:강원·춘천-084": "community_pick_69d6c731acab4634",
+    "redribbon:강원·춘천-085": "community_pick_3dfda0deb62fe1f6",
+    "redribbon:경기·인천-001": "community_pick_7740d10f01fbf2cd",
+    "redribbon:경기·인천-002": "community_pick_4d558f0a2775d4dc",
+    "redribbon:경기·인천-003": "community_pick_8bafbb21f6e761ea",
+    "redribbon:경기·인천-004": "community_pick_5ad19a87f05f56ec",
+    "redribbon:경기·인천-005": "community_pick_08096d3a1049e8d0",
+    "redribbon:경기·인천-006": "community_pick_611a3c08826e916c",
+    "redribbon:경기·인천-007": "community_pick_772499d12706e963",
+    "redribbon:경기·인천-008": "community_pick_f85376a1c36bbae3",
+    "redribbon:경기·인천-009": "community_pick_f6bf2cb2801b66d5",
+    "redribbon:경기·인천-010": "community_pick_48365053460d47d2",
+    "redribbon:경기·인천-011": "community_pick_7c7138f9a6a898a6",
+    "redribbon:경기·인천-012": "community_pick_1ce44f2088e3a374",
+    "redribbon:경기·인천-013": "community_pick_9b4bbd2f3c5a5bec",
+    "redribbon:경기·인천-014": "community_pick_fc5287f0925dfe8b",
+    "redribbon:경기·인천-015": "community_pick_2bd68a65a5963cde",
+    "redribbon:경기·인천-016": "topic_enrichment_ttoganjip_735b26768427",
+    "redribbon:경기·인천-017": "community_pick_a277c4e116ed6f5f",
+    "redribbon:경기·인천-018": "community_pick_0884552e98707c9a",
+    "redribbon:경기·인천-019": "community_pick_4d19f60df2e23f17",
+    "redribbon:경기·인천-020": "community_pick_b196f9db1237c141",
+    "redribbon:경기·인천-021": "community_pick_8bc0757e23c928a2",
+    "redribbon:경기·인천-022": "topic_enrichment_baekjong-wok_4faae9f8dc1f",
+    "redribbon:경기·인천-023": "community_pick_abd82b1f333f5383",
+    "redribbon:경기·인천-024": "community_pick_442a6dab2ae94f45",
+    "redribbon:경기·인천-025": "community_pick_40fcf581a771e203",
+    "redribbon:경기·인천-026": "community_pick_c24a4a0ab5b2c598",
+    "redribbon:경기·인천-027": "community_pick_8dc655b19631b7b2",
+    "redribbon:경기·인천-028": "community_pick_3c360fe803a9d1be",
+    "redribbon:경기·인천-029": "community_pick_3ba3dc2a4186f37a",
+    "redribbon:경기·인천-030": "community_pick_94ad2a71f016db2e",
+    "redribbon:경기·인천-031": "community_pick_1bf1729379b429af",
+    "redribbon:경기·인천-032": "community_pick_166907086b688fa2",
+    "redribbon:경기·인천-033": "community_pick_547a3d55224df7a5",
+    "redribbon:경기·인천-034": "community_pick_0ef37c540825ca10",
+    "redribbon:경기·인천-035": "old-korean-100_restaurant_075",
+    "redribbon:경기·인천-036": "community_pick_7e2c3e1796d004a9",
+    "redribbon:경기·인천-037": "community_pick_9d580f5fa6368ade",
+    "redribbon:경기·인천-038": "wednesday-gourmet_restaurant_030",
+    "redribbon:경기·인천-039": "community_pick_5abf1116ca10a90c",
+    "redribbon:경기·인천-040": "community_pick_7078a2f507a1e3c1",
+    "redribbon:경기·인천-041": "community_pick_956f72d16b0d1a8a",
+    "redribbon:경기·인천-042": "community_pick_9e3963a09a3b792e",
+    "redribbon:경기·인천-043": "community_pick_f132afd0413785c1",
+    "redribbon:경기·인천-044": "community_pick_5f333e3e7f0f28da",
+    "redribbon:경기·인천-045": "community_pick_aac926f4c8608fb4",
+    "redribbon:경기·인천-046": "community_pick_b726283bbed7c041",
+    "redribbon:경기·인천-047": "community_pick_fe9a3ab5043981e9",
+    "redribbon:경기·인천-048": "community_pick_f0f35b40dbaa4b13",
+    "redribbon:경기·인천-049": "community_pick_8a07262904b5f4ad",
+    "redribbon:경기·인천-050": "community_pick_9665a28bc20d2aa4",
+    "redribbon:경기·인천-051": "community_pick_e76199fd1bbd8594",
+    "redribbon:경기·인천-052": "community_pick_79ef969cefc4c8a3",
+    "redribbon:경기·인천-053": "community_pick_a3981f2268a6323d",
+    "redribbon:경기·인천-054": "community_pick_dc03227e19dab201",
+    "redribbon:경기·인천-055": "community_pick_5fcfce93cfa7f862",
+    "redribbon:경기·인천-056": "community_pick_156b501847122ce5",
+    "redribbon:경기·인천-057": "community_pick_55cd392a1eafbf11",
+    "redribbon:경기·인천-058": "community_pick_0ee1503b799ef574",
+    "redribbon:경기·인천-059": "community_pick_18a4022b8639e22f",
+    "redribbon:경기·인천-060": "topic_enrichment_baekjong-wok_dfc9645e8dd2",
+    "redribbon:경기·인천-061": "community_pick_9d96899238348444",
+    "redribbon:경기·인천-062": "community_pick_8ebd2853a0f7d58a",
+    "redribbon:경기·인천-063": "community_pick_0eb2efaaa000639d",
+    "redribbon:경기·인천-064": "community_pick_69472d67f7e6a49a",
+    "redribbon:경기·인천-065": "topic_enrichment_ttoganjip_54b4d8798b3a",
+    "redribbon:경기·인천-066": "community_pick_0c8c26511f71ce97",
+    "redribbon:경기·인천-067": "community_pick_8e64c1c0a72411a2",
+    "redribbon:경기·인천-068": "community_pick_12d95b96e5c198f5",
+    "redribbon:경기·인천-069": "community_pick_825fe819789a23fe",
+    "redribbon:경기·인천-070": "community_pick_c3182d84d97edbce",
+    "redribbon:경기·인천-071": "community_pick_487ef403d90205a6",
+    "redribbon:경기·인천-072": "community_pick_2bbacebc5221631a",
+    "redribbon:경기·인천-073": "community_pick_40d0ba214e2712d0",
+    "redribbon:경기·인천-074": "community_pick_727b431d5af1d61c",
+    "redribbon:경기·인천-075": "community_pick_7e4fce678613606f",
+    "redribbon:경기·인천-076": "community_pick_5fb319a35d1fff48",
+    "redribbon:경기·인천-077": "community_pick_3f54bd308bc2a507",
+    "redribbon:경기·인천-078": "community_pick_2396679961bccf92",
+    "redribbon:경기·인천-079": "community_pick_234c87a3ba6ff260",
+    "redribbon:경기·인천-080": "community_pick_63deead906831de9",
+    "redribbon:경기·인천-081": "topic_enrichment_delicious-guys_91fe28347cb7",
+    "redribbon:경기·인천-082": "community_pick_91481fe23a5982f4",
+    "redribbon:경기·인천-083": "community_pick_c3832e8e5355ef78",
+    "redribbon:경기·인천-084": "community_pick_6011a740adfdd117",
+    "redribbon:경기·인천-085": "six_topic_68f2f7278f49cbfb",
+    "redribbon:경기·인천-086": "community_pick_31f0fa15c4d48ae7",
+    "redribbon:경기·인천-087": "wednesday-gourmet_restaurant_036",
+    "redribbon:경기·인천-088": "community_pick_64d54c6a105fd7f8",
+    "redribbon:경기·인천-089": "community_pick_216e3d1a660b9561",
+    "redribbon:경기·인천-090": "community_pick_f3b2dde17b72ff0d",
+    "redribbon:경기·인천-091": "community_pick_a8a35f159670692f",
+    "redribbon:경기·인천-092": "community_pick_8e997b7c683076b9",
+    "redribbon:경기·인천-093": "wednesday-gourmet_restaurant_013",
+    "redribbon:경기·인천-094": "community_pick_ef9ae6c20c26fc7a",
+    "redribbon:경기·인천-095": "community_pick_482428fd8d0fe2f4",
+    "redribbon:경기·인천-096": "community_pick_a66e0fb33c9b9d5f",
+    "redribbon:경기·인천-097": "community_pick_3290e90a4e0e5cd9",
+    "redribbon:경기·인천-098": "community_pick_47eaa55302be8332",
+    "redribbon:경기·인천-099": "community_pick_11dffbf08228d7e5",
+    "redribbon:경기·인천-100": "community_pick_b5123e59b6b7373d",
+    "redribbon:경기·인천-101": "community_pick_a655d9bddecb1f3e",
+    "redribbon:경기·인천-102": "community_pick_e36ec7d363d527e2",
+    "redribbon:경기·인천-103": "community_pick_d95bc2d0b3212d69",
+    "redribbon:경기·인천-104": "community_pick_068dd0d2711f99f2",
+    "redribbon:경기·인천-105": "community_pick_39a4ece6380000a7",
+    "redribbon:경기·인천-106": "community_pick_0386cf4d4ad8666f",
+    "redribbon:경기·인천-107": "community_pick_7338054951766185",
+    "redribbon:경기·인천-108": "community_pick_5dde0def09933d32",
+    "redribbon:경기·인천-109": "community_pick_5dd922e3ce8f6500",
+    "redribbon:경기·인천-110": "community_pick_740e1dff59b9b112",
+    "redribbon:경기·인천-111": "community_pick_6f85e65fbc72c4a6",
+    "redribbon:경상도-001": "community_pick_e2db99acafd4c32f",
+    "redribbon:경상도-002": "community_pick_5cfa9665d514ef00",
+    "redribbon:경상도-003": "community_pick_c2594d5008be5072",
+    "redribbon:경상도-004": "community_pick_ff7653e158fcfda3",
+    "redribbon:경상도-005": "community_pick_fafa98b25223b6fc",
+    "redribbon:경상도-006": "community_pick_59a0425a2528d15b",
+    "redribbon:경상도-007": "community_pick_2307fe3fca2fb8cd",
+    "redribbon:경상도-008": "community_pick_eede9975bc986519",
+    "redribbon:경상도-009": "community_pick_d6a447b2e7c2cc8f",
+    "redribbon:경상도-010": "community_pick_19555a06269c05dd",
+    "redribbon:경상도-011": "community_pick_5d92f902d4f33e2e",
+    "redribbon:경상도-012": "community_pick_2545681f04e595cd",
+    "redribbon:경상도-013": "community_pick_cfa7d2d50a5e0b7d",
+    "redribbon:경상도-014": "community_pick_69c05474ca8b211e",
+    "redribbon:경상도-015": "community_pick_b46fa5ad41d595ef",
+    "redribbon:경상도-016": "community_pick_698d8b1305839318",
+    "redribbon:경상도-017": "travel_busan-bite_2337",
+    "redribbon:경상도-018": "topic_enrichment_ttoganjip_2357543f33ec",
+    "redribbon:경상도-019": "community_pick_0e731b722d76cd4f",
+    "redribbon:경상도-020": "community_pick_b25c1e2d582776e4",
+    "redribbon:경상도-021": "old-korean-100_restaurant_043",
+    "redribbon:경상도-022": "topic_enrichment_michelin-bib-gourmand_7603a482f8ab",
+    "redribbon:경상도-023": "community_pick_062ee6f5d38a79e6",
+    "redribbon:경상도-024": "topic_enrichment_michelin-bib-gourmand_9b91ce4a0539",
+    "redribbon:경상도-025": "community_pick_bce8c69aef93d3de",
+    "redribbon:경상도-026": "wednesday-gourmet_restaurant_096",
+    "redribbon:경상도-027": "community_pick_bc2dc368c5936109",
+    "redribbon:경상도-028": "six_topic_31999c1b84415d5a",
+    "redribbon:경상도-029": "community_pick_393c7c2183073bd8",
+    "redribbon:경상도-030": "community_pick_be93d5f08b134763",
+    "redribbon:경상도-031": "topic_enrichment_michelin-selected_908a4831bea9",
+    "redribbon:경상도-032": "community_pick_966a27cfa535d098",
+    "redribbon:경상도-033": "topic_enrichment_ttoganjip_d282e224f916",
+    "redribbon:경상도-034": "community_pick_47ebf9afa004f531",
+    "redribbon:경상도-035": "community_pick_569bbdf73b8f2e12",
+    "redribbon:경상도-036": "community_pick_a63143d85cf3f845",
+    "redribbon:경상도-037": "community_pick_7683ec34c56e5664",
+    "redribbon:경상도-038": "travel_busan-bite_1250",
+    "redribbon:경상도-039": "community_pick_0c716fe4db46a240",
+    "redribbon:경상도-040": "travel_busan-bite_124",
+    "redribbon:경상도-041": "community_pick_68177a25d58f4019",
+    "redribbon:경상도-042": "community_pick_ed7400ab5ab3194b",
+    "redribbon:경상도-043": "community_pick_5b09adce4445e2ff",
+    "redribbon:경상도-044": "community_pick_c17c13069a31900e",
+    "redribbon:경상도-045": "community_pick_9d43a2656a822d2a",
+    "redribbon:경상도-046": "community_pick_56c58c8082adbd82",
+    "redribbon:경상도-047": "community_pick_b4dcb98e4379f254",
+    "redribbon:경상도-048": "community_pick_d7e485379b9432dd",
+    "redribbon:경상도-049": "community_pick_c8566a8b346f97e9",
+    "redribbon:경상도-050": "wednesday-gourmet_restaurant_084",
+    "redribbon:경상도-051": "community_pick_c06454b9b2bb524f",
+    "redribbon:경상도-052": "topic_enrichment_ttoganjip_d32627ba7687",
+    "redribbon:경상도-053": "community_pick_2c59bb18bc9d89f8",
+    "redribbon:경상도-054": "community_pick_1c871bff81d3916c",
+    "redribbon:경상도-055": "community_pick_59b57101afb47eb1",
+    "redribbon:경상도-056": "community_pick_c627e640ce266d28",
+    "redribbon:경상도-057": "community_pick_fbbc6ab9c10b2ead",
+    "redribbon:경상도-058": "community_pick_893615aff7784088",
+    "redribbon:경상도-059": "community_pick_bdd9880f0ecd6558",
+    "redribbon:경상도-060": "community_pick_7e0827f1c4a63411",
+    "redribbon:경상도-061": "community_pick_a77f87601cdfb5cc",
+    "redribbon:경상도-062": "community_pick_00d42dd811fb1888",
+    "redribbon:경상도-063": "community_pick_3d6447c284f47600",
+    "redribbon:경상도-064": "community_pick_6cc9ffe57144d98b",
+    "redribbon:경상도-065": "community_pick_4746c81674b4b643",
+    "redribbon:경상도-066": "community_pick_fcac633bb6dd6dd1",
+    "redribbon:경상도-067": "community_pick_ce915bd1e3127d07",
+    "redribbon:경상도-068": "community_pick_3357811f72001944",
+    "redribbon:경상도-069": "community_pick_cfbcefb2553cf364",
+    "redribbon:경상도-070": "community_pick_b0c7ed2d2874904c",
+    "redribbon:경상도-071": "community_pick_187c32280d55790d",
+    "redribbon:경상도-072": "wednesday-gourmet_restaurant_103",
+    "redribbon:경상도-073": "community_pick_901403bbe13eb4de",
+    "redribbon:경상도-074": "community_pick_95afb35136f0a53c",
+    "redribbon:경상도-075": "community_pick_ec8a8a97b8e3644c",
+    "redribbon:경상도-076": "sikgaek-baekban-trip_restaurant_233",
+    "redribbon:경상도-077": "community_pick_872eb555e375f252",
+    "redribbon:경상도-078": "community_pick_163518d63af3e53d",
+    "redribbon:경상도-079": "community_pick_3c6c043583af62bd",
+    "redribbon:경상도-080": "community_pick_78048b216f705b14",
+    "redribbon:경상도-081": "community_pick_e0f42c403569e7a9",
+    "redribbon:경상도-082": "community_pick_9c74421d6c7c0212",
+    "redribbon:경상도-083": "community_pick_23b26045ee679c43",
+    "redribbon:경상도-084": "community_pick_5434dba501d28215",
+    "redribbon:경상도-085": "community_pick_7afe93cd0f92d849",
+    "redribbon:경상도-086": "community_pick_8aeab0d369bf8455",
+    "redribbon:경상도-087": "community_pick_20a7ed603a9260a6",
+    "redribbon:경상도-088": "community_pick_40caf6941776888b",
+    "redribbon:경상도-089": "community_pick_1f8a6784c09cd79b",
+    "redribbon:경상도-090": "community_pick_32bfd6539a7e4907",
+    "redribbon:경상도-091": "community_pick_0c0854dc86fee0eb",
+    "redribbon:경상도-092": "community_pick_ddf5b9192a0e6aa9",
+    "redribbon:경상도-093": "community_pick_5dee20d52467a8c0",
+    "redribbon:경상도-094": "community_pick_0fb682ebd5f7f093",
+    "redribbon:경상도-095": "community_pick_374d3023812af12d",
+    "redribbon:경상도-096": "topic_enrichment_baekjong-wok_66256bf45936",
+    "redribbon:경상도-097": "community_pick_bd9e62479e57f7e7",
+    "redribbon:경상도-098": "community_pick_767d750ef89934e5",
+    "redribbon:경상도-099": "community_pick_613960c3c4a0b3b9",
+    "redribbon:경상도-100": "topic_search_15c75c8ed857",
+    "redribbon:경상도-101": "community_pick_061e2b252f749a0a",
+    "redribbon:경상도-102": "community_pick_a21b6c22cba412cd",
+    "redribbon:경상도-103": "community_pick_4dc9bbadabbb5eb8",
+    "redribbon:경상도-104": "community_pick_f278804cf0252d57",
+    "redribbon:경상도-105": "community_pick_389e286eb9f565a8",
+    "redribbon:경상도-106": "community_pick_7d1dfdc2e17e0b6c",
+    "redribbon:경상도-107": "community_pick_f67ba2e62dc6e660",
+    "redribbon:경상도-108": "community_pick_5da87cab0305aa48",
+    "redribbon:경상도-109": "travel_busan-bite_204",
+    "redribbon:경상도-110": "community_pick_5b7551938170a163",
+    "redribbon:경상도-111": "community_pick_6587b080bb711a44",
+    "redribbon:경상도-112": "community_pick_50bd8556faf923aa",
+    "redribbon:경상도-113": "travel_busan-bite_198",
+    "redribbon:경상도-114": "community_pick_bb41142e54263635",
+    "redribbon:경상도-115": "community_pick_346ebe6fe2876295",
+    "redribbon:경상도-116": "community_pick_92e1fa7b52030c99",
+    "redribbon:경상도-117": "community_pick_6a623fe0a2d70c46",
+    "redribbon:경상도-118": "community_pick_acc80d4770d73185",
+    "redribbon:경상도-119": "community_pick_b94aa92a9a0a67a2",
+    "redribbon:경상도-120": "community_pick_2dd95eef41bea0b9",
+    "redribbon:경상도-121": "community_pick_c37906200f5d6f09",
+    "redribbon:경상도-122": "community_pick_c7cfe3b0466dc98b",
+    "redribbon:경상도-123": "community_pick_29145659d090e8bb",
+    "redribbon:경상도-124": "community_pick_ae380d42d27db8bc",
+    "redribbon:경상도-125": "community_pick_ba76d140faa7b534",
+    "redribbon:경상도-126": "topic_enrichment_delicious-guys_f608cae867ba",
+    "redribbon:경상도-127": "community_pick_d6503d6d266592db",
+    "redribbon:경상도-128": "topic_enrichment_baekjong-wok_01e2f132b695",
+    "redribbon:경상도-129": "community_pick_53a3fc0f2d644b14",
+    "redribbon:경상도-130": "community_pick_e5295babeb0051c7",
+    "redribbon:경상도-131": "community_pick_b3b183dbe8a7b8d0",
+    "redribbon:경상도-132": "community_pick_051ecbb083f989c4",
+    "redribbon:경상도-133": "topic_enrichment_baekjong-wok_c238c8eb5c74",
+    "redribbon:경상도-134": "community_pick_b253652dc7449e4e",
+    "redribbon:경상도-135": "community_pick_a73eba01bbd08b70",
+    "redribbon:경상도-136": "community_pick_c28fdfa254809c98",
+    "redribbon:경상도-137": "community_pick_3b0054fc7459703b",
+    "redribbon:경상도-138": "community_pick_3f935f02b37e2bc1",
+    "redribbon:경상도-139": "community_pick_b90a5f5d022d6fc0",
+    "redribbon:경상도-140": "community_pick_e6ce1d9938ce7637",
+    "redribbon:경상도-141": "community_pick_273a448287608400",
+    "redribbon:경상도-142": "community_pick_7c84ab4965a22d0c",
+    "redribbon:경상도-143": "topic_enrichment_baekjong-wok_0e790ce92b82",
+    "redribbon:경상도-144": "jeonhyunmoo-plan_restaurant_aeb387f4c550",
+    "redribbon:경상도-145": "community_pick_d138f417308e1e58",
+    "redribbon:경상도-146": "community_pick_9cd10e1f4d75adcc",
+    "redribbon:경상도-147": "community_pick_2091ed06dd7efb31",
+    "redribbon:경상도-148": "community_pick_9afa241674bfde3c",
+    "redribbon:경상도-149": "community_pick_880c2c1b95760c15",
+    "redribbon:경상도-150": "community_pick_dc7c2c3da7293d6d",
+    "redribbon:경상도-151": "community_pick_4c6b93b28d96ffcd",
+    "redribbon:경상도-152": "community_pick_53b7622a7e09de79",
+    "redribbon:경상도-153": "community_pick_fd152eb9f924ca08",
+    "redribbon:경상도-154": "travel_busan-bite_1252",
+    "redribbon:경상도-155": "community_pick_7f861f16a82d9c91",
+    "redribbon:경상도-156": "community_pick_ffe8493d8366f2ce",
+    "redribbon:경상도-157": "topic_enrichment_baekjong-wok_e4d22e240dfc",
+    "redribbon:경상도-158": "community_pick_4810a9b2e9e38ac3",
+    "redribbon:경상도-159": "community_pick_7f4b0c45034e19ab",
+    "redribbon:경상도-160": "community_pick_0dc385bb52063396",
+    "redribbon:경상도-161": "community_pick_bea241417715e8d5",
+    "redribbon:경상도-162": "community_pick_f1a37bd0fdaf0bc0",
+    "redribbon:경상도-163": "community_pick_95f0c4135d6ae6d5",
+    "redribbon:경상도-164": "community_pick_213e1ceb488ff432",
+    "redribbon:경상도-165": "community_pick_366fab1fcf45f683",
+    "redribbon:경상도-166": "community_pick_66bd83e98e0c6ea1",
+    "redribbon:서울-001": "community_pick_1c87727e23065799",
+    "redribbon:서울-002": "community_pick_3628ee03cedef1a0",
+    "redribbon:서울-003": "community_pick_2d816a0678259dbc",
+    "redribbon:서울-004": "community_pick_8fefd0045e2d3fd9",
+    "redribbon:서울-005": "community_pick_dd89c7e051144133",
+    "redribbon:서울-006": "community_pick_94ed91d10a5cfed5",
+    "redribbon:서울-007": "community_pick_c843ec81b6913ecd",
+    "redribbon:서울-008": "community_pick_327bb670d49deda0",
+    "redribbon:서울-009": "community_pick_5515733c2bad4b9f",
+    "redribbon:서울-010": "community_pick_c452d27f9c01a737",
+    "redribbon:서울-011": "r_f6168fc8",
+    "redribbon:서울-012": "community_pick_e3bfcdc9cba06feb",
+    "redribbon:서울-013": "r_9aab737c",
+    "redribbon:서울-014": "topic_enrichment_michelin-selected_d146241e05f5",
+    "redribbon:서울-015": "sikgaek-baekban-trip_restaurant_531",
+    "redribbon:서울-016": "wednesday-gourmet_restaurant_392",
+    "redribbon:서울-017": "topic_enrichment_delicious-guys_79267d8cd423",
+    "redribbon:서울-018": "community_pick_763dbc4b4329886c",
+    "redribbon:서울-019": "community_pick_acb8008b735a8e8c",
+    "redribbon:서울-020": "community_pick_508bf0203656c68b",
+    "redribbon:서울-021": "community_pick_819e9c9111359e3a",
+    "redribbon:서울-022": "community_pick_cc45845c54aa27b9",
+    "redribbon:서울-023": "community_pick_48719c190ed0884c",
+    "redribbon:서울-024": "wednesday-gourmet_restaurant_202",
+    "redribbon:서울-025": "community_pick_ff64e7f4e8102241",
+    "redribbon:서울-026": "community_pick_443f70971227f8e2",
+    "redribbon:서울-027": "community_pick_5784b5b53751d95c",
+    "redribbon:서울-028": "community_pick_96c319f392b3f0b2",
+    "redribbon:서울-029": "community_pick_d2095be8477fba08",
+    "redribbon:서울-030": "community_pick_a01db754def7279a",
+    "redribbon:서울-031": "community_pick_64a3e7e126fdc9b3",
+    "redribbon:서울-032": "community_pick_074f11a78a9f75c8",
+    "redribbon:서울-033": "wednesday-gourmet_restaurant_215",
+    "redribbon:서울-034": "community_pick_32b8f23391e97fdb",
+    "redribbon:서울-035": "community_pick_52452484e405607f",
+    "redribbon:서울-036": "community_pick_313420f4a7c133ae",
+    "redribbon:서울-037": "community_pick_b64f603269f20b2a",
+    "redribbon:서울-038": "community_pick_0fd69315cd4510e7",
+    "redribbon:서울-039": "community_pick_b260515124477537",
+    "redribbon:서울-040": "community_pick_fe1e3388496c4be2",
+    "redribbon:서울-041": "community_pick_83750c0fe272d33b",
+    "redribbon:서울-042": "mogeultende_0b570f10435c",
+    "redribbon:서울-043": "community_pick_93eaf9c4deeeffd6",
+    "redribbon:서울-044": "community_pick_e07b0d53eede1f14",
+    "redribbon:서울-045": "community_pick_ad23f47de75de107",
+    "redribbon:서울-046": "topic_enrichment_michelin-selected_73db764ec566",
+    "redribbon:서울-047": "community_pick_17b844de5f2ab246",
+    "redribbon:서울-048": "community_pick_960a588ea5adc1af",
+    "redribbon:서울-049": "wednesday-gourmet_restaurant_511",
+    "redribbon:서울-050": "community_pick_2c099a972e4636da",
+    "redribbon:서울-051": "community_pick_da60df39efa1aa11",
+    "redribbon:서울-052": "community_pick_90c6bbbad8ded41e",
+    "redribbon:서울-053": "community_pick_eadec18b9781fb50",
+    "redribbon:서울-054": "culinary-class-wars_restaurant_5faf20f61572",
+    "redribbon:서울-055": "community_pick_689f1cd6b153bfb3",
+    "redribbon:서울-056": "community_pick_e850e2dd63a28ba8",
+    "redribbon:서울-057": "community_pick_2aedf8d5ede91037",
+    "redribbon:서울-058": "community_pick_3150a3a368670373",
+    "redribbon:서울-059": "community_pick_047ff6fcbafd5f08",
+    "redribbon:서울-060": "community_pick_764fbc3c7c77eeaf",
+    "redribbon:서울-061": "community_pick_fe54535b2c8f61c1",
+    "redribbon:서울-062": "community_pick_23b043d7a8e91fe9",
+    "redribbon:서울-063": "community_pick_a9b5a1df3ace8a9d",
+    "redribbon:서울-064": "culinary-class-wars_restaurant_3c83923fbed2",
+    "redribbon:서울-065": "community_pick_c11fdfff906afd95",
+    "redribbon:서울-066": "community_pick_0e2dc803c2b4688d",
+    "redribbon:서울-067": "community_pick_6af1caf8f2f9a9ee",
+    "redribbon:서울-068": "community_pick_6c2d95a073a6bc83",
+    "redribbon:서울-069": "topic_enrichment_michelin-bib-gourmand_dea2fd21d3c5",
+    "redribbon:서울-070": "community_pick_75a476ce5f2c7d62",
+    "redribbon:서울-071": "community_pick_b5826f82face7045",
+    "redribbon:서울-072": "community_pick_737df4d6cfa5d9ad",
+    "redribbon:서울-073": "community_pick_96a35de7b6e67dd2",
+    "redribbon:서울-074": "community_pick_128f5b0932bd99ce",
+    "redribbon:서울-075": "wednesday-gourmet_restaurant_358",
+    "redribbon:서울-076": "community_pick_eb657bce7b3c2697",
+    "redribbon:서울-077": "requested_topic_88da62e111917f3f",
+    "redribbon:서울-078": "community_pick_1baa3d2e33f4fb5d",
+    "redribbon:서울-079": "community_pick_ee31656ebd25cd74",
+    "redribbon:서울-080": "community_pick_af8aaee605b480d7",
+    "redribbon:서울-081": "community_pick_ed461960cebe380e",
+    "redribbon:서울-082": "community_pick_adf5fbca66f38958",
+    "redribbon:서울-083": "community_pick_31da5f15e4b57860",
+    "redribbon:서울-084": "community_pick_e971c0707d182888",
+    "redribbon:서울-085": "community_pick_015b71f634d3cbf7",
+    "redribbon:서울-086": "community_pick_4bfcc5cc8f8823de",
+    "redribbon:서울-087": "community_pick_e06b3fa5b670db0f",
+    "redribbon:서울-088": "community_pick_ee748ce574effb7a",
+    "redribbon:서울-089": "community_pick_4cfd72a70ed223f5",
+    "redribbon:서울-090": "community_pick_f2aa6ba75834bea3",
+    "redribbon:서울-091": "community_pick_679e4e2168789e3d",
+    "redribbon:서울-092": "community_pick_432f1a6946483621",
+    "redribbon:서울-093": "community_pick_3b69046eecf4371d",
+    "redribbon:서울-094": "community_pick_17da4c9d581df970",
+    "redribbon:서울-095": "community_pick_57a80968890b8c09",
+    "redribbon:서울-096": "mogeultende_956416a15aad",
+    "redribbon:서울-097": "wednesday-gourmet_restaurant_336",
+    "redribbon:서울-098": "community_pick_d2f3da701b9c380c",
+    "redribbon:서울-099": "topic_enrichment_ttoganjip_f19065df624b",
+    "redribbon:서울-100": "community_pick_fe3e35b59631b7d8",
+    "redribbon:서울-101": "community_pick_7d3c405a65c5b846",
+    "redribbon:서울-102": "mogeultende_8cf850d13d0f",
+    "redribbon:서울-103": "choiza_place_fbe0dc47478fad10",
+    "redribbon:서울-104": "topic_enrichment_delicious-guys_07bbd29ec47c",
+    "redribbon:서울-105": "topic_enrichment_michelin-selected_9a98cbb18585",
+    "redribbon:서울-106": "community_pick_7a2cecfbecddd2de",
+    "redribbon:서울-107": "community_pick_0f3a588800a4275d",
+    "redribbon:서울-108": "mogeultende_16fde98822c4",
+    "redribbon:서울-109": "community_pick_e5342e8229973725",
+    "redribbon:서울-110": "community_pick_d09d9f44741fafab",
+    "redribbon:서울-111": "community_pick_ccd009957bdbd426",
+    "redribbon:서울-112": "community_pick_41ba49e866258c60",
+    "redribbon:서울-113": "culinary-class-wars_restaurant_8c1ce57aebc2",
+    "redribbon:서울-114": "community_pick_6cb8ac6f820d1995",
+    "redribbon:서울-115": "community_pick_18a8d1be1d3e09f7",
+    "redribbon:서울-116": "r_7219cb87",
+    "redribbon:서울-117": "community_pick_c3e58b817c035c17",
+    "redribbon:서울-118": "community_pick_7ccacc0b17e71940",
+    "redribbon:서울-119": "community_pick_421a5dcec5f5c55e",
+    "redribbon:서울-120": "wednesday-gourmet_restaurant_520",
+    "redribbon:서울-121": "wednesday-gourmet_restaurant_165",
+    "redribbon:서울-122": "community_pick_ec01d9174469fc4d",
+    "redribbon:서울-123": "mogeultende_e457dc73cc60",
+    "redribbon:서울-124": "community_pick_00319ac928e89182",
+    "redribbon:서울-125": "community_pick_7a1bcbb45d6cdf82",
+    "redribbon:서울-126": "community_pick_56953200609f430e",
+    "redribbon:서울-127": "community_pick_6045f3b93b2978af",
+    "redribbon:서울-128": "community_pick_3c5bb77c8c04d1be",
+    "redribbon:서울-129": "community_pick_8141a44673525724",
+    "redribbon:서울-130": "community_pick_d0700feb6366d328",
+    "redribbon:서울-131": "community_pick_17fb24eed523de5c",
+    "redribbon:서울-132": "community_pick_a43b863c0ba136df",
+    "redribbon:서울-133": "community_pick_881ceb022f646d0f",
+    "redribbon:서울-134": "community_pick_fa654f0ffeeee056",
+    "redribbon:서울-135": "community_pick_db1eda56183f793a",
+    "redribbon:서울-136": "community_pick_e64d0983bdb0002d",
+    "redribbon:서울-137": "community_pick_0c27408560b4b1e9",
+    "redribbon:서울-138": "community_pick_0183d7597db48be2",
+    "redribbon:서울-139": "community_pick_9c772976b780c672",
+    "redribbon:서울-140": "community_pick_69b0142b35621e73",
+    "redribbon:서울-141": "community_pick_598db12dc00603a4",
+    "redribbon:서울-142": "community_pick_c83c496ba962219e",
+    "redribbon:서울-143": "community_pick_1d3dd78fccc8ff00",
+    "redribbon:서울-144": "community_pick_734f0f0830a1468a",
+    "redribbon:서울-145": "community_pick_0dacb8834fc14e2b",
+    "redribbon:서울-146": "topic_enrichment_michelin-selected_c68e238e90b6",
+    "redribbon:서울-147": "topic_enrichment_ttoganjip_af541292429e",
+    "redribbon:서울-148": "community_pick_86a7bdaafcd110b2",
+    "redribbon:서울-149": "community_pick_94e64208c0cf2494",
+    "redribbon:서울-150": "community_pick_3c1197af3373d38e",
+    "redribbon:서울-151": "community_pick_725dca286e3acaa8",
+    "redribbon:서울-152": "community_pick_fb31275cd47c0b0e",
+    "redribbon:서울-153": "topic_enrichment_michelin-selected_f8354bd7c8f4",
+    "redribbon:서울-154": "community_pick_b5002acc80ea341f",
+    "redribbon:서울-155": "community_pick_9315660c2a23c3a7",
+    "redribbon:서울-156": "community_pick_e7d8d90141e0bc8f",
+    "redribbon:서울-157": "community_pick_b603928f8b0253b1",
+    "redribbon:서울-158": "community_pick_f1389af186dd459b",
+    "redribbon:서울-159": "community_pick_8d24432840cb374b",
+    "redribbon:서울-160": "topic_enrichment_delicious-guys_f60f5b497f77",
+    "redribbon:서울-161": "community_pick_f5752e5ee380c87d",
+    "redribbon:서울-162": "community_pick_28783d8d905f7026",
+    "redribbon:서울-163": "community_pick_3ccc9311b6a6b49c",
+    "redribbon:서울-164": "community_pick_43b96a28168446d8",
+    "redribbon:서울-165": "community_pick_ce1b80dc5b77b1e9",
+    "redribbon:서울-166": "community_pick_9f56cfa7c9a75de6",
+    "redribbon:서울-167": "community_pick_fd576539c7d2adbb",
+    "redribbon:서울-168": "community_pick_ca9b055137dca611",
+    "redribbon:서울-169": "community_pick_b9b46dbb68bc054f",
+    "redribbon:서울-170": "community_pick_01669c813d77f5dc",
+    "redribbon:서울-171": "community_pick_95f35959583400ef",
+    "redribbon:서울-172": "community_pick_4f904299265a84d6",
+    "redribbon:서울-173": "community_pick_404952870125ff9e",
+    "redribbon:서울-174": "wednesday-gourmet_restaurant_302",
+    "redribbon:서울-175": "community_pick_b33c52eb2ee1317f",
+    "redribbon:서울-176": "community_pick_b66610d7ef13d326",
+    "redribbon:서울-177": "community_pick_198f2bfab3e840a1",
+    "redribbon:서울-178": "community_pick_8fa3b212c3cbbce8",
+    "redribbon:서울-179": "community_pick_db4e4c050a0fae29",
+    "redribbon:서울-180": "mogeultende_0e4c9cb16731",
+    "redribbon:서울-181": "community_pick_a2045942f2808d5e",
+    "redribbon:서울-182": "community_pick_465698ee8c2549e5",
+    "redribbon:서울-183": "community_pick_d94e0f01bdd6b55a",
+    "redribbon:서울-184": "jeonhyunmoo-plan_restaurant_222a9f7f7db6",
+    "redribbon:서울-185": "community_pick_56eb68c3cc929c74",
+    "redribbon:서울-186": "community_pick_eb78f2190043a176",
+    "redribbon:서울-187": "community_pick_4011726f5cfe4bd3",
+    "redribbon:서울-188": "community_pick_e9537ec7e8bfff2b",
+    "redribbon:서울-189": "community_pick_dd056a9ff7f8ea3d",
+    "redribbon:서울-190": "community_pick_969e411af4120582",
+    "redribbon:서울-191": "community_pick_ca4e565b928cbdf1",
+    "redribbon:서울-192": "community_pick_c92d9604d59dbf93",
+    "redribbon:서울-193": "community_pick_59aef9f31ede756f",
+    "redribbon:서울-194": "community_pick_37535b6c88131ed7",
+    "redribbon:서울-195": "community_pick_81000888bea21453",
+    "redribbon:서울-196": "community_pick_76e9661d3e6873d2",
+    "redribbon:서울-197": "community_pick_6956ee1655ce27a7",
+    "redribbon:서울-198": "community_pick_f6c17c36b7b1902d",
+    "redribbon:서울-199": "community_pick_9378248aff9400a2",
+    "redribbon:서울-200": "community_pick_232a72448b177918",
+    "redribbon:서울-201": "community_pick_a8351237d781614f",
+    "redribbon:서울-202": "community_pick_3dab700156930c82",
+    "redribbon:서울-203": "community_pick_adb79e4d0895788c",
+    "redribbon:서울-204": "community_pick_797bf497dcf5e20f",
+    "redribbon:서울-205": "topic_enrichment_michelin-selected_a6780b884be0",
+    "redribbon:서울-206": "wednesday-gourmet_restaurant_504",
+    "redribbon:서울-207": "choiza_place_341fccc9c9751b91",
+    "redribbon:서울-208": "topic_enrichment_michelin-selected_b6512ce876de",
+    "redribbon:서울-209": "community_pick_6e8c25dea1e7a450",
+    "redribbon:서울-210": "community_pick_c1ae84a559ce823b",
+    "redribbon:서울-211": "sikgaek-baekban-trip_restaurant_065",
+    "redribbon:서울-212": "community_pick_cccf06b538ce6167",
+    "redribbon:서울-213": "community_pick_321c16544f569c66",
+    "redribbon:서울-214": "community_pick_f2e873f10f8782fd",
+    "redribbon:서울-215": "community_pick_a5d491c099c61682",
+    "redribbon:서울-216": "community_pick_45f908b2df358666",
+    "redribbon:서울-217": "wednesday-gourmet_restaurant_506",
+    "redribbon:서울-218": "topic_enrichment_michelin-bib-gourmand_4c757eea1ce8",
+    "redribbon:서울-219": "community_pick_eacb462e3f6e6e55",
+    "redribbon:서울-220": "community_pick_fcc2aa8e2bd61666",
+    "redribbon:서울-221": "community_pick_0a78c6e36877c824",
+    "redribbon:서울-222": "community_pick_c1a1d587d8e6c4bd",
+    "redribbon:서울-223": "community_pick_a46b6e0e3b0548ef",
+    "redribbon:서울-224": "topic_enrichment_delicious-guys_bd29a6baf7a5",
+    "redribbon:서울-225": "choiza_place_c72f1e5e9e52bf0a",
+    "redribbon:서울-226": "community_pick_cbe4c85c89690603",
+    "redribbon:서울-227": "popular_restaurants_hongdae_itsumo_ramen",
+    "redribbon:서울-228": "community_pick_6b101be89bceed7c",
+    "redribbon:서울-229": "topic_enrichment_ttoganjip_6a1a6bada12c",
+    "redribbon:서울-230": "community_pick_1075da7db171fbf1",
+    "redribbon:서울-231": "community_pick_25b66b85750c4d14",
+    "redribbon:서울-232": "community_pick_15c1627ee13fe755",
+    "redribbon:서울-233": "wednesday-gourmet_restaurant_388",
+    "redribbon:서울-234": "community_pick_93eec59a5f90fa6c",
+    "redribbon:서울-235": "community_pick_38a641097a85c1b1",
+    "redribbon:서울-236": "wednesday-gourmet_restaurant_386",
+    "redribbon:서울-237": "wednesday-gourmet_restaurant_406",
+    "redribbon:서울-238": "community_pick_7dd264d385c36f53",
+    "redribbon:서울-239": "requested_topic_9e3602e96b7165c1",
+    "redribbon:서울-240": "community_pick_4af71e6b5fd72a49",
+    "redribbon:서울-241": "wednesday-gourmet_restaurant_474",
+    "redribbon:서울-242": "community_pick_0651de122e5cabf8",
+    "redribbon:서울-243": "community_pick_26f501bafea48b21",
+    "redribbon:서울-244": "community_pick_d56005e4cf0b606c",
+    "redribbon:서울-245": "community_pick_a663c4376a32c87f",
+    "redribbon:서울-246": "requested_topic_666c14b70accf8d8",
+    "redribbon:서울-247": "community_pick_3ca01d1b67ac5f1e",
+    "redribbon:서울-248": "community_pick_33a3381ad13ab4b0",
+    "redribbon:서울-249": "community_pick_bf06bb4880511cd8",
+    "redribbon:서울-250": "topic_enrichment_baekjong-wok_f98670458f00",
+    "redribbon:서울-251": "community_pick_25eeea137fa9cd79",
+    "redribbon:서울-252": "wednesday-gourmet_restaurant_381",
+    "redribbon:서울-253": "community_pick_8afcec372bb7c63f",
+    "redribbon:서울-254": "community_pick_8b0eb153bd106c67",
+    "redribbon:서울-255": "community_pick_128e02ca251db587",
+    "redribbon:서울-256": "community_pick_e4f52c4f848cb0be",
+    "redribbon:서울-257": "topic_enrichment_michelin-selected_a92ba873923d",
+    "redribbon:서울-258": "community_pick_c0bbb467cbaf6636",
+    "redribbon:서울-259": "community_pick_f2403b27a07c9d01",
+    "redribbon:서울-260": "community_pick_94039b8cbdd83b06",
+    "redribbon:서울-261": "community_pick_99d7eb2ad87b557a",
+    "redribbon:서울-262": "community_pick_2736b932a74a4484",
+    "redribbon:서울-263": "community_pick_0b2a6549d3bcc916",
+    "redribbon:서울-264": "community_pick_039cfb1015a55b69",
+    "redribbon:서울-265": "requested_topic_ad6f8164c0725b6c",
+    "redribbon:서울-266": "community_pick_13525bad08627743",
+    "redribbon:서울-267": "community_pick_622e39c5edc80da6",
+    "redribbon:서울-268": "topic_enrichment_delicious-guys_8ea81784606c",
+    "redribbon:서울-269": "wednesday-gourmet_restaurant_368",
+    "redribbon:서울-270": "community_pick_8024383f594e3dc2",
+    "redribbon:서울-271": "topic_enrichment_michelin-selected_0476aa088e94",
+    "redribbon:서울-272": "community_pick_c56700c96c724280",
+    "redribbon:서울-273": "community_pick_b07be7dd92e45025",
+    "redribbon:서울-274": "community_pick_5c8dc66b33fc6914",
+    "redribbon:서울-275": "topic_enrichment_delicious-guys_48b9796ef90f",
+    "redribbon:서울-276": "community_pick_729248594fe2fae5",
+    "redribbon:서울-277": "community_pick_f4771cc064baa6ce",
+    "redribbon:서울-278": "community_pick_087eb97214a6618f",
+    "redribbon:서울-279": "community_pick_93cd8e1bbde3fef5",
+    "redribbon:서울-280": "community_pick_29309759ce77b763",
+    "redribbon:서울-281": "community_pick_212194bf33099a59",
+    "redribbon:서울-282": "community_pick_9ab32b2a1de31751",
+    "redribbon:서울-283": "community_pick_479b1644295d3da1",
+    "redribbon:서울-284": "r_eb889504",
+    "redribbon:서울-285": "r_e1a8060c",
+    "redribbon:서울-286": "community_pick_ab8e80cd8baa2f3f",
+    "redribbon:서울-287": "topic_enrichment_baekjong-wok_deb27c91e90a",
+    "redribbon:서울-288": "requested_topic_fdb12bb59ce9206d",
+    "redribbon:서울-289": "community_pick_57458ec3d49a1c8a",
+    "redribbon:서울-290": "community_pick_0ae286b4cfc6a48a",
+    "redribbon:서울-291": "requested_topic_7145bb018a228d3d",
+    "redribbon:서울-292": "topic_enrichment_michelin-bib-gourmand_7545010b8a03",
+    "redribbon:서울-293": "wednesday-gourmet_restaurant_467",
+    "redribbon:서울-294": "sikgaek-baekban-trip_restaurant_469",
+    "redribbon:서울-295": "six_topic_51352f5e25636317",
+    "redribbon:서울-296": "community_pick_766360ee6aff2457",
+    "redribbon:서울-297": "community_pick_25c85b118c2ee23b",
+    "redribbon:서울-298": "community_pick_8c89f884c14156a5",
+    "redribbon:서울-299": "community_pick_ecd4f41f0f4ac0f2",
+    "redribbon:서울-300": "community_pick_4b477b0a297cc05b",
+    "redribbon:서울-301": "mogeultende_3cbc3f126c0b",
+    "redribbon:서울-302": "community_pick_a7ca63c535977f7b",
+    "redribbon:서울-303": "community_pick_e7858e99532ecdec",
+    "redribbon:서울-304": "wednesday-gourmet_restaurant_232",
+    "redribbon:서울-305": "community_pick_08a8657c2760a57c",
+    "redribbon:서울-306": "sikgaek-baekban-trip_restaurant_597",
+    "redribbon:서울-307": "community_pick_9c00bce4c7cb23ea",
+    "redribbon:서울-308": "wednesday-gourmet_restaurant_241",
+    "redribbon:서울-309": "jeonhyunmoo-plan_restaurant_1cd3067a3a95",
+    "redribbon:서울-310": "community_pick_664df8173c9162e1",
+    "redribbon:서울-311": "topic_enrichment_delicious-guys_1af207dffa40",
+    "redribbon:서울-312": "community_pick_ee7ec5947f1cc3c5",
+    "redribbon:서울-313": "community_pick_0a7eb7b769c9bae9",
+    "redribbon:서울-314": "community_pick_b5cdc1a9bd8a285a",
+    "redribbon:서울-315": "community_pick_118b512e152ebc09",
+    "redribbon:서울-316": "community_pick_8203d2aa33659968",
+    "redribbon:서울-317": "wednesday-gourmet_restaurant_493",
+    "redribbon:서울-318": "community_pick_6337826dd2c66e49",
+    "redribbon:서울-319": "wednesday-gourmet_restaurant_496",
+    "redribbon:서울-320": "community_pick_d6cd1e3a6c89d018",
+    "redribbon:서울-321": "community_pick_595deb212a0d4335",
+    "redribbon:서울-322": "community_pick_beda9b98dbfa3554",
+    "redribbon:서울-323": "community_pick_701bcac6c20b3e10",
+    "redribbon:서울-324": "wednesday-gourmet_restaurant_430",
+    "redribbon:서울-325": "community_pick_b25153f80502816d",
+    "redribbon:서울-326": "community_pick_b46325fda40861bf",
+    "redribbon:서울-327": "community_pick_e396be9000ba7f93",
+    "redribbon:서울-328": "community_pick_0c43c0a1f251511a",
+    "redribbon:서울-329": "community_pick_3843abcf21204ed6",
+    "redribbon:서울-330": "community_pick_f7a1b64f5a4dcef9",
+    "redribbon:서울-331": "topic_enrichment_michelin-bib-gourmand_0eb12b158603",
+    "redribbon:서울-332": "wednesday-gourmet_restaurant_264",
+    "redribbon:서울-333": "community_pick_e27a8d98e701e292",
+    "redribbon:서울-334": "community_pick_70f28b9b00780cbe",
+    "redribbon:서울-335": "community_pick_204e6564e9b67755",
+    "redribbon:서울-336": "community_pick_4911543aaa6962e4",
+    "redribbon:서울-337": "community_pick_dadff6f1d6d958e1",
+    "redribbon:서울-338": "community_pick_cd97e036a512bdf4",
+    "redribbon:서울-339": "choiza_place_d2eee18465fb3eaa",
+    "redribbon:서울-340": "community_pick_dd51dfb5dc12a359",
+    "redribbon:서울-341": "community_pick_1ef0ea0a9a29727c",
+    "redribbon:서울-342": "topic_enrichment_baekjong-wok_e089b5d65612",
+    "redribbon:서울-343": "community_pick_bf961a8014fd9680",
+    "redribbon:서울-344": "community_pick_460e2d84eb50310b",
+    "redribbon:서울-345": "community_pick_9b70494492bb45d1",
+    "redribbon:서울-346": "community_pick_347ad671b7f04271",
+    "redribbon:서울-347": "community_pick_df2a593ab9f2c911",
+    "redribbon:서울-348": "community_pick_95542f5cf7341694",
+    "redribbon:서울-349": "wednesday-gourmet_restaurant_339",
+    "redribbon:서울-350": "topic_enrichment_delicious-guys_00e2930a6055",
+    "redribbon:서울-351": "wednesday-gourmet_restaurant_341",
+    "redribbon:서울-352": "community_pick_07ab58002b9c5c12",
+    "redribbon:서울-353": "community_pick_d9bf1bf5a8e7d235",
+    "redribbon:서울-354": "wednesday-gourmet_restaurant_360",
+    "redribbon:서울-355": "wednesday-gourmet_restaurant_366",
+    "redribbon:서울-356": "community_pick_b071d2596f5b5af1",
+    "redribbon:서울-357": "community_pick_1b4d5c5d31af50d6",
+    "redribbon:서울-358": "community_pick_65b41f6520b6db1b",
+    "redribbon:서울-359": "wednesday-gourmet_restaurant_375",
+    "redribbon:서울-360": "choiza_place_97df2bf5095defdd",
+    "redribbon:서울-361": "community_pick_7e39f89e4d4d2e77",
+    "redribbon:서울-362": "community_pick_691a18769328c5b2",
+    "redribbon:서울-363": "community_pick_ef49a49cdf38177c",
+    "redribbon:서울-364": "wednesday-gourmet_restaurant_528",
+    "redribbon:서울-365": "community_pick_629aa5fdd2b4a31b",
+    "redribbon:서울-366": "community_pick_4d387728d50b8d87",
+    "redribbon:서울-367": "sikgaek-baekban-trip_restaurant_487",
+    "redribbon:서울-368": "wednesday-gourmet_restaurant_542",
+    "redribbon:서울-369": "community_pick_e1758e5c58227bc3",
+    "redribbon:서울-370": "topic_enrichment_delicious-guys_23a16aca288b",
+    "redribbon:서울-371": "sikgaek-baekban-trip_restaurant_594",
+    "redribbon:서울-372": "community_pick_7b5fdb36c871b452",
+    "redribbon:전라도-001": "community_pick_2fe67cc217aa867f",
+    "redribbon:전라도-002": "community_pick_cf5869163983dc8d",
+    "redribbon:전라도-003": "community_pick_22da1dd3038e1231",
+    "redribbon:전라도-004": "community_pick_0b7809894178a156",
+    "redribbon:전라도-005": "community_pick_d474e82c0a2bda57",
+    "redribbon:전라도-006": "community_pick_e372c8e17ddd248e",
+    "redribbon:전라도-007": "community_pick_9872f2e0d2ef7e4b",
+    "redribbon:전라도-008": "community_pick_d8d29d863c28bb57",
+    "redribbon:전라도-009": "community_pick_682f1a83eda6c041",
+    "redribbon:전라도-010": "topic_enrichment_baekjong-wok_64cb792abe47",
+    "redribbon:전라도-011": "topic_enrichment_delicious-guys_7ecf0b49763c",
+    "redribbon:전라도-012": "community_pick_c4469f51ea9b532b",
+    "redribbon:전라도-013": "mogeultende_15e5a9983558",
+    "redribbon:전라도-014": "community_pick_2ca3215a66c924e7",
+    "redribbon:전라도-015": "topic_enrichment_baekjong-wok_f712ffe69f88",
+    "redribbon:전라도-016": "community_pick_a523160d24286017",
+    "redribbon:전라도-017": "community_pick_28f713e899bed222",
+    "redribbon:전라도-018": "jeonhyunmoo-plan_restaurant_c91c6a54578d",
+    "redribbon:전라도-019": "community_pick_cff2ae3fc981ee14",
+    "redribbon:전라도-020": "community_pick_f51bbb8a15d6722d",
+    "redribbon:전라도-021": "wednesday-gourmet_restaurant_130",
+    "redribbon:전라도-022": "community_pick_bd8732d10ef95e50",
+    "redribbon:전라도-023": "community_pick_9801647f19765fa6",
+    "redribbon:전라도-024": "community_pick_830aee57c748e9da",
+    "redribbon:전라도-025": "six_topic_0a27c1dcf76ab55c",
+    "redribbon:전라도-026": "community_pick_04545f19ba06efaa",
+    "redribbon:전라도-027": "community_pick_ca4d26f64accc230",
+    "redribbon:전라도-028": "community_pick_abeb4e15eaad7704",
+    "redribbon:전라도-029": "community_pick_ec5133bfa252ce1c",
+    "redribbon:전라도-030": "old-korean-100_restaurant_058",
+    "redribbon:전라도-031": "community_pick_500b8ef58654b3c3",
+    "redribbon:전라도-032": "topic_enrichment_baekjong-wok_ffeffb429425",
+    "redribbon:전라도-033": "community_pick_b65845b1fe1cfd8b",
+    "redribbon:전라도-034": "community_pick_11491c464bf1c94b",
+    "redribbon:전라도-035": "community_pick_1a601b77c2d1eff7",
+    "redribbon:전라도-036": "community_pick_6c6ac4487832dbdc",
+    "redribbon:전라도-037": "community_pick_a7f3bb6aa63e20f9",
+    "redribbon:전라도-038": "community_pick_040b93451f9df563",
+    "redribbon:전라도-039": "community_pick_5a053f2ac200b465",
+    "redribbon:전라도-040": "community_pick_9f3c9e845ef739fd",
+    "redribbon:전라도-041": "community_pick_6af406826e02a17d",
+    "redribbon:전라도-042": "topic_enrichment_baekjong-wok_f37d9ff802de",
+    "redribbon:전라도-043": "topic_enrichment_baekjong-wok_2acce0e57504",
+    "redribbon:전라도-044": "community_pick_669c8bd96dff089b",
+    "redribbon:전라도-045": "community_pick_ce0468c46d086e38",
+    "redribbon:전라도-046": "community_pick_4b3a53df6000447b",
+    "redribbon:전라도-047": "community_pick_460b2f9de1a5012d",
+    "redribbon:전라도-048": "sikgaek-baekban-trip_restaurant_417",
+    "redribbon:전라도-049": "sikgaek-baekban-trip_restaurant_184",
+    "redribbon:전라도-050": "old-korean-100_restaurant_078",
+    "redribbon:전라도-051": "community_pick_f1c59be93919dc64",
+    "redribbon:전라도-052": "community_pick_9aae265feec211b8",
+    "redribbon:전라도-053": "community_pick_4ecdfea31cbb1e2a",
+    "redribbon:전라도-054": "community_pick_f4f3d67a18908056",
+    "redribbon:전라도-055": "community_pick_1c13143de608311c",
+    "redribbon:전라도-056": "community_pick_5ce4502fd6656b76",
+    "redribbon:전라도-057": "community_pick_39561486b0ac6785",
+    "redribbon:전라도-058": "community_pick_36453f4a91242106",
+    "redribbon:전라도-059": "community_pick_e8f570d2a478dd7b",
+    "redribbon:전라도-060": "community_pick_cc7f273c56995c4c",
+    "redribbon:전라도-061": "topic_enrichment_baekjong-wok_8f6c67ed9af4",
+    "redribbon:전라도-062": "community_pick_404356b2285487bc",
+    "redribbon:전라도-063": "community_pick_93142d2150af5d8f",
+    "redribbon:전라도-064": "community_pick_900b9fc1cfafbc39",
+    "redribbon:전라도-065": "community_pick_8faebf84721c3db0",
+    "redribbon:전라도-066": "community_pick_d46c303db5730231",
+    "redribbon:전라도-067": "community_pick_473b138d5e68a3a1",
+    "redribbon:전라도-068": "community_pick_d044c6b9dea40988",
+    "redribbon:전라도-069": "community_pick_b27216c1f5da568a",
+    "redribbon:전라도-070": "topic_enrichment_ttoganjip_beab5ad2ba02",
+    "redribbon:전라도-071": "culinary-class-wars_restaurant_cd91ec8f37f0",
+    "redribbon:전라도-072": "community_pick_a4c048a718dd1565",
+    "redribbon:전라도-073": "topic_enrichment_baekjong-wok_f9f4a3d81b45",
+    "redribbon:전라도-074": "community_pick_e447a9422e9438cf",
+    "redribbon:전라도-075": "community_pick_45ed8c8b71f21f76",
+    "redribbon:전라도-076": "community_pick_1c55fdc455f3d5d4",
+    "redribbon:제주도-001": "community_pick_30a301c27366a1f2",
+    "redribbon:제주도-002": "community_pick_6f8ca4b8f47b826e",
+    "redribbon:제주도-003": "community_pick_cf1e964f739198af",
+    "redribbon:제주도-004": "community_pick_ab1dca2e9b4381b0",
+    "redribbon:제주도-005": "community_pick_74f8e5679ea4fbf2",
+    "redribbon:제주도-006": "community_pick_db65c8240b93a14f",
+    "redribbon:제주도-007": "community_pick_bd519ebbe4ca39e7",
+    "redribbon:제주도-008": "community_pick_23619fd8554eda57",
+    "redribbon:제주도-009": "community_pick_b46df3f1b7f3049d",
+    "redribbon:제주도-010": "community_pick_73774224f293ff9e",
+    "redribbon:제주도-011": "choiza_place_b63b95c5ef8210d4",
+    "redribbon:제주도-012": "community_pick_71823452c556d27d",
+    "redribbon:제주도-013": "community_pick_37f01ee16e4cb448",
+    "redribbon:제주도-014": "community_pick_596eb355eadec599",
+    "redribbon:제주도-015": "jeonhyunmoo-plan_restaurant_24e167c37991",
+    "redribbon:제주도-016": "community_pick_fcddfd62708fac90",
+    "redribbon:제주도-017": "community_pick_e43ea09043a81bb6",
+    "redribbon:제주도-018": "community_pick_300c35ec4b6c5c3a",
+    "redribbon:제주도-019": "community_pick_17c3bed7ffbe43da",
+    "redribbon:제주도-020": "community_pick_992c0a4a756f5bd4",
+    "redribbon:제주도-021": "community_pick_880ba2462be32ef7",
+    "redribbon:제주도-022": "travel_jeju-bite_11fe917470f733f2-row-2432",
+    "redribbon:제주도-023": "community_pick_95233e735eef34a4",
+    "redribbon:제주도-024": "community_pick_4dfa46138c06fecd"
+  }
+}

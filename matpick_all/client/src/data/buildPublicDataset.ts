@@ -32,6 +32,7 @@ import popularRestaurantsTopicEnrichment from "./generated/topic-enrichments/pop
 import ttoganjipTopicEnrichment from "./generated/topic-enrichments/ttoganjip.enriched.json";
 import wednesdayGourmetTopicEnrichment from "./generated/topic-enrichments/wednesday-gourmet.enriched.json";
 import wednesdayGourmetDataset from "./generated/wednesday-gourmet.generated.json";
+import communityPicksDataset from "./generated/community-picks.generated.json";
 import type {
   Creator,
   MatpickDataSet,
@@ -56,6 +57,9 @@ const patchOnlySourceIds = new Set<string>([
   "old-korean-100",
   "sikgaek-baekban-trip",
   "wednesday-gourmet",
+]);
+const associationOnlyWhenMatchedSourceIds = new Set<string>([
+  "community-picks",
 ]);
 
 function hasValidCoords(restaurant: Pick<Restaurant, "lat" | "lng">) {
@@ -236,6 +240,11 @@ function mergeDatasets(
 
   extras.forEach(extra => {
     const sourceIds = new Set((extra.sources ?? []).map(source => source.id));
+    const associationOnlyWhenMatched =
+      sourceIds.size > 0 &&
+      Array.from(sourceIds).every(sourceId =>
+        associationOnlyWhenMatchedSourceIds.has(sourceId)
+      );
     const patchOnlyDataset =
       sourceIds.size > 0 &&
       Array.from(sourceIds).every(sourceId =>
@@ -272,10 +281,14 @@ function mergeDatasets(
 
       if (existingIndex != null) {
         const existing = mergedRestaurants[existingIndex];
-        mergedRestaurants[existingIndex] = mergeRestaurantById(
-          existing,
-          restaurant
-        );
+        // A recommendation import may associate an existing canonical place,
+        // but it must never replace that place's coordinates, menus or prices.
+        if (!associationOnlyWhenMatched) {
+          mergedRestaurants[existingIndex] = mergeRestaurantById(
+            existing,
+            restaurant
+          );
+        }
         restaurantIdMap.set(restaurant.id, existing.id);
         existingRestaurantIndexById.set(restaurant.id, existingIndex);
         buildRestaurantLookupKeys(mergedRestaurants[existingIndex]).forEach(
@@ -407,6 +420,7 @@ const publicDataSourceIds = new Set(
     "busan-bite",
     "jeju-bite",
     "travel-bite",
+    "community-picks",
     ...topicExpansion.sources.map(source => source.id),
     ...researchedTopics.sources.map(source => source.id),
   ].filter(sourceId => !sourceIdsPendingEvidence.has(sourceId))
@@ -481,6 +495,9 @@ const dataset = filterDatasetForVisibleContent(
     requestedTopicExpansion as SourceDataset,
     choizaRoadExpansion as SourceDataset,
     sixTopicResearch as SourceDataset,
+    // Keep recommendation imports last so new rows retain their provided data,
+    // while identity matches above remain association-only.
+    communityPicksDataset as SourceDataset,
   ])
 );
 const creatorsWithProfileImages: Creator[] = dataset.creators.map(creator => ({
@@ -529,7 +546,7 @@ const normalizedDataset: MatpickDataSet = {
     };
     // A maintained menu is the administrator's explicit signal that this
     // listing is active. Keep all menu-backed records on one lifecycle state.
-    return normalized.menus?.length
+    return normalized.menus?.length && !normalized.id.startsWith("community_pick_")
       ? { ...normalized, operationState: "operating", operationStatus: "영업 중" }
       : normalized;
   }),

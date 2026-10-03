@@ -1,0 +1,66 @@
+{
+  "asOf": "2026-10-03",
+  "pendingTargets": 11,
+  "resolved": 11,
+  "reusedCoordinates": 653,
+  "naverPlaceSummaryResolved": 114,
+  "kakaoResolved": 550,
+  "unresolved": [],
+  "errors": [
+    {
+      "sourceEntryId": "naver-shared:1027341051",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027465621",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027472605",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027428530",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027484031",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1027481325",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1501659171",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:2876453917",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:3981454130",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1584939897",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    },
+    {
+      "sourceEntryId": "naver-shared:1061024204",
+      "stage": "naver_place_summary",
+      "error": "HTTP 400"
+    }
+  ]
+}

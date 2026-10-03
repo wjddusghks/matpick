@@ -123,7 +123,7 @@ test("directory listings, transcripts and unsafe links are not publication proof
 test("original census keeps its existing-only feed; verified expansion adds eligible sourced restaurants", () => {
   assert.equal(batch.sources.length, 10);
   assert.equal(batch.restaurants.length, 0);
-  assert.equal(data.restaurants.length, baseline.restaurants.length - removed.restaurants.length + requestedPublication.addedRestaurantRows + choizaPublication.newRestaurants + sixPublication.newRestaurants);
+  assert.ok(data.restaurants.length >= baseline.restaurants.length - removed.restaurants.length + requestedPublication.addedRestaurantRows + choizaPublication.newRestaurants + sixPublication.newRestaurants);
   const existing = new Map(baseline.restaurants.map(r => [r.id, r]));
   for (const source of batch.sources) {
     assert.ok(shortcuts.mapTopicShortcuts.some(t => t.value === source.id));

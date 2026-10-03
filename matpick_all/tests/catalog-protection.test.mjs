@@ -124,7 +124,8 @@ test("durable edits apply and deleted restaurants stay out of public results", (
 
 test("broadcast source edits replace source relationships in public catalog queries", () => {
   const restaurant = dataset.restaurants.find(row =>
-    dataset.sourceLinks.some(link => link.restaurantId === row.id)
+    dataset.sourceLinks.some(link => link.restaurantId === row.id) &&
+    !dataset.sourceLinks.some(link => link.restaurantId === row.id && link.sourceId === "community-picks")
   );
   const replacementSource = dataset.sources.find(source =>
     !dataset.sourceLinks.some(
@@ -163,6 +164,52 @@ test("broadcast source edits replace source relationships in public catalog quer
     cursor = sourceResult.body.nextCursor || undefined;
   } while (cursor && !found);
   assert.equal(found, true);
+});
+
+test("imported community relationships survive historical source link overrides", () => {
+  const communityLink = dataset.sourceLinks.find(link => link.sourceId === "community-picks");
+  assert.ok(communityLink);
+  const replacementSource = dataset.sources.find(source =>
+    source.id !== "community-picks" &&
+    !dataset.sourceLinks.some(
+      link => link.restaurantId === communityLink.restaurantId && link.sourceId === source.id
+    )
+  );
+  assert.ok(replacementSource);
+  const replacement = {
+    id: `admin:${communityLink.restaurantId}:community-regression`,
+    restaurantId: communityLink.restaurantId,
+    sourceId: replacementSource.id,
+    label: "관리자 추가",
+  };
+  const edits = [{
+    restaurantId: communityLink.restaurantId,
+    changes: { sourceLinks: [replacement] },
+    updatedAt: "2026-10-02T23:59:59+09:00",
+    deletedAt: null,
+  }];
+
+  const detail = queryCatalog({ view: "detail", id: communityLink.restaurantId }, edits);
+  assert.deepEqual(
+    detail.body.sourceLinks.map(link => link.sourceId).sort(),
+    [replacementSource.id, "community-picks"].sort(),
+  );
+  assert.equal(detail.body.sources.filter(source => source.id === "community-picks").length, 1);
+  const sourceList = queryCatalog({
+    view: "list", type: "source", value: "community-picks", limit: 100,
+  }, edits);
+  assert.ok(sourceList.body.sources.some(source => source.id === "community-picks"));
+  assert.equal(sourceList.body.sources.filter(source => source.id === "community-picks").length, 1);
+
+  const futureEdit = [{
+    ...edits[0],
+    updatedAt: "2026-10-04T00:00:00+09:00",
+  }];
+  const futureDetail = queryCatalog(
+    { view: "detail", id: communityLink.restaurantId },
+    futureEdit,
+  );
+  assert.deepEqual(futureDetail.body.sourceLinks, [replacement]);
 });
 
 test("featured ranking, creator scope and episode scope preserve server semantics", () => {

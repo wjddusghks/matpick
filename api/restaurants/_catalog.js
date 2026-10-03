@@ -8,8 +8,11 @@ const {
 
 const MAX_PAGE_SIZE = 24;
 const MAX_RESULT_OFFSET = 100000;
-const communitySource = { id: "community-picks", name: "추천식당", type: "other", provider: "맛픽", description: "사용자가 제보하고 운영자가 승인한 식당 · Community Picks", imageUrl: "/source-covers/community-picks.svg" };
-const allSources = [...(dataset.sources || []), communitySource];
+const communitySource = { id: "community-picks", name: "추천식당", type: "other", provider: "맛픽", description: "사용자가 제보하고 운영자가 승인한 식당 · Community Picks", imageUrl: "/source-covers/community-picks.svg", importedAt: "2026-10-03T17:20:00+09:00" };
+const staticSources = dataset.sources || [];
+const allSources = staticSources.some((source) => source.id === communitySource.id)
+  ? staticSources
+  : [...staticSources, communitySource];
 const sourceById = new Map(allSources.map((source) => [source.id, source]));
 const publicCreators = Array.from(new Map([
   ...(dataset.sources || [])
@@ -207,11 +210,31 @@ function queryCatalog(query, edits = [], publications = []) {
       .filter((edit) => Array.isArray(edit?.changes?.sourceLinks))
       .map((edit) => [edit.restaurantId, edit.changes.sourceLinks]),
   );
+  const sourceLinkOverrideEdits = new Map(
+    edits
+      .filter((edit) => Array.isArray(edit?.changes?.sourceLinks))
+      .map((edit) => [edit.restaurantId, edit]),
+  );
+  const communityImportedAt = Date.parse(
+    sourceById.get(communitySource.id)?.importedAt || communitySource.importedAt,
+  );
+  const importedCommunityLinks = (dataset.sourceLinks || []).filter((link) => {
+    const override = linkOverrides.get(link.restaurantId);
+    const edit = sourceLinkOverrideEdits.get(link.restaurantId);
+    const editUpdatedAt = Date.parse(edit?.updatedAt || "");
+    const isHistoricalOverride = !Number.isFinite(editUpdatedAt) ||
+      editUpdatedAt < communityImportedAt;
+    return link.sourceId === communitySource.id &&
+      override &&
+      isHistoricalOverride &&
+      !override.some((candidate) => candidate.sourceId === communitySource.id);
+  });
   const effectiveSourceLinks = [
     ...(dataset.sourceLinks || []).filter(
       (link) => !linkOverrides.has(link.restaurantId),
     ),
     ...Array.from(linkOverrides.values()).flat(),
+    ...importedCommunityLinks,
     ...publications.filter(p => !linkOverrides.has(p.restaurant.id)).map(p => p.sourceLink),
   ];
   const currentLinksByRestaurant = new Map();

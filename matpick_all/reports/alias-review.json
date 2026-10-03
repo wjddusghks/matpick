@@ -1,5 +1,5 @@
 {
-  "aliasCount": 926,
+  "aliasCount": 933,
   "unresolved": [
     {
       "id": "baekjong_wok_restaurant_028",
@@ -80,6 +80,12 @@
       "candidates": []
     },
     {
+      "id": "baekjong_wok_restaurant_327",
+      "name": "온천할머니집",
+      "address": "광주 동구 지호로127번길 29",
+      "candidates": []
+    },
+    {
       "id": "baekjong_wok_restaurant_332",
       "name": "용수천농원",
       "address": "대구 동구 용수동 468",
@@ -134,12 +140,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_d4c6ace32b09",
-      "name": "디핀옥수",
-      "address": "서울 성동구 독서당로 194",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_321296dcccb0",
       "name": "캐비스트리",
       "address": "서울 강남구 도산대로37길 21",
@@ -176,12 +176,6 @@
       "candidates": []
     },
     {
-      "id": "culinary-class-wars_restaurant_3c83923fbed2",
-      "name": "티엔미미 홍대점",
-      "address": "서울 마포구 양화로 144",
-      "candidates": []
-    },
-    {
       "id": "culinary-class-wars_restaurant_ca5c18de7e65",
       "name": "중앙가속기",
       "address": "서울 성동구 성수일로 9",
@@ -203,12 +197,6 @@
       "id": "culinary-class-wars_restaurant_b3e6b28f77c7",
       "name": "조광 201",
       "address": "서울 송파구 새말로10길 8",
-      "candidates": []
-    },
-    {
-      "id": "culinary-class-wars_restaurant_9b13563baeca",
-      "name": "마마리마켓",
-      "address": "서울 성동구 연무장18길 16",
       "candidates": []
     },
     {
@@ -1034,12 +1022,6 @@
       "candidates": []
     },
     {
-      "id": "jeonhyunmoo-plan_restaurant_1cd3067a3a95",
-      "name": "원강",
-      "address": "서울 강남구 학동로6길 16",
-      "candidates": []
-    },
-    {
       "id": "jeonhyunmoo-plan_restaurant_85b360eb978f",
       "name": "금성스테이크부대찌개",
       "address": "서울 강남구 언주로174길 26, 신사동 남강빌딩 1층 2호",
@@ -1640,12 +1622,6 @@
       "candidates": []
     },
     {
-      "id": "jeonhyunmoo-plan_restaurant_27de1ce012d9",
-      "name": "신도칼국수 본점",
-      "address": "대전 동구 대전로825번길 11 신도칼국수",
-      "candidates": []
-    },
-    {
       "id": "jeonhyunmoo-plan_restaurant_42d18586ada3",
       "name": "동표골뱅이",
       "address": "서울 용산구 새창로45길 5",
@@ -2135,12 +2111,6 @@
       "id": "seoul-taste-100-2025-608",
       "name": "메종조",
       "address": "서울 강남구 영동대로137길 6 지상1층 2호",
-      "candidates": []
-    },
-    {
-      "id": "seoul-taste-100-2025-609",
-      "name": "모수 서울",
-      "address": "서울 용산구 회나무로41길 4",
       "candidates": []
     },
     {
@@ -3080,6 +3050,12 @@
       "candidates": []
     },
     {
+      "id": "topic_enrichment_delicious-guys_e9deefd0dd9f",
+      "name": "평택 나귀당귀",
+      "address": "경기 평택시 조개터로26번길 21-3 (합정동 906-5)",
+      "candidates": []
+    },
+    {
       "id": "topic_enrichment_old-korean-100_5a9cf62b1493",
       "name": "강산면옥 본점",
       "address": "대구 중구 교동길 27-8",
@@ -3182,6 +3158,12 @@
       "candidates": []
     },
     {
+      "id": "wednesday-gourmet_restaurant_466",
+      "name": "서울 어바웃진스",
+      "address": "서울 종로구 새문안로3길 30 (내수동 167)",
+      "candidates": []
+    },
+    {
       "id": "wednesday-gourmet_restaurant_477",
       "name": "서울 취천루",
       "address": "서울 종로구 자하문로7길 9 (체부동 26)",
@@ -3197,6 +3179,12 @@
       "id": "wednesday-gourmet_restaurant_500",
       "name": "서울 영동막국수",
       "address": "서울 광진구 천호대로 581 (중곡동 140-19)",
+      "candidates": []
+    },
+    {
+      "id": "topic_enrichment_wednesday-gourmet_e44e714f751c",
+      "name": "서울 육전식당 1호점",
+      "address": "서울 동대문구 난계로30길 16 (신설동 104-3)",
       "candidates": []
     },
     {
@@ -3263,6 +3251,12 @@
       "id": "wednesday-gourmet_restaurant_410",
       "name": "서울 초마",
       "address": "서울 마포구 와우산로 72 (서교동 361-10)",
+      "candidates": []
+    },
+    {
+      "id": "wednesday-gourmet_restaurant_466",
+      "name": "서울 어바웃진스",
+      "address": "서울 종로구 새문안로3길 30 (내수동 167)",
       "candidates": []
     },
     {
@@ -4253,12 +4247,6 @@
       "id": "r_aaf69c42",
       "name": "리북방",
       "address": "서울 마포구 마포대로1길 16 2층",
-      "candidates": []
-    },
-    {
-      "id": "r_70da37bb",
-      "name": "원두막",
-      "address": "서울 중구 충무로 36-3",
       "candidates": []
     },
     {

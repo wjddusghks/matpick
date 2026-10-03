@@ -1,0 +1,34 @@
+{
+  "excluded": [
+    {
+      "name": "망원시장",
+      "naverPlaceId": "13305251",
+      "reason": "식당 아님",
+      "category": "시장"
+    },
+    {
+      "name": "서문시장",
+      "naverPlaceId": "12764360",
+      "reason": "식당 아님",
+      "category": "시장"
+    },
+    {
+      "name": "와인무",
+      "naverPlaceId": "1057213096",
+      "reason": "식당 아님",
+      "category": "주류"
+    },
+    {
+      "name": "모모쥬 동물원 제주신화월드점",
+      "naverPlaceId": "2027723820",
+      "reason": "식당 아님",
+      "category": "동물원"
+    },
+    {
+      "name": "동문재래시장",
+      "naverPlaceId": "11616005",
+      "reason": "식당 아님",
+      "category": "시장"
+    }
+  ]
+}

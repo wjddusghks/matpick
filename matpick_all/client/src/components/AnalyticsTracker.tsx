@@ -26,6 +26,11 @@ function getEventTargetLabel(name: string, params: MarketingEventDetail["params"
   return typeof candidate === "string" && candidate.trim() ? candidate : name;
 }
 
+function getRestaurantId(params: MarketingEventDetail["params"]) {
+  const restaurantId = params?.restaurant_id;
+  return typeof restaurantId === "string" ? restaurantId : "";
+}
+
 function findTrackableElement(target: EventTarget | null) {
   if (!(target instanceof Element)) {
     return null;
@@ -173,6 +178,7 @@ export default function AnalyticsTracker() {
       trackAnalyticsEvent("marketing_event", {
         name: detail.name,
         targetLabel: getEventTargetLabel(detail.name, detail.params),
+        restaurantId: getRestaurantId(detail.params),
       });
 
       if (detail.name === "search_submit") {

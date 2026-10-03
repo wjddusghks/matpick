@@ -598,9 +598,13 @@ export default function SearchMap() {
     type === "nearby" ? domesticRestaurants : orderedRestaurants;
   const totalAvailable =
     type === "nearby" ? nearbyResults.totalCount : listRestaurants.length;
-  const reportedTotal = type === "restaurant"
-    ? listRestaurants.length
-    : runtimeCatalogPageInfo.totalCount ?? listRestaurants.length;
+  const usesCatalogPagination = ["all", "query", "region", "food", "source", "creator", "nearby"].includes(type);
+  const reportedTotal = usesCatalogPagination
+    ? runtimeCatalogPageInfo.totalCount ?? listRestaurants.length
+    : listRestaurants.length;
+  const nextCatalogPageHref = usesCatalogPagination
+    ? getNextCatalogPageHref()
+    : null;
 
   useEffect(() => {
     if (
@@ -1065,10 +1069,10 @@ export default function SearchMap() {
               )}
           </div>
         ) : null}
-        {getNextCatalogPageHref() ? (
+        {nextCatalogPageHref ? (
           <div className="p-4 pt-0">
             <Link
-              href={getNextCatalogPageHref()!}
+              href={nextCatalogPageHref}
               className="flex min-h-12 w-full items-center justify-center rounded-xl border border-[#f1becb] bg-white px-4 py-3 text-sm font-bold text-[#c24d63]"
             >
               {locale === "en" ? "Next results" : "다음 맛집 보기"}

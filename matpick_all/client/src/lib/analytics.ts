@@ -3,6 +3,16 @@ import { hasAnalyticsConsent } from "@/lib/privacyConsent";
 const VISITOR_ID_KEY = "matpick_analytics_visitor_id";
 const SESSION_ID_KEY = "matpick_analytics_session_id";
 const SESSION_STARTED_KEY = "matpick_analytics_session_started";
+const ATTRIBUTION_PATH_KEY = "matpick_analytics_attribution_path";
+const QA_EXCLUSION_KEY = "matpick_analytics_qa_excluded";
+const TRUSTED_CAMPAIGN_SOURCES = new Set([
+  "instagram",
+  "threads",
+  "pinterest",
+  "naver",
+  "naver_blog",
+  "kakao",
+]);
 
 export type AnalyticsEventType =
   | "session_start"
@@ -23,6 +33,7 @@ export type AnalyticsEventInput = {
   targetLabel?: string;
   href?: string;
   durationMs?: number;
+  restaurantId?: string;
 };
 
 function createId(prefix: string) {
@@ -102,6 +113,40 @@ export function sanitizeClientAnalyticsPath(path: string) {
   return pathname.startsWith("/auth/callback/") ? pathname : path;
 }
 
+function isAnalyticsExcluded() {
+  if (typeof window === "undefined") return true;
+  if (["localhost", "127.0.0.1", "::1"].includes(window.location.hostname)) return true;
+
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("mp_qa") === "1") {
+    writeStorage(window.sessionStorage, QA_EXCLUSION_KEY, "1");
+    return true;
+  }
+  return readStorage(window.sessionStorage, QA_EXCLUSION_KEY) === "1";
+}
+
+function getCampaignAttributionPath() {
+  const existing = readStorage(window.sessionStorage, ATTRIBUTION_PATH_KEY);
+  if (existing) return existing;
+
+  const params = new URLSearchParams(window.location.search);
+  const source = (params.get("utm_source") || "").toLowerCase();
+  const validSlug = (value: string) => /^[a-z0-9_-]{1,80}$/.test(value);
+
+  if (TRUSTED_CAMPAIGN_SOURCES.has(source)) {
+    const campaign = new URLSearchParams({ utm_source: source });
+    for (const key of ["utm_medium", "utm_campaign", "utm_content"]) {
+      const value = (params.get(key) || "").toLowerCase();
+      if (validSlug(value)) campaign.set(key, value);
+    }
+    const path = `/?${campaign.toString()}`;
+    writeStorage(window.sessionStorage, ATTRIBUTION_PATH_KEY, path);
+    return path;
+  }
+
+  return "";
+}
+
 export function getCurrentAnalyticsPath() {
   if (typeof window === "undefined") {
     return "/";
@@ -121,7 +166,7 @@ export function trackAnalyticsEvent(
     return;
   }
 
-  if (!hasAnalyticsConsent()) {
+  if (isAnalyticsExcluded() || !hasAnalyticsConsent()) {
     return;
   }
 
@@ -131,6 +176,7 @@ export function trackAnalyticsEvent(
     path: sanitizeClientAnalyticsPath(input.path || getCurrentAnalyticsPath()),
     visitorId: getAnalyticsVisitorId(),
     sessionId: getAnalyticsSessionId(),
+    campaignPath: getCampaignAttributionPath(),
   };
   const body = JSON.stringify(payload);
 

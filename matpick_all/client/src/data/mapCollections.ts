@@ -314,6 +314,65 @@ export const featuredMapCollections: MapCollectionTopic[] = [
     }
   }
 ];
+
+const campaignMapCollections: MapCollectionTopic[] = [
+  {
+    slug: "seongsu-tv-youtube",
+    title: "성수 방송·유튜브 맛집 지도",
+    shortTitle: "성수 방송·유튜브 지도",
+    eyebrow: "성수역부터 뚝섬·서울숲까지",
+    description: "성수역, 뚝섬역, 서울숲 사이에서 TV 프로그램과 유튜브 채널에 소개된 맛집 24곳입니다.",
+    areaLabel: "성수·뚝섬·서울숲",
+    purposeTags: ["성수", "뚝섬", "서울숲", "방송", "유튜브"],
+    targetCount: 24,
+    restaurantIds: [
+      "r_f2be38a5",
+      "culinary-class-wars_restaurant_19ea35237ea5",
+      "jeonhyunmoo-plan_restaurant_f812b06c3e12",
+      "topic_enrichment_baekjong-wok_bac317ab1944",
+      "sikgaek-baekban-trip_restaurant_653",
+      "wednesday-gourmet_restaurant_507",
+      "wednesday-gourmet_restaurant_510",
+      "wednesday-gourmet_restaurant_512",
+      "topic_enrichment_ttoganjip_bb42c1e20165",
+      "topic_enrichment_ttoganjip_368b11c9b3f8",
+      "topic_enrichment_ttoganjip_d18e639e51bf",
+      "topic_enrichment_ttoganjip_5945989fbedb",
+      "topic_enrichment_ttoganjip_8679e0322b93",
+      "topic_enrichment_delicious-guys_c09759896ab3",
+      "topic_enrichment_delicious-guys_626c32b1ad6d",
+      "mogeultende_1d775528ed94",
+      "mogeultende_519c123ca0d6",
+      "mogeultende_e57ed111cd8d",
+      "requested_topic_97d09f9b23b0f872",
+      "requested_topic_88da62e111917f3f",
+      "choiza_place_05618f2a2d4f34be",
+      "choiza_place_432d7574314bd1fe",
+      "six_topic_dfe6a63cccfd04fd",
+      "six_topic_86a7b980cb074cd8"
+    ],
+    regionKeywords: ["성수", "뚝섬", "서울숲", "성동구"],
+    sourceIds: [
+      "baekjong-wok",
+      "mogeultende",
+      "jeonhyunmoo-plan",
+      "sikgaek-baekban-trip",
+      "wednesday-gourmet",
+      "ttoganjip",
+      "delicious-guys",
+      "the-dudley",
+      "choiza-road",
+      "hoesarang"
+    ],
+    palette: {
+      background: "linear-gradient(145deg, #173b36 0%, #287a68 52%, #ff8a72 100%)",
+      accent: "#ff8a72"
+    }
+  }
+];
+
+const allMapCollections = [...featuredMapCollections, ...campaignMapCollections];
+
 function normalizeLookupText(value: string) {
   return value.replace(/\s+/g, " ").trim().toLowerCase();
 }
@@ -356,7 +415,7 @@ function scoreRestaurant(restaurant: Restaurant) {
 }
 
 export function getMapCollectionTopicBySlug(slug: string) {
-  return featuredMapCollections.find((collection) => collection.slug === slug) ?? null;
+  return allMapCollections.find((collection) => collection.slug === slug) ?? null;
 }
 
 export function getMapCollectionPath(slug: string) {

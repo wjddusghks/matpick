@@ -1,6 +1,7 @@
 const crypto = require("node:crypto");
 
 const ANALYTICS_PREFIX = "matpick:analytics";
+const ACTIVATION_STATE_TTL_SECONDS = 60 * 60 * 24 * 45;
 const FALLBACK_STORE = globalThis.__MATPICK_ANALYTICS_STORE__ || new Map();
 
 if (!globalThis.__MATPICK_ANALYTICS_STORE__) {
@@ -58,6 +59,7 @@ function getDayKeys(day) {
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
     campaigns: `${keyPrefix}:campaigns`,
+    campaignActivations: `${keyPrefix}:campaign-activations`,
     geography: `${keyPrefix}:geography`,
     countries: `${keyPrefix}:countries`,
   };
@@ -74,6 +76,7 @@ function getAllKeys() {
     events: `${keyPrefix}:events`,
     clicks: `${keyPrefix}:clicks`,
     campaigns: `${keyPrefix}:campaigns`,
+    campaignActivations: `${keyPrefix}:campaign-activations`,
     geography: `${keyPrefix}:geography`,
     countries: `${keyPrefix}:countries`,
   };
@@ -172,6 +175,10 @@ function normalizeEvent(input, context = {}) {
     140,
   );
   const durationMs = normalizeDuration(input?.durationMs);
+  const restaurantIdCandidate = sanitizeText(input?.restaurantId, "", 120);
+  const restaurantId = /^[a-zA-Z0-9_:-]{1,120}$/.test(restaurantIdCandidate)
+    ? restaurantIdCandidate
+    : "";
 
   return {
     type,
@@ -183,7 +190,8 @@ function normalizeEvent(input, context = {}) {
     query,
     targetLabel,
     durationMs,
-    campaign: campaignFromPath(input?.path),
+    restaurantId,
+    campaign: campaignFromPath(input?.campaignPath) || campaignFromPath(input?.path),
     countryCode: normalizeCountryCode(context.countryCode),
   };
 }
@@ -232,6 +240,9 @@ function ensureFallbackBucket(bucket) {
     events: new Map(),
     clicks: new Map(),
     campaigns: new Map(),
+    campaignActivations: new Map(),
+    activatedSessions: new Set(),
+    sessionRestaurantViews: new Map(),
     geography: new Map(),
     countries: new Map(),
   };
@@ -344,6 +355,26 @@ function applyFallbackEvent(store, event) {
 
   if (event.type === "marketing_event") {
     incrementMap(store.events, event.name);
+
+    if (event.sessionId && event.campaign) {
+      const sessionHash = hashIdentity(event.sessionId);
+      let activated = event.name === "directions_click";
+
+      if (event.name === "restaurant_view" && event.restaurantId) {
+        store.sessionRestaurantViews ||= new Map();
+        const viewedRestaurants = store.sessionRestaurantViews.get(sessionHash) || new Set();
+        viewedRestaurants.add(hashIdentity(event.restaurantId));
+        store.sessionRestaurantViews.set(sessionHash, viewedRestaurants);
+        activated = viewedRestaurants.size >= 2;
+      }
+
+      store.activatedSessions ||= new Set();
+      store.campaignActivations ||= new Map();
+      if (activated && !store.activatedSessions.has(sessionHash)) {
+        store.activatedSessions.add(sessionHash);
+        incrementMap(store.campaignActivations, event.campaign);
+      }
+    }
   }
 
   if (event.type === "ad_impression") {
@@ -435,6 +466,37 @@ async function recordKvEventForKeys(keys, event) {
 
   if (event.type === "marketing_event") {
     commands.push(["HINCRBY", keys.events, event.name, "1"]);
+
+    if (event.sessionId && event.campaign) {
+      const sessionHash = hashIdentity(event.sessionId);
+      const activationSessionPrefix = keys.campaignActivations.replace(/:campaign-activations$/, ":activation-session");
+      const activationMarker = `${activationSessionPrefix}:${sessionHash}:activated`;
+
+      if (event.name === "directions_click") {
+        commands.push([
+          "EVAL",
+          "local first = redis.call('SET', KEYS[1], '1', 'NX', 'EX', ARGV[2]); if first then redis.call('HINCRBY', KEYS[2], ARGV[1], 1); return 1; end; return 0",
+          "2",
+          activationMarker,
+          keys.campaignActivations,
+          event.campaign,
+          String(ACTIVATION_STATE_TTL_SECONDS),
+        ]);
+      } else if (event.name === "restaurant_view" && event.restaurantId) {
+        const viewedRestaurants = `${activationSessionPrefix}:${sessionHash}:restaurants`;
+        commands.push([
+          "EVAL",
+          "redis.call('SADD', KEYS[1], ARGV[1]); redis.call('EXPIRE', KEYS[1], ARGV[3]); if redis.call('SCARD', KEYS[1]) < 2 then return 0; end; local first = redis.call('SET', KEYS[2], '1', 'NX', 'EX', ARGV[3]); if first then redis.call('HINCRBY', KEYS[3], ARGV[2], 1); return 1; end; return 0",
+          "3",
+          viewedRestaurants,
+          activationMarker,
+          keys.campaignActivations,
+          hashIdentity(event.restaurantId),
+          event.campaign,
+          String(ACTIVATION_STATE_TTL_SECONDS),
+        ]);
+      }
+    }
   }
 
   if (event.type === "ad_impression") {
@@ -547,6 +609,10 @@ async function readFallbackSummary(options) {
       Object.fromEntries((store.campaigns || new Map()).entries()),
       20,
     ),
+    topActivatedCampaigns: entriesFromHash(
+      Object.fromEntries((store.campaignActivations || new Map()).entries()),
+      20,
+    ),
     topCountries: entriesFromHash(
       Object.fromEntries((store.countries || new Map()).entries()),
       12,
@@ -566,6 +632,7 @@ async function readKvSummary(options) {
     eventsPayload,
     clicksPayload,
     campaignsPayload,
+    campaignActivationsPayload,
     geographyPayload,
     countriesPayload,
   ] = await Promise.all([
@@ -577,6 +644,7 @@ async function readKvSummary(options) {
     requestRedis(["HGETALL", keys.events]),
     requestRedis(["HGETALL", keys.clicks]),
     requestRedis(["HGETALL", keys.campaigns]),
+    requestRedis(["HGETALL", keys.campaignActivations]),
     requestRedis(["HGETALL", keys.geography]),
     requestRedis(["HGETALL", keys.countries]),
   ]);
@@ -626,6 +694,7 @@ async function readKvSummary(options) {
     topEvents: entriesFromHash(eventsPayload?.result),
     topClicks: entriesFromHash(clicksPayload?.result),
     topCampaigns: entriesFromHash(campaignsPayload?.result, 20),
+    topActivatedCampaigns: entriesFromHash(campaignActivationsPayload?.result, 20),
     topCountries: entriesFromHash(countriesPayload?.result, 12),
   };
 }

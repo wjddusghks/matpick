@@ -1,4 +1,5 @@
 import type { MatpickDataSet } from "./types";
+import { getMapCollectionTopicBySlug } from "./mapCollections";
 
 type RuntimeTopicEpisode = {
   slug: string;
@@ -79,6 +80,17 @@ function paramsForCurrentPage() {
   if (path === "/map" || path === "/map/") {
     const type = search.get("type") || "featured";
     const value = search.get("value") || "";
+    if (type === "collection") {
+      const collection = getMapCollectionTopicBySlug(value);
+      if (collection?.restaurantIds?.length) {
+        return new URLSearchParams({
+          view: "list",
+          type: "ids",
+          ids: collection.restaurantIds.join(","),
+          limit: String(collection.restaurantIds.length),
+        });
+      }
+    }
     const mapped = type === "query" ? "search" : type === "food" ? "category" : type;
     if (mapped === "episode" && search.get("topic") && value) {
       const params = new URLSearchParams({
@@ -188,7 +200,7 @@ async function loadBrowserDataset(): Promise<MatpickDataSet> {
 }
 
 async function loadRuntimeDataset(): Promise<MatpickDataSet> {
-  if (import.meta.env.SSR) {
+  if (import.meta.env.SSR || import.meta.env.DEV) {
     const module = await import("./generated/public-dataset.json");
     return module.default as MatpickDataSet;
   }

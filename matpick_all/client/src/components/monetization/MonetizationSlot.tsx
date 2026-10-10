@@ -161,7 +161,7 @@ function DeferredSlot({
     const trigger = triggerRef.current;
     const observer = new IntersectionObserver(
       entries => {
-        if (entries.some(entry => entry.isIntersecting)) {
+        if (entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= 0.25)) {
           setIsReady(true);
           observer.disconnect();
         }
@@ -434,10 +434,14 @@ export function KakaoAdfitSlot({
 
 export function CoupangSlot({
   label,
+  placement = "coupang_default",
   link = import.meta.env.VITE_COUPANG_PARTNERS_URL?.trim() ?? "",
   image = import.meta.env.VITE_COUPANG_BANNER_IMAGE_URL?.trim() ?? "",
   title = import.meta.env.VITE_COUPANG_BANNER_TITLE?.trim() ??
     "추천 상품 보러가기",
+  description = "맛픽과 어울리는 추천 상품을 확인해 보세요.",
+  cta = "상품 둘러보기",
+  useIframe = false,
   dynamicBannerId = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_ID?.trim() ??
     "",
   dynamicBannerTemplate = import.meta.env.VITE_COUPANG_DYNAMIC_BANNER_TEMPLATE?.trim() ??
@@ -450,9 +454,13 @@ export function CoupangSlot({
     "140",
 }: {
   label?: string;
+  placement?: string;
   link?: string;
   image?: string;
   title?: string;
+  description?: string;
+  cta?: string;
+  useIframe?: boolean;
   dynamicBannerId?: string;
   dynamicBannerTemplate?: string;
   dynamicBannerTrackingCode?: string;
@@ -460,6 +468,7 @@ export function CoupangSlot({
   dynamicBannerHeight?: string;
 }) {
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
+  const iframeImpressionTrackedRef = useRef(false);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
   const [dynamicBannerStatus, setDynamicBannerStatus] = useState<
     "loading" | "ready" | "failed"
@@ -470,7 +479,7 @@ export function CoupangSlot({
   );
   const configuredBannerWidth = parseBannerDimension(dynamicBannerWidth, 680);
   const configuredBannerHeight = parseBannerDimension(dynamicBannerHeight, 140);
-  const effectiveBannerHeight = isCompactViewport
+  const effectiveBannerHeight = isCompactViewport && !useIframe
     ? Math.min(configuredBannerHeight, 100)
     : configuredBannerHeight;
   const viewportFallbackWidth =
@@ -512,6 +521,7 @@ export function CoupangSlot({
 
   useEffect(() => {
     if (
+      useIframe ||
       !hasDynamicBanner ||
       !dynamicBannerRef.current ||
       measuredBannerWidth <= 0
@@ -566,13 +576,13 @@ export function CoupangSlot({
           onDisplayed: () => {
             trackAnalyticsEvent("ad_impression", {
               provider: "coupang",
-              targetLabel: dynamicBannerId || "dynamic-banner",
+              targetLabel: placement,
             });
           },
           onClicked: () => {
             trackAnalyticsEvent("ad_click", {
               provider: "coupang",
-              targetLabel: dynamicBannerId || "dynamic-banner",
+              targetLabel: placement,
             });
           },
         });
@@ -595,7 +605,50 @@ export function CoupangSlot({
     effectiveBannerWidth,
     hasDynamicBanner,
     measuredBannerWidth,
+    placement,
+    useIframe,
   ]);
+
+  useEffect(() => {
+    if (
+      !useIframe ||
+      !hasDynamicBanner ||
+      !dynamicBannerRef.current ||
+      iframeImpressionTrackedRef.current
+    ) {
+      return;
+    }
+
+    const container = dynamicBannerRef.current;
+    const trackImpression = () => {
+      if (iframeImpressionTrackedRef.current) {
+        return;
+      }
+
+      iframeImpressionTrackedRef.current = true;
+      trackAnalyticsEvent("ad_impression", {
+        provider: "coupang",
+        targetLabel: placement,
+      });
+    };
+
+    if (typeof IntersectionObserver === "undefined") {
+      trackImpression();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          trackImpression();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [hasDynamicBanner, placement, useIframe]);
 
   const shouldRenderDynamicBanner =
     hasDynamicBanner && dynamicBannerStatus !== "failed";
@@ -606,29 +659,69 @@ export function CoupangSlot({
     if (shouldRenderFallbackCard) {
       trackAnalyticsEvent("ad_impression", {
         provider: "coupang",
-        targetLabel: title || link || "fallback-banner",
+        targetLabel: placement,
       });
     }
-  }, [link, shouldRenderFallbackCard, title]);
+  }, [placement, shouldRenderFallbackCard]);
 
   if (!shouldRenderDynamicBanner && !shouldRenderFallbackCard) {
     return null;
   }
 
   if (shouldRenderDynamicBanner) {
+    const bannerWidth = Math.max(300, Math.round(effectiveBannerWidth));
+    const iframeSrc = new URL("https://ads-partners.coupang.com/widgets.html");
+    iframeSrc.search = new URLSearchParams({
+      id: dynamicBannerId,
+      template: dynamicBannerTemplate,
+      trackingCode: dynamicBannerTrackingCode,
+      subId: "",
+      width: String(bannerWidth),
+      height: String(effectiveBannerHeight),
+      tsource: "",
+    }).toString();
+    const ctaClasses =
+      "inline-flex shrink-0 items-center rounded-full bg-[#ffedf0] px-3 py-1.5 text-xs font-bold text-[#d95169] transition hover:bg-[#ffe1e6]";
     return (
       <SlotFrame label={label}>
-        <div
-          ref={dynamicBannerRef}
-          className="mx-auto overflow-hidden rounded-[18px] bg-[#fffafb]"
-          style={{
-            width: "100%",
-            maxWidth: `${configuredBannerWidth}px`,
-            height: `${effectiveBannerHeight}px`,
-            maxHeight: `${effectiveBannerHeight}px`,
-            contain: "layout paint",
-          }}
-        ></div>
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-3 text-left">
+          <div>
+            <p className="break-keep text-sm font-semibold text-[#2c2325]">{title}</p>
+            <p className="mt-1 break-keep text-xs leading-5 text-[#8c8384]">{description}</p>
+          </div>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              data-analytics-click-handled="true"
+              className={ctaClasses}
+              onClick={() =>
+                trackAnalyticsEvent("ad_click", {
+                  provider: "coupang",
+                  targetLabel: placement,
+                  href: link,
+                })
+              }
+            >
+              {cta} →
+            </a>
+          ) : null}
+        </div>
+        <div ref={dynamicBannerRef} className="mx-auto w-full overflow-hidden rounded-[18px] bg-[#fffafb]" style={{ maxWidth: `${configuredBannerWidth}px`, height: `${effectiveBannerHeight}px` }}>
+          {useIframe && measuredBannerWidth > 0 ? (
+            <iframe
+              title={title}
+              src={iframeSrc.toString()}
+              width={bannerWidth}
+              height={effectiveBannerHeight}
+              frameBorder="0"
+              scrolling="no"
+              referrerPolicy="unsafe-url"
+              className="mx-auto block max-w-full"
+            />
+          ) : null}
+        </div>
         <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
           {COUPANG_DISCLOSURE}
         </p>
@@ -640,12 +733,13 @@ export function CoupangSlot({
     <SlotFrame label={label}>
       <a
         href={link}
+        data-analytics-click-handled="true"
         target="_blank"
         rel="noopener noreferrer sponsored"
         onClick={() => {
           trackAnalyticsEvent("ad_click", {
             provider: "coupang",
-            targetLabel: title || link || "fallback-banner",
+            targetLabel: placement,
             href: link,
           });
         }}
@@ -662,13 +756,19 @@ export function CoupangSlot({
             AD
           </div>
         )}
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold text-[#1e1e1e]">{title}</p>
           <p className="mt-1 break-keep text-xs leading-5 text-[#8c8c8c]">
-            {COUPANG_DISCLOSURE}
+            {description}
           </p>
+          <span className="mt-2 inline-flex rounded-full bg-[#ffedf0] px-3 py-1.5 text-xs font-bold text-[#d95169]">
+            {cta} →
+          </span>
         </div>
       </a>
+      <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
+        {COUPANG_DISCLOSURE}
+      </p>
     </SlotFrame>
   );
 }
@@ -698,10 +798,12 @@ export function RevenuePlacement({
   providers,
   label,
   className = "",
+  placement,
 }: {
   providers: MonetizationProvider[];
   label?: string;
   className?: string;
+  placement?: string;
 }) {
   const { locale } = useLocale();
   const displayLabel = label ?? (locale === "en" ? "Advertisement" : "광고");
@@ -724,6 +826,7 @@ export function RevenuePlacement({
           <MonetizationSlot
             provider={provider}
             label={provider === "coupang" ? (locale === "en" ? "Affiliate advertisement" : "제휴 광고") : displayLabel}
+            placement={placement ? `${placement}_${provider}` : undefined}
           />
         </DeferredSlot>
       ))}
@@ -733,10 +836,12 @@ export function RevenuePlacement({
 
 export default function MonetizationSlot({
   label,
+  placement,
   provider = (import.meta.env.VITE_MONETIZATION_PROVIDER?.trim() ??
     "adsense") as MonetizationProvider,
 }: {
   label?: string;
+  placement?: string;
   provider?: MonetizationProvider;
 }) {
   if (provider === "adsense") {
@@ -748,7 +853,7 @@ export default function MonetizationSlot({
   }
 
   if (provider === "coupang") {
-    return <CoupangSlot label={label} />;
+    return <CoupangSlot label={label} placement={placement} />;
   }
 
   return null;

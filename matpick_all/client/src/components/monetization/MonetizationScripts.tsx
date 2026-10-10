@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { adsenseClient, isAdsenseLiveHost } from "@/lib/adConfig";
 import {
   PRIVACY_PREFERENCES_EVENT,
@@ -66,6 +67,7 @@ function upsertMeta(name: string, content: string) {
 }
 
 export default function MonetizationScripts() {
+  const [location] = useLocation();
   const [advertisingAllowed, setAdvertisingAllowed] = useState(
     hasAdvertisingConsent
   );
@@ -93,6 +95,11 @@ export default function MonetizationScripts() {
     }
 
     upsertMeta("google-adsense-account", adsenseClient);
+    if (location === "/") {
+      document.getElementById(ADSENSE_SCRIPT_ID)?.remove();
+      return;
+    }
+
     if (!advertisingAllowed || !isAdsenseLiveHost()) {
       return;
     }
@@ -119,7 +126,7 @@ export default function MonetizationScripts() {
 
     script.addEventListener("load", handleReady, { once: true });
     return () => script.removeEventListener("load", handleReady);
-  }, [adsenseClient, advertisingAllowed]);
+  }, [adsenseClient, advertisingAllowed, location]);
 
   return null;
 }

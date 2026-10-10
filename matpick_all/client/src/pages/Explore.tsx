@@ -61,7 +61,11 @@ import {
 } from "@/data/mapCollections";
 import HeartButton from "@/components/HeartButton";
 import { FavoriteTopicBadge } from "@/components/FavoriteTopicDialog";
-import { RevenuePlacement } from "@/components/monetization/MonetizationSlot";
+import {
+  CoupangSlot,
+  RevenuePlacement,
+} from "@/components/monetization/MonetizationSlot";
+import { homeCoupangBanner } from "@/lib/adConfig";
 import { useFavorites } from "@/contexts/FavoritesContext";
 import { useLocale } from "@/contexts/LocaleContext";
 import {
@@ -2287,15 +2291,24 @@ export default function Explore({ topicSlug, episodeSlug }: ExploreProps = {}) {
                 (index + 1 === 12 || index + 1 === 24) &&
                 index + 1 < visibleRestaurants.length
               ) {
-                const providers = index + 1 === 12 ? (["coupang"] as const) : (["adsense"] as const);
                 items.push(
                   <div
                     key={`revenue-inline-${restaurant.id}`}
                     className="sm:col-span-2 lg:col-span-3"
                   >
-                    <RevenuePlacement
-                      providers={[...providers]}
-                      label={copy.sponsoredLabel}
+                    <CoupangSlot
+                      label={locale === "en" ? "Sponsored · Coupang Partners" : "제휴 광고 · 쿠팡 파트너스"}
+                      placement={`explore_after_${index + 1}`}
+                      link={homeCoupangBanner.link}
+                      title={locale === "en" ? "Groceries after restaurant discovery" : "맛집 탐색 다음엔 신선식품 장보기"}
+                      description={locale === "en" ? "Visit Coupang Rocket Fresh for fresh food and groceries." : "쿠팡 로켓프레시의 신선식품과 식료품 카테고리로 이동합니다."}
+                      cta={locale === "en" ? "Shop on Rocket Fresh" : "로켓프레시에서 장보기"}
+                      dynamicBannerId={homeCoupangBanner.id}
+                      dynamicBannerTemplate={homeCoupangBanner.template}
+                      dynamicBannerTrackingCode={homeCoupangBanner.trackingCode}
+                      dynamicBannerWidth={homeCoupangBanner.width}
+                      dynamicBannerHeight={homeCoupangBanner.height}
+                      useIframe
                     />
                   </div>
                 );

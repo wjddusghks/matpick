@@ -12,6 +12,31 @@ export const homeAdSlots = {
     defaults.homeTopics,
 };
 
+export type HomeCoupangPlacement = "discovery" | "suggestion" | "topics";
+
+const HOME_COUPANG_DYNAMIC_BANNER_ID = "1037680";
+const HOME_COUPANG_TRACKING_CODE = "AF3438019";
+const HOME_COUPANG_PARTNERS_URL = "https://link.coupang.com/a/hJku3MqdCS";
+
+// These are public identifiers from the verified food-category Coupang Partners banner.
+// Dedicated home variables keep the homepage from inheriting an unrelated generic banner.
+export const homeCoupangBanner = {
+  link:
+    import.meta.env.VITE_COUPANG_HOME_PARTNERS_URL?.trim() ||
+    HOME_COUPANG_PARTNERS_URL,
+  id:
+    import.meta.env.VITE_COUPANG_HOME_DYNAMIC_BANNER_ID?.trim() ||
+    HOME_COUPANG_DYNAMIC_BANNER_ID,
+  trackingCode:
+    import.meta.env.VITE_COUPANG_HOME_DYNAMIC_BANNER_TRACKING_CODE?.trim() ||
+    HOME_COUPANG_TRACKING_CODE,
+  template:
+    import.meta.env.VITE_COUPANG_HOME_DYNAMIC_BANNER_TEMPLATE?.trim() ||
+    "carousel",
+  width: import.meta.env.VITE_COUPANG_HOME_DYNAMIC_BANNER_WIDTH?.trim() || "680",
+  height: import.meta.env.VITE_COUPANG_HOME_DYNAMIC_BANNER_HEIGHT?.trim() || "140",
+};
+
 export function isAdsenseLiveHost() {
   return (
     typeof window !== "undefined" &&

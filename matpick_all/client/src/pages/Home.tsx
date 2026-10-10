@@ -1872,6 +1872,7 @@ export default function Home() {
             </section>
 
             <HomeAdsense placement="topics" />
+            <HomeAdsense placement="suggestion" />
 
             {isFocused ? (
               <div className="absolute left-0 right-0 top-[74px] z-30 mt-3 overflow-hidden rounded-[30px] border border-[#ffb2ba] bg-white shadow-[0_24px_80px_rgba(255,102,132,0.16)] sm:top-[84px]">

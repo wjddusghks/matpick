@@ -26,6 +26,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { AdminSuggestionOverview } from "@/components/admin/SuggestionInboxPanel";
+import VisitorHistory from "@/components/admin/VisitorHistory";
 import { useAuth } from "@/contexts/AuthContext";
 import { discoveryTopics, publicDiscoveryTopics } from "@/data";
 import { featuredMapCollections } from "@/data/mapCollections";
@@ -1029,6 +1030,11 @@ export default function AdminDashboard() {
           <VisitorGeography
             summary={analyticsSummary}
             status={analyticsStatus}
+          />
+
+          <VisitorHistory
+            adminKey={getAdminRegistrationKey(user)}
+            adminToken={user.syncToken ?? ""}
           />
 
           <section className="mt-6 rounded-2xl border border-[#e9dde0] bg-[#292327] p-5 text-white sm:p-6">

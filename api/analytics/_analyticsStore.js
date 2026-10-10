@@ -44,8 +44,101 @@ async function requestRedis(command) {
   return response.json();
 }
 
+async function requestRedisPipeline(commands) {
+  const config = getKvConfig();
+  if (!config) {
+    return null;
+  }
+
+  const response = await fetch(`${config.url}/pipeline`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commands),
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      `Analytics store pipeline request failed: ${response.status}`,
+    );
+  }
+
+  const payload = await response.json();
+  if (!Array.isArray(payload) || payload.length !== commands.length) {
+    throw new Error("Analytics store pipeline returned an invalid response");
+  }
+
+  const failed = payload.find((entry) => entry?.error);
+  if (failed) {
+    throw new Error(`Analytics store pipeline failed: ${failed.error}`);
+  }
+
+  return payload;
+}
+
 function getKoreaDay(timestamp = Date.now()) {
   return new Date(timestamp + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+}
+
+function parseCalendarDay(value, fieldName) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    throw new TypeError(
+      `${fieldName} must be a calendar date in YYYY-MM-DD format`,
+    );
+  }
+
+  const [year, month, day] = value.split("-").map(Number);
+  const timestamp = Date.UTC(year, month - 1, day);
+  const parsed = new Date(timestamp);
+  if (
+    parsed.getUTCFullYear() !== year ||
+    parsed.getUTCMonth() !== month - 1 ||
+    parsed.getUTCDate() !== day
+  ) {
+    throw new RangeError(`${fieldName} must be a valid calendar date`);
+  }
+
+  return timestamp;
+}
+
+function normalizeVisitorHistoryOptions(options = {}) {
+  const days = options?.days;
+  if (days !== 7 && days !== 28) {
+    throw new RangeError("days must be exactly 7 or 28");
+  }
+
+  const today = getKoreaDay();
+  const endDay = options?.endDay ?? today;
+  const endTimestamp = parseCalendarDay(endDay, "endDay");
+  if (endDay > today) {
+    throw new RangeError("endDay cannot be in the future");
+  }
+
+  return { days, endDay, endTimestamp };
+}
+
+function getHistoryDayRange(options) {
+  const { days, endDay, endTimestamp } =
+    normalizeVisitorHistoryOptions(options);
+  const dayRows = [];
+
+  for (let offset = days - 1; offset >= 0; offset -= 1) {
+    const timestamp = endTimestamp - offset * 24 * 60 * 60 * 1000;
+    const date = new Date(timestamp);
+    dayRows.push({
+      day: date.toISOString().slice(0, 10),
+      weekday: date.getUTCDay(),
+    });
+  }
+
+  return {
+    days,
+    endDay,
+    startDay: dayRows[0].day,
+    dayRows,
+  };
 }
 
 function getDayKeys(day) {
@@ -191,7 +284,8 @@ function normalizeEvent(input, context = {}) {
     targetLabel,
     durationMs,
     restaurantId,
-    campaign: campaignFromPath(input?.campaignPath) || campaignFromPath(input?.path),
+    campaign:
+      campaignFromPath(input?.campaignPath) || campaignFromPath(input?.path),
     countryCode: normalizeCountryCode(context.countryCode),
   };
 }
@@ -362,7 +456,8 @@ function applyFallbackEvent(store, event) {
 
       if (event.name === "restaurant_view" && event.restaurantId) {
         store.sessionRestaurantViews ||= new Map();
-        const viewedRestaurants = store.sessionRestaurantViews.get(sessionHash) || new Set();
+        const viewedRestaurants =
+          store.sessionRestaurantViews.get(sessionHash) || new Set();
         viewedRestaurants.add(hashIdentity(event.restaurantId));
         store.sessionRestaurantViews.set(sessionHash, viewedRestaurants);
         activated = viewedRestaurants.size >= 2;
@@ -469,7 +564,10 @@ async function recordKvEventForKeys(keys, event) {
 
     if (event.sessionId && event.campaign) {
       const sessionHash = hashIdentity(event.sessionId);
-      const activationSessionPrefix = keys.campaignActivations.replace(/:campaign-activations$/, ":activation-session");
+      const activationSessionPrefix = keys.campaignActivations.replace(
+        /:campaign-activations$/,
+        ":activation-session",
+      );
       const activationMarker = `${activationSessionPrefix}:${sessionHash}:activated`;
 
       if (event.name === "directions_click") {
@@ -694,7 +792,10 @@ async function readKvSummary(options) {
     topEvents: entriesFromHash(eventsPayload?.result),
     topClicks: entriesFromHash(clicksPayload?.result),
     topCampaigns: entriesFromHash(campaignsPayload?.result, 20),
-    topActivatedCampaigns: entriesFromHash(campaignActivationsPayload?.result, 20),
+    topActivatedCampaigns: entriesFromHash(
+      campaignActivationsPayload?.result,
+      20,
+    ),
     topCountries: entriesFromHash(countriesPayload?.result, 12),
   };
 }
@@ -709,8 +810,140 @@ async function readAnalyticsSummary(
   return readFallbackSummary(options);
 }
 
+function historyMetricsFromValues({ visitors, geography, countries, hasData }) {
+  const geographyHash = hashToObject(geography);
+  const geographyTracked =
+    numberFromHash(geographyHash, "domestic") +
+    numberFromHash(geographyHash, "foreign") +
+    numberFromHash(geographyHash, "unknown");
+
+  return {
+    visitors,
+    countries: entriesFromHash(countries, Number.POSITIVE_INFINITY),
+    unknown: numberFromHash(geographyHash, "unknown"),
+    historicalUnclassified: Math.max(0, visitors - geographyTracked),
+    hasData,
+  };
+}
+
+function buildVisitorHistory(range, storage, metricsByDay) {
+  const weekdayRows = [1, 2, 3, 4, 5, 6, 0].map((weekday) => ({
+    weekday,
+    visitors: 0,
+    days: 0,
+    countries: new Map(),
+    unknown: 0,
+    historicalUnclassified: 0,
+  }));
+  const weekdaysByNumber = new Map(
+    weekdayRows.map((row) => [row.weekday, row]),
+  );
+  const countries = new Map();
+  let totalDailyVisitors = 0;
+
+  const days = range.dayRows.map((calendarDay) => {
+    const metrics = metricsByDay.get(calendarDay.day);
+    const row = { ...calendarDay, ...metrics };
+    const weekday = weekdaysByNumber.get(row.weekday);
+    weekday.days += 1;
+    weekday.visitors += row.visitors;
+    weekday.unknown += row.unknown;
+    weekday.historicalUnclassified += row.historicalUnclassified;
+    totalDailyVisitors += row.visitors;
+
+    for (const country of row.countries) {
+      incrementMap(weekday.countries, country.label, country.count);
+      incrementMap(countries, country.label, country.count);
+    }
+
+    return row;
+  });
+
+  return {
+    startDay: range.startDay,
+    endDay: range.endDay,
+    timeZone: "Asia/Seoul",
+    storage,
+    days,
+    weekdays: weekdayRows.map((row) => ({
+      ...row,
+      countries: entriesFromHash(
+        Object.fromEntries(row.countries.entries()),
+        Number.POSITIVE_INFINITY,
+      ),
+    })),
+    countries: entriesFromHash(
+      Object.fromEntries(countries.entries()),
+      Number.POSITIVE_INFINITY,
+    ),
+    totalDailyVisitors,
+  };
+}
+
+async function readFallbackVisitorHistory(range) {
+  const metricsByDay = new Map();
+
+  for (const { day } of range.dayRows) {
+    const store = FALLBACK_STORE.get(day);
+    metricsByDay.set(
+      day,
+      historyMetricsFromValues({
+        visitors: store?.visitors?.size || 0,
+        geography: Object.fromEntries(
+          (store?.geography || new Map()).entries(),
+        ),
+        countries: Object.fromEntries(
+          (store?.countries || new Map()).entries(),
+        ),
+        hasData: Boolean(store),
+      }),
+    );
+  }
+
+  return buildVisitorHistory(range, "memory", metricsByDay);
+}
+
+async function readKvVisitorHistory(range) {
+  const commands = range.dayRows.flatMap(({ day }) => {
+    const keys = getDayKeys(day);
+    return [
+      ["EXISTS", ...Object.values(keys)],
+      ["SCARD", keys.visitors],
+      ["HGETALL", keys.geography],
+      ["HGETALL", keys.countries],
+    ];
+  });
+  const payload = await requestRedisPipeline(commands);
+  const metricsByDay = new Map();
+
+  range.dayRows.forEach(({ day }, index) => {
+    const payloadOffset = index * 4;
+    metricsByDay.set(
+      day,
+      historyMetricsFromValues({
+        hasData: Number(payload[payloadOffset]?.result || 0) > 0,
+        visitors: Number(payload[payloadOffset + 1]?.result || 0),
+        geography: payload[payloadOffset + 2]?.result,
+        countries: payload[payloadOffset + 3]?.result,
+      }),
+    );
+  });
+
+  return buildVisitorHistory(range, "kv", metricsByDay);
+}
+
+async function readVisitorHistory(options = {}) {
+  const range = getHistoryDayRange(options);
+  if (getKvConfig()) {
+    return readKvVisitorHistory(range);
+  }
+
+  return readFallbackVisitorHistory(range);
+}
+
 module.exports = {
   getKoreaDay,
   readAnalyticsSummary,
+  readVisitorHistory,
   recordAnalyticsEvent,
 };

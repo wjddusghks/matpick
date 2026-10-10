@@ -1,7 +1,13 @@
-const { readAnalyticsSummary } = require("../analytics/_analyticsStore");
+const {
+  readAnalyticsSummary,
+  readVisitorHistory,
+} = require("../analytics/_analyticsStore");
 const { authorizeAdminRequest } = require("./_adminAuth");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
-const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
+const {
+  applyApiSecurityHeaders,
+  enforceSameOrigin,
+} = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
 function getHeader(req, name) {
@@ -49,9 +55,22 @@ module.exports = async function handler(req, res) {
       return res.status(403).json({ error: "Admin access is required." });
     }
 
+    if (req.query?.view === "visitors") {
+      const daysValue = String(req.query?.days ?? "").trim();
+      if (daysValue !== "7" && daysValue !== "28") {
+        return res.status(400).json({ error: "days must be exactly 7 or 28" });
+      }
+
+      const history = await readVisitorHistory({ days: Number(daysValue) });
+      return res.status(200).json({ history });
+    }
+
     const day = String(req.query?.day || "").trim();
     const scope = req.query?.scope === "all" ? "all" : "today";
-    const summary = await readAnalyticsSummary({ day: day || undefined, scope });
+    const summary = await readAnalyticsSummary({
+      day: day || undefined,
+      scope,
+    });
     return res.status(200).json({ summary });
   } catch (error) {
     logSecurityEvent("error", "admin-metrics-failed", {
@@ -60,7 +79,8 @@ module.exports = async function handler(req, res) {
       message: error instanceof Error ? error.message : "unknown",
     });
     return res.status(500).json({
-      error: error instanceof Error ? error.message : "Failed to read admin metrics",
+      error:
+        error instanceof Error ? error.message : "Failed to read admin metrics",
     });
   }
 };

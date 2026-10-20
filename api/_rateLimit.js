@@ -1,4 +1,13 @@
 const RATE_LIMIT_PREFIX = "matpick:rate-limit:";
+const { createHash } = require("node:crypto");
+const { isIP } = require("node:net");
+const MAX_FALLBACK_ENTRIES = 10000;
+function storageUnavailable() {
+  return Object.assign(new Error("Rate limit storage is unavailable."), { statusCode: 503 });
+}
+function isDeployed() {
+  return process.env.VERCEL === "1" || process.env.NODE_ENV === "production";
+}
 const FALLBACK_STORE = globalThis.__MATPICK_RATE_LIMIT_STORE__ || new Map();
 const { logSecurityEvent, maskValue } = require("./_securityLog");
 
@@ -7,13 +16,26 @@ if (!globalThis.__MATPICK_RATE_LIMIT_STORE__) {
 }
 
 function getKvConfig() {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || "";
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  const candidates = [
+    [process.env.KV_REST_API_URL, process.env.KV_REST_API_TOKEN],
+    [process.env.UPSTASH_REDIS_REST_URL, process.env.UPSTASH_REDIS_REST_TOKEN],
+  ].map(pair => pair.map(value => String(value || "").trim()));
+  if (candidates.some(([url, token]) => Boolean(url) !== Boolean(token))) throw storageUnavailable();
+  const pair = candidates.find(([url, token]) => url && token);
+  const [url, token] = pair || ["", ""];
 
   if (!url || !token) {
+    if (isDeployed()) throw storageUnavailable();
     return null;
   }
 
+  try {
+    const endpoint = new URL(url);
+    if (endpoint.protocol !== "https:" || endpoint.username || endpoint.password ||
+        endpoint.search || endpoint.hash) throw storageUnavailable();
+  } catch {
+    throw storageUnavailable();
+  }
   return {
     url: url.replace(/\/$/, ""),
     token,
@@ -30,12 +52,18 @@ function getClientIp(req) {
     "";
   // Vercel supplies its own forwarding header. Prefer it over the generic
   // header so a caller cannot choose a new rate-limit identity per request.
-  const candidate = String(vercelForwardedFor || forwardedFor || realIp || "")
+  const trusted = process.env.VERCEL === "1"
+    ? vercelForwardedFor
+    : (isDeployed() ? req.socket?.remoteAddress : (forwardedFor || realIp || req.socket?.remoteAddress)) || "";
+  const candidate = String(trusted)
     .split(",")
     .map((value) => value.trim())
     .find(Boolean);
 
-  return candidate || "unknown";
+  if (!candidate || !isIP(candidate)) return "unknown";
+  // Canonicalize IPv6 spelling so equivalent addresses share one counter.
+  if (isIP(candidate) === 6) return new URL(`http://[${candidate}]/`).hostname.slice(1, -1);
+  return candidate;
 }
 
 async function requestRedis(command) {
@@ -44,18 +72,24 @@ async function requestRedis(command) {
     return null;
   }
 
-  const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetch(config.url, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(command),
+    signal: AbortSignal.timeout(5000),
+    redirect: "error",
   });
 
   if (!response.ok) {
     throw new Error(`Rate limit store request failed: ${response.status}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+  if (payload.error) throw new Error("Rate limit store command failed");
+  return payload;
 }
 
 function getFallbackKey(bucket, subject) {
@@ -69,6 +103,15 @@ function consumeFallback(bucket, subject, windowSec) {
   const current = FALLBACK_STORE.get(key);
 
   if (!current || current.expiresAt <= now) {
+    if (FALLBACK_STORE.size >= MAX_FALLBACK_ENTRIES) {
+      for (const [entryKey, entry] of FALLBACK_STORE) {
+        if (entry.expiresAt <= now) FALLBACK_STORE.delete(entryKey);
+      }
+      // Do not evict active limits to make room for arbitrary new identities.
+      if (FALLBACK_STORE.size >= MAX_FALLBACK_ENTRIES) {
+        return { count: Number.MAX_SAFE_INTEGER, expiresAt };
+      }
+    }
     const next = { count: 1, expiresAt };
     FALLBACK_STORE.set(key, next);
     return next;
@@ -84,13 +127,14 @@ async function consumeRateLimit(bucket, subject, windowSec) {
     return consumeFallback(bucket, subject, windowSec);
   }
 
-  const key = `${RATE_LIMIT_PREFIX}${bucket}:${subject}`;
-  const countPayload = await requestRedis(["INCR", key]);
-  const count = Number(countPayload?.result || 0);
-
-  if (count === 1) {
-    await requestRedis(["EXPIRE", key, String(windowSec)]);
-  }
+  const identity = createHash("sha256").update(subject).digest("hex");
+  const key = `${RATE_LIMIT_PREFIX}${bucket}:${identity}`;
+  // Increment and expiry must be one operation; a crash after INCR must not
+  // leave a permanent limit. Also repair keys created by the old implementation.
+  const script = "local n=redis.call('INCR',KEYS[1]); if redis.call('TTL',KEYS[1])<0 then redis.call('EXPIRE',KEYS[1],ARGV[1]) end; return n";
+  const countPayload = await requestRedis(["EVAL", script, 1, key, windowSec]);
+  const count = Number(countPayload?.result);
+  if (!Number.isSafeInteger(count) || count < 1) throw new Error("Invalid rate limit state");
 
   return {
     count,
@@ -117,10 +161,12 @@ async function checkRateLimit(options) {
 async function enforceRateLimit(req, res, options) {
   const subject = String(options.subject || getClientIp(req));
   const message = options.message || "Too many requests. Please try again later.";
-  const state = await checkRateLimit({
-    ...options,
-    subject,
-  });
+  let state;
+  try {
+    state = await checkRateLimit({ ...options, subject });
+  } catch {
+    return rejectUnavailable(res);
+  }
 
   res.setHeader("X-RateLimit-Limit", String(state.limit));
   res.setHeader("X-RateLimit-Remaining", String(state.remaining));
@@ -144,10 +190,15 @@ async function enforceRateLimit(req, res, options) {
 
 async function enforceRateLimits(req, res, policies) {
   const subject = getClientIp(req);
-  const checks = await Promise.all(policies.map(async (policy) => ({
-    policy,
-    state: await checkRateLimit({ ...policy, subject: String(policy.subject || subject) }),
-  })));
+  let checks;
+  try {
+    checks = await Promise.all(policies.map(async (policy) => ({
+      policy,
+      state: await checkRateLimit({ ...policy, subject: String(policy.subject || subject) }),
+    })));
+  } catch {
+    return rejectUnavailable(res);
+  }
   const blocked = checks.find(({ state }) => !state.allowed);
   const displayed = blocked || checks[0];
 
@@ -169,6 +220,15 @@ async function enforceRateLimits(req, res, policies) {
   res.status(429).json({
     error: blocked.policy.message || "Too many requests. Please try again later.",
   });
+  return false;
+}
+
+function rejectUnavailable(res) {
+  // No credentials, raw provider errors, addresses or request bodies in logs.
+  logSecurityEvent("error", "rate-limit-storage-unavailable");
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Retry-After", "60");
+  res.status(503).json({ error: "Service temporarily unavailable. Please try again later." });
   return false;
 }
 

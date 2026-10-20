@@ -1,7 +1,10 @@
+const { readRemoteProfile } = require("./_profileStore");
+const { beginOAuth, OAuthConfigurationError } = require("./_oauthFlow");
 const {
-  createProfileSyncToken,
-  readRemoteProfile,
-} = require("./_profileStore");
+  consumeOAuthTransaction,
+  createSession,
+  SessionStoreUnavailableError,
+} = require("./_sessionStore");
 const { recordAuthMember } = require("./_memberStore");
 const { deriveAgeProfile } = require("./_ageProfile");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
@@ -59,11 +62,31 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { code, state } = readBody(req);
+    const { action, code, state } = readBody(req);
+
+    if (action === "start") {
+      const authorizeUrl = await beginOAuth(req, res, "naver");
+      if (!authorizeUrl) {
+        return res.status(500).json({
+          error: "Naver login client credentials are not configured.",
+        });
+      }
+      return res.status(200).json({ authorizeUrl });
+    }
 
     if (!code || !state) {
       return res.status(400).json({
         error: "Missing Naver authorization payload.",
+      });
+    }
+
+    const transaction = await consumeOAuthTransaction(req, res, {
+      provider: "naver",
+      state,
+    });
+    if (!transaction) {
+      return res.status(400).json({
+        error: "The login request expired or failed its security check.",
       });
     }
 
@@ -76,9 +99,12 @@ module.exports = async function handler(req, res) {
     });
 
     const tokenResponse = await fetch(
-      `https://nid.naver.com/oauth2.0/token?${tokenParams.toString()}`,
+      "https://nid.naver.com/oauth2.0/token",
       {
-        method: "GET",
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=utf-8" },
+        body: tokenParams,
+        signal: AbortSignal.timeout(10000),
       },
     );
 
@@ -118,7 +144,6 @@ module.exports = async function handler(req, res) {
       consentAcceptedAt: storedProfile?.consentAcceptedAt,
       allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
       ageProfile,
-      syncToken: createProfileSyncToken(userId, { ageProfile }),
     };
 
     try {
@@ -131,20 +156,21 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    return res.status(200).json({
-      user,
-    });
+    await createSession(req, res, user);
+    return res.status(200).json({ user });
   } catch (error) {
     logSecurityEvent("error", "naver-auth-failed", {
       route: "/api/auth/naver",
       ip: maskValue(getClientIp(req)),
       message: error instanceof Error ? error.message : "unknown",
     });
-    return res.status(500).json({
-      error:
-        error instanceof Error
-          ? error.message
-          : "An unknown error occurred while processing the Naver login.",
-    });
+    return res
+      .status(error instanceof SessionStoreUnavailableError ? 503 : 500)
+      .json({
+        error:
+          error instanceof OAuthConfigurationError
+            ? error.message
+            : "An unknown error occurred while processing the Naver login.",
+      });
   }
 };

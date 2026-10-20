@@ -16,7 +16,7 @@ const {
 const { queryCatalog } = require("../../api/restaurants/_catalog.js");
 const handler = require("../../api/admin/_restaurantAdmin.js");
 const publicHandler = require("../../api/restaurants/index.js");
-const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
+const { createSession } = require("../../api/auth/_sessionStore.js");
 const dataset = require("../client/src/data/generated/public-dataset.json");
 const [client, catalogClient] = await loadAppModules([
   "/src/lib/restaurantEdits.ts",
@@ -54,14 +54,37 @@ test("admin catalog sends bounded pages and metadata only on the authenticated f
   await withEnv(
     {
       ...noStorage,
+      KV_REST_API_URL: "https://session.test",
+      KV_REST_API_TOKEN: "test",
       ADMIN_USER_IDS: "naver:catalog-test-admin",
       AUTH_PROFILE_SIGNING_SECRET: "catalog-test-secret-only",
     },
     async () => {
+      const originalFetch = globalThis.fetch;
+      const values = new Map();
+      globalThis.fetch = async (_url, options) => {
+        const command = JSON.parse(options.body);
+        if (command[0] === "SET") values.set(command[1], command[2]);
+        const result =
+          command[0] === "GET"
+            ? (values.get(command[1]) ?? null)
+            : command[0] === "EVAL"
+              ? 1
+              : command[0] === "HVALS"
+                ? []
+                : "OK";
+        return { ok: true, json: async () => ({ result }) };
+      };
+      const sessionResponse = response();
+      sessionResponse.getHeader = name => sessionResponse.headers[name];
+      await createSession({ headers: {} }, sessionResponse, {
+        id: "catalog-test-admin",
+        provider: "naver",
+        name: "Admin",
+      });
       const headers = {
         "x-forwarded-for": "192.0.2.81",
-        "x-matpick-admin-key": "naver:catalog-test-admin",
-        "x-matpick-admin-token": createProfileSyncToken("catalog-test-admin"),
+        cookie: sessionResponse.headers["Set-Cookie"][0].split(";")[0],
       };
       const first = response();
       await handler(
@@ -74,7 +97,7 @@ test("admin catalog sends bounded pages and metadata only on the authenticated f
       );
       assert.equal(first.code, 200);
       assert.deepEqual(first.body.edits, []);
-      assert.equal(first.body.configured, false);
+      assert.equal(first.body.configured, true);
       assert.equal(first.body.catalog.pageSize, 800);
       assert.equal(first.body.catalog.totalCount, dataset.restaurants.length);
       assert.equal(first.body.catalog.restaurants.length, 800);
@@ -136,6 +159,7 @@ test("admin catalog sends bounded pages and metadata only on the authenticated f
         new Set(sourceLinkIds),
         new Set(dataset.sourceLinks.map(link => link.id))
       );
+      globalThis.fetch = originalFetch;
     }
   );
 });
@@ -559,7 +583,7 @@ test("restaurant creation is atomically idempotent and rejects another request f
   );
 });
 
-test("admin create API requires signed auth, reuses request IDs and compares effective edited identities", async () => {
+test("admin create API requires session auth, reuses request IDs and compares effective edited identities", async () => {
   await withEnv(
     {
       ...noStorage,
@@ -573,10 +597,25 @@ test("admin create API requires signed auth, reuses request IDs and compares eff
       const stored = new Map();
       const requests = new Map();
       const identities = new Set();
+      const sessions = new Map();
       globalThis.fetch = async (_url, options = {}) => {
         if (!options.body)
           return { ok: true, json: async () => ({ result: 1 }) };
         const command = JSON.parse(options.body);
+        if (command[0] === "SET") {
+          sessions.set(command[1], command[2]);
+          return { ok: true, json: async () => ({ result: "OK" }) };
+        }
+        if (command[0] === "GET")
+          return {
+            ok: true,
+            json: async () => ({ result: sessions.get(command[1]) ?? null }),
+          };
+        if (
+          command[0] === "EVAL" &&
+          String(command[3]).startsWith("matpick:rate-limit:")
+        )
+          return { ok: true, json: async () => ({ result: 1 }) };
         if (command[0] === "HVALS")
           return {
             ok: true,
@@ -598,12 +637,18 @@ test("admin create API requires signed auth, reuses request IDs and compares eff
           identities.add(command[10]);
           return { ok: true, json: async () => ({ result: command[8] }) };
         }
-        throw new Error(`Unexpected command ${command[0]}`);
+        throw new Error(`Unexpected command ${JSON.stringify(command)}`);
       };
+      const sessionResponse = response();
+      sessionResponse.getHeader = name => sessionResponse.headers[name];
+      await createSession({ headers: {} }, sessionResponse, {
+        id: "create-api-admin",
+        provider: "naver",
+        name: "Admin",
+      });
       const headers = {
         "x-forwarded-for": "192.0.2.120",
-        "x-matpick-admin-key": "naver:create-api-admin",
-        "x-matpick-admin-token": createProfileSyncToken("create-api-admin"),
+        cookie: sessionResponse.headers["Set-Cookie"][0].split(";")[0],
       };
       const body = {
         action: "create",
@@ -614,7 +659,7 @@ test("admin create API requires signed auth, reuses request IDs and compares eff
       try {
         const first = response();
         await handler({ method: "POST", headers, body }, first);
-        assert.equal(first.code, 201);
+        assert.equal(first.code, 201, JSON.stringify(first.body));
         assert.ok(first.body.edit.restaurantId.startsWith("admin_"));
         const retry = response();
         await handler({ method: "POST", headers, body }, retry);
@@ -739,22 +784,17 @@ test("unauthorized and cross-origin admin writes cannot touch storage", async ()
   assert.equal(crossOrigin.code, 403);
 });
 
-test("a valid admin sees storage availability and cannot save to missing durable storage", async () => {
+test("admin access fails closed when session storage is unavailable", async () => {
   await withEnv(
     {
       ...noStorage,
       ADMIN_USER_IDS: "naver:local-test-admin",
-      AUTH_PROFILE_SIGNING_SECRET: "local-test-secret-only",
     },
     async () => {
-      const headers = {
-        "x-matpick-admin-key": "naver:local-test-admin",
-        "x-matpick-admin-token": createProfileSyncToken("local-test-admin"),
-      };
+      const headers = { cookie: `__Host-matpick_session=${"A".repeat(43)}` };
       const get = response();
       await handler({ method: "GET", headers }, get);
-      assert.equal(get.code, 200);
-      assert.equal(get.body.configured, false);
+      assert.equal(get.code, 503);
       const post = response();
       await handler(
         {
@@ -771,25 +811,6 @@ test("a valid admin sees storage availability and cannot save to missing durable
       );
       assert.equal(post.code, 503);
       assert.ok(!post.body.ok);
-      const unknown = response();
-      await handler(
-        { method: "POST", headers, body: { restaurantId: "not-registered" } },
-        unknown
-      );
-      assert.equal(unknown.code, 404);
-      const invalid = response();
-      await handler({ method: "POST", headers, body: "null" }, invalid);
-      assert.equal(invalid.code, 400);
-      const expired = response();
-      await handler(
-        {
-          method: "POST",
-          headers: { ...headers, "x-matpick-admin-token": "invalid" },
-          body: {},
-        },
-        expired
-      );
-      assert.equal(expired.code, 403);
     }
   );
 });

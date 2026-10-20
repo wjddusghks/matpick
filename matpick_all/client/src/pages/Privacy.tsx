@@ -39,6 +39,7 @@ const koreanSections: PolicySection[] = [
       "소셜 로그인 및 회원 관리: 로그인 제공자, 제공자가 발급한 이용자 식별값, 이름·닉네임, 제공되는 경우 이메일과 프로필 이미지, 동의 시각 및 선택 설정. 로그인 유지, 계정 식별, 저장·댓글·리뷰 기능, 부정 이용 방지에 사용합니다.",
       "이용자 콘텐츠: 댓글·리뷰 본문, 평점, 업로드 사진, 작성·수정 시각, 연결된 식당 정보. 콘텐츠 표시, 수정·삭제 처리와 서비스 품질 관리에 사용합니다.",
       "식당 제보: 이용자가 입력한 식당 이름·위치·메뉴·가격·출처 링크·추천 이유·식당과의 관계·확인일 및 정보 활용 동의 기록. 식당 정보 확인과 편집·공개에 사용하며 제보 원문은 관리자만 열람합니다. 이름·이메일·개인 연락처나 회원 계정 정보는 제보 폼에서 요구하지 않습니다.",
+      "익명 피드백: 이용자가 선택한 분류, 메시지, 화면 언어, 검색어와 URL 쿼리·해시를 제거한 페이지 경로. 서비스 개선과 오류 확인을 위해 관리자가 운영 화면에서 내용과 처리 상태를 검토합니다. 이름·이메일은 수집하지 않으며, 메시지에 개인정보를 적지 말아 주세요.",
       "선택 연령대: 카카오·네이버 로그인에서 동의 후 제공된 연령대 또는 생년 정보로 계산한 연령대(예: 20대)를 후기 참고 정보로 사용합니다. 생년월일 원문은 저장하지 않으며, 연령대·산정 기준·확인 시각만 로그인 정보에 보관합니다. 후기 작성 시 별도로 공개를 선택한 경우에만 해당 후기의 연령대와 공개 동의 시각을 저장하고 표시합니다. 제공자 연령대는 만 나이와 다를 수 있으며 별도의 나이 본인인증을 의미하지 않습니다.",
       "자동 생성 정보: IP 주소, 브라우저·기기 정보, 요청 시각, 페이지 경로, 검색어, 클릭·광고 상호작용, 무작위 방문자·세션 식별값. 보안, 오류 대응, 이용 통계와 성능 개선에 사용합니다.",
       "방문 지역 통계: 분석에 동의한 신규 익명 방문자의 첫 이벤트에서 Vercel이 IP를 바탕으로 제공한 2자리 국가 코드만 저장해 국내·해외·국가 확인 불가로 집계합니다. 이 지역 집계를 위해 원본 IP 주소를 저장하지 않으며, 국가 코드가 없거나 유효하지 않으면 ‘확인 불가’로 분류합니다. 기능 도입 전에 누적된 방문자는 국가를 추정해 소급 분류하지 않습니다.",
@@ -61,6 +62,7 @@ const koreanSections: PolicySection[] = [
       "회원 프로필과 회원 식별 정보: 회원 탈퇴 또는 삭제 요청 처리 시까지",
       "댓글·리뷰와 업로드 사진: 이용자가 삭제하거나 권리 침해·삭제 요청이 처리될 때까지",
       "식당 제보 원문 및 동의 기록: 접수 후 180일. 작성 중인 내용은 해당 브라우저 탭의 세션 저장소에 임시 보관하며 제출 성공 시 삭제합니다. 제보 관련 삭제 문의에는 접수 번호를 함께 보내 주세요.",
+      "익명 피드백 원문과 운영 처리 상태: 접수 후 90일",
       "일자별 익명·가명 이용 통계: 45일",
       "일자별 회원 운영 통계: 180일",
       "개인을 직접 식별하지 않는 누적 집계 통계: 서비스 운영 기간",
@@ -115,7 +117,7 @@ const koreanSections: PolicySection[] = [
     title: "10. 아동, 변경 고지와 시행일",
     paragraphs: [
       "Matpick은 만 14세 미만 아동을 대상으로 회원 서비스를 제공하지 않습니다. 만 14세 미만 이용자의 정보가 법정대리인 동의 없이 수집된 사실을 확인하면 지체 없이 삭제합니다.",
-      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 10월 1일입니다. 익명 방문 지역 집계 기준을 추가했습니다.",
+      "중요한 변경이 있을 때에는 시행 전에 이 페이지 또는 서비스 화면에서 알립니다. 본 방침의 시행일은 2026년 10월 20일입니다. 익명 피드백 처리 항목과 보유기간을 추가했습니다.",
     ],
   },
 ];
@@ -137,6 +139,7 @@ const englishSections: PolicySection[] = [
       "Accounts: provider, provider-issued user ID, name or nickname, optional email and profile image, consent time, and settings for login, account management, saved places, and abuse prevention.",
       "User content: review text, ratings, photos, timestamps, and restaurant references for publishing and moderation.",
       "Restaurant suggestions: submitted restaurant details, menus, prices, source links, recommendation notes, relationship to the restaurant, check date and consent record, used to verify, edit and publish restaurant information. Original submissions are visible only to administrators. The form does not request your name, email, personal contact details or account information.",
+      "Anonymous feedback: the selected category, message, interface language, search term, and page path after URL queries and hashes are removed. Administrators review the message and its operational status to improve the service and investigate errors. We do not collect a name or email; do not include personal data in the message.",
       "Optional age group: a coarse range supplied by Kakao or NAVER, or calculated from birth information provided with consent. We retain only the group, its basis and check time, not the original birth date. The group and consent time are attached to a review only when the writer separately chooses to publish it. Provider ranges may differ from international age and are not independent identity verification.",
       "Usage and security: IP address, browser or device data, request time, paths, searches, clicks, ad interactions, and random visitor or session IDs for security and aggregated analytics.",
       "Visitor geography: for the first event from a new pseudonymous visitor who has allowed analytics, we retain only the two-letter country code that Vercel derives from the request IP and aggregate it as domestic, foreign, or country unavailable. We do not retain the raw IP address for this geography metric. Missing or invalid codes remain unavailable, and visitors counted before this feature are not retroactively assigned a country.",
@@ -153,6 +156,7 @@ const englishSections: PolicySection[] = [
       "Account profile and identifiers: until account deletion is requested",
       "Reviews and uploaded photos: until deleted or a valid removal request is resolved",
       "Restaurant suggestions and consent records: 180 days from submission. Drafts are kept in the current tab's session storage and removed after successful submission. Include your receipt number when requesting removal.",
+      "Anonymous feedback and its operational review status: 90 days from submission",
       "Daily pseudonymous analytics: 45 days; daily member operations metrics: 180 days",
       "Non-identifying aggregate totals: while the service operates",
       "Browser identifiers and choices: until storage is cleared or choices are changed",
@@ -185,7 +189,7 @@ const englishSections: PolicySection[] = [
     title: "7. Security, children, and effective date",
     paragraphs: [
       "We use HTTPS, origin checks, rate limits, allowlisted and signed-token admin access, security headers, limited logs, and same-origin image controls. No internet service can eliminate all risk.",
-      "Matpick does not target children under 14. This policy is effective October 1, 2026, with the pseudonymous visitor-geography rules added. Material changes will be announced on this page or in the service.",
+      "Matpick does not target children under 14. This policy is effective October 20, 2026, with anonymous feedback handling and retention added. Material changes will be announced on this page or in the service.",
     ],
   },
 ];
@@ -208,7 +212,7 @@ export default function Privacy() {
       "@type": "WebPage",
       name: `Matpick ${title}`,
       url: buildAbsoluteUrl("/privacy"),
-      dateModified: "2026-10-01",
+      dateModified: "2026-10-20",
     },
   });
 

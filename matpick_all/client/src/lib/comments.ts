@@ -11,15 +11,19 @@ function normalizeComment(comment: RestaurantComment): RestaurantComment {
     id: String(comment.id || "").trim(),
     user: String(comment.user || "").trim(),
     date: String(comment.date || "").trim(),
-    text: String(comment.text || "").trim().slice(0, 500),
-    createdAt: Number.isFinite(comment.createdAt) ? comment.createdAt : Date.now(),
+    text: String(comment.text || "")
+      .trim()
+      .slice(0, 500),
+    createdAt: Number.isFinite(comment.createdAt)
+      ? comment.createdAt
+      : Date.now(),
   };
 }
 
 export function mergeComments(...collections: RestaurantComment[][]) {
   const merged = new Map<string, RestaurantComment>();
 
-  collections.flat().forEach((comment) => {
+  collections.flat().forEach(comment => {
     const normalized = normalizeComment(comment);
     if (normalized.id && normalized.user && normalized.text) {
       merged.set(normalized.id, normalized);
@@ -77,13 +81,9 @@ export async function fetchRestaurantComments(restaurantId: string) {
 
 export async function postRestaurantComment({
   restaurantId,
-  userId,
-  syncToken,
   comment,
 }: {
   restaurantId: string;
-  userId: string;
-  syncToken: string;
   comment: RestaurantComment;
 }) {
   const response = await fetch("/api/comments", {
@@ -91,7 +91,8 @@ export async function postRestaurantComment({
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ restaurantId, userId, syncToken, comment }),
+    credentials: "same-origin",
+    body: JSON.stringify({ restaurantId, comment }),
   });
 
   if (!response.ok) {

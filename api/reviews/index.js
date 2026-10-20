@@ -1,7 +1,7 @@
 const {
-  validateProfileSyncToken,
   readRemoteProfile,
 } = require("../auth/_profileStore");
+const { readSession, SessionStoreUnavailableError } = require("../auth/_sessionStore");
 const { createMemberReview } = require("./_reviewSubmission");
 const {
   appendRemoteReview,
@@ -75,7 +75,14 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const { restaurantId, userId, syncToken, review } = readBody(req);
+      const { restaurantId, review } = readBody(req);
+      const session = await readSession(req);
+      if (!session) {
+        return res.status(401).json({
+          error: "Your session expired. Please sign in again before posting a review.",
+        });
+      }
+      const userId = session.user.id;
 
       if (
         !(await enforceRateLimit(req, res, {
@@ -89,7 +96,7 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      if (!restaurantId || !userId || !review) {
+      if (!restaurantId || !review) {
         return res.status(400).json({ error: "Invalid review payload" });
       }
 
@@ -106,40 +113,13 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const tokenValidation = validateProfileSyncToken(userId, syncToken);
-
-      if (!tokenValidation.valid) {
-        logSecurityEvent("warn", "review-sync-token-rejected", {
-          route: "/api/reviews",
-          userId: maskValue(userId),
-          restaurantId: maskValue(restaurantId),
-          ip: maskValue(getClientIp(req)),
-          version: tokenValidation.version,
-          reason: tokenValidation.reason,
-        });
-        return res.status(401).json({
-          error:
-            "Your session expired. Please sign in again before posting a review.",
-        });
-      }
-
-      if (tokenValidation.version === "legacy") {
-        logSecurityEvent("warn", "legacy-sync-token-used", {
-          route: "/api/reviews",
-          userId: maskValue(userId),
-          restaurantId: maskValue(restaurantId),
-          ip: maskValue(getClientIp(req)),
-        });
-        res.setHeader("X-Matpick-Legacy-Token", "1");
-      }
-
       const profile = await readRemoteProfile(String(userId));
       const memberReview = createMemberReview({
         restaurantId: String(restaurantId),
         userId,
         profile,
         review,
-        ageProfile: tokenValidation.ageProfile,
+        ageProfile: session.user.ageProfile,
       });
       const savedReview = await appendRemoteReview(
         String(restaurantId),
@@ -152,7 +132,7 @@ module.exports = async function handler(req, res) {
         ip: maskValue(getClientIp(req)),
         message: error instanceof Error ? error.message : "unknown",
       });
-      return res.status(error?.status || 500).json({
+      return res.status(error instanceof SessionStoreUnavailableError ? 503 : error?.status || 500).json({
         error: error instanceof Error ? error.message : "Failed to save review",
       });
     }

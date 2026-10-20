@@ -4,11 +4,6 @@ const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
 
-function getHeader(req, name) {
-  const value = req.headers?.[name] || req.headers?.[name.toLowerCase()];
-  return Array.isArray(value) ? value[0] : value || "";
-}
-
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
 
@@ -34,19 +29,14 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const adminKey = getHeader(req, "x-matpick-admin-key");
-    const authorization = authorizeAdminRequest({
-      adminKey,
-      syncToken: getHeader(req, "x-matpick-admin-token"),
-    });
+    const authorization = await authorizeAdminRequest(req);
     if (!authorization.valid) {
       logSecurityEvent("warn", "admin-members-rejected", {
         route: "/api/admin/members",
         ip: maskValue(getClientIp(req)),
-        adminKey: maskValue(adminKey),
         reason: authorization.reason,
       });
-      return res.status(403).json({ error: "Admin access is required." });
+      return res.status(authorization.unavailable ? 503 : 403).json({ error: "Admin access is required." });
     }
 
     const dashboard = await readMembersDashboard();
@@ -58,7 +48,7 @@ module.exports = async function handler(req, res) {
       message: error instanceof Error ? error.message : "unknown",
     });
     return res.status(500).json({
-      error: error instanceof Error ? error.message : "Failed to read member dashboard",
+      error: "Failed to read member dashboard",
     });
   }
 };

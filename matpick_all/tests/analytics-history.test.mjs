@@ -8,7 +8,7 @@ const {
   readVisitorHistory,
 } = require("../../api/analytics/_analyticsStore.js");
 const metricsHandler = require("../../api/admin/metrics.js");
-const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
+const { createSession } = require("../../api/auth/_sessionStore.js");
 
 const STORAGE_ENV = [
   "KV_REST_API_URL",
@@ -270,7 +270,24 @@ test("admin visitor history retains request guards and rejects invalid periods",
   const savedEnv = saveEnvironment(envNames);
   envNames.forEach(name => delete process.env[name]);
   process.env.ADMIN_USER_IDS = "naver:history-admin";
-  process.env.AUTH_PROFILE_SIGNING_SECRET = "history-test-secret";
+  process.env.KV_REST_API_URL = "https://session.test";
+  process.env.KV_REST_API_TOKEN = "test";
+  const oldFetch = globalThis.fetch;
+  const values = new Map();
+  globalThis.fetch = async (url, options) => {
+    const command = JSON.parse(options.body);
+    if (url.endsWith("/pipeline")) {
+      return { ok: true, json: async () => command.map(() => ({ result: 0 })) };
+    }
+    if (command[0] === "SET") values.set(command[1], command[2]);
+    const result =
+      command[0] === "GET"
+        ? (values.get(command[1]) ?? null)
+        : command[0] === "EVAL"
+          ? 1
+          : "OK";
+    return { ok: true, json: async () => ({ result }) };
+  };
 
   const call = async ({ query = {}, headers = {}, method = "GET" } = {}) => {
     const res = response();
@@ -287,9 +304,15 @@ test("admin visitor history retains request guards and rejects invalid periods",
 
   try {
     assert.equal((await call()).code, 403);
+    const sessionResponse = response();
+    sessionResponse.getHeader = name => sessionResponse.headers[name];
+    await createSession({ headers: {} }, sessionResponse, {
+      id: "history-admin",
+      provider: "naver",
+      name: "Admin",
+    });
     const headers = {
-      "x-matpick-admin-key": "naver:history-admin",
-      "x-matpick-admin-token": createProfileSyncToken("history-admin"),
+      cookie: sessionResponse.headers["Set-Cookie"][0].split(";")[0],
     };
     assert.equal(
       (
@@ -314,6 +337,7 @@ test("admin visitor history retains request guards and rejects invalid periods",
     assert.equal(valid.body.summary, undefined);
     assert.equal(valid.headers["Cache-Control"], "no-store");
   } finally {
+    globalThis.fetch = oldFetch;
     restoreEnvironment(savedEnv);
   }
 });

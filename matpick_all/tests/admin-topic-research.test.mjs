@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const handler = require("../../api/restaurants/index.js");
-const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
+const { createSession } = require("../../api/auth/_sessionStore.js");
 function response() {
   return {
     code: 200,
@@ -32,10 +32,24 @@ test("research queue is private, paginated and filtered; individual evidence is 
     "UPSTASH_REDIS_REST_TOKEN",
   ];
   const before = Object.fromEntries(names.map(k => [k, process.env[k]]));
+  const oldFetch = globalThis.fetch;
   try {
     names.forEach(k => delete process.env[k]);
     process.env.ADMIN_USER_IDS = "naver:topic-test";
-    process.env.AUTH_PROFILE_SIGNING_SECRET = "local-test-secret-only";
+    process.env.KV_REST_API_URL = "https://session.test";
+    process.env.KV_REST_API_TOKEN = "test";
+    const values = new Map();
+    globalThis.fetch = async (_url, options) => {
+      const command = JSON.parse(options.body);
+      if (command[0] === "SET") values.set(command[1], command[2]);
+      const result =
+        command[0] === "GET"
+          ? (values.get(command[1]) ?? null)
+          : command[0] === "EVAL"
+            ? 1
+            : "OK";
+      return { ok: true, json: async () => ({ result }) };
+    };
     const call = async (query = {}, headers = {}, method = "GET") => {
       const res = response();
       await handler(
@@ -49,9 +63,15 @@ test("research queue is private, paginated and filtered; individual evidence is 
       (await call({}, { "x-matpick-admin-key": "naver:topic-test" })).code,
       403
     );
+    const sessionResponse = response();
+    sessionResponse.getHeader = name => sessionResponse.headers[name];
+    await createSession({ headers: {} }, sessionResponse, {
+      id: "topic-test",
+      provider: "naver",
+      name: "Admin",
+    });
     const headers = {
-      "x-matpick-admin-key": "naver:topic-test",
-      "x-matpick-admin-token": createProfileSyncToken("topic-test"),
+      cookie: sessionResponse.headers["Set-Cookie"][0].split(";")[0],
     };
     assert.equal(
       (
@@ -117,6 +137,7 @@ test("research queue is private, paginated and filtered; individual evidence is 
         .length <= 100
     );
   } finally {
+    globalThis.fetch = oldFetch;
     for (const k of names) {
       if (before[k] === undefined) delete process.env[k];
       else process.env[k] = before[k];

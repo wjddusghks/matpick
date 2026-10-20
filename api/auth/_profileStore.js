@@ -1,10 +1,4 @@
-const crypto = require("node:crypto");
-const { normalizeAgeProfile } = require("./_ageProfile");
-
 const PROFILE_KEY_PREFIX = "matpick:auth-profile:";
-const SYNC_TOKEN_TTL_SECONDS = 60 * 60 * 24 * 30;
-const ALLOW_LEGACY_SYNC_TOKEN =
-  process.env.AUTH_ALLOW_LEGACY_SYNC_TOKEN === "1";
 
 function getKvConfig() {
   const url =
@@ -22,51 +16,8 @@ function getKvConfig() {
   };
 }
 
-function getSigningSecret() {
-  return (
-    process.env.AUTH_PROFILE_SIGNING_SECRET ||
-    process.env.NAVER_LOGIN_CLIENT_SECRET ||
-    process.env.KAKAO_CLIENT_SECRET ||
-    ""
-  );
-}
-
 function getProfileKey(userId) {
   return `${PROFILE_KEY_PREFIX}${userId}`;
-}
-
-function createLegacyProfileSyncToken(userId) {
-  const secret = getSigningSecret();
-  if (!secret || !userId) {
-    return "";
-  }
-
-  return crypto
-    .createHmac("sha256", secret)
-    .update(String(userId))
-    .digest("hex");
-}
-
-function signSyncPayload(encodedPayload) {
-  return crypto
-    .createHmac("sha256", getSigningSecret())
-    .update(encodedPayload)
-    .digest("base64url");
-}
-
-function isSafeEqual(left, right) {
-  const leftBuffer = Buffer.from(String(left));
-  const rightBuffer = Buffer.from(String(right));
-
-  if (leftBuffer.length !== rightBuffer.length) {
-    return false;
-  }
-
-  try {
-    return crypto.timingSafeEqual(leftBuffer, rightBuffer);
-  } catch {
-    return false;
-  }
 }
 
 async function requestRedis(command) {
@@ -75,18 +26,23 @@ async function requestRedis(command) {
     return null;
   }
 
-  const endpoint = `${config.url}/${command.map((part) => encodeURIComponent(String(part))).join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetch(config.url, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(command),
+    signal: AbortSignal.timeout(5000),
   });
 
   if (!response.ok) {
     throw new Error(`Profile store request failed: ${response.status}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+  if (payload?.error) throw new Error("Storage command failed");
+  return payload;
 }
 
 function normalizeStoredProfile(values) {
@@ -149,104 +105,7 @@ async function writeRemoteProfile(userId, profile) {
   return true;
 }
 
-function createProfileSyncToken(userId, options = {}) {
-  const secret = getSigningSecret();
-  if (!secret || !userId) {
-    return "";
-  }
-
-  const ttlSeconds = Math.max(
-    60,
-    Number.isFinite(options.ttlSeconds)
-      ? Number(options.ttlSeconds)
-      : SYNC_TOKEN_TTL_SECONDS,
-  );
-  const now = Math.floor(Date.now() / 1000);
-  const payload = {
-    v: 2,
-    uid: String(userId),
-    iat: now,
-    exp: now + ttlSeconds,
-    ...(normalizeAgeProfile(options.ageProfile)
-      ? { age: normalizeAgeProfile(options.ageProfile) }
-      : {}),
-  };
-  const encodedPayload = Buffer.from(JSON.stringify(payload)).toString(
-    "base64url",
-  );
-  const signature = signSyncPayload(encodedPayload);
-
-  return `${encodedPayload}.${signature}`;
-}
-
-function validateProfileSyncToken(userId, token) {
-  const secret = getSigningSecret();
-  if (!secret || !userId || !token) {
-    return { valid: false, version: null, reason: "missing" };
-  }
-
-  const stringToken = String(token).trim();
-  const [encodedPayload, signature] = stringToken.split(".");
-
-  if (encodedPayload && signature) {
-    const expectedSignature = signSyncPayload(encodedPayload);
-    if (!isSafeEqual(expectedSignature, signature)) {
-      return { valid: false, version: "v2", reason: "bad-signature" };
-    }
-
-    try {
-      const payload = JSON.parse(
-        Buffer.from(encodedPayload, "base64url").toString("utf8"),
-      );
-      const now = Math.floor(Date.now() / 1000);
-
-      if (payload?.uid !== String(userId)) {
-        return { valid: false, version: "v2", reason: "wrong-user" };
-      }
-
-      if (!Number.isFinite(payload?.exp)) {
-        return { valid: false, version: "v2", reason: "missing-exp" };
-      }
-
-      if (Number(payload.exp) <= now) {
-        return { valid: false, version: "v2", reason: "expired" };
-      }
-
-      return {
-        valid: true,
-        version: "v2",
-        reason: "ok",
-        issuedAt: Number(payload?.iat || 0) || null,
-        expiresAt: Number(payload.exp),
-        ageProfile: normalizeAgeProfile(payload.age),
-      };
-    } catch {
-      return { valid: false, version: "v2", reason: "invalid-payload" };
-    }
-  }
-
-  if (!ALLOW_LEGACY_SYNC_TOKEN) {
-    return { valid: false, version: "legacy", reason: "legacy-disabled" };
-  }
-
-  // Temporary compatibility path so already logged-in users are not logged out immediately.
-  const legacyExpected = createLegacyProfileSyncToken(userId);
-  const valid = isSafeEqual(legacyExpected, stringToken);
-  return {
-    valid,
-    version: "legacy",
-    reason: valid ? "ok" : "bad-legacy-token",
-  };
-}
-
-function isValidProfileSyncToken(userId, token) {
-  return validateProfileSyncToken(userId, token).valid;
-}
-
 module.exports = {
-  createProfileSyncToken,
-  isValidProfileSyncToken,
-  validateProfileSyncToken,
   readRemoteProfile,
   writeRemoteProfile,
 };

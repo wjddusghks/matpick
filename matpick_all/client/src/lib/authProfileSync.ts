@@ -1,24 +1,13 @@
 import type { StoredAuthProfile } from "./authProfile";
 
-export async function persistRemoteAuthProfile(
-  userId: string,
-  syncToken: string | undefined,
-  profile: StoredAuthProfile
-) {
-  if (!userId || !syncToken) {
-    return false;
-  }
-
+export async function persistRemoteAuthProfile(profile: StoredAuthProfile) {
   const response = await fetch("/api/auth/profile", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      userId,
-      syncToken,
-      profile,
-    }),
+    credentials: "same-origin",
+    body: JSON.stringify({ profile }),
   });
 
   if (!response.ok) {

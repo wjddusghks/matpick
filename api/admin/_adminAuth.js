@@ -1,20 +1,25 @@
-const { validateProfileSyncToken } = require("../auth/_profileStore");
+const {
+  readSession,
+  SessionStoreUnavailableError,
+} = require("../auth/_sessionStore");
 
 function parseAdminList(value) {
   return new Set(
     String(value || "")
       .split(/[,\n]/)
       .map((item) => item.trim().toLowerCase())
-      .filter(Boolean)
+      .filter(Boolean),
   );
 }
 
 function getConfiguredAdminKeys() {
-  return parseAdminList(process.env.ADMIN_USER_IDS || process.env.VITE_ADMIN_USER_IDS);
+  return parseAdminList(process.env.ADMIN_USER_IDS);
 }
 
 function isAllowedAdminKey(value) {
-  const key = String(value || "").trim().toLowerCase();
+  const key = String(value || "")
+    .trim()
+    .toLowerCase();
   if (!key) {
     return false;
   }
@@ -22,32 +27,30 @@ function isAllowedAdminKey(value) {
   return getConfiguredAdminKeys().has(key);
 }
 
-function getUserIdFromAdminKey(value) {
-  const key = String(value || "").trim();
-  const separatorIndex = key.indexOf(":");
-  if (separatorIndex < 1 || separatorIndex === key.length - 1) {
-    return "";
+async function authorizeAdminRequest(req) {
+  try {
+    const session = await readSession(req);
+    if (!session) return { valid: false, reason: "missing-session" };
+    const adminKey = `${session.user.provider}:${session.user.id}`;
+    if (!isAllowedAdminKey(adminKey)) {
+      return { valid: false, reason: "not-allowlisted" };
+    }
+    return {
+      valid: true,
+      reason: "ok",
+      userId: session.user.id,
+      user: session.user,
+    };
+  } catch (error) {
+    if (error instanceof SessionStoreUnavailableError) {
+      return {
+        valid: false,
+        unavailable: true,
+        reason: "session-store-unavailable",
+      };
+    }
+    throw error;
   }
-
-  return key.slice(separatorIndex + 1);
-}
-
-function authorizeAdminRequest({ adminKey, syncToken }) {
-  if (!isAllowedAdminKey(adminKey)) {
-    return { valid: false, reason: "not-allowlisted" };
-  }
-
-  const userId = getUserIdFromAdminKey(adminKey);
-  if (!userId) {
-    return { valid: false, reason: "invalid-admin-key" };
-  }
-
-  const tokenResult = validateProfileSyncToken(userId, syncToken);
-  if (!tokenResult.valid) {
-    return { valid: false, reason: `invalid-sync-token:${tokenResult.reason}` };
-  }
-
-  return { valid: true, reason: "ok", userId };
 }
 
 module.exports = {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "wouter";
+import { isPrivateMarketingPath, safeMarketingLocation } from "@/lib/marketingPrivacy";
 import {
   getMarketingEventName,
   type MarketingEventDetail,
@@ -102,8 +103,7 @@ function getPagePayload(path: string) {
   }
 
   return {
-    page_path: path,
-    page_location: window.location.href,
+    ...safeMarketingLocation(window.location.href),
     page_title: document.title,
   };
 }
@@ -165,6 +165,11 @@ function ensureMetaPixel(metaPixelId: string) {
 }
 
 export default function MarketingScripts() {
+  const [location] = useLocation();
+  return isPrivateMarketingPath(location) ? null : <PublicMarketingScripts />;
+}
+
+function PublicMarketingScripts() {
   const [location] = useLocation();
   const [preferences, setPreferences] = useState(() => readPrivacyPreferences());
   const googleTagIds = useMemo(() => normalizeGoogleTagIds(), []);

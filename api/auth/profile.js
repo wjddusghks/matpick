@@ -1,7 +1,9 @@
+const { readRemoteProfile, writeRemoteProfile } = require("./_profileStore");
 const {
-  validateProfileSyncToken,
-  writeRemoteProfile,
-} = require("./_profileStore");
+  readSession,
+  revokeSession,
+  SessionStoreUnavailableError,
+} = require("./_sessionStore");
 const { recordMemberProfileCompletion } = require("./_memberStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
@@ -22,8 +24,8 @@ function readBody(req) {
 module.exports = async function handler(req, res) {
   applyApiSecurityHeaders(res);
 
-  if (req.method !== "POST") {
-    res.setHeader("Allow", "POST");
+  if (!["GET", "POST", "DELETE"].includes(req.method)) {
+    res.setHeader("Allow", "GET, POST, DELETE");
     return res.status(405).json({ error: "Method not allowed" });
   }
 
@@ -32,7 +34,28 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { userId, syncToken, profile } = readBody(req);
+    if (req.method === "DELETE") {
+      await revokeSession(req, res);
+      return res.status(200).json({ ok: true });
+    }
+
+    const session = await readSession(req);
+    if (!session) {
+      return res.status(401).json({ error: "Authentication is required." });
+    }
+
+    const userId = session.user.id;
+    if (req.method === "GET") {
+      const storedProfile = await readRemoteProfile(userId);
+      return res.status(200).json({
+        user: {
+          ...session.user,
+          ...(storedProfile || {}),
+        },
+      });
+    }
+
+    const { profile } = readBody(req);
 
     if (
       !(await enforceRateLimit(req, res, {
@@ -62,30 +85,6 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const tokenValidation = validateProfileSyncToken(userId, syncToken);
-
-    if (!tokenValidation.valid) {
-      logSecurityEvent("warn", "profile-sync-token-rejected", {
-        route: "/api/auth/profile",
-        userId: maskValue(userId),
-        ip: maskValue(getClientIp(req)),
-        version: tokenValidation.version,
-        reason: tokenValidation.reason,
-      });
-      return res.status(401).json({
-        error: "Your session expired. Please sign in again before saving profile updates.",
-      });
-    }
-
-    if (tokenValidation.version === "legacy") {
-      logSecurityEvent("warn", "legacy-sync-token-used", {
-        route: "/api/auth/profile",
-        userId: maskValue(userId),
-        ip: maskValue(getClientIp(req)),
-      });
-      res.setHeader("X-Matpick-Legacy-Token", "1");
-    }
-
     await writeRemoteProfile(userId, profile);
 
     try {
@@ -100,8 +99,8 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({ ok: true });
   } catch (error) {
-    return res.status(500).json({
-      error: error instanceof Error ? error.message : "Failed to save profile",
+    return res.status(error instanceof SessionStoreUnavailableError ? 503 : 500).json({
+      error: "Failed to save profile",
     });
   }
 };

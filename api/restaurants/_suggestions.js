@@ -22,12 +22,9 @@ function createSuggestionHandler(store = suggestionStore) {
     if (!enforceSameOrigin(req, res)) return;
     let auth = null;
     if (req.method !== "POST") {
-      auth = authorizeAdminRequest({
-        adminKey: req.headers?.["x-matpick-admin-key"],
-        syncToken: req.headers?.["x-matpick-admin-token"],
-      });
+      auth = await authorizeAdminRequest(req);
       if (!auth.valid)
-        return res.status(403).json({ error: "관리자 로그인이 필요합니다." });
+        return res.status(auth.unavailable ? 503 : 403).json({ error: "관리자 로그인이 필요합니다." });
     }
     try {
       if (

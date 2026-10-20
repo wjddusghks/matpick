@@ -69,10 +69,7 @@ module.exports = async function handler(req, res) {
       message: error instanceof Error ? error.message : "unknown",
     });
     return res.status(500).json({
-      error:
-        error instanceof Error
-          ? error.message
-          : "Failed to record analytics event",
+      error: "Failed to record analytics event",
     });
   }
 };

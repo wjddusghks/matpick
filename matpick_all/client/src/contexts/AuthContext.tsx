@@ -2,15 +2,14 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useState,
   type ReactNode,
 } from "react";
 import {
   clearSavedPostLoginRedirect,
-  consumeOAuthState,
   getOAuthAvailability,
   getOAuthProviderLabel,
-  getOAuthRedirectUri,
   isOAuthProvider,
   takeSavedPostLoginRedirect,
   beginOAuthLogin,
@@ -35,7 +34,6 @@ export interface User {
   provider: OAuthProvider;
   consentAcceptedAt?: number;
   allowLocationPersonalization?: boolean;
-  syncToken?: string;
   ageProfile?: AgeProfile | null;
 }
 
@@ -49,48 +47,27 @@ interface AuthContextType {
   isLoggedIn: boolean;
   isAuthenticating: boolean;
   oauthEnabled: Record<OAuthProvider, boolean>;
-  loginWithKakao: (redirectTo?: string) => void;
-  loginWithNaver: (redirectTo?: string) => void;
+  loginWithKakao: (redirectTo?: string) => Promise<void>;
+  loginWithNaver: (redirectTo?: string) => Promise<void>;
   finishOAuthLogin: (
     provider: string,
     searchParams: URLSearchParams
   ) => Promise<string>;
   completeUserProfile: (input: CompleteUserProfileInput) => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 const AUTH_STORAGE_KEY = "matpick_auth_user";
 
-function loadStoredUser(): User | null {
-  if (typeof window === "undefined") {
-    return null;
-  }
-
-  try {
-    const raw = window.localStorage.getItem(AUTH_STORAGE_KEY);
-    if (!raw) {
-      return null;
-    }
-
-    return mergeUserProfile(JSON.parse(raw) as User);
-  } catch {
-    return null;
-  }
-}
-
-function persistUser(user: User | null) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  if (user) {
-    window.localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify(user));
-    return;
-  }
-
-  window.localStorage.removeItem(AUTH_STORAGE_KEY);
+function persistUserIdentity(user: User | null) {
+  if (user)
+    window.localStorage.setItem(
+      AUTH_STORAGE_KEY,
+      JSON.stringify({ id: user.id })
+    );
+  else window.localStorage.removeItem(AUTH_STORAGE_KEY);
 }
 
 async function readErrorMessage(response: Response): Promise<string> {
@@ -107,13 +84,17 @@ async function readErrorMessage(response: Response): Promise<string> {
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(loadStoredUser);
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [isAuthenticating, setIsAuthenticating] = useState(true);
   const oauthEnabled = getOAuthAvailability();
 
   const startProviderLogin = useCallback(
     (provider: OAuthProvider, redirectTo = "/") => {
-      beginOAuthLogin(provider, redirectTo);
+      setIsAuthenticating(true);
+      return beginOAuthLogin(provider, redirectTo).catch(error => {
+        setIsAuthenticating(false);
+        throw error;
+      });
     },
     []
   );
@@ -148,9 +129,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       const code = searchParams.get("code");
       const state = searchParams.get("state");
-      const savedState = consumeOAuthState(provider);
-
-      if (!code || !state || !savedState || savedState !== state) {
+      if (!code || !state) {
         clearSavedPostLoginRedirect();
         throw new Error("로그인 요청이 만료되었거나 보안 검증에 실패했습니다.");
       }
@@ -166,7 +145,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           body: JSON.stringify({
             code,
             state,
-            redirectUri: getOAuthRedirectUri(provider),
           }),
         });
 
@@ -184,24 +162,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
         if (isExistingMember) {
           try {
-            await persistRemoteAuthProfile(
-              mergedUser.id,
-              mergedUser.syncToken,
-              {
-                nickname: mergedUser.nickname?.trim() || mergedUser.name.trim(),
-                consentAcceptedAt: mergedUser.consentAcceptedAt ?? Date.now(),
-                allowLocationPersonalization: Boolean(
-                  mergedUser.allowLocationPersonalization
-                ),
-              }
-            );
+            await persistRemoteAuthProfile({
+              nickname: mergedUser.nickname?.trim() || mergedUser.name.trim(),
+              consentAcceptedAt: mergedUser.consentAcceptedAt ?? Date.now(),
+              allowLocationPersonalization: Boolean(
+                mergedUser.allowLocationPersonalization
+              ),
+            });
           } catch {
             // Keep login flow successful even when the remote profile store is unavailable.
           }
         }
 
         setUser(mergedUser);
-        persistUser(mergedUser);
+        persistUserIdentity(mergedUser);
 
         if (isExistingMember) {
           toast.message(
@@ -246,7 +220,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       try {
-        await persistRemoteAuthProfile(user.id, user.syncToken, {
+        await persistRemoteAuthProfile({
           nickname: nextNickname,
           consentAcceptedAt,
           allowLocationPersonalization,
@@ -256,15 +230,56 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       setUser(nextUser);
-      persistUser(nextUser);
+      persistUserIdentity(nextUser);
     },
     [user]
   );
 
-  const logout = useCallback(() => {
-    setUser(null);
-    persistUser(null);
-    clearSavedPostLoginRedirect();
+  const logout = useCallback(async () => {
+    try {
+      const response = await fetch("/api/auth/profile", {
+        method: "DELETE",
+        credentials: "same-origin",
+      });
+      if (!response.ok) {
+        toast.error("로그아웃을 완료하지 못했습니다. 다시 시도해 주세요.");
+        return;
+      }
+      setUser(null);
+      persistUserIdentity(null);
+      clearSavedPostLoginRedirect();
+    } catch {
+      toast.error("로그아웃을 완료하지 못했습니다. 다시 시도해 주세요.");
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.removeItem(AUTH_STORAGE_KEY);
+    const controller = new AbortController();
+    void fetch("/api/auth/profile", {
+      credentials: "same-origin",
+      cache: "no-store",
+      signal: controller.signal,
+    })
+      .then(async response => {
+        if (response.status === 401) return null;
+        if (!response.ok) throw new Error("Session unavailable");
+        const payload = (await response.json()) as { user?: User };
+        return payload.user ? mergeUserProfile(payload.user) : null;
+      })
+      .then(nextUser => {
+        if (!controller.signal.aborted) {
+          setUser(nextUser);
+          persistUserIdentity(nextUser);
+        }
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setUser(null);
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setIsAuthenticating(false);
+      });
+    return () => controller.abort();
   }, []);
 
   return (

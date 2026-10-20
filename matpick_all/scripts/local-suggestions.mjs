@@ -8,6 +8,9 @@ const storeModule = require.resolve(
   "../../api/restaurants/_suggestionStore.js"
 );
 const handlerModule = require.resolve("../../api/restaurants/_suggestions.js");
+const feedbackHandlerModule = require.resolve(
+  "../../api/feedback/_feedback.js"
+);
 const catalogModule = require.resolve("../../api/restaurants/_catalog.js");
 const retentionMs = 180 * 86400000;
 const fail = (message, status) => {
@@ -26,7 +29,11 @@ export function createLocalSuggestionStore(file) {
         if (error.code !== "ENOENT") throw error;
         items = [];
       }
-      items = items.filter(item => item.status === "approved" || item.createdAt > Date.now() - retentionMs);
+      items = items.filter(
+        item =>
+          item.status === "approved" ||
+          item.createdAt > Date.now() - retentionMs
+      );
       const value = run(items);
       await mkdir(path.dirname(file), { recursive: true });
       const temp = `${file}.tmp`;
@@ -79,9 +86,19 @@ export function createLocalSuggestionStore(file) {
         pageSize: 50,
       }));
     },
-    updateSuggestion(requestId, status, actor = "local-admin", draft = null, publish = true) {
+    updateSuggestion(
+      requestId,
+      status,
+      actor = "local-admin",
+      draft = null,
+      publish = true
+    ) {
       return transaction(items => {
-        if (!["pending", "approved", "rejected", "reviewed", "archived"].includes(status))
+        if (
+          !["pending", "approved", "rejected", "reviewed", "archived"].includes(
+            status
+          )
+        )
           fail("처리 상태를 확인해 주세요.", 400);
         const item = items.find(row => row.requestId === requestId);
         if (!item) fail("제보를 찾을 수 없습니다.", 404);
@@ -90,9 +107,14 @@ export function createLocalSuggestionStore(file) {
           : item;
         Object.assign(item, edited);
         if (status === "approved" && publish) {
-          const publication = require(storeModule).buildPublication(item, actor);
+          const publication = require(storeModule).buildPublication(
+            item,
+            actor
+          );
           const duplicate = items
-            .filter(row => row.requestId !== requestId && row.status === "approved")
+            .filter(
+              row => row.requestId !== requestId && row.status === "approved"
+            )
             .some(row => row.publication?.dedupeKey === publication.dedupeKey);
           if (duplicate)
             fail("이미 승인된 같은 이름과 주소의 추천식당이 있습니다.", 409);
@@ -170,7 +192,9 @@ export function localSuggestionsPlugin() {
           const address = req.socket.remoteAddress;
           if (!["127.0.0.1", "::1", "::ffff:127.0.0.1"].includes(address)) {
             res.writeHead(403, { "Content-Type": "application/json" });
-            res.end(JSON.stringify({ error: "Local catalog access is restricted." }));
+            res.end(
+              JSON.stringify({ error: "Local catalog access is restricted." })
+            );
             return;
           }
           const result = require(catalogModule).queryCatalog(
@@ -185,9 +209,10 @@ export function localSuggestionsPlugin() {
           res.end(JSON.stringify(result.body));
           return;
         }
+        const scope = url.searchParams.get("scope");
         if (
           url.pathname !== "/api/restaurants" ||
-          url.searchParams.get("scope") !== "suggestions"
+          !["suggestions", "feedback"].includes(scope || "")
         )
           return next();
         // This local inbox is private to the developer's machine, even with --host.
@@ -236,7 +261,9 @@ export function localSuggestionsPlugin() {
             res.end(JSON.stringify(value));
             return res;
           };
-          await handler(req, res);
+          await (
+            scope === "feedback" ? require(feedbackHandlerModule) : handler
+          )(req, res);
         } catch {
           res.statusCode = 503;
           res.setHeader("Content-Type", "application/json; charset=utf-8");

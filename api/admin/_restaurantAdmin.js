@@ -84,14 +84,10 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
   if (!enforceSameOrigin(req, res)) return;
-  const adminKey = req.headers?.["x-matpick-admin-key"];
-  const auth = authorizeAdminRequest({
-    adminKey,
-    syncToken: req.headers?.["x-matpick-admin-token"],
-  });
+  const auth = await authorizeAdminRequest(req);
   if (!auth.valid)
     return res
-      .status(403)
+      .status(auth.unavailable ? 503 : 403)
       .json({ error: "관리자 권한이 필요합니다. 다시 로그인해 주세요." });
   try {
     if (
@@ -208,7 +204,7 @@ module.exports = async function handler(req, res) {
         });
       const edit = await createRestaurant({
         changes,
-        actor: adminKey,
+        actor: `${auth.user.provider}:${auth.user.id}`,
         requestId: body.requestId,
         identity,
       });
@@ -239,7 +235,7 @@ module.exports = async function handler(req, res) {
       restaurantId: body.restaurantId,
       expectedRevision: body.expectedRevision,
       changes,
-      actor: adminKey,
+      actor: `${auth.user.provider}:${auth.user.id}`,
       action: body.action,
     });
     return res.status(200).json({ ok: true, edit });

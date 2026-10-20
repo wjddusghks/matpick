@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { getAdminRegistrationKey, isAdminUser } from "./admin";
+import { isAdminUser } from "./admin";
 import { SUGGESTIONS_API, type SuggestionItem } from "./restaurantSuggestions";
 
 export const suggestionStatuses = {
@@ -27,10 +27,6 @@ export function useSuggestionInbox() {
     setLoading(true);
     setError("");
     fetch(`${SUGGESTIONS_API}&page=${page}`, {
-      headers: {
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken || "",
-      },
       cache: "no-store",
       signal: controller.signal,
     })
@@ -69,10 +65,13 @@ export function useSuggestionInbox() {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "x-matpick-admin-key": getAdminRegistrationKey(user),
-          "x-matpick-admin-token": user.syncToken || "",
         },
-        body: JSON.stringify({ requestId: item.requestId, status, draft, action }),
+        body: JSON.stringify({
+          requestId: item.requestId,
+          status,
+          draft,
+          action,
+        }),
         signal: AbortSignal.timeout(20000),
       });
       const body = await response.json().catch(() => null);

@@ -37,7 +37,7 @@ test("catalog autocomplete runs independent limits together and reuses public st
   let rateReads = 0;
   let stateReads = 0;
   globalThis.fetch = async (_url, options = {}) => {
-    if (options.method === "POST") {
+    if (JSON.parse(options.body)[0] !== "EVAL") {
       stateReads += 1;
       return { ok: true, json: async () => ({ result: [] }) };
     }

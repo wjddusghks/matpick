@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { isPrivateMarketingPath } from "@/lib/marketingPrivacy";
 import { adsenseClient, isAdsenseLiveHost } from "@/lib/adConfig";
 import {
   PRIVACY_PREFERENCES_EVENT,
@@ -67,6 +68,11 @@ function upsertMeta(name: string, content: string) {
 }
 
 export default function MonetizationScripts() {
+  const [location] = useLocation();
+  return isPrivateMarketingPath(location) ? null : <PublicMonetizationScripts />;
+}
+
+function PublicMonetizationScripts() {
   const [location] = useLocation();
   const [advertisingAllowed, setAdvertisingAllowed] = useState(
     hasAdvertisingConsent

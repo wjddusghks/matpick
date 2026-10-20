@@ -12,7 +12,7 @@ const {
   validateAdminDraft,
 } = require("../../api/restaurants/_suggestionStore.js");
 const handler = require("../../api/restaurants/index.js");
-const { createProfileSyncToken } = require("../../api/auth/_profileStore.js");
+const { createSession } = require("../../api/auth/_sessionStore.js");
 const [client] = await loadAppModules(["/src/lib/restaurantSuggestions.ts"]);
 const base = () => ({
   requestId: randomUUID(),
@@ -88,18 +88,39 @@ test("only restaurant identity and consent are required; unknown prices stay unk
   assert.equal(result.name, input.name);
 });
 test("administrator drafts sanitize editable fields and reset unverified locations", () => {
-  const existing = { ...validateSuggestion(base()), id: "one", status: "pending" };
-  const draft = validateAdminDraft({
-    name: "  수정 국밥  ", location: "서울 중구 세종대로 110",
-    lat: 37.5665, lng: 126.978, locationVerified: true,
-    imageUrl: "https://images.example.test/store.jpg",
-    menus: [{ name: "국밥", price: 12000, unit: "1인분" }],
-  }, existing);
+  const existing = {
+    ...validateSuggestion(base()),
+    id: "one",
+    status: "pending",
+  };
+  const draft = validateAdminDraft(
+    {
+      name: "  수정 국밥  ",
+      location: "서울 중구 세종대로 110",
+      lat: 37.5665,
+      lng: 126.978,
+      locationVerified: true,
+      imageUrl: "https://images.example.test/store.jpg",
+      menus: [{ name: "국밥", price: 12000, unit: "1인분" }],
+    },
+    existing
+  );
   assert.equal(draft.name, "수정 국밥");
   assert.equal(draft.locationVerified, true);
   assert.equal(draft.menus[0].price, 12000);
-  assert.throws(() => validateAdminDraft({ ...draft, imageUrl: "javascript:alert(1)" }, existing), { status: 400 });
-  assert.equal(validateAdminDraft({ ...draft, lat: null, lng: null }, existing).locationVerified, false);
+  assert.throws(
+    () =>
+      validateAdminDraft(
+        { ...draft, imageUrl: "javascript:alert(1)" },
+        existing
+      ),
+    { status: 400 }
+  );
+  assert.equal(
+    validateAdminDraft({ ...draft, lat: null, lng: null }, existing)
+      .locationVerified,
+    false
+  );
 });
 test("invalid identity, consent, links, price, date and spam fail server validation", () => {
   for (const patch of [
@@ -156,7 +177,7 @@ test("missing durable storage never acknowledges receipt", async () =>
     assert.equal(res.code, 503);
     assert.equal(res.body.ok, undefined);
   }));
-test("inbox and moderation require signed allowlisted administrator, not just a key", async () =>
+test("inbox and moderation require an allowlisted server session, not browser headers", async () =>
   sandbox(async () => {
     process.env.ADMIN_USER_IDS = "naver:test-admin";
     for (const method of ["GET", "PATCH"]) {
@@ -185,7 +206,10 @@ test("cross-origin writes, malformed JSON and large bodies are rejected", async 
         {
           method: "POST",
           query: { scope: "suggestions" },
-          headers: { ...headers, "x-forwarded-for": randomUUID() },
+          headers: {
+            ...headers,
+            "x-forwarded-for": `2001:db8::${randomUUID().slice(0, 4)}:${randomUUID().slice(0, 4)}`,
+          },
           body,
         },
         res
@@ -195,7 +219,9 @@ test("cross-origin writes, malformed JSON and large bodies are rejected", async 
   }));
 test("anonymous submissions are rate limited", async () =>
   sandbox(async () => {
-    const headers = { "x-forwarded-for": randomUUID() };
+    const headers = {
+      "x-forwarded-for": `2001:db8::${randomUUID().slice(0, 4)}:${randomUUID().slice(0, 4)}`,
+    };
     for (let i = 0; i < 7; i++) {
       const res = response();
       await handler(
@@ -289,22 +315,40 @@ test("moderation rejects missing records before publication", async () =>
 test("valid administrator can read the inbox through the catalog route", async () =>
   sandbox(async () => {
     process.env.ADMIN_USER_IDS = "naver:test-admin";
-    process.env.AUTH_PROFILE_SIGNING_SECRET = "suggestion-test-signing-secret";
+    const values = new Map();
     globalThis.fetch = async (_url, options) => {
       const command = options?.body ? JSON.parse(options.body) : [];
+      if (command[0] === "SET") values.set(command[1], command[2]);
       return {
         ok: true,
-        json: async () => ({ result: command[0] === "ZREVRANGE" ? [] : 0 }),
+        json: async () => ({
+          result:
+            command[0] === "SET"
+              ? "OK"
+              : command[0] === "GET"
+              ? (values.get(command[1]) ?? null)
+              : command[0] === "EVAL"
+                ? 1
+                : command[0] === "ZREVRANGE"
+                  ? []
+                  : 0,
+        }),
       };
     };
+    const sessionResponse = response();
+    sessionResponse.getHeader = name => sessionResponse.headers[name];
+    await createSession({ headers: {} }, sessionResponse, {
+      id: "test-admin",
+      provider: "naver",
+      name: "Admin",
+    });
     const res = response();
     await handler(
       {
         method: "GET",
         query: { scope: "suggestions" },
         headers: {
-          "x-matpick-admin-key": "naver:test-admin",
-          "x-matpick-admin-token": createProfileSyncToken("test-admin"),
+          cookie: sessionResponse.headers["Set-Cookie"][0].split(";")[0],
         },
       },
       res

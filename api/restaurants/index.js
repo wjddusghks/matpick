@@ -65,6 +65,9 @@ async function runWithCatalogCacheInvalidation(action) {
 }
 
 module.exports = async function handler(req, res) {
+  if (req.query?.scope === "feedback") {
+    return require("../feedback/_feedback")(req, res);
+  }
   if (req.query?.scope === "private-guides") {
     applyApiSecurityHeaders(res);
     return res.status(410).json({ error: "삭제된 기능입니다." });

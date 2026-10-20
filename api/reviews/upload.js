@@ -1,4 +1,4 @@
-const { validateProfileSyncToken } = require("../auth/_profileStore");
+const { readSession, SessionStoreUnavailableError } = require("../auth/_sessionStore");
 const { checkRateLimit, enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
 const { logSecurityEvent, maskValue } = require("../_securityLog");
@@ -36,8 +36,8 @@ module.exports = async function handler(req, res) {
       request: req,
       onBeforeGenerateToken: async (pathname, clientPayload) => {
         const payload = clientPayload ? JSON.parse(clientPayload) : {};
-        const userId = String(payload.userId || "").trim();
-        const syncToken = String(payload.syncToken || "").trim();
+        const session = await readSession(req);
+        const userId = session?.user.id || "";
         const restaurantId = String(payload.restaurantId || "").trim();
 
         const userRateLimit = await checkRateLimit({
@@ -51,28 +51,14 @@ module.exports = async function handler(req, res) {
           throw new Error("Too many upload attempts");
         }
 
-        const tokenValidation = validateProfileSyncToken(userId, syncToken);
-
-        if (!userId || !restaurantId || !tokenValidation.valid) {
+        if (!userId || !restaurantId) {
           logSecurityEvent("warn", "review-upload-token-rejected", {
             route: "/api/reviews/upload",
             userId: maskValue(userId),
             restaurantId: maskValue(restaurantId),
             ip: maskValue(getClientIp(req)),
-            version: tokenValidation.version,
-            reason: tokenValidation.reason,
           });
           throw new Error("Your session expired. Please sign in again before uploading review photos.");
-        }
-
-        if (tokenValidation.version === "legacy") {
-          logSecurityEvent("warn", "legacy-sync-token-used", {
-            route: "/api/reviews/upload",
-            userId: maskValue(userId),
-            restaurantId: maskValue(restaurantId),
-            ip: maskValue(getClientIp(req)),
-          });
-          res.setHeader("X-Matpick-Legacy-Token", "1");
         }
 
         if (!pathname.startsWith(`reviews/${restaurantId}/`)) {
@@ -96,7 +82,9 @@ module.exports = async function handler(req, res) {
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Failed to upload review photo";
-    const status = /too many upload/i.test(message) ? 429 : 400;
+    const status = error instanceof SessionStoreUnavailableError
+      ? 503
+      : /too many upload/i.test(message) ? 429 : 400;
 
     if (status >= 400 && status !== 429) {
       logSecurityEvent("warn", "review-upload-failed", {

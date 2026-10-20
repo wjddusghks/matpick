@@ -3,7 +3,22 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const analyticsHandler = require("../../api/analytics/event.js");
+// Isolate geography behavior from the production Redis availability boundary,
+// which has its own fail-closed integration tests in rate-limit-availability.
+const limiter = require("../../api/_rateLimit.js");
+const originalEnforce = limiter.enforceRateLimit;
+const handlerPath = require.resolve("../../api/analytics/event.js");
+const cachedHandler = require.cache[handlerPath];
+let analyticsHandler;
+try {
+  limiter.enforceRateLimit = async () => true;
+  delete require.cache[handlerPath];
+  analyticsHandler = require(handlerPath);
+} finally {
+  limiter.enforceRateLimit = originalEnforce;
+  if (cachedHandler) require.cache[handlerPath] = cachedHandler;
+  else delete require.cache[handlerPath];
+}
 const {
   readAnalyticsSummary,
   recordAnalyticsEvent,
@@ -164,11 +179,10 @@ test("Redis assigns visitor geography atomically and reads coverage", async () =
   process.env.KV_REST_API_TOKEN = "test-only";
   const commands = [];
 
-  globalThis.fetch = async url => {
-    const command = new URL(url).pathname
-      .slice(1)
-      .split("/")
-      .map(decodeURIComponent);
+  globalThis.fetch = async (url, options) => {
+    assert.equal(new URL(url).pathname, "/");
+    assert.equal(options.method, "POST");
+    const command = JSON.parse(options.body);
     commands.push(command);
     let result = 1;
     if (command[0] === "SCARD" && command[1].endsWith(":visitors")) {

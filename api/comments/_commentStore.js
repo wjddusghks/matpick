@@ -21,20 +21,23 @@ async function requestRedis(command) {
     return null;
   }
 
-  const endpoint = `${config.url}/${command
-    .map((part) => encodeURIComponent(String(part)))
-    .join("/")}`;
-  const response = await fetch(endpoint, {
+  const response = await fetch(config.url, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${config.token}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(command),
+    signal: AbortSignal.timeout(5000),
   });
 
   if (!response.ok) {
     throw new Error(`Comment store request failed: ${response.status}`);
   }
 
-  return response.json();
+  const payload = await response.json();
+  if (payload?.error) throw new Error("Storage command failed");
+  return payload;
 }
 
 function getCommentKey(restaurantId) {

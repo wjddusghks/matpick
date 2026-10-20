@@ -7,10 +7,7 @@ const {
   normalizeAgeProfile,
   publicReviewAge,
 } = require("../../api/auth/_ageProfile.js");
-const {
-  createProfileSyncToken,
-  validateProfileSyncToken,
-} = require("../../api/auth/_profileStore.js");
+const { publicUser } = require("../../api/auth/_sessionStore.js");
 const {
   createMemberReview,
 } = require("../../api/reviews/_reviewSubmission.js");
@@ -75,39 +72,18 @@ test("provider age ranges preserve their basis, consent and uncertainty", () => 
     null
   );
 });
-test("signed age cannot be changed by a client; existing tokens remain valid", () => {
-  const old = process.env.AUTH_PROFILE_SIGNING_SECRET;
-  process.env.AUTH_PROFILE_SIGNING_SECRET = "test-only-secret";
-  try {
-    const age = { group: "20s", basis: "kakao_range", checkedAt: Date.now() };
-    const token = createProfileSyncToken("test-user", {
-      ageProfile: { ...age, birthday: "0101" },
-    });
-    assert.deepEqual(
-      validateProfileSyncToken("test-user", token).ageProfile,
-      age
-    );
-    const [payload, sig] = token.split(".");
-    const decoded = JSON.parse(Buffer.from(payload, "base64url"));
-    assert.ok(!JSON.stringify(decoded).includes("birthday"));
-    decoded.age.group = "30s";
-    assert.equal(
-      validateProfileSyncToken(
-        "test-user",
-        `${Buffer.from(JSON.stringify(decoded)).toString("base64url")}.${sig}`
-      ).valid,
-      false
-    );
-    assert.equal(validateProfileSyncToken("someone-else", token).valid, false);
-    assert.equal(
-      validateProfileSyncToken("test-user", createProfileSyncToken("test-user"))
-        .valid,
-      true
-    );
-  } finally {
-    if (old === undefined) delete process.env.AUTH_PROFILE_SIGNING_SECRET;
-    else process.env.AUTH_PROFILE_SIGNING_SECRET = old;
-  }
+test("session age is normalized and browser-supplied credential fields are discarded", () => {
+  const age = { group: "20s", basis: "kakao_range", checkedAt: Date.now() };
+  const user = publicUser({
+    id: "test-user",
+    provider: "kakao",
+    name: "Tester",
+    syncToken: "must-not-leave-the-server",
+    ageProfile: { ...age, birthday: "0101" },
+  });
+  assert.deepEqual(user.ageProfile, age);
+  assert.equal("syncToken" in user, false);
+  assert.ok(!JSON.stringify(user).includes("birthday"));
 });
 test("review age is opt-in and a replacement without consent removes it", () => {
   const input = {

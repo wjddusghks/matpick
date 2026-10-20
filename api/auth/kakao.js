@@ -1,7 +1,10 @@
+const { readRemoteProfile } = require("./_profileStore");
+const { beginOAuth, OAuthConfigurationError } = require("./_oauthFlow");
 const {
-  createProfileSyncToken,
-  readRemoteProfile,
-} = require("./_profileStore");
+  consumeOAuthTransaction,
+  createSession,
+  SessionStoreUnavailableError,
+} = require("./_sessionStore");
 const { recordAuthMember } = require("./_memberStore");
 const { deriveAgeProfile } = require("./_ageProfile");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
@@ -59,18 +62,38 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { code, redirectUri } = readBody(req);
+    const { action, code, state } = readBody(req);
 
-    if (!code || !redirectUri) {
+    if (action === "start") {
+      const authorizeUrl = await beginOAuth(req, res, "kakao");
+      if (!authorizeUrl) {
+        return res.status(500).json({
+          error: "Kakao REST API credentials are not configured.",
+        });
+      }
+      return res.status(200).json({ authorizeUrl });
+    }
+
+    if (!code || !state) {
       return res.status(400).json({
         error: "Missing Kakao authorization payload.",
+      });
+    }
+
+    const transaction = await consumeOAuthTransaction(req, res, {
+      provider: "kakao",
+      state,
+    });
+    if (!transaction) {
+      return res.status(400).json({
+        error: "The login request expired or failed its security check.",
       });
     }
 
     const tokenParams = new URLSearchParams({
       grant_type: "authorization_code",
       client_id: clientId,
-      redirect_uri: redirectUri,
+      redirect_uri: transaction.redirectUri,
       code,
     });
 
@@ -125,7 +148,6 @@ module.exports = async function handler(req, res) {
       consentAcceptedAt: storedProfile?.consentAcceptedAt,
       allowLocationPersonalization: storedProfile?.allowLocationPersonalization,
       ageProfile,
-      syncToken: createProfileSyncToken(userId, { ageProfile }),
     };
 
     try {
@@ -138,20 +160,21 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    return res.status(200).json({
-      user,
-    });
+    await createSession(req, res, user);
+    return res.status(200).json({ user });
   } catch (error) {
     logSecurityEvent("error", "kakao-auth-failed", {
       route: "/api/auth/kakao",
       ip: maskValue(getClientIp(req)),
       message: error instanceof Error ? error.message : "unknown",
     });
-    return res.status(500).json({
-      error:
-        error instanceof Error
-          ? error.message
-          : "An unknown error occurred while processing the Kakao login.",
-    });
+    return res
+      .status(error instanceof SessionStoreUnavailableError ? 503 : 500)
+      .json({
+        error:
+          error instanceof OAuthConfigurationError
+            ? error.message
+            : "An unknown error occurred while processing the Kakao login.",
+      });
   }
 };

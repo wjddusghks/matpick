@@ -37,6 +37,19 @@ test("frequent complete dishes use conventional semantic English names", () => {
     ["짝갈비살", "paired rib meat"],
     ["巨大 양념갈비", "Geodae marinated short ribs"],
     ["巨大 양념갈비(240g)", "Geodae marinated short ribs (240g)"],
+    ["마르게리따", "Margherita pizza"],
+    ["감바스 알 아히요", "gambas al ajillo"],
+    ["트러플 크림 뇨끼", "truffle cream gnocchi"],
+    ["히츠마부시", "hitsumabushi grilled eel over rice"],
+    ["공깃밥", "bowl of rice"],
+    ["쉬림프 로제 파스타", "shrimp rosé pasta"],
+    ["커무양", "Thai grilled pork neck"],
+    ["똠양꿍", "tom yum goong"],
+    ["알루 고비", "aloo gobi potato and cauliflower curry"],
+    ["블랙페퍼 안심 스테이크", "black pepper tenderloin steak"],
+    ["세비체", "ceviche"],
+    ["치킨 빈달루", "chicken vindaloo"],
+    ["카우팟", "khao pad fried rice"],
   ]);
 
   for (const [korean, english] of cases) {

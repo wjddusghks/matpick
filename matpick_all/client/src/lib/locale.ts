@@ -187,6 +187,17 @@ const ENGLISH_PROVIDER_NAMES: Record<string, string> = {
   "최자로드": "Choiza Road",
   "더들리": "The Dudley",
   "맛픽": "Matpick",
+  "카카오맵": "Kakao Map",
+  "네이버지도": "Naver Map",
+};
+
+const ENGLISH_SOURCE_LABELS: Record<string, string> = {
+  "카카오맵 공개 장소 패널": "Kakao Map public place listing",
+  "네이버 플레이스": "Naver Place listing",
+  "네이버지도": "Naver Map listing",
+  "공식 홈페이지": "Official website",
+  "공식 인스타그램": "Official Instagram",
+  "공식 메뉴판": "Official menu",
 };
 
 const ENGLISH_CREATOR_NAMES: Record<string, string> = {
@@ -297,6 +308,12 @@ export function getEnglishProviderName(value: string) {
 
 export function getLocalizedProviderName(value: string, locale: AppLocale) {
   return locale === "en" ? getEnglishProviderName(value) : value;
+}
+
+export function getLocalizedSourceLabel(value: string, locale: AppLocale) {
+  if (locale === "ko") return value;
+  const trimmed = value.trim();
+  return ENGLISH_SOURCE_LABELS[trimmed] ?? getEnglishSourceName(trimmed);
 }
 
 export function getEnglishCreatorName(value: string) {
@@ -452,6 +469,30 @@ export function getLocalizedHoursText(value: string, locale: AppLocale) {
   return hasKoreanText(translated) ? "Check current hours" : translated;
 }
 
+export function getLocalizedOperationStatus(value: string, locale: AppLocale) {
+  if (locale === "ko") return value;
+  const labels: Record<string, string> = {
+    "영업 중": "Open",
+    "영업중": "Open",
+    "휴업 중": "Temporarily closed",
+    "휴업중": "Temporarily closed",
+    "폐업": "Permanently closed",
+    "운영 확인 필요": "Operation status unverified",
+  };
+  return labels[value.trim()] ?? (hasKoreanText(value) ? "Check current operation status" : value);
+}
+
+export function getLocalizedDate(value: string, locale: AppLocale) {
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return value;
+  return new Intl.DateTimeFormat(locale === "en" ? "en-US" : "ko-KR", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    timeZone: "Asia/Seoul",
+  }).format(date);
+}
+
 export function getLocalizedDiscoveryTitle(value: string, locale: AppLocale) {
   if (locale === "ko") return value;
   return ENGLISH_SOURCE_NAMES[value] ?? DISCOVERY_TITLE_TRANSLATIONS[value] ?? getEnglishSourceName(value);
@@ -472,8 +513,12 @@ export function getBrowserFallbackLocale(): AppLocale {
   // Canonical pages stay Korean for first-time visitors and search engines.
   // An explicit visitor choice, rather than IP/browser language, enables English.
   try {
-    const requested = new URLSearchParams(window.location.search).get("lang");
+    const requested = new URLSearchParams(window.location?.search ?? "").get("lang");
     if (requested === "en" || requested === "ko") return requested;
+  } catch {
+    // A constrained webview may expose storage without a readable location.
+  }
+  try {
     return window.localStorage.getItem("matpick_locale") === "en" ? "en" : "ko";
   } catch {
     return "ko";

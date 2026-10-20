@@ -183,6 +183,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000"
+        },
+        {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
         },
@@ -224,6 +228,17 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.matpick.co.kr"
+        }
+      ],
+      "destination": "https://matpick.co.kr/:path*",
+      "permanent": true
+    },
     {
       "source": "/restaurant/baekjong_wok_restaurant_001",
       "destination": "/restaurant/topic_enrichment_baekjong-wok_42ed76417b00",

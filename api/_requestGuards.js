@@ -8,9 +8,8 @@ function getRequestProtocol(req) {
 }
 
 function getRequestHost(req) {
-  return String(
-    getHeader(req, "x-forwarded-host") || getHeader(req, "host") || ""
-  )
+  // Do not let an arbitrary forwarding header expand the origin allowlist.
+  return String(getHeader(req, "host") || "")
     .split(",")[0]
     .trim();
 }
@@ -28,6 +27,25 @@ function getExpectedOrigin(req) {
   return `${getRequestProtocol(req)}://${host}`;
 }
 
+function getConfiguredHttpsOrigin(value) {
+  try {
+    const url = new URL(String(value || "").trim());
+    if (
+      url.protocol !== "https:" ||
+      url.username ||
+      url.password ||
+      url.search ||
+      url.hash ||
+      url.pathname !== "/"
+    ) {
+      return "";
+    }
+    return url.origin;
+  } catch {
+    return "";
+  }
+}
+
 function getAllowedOrigins(req) {
   const configured = String(process.env.VITE_PUBLIC_APP_URL || "")
     .trim()
@@ -35,13 +53,17 @@ function getAllowedOrigins(req) {
   const expected = getExpectedOrigin(req);
   const origins = new Set();
 
-  if (configured) {
-    origins.add(configured);
-  }
-
-  if (expected) {
-    origins.add(expected);
-  }
+  if (configured) origins.add(configured);
+  const oauthOrigin = getConfiguredHttpsOrigin(process.env.OAUTH_PUBLIC_ORIGIN);
+  if (oauthOrigin) origins.add(oauthOrigin);
+  if (process.env.VERCEL === "1" || process.env.NODE_ENV === "production") {
+    origins.add("https://matpick.co.kr");
+    origins.add("https://www.matpick.co.kr");
+    // Only deployment names supplied by the platform, never request headers.
+    for (const host of [process.env.VERCEL_URL, process.env.VERCEL_BRANCH_URL]) {
+      if (host && /^[a-z0-9.-]+\.vercel\.app$/i.test(host)) origins.add(`https://${host}`);
+    }
+  } else if (expected) origins.add(expected);
 
   return origins;
 }
@@ -64,7 +86,7 @@ function enforceSameOrigin(req, res) {
   const allowedOrigins = getAllowedOrigins(req);
 
   if (!origin) {
-    if (secFetchSite && !["same-origin", "same-site", "none"].includes(secFetchSite)) {
+    if (secFetchSite && !["same-origin", "none"].includes(secFetchSite)) {
       res.status(403).json({ error: "Cross-site requests are not allowed." });
       return false;
     }
@@ -88,7 +110,7 @@ function enforceBrowserRequest(req, res) {
   const fetchSite = String(getHeader(req, "sec-fetch-site") || "")
     .trim()
     .toLowerCase();
-  if (["same-origin", "same-site"].includes(fetchSite)) {
+  if (fetchSite === "same-origin") {
     return true;
   }
 

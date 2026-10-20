@@ -50,6 +50,8 @@ import {
   getLocalizedHoursText,
   getLocalizedMenuName,
   getLocalizedPriceText,
+  getLocalizedSourceLabel,
+  getLocalizedDate,
   getLocalizedProviderName,
   getLocalizedRegion,
   getLocalizedRestaurantName,
@@ -508,7 +510,7 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
               )}
               {hasPrices && (
                 <p className="detail-small-note">
-                  {collectedDate ? `${collectedDate} ` : ""}
+                  {collectedDate ? `${getLocalizedDate(collectedDate, locale)} · ` : ""}
                   {isEnglish
                     ? "Collected prices may differ from current prices."
                     : "수집된 가격으로, 현재 매장 가격과 다를 수 있어요."}
@@ -538,10 +540,10 @@ function RestaurantDetailContent({ restaurant }: { restaurant: Restaurant }) {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {(isEnglish && source.label ? romanizeKoreanText(source.label) : source.label) || (isEnglish ? "Source" : "원문 보기")}
+                          {(source.label ? getLocalizedSourceLabel(source.label, locale) : "") || (isEnglish ? "Source" : "원문 보기")}
                         </a>
                         {source.publishedAt &&
-                          ` · ${isEnglish ? "Source date" : "자료 기준"} ${source.publishedAt.slice(0, 10)}`}
+                          ` · ${isEnglish ? "Source date" : "자료 기준"} ${getLocalizedDate(source.publishedAt, locale)}`}
                       </p>
                     ))}
                 </details>

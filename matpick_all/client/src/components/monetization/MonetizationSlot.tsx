@@ -33,6 +33,8 @@ export type MonetizationProvider = "adsense" | "kakao" | "coupang";
 
 const COUPANG_DISCLOSURE =
   "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
+const COUPANG_DISCLOSURE_EN =
+  "As a Coupang Partners affiliate, Matpick may earn a commission from qualifying purchases.";
 const COUPANG_SDK_ID = "matpick-coupang-partners-sdk";
 
 let coupangSdkPromise: Promise<
@@ -467,6 +469,8 @@ export function CoupangSlot({
   dynamicBannerWidth?: string;
   dynamicBannerHeight?: string;
 }) {
+  const { locale } = useLocale();
+  const coupangDisclosure = locale === "en" ? COUPANG_DISCLOSURE_EN : COUPANG_DISCLOSURE;
   const dynamicBannerRef = useRef<HTMLDivElement | null>(null);
   const iframeImpressionTrackedRef = useRef(false);
   const [measuredBannerWidth, setMeasuredBannerWidth] = useState(0);
@@ -723,7 +727,7 @@ export function CoupangSlot({
           ) : null}
         </div>
         <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
-          {COUPANG_DISCLOSURE}
+          {coupangDisclosure}
         </p>
       </SlotFrame>
     );
@@ -767,7 +771,7 @@ export function CoupangSlot({
         </div>
       </a>
       <p className="mt-3 break-keep text-[11px] leading-5 text-[#8c8384]">
-        {COUPANG_DISCLOSURE}
+        {coupangDisclosure}
       </p>
     </SlotFrame>
   );

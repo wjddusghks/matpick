@@ -44,13 +44,7 @@ function countryName(code: string) {
   }
 }
 
-export default function VisitorHistory({
-  adminKey,
-  adminToken,
-}: {
-  adminKey: string;
-  adminToken: string;
-}) {
+export default function VisitorHistory() {
   const [period, setPeriod] = useState<7 | 28>(7);
   const [selectedWeekday, setSelectedWeekday] = useState<number | null>(null);
   const [history, setHistory] = useState<VisitorHistoryData | null>(null);
@@ -63,10 +57,6 @@ export default function VisitorHistory({
     setLoading(true);
     setError("");
     fetch(`/api/admin/metrics?view=visitors&days=${period}`, {
-      headers: {
-        "x-matpick-admin-key": adminKey,
-        "x-matpick-admin-token": adminToken,
-      },
       cache: "no-store",
       signal: controller.signal,
     })
@@ -88,7 +78,7 @@ export default function VisitorHistory({
         if (!controller.signal.aborted) setLoading(false);
       });
     return () => controller.abort();
-  }, [period, adminKey, adminToken, reload]);
+  }, [period, reload]);
 
   const visibleDays = (history?.days || []).filter(
     day => selectedWeekday === null || day.weekday === selectedWeekday
@@ -388,9 +378,10 @@ export default function VisitorHistory({
             </div>
           </div>
           <p className="mt-5 border-t border-[#eee6e9] pt-4 text-xs leading-5 text-[#78666d]">
-            분석 동의 후 발급된 익명 ID 기준입니다. 국가는 각 날짜의 첫 이벤트의 접속
-            국가로 분류하며 국적을 의미하지 않습니다. VPN 등으로 실제 위치와
-            다를 수 있습니다. 국가 수집 이전 기록은 과거 미분류로 표시합니다.
+            분석 동의 후 발급된 익명 ID 기준입니다. 국가는 각 날짜의 첫 이벤트의
+            접속 국가로 분류하며 국적을 의미하지 않습니다. VPN 등으로 실제
+            위치와 다를 수 있습니다. 국가 수집 이전 기록은 과거 미분류로
+            표시합니다.
           </p>
         </>
       ) : null}

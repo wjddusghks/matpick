@@ -62,8 +62,10 @@ test('Redis attribution uses atomic dedupe and exposes campaign summaries', asyn
   process.env.KV_REST_API_URL = 'https://redis.example.test';
   process.env.KV_REST_API_TOKEN = 'test-only';
   const commands = [];
-  globalThis.fetch = async url => {
-    const command = new URL(url).pathname.slice(1).split('/').map(decodeURIComponent);
+  globalThis.fetch = async (url, options) => {
+    assert.equal(new URL(url).pathname, "/");
+    assert.equal(options.method, "POST");
+    const command = JSON.parse(options.body);
     commands.push(command);
     const result = command[0] === 'HGETALL' && command[1].endsWith(':campaigns')
       ? ['threads / social / korea-food / en-jeju', '2'] : command[0] === 'HGETALL' ? [] : 1;
@@ -90,8 +92,10 @@ test('Redis activation hashes restaurant state and atomically dedupes sessions',
   process.env.KV_REST_API_URL = 'https://redis.example.test';
   process.env.KV_REST_API_TOKEN = 'test-only';
   const commands = [];
-  globalThis.fetch = async url => {
-    commands.push(new URL(url).pathname.slice(1).split('/').map(decodeURIComponent));
+  globalThis.fetch = async (url, options) => {
+    assert.equal(new URL(url).pathname, "/");
+    assert.equal(options.method, "POST");
+    commands.push(JSON.parse(options.body));
     return {ok:true, json:async () => ({result:1})};
   };
   try {

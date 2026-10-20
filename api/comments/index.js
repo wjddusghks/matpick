@@ -1,8 +1,8 @@
 const crypto = require("node:crypto");
 const {
   readRemoteProfile,
-  validateProfileSyncToken,
 } = require("../auth/_profileStore");
+const { readSession, SessionStoreUnavailableError } = require("../auth/_sessionStore");
 const { appendRemoteComment, readRemoteComments } = require("./_commentStore");
 const { enforceRateLimit, getClientIp } = require("../_rateLimit");
 const { applyApiSecurityHeaders, enforceSameOrigin } = require("../_requestGuards");
@@ -51,7 +51,7 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ comments });
     } catch (error) {
       return res.status(500).json({
-        error: error instanceof Error ? error.message : "Failed to read comments",
+        error: "Failed to read comments",
       });
     }
   }
@@ -62,7 +62,14 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const { restaurantId, userId, syncToken, comment } = readBody(req);
+      const { restaurantId, comment } = readBody(req);
+      const session = await readSession(req);
+      if (!session) {
+        return res.status(401).json({
+          error: "Your session expired. Please sign in again before posting a comment.",
+        });
+      }
+      const userId = session.user.id;
 
       if (
         !(await enforceRateLimit(req, res, {
@@ -78,7 +85,6 @@ module.exports = async function handler(req, res) {
 
       if (
         !isValidRestaurantId(restaurantId) ||
-        !userId ||
         !comment ||
         typeof comment.text !== "string" ||
         !comment.text.trim()
@@ -98,30 +104,11 @@ module.exports = async function handler(req, res) {
         return;
       }
 
-      const tokenValidation = validateProfileSyncToken(userId, syncToken);
-      if (!tokenValidation.valid) {
-        logSecurityEvent("warn", "comment-sync-token-rejected", {
-          route: "/api/comments",
-          userId: maskValue(userId),
-          restaurantId: maskValue(restaurantId),
-          ip: maskValue(getClientIp(req)),
-          version: tokenValidation.version,
-          reason: tokenValidation.reason,
-        });
-        return res.status(401).json({
-          error: "Your session expired. Please sign in again before posting a comment.",
-        });
-      }
-
-      if (tokenValidation.version === "legacy") {
-        res.setHeader("X-Matpick-Legacy-Token", "1");
-      }
-
       const profile = await readRemoteProfile(String(userId));
       const serverComment = {
         ...comment,
         id: crypto.randomUUID(),
-        user: profile?.nickname || comment.user,
+        user: profile?.nickname || session.user.nickname || session.user.name,
         date: new Date(Date.now() + 9 * 60 * 60 * 1000)
           .toISOString()
           .slice(0, 10)
@@ -139,8 +126,8 @@ module.exports = async function handler(req, res) {
         ip: maskValue(getClientIp(req)),
         message: error instanceof Error ? error.message : "unknown",
       });
-      return res.status(500).json({
-        error: error instanceof Error ? error.message : "Failed to save comment",
+      return res.status(error instanceof SessionStoreUnavailableError ? 503 : 500).json({
+        error: "Failed to save comment",
       });
     }
   }

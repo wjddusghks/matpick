@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { useAuth } from "@/contexts/AuthContext";
-import { getAdminRegistrationKey, isAdminUser } from "@/lib/admin";
+import { isAdminUser } from "@/lib/admin";
 import { useSeo } from "@/lib/seo";
 
 type Topic = {
@@ -177,8 +177,6 @@ export default function AdminTopicResearch() {
   const [loading, setLoading] = useState(false);
   const [retry, setRetry] = useState(0);
   const detailPanel = useRef<HTMLElement>(null);
-  const adminKey = user ? getAdminRegistrationKey(user) : "";
-  const token = user?.syncToken || "";
   useSeo({
     title: "주제별 식당 후보 검토",
     description: "맛픽 관리자 조사 후보 검토",
@@ -209,10 +207,6 @@ export default function AdminTopicResearch() {
     fetch(`/api/restaurants?${params}`, {
       signal: controller.signal,
       cache: "no-store",
-      headers: {
-        "x-matpick-admin-key": adminKey,
-        "x-matpick-admin-token": token,
-      },
     })
       .then(async response => {
         const body = await response.json();
@@ -227,7 +221,7 @@ export default function AdminTopicResearch() {
         if (!controller.signal.aborted) setLoading(false);
       });
     return () => controller.abort();
-  }, [allowed, adminKey, token, search, topic, status, page, retry]);
+  }, [allowed, search, topic, status, page, retry]);
   useEffect(() => {
     if (!allowed || !selected) return;
     const controller = new AbortController();
@@ -238,10 +232,6 @@ export default function AdminTopicResearch() {
       {
         signal: controller.signal,
         cache: "no-store",
-        headers: {
-          "x-matpick-admin-key": adminKey,
-          "x-matpick-admin-token": token,
-        },
       }
     )
       .then(async response => {
@@ -255,7 +245,7 @@ export default function AdminTopicResearch() {
       });
     detailPanel.current?.focus();
     return () => controller.abort();
-  }, [selected, allowed, adminKey, token]);
+  }, [selected, allowed]);
   if (!allowed)
     return (
       <main className="mx-auto max-w-lg px-5 py-20">

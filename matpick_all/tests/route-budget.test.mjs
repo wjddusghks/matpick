@@ -203,6 +203,7 @@ test("endpoint reuses cache and cannot call provider after global admission is d
     assert.ok(String(url).startsWith("https://redis.test"));
     if (!options.body) return json(1); // existing per-IP limiter
     const cmd = JSON.parse(options.body);
+    if (cmd[0] === "EVAL" && String(cmd[3]).startsWith("matpick:rate-limit:")) return json(1);
     if (cmd[0] === "GET") return json(cached);
     if (cmd[0] === "EVAL") {
       admissions++;

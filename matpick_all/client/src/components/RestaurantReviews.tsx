@@ -105,7 +105,7 @@ export default function RestaurantReviews({
   }
 
   async function submitReview() {
-    if (!user?.syncToken || !isLoggedIn) {
+    if (!user || !isLoggedIn) {
       saveReviewDraft(restaurantId, {
         text: draft,
         stars,
@@ -123,8 +123,6 @@ export default function RestaurantReviews({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           restaurantId,
-          userId: user.id,
-          syncToken: user.syncToken,
           review: {
             stars,
             text: draft.trim(),
@@ -381,7 +379,7 @@ export default function RestaurantReviews({
                   ? isEnglish
                     ? "Posting…"
                     : "등록 중…"
-                  : !isLoggedIn || !user?.syncToken
+                  : !isLoggedIn || !user
                     ? isEnglish
                       ? "Sign in to post"
                       : "로그인하고 등록"
@@ -397,7 +395,11 @@ export default function RestaurantReviews({
         {reviews.slice(0, expanded ? undefined : 3).map(review => (
           <article key={review.id} className="detail-review-item">
             <div className="detail-review-byline">
-              <strong>{isEnglish && hasKoreanText(review.user) ? romanizeKoreanText(review.user) : review.user}</strong>
+              <strong>
+                {isEnglish && hasKoreanText(review.user)
+                  ? romanizeKoreanText(review.user)
+                  : review.user}
+              </strong>
               <ReviewAgeBadge review={review} english={isEnglish} />
               <span>{review.date}</span>
               <span

@@ -6,7 +6,7 @@ import RestaurantManager, {
   type SaveRestaurantInput,
 } from "@/components/admin/RestaurantManager";
 import { useAuth } from "@/contexts/AuthContext";
-import { getAdminRegistrationKey, isAdminUser } from "@/lib/admin";
+import { isAdminUser } from "@/lib/admin";
 import type { RestaurantEdit } from "@/lib/restaurantEdits";
 import {
   fetchAdminRestaurantCatalog,
@@ -60,12 +60,8 @@ export default function AdminRestaurants() {
     const controller = new AbortController();
     setReady(false);
     setLoadError("");
-    const headers = {
-      "x-matpick-admin-key": getAdminRegistrationKey(user),
-      "x-matpick-admin-token": user.syncToken || "",
-    };
     void fetchAdminRestaurantCatalog({
-      headers,
+      headers: {},
       signal: controller.signal,
     })
       .then(body => {
@@ -107,8 +103,6 @@ export default function AdminRestaurants() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken || "",
       },
       body: JSON.stringify(input),
     });
@@ -125,8 +119,6 @@ export default function AdminRestaurants() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken || "",
       },
       body: JSON.stringify({ action: "create", changes, ...registration }),
     });

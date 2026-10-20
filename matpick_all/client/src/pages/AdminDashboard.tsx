@@ -26,6 +26,7 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "wouter";
 import SocialLoginButtons from "@/components/SocialLoginButtons";
 import { AdminSuggestionOverview } from "@/components/admin/SuggestionInboxPanel";
+import FeedbackInboxPanel from "@/components/admin/FeedbackInboxPanel";
 import VisitorHistory from "@/components/admin/VisitorHistory";
 import { useAuth } from "@/contexts/AuthContext";
 import { discoveryTopics, publicDiscoveryTopics } from "@/data";
@@ -678,10 +679,6 @@ export default function AdminDashboard() {
     const controller = new AbortController();
     setCatalogStatus("loading");
     fetch("/api/restaurants?scope=admin&summaryOnly=1", {
-      headers: {
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken ?? "",
-      },
       cache: "no-store",
       signal: controller.signal,
     })
@@ -714,10 +711,6 @@ export default function AdminDashboard() {
     setAnalyticsError("");
 
     fetch(`/api/admin/metrics?scope=${analyticsScope}`, {
-      headers: {
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken ?? "",
-      },
       signal: controller.signal,
     })
       .then(async response => {
@@ -759,10 +752,6 @@ export default function AdminDashboard() {
     setMemberError("");
 
     fetch("/api/admin/members", {
-      headers: {
-        "x-matpick-admin-key": getAdminRegistrationKey(user),
-        "x-matpick-admin-token": user.syncToken ?? "",
-      },
       signal: controller.signal,
     })
       .then(async response => {
@@ -816,7 +805,7 @@ export default function AdminDashboard() {
     return (
       <AccessShell
         title="관리자 권한이 없습니다"
-        description="현재 로그인한 계정은 관리자 허용 목록에 등록되어 있지 않습니다. 아래 계정 키를 Vercel 환경변수 VITE_ADMIN_USER_IDS에 등록하면 이 계정으로 대시보드에 접근할 수 있습니다."
+        description="현재 로그인한 계정은 관리자 허용 목록에 등록되어 있지 않습니다. 아래 계정 키를 Vercel 서버 환경변수 ADMIN_USER_IDS에 등록하면 이 계정으로 대시보드에 접근할 수 있습니다."
       >
         <div className="rounded-[8px] border border-[#ffe0e5] bg-[#fff8f9] px-4 py-3">
           <p className="text-xs font-bold text-[#8a747a]">
@@ -898,6 +887,7 @@ export default function AdminDashboard() {
         </nav>
 
         <AdminSuggestionOverview />
+        <FeedbackInboxPanel />
 
         <section className="mt-10">
           <div className="flex flex-wrap items-end justify-between gap-3">
@@ -1032,10 +1022,7 @@ export default function AdminDashboard() {
             status={analyticsStatus}
           />
 
-          <VisitorHistory
-            adminKey={getAdminRegistrationKey(user)}
-            adminToken={user.syncToken ?? ""}
-          />
+          <VisitorHistory />
 
           <section className="mt-6 rounded-2xl border border-[#e9dde0] bg-[#292327] p-5 text-white sm:p-6">
             <h3 className="text-base font-black">집계 기준</h3>

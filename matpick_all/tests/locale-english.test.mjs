@@ -10,11 +10,22 @@ import {
   getEnglishSourceName,
   getLocalizedEditorialSummary,
   getLocalizedHoursText,
+  getLocalizedDate,
+  getLocalizedOperationStatus,
   getLocalizedPriceText,
+  getLocalizedSourceLabel,
   getLocalizedSearchDetail,
   getLocalizedSearchLabel,
   hasKoreanText,
 } from "../client/src/lib/locale.ts";
+
+test("source labels, operation status, and dates are localized for visitors", () => {
+  assert.equal(getLocalizedSourceLabel("카카오맵 공개 장소 패널", "en"), "Kakao Map public place listing");
+  assert.equal(getLocalizedOperationStatus("영업 중", "en"), "Open");
+  assert.equal(getLocalizedOperationStatus("운영 확인 필요", "en"), "Operation status unverified");
+  assert.equal(getLocalizedDate("2026-07-18", "en"), "Jul 18, 2026");
+  assert.equal(getLocalizedDate("2026-07-18", "ko"), "2026년 7월 18일");
+});
 
 test("English restaurant names and Korean addresses do not expose Hangul", () => {
   const name = getEnglishRestaurantName("맛픽식당");

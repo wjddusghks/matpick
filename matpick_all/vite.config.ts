@@ -3,12 +3,20 @@ import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
 import { localSuggestionsPlugin } from "./scripts/local-suggestions.mjs";
+import { lightweightPublicAssets } from "./scripts/public-assets.mjs";
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   envDir: import.meta.dirname,
   // Keep the live dev server's optimized modules separate from data/build tools.
   cacheDir: path.resolve(import.meta.dirname, "node_modules/.vite-dev"),
-  plugins: [localSuggestionsPlugin(), react(), tailwindcss()],
+  publicDir: command === "build" ? false : "public",
+  plugins: [
+    localSuggestionsPlugin(), react(), tailwindcss(),
+    lightweightPublicAssets(
+      path.resolve(import.meta.dirname, "client/public"),
+      path.resolve(import.meta.dirname, "dist"),
+    ),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -25,4 +33,4 @@ export default defineConfig({
     port: 3000,
     host: true,
   },
-});
+}));

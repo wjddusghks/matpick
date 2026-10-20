@@ -83,7 +83,9 @@
   align-self: stretch;
   min-height: 60px;
   flex-shrink: 0;
-  background: #f0e6dc;
+  background:
+    radial-gradient(circle at 32% 30%, #ffffffcc 0 10%, transparent 11%),
+    linear-gradient(145deg, #ffd9df, #f7c9dd 52%, #efb7d3);
 }
 .dining-moment-photo img {
   width: 100%;

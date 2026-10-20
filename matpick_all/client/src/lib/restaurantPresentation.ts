@@ -238,7 +238,7 @@ function buildPlaceholderSvg(
 export function hasRestaurantPhoto(
   restaurant: Pick<Restaurant, "imageUrl">
 ) {
-  return restaurant.imageUrl.trim().length > 0;
+  return getOptimizedCardImageUrl(restaurant.imageUrl).length > 0;
 }
 
 export function getRestaurantDisplayImage(

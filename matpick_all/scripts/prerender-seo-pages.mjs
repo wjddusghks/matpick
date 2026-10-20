@@ -544,7 +544,7 @@ async function main() {
 
   for (const restaurant of restaurants) {
     const restaurantUrl = absoluteUrl(siteUrl, `/restaurant/${restaurant.id}`);
-    const restaurantImage = restaurant.imageUrl
+    const restaurantImage = restaurant.imageUrl && !/^\/(?:card-data|card-previews|restaurant-image-previews|source-covers|dining-moments)\//.test(restaurant.imageUrl)
       ? absoluteUrl(siteUrl, restaurant.imageUrl)
       : defaultImage;
     const restaurantSources = [

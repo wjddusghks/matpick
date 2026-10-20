@@ -2,20 +2,6 @@ import { useState } from "react";
 import { Pause, Play } from "lucide-react";
 import "./dining-moments.css";
 
-const photos = [
-  "date",
-  "work",
-  "hosting",
-  "travel",
-  "solo",
-  "date",
-  "hosting",
-  "friends",
-  "travel",
-  "friends",
-  "work",
-  "solo",
-];
 export default function DiningMomentsMarquee({
   title,
   moments,
@@ -62,15 +48,7 @@ export default function DiningMomentsMarquee({
                     key={moment.label}
                     className={`dining-moment tone-${i % 6}`}
                   >
-                    <span className="dining-moment-photo" aria-hidden="true">
-                      <img
-                        src={`/dining-moments/${photos[i % photos.length]}.jpg`}
-                        alt=""
-                        width={112}
-                        height={112}
-                        decoding="async"
-                      />
-                    </span>
+                    <span className="dining-moment-photo" aria-hidden="true" />
                     <div className="dining-moment-copy">
                       <span>{moment.label}</span>
                       <p>{moment.question}</p>

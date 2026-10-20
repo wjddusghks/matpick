@@ -84,7 +84,7 @@ import {
   type AppLocale,
 } from "@/lib/locale";
 import { trackMarketingEvent } from "@/lib/marketing";
-import { getOptimizedCardImageUrl } from "@/lib/imagePreviews";
+import { getOptimizedCardImageUrl, isRetiredStaticImageUrl } from "@/lib/imagePreviews";
 import {
   formatRestaurantBroadcastBadge,
   getRestaurantDisplayImage,
@@ -450,7 +450,7 @@ function SourceAvatarButton({
         }`}
       >
         <span className="flex h-full w-full items-center justify-center rounded-full bg-white">
-          {option?.imageUrl ? (
+          {option?.imageUrl && !isRetiredStaticImageUrl(option.imageUrl) ? (
             <img
               src={option.imageUrl}
               alt={option.name}
@@ -458,7 +458,7 @@ function SourceAvatarButton({
             />
           ) : (
             <span className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#fff3f5] text-xs font-black text-[#ff7b83] sm:h-[62px] sm:w-[62px] sm:text-sm">
-              ALL
+              {option ? label.slice(0, 1) : "ALL"}
             </span>
           )}
         </span>
@@ -648,7 +648,7 @@ function PopularRestaurantCollectionGrid({
             style={{ background: collection.palette.background }}
             aria-label={`${collectionCopy.title} ${locale === "en" ? "open map" : "지도 보기"}`}
           >
-            {collection.imageUrl ? (
+            {getOptimizedCardImageUrl(collection.imageUrl) ? (
               <img
                 src={getOptimizedCardImageUrl(collection.imageUrl)}
                 alt=""
@@ -801,7 +801,7 @@ function EpisodeCollectionCard({
       style={{ background: getEpisodeCardPalette(index) }}
       aria-label={`${getLocalizedEpisodeLabel(episode.episode, locale)} ${locale === "en" ? "open card" : "카드 보기"}`}
     >
-      {mainImageUrl ? (
+      {getOptimizedCardImageUrl(mainImageUrl) ? (
         <img
           src={getOptimizedCardImageUrl(mainImageUrl)}
           alt=""
@@ -1281,14 +1281,14 @@ function EpisodeStoryActionButton({
 }
 
 function EpisodeStorySlideView({ slide }: { slide: EpisodeStorySlide }) {
-  const hasImage = Boolean(slide.imageUrl);
+  const hasImage = Boolean(getOptimizedCardImageUrl(slide.imageUrl));
 
   return (
     <article
       className="relative h-full w-full flex-shrink-0 overflow-hidden text-white"
       style={{ background: slide.background }}
     >
-      {slide.imageUrl ? (
+      {hasImage ? (
         <img
           src={getOptimizedCardImageUrl(slide.imageUrl)}
           alt=""

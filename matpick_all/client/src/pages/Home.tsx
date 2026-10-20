@@ -73,6 +73,7 @@ import {
   saveStoredLocation,
 } from "@/lib/location";
 import { trackMarketingEvent } from "@/lib/marketing";
+import { getOptimizedCardImageUrl, isRetiredStaticImageUrl } from "@/lib/imagePreviews";
 import {
   PRIVACY_PREFERENCES_EVENT,
   readPrivacyPreferences,
@@ -442,17 +443,7 @@ function saveCollectionSocialState(state: CollectionSocialState) {
 }
 
 function getHomeOptimizedCardImageUrl(imageUrl?: string | null) {
-  const trimmed = imageUrl?.trim() ?? "";
-
-  if (!trimmed.startsWith("/card-data/")) {
-    return trimmed;
-  }
-
-  const relativePath = trimmed
-    .slice("/card-data/".length)
-    .replace(/\.[a-z0-9]+$/i, ".webp");
-
-  return `/restaurant-image-previews/${relativePath}`;
+  return getOptimizedCardImageUrl(imageUrl);
 }
 
 function getCollectionStorySlides(
@@ -697,16 +688,20 @@ function TopicShortcutButton({ topic }: { topic: MapTopicShortcut }) {
     >
       <span className="flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffd8de_0%,#ffe7f6_100%)] p-[2px] transition group-hover:-translate-y-0.5 group-hover:shadow-[0_14px_30px_rgba(255,105,135,0.2)] sm:h-[68px] sm:w-[68px]">
         <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white">
-          <img
-            src={topic.imageUrl}
-            alt=""
-            width={64}
-            height={64}
-            loading="lazy"
-            decoding="async"
-            className="h-full w-full object-cover"
-            style={{ objectFit: topic.imageFit ?? "cover" }}
-          />
+          {!isRetiredStaticImageUrl(topic.imageUrl) ? (
+            <img
+              src={topic.imageUrl}
+              alt=""
+              width={64}
+              height={64}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+              style={{ objectFit: topic.imageFit ?? "cover" }}
+            />
+          ) : (
+            <span className="text-sm font-black text-[#ff7b83]">{label.slice(0, 1)}</span>
+          )}
         </span>
       </span>
       <span className="line-clamp-2 max-w-[82px] break-keep text-[11px] font-semibold leading-[1.25] text-[#5f5558] transition group-hover:text-[#ff6677] sm:text-xs">
@@ -2004,7 +1999,7 @@ function MapCollectionCard({
       style={{ background: collection.palette.background }}
       aria-label={`${collection.title} ${ui.collectionModal.openAria}`}
     >
-      {collection.imageUrl ? (
+      {getHomeOptimizedCardImageUrl(collection.imageUrl) ? (
         <img
           src={getHomeOptimizedCardImageUrl(collection.imageUrl)}
           alt=""
@@ -2013,7 +2008,7 @@ function MapCollectionCard({
         />
       ) : null}
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.06),rgba(0,0,0,0.54))]" />
-      {!collection.imageUrl ? (
+      {!getHomeOptimizedCardImageUrl(collection.imageUrl) ? (
         <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/15 blur-sm" />
       ) : null}
       <div className="relative z-10 flex h-full w-full flex-col justify-between">
@@ -2536,7 +2531,7 @@ function CollectionInstagramSlide({
           isCover || isPhoto ? collection.palette.background : "#ffffff",
       }}
     >
-      {slide.imageUrl ? (
+      {getHomeOptimizedCardImageUrl(slide.imageUrl) ? (
         <img
           src={getHomeOptimizedCardImageUrl(slide.imageUrl)}
           alt=""
@@ -2548,7 +2543,7 @@ function CollectionInstagramSlide({
       ) : (
         <div className="absolute inset-x-0 top-0 h-1/2 bg-[linear-gradient(180deg,#f5f5f5_0%,#ffffff_72%)]" />
       )}
-      {!slide.imageUrl ? (
+      {!getHomeOptimizedCardImageUrl(slide.imageUrl) ? (
         <div className="absolute -right-16 top-10 h-44 w-44 rounded-full bg-[#ff7b83]/18 blur-2xl" />
       ) : null}
       <div className="relative z-10 flex h-full flex-col justify-between px-7 py-8 sm:px-10 sm:py-11">

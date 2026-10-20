@@ -4,6 +4,8 @@ import legacyRestaurantAliases from "./legacy-restaurant-aliases.json";
 import discoveryTopicDefinitions from "./discovery-topics.json";
 import { isRestaurantRecommendable } from "@/lib/restaurantEligibility";
 import { normalizeLookupValue } from "./restaurantIdentity";
+import { creatorProfileImageOverrides } from "./creatorProfileImages";
+import { sourceProfileImageOverrides } from "./sourceProfileImages";
 export { buildRestaurantLookupKeys } from "./restaurantIdentity";
 import type {
   Creator,
@@ -81,7 +83,18 @@ const dataset = {
     } : {}),
   })),
 } as MatpickDataSet;
-const normalizedDataset = { ...dataset, restaurants: applyRestaurantEdits(dataset.restaurants) };
+const normalizedDataset = {
+  ...dataset,
+  creators: dataset.creators.map(creator => ({
+    ...creator,
+    profileImage: creatorProfileImageOverrides[creator.id] ?? creator.profileImage,
+  })),
+  sources: (dataset.sources ?? []).map(source => ({
+    ...source,
+    imageUrl: sourceProfileImageOverrides[source.id] ?? source.imageUrl,
+  })),
+  restaurants: applyRestaurantEdits(dataset.restaurants),
+};
 // The editor needs originals, including deleted records, for restore and reset.
 export const restaurantCatalog: Restaurant[] = dataset.restaurants;
 const publicDataSourceIds = new Set(dataset.sources?.map(source => source.id) ?? []);

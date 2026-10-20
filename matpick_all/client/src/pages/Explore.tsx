@@ -452,7 +452,7 @@ function SourceAvatarButton({
         <span className="flex h-full w-full items-center justify-center rounded-full bg-white">
           {option?.imageUrl && !isRetiredStaticImageUrl(option.imageUrl) ? (
             <img
-              src={option.imageUrl}
+              src={getOptimizedCardImageUrl(option.imageUrl)}
               alt={option.name}
               className="h-[54px] w-[54px] rounded-full object-cover sm:h-[62px] sm:w-[62px]"
             />

@@ -1,5 +1,6 @@
 import adsenseDefaults from "../client/src/data/adsense.json" with { type: "json" };
 import siteMetadata from "../client/src/data/siteMetadata.json" with { type: "json" };
+import imagePreviews from "../client/src/data/generated/restaurant-image-previews.json" with { type: "json" };
 import { loadPublicData } from "./load-public-data.mjs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -544,8 +545,10 @@ async function main() {
 
   for (const restaurant of restaurants) {
     const restaurantUrl = absoluteUrl(siteUrl, `/restaurant/${restaurant.id}`);
-    const restaurantImage = restaurant.imageUrl && !/^\/(?:card-data|card-previews|restaurant-image-previews|source-covers|dining-moments)\//.test(restaurant.imageUrl)
-      ? absoluteUrl(siteUrl, restaurant.imageUrl)
+    const previewImage = imagePreviews[restaurant.imageUrl?.split(/[?#]/, 1)[0]] ||
+      (restaurant.imageUrl?.startsWith("/card-data/") ? null : restaurant.imageUrl);
+    const restaurantImage = previewImage
+      ? absoluteUrl(siteUrl, previewImage)
       : defaultImage;
     const restaurantSources = [
       ...visibleVisits

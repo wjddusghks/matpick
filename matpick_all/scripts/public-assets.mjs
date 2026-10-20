@@ -2,15 +2,14 @@ import { cp, mkdir } from "node:fs/promises";
 import path from "node:path";
 
 export const retiredImageDirectories = new Set([
-  "card-data", "card-previews", "restaurant-image-previews",
-  "source-covers", "dining-moments",
+  "card-data",
 ]);
 
 export function isRetiredImageUrl(value = "") {
   return retiredImageDirectories.has(String(value).replace(/^\/+/, "").split("/")[0]);
 }
 
-// Explicitly filter public assets even if a local content tool regenerates photos.
+// Keep display-sized photos; only the large source originals stay on the PC.
 export function lightweightPublicAssets(publicDirectory, outputDirectory) {
   return {
     name: "lightweight-public-assets",

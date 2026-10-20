@@ -2,17 +2,12 @@ import restaurantImagePreviews from "@/data/generated/restaurant-image-previews.
 
 const RESTAURANT_IMAGE_PREVIEWS = restaurantImagePreviews as Record<string, string>;
 
-const RETIRED_STATIC_IMAGE_PREFIXES = [
-  "/card-data/",
-  "/card-previews/",
-  "/restaurant-image-previews/",
-  "/source-covers/",
-  "/dining-moments/",
-] as const;
-
 export function isRetiredStaticImageUrl(imageUrl?: string | null) {
   const trimmed = imageUrl?.trim() ?? "";
-  return RETIRED_STATIC_IMAGE_PREFIXES.some(prefix => trimmed.startsWith(prefix));
+  return (
+    trimmed.startsWith("/card-data/") &&
+    !RESTAURANT_IMAGE_PREVIEWS[trimmed.split(/[?#]/, 1)[0]]
+  );
 }
 
 export function getOptimizedCardImageUrl(imageUrl?: string | null) {
@@ -22,9 +17,10 @@ export function getOptimizedCardImageUrl(imageUrl?: string | null) {
     return "";
   }
 
-  if (isRetiredStaticImageUrl(trimmed)) {
-    return "";
+  const previewUrl = RESTAURANT_IMAGE_PREVIEWS[trimmed.split(/[?#]/, 1)[0]];
+  if (previewUrl) {
+    return previewUrl;
   }
 
-  return RESTAURANT_IMAGE_PREVIEWS[trimmed] ?? trimmed;
+  return isRetiredStaticImageUrl(trimmed) ? "" : trimmed;
 }

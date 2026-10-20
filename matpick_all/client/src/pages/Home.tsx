@@ -690,7 +690,7 @@ function TopicShortcutButton({ topic }: { topic: MapTopicShortcut }) {
         <span className="flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 border-white bg-white">
           {!isRetiredStaticImageUrl(topic.imageUrl) ? (
             <img
-              src={topic.imageUrl}
+              src={getOptimizedCardImageUrl(topic.imageUrl)}
               alt=""
               width={64}
               height={64}

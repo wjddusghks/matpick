@@ -13,7 +13,7 @@ import {
 
 const COPY = {
   ko: {
-    button: "의견 보내기",
+    button: "건의하기",
     invite: "맛픽을 더 좋게 만들 아이디어가 있나요?",
     title: "맛픽에 의견 보내기",
     desc: "개선 제안이나 불편 사항을 익명으로 남겨 주세요.",
@@ -151,7 +151,7 @@ export default function FeedbackWidget() {
         aria-label={t.button}
       >
         <MessageSquareHeart className="h-5 w-5" />
-        <span className="hidden sm:inline">{t.button}</span>
+        <span>{t.button}</span>
       </button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-md">
